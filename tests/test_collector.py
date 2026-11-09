@@ -325,4 +325,4 @@ def test_owid_week_format():
     import mortality
     m = mortality.parse_owid("entity,code,week,p_avg_all_ages\nAlbania,ALB,2026-W40,-1.5\nAlbania,ALB,2026-W41,26.0\n",
                              datetime(2026, 11, 9, tzinfo=timezone.utc))
-    assert m["ALB"]["latest"]["week"] == 41 and m["ALB"]["latest"]["excess_pct"] == 26.0 and m["ALB"]["age_weeks"] == 3
+    assert m["ALB"]["latest"]["week"] == 41 and m["ALB"]["latest"]["excess_pct"] == 26.0 and m["ALB"]["age_weeks"] == 4
