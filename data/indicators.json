@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-09T16:26:00Z",
+  "generated_at": "2026-11-09T16:41:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -84,14 +84,24 @@
     },
     {
       "band": "Low",
-      "convergence": "No warning signs are showing. The strongest signs not yet showing: missile / live-fire navigation warnings near taiwan, gps jamming over the taiwan strait and internet disruption in taiwan.",
-      "domains": [],
+      "convergence": "Only one kind of sign is showing (cyber). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: missile / live-fire navigation warnings near taiwan, gps jamming over the taiwan strait and internet disruption in taiwan.",
+      "domains": [
+        "Cyber"
+      ],
       "key": "taiwan",
-      "lit": [],
+      "lit": [
+        {
+          "detail": "Exposed: Volt Typhoon's Framework for Silent Espionage - BankInfoSecurity",
+          "domain": "Cyber",
+          "id": "cyber",
+          "name": "Chinese state hacking reports (Volt / Salt Typhoon)",
+          "weight": 10
+        }
+      ],
       "name": "Taiwan Strait / South China Sea crisis",
       "sa_impact": "Trade and fuel: most of Australia's refined fuel and many goods pass the South China Sea. A blockade would disrupt fuel, medicines and electronics within weeks; Australian forces could be drawn in.",
-      "score": 0,
-      "trend": "steady",
+      "score": 10,
+      "trend": "up",
       "unlit": [
         {
           "domain": "Maritime",
@@ -219,15 +229,25 @@
       "why": "North Korean missile launches are often preceded by navigation warnings; South Korea and Japan report GPS jamming from the North during tense periods."
     },
     {
-      "band": "Low",
-      "convergence": "No warning signs are showing. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and mobilisation / reservist reports (russia / nato).",
-      "domains": [],
+      "band": "Guarded",
+      "convergence": "Only one kind of sign is showing (mobilisation). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and us nuclear command aircraft unusual.",
+      "domains": [
+        "Mobilisation"
+      ],
       "key": "russia",
-      "lit": [],
+      "lit": [
+        {
+          "detail": "Leaked Russian mortality data points to nearly 400,000 deaths tied to the war in Ukraine - Latin Times",
+          "domain": "Mobilisation",
+          "id": "mob",
+          "name": "Mobilisation / reservist reports (Russia / NATO)",
+          "weight": 15
+        }
+      ],
       "name": "Russia-NATO escalation",
       "sa_impact": "Indirect: energy and market shock, cyber attacks that can spill over to Australian systems, and nuclear-risk rhetoric.",
-      "score": 0,
-      "trend": "down",
+      "score": 15,
+      "trend": "up",
       "unlit": [
         {
           "domain": "Electronic warfare",
@@ -239,12 +259,6 @@
           "domain": "Military air",
           "id": "air",
           "name": "Unusual military air activity (Eastern Europe)",
-          "weight": 15
-        },
-        {
-          "domain": "Mobilisation",
-          "id": "mob",
-          "name": "Mobilisation / reservist reports (Russia / NATO)",
           "weight": 15
         },
         {
@@ -294,6 +308,12 @@
           "id": "def",
           "name": "European defence stocks outperforming (5 days)",
           "weight": 5
+        },
+        {
+          "domain": "Cyber",
+          "id": "cyber",
+          "name": "Russian wiper / Sandworm activity reports",
+          "weight": 10
         }
       ],
       "why": "Before February 2022: embassy departures, mobilisation reports, airspace closures and a surge in GPS jamming. Baltic and Black Sea jamming is now routine, so only spikes above normal count."
@@ -406,10 +426,9 @@
     },
     {
       "band": "Elevated",
-      "convergence": "Two different kinds of sign are showing together (health and trade). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: countries restricting medical supply exports, pandemic-response stocks outperforming (5 days) and market fear index above 30.",
+      "convergence": "Only one kind of sign is showing (health). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: countries restricting medical supply exports, pandemic-response stocks outperforming (5 days) and australian medicine or ppe shortage reports.",
       "domains": [
-        "Health",
-        "Trade"
+        "Health"
       ],
       "key": "bio",
       "lit": [
@@ -421,31 +440,17 @@
           "weight": 15
         },
         {
-          "detail": "TreVeyon Henderson’s Mystery Illness Leaves Patriots Scrambling - Yahoo Sports",
+          "detail": "Mystery Pneumonia Death Sparks Concern; Trader Joe's Recall; OUD in Young People - MedPage Today",
           "domain": "Health",
           "id": "illness",
           "name": "Unknown illness / pneumonia cluster reported",
           "weight": 20
-        },
-        {
-          "detail": "Regulatory round-up: 9 November 2026 - The Pharma Letter",
-          "domain": "Trade",
-          "id": "shortage",
-          "name": "Australian medicine or PPE shortage reports",
-          "weight": 10
-        },
-        {
-          "detail": "'Normal teen' spared jail over Opera House terror plot - https://aapnews.aap.com.au/",
-          "domain": "Health",
-          "id": "masscas",
-          "name": "Mass casualty declarations (any country)",
-          "weight": 5
         }
       ],
       "name": "Pandemic or biological emergency",
       "sa_impact": "Health system strain, possible lockdowns and border closures, and shortages of medicines and protective equipment, which Australia mostly imports.",
-      "score": 50,
-      "trend": "steady",
+      "score": 35,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Trade",
@@ -460,6 +465,18 @@
           "weight": 20
         },
         {
+          "domain": "Trade",
+          "id": "shortage",
+          "name": "Australian medicine or PPE shortage reports",
+          "weight": 10
+        },
+        {
+          "domain": "Health",
+          "id": "masscas",
+          "name": "Mass casualty declarations (any country)",
+          "weight": 5
+        },
+        {
           "domain": "Markets",
           "id": "vix",
           "name": "Market fear index above 30",
@@ -467,6 +484,80 @@
         }
       ],
       "why": "Before COVID-19 (Dec 2019 - Feb 2020): reports of an unknown pneumonia cluster, WHO outbreak notices, mask and hazmat makers (Alpha Pro Tech, Lakeland) and vaccine developers (Moderna, Novavax) surging weeks before broad markets fell, and countries restricting exports of masks and medicines (Taiwan from 24 Jan 2020, then dozens more)."
+    },
+    {
+      "band": "Guarded",
+      "convergence": "Two different kinds of sign are showing together (australian incidents and state actors). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: global cyber threat level raised (sans infocon not green), several vpn / firewall flaws exploited this week and spike in scanning of industrial-control systems.",
+      "domains": [
+        "Australian incidents",
+        "State actors"
+      ],
+      "key": "cyber",
+      "lit": [
+        {
+          "detail": "What is wiper malware and why is it so dangerous? - ESET",
+          "domain": "State actors",
+          "id": "state",
+          "name": "Reports of state hackers / pre-positioning / wipers",
+          "weight": 15
+        },
+        {
+          "detail": "News - Australian healthcare provider suffers ransomware attack, patient records stolen - teiss",
+          "domain": "Australian incidents",
+          "id": "au",
+          "name": "Major Australian cyber incident reported",
+          "weight": 10
+        }
+      ],
+      "name": "Major cyber attack on Australia",
+      "sa_impact": "Banks, payments, hospitals, fuel distribution, telcos and the power grid all run on networks; a large attack can stop card payments and services for hours to days.",
+      "score": 25,
+      "trend": "steady",
+      "unlit": [
+        {
+          "domain": "Global threat level",
+          "id": "infocon",
+          "name": "Global cyber threat level raised (SANS Infocon not green)",
+          "weight": 20
+        },
+        {
+          "domain": "Exploited vulnerabilities",
+          "id": "kev",
+          "name": "Surge in newly exploited vulnerabilities (2x normal week)",
+          "weight": 10
+        },
+        {
+          "domain": "Edge-device exploitation",
+          "id": "edge",
+          "name": "Several VPN / firewall flaws exploited this week",
+          "weight": 15
+        },
+        {
+          "domain": "Infrastructure probing",
+          "id": "ics",
+          "name": "Spike in scanning of industrial-control systems",
+          "weight": 15
+        },
+        {
+          "domain": "Ransomware",
+          "id": "ransom",
+          "name": "Australian ransomware victims above normal",
+          "weight": 10
+        },
+        {
+          "domain": "Official alerts",
+          "id": "acsc",
+          "name": "New Australian cyber alert (ACSC)",
+          "weight": 10
+        },
+        {
+          "domain": "Communications",
+          "id": "tel",
+          "name": "Phone / internet carrier outage",
+          "weight": 10
+        }
+      ],
+      "why": "Large attacks are usually preceded by quieter steps: a surge in newly exploited flaws in VPNs and firewalls (how state groups like Volt Typhoon get in), scanning of industrial-control systems, a rise in ransomware victims in the target country, and official warnings. Before Russia's 2022 invasion, wiper malware hit Ukraine a day ahead; Chinese groups have been found pre-positioned in US and allied infrastructure."
     }
   ]
 }
