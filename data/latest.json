@@ -4,31 +4,31 @@
     "anomalies": {
       "airlift": {
         "status": "learning baseline",
-        "value": 31
+        "value": 29
       },
       "bizjets_airborne": {
         "status": "learning baseline",
-        "value": 52
+        "value": 45
       },
       "dark_auspng": {
-        "status": "no data",
-        "value": null
+        "status": "learning baseline",
+        "value": 0
       },
       "dark_eeurope": {
-        "status": "no data",
-        "value": null
+        "status": "learning baseline",
+        "value": 0
       },
       "dark_korea": {
-        "status": "no data",
-        "value": null
+        "status": "learning baseline",
+        "value": 0
       },
       "dark_mideast": {
-        "status": "no data",
-        "value": null
+        "status": "learning baseline",
+        "value": 1
       },
       "dark_taiwan": {
-        "status": "no data",
-        "value": null
+        "status": "learning baseline",
+        "value": 0
       },
       "mil_auspng": {
         "status": "learning baseline",
@@ -44,7 +44,7 @@
       },
       "mil_mideast": {
         "status": "learning baseline",
-        "value": 4
+        "value": 3
       },
       "mil_taiwan": {
         "status": "learning baseline",
@@ -52,7 +52,7 @@
       },
       "mil_total": {
         "status": "learning baseline",
-        "value": 466
+        "value": 437
       },
       "nc3": {
         "status": "learning baseline",
@@ -60,7 +60,7 @@
       },
       "raaf": {
         "status": "learning baseline",
-        "value": 0
+        "value": 1
       },
       "retreat_bizjets": {
         "status": "learning baseline",
@@ -68,34 +68,39 @@
       },
       "tankers": {
         "status": "learning baseline",
-        "value": 12
+        "value": 10
       }
     },
     "detail": {
-      "airlift": 31,
-      "bizjets_airborne": 52,
+      "airlift": 29,
+      "bizjets_airborne": 45,
       "bizjets_by_hub": {
-        "Dallas / Houston": 7,
-        "Dubai": 2,
+        "Dallas / Houston": 6,
+        "Dubai": 1,
         "Geneva / Zurich": 7,
         "Hong Kong": 0,
         "London": 6,
-        "Los Angeles (Van Nuys)": 3,
+        "Los Angeles (Van Nuys)": 2,
         "Moscow": 0,
-        "New York (Teterboro)": 15,
+        "New York (Teterboro)": 13,
         "Palm Beach / Miami": 8,
         "San Francisco Bay": 0,
         "Singapore": 0,
-        "Washington DC": 15
+        "Washington DC": 12
       },
+      "dark_auspng": 0,
+      "dark_eeurope": 0,
+      "dark_korea": 0,
+      "dark_mideast": 1,
+      "dark_taiwan": 0,
       "errors": [],
       "isr": 10,
       "mil_auspng": 0,
       "mil_eeurope": 7,
       "mil_korea": 1,
-      "mil_mideast": 4,
+      "mil_mideast": 3,
       "mil_taiwan": 0,
-      "mil_total": 466,
+      "mil_total": 437,
       "nc3": 1,
       "nc3_seen": [
         {
@@ -104,7 +109,7 @@
           "type": "E6"
         }
       ],
-      "raaf": 0,
+      "raaf": 1,
       "retreat_bizjets": 0,
       "retreat_by_place": {
         "Auckland": 0,
@@ -112,7 +117,7 @@
         "Patagonia": 0,
         "Queenstown / Wanaka": 0
       },
-      "tankers": 12
+      "tankers": 10
     }
   },
   "analyst_latest": {
@@ -252,27 +257,27 @@
     }
   ],
   "gdacs_current_orange_red": [],
-  "generated_at": "2026-11-09T15:28:00Z",
+  "generated_at": "2026-11-09T15:38:00Z",
   "markets": {
     "AUD/USD": {
-      "change_pct": -0.43,
+      "change_pct": -0.38,
       "prev_close": 0.6931,
-      "price": 0.6901
+      "price": 0.6905
     },
     "Brent oil": {
-      "change_pct": -3.92,
+      "change_pct": -4.2,
       "prev_close": 98.32,
-      "price": 94.47
+      "price": 94.19
     },
     "Gold": {
-      "change_pct": 1.21,
+      "change_pct": 1.22,
       "prev_close": 4074.8999,
-      "price": 4124.3
+      "price": 4124.6
     },
     "VIX": {
-      "change_pct": -17.08,
+      "change_pct": -17.9,
       "prev_close": 25.64,
-      "price": 21.26
+      "price": 21.05
     }
   },
   "quakes_m6_24h": [
@@ -422,11 +427,11 @@
     },
     "aircraft": {
       "ok": true,
-      "secs": 24.8
+      "secs": 24.9
     },
     "analysts": {
       "ok": true,
-      "secs": 2.8
+      "secs": 1.5
     },
     "cisa": {
       "ok": true,
@@ -434,23 +439,23 @@
     },
     "gdacs": {
       "ok": true,
-      "secs": 3.5
+      "secs": 2.4
     },
     "markets": {
       "ok": true,
-      "secs": 0.3
+      "secs": 0.4
     },
     "telecom": {
       "ok": true,
-      "secs": 5.7
+      "secs": 3.4
     },
     "uk_advice": {
       "ok": true,
-      "secs": 0.4
+      "secs": 0.1
     },
     "us_advisories": {
       "ok": true,
-      "secs": 0.4
+      "secs": 0.3
     },
     "usgs": {
       "ok": true,
@@ -458,7 +463,7 @@
     },
     "who": {
       "ok": true,
-      "secs": 1.4
+      "secs": 0.7
     }
   },
   "telecom": {
@@ -474,7 +479,7 @@
         "baseline": 716,
         "drop_pct": 0.0,
         "points": 37,
-        "recent": 718
+        "recent": 719
       }
     },
     "Optus": {
@@ -486,7 +491,7 @@
         "recent": 20589
       },
       "ping-slash24": {
-        "baseline": 110,
+        "baseline": 109,
         "drop_pct": 0.0,
         "points": 37,
         "recent": 115
@@ -504,7 +509,7 @@
         "baseline": 9223,
         "drop_pct": 0.0,
         "points": 37,
-        "recent": 9241
+        "recent": 9258
       }
     },
     "Telstra": {
@@ -517,9 +522,9 @@
       },
       "ping-slash24": {
         "baseline": 2028,
-        "drop_pct": 0.0,
+        "drop_pct": 0.2,
         "points": 37,
-        "recent": 2031
+        "recent": 2024
       }
     },
     "Vodafone": {
@@ -534,7 +539,7 @@
         "baseline": 20,
         "drop_pct": 0.0,
         "points": 37,
-        "recent": 23
+        "recent": 21
       }
     }
   },
