@@ -108,8 +108,7 @@ def parse_owid(text, now, history=12):
     return out
 
 
-CDC = ("https://data.cdc.gov/resource/r8kw-7aab.json?$limit=20000&group=By%20Week"
-       "&$where=end_date%20%3E%20%27{since}%27")
+CDC = "https://data.cdc.gov/resource/r8kw-7aab.json?$limit=50000&$order=end_date%20DESC"
 
 
 def parse_cdc(rows, now, skip_recent_weeks=3):
@@ -117,6 +116,8 @@ def parse_cdc(rows, now, skip_recent_weeks=3):
     cutoff = (now - timedelta(weeks=skip_recent_weeks)).date().isoformat()
     by = {}
     for r in rows if isinstance(rows, list) else []:
+        if (r.get("group") or "By Week") != "By Week":
+            continue
         end = (r.get("end_date") or "")[:10]
         try:
             pct = float(r.get("percent_of_expected_deaths"))
@@ -145,7 +146,7 @@ def refresh(now, previous):
         raise RuntimeError("no countries parsed")
     newest = max((c["latest"].get("date") or "" for c in countries.values()), default="")
     try:
-        us = parse_cdc(get_json(CDC.format(since=(now - timedelta(weeks=20)).date().isoformat()), timeout=60), now)
+        us = parse_cdc(get_json(CDC, timeout=60), now)
     except Exception as e:  # noqa: BLE001
         us = {"_error": f"{type(e).__name__}: {e}"[:200]}
     return {"generated_at": iso(now), "source": source, "countries_newest_date": newest, "countries": countries, "us_states": us}
