@@ -8,7 +8,7 @@
       },
       "mil_total": {
         "status": "learning baseline",
-        "value": 188
+        "value": 210
       },
       "nc3": {
         "status": "learning baseline",
@@ -20,20 +20,20 @@
       },
       "tankers": {
         "status": "learning baseline",
-        "value": 9
+        "value": 7
       }
     },
     "detail": {
       "bizjets_airborne": 30,
       "bizjets_by_hub": {
-        "Dallas / Houston": 0,
-        "Dubai": 0,
-        "Geneva / Zurich": 10,
-        "Hong Kong": 0,
-        "London": 13,
+        "Dallas / Houston": 1,
+        "Dubai": 1,
+        "Geneva / Zurich": 9,
+        "Hong Kong": 1,
+        "London": 10,
         "Los Angeles (Van Nuys)": 0,
         "Moscow": 0,
-        "New York (Teterboro)": 6,
+        "New York (Teterboro)": 5,
         "Palm Beach / Miami": 3,
         "San Francisco Bay": 0,
         "Singapore": 0,
@@ -41,7 +41,7 @@
       },
       "errors": [],
       "isr": 2,
-      "mil_total": 188,
+      "mil_total": 210,
       "nc3": 0,
       "nc3_seen": [],
       "retreat_bizjets": 1,
@@ -51,7 +51,7 @@
         "Patagonia": 0,
         "Queenstown / Wanaka": 0
       },
-      "tankers": 9
+      "tankers": 7
     }
   },
   "cisa_latest": [
@@ -93,27 +93,27 @@
     }
   ],
   "gdacs_current_orange_red": [],
-  "generated_at": "2026-11-09T12:04:00Z",
+  "generated_at": "2026-11-09T12:17:00Z",
   "markets": {
     "AUD/USD": {
-      "change_pct": -0.42,
+      "change_pct": -0.46,
       "prev_close": 0.6931,
-      "price": 0.6902
+      "price": 0.6899
     },
     "Brent oil": {
-      "change_pct": -3.45,
+      "change_pct": -3.42,
       "prev_close": 98.32,
-      "price": 94.93
+      "price": 94.96
     },
     "Gold": {
-      "change_pct": 1.06,
+      "change_pct": 1.05,
       "prev_close": 4074.8999,
-      "price": 4118.1
+      "price": 4117.8
     },
     "VIX": {
-      "change_pct": -9.05,
+      "change_pct": -8.35,
       "prev_close": 25.64,
-      "price": 23.32
+      "price": 23.5
     }
   },
   "quakes_m6_24h": [
@@ -128,7 +128,25 @@
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tx16"
     }
   ],
-  "recent_alerts": [],
+  "recent_alerts": [
+    {
+      "channel": "proactive",
+      "channels": [
+        "proactive"
+      ],
+      "message": "THIS IS A TEST - no real threat. Example of a Level 4 alert: three categories elevated with official advisories issued. You would: finish stocking food, water and medicines; confirm the family meeting point; charge radios and power banks.",
+      "priority": 4,
+      "sent": {
+        "proactive": true
+      },
+      "sent_at": "2026-11-09T12:17:00Z",
+      "source": "analysis",
+      "tags": [
+        "test_tube"
+      ],
+      "title": "TEST ONLY - Level 4 High (mock)"
+    }
+  ],
   "source_health": {
     "acsc": {
       "error": "TimeoutError: The read operation timed out",
@@ -136,7 +154,7 @@
     },
     "aircraft": {
       "ok": true,
-      "secs": 22.6
+      "secs": 23.8
     },
     "cisa": {
       "ok": true,
@@ -144,15 +162,15 @@
     },
     "gdacs": {
       "ok": true,
-      "secs": 3.2
+      "secs": 6.6
     },
     "markets": {
       "ok": true,
-      "secs": 0.8
+      "secs": 0.4
     },
     "uk_advice": {
       "ok": true,
-      "secs": 0.2
+      "secs": 0.1
     },
     "us_advisories": {
       "ok": true,
@@ -164,10 +182,17 @@
     },
     "who": {
       "ok": true,
-      "secs": 0.3
+      "secs": 0.4
     }
   },
   "uk_recent_updates": [
+    {
+      "id": "https://www.gov.uk/foreign-travel-advice/chile#2026-11-09T12:06:58+00:00",
+      "link": "https://www.gov.uk/foreign-travel-advice/chile",
+      "summary": "",
+      "title": "Chile",
+      "updated": "2026-11-09T12:06:58+00:00"
+    },
     {
       "id": "https://www.gov.uk/foreign-travel-advice/poland#2026-11-07T15:53:32+00:00",
       "link": "https://www.gov.uk/foreign-travel-advice/poland",
@@ -230,13 +255,6 @@
       "summary": "",
       "title": "Guatemala",
       "updated": "2026-11-05T14:10:49+00:00"
-    },
-    {
-      "id": "https://www.gov.uk/foreign-travel-advice/el-salvador#2026-11-05T14:10:46+00:00",
-      "link": "https://www.gov.uk/foreign-travel-advice/el-salvador",
-      "summary": "",
-      "title": "El Salvador",
-      "updated": "2026-11-05T14:10:46+00:00"
     }
   ],
   "us_departure_orders": [
