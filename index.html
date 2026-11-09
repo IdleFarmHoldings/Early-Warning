@@ -2,79 +2,250 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex">
-<title>Early Warning</title>
+<title>Early Warning Board</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
-:root{--bg:#f6f5f2;--card:#fff;--ink:#1d1d1b;--muted:#6b6a66;--line:#e4e2dc;
---l1:#2f855a;--l2:#b7791f;--l3:#dd6b20;--l4:#c53030;--l5:#742a2a;}
-@media (prefers-color-scheme:dark){:root{--bg:#141413;--card:#1f1f1d;--ink:#ecebe7;--muted:#a3a29c;--line:#33332f;
---l1:#48bb78;--l2:#ecc94b;--l3:#f6ad55;--l4:#fc8181;--l5:#feb2b2;}}
+:root{
+  --bg:#e9ecee; --surface:#ffffff; --sunk:#f3f5f6; --ink:#162028; --muted:#56636d; --line:#d2d8dc;
+  --accent:#1d3a4f;
+  --l1:#6f8f7c; --l2:#3f9a5a; --l3:#e3b81c; --l4:#e5791f; --l5:#c8312b;
+  --l3-ink:#3a2e00; --chip-ink:#ffffff;
+  --display:"Barlow Condensed","Arial Narrow",system-ui,sans-serif;
+  --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){:root{
+  --bg:#0f151a; --surface:#172028; --sunk:#121a20; --ink:#e4eaee; --muted:#93a1ab; --line:#2a3640;
+  --accent:#9cc3de; --l1:#7fa08c; --l2:#4fb06b; --l3:#e8c33a; --l4:#ef8a35; --l5:#e2514a; color-scheme:dark}}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
-main{max-width:760px;margin:0 auto;padding:20px 16px 48px}
-h1{font-size:1.1rem;margin:0 0 4px;letter-spacing:.02em}
-.meta{color:var(--muted);font-size:.85rem}
-.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin-top:16px}
-.level{display:flex;align-items:center;gap:14px}
-.badge{font-size:2rem;font-weight:700;width:64px;height:64px;border-radius:50%;display:grid;place-items:center;color:#fff;flex:none}
-.lvlname{font-size:1.4rem;font-weight:700}
-h2{font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:0 0 8px}
-ul{margin:0;padding-left:20px}
-.cat{padding:12px 0;border-top:1px solid var(--line)}
-.cat:first-of-type{border-top:0;padding-top:0}
-.row{display:flex;justify-content:space-between;gap:8px;align-items:baseline}
-.name{font-weight:600}
-.score{font-variant-numeric:tabular-nums;font-weight:600}
-.bar{height:6px;background:var(--line);border-radius:3px;margin:6px 0;overflow:hidden}
-.bar i{display:block;height:100%;border-radius:3px}
-.small{font-size:.85rem;color:var(--muted)}
-.small a{color:var(--muted)}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
-.mk{font-variant-numeric:tabular-nums}
-.up{color:var(--l1)}.down{color:var(--l4)}
-.err{color:var(--l4)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.5}
+.wrap{max-width:1120px;margin:0 auto;padding:20px max(16px,env(safe-area-inset-right)) 48px max(16px,env(safe-area-inset-left));display:grid;grid-template-columns:minmax(0,1fr);gap:20px}
+.wrap>*,.top>*,.lower>*,.gauge-row>*{min-width:0}
+h1,h2,h3{font-family:var(--display);font-weight:600;letter-spacing:.01em;margin:0;line-height:1.1}
+h1{font-size:2.1rem;text-transform:uppercase}
+h2{font-size:1.25rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+a{color:var(--accent)}
+header{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:8px 20px;border-bottom:2px solid var(--ink);padding-bottom:10px}
+header .meta{font-size:.82rem;display:flex;gap:4px 16px;flex-wrap:wrap}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:18px}
+.top{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:20px}
+@media (max-width:760px){.top{grid-template-columns:1fr}}
+.gauge-row{display:grid;grid-template-columns:minmax(200px,280px) 1fr;gap:20px;align-items:center}
+@media (max-width:560px){.gauge-row{grid-template-columns:1fr;justify-items:center;text-align:center}.gauge{width:min(240px,100%)}.summary{text-align:left}}
+.gauge svg{width:100%;height:auto;display:block}
+.gauge text{font-family:var(--display);font-weight:700}
+.lvl-name{font-family:var(--display);font-size:2.6rem;font-weight:700;text-transform:uppercase;line-height:1}
+.lvl-sub{font-family:var(--mono);font-size:.8rem;color:var(--muted);margin-top:2px}
+.headline{font-weight:600;margin:10px 0 4px}
+.summary{margin:0;max-width:65ch}
+.actions{margin-top:14px;border-top:1px solid var(--line);padding-top:12px}
+.actions h3{font-size:1rem;text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px}
+.actions ul{margin:0;padding-left:1.1em;display:grid;gap:3px}
+.cats{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+@media (max-width:420px){.cats{grid-template-columns:1fr}}
+.cat{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:14px 16px;display:grid;gap:8px;align-content:start;min-width:0}
+.cat-head{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.cat-head h3{font-size:1.15rem;text-transform:uppercase}
+.chip{font-family:var(--mono);font-size:.78rem;font-weight:500;padding:2px 8px;border-radius:3px;color:var(--chip-ink);white-space:nowrap}
+.bar{display:grid;grid-template-columns:repeat(5,1fr);gap:3px}
+.bar i{height:6px;border-radius:1px;background:var(--line)}
+.cat p{margin:0;font-size:.9rem}
+.cat .src{font-size:.78rem;display:flex;flex-wrap:wrap;gap:2px 10px}
+.cat .src a{overflow-wrap:anywhere}
+.cat .facts{font-family:var(--mono);font-size:.74rem;color:var(--muted);display:flex;gap:12px}
+.lower{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px}
+@media (max-width:760px){.lower{grid-template-columns:1fr}}
+.list{display:grid;margin-top:8px}
+.item{padding:10px 0;border-top:1px solid var(--line);display:grid;gap:2px}
+.item:first-child{border-top:0}
+.item .t{font-weight:600}
+.item .w{font-family:var(--mono);font-size:.75rem;color:var(--muted)}
+.item p{margin:0;font-size:.88rem;overflow-wrap:anywhere}
+.empty{color:var(--muted);font-size:.9rem;margin:8px 0 0}
+.mk{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:8px}
+.mk div{font-family:var(--mono);font-size:.85rem}
+.mk b{font-size:1.05rem}
+.side p{font-size:.88rem;margin:8px 0 0}
+.guide{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.88rem;min-width:520px}
+th,td{text-align:left;padding:8px 10px;border-top:1px solid var(--line);vertical-align:top}
+th{font-family:var(--display);text-transform:uppercase;letter-spacing:.05em;font-weight:600;color:var(--muted);border-top:0}
+.banner{border:1.5px dashed var(--line);border-radius:6px;padding:14px 16px;font-size:.9rem}
+.sim{background:var(--l5);color:#fff;border-radius:6px;padding:12px 16px;font-family:var(--display);font-size:1.3rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;text-align:center}
+.sim a{color:#fff}
+@media (max-width:480px){.wrap{gap:14px;padding-top:12px}h1{font-size:1.7rem}.panel{padding:14px}.lvl-name{font-size:2.1rem}.cat{padding:12px}}
+@media (prefers-reduced-motion:no-preference){.needle{transition:transform .8s cubic-bezier(.3,1.4,.5,1)}}
 </style>
 </head>
 <body>
-<main>
-  <h1>Early Warning · South Australia</h1>
-  <div class="meta" id="meta">Loading…</div>
-  <div id="app"></div>
-  <p class="small" style="margin-top:24px">Read-only family status page. Scores 0–5 per category; overall level 1 Normal, 2 Watch, 3 Elevated, 4 High, 5 Imminent. Updated twice daily by analysis; market figures every 15 minutes. Not an official warning service — for emergencies follow <a href="https://www.alert.sa.gov.au/">Alert SA</a> and <a href="https://www.cfs.sa.gov.au/">CFS</a>.</p>
-</main>
+<div class="wrap">
+  <div id="sim" class="sim" hidden></div>
+  <header>
+    <div>
+      <h1>Early Warning Board</h1>
+      <div class="muted" style="font-size:.9rem">Threats that could reach South Australia: conflict, disasters, cyber, pandemic, shortages</div>
+    </div>
+    <div class="meta mono">
+      <span>Last check: <b id="updated">loading</b></span>
+      <span>Next check: <b id="next">—</b></span>
+    </div>
+  </header>
+
+  <div id="banner" class="banner">Loading the latest assessment…</div>
+
+  <section class="top">
+    <div class="panel">
+      <div class="gauge-row">
+        <div class="gauge" aria-hidden="true"><svg id="gauge" viewBox="0 0 240 140"></svg></div>
+        <div>
+          <div class="lvl-name" id="lvlName">—</div>
+          <div class="lvl-sub" id="lvlSub"></div>
+          <p class="headline" id="headline"></p>
+          <p class="summary" id="summary"></p>
+        </div>
+      </div>
+      <div class="actions">
+        <h3 id="actTitle">What to do at this level</h3>
+        <ul id="actList"></ul>
+      </div>
+    </div>
+    <div class="panel side">
+      <h2>Markets</h2>
+      <div class="mk" id="markets"><span class="empty">Loading…</span></div>
+      <p class="muted" id="mktTime"></p>
+      <p id="feeds" class="muted"></p>
+      <p>In an emergency, follow official advice first: <a href="https://www.alert.sa.gov.au/">Alert SA</a>, <a href="https://www.cfs.sa.gov.au/">CFS</a>, <a href="https://www.smartraveller.gov.au/">Smartraveller</a>, ABC Radio Adelaide 891 AM.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2 style="margin-bottom:10px">Categories <span class="mono" style="font-size:.8rem;letter-spacing:0;text-transform:none">score 0–5</span></h2>
+    <div class="cats" id="cats"></div>
+  </section>
+
+  <section class="lower">
+    <div class="panel">
+      <h2>Confirmed impacts on Australia</h2>
+      <div class="list" id="confirmed"></div>
+    </div>
+    <div class="panel">
+      <h2>Recent alerts</h2>
+      <div class="list" id="alerts"></div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2 style="margin-bottom:8px">Level guide</h2>
+    <div class="guide"><table>
+      <thead><tr><th>Level</th><th>Meaning</th><th>Family action</th></tr></thead>
+      <tbody id="guideBody"></tbody>
+    </table></div>
+  </section>
+  <p class="muted" style="font-size:.8rem;margin:0">Family status page, updated twice daily by analysis; markets and alerts every 15 minutes. Not an official warning service.</p>
+</div>
+
 <script>
-const NAMES={1:"Normal",2:"Watch",3:"Elevated",4:"High",5:"Imminent"};
-const ARROW={up:"↑",down:"↓",steady:"→"};
-const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-const safeUrl=u=>/^https?:\/\//i.test(u||"")?u:"#";
-const lvlColor=n=>`var(--l${Math.min(5,Math.max(1,Math.round(n)))})`;
-const scoreColor=s=>s>=4?"var(--l4)":s>=3?"var(--l3)":s>=2?"var(--l2)":"var(--l1)";
-const fmt=iso=>{try{return new Date(iso).toLocaleString("en-AU",{timeZone:"Australia/Adelaide",weekday:"short",day:"numeric",month:"short",hour:"numeric",minute:"2-digit"})}catch(e){return iso}};
-async function get(p){const r=await fetch(p+"?t="+Date.now(),{cache:"no-store"});if(!r.ok)throw new Error(p+" "+r.status);return r.json();}
-async function load(){
-  let s,l;
-  try{s=await get("data/status.json")}catch(e){document.getElementById("meta").innerHTML='<span class="err">Could not load status.</span>';return}
-  try{l=await get("data/latest.json")}catch(e){l=null}
-  document.getElementById("meta").textContent=`Updated ${fmt(s.updatedAt)} · next check ${fmt(s.nextCheck)} (Adelaide time)`;
-  let h=`<div class="card"><div class="level"><div class="badge" style="background:${lvlColor(s.level)}">${esc(s.level)}</div>
-  <div><div class="lvlname">${esc(s.levelName||NAMES[s.level])} <span class="small">${ARROW[s.trend]||""} ${esc(s.trend)}</span></div>
-  <div>${esc(s.headline)}</div></div></div>
-  <p style="margin:12px 0 0">${esc(s.summary)}</p></div>`;
-  if(s.actions&&s.actions.length) h+=`<div class="card"><h2>Suggested actions</h2><ul>${s.actions.map(a=>`<li>${esc(a)}</li>`).join("")}</ul></div>`;
-  if(s.confirmed&&s.confirmed.length) h+=`<div class="card"><h2>Confirmed impacts on Australia</h2><ul>${s.confirmed.map(c=>`<li><b>${esc(c.title)}</b> (${esc(c.date)}) — ${esc(c.impact)} ${c.url?`<a class="small" href="${esc(safeUrl(c.url))}" rel="noopener">source</a>`:""}</li>`).join("")}</ul></div>`;
-  h+=`<div class="card"><h2>Categories</h2>${(s.categories||[]).map(c=>`<div class="cat">
-   <div class="row"><span class="name">${esc(c.name)}</span><span class="score">${Number(c.score).toFixed(1)} <span class="small">${ARROW[c.trend]||""}</span></span></div>
-   <div class="bar"><i style="width:${Math.min(100,c.score/5*100)}%;background:${scoreColor(c.score)}"></i></div>
-   <div>${esc(c.summary)}</div>
-   <div class="small">Confidence: ${esc(c.confidence)}${(c.sources||[]).map(x=>` · <a href="${esc(safeUrl(x.url))}" rel="noopener">${esc(x.title)}</a>`).join("")}</div></div>`).join("")}</div>`;
-  if(l&&l.markets){h+=`<div class="card"><h2>Markets <span style="text-transform:none;letter-spacing:0">· ${fmt(l.generated_at)}</span></h2><div class="grid">${Object.entries(l.markets).map(([k,v])=>{
-    const c=Number(v.change_pct);return `<div class="mk"><div class="small">${esc(k)}</div><b>${esc(v.price)}</b> <span class="${c>=0?"up":"down"}">${c>=0?"+":""}${c.toFixed(2)}%</span></div>`}).join("")}</div></div>`;}
-  if(l&&l.source_health){const bad=Object.entries(l.source_health).filter(([k,v])=>!v.ok).map(([k])=>k);
-    h+=`<p class="small">Data feeds: ${bad.length?`${Object.keys(l.source_health).length-bad.length} OK, unavailable: ${esc(bad.join(", "))}`:"all OK"}.</p>`;}
-  document.getElementById("app").innerHTML=h;
+const LEVELS = [null,
+  {name:"Normal", meaning:"Background noise only", actions:["Routine kit check once a month","Keep fuel above half a tank"]},
+  {name:"Watch", meaning:"One category elevated", actions:["Read the briefing","No purchases needed yet","Check emergency contacts are current"]},
+  {name:"Elevated", meaning:"Two or more categories elevated, or one critical", actions:["Fill all fuel tanks and jerry cans","Withdraw some cash","Top up regular medications","Check water and food kit against list"]},
+  {name:"High", meaning:"Several categories converging and official advisories issued", actions:["Finish stocking food, water and medicines","Confirm the family meeting point and plan","Charge power banks, radios and devices","Download offline maps and documents"]},
+  {name:"Imminent", meaning:"Event underway or confirmed imminent", actions:["Execute the family plan","Follow official SA emergency instructions first","Check on vulnerable family and neighbours"]}
+];
+const CATS = [
+  {key:"geo",name:"Geopolitical & conflict"},{key:"nuclear",name:"Nuclear & fallout"},{key:"cyber",name:"Cyber & infrastructure"},
+  {key:"bio",name:"Pandemic & biological"},{key:"nature",name:"Natural hazards"},{key:"supply",name:"Fuel, food & supply"},{key:"markets",name:"Markets & finance"}];
+const $ = id => document.getElementById(id);
+const lc = n => `var(--l${Math.max(1,Math.min(5,n||1))})`;
+const scoreColor = s => s>=4.5?lc(5):s>=3.5?lc(4):s>=2.5?lc(3):s>=1.5?lc(2):lc(1);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const safeUrl = u => /^https?:\/\//i.test(u||"") ? u : null;
+const fmt = iso => { if(!iso) return "—"; const d=new Date(iso); if(isNaN(d)) return esc(iso);
+  return d.toLocaleString("en-AU",{timeZone:"Australia/Adelaide",weekday:"short",day:"numeric",month:"short",hour:"numeric",minute:"2-digit"}); };
+const trendTxt = t => t==="up"?"▲ rising":t==="down"?"▼ easing":"● steady";
+
+function drawGauge(level){
+  const cx=120, cy=124, r1=58, r2=104; let s="";
+  for(let i=0;i<5;i++){
+    const a0=Math.PI*(1-i/5)-0.012, a1=Math.PI*(1-(i+1)/5)+0.012;
+    const p=(r,a)=>`${(cx+r*Math.cos(a)).toFixed(1)} ${(cy-r*Math.sin(a)).toFixed(1)}`;
+    s+=`<path d="M${p(r2,a0)} A${r2} ${r2} 0 0 1 ${p(r2,a1)} L${p(r1,a1)} A${r1} ${r1} 0 0 0 ${p(r1,a0)} Z" fill="${lc(i+1)}" opacity="${level&&level!==i+1?0.38:1}"/>`;
+    const am=(a0+a1)/2; s+=`<text x="${(cx+(r1+r2)/2*Math.cos(am)).toFixed(1)}" y="${(cy-(r1+r2)/2*Math.sin(am)+6).toFixed(1)}" text-anchor="middle" font-size="17" fill="var(--surface)">${i+1}</text>`;
+  }
+  const ang = level ? 180 - ((level-0.5)/5)*180 : 90;
+  s+=`<g class="needle" style="transform-origin:${cx}px ${cy}px;transform:rotate(${90-ang}deg)"><path d="M${cx-5} ${cy} L${cx} ${cy-r2+6} L${cx+5} ${cy} Z" fill="var(--ink)"/></g><circle cx="${cx}" cy="${cy}" r="9" fill="var(--ink)"/>`;
+  $("gauge").innerHTML=s;
 }
-load();setInterval(load,5*60*1000);
+
+function renderStatus(st){
+  const has = st && st.level;
+  $("banner").hidden = !!has;
+  if(!has) $("banner").textContent = "No assessment available yet.";
+  const level = has ? Math.max(1,Math.min(5,Math.round(st.level))) : 0;
+  drawGauge(level);
+  const L = LEVELS[level||1];
+  $("lvlName").textContent = has ? `${level} · ${st.levelName || L.name}` : "—";
+  $("lvlName").style.color = has ? lc(level) : "var(--muted)";
+  $("lvlSub").textContent = has ? `${trendTxt(st.trend)} · ${L.meaning}` : "";
+  $("headline").textContent = has ? (st.headline||"") : "";
+  $("summary").textContent = has ? (st.summary||"") : "";
+  $("updated").textContent = has ? fmt(st.updatedAt) : "—";
+  $("next").textContent = st && st.nextCheck ? fmt(st.nextCheck) : "—";
+  $("actTitle").textContent = has ? `What to do at level ${level}` : "What to do";
+  const acts = has ? [...L.actions, ...(Array.isArray(st.actions)?st.actions:[])] : [];
+  $("actList").innerHTML = acts.map(a=>`<li>${esc(a)}</li>`).join("");
+  const byKey = {}; (st && Array.isArray(st.categories) ? st.categories : []).forEach(c=>byKey[c.key]=c);
+  $("cats").innerHTML = CATS.map(def=>{
+    const c = byKey[def.key]; const sc = c && typeof c.score==="number" ? c.score : null;
+    const bars = [1,2,3,4,5].map(i=>`<i style="${sc!==null&&sc>=i-0.5?`background:${scoreColor(sc)}`:""}"></i>`).join("");
+    const srcs = c && Array.isArray(c.sources) ? c.sources.filter(x=>safeUrl(x.url)).slice(0,4).map(x=>`<a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.title||"Source")}</a>`).join("") : "";
+    return `<article class="cat">
+      <div class="cat-head"><h3>${esc(c?.name||def.name)}</h3>
+        <span class="chip" style="background:${sc===null?"var(--muted)":scoreColor(sc)};${sc!==null&&sc>=2.5&&sc<3.5?"color:var(--l3-ink)":""}">${sc===null?"no data":sc.toFixed(1)+" / 5"}</span></div>
+      <div class="bar" aria-hidden="true">${bars}</div>
+      ${c?`<div class="facts"><span>${trendTxt(c.trend)}</span><span>confidence: ${esc(c.confidence||"—")}</span></div><p>${esc(c.summary||"")}</p>${srcs?`<div class="src">${srcs}</div>`:""}`:`<p class="muted">No data.</p>`}
+    </article>`;
+  }).join("");
+  const conf = st && Array.isArray(st.confirmed) ? st.confirmed : [];
+  $("confirmed").innerHTML = conf.length ? conf.map(x=>{ const u=safeUrl(x.url);
+    return `<div class="item"><span class="t">${esc(x.title)}</span><span class="w">${esc(x.date||"")}</span><p>${esc(x.impact||"")}${u?` <a href="${esc(u)}" target="_blank" rel="noopener">Source</a>`:""}</p></div>`;
+  }).join("") : `<p class="empty">No confirmed large-scale event affecting Australia right now.</p>`;
+}
+
+function renderLatest(l){
+  if(!l){ $("markets").innerHTML=`<span class="empty">Unavailable.</span>`; $("alerts").innerHTML=`<p class="empty">Unavailable.</p>`; return; }
+  $("markets").innerHTML = Object.entries(l.markets||{}).map(([k,v])=>{ const c=Number(v.change_pct)||0;
+    return `<div><span class="muted">${esc(k)}</span><br><b>${esc(v.price)}</b> <span style="color:${c>=0?"var(--l2)":"var(--l5)"}">${c>=0?"+":""}${c.toFixed(2)}%</span></div>`}).join("") || `<span class="empty">No data.</span>`;
+  $("mktTime").textContent = `As of ${fmt(l.generated_at)}`;
+  const h=l.source_health||{}, bad=Object.keys(h).filter(k=>!h[k].ok);
+  $("feeds").textContent = Object.keys(h).length ? (bad.length?`Data feeds: ${Object.keys(h).length-bad.length} OK, unavailable: ${bad.join(", ")}.`:"Data feeds: all OK.") : "";
+  const al=(l.recent_alerts||[]).slice(0,8);
+  $("alerts").innerHTML = al.length ? al.map(a=>`<div class="item"><span class="t">${esc(a.title)}</span><span class="w">${fmt(a.sent_at)} · priority ${esc(a.priority)}</span><p>${esc(a.message)}</p></div>`).join("") : `<p class="empty">No alerts in the last few days.</p>`;
+}
+
+$("guideBody").innerHTML = LEVELS.slice(1).map((L,i)=>`<tr>
+  <td><span class="chip" style="background:${lc(i+1)};${i===2?"color:var(--l3-ink)":""}">${i+1} ${L.name}</span></td>
+  <td>${esc(L.meaning)}</td><td>${esc(L.actions.join("; "))}</td></tr>`).join("");
+
+const demo = new URLSearchParams(location.search).get("demo");
+const DEMO_OK = /^[1-5]$/.test(demo||"");
+if(DEMO_OK){ $("sim").hidden=false; $("sim").innerHTML=`Simulation only — not real. <a href="./">See the real status</a>`; document.title="SIMULATION - Early Warning Board"; }
+
+async function get(p){ const r=await fetch(p+(p.includes("?")?"&":"?")+"t="+Date.now(),{cache:"no-store"}); if(!r.ok) throw new Error(r.status); return r.json(); }
+async function load(){
+  let st=null, l=null;
+  try{ st = await get(DEMO_OK ? `data/demo-level${demo}.json` : "data/status.json"); }catch(e){ $("banner").hidden=false; $("banner").textContent="Could not load the assessment. Try again shortly."; }
+  try{ l = await get("data/latest.json"); }catch(e){}
+  if(st) renderStatus(st); else drawGauge(0);
+  renderLatest(l);
+}
+load(); setInterval(load, 5*60*1000);
 </script>
 </body>
 </html>

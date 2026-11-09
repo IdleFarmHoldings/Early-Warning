@@ -30,11 +30,18 @@ def load_series(now, days=16):
     return rows
 
 
+def click_url(alert):
+    """Alerts may deep-link into the status page (e.g. ?demo=5); anything else falls back to the page."""
+    base = CONFIG["board_url"]
+    c = alert.get("click")
+    return c if isinstance(c, str) and c.startswith(base) else base
+
+
 def send(alert, dry_run):
     sent = {}
     for ch in alert["channels"]:
         sent[ch] = push(ch, alert["title"], alert["message"], priority=alert.get("priority", 3),
-                        tags=alert.get("tags"), click=CONFIG["board_url"], dry_run=dry_run)
+                        tags=alert.get("tags"), click=click_url(alert), dry_run=dry_run)
     return sent
 
 
