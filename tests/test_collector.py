@@ -227,3 +227,14 @@ def test_convergence_sector_and_who():
     ctx["anomalies"] = {}; ctx["departures"] = []; ctx["markets"] = {}
     one = {s["key"]: s for s in precursors.score_scenarios(ctx, {})}["mideast"]
     assert one["convergence"].startswith("Only one kind of sign") and one["band"] == "Low"
+
+
+def test_news_require_filters_noise():
+    import precursors
+    ind = next(i for s in precursors.PLAYBOOK["scenarios"] if s["key"] == "bio" for i in s["indicators"] if i["id"] == "illness")
+    ctx = lambda t: {"news": {"illness": {"items": [{"title": t}]}}}
+    assert precursors._lit(ind, ctx("TreVeyon Henderson's Mystery Illness Leaves Patriots Scrambling")) is None
+    assert precursors._lit(ind, ctx("Mystery pneumonia cluster in Hubei puts health authorities on alert"))
+    mc = next(i for s in precursors.PLAYBOOK["scenarios"] if s["key"] == "bio" for i in s["indicators"] if i["id"] == "masscas")
+    assert precursors._lit(mc, {"news": {"masscas": {"items": [{"title": "Opera House terror plot sentencing"}]}}}) is None
+    assert precursors._lit(mc, {"news": {"masscas": {"items": [{"title": "Hospital declares Code Brown after crash"}]}}})

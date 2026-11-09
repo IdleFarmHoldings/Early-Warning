@@ -163,7 +163,11 @@
             "Yemen"
           ],
           "weight": 5,
-          "domain": "Health"
+          "domain": "Health",
+          "require": [
+            "mass casualty",
+            "code brown"
+          ]
         }
       ]
     },
@@ -278,7 +282,20 @@
             "PLA"
           ],
           "weight": 15,
-          "domain": "State signalling"
+          "domain": "State signalling",
+          "require": [
+            "UVB-76",
+            "Buzzer",
+            "doomsday radio",
+            "nuclear drills",
+            "nuclear drill",
+            "didn't warn",
+            "ro-ro",
+            "wartime",
+            "war preparedness",
+            "stockpile",
+            "stockpiling"
+          ]
         },
         {
           "id": "blood",
@@ -293,7 +310,14 @@
             "Fujian"
           ],
           "weight": 10,
-          "domain": "Medical preparation"
+          "domain": "Medical preparation",
+          "require": [
+            "blood supplies",
+            "blood donation",
+            "blood drive",
+            "field hospital",
+            "field hospitals"
+          ]
         },
         {
           "id": "def",
@@ -516,7 +540,14 @@
             "Belarus"
           ],
           "weight": 10,
-          "domain": "Medical preparation"
+          "domain": "Medical preparation",
+          "require": [
+            "blood supplies",
+            "blood donation",
+            "blood drive",
+            "field hospital",
+            "field hospitals"
+          ]
         },
         {
           "id": "signals",
@@ -527,7 +558,20 @@
             ""
           ],
           "weight": 5,
-          "domain": "State signalling"
+          "domain": "State signalling",
+          "require": [
+            "UVB-76",
+            "Buzzer",
+            "doomsday radio",
+            "nuclear drills",
+            "nuclear drill",
+            "didn't warn",
+            "ro-ro",
+            "wartime",
+            "war preparedness",
+            "stockpile",
+            "stockpiling"
+          ]
         },
         {
           "id": "def",
@@ -692,7 +736,11 @@
             "Code Brown"
           ],
           "weight": 10,
-          "domain": "Health"
+          "domain": "Health",
+          "require": [
+            "mass casualty",
+            "code brown"
+          ]
         }
       ]
     },
@@ -719,7 +767,16 @@
             ""
           ],
           "weight": 20,
-          "domain": "Health"
+          "domain": "Health",
+          "require": [
+            "pneumonia",
+            "outbreak",
+            "cluster",
+            "unexplained deaths",
+            "villagers",
+            "residents",
+            "health authorities"
+          ]
         },
         {
           "id": "exports",
@@ -730,7 +787,16 @@
             ""
           ],
           "weight": 20,
-          "domain": "Trade"
+          "domain": "Trade",
+          "require": [
+            "export ban",
+            "export bans",
+            "export restriction",
+            "export restrictions",
+            "halts exports",
+            "bans exports",
+            "restricts exports"
+          ]
         },
         {
           "id": "pharma",
@@ -750,7 +816,11 @@
             ""
           ],
           "weight": 10,
-          "domain": "Trade"
+          "domain": "Trade",
+          "require": [
+            "shortage",
+            "shortages"
+          ]
         },
         {
           "id": "masscas",
@@ -761,7 +831,11 @@
             ""
           ],
           "weight": 5,
-          "domain": "Health"
+          "domain": "Health",
+          "require": [
+            "mass casualty",
+            "code brown"
+          ]
         },
         {
           "id": "vix",
@@ -776,13 +850,30 @@
     }
   ],
   "news_exclude": [
+    "AFL",
+    "Kalshi",
+    "NBA",
+    "NFL",
+    "NRL",
+    "Patriots",
+    "Polymarket",
+    "Quiver",
     "bet",
     "bets",
+    "boyband",
+    "cat",
+    "cats",
+    "celebrity",
+    "coach",
+    "dog",
+    "dogs",
+    "horse",
     "odds",
+    "pet",
+    "pets",
     "prediction market",
-    "Polymarket",
-    "Kalshi",
-    "Quiver",
+    "racing",
+    "season",
     "wager"
   ],
   "departure_new_days": 14

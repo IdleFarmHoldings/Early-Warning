@@ -74,6 +74,8 @@ def _lit(ind, ctx):
                 title = it.get("title", "")
                 if _words(title, PLAYBOOK.get("news_exclude", [])):
                     continue
+                if ind.get("require") and not _words(title, ind["require"]):
+                    continue
                 if not any(w for w in ind["words"]) or _words(title, ind["words"]):
                     return title[:140]
         return None
