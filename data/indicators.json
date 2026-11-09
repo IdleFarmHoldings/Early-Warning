@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-09T16:47:00Z",
+  "generated_at": "2026-11-09T17:00:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -77,6 +77,12 @@
           "domain": "Health",
           "id": "masscas",
           "name": "Mass casualty declarations in the region",
+          "weight": 5
+        },
+        {
+          "domain": "Undersea cables",
+          "id": "cable",
+          "name": "Vessels loitering over Red Sea cables",
           "weight": 5
         }
       ],
@@ -168,6 +174,18 @@
           "id": "def",
           "name": "Defence stocks outperforming (US / Australia)",
           "weight": 5
+        },
+        {
+          "domain": "Undersea cables",
+          "id": "cable",
+          "name": "Chinese / HK vessels loitering over Taiwan's cables",
+          "weight": 10
+        },
+        {
+          "domain": "Undersea cables",
+          "id": "cablenews",
+          "name": "Taiwan undersea cable damage reported",
+          "weight": 10
         }
       ],
       "why": "China's large drills around Taiwan (2022, 2023, 2024, 2025) were announced through maritime navigation warnings, with GPS interference and coastguard surges; any real operation would be expected to add mobilisation reports and internet disruption."
@@ -314,6 +332,18 @@
           "id": "cyber",
           "name": "Russian wiper / Sandworm activity reports",
           "weight": 10
+        },
+        {
+          "domain": "Undersea cables",
+          "id": "cable",
+          "name": "Russian / Chinese vessels loitering over Baltic cables",
+          "weight": 10
+        },
+        {
+          "domain": "Undersea cables",
+          "id": "cablenews",
+          "name": "Baltic undersea cable damage reported",
+          "weight": 10
         }
       ],
       "why": "Before February 2022: embassy departures, mobilisation reports, airspace closures and a surge in GPS jamming. Baltic and Black Sea jamming is now routine, so only spikes above normal count."
@@ -420,15 +450,29 @@
           "id": "masscas",
           "name": "Mass casualty / Code Brown declared in Australia",
           "weight": 10
+        },
+        {
+          "domain": "Undersea cables",
+          "id": "cable",
+          "name": "Foreign vessel loitering over Australian cable corridors",
+          "weight": 20
+        },
+        {
+          "domain": "Undersea cables",
+          "id": "cablenews",
+          "name": "Undersea cable damage reported (Australia / Pacific)",
+          "weight": 10
         }
       ],
       "why": "The 2023 Optus outage cut mobile, NBN, EFTPOS and some 000 calls nationwide for 12 hours. Hostile states pre-position in critical infrastructure; GPS jamming over Australia would be a new and serious sign."
     },
     {
-      "band": "Elevated",
-      "convergence": "Only one kind of sign is showing (health). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: countries restricting medical supply exports, pandemic-response stocks outperforming (5 days) and australian medicine or ppe shortage reports.",
+      "band": "High",
+      "convergence": "Signs are converging across 3 separate areas (chemical weapons, health and markets). Unrelated systems flagging the same scenario at once is the pattern seen before past events. Before COVID-19 (Dec 2019 - Feb 2020): reports of an unknown pneumonia cluster, WHO outbreak notices, mask and hazmat makers (Alpha Pro Tech, Lakeland) and vaccine developers (Moderna, Novavax) surging weeks before broad markets fell, and countries restricting exports of masks and medicines (Taiwan from 24 Jan 2020, then dozens more). The strongest signs not yet showing: countries restricting medical supply exports, australian medicine or ppe shortage reports and market fear index above 30.",
       "domains": [
-        "Health"
+        "Chemical weapons",
+        "Health",
+        "Markets"
       ],
       "key": "bio",
       "lit": [
@@ -445,23 +489,31 @@
           "id": "illness",
           "name": "Unknown illness / pneumonia cluster reported",
           "weight": 20
+        },
+        {
+          "detail": "Pandemic-response stocks (masks, hazmat, vaccines, tests) +8.8% vs market over 5 days",
+          "domain": "Markets",
+          "id": "pharma",
+          "name": "Pandemic-response stocks outperforming (5 days)",
+          "weight": 20
+        },
+        {
+          "detail": "Tabletop Exercise and Off-Site Mock Drill Conducted in Rayagada District to Tackle Chlorine Gas Leak Emergencies - Odisha Barta",
+          "domain": "Chemical weapons",
+          "id": "chem",
+          "name": "Chemical / nerve-agent attack or mass poisoning reported",
+          "weight": 15
         }
       ],
-      "name": "Pandemic or biological emergency",
+      "name": "Pandemic, biological or chemical emergency",
       "sa_impact": "Health system strain, possible lockdowns and border closures, and shortages of medicines and protective equipment, which Australia mostly imports.",
-      "score": 35,
-      "trend": "steady",
+      "score": 70,
+      "trend": "up",
       "unlit": [
         {
           "domain": "Trade",
           "id": "exports",
           "name": "Countries restricting medical supply exports",
-          "weight": 20
-        },
-        {
-          "domain": "Markets",
-          "id": "pharma",
-          "name": "Pandemic-response stocks outperforming (5 days)",
           "weight": 20
         },
         {
@@ -480,6 +532,18 @@
           "domain": "Markets",
           "id": "vix",
           "name": "Market fear index above 30",
+          "weight": 10
+        },
+        {
+          "domain": "Death statistics",
+          "id": "mortality",
+          "name": "Deaths well above normal in a country (official weekly data)",
+          "weight": 10
+        },
+        {
+          "domain": "Health",
+          "id": "dieoff",
+          "name": "Unexplained mass deaths or animal die-offs",
           "weight": 10
         }
       ],
@@ -558,6 +622,82 @@
         }
       ],
       "why": "Large attacks are usually preceded by quieter steps: a surge in newly exploited flaws in VPNs and firewalls (how state groups like Volt Typhoon get in), scanning of industrial-control systems, a rise in ransomware victims in the target country, and official warnings. Before Russia's 2022 invasion, wiper malware hit Ukraine a day ahead; Chinese groups have been found pre-positioned in US and allied infrastructure."
+    },
+    {
+      "band": "Elevated",
+      "convergence": "Signs are converging across 3 separate areas (ai-enabled hacking, markets and synthetic media). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: a Chinese state-sponsored group used an AI agent to carry out 80-90% of an attack on about 30 organisations, at thousands of requests per second. A fake AI image of a Pentagon explosion briefly moved US markets in May 2023, and a deepfake video call of a CFO tricked a company into paying US$25 million in 2024. The likely signature of an AI attack is breadth and speed: many unrelated systems and vendors hit at once, synthetic media of officials, and shocks with no clear human cause. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, market fear index jumps 25%+ in a day and major cloud or ai service outage.",
+      "domains": [
+        "AI-enabled hacking",
+        "Markets",
+        "Synthetic media"
+      ],
+      "key": "ai",
+      "lit": [
+        {
+          "detail": "Do AI agents have minds? A philosopher explains - The Conversation",
+          "domain": "AI-enabled hacking",
+          "id": "aihack",
+          "name": "Reports of AI-driven hacking campaigns",
+          "weight": 15
+        },
+        {
+          "detail": "Fact Check: AI-Generated Video Shared AS Donald Trump Destroying His Office - Telugu Post",
+          "domain": "Synthetic media",
+          "id": "deepfake",
+          "name": "Deepfakes of leaders or fake official alerts",
+          "weight": 15
+        },
+        {
+          "detail": "Kuniko Limited Enters Trading Halt Pending Capital Raise Announcement - Kalkine",
+          "domain": "Markets",
+          "id": "flash",
+          "name": "Flash crash or exchange trading halt",
+          "weight": 10
+        }
+      ],
+      "name": "AI-enabled attack (non-traditional)",
+      "sa_impact": "Not bombs but disruption: hacking at machine speed across banks, telcos, hospitals and the grid at once; fake videos or alerts from leaders causing panic buying or bank runs; or automated market and fraud shocks. Effects would be outages, payment failures and confusion about what is real.",
+      "score": 40,
+      "trend": "steady",
+      "unlit": [
+        {
+          "domain": "Mass exploitation",
+          "id": "breadth",
+          "name": "Exploited flaws across unusually many vendors at once",
+          "weight": 15
+        },
+        {
+          "domain": "Markets",
+          "id": "vix",
+          "name": "Market fear index jumps 25%+ in a day",
+          "weight": 10
+        },
+        {
+          "domain": "Cloud services",
+          "id": "cloud",
+          "name": "Major cloud or AI service outage",
+          "weight": 10
+        },
+        {
+          "domain": "Communications",
+          "id": "tel",
+          "name": "Phone / internet carrier outage",
+          "weight": 10
+        },
+        {
+          "domain": "Fraud waves",
+          "id": "scams",
+          "name": "Surge in AI voice-clone / deepfake scams in Australia",
+          "weight": 5
+        },
+        {
+          "domain": "Edge-device exploitation",
+          "id": "edge",
+          "name": "Several VPN / firewall flaws exploited this week",
+          "weight": 10
+        }
+      ],
+      "why": "In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: a Chinese state-sponsored group used an AI agent to carry out 80-90% of an attack on about 30 organisations, at thousands of requests per second. A fake AI image of a Pentagon explosion briefly moved US markets in May 2023, and a deepfake video call of a CFO tricked a company into paying US$25 million in 2024. The likely signature of an AI attack is breadth and speed: many unrelated systems and vendors hit at once, synthetic media of officials, and shocks with no clear human cause."
     }
   ]
 }
