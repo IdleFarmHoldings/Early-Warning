@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-09T19:25:00Z",
+  "generated_at": "2026-11-09T20:16:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -464,8 +464,9 @@
     },
     {
       "band": "High",
-      "convergence": "Signs are converging across 3 separate areas (death statistics, health and markets). Unrelated systems flagging the same scenario at once is the pattern seen before past events. Before COVID-19 (Dec 2019 - Feb 2020): reports of an unknown pneumonia cluster, WHO outbreak notices, mask and hazmat makers (Alpha Pro Tech, Lakeland) and vaccine developers (Moderna, Novavax) surging weeks before broad markets fell, and countries restricting exports of masks and medicines (Taiwan from 24 Jan 2020, then dozens more). The strongest signs not yet showing: countries restricting medical supply exports, chemical / nerve-agent attack or mass poisoning reported and australian medicine or ppe shortage reports.",
+      "convergence": "Signs are converging across 4 separate areas (chemical weapons, death statistics, health and markets). Unrelated systems flagging the same scenario at once is the pattern seen before past events. Before COVID-19 (Dec 2019 - Feb 2020): reports of an unknown pneumonia cluster, WHO outbreak notices, mask and hazmat makers (Alpha Pro Tech, Lakeland) and vaccine developers (Moderna, Novavax) surging weeks before broad markets fell, and countries restricting exports of masks and medicines (Taiwan from 24 Jan 2020, then dozens more). The strongest signs not yet showing: countries restricting medical supply exports, australian medicine or ppe shortage reports and market fear index above 30.",
       "domains": [
+        "Chemical weapons",
         "Death statistics",
         "Health",
         "Markets"
@@ -487,7 +488,7 @@
           "weight": 20
         },
         {
-          "detail": "Pandemic-response stocks (masks, hazmat, vaccines, tests) +9.5% vs market over 5 days",
+          "detail": "Pandemic-response stocks (masks, hazmat, vaccines, tests) +8.6% vs market over 5 days",
           "domain": "Markets",
           "id": "pharma",
           "name": "Pandemic-response stocks outperforming (5 days)",
@@ -499,12 +500,19 @@
           "id": "mortality",
           "name": "Deaths well above normal in a country (official weekly data)",
           "weight": 10
+        },
+        {
+          "detail": "By What Logic Does Sudan’s Military Junta Have A Seat On The World’s Chemical Weapons Watchdog? - OpEd - Eurasia Review",
+          "domain": "Chemical weapons",
+          "id": "chem",
+          "name": "Chemical / nerve-agent attack or mass poisoning reported",
+          "weight": 15
         }
       ],
       "name": "Pandemic, biological or chemical emergency",
       "sa_impact": "Health system strain, possible lockdowns and border closures, and shortages of medicines and protective equipment, which Australia mostly imports.",
-      "score": 65,
-      "trend": "steady",
+      "score": 80,
+      "trend": "up",
       "unlit": [
         {
           "domain": "Trade",
@@ -529,12 +537,6 @@
           "id": "vix",
           "name": "Market fear index above 30",
           "weight": 10
-        },
-        {
-          "domain": "Chemical weapons",
-          "id": "chem",
-          "name": "Chemical / nerve-agent attack or mass poisoning reported",
-          "weight": 15
         },
         {
           "domain": "Health",
@@ -620,9 +622,10 @@
       "why": "Large attacks are usually preceded by quieter steps: a surge in newly exploited flaws in VPNs and firewalls (how state groups like Volt Typhoon get in), scanning of industrial-control systems, a rise in ransomware victims in the target country, and official warnings. Before Russia's 2022 invasion, wiper malware hit Ukraine a day ahead; Chinese groups have been found pre-positioned in US and allied infrastructure."
     },
     {
-      "band": "Low",
-      "convergence": "Only one kind of sign is showing (markets). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, reports of ai-driven hacking campaigns and deepfakes of leaders or fake official alerts.",
+      "band": "Guarded",
+      "convergence": "Two different kinds of sign are showing together (fraud waves and markets). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, reports of ai-driven hacking campaigns and deepfakes of leaders or fake official alerts.",
       "domains": [
+        "Fraud waves",
         "Markets"
       ],
       "key": "ai",
@@ -633,12 +636,19 @@
           "id": "flash",
           "name": "Flash crash or exchange trading halt",
           "weight": 10
+        },
+        {
+          "detail": "Deepfake CEO Impersonation Scam Steals $129M From Companies - GovInfoSecurity",
+          "domain": "Fraud waves",
+          "id": "scams",
+          "name": "Surge in AI voice-clone / deepfake scams in Australia",
+          "weight": 5
         }
       ],
       "name": "AI-enabled attack (non-traditional)",
       "sa_impact": "Not bombs but disruption: hacking at machine speed across banks, telcos, hospitals and the grid at once; fake videos or alerts from leaders causing panic buying or bank runs; or automated market and fraud shocks. Effects would be outages, payment failures and confusion about what is real.",
-      "score": 10,
-      "trend": "steady",
+      "score": 15,
+      "trend": "up",
       "unlit": [
         {
           "domain": "Mass exploitation",
@@ -675,12 +685,6 @@
           "id": "tel",
           "name": "Phone / internet carrier outage",
           "weight": 10
-        },
-        {
-          "domain": "Fraud waves",
-          "id": "scams",
-          "name": "Surge in AI voice-clone / deepfake scams in Australia",
-          "weight": 5
         },
         {
           "domain": "Edge-device exploitation",
