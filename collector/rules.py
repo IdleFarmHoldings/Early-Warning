@@ -19,13 +19,30 @@ for _r in REGIONS:
     METRIC_LABELS[f"mil_{_r['key']}"] = f"military aircraft visible over {_r['name']}"
     METRIC_LABELS[f"dark_{_r['key']}"] = f"military aircraft that vanished from tracking at altitude over {_r['name']}"
 DROP_METRICS = {f"mil_{r['key']}" for r in REGIONS}
+for _r in CONFIG["gps"]["regions"]:
+    METRIC_LABELS[f"gps_{_r['key']}"] = f"% of aircraft over {_r['name']} reporting degraded GPS"
+for _a in CONFIG["navwarn"]["areas"]:
+    METRIC_LABELS[f"navwarn_{_a['key']}"] = f"active missile / live-fire navigation warnings for {_a['name']}"
+
+
+def extra_metrics(results):
+    """GPS jamming and navigation-warning metrics, in the same shape as the aircraft counts."""
+    m = {}
+    for k, r in ((results.get("gps") or {}).get("regions") or {}).items():
+        m[f"gps_{k}"] = r.get("bad_pct")
+    for k, n in ((results.get("navwarn") or {}).get("counts") or {}).items():
+        m[f"navwarn_{k}"] = n
+    return m
 
 
 def _min_excess(metric):
     me = ANOM["min_excess"]
     if metric in me:
         return me[metric]
-    return me.get("region" if metric.startswith("mil_") else "dark" if metric.startswith("dark_") else "", 5)
+    for prefix in ("mil_", "dark_", "gps_", "navwarn_"):
+        if metric.startswith(prefix):
+            return me.get({"mil_": "region"}.get(prefix, prefix[:-1]), 5)
+    return 5
 
 
 def count_dark(prev, positions, min_alt):
@@ -210,7 +227,7 @@ def evaluate(results, state, series, now):
         if prev is not None:
             ac.update(count_dark(prev, positions, CONFIG["jets"]["dark_min_alt_ft"]))
         state["mil_prev"] = positions
-    an = anomalies(ac, series, now)
+    an = anomalies({**ac, **extra_metrics(results)}, series, now)
     for metric, info in an.items():
         if info["status"] not in ("ANOMALY", "DROP"):
             continue
@@ -220,7 +237,15 @@ def evaluate(results, state, series, now):
         cooldown[metric] = iso(now)
         if bootstrap:
             continue
-        if info["status"] == "DROP" or metric.startswith("dark_"):
+        if metric.startswith("gps_"):
+            title = "UNCONFIRMED: GPS jamming detected"
+            body = (f"{info['value']}{METRIC_LABELS[metric]} (usual ~{info['median']}%). "
+                    "Jamming often accompanies military operations, but can also be faulty equipment. Watching for confirmation.")
+        elif metric.startswith("navwarn_"):
+            title = "Surge in military navigation warnings"
+            body = (f"{info['value']} {METRIC_LABELS[metric]} (usual ~{info['median']}). "
+                    "Missile tests and live-fire drills are announced this way, sometimes ahead of major exercises or operations.")
+        elif info["status"] == "DROP" or metric.startswith("dark_"):
             title = "UNCONFIRMED: military aircraft going dark"
             body = (f"{info['value']} {METRIC_LABELS[metric]} (usual ~{info['median']} at this time of day). "
                     "Militaries switch off transponders before operations, but tracking gaps also cause this. Watching for confirmation.")
@@ -275,6 +300,25 @@ def evaluate(results, state, series, now):
                              f"Outage monitors show {names}. You may lose phone signal or internet. Now: get some cash out, "
                              "fill up fuel, and agree where to meet in case you can't call. 000 may still work via another network.",
                              priority=5 if major else 4, confirmed=major, tags=["signal_strength"]))
+
+    # Country-level internet blackouts
+    lim = CONFIG["internet_country_drop_pct"]
+    for name, row in ((results.get("internet") or {}).get("countries") or {}).items():
+        drops = [row[ds]["drop_pct"] for ds in ("ping-slash24", "bgp")
+                 if isinstance(row.get(ds), dict) and row[ds].get("drop_pct") is not None
+                 and (row[ds].get("baseline") or 0) >= tc.get("min_baseline", 50)]
+        if not drops or max(drops) < lim:
+            continue
+        key = f"net-{name}"
+        last = cooldown.get(key)
+        if last and now - _parse_ts(last) < timedelta(hours=tc["cooldown_hours"]):
+            continue
+        cooldown[key] = iso(now)
+        if not bootstrap:
+            alerts.append(_alert(key, ["proactive"], "geo", f"Internet blackout: {name}",
+                                 f"About {round(max(drops))}% of {name}'s internet has dropped off in the last hour. "
+                                 "Governments often cut access during unrest or military operations. Watching for the cause.",
+                                 priority=4, confirmed=False, tags=["globe_with_meridians"]))
 
     # Prune old seen keys
     cutoff = iso(now - timedelta(days=45))

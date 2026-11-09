@@ -35,6 +35,10 @@ Channel names are stored as repository secrets `NTFY_PROACTIVE` and `NTFY_REACTI
 | [adsb.fi](https://adsb.fi) open data | Long-range private jet counts, retreat destinations, military, tanker and nuclear-command aircraft |
 
 | [IODA](https://ioda.inetintel.cc.gatech.edu) (Georgia Tech) | Telstra, Optus, TPG, Vodafone and Aussie Broadband reachability: a sudden drop triggers a "you may lose signal" alert |
+| adsb.fi navigation integrity (NIC) | GPS jamming: share of aircraft with degraded GPS over the Baltic, Black Sea, Israel, Gulf, Taiwan Strait, Korea, SA and NSW |
+| [NGA maritime safety warnings](https://msi.nga.mil) | Missile, rocket and live-fire warnings around Taiwan and the China seas, Korea, the Gulf and Red Sea, and Australia |
+| IODA country signals | Internet blackouts in Iran, Israel, Taiwan, Russia, China and South Korea |
+| Google News search (last 24 h) | Reservist call-ups, mobilisation orders, cancelled military leave, ADF reserve call-outs, airspace closures (for the analysis run only) |
 | Crisis Group, ASPI Strategist, Lowy Interpreter | Analyst headlines for the analysis run (context only, never pushed on their own) |
 
 Aircraft data courtesy of [adsb.fi](https://adsb.fi), used for personal, non-commercial purposes.

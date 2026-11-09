@@ -11,7 +11,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from common import CONFIG, ROOT, append_jsonl, iso, load_json, now_utc, push, save_json  # noqa: E402
-from rules import evaluate  # noqa: E402
+from rules import extra_metrics, evaluate  # noqa: E402
 from sources import fetch_all  # noqa: E402
 
 SERIES_DIR = ROOT / "data" / "series"
@@ -88,6 +88,10 @@ def summarise(results, health, anomalies, now):
         "markets": results.get("markets"),
         "telecom": (results.get("telecom") or {}).get("networks"),
         "analyst_latest": (results.get("analysts") or {}).get("feeds"),
+        "gps_jamming": (results.get("gps") or {}).get("regions"),
+        "navwarn": results.get("navwarn"),
+        "internet_countries": (results.get("internet") or {}).get("countries"),
+        "news_watch": (results.get("news_watch") or {}).get("watch"),
     }
 
 
@@ -107,6 +111,7 @@ def main():
     mk = results.get("markets") or {}
     row = {"ts": iso(now), **{k: ac.get(k) for k in ("bizjets_airborne", "retreat_bizjets", "mil_total", "tankers", "nc3", "isr")},
            **{k: v for k, v in ac.items() if k.startswith(("mil_", "dark_")) or k in ("airlift", "raaf")},
+           **extra_metrics(results),
            **{f"mkt_{k}": v.get("price") for k, v in mk.items() if isinstance(v, dict)}}
     append_jsonl(f"data/series/{now.strftime('%Y-%m')}.jsonl", row)
 

@@ -216,6 +216,104 @@ def fetch_telecom():
     return {"networks": out, "errors": errors}
 
 
+# ---------- GPS jamming: share of aircraft with degraded navigation integrity (NIC) ----------
+def gps_share(acs, nic_bad_below, min_aircraft):
+    nics = [a["nic"] for a in acs if a.get("alt_baro") != "ground" and isinstance(a.get("nic"), (int, float))]
+    if len(nics) < min_aircraft:
+        return None, len(nics)
+    return round(100 * sum(1 for n in nics if n < nic_bad_below) / len(nics)), len(nics)
+
+
+def fetch_gps():
+    gc = CONFIG["gps"]
+    out, errors = {}, []
+    for r in gc["regions"]:
+        try:
+            d = _adsb(f"/v3/lat/{r['lat']}/lon/{r['lon']}/dist/{gc['radius_nm']}")
+            pct, n = gps_share(d.get("ac") or d.get("aircraft") or [], gc["nic_bad_below"], gc["min_aircraft"])
+            out[r["key"]] = {"name": r["name"], "bad_pct": pct, "aircraft": n}
+        except Exception as e:  # noqa: BLE001
+            errors.append(f"{r['name']}: {type(e).__name__}: {e}"[:160])
+    if not out:
+        raise RuntimeError("; ".join(errors[:2]))
+    return {"regions": out, "errors": errors}
+
+
+# ---------- NGA maritime navigation warnings (missile / live-fire areas) ----------
+NGA = "https://msi.nga.mil/api/publications/broadcast-warn?status=active&output=json"
+
+
+def _find_records(data):
+    stack = [data]
+    while stack:
+        x = stack.pop(0)
+        if isinstance(x, list) and x and isinstance(x[0], dict) and "text" in x[0]:
+            return x
+        if isinstance(x, dict):
+            stack.extend(x.values())
+        elif isinstance(x, list):
+            stack.extend(x)
+    return []
+
+
+def parse_navwarn(data):
+    nc = CONFIG["navwarn"]
+    counts = {a["key"]: 0 for a in nc["areas"]}
+    items = []
+    for w in _find_records(data):
+        text = " ".join(str(w.get("text") or "").upper().split())
+        if not any(k in text for k in nc["military_keywords"]):
+            continue
+        for a in nc["areas"]:
+            if any(word in text for word in a["words"]):
+                counts[a["key"]] += 1
+                wid = f"{w.get('navArea', '')}{w.get('msgNumber', '')}/{w.get('msgYear', '')}"
+                items.append({"id": wid, "area": a["key"], "issued": w.get("issueDate"), "text": text[:300]})
+    return {"counts": counts, "total_records": len(_find_records(data)), "military": items[:30]}
+
+
+# ---------- Country-level internet blackouts (IODA) ----------
+IODA_COUNTRY = "https://api.ioda.inetintel.cc.gatech.edu/v2/signals/raw/country/{code}?from={frm}&until={until}&datasource={ds}"
+
+
+def fetch_internet_countries():
+    tc = CONFIG["telecom"]
+    until = int(time.time())
+    frm = until - tc["window_hours"] * 3600
+    out, errors = {}, []
+    for c in CONFIG["internet_countries"]:
+        row = {"code": c["code"]}
+        for ds in ("ping-slash24", "bgp"):
+            try:
+                vals = _signal_values(get_json(IODA_COUNTRY.format(code=c["code"], frm=frm, until=until, ds=ds), timeout=15))
+                drop, base, recent = signal_drop(vals, tc["recent_points"])
+                row[ds] = {"drop_pct": drop, "baseline": base, "recent": recent, "points": len(vals)}
+            except Exception as e:  # noqa: BLE001
+                errors.append(f"{c['name']} {ds}: {type(e).__name__}: {e}"[:160])
+        out[c["name"]] = row
+    if not any(("ping-slash24" in r or "bgp" in r) for r in out.values()):
+        raise RuntimeError("; ".join(errors[:3]))
+    return {"countries": out, "errors": errors}
+
+
+# ---------- News keyword watch (Google News RSS, last 24 h) ----------
+GNEWS = "https://news.google.com/rss/search?q={q}&hl=en-AU&gl=AU&ceid=AU:en"
+
+
+def fetch_news_watch():
+    out, errors = {}, []
+    for w in CONFIG["news_watch"]:
+        try:
+            raw = http_get(GNEWS.format(q=urllib.parse.quote(w["q"] + " when:1d")), timeout=20)
+            out[w["key"]] = {"name": w["name"], "items": [{"title": i["title"], "date": i["date"], "link": i["link"]}
+                                                          for i in parse_rss(raw, limit=6)]}
+        except Exception as e:  # noqa: BLE001
+            errors.append(f"{w['name']}: {type(e).__name__}: {e}"[:160])
+    if not out:
+        raise RuntimeError("; ".join(errors[:2]))
+    return {"watch": out, "errors": errors}
+
+
 # ---------- Markets (Yahoo Finance chart endpoint, unofficial) ----------
 def market_quote(symbol):
     url = f"https://query1.finance.yahoo.com/v8/finance/chart/{urllib.parse.quote(symbol)}?range=5d&interval=1d"
@@ -329,6 +427,10 @@ def fetch_all():
         "aircraft": fetch_aircraft,
         "telecom": fetch_telecom,
         "analysts": fetch_analysts,
+        "gps": fetch_gps,
+        "navwarn": lambda: parse_navwarn(get_json(NGA, timeout=30)),
+        "internet": fetch_internet_countries,
+        "news_watch": fetch_news_watch,
     }
     for name, fn in plan.items():
         t0 = time.time()

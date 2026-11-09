@@ -56,7 +56,8 @@
     "z_threshold": 4.0,
     "min_ratio": 1.6,
     "min_excess": {"bizjets_airborne": 15, "retreat_bizjets": 5, "mil_total": 40, "tankers": 8, "nc3": 2,
-                   "airlift": 6, "raaf": 4, "region": 10, "dark": 6},
+                   "airlift": 6, "raaf": 4, "region": 10, "dark": 6,
+                   "gps": 15, "navwarn": 3},
     "drop_min_median": 8,
     "drop_max_ratio": 0.4,
     "cooldown_hours": 6
@@ -119,6 +120,180 @@
     {
       "name": "Lowy Interpreter",
       "url": "https://www.lowyinstitute.org/the-interpreter/rss.xml"
+    }
+  ],
+
+  "gps": {
+    "_comment": "Share of aircraft reporting degraded GPS (ADS-B NIC below threshold) per region, like gpsjam.org.",
+    "nic_bad_below": 7,
+    "min_aircraft": 10,
+    "radius_nm": 250,
+    "regions": [
+      {
+        "key": "baltic",
+        "name": "Baltic / Kaliningrad",
+        "lat": 55.5,
+        "lon": 20.5
+      },
+      {
+        "key": "blacksea",
+        "name": "Black Sea",
+        "lat": 44.5,
+        "lon": 33.5
+      },
+      {
+        "key": "israel",
+        "name": "Israel & Eastern Mediterranean",
+        "lat": 32.5,
+        "lon": 34.8
+      },
+      {
+        "key": "gulf",
+        "name": "Persian Gulf",
+        "lat": 26.0,
+        "lon": 52.0
+      },
+      {
+        "key": "taiwan",
+        "name": "Taiwan Strait",
+        "lat": 24.0,
+        "lon": 119.5
+      },
+      {
+        "key": "korea",
+        "name": "Korea",
+        "lat": 37.5,
+        "lon": 127.0
+      },
+      {
+        "key": "adelaide",
+        "name": "South Australia",
+        "lat": -34.9,
+        "lon": 138.6
+      },
+      {
+        "key": "sydney",
+        "name": "Sydney / NSW",
+        "lat": -33.9,
+        "lon": 151.2
+      }
+    ]
+  },
+
+  "navwarn": {
+    "_comment": "NGA maritime broadcast warnings (HYDROPAC, NAVAREA IV/XII, HYDROLANT). Military keywords counted per area.",
+    "military_keywords": [
+      "MISSILE",
+      "ROCKET",
+      "LIVE FIR",
+      "GUNNERY",
+      "HAZARDOUS OPERATIONS",
+      "MILITARY EXERCISE",
+      "NAVAL EXERCISE",
+      "FIRING EXERCISE"
+    ],
+    "areas": [
+      {
+        "key": "taiwan",
+        "name": "Taiwan, East & South China Seas",
+        "words": [
+          "TAIWAN",
+          "SOUTH CHINA SEA",
+          "EAST CHINA SEA",
+          "YELLOW SEA",
+          "BOHAI",
+          "PHILIPPINE"
+        ]
+      },
+      {
+        "key": "korea",
+        "name": "Korea & Sea of Japan",
+        "words": [
+          "KOREA",
+          "SEA OF JAPAN",
+          "JAPAN SEA"
+        ]
+      },
+      {
+        "key": "mideast",
+        "name": "Gulf, Red Sea & Arabian Sea",
+        "words": [
+          "PERSIAN GULF",
+          "ARABIAN",
+          "RED SEA",
+          "GULF OF OMAN",
+          "GULF OF ADEN",
+          "HORMUZ"
+        ]
+      },
+      {
+        "key": "australia",
+        "name": "Around Australia",
+        "words": [
+          "AUSTRALIA",
+          "CORAL SEA",
+          "TIMOR SEA",
+          "ARAFURA",
+          "TASMAN"
+        ]
+      }
+    ]
+  },
+
+  "internet_countries": [
+    {
+      "code": "IR",
+      "name": "Iran"
+    },
+    {
+      "code": "IL",
+      "name": "Israel"
+    },
+    {
+      "code": "TW",
+      "name": "Taiwan"
+    },
+    {
+      "code": "RU",
+      "name": "Russia"
+    },
+    {
+      "code": "CN",
+      "name": "China"
+    },
+    {
+      "code": "KR",
+      "name": "South Korea"
+    }
+  ],
+
+  "internet_country_drop_pct": 25,
+
+  "news_watch": [
+    {
+      "key": "reservists",
+      "name": "Reservist call-ups",
+      "q": "reservists (\"called up\" OR \"call-up\" OR mobilised OR mobilized OR recalled)"
+    },
+    {
+      "key": "mobilisation",
+      "name": "Mobilisation orders",
+      "q": "(mobilisation OR mobilization) (decree OR order OR announced) military"
+    },
+    {
+      "key": "leave",
+      "name": "Military leave cancelled",
+      "q": "\"leave cancelled\" OR \"leave canceled\" (military OR troops OR soldiers)"
+    },
+    {
+      "key": "adf",
+      "name": "ADF reserves call-out",
+      "q": "ADF (\"call out\" OR \"called out\") reserves"
+    },
+    {
+      "key": "airspace",
+      "name": "Airspace closures",
+      "q": "\"airspace closed\" OR \"closes airspace\" OR \"airspace closure\""
     }
   ]
 }

@@ -129,3 +129,26 @@ def test_military_dark_drop_and_airlift():
     titles = {a["title"] for a in alerts}
     assert "UNCONFIRMED: military aircraft going dark" in titles and "UNCONFIRMED: military airlift surge" in titles
     assert all(len(a["message"]) < 400 for a in alerts)
+
+
+def test_gps_navwarn_internet():
+    from sources import gps_share, parse_navwarn
+    acs = [{"nic": 8}] * 8 + [{"nic": 0}] * 4 + [{"nic": 0, "alt_baro": "ground"}]
+    assert gps_share(acs, 7, 10) == (33, 12)
+    assert gps_share(acs[:5], 7, 10) == (None, 5)
+    nw = parse_navwarn({"broadcast-warn": [
+        {"navArea": "P", "msgNumber": 1, "msgYear": 2026, "text": "EAST CHINA SEA. LIVE FIRING 10 NOV."},
+        {"navArea": "P", "msgNumber": 2, "msgYear": 2026, "text": "CORAL SEA. BUOY ADRIFT."},
+        {"navArea": "P", "msgNumber": 3, "msgYear": 2026, "text": "TIMOR SEA. MISSILE FIRING EXERCISE."}]})
+    assert nw["counts"]["taiwan"] == 1 and nw["counts"]["australia"] == 1 and nw["total_records"] == 3
+
+    now = now_utc().replace(second=0, microsecond=0)
+    series = [{"ts": iso(now - timedelta(days=d, minutes=m)), "gps_taiwan": 2, "navwarn_taiwan": 4}
+              for d in range(1, 8) for m in (-45, -30, -15, 0, 15, 30, 45)]
+    res = {"gps": {"regions": {"taiwan": {"bad_pct": 40}}}, "navwarn": {"counts": {"taiwan": 12}},
+           "internet": {"countries": {"Iran": {"bgp": {"drop_pct": 60.0, "baseline": 5000}}}}}
+    alerts, state, an = evaluate(res, {"bootstrapped": True}, series, now)
+    titles = {a["title"] for a in alerts}
+    assert {"UNCONFIRMED: GPS jamming detected", "Surge in military navigation warnings", "Internet blackout: Iran"} <= titles, titles
+    assert any("40% of aircraft over Taiwan Strait" in a["message"] for a in alerts)
+    assert all(len(a["message"]) < 400 for a in alerts)
