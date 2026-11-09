@@ -4,11 +4,11 @@
     "anomalies": {
       "bizjets_airborne": {
         "status": "learning baseline",
-        "value": 38
+        "value": 41
       },
       "mil_total": {
         "status": "learning baseline",
-        "value": 432
+        "value": 445
       },
       "nc3": {
         "status": "learning baseline",
@@ -24,24 +24,24 @@
       }
     },
     "detail": {
-      "bizjets_airborne": 38,
+      "bizjets_airborne": 41,
       "bizjets_by_hub": {
         "Dallas / Houston": 7,
         "Dubai": 2,
-        "Geneva / Zurich": 5,
+        "Geneva / Zurich": 6,
         "Hong Kong": 1,
-        "London": 6,
+        "London": 5,
         "Los Angeles (Van Nuys)": 1,
         "Moscow": 0,
         "New York (Teterboro)": 9,
-        "Palm Beach / Miami": 2,
-        "San Francisco Bay": 1,
+        "Palm Beach / Miami": 3,
+        "San Francisco Bay": 0,
         "Singapore": 0,
-        "Washington DC": 11
+        "Washington DC": 13
       },
       "errors": [],
-      "isr": 2,
-      "mil_total": 432,
+      "isr": 3,
+      "mil_total": 445,
       "nc3": 1,
       "nc3_seen": [
         {
@@ -99,27 +99,27 @@
     }
   ],
   "gdacs_current_orange_red": [],
-  "generated_at": "2026-11-09T14:55:00Z",
+  "generated_at": "2026-11-09T15:01:00Z",
   "markets": {
     "AUD/USD": {
-      "change_pct": -0.36,
+      "change_pct": -0.39,
       "prev_close": 0.6931,
-      "price": 0.6906
+      "price": 0.6904
     },
     "Brent oil": {
-      "change_pct": -4.42,
+      "change_pct": -4.36,
       "prev_close": 98.32,
-      "price": 93.97
+      "price": 94.03
     },
     "Gold": {
-      "change_pct": 1.27,
+      "change_pct": 1.45,
       "prev_close": 4074.8999,
-      "price": 4126.6
+      "price": 4133.8
     },
     "VIX": {
-      "change_pct": -14.39,
+      "change_pct": -14.35,
       "prev_close": 25.64,
-      "price": 21.95
+      "price": 21.96
     }
   },
   "quakes_m6_24h": [
@@ -135,6 +135,26 @@
     }
   ],
   "recent_alerts": [
+    {
+      "channel": "both",
+      "channels": [
+        "proactive",
+        "reactive"
+      ],
+      "click": "https://idlefarmholdings.github.io/Early-Warning/?demo=5",
+      "message": "THIS IS A TEST. NOTHING HAS HAPPENED. Simulated scenario: US nuclear strike on Iran, Hormuz closed, fuel emergency in Australia. Tap to see the simulated board.",
+      "priority": 5,
+      "sent": {
+        "proactive": true,
+        "reactive": true
+      },
+      "sent_at": "2026-11-09T15:01:00Z",
+      "source": "analysis",
+      "tags": [
+        "test_tube"
+      ],
+      "title": "TEST ONLY - SIMULATION - Level 5 Imminent"
+    },
     {
       "channel": "proactive",
       "channels": [
@@ -249,15 +269,15 @@
     },
     "aircraft": {
       "ok": true,
-      "secs": 23.5
+      "secs": 23.4
     },
     "cisa": {
       "ok": true,
-      "secs": 0.2
+      "secs": 0.4
     },
     "gdacs": {
       "ok": true,
-      "secs": 1.8
+      "secs": 3.7
     },
     "markets": {
       "ok": true,
@@ -265,15 +285,15 @@
     },
     "uk_advice": {
       "ok": true,
-      "secs": 0.1
+      "secs": 0.0
     },
     "us_advisories": {
       "ok": true,
-      "secs": 0.1
+      "secs": 0.2
     },
     "usgs": {
       "ok": true,
-      "secs": 0.0
+      "secs": 0.1
     },
     "who": {
       "ok": true,
