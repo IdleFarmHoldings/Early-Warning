@@ -227,7 +227,7 @@ function renderLatest(l){
   $("mktTime").textContent = `As of ${fmt(l.generated_at)}`;
   const tel=l.telecom||{}, tn=Object.keys(tel);
   $("telco").innerHTML = tn.length ? tn.map(n=>{
-    const ds=[tel[n]["ping-slash24"],tel[n]["bgp"]].filter(x=>x&&x.drop_pct!=null&&(x.baseline||0)>=20);
+    const ds=[tel[n]["ping-slash24"],tel[n]["bgp"]].filter(x=>x&&x.drop_pct!=null&&(x.baseline||0)>=50);
     const d=ds.length?Math.max(...ds.map(x=>x.drop_pct)):null;
     const st=d===null?["No data","var(--muted)"]:d>=50?["Major outage","var(--l5)"]:d>=20?["Possible outage","var(--l4)"]:["Normal","var(--l2)"];
     return `<div class="item" style="grid-template-columns:1fr auto;align-items:center"><span class="t">${esc(n)}</span><span class="chip" style="background:${st[1]}">${st[0]}</span></div>`}).join("")

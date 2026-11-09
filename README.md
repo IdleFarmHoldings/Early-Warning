@@ -35,7 +35,7 @@ Channel names are stored as repository secrets `NTFY_PROACTIVE` and `NTFY_REACTI
 | [adsb.fi](https://adsb.fi) open data | Long-range private jet counts, retreat destinations, military, tanker and nuclear-command aircraft |
 
 | [IODA](https://ioda.inetintel.cc.gatech.edu) (Georgia Tech) | Telstra, Optus, TPG, Vodafone and Aussie Broadband reachability: a sudden drop triggers a "you may lose signal" alert |
-| Crisis Group, ISW, ASPI Strategist, Lowy Interpreter | Analyst headlines for the analysis run (context only, never pushed on their own) |
+| Crisis Group, ASPI Strategist, Lowy Interpreter | Analyst headlines for the analysis run (context only, never pushed on their own) |
 
 Aircraft data courtesy of [adsb.fi](https://adsb.fi), used for personal, non-commercial purposes.
 
