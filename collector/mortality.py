@@ -70,37 +70,40 @@ ISO3 = {"AUS": "AU", "AUT": "AT", "BEL": "BE", "BGR": "BG", "CAN": "CA", "CHE": 
         "ARM": "AM", "GEO": "GE", "AZE": "AZ", "MDA": "MD", "MLT": "MT", "CYP": "CY", "TUR": "TR", "IRN": "IR", "OMN": "OM"}
 
 
+def _owid_date(d):
+    """'2026-10-04' or ISO week '2026-W40' -> date (week ending Sunday)."""
+    d = (d or "").strip()
+    if "-W" in d:
+        y, w = d.split("-W")
+        return date.fromisocalendar(int(y), int(w), 7)
+    return date.fromisoformat(d[:10])
+
+
 def parse_owid(text, now, history=12):
-    rows = list(csv.DictReader(io.StringIO(text.lstrip("\ufeff"))))
-    if not rows or "Code" not in rows[0]:
+    rows = [{k.strip().lower(): v for k, v in r.items()} for r in csv.DictReader(io.StringIO(text.lstrip("\ufeff")))]
+    if not rows or "code" not in rows[0]:
         raise ValueError("OWID CSV not recognised: " + text[:120])
-    datecol = next((c for c in ("Day", "date", "Date", "Year") if c in rows[0]), None)
-    valcol = [c for c in rows[0] if c not in ("Entity", "Code", datecol)][0]
+    datecol = next((c for c in ("day", "week", "date", "year") if c in rows[0]), None)
+    valcol = [c for c in rows[0] if c not in ("entity", "code", datecol)][0]
     by = {}
     for r in rows:
-        code = r.get("Code") or ""
+        code = r.get("code") or ""
         try:
-            v = float(r[valcol])
+            v, d = float(r[valcol]), _owid_date(r[datecol])
         except (TypeError, ValueError):
             continue
         if len(code) == 3:
-            by.setdefault(code, []).append((r[datecol], round(v, 1), r.get("Entity", code)))
+            by.setdefault(code, []).append((d, round(v, 1), r.get("entity", code)))
     out = {}
     for code, vals in by.items():
         vals.sort()
         series = []
         for d, v, _ in vals[-history:]:
-            try:
-                y, w, _ = date.fromisoformat(d[:10]).isocalendar()
-            except ValueError:
-                y, w = None, None
-            series.append({"date": d, "year": y, "week": w, "deaths": None, "expected": None, "excess_pct": v})
+            y, w, _ = d.isocalendar()
+            series.append({"date": d.isoformat(), "year": y, "week": w, "deaths": None, "expected": None, "excess_pct": v})
         last = series[-1]
-        try:
-            age = (now.date() - date.fromisoformat(last["date"][:10])).days // 7
-        except ValueError:
-            age = None
-        out[code] = {"iso2": ISO3.get(code, code[:2]), "name": vals[-1][2], "latest": last, "age_weeks": age,
+        out[code] = {"iso2": ISO3.get(code, code[:2]), "name": vals[-1][2], "latest": last,
+                     "age_weeks": (now.date() - vals[-1][0]).days // 7,
                      "max_excess_recent": max((s["excess_pct"] or 0) for s in series[-4:]), "series": series}
     return out
 

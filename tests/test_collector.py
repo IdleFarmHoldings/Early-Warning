@@ -318,3 +318,11 @@ def test_owid_fallback():
     m = mortality.parse_owid(csv_text, datetime(2026, 11, 9, tzinfo=timezone.utc))
     assert list(m) == ["AUS"] and m["AUS"]["latest"]["excess_pct"] == 31.5 and m["AUS"]["iso2"] == "AU"
     assert mortality.summary({"countries": m}) == ["Australia +32%"]
+
+
+def test_owid_week_format():
+    from datetime import datetime, timezone
+    import mortality
+    m = mortality.parse_owid("entity,code,week,p_avg_all_ages\nAlbania,ALB,2026-W40,-1.5\nAlbania,ALB,2026-W41,26.0\n",
+                             datetime(2026, 11, 9, tzinfo=timezone.utc))
+    assert m["ALB"]["latest"]["week"] == 41 and m["ALB"]["latest"]["excess_pct"] == 26.0 and m["ALB"]["age_weeks"] == 3
