@@ -193,3 +193,17 @@ def test_playbook_scores_and_journal():
     pat = precursors.learn_patterns(new, now)["scenarios"]["mideast"]
     tk = next(i for i in pat["indicators"] if i["id"] == "tankers")
     assert pat["events"] == 1 and tk["seen_before"] == 1 and tk["median_lead_hours"] == 30.0
+
+
+def test_news_matching_and_new_departures():
+    import precursors
+    ind = {"type": "news", "key": "mob", "words": ["China", "PLA", "Taiwan"]}
+    ctx = lambda t: {"news": {"mob": {"items": [{"title": t}]}}}
+    assert precursors._lit(ind, ctx("Military has yet to present mobilization plans")) is None  # 'PLA' inside 'plans'
+    assert precursors._lit(ind, ctx("PLA calls up reservists"))
+    assert precursors._lit({**ind, "words": ["Israel"]}, ctx("Trader bets on Israel airspace closure")) is None
+    now = now_utc()
+    st = {}
+    assert precursors.new_departures(["Belarus"], st, now) == []
+    assert precursors.new_departures(["Belarus", "Qatar"], st, now) == ["Qatar"]
+    assert precursors.new_departures(["Belarus", "Qatar"], st, now + timedelta(days=20)) == []

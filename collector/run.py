@@ -194,7 +194,9 @@ def main():
         "anomalies": anomalies,
         "internet": (results.get("internet") or {}).get("countries"),
         "telecom": (results.get("telecom") or {}).get("networks"),
-        "departures": sorted(c for c, a in (results.get("us_advisories") or {}).items() if a.get("departure")),
+        "departures": precursors.new_departures(
+            sorted(c for c, a in (results.get("us_advisories") or {}).items() if a.get("departure")), state, now)
+        if results.get("us_advisories") else [],
         "news": (results.get("news_watch") or {}).get("watch"),
         "markets": mk,
         "satellites": sat_out,

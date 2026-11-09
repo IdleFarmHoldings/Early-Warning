@@ -76,6 +76,28 @@ header .meta{font-size:.82rem;display:flex;gap:4px 16px;flex-wrap:wrap}
 table{border-collapse:collapse;width:100%;font-size:.88rem;min-width:520px}
 th,td{text-align:left;padding:8px 10px;border-top:1px solid var(--line);vertical-align:top}
 th{font-family:var(--display);text-transform:uppercase;letter-spacing:.05em;font-weight:600;color:var(--muted);border-top:0}
+.cta{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;background:var(--accent);color:var(--surface);border-radius:6px;padding:14px 18px;text-decoration:none}
+.cta b{font-family:var(--display);font-size:1.3rem;text-transform:uppercase;letter-spacing:.04em}
+.cta span{font-size:.88rem;opacity:.9}
+.concerns{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:14px}
+@media (max-width:420px){.concerns{grid-template-columns:1fr}}
+.cc{background:var(--surface);border:1px solid var(--line);border-left:6px solid var(--line);border-radius:6px;padding:14px 16px;display:grid;gap:8px;align-content:start;min-width:0}
+.cc h3{font-size:1.25rem;text-transform:uppercase}
+.cc .lik{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.cc .pct{font-family:var(--display);font-size:2rem;font-weight:700;line-height:1}
+.cc .sub{font-family:var(--mono);font-size:.74rem;color:var(--muted)}
+.cc h4{margin:4px 0 0;font:600 .78rem var(--body);text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.cc ul{margin:0;padding-left:1.1em;font-size:.88rem;display:grid;gap:3px}
+.cc .sc{display:grid;grid-template-columns:auto 1fr;gap:2px 10px;font-size:.86rem}
+.cc .sc b{font-family:var(--mono);font-weight:500;text-align:right}
+.cc .act{font-size:.88rem}
+.cc .act div{padding:6px 0;border-top:1px dashed var(--line)}
+.cc .act div:first-child{border-top:0}
+.cc .act span{display:block;color:var(--muted);font-size:.82rem}
+.meter{height:6px;background:var(--line);border-radius:3px;overflow:hidden}
+.meter i{display:block;height:100%}
+.why{color:var(--muted);font-size:.82rem}
+details summary{cursor:pointer;font-size:.84rem;color:var(--accent)}
 .banner{border:1.5px dashed var(--line);border-radius:6px;padding:14px 16px;font-size:.9rem}
 .sim{background:var(--l5);color:#fff;border-radius:6px;padding:12px 16px;font-family:var(--display);font-size:1.3rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;text-align:center}
 .sim a{color:#fff}
@@ -126,6 +148,14 @@ th{font-family:var(--display);text-transform:uppercase;letter-spacing:.05em;font
     </div>
   </section>
 
+  <a class="cta" href="analytics.html"><div><b>Analytics &amp; heat maps →</b><br><span>Escalation trends, GPS jamming and satellite maps, military activity, warning-sign matrix</span></div></a>
+
+  <section>
+    <h2 style="margin-bottom:4px">Major concerns</h2>
+    <p class="muted" style="margin:0 0 10px;font-size:.85rem">Likelihood of significant escalation in the next 30 days, with possible scenarios and why each action is suggested. Likelihoods are analyst judgement, not certainty; the warning-sign bar counts known precursors showing right now.</p>
+    <div class="concerns" id="concerns"><p class="empty">Loading…</p></div>
+  </section>
+
   <section>
     <h2 style="margin-bottom:10px">Categories <span class="mono" style="font-size:.8rem;letter-spacing:0;text-transform:none">score 0–5</span></h2>
     <div class="cats" id="cats"></div>
@@ -154,11 +184,27 @@ th{font-family:var(--display);text-transform:uppercase;letter-spacing:.05em;font
 
 <script>
 const LEVELS = [null,
-  {name:"Normal", meaning:"Background noise only", actions:["Routine kit check once a month","Keep fuel above half a tank"]},
-  {name:"Watch", meaning:"One category elevated", actions:["Read the briefing","No purchases needed yet","Check emergency contacts are current"]},
-  {name:"Elevated", meaning:"Two or more categories elevated, or one critical", actions:["Fill all fuel tanks and jerry cans","Withdraw some cash","Top up regular medications","Check water and food kit against list"]},
-  {name:"High", meaning:"Several categories converging and official advisories issued", actions:["Finish stocking food, water and medicines","Confirm the family meeting point and plan","Charge power banks, radios and devices","Download offline maps and documents"]},
-  {name:"Imminent", meaning:"Event underway or confirmed imminent", actions:["Execute the family plan","Follow official SA emergency instructions first","Check on vulnerable family and neighbours"]}
+  {name:"Normal", meaning:"Background noise only", actions:[
+    {action:"Routine kit check once a month", reason:"Batteries go flat and food expires; a kit that works is what lets you stay calm if things change quickly."},
+    {action:"Keep fuel above half a tank", reason:"Fuel is the first thing to run short in any shock — Australia imports most of it, and servos can run dry within days of panic buying."}]},
+  {name:"Watch", meaning:"One category elevated", actions:[
+    {action:"Read the briefing", reason:"Knowing what's driving the risk lets you act early and calmly instead of reacting to headlines."},
+    {action:"No purchases needed yet", reason:"Buying early at this level adds to shortages without making you safer."},
+    {action:"Check emergency contacts are current", reason:"If phone networks fail, you'll need saved numbers, a meeting point and a plan agreed in advance."}]},
+  {name:"Elevated", meaning:"Two or more categories elevated, or one critical", actions:[
+    {action:"Fill all fuel tanks and jerry cans", reason:"Fuel supply is Australia's weakest link; filling before queues form avoids rationing and price spikes."},
+    {action:"Withdraw some cash", reason:"Card payments, EFTPOS and ATMs stop working in network or power outages — cash still buys fuel and food."},
+    {action:"Top up regular medications", reason:"Pharmacy supply chains are long; a few weeks' buffer covers delivery disruption."},
+    {action:"Check water and food kit against list", reason:"Two weeks of supplies lets the household ride out shortages without joining panic buying."}]},
+  {name:"High", meaning:"Several categories converging and official advisories issued", actions:[
+    {action:"Finish stocking food, water and medicines", reason:"Several independent warning signs at once means disruption is likely enough to prepare for now, while shelves are full."},
+    {action:"Confirm the family meeting point and plan", reason:"If calls and messages fail, everyone needs to know where to go and when without talking."},
+    {action:"Charge power banks, radios and devices", reason:"A battery radio (ABC 891 AM) keeps official information coming if phones and power drop out."},
+    {action:"Download offline maps and documents", reason:"Copies of IDs, insurance and maps on your phone work without internet."}]},
+  {name:"Imminent", meaning:"Event underway or confirmed imminent", actions:[
+    {action:"Execute the family plan", reason:"The planning is done — acting on it quickly beats deciding under pressure."},
+    {action:"Follow official SA emergency instructions first", reason:"Authorities have local information this system doesn't; their instructions override any general advice here."},
+    {action:"Check on vulnerable family and neighbours", reason:"Older people and those without transport are hit first by outages and shortages."}]}
 ];
 const CATS = [
   {key:"geo",name:"Geopolitical & conflict"},{key:"nuclear",name:"Nuclear & fallout"},{key:"cyber",name:"Cyber & infrastructure"},
@@ -201,7 +247,8 @@ function renderStatus(st){
   $("next").textContent = st && st.nextCheck ? fmt(st.nextCheck) : "—";
   $("actTitle").textContent = has ? `What to do at level ${level}` : "What to do";
   const acts = has ? [...L.actions, ...(Array.isArray(st.actions)?st.actions:[])] : [];
-  $("actList").innerHTML = acts.map(a=>`<li>${esc(a)}</li>`).join("");
+  $("actList").innerHTML = acts.map(a=> typeof a==="string" ? `<li>${esc(a)}</li>`
+    : `<li><b>${esc(a.action)}</b>${a.reason?`<br><span class="why">Why: ${esc(a.reason)}</span>`:""}</li>`).join("");
   const byKey = {}; (st && Array.isArray(st.categories) ? st.categories : []).forEach(c=>byKey[c.key]=c);
   $("cats").innerHTML = CATS.map(def=>{
     const c = byKey[def.key]; const sc = c && typeof c.score==="number" ? c.score : null;
@@ -218,6 +265,28 @@ function renderStatus(st){
   $("confirmed").innerHTML = conf.length ? conf.map(x=>{ const u=safeUrl(x.url);
     return `<div class="item"><span class="t">${esc(x.title)}</span><span class="w">${esc(x.date||"")}</span><p>${esc(x.impact||"")}${u?` <a href="${esc(u)}" target="_blank" rel="noopener">Source</a>`:""}</p></div>`;
   }).join("") : `<p class="empty">No confirmed large-scale event affecting Australia right now.</p>`;
+}
+
+function renderConcerns(st, ind){
+  const sc = {}; ((ind&&ind.scenarios)||[]).forEach(x=>sc[x.key]=x);
+  let list = (st && Array.isArray(st.concerns) && st.concerns.length) ? st.concerns : null;
+  if(!list) list = ((ind&&ind.scenarios)||[]).map(x=>({key:x.key,title:x.name,likelihood:null,trend:x.trend,drivers:[],scenarios:[],actions:[]}));
+  if(!list.length){ $("concerns").innerHTML=`<p class="empty">No concerns assessed yet.</p>`; return; }
+  const col = p => p==null?"var(--line)":p>=60?lc(5):p>=35?lc(4):p>=15?lc(3):lc(2);
+  $("concerns").innerHTML = list.map(c=>{
+    const w = sc[c.key];
+    const signs = w ? `<h4>Warning signs showing: ${w.lit.length} of ${w.lit.length+w.unlit.length} · ${esc(w.band)}</h4>
+      <div class="meter"><i style="width:${w.score}%;background:${col(w.score)}"></i></div>
+      ${w.lit.length?`<ul>${w.lit.map(i=>`<li>${esc(i.name)} <span class="why">(${esc(i.detail)})</span></li>`).join("")}</ul>`:`<span class="why">None of the known precursors are showing.</span>`}
+      <details><summary>What we watch for and why</summary><p class="why" style="margin:6px 0">${esc(w.why)}</p><ul>${w.unlit.map(i=>`<li class="why">${esc(i.name)}</li>`).join("")}</ul></details>` : "";
+    const scen = (c.scenarios||[]).length ? `<h4>Possible scenarios</h4><div class="sc">${c.scenarios.map(x=>`<b>${x.likelihood!=null?esc(x.likelihood)+"%":""}</b><span><b style="font-family:var(--body);font-weight:600;text-align:left">${esc(x.name)}</b> — ${esc(x.sa_impact||"")}</span>`).join("")}</div>` : (w?`<h4>What it would mean for SA</h4><p class="why" style="margin:0">${esc(w.sa_impact)}</p>`:"");
+    const acts = (c.actions||[]).length ? `<h4>Suggested actions and why</h4><div class="act">${c.actions.map(a=>`<div>${esc(a.action)}<span>${esc(a.reason||"")}</span></div>`).join("")}</div>` : "";
+    const drv = (c.drivers||[]).length ? `<h4>What's driving this</h4><ul>${c.drivers.map(d=>`<li>${esc(d)}</li>`).join("")}</ul>` : "";
+    return `<article class="cc" style="border-left-color:${col(c.likelihood)}">
+      <h3>${esc(c.title)}</h3>
+      <div class="lik">${c.likelihood!=null?`<span class="pct" style="color:${col(c.likelihood)}">${esc(c.likelihood)}%</span><span class="sub">chance of significant escalation, 30 days · ${({up:"▲ rising",down:"▼ easing"})[c.trend]||"● steady"}</span>`:`<span class="sub">Awaiting analyst assessment</span>`}</div>
+      ${drv}${scen}${acts}${signs}</article>`;
+  }).join("");
 }
 
 function renderLatest(l){
@@ -240,7 +309,7 @@ function renderLatest(l){
 
 $("guideBody").innerHTML = LEVELS.slice(1).map((L,i)=>`<tr>
   <td><span class="chip" style="background:${lc(i+1)};${i===2?"color:var(--l3-ink)":""}">${i+1} ${L.name}</span></td>
-  <td>${esc(L.meaning)}</td><td>${esc(L.actions.join("; "))}</td></tr>`).join("");
+  <td>${esc(L.meaning)}</td><td>${esc(L.actions.map(a=>a.action).join("; "))}</td></tr>`).join("");
 
 const demo = new URLSearchParams(location.search).get("demo");
 const DEMO_OK = /^[1-5]$/.test(demo||"");
@@ -251,7 +320,9 @@ async function load(){
   let st=null, l=null;
   try{ st = await get(DEMO_OK ? `data/demo-level${demo}.json` : "data/status.json"); }catch(e){ $("banner").hidden=false; $("banner").textContent="Could not load the assessment. Try again shortly."; }
   try{ l = await get("data/latest.json"); }catch(e){}
+  let ind=null; try{ ind = await get("data/indicators.json"); }catch(e){}
   if(st) renderStatus(st); else drawGauge(0);
+  renderConcerns(DEMO_OK ? st : st, DEMO_OK ? null : ind);
   renderLatest(l);
 }
 load(); setInterval(load, 5*60*1000);

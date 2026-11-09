@@ -1,6 +1,7 @@
 """Precursor playbook: score how many known warning signs are showing per scenario, keep an event journal,
 and learn which signs actually came before real events (lead times). Pure functions where possible."""
 import json
+import re
 from datetime import timedelta
 from statistics import median
 
@@ -15,6 +16,25 @@ def band(score):
         if score >= lo:
             name = n
     return name
+
+
+def _words(text, words):
+    """Whole-word, case-insensitive match of any of `words` in text."""
+    return any(w and re.search(r"(?<![A-Za-z])" + re.escape(w) + r"(?![A-Za-z])", text, re.I) for w in words)
+
+
+def new_departures(current, state, now):
+    """Departure orders that appeared recently (standing orders like Belarus's don't count as a warning sign)."""
+    seen = state.get("dep_first_seen")
+    if seen is None:  # first run: everything already in place is old news
+        state["dep_first_seen"] = {c: "old" for c in current}
+        return []
+    for c in current:
+        seen.setdefault(c, iso(now))
+    for c in [c for c in seen if c not in current]:
+        del seen[c]
+    cutoff = iso(now - timedelta(days=PLAYBOOK.get("departure_new_days", 14)))
+    return sorted(c for c, t in seen.items() if t != "old" and t >= cutoff)
 
 
 def _lit(ind, ctx):
@@ -52,7 +72,9 @@ def _lit(ind, ctx):
         for k in keys:
             for it in ((ctx["news"] or {}).get(k) or {}).get("items", []):
                 title = it.get("title", "")
-                if any(w.lower() in title.lower() for w in ind["words"]):
+                if _words(title, PLAYBOOK.get("news_exclude", [])):
+                    continue
+                if not any(w for w in ind["words"]) or _words(title, ind["words"]):
                     return title[:140]
         return None
     if t == "market":

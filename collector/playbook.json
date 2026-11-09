@@ -1,94 +1,550 @@
 {
   "_comment": "Precursor playbook. Each scenario lists observable warning signs seen before past strikes and crises, with weights (score = sum of lit weights, max 100). 'why' explains the historical basis. Scores measure how many warning signs are showing, not a probability.",
-  "bands": [[0, "Low"], [15, "Guarded"], [35, "Elevated"], [60, "High"]],
+  "bands": [
+    [
+      0,
+      "Low"
+    ],
+    [
+      15,
+      "Guarded"
+    ],
+    [
+      35,
+      "Elevated"
+    ],
+    [
+      60,
+      "High"
+    ]
+  ],
   "alert_score": 60,
   "lookback_hours": 72,
   "scenarios": [
     {
-      "key": "mideast", "name": "Middle East war & Gulf shipping",
+      "key": "mideast",
+      "name": "Middle East war & Gulf shipping",
       "sa_impact": "Fuel: Australia imports most of its fuel, much of it refined from Gulf crude in Asia. Shipping attacks or a Hormuz closure push up prices within days and can cause local shortages.",
       "why": "Before the 2024-25 Israel-Iran exchanges and US strikes, watchers saw US tanker surges toward Europe and the Gulf, embassy departure orders, regional GPS jamming, airspace closures and oil price jumps, often 1-3 days ahead.",
       "indicators": [
-        {"id": "tankers", "name": "Air-refuelling tanker surge", "type": "anomaly", "metrics": ["tankers"], "weight": 15},
-        {"id": "air", "name": "Unusual military air activity over the region", "type": "anomaly", "metrics": ["mil_mideast", "dark_mideast"], "weight": 15},
-        {"id": "gps", "name": "GPS jamming spike (Gulf / Israel)", "type": "anomaly", "metrics": ["gps_gulf", "gps_israel"], "weight": 10},
-        {"id": "net", "name": "Internet blackout in Iran or Israel", "type": "internet", "countries": ["Iran", "Israel"], "min": 25, "weight": 15},
-        {"id": "dep", "name": "US embassy departure order in the region", "type": "departure", "countries": ["Iran", "Iraq", "Israel", "Lebanon", "Jordan", "Qatar", "Bahrain", "Kuwait", "United Arab Emirates", "Saudi Arabia", "Oman", "Yemen"], "weight": 15},
-        {"id": "airspace", "name": "Airspace closures reported (Iran / Israel / Gulf)", "type": "news", "key": "airspace", "words": ["Iran", "Israel", "Iraq", "Gulf", "Qatar", "Jordan"], "weight": 10},
-        {"id": "nav", "name": "Military navigation warnings (Gulf / Red Sea)", "type": "anomaly", "metrics": ["navwarn_mideast"], "weight": 10},
-        {"id": "oil", "name": "Brent oil up 4%+ in a day", "type": "market", "name_mkt": "Brent oil", "change_at_least": 4, "weight": 10},
-        {"id": "sat", "name": "Spy-satellite passes converging on Iran / Israel", "type": "sat", "hotspots": ["iran", "israel"], "ratio": 1.4, "weight": 5}
+        {
+          "id": "tankers",
+          "name": "Air-refuelling tanker surge",
+          "type": "anomaly",
+          "metrics": [
+            "tankers"
+          ],
+          "weight": 15
+        },
+        {
+          "id": "air",
+          "name": "Unusual military air activity over the region",
+          "type": "anomaly",
+          "metrics": [
+            "mil_mideast",
+            "dark_mideast"
+          ],
+          "weight": 15
+        },
+        {
+          "id": "gps",
+          "name": "GPS jamming spike (Gulf / Israel)",
+          "type": "anomaly",
+          "metrics": [
+            "gps_gulf",
+            "gps_israel"
+          ],
+          "weight": 10
+        },
+        {
+          "id": "net",
+          "name": "Internet blackout in Iran or Israel",
+          "type": "internet",
+          "countries": [
+            "Iran",
+            "Israel"
+          ],
+          "min": 25,
+          "weight": 15
+        },
+        {
+          "id": "dep",
+          "name": "New US embassy departure order in the region",
+          "type": "departure",
+          "countries": [
+            "Iran",
+            "Iraq",
+            "Israel",
+            "Lebanon",
+            "Jordan",
+            "Qatar",
+            "Bahrain",
+            "Kuwait",
+            "United Arab Emirates",
+            "Saudi Arabia",
+            "Oman",
+            "Yemen"
+          ],
+          "weight": 15
+        },
+        {
+          "id": "airspace",
+          "name": "Airspace closures reported (Iran / Israel / Gulf)",
+          "type": "news",
+          "key": "airspace",
+          "words": [
+            "Iran",
+            "Israel",
+            "Iraq",
+            "Gulf",
+            "Qatar",
+            "Jordan"
+          ],
+          "weight": 10
+        },
+        {
+          "id": "nav",
+          "name": "Military navigation warnings (Gulf / Red Sea)",
+          "type": "anomaly",
+          "metrics": [
+            "navwarn_mideast"
+          ],
+          "weight": 10
+        },
+        {
+          "id": "oil",
+          "name": "Brent oil up 4%+ in a day",
+          "type": "market",
+          "name_mkt": "Brent oil",
+          "change_at_least": 4,
+          "weight": 10
+        },
+        {
+          "id": "sat",
+          "name": "Spy-satellite passes converging on Iran / Israel",
+          "type": "sat",
+          "hotspots": [
+            "iran",
+            "israel"
+          ],
+          "ratio": 1.4,
+          "weight": 5
+        }
       ]
     },
     {
-      "key": "taiwan", "name": "Taiwan Strait / South China Sea crisis",
+      "key": "taiwan",
+      "name": "Taiwan Strait / South China Sea crisis",
       "sa_impact": "Trade and fuel: most of Australia's refined fuel and many goods pass the South China Sea. A blockade would disrupt fuel, medicines and electronics within weeks; Australian forces could be drawn in.",
       "why": "China's large drills around Taiwan (2022, 2023, 2024, 2025) were announced through maritime navigation warnings, with GPS interference and coastguard surges; any real operation would be expected to add mobilisation reports and internet disruption.",
       "indicators": [
-        {"id": "nav", "name": "Missile / live-fire navigation warnings near Taiwan", "type": "anomaly", "metrics": ["navwarn_taiwan"], "weight": 20},
-        {"id": "gps", "name": "GPS jamming over the Taiwan Strait", "type": "anomaly", "metrics": ["gps_taiwan"], "weight": 15},
-        {"id": "net", "name": "Internet disruption in Taiwan", "type": "internet", "countries": ["Taiwan"], "min": 20, "weight": 15},
-        {"id": "air", "name": "Unusual military air activity near Taiwan", "type": "anomaly", "metrics": ["mil_taiwan", "dark_taiwan"], "weight": 10},
-        {"id": "mob", "name": "Mobilisation / reservist reports (China or Taiwan)", "type": "news", "key": ["reservists", "mobilisation", "leave"], "words": ["China", "Chinese", "Taiwan", "PLA"], "weight": 15},
-        {"id": "lift", "name": "Military airlift or RAAF surge", "type": "anomaly", "metrics": ["airlift", "raaf"], "weight": 10},
-        {"id": "dep", "name": "US embassy departure order (Taiwan / China)", "type": "departure", "countries": ["Taiwan", "China"], "weight": 10},
-        {"id": "sat", "name": "Spy-satellite passes converging on Taiwan", "type": "sat", "hotspots": ["taiwan"], "ratio": 1.4, "weight": 5}
+        {
+          "id": "nav",
+          "name": "Missile / live-fire navigation warnings near Taiwan",
+          "type": "anomaly",
+          "metrics": [
+            "navwarn_taiwan"
+          ],
+          "weight": 20
+        },
+        {
+          "id": "gps",
+          "name": "GPS jamming over the Taiwan Strait",
+          "type": "anomaly",
+          "metrics": [
+            "gps_taiwan"
+          ],
+          "weight": 15
+        },
+        {
+          "id": "net",
+          "name": "Internet disruption in Taiwan",
+          "type": "internet",
+          "countries": [
+            "Taiwan"
+          ],
+          "min": 20,
+          "weight": 15
+        },
+        {
+          "id": "air",
+          "name": "Unusual military air activity near Taiwan",
+          "type": "anomaly",
+          "metrics": [
+            "mil_taiwan",
+            "dark_taiwan"
+          ],
+          "weight": 10
+        },
+        {
+          "id": "mob",
+          "name": "Mobilisation / reservist reports (China or Taiwan)",
+          "type": "news",
+          "key": [
+            "reservists",
+            "mobilisation",
+            "leave"
+          ],
+          "words": [
+            "China",
+            "Chinese",
+            "Taiwan",
+            "PLA"
+          ],
+          "weight": 15
+        },
+        {
+          "id": "lift",
+          "name": "Military airlift or RAAF surge",
+          "type": "anomaly",
+          "metrics": [
+            "airlift",
+            "raaf"
+          ],
+          "weight": 10
+        },
+        {
+          "id": "dep",
+          "name": "New US embassy departure order (Taiwan / China)",
+          "type": "departure",
+          "countries": [
+            "Taiwan",
+            "China"
+          ],
+          "weight": 10
+        },
+        {
+          "id": "sat",
+          "name": "Spy-satellite passes converging on Taiwan",
+          "type": "sat",
+          "hotspots": [
+            "taiwan"
+          ],
+          "ratio": 1.4,
+          "weight": 5
+        }
       ]
     },
     {
-      "key": "korea", "name": "Korean Peninsula conflict",
+      "key": "korea",
+      "name": "Korean Peninsula conflict",
       "sa_impact": "Indirect: market shock, Australian citizens in Korea and Japan, and US-allied commitments. Little direct physical risk to SA.",
       "why": "North Korean missile launches are often preceded by navigation warnings; South Korea and Japan report GPS jamming from the North during tense periods.",
       "indicators": [
-        {"id": "nav", "name": "Missile navigation warnings (Korea / Sea of Japan)", "type": "anomaly", "metrics": ["navwarn_korea"], "weight": 20},
-        {"id": "gps", "name": "GPS jamming over Korea", "type": "anomaly", "metrics": ["gps_korea"], "weight": 20},
-        {"id": "air", "name": "Unusual military air activity (Korea / Japan)", "type": "anomaly", "metrics": ["mil_korea", "dark_korea"], "weight": 15},
-        {"id": "net", "name": "Internet disruption in South Korea", "type": "internet", "countries": ["South Korea"], "min": 20, "weight": 10},
-        {"id": "mob", "name": "Mobilisation / reservist reports (Korea)", "type": "news", "key": ["reservists", "mobilisation", "leave"], "words": ["Korea"], "weight": 15},
-        {"id": "nc3", "name": "US nuclear command aircraft unusual", "type": "anomaly", "metrics": ["nc3"], "weight": 10},
-        {"id": "sat", "name": "Spy-satellite passes converging on Korea", "type": "sat", "hotspots": ["korea"], "ratio": 1.4, "weight": 10}
+        {
+          "id": "nav",
+          "name": "Missile navigation warnings (Korea / Sea of Japan)",
+          "type": "anomaly",
+          "metrics": [
+            "navwarn_korea"
+          ],
+          "weight": 20
+        },
+        {
+          "id": "gps",
+          "name": "GPS jamming over Korea",
+          "type": "anomaly",
+          "metrics": [
+            "gps_korea"
+          ],
+          "weight": 20
+        },
+        {
+          "id": "air",
+          "name": "Unusual military air activity (Korea / Japan)",
+          "type": "anomaly",
+          "metrics": [
+            "mil_korea",
+            "dark_korea"
+          ],
+          "weight": 15
+        },
+        {
+          "id": "net",
+          "name": "Internet disruption in South Korea",
+          "type": "internet",
+          "countries": [
+            "South Korea"
+          ],
+          "min": 20,
+          "weight": 10
+        },
+        {
+          "id": "mob",
+          "name": "Mobilisation / reservist reports (Korea)",
+          "type": "news",
+          "key": [
+            "reservists",
+            "mobilisation",
+            "leave"
+          ],
+          "words": [
+            "Korea"
+          ],
+          "weight": 15
+        },
+        {
+          "id": "nc3",
+          "name": "US nuclear command aircraft unusual",
+          "type": "anomaly",
+          "metrics": [
+            "nc3"
+          ],
+          "weight": 10
+        },
+        {
+          "id": "sat",
+          "name": "Spy-satellite passes converging on Korea",
+          "type": "sat",
+          "hotspots": [
+            "korea"
+          ],
+          "ratio": 1.4,
+          "weight": 10
+        }
       ]
     },
     {
-      "key": "russia", "name": "Russia-NATO escalation",
+      "key": "russia",
+      "name": "Russia-NATO escalation",
       "sa_impact": "Indirect: energy and market shock, cyber attacks that can spill over to Australian systems, and nuclear-risk rhetoric.",
       "why": "Before February 2022: embassy departures, mobilisation reports, airspace closures and a surge in GPS jamming. Baltic and Black Sea jamming is now routine, so only spikes above normal count.",
       "indicators": [
-        {"id": "gps", "name": "GPS jamming spike (Baltic / Black Sea)", "type": "anomaly", "metrics": ["gps_baltic", "gps_blacksea"], "weight": 15},
-        {"id": "air", "name": "Unusual military air activity (Eastern Europe)", "type": "anomaly", "metrics": ["mil_eeurope", "dark_eeurope"], "weight": 15},
-        {"id": "mob", "name": "Mobilisation / reservist reports (Russia / NATO)", "type": "news", "key": ["reservists", "mobilisation", "leave"], "words": ["Russia", "Russian", "NATO", "Poland", "Baltic", "Finland", "Lithuania", "Latvia", "Estonia"], "weight": 15},
-        {"id": "net", "name": "Internet disruption in Russia", "type": "internet", "countries": ["Russia"], "min": 20, "weight": 10},
-        {"id": "nc3", "name": "US nuclear command aircraft unusual", "type": "anomaly", "metrics": ["nc3"], "weight": 15},
-        {"id": "dep", "name": "US embassy departure order (Russia / Belarus / Ukraine region)", "type": "departure", "countries": ["Russia", "Belarus", "Ukraine", "Moldova", "Poland", "Lithuania", "Latvia", "Estonia", "Finland"], "weight": 10},
-        {"id": "jets", "name": "Private jets heading to retreat destinations", "type": "anomaly", "metrics": ["retreat_bizjets", "bizjets_airborne"], "weight": 10},
-        {"id": "vix", "name": "Market fear index above 30", "type": "market", "name_mkt": "VIX", "price_at_least": 30, "weight": 10}
+        {
+          "id": "gps",
+          "name": "GPS jamming spike (Baltic / Black Sea)",
+          "type": "anomaly",
+          "metrics": [
+            "gps_baltic",
+            "gps_blacksea"
+          ],
+          "weight": 15
+        },
+        {
+          "id": "air",
+          "name": "Unusual military air activity (Eastern Europe)",
+          "type": "anomaly",
+          "metrics": [
+            "mil_eeurope",
+            "dark_eeurope"
+          ],
+          "weight": 15
+        },
+        {
+          "id": "mob",
+          "name": "Mobilisation / reservist reports (Russia / NATO)",
+          "type": "news",
+          "key": [
+            "reservists",
+            "mobilisation",
+            "leave"
+          ],
+          "words": [
+            "Russia",
+            "Russian",
+            "NATO",
+            "Poland",
+            "Baltic",
+            "Finland",
+            "Lithuania",
+            "Latvia",
+            "Estonia"
+          ],
+          "weight": 15
+        },
+        {
+          "id": "net",
+          "name": "Internet disruption in Russia",
+          "type": "internet",
+          "countries": [
+            "Russia"
+          ],
+          "min": 20,
+          "weight": 10
+        },
+        {
+          "id": "nc3",
+          "name": "US nuclear command aircraft unusual",
+          "type": "anomaly",
+          "metrics": [
+            "nc3"
+          ],
+          "weight": 15
+        },
+        {
+          "id": "dep",
+          "name": "New US embassy departure order (Russia / Belarus / Ukraine region)",
+          "type": "departure",
+          "countries": [
+            "Russia",
+            "Belarus",
+            "Ukraine",
+            "Moldova",
+            "Poland",
+            "Lithuania",
+            "Latvia",
+            "Estonia",
+            "Finland"
+          ],
+          "weight": 10
+        },
+        {
+          "id": "jets",
+          "name": "Private jets heading to retreat destinations",
+          "type": "anomaly",
+          "metrics": [
+            "retreat_bizjets",
+            "bizjets_airborne"
+          ],
+          "weight": 10
+        },
+        {
+          "id": "vix",
+          "name": "Market fear index above 30",
+          "type": "market",
+          "name_mkt": "VIX",
+          "price_at_least": 30,
+          "weight": 10
+        }
       ]
     },
     {
-      "key": "nuclear", "name": "Nuclear use or alert",
+      "key": "nuclear",
+      "name": "Nuclear use or alert",
       "sa_impact": "Fallout risk to SA from a northern-hemisphere exchange is very low, but global trade, fuel and finance would be severely disrupted.",
       "why": "Visible changes to US nuclear command aircraft (E-4B / E-6B), tanker surges, elite flight to remote retreats and market panic are the few public signals that would accompany a nuclear alert.",
       "indicators": [
-        {"id": "nc3", "name": "US nuclear command aircraft unusual", "type": "anomaly", "metrics": ["nc3"], "weight": 30},
-        {"id": "tankers", "name": "Air-refuelling tanker surge", "type": "anomaly", "metrics": ["tankers"], "weight": 10},
-        {"id": "jets", "name": "Private jets heading to retreat destinations", "type": "anomaly", "metrics": ["retreat_bizjets"], "weight": 15},
-        {"id": "bizjets", "name": "Surge of long-range private jets", "type": "anomaly", "metrics": ["bizjets_airborne"], "weight": 10},
-        {"id": "vix", "name": "Market fear index above 35", "type": "market", "name_mkt": "VIX", "price_at_least": 35, "weight": 10},
-        {"id": "gold", "name": "Gold up 4%+ in a day", "type": "market", "name_mkt": "Gold", "change_at_least": 4, "weight": 10},
-        {"id": "mob", "name": "Mobilisation reports (any major power)", "type": "news", "key": ["mobilisation"], "words": ["Russia", "China", "United States", "US", "nuclear"], "weight": 15}
+        {
+          "id": "nc3",
+          "name": "US nuclear command aircraft unusual",
+          "type": "anomaly",
+          "metrics": [
+            "nc3"
+          ],
+          "weight": 30
+        },
+        {
+          "id": "tankers",
+          "name": "Air-refuelling tanker surge",
+          "type": "anomaly",
+          "metrics": [
+            "tankers"
+          ],
+          "weight": 10
+        },
+        {
+          "id": "jets",
+          "name": "Private jets heading to retreat destinations",
+          "type": "anomaly",
+          "metrics": [
+            "retreat_bizjets"
+          ],
+          "weight": 15
+        },
+        {
+          "id": "bizjets",
+          "name": "Surge of long-range private jets",
+          "type": "anomaly",
+          "metrics": [
+            "bizjets_airborne"
+          ],
+          "weight": 10
+        },
+        {
+          "id": "vix",
+          "name": "Market fear index above 35",
+          "type": "market",
+          "name_mkt": "VIX",
+          "price_at_least": 35,
+          "weight": 10
+        },
+        {
+          "id": "gold",
+          "name": "Gold up 4%+ in a day",
+          "type": "market",
+          "name_mkt": "Gold",
+          "change_at_least": 4,
+          "weight": 10
+        },
+        {
+          "id": "mob",
+          "name": "Mobilisation reports (any major power)",
+          "type": "news",
+          "key": [
+            "mobilisation"
+          ],
+          "words": [
+            "Russia",
+            "China",
+            "United States",
+            "US",
+            "nuclear"
+          ],
+          "weight": 15
+        }
       ]
     },
     {
-      "key": "ausinfra", "name": "Australian infrastructure disruption",
+      "key": "ausinfra",
+      "name": "Australian infrastructure disruption",
       "sa_impact": "Direct: loss of phone, internet, EFTPOS and fuel pumps. Cash, fuel and a pre-agreed meeting point matter most in the first 24 hours.",
       "why": "The 2023 Optus outage cut mobile, NBN, EFTPOS and some 000 calls nationwide for 12 hours. Hostile states pre-position in critical infrastructure; GPS jamming over Australia would be a new and serious sign.",
       "indicators": [
-        {"id": "tel", "name": "Phone / internet carrier outage", "type": "telecom", "min": 20, "weight": 30},
-        {"id": "tel2", "name": "Two or more carriers down at once", "type": "telecom", "min": 20, "min_count": 2, "weight": 20},
-        {"id": "gps", "name": "GPS degradation over SA or NSW", "type": "anomaly", "metrics": ["gps_adelaide", "gps_sydney"], "weight": 25},
-        {"id": "acsc", "name": "New Australian cyber alert (ACSC)", "type": "acsc", "weight": 15},
-        {"id": "adf", "name": "ADF reserves called out", "type": "news", "key": ["adf"], "words": [""], "weight": 10}
+        {
+          "id": "tel",
+          "name": "Phone / internet carrier outage",
+          "type": "telecom",
+          "min": 20,
+          "weight": 30
+        },
+        {
+          "id": "tel2",
+          "name": "Two or more carriers down at once",
+          "type": "telecom",
+          "min": 20,
+          "min_count": 2,
+          "weight": 20
+        },
+        {
+          "id": "gps",
+          "name": "GPS degradation over SA or NSW",
+          "type": "anomaly",
+          "metrics": [
+            "gps_adelaide",
+            "gps_sydney"
+          ],
+          "weight": 25
+        },
+        {
+          "id": "acsc",
+          "name": "New Australian cyber alert (ACSC)",
+          "type": "acsc",
+          "weight": 15
+        },
+        {
+          "id": "adf",
+          "name": "ADF reserves called out",
+          "type": "news",
+          "key": [
+            "adf"
+          ],
+          "words": [
+            ""
+          ],
+          "weight": 10
+        }
       ]
     }
-  ]
+  ],
+  "news_exclude": [
+    "bet",
+    "bets",
+    "odds",
+    "prediction market",
+    "Polymarket",
+    "Kalshi",
+    "Quiver",
+    "wager"
+  ],
+  "departure_new_days": 14
 }

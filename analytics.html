@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Early Warning Analytics</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+:root{
+  --bg:#e9ecee; --surface:#ffffff; --sunk:#f3f5f6; --ink:#162028; --muted:#56636d; --line:#d2d8dc; --grid:#e1e0d9;
+  --accent:#1d3a4f;
+  --l1:#6f8f7c; --l2:#3f9a5a; --l3:#e3b81c; --l4:#e5791f; --l5:#c8312b;
+  --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --s6:#008300;
+  --good:#0ca30c; --warning:#fab219; --serious:#ec835a; --critical:#d03b3b;
+  --seq-lo:#cde2fb; --seq-hi:#104281;
+  --display:"Barlow Condensed","Arial Narrow",system-ui,sans-serif;
+  --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){:root{
+  --bg:#0f151a; --surface:#172028; --sunk:#121a20; --ink:#e4eaee; --muted:#93a1ab; --line:#2a3640; --grid:#2c2c2a;
+  --accent:#9cc3de; --l1:#7fa08c; --l2:#4fb06b; --l3:#e8c33a; --l4:#ef8a35; --l5:#e2514a;
+  --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181; --s6:#008300;
+  --seq-lo:#184f95; --seq-hi:#cde2fb; color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.5}
+.wrap{max-width:1180px;margin:0 auto;padding:20px max(16px,env(safe-area-inset-right)) 48px max(16px,env(safe-area-inset-left));display:grid;grid-template-columns:minmax(0,1fr);gap:20px}
+.wrap>*,.two>*{min-width:0}
+h1,h2,h3{font-family:var(--display);font-weight:600;margin:0;line-height:1.1}
+h1{font-size:2.1rem;text-transform:uppercase}
+h2{font-size:1.3rem;text-transform:uppercase;letter-spacing:.05em}
+h3{font-size:1.05rem;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+a{color:var(--accent)}
+.muted{color:var(--muted)}
+.note{color:var(--muted);font-size:.85rem;margin:4px 0 12px;max-width:80ch}
+header{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:8px 20px;border-bottom:2px solid var(--ink);padding-bottom:10px}
+.back{font-family:var(--display);font-size:1.1rem;text-transform:uppercase;text-decoration:none;font-weight:600}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:18px}
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px}
+@media (max-width:860px){.two{grid-template-columns:1fr}}
+.chart{position:relative;height:280px}
+.mini-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+.mini{border:1px solid var(--line);border-radius:6px;padding:10px 12px;background:var(--surface)}
+.mini .row{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.mini .v{font-family:var(--mono);font-size:1.25rem;font-weight:500}
+.mini .chart{height:70px}
+.chip{font-family:var(--mono);font-size:.72rem;padding:1px 7px;border-radius:3px;color:#fff;white-space:nowrap}
+#map{height:460px;border-radius:6px;border:1px solid var(--line)}
+@media (max-width:560px){#map{height:360px}}
+.toggles{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px}
+.toggles button{font:600 .84rem var(--body);padding:6px 12px;border-radius:4px;border:1.5px solid var(--ink);background:var(--surface);color:var(--ink);cursor:pointer}
+.toggles button[aria-pressed="true"]{background:var(--ink);color:var(--surface)}
+.legend{display:flex;align-items:center;gap:8px;font-size:.8rem;color:var(--muted);margin-top:8px;flex-wrap:wrap}
+.legend .ramp{width:140px;height:10px;border-radius:2px;background:linear-gradient(90deg,var(--seq-lo),var(--seq-hi))}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.86rem}
+th,td{text-align:left;padding:7px 9px;border-top:1px solid var(--line);vertical-align:top}
+th{font-family:var(--display);text-transform:uppercase;letter-spacing:.05em;font-weight:600;color:var(--muted);border-top:0}
+td.num{font-family:var(--mono);text-align:right}
+.matrix td{text-align:center;font-family:var(--mono);font-size:.78rem}
+.matrix td.lit{background:var(--critical);color:#fff}
+.matrix td.off{color:var(--muted)}
+.matrix td:first-child,.matrix th:first-child{text-align:left;font-family:var(--body)}
+.empty{color:var(--muted);font-size:.9rem}
+.leaflet-container{font-family:var(--body)}
+.leaflet-tooltip{font-size:.8rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <a class="back" href="./">← Early Warning Board</a>
+      <h1>Analytics</h1>
+      <div class="muted" style="font-size:.9rem">Patterns behind the board: warning signs, jamming, satellites, military activity</div>
+    </div>
+    <div class="muted" style="font-family:var(--mono);font-size:.8rem" id="asof">Loading…</div>
+  </header>
+
+  <section class="panel">
+    <h2>Escalation potential, last 14 days</h2>
+    <p class="note">Warning-sign score per scenario (0–100): how many known precursors are showing at once. A rising line means more signs are lining up — it is not a probability. Hover for values.</p>
+    <div class="chart"><canvas id="escChart" aria-label="Warning-sign scores over time"></canvas></div>
+    <details style="margin-top:8px"><summary style="cursor:pointer;font-size:.85rem">Table view</summary><div class="tbl" id="escTable"></div></details>
+  </section>
+
+  <section class="panel">
+    <h2>Heat map</h2>
+    <p class="note">Satellite layer: where military imaging and radar satellites (US, China, Russia, Israel, Japan, Europe, India) will pass in the next 12 hours, from public orbit data — darker means more coverage. Rings: hotspots, with passes vs usual. GPS layer: share of aircraft reporting degraded GPS now.</p>
+    <div class="toggles" role="group" aria-label="Map layers">
+      <button type="button" id="tSat" aria-pressed="true">Satellite pass density</button>
+      <button type="button" id="tHot" aria-pressed="true">Satellite hotspots</button>
+      <button type="button" id="tGps" aria-pressed="true">GPS degradation</button>
+    </div>
+    <div id="map" role="img" aria-label="World map with satellite and GPS layers"></div>
+    <div class="legend"><span>Satellite passes</span><span class="ramp"></span><span>more</span>
+      <span style="margin-left:12px">GPS:</span>
+      <span class="chip" style="background:var(--good)">&lt;5% normal</span><span class="chip" style="background:var(--warning);color:#0b0b0b">5–20%</span>
+      <span class="chip" style="background:var(--serious)">20–40%</span><span class="chip" style="background:var(--critical)">40%+</span></div>
+  </section>
+
+  <section class="two">
+    <div class="panel">
+      <h2>Satellite convergence</h2>
+      <p class="note">Passes over each hotspot in the next 12 hours vs the usual for this time. Countries move satellites to revisit places they care about; a jump of 1.4× or more counts as a warning sign.</p>
+      <div class="tbl" id="satTable"><p class="empty">Loading…</p></div>
+    </div>
+    <div class="panel">
+      <h2>Satellite manoeuvres</h2>
+      <p class="note">Military satellites whose orbit changed since the last check (altitude change in km). Manoeuvres can mean re-tasking to watch a new area — or routine station-keeping.</p>
+      <div class="tbl" id="manTable"><p class="empty">Loading…</p></div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>GPS degradation by region</h2>
+    <p class="note">% of aircraft reporting poor GPS accuracy, last 14 days. The Baltic and Black Sea are jammed routinely; new jamming elsewhere matters more.</p>
+    <div class="mini-grid" id="gpsMinis"></div>
+  </section>
+
+  <section class="panel">
+    <h2>Military activity</h2>
+    <p class="note">Military aircraft visible on public flight tracking, last 14 days. Sudden drops can mean transponders switched off before operations; surges in transports can mean evacuations or deployments.</p>
+    <div class="mini-grid" id="milMinis"></div>
+  </section>
+
+  <section class="panel">
+    <h2>Warning-sign matrix</h2>
+    <p class="note">Every precursor the system watches, by scenario. Red = showing now.</p>
+    <div class="tbl" id="matrix"><p class="empty">Loading…</p></div>
+  </section>
+
+  <section class="two">
+    <div class="panel">
+      <h2>Learned patterns</h2>
+      <p class="note">Each time a real event happens (a strike, a blockade, a nationwide outage), the system records which warning signs came first and how many hours ahead. Over months this shows which signs actually predict what.</p>
+      <div id="patterns"><p class="empty">Loading…</p></div>
+    </div>
+    <div class="panel">
+      <h2>Networks &amp; internet</h2>
+      <p class="note">Australian carriers and key countries: % of the network that dropped off in the last hour.</p>
+      <div class="tbl" id="netTable"><p class="empty">Loading…</p></div>
+    </div>
+  </section>
+  <p class="muted" style="font-size:.8rem;margin:0">Public data: adsb.fi, CelesTrak, IODA (Georgia Tech), Google News, official advisories. Satellite positions are approximate. Not an official warning service.</p>
+</div>
+
+<script>
+const $ = id => document.getElementById(id);
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const fmt = iso => { const d=new Date(iso); return isNaN(d)?"—":d.toLocaleString("en-AU",{timeZone:"Australia/Adelaide",day:"numeric",month:"short",hour:"numeric",minute:"2-digit"}); };
+async function get(p){ try{ const r=await fetch(p+"?t="+Date.now(),{cache:"no-store"}); return r.ok? r.json(): null; }catch(e){ return null; } }
+const SERIES = ["--s1","--s2","--s3","--s4","--s5","--s6"];
+const gpsColor = v => v==null?css("--line"):v>=40?css("--critical"):v>=20?css("--serious"):v>=5?css("--warning"):css("--good");
+Chart.defaults.font.family = css("--body"); Chart.defaults.color = css("--muted");
+
+function lineChart(canvas, labels, datasets, opts={}){
+  return new Chart(canvas, {type:"line", data:{labels, datasets},
+    options:{responsive:true, maintainAspectRatio:false, animation:false, spanGaps:true,
+      interaction:{mode:"index", intersect:false},
+      plugins:{legend:{display:!opts.mini && datasets.length>1, position:"bottom", labels:{boxWidth:12, boxHeight:3}},
+               tooltip:{enabled:true}},
+      elements:{point:{radius:0, hoverRadius:4}, line:{borderWidth:2, tension:.25}},
+      scales:{x:{display:!opts.mini, grid:{display:false}, ticks:{maxTicksLimit:7, maxRotation:0}},
+              y:{display:!opts.mini, beginAtZero:true, max:opts.max, grid:{color:css("--grid")}, border:{display:false}}}}});
+}
+
+(async()=>{
+  const [an, ind, sat, lat, pat] = await Promise.all([get("data/analytics.json"), get("data/indicators.json"),
+    get("data/satellites.json"), get("data/latest.json"), get("data/patterns.json")]);
+  $("asof").textContent = `Data as of ${fmt((lat||{}).generated_at)} · satellites ${fmt((sat||{}).generated_at)}`;
+  const rows = (an&&an.rows)||[];
+  const labels = rows.map(r=>new Date(r.ts).toLocaleString("en-AU",{timeZone:"Australia/Adelaide",day:"numeric",month:"short",hour:"numeric"}));
+  const scen = (ind&&ind.scenarios)||[];
+
+  // Escalation lines
+  if(rows.length && scen.length){
+    lineChart($("escChart"), labels, scen.map((s,i)=>({label:`${s.name} (${s.score})`, data:rows.map(r=>r["esc_"+s.key]??null),
+      borderColor:css(SERIES[i%6]), backgroundColor:css(SERIES[i%6])})), {max:100});
+    $("escTable").innerHTML = `<table><thead><tr><th>Scenario</th><th>Now</th><th>Band</th><th>Trend</th><th>14-day max</th></tr></thead><tbody>${
+      scen.map(s=>{ const vals=rows.map(r=>r["esc_"+s.key]).filter(v=>v!=null); return `<tr><td>${esc(s.name)}</td><td class="num">${s.score}</td><td>${esc(s.band)}</td><td>${esc(s.trend)}</td><td class="num">${vals.length?Math.max(...vals):"—"}</td></tr>`}).join("")}</tbody></table>`;
+  } else { $("escChart").parentElement.innerHTML = `<p class="empty">History builds up from the first collector runs — check back in a few hours.</p>`; }
+
+  // Map
+  const map = L.map("map",{worldCopyJump:true, zoomControl:true}).setView([10,100],2);
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:7, minZoom:1, attribution:"© OpenStreetMap contributors"}).addTo(map);
+  const satLayer = L.layerGroup(), hotLayer = L.layerGroup(), gpsLayer = L.layerGroup();
+  if(sat && sat.grid){
+    const vals = Object.values(sat.grid), max = Math.max(...vals), g = sat.grid_deg||5;
+    for(const [k,v] of Object.entries(sat.grid)){
+      const [la,lo] = k.split(",").map(Number); const t = Math.sqrt(v/max);
+      L.rectangle([[la,lo],[la+g,lo+g]],{stroke:false, fillColor:css("--s1"), fillOpacity:0.08+0.6*t})
+        .bindTooltip(`${v} satellite-minutes overhead (next ${sat.hours_ahead} h)`).addTo(satLayer);
+    }
+    const cfgHot = sat.hotspots||{};
+    const HOT = {iran:[32,53],israel:[32,35.2],taiwan:[24,120],korea:[38.5,127],baltic:[55,21],crimea:[45,34],scs:[12,114],pinegap:[-23.8,133.7],adelaide:[-34.8,138.6]};
+    for(const [k,h] of Object.entries(cfgHot)){
+      if(!HOT[k]) continue;
+      const hi = h.ratio && h.ratio>=1.4;
+      L.circle(HOT[k],{radius:600000, color:hi?css("--critical"):css("--ink"), weight:hi?3:1.5, fill:false, dashArray:hi?null:"4 4"})
+        .bindTooltip(`<b>${esc(h.name)}</b><br>${h.passes} passes next 12 h${h.usual?` · usual ${h.usual} · ${h.ratio}×`:" · learning usual level"}<br>${Object.entries(h.by_owner||{}).map(([o,n])=>`${esc(o)} ${n}`).join(", ")}`).addTo(hotLayer);
+    }
+  }
+  const GPSLOC = {baltic:[55.5,20.5],blacksea:[44.5,33.5],israel:[32.5,34.8],gulf:[26,52],taiwan:[24,119.5],korea:[37.5,127],adelaide:[-34.9,138.6],sydney:[-33.9,151.2]};
+  for(const [k,r] of Object.entries((lat&&lat.gps_jamming)||{})){
+    if(!GPSLOC[k]) continue;
+    L.circleMarker(GPSLOC[k],{radius:11, color:css("--surface"), weight:2, fillColor:gpsColor(r.bad_pct), fillOpacity:1})
+      .bindTooltip(`<b>${esc(r.name)}</b><br>${r.bad_pct==null?`Too few aircraft (${r.aircraft}) to measure`:`${r.bad_pct}% of ${r.aircraft} aircraft with degraded GPS`}`).addTo(gpsLayer);
+  }
+  satLayer.addTo(map); hotLayer.addTo(map); gpsLayer.addTo(map);
+  for(const [id,layer] of [["tSat",satLayer],["tHot",hotLayer],["tGps",gpsLayer]]){
+    $(id).addEventListener("click",e=>{ const on=e.currentTarget.getAttribute("aria-pressed")!=="true";
+      e.currentTarget.setAttribute("aria-pressed",on); on?layer.addTo(map):map.removeLayer(layer); });
+  }
+
+  // Satellite tables
+  if(sat && sat.hotspots){
+    $("satTable").innerHTML = `<table><thead><tr><th>Hotspot</th><th>Next 12 h</th><th>Usual</th><th>Ratio</th><th>By country</th></tr></thead><tbody>${
+      Object.values(sat.hotspots).sort((a,b)=>(b.ratio||0)-(a.ratio||0)||b.passes-a.passes).map(h=>`<tr><td>${esc(h.name)}</td><td class="num">${h.passes}</td><td class="num">${h.usual??"…"}</td>
+      <td class="num">${h.ratio!=null?`<span class="chip" style="background:${h.ratio>=1.4?css("--critical"):css("--good")}">${h.ratio}×</span>`:"learning"}</td>
+      <td style="font-size:.8rem">${Object.entries(h.by_owner||{}).sort((a,b)=>b[1]-a[1]).map(([o,n])=>`${esc(o)} ${n}`).join(", ")}</td></tr>`).join("")}</tbody></table>
+      <p class="note" style="margin-top:8px">${sat.satellites} military imaging/radar satellites tracked: ${Object.entries(sat.by_owner||{}).map(([o,n])=>`${esc(o)} ${n}`).join(", ")}.</p>`;
+    const man = sat.manoeuvres||[];
+    $("manTable").innerHTML = man.length ? `<table><thead><tr><th>Satellite</th><th>Country</th><th>Altitude change</th></tr></thead><tbody>${
+      man.map(m=>`<tr><td>${esc(m.name)}</td><td>${esc(m.owner)}</td><td class="num">${m.altitude_change_km>0?"+":""}${m.altitude_change_km} km</td></tr>`).join("")}</tbody></table>`
+      : `<p class="empty">No manoeuvres detected since the last check${sat.generated_at?"":" (first check pending)"}.</p>`;
+  } else { $("satTable").innerHTML = $("manTable").innerHTML = `<p class="empty">Satellite data not available yet.</p>`; }
+
+  // Small multiples
+  function minis(el, items){
+    el.innerHTML = items.map((it,i)=>`<div class="mini"><div class="row"><span>${esc(it.name)}</span><span class="v">${it.now??"—"}${it.unit||""}</span></div>
+      <div class="chart"><canvas id="${el.id}-${i}"></canvas></div></div>`).join("");
+    items.forEach((it,i)=>{ if(rows.length) lineChart($(`${el.id}-${i}`), labels, [{label:it.name, data:rows.map(r=>r[it.key]??null), borderColor:it.color||css("--s1"), backgroundColor:it.color||css("--s1")}], {mini:true, max:it.max}); });
+  }
+  const gps = (lat&&lat.gps_jamming)||{};
+  minis($("gpsMinis"), Object.entries(gps).map(([k,r])=>({key:"gps_"+k, name:r.name, now:r.bad_pct, unit:r.bad_pct==null?"":"%", max:100, color:gpsColor(r.bad_pct)})));
+  const det = ((lat&&lat.aircraft)||{}).detail||{};
+  const MIL = [["mil_total","All military aircraft"],["tankers","Refuelling tankers"],["airlift","Military transports"],["raaf","RAAF aircraft"],
+    ["mil_mideast","Middle East & Gulf"],["mil_eeurope","Eastern Europe & Black Sea"],["mil_korea","Korea & Japan"],["mil_taiwan","Taiwan & S. China Sea"],["mil_auspng","Australia & PNG"],["nc3","US nuclear command"]];
+  minis($("milMinis"), MIL.map(([k,n])=>({key:k, name:n, now:det[k]})));
+
+  // Matrix
+  if(scen.length){
+    $("matrix").innerHTML = `<table class="matrix"><thead><tr><th>Scenario</th><th>Score</th><th>Warning signs (red = showing)</th></tr></thead><tbody>${
+      scen.map(s=>`<tr><td><b>${esc(s.name)}</b><br><span class="muted" style="font-size:.78rem">${esc(s.band)}</span></td><td>${s.score}</td><td style="text-align:left">${
+        [...s.lit.map(i=>({...i,on:1})),...s.unlit].map(i=>`<span class="chip" title="${esc(i.detail||"")}" style="display:inline-block;margin:2px;background:${i.on?css("--critical"):"transparent"};color:${i.on?"#fff":css("--muted")};border:1px solid ${i.on?css("--critical"):css("--line")}">${esc(i.name)} · ${i.weight}</span>`).join("")}</td></tr>`).join("")}</tbody></table>`;
+  }
+
+  // Patterns
+  const ps = Object.values((pat&&pat.scenarios)||{});
+  const withEv = ps.filter(p=>p.events>0);
+  $("patterns").innerHTML = withEv.length ? withEv.map(p=>`<h3 style="margin-top:8px">${esc(p.name)} · ${p.events} event${p.events>1?"s":""}</h3>
+    <table><thead><tr><th>Warning sign</th><th>Seen before</th><th>Median lead</th></tr></thead><tbody>${
+    p.indicators.filter(i=>i.seen_before).sort((a,b)=>b.seen_before-a.seen_before).map(i=>`<tr><td>${esc(i.name)}</td><td class="num">${i.seen_before}/${i.of_events}</td><td class="num">${i.median_lead_hours!=null?i.median_lead_hours+" h":"—"}</td></tr>`).join("")||`<tr><td colspan="3" class="muted">No warning signs were showing before these events.</td></tr>`}</tbody></table>`).join("")
+    : `<p class="empty">No real events recorded yet. The first time a strike, blockade or nationwide outage is confirmed, its precursors and lead times will appear here.</p>`;
+
+  // Networks
+  const netRow = (n,r) => { const d=[r&&r["ping-slash24"],r&&r.bgp].filter(x=>x&&x.drop_pct!=null&&(x.baseline||0)>=50).map(x=>x.drop_pct);
+    const v=d.length?Math.max(...d):null; const c=v==null?css("--line"):v>=50?css("--critical"):v>=20?css("--serious"):css("--good");
+    return `<tr><td>${esc(n)}</td><td class="num"><span class="chip" style="background:${c}">${v==null?"no data":v.toFixed(1)+"%"}</span></td></tr>`; };
+  $("netTable").innerHTML = `<table><thead><tr><th>Australian carriers</th><th>Dropped</th></tr></thead><tbody>${Object.entries((lat&&lat.telecom)||{}).map(([n,r])=>netRow(n,r)).join("")}</tbody></table>
+    <table style="margin-top:10px"><thead><tr><th>Countries</th><th>Dropped</th></tr></thead><tbody>${Object.entries((lat&&lat.internet_countries)||{}).map(([n,r])=>netRow(n,r)).join("")}</tbody></table>`;
+})();
+</script>
+</body>
+</html>
