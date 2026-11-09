@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Early Warning</title>
+<style>
+:root{--bg:#f6f5f2;--card:#fff;--ink:#1d1d1b;--muted:#6b6a66;--line:#e4e2dc;
+--l1:#2f855a;--l2:#b7791f;--l3:#dd6b20;--l4:#c53030;--l5:#742a2a;}
+@media (prefers-color-scheme:dark){:root{--bg:#141413;--card:#1f1f1d;--ink:#ecebe7;--muted:#a3a29c;--line:#33332f;
+--l1:#48bb78;--l2:#ecc94b;--l3:#f6ad55;--l4:#fc8181;--l5:#feb2b2;}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+main{max-width:760px;margin:0 auto;padding:20px 16px 48px}
+h1{font-size:1.1rem;margin:0 0 4px;letter-spacing:.02em}
+.meta{color:var(--muted);font-size:.85rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin-top:16px}
+.level{display:flex;align-items:center;gap:14px}
+.badge{font-size:2rem;font-weight:700;width:64px;height:64px;border-radius:50%;display:grid;place-items:center;color:#fff;flex:none}
+.lvlname{font-size:1.4rem;font-weight:700}
+h2{font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:0 0 8px}
+ul{margin:0;padding-left:20px}
+.cat{padding:12px 0;border-top:1px solid var(--line)}
+.cat:first-of-type{border-top:0;padding-top:0}
+.row{display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+.name{font-weight:600}
+.score{font-variant-numeric:tabular-nums;font-weight:600}
+.bar{height:6px;background:var(--line);border-radius:3px;margin:6px 0;overflow:hidden}
+.bar i{display:block;height:100%;border-radius:3px}
+.small{font-size:.85rem;color:var(--muted)}
+.small a{color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.mk{font-variant-numeric:tabular-nums}
+.up{color:var(--l1)}.down{color:var(--l4)}
+.err{color:var(--l4)}
+</style>
+</head>
+<body>
+<main>
+  <h1>Early Warning · South Australia</h1>
+  <div class="meta" id="meta">Loading…</div>
+  <div id="app"></div>
+  <p class="small" style="margin-top:24px">Read-only family status page. Scores 0–5 per category; overall level 1 Normal, 2 Watch, 3 Elevated, 4 High, 5 Imminent. Updated twice daily by analysis; market figures every 15 minutes. Not an official warning service — for emergencies follow <a href="https://www.alert.sa.gov.au/">Alert SA</a> and <a href="https://www.cfs.sa.gov.au/">CFS</a>.</p>
+</main>
+<script>
+const NAMES={1:"Normal",2:"Watch",3:"Elevated",4:"High",5:"Imminent"};
+const ARROW={up:"↑",down:"↓",steady:"→"};
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const safeUrl=u=>/^https?:\/\//i.test(u||"")?u:"#";
+const lvlColor=n=>`var(--l${Math.min(5,Math.max(1,Math.round(n)))})`;
+const scoreColor=s=>s>=4?"var(--l4)":s>=3?"var(--l3)":s>=2?"var(--l2)":"var(--l1)";
+const fmt=iso=>{try{return new Date(iso).toLocaleString("en-AU",{timeZone:"Australia/Adelaide",weekday:"short",day:"numeric",month:"short",hour:"numeric",minute:"2-digit"})}catch(e){return iso}};
+async function get(p){const r=await fetch(p+"?t="+Date.now(),{cache:"no-store"});if(!r.ok)throw new Error(p+" "+r.status);return r.json();}
+async function load(){
+  let s,l;
+  try{s=await get("data/status.json")}catch(e){document.getElementById("meta").innerHTML='<span class="err">Could not load status.</span>';return}
+  try{l=await get("data/latest.json")}catch(e){l=null}
+  document.getElementById("meta").textContent=`Updated ${fmt(s.updatedAt)} · next check ${fmt(s.nextCheck)} (Adelaide time)`;
+  let h=`<div class="card"><div class="level"><div class="badge" style="background:${lvlColor(s.level)}">${esc(s.level)}</div>
+  <div><div class="lvlname">${esc(s.levelName||NAMES[s.level])} <span class="small">${ARROW[s.trend]||""} ${esc(s.trend)}</span></div>
+  <div>${esc(s.headline)}</div></div></div>
+  <p style="margin:12px 0 0">${esc(s.summary)}</p></div>`;
+  if(s.actions&&s.actions.length) h+=`<div class="card"><h2>Suggested actions</h2><ul>${s.actions.map(a=>`<li>${esc(a)}</li>`).join("")}</ul></div>`;
+  if(s.confirmed&&s.confirmed.length) h+=`<div class="card"><h2>Confirmed impacts on Australia</h2><ul>${s.confirmed.map(c=>`<li><b>${esc(c.title)}</b> (${esc(c.date)}) — ${esc(c.impact)} ${c.url?`<a class="small" href="${esc(safeUrl(c.url))}" rel="noopener">source</a>`:""}</li>`).join("")}</ul></div>`;
+  h+=`<div class="card"><h2>Categories</h2>${(s.categories||[]).map(c=>`<div class="cat">
+   <div class="row"><span class="name">${esc(c.name)}</span><span class="score">${Number(c.score).toFixed(1)} <span class="small">${ARROW[c.trend]||""}</span></span></div>
+   <div class="bar"><i style="width:${Math.min(100,c.score/5*100)}%;background:${scoreColor(c.score)}"></i></div>
+   <div>${esc(c.summary)}</div>
+   <div class="small">Confidence: ${esc(c.confidence)}${(c.sources||[]).map(x=>` · <a href="${esc(safeUrl(x.url))}" rel="noopener">${esc(x.title)}</a>`).join("")}</div></div>`).join("")}</div>`;
+  if(l&&l.markets){h+=`<div class="card"><h2>Markets <span style="text-transform:none;letter-spacing:0">· ${fmt(l.generated_at)}</span></h2><div class="grid">${Object.entries(l.markets).map(([k,v])=>{
+    const c=Number(v.change_pct);return `<div class="mk"><div class="small">${esc(k)}</div><b>${esc(v.price)}</b> <span class="${c>=0?"up":"down"}">${c>=0?"+":""}${c.toFixed(2)}%</span></div>`}).join("")}</div></div>`;}
+  if(l&&l.source_health){const bad=Object.entries(l.source_health).filter(([k,v])=>!v.ok).map(([k])=>k);
+    h+=`<p class="small">Data feeds: ${bad.length?`${Object.keys(l.source_health).length-bad.length} OK, unavailable: ${esc(bad.join(", "))}`:"all OK"}.</p>`;}
+  document.getElementById("app").innerHTML=h;
+}
+load();setInterval(load,5*60*1000);
+</script>
+</body>
+</html>
