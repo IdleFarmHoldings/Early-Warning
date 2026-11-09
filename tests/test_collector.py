@@ -152,3 +152,44 @@ def test_gps_navwarn_internet():
     assert {"UNCONFIRMED: GPS jamming detected", "Surge in military navigation warnings", "Internet blackout: Iran"} <= titles, titles
     assert any("40% of aircraft over Taiwan Strait" in a["message"] for a in alerts)
     assert all(len(a["message"]) < 400 for a in alerts)
+
+
+def test_satellite_subpoint_and_hotspots():
+    from datetime import datetime, timezone
+    import satellites
+    el = {"OBJECT_NAME": "YAOGAN-30 A", "NORAD_CAT_ID": 1, "EPOCH": "2026-11-09T00:00:00.000000",
+          "MEAN_MOTION": 15.2, "ECCENTRICITY": 0.001, "INCLINATION": 35.0, "RA_OF_ASC_NODE": 100.0,
+          "ARG_OF_PERICENTER": 0.0, "MEAN_ANOMALY": 0.0}
+    sats = satellites.select([el, {**el, "OBJECT_NAME": "STARLINK-1"}])
+    assert len(sats) == 1 and sats[0]["_owner"] == "China"
+    t0 = datetime(2026, 11, 9, tzinfo=timezone.utc)
+    lats = [satellites.subpoint(sats[0], t0 + timedelta(minutes=m))[0] for m in range(0, 200, 5)]
+    assert max(lats) <= 35.5 and min(lats) >= -35.5 and max(lats) > 30  # bounded by inclination
+    out = satellites.analyse(sats, t0, {"1": {"n": 15.19, "epoch": "old"}}, [])
+    assert out["satellites"] == 1 and sum(out["grid"].values()) == 360
+    assert out["manoeuvres"] and out["manoeuvres"][0]["altitude_change_km"] < 0
+
+
+def test_playbook_scores_and_journal():
+    import precursors
+    ctx = {"anomalies": {"tankers": {"status": "ANOMALY", "value": 30, "median": 9}},
+           "internet": {"Iran": {"bgp": {"drop_pct": 70.0, "baseline": 5000}}}, "telecom": {},
+           "departures": ["Iraq"], "news": {"airspace": {"items": [{"title": "Iran closes airspace"}]}},
+           "markets": {"Brent oil": {"change_pct": 6.0, "price": 101}}, "satellites": {}, "acsc_new": []}
+    sc = {s["key"]: s for s in precursors.score_scenarios(ctx, {"mideast": 10})}
+    me = sc["mideast"]
+    assert me["score"] == 65 and me["band"] == "High" and me["trend"] == "up"
+    assert {i["id"] for i in me["lit"]} == {"tankers", "net", "dep", "airspace", "oil"}
+    assert sc["taiwan"]["score"] == 0 and sc["taiwan"]["band"] == "Low"
+    assert "mideast.tankers" in precursors.lit_ids(list(sc.values()))
+
+    now = now_utc().replace(second=0, microsecond=0)
+    series = [{"ts": iso(now - timedelta(hours=30)), "lit": ["mideast.tankers"]},
+              {"ts": iso(now - timedelta(hours=5)), "lit": ["mideast.tankers", "mideast.dep"]}]
+    status = {"events_observed": [{"eventKey": "us-strike-iran-2026-11", "title": "US strikes Iran", "scenario": "mideast"}]}
+    new = precursors.journal_events(status, [], series, now)
+    assert len(new) == 1 and new[0]["precursors_first_seen"]["mideast.tankers"] == series[0]["ts"]
+    assert precursors.journal_events(status, new, series, now) == []
+    pat = precursors.learn_patterns(new, now)["scenarios"]["mideast"]
+    tk = next(i for i in pat["indicators"] if i["id"] == "tankers")
+    assert pat["events"] == 1 and tk["seen_before"] == 1 and tk["median_lead_hours"] == 30.0

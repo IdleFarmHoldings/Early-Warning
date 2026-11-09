@@ -3,6 +3,9 @@
 Run every 15 minutes by GitHub Actions. Use --dry-run to skip pushes.
 """
 import argparse
+import time
+from datetime import datetime, timezone
+from email.utils import parsedate_to_datetime
 import json
 import sys
 from datetime import timedelta
@@ -13,6 +16,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from common import CONFIG, ROOT, append_jsonl, iso, load_json, now_utc, push, save_json  # noqa: E402
 from rules import extra_metrics, evaluate  # noqa: E402
 from sources import fetch_all  # noqa: E402
+import precursors  # noqa: E402
+import satellites  # noqa: E402
 
 SERIES_DIR = ROOT / "data" / "series"
 
@@ -95,6 +100,65 @@ def summarise(results, health, anomalies, now):
     }
 
 
+def load_jsonl(path):
+    p = ROOT / path
+    if not p.exists():
+        return []
+    out = []
+    for line in p.read_text().splitlines():
+        try:
+            out.append(json.loads(line))
+        except json.JSONDecodeError:
+            continue
+    return out
+
+
+def recent_titles(items, now, hours):
+    out = []
+    for it in items:
+        try:
+            dt = parsedate_to_datetime(it.get("date") or "")
+        except (TypeError, ValueError):
+            continue
+        if dt and dt.tzinfo and now - dt <= timedelta(hours=hours):
+            out.append(it.get("title", ""))
+    return out
+
+
+def precursor_alerts(scenarios, prev_ind, state, now, first_run):
+    """Alert when a scenario's warning-sign score first crosses the alert line (12 h cooldown)."""
+    line = precursors.PLAYBOOK["alert_score"]
+    prev = {s["key"]: s["score"] for s in prev_ind.get("scenarios", [])}
+    cd = state.setdefault("cooldown", {})
+    out = []
+    for s in scenarios:
+        key = f"esc-{s['key']}"
+        last = cd.get(key)
+        recent = last and now - datetime.strptime(last, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc) < timedelta(hours=12)
+        if s["score"] >= line and prev.get(s["key"], 0) < line and not recent and not first_run:
+            cd[key] = iso(now)
+            signs = "; ".join(i["name"] for i in s["lit"][:4])
+            out.append({"key": key, "channels": ["proactive"], "category": "geo",
+                        "title": f"Warning signs building: {s['name']}"[:90],
+                        "message": f"{len(s['lit'])} known warning signs now showing ({signs}). Not confirmed - see the board for detail."[:390],
+                        "priority": 4, "confirmed": False, "tags": ["warning"]})
+    return out
+
+
+def analytics_series(rows, now, days=14):
+    """Hourly (last value per hour) history of the metrics the analytics page charts."""
+    cutoff = iso(now - timedelta(days=days))
+    keep = ("esc_", "gps_", "mil_", "dark_", "navwarn_", "mkt_")
+    extra = {"airlift", "raaf", "tankers", "nc3", "bizjets_airborne", "retreat_bizjets"}
+    by_hour = {}
+    for r in rows:
+        ts = r.get("ts", "")
+        if ts < cutoff:
+            continue
+        by_hour[ts[:13]] = {"ts": ts, **{k: v for k, v in r.items() if k.startswith(keep) or k in extra}}
+    return {"generated_at": iso(now), "rows": [by_hour[h] for h in sorted(by_hour)]}
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--dry-run", action="store_true")
@@ -113,7 +177,44 @@ def main():
            **{k: v for k, v in ac.items() if k.startswith(("mil_", "dark_")) or k in ("airlift", "raaf")},
            **extra_metrics(results),
            **{f"mkt_{k}": v.get("price") for k, v in mk.items() if isinstance(v, dict)}}
+
+    # Satellites (refreshed every few hours) and the precursor playbook
+    sat_out = load_json("data/satellites.json", {})
+    t0 = time.time()
+    try:
+        fresh, state = satellites.refresh(now, state, sat_out)
+        if fresh:
+            sat_out = fresh
+            save_json("data/satellites.json", sat_out)
+        health["satellites"] = {"ok": True, "secs": round(time.time() - t0, 1), "refreshed": bool(fresh)}
+    except Exception as e:  # noqa: BLE001
+        health["satellites"] = {"ok": False, "error": f"{type(e).__name__}: {e}"[:300]}
+    prev_ind = load_json("data/indicators.json", {})
+    ctx = {
+        "anomalies": anomalies,
+        "internet": (results.get("internet") or {}).get("countries"),
+        "telecom": (results.get("telecom") or {}).get("networks"),
+        "departures": sorted(c for c, a in (results.get("us_advisories") or {}).items() if a.get("departure")),
+        "news": (results.get("news_watch") or {}).get("watch"),
+        "markets": mk,
+        "satellites": sat_out,
+        "acsc_new": recent_titles(results.get("acsc") or [], now, hours=48),
+    }
+    scenarios = precursors.score_scenarios(ctx, {s["key"]: s["score"] for s in prev_ind.get("scenarios", [])})
+    row.update({f"esc_{s['key']}": s["score"] for s in scenarios})
+    row["lit"] = precursors.lit_ids(scenarios)
     append_jsonl(f"data/series/{now.strftime('%Y-%m')}.jsonl", row)
+    save_json("data/indicators.json", {"generated_at": iso(now), "scenarios": scenarios,
+                                       "note": "Scores count known warning signs showing now (0-100). They are not probabilities."})
+    alerts += precursor_alerts(scenarios, prev_ind, state, now, first_run)
+
+    # Event journal and learned patterns
+    journal = load_jsonl("data/events.jsonl")
+    for ev in precursors.journal_events(load_json("data/status.json", {}), journal, series + [row], now):
+        append_jsonl("data/events.jsonl", ev)
+        journal.append(ev)
+    save_json("data/patterns.json", precursors.learn_patterns(journal, now))
+    save_json("data/analytics.json", analytics_series(series + [row], now))
 
     log = []
     for a in alerts:
