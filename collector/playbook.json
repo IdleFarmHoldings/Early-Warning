@@ -244,7 +244,20 @@
             "PLA"
           ],
           "weight": 15,
-          "domain": "Mobilisation"
+          "domain": "Mobilisation",
+          "require": [
+            "mobilisation",
+            "mobilization",
+            "reservists",
+            "reservist",
+            "call-up",
+            "called up",
+            "conscription",
+            "draft",
+            "conscripts",
+            "leave cancelled",
+            "leave canceled"
+          ]
         },
         {
           "id": "lift",
@@ -450,7 +463,20 @@
             "Korea"
           ],
           "weight": 15,
-          "domain": "Mobilisation"
+          "domain": "Mobilisation",
+          "require": [
+            "mobilisation",
+            "mobilization",
+            "reservists",
+            "reservist",
+            "call-up",
+            "called up",
+            "conscription",
+            "draft",
+            "conscripts",
+            "leave cancelled",
+            "leave canceled"
+          ]
         },
         {
           "id": "nc3",
@@ -524,7 +550,20 @@
             "Estonia"
           ],
           "weight": 15,
-          "domain": "Mobilisation"
+          "domain": "Mobilisation",
+          "require": [
+            "mobilisation",
+            "mobilization",
+            "reservists",
+            "reservist",
+            "call-up",
+            "called up",
+            "conscription",
+            "draft",
+            "conscripts",
+            "leave cancelled",
+            "leave canceled"
+          ]
         },
         {
           "id": "net",
@@ -769,7 +808,20 @@
             "nuclear"
           ],
           "weight": 15,
-          "domain": "Mobilisation"
+          "domain": "Mobilisation",
+          "require": [
+            "mobilisation",
+            "mobilization",
+            "reservists",
+            "reservist",
+            "call-up",
+            "called up",
+            "conscription",
+            "draft",
+            "conscripts",
+            "leave cancelled",
+            "leave canceled"
+          ]
         }
       ]
     },
@@ -1011,7 +1063,20 @@
             "mass poisoning"
           ],
           "weight": 15,
-          "domain": "Chemical weapons"
+          "domain": "Chemical weapons",
+          "exclude": [
+            "exercise",
+            "drill",
+            "mock",
+            "tabletop",
+            "training",
+            "anniversary",
+            "history",
+            "convention",
+            "museum",
+            "film",
+            "movie"
+          ]
         },
         {
           "id": "dieoff",
@@ -1174,7 +1239,20 @@
             "AI-driven"
           ],
           "weight": 15,
-          "domain": "AI-enabled hacking"
+          "domain": "AI-enabled hacking",
+          "require2": [
+            "attack",
+            "attacks",
+            "hack",
+            "hacked",
+            "hacking",
+            "hackers",
+            "cyberattack",
+            "breach",
+            "espionage",
+            "ransomware",
+            "intrusion"
+          ]
         },
         {
           "id": "deepfake",
@@ -1191,7 +1269,23 @@
             "AI-generated"
           ],
           "weight": 15,
-          "domain": "Synthetic media"
+          "domain": "Synthetic media",
+          "require2": [
+            "emergency",
+            "alert",
+            "panic",
+            "bank",
+            "banks",
+            "evacuation",
+            "evacuate",
+            "war",
+            "attack",
+            "announces",
+            "announcement",
+            "declares",
+            "resign",
+            "resigns"
+          ]
         },
         {
           "id": "flash",
@@ -1209,7 +1303,29 @@
             "market halted"
           ],
           "weight": 10,
-          "domain": "Markets"
+          "domain": "Markets",
+          "require2": [
+            "market",
+            "markets",
+            "exchange",
+            "stocks",
+            "index",
+            "Dow",
+            "Nasdaq",
+            "S&P",
+            "ASX 200",
+            "bonds",
+            "currency"
+          ],
+          "exclude": [
+            "pending",
+            "capital raise",
+            "Limited",
+            "Ltd",
+            "Inc",
+            "Corp",
+            "announcement"
+          ]
         },
         {
           "id": "vix",
@@ -1234,7 +1350,15 @@
             "widespread outage"
           ],
           "weight": 10,
-          "domain": "Cloud services"
+          "domain": "Cloud services",
+          "require2": [
+            "global",
+            "worldwide",
+            "widespread",
+            "millions",
+            "major",
+            "nationwide"
+          ]
         },
         {
           "id": "tel",

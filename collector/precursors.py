@@ -76,6 +76,10 @@ def _lit(ind, ctx):
                     continue
                 if ind.get("require") and not _words(title, ind["require"]):
                     continue
+                if ind.get("require2") and not _words(title, ind["require2"]):
+                    continue
+                if ind.get("exclude") and _words(title, ind["exclude"]):
+                    continue
                 if not any(w for w in ind["words"]) or _words(title, ind["words"]):
                     return title[:140]
         return None

@@ -21,10 +21,11 @@ CODES = {"AUS": ("AU", "Australia"), "AUT": ("AT", "Austria"), "BEL": ("BE", "Be
 
 
 def parse_stmf(text, now, base_years=3, history_weeks=12):
-    lines = text.splitlines()
-    start = next((i for i, l in enumerate(lines) if l.lower().startswith("countrycode")), None)
+    lines = [l.lstrip("\ufeff").replace('"', "") for l in text.splitlines()]
+    start = next((i for i, l in enumerate(lines[:50]) if "countrycode" in l.lower()), None)
     if start is None:
-        raise ValueError("STMF header not found")
+        raise ValueError("STMF header not found; starts: " + " | ".join(lines[:3])[:200])
+    lines[start] = ",".join(h.strip() for h in lines[start].split(","))
     deaths = {}
     for r in csv.DictReader(io.StringIO("\n".join(lines[start:]))):
         if (r.get("Sex") or "").lower() != "b" or str(r.get("Forecast", "0")).strip() == "1":

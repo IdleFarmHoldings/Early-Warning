@@ -297,3 +297,15 @@ def test_mortality_maritime_and_ai():
     assert {i["id"] for i in sc["ai"]["lit"]} == {"breadth", "deepfake", "vix"} and len(sc["ai"]["domains"]) == 3
     assert "cable" in {i["id"] for i in sc["ausinfra"]["lit"]}
     assert "mortality" in {i["id"] for i in sc["bio"]["lit"]}
+
+
+def test_news_require2_and_exclude():
+    import precursors
+    get = lambda k, iid: next(i for s in precursors.PLAYBOOK["scenarios"] if s["key"] == k for i in s["indicators"] if i["id"] == iid)
+    t = lambda key, title: {"news": {key: {"items": [{"title": title}]}}}
+    assert precursors._lit(get("ai", "aihack"), t("ai_hack", "Do AI agents have minds? A philosopher explains")) is None
+    assert precursors._lit(get("ai", "aihack"), t("ai_hack", "AI agents used in hacking campaign against banks"))
+    assert precursors._lit(get("ai", "flash"), t("flash", "Kuniko Limited Enters Trading Halt Pending Capital Raise")) is None
+    assert precursors._lit(get("ai", "flash"), t("flash", "Flash crash wipes 8% off ASX 200 in minutes"))
+    assert precursors._lit(get("bio", "chem"), t("chem", "Tabletop Exercise and Mock Drill on chemical attack")) is None
+    assert precursors._lit(get("russia", "mob"), t("mobilisation", "Leaked Russian mortality data points to 400,000 deaths")) is None
