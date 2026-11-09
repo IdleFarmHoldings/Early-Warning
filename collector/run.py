@@ -107,11 +107,14 @@ def main():
         a["source"] = "collector"
         log.append(a)
     log += relay_outbox(now, args.dry_run)
-    if first_run:
-        for ch in ("proactive", "reactive"):
-            push(ch, "Early Warning connected",
-                 f"You're subscribed to the {'Early warning' if ch == 'proactive' else 'Confirmed only'} channel. "
-                 "Alerts will arrive here.", priority=2, tags=["white_check_mark"], dry_run=args.dry_run)
+    welcomed = set(state.get("welcomed", []))
+    for ch in ("proactive", "reactive"):
+        if ch not in welcomed and push(ch, "Early Warning connected",
+                                       f"You're subscribed to the {'Early warning' if ch == 'proactive' else 'Confirmed only'} "
+                                       "channel. Alerts will arrive here.", priority=2, tags=["white_check_mark"],
+                                       dry_run=args.dry_run):
+            welcomed.add(ch)
+    state["welcomed"] = sorted(welcomed)
     for a in log:
         append_jsonl("alerts/log.jsonl", a)
 
