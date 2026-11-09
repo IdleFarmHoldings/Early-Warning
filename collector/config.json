@@ -36,7 +36,17 @@
     "radius_nm": 250,
     "tanker_types": ["K35R", "K35E", "KC46", "KC10", "A332", "MRTT"],
     "nc3_types": ["E6", "E4", "E4B"],
-    "isr_types": ["R135", "E3TF", "E3CF", "E737", "P8"]
+    "isr_types": ["R135", "E3TF", "E3CF", "E737", "P8"],
+    "transport_types": ["C17", "C30J", "C130", "A400", "C5M", "IL76", "Y20", "C2"],
+    "raaf_reg_regex": "^A\\d{2}-",
+    "dark_min_alt_ft": 15000,
+    "mil_regions": [
+      {"key": "mideast", "name": "Middle East & Gulf", "box": [12, 40, 32, 62]},
+      {"key": "taiwan", "name": "Taiwan & South China Sea", "box": [5, 30, 105, 130]},
+      {"key": "korea", "name": "Korea & Japan", "box": [30, 45, 124, 146]},
+      {"key": "eeurope", "name": "Eastern Europe & Black Sea", "box": [40, 60, 20, 42]},
+      {"key": "auspng", "name": "Australia & PNG", "box": [-45, -1, 110, 160]}
+    ]
   },
 
   "anomaly": {
@@ -45,7 +55,10 @@
     "hour_window": 1,
     "z_threshold": 4.0,
     "min_ratio": 1.6,
-    "min_excess": {"bizjets_airborne": 15, "retreat_bizjets": 5, "mil_total": 40, "tankers": 8, "nc3": 2},
+    "min_excess": {"bizjets_airborne": 15, "retreat_bizjets": 5, "mil_total": 40, "tankers": 8, "nc3": 2,
+                   "airlift": 6, "raaf": 4, "region": 10, "dark": 6},
+    "drop_min_median": 8,
+    "drop_max_ratio": 0.4,
     "cooldown_hours": 6
   },
 

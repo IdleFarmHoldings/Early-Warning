@@ -105,3 +105,27 @@ def test_parse_feed_atom():
     from sources import parse_feed
     atom = b'<feed xmlns="http://www.w3.org/2005/Atom"><entry><id>1</id><title>Hello</title><updated>2026-11-09</updated><link href="https://x/1"/></entry></feed>'
     assert parse_feed(atom)[0] == {"id": "1", "title": "Hello", "date": "2026-11-09", "link": "https://x/1"}
+
+
+def test_military_dark_drop_and_airlift():
+    from rules import count_dark
+    prev = {"a": [25, 50, 30000], "b": [25, 50, 2000], "c": [25, 50, 30000], "d": [-30, 140, 25000]}
+    d = count_dark(prev, {"c": [25, 51, 30000]}, 15000)
+    assert d["dark_mideast"] == 1 and d["dark_auspng"] == 1, d  # 'b' was low (landing), 'c' still tracked
+
+    now = now_utc().replace(second=0, microsecond=0)
+    series = []
+    for day in range(1, 8):
+        for m in (-45, -30, -15, 0, 15, 30, 45):
+            ts = now - timedelta(days=day, minutes=m)
+            series.append({"ts": iso(ts), "mil_mideast": 30, "dark_mideast": 1, "airlift": 10, "raaf": 2})
+    an = anomalies({"mil_mideast": 6, "dark_mideast": 12, "airlift": 30, "raaf": 2}, series, now)
+    assert an["mil_mideast"]["status"] == "DROP"
+    assert an["dark_mideast"]["status"] == "ANOMALY"
+    assert an["airlift"]["status"] == "ANOMALY" and an["raaf"]["status"] == "normal"
+
+    state = {"bootstrapped": True}
+    alerts, state, _ = evaluate({"aircraft": {"mil_mideast": 6, "airlift": 30}}, state, series, now)
+    titles = {a["title"] for a in alerts}
+    assert "UNCONFIRMED: military aircraft going dark" in titles and "UNCONFIRMED: military airlift surge" in titles
+    assert all(len(a["message"]) < 400 for a in alerts)

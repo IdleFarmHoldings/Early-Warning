@@ -106,6 +106,7 @@ def main():
     ac = results.get("aircraft") or {}
     mk = results.get("markets") or {}
     row = {"ts": iso(now), **{k: ac.get(k) for k in ("bizjets_airborne", "retreat_bizjets", "mil_total", "tankers", "nc3", "isr")},
+           **{k: v for k, v in ac.items() if k.startswith(("mil_", "dark_")) or k in ("airlift", "raaf")},
            **{f"mkt_{k}": v.get("price") for k, v in mk.items() if isinstance(v, dict)}}
     append_jsonl(f"data/series/{now.strftime('%Y-%m')}.jsonl", row)
 

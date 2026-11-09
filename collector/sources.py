@@ -242,6 +242,11 @@ def _adsb(path):
     return get_json(f"{ADSB}{path}")
 
 
+def _in_box(a, box):
+    lat, lon = a.get("lat"), a.get("lon")
+    return isinstance(lat, (int, float)) and isinstance(lon, (int, float)) and box[0] <= lat <= box[1] and box[2] <= lon <= box[3]
+
+
 def summarise_aircraft(acs, types):
     airborne, ground = {}, {}
     for a in acs:
@@ -281,6 +286,15 @@ def fetch_aircraft():
         airborne = [a for a in acs if a.get("alt_baro") != "ground"]
         def count(types):
             return sum(1 for a in airborne if (a.get("t") or "").upper() in set(types))
+        raaf_re = re.compile(jc["raaf_reg_regex"])
+        regions = {}
+        for r in jc["mil_regions"]:
+            regions[f"mil_{r['key']}"] = sum(1 for a in airborne if _in_box(a, r["box"]))
+        mil.update(airlift=count(jc["transport_types"]),
+                   raaf=sum(1 for a in airborne if raaf_re.match(a.get("r") or "")),
+                   positions={a["hex"]: [a.get("lat"), a.get("lon"), a.get("alt_baro")] for a in airborne
+                              if a.get("hex") and isinstance(a.get("lat"), (int, float))},
+                   **regions)
         mil.update(mil_total=len(airborne), tankers=count(jc["tanker_types"]), nc3=count(jc["nc3_types"]),
                    isr=count(jc["isr_types"]),
                    nc3_seen=[{"type": a.get("t"), "flight": (a.get("flight") or "").strip(), "hex": a.get("hex")}

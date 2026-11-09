@@ -39,6 +39,8 @@ Channel names are stored as repository secrets `NTFY_PROACTIVE` and `NTFY_REACTI
 
 Aircraft data courtesy of [adsb.fi](https://adsb.fi), used for personal, non-commercial purposes.
 
+Military flights: counts are kept per region (Middle East & Gulf, Taiwan & South China Sea, Korea & Japan, Eastern Europe & Black Sea, Australia & PNG). Three unconfirmed signals can alert: a region suddenly going quiet, an unusual number of aircraft vanishing from tracking at altitude ("going dark"), and surges in military transport or RAAF flights (possible evacuations or deployments). Many military flights never broadcast at all, and tracking gaps cause false alarms, so these are always marked UNCONFIRMED.
+
 Flight anomalies need about a week of history before they can alert ("learning baseline").
 
 ## Files

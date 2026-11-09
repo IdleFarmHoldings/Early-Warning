@@ -11,7 +11,34 @@ METRIC_LABELS = {
     "mil_total": "military aircraft airborne",
     "tankers": "air-refuelling tankers airborne",
     "nc3": "US nuclear command aircraft (E-4B / E-6B) airborne",
+    "airlift": "military transport aircraft (C-17, C-130, A400M...) airborne",
+    "raaf": "RAAF aircraft broadcasting",
 }
+REGIONS = CONFIG["jets"]["mil_regions"]
+for _r in REGIONS:
+    METRIC_LABELS[f"mil_{_r['key']}"] = f"military aircraft visible over {_r['name']}"
+    METRIC_LABELS[f"dark_{_r['key']}"] = f"military aircraft that vanished from tracking at altitude over {_r['name']}"
+DROP_METRICS = {f"mil_{r['key']}" for r in REGIONS}
+
+
+def _min_excess(metric):
+    me = ANOM["min_excess"]
+    if metric in me:
+        return me[metric]
+    return me.get("region" if metric.startswith("mil_") else "dark" if metric.startswith("dark_") else "", 5)
+
+
+def count_dark(prev, positions, min_alt):
+    """Aircraft airborne at altitude in a region last run that are now gone from the whole military feed."""
+    out = {f"dark_{r['key']}": 0 for r in REGIONS}
+    for hx, (lat, lon, alt) in prev.items():
+        if hx in positions or not isinstance(alt, (int, float)) or alt < min_alt:
+            continue
+        for r in REGIONS:
+            b = r["box"]
+            if lat is not None and b[0] <= lat <= b[1] and b[2] <= lon <= b[3]:
+                out[f"dark_{r['key']}"] += 1
+    return out
 
 
 def _alert(key, channels, category, title, message, priority=3, confirmed=True, tags=None):
@@ -59,10 +86,12 @@ def anomalies(current, series, now):
         z = (v - b["median"]) / b["spread"]
         ratio = v / b["median"] if b["median"] > 0 else float("inf")
         excess = v - b["median"]
-        flag = (z >= ANOM["z_threshold"] and excess >= ANOM["min_excess"].get(metric, 5)
+        flag = (z >= ANOM["z_threshold"] and excess >= _min_excess(metric)
                 and (ratio >= ANOM["min_ratio"] or metric == "nc3"))
+        drop = (metric in DROP_METRICS and b["median"] >= ANOM["drop_min_median"]
+                and ratio <= ANOM["drop_max_ratio"] and z <= -ANOM["z_threshold"])
         out[metric] = {"value": v, "median": round(b["median"], 1), "z": round(z, 1), "ratio": round(ratio, 2),
-                       "samples": b["n"], "status": "ANOMALY" if flag else "normal"}
+                       "samples": b["n"], "status": "ANOMALY" if flag else "DROP" if drop else "normal"}
     return out
 
 
@@ -175,9 +204,15 @@ def evaluate(results, state, series, now):
 
     # Aircraft anomalies (unconfirmed, early warning only)
     ac = results.get("aircraft") or {}
+    positions = ac.pop("positions", None)
+    if positions is not None:
+        prev = state.get("mil_prev")
+        if prev is not None:
+            ac.update(count_dark(prev, positions, CONFIG["jets"]["dark_min_alt_ft"]))
+        state["mil_prev"] = positions
     an = anomalies(ac, series, now)
     for metric, info in an.items():
-        if info["status"] != "ANOMALY":
+        if info["status"] not in ("ANOMALY", "DROP"):
             continue
         last = cooldown.get(metric)
         if last and now - _parse_ts(last) < timedelta(hours=ANOM["cooldown_hours"]):
@@ -185,10 +220,22 @@ def evaluate(results, state, series, now):
         cooldown[metric] = iso(now)
         if bootstrap:
             continue
-        alerts.append(_alert(f"air-{metric}", ["proactive"], "geo",
-                             f"UNCONFIRMED: unusual flight activity",
-                             f"{info['value']} {METRIC_LABELS[metric]} - about {info['ratio']}x normal for this time of day "
-                             f"(usual ~{info['median']}). Watching for confirmation from official sources.",
+        if info["status"] == "DROP" or metric.startswith("dark_"):
+            title = "UNCONFIRMED: military aircraft going dark"
+            body = (f"{info['value']} {METRIC_LABELS[metric]} (usual ~{info['median']} at this time of day). "
+                    "Militaries switch off transponders before operations, but tracking gaps also cause this. Watching for confirmation.")
+            if info["status"] == "DROP":
+                body = (f"Only {info['value']} {METRIC_LABELS[metric]}, usually ~{info['median']} at this time of day. "
+                        "Militaries switch off transponders before operations, but tracking gaps also cause this. Watching for confirmation.")
+        elif metric in ("airlift", "raaf"):
+            title = "UNCONFIRMED: military airlift surge"
+            body = (f"{info['value']} {METRIC_LABELS[metric]} - about {info['ratio']}x normal (usual ~{info['median']}). "
+                    "Surges can mean evacuations or deployments, or just exercises. Watching for confirmation.")
+        else:
+            title = "UNCONFIRMED: unusual flight activity"
+            body = (f"{info['value']} {METRIC_LABELS[metric]} - about {info['ratio']}x normal for this time of day "
+                    f"(usual ~{info['median']}). Watching for confirmation from official sources.")
+        alerts.append(_alert(f"air-{metric}", ["proactive"], "geo", title, body,
                              priority=4, confirmed=False, tags=["airplane", "question"]))
 
     # Telecom: a big drop in reachable networks for a major Australian carrier
