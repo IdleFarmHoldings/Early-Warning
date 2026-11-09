@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-09T17:13:00Z",
+  "generated_at": "2026-11-09T17:16:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -463,9 +463,10 @@
       "why": "The 2023 Optus outage cut mobile, NBN, EFTPOS and some 000 calls nationwide for 12 hours. Hostile states pre-position in critical infrastructure; GPS jamming over Australia would be a new and serious sign."
     },
     {
-      "band": "Elevated",
-      "convergence": "Two different kinds of sign are showing together (health and markets). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: countries restricting medical supply exports, chemical / nerve-agent attack or mass poisoning reported and australian medicine or ppe shortage reports.",
+      "band": "High",
+      "convergence": "Signs are converging across 3 separate areas (death statistics, health and markets). Unrelated systems flagging the same scenario at once is the pattern seen before past events. Before COVID-19 (Dec 2019 - Feb 2020): reports of an unknown pneumonia cluster, WHO outbreak notices, mask and hazmat makers (Alpha Pro Tech, Lakeland) and vaccine developers (Moderna, Novavax) surging weeks before broad markets fell, and countries restricting exports of masks and medicines (Taiwan from 24 Jan 2020, then dozens more). The strongest signs not yet showing: countries restricting medical supply exports, chemical / nerve-agent attack or mass poisoning reported and australian medicine or ppe shortage reports.",
       "domains": [
+        "Death statistics",
         "Health",
         "Markets"
       ],
@@ -491,12 +492,19 @@
           "id": "pharma",
           "name": "Pandemic-response stocks outperforming (5 days)",
           "weight": 20
+        },
+        {
+          "detail": "Deaths above normal: Arizona (US) 125% of expected, South Carolina (US) 126% of expected, Utah (US) 132% of expected",
+          "domain": "Death statistics",
+          "id": "mortality",
+          "name": "Deaths well above normal in a country (official weekly data)",
+          "weight": 10
         }
       ],
       "name": "Pandemic, biological or chemical emergency",
       "sa_impact": "Health system strain, possible lockdowns and border closures, and shortages of medicines and protective equipment, which Australia mostly imports.",
-      "score": 55,
-      "trend": "steady",
+      "score": 65,
+      "trend": "up",
       "unlit": [
         {
           "domain": "Trade",
@@ -520,12 +528,6 @@
           "domain": "Markets",
           "id": "vix",
           "name": "Market fear index above 30",
-          "weight": 10
-        },
-        {
-          "domain": "Death statistics",
-          "id": "mortality",
-          "name": "Deaths well above normal in a country (official weekly data)",
           "weight": 10
         },
         {

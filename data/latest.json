@@ -4,11 +4,11 @@
     "anomalies": {
       "airlift": {
         "status": "learning baseline",
-        "value": 40
+        "value": 36
       },
       "bizjets_airborne": {
         "status": "learning baseline",
-        "value": 51
+        "value": 53
       },
       "dark_auspng": {
         "status": "learning baseline",
@@ -28,7 +28,7 @@
       },
       "dark_taiwan": {
         "status": "learning baseline",
-        "value": 0
+        "value": 1
       },
       "gps_adelaide": {
         "status": "no data",
@@ -36,7 +36,7 @@
       },
       "gps_baltic": {
         "status": "learning baseline",
-        "value": 20
+        "value": 22
       },
       "gps_blacksea": {
         "status": "no data",
@@ -44,15 +44,15 @@
       },
       "gps_gulf": {
         "status": "learning baseline",
-        "value": 2
+        "value": 1
       },
       "gps_israel": {
         "status": "learning baseline",
-        "value": 4
+        "value": 6
       },
       "gps_korea": {
-        "status": "learning baseline",
-        "value": 0
+        "status": "no data",
+        "value": null
       },
       "gps_sydney": {
         "status": "no data",
@@ -68,7 +68,7 @@
       },
       "mil_eeurope": {
         "status": "learning baseline",
-        "value": 5
+        "value": 4
       },
       "mil_korea": {
         "status": "learning baseline",
@@ -76,15 +76,15 @@
       },
       "mil_mideast": {
         "status": "learning baseline",
-        "value": 5
+        "value": 6
       },
       "mil_taiwan": {
         "status": "learning baseline",
-        "value": 1
+        "value": 0
       },
       "mil_total": {
         "status": "learning baseline",
-        "value": 374
+        "value": 362
       },
       "navwarn_australia": {
         "status": "no data",
@@ -120,35 +120,35 @@
       }
     },
     "detail": {
-      "airlift": 40,
-      "bizjets_airborne": 51,
+      "airlift": 36,
+      "bizjets_airborne": 53,
       "bizjets_by_hub": {
-        "Dallas / Houston": 6,
+        "Dallas / Houston": 7,
         "Dubai": 3,
-        "Geneva / Zurich": 3,
+        "Geneva / Zurich": 4,
         "Hong Kong": 0,
         "London": 3,
         "Los Angeles (Van Nuys)": 6,
         "Moscow": 0,
         "New York (Teterboro)": 14,
-        "Palm Beach / Miami": 12,
+        "Palm Beach / Miami": 11,
         "San Francisco Bay": 4,
         "Singapore": 0,
-        "Washington DC": 15
+        "Washington DC": 16
       },
       "dark_auspng": 0,
       "dark_eeurope": 0,
       "dark_korea": 0,
       "dark_mideast": 0,
-      "dark_taiwan": 0,
+      "dark_taiwan": 1,
       "errors": [],
       "isr": 8,
       "mil_auspng": 0,
-      "mil_eeurope": 5,
+      "mil_eeurope": 4,
       "mil_korea": 2,
-      "mil_mideast": 5,
-      "mil_taiwan": 1,
-      "mil_total": 374,
+      "mil_mideast": 6,
+      "mil_taiwan": 0,
+      "mil_total": 362,
       "nc3": 0,
       "nc3_seen": [],
       "raaf": 1,
@@ -310,7 +310,7 @@
       "total": 5
     },
     "errors": [],
-    "generated_at": "2026-11-09T17:15:08Z",
+    "generated_at": "2026-11-09T17:18:18Z",
     "infocon": "green",
     "kev": {
       "all": {
@@ -523,14 +523,11 @@
     },
     "sources": {
       "by_country": {
-        "DE": 21591,
-        "FR": 505,
-        "GB": 7197,
-        "HK": 504,
-        "NL": 1740,
+        "DE": 25819,
+        "GB": 12057,
+        "NL": 2581,
         "SE": 1658,
-        "US": 149152,
-        "VN": 592
+        "US": 153288
       },
       "top_ips": 100
     },
@@ -547,16 +544,16 @@
     }
   },
   "gdacs_current_orange_red": [],
-  "generated_at": "2026-11-09T17:13:00Z",
+  "generated_at": "2026-11-09T17:16:00Z",
   "gps_jamming": {
     "adelaide": {
-      "aircraft": 7,
+      "aircraft": 6,
       "bad_pct": null,
       "name": "South Australia"
     },
     "baltic": {
       "aircraft": 69,
-      "bad_pct": 20,
+      "bad_pct": 22,
       "name": "Baltic / Kaliningrad"
     },
     "blacksea": {
@@ -565,27 +562,27 @@
       "name": "Black Sea"
     },
     "gulf": {
-      "aircraft": 61,
-      "bad_pct": 2,
+      "aircraft": 67,
+      "bad_pct": 1,
       "name": "Persian Gulf"
     },
     "israel": {
-      "aircraft": 47,
-      "bad_pct": 4,
+      "aircraft": 50,
+      "bad_pct": 6,
       "name": "Israel & Eastern Mediterranean"
     },
     "korea": {
-      "aircraft": 10,
-      "bad_pct": 0,
+      "aircraft": 9,
+      "bad_pct": null,
       "name": "Korea"
     },
     "sydney": {
-      "aircraft": 5,
+      "aircraft": 4,
       "bad_pct": null,
       "name": "Sydney / NSW"
     },
     "taiwan": {
-      "aircraft": 17,
+      "aircraft": 19,
       "bad_pct": 0,
       "name": "Taiwan Strait"
     }
@@ -623,7 +620,7 @@
     },
     "Israel": {
       "bgp": {
-        "baseline": 32370,
+        "baseline": 32369,
         "drop_pct": 0.0,
         "points": 73,
         "recent": 32369
@@ -684,9 +681,9 @@
   },
   "markets": {
     "AUD/USD": {
-      "change_pct": -0.22,
+      "change_pct": -0.23,
       "prev_close": 0.6931,
-      "price": 0.6916
+      "price": 0.6915
     },
     "Brent oil": {
       "change_pct": -4.57,
@@ -696,12 +693,12 @@
     "Gold": {
       "change_pct": 1.11,
       "prev_close": 4074.8999,
-      "price": 4120.0
+      "price": 4120.3
     },
     "VIX": {
-      "change_pct": -19.93,
+      "change_pct": -20.05,
       "prev_close": 25.64,
-      "price": 20.53
+      "price": 20.5
     }
   },
   "navwarn": null,
@@ -803,14 +800,14 @@
           "title": "Five 'professional' hacker groups linked to foreign intelligence agencies, governments - NST Online"
         },
         {
-          "date": "Mon, 09 Nov 2026 09:19:11 GMT",
-          "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFA1UG1adFJqb2Y3LVJDaFZfNEtCRmR4Vmkyc2NjQnlrM1NSX29RRE4wV2tMYjZwbldRWktnamdxbVZONDdNV2o3MUJvbjQ1S0k?oc=5",
-          "title": "Iran reminds Germany of its role in chemical attacks during Iran-Iraq war - Trend News Agency"
-        },
-        {
           "date": "Sun, 08 Nov 2026 19:02:54 GMT",
           "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE85blp3eU5jUWQwTFBjLWhQejRUWkc5VWZ3RkNyVGItbWNmTXI1X1o2X0YzN1JEc19TdGJ6MnJRZ2ZrVF8zY1dwcmFFbHQtQ0pXdlI0M0ltMEN2VkdBa1pB?oc=5",
           "title": "Russian spymaster claims he helped topple Austrian chancellor in Kremlin operation - report - The Jerusalem Post"
+        },
+        {
+          "date": "Mon, 09 Nov 2026 09:19:11 GMT",
+          "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFA1UG1adFJqb2Y3LVJDaFZfNEtCRmR4Vmkyc2NjQnlrM1NSX29RRE4wV2tMYjZwbldRWktnamdxbVZONDdNV2o3MUJvbjQ1S0k?oc=5",
+          "title": "Iran reminds Germany of its role in chemical attacks during Iran-Iraq war - Trend News Agency"
         },
         {
           "date": "Mon, 09 Nov 2026 06:04:34 GMT",
@@ -962,14 +959,14 @@
     "deepfake": {
       "items": [
         {
+          "date": "Mon, 09 Nov 2026 16:00:00 GMT",
+          "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9VZ3M0YkNfU285eUdFbFdBb3U3VVR3SjhUWUg2eGlWbFBhS2FFTlREVTlaMFdKSFRHZUNzTjVyRkVjelNGazhkalZlSllDX2g5eGtBRkFiT25OTTZXZGQtcEJoc0N1TnVubDRjZzNoY3ZsbmtGVmZIQ0Z3?oc=5",
+          "title": "Election body airs deepfake warning - Taipei Times"
+        },
+        {
           "date": "Mon, 09 Nov 2026 10:41:05 GMT",
           "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPQ0NJZkQyaVl2OUJibjBCREM5YllJZWZ4aUMxM3lDRVZuSUoyYXJ1X3JUb2t5Q3kwSFhJejQ3VVdwLXYwREVucWhOcnRuLXFQZWt2ckw1WjZXS1hhaXdKa29za0VpLS1paHg0V1Vtc3hxSDNGY2NKdW55RlhQa3B4bnhKVVJadzFrMTJNS0hYaUFVdk9rMmsycHlRWVllTDdoSGtyeXVyMjZUX1NOU1JXT29OREk4dENraGlRNmlFRQ?oc=5",
           "title": "Hong Kong may consider funding AI films in Film Development Fund review - The Standard (HK)"
-        },
-        {
-          "date": "Mon, 09 Nov 2026 01:57:00 GMT",
-          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPYXdJNnFUQXVSMmw5Zm1nZzVZTTJLWmxKWGtET0IwbVlKVDRWU3RUVGRwa1ctZ21vSXRtZkMwajRiZkZEOERPcDdaWmpyMG1WUjRBd1BqWVh2VjNTekg5NE9kN2M4VGlLMi1LWGt2Z2E1ekxnMWxyb1BqdGhXSWUxTnVwUm5XeDFQbjF6VkxJeThQSHRNazFQbTZwX2ZQbWM3MEk4QTJYSEVvbWhYeGc?oc=5",
-          "title": "New Zealand’s PM Luxon faces deadline in finance minister search - The Straits Times"
         },
         {
           "date": "Mon, 09 Nov 2026 09:50:14 GMT",
@@ -1389,29 +1386,29 @@
     "defence_us": {
       "basket_5d": -3.09,
       "benchmark": "SPY",
-      "benchmark_5d": 0.02,
+      "benchmark_5d": 0.03,
       "name": "US defence stocks",
-      "relative_5d": -3.11,
+      "relative_5d": -3.12,
       "symbols": {
         "GD": -3.09,
-        "LHX": -3.01,
-        "LMT": -8.68,
+        "LHX": -2.91,
+        "LMT": -8.71,
         "NOC": -2.42,
-        "RTX": -3.51
+        "RTX": -3.49
       }
     },
     "pandemic": {
       "basket_5d": 8.81,
       "benchmark": "SPY",
-      "benchmark_5d": 0.02,
+      "benchmark_5d": 0.03,
       "name": "Pandemic-response stocks (masks, hazmat, vaccines, tests)",
-      "relative_5d": 8.79,
+      "relative_5d": 8.78,
       "symbols": {
-        "APT": 0.63,
-        "EBS": -4.5,
+        "APT": 1.45,
+        "EBS": -4.19,
         "LAKE": 1.12,
-        "MRNA": 26.11,
-        "NVAX": 14.85,
+        "MRNA": 25.98,
+        "NVAX": 14.74,
         "SIGA": 8.81
       }
     }
@@ -1427,27 +1424,27 @@
     },
     "analysts": {
       "ok": true,
-      "secs": 1.9
+      "secs": 2.1
     },
     "cisa": {
       "ok": true,
-      "secs": 0.3
+      "secs": 0.2
     },
     "cyber": {
       "ok": true,
-      "secs": 4.7
+      "secs": 4.4
     },
     "gdacs": {
       "ok": true,
-      "secs": 2.9
+      "secs": 3.3
     },
     "gps": {
       "ok": true,
-      "secs": 10.4
+      "secs": 10.6
     },
     "internet": {
       "ok": true,
-      "secs": 5.1
+      "secs": 5.3
     },
     "maritime": {
       "error": "RuntimeError: needs a free aisstream.io key in the AISSTREAM_KEY repository secret",
@@ -1455,12 +1452,12 @@
     },
     "markets": {
       "ok": true,
-      "secs": 0.3
+      "secs": 0.2
     },
     "mortality": {
       "ok": true,
       "refreshed": true,
-      "secs": 6.3
+      "secs": 9.2
     },
     "navwarn": {
       "error": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output=json: HTTPError: HTTP Error 503: Service Unavailable; warn?status=active&output=json: HTTPError: HTTP Error 503: Service Unavailable",
@@ -1468,7 +1465,7 @@
     },
     "news_watch": {
       "ok": true,
-      "secs": 6.4
+      "secs": 6.1
     },
     "satellites": {
       "ok": true,
@@ -1477,15 +1474,15 @@
     },
     "sectors": {
       "ok": true,
-      "secs": 1.7
+      "secs": 1.6
     },
     "telecom": {
       "ok": true,
-      "secs": 5.4
+      "secs": 5.2
     },
     "uk_advice": {
       "ok": true,
-      "secs": 0.0
+      "secs": 0.2
     },
     "us_advisories": {
       "ok": true,
@@ -1497,7 +1494,7 @@
     },
     "who": {
       "ok": true,
-      "secs": 1.1
+      "secs": 0.2
     }
   },
   "telecom": {
