@@ -4,11 +4,11 @@
     "anomalies": {
       "bizjets_airborne": {
         "status": "learning baseline",
-        "value": 30
+        "value": 33
       },
       "mil_total": {
         "status": "learning baseline",
-        "value": 210
+        "value": 206
       },
       "nc3": {
         "status": "learning baseline",
@@ -20,28 +20,28 @@
       },
       "tankers": {
         "status": "learning baseline",
-        "value": 7
+        "value": 8
       }
     },
     "detail": {
-      "bizjets_airborne": 30,
+      "bizjets_airborne": 33,
       "bizjets_by_hub": {
         "Dallas / Houston": 1,
         "Dubai": 1,
-        "Geneva / Zurich": 9,
+        "Geneva / Zurich": 7,
         "Hong Kong": 1,
         "London": 10,
         "Los Angeles (Van Nuys)": 0,
         "Moscow": 0,
-        "New York (Teterboro)": 5,
-        "Palm Beach / Miami": 3,
+        "New York (Teterboro)": 6,
+        "Palm Beach / Miami": 4,
         "San Francisco Bay": 0,
-        "Singapore": 0,
-        "Washington DC": 5
+        "Singapore": 1,
+        "Washington DC": 6
       },
       "errors": [],
       "isr": 2,
-      "mil_total": 210,
+      "mil_total": 206,
       "nc3": 0,
       "nc3_seen": [],
       "retreat_bizjets": 1,
@@ -51,7 +51,7 @@
         "Patagonia": 0,
         "Queenstown / Wanaka": 0
       },
-      "tankers": 7
+      "tankers": 8
     }
   },
   "cisa_latest": [
@@ -93,27 +93,27 @@
     }
   ],
   "gdacs_current_orange_red": [],
-  "generated_at": "2026-11-09T12:17:00Z",
+  "generated_at": "2026-11-09T12:21:00Z",
   "markets": {
     "AUD/USD": {
-      "change_pct": -0.46,
+      "change_pct": -0.48,
       "prev_close": 0.6931,
-      "price": 0.6899
+      "price": 0.6898
     },
     "Brent oil": {
-      "change_pct": -3.42,
+      "change_pct": -3.32,
       "prev_close": 98.32,
-      "price": 94.96
+      "price": 95.06
     },
     "Gold": {
-      "change_pct": 1.05,
+      "change_pct": 1.06,
       "prev_close": 4074.8999,
-      "price": 4117.8
+      "price": 4118.1
     },
     "VIX": {
-      "change_pct": -8.35,
+      "change_pct": -8.58,
       "prev_close": 25.64,
-      "price": 23.5
+      "price": 23.44
     }
   },
   "quakes_m6_24h": [
@@ -129,6 +129,25 @@
     }
   ],
   "recent_alerts": [
+    {
+      "channel": "both",
+      "channels": [
+        "proactive",
+        "reactive"
+      ],
+      "message": "Test only. If this popped up on your screen, alerts are working on this channel.",
+      "priority": 3,
+      "sent": {
+        "proactive": true,
+        "reactive": true
+      },
+      "sent_at": "2026-11-09T12:21:00Z",
+      "source": "analysis",
+      "tags": [
+        "bell"
+      ],
+      "title": "TEST - notification check"
+    },
     {
       "channel": "proactive",
       "channels": [
@@ -154,7 +173,7 @@
     },
     "aircraft": {
       "ok": true,
-      "secs": 23.8
+      "secs": 24.3
     },
     "cisa": {
       "ok": true,
@@ -162,19 +181,19 @@
     },
     "gdacs": {
       "ok": true,
-      "secs": 6.6
+      "secs": 7.5
     },
     "markets": {
       "ok": true,
-      "secs": 0.4
+      "secs": 0.6
     },
     "uk_advice": {
       "ok": true,
-      "secs": 0.1
+      "secs": 0.2
     },
     "us_advisories": {
       "ok": true,
-      "secs": 0.2
+      "secs": 0.4
     },
     "usgs": {
       "ok": true,
@@ -182,7 +201,7 @@
     },
     "who": {
       "ok": true,
-      "secs": 0.4
+      "secs": 1.0
     }
   },
   "uk_recent_updates": [
