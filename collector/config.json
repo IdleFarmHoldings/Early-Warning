@@ -540,6 +540,21 @@
       "key": "cn_signals",
       "name": "Chinese signalling & war preparation",
       "q": "(\"don't say we didn't warn\" OR \"ro-ro ferries\" OR \"wartime footing\" OR \"war preparedness\" OR \"strategic stockpile\") China"
+    },
+    {
+      "key": "cyber_state",
+      "name": "State hackers & pre-positioning",
+      "q": "(\"Volt Typhoon\" OR \"Salt Typhoon\" OR Sandworm OR \"pre-positioning\" OR \"state-sponsored hackers\" OR \"wiper malware\") (infrastructure OR telecom OR Australia OR grid)"
+    },
+    {
+      "key": "cyber_au",
+      "name": "Australian cyber incidents",
+      "q": "Australia (\"cyber attack\" OR cyberattack OR ransomware OR \"data breach\" OR DDoS OR \"cyber incident\")"
+    },
+    {
+      "key": "cyber_supply",
+      "name": "Supply-chain & mass exploitation",
+      "q": "(\"supply chain attack\" OR \"mass exploitation\" OR \"zero-day\" OR \"actively exploited\") (thousands OR worldwide OR critical)"
     }
   ],
   "satellites": {
@@ -654,5 +669,69 @@
       ],
       "benchmark": "^AXJO"
     }
-  ]
+  ],
+  "cyber": {
+    "_comment": "Edge vendors: VPN/firewall/remote-access makers whose flaws state actors use for initial access. Ports: industrial control (ics) and remote access scanning watched by SANS ISC.",
+    "edge_vendors": [
+      "fortinet",
+      "ivanti",
+      "cisco",
+      "citrix",
+      "palo alto networks",
+      "sonicwall",
+      "juniper",
+      "f5",
+      "vmware",
+      "checkpoint",
+      "check point",
+      "zyxel",
+      "sophos",
+      "array networks",
+      "pulse secure",
+      "barracuda",
+      "netscaler"
+    ],
+    "ports": [
+      {
+        "port": 502,
+        "name": "Modbus (industrial control)",
+        "group": "ics"
+      },
+      {
+        "port": 102,
+        "name": "Siemens S7 (industrial control)",
+        "group": "ics"
+      },
+      {
+        "port": 20000,
+        "name": "DNP3 (power & water SCADA)",
+        "group": "ics"
+      },
+      {
+        "port": 44818,
+        "name": "EtherNet/IP (factory control)",
+        "group": "ics"
+      },
+      {
+        "port": 47808,
+        "name": "BACnet (building control)",
+        "group": "ics"
+      },
+      {
+        "port": 2404,
+        "name": "IEC-104 (power grid)",
+        "group": "ics"
+      },
+      {
+        "port": 3389,
+        "name": "Remote Desktop",
+        "group": "remote"
+      },
+      {
+        "port": 445,
+        "name": "Windows file sharing (SMB)",
+        "group": "remote"
+      }
+    ]
+  }
 }

@@ -109,6 +109,13 @@ def _lit(ind, ctx):
             if (w.get("date") or "") >= cutoff and any(k in text for k in kws):
                 return w.get("title", "")[:140]
         return None
+    if t == "cyber":
+        v = (ctx.get("cyber") or {}).get(ind["field"])
+        if v is None:
+            return None
+        if "not_in" in ind:
+            return f"{ind['field'].replace('_', ' ')}: {v}" if str(v).lower() not in ind["not_in"] else None
+        return f"{ind['field'].replace('_', ' ')} = {v}" if isinstance(v, (int, float)) and v >= ind["at_least"] else None
     if t == "acsc":
         return ctx["acsc_new"][0][:140] if ctx["acsc_new"] else None
     return None

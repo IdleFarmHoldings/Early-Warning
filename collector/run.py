@@ -98,6 +98,7 @@ def summarise(results, health, anomalies, now):
         "internet_countries": (results.get("internet") or {}).get("countries"),
         "news_watch": (results.get("news_watch") or {}).get("watch"),
         "sectors": (results.get("sectors") or {}).get("baskets"),
+        "cyber": results.get("cyber"),
     }
 
 
@@ -149,7 +150,7 @@ def precursor_alerts(scenarios, prev_ind, state, now, first_run):
 def analytics_series(rows, now, days=14):
     """Hourly (last value per hour) history of the metrics the analytics page charts."""
     cutoff = iso(now - timedelta(days=days))
-    keep = ("esc_", "gps_", "mil_", "dark_", "navwarn_", "mkt_", "rel_")
+    keep = ("esc_", "gps_", "mil_", "dark_", "navwarn_", "mkt_", "rel_", "cy_")
     extra = {"airlift", "raaf", "tankers", "nc3", "bizjets_airborne", "retreat_bizjets"}
     by_hour = {}
     for r in rows:
@@ -204,11 +205,13 @@ def main():
         "acsc_new": recent_titles(results.get("acsc") or [], now, hours=48),
         "sectors": (results.get("sectors") or {}).get("baskets") or {},
         "who": results.get("who") or [],
+        "cyber": (results.get("cyber") or {}).get("summary") or {},
         "now": now,
     }
     scenarios = precursors.score_scenarios(ctx, {s["key"]: s["score"] for s in prev_ind.get("scenarios", [])})
     row.update({f"esc_{s['key']}": s["score"] for s in scenarios})
     row.update({f"rel_{k}": v.get("relative_5d") for k, v in ctx["sectors"].items()})
+    row.update({f"cy_{k}": v for k, v in ctx["cyber"].items() if isinstance(v, (int, float))})
     row["lit"] = precursors.lit_ids(scenarios)
     append_jsonl(f"data/series/{now.strftime('%Y-%m')}.jsonl", row)
     save_json("data/indicators.json", {"generated_at": iso(now), "scenarios": scenarios,

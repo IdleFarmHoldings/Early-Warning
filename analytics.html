@@ -15,7 +15,7 @@
   --bg:#e9ecee; --surface:#ffffff; --sunk:#f3f5f6; --ink:#162028; --muted:#56636d; --line:#d2d8dc; --grid:#e1e0d9;
   --accent:#1d3a4f;
   --l1:#6f8f7c; --l2:#3f9a5a; --l3:#e3b81c; --l4:#e5791f; --l5:#c8312b;
-  --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --s6:#008300;
+  --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --s6:#008300; --s7:#6250d6;
   --good:#0ca30c; --warning:#fab219; --serious:#ec835a; --critical:#d03b3b;
   --seq-lo:#cde2fb; --seq-hi:#104281;
   --display:"Barlow Condensed","Arial Narrow",system-ui,sans-serif;
@@ -26,7 +26,7 @@
 @media (prefers-color-scheme: dark){:root{
   --bg:#0f151a; --surface:#172028; --sunk:#121a20; --ink:#e4eaee; --muted:#93a1ab; --line:#2a3640; --grid:#2c2c2a;
   --accent:#9cc3de; --l1:#7fa08c; --l2:#4fb06b; --l3:#e8c33a; --l4:#ef8a35; --l5:#e2514a;
-  --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181; --s6:#008300;
+  --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181; --s6:#008300; --s7:#9085e9;
   --seq-lo:#184f95; --seq-hi:#cde2fb; color-scheme:dark}}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.5}
@@ -69,6 +69,11 @@ td.num{font-family:var(--mono);text-align:right}
 .matrix td:first-child,.matrix th:first-child{text-align:left;font-family:var(--body)}
 .empty{color:var(--muted);font-size:.9rem}
 .leaflet-container{font-family:var(--body)}
+#cyMap{height:440px;border-radius:6px;border:1px solid var(--line)}
+@media (max-width:560px){#cyMap{height:340px}}
+.vec{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.vec .mini p{margin:4px 0 0;font-size:.82rem;color:var(--muted)}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:4px;vertical-align:middle}
 .leaflet-tooltip{font-size:.8rem}
 </style>
 </head>
@@ -128,6 +133,40 @@ td.num{font-family:var(--mono);text-align:right}
     <h2>Military activity</h2>
     <p class="note">Military aircraft visible on public flight tracking, last 14 days. Sudden drops can mean transponders switched off before operations; surges in transports can mean evacuations or deployments.</p>
     <div class="mini-grid" id="milMinis"></div>
+  </section>
+
+  <section class="panel">
+    <h2>Cyber threat picture</h2>
+    <p class="note">Big cyber attacks are usually preceded by quieter steps. Each card is one attack route, compared with its normal level; red means well above normal. Sources: CISA, SANS Internet Storm Center, abuse.ch, ransomware.live, ACSC.</p>
+    <div class="vec" id="cyVectors"><p class="empty">Loading…</p></div>
+  </section>
+
+  <section class="panel">
+    <h2>Cyber attack map</h2>
+    <p class="note">Where attacks are landing and where they come from, by country. Hit: ransomware victims posted on leak sites (last 7 days). From: the top 100 attacking addresses seen by SANS sensors worldwide, and botnet command servers. Attack origins only show where the traffic comes from — attackers often route through other countries, so this is not proof of who is behind it.</p>
+    <div class="toggles" role="group" aria-label="Cyber map layers">
+      <button type="button" id="tHit" aria-pressed="true"><span class="dot" style="background:var(--s2)"></span>Where attacks hit</button>
+      <button type="button" id="tFrom" aria-pressed="true"><span class="dot" style="background:var(--s7)"></span>Where attacks come from</button>
+      <button type="button" id="tC2" aria-pressed="false"><span class="dot" style="background:var(--s3)"></span>Botnet command servers</button>
+    </div>
+    <div id="cyMap" role="img" aria-label="World map of cyber attack targets and sources"></div>
+    <div class="two" style="margin-top:14px">
+      <div class="tbl" id="cyHitTbl"></div>
+      <div class="tbl" id="cyFromTbl"></div>
+    </div>
+  </section>
+
+  <section class="two">
+    <div class="panel">
+      <h2>Newly exploited flaws (7 days)</h2>
+      <p class="note">Added to CISA's catalogue of vulnerabilities being used in real attacks. VPN and firewall flaws (marked EDGE) are how state hackers usually get in.</p>
+      <div class="tbl" id="kevTbl"><p class="empty">Loading…</p></div>
+    </div>
+    <div class="panel">
+      <h2>Infrastructure probing</h2>
+      <p class="note">How many different machines scanned for each type of control system or remote access yesterday, vs the usual for the past fortnight. A jump often comes before attacks on utilities.</p>
+      <div class="tbl" id="portTbl"><p class="empty">Loading…</p></div>
+    </div>
   </section>
 
   <section class="panel">
@@ -258,6 +297,62 @@ function lineChart(canvas, labels, datasets, opts={}){
     now:b.relative_5d==null?null:(b.relative_5d>0?"+":"")+b.relative_5d, unit:b.relative_5d==null?"":" pts",
     color:b.relative_5d!=null&&b.relative_5d>=5?css("--critical"):css("--s1")})));
   if(!Object.keys(sec).length) $("secMinis").innerHTML = `<p class="empty">Sector data arrives with the next collector run.</p>`;
+
+  // ---------- Cyber ----------
+  const cy = (lat&&lat.cyber)||null;
+  const C = {AU:[-25,134],US:[39,-98],CA:[57,-101],MX:[23,-102],BR:[-10,-52],AR:[-35,-65],CL:[-33,-71],CO:[4,-73],PE:[-10,-76],VE:[7,-66],
+    GB:[54,-2],IE:[53,-8],FR:[46.5,2.5],DE:[51,10],NL:[52.3,5.5],BE:[50.6,4.6],LU:[49.8,6.1],CH:[46.8,8.2],AT:[47.5,14.5],IT:[42.8,12.5],ES:[40,-4],PT:[39.5,-8],
+    SE:[62,15],NO:[61,9],FI:[64,26],DK:[56,10],PL:[52,19],CZ:[49.8,15.5],SK:[48.7,19.7],HU:[47,19.5],RO:[46,25],BG:[42.7,25.3],GR:[39,22],RS:[44,21],HR:[45.2,15.5],
+    UA:[49,32],BY:[53.7,28],RU:[60,90],LT:[55.3,24],LV:[56.9,24.6],EE:[58.7,25.5],MD:[47.2,28.5],TR:[39,35],IL:[31.4,35],PS:[31.9,35.2],LB:[33.9,35.9],JO:[31,36.5],
+    SY:[35,38.5],IQ:[33,44],IR:[32,53],SA:[24,45],AE:[24,54],QA:[25.3,51.2],KW:[29.3,47.6],BH:[26,50.5],OM:[21,57],YE:[15.5,48],EG:[26.5,30],LY:[27,17],TN:[34,9],
+    DZ:[28,2],MA:[32,-6],NG:[9,8],GH:[8,-1],KE:[0.5,38],ZA:[-29,24],ET:[9,39],TZ:[-6,35],UG:[1.3,32.3],SN:[14.5,-14.5],CI:[7.6,-5.5],
+    IN:[22,79],PK:[30,70],BD:[24,90],LK:[7.8,80.7],NP:[28.4,84],CN:[35,104],HK:[22.3,114.2],TW:[23.7,121],JP:[36.5,138],KR:[36.5,128],KP:[40,127],
+    MN:[46.8,103],KZ:[48,67],UZ:[41.4,64.6],VN:[16,107],TH:[15,101],MY:[4,102],SG:[1.35,103.8],ID:[-2,118],PH:[12,122],KH:[12.5,105],MM:[21,96],
+    NZ:[-41,174],PG:[-6,145],FJ:[-17.8,178],SC:[-4.7,55.5],PA:[8.5,-80],CR:[10,-84],DO:[19,-70.5],PR:[18.2,-66.5]};
+  if(cy){
+    const S = cy.summary||{};
+    const card = (title, val, usual, ratio, note, hot) => `<div class="mini"><div class="row"><span>${esc(title)}</span>
+      <span class="chip" style="background:${hot?css("--critical"):ratio==null?css("--line"):css("--good")}">${hot?"above normal":ratio==null?"learning":"normal"}</span></div>
+      <div class="v" style="margin-top:4px">${val??"—"}${usual!=null?` <span class="muted" style="font-size:.85rem">usual ${usual}</span>`:""}</div><p>${esc(note)}</p></div>`;
+    const kev = cy.kev||{}, rs = (cy.ransomware||{}).au||{}, c2 = cy.c2||{};
+    const ic = (S.infocon||"unknown").toLowerCase();
+    const icsPorts = Object.values(cy.ports||{}).filter(p=>p.group==="ics");
+    const icsHot = icsPorts.filter(p=>p.ratio>=2);
+    $("cyVectors").innerHTML = [
+      `<div class="mini"><div class="row"><span>Global threat level (SANS Infocon)</span><span class="chip" style="background:${ic==="green"?css("--good"):ic==="yellow"?css("--warning"):ic==="orange"?css("--serious"):ic==="red"?css("--critical"):css("--line")};${ic==="yellow"?"color:#0b0b0b":""}">${esc(ic)}</span></div><p>Raised only for major internet-wide threats such as fast-spreading worms. Green is normal.</p></div>`,
+      card("Exploited flaws this week", kev.all&&kev.all.last_7d, kev.all&&kev.all.usual_7d, kev.all&&kev.all.ratio, "New vulnerabilities confirmed in use by attackers.", (kev.all&&kev.all.ratio)>=2),
+      card("VPN & firewall flaws this week", kev.edge&&kev.edge.last_7d, kev.edge&&kev.edge.usual_7d, kev.edge&&kev.edge.ratio, "Edge devices are the usual way state hackers get into networks.", (kev.edge&&kev.edge.last_7d)>=3),
+      card("Industrial-control scanning", icsHot.length?`${icsHot.length} spiking`:"steady", null, S.ics_scan_ratio, icsHot.length?`Spiking: ${icsHot.map(p=>p.name).join(", ")}.`:"Scanning of power, water and factory control systems at normal levels.", icsHot.length>0),
+      card("Australian ransomware victims (7 days)", rs.last_7d, rs.usual_7d, rs.ratio, "Organisations named on criminal leak sites.", rs.ratio>=2),
+      card("Botnet command servers online", c2.online, null, c2.online==null?null:1, `${c2.new_7d??"—"} new this week; ${c2.total??"—"} tracked in total.`, false)
+    ].join("");
+
+    const cmap = L.map("cyMap",{worldCopyJump:true}).setView([20,40],2);
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:6, minZoom:1, attribution:"© OpenStreetMap contributors"}).addTo(cmap);
+    const layerFrom = (obj, color, label, maxR) => { const g=L.layerGroup(); const vals=Object.values(obj||{}); const mx=Math.max(1,...vals);
+      for(const [cc,n] of Object.entries(obj||{})){ if(!C[cc]) continue;
+        L.circleMarker(C[cc],{radius:4+maxR*Math.sqrt(n/mx), color:css("--surface"), weight:1.5, fillColor:color, fillOpacity:.75})
+          .bindTooltip(`<b>${esc(cc)}</b>: ${n.toLocaleString()} ${label}`).addTo(g); }
+      return g; };
+    const ransomBy = (cy.ransomware||{}).by_country_7d||{}, fromBy = (cy.sources||{}).by_country||{}, c2By = c2.by_country||{};
+    const lHit = layerFrom(ransomBy, css("--s2"), "ransomware victims (7 days)", 26).addTo(cmap);
+    const lFrom = layerFrom(fromBy, css("--s7"), "attack reports from top attacking addresses", 26).addTo(cmap);
+    const lC2 = layerFrom(c2By, css("--s3"), "botnet command servers", 22);
+    for(const [id,layer] of [["tHit",lHit],["tFrom",lFrom],["tC2",lC2]]){
+      $(id).addEventListener("click",e=>{ const on=e.currentTarget.getAttribute("aria-pressed")!=="true";
+        e.currentTarget.setAttribute("aria-pressed",on); on?layer.addTo(cmap):cmap.removeLayer(layer); }); }
+    const top = (obj,n=8) => Object.entries(obj||{}).sort((a,b)=>b[1]-a[1]).slice(0,n);
+    $("cyHitTbl").innerHTML = `<table><thead><tr><th>Most hit (ransomware, 7 days)</th><th>Victims</th></tr></thead><tbody>${top(ransomBy).map(([c,n])=>`<tr><td>${esc(c)}${c==="AU"?" ◀ Australia":""}</td><td class="num">${n}</td></tr>`).join("")||`<tr><td colspan="2" class="muted">No data yet</td></tr>`}</tbody></table>`;
+    $("cyFromTbl").innerHTML = `<table><thead><tr><th>Most attacks from</th><th>Reports</th></tr></thead><tbody>${top(fromBy).map(([c,n])=>`<tr><td>${esc(c)}</td><td class="num">${n.toLocaleString()}</td></tr>`).join("")||`<tr><td colspan="2" class="muted">No data yet</td></tr>`}</tbody></table>`;
+    const rec = kev.recent||[];
+    $("kevTbl").innerHTML = rec.length ? `<table><thead><tr><th>Flaw</th><th>Product</th><th>Added</th></tr></thead><tbody>${rec.map(v=>`<tr><td style="font-family:var(--mono);font-size:.78rem">${esc(v.cve)}${v.edge?` <span class="chip" style="background:var(--serious)">EDGE</span>`:""}${v.ransomware?` <span class="chip" style="background:var(--critical)">RANSOMWARE</span>`:""}</td><td>${esc(v.vendor)} ${esc(v.product)}</td><td class="num">${esc(v.added)}</td></tr>`).join("")}</tbody></table>` : `<p class="empty">No new exploited flaws in the last 7 days.</p>`;
+    const ports = Object.entries(cy.ports||{});
+    $("portTbl").innerHTML = ports.length ? `<table><thead><tr><th>System</th><th>Scanners</th><th>Usual</th><th>vs usual</th></tr></thead><tbody>${ports.map(([p,v])=>`<tr><td>${esc(v.name)} <span class="muted" style="font-size:.75rem">:${esc(p)}</span></td><td class="num">${v.sources??"—"}</td><td class="num">${v.usual??"—"}</td><td class="num">${v.ratio!=null?`<span class="chip" style="background:${v.ratio>=2?css("--critical"):v.ratio>=1.4?css("--serious"):css("--good")}">${v.ratio}×</span>`:"—"}</td></tr>`).join("")}</tbody></table>` : `<p class="empty">Scan data not available.</p>`;
+  } else {
+    $("cyVectors").innerHTML = `<p class="empty">Cyber data arrives with the next collector run.</p>`;
+    $("cyMap").outerHTML = `<p class="empty">Cyber map appears after the next collector run.</p>`;
+    $("kevTbl").innerHTML = $("portTbl").innerHTML = "";
+  }
 
   // Matrix
   if(scen.length){

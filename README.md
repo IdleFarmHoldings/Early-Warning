@@ -41,6 +41,10 @@ Channel names are stored as repository secrets `NTFY_PROACTIVE` and `NTFY_REACTI
 | Google News search (last 24 h) | Reservist call-ups, mobilisation orders, cancelled military leave, ADF reserve call-outs, airspace closures (for the analysis run only) |
 | Yahoo Finance sector baskets | Pandemic-response (APT, LAKE, MRNA, NVAX, EBS, SIGA) and defence (US, Europe, Australia) stocks vs their market over 5 days |
 | Google News: health & signalling | Mass casualty / Code Brown declarations, medical export bans, Australian medicine shortages, unknown illness clusters, military blood drives and field hospitals, Russian and Chinese war signalling |
+| CISA Known Exploited Vulnerabilities | Newly exploited flaws per week vs normal, especially VPN / firewall (edge) devices |
+| SANS Internet Storm Center | Global threat level (Infocon), scanning of industrial-control and remote-access ports, top attacking addresses (geolocated by ip-api.com) |
+| abuse.ch Feodo Tracker | Botnet command servers by country |
+| ransomware.live | Ransomware victims by country (7 days) and Australian victims vs normal |
 | Crisis Group, ASPI Strategist, Lowy Interpreter | Analyst headlines for the analysis run (context only, never pushed on their own) |
 
 Aircraft data courtesy of [adsb.fi](https://adsb.fi), used for personal, non-commercial purposes.

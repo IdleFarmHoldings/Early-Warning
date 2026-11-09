@@ -238,3 +238,29 @@ def test_news_require_filters_noise():
     mc = next(i for s in precursors.PLAYBOOK["scenarios"] if s["key"] == "bio" for i in s["indicators"] if i["id"] == "masscas")
     assert precursors._lit(mc, {"news": {"masscas": {"items": [{"title": "Opera House terror plot sentencing"}]}}}) is None
     assert precursors._lit(mc, {"news": {"masscas": {"items": [{"title": "Hospital declares Code Brown after crash"}]}}})
+
+
+def test_cyber_parsers_and_scenario():
+    from datetime import datetime, timezone
+    import cyber, precursors
+    now = datetime(2026, 11, 9, tzinfo=timezone.utc)
+    vulns = [{"cveID": f"CVE-{i}", "vendorProject": "Fortinet" if i < 4 else "Microsoft", "dateAdded": "2026-11-07",
+              "knownRansomwareCampaignUse": "Known" if i == 0 else "Unknown"} for i in range(6)]
+    vulns += [{"cveID": f"CVE-o{w}", "vendorProject": "Adobe", "dateAdded": (now - timedelta(days=7 * w + 3)).strftime("%Y-%m-%d")}
+              for w in range(1, 13) for _ in range(2)]
+    k = cyber.parse_kev({"vulnerabilities": vulns}, now)
+    assert k["all"]["last_7d"] == 6 and k["all"]["usual_7d"] == 2 and k["all"]["ratio"] == 3.0
+    assert k["edge"]["last_7d"] == 4 and k["ransomware_linked_7d"] == 1
+    ph = [{"date": f"2026-11-{d:02d}", "sources": 100, "records": 1} for d in range(1, 9)] + [{"date": "2026-11-09", "sources": 5}]
+    ph[-2]["sources"] = 300
+    r = cyber.parse_porthistory(ph)
+    assert r["sources"] == 300 and r["usual"] == 100 and r["ratio"] == 3.0
+    rv = cyber.parse_ransom([{"victim": "a", "country": "AU", "attackdate": "2026-11-08"},
+                             {"post_title": "b", "country": "US", "discovered": "2026-11-08 10:00:00"}], [], now)
+    assert rv["by_country_7d"] == {"AU": 1, "US": 1}
+    assert cyber._ip("045.142.012.061") == "45.142.12.61"
+    ctx = {"anomalies": {}, "internet": {}, "telecom": {}, "departures": [], "news": {}, "markets": {}, "satellites": {},
+           "acsc_new": [], "sectors": {}, "who": [], "now": now,
+           "cyber": {"infocon": "yellow", "kev_ratio": 3.0, "kev_edge_7d": 4, "ics_scan_ratio": 1.1, "ransom_au_ratio": None}}
+    sc = {s["key"]: s for s in precursors.score_scenarios(ctx, {})}["cyber"]
+    assert {i["id"] for i in sc["lit"]} == {"infocon", "kev", "edge"} and len(sc["domains"]) == 3 and sc["band"] == "Elevated"

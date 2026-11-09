@@ -330,6 +330,25 @@
           "min_rel": 5,
           "weight": 5,
           "domain": "Markets"
+        },
+        {
+          "id": "cyber",
+          "name": "Chinese state hacking reports (Volt / Salt Typhoon)",
+          "type": "news",
+          "key": "cyber_state",
+          "words": [
+            "Typhoon",
+            "China",
+            "Chinese"
+          ],
+          "require": [
+            "Typhoon",
+            "pre-positioning",
+            "pre-positioned",
+            "state-sponsored"
+          ],
+          "weight": 10,
+          "domain": "Cyber"
         }
       ]
     },
@@ -581,6 +600,24 @@
           "min_rel": 5,
           "weight": 5,
           "domain": "Markets"
+        },
+        {
+          "id": "cyber",
+          "name": "Russian wiper / Sandworm activity reports",
+          "type": "news",
+          "key": "cyber_state",
+          "words": [
+            "Sandworm",
+            "Russia",
+            "Russian"
+          ],
+          "require": [
+            "Sandworm",
+            "wiper",
+            "state-sponsored"
+          ],
+          "weight": 10,
+          "domain": "Cyber"
         }
       ]
     },
@@ -845,6 +882,116 @@
           "price_at_least": 30,
           "weight": 10,
           "domain": "Markets"
+        }
+      ]
+    },
+    {
+      "key": "cyber",
+      "name": "Major cyber attack on Australia",
+      "sa_impact": "Banks, payments, hospitals, fuel distribution, telcos and the power grid all run on networks; a large attack can stop card payments and services for hours to days.",
+      "why": "Large attacks are usually preceded by quieter steps: a surge in newly exploited flaws in VPNs and firewalls (how state groups like Volt Typhoon get in), scanning of industrial-control systems, a rise in ransomware victims in the target country, and official warnings. Before Russia's 2022 invasion, wiper malware hit Ukraine a day ahead; Chinese groups have been found pre-positioned in US and allied infrastructure.",
+      "indicators": [
+        {
+          "id": "infocon",
+          "name": "Global cyber threat level raised (SANS Infocon not green)",
+          "type": "cyber",
+          "field": "infocon",
+          "not_in": [
+            "green",
+            ""
+          ],
+          "weight": 20,
+          "domain": "Global threat level"
+        },
+        {
+          "id": "kev",
+          "name": "Surge in newly exploited vulnerabilities (2x normal week)",
+          "type": "cyber",
+          "field": "kev_ratio",
+          "at_least": 2,
+          "weight": 10,
+          "domain": "Exploited vulnerabilities"
+        },
+        {
+          "id": "edge",
+          "name": "Several VPN / firewall flaws exploited this week",
+          "type": "cyber",
+          "field": "kev_edge_7d",
+          "at_least": 3,
+          "weight": 15,
+          "domain": "Edge-device exploitation"
+        },
+        {
+          "id": "ics",
+          "name": "Spike in scanning of industrial-control systems",
+          "type": "cyber",
+          "field": "ics_scan_ratio",
+          "at_least": 2,
+          "weight": 15,
+          "domain": "Infrastructure probing"
+        },
+        {
+          "id": "ransom",
+          "name": "Australian ransomware victims above normal",
+          "type": "cyber",
+          "field": "ransom_au_ratio",
+          "at_least": 2,
+          "weight": 10,
+          "domain": "Ransomware"
+        },
+        {
+          "id": "acsc",
+          "name": "New Australian cyber alert (ACSC)",
+          "type": "acsc",
+          "weight": 10,
+          "domain": "Official alerts"
+        },
+        {
+          "id": "state",
+          "name": "Reports of state hackers / pre-positioning / wipers",
+          "type": "news",
+          "key": "cyber_state",
+          "words": [
+            ""
+          ],
+          "require": [
+            "Typhoon",
+            "Sandworm",
+            "pre-positioning",
+            "pre-positioned",
+            "state-sponsored",
+            "wiper"
+          ],
+          "weight": 15,
+          "domain": "State actors"
+        },
+        {
+          "id": "au",
+          "name": "Major Australian cyber incident reported",
+          "type": "news",
+          "key": "cyber_au",
+          "words": [
+            ""
+          ],
+          "require": [
+            "cyber attack",
+            "cyberattack",
+            "ransomware",
+            "DDoS",
+            "cyber incident",
+            "hack",
+            "hackers"
+          ],
+          "weight": 10,
+          "domain": "Australian incidents"
+        },
+        {
+          "id": "tel",
+          "name": "Phone / internet carrier outage",
+          "type": "telecom",
+          "min": 20,
+          "weight": 10,
+          "domain": "Communications"
         }
       ]
     }

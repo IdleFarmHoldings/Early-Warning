@@ -5,6 +5,7 @@ import urllib.parse
 import xml.etree.ElementTree as ET
 
 from common import CONFIG, get_json, http_get
+from cyber import fetch_cyber
 
 NS = {
     "gdacs": "http://www.gdacs.org",
@@ -480,6 +481,7 @@ def fetch_all():
         "internet": fetch_internet_countries,
         "news_watch": fetch_news_watch,
         "sectors": fetch_sectors,
+        "cyber": fetch_cyber,
     }
     for name, fn in plan.items():
         t0 = time.time()
