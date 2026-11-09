@@ -8,7 +8,7 @@
       },
       "bizjets_airborne": {
         "status": "learning baseline",
-        "value": 46
+        "value": 42
       },
       "dark_auspng": {
         "status": "learning baseline",
@@ -24,7 +24,7 @@
       },
       "dark_mideast": {
         "status": "learning baseline",
-        "value": 1
+        "value": 2
       },
       "dark_taiwan": {
         "status": "learning baseline",
@@ -36,7 +36,7 @@
       },
       "gps_baltic": {
         "status": "learning baseline",
-        "value": 27
+        "value": 24
       },
       "gps_blacksea": {
         "status": "no data",
@@ -44,11 +44,11 @@
       },
       "gps_gulf": {
         "status": "learning baseline",
-        "value": 7
+        "value": 4
       },
       "gps_israel": {
         "status": "learning baseline",
-        "value": 5
+        "value": 2
       },
       "gps_korea": {
         "status": "no data",
@@ -76,7 +76,7 @@
       },
       "mil_mideast": {
         "status": "learning baseline",
-        "value": 6
+        "value": 4
       },
       "mil_taiwan": {
         "status": "learning baseline",
@@ -84,7 +84,7 @@
       },
       "mil_total": {
         "status": "learning baseline",
-        "value": 345
+        "value": 336
       },
       "navwarn_australia": {
         "status": "no data",
@@ -116,22 +116,22 @@
       },
       "tankers": {
         "status": "learning baseline",
-        "value": 17
+        "value": 16
       }
     },
     "detail": {
       "airlift": 33,
-      "bizjets_airborne": 46,
+      "bizjets_airborne": 42,
       "bizjets_by_hub": {
         "Dallas / Houston": 3,
         "Dubai": 2,
-        "Geneva / Zurich": 6,
+        "Geneva / Zurich": 3,
         "Hong Kong": 0,
         "London": 5,
-        "Los Angeles (Van Nuys)": 7,
+        "Los Angeles (Van Nuys)": 6,
         "Moscow": 0,
         "New York (Teterboro)": 8,
-        "Palm Beach / Miami": 6,
+        "Palm Beach / Miami": 5,
         "San Francisco Bay": 5,
         "Singapore": 0,
         "Washington DC": 15
@@ -139,16 +139,16 @@
       "dark_auspng": 0,
       "dark_eeurope": 0,
       "dark_korea": 0,
-      "dark_mideast": 1,
+      "dark_mideast": 2,
       "dark_taiwan": 0,
       "errors": [],
       "isr": 7,
       "mil_auspng": 0,
       "mil_eeurope": 7,
       "mil_korea": 1,
-      "mil_mideast": 6,
+      "mil_mideast": 4,
       "mil_taiwan": 0,
-      "mil_total": 345,
+      "mil_total": 336,
       "nc3": 0,
       "nc3_seen": [],
       "raaf": 0,
@@ -159,7 +159,7 @@
         "Patagonia": 0,
         "Queenstown / Wanaka": 0
       },
-      "tankers": 17
+      "tankers": 16
     }
   },
   "analyst_latest": {
@@ -310,12 +310,12 @@
       "total": 5
     },
     "errors": [],
-    "generated_at": "2026-11-09T16:45:22Z",
+    "generated_at": "2026-11-09T16:47:35Z",
     "infocon": "green",
     "kev": {
       "all": {
-        "last_7d": 3,
-        "ratio": 0.33,
+        "last_7d": 6,
+        "ratio": 0.67,
         "usual_7d": 9
       },
       "edge": {
@@ -325,6 +325,33 @@
       },
       "ransomware_linked_7d": 0,
       "recent": [
+        {
+          "added": "2026-11-09",
+          "cve": "CVE-2026-102895",
+          "edge": false,
+          "name": "GPUStack Improper Authentication Vulnerability",
+          "product": "GPUStack",
+          "ransomware": false,
+          "vendor": "GPUStack"
+        },
+        {
+          "added": "2026-11-09",
+          "cve": "CVE-2026-123158",
+          "edge": false,
+          "name": "OpenBSD OpenSSH Unexpected Status Code or Return Value Vulnerability",
+          "product": "OpenSSH",
+          "ransomware": false,
+          "vendor": "OpenBSD"
+        },
+        {
+          "added": "2026-11-09",
+          "cve": "CVE-2026-116779",
+          "edge": false,
+          "name": "SignalWire FreeSwitch Code Injection Vulnerability",
+          "product": "FreeSwitch",
+          "ransomware": false,
+          "vendor": "SignalWire"
+        },
         {
           "added": "2026-11-06",
           "cve": "CVE-2026-19868",
@@ -356,36 +383,68 @@
     },
     "ports": {
       "102": {
+        "date": "2026-11-08",
         "group": "ics",
-        "name": "Siemens S7 (industrial control)"
+        "name": "Siemens S7 (industrial control)",
+        "ratio": 0.95,
+        "sources": 1524,
+        "usual": 1596
       },
       "20000": {
+        "date": "2026-11-08",
         "group": "ics",
-        "name": "DNP3 (power & water SCADA)"
+        "name": "DNP3 (power & water SCADA)",
+        "ratio": 1.07,
+        "sources": 1178,
+        "usual": 1097
       },
       "2404": {
+        "date": "2026-11-08",
         "group": "ics",
-        "name": "IEC-104 (power grid)"
+        "name": "IEC-104 (power grid)",
+        "ratio": 1.36,
+        "sources": 1292,
+        "usual": 951
       },
       "3389": {
+        "date": "2026-11-08",
         "group": "remote",
-        "name": "Remote Desktop"
+        "name": "Remote Desktop",
+        "ratio": 1.28,
+        "sources": 4073,
+        "usual": 3179
       },
       "445": {
+        "date": "2026-11-08",
         "group": "remote",
-        "name": "Windows file sharing (SMB)"
+        "name": "Windows file sharing (SMB)",
+        "ratio": 0.97,
+        "sources": 5932,
+        "usual": 6119
       },
       "44818": {
+        "date": "2026-11-08",
         "group": "ics",
-        "name": "EtherNet/IP (factory control)"
+        "name": "EtherNet/IP (factory control)",
+        "ratio": 1.23,
+        "sources": 1740,
+        "usual": 1413
       },
       "47808": {
+        "date": "2026-11-08",
         "group": "ics",
-        "name": "BACnet (building control)"
+        "name": "BACnet (building control)",
+        "ratio": 1.55,
+        "sources": 1578,
+        "usual": 1016
       },
       "502": {
+        "date": "2026-11-08",
         "group": "ics",
-        "name": "Modbus (industrial control)"
+        "name": "Modbus (industrial control)",
+        "ratio": 1.08,
+        "sources": 1557,
+        "usual": 1448
       }
     },
     "ransomware": {
@@ -460,11 +519,11 @@
     "sources": {
       "by_country": {
         "AD": 828,
-        "BG": 2437,
-        "CA": 9391,
+        "BG": 2055,
+        "CA": 9392,
         "CN": 431,
-        "DE": 816,
-        "FR": 7837,
+        "DE": 1629,
+        "FR": 7862,
         "HK": 414,
         "KZ": 414,
         "NL": 4192,
@@ -473,47 +532,47 @@
         "RO": 450,
         "SC": 1353,
         "SE": 413,
-        "US": 11754
+        "US": 11373
       },
       "top_ips": 100
     },
     "summary": {
       "c2_online": 1,
-      "ics_scan_ratio": null,
+      "ics_scan_ratio": 1.55,
       "infocon": "green",
-      "kev_7d": 3,
+      "kev_7d": 6,
       "kev_edge_7d": 1,
-      "kev_ratio": 0.33,
+      "kev_ratio": 0.67,
       "ransom_au_7d": 2,
       "ransom_au_ratio": 0.5
     }
   },
   "gdacs_current_orange_red": [],
-  "generated_at": "2026-11-09T16:43:00Z",
+  "generated_at": "2026-11-09T16:45:00Z",
   "gps_jamming": {
     "adelaide": {
-      "aircraft": 2,
+      "aircraft": 3,
       "bad_pct": null,
       "name": "South Australia"
     },
     "baltic": {
-      "aircraft": 79,
-      "bad_pct": 27,
+      "aircraft": 80,
+      "bad_pct": 24,
       "name": "Baltic / Kaliningrad"
     },
     "blacksea": {
-      "aircraft": 7,
+      "aircraft": 5,
       "bad_pct": null,
       "name": "Black Sea"
     },
     "gulf": {
-      "aircraft": 56,
-      "bad_pct": 7,
+      "aircraft": 54,
+      "bad_pct": 4,
       "name": "Persian Gulf"
     },
     "israel": {
-      "aircraft": 42,
-      "bad_pct": 5,
+      "aircraft": 45,
+      "bad_pct": 2,
       "name": "Israel & Eastern Mediterranean"
     },
     "korea": {
@@ -631,19 +690,19 @@
       "price": 0.6912
     },
     "Brent oil": {
-      "change_pct": -4.9,
+      "change_pct": -4.7,
       "prev_close": 98.32,
-      "price": 93.5
+      "price": 93.7
     },
     "Gold": {
-      "change_pct": 1.29,
+      "change_pct": 1.26,
       "prev_close": 4074.8999,
-      "price": 4127.6
+      "price": 4126.1
     },
     "VIX": {
-      "change_pct": -18.37,
+      "change_pct": -18.14,
       "prev_close": 25.64,
-      "price": 20.93
+      "price": 20.99
     }
   },
   "navwarn": null,
@@ -739,11 +798,6 @@
           "title": "Exposed: Volt Typhoon's Framework for Silent Espionage - BankInfoSecurity"
         },
         {
-          "date": "Sun, 08 Nov 2026 16:46:00 GMT",
-          "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQVnYzVnFWZ29oVGJKVmZhRzgtV2IxWG13MUVwc0VIWnY2ZVFKUkNCbTJqUC04ckZXTFNhU1Z3dVZubFZCMmRUcFFkTTZBY2lXUUlmRjBLUkt4ekU1S3VVRjdYcXRyYVBIOHRSRGl1Y2Y3MWVkUWNVWWlDYlUtb0g0UjdRTWEzcC1aUzY2MnRlel9pd3lDZC1pOUZmd1Q?oc=5",
-          "title": "'On par with what the DoD pursued during the Cold War': Pentagon’s war stockpile plan hits a minerals wall - Fortune"
-        },
-        {
           "date": "Mon, 09 Nov 2026 01:45:48 GMT",
           "link": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxQa3owSlBBRjBTQ1EyX3JWT3Nza3VqLUh4R2Y1UVN2TXplUkJIcmVhZXBiQmpxRVhwVnRsUDRhQzNuQUtqR0hSMTVYOEhUeUcwNHFjc0Q2YTd5TVBTYjEyUDJqZkQ1dmZhMzFnMzRhTnpDT0FlZzkzdzlQa05sV09JdFY5aHotZGx2M0Y3U2FmU0UyVmg1SnQ0WV92NEZFOGE0U200NVlxcUtHQnZ0VkVQMHY3T3BwYjF2ZzBCUVFDNnkwNzc3OVBtSjVsbi00aFJORmo0bG1fbl85ZU9WVnFBUm1LdGJjTWVWcjMzZ0o0ejF1dGc?oc=5",
           "title": "Democratic Win Set to Reshuffle U.S. Energy Policy: Capacity Ambitions, Manufacturing Realities, Cyber Risks, and Consumer Limits - Energy News Beat"
@@ -769,8 +823,8 @@
           "title": "Warning: Actively exploited CVE-2026-114713 affects UnrealIRCd, Patch Immediately! - CCB Belgium"
         },
         {
-          "date": "Mon, 09 Nov 2026 09:25:07 GMT",
-          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQSF9MdVo2UkhYMG1paEZmYVdQVC05aFFFZWRnRXdScmgyZzRBTE9Qc0F6alYzZ3U4cFdKQWVYQXpDanU2QjQzeVRNLS1LaEdrSHlUdzhUVmNFT29nRG1rYmNKOXdPdlVSQlZ0dFF0TnFSLXAyY1VVcERzV2VuT3ozSzl5X0pnNHFIc0ppSTdYME5fWV9fSWh3RVRNeHh4dm9mUUVJaDNLWTB3UzVmQl93?oc=5",
+          "date": "Mon, 09 Nov 2026 09:24:49 GMT",
+          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPd0tVaVc1OGVSd2hocTV5Z3BrRlo2bFpXcVlUVXIzTThJd29jWkxtZlBWbGxhay1FekVheGhCZi1LczBVTnRTdVBxNVBNRzR5VXVwTjdOXzFrQm84Tm13U1E1WEpXVXpUTHlNSVJQRWlUVDRtQVZsU182RnFKVkpHTVlrZWZRZmRhQUhBUXlHRkxHNkV0alFOdzQ5cVhSQm1VS1B2VXJsaV96dw?oc=5",
           "title": "CyberSecurity Live 2026 – Five numbers shaping cyber risk in financial services - FStech"
         },
         {
@@ -1100,17 +1154,17 @@
       }
     },
     "defence_us": {
-      "basket_5d": -2.92,
+      "basket_5d": -2.96,
       "benchmark": "SPY",
       "benchmark_5d": -0.21,
       "name": "US defence stocks",
-      "relative_5d": -2.71,
+      "relative_5d": -2.75,
       "symbols": {
-        "GD": -2.92,
+        "GD": -2.96,
         "LHX": -2.92,
         "LMT": -8.72,
-        "NOC": -2.28,
-        "RTX": -3.36
+        "NOC": -2.31,
+        "RTX": -3.35
       }
     },
     "pandemic": {
@@ -1123,7 +1177,7 @@
         "APT": -0.18,
         "EBS": -5.28,
         "LAKE": 1.56,
-        "MRNA": 25.64,
+        "MRNA": 25.6,
         "NVAX": 14.27,
         "SIGA": 7.12
       }
@@ -1136,11 +1190,11 @@
     },
     "aircraft": {
       "ok": true,
-      "secs": 24.3
+      "secs": 25.6
     },
     "analysts": {
       "ok": true,
-      "secs": 4.7
+      "secs": 2.1
     },
     "cisa": {
       "ok": true,
@@ -1148,23 +1202,23 @@
     },
     "cyber": {
       "ok": true,
-      "secs": 5.1
+      "secs": 4.7
     },
     "gdacs": {
       "ok": true,
-      "secs": 2.5
+      "secs": 2.6
     },
     "gps": {
       "ok": true,
-      "secs": 10.7
+      "secs": 10.6
     },
     "internet": {
       "ok": true,
-      "secs": 5.7
+      "secs": 3.7
     },
     "markets": {
       "ok": true,
-      "secs": 0.2
+      "secs": 0.6
     },
     "navwarn": {
       "error": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output=json: HTTPError: HTTP Error 503: Service Unavailable; warn?status=active&output=json: HTTPError: HTTP Error 503: Service Unavailable",
@@ -1172,7 +1226,7 @@
     },
     "news_watch": {
       "ok": true,
-      "secs": 4.0
+      "secs": 4.7
     },
     "satellites": {
       "ok": true,
@@ -1181,27 +1235,27 @@
     },
     "sectors": {
       "ok": true,
-      "secs": 1.7
+      "secs": 3.5
     },
     "telecom": {
       "ok": true,
-      "secs": 5.0
+      "secs": 3.5
     },
     "uk_advice": {
       "ok": true,
-      "secs": 0.1
+      "secs": 0.2
     },
     "us_advisories": {
       "ok": true,
-      "secs": 0.3
+      "secs": 0.4
     },
     "usgs": {
       "ok": true,
-      "secs": 0.1
+      "secs": 0.2
     },
     "who": {
       "ok": true,
-      "secs": 0.8
+      "secs": 0.7
     }
   },
   "telecom": {
