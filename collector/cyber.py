@@ -90,13 +90,27 @@ def parse_ransom(recent, au_hist, now):
 
 
 # ---------- SANS ISC ----------
+def _rows(data):
+    """ISC wraps lists in different shapes: a list, {"porthistory": [...]}, or {"0": {...}, "1": {...}}."""
+    if isinstance(data, list):
+        return data
+    if isinstance(data, dict):
+        for v in data.values():
+            if isinstance(v, list):
+                return v
+        vals = [v for v in data.values() if isinstance(v, dict)]
+        if vals:
+            return vals
+    return []
+
+
 def parse_porthistory(rows):
     """Distinct scanning sources on the latest full day vs the median of the earlier days."""
     vals = []
-    for r in rows if isinstance(rows, list) else []:
-        if isinstance(r, dict) and r.get("date"):
+    for r in _rows(rows):
+        if isinstance(r, dict) and (r.get("date") or r.get("day")):
             try:
-                vals.append((r["date"], int(r.get("sources") or 0), int(r.get("records") or 0)))
+                vals.append((r.get("date") or r.get("day"), int(r.get("sources") or 0), int(r.get("records") or 0)))
             except (TypeError, ValueError):
                 continue
     vals.sort()
@@ -141,8 +155,11 @@ def fetch_cyber():
         res = {}
         for p in cc["ports"]:
             try:
-                res[str(p["port"])] = {"name": p["name"], "group": p["group"],
-                                       **(parse_porthistory(get_json(PORTHIST.format(port=p["port"], start=start, end=end))) or {})}
+                raw = get_json(PORTHIST.format(port=p["port"], start=start, end=end))
+                parsed = parse_porthistory(raw)
+                if parsed is None:
+                    errors.append(f"port {p['port']} unparsed: {json.dumps(raw)[:200]}")
+                res[str(p["port"])] = {"name": p["name"], "group": p["group"], **(parsed or {})}
             except Exception as e:  # noqa: BLE001
                 errors.append(f"port {p['port']}: {type(e).__name__}"[:80])
         return res
