@@ -4,11 +4,11 @@
     "anomalies": {
       "airlift": {
         "status": "learning baseline",
-        "value": 29
+        "value": 27
       },
       "bizjets_airborne": {
         "status": "learning baseline",
-        "value": 45
+        "value": 46
       },
       "dark_auspng": {
         "status": "learning baseline",
@@ -24,9 +24,41 @@
       },
       "dark_mideast": {
         "status": "learning baseline",
-        "value": 1
+        "value": 0
       },
       "dark_taiwan": {
+        "status": "learning baseline",
+        "value": 0
+      },
+      "gps_adelaide": {
+        "status": "no data",
+        "value": null
+      },
+      "gps_baltic": {
+        "status": "learning baseline",
+        "value": 24
+      },
+      "gps_blacksea": {
+        "status": "learning baseline",
+        "value": 41
+      },
+      "gps_gulf": {
+        "status": "learning baseline",
+        "value": 10
+      },
+      "gps_israel": {
+        "status": "learning baseline",
+        "value": 2
+      },
+      "gps_korea": {
+        "status": "learning baseline",
+        "value": 0
+      },
+      "gps_sydney": {
+        "status": "no data",
+        "value": null
+      },
+      "gps_taiwan": {
         "status": "learning baseline",
         "value": 0
       },
@@ -36,7 +68,7 @@
       },
       "mil_eeurope": {
         "status": "learning baseline",
-        "value": 7
+        "value": 6
       },
       "mil_korea": {
         "status": "learning baseline",
@@ -44,7 +76,7 @@
       },
       "mil_mideast": {
         "status": "learning baseline",
-        "value": 3
+        "value": 5
       },
       "mil_taiwan": {
         "status": "learning baseline",
@@ -52,7 +84,23 @@
       },
       "mil_total": {
         "status": "learning baseline",
-        "value": 437
+        "value": 433
+      },
+      "navwarn_australia": {
+        "status": "no data",
+        "value": null
+      },
+      "navwarn_korea": {
+        "status": "no data",
+        "value": null
+      },
+      "navwarn_mideast": {
+        "status": "no data",
+        "value": null
+      },
+      "navwarn_taiwan": {
+        "status": "no data",
+        "value": null
       },
       "nc3": {
         "status": "learning baseline",
@@ -72,35 +120,35 @@
       }
     },
     "detail": {
-      "airlift": 29,
-      "bizjets_airborne": 45,
+      "airlift": 27,
+      "bizjets_airborne": 46,
       "bizjets_by_hub": {
-        "Dallas / Houston": 6,
+        "Dallas / Houston": 5,
         "Dubai": 1,
-        "Geneva / Zurich": 7,
+        "Geneva / Zurich": 4,
         "Hong Kong": 0,
-        "London": 6,
-        "Los Angeles (Van Nuys)": 2,
+        "London": 7,
+        "Los Angeles (Van Nuys)": 3,
         "Moscow": 0,
-        "New York (Teterboro)": 13,
-        "Palm Beach / Miami": 8,
-        "San Francisco Bay": 0,
+        "New York (Teterboro)": 12,
+        "Palm Beach / Miami": 9,
+        "San Francisco Bay": 2,
         "Singapore": 0,
-        "Washington DC": 12
+        "Washington DC": 10
       },
       "dark_auspng": 0,
       "dark_eeurope": 0,
       "dark_korea": 0,
-      "dark_mideast": 1,
+      "dark_mideast": 0,
       "dark_taiwan": 0,
       "errors": [],
       "isr": 10,
       "mil_auspng": 0,
-      "mil_eeurope": 7,
+      "mil_eeurope": 6,
       "mil_korea": 1,
-      "mil_mideast": 3,
+      "mil_mideast": 5,
       "mil_taiwan": 0,
-      "mil_total": 437,
+      "mil_total": 433,
       "nc3": 1,
       "nc3_seen": [
         {
@@ -257,27 +305,221 @@
     }
   ],
   "gdacs_current_orange_red": [],
-  "generated_at": "2026-11-09T15:38:00Z",
+  "generated_at": "2026-11-09T15:42:00Z",
+  "gps_jamming": {
+    "adelaide": {
+      "aircraft": 1,
+      "bad_pct": null,
+      "name": "South Australia"
+    },
+    "baltic": {
+      "aircraft": 78,
+      "bad_pct": 24,
+      "name": "Baltic / Kaliningrad"
+    },
+    "blacksea": {
+      "aircraft": 17,
+      "bad_pct": 41,
+      "name": "Black Sea"
+    },
+    "gulf": {
+      "aircraft": 79,
+      "bad_pct": 10,
+      "name": "Persian Gulf"
+    },
+    "israel": {
+      "aircraft": 45,
+      "bad_pct": 2,
+      "name": "Israel & Eastern Mediterranean"
+    },
+    "korea": {
+      "aircraft": 21,
+      "bad_pct": 0,
+      "name": "Korea"
+    },
+    "sydney": {
+      "aircraft": 4,
+      "bad_pct": null,
+      "name": "Sydney / NSW"
+    },
+    "taiwan": {
+      "aircraft": 21,
+      "bad_pct": 0,
+      "name": "Taiwan Strait"
+    }
+  },
+  "internet_countries": {
+    "China": {
+      "bgp": {
+        "baseline": 1090460,
+        "drop_pct": 0.0,
+        "points": 73,
+        "recent": 1090460
+      },
+      "code": "CN",
+      "ping-slash24": {
+        "baseline": 316787,
+        "drop_pct": 1.1,
+        "points": 37,
+        "recent": 313170
+      }
+    },
+    "Iran": {
+      "bgp": {
+        "baseline": 41754,
+        "drop_pct": 0.0,
+        "points": 73,
+        "recent": 41750
+      },
+      "code": "IR",
+      "ping-slash24": {
+        "baseline": 11636,
+        "drop_pct": 0.0,
+        "points": 37,
+        "recent": 11684
+      }
+    },
+    "Israel": {
+      "bgp": {
+        "baseline": 32370,
+        "drop_pct": 0.0,
+        "points": 73,
+        "recent": 32369
+      },
+      "code": "IL",
+      "ping-slash24": {
+        "baseline": 4734,
+        "drop_pct": 0.4,
+        "points": 37,
+        "recent": 4715
+      }
+    },
+    "Russia": {
+      "bgp": {
+        "baseline": 170603,
+        "drop_pct": 0.0,
+        "points": 73,
+        "recent": 170586
+      },
+      "code": "RU",
+      "ping-slash24": {
+        "baseline": 92270,
+        "drop_pct": 0.1,
+        "points": 37,
+        "recent": 92137
+      }
+    },
+    "South Korea": {
+      "bgp": {
+        "baseline": 433793,
+        "drop_pct": 0.0,
+        "points": 73,
+        "recent": 433792
+      },
+      "code": "KR",
+      "ping-slash24": {
+        "baseline": 268514,
+        "drop_pct": 0.2,
+        "points": 37,
+        "recent": 268074
+      }
+    },
+    "Taiwan": {
+      "bgp": {
+        "baseline": 136271,
+        "drop_pct": 0.0,
+        "points": 73,
+        "recent": 136271
+      },
+      "code": "TW",
+      "ping-slash24": {
+        "baseline": 31276,
+        "drop_pct": 0.6,
+        "points": 37,
+        "recent": 31084
+      }
+    }
+  },
   "markets": {
     "AUD/USD": {
-      "change_pct": -0.38,
+      "change_pct": -0.39,
       "prev_close": 0.6931,
-      "price": 0.6905
+      "price": 0.6904
     },
     "Brent oil": {
-      "change_pct": -4.2,
+      "change_pct": -3.98,
       "prev_close": 98.32,
-      "price": 94.19
+      "price": 94.41
     },
     "Gold": {
-      "change_pct": 1.22,
+      "change_pct": 1.29,
       "prev_close": 4074.8999,
-      "price": 4124.6
+      "price": 4127.6
     },
     "VIX": {
-      "change_pct": -17.9,
+      "change_pct": -17.86,
       "prev_close": 25.64,
-      "price": 21.05
+      "price": 21.06
+    }
+  },
+  "navwarn": null,
+  "news_watch": {
+    "adf": {
+      "items": [],
+      "name": "ADF reserves call-out"
+    },
+    "airspace": {
+      "items": [],
+      "name": "Airspace closures"
+    },
+    "leave": {
+      "items": [],
+      "name": "Military leave cancelled"
+    },
+    "mobilisation": {
+      "items": [
+        {
+          "date": "Mon, 09 Nov 2026 13:58:26 GMT",
+          "link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE1ZTV9IMWJSeWlpeXg1VEZTbWlFeHhHX0w0YU1JWWpiMjBMV2xIMTM0UFE3ZzUyOHhsci1EWEY1b3Q4Z1FJckY3Zk91RQ?oc=5",
+          "title": "Record Number of Russians Head for the Exit Amid New Draft Fears - Kyiv Post"
+        },
+        {
+          "date": "Mon, 09 Nov 2026 14:21:46 GMT",
+          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQckV2TlV3eFZ0V0d3dGh0OG5XdWR5QW5wcTBETy1vZ2xnUnhjOXJ6T1lFcWpmRWRRWUVKbTlHNW5iSllNcXVBN3lLdEozaFRwOEpnY2xYQ3hpeU40RVdsd1ZhdXpmNU0ycHQ2ZzZCeUl1RWZXNGJKTmpVektVNm1JcnBDNXF4RHVNTVBYMVZLal9YTFNOY09UR3RCdTRabVlsR1FQUi00djdWSjE0WmNNTDNmNXd1MFpob09EamduYkMzN011ekpwZTl3?oc=5",
+          "title": "‘Fears of being sent to the front’ sees over 1.1m Russians flee as Kremlin wants ‘600,000 more troops’ - London Business News"
+        },
+        {
+          "date": "Mon, 09 Nov 2026 09:00:36 GMT",
+          "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQOFB5ZFREdjNrT2ptUGZSUnBSUzlfdW9uZnJnUDJEbXBfNHlseWNLa2UzTGU1eUUtZ0Y4T2V0d05sZHJLSTNQUkFDRlBzNG9aQzE3S1hpQmt2eUZ0R3o0X1hWMldtcndNejkxS1ppSHhfbWYtN3lzS3h4cUlJLTNTOHhFdFNVZm8?oc=5",
+          "title": "Military has yet to present mobilization plans to Liberal government - Yahoo News Canada"
+        },
+        {
+          "date": "Mon, 09 Nov 2026 13:06:00 GMT",
+          "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPbkZoMkJYbU8yUXNIMWVuSEV5dGUxaElZSVJCclFfSDFfR1hNUjBzZS1HU3ZlREgxdjJTeWR4SUpEM09wOXlFeXN6ZXRmZGxvQ1NpT3BpaTBsaDVYR1RRSzVTc21LVk1meERWNERtdmI5aXlHcjNpbDBHeldhTFVWQk9VX19PYmtZSWItZUlDU0FLSVB0VmFJQVhweW9xcHByWnktUlQxRFlBYlliVThNY3FfT3JQNDB5WUtpQ1EyTWR3Y2ZpdTBQVl93RmFWd01E?oc=5",
+          "title": "The right to a deferment does not yet guarantee its receipt: what military conscripts need to do - Судово-юридична газета"
+        },
+        {
+          "date": "Mon, 09 Nov 2026 14:35:45 GMT",
+          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQQmpEa29NQUhBX2J4VzgyLWNDTUFORHMzNjFrN2xvdzJVbm45Q3djcGRlS0ZzUmVYMW90RmFOZm0yNV93UlpMLVFGN0YzdV9WclVYc1JmX2haLS01R3ZmOFZQZXVhWnZfSW9RTGtZXzZ4WFFQZzNrVzBNTHBjM1JMTVBQaU5VWkJ3QWRHUmgwaTBWd1JGS2pjUFhlNGlwM1RlcllmLUJ1SnRnQV9VOG1GTjJYRWZld2RUZnpEU011a2Zjc1E2bFJKWjN3?oc=5",
+          "title": "Nearly 400,000 Russians killed in Ukraine: Hackers breach Rosstat and obtain death certificates - ProtoThema English"
+        },
+        {
+          "date": "Sun, 08 Nov 2026 17:50:00 GMT",
+          "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOZVFxcGh3N2RPYlBvQm9ZeTF0MmYyUHR5blpHTGJXc0NHNEMxUm1NWV85M2NiVFRGTHR6d2RjNXFKaW4tZFZkVjZtbHFvY3hjXzdWd3hRNHctUW5UNHNqdXo2UEJieHR1UWhpWm1UYmRWakJUaXg4M3JIakJKc25tM3VseGZqb1MzQzZpZURGbVlhSTU3RlRTa1RqQldwdy12bUZOcg?oc=5",
+          "title": "Hacked records show 400,000 Russians killed in war on Ukraine - The Straits Times"
+        }
+      ],
+      "name": "Mobilisation orders"
+    },
+    "reservists": {
+      "items": [
+        {
+          "date": "Mon, 09 Nov 2026 07:37:44 GMT",
+          "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQc2NZZ3FuV0hILWVlVjdxZXIzZHBXbEh4Vng5TUdxWDZaZWxDYnFRNDBvT0ZJRTZzZGVLNHRfR2NMNmR1US1IMmhkNE1MY19qWXBqcWxvX3BreUNSaERWSFRuZGhIWnRleERpYUJ3eTRkWDdKSG5kR2VualFRRzVuZnFieUNTaG9XNVduSnRJQmdka2k2amJQOTVhXzhjZURad1E?oc=5",
+          "title": "DIHK calls for principle of double voluntarism to be maintained - Table.Briefings"
+        }
+      ],
+      "name": "Reservist call-ups"
     }
   },
   "quakes_m6_24h": [
@@ -427,27 +669,43 @@
     },
     "aircraft": {
       "ok": true,
-      "secs": 24.9
+      "secs": 23.0
     },
     "analysts": {
       "ok": true,
-      "secs": 1.5
+      "secs": 3.2
     },
     "cisa": {
       "ok": true,
-      "secs": 0.3
+      "secs": 0.5
     },
     "gdacs": {
       "ok": true,
       "secs": 2.4
     },
+    "gps": {
+      "ok": true,
+      "secs": 9.9
+    },
+    "internet": {
+      "ok": true,
+      "secs": 3.0
+    },
     "markets": {
       "ok": true,
       "secs": 0.4
     },
+    "navwarn": {
+      "error": "HTTPError: HTTP Error 503: Service Unavailable",
+      "ok": false
+    },
+    "news_watch": {
+      "ok": true,
+      "secs": 1.6
+    },
     "telecom": {
       "ok": true,
-      "secs": 3.4
+      "secs": 3.3
     },
     "uk_advice": {
       "ok": true,
@@ -455,7 +713,7 @@
     },
     "us_advisories": {
       "ok": true,
-      "secs": 0.3
+      "secs": 0.2
     },
     "usgs": {
       "ok": true,
@@ -463,7 +721,7 @@
     },
     "who": {
       "ok": true,
-      "secs": 0.7
+      "secs": 0.9
     }
   },
   "telecom": {
@@ -491,7 +749,7 @@
         "recent": 20589
       },
       "ping-slash24": {
-        "baseline": 109,
+        "baseline": 110,
         "drop_pct": 0.0,
         "points": 37,
         "recent": 115
@@ -536,7 +794,7 @@
         "recent": 4312
       },
       "ping-slash24": {
-        "baseline": 20,
+        "baseline": 21,
         "drop_pct": 0.0,
         "points": 37,
         "recent": 21
