@@ -335,11 +335,11 @@ function lineChart(canvas, labels, datasets, opts={}){
     const list = Object.values(mor.countries).sort((a,b)=>(b.latest.excess_pct??-99)-(a.latest.excess_pct??-99));
     for(const c of list){ const p=MC[c.iso2]; if(!p) continue; const v=c.latest.excess_pct;
       L.circleMarker(p,{radius:9, color:css("--surface"), weight:2, fillColor:exColor(v), fillOpacity:c.age_weeks>10?.35:1})
-        .bindTooltip(`<b>${esc(c.name)}</b><br>Week ${c.latest.week}/${c.latest.year}: ${c.latest.deaths.toLocaleString()} deaths, ${v>0?"+":""}${v}% vs normal<br>${c.age_weeks} weeks old${c.age_weeks>10?" (stale)":""}`).addTo(mm); }
+        .bindTooltip(`<b>${esc(c.name)}</b><br>${c.latest.week?`Week ${c.latest.week}/${c.latest.year}`:esc(c.latest.date||"")}: ${c.latest.deaths!=null?c.latest.deaths.toLocaleString()+" deaths, ":""}${v>0?"+":""}${v}% vs normal<br>${c.age_weeks} weeks old${c.age_weeks>10?" (stale)":""}`).addTo(mm); }
     $("morTbl").innerHTML = `<table><thead><tr><th>Country</th><th>Latest week</th><th>Deaths</th><th>Normal</th><th>vs normal</th><th>Data age</th></tr></thead><tbody>${
-      list.map(c=>`<tr><td>${esc(c.name)}</td><td class="num">${c.latest.week}/${c.latest.year}</td><td class="num">${c.latest.deaths.toLocaleString()}</td><td class="num">${c.latest.expected.toLocaleString()}</td>
+      list.map(c=>`<tr><td>${esc(c.name)}</td><td class="num">${c.latest.week?c.latest.week+"/"+c.latest.year:esc(c.latest.date||"—")}</td><td class="num">${c.latest.deaths!=null?c.latest.deaths.toLocaleString():"—"}</td><td class="num">${c.latest.expected!=null?c.latest.expected.toLocaleString():"—"}</td>
       <td class="num"><span class="chip" style="background:${exColor(c.latest.excess_pct)};${c.latest.excess_pct>=5&&c.latest.excess_pct<15?"color:#0b0b0b":""}">${c.latest.excess_pct>0?"+":""}${c.latest.excess_pct}%</span></td><td class="num">${c.age_weeks??"—"} wk</td></tr>`).join("")}</tbody></table>
-      <p class="note" style="margin-top:6px">Data refreshed ${fmt(mor.generated_at)}. Faded markers are more than 10 weeks old.</p>`;
+      <p class="note" style="margin-top:6px">Source: ${esc(mor.source||"")}. Refreshed ${fmt(mor.generated_at)}. Faded markers are more than 10 weeks old.</p>`;
   } else { $("morMap").outerHTML = `<p class="empty">Death-rate data arrives with the next daily refresh.</p>`; $("morTbl").innerHTML=""; }
 
   // ---------- Undersea cables ----------

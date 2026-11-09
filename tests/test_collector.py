@@ -309,3 +309,12 @@ def test_news_require2_and_exclude():
     assert precursors._lit(get("ai", "flash"), t("flash", "Flash crash wipes 8% off ASX 200 in minutes"))
     assert precursors._lit(get("bio", "chem"), t("chem", "Tabletop Exercise and Mock Drill on chemical attack")) is None
     assert precursors._lit(get("russia", "mob"), t("mobilisation", "Leaked Russian mortality data points to 400,000 deaths")) is None
+
+
+def test_owid_fallback():
+    from datetime import datetime, timezone
+    import mortality
+    csv_text = "Entity,Code,Day,p_avg_all_ages\nAustralia,AUS,2026-09-27,3.0\nAustralia,AUS,2026-10-04,31.5\nEurope,,2026-10-04,2\n"
+    m = mortality.parse_owid(csv_text, datetime(2026, 11, 9, tzinfo=timezone.utc))
+    assert list(m) == ["AUS"] and m["AUS"]["latest"]["excess_pct"] == 31.5 and m["AUS"]["iso2"] == "AU"
+    assert mortality.summary({"countries": m}) == ["Australia +32%"]
