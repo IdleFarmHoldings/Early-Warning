@@ -39,11 +39,15 @@ Channel names are stored as repository secrets `NTFY_PROACTIVE` and `NTFY_REACTI
 | [NGA maritime safety warnings](https://msi.nga.mil) | Missile, rocket and live-fire warnings around Taiwan and the China seas, Korea, the Gulf and Red Sea, and Australia |
 | IODA country signals | Internet blackouts in Iran, Israel, Taiwan, Russia, China and South Korea |
 | Google News search (last 24 h) | Reservist call-ups, mobilisation orders, cancelled military leave, ADF reserve call-outs, airspace closures (for the analysis run only) |
+| Yahoo Finance sector baskets | Pandemic-response (APT, LAKE, MRNA, NVAX, EBS, SIGA) and defence (US, Europe, Australia) stocks vs their market over 5 days |
+| Google News: health & signalling | Mass casualty / Code Brown declarations, medical export bans, Australian medicine shortages, unknown illness clusters, military blood drives and field hospitals, Russian and Chinese war signalling |
 | Crisis Group, ASPI Strategist, Lowy Interpreter | Analyst headlines for the analysis run (context only, never pushed on their own) |
 
 Aircraft data courtesy of [adsb.fi](https://adsb.fi), used for personal, non-commercial purposes.
 
 Military flights: counts are kept per region (Middle East & Gulf, Taiwan & South China Sea, Korea & Japan, Eastern Europe & Black Sea, Australia & PNG). Three unconfirmed signals can alert: a region suddenly going quiet, an unusual number of aircraft vanishing from tracking at altitude ("going dark"), and surges in military transport or RAAF flights (possible evacuations or deployments). Many military flights never broadcast at all, and tracking gaps cause false alarms, so these are always marked UNCONFIRMED.
+
+Precursor playbook (`collector/playbook.json`): seven scenarios, each with weighted warning signs grouped into domains (military air, maritime, space, diplomatic, markets, health, trade...). Signs from three or more separate domains at once lift a scenario to Elevated, and every scenario carries a plain explanation of how its signs are converging. Real events recorded by the analysis are journaled with the signs that preceded them (`data/events.jsonl`, `data/patterns.json`).
 
 Flight anomalies need about a week of history before they can alert ("learning baseline").
 

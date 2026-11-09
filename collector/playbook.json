@@ -34,7 +34,8 @@
           "metrics": [
             "tankers"
           ],
-          "weight": 15
+          "weight": 15,
+          "domain": "Military air"
         },
         {
           "id": "air",
@@ -44,7 +45,8 @@
             "mil_mideast",
             "dark_mideast"
           ],
-          "weight": 15
+          "weight": 15,
+          "domain": "Military air"
         },
         {
           "id": "gps",
@@ -54,7 +56,8 @@
             "gps_gulf",
             "gps_israel"
           ],
-          "weight": 10
+          "weight": 10,
+          "domain": "Electronic warfare"
         },
         {
           "id": "net",
@@ -65,7 +68,8 @@
             "Israel"
           ],
           "min": 25,
-          "weight": 15
+          "weight": 15,
+          "domain": "Communications"
         },
         {
           "id": "dep",
@@ -85,7 +89,8 @@
             "Oman",
             "Yemen"
           ],
-          "weight": 15
+          "weight": 15,
+          "domain": "Diplomatic"
         },
         {
           "id": "airspace",
@@ -100,7 +105,8 @@
             "Qatar",
             "Jordan"
           ],
-          "weight": 10
+          "weight": 10,
+          "domain": "Aviation"
         },
         {
           "id": "nav",
@@ -109,7 +115,8 @@
           "metrics": [
             "navwarn_mideast"
           ],
-          "weight": 10
+          "weight": 10,
+          "domain": "Maritime"
         },
         {
           "id": "oil",
@@ -117,7 +124,8 @@
           "type": "market",
           "name_mkt": "Brent oil",
           "change_at_least": 4,
-          "weight": 10
+          "weight": 10,
+          "domain": "Markets"
         },
         {
           "id": "sat",
@@ -128,7 +136,34 @@
             "israel"
           ],
           "ratio": 1.4,
-          "weight": 5
+          "weight": 5,
+          "domain": "Space"
+        },
+        {
+          "id": "def",
+          "name": "US defence stocks outperforming (5 days)",
+          "type": "sector",
+          "basket": "defence_us",
+          "min_rel": 5,
+          "weight": 5,
+          "domain": "Markets"
+        },
+        {
+          "id": "masscas",
+          "name": "Mass casualty declarations in the region",
+          "type": "news",
+          "key": "masscas",
+          "words": [
+            "Israel",
+            "Iran",
+            "Gaza",
+            "Lebanon",
+            "Iraq",
+            "Gulf",
+            "Yemen"
+          ],
+          "weight": 5,
+          "domain": "Health"
         }
       ]
     },
@@ -145,7 +180,8 @@
           "metrics": [
             "navwarn_taiwan"
           ],
-          "weight": 20
+          "weight": 20,
+          "domain": "Maritime"
         },
         {
           "id": "gps",
@@ -154,7 +190,8 @@
           "metrics": [
             "gps_taiwan"
           ],
-          "weight": 15
+          "weight": 15,
+          "domain": "Electronic warfare"
         },
         {
           "id": "net",
@@ -164,7 +201,8 @@
             "Taiwan"
           ],
           "min": 20,
-          "weight": 15
+          "weight": 15,
+          "domain": "Communications"
         },
         {
           "id": "air",
@@ -174,7 +212,8 @@
             "mil_taiwan",
             "dark_taiwan"
           ],
-          "weight": 10
+          "weight": 10,
+          "domain": "Military air"
         },
         {
           "id": "mob",
@@ -191,7 +230,8 @@
             "Taiwan",
             "PLA"
           ],
-          "weight": 15
+          "weight": 15,
+          "domain": "Mobilisation"
         },
         {
           "id": "lift",
@@ -201,7 +241,8 @@
             "airlift",
             "raaf"
           ],
-          "weight": 10
+          "weight": 10,
+          "domain": "Military air"
         },
         {
           "id": "dep",
@@ -211,7 +252,8 @@
             "Taiwan",
             "China"
           ],
-          "weight": 10
+          "weight": 10,
+          "domain": "Diplomatic"
         },
         {
           "id": "sat",
@@ -221,7 +263,49 @@
             "taiwan"
           ],
           "ratio": 1.4,
-          "weight": 5
+          "weight": 5,
+          "domain": "Space"
+        },
+        {
+          "id": "signals",
+          "name": "Chinese war-preparation signalling",
+          "type": "news",
+          "key": "cn_signals",
+          "words": [
+            "China",
+            "Chinese",
+            "Taiwan",
+            "PLA"
+          ],
+          "weight": 15,
+          "domain": "State signalling"
+        },
+        {
+          "id": "blood",
+          "name": "Military blood drives / field hospitals (China / Taiwan)",
+          "type": "news",
+          "key": "blood",
+          "words": [
+            "China",
+            "Chinese",
+            "Taiwan",
+            "PLA",
+            "Fujian"
+          ],
+          "weight": 10,
+          "domain": "Medical preparation"
+        },
+        {
+          "id": "def",
+          "name": "Defence stocks outperforming (US / Australia)",
+          "type": "sector",
+          "basket": [
+            "defence_us",
+            "defence_au"
+          ],
+          "min_rel": 5,
+          "weight": 5,
+          "domain": "Markets"
         }
       ]
     },
@@ -238,7 +322,8 @@
           "metrics": [
             "navwarn_korea"
           ],
-          "weight": 20
+          "weight": 20,
+          "domain": "Maritime"
         },
         {
           "id": "gps",
@@ -247,7 +332,8 @@
           "metrics": [
             "gps_korea"
           ],
-          "weight": 20
+          "weight": 20,
+          "domain": "Electronic warfare"
         },
         {
           "id": "air",
@@ -257,7 +343,8 @@
             "mil_korea",
             "dark_korea"
           ],
-          "weight": 15
+          "weight": 15,
+          "domain": "Military air"
         },
         {
           "id": "net",
@@ -267,7 +354,8 @@
             "South Korea"
           ],
           "min": 20,
-          "weight": 10
+          "weight": 10,
+          "domain": "Communications"
         },
         {
           "id": "mob",
@@ -281,7 +369,8 @@
           "words": [
             "Korea"
           ],
-          "weight": 15
+          "weight": 15,
+          "domain": "Mobilisation"
         },
         {
           "id": "nc3",
@@ -290,7 +379,8 @@
           "metrics": [
             "nc3"
           ],
-          "weight": 10
+          "weight": 10,
+          "domain": "Nuclear command"
         },
         {
           "id": "sat",
@@ -300,7 +390,8 @@
             "korea"
           ],
           "ratio": 1.4,
-          "weight": 10
+          "weight": 10,
+          "domain": "Space"
         }
       ]
     },
@@ -318,7 +409,8 @@
             "gps_baltic",
             "gps_blacksea"
           ],
-          "weight": 15
+          "weight": 15,
+          "domain": "Electronic warfare"
         },
         {
           "id": "air",
@@ -328,7 +420,8 @@
             "mil_eeurope",
             "dark_eeurope"
           ],
-          "weight": 15
+          "weight": 15,
+          "domain": "Military air"
         },
         {
           "id": "mob",
@@ -350,7 +443,8 @@
             "Latvia",
             "Estonia"
           ],
-          "weight": 15
+          "weight": 15,
+          "domain": "Mobilisation"
         },
         {
           "id": "net",
@@ -360,7 +454,8 @@
             "Russia"
           ],
           "min": 20,
-          "weight": 10
+          "weight": 10,
+          "domain": "Communications"
         },
         {
           "id": "nc3",
@@ -369,7 +464,8 @@
           "metrics": [
             "nc3"
           ],
-          "weight": 15
+          "weight": 15,
+          "domain": "Nuclear command"
         },
         {
           "id": "dep",
@@ -386,7 +482,8 @@
             "Estonia",
             "Finland"
           ],
-          "weight": 10
+          "weight": 10,
+          "domain": "Diplomatic"
         },
         {
           "id": "jets",
@@ -396,7 +493,8 @@
             "retreat_bizjets",
             "bizjets_airborne"
           ],
-          "weight": 10
+          "weight": 10,
+          "domain": "Elite movement"
         },
         {
           "id": "vix",
@@ -404,7 +502,41 @@
           "type": "market",
           "name_mkt": "VIX",
           "price_at_least": 30,
-          "weight": 10
+          "weight": 10,
+          "domain": "Markets"
+        },
+        {
+          "id": "blood",
+          "name": "Military blood supplies / field hospitals (Russia)",
+          "type": "news",
+          "key": "blood",
+          "words": [
+            "Russia",
+            "Russian",
+            "Belarus"
+          ],
+          "weight": 10,
+          "domain": "Medical preparation"
+        },
+        {
+          "id": "signals",
+          "name": "Russian signalling (Buzzer broadcasts, nuclear drills)",
+          "type": "news",
+          "key": "ru_signals",
+          "words": [
+            ""
+          ],
+          "weight": 5,
+          "domain": "State signalling"
+        },
+        {
+          "id": "def",
+          "name": "European defence stocks outperforming (5 days)",
+          "type": "sector",
+          "basket": "defence_eu",
+          "min_rel": 5,
+          "weight": 5,
+          "domain": "Markets"
         }
       ]
     },
@@ -421,7 +553,8 @@
           "metrics": [
             "nc3"
           ],
-          "weight": 30
+          "weight": 30,
+          "domain": "Nuclear command"
         },
         {
           "id": "tankers",
@@ -430,7 +563,8 @@
           "metrics": [
             "tankers"
           ],
-          "weight": 10
+          "weight": 10,
+          "domain": "Military air"
         },
         {
           "id": "jets",
@@ -439,7 +573,8 @@
           "metrics": [
             "retreat_bizjets"
           ],
-          "weight": 15
+          "weight": 15,
+          "domain": "Elite movement"
         },
         {
           "id": "bizjets",
@@ -448,7 +583,8 @@
           "metrics": [
             "bizjets_airborne"
           ],
-          "weight": 10
+          "weight": 10,
+          "domain": "Elite movement"
         },
         {
           "id": "vix",
@@ -456,7 +592,8 @@
           "type": "market",
           "name_mkt": "VIX",
           "price_at_least": 35,
-          "weight": 10
+          "weight": 10,
+          "domain": "Markets"
         },
         {
           "id": "gold",
@@ -464,7 +601,8 @@
           "type": "market",
           "name_mkt": "Gold",
           "change_at_least": 4,
-          "weight": 10
+          "weight": 10,
+          "domain": "Markets"
         },
         {
           "id": "mob",
@@ -480,7 +618,8 @@
             "US",
             "nuclear"
           ],
-          "weight": 15
+          "weight": 15,
+          "domain": "Mobilisation"
         }
       ]
     },
@@ -495,7 +634,8 @@
           "name": "Phone / internet carrier outage",
           "type": "telecom",
           "min": 20,
-          "weight": 30
+          "weight": 30,
+          "domain": "Communications"
         },
         {
           "id": "tel2",
@@ -503,7 +643,8 @@
           "type": "telecom",
           "min": 20,
           "min_count": 2,
-          "weight": 20
+          "weight": 20,
+          "domain": "Communications"
         },
         {
           "id": "gps",
@@ -513,13 +654,15 @@
             "gps_adelaide",
             "gps_sydney"
           ],
-          "weight": 25
+          "weight": 25,
+          "domain": "Electronic warfare"
         },
         {
           "id": "acsc",
           "name": "New Australian cyber alert (ACSC)",
           "type": "acsc",
-          "weight": 15
+          "weight": 15,
+          "domain": "Cyber"
         },
         {
           "id": "adf",
@@ -531,7 +674,103 @@
           "words": [
             ""
           ],
-          "weight": 10
+          "weight": 10,
+          "domain": "Mobilisation"
+        },
+        {
+          "id": "masscas",
+          "name": "Mass casualty / Code Brown declared in Australia",
+          "type": "news",
+          "key": "masscas",
+          "words": [
+            "Australia",
+            "Adelaide",
+            "Sydney",
+            "Melbourne",
+            "Brisbane",
+            "Perth",
+            "Code Brown"
+          ],
+          "weight": 10,
+          "domain": "Health"
+        }
+      ]
+    },
+    {
+      "key": "bio",
+      "name": "Pandemic or biological emergency",
+      "sa_impact": "Health system strain, possible lockdowns and border closures, and shortages of medicines and protective equipment, which Australia mostly imports.",
+      "why": "Before COVID-19 (Dec 2019 - Feb 2020): reports of an unknown pneumonia cluster, WHO outbreak notices, mask and hazmat makers (Alpha Pro Tech, Lakeland) and vaccine developers (Moderna, Novavax) surging weeks before broad markets fell, and countries restricting exports of masks and medicines (Taiwan from 24 Jan 2020, then dozens more).",
+      "indicators": [
+        {
+          "id": "who",
+          "name": "WHO outbreak report with a high-concern pathogen (last 14 days)",
+          "type": "who",
+          "days": 14,
+          "weight": 15,
+          "domain": "Health"
+        },
+        {
+          "id": "illness",
+          "name": "Unknown illness / pneumonia cluster reported",
+          "type": "news",
+          "key": "illness",
+          "words": [
+            ""
+          ],
+          "weight": 20,
+          "domain": "Health"
+        },
+        {
+          "id": "exports",
+          "name": "Countries restricting medical supply exports",
+          "type": "news",
+          "key": "medexport",
+          "words": [
+            ""
+          ],
+          "weight": 20,
+          "domain": "Trade"
+        },
+        {
+          "id": "pharma",
+          "name": "Pandemic-response stocks outperforming (5 days)",
+          "type": "sector",
+          "basket": "pandemic",
+          "min_rel": 8,
+          "weight": 20,
+          "domain": "Markets"
+        },
+        {
+          "id": "shortage",
+          "name": "Australian medicine or PPE shortage reports",
+          "type": "news",
+          "key": "medshort",
+          "words": [
+            ""
+          ],
+          "weight": 10,
+          "domain": "Trade"
+        },
+        {
+          "id": "masscas",
+          "name": "Mass casualty declarations (any country)",
+          "type": "news",
+          "key": "masscas",
+          "words": [
+            ""
+          ],
+          "weight": 5,
+          "domain": "Health"
+        },
+        {
+          "id": "vix",
+          "name": "Market fear index above 30",
+          "type": "market",
+          "name_mkt": "VIX",
+          "price_at_least": 30,
+          "weight": 10,
+          "domain": "Markets"
         }
       ]
     }

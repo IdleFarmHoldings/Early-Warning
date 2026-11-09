@@ -348,6 +348,37 @@ def parse_market(data):
             "change_pct": round(change, 2) if change is not None else None}
 
 
+def change_over(data, days=5):
+    """% change over the last `days` trading sessions from a Yahoo chart response."""
+    res = data["chart"]["result"][0]
+    closes = [c for c in res["indicators"]["quote"][0]["close"] if c is not None]
+    if len(closes) <= days:
+        return None
+    return round((closes[-1] - closes[-1 - days]) / closes[-1 - days] * 100, 2)
+
+
+def fetch_sectors():
+    """Sector baskets vs their benchmark over 5 trading days: unusual outperformance can precede or confirm a shock."""
+    out, errors = {}, []
+    for b in CONFIG["sector_baskets"]:
+        ch = {}
+        for sym in b["symbols"] + [b["benchmark"]]:
+            try:
+                url = f"https://query1.finance.yahoo.com/v8/finance/chart/{urllib.parse.quote(sym)}?range=1mo&interval=1d"
+                ch[sym] = change_over(get_json(url))
+            except Exception as e:  # noqa: BLE001
+                errors.append(f"{sym}: {type(e).__name__}"[:80])
+        vals = sorted(v for k, v in ch.items() if k in b["symbols"] and v is not None)
+        bench = ch.get(b["benchmark"])
+        med = vals[len(vals) // 2] if vals else None
+        out[b["key"]] = {"name": b["name"], "basket_5d": med, "benchmark": b["benchmark"], "benchmark_5d": bench,
+                         "relative_5d": round(med - bench, 2) if med is not None and bench is not None else None,
+                         "symbols": {k: v for k, v in ch.items() if k in b["symbols"]}}
+    if not any(v["basket_5d"] is not None for v in out.values()):
+        raise RuntimeError("; ".join(errors[:3]))
+    return {"baskets": out, "errors": errors}
+
+
 # ---------- Aircraft: adsb.fi open data (1 request per second) ----------
 ADSB = "https://opendata.adsb.fi/api"
 
@@ -448,6 +479,7 @@ def fetch_all():
         "navwarn": _fetch_navwarn,
         "internet": fetch_internet_countries,
         "news_watch": fetch_news_watch,
+        "sectors": fetch_sectors,
     }
     for name, fn in plan.items():
         t0 = time.time()

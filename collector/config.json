@@ -1,80 +1,297 @@
 {
   "user_agent": "EarlyWarningCollector/1.0 (+https://github.com/IdleFarmHoldings/early-warning)",
   "board_url": "https://idlefarmholdings.github.io/Early-Warning/",
-
   "region_box_comment": "Wider region that matters to South Australia: lat_min, lat_max, lon_min, lon_max",
-  "region_box": [-55, 25, 90, 190],
-  "australia_box": [-44.5, -9.5, 112, 154.5],
-
-  "au_relevant_countries": ["Taiwan", "China", "North Korea", "South Korea", "Japan", "Philippines", "Indonesia",
-    "Papua New Guinea", "Timor-Leste", "Malaysia", "Singapore", "Vietnam", "New Zealand", "Solomon Islands",
-    "Fiji", "Vanuatu", "Tonga", "Samoa", "Myanmar", "Thailand", "India", "Iran", "Israel", "Saudi Arabia",
-    "United Arab Emirates", "Qatar", "Yemen", "Russia", "Ukraine"],
-
+  "region_box": [
+    -55,
+    25,
+    90,
+    190
+  ],
+  "australia_box": [
+    -44.5,
+    -9.5,
+    112,
+    154.5
+  ],
+  "au_relevant_countries": [
+    "Taiwan",
+    "China",
+    "North Korea",
+    "South Korea",
+    "Japan",
+    "Philippines",
+    "Indonesia",
+    "Papua New Guinea",
+    "Timor-Leste",
+    "Malaysia",
+    "Singapore",
+    "Vietnam",
+    "New Zealand",
+    "Solomon Islands",
+    "Fiji",
+    "Vanuatu",
+    "Tonga",
+    "Samoa",
+    "Myanmar",
+    "Thailand",
+    "India",
+    "Iran",
+    "Israel",
+    "Saudi Arabia",
+    "United Arab Emirates",
+    "Qatar",
+    "Yemen",
+    "Russia",
+    "Ukraine"
+  ],
   "jets": {
-    "long_range_types": ["GLF6", "GA7C", "GA8C", "GLF5", "GL7T", "GL8T", "GLEX", "GL5T", "GL6T", "FA8X", "FA7X", "FA6X"],
+    "long_range_types": [
+      "GLF6",
+      "GA7C",
+      "GA8C",
+      "GLF5",
+      "GL7T",
+      "GL8T",
+      "GLEX",
+      "GL5T",
+      "GL6T",
+      "FA8X",
+      "FA7X",
+      "FA6X"
+    ],
     "hubs": [
-      {"name": "New York (Teterboro)", "lat": 40.85, "lon": -74.06},
-      {"name": "Washington DC", "lat": 38.85, "lon": -77.04},
-      {"name": "Palm Beach / Miami", "lat": 26.4, "lon": -80.2},
-      {"name": "Los Angeles (Van Nuys)", "lat": 34.2, "lon": -118.49},
-      {"name": "San Francisco Bay", "lat": 37.5, "lon": -122.2},
-      {"name": "Dallas / Houston", "lat": 31.5, "lon": -96.0},
-      {"name": "London", "lat": 51.5, "lon": -0.3},
-      {"name": "Geneva / Zurich", "lat": 46.8, "lon": 7.5},
-      {"name": "Dubai", "lat": 25.1, "lon": 55.3},
-      {"name": "Moscow", "lat": 55.75, "lon": 37.6},
-      {"name": "Hong Kong", "lat": 22.3, "lon": 114.0},
-      {"name": "Singapore", "lat": 1.35, "lon": 103.9}
+      {
+        "name": "New York (Teterboro)",
+        "lat": 40.85,
+        "lon": -74.06
+      },
+      {
+        "name": "Washington DC",
+        "lat": 38.85,
+        "lon": -77.04
+      },
+      {
+        "name": "Palm Beach / Miami",
+        "lat": 26.4,
+        "lon": -80.2
+      },
+      {
+        "name": "Los Angeles (Van Nuys)",
+        "lat": 34.2,
+        "lon": -118.49
+      },
+      {
+        "name": "San Francisco Bay",
+        "lat": 37.5,
+        "lon": -122.2
+      },
+      {
+        "name": "Dallas / Houston",
+        "lat": 31.5,
+        "lon": -96.0
+      },
+      {
+        "name": "London",
+        "lat": 51.5,
+        "lon": -0.3
+      },
+      {
+        "name": "Geneva / Zurich",
+        "lat": 46.8,
+        "lon": 7.5
+      },
+      {
+        "name": "Dubai",
+        "lat": 25.1,
+        "lon": 55.3
+      },
+      {
+        "name": "Moscow",
+        "lat": 55.75,
+        "lon": 37.6
+      },
+      {
+        "name": "Hong Kong",
+        "lat": 22.3,
+        "lon": 114.0
+      },
+      {
+        "name": "Singapore",
+        "lat": 1.35,
+        "lon": 103.9
+      }
     ],
     "retreats": [
-      {"name": "Auckland", "lat": -37.0, "lon": 174.8},
-      {"name": "Queenstown / Wanaka", "lat": -45.0, "lon": 168.9},
-      {"name": "Hawaii", "lat": 20.8, "lon": -156.9},
-      {"name": "Patagonia", "lat": -41.1, "lon": -71.3}
+      {
+        "name": "Auckland",
+        "lat": -37.0,
+        "lon": 174.8
+      },
+      {
+        "name": "Queenstown / Wanaka",
+        "lat": -45.0,
+        "lon": 168.9
+      },
+      {
+        "name": "Hawaii",
+        "lat": 20.8,
+        "lon": -156.9
+      },
+      {
+        "name": "Patagonia",
+        "lat": -41.1,
+        "lon": -71.3
+      }
     ],
     "radius_nm": 250,
-    "tanker_types": ["K35R", "K35E", "KC46", "KC10", "A332", "MRTT"],
-    "nc3_types": ["E6", "E4", "E4B"],
-    "isr_types": ["R135", "E3TF", "E3CF", "E737", "P8"],
-    "transport_types": ["C17", "C30J", "C130", "A400", "C5M", "IL76", "Y20", "C2"],
+    "tanker_types": [
+      "K35R",
+      "K35E",
+      "KC46",
+      "KC10",
+      "A332",
+      "MRTT"
+    ],
+    "nc3_types": [
+      "E6",
+      "E4",
+      "E4B"
+    ],
+    "isr_types": [
+      "R135",
+      "E3TF",
+      "E3CF",
+      "E737",
+      "P8"
+    ],
+    "transport_types": [
+      "C17",
+      "C30J",
+      "C130",
+      "A400",
+      "C5M",
+      "IL76",
+      "Y20",
+      "C2"
+    ],
     "raaf_reg_regex": "^A\\d{2}-",
     "dark_min_alt_ft": 15000,
     "mil_regions": [
-      {"key": "mideast", "name": "Middle East & Gulf", "box": [12, 40, 32, 62]},
-      {"key": "taiwan", "name": "Taiwan & South China Sea", "box": [5, 30, 105, 130]},
-      {"key": "korea", "name": "Korea & Japan", "box": [30, 45, 124, 146]},
-      {"key": "eeurope", "name": "Eastern Europe & Black Sea", "box": [40, 60, 20, 42]},
-      {"key": "auspng", "name": "Australia & PNG", "box": [-45, -1, 110, 160]}
+      {
+        "key": "mideast",
+        "name": "Middle East & Gulf",
+        "box": [
+          12,
+          40,
+          32,
+          62
+        ]
+      },
+      {
+        "key": "taiwan",
+        "name": "Taiwan & South China Sea",
+        "box": [
+          5,
+          30,
+          105,
+          130
+        ]
+      },
+      {
+        "key": "korea",
+        "name": "Korea & Japan",
+        "box": [
+          30,
+          45,
+          124,
+          146
+        ]
+      },
+      {
+        "key": "eeurope",
+        "name": "Eastern Europe & Black Sea",
+        "box": [
+          40,
+          60,
+          20,
+          42
+        ]
+      },
+      {
+        "key": "auspng",
+        "name": "Australia & PNG",
+        "box": [
+          -45,
+          -1,
+          110,
+          160
+        ]
+      }
     ]
   },
-
   "anomaly": {
     "min_samples": 20,
     "baseline_days": 14,
     "hour_window": 1,
     "z_threshold": 4.0,
     "min_ratio": 1.6,
-    "min_excess": {"bizjets_airborne": 15, "retreat_bizjets": 5, "mil_total": 40, "tankers": 8, "nc3": 2,
-                   "airlift": 6, "raaf": 4, "region": 10, "dark": 6,
-                   "gps": 15, "navwarn": 3},
+    "min_excess": {
+      "bizjets_airborne": 15,
+      "retreat_bizjets": 5,
+      "mil_total": 40,
+      "tankers": 8,
+      "nc3": 2,
+      "airlift": 6,
+      "raaf": 4,
+      "region": 10,
+      "dark": 6,
+      "gps": 15,
+      "navwarn": 3
+    },
     "drop_min_median": 8,
     "drop_max_ratio": 0.4,
     "cooldown_hours": 6
   },
-
   "markets": {
-    "symbols": {"VIX": "^VIX", "Gold": "GC=F", "Brent oil": "BZ=F", "AUD/USD": "AUDUSD=X"},
+    "symbols": {
+      "VIX": "^VIX",
+      "Gold": "GC=F",
+      "Brent oil": "BZ=F",
+      "AUD/USD": "AUDUSD=X"
+    },
     "vix_level_alert": 35,
-    "day_change_alert_pct": {"VIX": 40, "Gold": 4, "Brent oil": 8, "AUD/USD": -3}
+    "day_change_alert_pct": {
+      "VIX": 40,
+      "Gold": 4,
+      "Brent oil": 8,
+      "AUD/USD": -3
+    }
   },
-
-  "who_keywords": ["novel", "unknown", "avian influenza", "h5n1", "h7n9", "mers", "disease x", "unknown aetiology",
-    "unknown etiology", "pneumonia of unknown", "marburg", "ebola", "smallpox", "mpox clade i", "nipah"],
-
-  "uk_keywords": ["against all travel", "leave now", "leave the country", "commercial flights"],
+  "who_keywords": [
+    "novel",
+    "unknown",
+    "avian influenza",
+    "h5n1",
+    "h7n9",
+    "mers",
+    "disease x",
+    "unknown aetiology",
+    "unknown etiology",
+    "pneumonia of unknown",
+    "marburg",
+    "ebola",
+    "smallpox",
+    "mpox clade i",
+    "nipah"
+  ],
+  "uk_keywords": [
+    "against all travel",
+    "leave now",
+    "leave the country",
+    "commercial flights"
+  ],
   "acsc_push_all": true,
-
   "telecom": {
     "_comment": "IODA (Georgia Tech) internet outage signals per network. Active probing (ping-slash24) drop vs the previous few hours.",
     "networks": [
@@ -107,7 +324,6 @@
     "cooldown_hours": 6,
     "min_baseline": 50
   },
-
   "analyst_feeds": [
     {
       "name": "Crisis Group",
@@ -122,7 +338,6 @@
       "url": "https://www.lowyinstitute.org/the-interpreter/rss.xml"
     }
   ],
-
   "gps": {
     "_comment": "Share of aircraft reporting degraded GPS (ADS-B NIC below threshold) per region, like gpsjam.org.",
     "nic_bad_below": 7,
@@ -179,7 +394,6 @@
       }
     ]
   },
-
   "navwarn": {
     "_comment": "NGA maritime broadcast warnings (HYDROPAC, NAVAREA IV/XII, HYDROLANT). Military keywords counted per area.",
     "military_keywords": [
@@ -239,7 +453,6 @@
       }
     ]
   },
-
   "internet_countries": [
     {
       "code": "IR",
@@ -266,9 +479,7 @@
       "name": "South Korea"
     }
   ],
-
   "internet_country_drop_pct": 25,
-
   "news_watch": [
     {
       "key": "reservists",
@@ -294,9 +505,43 @@
       "key": "airspace",
       "name": "Airspace closures",
       "q": "\"airspace closed\" OR \"closes airspace\" OR \"airspace closure\""
+    },
+    {
+      "key": "masscas",
+      "name": "Mass casualty declarations",
+      "q": "\"mass casualty\" (declared OR incident OR event) OR \"code brown\" hospital"
+    },
+    {
+      "key": "medexport",
+      "name": "Medical export restrictions",
+      "q": "(\"export ban\" OR \"export restrictions\" OR \"halts exports\") (masks OR medicines OR \"medical supplies\" OR antibiotics OR vaccines OR PPE)"
+    },
+    {
+      "key": "medshort",
+      "name": "Australian medicine shortages",
+      "q": "Australia (\"medicine shortage\" OR \"drug shortage\" OR TGA shortage OR \"PPE shortage\")"
+    },
+    {
+      "key": "illness",
+      "name": "Unknown illness clusters",
+      "q": "(\"unknown illness\" OR \"mystery illness\" OR \"mystery pneumonia\" OR \"unexplained deaths\" OR \"pneumonia cluster\")"
+    },
+    {
+      "key": "blood",
+      "name": "Military blood supplies & field hospitals",
+      "q": "(\"blood supplies\" OR \"blood donation\" OR \"field hospitals\") (military OR troops OR army OR wartime)"
+    },
+    {
+      "key": "ru_signals",
+      "name": "Russian signalling (Buzzer, nuclear drills)",
+      "q": "(\"UVB-76\" OR \"the Buzzer\" OR \"doomsday radio\" OR \"nuclear drills\") Russia"
+    },
+    {
+      "key": "cn_signals",
+      "name": "Chinese signalling & war preparation",
+      "q": "(\"don't say we didn't warn\" OR \"ro-ro ferries\" OR \"wartime footing\" OR \"war preparedness\" OR \"strategic stockpile\") China"
     }
   ],
-
   "satellites": {
     "refresh_hours": 6,
     "hours_ahead": 12,
@@ -361,5 +606,53 @@
         "lon": 138.6
       }
     ]
-  }
+  },
+  "sector_baskets": [
+    {
+      "key": "pandemic",
+      "name": "Pandemic-response stocks (masks, hazmat, vaccines, tests)",
+      "symbols": [
+        "APT",
+        "LAKE",
+        "MRNA",
+        "NVAX",
+        "EBS",
+        "SIGA"
+      ],
+      "benchmark": "SPY"
+    },
+    {
+      "key": "defence_us",
+      "name": "US defence stocks",
+      "symbols": [
+        "RTX",
+        "LMT",
+        "NOC",
+        "GD",
+        "LHX"
+      ],
+      "benchmark": "SPY"
+    },
+    {
+      "key": "defence_eu",
+      "name": "European defence stocks",
+      "symbols": [
+        "RHM.DE",
+        "BA.L",
+        "SAAB-B.ST",
+        "LDO.MI"
+      ],
+      "benchmark": "^STOXX"
+    },
+    {
+      "key": "defence_au",
+      "name": "Australian defence stocks",
+      "symbols": [
+        "EOS.AX",
+        "DRO.AX",
+        "ASB.AX"
+      ],
+      "benchmark": "^AXJO"
+    }
+  ]
 }

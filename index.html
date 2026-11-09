@@ -269,15 +269,18 @@ function renderStatus(st){
 
 function renderConcerns(st, ind){
   const sc = {}; ((ind&&ind.scenarios)||[]).forEach(x=>sc[x.key]=x);
-  let list = (st && Array.isArray(st.concerns) && st.concerns.length) ? st.concerns : null;
-  if(!list) list = ((ind&&ind.scenarios)||[]).map(x=>({key:x.key,title:x.name,likelihood:null,trend:x.trend,drivers:[],scenarios:[],actions:[]}));
+  let list = (st && Array.isArray(st.concerns) && st.concerns.length) ? [...st.concerns] : [];
+  const have = new Set(list.map(c=>c.key));
+  ((ind&&ind.scenarios)||[]).forEach(x=>{ if(!have.has(x.key) && (x.score>0 || !list.length))
+    list.push({key:x.key,title:x.name,likelihood:null,trend:x.trend,drivers:[],scenarios:[],actions:[]}); });
   if(!list.length){ $("concerns").innerHTML=`<p class="empty">No concerns assessed yet.</p>`; return; }
   const col = p => p==null?"var(--line)":p>=60?lc(5):p>=35?lc(4):p>=15?lc(3):lc(2);
   $("concerns").innerHTML = list.map(c=>{
     const w = sc[c.key];
-    const signs = w ? `<h4>Warning signs showing: ${w.lit.length} of ${w.lit.length+w.unlit.length} · ${esc(w.band)}</h4>
+    const signs = w ? `<h4>Warning signs showing: ${w.lit.length} of ${w.lit.length+w.unlit.length} · ${esc(w.band)}${(w.domains||[]).length>1?` · ${w.domains.length} areas converging`:""}</h4>
       <div class="meter"><i style="width:${w.score}%;background:${col(w.score)}"></i></div>
-      ${w.lit.length?`<ul>${w.lit.map(i=>`<li>${esc(i.name)} <span class="why">(${esc(i.detail)})</span></li>`).join("")}</ul>`:`<span class="why">None of the known precursors are showing.</span>`}
+      ${w.convergence?`<p class="why" style="margin:0"><b style="color:var(--ink)">How the signs fit together:</b> ${esc(w.convergence)}</p>`:""}
+      ${w.lit.length?`<ul>${w.lit.map(i=>`<li>${esc(i.name)} <span class="why">[${esc(i.domain||"")}] ${esc(i.detail)}</span></li>`).join("")}</ul>`:""}
       <details><summary>What we watch for and why</summary><p class="why" style="margin:6px 0">${esc(w.why)}</p><ul>${w.unlit.map(i=>`<li class="why">${esc(i.name)}</li>`).join("")}</ul></details>` : "";
     const scen = (c.scenarios||[]).length ? `<h4>Possible scenarios</h4><div class="sc">${c.scenarios.map(x=>`<b>${x.likelihood!=null?esc(x.likelihood)+"%":""}</b><span><b style="font-family:var(--body);font-weight:600;text-align:left">${esc(x.name)}</b> — ${esc(x.sa_impact||"")}</span>`).join("")}</div>` : (w?`<h4>What it would mean for SA</h4><p class="why" style="margin:0">${esc(w.sa_impact)}</p>`:"");
     const acts = (c.actions||[]).length ? `<h4>Suggested actions and why</h4><div class="act">${c.actions.map(a=>`<div>${esc(a.action)}<span>${esc(a.reason||"")}</span></div>`).join("")}</div>` : "";

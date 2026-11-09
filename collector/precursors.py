@@ -5,7 +5,7 @@ import re
 from datetime import timedelta
 from statistics import median
 
-from common import ROOT, iso
+from common import CONFIG, ROOT, iso
 
 PLAYBOOK = json.loads((ROOT / "collector" / "playbook.json").read_text())
 
@@ -91,6 +91,22 @@ def _lit(ind, ctx):
             if s.get("ratio") and s["ratio"] >= ind["ratio"]:
                 hits.append(f"{s.get('name', h)} {s['ratio']}x usual passes")
         return "; ".join(hits) or None
+    if t == "sector":
+        hits = []
+        for b in (ind["basket"] if isinstance(ind["basket"], list) else [ind["basket"]]):
+            x = (ctx.get("sectors") or {}).get(b) or {}
+            r = x.get("relative_5d")
+            if r is not None and r >= ind["min_rel"]:
+                hits.append(f"{x.get('name', b)} {r:+.1f}% vs market over 5 days")
+        return "; ".join(hits) or None
+    if t == "who":
+        kws = [k.lower() for k in CONFIG["who_keywords"]]
+        cutoff = iso(ctx["now"] - timedelta(days=ind.get("days", 14))) if ctx.get("now") else ""
+        for w in ctx.get("who") or []:
+            text = (w.get("title", "") + " " + w.get("summary", "")).lower()
+            if (w.get("date") or "") >= cutoff and any(k in text for k in kws):
+                return w.get("title", "")[:140]
+        return None
     if t == "acsc":
         return ctx["acsc_new"][0][:140] if ctx["acsc_new"] else None
     return None
@@ -110,9 +126,41 @@ def score_scenarios(ctx, prev_scores):
         score = min(100, score)
         prev = prev_scores.get(sc["key"])
         trend = "steady" if prev is None or abs(score - prev) < 5 else "up" if score > prev else "down"
-        out.append({"key": sc["key"], "name": sc["name"], "score": score, "band": band(score), "trend": trend,
+        dom = {i["id"]: i.get("domain", "Other") for i in sc["indicators"]}
+        for i in lit:
+            i["domain"] = dom[i["id"]]
+        for i in unlit:
+            i["domain"] = dom[i["id"]]
+        domains = sorted({i["domain"] for i in lit})
+        b = band(score)
+        if len(domains) >= 3 and score < 35:  # signs from three independent domains at once outweigh their raw weights
+            b = "Elevated"
+        out.append({"key": sc["key"], "name": sc["name"], "score": score, "band": b, "trend": trend,
+                    "domains": domains, "convergence": explain(sc, lit, unlit, domains),
                     "lit": lit, "unlit": unlit, "why": sc["why"], "sa_impact": sc["sa_impact"]})
     return out
+
+
+def _join(xs):
+    xs = list(xs)
+    return xs[0] if len(xs) == 1 else ", ".join(xs[:-1]) + " and " + xs[-1]
+
+
+def explain(sc, lit, unlit, domains):
+    """Plain-language explanation of how the warning signs for a scenario are (or aren't) converging."""
+    missing = sorted(unlit, key=lambda i: -i["weight"])[:3]
+    watch = f" The strongest signs not yet showing: {_join(i['name'].lower() for i in missing)}." if missing else ""
+    if not lit:
+        return "No warning signs are showing." + watch
+    n = len(domains)
+    if n == 1:
+        return (f"Only one kind of sign is showing ({domains[0].lower()}). On its own this is usually routine activity "
+                f"or noise, not a warning.{watch}")
+    if n == 2:
+        return (f"Two different kinds of sign are showing together ({_join(d.lower() for d in domains)}). Worth watching: "
+                f"independent signs lining up is the pattern that came before past events.{watch}")
+    return (f"Signs are converging across {n} separate areas ({_join(d.lower() for d in domains)}). Unrelated systems "
+            f"flagging the same scenario at once is the pattern seen before past events. {sc['why']}{watch}")
 
 
 def lit_ids(scenarios):

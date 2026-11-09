@@ -207,3 +207,23 @@ def test_news_matching_and_new_departures():
     assert precursors.new_departures(["Belarus"], st, now) == []
     assert precursors.new_departures(["Belarus", "Qatar"], st, now) == ["Qatar"]
     assert precursors.new_departures(["Belarus", "Qatar"], st, now + timedelta(days=20)) == []
+
+
+def test_convergence_sector_and_who():
+    import precursors
+    now = now_utc()
+    ctx = {"anomalies": {"tankers": {"status": "ANOMALY", "value": 30, "median": 9}}, "internet": {}, "telecom": {},
+           "departures": ["Qatar"], "news": {}, "markets": {"Brent oil": {"change_pct": 5.0}}, "satellites": {}, "acsc_new": [],
+           "sectors": {"defence_us": {"name": "US defence", "relative_5d": 6.2}, "pandemic": {"name": "Pandemic", "relative_5d": 12.0}},
+           "who": [{"title": "Avian influenza H5N1 - Cambodia", "summary": "", "date": iso(now)}], "now": now}
+    sc = {s["key"]: s for s in precursors.score_scenarios(ctx, {})}
+    me = sc["mideast"]
+    assert me["domains"] == ["Diplomatic", "Markets", "Military air"]
+    assert "converging across 3 separate areas" in me["convergence"]
+    assert "strongest signs not yet showing" in me["convergence"]
+    bio = sc["bio"]
+    assert {i["id"] for i in bio["lit"]} == {"who", "pharma"} and "Two different kinds" in bio["convergence"]
+    assert sc["korea"]["convergence"].startswith("No warning signs")
+    ctx["anomalies"] = {}; ctx["departures"] = []; ctx["markets"] = {}
+    one = {s["key"]: s for s in precursors.score_scenarios(ctx, {})}["mideast"]
+    assert one["convergence"].startswith("Only one kind of sign") and one["band"] == "Low"

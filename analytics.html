@@ -131,6 +131,12 @@ td.num{font-family:var(--mono);text-align:right}
   </section>
 
   <section class="panel">
+    <h2>Sector signals</h2>
+    <p class="note">Stock baskets vs their market over 5 trading days. Before COVID, mask, hazmat and vaccine makers jumped weeks before markets fell; defence stocks tend to rise as conflicts escalate. Outperformance by several points is a corroborating sign, never proof on its own.</p>
+    <div class="mini-grid" id="secMinis"></div>
+  </section>
+
+  <section class="panel">
     <h2>Warning-sign matrix</h2>
     <p class="note">Every precursor the system watches, by scenario. Red = showing now.</p>
     <div class="tbl" id="matrix"><p class="empty">Loading…</p></div>
@@ -169,7 +175,7 @@ function lineChart(canvas, labels, datasets, opts={}){
                tooltip:{enabled:true}},
       elements:{point:{radius:0, hoverRadius:4}, line:{borderWidth:2, tension:.25}},
       scales:{x:{display:!opts.mini, grid:{display:false}, ticks:{maxTicksLimit:7, maxRotation:0}},
-              y:{display:!opts.mini, beginAtZero:true, max:opts.max, grid:{color:css("--grid")}, border:{display:false}}}}});
+              y:{display:!opts.mini, beginAtZero:opts.max!=null, max:opts.max, grid:{color:css("--grid")}, border:{display:false}}}}});
 }
 
 (async()=>{
@@ -246,10 +252,17 @@ function lineChart(canvas, labels, datasets, opts={}){
     ["mil_mideast","Middle East & Gulf"],["mil_eeurope","Eastern Europe & Black Sea"],["mil_korea","Korea & Japan"],["mil_taiwan","Taiwan & S. China Sea"],["mil_auspng","Australia & PNG"],["nc3","US nuclear command"]];
   minis($("milMinis"), MIL.map(([k,n])=>({key:k, name:n, now:det[k]})));
 
+  const sec = (lat&&lat.sectors)||{};
+  $("secMinis").innerHTML = "";
+  minis($("secMinis"), Object.entries(sec).map(([k,b])=>({key:"rel_"+k, name:`${b.name} vs ${b.benchmark}`,
+    now:b.relative_5d==null?null:(b.relative_5d>0?"+":"")+b.relative_5d, unit:b.relative_5d==null?"":" pts",
+    color:b.relative_5d!=null&&b.relative_5d>=5?css("--critical"):css("--s1")})));
+  if(!Object.keys(sec).length) $("secMinis").innerHTML = `<p class="empty">Sector data arrives with the next collector run.</p>`;
+
   // Matrix
   if(scen.length){
     $("matrix").innerHTML = `<table class="matrix"><thead><tr><th>Scenario</th><th>Score</th><th>Warning signs (red = showing)</th></tr></thead><tbody>${
-      scen.map(s=>`<tr><td><b>${esc(s.name)}</b><br><span class="muted" style="font-size:.78rem">${esc(s.band)}</span></td><td>${s.score}</td><td style="text-align:left">${
+      scen.map(s=>`<tr><td><b>${esc(s.name)}</b><br><span class="muted" style="font-size:.78rem">${esc(s.band)}${(s.domains||[]).length?` · ${s.domains.length} area${s.domains.length>1?"s":""}`:""}</span></td><td>${s.score}</td><td style="text-align:left"><p class="note" style="margin:0 0 6px;font-family:var(--body);font-size:.82rem">${esc(s.convergence||"")}</p>${
         [...s.lit.map(i=>({...i,on:1})),...s.unlit].map(i=>`<span class="chip" title="${esc(i.detail||"")}" style="display:inline-block;margin:2px;background:${i.on?css("--critical"):"transparent"};color:${i.on?"#fff":css("--muted")};border:1px solid ${i.on?css("--critical"):css("--line")}">${esc(i.name)} · ${i.weight}</span>`).join("")}</td></tr>`).join("")}</tbody></table>`;
   }
 
