@@ -1,59 +1,82 @@
 {
-  "generated_at": "2026-11-09T16:12:00Z",
+  "generated_at": "2026-11-09T16:26:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
       "band": "Low",
+      "convergence": "No warning signs are showing. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
+      "domains": [],
       "key": "mideast",
       "lit": [],
       "name": "Middle East war & Gulf shipping",
       "sa_impact": "Fuel: Australia imports most of its fuel, much of it refined from Gulf crude in Asia. Shipping attacks or a Hormuz closure push up prices within days and can cause local shortages.",
       "score": 0,
-      "trend": "down",
+      "trend": "steady",
       "unlit": [
         {
+          "domain": "Military air",
           "id": "tankers",
           "name": "Air-refuelling tanker surge",
           "weight": 15
         },
         {
+          "domain": "Military air",
           "id": "air",
           "name": "Unusual military air activity over the region",
           "weight": 15
         },
         {
+          "domain": "Electronic warfare",
           "id": "gps",
           "name": "GPS jamming spike (Gulf / Israel)",
           "weight": 10
         },
         {
+          "domain": "Communications",
           "id": "net",
           "name": "Internet blackout in Iran or Israel",
           "weight": 15
         },
         {
+          "domain": "Diplomatic",
           "id": "dep",
           "name": "New US embassy departure order in the region",
           "weight": 15
         },
         {
+          "domain": "Aviation",
           "id": "airspace",
           "name": "Airspace closures reported (Iran / Israel / Gulf)",
           "weight": 10
         },
         {
+          "domain": "Maritime",
           "id": "nav",
           "name": "Military navigation warnings (Gulf / Red Sea)",
           "weight": 10
         },
         {
+          "domain": "Markets",
           "id": "oil",
           "name": "Brent oil up 4%+ in a day",
           "weight": 10
         },
         {
+          "domain": "Space",
           "id": "sat",
           "name": "Spy-satellite passes converging on Iran / Israel",
+          "weight": 5
+        },
+        {
+          "domain": "Markets",
+          "id": "def",
+          "name": "US defence stocks outperforming (5 days)",
+          "weight": 5
+        },
+        {
+          "domain": "Health",
+          "id": "masscas",
+          "name": "Mass casualty declarations in the region",
           "weight": 5
         }
       ],
@@ -61,51 +84,79 @@
     },
     {
       "band": "Low",
+      "convergence": "No warning signs are showing. The strongest signs not yet showing: missile / live-fire navigation warnings near taiwan, gps jamming over the taiwan strait and internet disruption in taiwan.",
+      "domains": [],
       "key": "taiwan",
       "lit": [],
       "name": "Taiwan Strait / South China Sea crisis",
       "sa_impact": "Trade and fuel: most of Australia's refined fuel and many goods pass the South China Sea. A blockade would disrupt fuel, medicines and electronics within weeks; Australian forces could be drawn in.",
       "score": 0,
-      "trend": "down",
+      "trend": "steady",
       "unlit": [
         {
+          "domain": "Maritime",
           "id": "nav",
           "name": "Missile / live-fire navigation warnings near Taiwan",
           "weight": 20
         },
         {
+          "domain": "Electronic warfare",
           "id": "gps",
           "name": "GPS jamming over the Taiwan Strait",
           "weight": 15
         },
         {
+          "domain": "Communications",
           "id": "net",
           "name": "Internet disruption in Taiwan",
           "weight": 15
         },
         {
+          "domain": "Military air",
           "id": "air",
           "name": "Unusual military air activity near Taiwan",
           "weight": 10
         },
         {
+          "domain": "Mobilisation",
           "id": "mob",
           "name": "Mobilisation / reservist reports (China or Taiwan)",
           "weight": 15
         },
         {
+          "domain": "Military air",
           "id": "lift",
           "name": "Military airlift or RAAF surge",
           "weight": 10
         },
         {
+          "domain": "Diplomatic",
           "id": "dep",
           "name": "New US embassy departure order (Taiwan / China)",
           "weight": 10
         },
         {
+          "domain": "Space",
           "id": "sat",
           "name": "Spy-satellite passes converging on Taiwan",
+          "weight": 5
+        },
+        {
+          "domain": "State signalling",
+          "id": "signals",
+          "name": "Chinese war-preparation signalling",
+          "weight": 15
+        },
+        {
+          "domain": "Medical preparation",
+          "id": "blood",
+          "name": "Military blood drives / field hospitals (China / Taiwan)",
+          "weight": 10
+        },
+        {
+          "domain": "Markets",
+          "id": "def",
+          "name": "Defence stocks outperforming (US / Australia)",
           "weight": 5
         }
       ],
@@ -113,6 +164,8 @@
     },
     {
       "band": "Low",
+      "convergence": "No warning signs are showing. The strongest signs not yet showing: missile navigation warnings (korea / sea of japan), gps jamming over korea and unusual military air activity (korea / japan).",
+      "domains": [],
       "key": "korea",
       "lit": [],
       "name": "Korean Peninsula conflict",
@@ -121,36 +174,43 @@
       "trend": "steady",
       "unlit": [
         {
+          "domain": "Maritime",
           "id": "nav",
           "name": "Missile navigation warnings (Korea / Sea of Japan)",
           "weight": 20
         },
         {
+          "domain": "Electronic warfare",
           "id": "gps",
           "name": "GPS jamming over Korea",
           "weight": 20
         },
         {
+          "domain": "Military air",
           "id": "air",
           "name": "Unusual military air activity (Korea / Japan)",
           "weight": 15
         },
         {
+          "domain": "Communications",
           "id": "net",
           "name": "Internet disruption in South Korea",
           "weight": 10
         },
         {
+          "domain": "Mobilisation",
           "id": "mob",
           "name": "Mobilisation / reservist reports (Korea)",
           "weight": 15
         },
         {
+          "domain": "Nuclear command",
           "id": "nc3",
           "name": "US nuclear command aircraft unusual",
           "weight": 10
         },
         {
+          "domain": "Space",
           "id": "sat",
           "name": "Spy-satellite passes converging on Korea",
           "weight": 10
@@ -159,99 +219,134 @@
       "why": "North Korean missile launches are often preceded by navigation warnings; South Korea and Japan report GPS jamming from the North during tense periods."
     },
     {
-      "band": "Guarded",
+      "band": "Low",
+      "convergence": "No warning signs are showing. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and mobilisation / reservist reports (russia / nato).",
+      "domains": [],
       "key": "russia",
-      "lit": [
-        {
-          "detail": "Russian commanders making ‘dead soldiers’ vote for Putin’s party - TVP World",
-          "id": "mob",
-          "name": "Mobilisation / reservist reports (Russia / NATO)",
-          "weight": 15
-        }
-      ],
+      "lit": [],
       "name": "Russia-NATO escalation",
       "sa_impact": "Indirect: energy and market shock, cyber attacks that can spill over to Australian systems, and nuclear-risk rhetoric.",
-      "score": 15,
+      "score": 0,
       "trend": "down",
       "unlit": [
         {
+          "domain": "Electronic warfare",
           "id": "gps",
           "name": "GPS jamming spike (Baltic / Black Sea)",
           "weight": 15
         },
         {
+          "domain": "Military air",
           "id": "air",
           "name": "Unusual military air activity (Eastern Europe)",
           "weight": 15
         },
         {
+          "domain": "Mobilisation",
+          "id": "mob",
+          "name": "Mobilisation / reservist reports (Russia / NATO)",
+          "weight": 15
+        },
+        {
+          "domain": "Communications",
           "id": "net",
           "name": "Internet disruption in Russia",
           "weight": 10
         },
         {
+          "domain": "Nuclear command",
           "id": "nc3",
           "name": "US nuclear command aircraft unusual",
           "weight": 15
         },
         {
+          "domain": "Diplomatic",
           "id": "dep",
           "name": "New US embassy departure order (Russia / Belarus / Ukraine region)",
           "weight": 10
         },
         {
+          "domain": "Elite movement",
           "id": "jets",
           "name": "Private jets heading to retreat destinations",
           "weight": 10
         },
         {
+          "domain": "Markets",
           "id": "vix",
           "name": "Market fear index above 30",
           "weight": 10
+        },
+        {
+          "domain": "Medical preparation",
+          "id": "blood",
+          "name": "Military blood supplies / field hospitals (Russia)",
+          "weight": 10
+        },
+        {
+          "domain": "State signalling",
+          "id": "signals",
+          "name": "Russian signalling (Buzzer broadcasts, nuclear drills)",
+          "weight": 5
+        },
+        {
+          "domain": "Markets",
+          "id": "def",
+          "name": "European defence stocks outperforming (5 days)",
+          "weight": 5
         }
       ],
       "why": "Before February 2022: embassy departures, mobilisation reports, airspace closures and a surge in GPS jamming. Baltic and Black Sea jamming is now routine, so only spikes above normal count."
     },
     {
       "band": "Low",
+      "convergence": "No warning signs are showing. The strongest signs not yet showing: us nuclear command aircraft unusual, private jets heading to retreat destinations and mobilisation reports (any major power).",
+      "domains": [],
       "key": "nuclear",
       "lit": [],
       "name": "Nuclear use or alert",
       "sa_impact": "Fallout risk to SA from a northern-hemisphere exchange is very low, but global trade, fuel and finance would be severely disrupted.",
       "score": 0,
-      "trend": "down",
+      "trend": "steady",
       "unlit": [
         {
+          "domain": "Nuclear command",
           "id": "nc3",
           "name": "US nuclear command aircraft unusual",
           "weight": 30
         },
         {
+          "domain": "Military air",
           "id": "tankers",
           "name": "Air-refuelling tanker surge",
           "weight": 10
         },
         {
+          "domain": "Elite movement",
           "id": "jets",
           "name": "Private jets heading to retreat destinations",
           "weight": 15
         },
         {
+          "domain": "Elite movement",
           "id": "bizjets",
           "name": "Surge of long-range private jets",
           "weight": 10
         },
         {
+          "domain": "Markets",
           "id": "vix",
           "name": "Market fear index above 35",
           "weight": 10
         },
         {
+          "domain": "Markets",
           "id": "gold",
           "name": "Gold up 4%+ in a day",
           "weight": 10
         },
         {
+          "domain": "Mobilisation",
           "id": "mob",
           "name": "Mobilisation reports (any major power)",
           "weight": 15
@@ -261,6 +356,8 @@
     },
     {
       "band": "Low",
+      "convergence": "No warning signs are showing. The strongest signs not yet showing: phone / internet carrier outage, gps degradation over sa or nsw and two or more carriers down at once.",
+      "domains": [],
       "key": "ausinfra",
       "lit": [],
       "name": "Australian infrastructure disruption",
@@ -269,32 +366,107 @@
       "trend": "steady",
       "unlit": [
         {
+          "domain": "Communications",
           "id": "tel",
           "name": "Phone / internet carrier outage",
           "weight": 30
         },
         {
+          "domain": "Communications",
           "id": "tel2",
           "name": "Two or more carriers down at once",
           "weight": 20
         },
         {
+          "domain": "Electronic warfare",
           "id": "gps",
           "name": "GPS degradation over SA or NSW",
           "weight": 25
         },
         {
+          "domain": "Cyber",
           "id": "acsc",
           "name": "New Australian cyber alert (ACSC)",
           "weight": 15
         },
         {
+          "domain": "Mobilisation",
           "id": "adf",
           "name": "ADF reserves called out",
+          "weight": 10
+        },
+        {
+          "domain": "Health",
+          "id": "masscas",
+          "name": "Mass casualty / Code Brown declared in Australia",
           "weight": 10
         }
       ],
       "why": "The 2023 Optus outage cut mobile, NBN, EFTPOS and some 000 calls nationwide for 12 hours. Hostile states pre-position in critical infrastructure; GPS jamming over Australia would be a new and serious sign."
+    },
+    {
+      "band": "Elevated",
+      "convergence": "Two different kinds of sign are showing together (health and trade). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: countries restricting medical supply exports, pandemic-response stocks outperforming (5 days) and market fear index above 30.",
+      "domains": [
+        "Health",
+        "Trade"
+      ],
+      "key": "bio",
+      "lit": [
+        {
+          "detail": "Ebola disease caused by Bundibugyo virus - Democratic Republic of the Congo, Kenya and Nigeria",
+          "domain": "Health",
+          "id": "who",
+          "name": "WHO outbreak report with a high-concern pathogen (last 14 days)",
+          "weight": 15
+        },
+        {
+          "detail": "TreVeyon Henderson’s Mystery Illness Leaves Patriots Scrambling - Yahoo Sports",
+          "domain": "Health",
+          "id": "illness",
+          "name": "Unknown illness / pneumonia cluster reported",
+          "weight": 20
+        },
+        {
+          "detail": "Regulatory round-up: 9 November 2026 - The Pharma Letter",
+          "domain": "Trade",
+          "id": "shortage",
+          "name": "Australian medicine or PPE shortage reports",
+          "weight": 10
+        },
+        {
+          "detail": "'Normal teen' spared jail over Opera House terror plot - https://aapnews.aap.com.au/",
+          "domain": "Health",
+          "id": "masscas",
+          "name": "Mass casualty declarations (any country)",
+          "weight": 5
+        }
+      ],
+      "name": "Pandemic or biological emergency",
+      "sa_impact": "Health system strain, possible lockdowns and border closures, and shortages of medicines and protective equipment, which Australia mostly imports.",
+      "score": 50,
+      "trend": "steady",
+      "unlit": [
+        {
+          "domain": "Trade",
+          "id": "exports",
+          "name": "Countries restricting medical supply exports",
+          "weight": 20
+        },
+        {
+          "domain": "Markets",
+          "id": "pharma",
+          "name": "Pandemic-response stocks outperforming (5 days)",
+          "weight": 20
+        },
+        {
+          "domain": "Markets",
+          "id": "vix",
+          "name": "Market fear index above 30",
+          "weight": 10
+        }
+      ],
+      "why": "Before COVID-19 (Dec 2019 - Feb 2020): reports of an unknown pneumonia cluster, WHO outbreak notices, mask and hazmat makers (Alpha Pro Tech, Lakeland) and vaccine developers (Moderna, Novavax) surging weeks before broad markets fell, and countries restricting exports of masks and medicines (Taiwan from 24 Jan 2020, then dozens more)."
     }
   ]
 }
