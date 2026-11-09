@@ -4,11 +4,11 @@
     "anomalies": {
       "bizjets_airborne": {
         "status": "learning baseline",
-        "value": 33
+        "value": 32
       },
       "mil_total": {
         "status": "learning baseline",
-        "value": 240
+        "value": 242
       },
       "nc3": {
         "status": "learning baseline",
@@ -24,24 +24,24 @@
       }
     },
     "detail": {
-      "bizjets_airborne": 33,
+      "bizjets_airborne": 32,
       "bizjets_by_hub": {
         "Dallas / Houston": 1,
         "Dubai": 1,
-        "Geneva / Zurich": 8,
+        "Geneva / Zurich": 7,
         "Hong Kong": 0,
-        "London": 9,
+        "London": 8,
         "Los Angeles (Van Nuys)": 0,
         "Moscow": 0,
         "New York (Teterboro)": 8,
         "Palm Beach / Miami": 4,
         "San Francisco Bay": 0,
         "Singapore": 1,
-        "Washington DC": 7
+        "Washington DC": 8
       },
       "errors": [],
       "isr": 2,
-      "mil_total": 240,
+      "mil_total": 242,
       "nc3": 0,
       "nc3_seen": [],
       "retreat_bizjets": 0,
@@ -93,12 +93,12 @@
     }
   ],
   "gdacs_current_orange_red": [],
-  "generated_at": "2026-11-09T12:38:00Z",
+  "generated_at": "2026-11-09T12:41:00Z",
   "markets": {
     "AUD/USD": {
-      "change_pct": -0.48,
+      "change_pct": -0.49,
       "prev_close": 0.6931,
-      "price": 0.6898
+      "price": 0.6897
     },
     "Brent oil": {
       "change_pct": -3.45,
@@ -108,12 +108,12 @@
     "Gold": {
       "change_pct": 1.2,
       "prev_close": 4074.8999,
-      "price": 4123.7
+      "price": 4124.0
     },
     "VIX": {
-      "change_pct": -8.03,
+      "change_pct": -8.27,
       "prev_close": 25.64,
-      "price": 23.58
+      "price": 23.52
     }
   },
   "quakes_m6_24h": [
@@ -129,6 +129,23 @@
     }
   ],
   "recent_alerts": [
+    {
+      "channel": "proactive",
+      "channels": [
+        "proactive"
+      ],
+      "message": "THIS IS A TEST - no real threat. Example of a Level 4 alert: three categories elevated with official advisories issued. You would: finish stocking food, water and medicines; confirm the family meeting point; charge radios and power banks.",
+      "priority": 4,
+      "sent": {
+        "proactive": true
+      },
+      "sent_at": "2026-11-09T12:41:00Z",
+      "source": "analysis",
+      "tags": [
+        "test_tube"
+      ],
+      "title": "TEST ONLY - Level 4 High (mock)"
+    },
     {
       "channel": "both",
       "channels": [
@@ -177,31 +194,31 @@
     },
     "cisa": {
       "ok": true,
-      "secs": 0.1
+      "secs": 0.3
     },
     "gdacs": {
       "ok": true,
-      "secs": 3.9
+      "secs": 3.1
     },
     "markets": {
       "ok": true,
-      "secs": 0.2
+      "secs": 0.6
     },
     "uk_advice": {
       "ok": true,
-      "secs": 0.7
+      "secs": 0.2
     },
     "us_advisories": {
       "ok": true,
-      "secs": 0.2
+      "secs": 0.3
     },
     "usgs": {
       "ok": true,
-      "secs": 0.0
+      "secs": 0.1
     },
     "who": {
       "ok": true,
-      "secs": 0.7
+      "secs": 0.8
     }
   },
   "uk_recent_updates": [
