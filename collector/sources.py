@@ -240,7 +240,24 @@ def fetch_gps():
 
 
 # ---------- NGA maritime navigation warnings (missile / live-fire areas) ----------
-NGA = "https://msi.nga.mil/api/publications/broadcast-warn?status=active&output=json"
+NGA_URLS = ["https://msi.nga.mil/api/publications/broadcast-warn?status=A&output=json",
+            "https://msi.nga.mil/api/publications/broadcast-warn?output=json",
+            "https://msi.nga.mil/api/publications/broadcast-warn?status=active&output=json"]
+
+
+def _fetch_navwarn():
+    errors = []
+    for url in NGA_URLS:
+        try:
+            out = parse_navwarn(get_json(url, timeout=30))
+            if out["total_records"]:
+                out["url"] = url
+                return out
+            errors.append(f"{url[-30:]}: no records")
+        except Exception as e:  # noqa: BLE001
+            errors.append(f"{url[-30:]}: {type(e).__name__}: {e}"[:120])
+        time.sleep(2)
+    raise RuntimeError("; ".join(errors))
 
 
 def _find_records(data):
@@ -428,7 +445,7 @@ def fetch_all():
         "telecom": fetch_telecom,
         "analysts": fetch_analysts,
         "gps": fetch_gps,
-        "navwarn": lambda: parse_navwarn(get_json(NGA, timeout=30)),
+        "navwarn": _fetch_navwarn,
         "internet": fetch_internet_countries,
         "news_watch": fetch_news_watch,
     }
