@@ -264,3 +264,36 @@ def test_cyber_parsers_and_scenario():
            "cyber": {"infocon": "yellow", "kev_ratio": 3.0, "kev_edge_7d": 4, "ics_scan_ratio": 1.1, "ransom_au_ratio": None}}
     sc = {s["key"]: s for s in precursors.score_scenarios(ctx, {})}["cyber"]
     assert {i["id"] for i in sc["lit"]} == {"infocon", "kev", "edge"} and len(sc["domains"]) == 3 and sc["band"] == "Elevated"
+
+
+def test_mortality_maritime_and_ai():
+    from datetime import datetime, timezone
+    import maritime, mortality, precursors
+    hdr = "Short-term mortality\nCountryCode,Year,Week,Sex,DTotal,Forecast\n"
+    rows = "".join(f"AUS,{y},40,b,{3000 if y < 2026 else 4200},0\nAUS,{y},40,m,1,0\n" for y in (2023, 2024, 2025, 2026))
+    now = datetime(2026, 11, 9, tzinfo=timezone.utc)
+    m = mortality.parse_stmf(hdr + rows, now)
+    assert m["AUS"]["latest"]["excess_pct"] == 40.0 and m["AUS"]["iso2"] == "AU" and m["AUS"]["age_weeks"] == 5
+    assert mortality.summary({"countries": m}) == ["Australia +40%"]
+
+    seen = {}
+    msg = {"MessageType": "PositionReport", "MetaData": {"MMSI": 413000001, "ShipName": "XIN HAI ", "latitude": -33.8, "longitude": 151.4},
+           "Message": {"PositionReport": {"Sog": 0.4, "NavigationalStatus": 1}}}
+    maritime.handle(msg, seen, now)
+    maritime.handle({**msg, "MetaData": {**msg["MetaData"], "MMSI": 1, "latitude": 0, "longitude": 0}}, seen, now)
+    assert list(seen) == ["413000001"] and seen["413000001"]["zone"] == "syd_n" and seen["413000001"]["flag"] == "China"
+    mc = {"max_knots": 3, "min_minutes": 45, "forget_hours": 6, "flags_of_interest": ["China"]}
+    tracks = {}
+    assert maritime.update_tracks(tracks, seen, now, mc) == []
+    seen["413000001"]["last"] = iso(now + timedelta(minutes=50))
+    lo = maritime.update_tracks(tracks, seen, now + timedelta(minutes=50), mc)
+    assert len(lo) == 1 and lo[0]["minutes"] == 50 and lo[0]["of_interest"]
+
+    ctx = {"anomalies": {}, "internet": {}, "telecom": {}, "departures": [], "markets": {"VIX": {"change_pct": 30.0, "price": 28}},
+           "satellites": {}, "acsc_new": [], "sectors": {}, "who": [], "now": now, "mortality": ["Australia +40%"],
+           "cyber": {"kev_vendors_ratio": 2.5}, "maritime": {"loitering": lo},
+           "news": {"deepfake": {"items": [{"title": "Deepfake video of prime minister announcing bank closures spreads"}]}}}
+    sc = {s["key"]: s for s in precursors.score_scenarios(ctx, {})}
+    assert {i["id"] for i in sc["ai"]["lit"]} == {"breadth", "deepfake", "vix"} and len(sc["ai"]["domains"]) == 3
+    assert "cable" in {i["id"] for i in sc["ausinfra"]["lit"]}
+    assert "mortality" in {i["id"] for i in sc["bio"]["lit"]}

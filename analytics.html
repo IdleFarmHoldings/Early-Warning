@@ -69,7 +69,8 @@ td.num{font-family:var(--mono);text-align:right}
 .matrix td:first-child,.matrix th:first-child{text-align:left;font-family:var(--body)}
 .empty{color:var(--muted);font-size:.9rem}
 .leaflet-container{font-family:var(--body)}
-#cyMap{height:440px;border-radius:6px;border:1px solid var(--line)}
+#cyMap,#morMap,#seaMap{height:440px;border-radius:6px;border:1px solid var(--line)}
+@media (max-width:560px){#morMap,#seaMap{height:340px}}
 @media (max-width:560px){#cyMap{height:340px}}
 .vec{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
 .vec .mini p{margin:4px 0 0;font-size:.82rem;color:var(--muted)}
@@ -167,6 +168,23 @@ td.num{font-family:var(--mono);text-align:right}
       <p class="note">How many different machines scanned for each type of control system or remote access yesterday, vs the usual for the past fortnight. A jump often comes before attacks on utilities.</p>
       <div class="tbl" id="portTbl"><p class="empty">Loading…</p></div>
     </div>
+  </section>
+
+  <section class="panel">
+    <h2>Death rates vs normal</h2>
+    <p class="note">Weekly deaths from all causes compared with the same week in the previous three years, from official statistics (Human Mortality Database). A sudden, local jump with no flu season or heatwave to explain it is one sign of a disease outbreak or chemical/biological attack. These figures arrive weeks late, so they confirm rather than warn; the news watches for chemical attacks, mass poisonings and unexplained deaths are the fast signals.</p>
+    <div id="morMap" role="img" aria-label="Map of excess deaths by country"></div>
+    <div class="legend"><span>Deaths vs normal:</span>
+      <span class="chip" style="background:var(--good)">below or within 5%</span><span class="chip" style="background:var(--warning);color:#0b0b0b">+5–15%</span>
+      <span class="chip" style="background:var(--serious)">+15–25%</span><span class="chip" style="background:var(--critical)">+25% or more</span></div>
+    <div class="tbl" id="morTbl" style="margin-top:12px"><p class="empty">Loading…</p></div>
+  </section>
+
+  <section class="panel">
+    <h2>Undersea cables: loitering vessels</h2>
+    <p class="note">Ships moving under 3 knots for 45+ minutes inside known cable corridors (Australia, Taiwan, the Baltic, the Red Sea), from live ship-tracking (AIS). Cables near Taiwan and in the Baltic have been cut by ships dragging anchors, including Chinese- and Hong Kong-linked vessels. Ships can switch tracking off and coverage far offshore is patchy, so an empty list is not proof of safety.</p>
+    <div id="seaMap" role="img" aria-label="Map of undersea cable corridors and loitering vessels"></div>
+    <div class="tbl" id="seaTbl" style="margin-top:12px"><p class="empty">Loading…</p></div>
   </section>
 
   <section class="panel">
@@ -298,8 +316,6 @@ function lineChart(canvas, labels, datasets, opts={}){
     color:b.relative_5d!=null&&b.relative_5d>=5?css("--critical"):css("--s1")})));
   if(!Object.keys(sec).length) $("secMinis").innerHTML = `<p class="empty">Sector data arrives with the next collector run.</p>`;
 
-  // ---------- Cyber ----------
-  const cy = (lat&&lat.cyber)||null;
   const C = {AU:[-25,134],US:[39,-98],CA:[57,-101],MX:[23,-102],BR:[-10,-52],AR:[-35,-65],CL:[-33,-71],CO:[4,-73],PE:[-10,-76],VE:[7,-66],
     GB:[54,-2],IE:[53,-8],FR:[46.5,2.5],DE:[51,10],NL:[52.3,5.5],BE:[50.6,4.6],LU:[49.8,6.1],CH:[46.8,8.2],AT:[47.5,14.5],IT:[42.8,12.5],ES:[40,-4],PT:[39.5,-8],
     SE:[62,15],NO:[61,9],FI:[64,26],DK:[56,10],PL:[52,19],CZ:[49.8,15.5],SK:[48.7,19.7],HU:[47,19.5],RO:[46,25],BG:[42.7,25.3],GR:[39,22],RS:[44,21],HR:[45.2,15.5],
@@ -309,6 +325,42 @@ function lineChart(canvas, labels, datasets, opts={}){
     IN:[22,79],PK:[30,70],BD:[24,90],LK:[7.8,80.7],NP:[28.4,84],CN:[35,104],HK:[22.3,114.2],TW:[23.7,121],JP:[36.5,138],KR:[36.5,128],KP:[40,127],
     MN:[46.8,103],KZ:[48,67],UZ:[41.4,64.6],VN:[16,107],TH:[15,101],MY:[4,102],SG:[1.35,103.8],ID:[-2,118],PH:[12,122],KH:[12.5,105],MM:[21,96],
     NZ:[-41,174],PG:[-6,145],FJ:[-17.8,178],SC:[-4.7,55.5],PA:[8.5,-80],CR:[10,-84],DO:[19,-70.5],PR:[18.2,-66.5]};
+  // ---------- Mortality ----------
+  const [mor, sea] = await Promise.all([get("data/mortality.json"), get("data/maritime.json")]);
+  const MC = Object.assign({}, C, {"GB-SCT":[56.8,-4.2],"GB-NIR":[54.6,-6.7]});
+  const exColor = v => v==null?css("--line"):v>=25?css("--critical"):v>=15?css("--serious"):v>=5?css("--warning"):css("--good");
+  if(mor && mor.countries){
+    const mm = L.map("morMap",{worldCopyJump:true}).setView([35,20],2);
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:6,minZoom:1,attribution:"© OpenStreetMap contributors"}).addTo(mm);
+    const list = Object.values(mor.countries).sort((a,b)=>(b.latest.excess_pct??-99)-(a.latest.excess_pct??-99));
+    for(const c of list){ const p=MC[c.iso2]; if(!p) continue; const v=c.latest.excess_pct;
+      L.circleMarker(p,{radius:9, color:css("--surface"), weight:2, fillColor:exColor(v), fillOpacity:c.age_weeks>10?.35:1})
+        .bindTooltip(`<b>${esc(c.name)}</b><br>Week ${c.latest.week}/${c.latest.year}: ${c.latest.deaths.toLocaleString()} deaths, ${v>0?"+":""}${v}% vs normal<br>${c.age_weeks} weeks old${c.age_weeks>10?" (stale)":""}`).addTo(mm); }
+    $("morTbl").innerHTML = `<table><thead><tr><th>Country</th><th>Latest week</th><th>Deaths</th><th>Normal</th><th>vs normal</th><th>Data age</th></tr></thead><tbody>${
+      list.map(c=>`<tr><td>${esc(c.name)}</td><td class="num">${c.latest.week}/${c.latest.year}</td><td class="num">${c.latest.deaths.toLocaleString()}</td><td class="num">${c.latest.expected.toLocaleString()}</td>
+      <td class="num"><span class="chip" style="background:${exColor(c.latest.excess_pct)};${c.latest.excess_pct>=5&&c.latest.excess_pct<15?"color:#0b0b0b":""}">${c.latest.excess_pct>0?"+":""}${c.latest.excess_pct}%</span></td><td class="num">${c.age_weeks??"—"} wk</td></tr>`).join("")}</tbody></table>
+      <p class="note" style="margin-top:6px">Data refreshed ${fmt(mor.generated_at)}. Faded markers are more than 10 weeks old.</p>`;
+  } else { $("morMap").outerHTML = `<p class="empty">Death-rate data arrives with the next daily refresh.</p>`; $("morTbl").innerHTML=""; }
+
+  // ---------- Undersea cables ----------
+  if(sea && sea.zones){
+    const sm = L.map("seaMap",{worldCopyJump:true}).setView([0,120],2);
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:10,minZoom:1,attribution:"© OpenStreetMap contributors"}).addTo(sm);
+    for(const z of Object.values(sea.zones)){ const b=z.box;
+      L.rectangle([[b[0],b[2]],[b[1],b[3]]],{color:z.of_interest?css("--critical"):z.loitering?css("--serious"):css("--s1"), weight:z.of_interest?3:1.5, fillOpacity:.12})
+        .bindTooltip(`<b>${esc(z.name)}</b><br>${z.vessels_now} vessels seen this check · ${z.loitering} loitering${z.of_interest?` · ${z.of_interest} of interest`:""}`).addTo(sm); }
+    for(const v of sea.loitering||[]){
+      L.circleMarker([v.lat,v.lon],{radius:7, color:css("--surface"), weight:2, fillColor:v.of_interest?css("--critical"):css("--s2"), fillOpacity:1})
+        .bindTooltip(`<b>${esc(v.name||v.mmsi)}</b> (${esc(v.flag)})<br>${v.sog} kn for ~${v.minutes} min`).addTo(sm); }
+    const lo = sea.loitering||[];
+    $("seaTbl").innerHTML = (lo.length ? `<table><thead><tr><th>Vessel</th><th>Flag</th><th>Zone</th><th>Speed</th><th>Loitering</th></tr></thead><tbody>${
+      lo.map(v=>`<tr><td>${esc(v.name||"(no name)")} <span class="muted" style="font-size:.75rem">${esc(v.mmsi)}</span></td><td>${v.of_interest?`<span class="chip" style="background:var(--critical)">${esc(v.flag)}</span>`:esc(v.flag)}</td><td>${esc((sea.zones[v.zone]||{}).name||v.zone)}</td><td class="num">${v.sog??"—"} kn</td><td class="num">${v.minutes} min</td></tr>`).join("")}</tbody></table>`
+      : `<p class="empty">No vessels loitering in cable corridors right now.</p>`) + `<p class="note" style="margin-top:6px">${sea.messages_vessels} vessels seen in the corridors during the last check (${fmt(sea.generated_at)}).</p>`;
+  } else { $("seaMap").outerHTML = `<p class="empty">Ship tracking starts once the free aisstream.io key is added to the repository (see README).</p>`; $("seaTbl").innerHTML=""; }
+
+  // ---------- Cyber ----------
+  const cy = (lat&&lat.cyber)||null;
+
   if(cy){
     const S = cy.summary||{};
     const card = (title, val, usual, ratio, note, hot) => `<div class="mini"><div class="row"><span>${esc(title)}</span>

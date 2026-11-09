@@ -116,6 +116,14 @@ def _lit(ind, ctx):
         if "not_in" in ind:
             return f"{ind['field'].replace('_', ' ')}: {v}" if str(v).lower() not in ind["not_in"] else None
         return f"{ind['field'].replace('_', ' ')} = {v}" if isinstance(v, (int, float)) and v >= ind["at_least"] else None
+    if t == "maritime":
+        regions = {z["key"]: z["region"] for z in CONFIG["maritime"]["zones"]}
+        hits = [v for v in (ctx.get("maritime") or {}).get("loitering", [])
+                if regions.get(v["zone"]) == ind["region"] and (v["of_interest"] or not ind.get("of_interest"))]
+        return "; ".join(f"{v['flag']} vessel {v['name'] or v['mmsi']} ~{v['minutes']} min" for v in hits[:3]) or None
+    if t == "mortality":
+        hot = ctx.get("mortality") or []
+        return ("Deaths above normal: " + ", ".join(hot[:4])) if hot else None
     if t == "acsc":
         return ctx["acsc_new"][0][:140] if ctx["acsc_new"] else None
     return None

@@ -45,6 +45,8 @@ Channel names are stored as repository secrets `NTFY_PROACTIVE` and `NTFY_REACTI
 | SANS Internet Storm Center | Global threat level (Infocon), scanning of industrial-control and remote-access ports, top attacking addresses (geolocated by ip-api.com) |
 | abuse.ch Feodo Tracker | Botnet command servers by country |
 | ransomware.live | Ransomware victims by country (7 days) and Australian victims vs normal |
+| Human Mortality Database (STMF) | Weekly deaths vs normal for ~38 countries (lags several weeks) |
+| aisstream.io live AIS (free key) | Vessels loitering over undersea-cable corridors around Australia, Taiwan, the Baltic and Red Sea |
 | Crisis Group, ASPI Strategist, Lowy Interpreter | Analyst headlines for the analysis run (context only, never pushed on their own) |
 
 Aircraft data courtesy of [adsb.fi](https://adsb.fi), used for personal, non-commercial purposes.
@@ -61,3 +63,14 @@ Flight anomalies need about a week of history before they can alert ("learning b
 - `state/state.json` — what has already been alerted (prevents repeats)
 - `alerts/log.jsonl` — every alert sent
 - `tests/` — offline tests: `python tests/test_collector.py`
+
+## Ship tracking key (one-off setup)
+
+1. Sign in at https://aisstream.io with GitHub and copy your free API key.
+2. In this repository: Settings > Secrets and variables > Actions > New repository secret. Name: `AISSTREAM_KEY`, value: the key.
+
+Until the key is added, the "Undersea cables" section shows a setup note and everything else runs normally.
+
+## Runs without your computer
+
+Everything runs in the cloud: the collector on GitHub Actions every 15 minutes, the twice-daily analysis as a scheduled Claude task, alerts through ntfy.sh, and the family page on GitHub Pages. No laptop needs to be on or signed in.

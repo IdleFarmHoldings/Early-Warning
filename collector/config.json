@@ -555,6 +555,46 @@
       "key": "cyber_supply",
       "name": "Supply-chain & mass exploitation",
       "q": "(\"supply chain attack\" OR \"mass exploitation\" OR \"zero-day\" OR \"actively exploited\") (thousands OR worldwide OR critical)"
+    },
+    {
+      "key": "cables",
+      "name": "Undersea cable damage",
+      "q": "(\"undersea cable\" OR \"subsea cable\" OR \"submarine cable\") (cut OR damaged OR severed OR anchor OR sabotage OR outage)"
+    },
+    {
+      "key": "chem",
+      "name": "Chemical weapons & mass poisoning",
+      "q": "(\"chemical attack\" OR \"nerve agent\" OR \"chemical weapons\" OR \"poison gas\" OR \"chlorine gas\" OR OPCW OR \"mass poisoning\")"
+    },
+    {
+      "key": "dieoff",
+      "name": "Mass deaths & animal die-offs",
+      "q": "(\"mass die-off\" OR \"mass deaths\" OR \"unexplained deaths\" OR \"mysterious deaths\") (livestock OR birds OR fish OR cattle OR people OR villagers OR residents)"
+    },
+    {
+      "key": "ai_hack",
+      "name": "AI-enabled hacking",
+      "q": "(\"AI-powered\" OR \"AI-orchestrated\" OR \"AI agents\" OR \"autonomous AI\" OR \"AI-driven\") (\"cyberattack\" OR hacking OR \"cyber attack\" OR hackers)"
+    },
+    {
+      "key": "deepfake",
+      "name": "Deepfakes of leaders & fake alerts",
+      "q": "(deepfake OR \"fake video\" OR \"fake emergency alert\" OR \"AI-generated\") (\"prime minister\" OR president OR minister OR emergency OR government OR \"central bank\")"
+    },
+    {
+      "key": "flash",
+      "name": "Flash crashes & trading halts",
+      "q": "(\"flash crash\" OR \"trading halt\" OR \"trading halted\" OR \"circuit breaker\" OR \"market halted\") (stocks OR exchange OR market)"
+    },
+    {
+      "key": "cloud",
+      "name": "Major cloud & AI service outages",
+      "q": "(AWS OR Azure OR \"Google Cloud\" OR Cloudflare OR \"Microsoft 365\" OR OpenAI OR Anthropic OR CrowdStrike) (outage OR \"global outage\" OR \"widespread outage\" OR disruption)"
+    },
+    {
+      "key": "scams",
+      "name": "AI voice-clone & deepfake scams in Australia",
+      "q": "Australia (\"voice clone\" OR \"voice cloning\" OR deepfake) (scam OR scams OR Scamwatch OR fraud)"
     }
   ],
   "satellites": {
@@ -731,6 +771,166 @@
         "port": 445,
         "name": "Windows file sharing (SMB)",
         "group": "remote"
+      }
+    ]
+  },
+  "maritime": {
+    "_comment": "Boxes (lat_min, lat_max, lon_min, lon_max) over cable corridors and landings. Loiterer = under max_knots in one zone for min_minutes.",
+    "listen_seconds": 150,
+    "max_knots": 3,
+    "min_minutes": 45,
+    "forget_hours": 6,
+    "alert_minutes": 60,
+    "flags_of_interest": [
+      "China",
+      "Hong Kong",
+      "Russia",
+      "North Korea",
+      "Iran"
+    ],
+    "zones": [
+      {
+        "key": "syd_n",
+        "name": "Sydney northern cable protection zone",
+        "region": "Australia",
+        "box": [
+          -33.9,
+          -33.7,
+          151.28,
+          151.7
+        ]
+      },
+      {
+        "key": "syd_s",
+        "name": "Sydney southern cable protection zone",
+        "region": "Australia",
+        "box": [
+          -34.15,
+          -33.98,
+          151.2,
+          151.6
+        ]
+      },
+      {
+        "key": "perth",
+        "name": "Perth cable protection zone",
+        "region": "Australia",
+        "box": [
+          -31.99,
+          -31.88,
+          115.25,
+          115.74
+        ]
+      },
+      {
+        "key": "darwin",
+        "name": "Darwin cable approaches",
+        "region": "Australia",
+        "box": [
+          -12.3,
+          -11.9,
+          130.3,
+          130.7
+        ]
+      },
+      {
+        "key": "sunshine",
+        "name": "Sunshine Coast cable landing",
+        "region": "Australia",
+        "box": [
+          -26.8,
+          -26.55,
+          153.1,
+          153.5
+        ]
+      },
+      {
+        "key": "bass",
+        "name": "Bass Strait (Basslink)",
+        "region": "Australia",
+        "box": [
+          -40.9,
+          -39.2,
+          146.4,
+          147.3
+        ]
+      },
+      {
+        "key": "matsu",
+        "name": "Taiwan–Matsu cables",
+        "region": "Taiwan",
+        "box": [
+          25.9,
+          26.3,
+          119.7,
+          120.4
+        ]
+      },
+      {
+        "key": "penghu",
+        "name": "Taiwan–Penghu cables",
+        "region": "Taiwan",
+        "box": [
+          23.2,
+          23.7,
+          119.6,
+          120.2
+        ]
+      },
+      {
+        "key": "keelung",
+        "name": "Taiwan north-east landings",
+        "region": "Taiwan",
+        "box": [
+          25.05,
+          25.5,
+          121.6,
+          122.1
+        ]
+      },
+      {
+        "key": "fangshan",
+        "name": "Taiwan south-west landings",
+        "region": "Taiwan",
+        "box": [
+          22.1,
+          22.6,
+          120.2,
+          120.6
+        ]
+      },
+      {
+        "key": "gof",
+        "name": "Gulf of Finland cables",
+        "region": "Baltic",
+        "box": [
+          59.4,
+          60.2,
+          22.8,
+          25.9
+        ]
+      },
+      {
+        "key": "gotland",
+        "name": "Baltic Gotland corridor",
+        "region": "Baltic",
+        "box": [
+          55.5,
+          57.8,
+          17.8,
+          20.8
+        ]
+      },
+      {
+        "key": "bab",
+        "name": "Bab el-Mandeb cables",
+        "region": "Red Sea",
+        "box": [
+          12.3,
+          13.6,
+          42.7,
+          43.7
+        ]
       }
     ]
   }

@@ -18,7 +18,7 @@ concurrency:
 jobs:
   collect:
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 14
     steps:
       - uses: actions/checkout@v4
 
@@ -26,10 +26,14 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install websocket client
+        run: pip install -q websockets==13.1
+
       - name: Run collector
         env:
           NTFY_PROACTIVE: ${{ secrets.NTFY_PROACTIVE }}
           NTFY_REACTIVE: ${{ secrets.NTFY_REACTIVE }}
+          AISSTREAM_KEY: ${{ secrets.AISSTREAM_KEY }}
         run: python collector/run.py
 
       - name: Save data

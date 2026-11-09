@@ -57,8 +57,14 @@ def parse_kev(data, now):
     dates = [_date(v.get("dateAdded")) for v in vulns]
     edge = [_date(v.get("dateAdded")) for v in vulns if (v.get("vendorProject") or "").lower() in cc["edge_vendors"]]
     recent = [v for v, d in zip(vulns, dates) if d and now - d <= timedelta(days=7)]
+    vendors_week = []
+    for w in range(0, 13):
+        lo, hi = now - timedelta(days=7 * (w + 1)), now - timedelta(days=7 * w)
+        vendors_week.append(len({(v.get("vendorProject") or "").lower() for v, d in zip(vulns, dates) if d and lo < d <= hi}))
+    vmed = _median(vendors_week[1:])
     return {
         "all": weekly_spike(dates, now), "edge": weekly_spike(edge, now),
+        "vendors": {"last_7d": vendors_week[0], "usual_7d": vmed, "ratio": round(vendors_week[0] / vmed, 2) if vmed else None},
         "ransomware_linked_7d": sum(1 for v in recent if (v.get("knownRansomwareCampaignUse") or "").lower() == "known"),
         "recent": [{"cve": v.get("cveID"), "vendor": v.get("vendorProject"), "product": v.get("product"),
                     "name": v.get("vulnerabilityName"), "added": v.get("dateAdded"),
@@ -222,6 +228,7 @@ def fetch_cyber():
         "kev_7d": (out.get("kev") or {}).get("all", {}).get("last_7d"),
         "kev_ratio": (out.get("kev") or {}).get("all", {}).get("ratio"),
         "kev_edge_7d": (out.get("kev") or {}).get("edge", {}).get("last_7d"),
+        "kev_vendors_ratio": (out.get("kev") or {}).get("vendors", {}).get("ratio"),
         "ics_scan_ratio": max(ics) if ics else None,
         "ransom_au_7d": ((out.get("ransomware") or {}).get("au") or {}).get("last_7d"),
         "ransom_au_ratio": ((out.get("ransomware") or {}).get("au") or {}).get("ratio"),

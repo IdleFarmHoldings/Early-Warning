@@ -168,6 +168,15 @@
             "mass casualty",
             "code brown"
           ]
+        },
+        {
+          "id": "cable",
+          "name": "Vessels loitering over Red Sea cables",
+          "type": "maritime",
+          "region": "Red Sea",
+          "of_interest": false,
+          "weight": 5,
+          "domain": "Undersea cables"
         }
       ]
     },
@@ -349,6 +358,34 @@
           ],
           "weight": 10,
           "domain": "Cyber"
+        },
+        {
+          "id": "cable",
+          "name": "Chinese / HK vessels loitering over Taiwan's cables",
+          "type": "maritime",
+          "region": "Taiwan",
+          "of_interest": true,
+          "weight": 10,
+          "domain": "Undersea cables"
+        },
+        {
+          "id": "cablenews",
+          "name": "Taiwan undersea cable damage reported",
+          "type": "news",
+          "key": "cables",
+          "words": [
+            "Taiwan",
+            "Matsu",
+            "Penghu"
+          ],
+          "require": [
+            "undersea cable",
+            "subsea cable",
+            "submarine cable",
+            "cable"
+          ],
+          "weight": 10,
+          "domain": "Undersea cables"
         }
       ]
     },
@@ -618,6 +655,38 @@
           ],
           "weight": 10,
           "domain": "Cyber"
+        },
+        {
+          "id": "cable",
+          "name": "Russian / Chinese vessels loitering over Baltic cables",
+          "type": "maritime",
+          "region": "Baltic",
+          "of_interest": true,
+          "weight": 10,
+          "domain": "Undersea cables"
+        },
+        {
+          "id": "cablenews",
+          "name": "Baltic undersea cable damage reported",
+          "type": "news",
+          "key": "cables",
+          "words": [
+            "Baltic",
+            "Finland",
+            "Estonia",
+            "Sweden",
+            "Latvia",
+            "Lithuania",
+            "Gotland"
+          ],
+          "require": [
+            "undersea cable",
+            "subsea cable",
+            "submarine cable",
+            "cable"
+          ],
+          "weight": 10,
+          "domain": "Undersea cables"
         }
       ]
     },
@@ -778,12 +847,46 @@
             "mass casualty",
             "code brown"
           ]
+        },
+        {
+          "id": "cable",
+          "name": "Foreign vessel loitering over Australian cable corridors",
+          "type": "maritime",
+          "region": "Australia",
+          "of_interest": true,
+          "weight": 20,
+          "domain": "Undersea cables"
+        },
+        {
+          "id": "cablenews",
+          "name": "Undersea cable damage reported (Australia / Pacific)",
+          "type": "news",
+          "key": "cables",
+          "words": [
+            "Australia",
+            "Australian",
+            "Pacific",
+            "Tonga",
+            "PNG",
+            "Papua",
+            "Indonesia",
+            "Singapore",
+            "Guam"
+          ],
+          "require": [
+            "undersea cable",
+            "subsea cable",
+            "submarine cable",
+            "cable"
+          ],
+          "weight": 10,
+          "domain": "Undersea cables"
         }
       ]
     },
     {
       "key": "bio",
-      "name": "Pandemic or biological emergency",
+      "name": "Pandemic, biological or chemical emergency",
       "sa_impact": "Health system strain, possible lockdowns and border closures, and shortages of medicines and protective equipment, which Australia mostly imports.",
       "why": "Before COVID-19 (Dec 2019 - Feb 2020): reports of an unknown pneumonia cluster, WHO outbreak notices, mask and hazmat makers (Alpha Pro Tech, Lakeland) and vaccine developers (Moderna, Novavax) surging weeks before broad markets fell, and countries restricting exports of masks and medicines (Taiwan from 24 Jan 2020, then dozens more).",
       "indicators": [
@@ -882,6 +985,50 @@
           "price_at_least": 30,
           "weight": 10,
           "domain": "Markets"
+        },
+        {
+          "id": "mortality",
+          "name": "Deaths well above normal in a country (official weekly data)",
+          "type": "mortality",
+          "weight": 10,
+          "domain": "Death statistics"
+        },
+        {
+          "id": "chem",
+          "name": "Chemical / nerve-agent attack or mass poisoning reported",
+          "type": "news",
+          "key": "chem",
+          "words": [
+            ""
+          ],
+          "require": [
+            "chemical attack",
+            "nerve agent",
+            "chemical weapons",
+            "poison gas",
+            "chlorine gas",
+            "OPCW",
+            "mass poisoning"
+          ],
+          "weight": 15,
+          "domain": "Chemical weapons"
+        },
+        {
+          "id": "dieoff",
+          "name": "Unexplained mass deaths or animal die-offs",
+          "type": "news",
+          "key": "dieoff",
+          "words": [
+            ""
+          ],
+          "require": [
+            "die-off",
+            "mass deaths",
+            "unexplained deaths",
+            "mysterious deaths"
+          ],
+          "weight": 10,
+          "domain": "Health"
         }
       ]
     },
@@ -992,6 +1139,135 @@
           "min": 20,
           "weight": 10,
           "domain": "Communications"
+        }
+      ]
+    },
+    {
+      "key": "ai",
+      "name": "AI-enabled attack (non-traditional)",
+      "sa_impact": "Not bombs but disruption: hacking at machine speed across banks, telcos, hospitals and the grid at once; fake videos or alerts from leaders causing panic buying or bank runs; or automated market and fraud shocks. Effects would be outages, payment failures and confusion about what is real.",
+      "why": "In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: a Chinese state-sponsored group used an AI agent to carry out 80-90% of an attack on about 30 organisations, at thousands of requests per second. A fake AI image of a Pentagon explosion briefly moved US markets in May 2023, and a deepfake video call of a CFO tricked a company into paying US$25 million in 2024. The likely signature of an AI attack is breadth and speed: many unrelated systems and vendors hit at once, synthetic media of officials, and shocks with no clear human cause.",
+      "indicators": [
+        {
+          "id": "breadth",
+          "name": "Exploited flaws across unusually many vendors at once",
+          "type": "cyber",
+          "field": "kev_vendors_ratio",
+          "at_least": 2,
+          "weight": 15,
+          "domain": "Mass exploitation"
+        },
+        {
+          "id": "aihack",
+          "name": "Reports of AI-driven hacking campaigns",
+          "type": "news",
+          "key": "ai_hack",
+          "words": [
+            ""
+          ],
+          "require": [
+            "AI-powered",
+            "AI-orchestrated",
+            "AI agents",
+            "AI agent",
+            "autonomous",
+            "AI-driven"
+          ],
+          "weight": 15,
+          "domain": "AI-enabled hacking"
+        },
+        {
+          "id": "deepfake",
+          "name": "Deepfakes of leaders or fake official alerts",
+          "type": "news",
+          "key": "deepfake",
+          "words": [
+            ""
+          ],
+          "require": [
+            "deepfake",
+            "fake video",
+            "fake emergency alert",
+            "AI-generated"
+          ],
+          "weight": 15,
+          "domain": "Synthetic media"
+        },
+        {
+          "id": "flash",
+          "name": "Flash crash or exchange trading halt",
+          "type": "news",
+          "key": "flash",
+          "words": [
+            ""
+          ],
+          "require": [
+            "flash crash",
+            "trading halt",
+            "trading halted",
+            "circuit breaker",
+            "market halted"
+          ],
+          "weight": 10,
+          "domain": "Markets"
+        },
+        {
+          "id": "vix",
+          "name": "Market fear index jumps 25%+ in a day",
+          "type": "market",
+          "name_mkt": "VIX",
+          "change_at_least": 25,
+          "weight": 10,
+          "domain": "Markets"
+        },
+        {
+          "id": "cloud",
+          "name": "Major cloud or AI service outage",
+          "type": "news",
+          "key": "cloud",
+          "words": [
+            ""
+          ],
+          "require": [
+            "outage",
+            "global outage",
+            "widespread outage"
+          ],
+          "weight": 10,
+          "domain": "Cloud services"
+        },
+        {
+          "id": "tel",
+          "name": "Phone / internet carrier outage",
+          "type": "telecom",
+          "min": 20,
+          "weight": 10,
+          "domain": "Communications"
+        },
+        {
+          "id": "scams",
+          "name": "Surge in AI voice-clone / deepfake scams in Australia",
+          "type": "news",
+          "key": "scams",
+          "words": [
+            ""
+          ],
+          "require": [
+            "voice clone",
+            "voice cloning",
+            "deepfake"
+          ],
+          "weight": 5,
+          "domain": "Fraud waves"
+        },
+        {
+          "id": "edge",
+          "name": "Several VPN / firewall flaws exploited this week",
+          "type": "cyber",
+          "field": "kev_edge_7d",
+          "at_least": 3,
+          "weight": 10,
+          "domain": "Edge-device exploitation"
         }
       ]
     }

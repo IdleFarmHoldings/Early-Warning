@@ -17,6 +17,8 @@ from common import CONFIG, ROOT, append_jsonl, iso, load_json, now_utc, push, sa
 from rules import extra_metrics, evaluate  # noqa: E402
 from sources import fetch_all  # noqa: E402
 import precursors  # noqa: E402
+import mortality  # noqa: E402
+import maritime  # noqa: E402
 import satellites  # noqa: E402
 
 SERIES_DIR = ROOT / "data" / "series"
@@ -127,6 +129,31 @@ def recent_titles(items, now, hours):
     return out
 
 
+def cable_alerts(mar, state, now, first_run):
+    """Vessels from flags of interest loitering over Australian cable corridors (unconfirmed)."""
+    mc = CONFIG["maritime"]
+    regions = {z["key"]: z["region"] for z in mc["zones"]}
+    cd = state.setdefault("cooldown", {})
+    out = []
+    for v in (mar or {}).get("loitering", []):
+        if not v["of_interest"] or regions.get(v["zone"]) != "Australia" or v["minutes"] < mc["alert_minutes"]:
+            continue
+        key = f"cable-{v['mmsi']}"
+        last = cd.get(key)
+        if last and now - datetime.strptime(last, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc) < timedelta(hours=12):
+            continue
+        cd[key] = iso(now)
+        if first_run:
+            continue
+        zname = next(z["name"] for z in mc["zones"] if z["key"] == v["zone"])
+        out.append({"key": key, "channels": ["proactive"], "category": "cyber",
+                    "title": "UNCONFIRMED: vessel loitering over undersea cables",
+                    "message": (f"{v['flag']}-flagged vessel {v['name'] or v['mmsi']} has been slow or stopped in the {zname} "
+                                f"for about {v['minutes']} min. Cable damage would disrupt internet and phone links. Watching.")[:390],
+                    "priority": 4, "confirmed": False, "tags": ["anchor"]})
+    return out
+
+
 def precursor_alerts(scenarios, prev_ind, state, now, first_run):
     """Alert when a scenario's warning-sign score first crosses the alert line (12 h cooldown)."""
     line = precursors.PLAYBOOK["alert_score"]
@@ -191,6 +218,25 @@ def main():
         health["satellites"] = {"ok": True, "secs": round(time.time() - t0, 1), "refreshed": bool(fresh)}
     except Exception as e:  # noqa: BLE001
         health["satellites"] = {"ok": False, "error": f"{type(e).__name__}: {e}"[:300]}
+    mort = load_json("data/mortality.json", {})
+    t0 = time.time()
+    try:
+        fresh_m = mortality.refresh(now, mort)
+        if fresh_m:
+            mort = fresh_m
+            save_json("data/mortality.json", mort)
+        health["mortality"] = {"ok": True, "secs": round(time.time() - t0, 1), "refreshed": bool(fresh_m)}
+    except Exception as e:  # noqa: BLE001
+        health["mortality"] = {"ok": False, "error": f"{type(e).__name__}: {e}"[:300]}
+    mar = {}
+    t0 = time.time()
+    try:
+        mar = maritime.fetch_maritime(state)
+        save_json("data/maritime.json", mar)
+        health["maritime"] = {"ok": True, "secs": round(time.time() - t0, 1)}
+    except Exception as e:  # noqa: BLE001
+        health["maritime"] = {"ok": False, "error": f"{type(e).__name__}: {e}"[:300]}
+    alerts += cable_alerts(mar, state, now, first_run)
     prev_ind = load_json("data/indicators.json", {})
     ctx = {
         "anomalies": anomalies,
@@ -206,6 +252,8 @@ def main():
         "sectors": (results.get("sectors") or {}).get("baskets") or {},
         "who": results.get("who") or [],
         "cyber": (results.get("cyber") or {}).get("summary") or {},
+        "mortality": mortality.summary(mort),
+        "maritime": mar,
         "now": now,
     }
     scenarios = precursors.score_scenarios(ctx, {s["key"]: s["score"] for s in prev_ind.get("scenarios", [])})
