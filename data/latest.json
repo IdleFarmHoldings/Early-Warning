@@ -8,7 +8,7 @@
       },
       "mil_total": {
         "status": "learning baseline",
-        "value": 424
+        "value": 432
       },
       "nc3": {
         "status": "learning baseline",
@@ -20,28 +20,28 @@
       },
       "tankers": {
         "status": "learning baseline",
-        "value": 5
+        "value": 7
       }
     },
     "detail": {
       "bizjets_airborne": 38,
       "bizjets_by_hub": {
-        "Dallas / Houston": 8,
+        "Dallas / Houston": 7,
         "Dubai": 2,
-        "Geneva / Zurich": 4,
+        "Geneva / Zurich": 5,
         "Hong Kong": 1,
         "London": 6,
         "Los Angeles (Van Nuys)": 1,
         "Moscow": 0,
-        "New York (Teterboro)": 11,
-        "Palm Beach / Miami": 3,
+        "New York (Teterboro)": 9,
+        "Palm Beach / Miami": 2,
         "San Francisco Bay": 1,
         "Singapore": 0,
         "Washington DC": 11
       },
       "errors": [],
       "isr": 2,
-      "mil_total": 424,
+      "mil_total": 432,
       "nc3": 1,
       "nc3_seen": [
         {
@@ -57,7 +57,7 @@
         "Patagonia": 0,
         "Queenstown / Wanaka": 0
       },
-      "tankers": 5
+      "tankers": 7
     }
   },
   "cisa_latest": [
@@ -99,27 +99,27 @@
     }
   ],
   "gdacs_current_orange_red": [],
-  "generated_at": "2026-11-09T14:49:00Z",
+  "generated_at": "2026-11-09T14:55:00Z",
   "markets": {
     "AUD/USD": {
-      "change_pct": -0.33,
+      "change_pct": -0.36,
       "prev_close": 0.6931,
-      "price": 0.6908
+      "price": 0.6906
     },
     "Brent oil": {
-      "change_pct": -4.55,
+      "change_pct": -4.42,
       "prev_close": 98.32,
-      "price": 93.85
+      "price": 93.97
     },
     "Gold": {
-      "change_pct": 1.34,
+      "change_pct": 1.27,
       "prev_close": 4074.8999,
-      "price": 4129.4
+      "price": 4126.6
     },
     "VIX": {
-      "change_pct": -11.04,
+      "change_pct": -14.39,
       "prev_close": 25.64,
-      "price": 22.81
+      "price": 21.95
     }
   },
   "quakes_m6_24h": [
@@ -135,6 +135,23 @@
     }
   ],
   "recent_alerts": [
+    {
+      "channel": "proactive",
+      "channels": [
+        "proactive"
+      ],
+      "message": "Test only. Tap this notification: it should open the family status page, not Claude.",
+      "priority": 2,
+      "sent": {
+        "proactive": true
+      },
+      "sent_at": "2026-11-09T14:55:00Z",
+      "source": "analysis",
+      "tags": [
+        "link"
+      ],
+      "title": "TEST - link check"
+    },
     {
       "channel": "both",
       "channels": [
@@ -232,35 +249,35 @@
     },
     "aircraft": {
       "ok": true,
-      "secs": 24.6
+      "secs": 23.5
     },
     "cisa": {
       "ok": true,
-      "secs": 0.6
+      "secs": 0.2
     },
     "gdacs": {
       "ok": true,
-      "secs": 4.0
+      "secs": 1.8
     },
     "markets": {
       "ok": true,
-      "secs": 0.6
+      "secs": 0.3
     },
     "uk_advice": {
       "ok": true,
-      "secs": 0.2
+      "secs": 0.1
     },
     "us_advisories": {
       "ok": true,
-      "secs": 0.4
+      "secs": 0.1
     },
     "usgs": {
       "ok": true,
-      "secs": 0.1
+      "secs": 0.0
     },
     "who": {
       "ok": true,
-      "secs": 0.6
+      "secs": 0.4
     }
   },
   "uk_recent_updates": [
