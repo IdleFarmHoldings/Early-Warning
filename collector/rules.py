@@ -191,6 +191,44 @@ def evaluate(results, state, series, now):
                              f"(usual ~{info['median']}). Watching for confirmation from official sources.",
                              priority=4, confirmed=False, tags=["airplane", "question"]))
 
+    # Telecom: a big drop in reachable networks for a major Australian carrier
+    tc = CONFIG.get("telecom", {})
+    tel = (results.get("telecom") or {}).get("networks") or {}
+    down = state.setdefault("telco_down", {})
+    hits = {}
+    for name, row in tel.items():
+        # ignore tiny signals (e.g. mobile networks with few probe-able addresses): too noisy to alert on
+        drops = [row[ds]["drop_pct"] for ds in ("ping-slash24", "bgp")
+                 if isinstance(row.get(ds), dict) and row[ds].get("drop_pct") is not None
+                 and (row[ds].get("baseline") or 0) >= tc.get("min_baseline", 20)]
+        if not drops:
+            continue
+        worst = max(drops)
+        if worst >= tc["warn_drop_pct"]:
+            hits[name] = worst
+        elif name in down and worst <= tc["recover_drop_pct"]:
+            del down[name]
+            if not bootstrap:
+                alerts.append(_alert(f"telco-up-{name}", ["proactive"], "cyber", f"{name} network recovering",
+                                     f"{name}'s network looks to be back to normal levels. Some services may take a while to settle.",
+                                     priority=3, tags=["white_check_mark"]))
+    fresh = {}
+    for name, worst in hits.items():
+        last = cooldown.get(f"telco-{name}")
+        if name in down and last and now - _parse_ts(last) < timedelta(hours=tc["cooldown_hours"]):
+            continue
+        down[name] = iso(now)
+        cooldown[f"telco-{name}"] = iso(now)
+        fresh[name] = worst
+    if fresh and not bootstrap:
+        major = any(d >= tc["major_drop_pct"] for d in hits.values()) or len(hits) >= 2
+        names = ", ".join(f"{n} (about {round(d)}% down)" for n, d in sorted(hits.items(), key=lambda x: -x[1]))
+        alerts.append(_alert("telco-" + "-".join(sorted(fresh)), ["proactive", "reactive"] if major else ["proactive"], "cyber",
+                             f"{'MAJOR ' if major else ''}phone/internet outage: {', '.join(sorted(hits))}",
+                             f"Outage monitors show {names}. You may lose phone signal or internet. Now: get some cash out, "
+                             "fill up fuel, and agree where to meet in case you can't call. 000 may still work via another network.",
+                             priority=5 if major else 4, confirmed=major, tags=["signal_strength"]))
+
     # Prune old seen keys
     cutoff = iso(now - timedelta(days=45))
     for k in [k for k, t in seen.items() if t < cutoff]:

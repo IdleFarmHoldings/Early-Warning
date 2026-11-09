@@ -140,6 +140,82 @@ def parse_rss(raw, limit=20):
     return out
 
 
+def parse_feed(raw, limit=20):
+    """RSS <item>s or Atom <entry>s."""
+    out = parse_rss(raw, limit)
+    if out:
+        return out
+    root = ET.fromstring(raw)
+    for e in root.findall("atom:entry", NS)[:limit]:
+        link = e.find("atom:link", NS)
+        out.append({"id": _text(e, "atom:id"), "title": _text(e, "atom:title"),
+                    "date": _text(e, "atom:updated") or _text(e, "atom:published"),
+                    "link": link.get("href", "") if link is not None else ""})
+    return out
+
+
+# ---------- Analyst / think-tank headlines (for the analysis run; never pushed) ----------
+def fetch_analysts():
+    out, errors = {}, []
+    for f in CONFIG.get("analyst_feeds", []):
+        try:
+            out[f["name"]] = [{"title": i["title"], "date": i["date"], "link": i["link"]}
+                              for i in parse_feed(http_get(f["url"], timeout=25), limit=6)]
+        except Exception as e:  # noqa: BLE001
+            errors.append(f"{f['name']}: {type(e).__name__}: {e}"[:160])
+    if not out:
+        raise RuntimeError("; ".join(errors) or "no analyst feeds configured")
+    return {"feeds": out, "errors": errors}
+
+
+# ---------- Telecom outages (IODA, Georgia Tech Internet Outage Detection & Analysis) ----------
+IODA = "https://api.ioda.inetintel.cc.gatech.edu/v2/signals/raw/asn/{asn}?from={frm}&until={until}&datasource={ds}"
+
+
+def _signal_values(data):
+    """IODA nests signal objects in lists; return the first object's values list."""
+    stack = [data.get("data") if isinstance(data, dict) else data]
+    while stack:
+        x = stack.pop(0)
+        if isinstance(x, dict) and isinstance(x.get("values"), list):
+            return x["values"]
+        if isinstance(x, list):
+            stack.extend(x)
+    return []
+
+
+def signal_drop(values, recent_points):
+    """Percent drop of the recent median vs the earlier median. None if not enough data."""
+    vals = [v for v in values if isinstance(v, (int, float))]
+    if len(vals) < recent_points + 6:
+        return None, None, None
+    base_vals, recent_vals = sorted(vals[:-recent_points]), sorted(vals[-recent_points:])
+    base, recent = base_vals[len(base_vals) // 2], recent_vals[len(recent_vals) // 2]
+    if not base:
+        return None, base, recent
+    return round(max(0.0, (base - recent) / base * 100), 1), base, recent
+
+
+def fetch_telecom():
+    tc = CONFIG["telecom"]
+    until = int(time.time())
+    frm = until - tc["window_hours"] * 3600
+    out, errors = {}, []
+    for n in tc["networks"]:
+        row = {"asn": n["asn"]}
+        for ds in ("ping-slash24", "bgp"):
+            try:
+                vals = _signal_values(get_json(IODA.format(asn=n["asn"], frm=frm, until=until, ds=ds), timeout=15))
+                drop, base, recent = signal_drop(vals, tc["recent_points"])
+                row[ds] = {"drop_pct": drop, "baseline": base, "recent": recent, "points": len(vals)}
+            except Exception as e:  # noqa: BLE001
+                errors.append(f"{n['name']} {ds}: {type(e).__name__}: {e}"[:160])
+        out[n["name"]] = row
+    if not any(("ping-slash24" in r or "bgp" in r) for r in out.values()):
+        raise RuntimeError("; ".join(errors[:3]))
+    return {"networks": out, "errors": errors}
+
+
 # ---------- Markets (Yahoo Finance chart endpoint, unofficial) ----------
 def market_quote(symbol):
     url = f"https://query1.finance.yahoo.com/v8/finance/chart/{urllib.parse.quote(symbol)}?range=5d&interval=1d"
@@ -237,6 +313,8 @@ def fetch_all():
         "cisa": lambda: parse_rss(http_get(CISA), limit=15),
         "markets": _fetch_markets,
         "aircraft": fetch_aircraft,
+        "telecom": fetch_telecom,
+        "analysts": fetch_analysts,
     }
     for name, fn in plan.items():
         t0 = time.time()

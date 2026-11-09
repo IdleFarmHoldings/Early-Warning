@@ -86,6 +86,8 @@ def summarise(results, health, anomalies, now):
         "acsc_latest": (results.get("acsc") or [])[:6],
         "cisa_latest": (results.get("cisa") or [])[:6],
         "markets": results.get("markets"),
+        "telecom": (results.get("telecom") or {}).get("networks"),
+        "analyst_latest": (results.get("analysts") or {}).get("feeds"),
     }
 
 

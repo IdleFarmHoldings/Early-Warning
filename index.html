@@ -119,6 +119,8 @@ th{font-family:var(--display);text-transform:uppercase;letter-spacing:.05em;font
       <h2>Markets</h2>
       <div class="mk" id="markets"><span class="empty">Loading…</span></div>
       <p class="muted" id="mktTime"></p>
+      <h2 style="margin-top:16px">Phone &amp; internet networks</h2>
+      <div class="list" id="telco"><p class="empty">Loading…</p></div>
       <p id="feeds" class="muted"></p>
       <p>In an emergency, follow official advice first: <a href="https://www.alert.sa.gov.au/">Alert SA</a>, <a href="https://www.cfs.sa.gov.au/">CFS</a>, <a href="https://www.smartraveller.gov.au/">Smartraveller</a>, ABC Radio Adelaide 891 AM.</p>
     </div>
@@ -223,6 +225,13 @@ function renderLatest(l){
   $("markets").innerHTML = Object.entries(l.markets||{}).map(([k,v])=>{ const c=Number(v.change_pct)||0;
     return `<div><span class="muted">${esc(k)}</span><br><b>${esc(v.price)}</b> <span style="color:${c>=0?"var(--l2)":"var(--l5)"}">${c>=0?"+":""}${c.toFixed(2)}%</span></div>`}).join("") || `<span class="empty">No data.</span>`;
   $("mktTime").textContent = `As of ${fmt(l.generated_at)}`;
+  const tel=l.telecom||{}, tn=Object.keys(tel);
+  $("telco").innerHTML = tn.length ? tn.map(n=>{
+    const ds=[tel[n]["ping-slash24"],tel[n]["bgp"]].filter(x=>x&&x.drop_pct!=null&&(x.baseline||0)>=20);
+    const d=ds.length?Math.max(...ds.map(x=>x.drop_pct)):null;
+    const st=d===null?["No data","var(--muted)"]:d>=50?["Major outage","var(--l5)"]:d>=20?["Possible outage","var(--l4)"]:["Normal","var(--l2)"];
+    return `<div class="item" style="grid-template-columns:1fr auto;align-items:center"><span class="t">${esc(n)}</span><span class="chip" style="background:${st[1]}">${st[0]}</span></div>`}).join("")
+    : `<p class="empty">Network monitoring starting up.</p>`;
   const h=l.source_health||{}, bad=Object.keys(h).filter(k=>!h[k].ok);
   $("feeds").textContent = Object.keys(h).length ? (bad.length?`Data feeds: ${Object.keys(h).length-bad.length} OK, unavailable: ${bad.join(", ")}.`:"Data feeds: all OK.") : "";
   const al=(l.recent_alerts||[]).slice(0,8);

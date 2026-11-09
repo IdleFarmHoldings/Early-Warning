@@ -59,5 +59,56 @@
     "unknown etiology", "pneumonia of unknown", "marburg", "ebola", "smallpox", "mpox clade i", "nipah"],
 
   "uk_keywords": ["against all travel", "leave now", "leave the country", "commercial flights"],
-  "acsc_push_all": true
+  "acsc_push_all": true,
+
+  "telecom": {
+    "_comment": "IODA (Georgia Tech) internet outage signals per network. Active probing (ping-slash24) drop vs the previous few hours.",
+    "networks": [
+      {
+        "name": "Telstra",
+        "asn": 1221
+      },
+      {
+        "name": "Optus",
+        "asn": 4804
+      },
+      {
+        "name": "TPG",
+        "asn": 7545
+      },
+      {
+        "name": "Vodafone",
+        "asn": 133612
+      },
+      {
+        "name": "Aussie Broadband",
+        "asn": 4764
+      }
+    ],
+    "window_hours": 6,
+    "recent_points": 3,
+    "warn_drop_pct": 20,
+    "major_drop_pct": 50,
+    "recover_drop_pct": 8,
+    "cooldown_hours": 6
+  },
+
+  "analyst_feeds": [
+    {
+      "name": "Crisis Group",
+      "url": "https://www.crisisgroup.org/rss"
+    },
+    {
+      "name": "ISW",
+      "url": "https://www.understandingwar.org/rss.xml"
+    },
+    {
+      "name": "ASPI Strategist",
+      "url": "https://www.aspistrategist.org.au/feed/"
+    },
+    {
+      "name": "Lowy Interpreter",
+      "url": "https://www.lowyinstitute.org/the-interpreter/rss.xml"
+    }
+  ]
 }
