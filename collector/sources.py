@@ -233,7 +233,7 @@ def fetch_all():
         "gdacs": lambda: parse_gdacs(http_get(GDACS)),
         "usgs": lambda: parse_usgs(get_json(USGS)),
         "who": _fetch_who,
-        "acsc": lambda: parse_rss(http_get(ACSC)),
+        "acsc": lambda: parse_rss(http_get(ACSC, timeout=50)),
         "cisa": lambda: parse_rss(http_get(CISA), limit=15),
         "markets": _fetch_markets,
         "aircraft": fetch_aircraft,
