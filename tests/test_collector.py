@@ -326,3 +326,15 @@ def test_owid_week_format():
     m = mortality.parse_owid("entity,code,week,p_avg_all_ages\nAlbania,ALB,2026-W40,-1.5\nAlbania,ALB,2026-W41,26.0\n",
                              datetime(2026, 11, 9, tzinfo=timezone.utc))
     assert m["ALB"]["latest"]["week"] == 41 and m["ALB"]["latest"]["excess_pct"] == 26.0 and m["ALB"]["age_weeks"] == 4
+
+
+def test_cdc_states():
+    from datetime import datetime, timezone
+    import mortality
+    now = datetime(2026, 11, 9, tzinfo=timezone.utc)
+    rows = [{"state": "Texas", "end_date": "2026-09-26T00:00:00.000", "percent_of_expected_deaths": "131", "total_deaths": "4000"},
+            {"state": "Texas", "end_date": "2026-11-07T00:00:00.000", "percent_of_expected_deaths": "60", "total_deaths": "1000"},
+            {"state": "Ohio", "end_date": "2026-09-26T00:00:00.000", "percent_of_expected_deaths": "99", "total_deaths": "2000"}]
+    us = mortality.parse_cdc(rows, now)
+    assert us["Texas"]["latest"]["pct_expected"] == 131.0  # the incomplete newest week is skipped
+    assert mortality.summary({"us_states": us}) == ["Texas (US) 131% of expected"]

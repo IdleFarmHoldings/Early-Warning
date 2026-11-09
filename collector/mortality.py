@@ -4,7 +4,7 @@ import csv
 import io
 from datetime import date, datetime, timedelta, timezone
 
-from common import http_get, iso
+from common import get_json, http_get, iso
 
 STMF = "https://www.mortality.org/File/GetDocument/Public/STMF/Outputs/stmf.csv"
 CODES = {"AUS": ("AU", "Australia"), "AUT": ("AT", "Austria"), "BEL": ("BE", "Belgium"), "BGR": ("BG", "Bulgaria"),
@@ -108,6 +108,31 @@ def parse_owid(text, now, history=12):
     return out
 
 
+CDC = ("https://data.cdc.gov/resource/r8kw-7aab.json?$limit=20000&group=By%20Week"
+       "&$where=end_date%20%3E%20%27{since}%27")
+
+
+def parse_cdc(rows, now, skip_recent_weeks=3):
+    """US weekly deaths by state as % of expected (CDC NCHS). The newest weeks are incomplete, so they are skipped."""
+    cutoff = (now - timedelta(weeks=skip_recent_weeks)).date().isoformat()
+    by = {}
+    for r in rows if isinstance(rows, list) else []:
+        end = (r.get("end_date") or "")[:10]
+        try:
+            pct = float(r.get("percent_of_expected_deaths"))
+            total = float(r.get("total_deaths") or 0)
+        except (TypeError, ValueError):
+            continue
+        if end and end <= cutoff:
+            by.setdefault(r.get("state", "?"), []).append({"date": end, "pct_expected": pct, "deaths": total})
+    out = {}
+    for st, vals in by.items():
+        vals.sort(key=lambda x: x["date"])
+        last = vals[-1]
+        out[st] = {"latest": last, "series": vals[-12:], "max_recent": max(v["pct_expected"] for v in vals[-3:])}
+    return out
+
+
 def refresh(now, previous):
     last = (previous or {}).get("generated_at")
     if last and now - datetime.strptime(last, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc) < timedelta(hours=24):
@@ -118,12 +143,20 @@ def refresh(now, previous):
         countries, source = parse_owid(http_get(OWID, timeout=90).decode("utf-8", "replace"), now), "Our World in Data (HMD / World Mortality Dataset)"
     if not countries:
         raise RuntimeError("no countries parsed")
-    return {"generated_at": iso(now), "source": source, "countries": countries}
+    newest = max((c["latest"].get("date") or "" for c in countries.values()), default="")
+    try:
+        us = parse_cdc(get_json(CDC.format(since=(now - timedelta(weeks=20)).date().isoformat()), timeout=60), now)
+    except Exception as e:  # noqa: BLE001
+        us = {"_error": f"{type(e).__name__}: {e}"[:200]}
+    return {"generated_at": iso(now), "source": source, "countries_newest_date": newest, "countries": countries, "us_states": us}
 
 
-def summary(mort, max_age_weeks=10, threshold=20.0):
-    """Countries with recent (not stale) deaths well above normal."""
+def summary(mort, max_age_weeks=10, threshold=20.0, us_threshold=125.0):
+    """Countries or US states with recent (not stale) deaths well above normal."""
     hot = []
+    for st, v in ((mort or {}).get("us_states") or {}).items():
+        if st != "_error" and isinstance(v, dict) and v.get("max_recent", 0) >= us_threshold:
+            hot.append(f"{st} (US) {v['max_recent']:.0f}% of expected")
     for c in (mort or {}).get("countries", {}).values():
         if c.get("age_weeks") is not None and c["age_weeks"] <= max_age_weeks and c["max_excess_recent"] >= threshold:
             hot.append(f"{c['name']} +{c['max_excess_recent']:.0f}%")
