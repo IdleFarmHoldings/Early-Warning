@@ -1,17 +1,27 @@
 {
-  "generated_at": "2026-11-10T09:48:00Z",
+  "generated_at": "2026-11-10T09:56:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
       "band": "Low",
-      "convergence": "No warning signs are showing. The strongest signs not yet showing: cfs emergency warning in sa, extreme or catastrophic fire danger near adelaide and tight power supply in sa (aemo lack of reserve, level 2+).",
-      "domains": [],
+      "convergence": "Only one kind of sign is showing (roads). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: cfs emergency warning in sa, extreme or catastrophic fire danger near adelaide and tight power supply in sa (aemo lack of reserve, level 2+).",
+      "domains": [
+        "Roads"
+      ],
       "key": "local",
-      "lit": [],
+      "lit": [
+        {
+          "detail": "RD_CLOSURE MORGAN MAIL ROAD; RD_CLOSURE MORGAN VALE ROAD",
+          "domain": "Roads",
+          "id": "roads",
+          "name": "Fire, flood or storm road closures in SA",
+          "weight": 10
+        }
+      ],
       "name": "Local emergency in SA (bushfire, heat, power)",
       "sa_impact": "Direct: bushfires, heatwaves and power cuts are the emergencies most likely to affect the family. In the 2016 statewide blackout, power, phones, traffic lights and fuel pumps failed together.",
-      "score": 0,
-      "trend": "steady",
+      "score": 10,
+      "trend": "up",
       "unlit": [
         {
           "domain": "Bushfire",
@@ -53,6 +63,12 @@
           "domain": "Communications",
           "id": "tel",
           "name": "Phone / internet carrier outage",
+          "weight": 10
+        },
+        {
+          "domain": "Hospitals",
+          "id": "ed",
+          "name": "Three or more Adelaide emergency departments 'very busy'",
           "weight": 10
         }
       ],
@@ -168,14 +184,24 @@
     },
     {
       "band": "Low",
-      "convergence": "No warning signs are showing. The strongest signs not yet showing: missile / live-fire navigation warnings near taiwan, gps jamming over the taiwan strait and internet disruption in taiwan.",
-      "domains": [],
+      "convergence": "Only one kind of sign is showing (cyber). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: missile / live-fire navigation warnings near taiwan, gps jamming over the taiwan strait and internet disruption in taiwan.",
+      "domains": [
+        "Cyber"
+      ],
       "key": "taiwan",
-      "lit": [],
+      "lit": [
+        {
+          "detail": "Exposed: Volt Typhoon's Framework for Silent Espionage",
+          "domain": "Cyber",
+          "id": "cyber",
+          "name": "Chinese state hacking reports (Volt / Salt Typhoon)",
+          "weight": 10
+        }
+      ],
       "name": "Taiwan Strait / South China Sea crisis",
       "sa_impact": "Trade and fuel: most of Australia's refined fuel and many goods pass the South China Sea. A blockade would disrupt fuel, medicines and electronics within weeks; Australian forces could be drawn in.",
-      "score": 0,
-      "trend": "steady",
+      "score": 10,
+      "trend": "up",
       "unlit": [
         {
           "domain": "Maritime",
@@ -242,12 +268,6 @@
           "id": "def",
           "name": "Defence stocks outperforming (US / Australia)",
           "weight": 5
-        },
-        {
-          "domain": "Cyber",
-          "id": "cyber",
-          "name": "Chinese state hacking reports (Volt / Salt Typhoon)",
-          "weight": 10
         },
         {
           "domain": "Undersea cables",
@@ -647,18 +667,32 @@
           "id": "dieoff",
           "name": "Unexplained mass deaths or animal die-offs",
           "weight": 10
+        },
+        {
+          "domain": "Hospitals",
+          "id": "ed",
+          "name": "Three or more Adelaide emergency departments 'very busy'",
+          "weight": 10
         }
       ],
       "why": "Before COVID-19 (Dec 2019 - Feb 2020): reports of an unknown pneumonia cluster, WHO outbreak notices, mask and hazmat makers (Alpha Pro Tech, Lakeland) and vaccine developers (Moderna, Novavax) surging weeks before broad markets fell, and countries restricting exports of masks and medicines (Taiwan from 24 Jan 2020, then dozens more)."
     },
     {
-      "band": "Low",
-      "convergence": "Only one kind of sign is showing (australian incidents). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: global cyber threat level raised (sans infocon not green), several vpn / firewall flaws exploited this week and spike in scanning of industrial-control systems.",
+      "band": "Guarded",
+      "convergence": "Two different kinds of sign are showing together (australian incidents and state actors). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: global cyber threat level raised (sans infocon not green), several vpn / firewall flaws exploited this week and spike in scanning of industrial-control systems.",
       "domains": [
-        "Australian incidents"
+        "Australian incidents",
+        "State actors"
       ],
       "key": "cyber",
       "lit": [
+        {
+          "detail": "Exposed: Volt Typhoon's Framework for Silent Espionage",
+          "domain": "State actors",
+          "id": "state",
+          "name": "Reports of state hackers / pre-positioning / wipers",
+          "weight": 15
+        },
         {
           "detail": "France vows tough response to freezer cyberattack blamed on Iran",
           "domain": "Australian incidents",
@@ -669,8 +703,8 @@
       ],
       "name": "Major cyber attack on Australia",
       "sa_impact": "Banks, payments, hospitals, fuel distribution, telcos and the power grid all run on networks; a large attack can stop card payments and services for hours to days.",
-      "score": 10,
-      "trend": "steady",
+      "score": 25,
+      "trend": "up",
       "unlit": [
         {
           "domain": "Global threat level",
@@ -709,12 +743,6 @@
           "weight": 10
         },
         {
-          "domain": "State actors",
-          "id": "state",
-          "name": "Reports of state hackers / pre-positioning / wipers",
-          "weight": 15
-        },
-        {
           "domain": "Communications",
           "id": "tel",
           "name": "Phone / internet carrier outage",
@@ -734,7 +762,7 @@
       "key": "ai",
       "lit": [
         {
-          "detail": "Israel warns Iran is seeking AI-powered cyberattack capabilities",
+          "detail": "Autonomous AI agent executes multi-week cyberattack on European telecommunications provider",
           "domain": "AI-enabled hacking",
           "id": "aihack",
           "name": "Reports of AI-driven hacking campaigns",
