@@ -470,7 +470,7 @@ def parse_dispatch_demand(csv_text, region="SA1"):
     raise ValueError("no REGIONSUM row for " + region)
 
 
-def demand_status(now, mw, hist, drop_pct=30, low_ratio=0.6):
+def demand_status(now, mw, hist, drop_pct=30, low_ratio=0.6, no_history_drop_pct=60):
     """Compare current SA demand with 15-45 minutes ago and with the same time of day over the past week.
     A large blackout shows as a sudden fall to well below normal; rooftop-solar changes are slower."""
     from datetime import datetime, timedelta
@@ -482,7 +482,13 @@ def demand_status(now, mw, hist, drop_pct=30, low_ratio=0.6):
     usual = sorted(same)[len(same) // 2] if len(same) >= 3 else None
     prev = max(recent) if recent else None
     fall = round((prev - mw) / prev * 100, 1) if prev and prev > 0 else None
-    sudden = fall is not None and fall >= drop_pct and (usual is None or mw < usual * low_ratio)
+    # With a week of history: a sharp fall to well below the usual level for this time of day.
+    # Before that there is nothing to compare with, and rooftop solar alone can cut demand by a third within
+    # the hour on a sunny morning, so only a much larger fall counts.
+    if usual is None:
+        sudden = fall is not None and fall >= no_history_drop_pct
+    else:
+        sudden = fall is not None and fall >= drop_pct and mw < usual * low_ratio
     return {"mw": round(mw), "usual_mw": round(usual) if usual else None, "fall_pct_30min": fall, "possible_blackout": sudden}
 
 

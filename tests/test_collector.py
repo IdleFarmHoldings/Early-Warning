@@ -574,3 +574,30 @@ def test_cfs_feed_down_is_not_shown_as_zero(monkeypatch):
     state["cap_ok"] = True
     s = localsa.fetch_local({})["summary"]
     assert s["cfs_feed_ok"] is True and s["fires_active"] == 1, "falls back to counting fires in the warnings feed"
+
+
+def test_false_alarm_holes_closed():
+    """Three false alarms found in validation: a bank outage counted as a power cut, a cable-project headline
+    counted as cable damage, and an ordinary fall in grid demand counted as a blackout."""
+    from datetime import datetime, timezone
+    import localsa
+    import run
+    item = lambda t: {"title": t}
+    assert run.power_reports([item("Westpac outage hits thousands of Aussies - Adelaide Now")]) == []
+    assert run.power_reports([item("Optus outage leaves Adelaide customers offline - ABC")]) == [], "not a power cut"
+    assert run.power_reports([item("Thousands without power across Adelaide after storm - ABC News")]) == [
+        "Thousands without power across Adelaide after storm"]
+    assert run.power_reports([item("SA Power Networks crews respond to blackout in Adelaide Hills - The Advertiser")])
+
+    now = now_utc().replace(second=0, microsecond=0)
+    mar = {"loitering": [{"mmsi": 413607840, "name": "HONG BO 16", "flag": "China", "zone": "sunshine", "minutes": 80, "of_interest": True}]}
+    for title in ("SunCable largely finalises subsea cable route, targets electricity supply from Australia to Singapore around 2035 - Zaobao",
+                  "Finland jails cargo ship officers over subsea cable sabotage near Pacific route - Submarine Networks",
+                  "Australia to fund new Pacific undersea cable - Reuters"):
+        assert run.cable_alerts(mar, {}, now, False, {}, {"cables": {"items": [item(title)]}}) == [], title
+    assert len(run.cable_alerts(mar, {}, now, False, {}, {"cables": {"items": [item("Undersea cable linking Perth and Singapore severed - ABC")]}})) == 1
+
+    t0 = datetime(2026, 11, 10, 22, 0, tzinfo=timezone.utc)
+    ts = lambda m: (t0 - timedelta(minutes=m)).strftime("%Y-%m-%dT%H:%M:%SZ")
+    assert localsa.demand_status(t0, 410, [[ts(45), 600]])["possible_blackout"] is False, "solar-sized fall, no history yet"
+    assert localsa.demand_status(t0, 200, [[ts(30), 1400]])["possible_blackout"] is True, "an 86% fall still counts without history"

@@ -209,6 +209,29 @@ def recent_titles(items, now, hours):
     return out
 
 
+CABLE_DAMAGE = r"\b(cut|severed?|damaged?|sabotaged?|snapped|broken|breaks?|fault|outage|disrupt\w*|ruptured?)\b"
+CABLE_NOT_NEWS = r"\b(jailed|jails|convict\w*|sentenced|trial|court|anniversary|route|plans?|planned|proposed|to build|contract|funding)\b"
+POWER_WORDS = (r"without power|blackouts?|power cuts?|power (is |was )?out\b|los(e|t|es) power|"
+               r"(power|electricity|SA Power Networks)\b.*\boutages?|\boutages?\b.*\b(power|electricity|SA Power Networks)")
+SA_WORDS = r"SA Power|South Australia\w*|Adelaide|\bSA\b"
+
+
+def headline(item):
+    """A Google News title without its trailing ' - Publisher', so a publisher's name never counts as a match."""
+    t = item.get("title", "")
+    return t.rsplit(" - ", 1)[0] if " - " in t else t
+
+
+def power_reports(items):
+    """Headlines that report a power outage in South Australia (both the place and the outage must be in the headline)."""
+    out = []
+    for i in items or []:
+        t = headline(i)
+        if re.search(POWER_WORDS, t, re.I) and re.search(SA_WORDS, t):
+            out.append(t[:140])
+    return out[:3]
+
+
 def cable_alerts(mar, state, now, first_run, telecom=None, news=None):
     """Two stages. WATCH: a vessel from a flag of interest loitering over an Australian cable corridor goes on a
     watch list (dashboard only, no phone alert). ESCALATE: if a watched vessel was seen in the last 12 hours AND
@@ -236,7 +259,9 @@ def cable_alerts(mar, state, now, first_run, telecom=None, news=None):
             symptoms.append(f"{name} network down about {round(max(d))}%")
     for it in ((news or {}).get("cables") or {}).get("items", []):
         t = it.get("title", "").rsplit(" - ", 1)[0]
-        if re.search(r"cable", t, re.I) and re.search(r"Australia|Australian|Pacific|Sydney|Perth|Darwin|Tasmania|Indonesia|Singapore|Guam", t):
+        # must report damage to a communications cable, not merely mention one (e.g. plans for a new power cable)
+        if (re.search(r"\bcables?\b", t, re.I) and re.search(CABLE_DAMAGE, t, re.I) and not re.search(CABLE_NOT_NEWS, t, re.I)
+                and re.search(r"Australia|Australian|Pacific|Sydney|Perth|Darwin|Tasmania|Indonesia|Singapore|Guam", t)):
             symptoms.append(f"report: {t[:90]}")
             break
     if not symptoms:
@@ -405,10 +430,10 @@ def main():
             pm = val
     if loc.get("summary") is not None:
         nw = (results.get("news_watch") or {}).get("watch") or {}
-        pick = lambda k, words: [i["title"].rsplit(" - ", 1)[0][:140] for i in (nw.get(k) or {}).get("items", [])
-                                 if re.search(words, i["title"], re.I)][:3]
+        pick = lambda k, words: [headline(i)[:140] for i in (nw.get(k) or {}).get("items", [])
+                                 if re.search(words, headline(i), re.I)][:3]
         loc["summary"]["sawater_news"] = pick("sawater", r"SA Water")
-        loc["summary"]["power_news"] = pick("sapn", r"(SA Power|South Australia|Adelaide|\bSA\b).*(outage|without power|blackout|power cut)|(outage|without power|blackout|power cut).*(SA Power|South Australia|Adelaide|\bSA\b)")
+        loc["summary"]["power_news"] = power_reports((nw.get("sapn") or {}).get("items"))
         loc["summary"]["murray_news"] = pick("murray", r"River Murray")
     if loc.get("samples"):
         save_json("data/debug_samples.json", loc.pop("samples"))
