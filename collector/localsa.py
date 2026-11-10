@@ -504,7 +504,8 @@ def fetch_local(state):
     part("roads", lambda: fetch_roads(samples))
     part("ed", lambda: discover_ed(samples))
     part("reservoirs", lambda: fetch_reservoirs(state, samples, __import__("common").iso()))
-    part("sapn", lambda: fetch_sapn(samples))
+    # SA Power Networks' outage list refuses automated requests (HTTP 403), so it is not polled;
+    # widespread outages are picked up through the "sapn" news watch instead.
     if not out:
         raise RuntimeError("; ".join(errors[:3]))
     inc = out.get("incidents") or []
