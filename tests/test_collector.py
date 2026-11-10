@@ -454,3 +454,9 @@ def test_reservoirs_csv():
     r = localsa.parse_reservoirs(csv_text)
     assert [x["name"] for x in r["reservoirs"]] == ["Mount Bold", "Happy Valley"] and r["low"] == ["Happy Valley"]
     assert r["total_pct"] == 57.4 and r["as_of"] == "30/09/2026"
+
+
+def test_sapn_parse():
+    import localsa
+    assert localsa.parse_sapn('["ADELAIDE", "Norwood", "adelaide"]') == {"suburbs": ["Adelaide", "Norwood"], "suburb_count": 2}
+    assert localsa.parse_sapn('{"Suburbs": [{"SuburbName": "GLENELG"}]}')["suburbs"] == ["Glenelg"]

@@ -360,7 +360,11 @@ function renderLatest(l){
     let h = Object.entries(fd).map(([d,r])=>rowL(`Fire danger: ${d}`, r||"No rating", fdC(r), r==="High")).join("");
     h += rowL("Total fire ban", bans.length?bans.join(", "):"None", bans.length?"var(--l4)":"var(--l2)");
     const pn = ls.power_news||[], wn = ls.sawater_news||[], mn = ls.murray_news||[];
-    h += rowL("Power outages", pn.length?`${pn.length} report${pn.length>1?"s":""} today`:"No major outages reported", pn.length?"var(--l4)":"var(--l2)");
+    const po = ls.power_out_suburbs;
+    h += po!=null
+      ? rowL("Power outages (SAPN)", po?`${po} suburb${po>1?"s":""} affected`:"None listed", po>=50||pn.length?"var(--l4)":po>=10?"var(--l3)":"var(--l2)", po>=10&&po<50&&!pn.length)
+      : rowL("Power outages", pn.length?`${pn.length} report${pn.length>1?"s":""} today`:"No major outages reported", pn.length?"var(--l4)":"var(--l2)");
+    if(po) h += `<details style="margin-top:4px"><summary>Suburbs with outages</summary><p class="why" style="margin:6px 0 0">${esc((ls.power_out_list||[]).join(", "))}${po>(ls.power_out_list||[]).length?" …":""}</p></details>`;
     h += rowL("Water (SA Water)", wn.length?`${wn.length} supply/quality report${wn.length>1?"s":""}`:"No major issues reported", wn.length?"var(--l3)":"var(--l2)", wn.length>0);
     if(ls.reservoirs_pct!=null) h += rowL("Adelaide reservoirs", `${ls.reservoirs_pct}% full${ls.reservoirs_as_of?` · ${ls.reservoirs_as_of}`:""}`, ls.reservoirs_pct<30?"var(--l4)":ls.reservoirs_pct<50?"var(--l3)":"var(--l2)", ls.reservoirs_pct>=30&&ls.reservoirs_pct<50);
     const newsItems = [...pn.map(t=>"Power: "+t), ...wn.map(t=>"Water: "+t), ...mn.map(t=>"River Murray: "+t)];

@@ -398,6 +398,34 @@ def fetch_reservoirs(state, samples, now_iso):
 SAPN_PAGE = "https://www.sapowernetworks.com.au/outages/"
 
 
+SAPN_SUBURBS = "https://outage.apps.sapowernetworks.com.au/OutageReport/AllIVRSuburbs"
+
+
+def parse_sapn(body):
+    """Suburbs SA Power Networks currently lists with outages. Accepts a JSON list of strings or of objects."""
+    data = json.loads(body)
+    items = data if isinstance(data, list) else next((v for v in data.values() if isinstance(v, list)), [])
+    subs = []
+    for it in items:
+        if isinstance(it, str):
+            subs.append(it.strip().title())
+        elif isinstance(it, dict):
+            nm = next((str(v) for k, v in it.items() if re.search(r"suburb|name|locality", k, re.I) and isinstance(v, str)), None)
+            if nm:
+                subs.append(nm.strip().title())
+    subs = sorted(set(s for s in subs if s))
+    return {"suburbs": subs[:200], "suburb_count": len(subs)}
+
+
+def fetch_sapn(samples):
+    body = http_get(SAPN_SUBURBS, timeout=30, accept="application/json").decode("utf-8", "replace")
+    samples["sapn_data"] = body[:1200]
+    try:
+        return parse_sapn(body)
+    except ValueError:
+        return discover_sapn(samples)
+
+
 def discover_sapn(samples):
     html = http_get(SAPN_PAGE, timeout=30).decode("utf-8", "replace")
     cands = re.findall(r"""["'](https?://[^"'\s]+(?:outage|Outage)[^"'\s]*)["']""", html)
@@ -476,7 +504,7 @@ def fetch_local(state):
     part("roads", lambda: fetch_roads(samples))
     part("ed", lambda: discover_ed(samples))
     part("reservoirs", lambda: fetch_reservoirs(state, samples, __import__("common").iso()))
-    part("sapn", lambda: discover_sapn(samples))
+    part("sapn", lambda: fetch_sapn(samples))
     if not out:
         raise RuntimeError("; ".join(errors[:3]))
     inc = out.get("incidents") or []
@@ -500,6 +528,8 @@ def fetch_local(state):
         "ed_very_busy": [e["hospital"] for e in (out.get("ed") or []) if re.search(r"very busy", e["status"], re.I)],
         "ed": [{k: e.get(k) for k in ("hospital", "status", "capacity_pct", "avg_wait_min", "waiting")} for e in (out.get("ed") or [])][:12],
         "ed_known": len(out.get("ed") or []),
+        "power_out_suburbs": (out.get("sapn") or {}).get("suburb_count"),
+        "power_out_list": ((out.get("sapn") or {}).get("suburbs") or [])[:30],
         "reservoirs_pct": (out.get("reservoirs") or {}).get("total_pct"),
         "reservoirs_as_of": (out.get("reservoirs") or {}).get("as_of"),
         "reservoirs_low": (out.get("reservoirs") or {}).get("low") or [],
