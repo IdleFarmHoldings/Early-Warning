@@ -590,7 +590,7 @@ def test_false_alarm_holes_closed():
     assert run.power_reports([item("SA Power Networks crews respond to blackout in Adelaide Hills - The Advertiser")])
 
     now = now_utc().replace(second=0, microsecond=0)
-    mar = {"loitering": [{"mmsi": 413607840, "name": "HONG BO 16", "flag": "China", "zone": "sunshine", "minutes": 80, "of_interest": True}]}
+    mar = {"loitering": [{"mmsi": 413607840, "name": "HONG BO 16", "flag": "China", "zone": "syd_n", "minutes": 80, "of_interest": True}]}
     for title in ("SunCable largely finalises subsea cable route, targets electricity supply from Australia to Singapore around 2035 - Zaobao",
                   "Finland jails cargo ship officers over subsea cable sabotage near Pacific route - Submarine Networks",
                   "Australia to fund new Pacific undersea cable - Reuters"):
@@ -660,3 +660,37 @@ def test_pages_plain_names_and_distinct_colours():
     colours = re.findall(r'"(--s\d|#[0-9a-f]{6})"', line)
     scenarios = _json.loads((root / "collector" / "playbook.json").read_text())["scenarios"]
     assert len(set(colours)) == len(colours) >= len(scenarios)
+
+
+def test_source_down_note_after_an_hour_and_on_recovery():
+    import run
+    now = now_utc().replace(second=0, microsecond=0)
+    good = {"summary": {"cfs_feed_ok": True, "fire_danger_ok": True}}
+    cfs_down = {"summary": {"cfs_feed_ok": False, "fire_danger_ok": True}}
+    h = {"telecom": {"ok": True}}
+    st = {}
+    assert run.source_alerts(h, good, st, now, False) == [] and st["feed_down"] == {}
+    assert run.source_alerts(h, cfs_down, st, now, False) == [], "a short blip says nothing"
+    assert run.source_alerts(h, cfs_down, st, now + timedelta(minutes=45), False) == []
+    al = run.source_alerts(h, cfs_down, st, now + timedelta(minutes=60), False)
+    assert len(al) == 1 and al[0]["priority"] == 2 and "CFS bushfire warnings not updating" in al[0]["title"]
+    assert run.source_alerts(h, cfs_down, st, now + timedelta(hours=5), False) == [], "said once, not repeated"
+    back = run.source_alerts(h, good, st, now + timedelta(hours=6), False)
+    assert len(back) == 1 and "working again" in back[0]["title"] and st["feed_down"] == {}
+    st = {}
+    run.source_alerts({"telecom": {"ok": False}}, {}, st, now, False)  # whole local fetch failed: all three counted
+    al = run.source_alerts({"telecom": {"ok": False}}, {}, st, now + timedelta(hours=1), False)
+    assert sorted(a["key"] for a in al) == ["feed-down-cfs", "feed-down-fdr", "feed-down-telecom"]
+    st = {}
+    run.source_alerts(h, cfs_down, st, now, True)
+    assert run.source_alerts(h, cfs_down, st, now + timedelta(hours=1), True) == [], "nothing is pushed on the very first run"
+
+
+def test_sunshine_coast_zone_removed_and_old_tracks_forgotten():
+    import maritime
+    from common import CONFIG
+    assert "sunshine" not in {z["key"] for z in CONFIG["maritime"]["zones"]}
+    now = now_utc()
+    tracks = {"477151700": {"mmsi": "477151700", "name": "DA TAI SHAN", "flag": "Hong Kong", "zone": "sunshine",
+                            "first": iso(now - timedelta(hours=2)), "last": iso(now), "slow": True, "sog": 0.1}}
+    assert maritime.update_tracks(tracks, {}, now, CONFIG["maritime"]) == [] and tracks == {}

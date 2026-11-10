@@ -281,6 +281,46 @@ def cable_alerts(mar, state, now, first_run, telecom=None, news=None):
              "priority": 4, "confirmed": False, "tags": ["anchor"]}]
 
 
+CRITICAL_FEEDS = {
+    "cfs": ("CFS bushfire warnings", "Check cfs.sa.gov.au or the Alert SA app for bushfire warnings until it is back."),
+    "fdr": ("fire danger ratings and fire bans", "Check cfs.sa.gov.au for today's fire danger rating until it is back."),
+    "telecom": ("the phone network outage monitor", "Phone and internet outage alerts may not arrive until it is back."),
+}
+FEED_DOWN_AFTER = timedelta(minutes=60)
+
+
+def source_alerts(health, loc, state, now, first_run):
+    """A quiet 'System check' note when a feed the family relies on has been unreadable for an hour, and one
+    more when it returns. Short blips say nothing."""
+    sm = (loc or {}).get("summary") or {}
+    ok = {"cfs": bool(sm.get("cfs_feed_ok")), "fdr": bool(sm.get("fire_danger_ok")),
+          "telecom": bool((health.get("telecom") or {}).get("ok"))}
+    down = state.setdefault("feed_down", {})
+    out = []
+
+    def note(key, title, message, tag):
+        if not first_run:
+            out.append({"key": key, "channels": ["proactive"], "category": "system", "title": title, "message": message,
+                        "priority": 2, "confirmed": True, "tags": [tag]})
+
+    for key, (name, advice) in CRITICAL_FEEDS.items():
+        rec = down.get(key)
+        if ok[key]:
+            if rec and rec.get("alerted"):
+                note(f"feed-up-{key}", f"System check: {name} working again"[:90],
+                     f"Early Warning can read {name} again. Alerts that depend on it are back to normal.", "white_check_mark")
+            down.pop(key, None)
+            continue
+        rec = down.setdefault(key, {"since": iso(now)})
+        since = datetime.strptime(rec["since"], "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
+        if not rec.get("alerted") and now - since >= FEED_DOWN_AFTER:
+            rec["alerted"] = iso(now)
+            note(f"feed-down-{key}", f"System check: {name} not updating"[:90],
+                 f"Early Warning has not been able to read {name} for about an hour, so it cannot warn you from that source. {advice}",
+                 "wrench")
+    return out
+
+
 def local_alerts(loc, state, now, first_run):
     """Bushfire emergency warnings, extreme fire danger near Adelaide, and severe grid shortfalls in SA."""
     sm = (loc or {}).get("summary") or {}
@@ -438,6 +478,7 @@ def main():
     if loc.get("samples"):
         save_json("data/debug_samples.json", loc.pop("samples"))
     alerts += local_alerts(loc, state, now, first_run)
+    alerts += source_alerts(health, loc, state, now, first_run)
     alerts += cable_alerts(mar, state, now, first_run, (results.get("telecom") or {}).get("networks"),
                            (results.get("news_watch") or {}).get("watch"))
     if loc.get("summary") is not None:

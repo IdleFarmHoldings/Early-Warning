@@ -81,7 +81,8 @@ def update_tracks(tracks, seen, now, mc):
         else:
             tracks[mmsi] = {**r, "first": iso(now), "slow": slow}
     cutoff = iso(now - timedelta(hours=mc["forget_hours"]))
-    for m in [m for m, t in tracks.items() if t["last"] < cutoff]:
+    known = {z["key"] for z in CONFIG["maritime"]["zones"]}  # forget vessels remembered in a zone that is no longer watched
+    for m in [m for m, t in tracks.items() if t["last"] < cutoff or t.get("zone") not in known]:
         del tracks[m]
     out = []
     for t in tracks.values():
