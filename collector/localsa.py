@@ -186,7 +186,8 @@ def fetch_aemo(state, max_new=40):
 ROAD_LAYERS = {
     "closures": ["https://maps.sa.gov.au/arcgis/rest/services/DPTIExtTransport/TrafficSAOpenData/MapServer/1",
                  "https://dit-cms-prod.geohub.sa.gov.au/arcgis/rest/services/TrafficSATime_OpenData/TrafficSATime_OpenData/MapServer/2"],
-    "incidents": ["https://dit-cms-prod.geohub.sa.gov.au/arcgis/rest/services/TrafficSATime_OpenData/TrafficSATime_OpenData/MapServer/0"],
+    "incidents": ["https://maps.sa.gov.au/arcgis/rest/services/DPTIExtTransport/TrafficSAOpenData/MapServer/2",
+                  "https://dit-cms-prod.geohub.sa.gov.au/arcgis/rest/services/TrafficSATime_OpenData/TrafficSATime_OpenData/MapServer/0"],
 }
 
 
@@ -200,6 +201,13 @@ def _arcgis_rows(url):
 def summarise_roads(rows):
     out = []
     for r in rows:
+        if "LOCAL_ROAD_NAME" in r or "PLOT_DETAILS" in r:
+            det = (r.get("PLOT_DETAILS") or "").replace("\r", " ").replace("\n", " ")
+            det = re.sub(r"\s+", " ", re.sub(r"Ref#\s*\d+", "", det)).strip()
+            out.append({"road": (r.get("LOCAL_ROAD_NAME") or "").title()[:80],
+                        "suburb": (r.get("START_SUBURB") or "").title()[:40], "type": det[:120],
+                        "hazard": bool(re.search(r"fire|flood|storm|tree|power|emergency|hazard|smoke|washout", det, re.I))})
+            continue
         txt = " ".join(str(v) for v in r.values() if isinstance(v, str))
         road = next((str(r[k]) for k in r if re.search(r"road|street|location|name", k, re.I) and isinstance(r[k], str)), "")
         kind = next((str(r[k]) for k in r if re.search(r"type|category|description", k, re.I) and isinstance(r[k], str)), "")
@@ -226,6 +234,27 @@ def fetch_roads(samples):
 
 # ---------- SA Health emergency departments ----------
 ED_SHELL = "https://www.sahealth.sa.gov.au/wps/themes/html/Portal/js/OBI_DATA/EDDashboard_rwd.html"
+ED_DATA = "https://www.sahealth.sa.gov.au/wps/themes/html/Portal/js/OBI_DATA/json/ED001.json"
+ED_NAMES = {"FMC": "Flinders Medical Centre", "LMH": "Lyell McEwin", "RAH": "Royal Adelaide", "TQEH": "Queen Elizabeth",
+            "MOD": "Modbury", "NHS": "Noarlunga", "NOA": "Noarlunga", "WCH": "Women's and Children's"}
+ED_VERY_BUSY = {"cap_pct": 100, "wait_min": 240}
+
+
+def parse_ed_rows(rows):
+    """SA Health ED001.json rows: HOSP_SHORT, CAP (% of ED capacity in use), AVG_WAIT (minutes), WTBS (waiting to be seen)."""
+    out = []
+    for r in rows:
+        try:
+            cap, wait = float(r.get("CAP") or 0), float(r.get("AVG_WAIT") or 0)
+            wtbs = int(float(r.get("WTBS") or 0))
+        except ValueError:
+            continue
+        code = (r.get("HOSP_SHORT") or "").strip()
+        very = cap >= ED_VERY_BUSY["cap_pct"] or wait >= ED_VERY_BUSY["wait_min"]
+        out.append({"hospital": ED_NAMES.get(code, code), "code": code, "capacity_pct": cap, "avg_wait_min": round(wait),
+                    "waiting": wtbs, "status": "Very busy" if very else ("Busy" if cap >= 85 or wait >= 120 else "Normal"),
+                    "as_of": r.get("DTM", "")})
+    return out
 
 
 def _abs(base, ref):
@@ -234,6 +263,18 @@ def _abs(base, ref):
 
 
 def discover_ed(samples):
+    """SA Health ED data: the known data file first, then discovery from the dashboard page as a fallback."""
+    try:
+        rows = json.loads(http_get(ED_DATA, timeout=30))
+        recs = parse_ed_rows(rows if isinstance(rows, list) else [])
+        if recs:
+            return recs
+    except Exception as e:  # noqa: BLE001
+        samples["ed_direct_err"] = f"{type(e).__name__}: {e}"[:200]
+    return _discover_ed(samples)
+
+
+def _discover_ed(samples):
     """The dashboard loads its data with JavaScript; find and fetch the data file it uses."""
     html = http_get(ED_SHELL, timeout=30).decode("utf-8", "replace")
     refs = re.findall(r"""(?:src|href)=["']([^"']+\.(?:js|json|csv|xml)[^"']*)["']""", html, re.I)
@@ -260,7 +301,10 @@ def discover_ed(samples):
             continue
         samples["ed_data_url"] = u
         samples["ed_data"] = body[:2000]
-        return parse_ed(body)
+        try:
+            return parse_ed_rows(json.loads(body)) or parse_ed(body)
+        except ValueError:
+            return parse_ed(body)
     raise RuntimeError("ED data file not found yet (see debug sample)")
 
 
@@ -362,9 +406,10 @@ def fetch_local(state):
         "grid_lor_actual": (out.get("grid") or {}).get("sa_actual", False),
         "road_closures": len((out.get("roads") or {}).get("closures") or []),
         "road_incidents": len((out.get("roads") or {}).get("incidents") or []),
-        "road_hazards": [f"{r['type']} {r['road']}".strip() for k in ("closures", "incidents")
+        "road_hazards": [f"{r['road']}{', ' + r.get('suburb') if r.get('suburb') else ''}: {r['type']}".strip() for k in ("closures", "incidents")
                          for r in ((out.get("roads") or {}).get(k) or []) if r["hazard"]][:5],
         "ed_very_busy": [e["hospital"] for e in (out.get("ed") or []) if re.search(r"very busy", e["status"], re.I)],
+        "ed": [{k: e.get(k) for k in ("hospital", "status", "capacity_pct", "avg_wait_min", "waiting")} for e in (out.get("ed") or [])][:12],
         "ed_known": len(out.get("ed") or []),
     }
     out["errors"] = errors

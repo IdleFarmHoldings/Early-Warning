@@ -435,3 +435,14 @@ def test_watchdog_decisions():
     assert acts == set(), "no repeat alert within 6 hours"
     acts, st = watchdog.decide(now + timedelta(hours=2), now + timedelta(hours=2) - timedelta(minutes=5), 1, 0, st)
     assert acts == {"recovered"} and not st["stale"]
+
+
+def test_ed_and_roads_parsing():
+    import localsa
+    ed = localsa.parse_ed_rows([{"DTM": "2026-11-10T20:00:00", "HOSP_SHORT": "FMC", "WTBS": "22", "CAP": "63", "AVG_WAIT": "109.46"},
+                                {"HOSP_SHORT": "RAH", "WTBS": "40", "CAP": "112", "AVG_WAIT": "200"},
+                                {"HOSP_SHORT": "LMH", "WTBS": "29", "CAP": "88", "AVG_WAIT": "83"}])
+    assert [(e["hospital"], e["status"]) for e in ed] == [("Flinders Medical Centre", "Normal"), ("Royal Adelaide", "Very busy"), ("Lyell McEwin", "Busy")]
+    r = localsa.summarise_roads([{"LOCAL_ROAD_NAME": "MORGAN MAIL ROAD", "START_SUBURB": "QUONDONG",
+                                  "PLOT_DETAILS": "MORGAN MAIL RD Closed due to flooding over road\r\n\r\nRef# 2138578"}])
+    assert r[0]["road"] == "Morgan Mail Road" and r[0]["hazard"] and "Ref#" not in r[0]["type"]

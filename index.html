@@ -362,9 +362,10 @@ function renderLatest(l){
     h += rowL("Power supply (SA)", lvl>=3?"Critical (LOR3)":lvl===2?"Tight (LOR2)":lvl===1?"Watch (LOR1)":"Normal", lvl>=3?"var(--l5)":lvl===2?"var(--l4)":lvl===1?"var(--l3)":"var(--l2)", lvl===1);
     const ew=(ls.emergency_warnings||[]).length, wa=(ls.watch_and_act||[]).length;
     h += rowL("CFS warnings", ew?`${ew} Emergency`:wa?`${wa} Watch and Act`:`None · ${ls.fires_active||0} fires active`, ew?"var(--l5)":wa?"var(--l4)":"var(--l2)");
-    h += rowL("Road closures (SA)", `${ls.road_closures||0} closures · ${ls.road_incidents||0} incidents`, (ls.road_hazards||[]).length?"var(--l4)":"var(--l2)");
+    h += rowL("Road closures (SA)", `${ls.road_closures||0} closed${ls.road_incidents?` · ${ls.road_incidents} incidents`:""}${(ls.road_hazards||[]).length?` · ${ls.road_hazards.length} weather/fire`:""}`, (ls.road_hazards||[]).length?"var(--l4)":"var(--l2)");
     if(ls.ed_known) h += rowL("Hospital EDs very busy", `${(ls.ed_very_busy||[]).length} of ${ls.ed_known}`, (ls.ed_very_busy||[]).length>=3?"var(--l4)":(ls.ed_very_busy||[]).length?"var(--l3)":"var(--l2)", (ls.ed_very_busy||[]).length>0 && (ls.ed_very_busy||[]).length<3);
-    if((ls.road_hazards||[]).length) h += `<p class="why" style="margin:6px 0 0">Hazard on roads: ${esc(ls.road_hazards[0])}</p>`;
+    if((ls.ed||[]).length) h += `<details style="margin-top:6px"><summary>Emergency departments now</summary><div class="list">${ls.ed.map(e=>`<div class="item" style="grid-template-columns:1fr auto;align-items:center"><span>${esc(e.hospital)} <span class="why">· ${e.avg_wait_min} min wait · ${e.capacity_pct}% full</span></span><span class="chip" style="background:${e.status==="Very busy"?"var(--l4)":e.status==="Busy"?"var(--l3)":"var(--l2)"};${e.status==="Busy"?"color:var(--l3-ink)":""}">${esc(e.status)}</span></div>`).join("")}</div></details>`;
+    if((ls.road_hazards||[]).length) h += `<p class="why" style="margin:6px 0 0">Weather/fire road closure: ${esc(ls.road_hazards[0])}</p>`;
     if((ls.bom_severe||[]).length) h += `<p class="why" style="margin:6px 0 0">Bureau warning: ${esc(ls.bom_severe[0])}</p>`;
     $("localBox").innerHTML = h;
   } else { $("localBox").innerHTML = `<p class="empty">Local data arrives with the next check.</p>`; }
