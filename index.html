@@ -121,7 +121,7 @@ th{font-family:var(--display);text-transform:uppercase;letter-spacing:.05em;font
 .why{color:var(--muted);font-size:.82rem}
 details summary{cursor:pointer;font-size:.84rem;color:var(--accent)}
 .banner{border:1.5px dashed var(--line);border-radius:6px;padding:14px 16px;font-size:.9rem}
-.sim{background:var(--l5);color:#fff;border-radius:6px;padding:12px 16px;font-family:var(--display);font-size:1.3rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;text-align:center}
+.sim{position:sticky;top:0;z-index:20;background:var(--l5);color:#fff;border-radius:6px;padding:12px 16px;font-family:var(--display);font-size:1.3rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;text-align:center}
 .sim a{color:#fff}
 @media (max-width:480px){.wrap{gap:14px;padding-top:12px}h1{font-size:1.7rem}.panel{padding:14px}.lvl-name{font-size:2.1rem}.cat{padding:12px}}
 @media (prefers-reduced-motion:no-preference){.needle{transition:transform .8s cubic-bezier(.3,1.4,.5,1)}}
@@ -343,7 +343,7 @@ function renderLatest(l){
     return `<div class="item" style="grid-template-columns:1fr auto;align-items:center"><span class="t">${esc(n)}</span><span class="chip" style="background:${st[1]}">${st[0]}</span></div>`}).join("")
     : `<p class="empty">Network monitoring starting up.</p>`;
   const h=l.source_health||{}, bad=Object.keys(h).filter(k=>!h[k].ok);
-  $("feeds").textContent = Object.keys(h).length ? (bad.length?`Data feeds: ${Object.keys(h).length-bad.length} OK, unavailable: ${bad.join(", ")}.`:"Data feeds: all OK.") : "";
+  $("feeds").textContent = Object.keys(h).length ? (bad.length?`Data feeds: ${Object.keys(h).length-bad.length} working. Not available right now: ${bad.map(k=>FEED_NAMES[k]||k).join(", ")}.`:"Data feeds: all working.") : "";
   renderAlerts(l.recent_alerts||[]);
   const ls = (l.local_sa||{}).summary;
   if(ls){
@@ -375,7 +375,7 @@ function renderLatest(l){
     if((ls.ed||[]).length) h += `<details style="margin-top:6px"><summary>Emergency departments now</summary><div class="list">${ls.ed.map(e=>`<div class="item" style="grid-template-columns:1fr auto;align-items:center"><span>${esc(e.hospital)} <span class="why">· ${e.avg_wait_min} min wait · ${e.capacity_pct}% full</span></span><span class="chip" style="background:${e.status==="Very busy"?"var(--l4)":e.status==="Busy"?"var(--l3)":"var(--l2)"};${e.status==="Busy"?"color:var(--l3-ink)":""}">${esc(e.status)}</span></div>`).join("")}</div></details>`;
     if((ls.road_hazards||[]).length) h += `<p class="why" style="margin:6px 0 0">Weather/fire road closure: ${esc(ls.road_hazards[0])}</p>`;
     if((ls.bom_severe||[]).length) h += `<p class="why" style="margin:6px 0 0">Bureau warning: ${esc(ls.bom_severe[0])}</p>`;
-    $("localBox").innerHTML = h;
+    $("localBox").innerHTML = (DEMO_OK ? `<p class="why" style="margin:0 0 8px"><b>These are today's real readings.</b> They are not part of the simulation.</p>` : "") + h;
   } else { $("localBox").innerHTML = `<p class="empty">Local data arrives with the next check.</p>`; }
 }
 
@@ -384,6 +384,11 @@ $("guideBody").innerHTML = LEVELS.slice(1).map((L,i)=>`<tr>
   <td>${esc(L.meaning)}</td><td>${esc(L.actions.map(a=>a.action).join("; "))}</td></tr>`).join("");
 
 // Deep link from a phone notification: ?alert=<id>&t=<title>&m=<message>&p=<priority>#alerts
+const FEED_NAMES = {acsc:"Australian cyber alerts (ACSC)", navwarn:"military navigation warnings", cisa:"US cyber advisories", gdacs:"global disaster alerts",
+  usgs:"earthquakes", who:"WHO outbreak news", us_advisories:"US travel advisories", uk_advice:"UK travel advice", markets:"markets", sectors:"sector stocks",
+  aircraft:"aircraft tracking", gps:"GPS interference", telecom:"phone network monitor", internet:"country internet monitor", news_watch:"news watch",
+  analysts:"analyst headlines", cyber:"cyber threat feeds", satellites:"satellite tracking", maritime:"ship tracking", local_sa:"local SA feeds",
+  chokepoints:"shipping chokepoints", prediction_markets:"forecast markets"};
 const QS = new URLSearchParams(location.search);
 const LINKED = QS.get("alert") ? {id:QS.get("alert"), title:QS.get("t")||"Alert", message:QS.get("m")||"", priority:Number(QS.get("p"))||3} : null;
 let focusDone = false;
@@ -393,6 +398,8 @@ function renderAlerts(list){
   const open = new Set([...box.querySelectorAll("details[open]")].map(d=>d.dataset.id));
   let al = list.slice(0, 25).map(a=>({...a, id:a.id || `${a.sent_at||a.at||""}-${a.title}`}));
   let pending = false;
+  // Older alerts were logged without an id: recognise the tapped one by its title so it is not shown twice as "just now".
+  if(LINKED && !al.some(a=>a.id===LINKED.id)){ const m = list.slice(0,25).findIndex(a=>!a.id && a.title===LINKED.title); if(m>=0) al[m].id = LINKED.id; }
   if(LINKED && !al.some(a=>a.id===LINKED.id)){ al.unshift({...LINKED, sent_at:null, pending:true}); pending = true; }
   if(!al.length){ box.innerHTML = `<p class="empty">No alerts in the last few days.</p>`; return; }
   const row = a => { const isLinked = LINKED && a.id===LINKED.id;

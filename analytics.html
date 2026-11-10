@@ -103,8 +103,9 @@ details.panel>summary:focus-visible{outline:3px solid var(--accent);outline-offs
 
   <section class="panel">
     <h2>Escalation potential, last 14 days</h2>
-    <p class="note">Warning-sign score per scenario (0–100): how many known precursors are showing at once. A rising line means more signs are lining up — it is not a probability. Hover for values.</p>
+    <p class="note">Warning-sign score per scenario (0–100): how many known precursors are showing at once. A rising line means more signs are lining up — it is not a probability. Tap or hover on the chart for values.</p>
     <div class="chart"><canvas id="escChart" aria-label="Warning-sign scores over time"></canvas></div>
+    <div id="escKey" class="legend" style="gap:0"></div>
     <details style="margin-top:8px"><summary style="cursor:pointer;font-size:.85rem">Table view</summary><div class="tbl" id="escTable"></div></details>
   </section>
 
@@ -243,6 +244,8 @@ const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt
 const fmt = iso => { const d=new Date(iso); return isNaN(d)?"—":d.toLocaleString("en-AU",{timeZone:"Australia/Adelaide",day:"numeric",month:"short",hour:"numeric",minute:"2-digit"}); };
 async function get(p){ try{ const r=await fetch(p+"?t="+Date.now(),{cache:"no-store"}); return r.ok? r.json(): null; }catch(e){ return null; } }
 const SERIES = ["--s1","--s2","--s3","--s4","--s5","--s6"];
+// Ten scenarios need ten different line colours, or two lines look like the same scenario.
+const ESC_COLORS = () => ["--s1","--s2","--s3","--s4","--s5","--s6","--s7"].map(css).concat(["#00a3c4","#a8b3bb","#e8c33a"]);
 const gpsColor = v => v==null?css("--line"):v>=40?css("--critical"):v>=20?css("--serious"):v>=5?css("--warning"):css("--good");
 Chart.defaults.font.family = css("--body"); Chart.defaults.color = css("--muted");
 
@@ -250,7 +253,7 @@ function lineChart(canvas, labels, datasets, opts={}){
   return new Chart(canvas, {type:"line", data:{labels, datasets},
     options:{responsive:true, maintainAspectRatio:false, animation:false, spanGaps:true,
       interaction:{mode:"index", intersect:false},
-      plugins:{legend:{display:!opts.mini && datasets.length>1, position:"bottom", labels:{boxWidth:12, boxHeight:3}},
+      plugins:{legend:{display:!opts.mini && opts.legend!==false && datasets.length>1, position:"bottom", labels:{boxWidth:12, boxHeight:3}},
                tooltip:{enabled:true}},
       elements:{point:{radius:0, hoverRadius:4}, line:{borderWidth:2, tension:.25}},
       scales:{x:{display:!opts.mini, grid:{display:false}, ticks:{maxTicksLimit:7, maxRotation:0}},
@@ -282,7 +285,9 @@ document.querySelectorAll(".wrap .panel").forEach((p, i)=>{
   // Escalation lines
   if(rows.length && scen.length){
     lineChart($("escChart"), labels, scen.map((s,i)=>({label:`${s.name} (${s.score})`, data:rows.map(r=>r["esc_"+s.key]??null),
-      borderColor:css(SERIES[i%6]), backgroundColor:css(SERIES[i%6])})), {max:100});
+      borderColor:ESC_COLORS()[i%10], backgroundColor:ESC_COLORS()[i%10]})), {max:100, legend:false});
+    // The key sits under the chart as ordinary text so it wraps on a phone instead of squeezing the chart.
+    $("escKey").innerHTML = scen.map((s,i)=>`<span style="display:inline-flex;align-items:center;gap:6px;margin:2px 12px 2px 0"><span style="width:14px;height:4px;border-radius:2px;background:${ESC_COLORS()[i%10]}"></span>${esc(s.name)} (${s.score})</span>`).join("");
     $("escTable").innerHTML = `<table><thead><tr><th>Scenario</th><th>Now</th><th>Band</th><th>Trend</th><th>14-day max</th></tr></thead><tbody>${
       scen.map(s=>{ const vals=rows.map(r=>r["esc_"+s.key]).filter(v=>v!=null); return `<tr><td>${esc(s.name)}</td><td class="num">${s.score}</td><td>${esc(s.band)}</td><td>${esc(s.trend)}</td><td class="num">${vals.length?Math.max(...vals):"—"}</td></tr>`}).join("")}</tbody></table>`;
   } else { $("escChart").parentElement.innerHTML = `<p class="empty">History builds up from the first collector runs — check back in a few hours.</p>`; }

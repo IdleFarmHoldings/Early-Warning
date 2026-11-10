@@ -644,3 +644,19 @@ def test_news_signs_reject_headlines_that_lit_them_falsely():
     ]
     for k, iid, title in real_hits:
         assert lit(k, iid, title), f"{k}.{iid} should light on: {title}"
+
+
+def test_pages_plain_names_and_distinct_colours():
+    """Board: every data feed has a plain-language name. Analytics: one colour per scenario line."""
+    import json as _json
+    import re
+    root = Path(__file__).resolve().parent.parent
+    board = (root / "index.html").read_text()
+    names = set(re.findall(r"(\w+):\"", board[board.index("const FEED_NAMES"):board.index("const QS")]))
+    feeds = set(_json.loads((root / "data" / "latest.json").read_text())["source_health"])
+    assert feeds <= names, f"feeds without a plain name: {sorted(feeds - names)}"
+    an = (root / "analytics.html").read_text()
+    line = an[an.index("const ESC_COLORS"):].split("\n", 1)[0]
+    colours = re.findall(r'"(--s\d|#[0-9a-f]{6})"', line)
+    scenarios = _json.loads((root / "collector" / "playbook.json").read_text())["scenarios"]
+    assert len(set(colours)) == len(colours) >= len(scenarios)
