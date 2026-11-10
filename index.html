@@ -414,13 +414,14 @@ function renderAlerts(list){
 }
 
 const demo = new URLSearchParams(location.search).get("demo");
-const DEMO_OK = /^[1-5]$/.test(demo||"");
+const DEMO_OK = /^[1-5]$|^[a-z0-9-]{2,24}$/.test(demo||"");
+const DEMO_FILE = /^[1-5]$/.test(demo||"") ? `data/demo-level${demo}.json` : `data/demo-${demo}.json`;
 if(DEMO_OK){ $("sim").hidden=false; $("sim").innerHTML=`Simulation only — not real. <a href="./">See the real status</a>`; document.title="SIMULATION - Early Warning Board"; }
 
 async function get(p){ const r=await fetch(p+(p.includes("?")?"&":"?")+"t="+Date.now(),{cache:"no-store"}); if(!r.ok) throw new Error(r.status); return r.json(); }
 async function load(){
   let st=null, l=null;
-  try{ st = await get(DEMO_OK ? `data/demo-level${demo}.json` : "data/status.json"); }catch(e){ $("banner").hidden=false; $("banner").textContent="Could not load the assessment. Try again shortly."; }
+  try{ st = await get(DEMO_OK ? DEMO_FILE : "data/status.json"); }catch(e){ $("banner").hidden=false; $("banner").textContent="Could not load the assessment. Try again shortly."; }
   try{ l = await get("data/latest.json"); }catch(e){}
   let ind=null; try{ ind = await get("data/indicators.json"); }catch(e){}
   if(st) renderStatus(st); else drawGauge(0);
