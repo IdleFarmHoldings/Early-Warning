@@ -122,6 +122,25 @@ def parse_bom(raw):
     return out
 
 
+def parse_bom_cap(raw):
+    """Bureau CAP warning -> [{"title", "severe", "expires"}] (expires as UTC ISO string, or "")."""
+    from datetime import datetime, timezone
+    root = ET.fromstring(raw)
+    out = []
+    for info in [e for e in root.iter() if _local(e.tag) == "info"]:
+        t = _texts(info)
+        title = t.get("headline") or t.get("event") or ""
+        exp = t.get("expires", "")
+        try:
+            exp = datetime.fromisoformat(exp).astimezone(timezone.utc).isoformat() if exp else ""
+        except ValueError:
+            exp = ""
+        if title:
+            out.append({"title": title[:160], "expires": exp, "link": "",
+                        "severe": bool(re.search(r"severe|heatwave|extreme heat|flood warning|damaging winds|fire weather|destructive", title, re.I))})
+    return out
+
+
 # ---------- AEMO lack-of-reserve notices ----------
 LOR_RE = re.compile(r"(Actual|Forecast)\s+(?:Lack Of Reserve|LOR)\s*(?:Level\s*)?(\d)?.*?(?:\(LOR(\d)\))?.*?in the\s+(\w+)\s+region", re.I | re.S)
 
@@ -191,21 +210,23 @@ def fetch_local(state):
         return parse_fdr(raw, lc["fire_districts"])
 
     def bom():
+        """Active Bureau warnings for SA: the CAP files (IDS*.cap.xml) on BoM's public FTP, skipping expired ones."""
         import ftplib
         import io
+        from datetime import datetime, timezone
+        out = []
         with ftplib.FTP("ftp.bom.gov.au", timeout=30) as f:
             f.login()
             f.cwd("/anon/gen/fwo")
-            names = f.nlst()
-            pick = next((n for n in names if n.startswith("IDZ00057")), None)
-            samples["bom_files"] = " ".join(sorted(n for n in names if n.startswith(("IDZ", "IDS2")))[:80])
-            if not pick:
-                raise RuntimeError("SA warnings file not found on BoM FTP")
-            buf = io.BytesIO()
-            f.retrbinary(f"RETR {pick}", buf.write)
-        raw = buf.getvalue()
-        samples["bom"] = raw[:1000].decode("utf-8", "replace")
-        return parse_bom(raw)
+            names = sorted(n for n in f.nlst() if re.match(r"^IDS\d+\.cap\.xml$", n))[:20]
+            samples["bom_files"] = " ".join(names)
+            for n in names:
+                buf = io.BytesIO()
+                f.retrbinary(f"RETR {n}", buf.write)
+                for w in parse_bom_cap(buf.getvalue()):
+                    if not w["expires"] or w["expires"] > datetime.now(timezone.utc).isoformat():
+                        out.append(w)
+        return out
 
     part("incidents", incidents)
     part("warnings", cap)

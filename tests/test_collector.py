@@ -408,3 +408,11 @@ def test_fdr_real_layout():
     assert localsa.worst(f["Adelaide Metropolitan"]["ratings"]) == "Extreme"
     assert f["Mount Lofty Ranges"]["ratings"] == ["High"] and not f["Mount Lofty Ranges"]["fire_ban"]
     assert "Flinders" not in f
+
+
+def test_bom_cap():
+    import localsa
+    raw = b'''<alert xmlns="urn:oasis:names:tc:emergency:cap:1.2"><info><event>Severe Weather Warning</event>
+      <expires>2099-01-01T10:00:00+10:30</expires><headline>Severe Weather Warning for damaging winds for Mount Lofty Ranges</headline></info></alert>'''
+    w = localsa.parse_bom_cap(raw)
+    assert w[0]["severe"] and w[0]["expires"].startswith("2098-12-31T23:30")
