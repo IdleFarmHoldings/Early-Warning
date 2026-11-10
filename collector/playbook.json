@@ -233,7 +233,20 @@
             "Jordan"
           ],
           "weight": 10,
-          "domain": "Aviation"
+          "domain": "Aviation",
+          "require": [
+            "airspace"
+          ],
+          "require2": [
+            "closed",
+            "closes",
+            "closure",
+            "closures",
+            "shut",
+            "shuts",
+            "suspended",
+            "suspends"
+          ]
         },
         {
           "id": "nav",
@@ -294,6 +307,18 @@
           "require": [
             "mass casualty",
             "code brown"
+          ],
+          "exclude": [
+            "pile-up",
+            "pile-ups",
+            "pileup",
+            "highway",
+            "motorway",
+            "drill",
+            "exercise",
+            "training",
+            "spared jail",
+            "plot"
           ]
         },
         {
@@ -527,7 +552,19 @@
             "state-sponsored"
           ],
           "weight": 10,
-          "domain": "Cyber"
+          "domain": "Cyber",
+          "exclude": [
+            "framework",
+            "exposed",
+            "report",
+            "whitepaper",
+            "analysis",
+            "lessons",
+            "history",
+            "anniversary",
+            "inside",
+            "profile"
+          ]
         },
         {
           "id": "cable",
@@ -555,7 +592,32 @@
             "cable"
           ],
           "weight": 10,
-          "domain": "Undersea cables"
+          "domain": "Undersea cables",
+          "require2": [
+            "cut",
+            "severed",
+            "damaged",
+            "damage",
+            "sabotage",
+            "sabotaged",
+            "snapped",
+            "broken",
+            "outage",
+            "disrupted",
+            "disruption",
+            "ruptured"
+          ],
+          "exclude": [
+            "route",
+            "plan",
+            "plans",
+            "planned",
+            "proposed",
+            "contract",
+            "funding",
+            "court",
+            "trial"
+          ]
         },
         {
           "id": "straits",
@@ -878,7 +940,19 @@
             "state-sponsored"
           ],
           "weight": 10,
-          "domain": "Cyber"
+          "domain": "Cyber",
+          "exclude": [
+            "framework",
+            "exposed",
+            "report",
+            "whitepaper",
+            "analysis",
+            "lessons",
+            "history",
+            "anniversary",
+            "inside",
+            "profile"
+          ]
         },
         {
           "id": "cable",
@@ -910,7 +984,32 @@
             "cable"
           ],
           "weight": 10,
-          "domain": "Undersea cables"
+          "domain": "Undersea cables",
+          "require2": [
+            "cut",
+            "severed",
+            "damaged",
+            "damage",
+            "sabotage",
+            "sabotaged",
+            "snapped",
+            "broken",
+            "outage",
+            "disrupted",
+            "disruption",
+            "ruptured"
+          ],
+          "exclude": [
+            "route",
+            "plan",
+            "plans",
+            "planned",
+            "proposed",
+            "contract",
+            "funding",
+            "court",
+            "trial"
+          ]
         },
         {
           "id": "pm",
@@ -1099,6 +1198,18 @@
           "require": [
             "mass casualty",
             "code brown"
+          ],
+          "exclude": [
+            "pile-up",
+            "pile-ups",
+            "pileup",
+            "highway",
+            "motorway",
+            "drill",
+            "exercise",
+            "training",
+            "spared jail",
+            "plot"
           ]
         },
         {
@@ -1133,7 +1244,32 @@
             "cable"
           ],
           "weight": 10,
-          "domain": "Undersea cables"
+          "domain": "Undersea cables",
+          "require2": [
+            "cut",
+            "severed",
+            "damaged",
+            "damage",
+            "sabotage",
+            "sabotaged",
+            "snapped",
+            "broken",
+            "outage",
+            "disrupted",
+            "disruption",
+            "ruptured"
+          ],
+          "exclude": [
+            "route",
+            "plan",
+            "plans",
+            "planned",
+            "proposed",
+            "contract",
+            "funding",
+            "court",
+            "trial"
+          ]
         },
         {
           "id": "malacca",
@@ -1250,6 +1386,18 @@
           "require": [
             "mass casualty",
             "code brown"
+          ],
+          "exclude": [
+            "pile-up",
+            "pile-ups",
+            "pileup",
+            "highway",
+            "motorway",
+            "drill",
+            "exercise",
+            "training",
+            "spared jail",
+            "plot"
           ]
         },
         {
@@ -1418,7 +1566,19 @@
             "wiper"
           ],
           "weight": 15,
-          "domain": "State actors"
+          "domain": "State actors",
+          "exclude": [
+            "framework",
+            "exposed",
+            "report",
+            "whitepaper",
+            "analysis",
+            "lessons",
+            "history",
+            "anniversary",
+            "inside",
+            "profile"
+          ]
         },
         {
           "id": "au",
@@ -1426,7 +1586,26 @@
           "type": "news",
           "key": "cyber_au",
           "words": [
-            ""
+            "Australia",
+            "Australian",
+            "Australians",
+            "Aussie",
+            "Adelaide",
+            "Sydney",
+            "Melbourne",
+            "Brisbane",
+            "Perth",
+            "Canberra",
+            "Darwin",
+            "Hobart",
+            "Queensland",
+            "Victoria",
+            "NSW",
+            "Tasmania",
+            "Medibank",
+            "Optus",
+            "Telstra",
+            "Qantas"
           ],
           "require": [
             "cyber attack",
@@ -1504,6 +1683,18 @@
             "espionage",
             "ransomware",
             "intrusion"
+          ],
+          "exclude": [
+            "philosopher",
+            "minds",
+            "seeking",
+            "could",
+            "may",
+            "might",
+            "warns",
+            "warning",
+            "future",
+            "opinion"
           ]
         },
         {
@@ -1570,13 +1761,20 @@
             "currency"
           ],
           "exclude": [
-            "pending",
-            "capital raise",
+            "Bitcoin",
+            "Corp",
+            "Inc",
             "Limited",
             "Ltd",
-            "Inc",
-            "Corp",
-            "announcement"
+            "announcement",
+            "capital raise",
+            "comeback",
+            "crypto",
+            "pending",
+            "rally",
+            "surge",
+            "surges",
+            "token"
           ]
         },
         {
@@ -1650,34 +1848,37 @@
   ],
   "news_exclude": [
     "AFL",
+    "bet",
+    "bets",
+    "boyband",
+    "celebrity",
+    "coach",
+    "convicted",
+    "conviction",
+    "explained",
+    "explainer",
+    "fact check",
+    "fantasy",
+    "how to",
+    "injury report",
+    "jailed",
+    "jails",
     "Kalshi",
     "NBA",
     "NFL",
     "NRL",
-    "Patriots",
-    "Polymarket",
-    "Quiver",
-    "bet",
-    "bets",
-    "boyband",
-    "cat",
-    "cats",
-    "celebrity",
-    "coach",
-    "dog",
-    "dogs",
-    "explained",
-    "explainer",
-    "guide",
-    "horse",
-    "how to",
     "odds",
-    "pet",
-    "pets",
+    "OpEd",
+    "opinion",
+    "Patriots",
     "podcast",
+    "Polymarket",
     "prediction market",
+    "quarterback",
+    "Quiver",
     "racing",
-    "season",
+    "roster",
+    "sentenced",
     "wager",
     "webinar",
     "what is"

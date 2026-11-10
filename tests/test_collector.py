@@ -601,3 +601,46 @@ def test_false_alarm_holes_closed():
     ts = lambda m: (t0 - timedelta(minutes=m)).strftime("%Y-%m-%dT%H:%M:%SZ")
     assert localsa.demand_status(t0, 410, [[ts(45), 600]])["possible_blackout"] is False, "solar-sized fall, no history yet"
     assert localsa.demand_status(t0, 200, [[ts(30), 1400]])["possible_blackout"] is True, "an 86% fall still counts without history"
+
+
+def test_news_signs_reject_headlines_that_lit_them_falsely():
+    """Every headline here lit a warning sign during the first two days and was not a real sign; the last block
+    are genuine reports that must still light it."""
+    import precursors
+    get = lambda k, iid: next(i for s in precursors.PLAYBOOK["scenarios"] if s["key"] == k for i in s["indicators"] if i["id"] == iid)
+
+    def lit(k, iid, title):
+        ind = get(k, iid)
+        keys = ind["key"] if isinstance(ind["key"], list) else [ind["key"]]
+        ctx = {"news": {keys[0]: {"items": [{"title": title}]}}}
+        return precursors._lit(ind, ctx) is not None
+
+    false_hits = [
+        ("mideast", "airspace", "BREAKING NEWS: Iran Hits Qatar, Bahrain, Saudi Arabia, Kuwait & UAE In Retaliation | AH1B Flowers (3yKBVDt3Iw) - Unisba Media"),
+        ("russia", "cablenews", "Breaking the Gray-Zone Shield: Finland Jails Cargo Ship Officers in Landmark Subsea Cable Sabotage Conviction - Submarine Networks"),
+        ("ausinfra", "cablenews", "SunCable largely finalises subsea cable route, targets electricity supply from Australia to Singapore around 2035 - Zaobao"),
+        ("bio", "masscas", "Mass Casualty Pile-ups Paralyze Bulgaria's Trakia Highway, More Than 10 Dead - Novinite"),
+        ("cyber", "au", "France vows tough response to freezer cyberattack blamed on Iran - The Australian"),
+        ("cyber", "state", "Exposed: Volt Typhoon's Framework for Silent Espionage - BankInfoSecurity"),
+        ("taiwan", "cyber", "Exposed: Volt Typhoon's Framework for Silent Espionage - BankInfoSecurity"),
+        ("ai", "flash", "AI Selloff Overdone? Asian Chip Stocks Stage Fierce Comeback; South Korean Market's Opening Surge Triggers Circuit Breaker - BigGo Finance"),
+        ("ai", "aihack", "Israel warns Iran is seeking AI-powered cyberattack capabilities - Times of Israel"),
+        ("ai", "aihack", "Do AI agents have minds? A philosopher explains - The Conversation"),
+        ("bio", "illness", "TreVeyon Henderson's Mystery Illness Leaves Patriots Scrambling - Yahoo Sports"),
+    ]
+    for k, iid, title in false_hits:
+        assert not lit(k, iid, title), f"{k}.{iid} should ignore: {title}"
+    real_hits = [
+        ("mideast", "airspace", "Iran closes airspace as tensions rise - Reuters"),
+        ("russia", "cablenews", "Baltic undersea cable between Finland and Estonia damaged, anchor suspected - Yle"),
+        ("ausinfra", "cablenews", "Undersea cable linking Australia and Guam severed - ABC"),
+        ("bio", "masscas", "Hospitals declare mass casualty incident after unknown illness strikes festival - BBC"),
+        ("cyber", "au", "Australian hospital network hit by ransomware, surgeries cancelled - ABC"),
+        ("cyber", "state", "Volt Typhoon found pre-positioned in power utility networks, agencies say - Reuters"),
+        ("ai", "flash", "Wall Street trading halted after flash crash wipes 7% off stocks - Bloomberg"),
+        ("ai", "aihack", "Autonomous AI agent executes multi-week cyberattack on European telecommunications provider - SC Media"),
+        ("bio", "illness", "Mystery pneumonia outbreak hits city ahead of flu season - ABC"),
+        ("bio", "illness", "Health authorities guide residents after unknown illness outbreak - BBC"),
+    ]
+    for k, iid, title in real_hits:
+        assert lit(k, iid, title), f"{k}.{iid} should light on: {title}"
