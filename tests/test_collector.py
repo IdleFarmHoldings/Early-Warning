@@ -331,3 +331,17 @@ def test_relay_only(tmp_path, monkeypatch):
     latest = _json.loads((tmp_path / "data" / "latest.json").read_text())
     assert [a["title"] for a in latest["recent_alerts"]] == ["Daily digest", "old"]
     assert not list((tmp_path / "alerts" / "outbox").glob("*.json")) and (tmp_path / "alerts" / "sent" / "x-digest.json").exists()
+
+
+def test_alert_links():
+    from datetime import datetime, timezone
+    from urllib.parse import parse_qs, urlparse
+    import run
+    now = datetime(2026, 11, 10, 8, 5, tzinfo=timezone.utc)
+    assert run.alert_id({"key": "cable-413000001"}, now) == "20261110T0805-cable-413000001"
+    assert run.alert_id({"id": "20261110T0753Z-relay-check"}, now) == "20261110T0753Z-relay-check"
+    a = {"id": "20261110T0805-x", "title": "UNCONFIRMED: vessel & cables", "message": "Ship stopped <near> cables", "priority": 4}
+    u = urlparse(run.click_url(a))
+    q = parse_qs(u.query)
+    assert u.fragment == "alerts" and q["alert"] == ["20261110T0805-x"] and q["t"] == ["UNCONFIRMED: vessel & cables"] and q["p"] == ["4"]
+    assert run.click_url({**a, "click": run.CONFIG["board_url"] + "?demo=5"}).endswith("?demo=5")

@@ -7,6 +7,8 @@ import time
 from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
 import json
+import re
+import urllib.parse
 import sys
 from datetime import timedelta
 from pathlib import Path
@@ -36,14 +38,27 @@ def load_series(now, days=16):
     return rows
 
 
+def alert_id(alert, now):
+    """Stable id used to link a phone notification to its row on the family page."""
+    base = alert.get("id") or alert.get("key") or "alert"
+    base = re.sub(r"[^A-Za-z0-9-]+", "-", str(base)).strip("-")[:50] or "alert"
+    return base if base[:8].isdigit() else f"{now:%Y%m%dT%H%M}-{base}"
+
+
 def click_url(alert):
-    """Alerts may deep-link into the status page (e.g. ?demo=5); anything else falls back to the page."""
+    """Tapping a notification opens the family page at that alert. The title and message ride along in the link
+    so the page can show it at once, even before GitHub Pages has published the latest data."""
     base = CONFIG["board_url"]
     c = alert.get("click")
-    return c if isinstance(c, str) and c.startswith(base) else base
+    if isinstance(c, str) and c.startswith(base):
+        return c
+    q = urllib.parse.urlencode({"alert": alert.get("id", ""), "t": alert.get("title", "")[:120],
+                                "m": alert.get("message", "")[:300], "p": alert.get("priority", 3)})
+    return f"{base}?{q}#alerts"
 
 
 def send(alert, dry_run):
+    alert.setdefault("id", alert_id(alert, now_utc()))
     sent = {}
     for ch in alert["channels"]:
         sent[ch] = push(ch, alert["title"], alert["message"], priority=alert.get("priority", 3),
@@ -65,6 +80,7 @@ def relay_outbox(now, dry_run):
         ch = a.get("channel", "proactive")
         a["channels"] = ["proactive", "reactive"] if ch == "both" else [ch]
         a.setdefault("tags", ["memo"])
+        a["id"] = alert_id({"id": p.stem}, now)
         a["sent"] = send(a, dry_run)
         a["sent_at"] = iso(now)
         a["source"] = "analysis"
@@ -282,7 +298,7 @@ def main():
     log = []
     for a in alerts:
         a["sent"] = send(a, args.dry_run)
-        a["at"] = iso(now)
+        a["at"] = a["sent_at"] = iso(now)
         a["source"] = "collector"
         log.append(a)
     log += relay_outbox(now, args.dry_run)

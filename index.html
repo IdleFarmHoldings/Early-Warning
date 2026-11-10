@@ -34,8 +34,9 @@ a{color:var(--accent)}
 header{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:8px 20px;border-bottom:2px solid var(--ink);padding-bottom:10px}
 header .meta{font-size:.82rem;display:flex;gap:4px 16px;flex-wrap:wrap}
 .panel{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:18px}
-.top{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:20px}
-@media (max-width:760px){.top{grid-template-columns:1fr}}
+.top{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);grid-template-areas:"g s" "a a";gap:20px}
+.g-gauge{grid-area:g}.g-side{grid-area:s}.g-alerts{grid-area:a;min-width:0}
+@media (max-width:760px){.top{grid-template-columns:1fr;grid-template-areas:"g" "a" "s"}}
 .gauge-row{display:grid;grid-template-columns:minmax(200px,280px) 1fr;gap:20px;align-items:center}
 @media (max-width:560px){.gauge-row{grid-template-columns:1fr;justify-items:center;text-align:center}.gauge{width:min(240px,100%)}.summary{text-align:left}}
 .gauge svg{width:100%;height:auto;display:block}
@@ -91,6 +92,12 @@ th{font-family:var(--display);text-transform:uppercase;letter-spacing:.05em;font
 .ev .chev{font-size:1.1rem;color:var(--muted);transition:transform .2s}
 .ev[open] .chev{transform:rotate(90deg)}
 .ev .body{padding:0 14px 14px;display:grid;gap:8px;border-top:1px dashed var(--line);padding-top:10px}
+.al>summary{grid-template-columns:1fr auto;align-items:start;row-gap:2px}
+.al .when{grid-column:1/-1;font-family:var(--mono);font-size:.74rem;color:var(--muted)}
+.al .t{font-size:1.05rem}
+.al .body p{margin:0;font-size:.92rem}
+.al.focus{box-shadow:0 0 0 3px var(--accent)}
+.al .new{font-family:var(--mono);font-size:.68rem;background:var(--accent);color:var(--surface);border-radius:3px;padding:1px 6px;margin-left:6px;vertical-align:middle}
 .fold{background:var(--surface);border:1px solid var(--line);border-radius:6px}
 .fold>summary{cursor:pointer;padding:12px 16px;font-family:var(--display);font-size:1.25rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
 .fold>div{padding:0 16px 16px}
@@ -137,7 +144,7 @@ details summary{cursor:pointer;font-size:.84rem;color:var(--accent)}
   <div id="banner" class="banner">Loading the latest assessment…</div>
 
   <section class="top">
-    <div class="panel">
+    <div class="panel g-gauge">
       <div class="gauge-row">
         <div class="gauge" aria-hidden="true"><svg id="gauge" viewBox="0 0 240 140"></svg></div>
         <div>
@@ -152,7 +159,7 @@ details summary{cursor:pointer;font-size:.84rem;color:var(--accent)}
         <ul id="actList"></ul>
       </div>
     </div>
-    <div class="panel side">
+    <div class="panel side g-side">
       <h2>Markets</h2>
       <div class="mk" id="markets"><span class="empty">Loading…</span></div>
       <p class="muted" id="mktTime"></p>
@@ -161,7 +168,13 @@ details summary{cursor:pointer;font-size:.84rem;color:var(--accent)}
       <p id="feeds" class="muted"></p>
       <p>In an emergency, follow official advice first: <a href="https://www.alert.sa.gov.au/">Alert SA</a>, <a href="https://www.cfs.sa.gov.au/">CFS</a>, <a href="https://www.smartraveller.gov.au/">Smartraveller</a>, ABC Radio Adelaide 891 AM.</p>
     </div>
+  <div id="alerts-sec" class="g-alerts">
+    <h2 id="alerts" style="margin-bottom:4px;scroll-margin-top:12px">Recent alerts</h2>
+    <p class="muted" style="margin:0 0 10px;font-size:.85rem">The latest alert (or the one you tapped). Tap to read it in full; earlier alerts are under Previous alerts. UNCONFIRMED alerts are early signals that the twice-daily analysis then checks.</p>
+    <div class="events" id="alertList"><p class="empty">Loading…</p></div>
+  </div>
   </section>
+
 
   <a class="cta" href="analytics.html"><div><b>Analytics &amp; heat maps →</b><br><span>Escalation trends, GPS jamming and satellite maps, military activity, warning-sign matrix</span></div></a>
 
@@ -176,14 +189,10 @@ details summary{cursor:pointer;font-size:.84rem;color:var(--accent)}
     <div><div class="cats" id="cats"></div></div>
   </details>
 
-  <section class="lower">
+  <section>
     <div class="panel">
       <h2>Confirmed impacts on Australia</h2>
       <div class="list" id="confirmed"></div>
-    </div>
-    <div class="panel">
-      <h2>Recent alerts</h2>
-      <div class="list" id="alerts"></div>
     </div>
   </section>
 
@@ -316,7 +325,7 @@ function renderConcerns(st, ind){
 }
 
 function renderLatest(l){
-  if(!l){ $("markets").innerHTML=`<span class="empty">Unavailable.</span>`; $("alerts").innerHTML=`<p class="empty">Unavailable.</p>`; return; }
+  if(!l){ $("markets").innerHTML=`<span class="empty">Unavailable.</span>`; renderAlerts([]); return; }
   $("markets").innerHTML = Object.entries(l.markets||{}).map(([k,v])=>{ const c=Number(v.change_pct)||0;
     return `<div><span class="muted">${esc(k)}</span><br><b>${esc(v.price)}</b> <span style="color:${c>=0?"var(--l2)":"var(--l5)"}">${c>=0?"+":""}${c.toFixed(2)}%</span></div>`}).join("") || `<span class="empty">No data.</span>`;
   $("mktTime").textContent = `As of ${fmt(l.generated_at)}`;
@@ -329,13 +338,39 @@ function renderLatest(l){
     : `<p class="empty">Network monitoring starting up.</p>`;
   const h=l.source_health||{}, bad=Object.keys(h).filter(k=>!h[k].ok);
   $("feeds").textContent = Object.keys(h).length ? (bad.length?`Data feeds: ${Object.keys(h).length-bad.length} OK, unavailable: ${bad.join(", ")}.`:"Data feeds: all OK.") : "";
-  const al=(l.recent_alerts||[]).slice(0,8);
-  $("alerts").innerHTML = al.length ? al.map(a=>`<div class="item"><span class="t">${esc(a.title)}</span><span class="w">${fmt(a.sent_at)} · priority ${esc(a.priority)}</span><p>${esc(a.message)}</p></div>`).join("") : `<p class="empty">No alerts in the last few days.</p>`;
+  renderAlerts(l.recent_alerts||[]);
 }
 
 $("guideBody").innerHTML = LEVELS.slice(1).map((L,i)=>`<tr>
   <td><span class="chip" style="background:${lc(i+1)};${i===2?"color:var(--l3-ink)":""}">${i+1} ${L.name}</span></td>
   <td>${esc(L.meaning)}</td><td>${esc(L.actions.map(a=>a.action).join("; "))}</td></tr>`).join("");
+
+// Deep link from a phone notification: ?alert=<id>&t=<title>&m=<message>&p=<priority>#alerts
+const QS = new URLSearchParams(location.search);
+const LINKED = QS.get("alert") ? {id:QS.get("alert"), title:QS.get("t")||"Alert", message:QS.get("m")||"", priority:Number(QS.get("p"))||3} : null;
+let focusDone = false;
+const prColor = p => p>=5?"var(--l5)":p>=4?"var(--l4)":p>=3?"var(--l3)":"var(--line)";
+function renderAlerts(list){
+  const box = $("alertList");
+  const open = new Set([...box.querySelectorAll("details[open]")].map(d=>d.dataset.id));
+  let al = list.slice(0, 25).map(a=>({...a, id:a.id || `${a.sent_at||a.at||""}-${a.title}`}));
+  let pending = false;
+  if(LINKED && !al.some(a=>a.id===LINKED.id)){ al.unshift({...LINKED, sent_at:null, pending:true}); pending = true; }
+  if(!al.length){ box.innerHTML = `<p class="empty">No alerts in the last few days.</p>`; return; }
+  const row = a => { const isLinked = LINKED && a.id===LINKED.id;
+    const when = a.pending ? "just now" : fmt(a.sent_at||a.at);
+    return `<details class="ev al${isLinked?" focus":""}" data-id="${esc(a.id)}" style="border-left-color:${prColor(a.priority)}"${(isLinked&&!focusDone)||open.has(a.id)?" open":""}>
+      <summary><span class="t">${esc(a.title)}${isLinked?`<span class="new">you tapped this</span>`:""}</span><span class="chev" aria-hidden="true">›</span><span class="when">${esc(when)}</span></summary>
+      <div class="body"><p>${esc(a.message||"")}</p>${a.pending?`<p class="why">The page is still catching up with this alert; it will appear in the list within a few minutes.</p>`:""}</div></details>`; };
+  // Show one alert up top: the one tapped in a notification, otherwise the newest. Everything else goes in one tab.
+  const topIdx = LINKED ? Math.max(0, al.findIndex(a=>a.id===LINKED.id)) : 0;
+  const top = al[topIdx], older = al.filter((_, i)=>i!==topIdx);
+  box.innerHTML = row(top) + (older.length ? `<details class="fold" data-id="__older"${open.has("__older")?" open":""}><summary>Previous alerts (${older.length})</summary><div class="events">${older.map(row).join("")}</div></details>` : "");
+  if(LINKED && !focusDone){
+    const el = box.querySelector(`details.focus`);
+    if(el){ focusDone = true; setTimeout(()=>el.scrollIntoView({behavior:"smooth", block:"center"}), 150); }
+  }
+}
 
 const demo = new URLSearchParams(location.search).get("demo");
 const DEMO_OK = /^[1-5]$/.test(demo||"");
