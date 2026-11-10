@@ -236,7 +236,7 @@ def fetch_roads(samples):
 ED_SHELL = "https://www.sahealth.sa.gov.au/wps/themes/html/Portal/js/OBI_DATA/EDDashboard_rwd.html"
 ED_DATA = "https://www.sahealth.sa.gov.au/wps/themes/html/Portal/js/OBI_DATA/json/ED001.json"
 ED_NAMES = {"FMC": "Flinders Medical Centre", "LMH": "Lyell McEwin", "RAH": "Royal Adelaide", "TQEH": "Queen Elizabeth",
-            "MOD": "Modbury", "NHS": "Noarlunga", "NOA": "Noarlunga", "WCH": "Women's and Children's"}
+            "MOD": "Modbury", "MH": "Modbury", "NHS": "Noarlunga", "NOA": "Noarlunga", "WCH": "Women's and Children's"}
 ED_VERY_BUSY = {"cap_pct": 100, "wait_min": 240}
 
 
@@ -250,6 +250,8 @@ def parse_ed_rows(rows):
         except ValueError:
             continue
         code = (r.get("HOSP_SHORT") or "").strip()
+        if not code:
+            continue
         very = cap >= ED_VERY_BUSY["cap_pct"] or wait >= ED_VERY_BUSY["wait_min"]
         out.append({"hospital": ED_NAMES.get(code, code), "code": code, "capacity_pct": cap, "avg_wait_min": round(wait),
                     "waiting": wtbs, "status": "Very busy" if very else ("Busy" if cap >= 85 or wait >= 120 else "Normal"),
