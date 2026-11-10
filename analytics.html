@@ -69,6 +69,18 @@ td.num{font-family:var(--mono);text-align:right}
 .matrix td:first-child,.matrix th:first-child{text-align:left;font-family:var(--body)}
 .empty{color:var(--muted);font-size:.9rem}
 .leaflet-container{font-family:var(--body)}
+details.panel>summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px}
+details.panel>summary::-webkit-details-marker{display:none}
+details.panel>summary h2{margin:0}
+details.panel>summary::after{content:"›";font-size:1.4rem;color:var(--muted);transition:transform .2s;flex:none}
+details.panel[open]>summary::after{transform:rotate(90deg)}
+details.panel[open]>summary{margin-bottom:6px}
+details.panel>summary:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.arc{stroke-dasharray:100;stroke-dashoffset:100;animation:fly 3.2s ease-in-out infinite;fill:none}
+.impact{animation:pulse 3.2s ease-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes fly{0%{stroke-dashoffset:100;opacity:.95}55%{stroke-dashoffset:0;opacity:.95}100%{stroke-dashoffset:0;opacity:0}}
+@keyframes pulse{0%,50%{opacity:0;transform:scale(.4)}60%{opacity:.9;transform:scale(1)}100%{opacity:0;transform:scale(2.2)}}
+@media (prefers-reduced-motion:reduce){.arc{animation:none;stroke-dashoffset:0;opacity:.6}.impact{animation:none;opacity:.6}}
 #cyMap,#seaMap{height:440px;border-radius:6px;border:1px solid var(--line)}
 @media (max-width:560px){#seaMap{height:340px}}
 @media (max-width:560px){#cyMap{height:340px}}
@@ -144,10 +156,11 @@ td.num{font-family:var(--mono);text-align:right}
 
   <section class="panel">
     <h2>Cyber attack map</h2>
-    <p class="note">Where attacks are landing and where they come from, by country. Hit: ransomware victims posted on leak sites (last 7 days). From: the top 100 attacking addresses seen by SANS sensors worldwide, and botnet command servers. Attack origins only show where the traffic comes from — attackers often route through other countries, so this is not proof of who is behind it.</p>
+    <p class="note">Where attacks are landing and where they come from, by country. Hit: ransomware victims posted on leak sites (last 7 days). From: the top 100 attacking addresses seen by SANS sensors worldwide, and botnet command servers. Attack origins only show where the traffic comes from — attackers often route through other countries, so this is not proof of who is behind it. The animated lines show the overall flow from the main origin countries to the most-hit countries; our data does not link individual attacks, so a line does not mean that country attacked that one.</p>
     <div class="toggles" role="group" aria-label="Cyber map layers">
       <button type="button" id="tHit" aria-pressed="true"><span class="dot" style="background:var(--s2)"></span>Where attacks hit</button>
       <button type="button" id="tFrom" aria-pressed="true"><span class="dot" style="background:var(--s7)"></span>Where attacks come from</button>
+      <button type="button" id="tArc" aria-pressed="true"><span class="dot" style="background:var(--critical)"></span>Attack flow (animated)</button>
       <button type="button" id="tC2" aria-pressed="false"><span class="dot" style="background:var(--s3)"></span>Botnet command servers</button>
     </div>
     <div id="cyMap" role="img" aria-label="World map of cyber attack targets and sources"></div>
@@ -237,6 +250,18 @@ function lineChart(canvas, labels, datasets, opts={}){
               y:{display:!opts.mini, beginAtZero:opts.max!=null, max:opts.max, grid:{color:css("--grid")}, border:{display:false}}}}});
 }
 
+// Every panel becomes a tap-to-open tab. Maps are redrawn when their tab opens (they cannot size while hidden).
+const MAPS = [];
+document.querySelectorAll(".wrap .panel").forEach((p, i)=>{
+  const h = p.querySelector(":scope > h2"); if(!h) return;
+  const d = document.createElement("details"); d.className = p.className;
+  const sm = document.createElement("summary"); sm.appendChild(h); d.appendChild(sm);
+  while(p.firstChild) d.appendChild(p.firstChild);
+  p.replaceWith(d);
+  if(i === 0) d.open = true;
+  d.addEventListener("toggle", ()=>{ if(d.open) setTimeout(()=>MAPS.forEach(m=>m.invalidateSize()), 60); });
+});
+
 (async()=>{
   const [an, ind, sat, lat, pat] = await Promise.all([get("data/analytics.json"), get("data/indicators.json"),
     get("data/satellites.json"), get("data/latest.json"), get("data/patterns.json")]);
@@ -254,7 +279,7 @@ function lineChart(canvas, labels, datasets, opts={}){
   } else { $("escChart").parentElement.innerHTML = `<p class="empty">History builds up from the first collector runs — check back in a few hours.</p>`; }
 
   // Map
-  const map = L.map("map",{worldCopyJump:true, zoomControl:true}).setView([10,100],2);
+  const map = L.map("map",{worldCopyJump:true, zoomControl:true}).setView([10,100],2); MAPS.push(map);
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:7, minZoom:1, attribution:"© OpenStreetMap contributors"}).addTo(map);
   const satLayer = L.layerGroup(), hotLayer = L.layerGroup(), gpsLayer = L.layerGroup();
   if(sat && sat.grid){
@@ -349,7 +374,7 @@ function lineChart(canvas, labels, datasets, opts={}){
 
   // ---------- Undersea cables ----------
   if(sea && sea.zones){
-    const sm = L.map("seaMap",{worldCopyJump:true}).setView([0,120],2);
+    const sm = L.map("seaMap",{worldCopyJump:true}).setView([0,120],2); MAPS.push(sm);
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:10,minZoom:1,attribution:"© OpenStreetMap contributors"}).addTo(sm);
     for(const z of Object.values(sea.zones)){ const b=z.box;
       L.rectangle([[b[0],b[2]],[b[1],b[3]]],{color:z.of_interest?css("--critical"):z.loitering?css("--serious"):css("--s1"), weight:z.of_interest?3:1.5, fillOpacity:.12})
@@ -384,7 +409,7 @@ function lineChart(canvas, labels, datasets, opts={}){
       card("Botnet command servers online", c2.online, null, c2.online==null?null:1, `${c2.new_7d??"—"} new this week; ${c2.total??"—"} tracked in total.`, false)
     ].join("");
 
-    const cmap = L.map("cyMap",{worldCopyJump:true}).setView([20,40],2);
+    const cmap = L.map("cyMap",{worldCopyJump:true}).setView([20,40],2); MAPS.push(cmap);
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:6, minZoom:1, attribution:"© OpenStreetMap contributors"}).addTo(cmap);
     const layerFrom = (obj, color, label, maxR) => { const g=L.layerGroup(); const vals=Object.values(obj||{}); const mx=Math.max(1,...vals);
       for(const [cc,n] of Object.entries(obj||{})){ if(!C[cc]) continue;
@@ -395,7 +420,27 @@ function lineChart(canvas, labels, datasets, opts={}){
     const lHit = layerFrom(ransomBy, css("--s2"), "ransomware victims (7 days)", 26).addTo(cmap);
     const lFrom = layerFrom(fromBy, css("--s7"), "attack reports from top attacking addresses", 26).addTo(cmap);
     const lC2 = layerFrom(c2By, css("--s3"), "botnet command servers", 22);
-    for(const [id,layer] of [["tHit",lHit],["tFrom",lFrom],["tC2",lC2]]){
+    // Animated flow: top origin countries -> most-hit countries, a curved "trajectory" per pair, staggered in time.
+    const lArc = L.layerGroup();
+    const tops = (o,n)=>Object.entries(o||{}).filter(([c])=>C[c]).sort((a,b)=>b[1]-a[1]).slice(0,n);
+    const srcs = tops(fromBy, 6), dsts = tops(ransomBy, 6);
+    const pairs = [];
+    for(const [sc,sn] of srcs) for(const [dc,dn] of dsts) if(sc!==dc) pairs.push([sc,dc,sn*dn]);
+    pairs.sort((a,b)=>b[2]-a[2]);
+    const curve = (a, b) => { let [la1,lo1]=a, [la2,lo2]=b; if(lo2-lo1>180) lo2-=360; if(lo1-lo2>180) lo2+=360;
+      const mx=(la1+la2)/2, my=(lo1+lo2)/2, dist=Math.hypot(la2-la1, lo2-lo1);
+      const cx=Math.min(78, mx + Math.min(35, dist*0.25)), cy=my;  // bulge towards the pole like a ballistic arc
+      const pts=[]; for(let t=0;t<=1.0001;t+=1/32){ const u=1-t; pts.push([u*u*la1+2*u*t*cx+t*t*la2, u*u*lo1+2*u*t*cy+t*t*lo2]); } return pts; };
+    pairs.slice(0, 16).forEach(([sc,dc], i)=>{
+      const delay = (i * 0.37) % 3.2;
+      const line = L.polyline(curve(C[sc], C[dc]), {color:css("--critical"), weight:2, opacity:.9, className:"arc", interactive:false}).addTo(lArc);
+      line.on("add", ()=>{ const el=line.getElement(); if(el){ el.setAttribute("pathLength","100"); el.style.animationDelay=`${delay}s`; } });
+      const dot = L.circleMarker(C[dc], {radius:7, color:css("--critical"), weight:2, fill:false, className:"impact", interactive:false}).addTo(lArc);
+      dot.on("add", ()=>{ const el=dot.getElement(); if(el) el.style.animationDelay=`${delay}s`; });
+    });
+    lArc.addTo(cmap);
+    lArc.eachLayer(l=>l.fire("add"));
+    for(const [id,layer] of [["tHit",lHit],["tFrom",lFrom],["tArc",lArc],["tC2",lC2]]){
       $(id).addEventListener("click",e=>{ const on=e.currentTarget.getAttribute("aria-pressed")!=="true";
         e.currentTarget.setAttribute("aria-pressed",on); on?layer.addTo(cmap):cmap.removeLayer(layer); }); }
     const top = (obj,n=8) => Object.entries(obj||{}).sort((a,b)=>b[1]-a[1]).slice(0,n);
