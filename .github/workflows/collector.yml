@@ -1,5 +1,8 @@
 name: Collector
 
+# GitHub's free scheduler often runs only about once an hour, so each run keeps working for ~50 minutes:
+# a full check every 15 minutes, and a check of alerts/outbox every minute in between.
+
 on:
   schedule:
     - cron: "*/15 * * * *"
@@ -18,7 +21,13 @@ concurrency:
 jobs:
   collect:
     runs-on: ubuntu-latest
-    timeout-minutes: 14
+    timeout-minutes: 62
+    env:
+      NTFY_PROACTIVE: ${{ secrets.NTFY_PROACTIVE }}
+      NTFY_REACTIVE: ${{ secrets.NTFY_REACTIVE }}
+      AISSTREAM_KEY: ${{ secrets.AISSTREAM_KEY }}
+      PASSES: "4"
+      PASS_SECONDS: "900"
     steps:
       - uses: actions/checkout@v4
 
@@ -29,22 +38,32 @@ jobs:
       - name: Install websocket client
         run: pip install -q websockets==13.1
 
-      - name: Run collector
-        env:
-          NTFY_PROACTIVE: ${{ secrets.NTFY_PROACTIVE }}
-          NTFY_REACTIVE: ${{ secrets.NTFY_REACTIVE }}
-          AISSTREAM_KEY: ${{ secrets.AISSTREAM_KEY }}
-        run: python collector/run.py
-
-      - name: Save data
+      - name: Collect, alert and save (repeats through the hour)
         run: |
           git config user.name "early-warning-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data state alerts
-          if git diff --cached --quiet; then exit 0; fi
-          git commit -q -m "collector: $(date -u +%Y-%m-%dT%H:%MZ)"
-          for i in 1 2 3; do
-            git pull -q --rebase -X theirs && git push -q && exit 0
-            sleep 5
+          save() {
+            git add data state alerts
+            if git diff --cached --quiet; then return 0; fi
+            git commit -q -m "$1: $(date -u +%Y-%m-%dT%H:%MZ)"
+            for i in 1 2 3; do
+              git pull -q --rebase -X theirs && git push -q && return 0
+              sleep 5
+            done
+            echo "push failed"; return 1
+          }
+          start=$(date +%s)
+          for n in $(seq 1 "$PASSES"); do
+            python collector/run.py || echo "collector pass $n failed"
+            save collector || true
+            [ "$n" -ge "$PASSES" ] && break
+            next=$((start + n * PASS_SECONDS))
+            while [ "$(date +%s)" -lt "$next" ]; do
+              sleep 60
+              git pull -q --rebase -X theirs || true
+              if ls alerts/outbox/*.json >/dev/null 2>&1; then
+                python collector/run.py --relay-only || true
+                save "collector relay" || true
+              fi
+            done
           done
-          exit 1

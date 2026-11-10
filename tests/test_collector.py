@@ -315,3 +315,19 @@ def test_publisher_suffix_and_roundups_ignored():
     assert precursors._lit(get("bio", "illness"), t("illness", "Mystery Pneumonia Death Sparks Concern; Trader Joe's Recall; OUD in Young People - MedPage")) is None
     assert precursors._lit(get("bio", "chem"), t("chem", "By What Logic Does Sudan's Junta Have A Seat On The Chemical Weapons Watchdog - Forbes")) is None
     assert precursors._lit(get("bio", "chem"), t("chem", "Nerve agent attack leaves 12 hospitalised in Tbilisi - Reuters"))
+
+
+def test_relay_only(tmp_path, monkeypatch):
+    import json as _json
+    import run
+    monkeypatch.setattr(run, "ROOT", tmp_path)
+    import common
+    monkeypatch.setattr(common, "ROOT", tmp_path)
+    (tmp_path / "alerts" / "outbox").mkdir(parents=True)
+    (tmp_path / "data").mkdir()
+    (tmp_path / "data" / "latest.json").write_text(_json.dumps({"recent_alerts": [{"title": "old"}]}))
+    (tmp_path / "alerts" / "outbox" / "x-digest.json").write_text(_json.dumps({"channel": "proactive", "title": "Daily digest", "message": "hi"}))
+    run.relay_only(now_utc(), dry_run=True)
+    latest = _json.loads((tmp_path / "data" / "latest.json").read_text())
+    assert [a["title"] for a in latest["recent_alerts"]] == ["Daily digest", "old"]
+    assert not list((tmp_path / "alerts" / "outbox").glob("*.json")) and (tmp_path / "alerts" / "sent" / "x-digest.json").exists()

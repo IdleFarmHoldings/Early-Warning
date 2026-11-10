@@ -79,21 +79,36 @@ th{font-family:var(--display);text-transform:uppercase;letter-spacing:.05em;font
 .cta{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;background:var(--accent);color:var(--surface);border-radius:6px;padding:14px 18px;text-decoration:none}
 .cta b{font-family:var(--display);font-size:1.3rem;text-transform:uppercase;letter-spacing:.04em}
 .cta span{font-size:.88rem;opacity:.9}
+.events{display:grid;gap:8px}
+.ev{background:var(--surface);border:1px solid var(--line);border-left:6px solid var(--line);border-radius:6px}
+.ev>summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:6px 12px;padding:12px 14px}
+.ev>summary::-webkit-details-marker{display:none}
+.ev>summary:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.ev .t{font-family:var(--display);font-size:1.2rem;font-weight:600;text-transform:uppercase;line-height:1.15}
+.ev .one{grid-column:1/-1;font-size:.84rem;color:var(--muted);margin-top:-2px}
+.ev .badge2{font-family:var(--display);font-size:1.5rem;font-weight:700;line-height:1;text-align:right;white-space:nowrap}
+.ev .badge2 small{display:block;font-family:var(--mono);font-size:.66rem;font-weight:400;color:var(--muted);text-transform:none}
+.ev .chev{font-size:1.1rem;color:var(--muted);transition:transform .2s}
+.ev[open] .chev{transform:rotate(90deg)}
+.ev .body{padding:0 14px 14px;display:grid;gap:8px;border-top:1px dashed var(--line);padding-top:10px}
+.fold{background:var(--surface);border:1px solid var(--line);border-radius:6px}
+.fold>summary{cursor:pointer;padding:12px 16px;font-family:var(--display);font-size:1.25rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.fold>div{padding:0 16px 16px}
 .concerns{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:14px}
 @media (max-width:420px){.concerns{grid-template-columns:1fr}}
 .cc{background:var(--surface);border:1px solid var(--line);border-left:6px solid var(--line);border-radius:6px;padding:14px 16px;display:grid;gap:8px;align-content:start;min-width:0}
-.cc h3{font-size:1.25rem;text-transform:uppercase}
-.cc .lik{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
-.cc .pct{font-family:var(--display);font-size:2rem;font-weight:700;line-height:1}
-.cc .sub{font-family:var(--mono);font-size:.74rem;color:var(--muted)}
-.cc h4{margin:4px 0 0;font:600 .78rem var(--body);text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
-.cc ul{margin:0;padding-left:1.1em;font-size:.88rem;display:grid;gap:3px}
-.cc .sc{display:grid;grid-template-columns:auto 1fr;gap:2px 10px;font-size:.86rem}
-.cc .sc b{font-family:var(--mono);font-weight:500;text-align:right}
-.cc .act{font-size:.88rem}
-.cc .act div{padding:6px 0;border-top:1px dashed var(--line)}
-.cc .act div:first-child{border-top:0}
-.cc .act span{display:block;color:var(--muted);font-size:.82rem}
+.cc h3,.ev .body h3{font-size:1.25rem;text-transform:uppercase}
+.cc .lik,.ev .body .lik{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.cc .pct,.ev .body .pct{font-family:var(--display);font-size:2rem;font-weight:700;line-height:1}
+.cc .sub,.ev .body .sub{font-family:var(--mono);font-size:.74rem;color:var(--muted)}
+.cc h4,.ev .body h4{margin:4px 0 0;font:600 .78rem var(--body);text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.cc ul,.ev .body ul{margin:0;padding-left:1.1em;font-size:.88rem;display:grid;gap:3px}
+.cc .sc,.ev .body .sc{display:grid;grid-template-columns:auto 1fr;gap:2px 10px;font-size:.86rem}
+.cc .sc b,.ev .body .sc b{font-family:var(--mono);font-weight:500;text-align:right}
+.cc .act,.ev .body .act{font-size:.88rem}
+.cc .act div,.ev .body .act div{padding:6px 0;border-top:1px dashed var(--line)}
+.cc .act div:first-child,.ev .body .act div:first-child{border-top:0}
+.cc .act span,.ev .body .act span{display:block;color:var(--muted);font-size:.82rem}
 .meter{height:6px;background:var(--line);border-radius:3px;overflow:hidden}
 .meter i{display:block;height:100%}
 .why{color:var(--muted);font-size:.82rem}
@@ -151,15 +166,15 @@ details summary{cursor:pointer;font-size:.84rem;color:var(--accent)}
   <a class="cta" href="analytics.html"><div><b>Analytics &amp; heat maps →</b><br><span>Escalation trends, GPS jamming and satellite maps, military activity, warning-sign matrix</span></div></a>
 
   <section>
-    <h2 style="margin-bottom:4px">Major concerns</h2>
-    <p class="muted" style="margin:0 0 10px;font-size:.85rem">Likelihood of significant escalation in the next 30 days, with possible scenarios and why each action is suggested. Likelihoods are analyst judgement, not certainty; the warning-sign bar counts known precursors showing right now.</p>
-    <div class="concerns" id="concerns"><p class="empty">Loading…</p></div>
+    <h2 style="margin-bottom:4px">Potential events</h2>
+    <p class="muted" style="margin:0 0 10px;font-size:.85rem">Tap an event to see what's driving it, possible scenarios for SA, what to do and why, and the warning signs we watch. Percentages are the analyst's judgement of significant escalation in the next 30 days, not certainty.</p>
+    <div class="events" id="concerns"><p class="empty">Loading…</p></div>
   </section>
 
-  <section>
-    <h2 style="margin-bottom:10px">Categories <span class="mono" style="font-size:.8rem;letter-spacing:0;text-transform:none">score 0–5</span></h2>
-    <div class="cats" id="cats"></div>
-  </section>
+  <details class="fold">
+    <summary>Category scores (0–5)</summary>
+    <div><div class="cats" id="cats"></div></div>
+  </details>
 
   <section class="lower">
     <div class="panel">
@@ -172,13 +187,13 @@ details summary{cursor:pointer;font-size:.84rem;color:var(--accent)}
     </div>
   </section>
 
-  <section class="panel">
-    <h2 style="margin-bottom:8px">Level guide</h2>
-    <div class="guide"><table>
+  <details class="fold">
+    <summary>Level guide</summary>
+    <div><div class="guide"><table>
       <thead><tr><th>Level</th><th>Meaning</th><th>Family action</th></tr></thead>
       <tbody id="guideBody"></tbody>
-    </table></div>
-  </section>
+    </table></div></div>
+  </details>
   <p class="muted" style="font-size:.8rem;margin:0">Family status page, updated twice daily by analysis; markets and alerts every 15 minutes. Not an official warning service.</p>
 </div>
 
@@ -269,12 +284,16 @@ function renderStatus(st){
 
 function renderConcerns(st, ind){
   const sc = {}; ((ind&&ind.scenarios)||[]).forEach(x=>sc[x.key]=x);
-  let list = (st && Array.isArray(st.concerns) && st.concerns.length) ? [...st.concerns] : [];
+  const list = (st && Array.isArray(st.concerns)) ? [...st.concerns] : [];
   const have = new Set(list.map(c=>c.key));
-  ((ind&&ind.scenarios)||[]).forEach(x=>{ if(!have.has(x.key) && (x.score>0 || !list.length))
+  ((ind&&ind.scenarios)||[]).forEach(x=>{ if(!have.has(x.key))
     list.push({key:x.key,title:x.name,likelihood:null,trend:x.trend,drivers:[],scenarios:[],actions:[]}); });
-  if(!list.length){ $("concerns").innerHTML=`<p class="empty">No concerns assessed yet.</p>`; return; }
+  if(!list.length){ $("concerns").innerHTML=`<p class="empty">No events assessed yet.</p>`; return; }
+  const rank = c => c.likelihood!=null ? 1000 + c.likelihood : (sc[c.key]?sc[c.key].score:0);
+  list.sort((a,b)=>rank(b)-rank(a));
+  const open = new Set([...document.querySelectorAll("#concerns details[open]")].map(d=>d.dataset.key));
   const col = p => p==null?"var(--line)":p>=60?lc(5):p>=35?lc(4):p>=15?lc(3):lc(2);
+  const trendTxt2 = t => ({up:"▲ rising",down:"▼ easing"})[t]||"● steady";
   $("concerns").innerHTML = list.map(c=>{
     const w = sc[c.key];
     const signs = w ? `<h4>Warning signs showing: ${w.lit.length} of ${w.lit.length+w.unlit.length} · ${esc(w.band)}${(w.domains||[]).length>1?` · ${w.domains.length} areas converging`:""}</h4>
@@ -285,10 +304,14 @@ function renderConcerns(st, ind){
     const scen = (c.scenarios||[]).length ? `<h4>Possible scenarios</h4><div class="sc">${c.scenarios.map(x=>`<b>${x.likelihood!=null?esc(x.likelihood)+"%":""}</b><span><b style="font-family:var(--body);font-weight:600;text-align:left">${esc(x.name)}</b> — ${esc(x.sa_impact||"")}</span>`).join("")}</div>` : (w?`<h4>What it would mean for SA</h4><p class="why" style="margin:0">${esc(w.sa_impact)}</p>`:"");
     const acts = (c.actions||[]).length ? `<h4>Suggested actions and why</h4><div class="act">${c.actions.map(a=>`<div>${esc(a.action)}<span>${esc(a.reason||"")}</span></div>`).join("")}</div>` : "";
     const drv = (c.drivers||[]).length ? `<h4>What's driving this</h4><ul>${c.drivers.map(d=>`<li>${esc(d)}</li>`).join("")}</ul>` : "";
-    return `<article class="cc" style="border-left-color:${col(c.likelihood)}">
-      <h3>${esc(c.title)}</h3>
-      <div class="lik">${c.likelihood!=null?`<span class="pct" style="color:${col(c.likelihood)}">${esc(c.likelihood)}%</span><span class="sub">chance of significant escalation, 30 days · ${({up:"▲ rising",down:"▼ easing"})[c.trend]||"● steady"}</span>`:`<span class="sub">Awaiting analyst assessment</span>`}</div>
-      ${drv}${scen}${acts}${signs}</article>`;
+    const stripe = c.likelihood!=null ? col(c.likelihood) : (w ? col(w.score) : "var(--line)");
+    const badge = c.likelihood!=null
+      ? `<span class="badge2" style="color:${col(c.likelihood)}">${esc(c.likelihood)}%<small>${trendTxt2(c.trend)}</small></span>`
+      : `<span class="badge2" style="font-size:1rem;color:${w?col(w.score):"var(--muted)"}">${w?esc(w.band):"—"}<small>warning signs</small></span>`;
+    const one = (c.drivers&&c.drivers[0]) || (w ? (w.lit.length ? `${w.lit.length} warning sign${w.lit.length>1?"s":""} showing: ${w.lit.slice(0,2).map(i=>i.name.toLowerCase()).join("; ")}` : "No warning signs showing.") : "");
+    return `<details class="ev" data-key="${esc(c.key)}" style="border-left-color:${stripe}"${open.has(c.key)?" open":""}>
+      <summary><span class="t">${esc(c.title)}</span>${badge}<span class="chev" aria-hidden="true">›</span><span class="one">${esc(one)}</span></summary>
+      <div class="body">${drv}${scen}${acts}${signs}</div></details>`;
   }).join("");
 }
 

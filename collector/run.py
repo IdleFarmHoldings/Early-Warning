@@ -187,11 +187,28 @@ def analytics_series(rows, now, days=14):
     return {"generated_at": iso(now), "rows": [by_hour[h] for h in sorted(by_hour)]}
 
 
+def relay_only(now, dry_run):
+    """Quick pass between full checks: push any alerts the analysis has dropped into the outbox."""
+    log = relay_outbox(now, dry_run)
+    if not log:
+        return
+    for a in log:
+        append_jsonl("alerts/log.jsonl", a)
+    latest = load_json("data/latest.json", {})
+    latest["recent_alerts"] = (log + latest.get("recent_alerts", []))[:25]
+    save_json("data/latest.json", latest)
+    print(f"{iso(now)}: relayed {len(log)} alert(s) from the outbox")
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--relay-only", action="store_true", help="only deliver alerts waiting in alerts/outbox")
     args = ap.parse_args()
     now = now_utc().replace(second=0, microsecond=0)
+    if args.relay_only:
+        relay_only(now, args.dry_run)
+        return
 
     state = load_json("state/state.json", {})
     first_run = not state.get("bootstrapped")
