@@ -552,3 +552,25 @@ def test_outbox_bad_files_and_retries(tmp_path, monkeypatch):
     q = _json.loads(p.read_text())
     assert q["channel"] == "proactive" and q["priority"] == 4 and q["source"] == "collector"
     assert run.queue_retry({"id": "y", "channels": ["proactive"], "sent": {"proactive": True}, "title": "T", "message": "M"}, now) is None
+
+
+def test_cfs_feed_down_is_not_shown_as_zero(monkeypatch):
+    """If the CFS feeds cannot be read, the summary says so instead of reporting 0 fires and no warnings."""
+    import localsa
+    cap = b"""<feed xmlns="http://www.w3.org/2005/Atom"><entry><content><alert xmlns="urn:oasis:names:tc:emergency:cap:1.2">
+    <info><event>Grass Fire</event><headline>MULGUNDAWA : Grass fire</headline><severity>Unknown</severity></info></alert></content></entry>
+    <entry><content><alert xmlns="urn:oasis:names:tc:emergency:cap:1.2"><info><event>Vehicle Accident</event>
+    <headline>GAWLER : Vehicle accident</headline></info></alert></content></entry></feed>"""
+    state = {"calls": 0}
+
+    def fake_get(url, **kw):
+        if url == localsa.CFS_CAP and state.get("cap_ok"):
+            return cap
+        raise OSError("down")
+    monkeypatch.setattr(localsa, "http_get", fake_get)
+    monkeypatch.setattr(localsa, "fetch_reservoirs", lambda *a, **k: {"total_pct": 50, "low": []})
+    s = localsa.fetch_local({})["summary"]
+    assert s["fires_active"] is None and s["cfs_feed_ok"] is False and s["fire_danger_ok"] is False
+    state["cap_ok"] = True
+    s = localsa.fetch_local({})["summary"]
+    assert s["cfs_feed_ok"] is True and s["fires_active"] == 1, "falls back to counting fires in the warnings feed"

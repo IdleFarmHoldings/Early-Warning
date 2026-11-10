@@ -571,7 +571,12 @@ def fetch_local(state):
     warn = out.get("warnings") or []
     fd = out.get("fire_danger") or {}
     out["summary"] = {
-        "fires_active": sum(1 for i in inc if i["fire"]),
+        # None (not 0) when neither CFS feed could be read, so the board never shows "0 fires" for a feed that is down
+        "fires_active": (sum(1 for i in inc if i["fire"]) if "incidents" in out
+                         else sum(1 for w in warn if re.search(r"fire|burn", w.get("event", "") + " " + w.get("headline", ""), re.I))
+                         if "warnings" in out else None),
+        "cfs_feed_ok": "warnings" in out,
+        "fire_danger_ok": bool(fd),
         "emergency_warnings": [w["headline"] for w in warn if w["level"] == "Emergency Warning"]
         + [f"{i['type']} {i['where']}" for i in inc if i["level"] == "Emergency Warning"],
         "watch_and_act": [w["headline"] for w in warn if w["level"] == "Watch and Act"]
