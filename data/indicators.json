@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T05:19:00Z",
+  "generated_at": "2026-11-10T06:17:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -252,14 +252,24 @@
     },
     {
       "band": "Low",
-      "convergence": "No warning signs are showing. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and mobilisation / reservist reports (russia / nato).",
-      "domains": [],
+      "convergence": "Only one kind of sign is showing (undersea cables). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and mobilisation / reservist reports (russia / nato).",
+      "domains": [
+        "Undersea cables"
+      ],
       "key": "russia",
-      "lit": [],
+      "lit": [
+        {
+          "detail": "Breaking the Gray-Zone Shield: Finland Jails Cargo Ship Officers in Landmark Subsea Cable Sabotage Conviction - Submarine Networks",
+          "domain": "Undersea cables",
+          "id": "cablenews",
+          "name": "Baltic undersea cable damage reported",
+          "weight": 10
+        }
+      ],
       "name": "Russia-NATO escalation",
       "sa_impact": "Indirect: energy and market shock, cyber attacks that can spill over to Australian systems, and nuclear-risk rhetoric.",
-      "score": 0,
-      "trend": "steady",
+      "score": 10,
+      "trend": "up",
       "unlit": [
         {
           "domain": "Electronic warfare",
@@ -337,12 +347,6 @@
           "domain": "Undersea cables",
           "id": "cable",
           "name": "Russian / Chinese vessels loitering over Baltic cables",
-          "weight": 10
-        },
-        {
-          "domain": "Undersea cables",
-          "id": "cablenews",
-          "name": "Baltic undersea cable damage reported",
           "weight": 10
         }
       ],
@@ -647,7 +651,7 @@
           "weight": 15
         },
         {
-          "detail": "Crypto Flash Crash Impact on Investor Confidence and Market Sentiment - The Cryptonomist",
+          "detail": "AI Selloff Overdone? Asian Chip Stocks Stage Fierce Comeback; South Korean Market's Opening Surge Triggers Circuit Breaker - BigGo Finance",
           "domain": "Markets",
           "id": "flash",
           "name": "Flash crash or exchange trading halt",
