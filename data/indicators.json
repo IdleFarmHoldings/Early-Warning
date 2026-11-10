@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T11:04:00Z",
+  "generated_at": "2026-11-10T11:20:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -70,6 +70,24 @@
           "id": "ed",
           "name": "Three or more Adelaide emergency departments 'very busy'",
           "weight": 10
+        },
+        {
+          "domain": "Power grid",
+          "id": "power",
+          "name": "Reports of widespread power outages in SA",
+          "weight": 15
+        },
+        {
+          "domain": "Water",
+          "id": "water",
+          "name": "SA Water supply cut or water-quality notice reported",
+          "weight": 10
+        },
+        {
+          "domain": "Water",
+          "id": "reservoirs",
+          "name": "Adelaide reservoirs below 30% (any)",
+          "weight": 5
         }
       ],
       "why": "The worst local days stack up: extreme fire danger, a heatwave pushing power demand, a tight grid, and storms or fires damaging lines. AEMO warns of supply shortfalls hours to a day ahead; the CFS and Bureau issue ratings and warnings a day or more ahead."
