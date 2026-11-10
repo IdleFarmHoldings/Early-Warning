@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T15:05:00Z",
+  "generated_at": "2026-11-10T15:20:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -555,25 +555,15 @@
       "why": "Visible changes to US nuclear command aircraft (E-4B / E-6B), tanker surges, elite flight to remote retreats and market panic are the few public signals that would accompany a nuclear alert."
     },
     {
-      "band": "Guarded",
-      "convergence": "Only one kind of sign is showing (undersea cables). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: phone / internet carrier outage, gps degradation over sa or nsw and sudden fall in sa electricity demand (possible large blackout).",
-      "domains": [
-        "Undersea cables"
-      ],
+      "band": "Low",
+      "convergence": "No warning signs are showing. The strongest signs not yet showing: phone / internet carrier outage, gps degradation over sa or nsw and sudden fall in sa electricity demand (possible large blackout).",
+      "domains": [],
       "key": "ausinfra",
-      "lit": [
-        {
-          "detail": "China vessel HONG BO 16 ~65 min",
-          "domain": "Undersea cables",
-          "id": "cable",
-          "name": "Foreign vessel loitering over Australian cable corridors",
-          "weight": 20
-        }
-      ],
+      "lit": [],
       "name": "Australian infrastructure disruption",
       "sa_impact": "Direct: loss of phone, internet, EFTPOS and fuel pumps. Cash, fuel and a pre-agreed meeting point matter most in the first 24 hours.",
-      "score": 20,
-      "trend": "steady",
+      "score": 0,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Communications",
@@ -613,6 +603,12 @@
         },
         {
           "domain": "Undersea cables",
+          "id": "cable",
+          "name": "Foreign vessel loitering over Australian cable corridors",
+          "weight": 20
+        },
+        {
+          "domain": "Undersea cables",
           "id": "cablenews",
           "name": "Undersea cable damage reported (Australia / Pacific)",
           "weight": 10
@@ -649,7 +645,7 @@
           "weight": 15
         },
         {
-          "detail": "Pandemic-response stocks (masks, hazmat, vaccines, tests) +8.4% vs market over 5 days",
+          "detail": "Pandemic-response stocks (masks, hazmat, vaccines, tests) +8.1% vs market over 5 days",
           "domain": "Markets",
           "id": "pharma",
           "name": "Pandemic-response stocks outperforming (5 days)",
