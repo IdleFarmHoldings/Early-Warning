@@ -1,12 +1,11 @@
 {
-  "generated_at": "2026-11-10T16:47:00Z",
+  "generated_at": "2026-11-10T17:02:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
-      "band": "Guarded",
-      "convergence": "Two different kinds of sign are showing together (power grid and roads). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: cfs emergency warning in sa, sudden fall in sa electricity demand (possible large blackout) and extreme or catastrophic fire danger near adelaide.",
+      "band": "Low",
+      "convergence": "Only one kind of sign is showing (roads). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: cfs emergency warning in sa, sudden fall in sa electricity demand (possible large blackout) and extreme or catastrophic fire danger near adelaide.",
       "domains": [
-        "Power grid",
         "Roads"
       ],
       "key": "local",
@@ -17,19 +16,12 @@
           "id": "roads",
           "name": "Fire, flood or storm road closures in SA",
           "weight": 10
-        },
-        {
-          "detail": "Westpac outage hits thousands of Aussies",
-          "domain": "Power grid",
-          "id": "power",
-          "name": "Reports of widespread power outages in SA",
-          "weight": 15
         }
       ],
       "name": "Local emergency in SA (bushfire, heat, power)",
       "sa_impact": "Direct: bushfires, heatwaves and power cuts are the emergencies most likely to affect the family. In the 2016 statewide blackout, power, phones, traffic lights and fuel pumps failed together.",
-      "score": 25,
-      "trend": "steady",
+      "score": 10,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Bushfire",
@@ -80,6 +72,12 @@
           "weight": 10
         },
         {
+          "domain": "Power grid",
+          "id": "power",
+          "name": "Reports of widespread power outages in SA",
+          "weight": 15
+        },
+        {
           "domain": "Water",
           "id": "water",
           "name": "SA Water supply cut or water-quality notice reported",
@@ -102,24 +100,14 @@
     },
     {
       "band": "Low",
-      "convergence": "Only one kind of sign is showing (aviation). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
-      "domains": [
-        "Aviation"
-      ],
+      "convergence": "No warning signs are showing. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
+      "domains": [],
       "key": "mideast",
-      "lit": [
-        {
-          "detail": "BREAKING NEWS: Iran Hits Qatar, Bahrain, Saudi Arabia, Kuwait & UAE In Retaliation | AH1B Flowers (3yKBVDt3Iw)",
-          "domain": "Aviation",
-          "id": "airspace",
-          "name": "Airspace closures reported (Iran / Israel / Gulf)",
-          "weight": 10
-        }
-      ],
+      "lit": [],
       "name": "Middle East war & Gulf shipping",
       "sa_impact": "Fuel: Australia imports most of its fuel, much of it refined from Gulf crude in Asia. Shipping attacks or a Hormuz closure push up prices within days and can cause local shortages.",
-      "score": 10,
-      "trend": "steady",
+      "score": 0,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Military air",
@@ -150,6 +138,12 @@
           "id": "dep",
           "name": "New US embassy departure order in the region",
           "weight": 15
+        },
+        {
+          "domain": "Aviation",
+          "id": "airspace",
+          "name": "Airspace closures reported (Iran / Israel / Gulf)",
+          "weight": 10
         },
         {
           "domain": "Maritime",
@@ -210,24 +204,14 @@
     },
     {
       "band": "Low",
-      "convergence": "Only one kind of sign is showing (cyber). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: missile / live-fire navigation warnings near taiwan, gps jamming over the taiwan strait and internet disruption in taiwan.",
-      "domains": [
-        "Cyber"
-      ],
+      "convergence": "No warning signs are showing. The strongest signs not yet showing: missile / live-fire navigation warnings near taiwan, gps jamming over the taiwan strait and internet disruption in taiwan.",
+      "domains": [],
       "key": "taiwan",
-      "lit": [
-        {
-          "detail": "Exposed: Volt Typhoon's Framework for Silent Espionage",
-          "domain": "Cyber",
-          "id": "cyber",
-          "name": "Chinese state hacking reports (Volt / Salt Typhoon)",
-          "weight": 10
-        }
-      ],
+      "lit": [],
       "name": "Taiwan Strait / South China Sea crisis",
       "sa_impact": "Trade and fuel: most of Australia's refined fuel and many goods pass the South China Sea. A blockade would disrupt fuel, medicines and electronics within weeks; Australian forces could be drawn in.",
-      "score": 10,
-      "trend": "steady",
+      "score": 0,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Maritime",
@@ -294,6 +278,12 @@
           "id": "def",
           "name": "Defence stocks outperforming (US / Australia)",
           "weight": 5
+        },
+        {
+          "domain": "Cyber",
+          "id": "cyber",
+          "name": "Chinese state hacking reports (Volt / Salt Typhoon)",
+          "weight": 10
         },
         {
           "domain": "Undersea cables",
@@ -386,24 +376,14 @@
     },
     {
       "band": "Low",
-      "convergence": "Only one kind of sign is showing (undersea cables). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and mobilisation / reservist reports (russia / nato).",
-      "domains": [
-        "Undersea cables"
-      ],
+      "convergence": "No warning signs are showing. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and mobilisation / reservist reports (russia / nato).",
+      "domains": [],
       "key": "russia",
-      "lit": [
-        {
-          "detail": "Breaking the Gray-Zone Shield: Finland Jails Cargo Ship Officers in Landmark Subsea Cable Sabotage Conviction",
-          "domain": "Undersea cables",
-          "id": "cablenews",
-          "name": "Baltic undersea cable damage reported",
-          "weight": 10
-        }
-      ],
+      "lit": [],
       "name": "Russia-NATO escalation",
       "sa_impact": "Indirect: energy and market shock, cyber attacks that can spill over to Australian systems, and nuclear-risk rhetoric.",
-      "score": 10,
-      "trend": "steady",
+      "score": 0,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Electronic warfare",
@@ -481,6 +461,12 @@
           "domain": "Undersea cables",
           "id": "cable",
           "name": "Russian / Chinese vessels loitering over Baltic cables",
+          "weight": 10
+        },
+        {
+          "domain": "Undersea cables",
+          "id": "cablenews",
+          "name": "Baltic undersea cable damage reported",
           "weight": 10
         },
         {
@@ -642,19 +628,12 @@
           "id": "who",
           "name": "WHO outbreak report with a high-concern pathogen (last 14 days)",
           "weight": 15
-        },
-        {
-          "detail": "Mass Casualty Pile-ups Paralyze Bulgaria's Trakia Highway, More Than 10 Dead",
-          "domain": "Health",
-          "id": "masscas",
-          "name": "Mass casualty declarations (any country)",
-          "weight": 5
         }
       ],
       "name": "Pandemic, biological or chemical emergency",
       "sa_impact": "Health system strain, possible lockdowns and border closures, and shortages of medicines and protective equipment, which Australia mostly imports.",
-      "score": 20,
-      "trend": "steady",
+      "score": 15,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Health",
@@ -679,6 +658,12 @@
           "id": "shortage",
           "name": "Australian medicine or PPE shortage reports",
           "weight": 10
+        },
+        {
+          "domain": "Health",
+          "id": "masscas",
+          "name": "Mass casualty declarations (any country)",
+          "weight": 5
         },
         {
           "domain": "Markets",
@@ -708,33 +693,15 @@
       "why": "Before COVID-19 (Dec 2019 - Feb 2020): reports of an unknown pneumonia cluster, WHO outbreak notices, mask and hazmat makers (Alpha Pro Tech, Lakeland) and vaccine developers (Moderna, Novavax) surging weeks before broad markets fell, and countries restricting exports of masks and medicines (Taiwan from 24 Jan 2020, then dozens more)."
     },
     {
-      "band": "Guarded",
-      "convergence": "Two different kinds of sign are showing together (australian incidents and state actors). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: sudden fall in sa electricity demand (possible large blackout), global cyber threat level raised (sans infocon not green) and several vpn / firewall flaws exploited this week.",
-      "domains": [
-        "Australian incidents",
-        "State actors"
-      ],
+      "band": "Low",
+      "convergence": "No warning signs are showing. The strongest signs not yet showing: sudden fall in sa electricity demand (possible large blackout), global cyber threat level raised (sans infocon not green) and several vpn / firewall flaws exploited this week.",
+      "domains": [],
       "key": "cyber",
-      "lit": [
-        {
-          "detail": "Exposed: Volt Typhoon's Framework for Silent Espionage",
-          "domain": "State actors",
-          "id": "state",
-          "name": "Reports of state hackers / pre-positioning / wipers",
-          "weight": 15
-        },
-        {
-          "detail": "France vows tough response to freezer cyberattack blamed on Iran",
-          "domain": "Australian incidents",
-          "id": "au",
-          "name": "Major Australian cyber incident reported",
-          "weight": 10
-        }
-      ],
+      "lit": [],
       "name": "Major cyber attack on Australia",
       "sa_impact": "Banks, payments, hospitals, fuel distribution, telcos and the power grid all run on networks; a large attack can stop card payments and services for hours to days.",
-      "score": 25,
-      "trend": "steady",
+      "score": 0,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Global threat level",
@@ -773,6 +740,18 @@
           "weight": 10
         },
         {
+          "domain": "State actors",
+          "id": "state",
+          "name": "Reports of state hackers / pre-positioning / wipers",
+          "weight": 15
+        },
+        {
+          "domain": "Australian incidents",
+          "id": "au",
+          "name": "Major Australian cyber incident reported",
+          "weight": 10
+        },
+        {
           "domain": "Communications",
           "id": "tel",
           "name": "Phone / internet carrier outage",
@@ -788,28 +767,20 @@
       "why": "Large attacks are usually preceded by quieter steps: a surge in newly exploited flaws in VPNs and firewalls (how state groups like Volt Typhoon get in), scanning of industrial-control systems, a rise in ransomware victims in the target country, and official warnings. Before Russia's 2022 invasion, wiper malware hit Ukraine a day ahead; Chinese groups have been found pre-positioned in US and allied infrastructure."
     },
     {
-      "band": "Elevated",
-      "convergence": "Signs are converging across 3 separate areas (ai-enabled hacking, fraud waves and markets). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: a Chinese state-sponsored group used an AI agent to carry out 80-90% of an attack on about 30 organisations, at thousands of requests per second. A fake AI image of a Pentagon explosion briefly moved US markets in May 2023, and a deepfake video call of a CFO tricked a company into paying US$25 million in 2024. The likely signature of an AI attack is breadth and speed: many unrelated systems and vendors hit at once, synthetic media of officials, and shocks with no clear human cause. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, deepfakes of leaders or fake official alerts and market fear index jumps 25%+ in a day.",
+      "band": "Guarded",
+      "convergence": "Two different kinds of sign are showing together (ai-enabled hacking and fraud waves). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, deepfakes of leaders or fake official alerts and flash crash or exchange trading halt.",
       "domains": [
         "AI-enabled hacking",
-        "Fraud waves",
-        "Markets"
+        "Fraud waves"
       ],
       "key": "ai",
       "lit": [
         {
-          "detail": "Israel warns Iran is seeking AI-powered cyberattack capabilities",
+          "detail": "Autonomous AI agent executes multi-week cyberattack on European telecommunications provider",
           "domain": "AI-enabled hacking",
           "id": "aihack",
           "name": "Reports of AI-driven hacking campaigns",
           "weight": 15
-        },
-        {
-          "detail": "AI Selloff Overdone? Asian Chip Stocks Stage Fierce Comeback; South Korean Market's Opening Surge Triggers Circuit Breaker",
-          "domain": "Markets",
-          "id": "flash",
-          "name": "Flash crash or exchange trading halt",
-          "weight": 10
         },
         {
           "detail": "Expert warns of rise in romance and voice cloning scams",
@@ -821,8 +792,8 @@
       ],
       "name": "AI-enabled attack (non-traditional)",
       "sa_impact": "Not bombs but disruption: hacking at machine speed across banks, telcos, hospitals and the grid at once; fake videos or alerts from leaders causing panic buying or bank runs; or automated market and fraud shocks. Effects would be outages, payment failures and confusion about what is real.",
-      "score": 30,
-      "trend": "steady",
+      "score": 20,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Mass exploitation",
@@ -835,6 +806,12 @@
           "id": "deepfake",
           "name": "Deepfakes of leaders or fake official alerts",
           "weight": 15
+        },
+        {
+          "domain": "Markets",
+          "id": "flash",
+          "name": "Flash crash or exchange trading halt",
+          "weight": 10
         },
         {
           "domain": "Markets",
