@@ -191,7 +191,19 @@ def fetch_local(state):
         return parse_fdr(raw, lc["fire_districts"])
 
     def bom():
-        raw = http_get(BOM_SA, timeout=30)
+        import ftplib
+        import io
+        with ftplib.FTP("ftp.bom.gov.au", timeout=30) as f:
+            f.login()
+            f.cwd("/anon/gen/fwo")
+            names = f.nlst()
+            pick = next((n for n in names if n.startswith("IDZ00057")), None)
+            samples["bom_files"] = " ".join(sorted(n for n in names if n.startswith(("IDZ", "IDS2")))[:80])
+            if not pick:
+                raise RuntimeError("SA warnings file not found on BoM FTP")
+            buf = io.BytesIO()
+            f.retrbinary(f"RETR {pick}", buf.write)
+        raw = buf.getvalue()
         samples["bom"] = raw[:1000].decode("utf-8", "replace")
         return parse_bom(raw)
 
