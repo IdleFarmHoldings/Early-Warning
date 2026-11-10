@@ -272,7 +272,16 @@ function renderStatus(st){
   $("updated").textContent = has ? fmt(st.updatedAt) : "—";
   $("next").textContent = st && st.nextCheck ? fmt(st.nextCheck) : "—";
   $("actTitle").textContent = has ? `What to do at level ${level}` : "What to do";
-  const acts = has ? [...L.actions, ...(Array.isArray(st.actions)?st.actions:[])] : [];
+  // Extra actions from the analysis are skipped when they repeat a standard one (e.g. "Confirm the family meeting point"
+  // vs "Confirm the family meeting point and plan"): same key words, ignoring small words.
+  const STOP = new Set(["the","a","an","and","or","of","to","your","any","at","all","in","on","for","with","now","today"]);
+  const words = t => new Set(String(t).toLowerCase().replace(/[^a-z0-9 ]/g," ").split(/\s+/).filter(w=>w&&!STOP.has(w)));
+  const dup = (a,b) => { const [x,y] = a.size<=b.size?[a,b]:[b,a]; return x.size>0 && [...x].every(w=>y.has(w)); };
+  const acts = [];
+  if(has) for(const a of [...L.actions, ...(Array.isArray(st.actions)?st.actions:[])]){
+    const w = words(typeof a==="string"?a:a.action);
+    if(!acts.some(b=>dup(w, words(typeof b==="string"?b:b.action)))) acts.push(a);
+  }
   $("actList").innerHTML = acts.map(a=> typeof a==="string" ? `<li>${esc(a)}</li>`
     : `<li><b>${esc(a.action)}</b>${a.reason?`<br><span class="why">Why: ${esc(a.reason)}</span>`:""}</li>`).join("");
   const byKey = {}; (st && Array.isArray(st.categories) ? st.categories : []).forEach(c=>byKey[c.key]=c);
