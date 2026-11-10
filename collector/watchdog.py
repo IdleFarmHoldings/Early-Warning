@@ -60,6 +60,22 @@ def main():
              f"The Early Warning collector has not updated for about {hours:.1f} hours. Automatic restart attempted. "
              "Until it recovers, rely on Alert SA, ABC Radio Adelaide 891 AM and official sources.",
              priority=4, tags=["warning"], click=CONFIG["board_url"])
+    # The twice-daily analysis should update status.json by ~4:45 am and pm Adelaide time
+    upd = load_json("data/status.json", {}).get("updatedAt")
+    try:
+        a_age = now - datetime.fromisoformat(upd).astimezone(timezone.utc) if upd else None
+    except ValueError:
+        a_age = None
+    if a_age and a_age > timedelta(hours=14):
+        last = state.get("analysis_alerted_at")
+        if not last or now - _ts(last) > timedelta(hours=12):
+            state["analysis_alerted_at"] = iso(now)
+            push("proactive", "System check: twice-daily analysis missed",
+                 f"The last full analysis was {a_age.total_seconds() / 3600:.0f} hours ago. Automatic checks and alerts "
+                 "are still running; the board's assessment may be out of date.", priority=3, tags=["warning"],
+                 click=CONFIG["board_url"])
+    elif a_age is not None:
+        state.pop("analysis_alerted_at", None)
     if "recovered" in actions:
         push("proactive", "System check: updates are back",
              "The Early Warning collector is updating normally again.", priority=2, tags=["white_check_mark"],
