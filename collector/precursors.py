@@ -131,6 +131,8 @@ def _lit(ind, ctx):
         return "; ".join(f"{v['flag']} vessel {v['name'] or v['mmsi']} ~{v['minutes']} min" for v in hits[:3]) or None
     if t == "local":
         v = (ctx.get("local") or {}).get(ind["field"])
+        if "min_len" in ind:
+            return ("; ".join(map(str, v[:4])) if isinstance(v, list) and len(v) >= ind["min_len"] else None)
         if ind.get("nonempty"):
             return ("; ".join(map(str, v[:2])) if isinstance(v, list) else str(v)) if v else None
         if "any_of" in ind:

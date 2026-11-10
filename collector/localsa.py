@@ -182,6 +182,115 @@ def fetch_aemo(state, max_new=40):
             "sa_actual": any(n["kind"] == "Actual" for n in active), "checked_files": len(new)}
 
 
+# ---------- Traffic SA road closures and incidents (ArcGIS) ----------
+ROAD_LAYERS = {
+    "closures": ["https://maps.sa.gov.au/arcgis/rest/services/DPTIExtTransport/TrafficSAOpenData/MapServer/1",
+                 "https://dit-cms-prod.geohub.sa.gov.au/arcgis/rest/services/TrafficSATime_OpenData/TrafficSATime_OpenData/MapServer/2"],
+    "incidents": ["https://dit-cms-prod.geohub.sa.gov.au/arcgis/rest/services/TrafficSATime_OpenData/TrafficSATime_OpenData/MapServer/0"],
+}
+
+
+def _arcgis_rows(url):
+    data = json.loads(http_get(url + "/query?where=1%3D1&outFields=*&returnGeometry=false&f=json", timeout=30))
+    if data.get("error"):
+        raise RuntimeError(str(data["error"])[:150])
+    return [f.get("attributes", {}) for f in data.get("features", [])]
+
+
+def summarise_roads(rows):
+    out = []
+    for r in rows:
+        txt = " ".join(str(v) for v in r.values() if isinstance(v, str))
+        road = next((str(r[k]) for k in r if re.search(r"road|street|location|name", k, re.I) and isinstance(r[k], str)), "")
+        kind = next((str(r[k]) for k in r if re.search(r"type|category|description", k, re.I) and isinstance(r[k], str)), "")
+        out.append({"road": road[:80], "type": kind[:80],
+                    "hazard": bool(re.search(r"fire|flood|storm|tree|power|emergency|hazard|smoke", txt, re.I))})
+    return out
+
+
+def fetch_roads(samples):
+    res = {}
+    for name, urls in ROAD_LAYERS.items():
+        for u in urls:
+            try:
+                rows = _arcgis_rows(u)
+                samples[f"roads_{name}"] = json.dumps(rows[:2])[:800]
+                res[name] = summarise_roads(rows)
+                break
+            except Exception as e:  # noqa: BLE001
+                samples[f"roads_{name}_err"] = f"{u}: {type(e).__name__}: {e}"[:200]
+    if not res:
+        raise RuntimeError("no road layers reachable")
+    return res
+
+
+# ---------- SA Health emergency departments ----------
+ED_SHELL = "https://www.sahealth.sa.gov.au/wps/themes/html/Portal/js/OBI_DATA/EDDashboard_rwd.html"
+
+
+def _abs(base, ref):
+    from urllib.parse import urljoin
+    return urljoin(base, ref)
+
+
+def discover_ed(samples):
+    """The dashboard loads its data with JavaScript; find and fetch the data file it uses."""
+    html = http_get(ED_SHELL, timeout=30).decode("utf-8", "replace")
+    refs = re.findall(r"""(?:src|href)=["']([^"']+\.(?:js|json|csv|xml)[^"']*)["']""", html, re.I)
+    refs += re.findall(r"""["']([^"'\s]+\.(?:json|csv|xml)(?:\?[^"']*)?)["']""", html, re.I)
+    found = []
+    for r in refs[:12]:
+        u = _abs(ED_SHELL, r)
+        if any(x in u for x in ("jquery", "bootstrap", "analytics", "google")):
+            continue
+        try:
+            body = http_get(u, timeout=20).decode("utf-8", "replace")
+        except Exception:  # noqa: BLE001
+            continue
+        if u.endswith(".js") or ".js?" in u:
+            for d in re.findall(r"""["']([^"'\s]+\.(?:json|csv|xml)(?:\?[^"']*)?)["']""", body, re.I)[:8]:
+                found.append(_abs(u, d))
+        else:
+            found.append(u)
+    samples["ed_candidates"] = " ".join(dict.fromkeys(found))[:1200]
+    for u in dict.fromkeys(found):
+        try:
+            body = http_get(u, timeout=20).decode("utf-8", "replace")
+        except Exception:  # noqa: BLE001
+            continue
+        samples["ed_data_url"] = u
+        samples["ed_data"] = body[:2000]
+        return parse_ed(body)
+    raise RuntimeError("ED data file not found yet (see debug sample)")
+
+
+def parse_ed(body):
+    """Hospitals with their busy status. Accepts JSON or XML; keeps any record that names a hospital and a status."""
+    recs = []
+    try:
+        data = json.loads(body)
+        stack = [data]
+        while stack:
+            x = stack.pop()
+            if isinstance(x, dict):
+                name = next((str(v) for k, v in x.items() if re.search(r"hosp|site|name", k, re.I) and isinstance(v, str)), None)
+                status = next((str(v) for k, v in x.items() if re.search(r"status|capacity|state", k, re.I) and isinstance(v, str)), None)
+                if name and status:
+                    recs.append({"hospital": name[:60], "status": status[:30]})
+                stack.extend(x.values())
+            elif isinstance(x, list):
+                stack.extend(x)
+    except ValueError:
+        root = ET.fromstring(body)
+        for el in root.iter():
+            t = {_local(c.tag): (c.text or "").strip() for c in el}
+            name = next((v for k, v in t.items() if re.search(r"hosp|site|name", k) and v), None)
+            status = next((v for k, v in t.items() if re.search(r"status|capacity", k) and v), None)
+            if name and status:
+                recs.append({"hospital": name[:60], "status": status[:30]})
+    return recs[:40]
+
+
 def fetch_local(state):
     lc = CONFIG["local"]
     out, errors, samples = {}, [], {}
@@ -233,6 +342,8 @@ def fetch_local(state):
     part("fire_danger", fdr)
     part("bom", bom)
     part("grid", lambda: fetch_aemo(state))
+    part("roads", lambda: fetch_roads(samples))
+    part("ed", lambda: discover_ed(samples))
     if not out:
         raise RuntimeError("; ".join(errors[:3]))
     inc = out.get("incidents") or []
@@ -249,6 +360,12 @@ def fetch_local(state):
         "bom_severe": [b["title"] for b in (out.get("bom") or []) if b["severe"]],
         "grid_lor_level": (out.get("grid") or {}).get("sa_max_level", 0),
         "grid_lor_actual": (out.get("grid") or {}).get("sa_actual", False),
+        "road_closures": len((out.get("roads") or {}).get("closures") or []),
+        "road_incidents": len((out.get("roads") or {}).get("incidents") or []),
+        "road_hazards": [f"{r['type']} {r['road']}".strip() for k in ("closures", "incidents")
+                         for r in ((out.get("roads") or {}).get(k) or []) if r["hazard"]][:5],
+        "ed_very_busy": [e["hospital"] for e in (out.get("ed") or []) if re.search(r"very busy", e["status"], re.I)],
+        "ed_known": len(out.get("ed") or []),
     }
     out["errors"] = errors
     out["samples"] = samples

@@ -1,0 +1,44 @@
+name: Watchdog
+
+# Independent of the collector: restarts it if it has stalled, and alerts phones if data is over 2 hours old.
+
+on:
+  schedule:
+    - cron: "7,37 * * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: watchdog
+  cancel-in-progress: true
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      GH_TOKEN: ${{ github.token }}
+      NTFY_PROACTIVE: ${{ secrets.NTFY_PROACTIVE }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 60
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check freshness, restart and alert if needed
+        run: |
+          running=$(gh run list --workflow collector.yml --status in_progress --json databaseId --jq length || echo 0)
+          queued=$(gh run list --workflow collector.yml --status queued --json databaseId --jq length || echo 0)
+          python collector/watchdog.py --running "$running" --queued "$queued"
+      - name: Save watchdog state
+        run: |
+          git config user.name "early-warning-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/watchdog.json || true
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -q -m "watchdog: $(date -u +%Y-%m-%dT%H:%MZ)"
+          for i in 1 2 3; do git pull -q --rebase -X theirs && git push -q && exit 0; sleep 5; done

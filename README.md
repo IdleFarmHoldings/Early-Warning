@@ -78,3 +78,10 @@ Until the key is added, the "Undersea cables" section shows a setup note and eve
 ## Runs without your computer
 
 Everything runs in the cloud: the collector on GitHub Actions every 15 minutes, the twice-daily analysis as a scheduled Claude task, alerts through ntfy.sh, and the family page on GitHub Pages. No laptop needs to be on or signed in.
+
+## Keeping it running
+
+- The collector starts its own next run when it finishes, so checks continue even when GitHub's timer is late.
+- A separate **Watchdog** workflow checks every 30 minutes: it restarts the collector if data is over 45 minutes old, and alerts the Early warning channel if it is over 2 hours old (and again when it recovers).
+- Both pages show a warning banner when data is stale.
+- Optional outside watchdog: create a free check at https://healthchecks.io (period 30 min, grace 60 min), connect its ntfy or email integration, and add the ping URL as the repository secret `HEALTHCHECK_URL`. It alerts you even if GitHub itself is down.

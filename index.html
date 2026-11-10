@@ -141,6 +141,7 @@ details summary{cursor:pointer;font-size:.84rem;color:var(--accent)}
     </div>
   </header>
 
+  <div id="stale" class="banner" hidden style="border-style:solid;border-color:var(--l4);color:var(--ink)"></div>
   <div id="banner" class="banner">Loading the latest assessment…</div>
 
   <section class="top">
@@ -361,6 +362,9 @@ function renderLatest(l){
     h += rowL("Power supply (SA)", lvl>=3?"Critical (LOR3)":lvl===2?"Tight (LOR2)":lvl===1?"Watch (LOR1)":"Normal", lvl>=3?"var(--l5)":lvl===2?"var(--l4)":lvl===1?"var(--l3)":"var(--l2)", lvl===1);
     const ew=(ls.emergency_warnings||[]).length, wa=(ls.watch_and_act||[]).length;
     h += rowL("CFS warnings", ew?`${ew} Emergency`:wa?`${wa} Watch and Act`:`None · ${ls.fires_active||0} fires active`, ew?"var(--l5)":wa?"var(--l4)":"var(--l2)");
+    h += rowL("Road closures (SA)", `${ls.road_closures||0} closures · ${ls.road_incidents||0} incidents`, (ls.road_hazards||[]).length?"var(--l4)":"var(--l2)");
+    if(ls.ed_known) h += rowL("Hospital EDs very busy", `${(ls.ed_very_busy||[]).length} of ${ls.ed_known}`, (ls.ed_very_busy||[]).length>=3?"var(--l4)":(ls.ed_very_busy||[]).length?"var(--l3)":"var(--l2)", (ls.ed_very_busy||[]).length>0 && (ls.ed_very_busy||[]).length<3);
+    if((ls.road_hazards||[]).length) h += `<p class="why" style="margin:6px 0 0">Hazard on roads: ${esc(ls.road_hazards[0])}</p>`;
     if((ls.bom_severe||[]).length) h += `<p class="why" style="margin:6px 0 0">Bureau warning: ${esc(ls.bom_severe[0])}</p>`;
     $("localBox").innerHTML = h;
   } else { $("localBox").innerHTML = `<p class="empty">Local data arrives with the next check.</p>`; }
@@ -410,6 +414,14 @@ async function load(){
   if(st) renderStatus(st); else drawGauge(0);
   renderConcerns(DEMO_OK ? st : st, DEMO_OK ? null : ind);
   renderLatest(l);
+  // Stale-data warning: live data should be under ~30 min old; the analysis runs twice a day.
+  const ago = iso => iso ? (Date.now() - new Date(iso).getTime()) / 60000 : Infinity;
+  const msgs = [];
+  if(l && ago(l.generated_at) > 45) msgs.push(`Live data was last updated ${Math.round(ago(l.generated_at)/60*10)/10} hours ago, so the system may be delayed.`);
+  if(!l) msgs.push("Live data could not be loaded.");
+  if(st && !DEMO_OK && ago(st.updatedAt) > 14*60) msgs.push(`The last analysis was ${Math.round(ago(st.updatedAt)/60)} hours ago (it normally runs at 4:39 am and pm).`);
+  $("stale").hidden = !msgs.length;
+  $("stale").innerHTML = msgs.length ? `<b>Heads up:</b> ${esc(msgs.join(" "))} For emergencies, follow <a href="https://www.alert.sa.gov.au/">Alert SA</a> and ABC Radio Adelaide 891 AM.` : "";
 }
 load(); setInterval(load, 5*60*1000);
 </script>

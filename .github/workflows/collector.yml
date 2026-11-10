@@ -13,6 +13,7 @@ on:
 
 permissions:
   contents: write
+  actions: write
 
 concurrency:
   group: collector
@@ -26,6 +27,7 @@ jobs:
       NTFY_PROACTIVE: ${{ secrets.NTFY_PROACTIVE }}
       NTFY_REACTIVE: ${{ secrets.NTFY_REACTIVE }}
       AISSTREAM_KEY: ${{ secrets.AISSTREAM_KEY }}
+      HEALTHCHECK_URL: ${{ secrets.HEALTHCHECK_URL }}
       PASSES: "4"
       PASS_SECONDS: "900"
     steps:
@@ -56,6 +58,8 @@ jobs:
           for n in $(seq 1 "$PASSES"); do
             python collector/run.py || echo "collector pass $n failed"
             save collector || true
+            # optional outside watchdog (healthchecks.io): it alerts if these pings stop arriving
+            if [ -n "$HEALTHCHECK_URL" ]; then curl -fsS -m 10 --retry 2 "$HEALTHCHECK_URL" >/dev/null || true; fi
             [ "$n" -ge "$PASSES" ] && break
             next=$((start + n * PASS_SECONDS))
             while [ "$(date +%s)" -lt "$next" ]; do
@@ -67,3 +71,9 @@ jobs:
               fi
             done
           done
+
+      - name: Start the next run (keeps checks going even when GitHub's timer is late)
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run collector.yml --ref main || echo "could not queue the next run; the timer and watchdog will"

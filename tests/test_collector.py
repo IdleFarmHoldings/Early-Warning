@@ -416,3 +416,22 @@ def test_bom_cap():
       <expires>2099-01-01T10:00:00+10:30</expires><headline>Severe Weather Warning for damaging winds for Mount Lofty Ranges</headline></info></alert>'''
     w = localsa.parse_bom_cap(raw)
     assert w[0]["severe"] and w[0]["expires"].startswith("2098-12-31T23:30")
+
+
+def test_watchdog_decisions():
+    from datetime import datetime, timezone
+    import watchdog
+    now = datetime(2026, 11, 10, 12, 0, tzinfo=timezone.utc)
+    st = {}
+    acts, st = watchdog.decide(now, now - timedelta(minutes=20), 0, 0, st)
+    assert acts == set()
+    acts, st = watchdog.decide(now, now - timedelta(minutes=50), 1, 0, st)
+    assert acts == set(), "a run is already going"
+    acts, st = watchdog.decide(now, now - timedelta(minutes=50), 0, 0, st)
+    assert acts == {"restart"}
+    acts, st = watchdog.decide(now, now - timedelta(hours=3), 0, 0, st)
+    assert acts == {"restart", "alert"} and st["stale"]
+    acts, st = watchdog.decide(now + timedelta(hours=1), now - timedelta(hours=3), 1, 0, st)
+    assert acts == set(), "no repeat alert within 6 hours"
+    acts, st = watchdog.decide(now + timedelta(hours=2), now + timedelta(hours=2) - timedelta(minutes=5), 1, 0, st)
+    assert acts == {"recovered"} and not st["stale"]

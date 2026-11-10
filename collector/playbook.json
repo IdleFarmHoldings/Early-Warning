@@ -91,6 +91,24 @@
           "min": 20,
           "weight": 10,
           "domain": "Communications"
+        },
+        {
+          "id": "roads",
+          "name": "Fire, flood or storm road closures in SA",
+          "type": "local",
+          "field": "road_hazards",
+          "nonempty": true,
+          "weight": 10,
+          "domain": "Roads"
+        },
+        {
+          "id": "ed",
+          "name": "Three or more Adelaide emergency departments 'very busy'",
+          "type": "local",
+          "field": "ed_very_busy",
+          "min_len": 3,
+          "weight": 10,
+          "domain": "Hospitals"
         }
       ]
     },
@@ -1265,6 +1283,15 @@
           ],
           "weight": 10,
           "domain": "Health"
+        },
+        {
+          "id": "ed",
+          "name": "Three or more Adelaide emergency departments 'very busy'",
+          "type": "local",
+          "field": "ed_very_busy",
+          "min_len": 3,
+          "weight": 10,
+          "domain": "Hospitals"
         }
       ]
     },

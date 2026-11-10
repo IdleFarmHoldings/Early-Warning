@@ -266,6 +266,8 @@ document.querySelectorAll(".wrap .panel").forEach((p, i)=>{
   const [an, ind, sat, lat, pat] = await Promise.all([get("data/analytics.json"), get("data/indicators.json"),
     get("data/satellites.json"), get("data/latest.json"), get("data/patterns.json")]);
   $("asof").textContent = `Data as of ${fmt((lat||{}).generated_at)} · satellites ${fmt((sat||{}).generated_at)}`;
+  const ageMin = lat && lat.generated_at ? (Date.now() - new Date(lat.generated_at).getTime())/60000 : Infinity;
+  if(ageMin > 45){ $("asof").innerHTML = `<span style="color:${css("--critical")};font-weight:600">Data is ${Math.round(ageMin/6)/10} h old — the system may be delayed.</span> ` + esc($("asof").textContent); }
   const rows = (an&&an.rows)||[];
   const labels = rows.map(r=>new Date(r.ts).toLocaleString("en-AU",{timeZone:"Australia/Adelaide",day:"numeric",month:"short",hour:"numeric"}));
   const scen = (ind&&ind.scenarios)||[];
