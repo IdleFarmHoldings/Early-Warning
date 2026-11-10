@@ -933,5 +933,88 @@
         ]
       }
     ]
+  },
+  "local": {
+    "fire_districts": [
+      "Adelaide Metropolitan",
+      "Mount Lofty Ranges"
+    ],
+    "fdr_alert": [
+      "Catastrophic",
+      "Extreme"
+    ]
+  },
+  "chokepoints": [
+    "Strait of Hormuz",
+    "Malacca Strait",
+    "Bab el-Mandeb Strait",
+    "Taiwan Strait",
+    "Luzon Strait",
+    "Sunda Strait",
+    "Lombok Strait",
+    "Torres Strait",
+    "Suez Canal"
+  ],
+  "prediction_markets": {
+    "min_volume": 20000,
+    "jump_points": 10,
+    "topics": [
+      {
+        "key": "mideast",
+        "q": "Iran",
+        "must": [
+          "strike",
+          "attack",
+          "war",
+          "Hormuz",
+          "nuclear",
+          "invade",
+          "military",
+          "regime"
+        ]
+      },
+      {
+        "key": "taiwan",
+        "q": "Taiwan",
+        "must": [
+          "invade",
+          "invasion",
+          "blockade",
+          "China",
+          "military",
+          "attack"
+        ]
+      },
+      {
+        "key": "russia",
+        "q": "Russia NATO",
+        "must": [
+          "NATO",
+          "attack",
+          "war",
+          "invade",
+          "Article 5"
+        ]
+      },
+      {
+        "key": "korea",
+        "q": "North Korea",
+        "must": [
+          "missile",
+          "attack",
+          "war",
+          "nuclear",
+          "test",
+          "invade"
+        ]
+      },
+      {
+        "key": "nuclear",
+        "q": "nuclear weapon",
+        "must": [
+          "nuclear"
+        ]
+      }
+    ]
   }
 }

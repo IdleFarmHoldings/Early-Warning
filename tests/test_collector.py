@@ -345,3 +345,49 @@ def test_alert_links():
     q = parse_qs(u.query)
     assert u.fragment == "alerts" and q["alert"] == ["20261110T0805-x"] and q["t"] == ["UNCONFIRMED: vessel & cables"] and q["p"] == ["4"]
     assert run.click_url({**a, "click": run.CONFIG["board_url"] + "?demo=5"}).endswith("?demo=5")
+
+
+def test_local_sa_parsers():
+    import localsa
+    n = localsa.parse_notice("MARKET NOTICE\nReason: RESERVE NOTICE\nActual Lack Of Reserve Level 2 (LOR2) in the SA region - 10/11/2026\nThe Actual LOR2 condition in the SA region...")
+    assert n == {"kind": "Actual", "level": 2, "region": "SA", "cancelled": False}
+    c = localsa.parse_notice("Cancellation of Forecast Lack Of Reserve Level 1 (LOR1) in the SA region")
+    assert c["cancelled"] and c["level"] == 1
+    assert localsa.parse_notice("Inter-regional transfer limit variation") is None
+    cap = b'''<feed><entry><alert xmlns="urn:oasis:names:tc:emergency:cap:1.2"><info><event>Bushfire</event>
+      <headline>Emergency Warning - Bushfire at Cudlee Creek</headline><severity>Extreme</severity>
+      <area><areaDesc>Adelaide Hills</areaDesc></area></info></alert></entry></feed>'''
+    w = localsa.parse_cap(cap)
+    assert w[0]["level"] == "Emergency Warning" and w[0]["area"] == "Adelaide Hills"
+    fdr = b'''<FireDangerRatings><District><Name>Adelaide Metropolitan</Name><Today>Extreme</Today><Tomorrow>High</Tomorrow>
+      <TotalFireBan>Total Fire Ban</TotalFireBan></District><District><Name>Mount Lofty Ranges</Name><Today>Moderate</Today>
+      <Tomorrow>High</Tomorrow><TotalFireBan>No Total Fire Ban</TotalFireBan></District></FireDangerRatings>'''
+    f = localsa.parse_fdr(fdr, ["Adelaide Metropolitan", "Mount Lofty Ranges"])
+    assert localsa.worst(f["Adelaide Metropolitan"]["ratings"]) == "Extreme" and f["Adelaide Metropolitan"]["fire_ban"]
+    assert localsa.worst(f["Mount Lofty Ranges"]["ratings"]) == "High" and not f["Mount Lofty Ranges"]["fire_ban"]
+    inc = localsa.parse_cfs_incidents([{"Type": "Grass Fire", "Location_name": "Gawler", "Status": "Going", "Level": "Watch and Act"}])
+    assert inc[0]["fire"] and inc[0]["level"] == "Watch and Act"
+
+
+def test_foresight_and_local_scenario():
+    import foresight, precursors, run
+    rows = [{"portname": "Strait of Hormuz", "date": f"2026-{(d // 30) + 8:02d}-{(d % 30) + 1:02d}", "n_total": 100 if d < 63 else 40, "n_tanker": 50}
+            for d in range(70)]
+    st = foresight.chokepoint_stats(rows)["Strait of Hormuz"]
+    assert st["usual_7d"] == 100.0 and st["avg_7d"] == 40.0 and st["change_pct"] == -60.0
+    assert foresight._yes_price({"outcomes": '["Yes", "No"]', "outcomePrices": '["0.235", "0.765"]'}) == 23.5
+    now = now_utc().replace(second=0, microsecond=0)
+    ctx = {"anomalies": {}, "internet": {}, "telecom": {}, "departures": [], "news": {}, "markets": {}, "satellites": {},
+           "acsc_new": [], "sectors": {}, "who": [], "cyber": {}, "maritime": {}, "now": now,
+           "chokepoints": {"Strait of Hormuz": st},
+           "pmarkets": [{"topic": "mideast", "question": "US strikes Iran by Dec 31?", "yes_pct": 45, "change_24h": 18}],
+           "local": {"emergency_warnings": [], "watch_and_act": [], "worst_fire_danger": {"Adelaide Metropolitan": "Extreme"},
+                     "fire_ban_districts": ["Adelaide Metropolitan"], "bom_severe": ["Heatwave warning for SA"], "grid_lor_level": 2}}
+    sc = {s["key"]: s for s in precursors.score_scenarios(ctx, {})}
+    assert {"hormuz", "pm"} <= {i["id"] for i in sc["mideast"]["lit"]}
+    assert {i["id"] for i in sc["local"]["lit"]} == {"fdr", "tfb", "bom", "grid"} and sc["local"]["band"] == "High"
+    state = {}
+    loc = {"summary": {**ctx["local"], "grid_lor_actual": True, "emergency_warnings": ["Emergency Warning - Bushfire at Cudlee Creek"]}}
+    al = run.local_alerts(loc, state, now, first_run=False)
+    assert {a["title"] for a in al} == {"CFS Emergency Warning", "Extreme fire danger: Adelaide Metropolitan", "Power supply tight in SA (Actual LOR2)"}
+    assert run.local_alerts(loc, state, now, first_run=False) == []  # no repeats

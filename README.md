@@ -46,6 +46,11 @@ Channel names are stored as repository secrets `NTFY_PROACTIVE` and `NTFY_REACTI
 | abuse.ch Feodo Tracker | Botnet command servers by country |
 | ransomware.live | Ransomware victims by country (7 days) and Australian victims vs normal |
 | aisstream.io live AIS (free key) | Vessels loitering over undersea-cable corridors around Australia, Taiwan, the Baltic and Red Sea |
+| SA CFS (incidents, CAP warnings, fire danger ratings and total fire bans) | Bushfire warnings and fire weather for Adelaide and the Mount Lofty Ranges |
+| Bureau of Meteorology SA warnings | Heatwave, severe weather and flood warnings |
+| AEMO market notices (NEMWeb) | Lack-of-reserve (tight power supply) notices for the SA region |
+| IMF PortWatch | Daily ship transits through Hormuz, Malacca, Bab el-Mandeb, Taiwan Strait and other chokepoints |
+| Polymarket | Crowd probabilities on conflict questions; jumps of 10+ points in a day are a warning sign |
 | Crisis Group, ASPI Strategist, Lowy Interpreter | Analyst headlines for the analysis run (context only, never pushed on their own) |
 
 Aircraft data courtesy of [adsb.fi](https://adsb.fi), used for personal, non-commercial purposes.

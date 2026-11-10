@@ -129,6 +129,26 @@ def _lit(ind, ctx):
         hits = [v for v in (ctx.get("maritime") or {}).get("loitering", [])
                 if regions.get(v["zone"]) == ind["region"] and (v["of_interest"] or not ind.get("of_interest"))]
         return "; ".join(f"{v['flag']} vessel {v['name'] or v['mmsi']} ~{v['minutes']} min" for v in hits[:3]) or None
+    if t == "local":
+        v = (ctx.get("local") or {}).get(ind["field"])
+        if ind.get("nonempty"):
+            return ("; ".join(map(str, v[:2])) if isinstance(v, list) else str(v)) if v else None
+        if "any_of" in ind:
+            hits = [f"{d}: {r}" for d, r in (v or {}).items() if r in ind["any_of"]]
+            return "; ".join(hits) or None
+        return f"level {v}" if isinstance(v, (int, float)) and v >= ind["at_least"] else None
+    if t == "chokepoint":
+        hits = []
+        for n in ind["names"]:
+            c = (ctx.get("chokepoints") or {}).get(n) or {}
+            if c.get("change_pct") is not None and c["change_pct"] <= -ind["drop_pct"]:
+                hits.append(f"{n} {c['change_pct']:+.0f}% vs usual ({c['avg_7d']}/day)")
+        return "; ".join(hits) or None
+    if t == "pmarket":
+        jump = CONFIG["prediction_markets"]["jump_points"]
+        hits = [m for m in ctx.get("pmarkets") or [] if m["topic"] == ind["topic"]
+                and (m.get("change_24h") or 0) >= jump and m["yes_pct"] >= 10]
+        return "; ".join(f"{m['question'][:70]} {m['yes_pct']:.0f}% ({m['change_24h']:+.0f} pts)" for m in hits[:2]) or None
     if t == "acsc":
         return ctx["acsc_new"][0][:140] if ctx["acsc_new"] else None
     return None

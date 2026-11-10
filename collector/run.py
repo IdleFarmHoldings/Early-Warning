@@ -20,6 +20,8 @@ from rules import extra_metrics, evaluate  # noqa: E402
 from sources import fetch_all  # noqa: E402
 import precursors  # noqa: E402
 import maritime  # noqa: E402
+import localsa  # noqa: E402
+import foresight  # noqa: E402
 import satellites  # noqa: E402
 
 SERIES_DIR = ROOT / "data" / "series"
@@ -169,6 +171,41 @@ def cable_alerts(mar, state, now, first_run):
     return out
 
 
+def local_alerts(loc, state, now, first_run):
+    """Bushfire emergency warnings, extreme fire danger near Adelaide, and severe grid shortfalls in SA."""
+    sm = (loc or {}).get("summary") or {}
+    cd = state.setdefault("cooldown", {})
+    day = now.strftime("%Y-%m-%d")
+    out = []
+
+    def add(key, hours, title, message, priority, tag):
+        last = cd.get(key)
+        if last and now - datetime.strptime(last, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc) < timedelta(hours=hours):
+            return
+        cd[key] = iso(now)
+        if not first_run:
+            out.append({"key": key, "channels": ["proactive"], "category": "nature", "title": title[:90],
+                        "message": message[:390], "priority": priority, "confirmed": True, "tags": [tag]})
+
+    for w in sm.get("emergency_warnings", [])[:3]:
+        add("cfs-ew-" + "".join(ch for ch in w.lower() if ch.isalnum())[:40], 12, "CFS Emergency Warning",
+            f"{w}. Check alert.sa.gov.au and ABC Radio Adelaide 891 AM and follow CFS advice now.", 5, "fire")
+    for d, r in (sm.get("worst_fire_danger") or {}).items():
+        if r in CONFIG["local"]["fdr_alert"]:
+            add(f"fdr-{d}-{day}-{r}", 20, f"{r} fire danger: {d}",
+                f"{r} fire danger rating for {d}. Review your bushfire plan, avoid high-risk areas and keep "
+                "phones charged. Check cfs.sa.gov.au for total fire bans.", 4, "fire")
+    lvl = sm.get("grid_lor_level") or 0
+    if lvl >= 2:
+        kind = "Actual" if sm.get("grid_lor_actual") else "Forecast"
+        add(f"lor-{day}-{lvl}-{kind}", 12, f"Power supply tight in SA ({kind} LOR{lvl})",
+            f"AEMO has issued a {kind.lower()} lack of reserve level {lvl} notice for SA. "
+            + ("Rolling blackouts are possible; charge phones and power banks, and plan for medical devices."
+               if lvl >= 3 else "Supply is tight; blackouts are unlikely but possible if more generators fail."),
+            4 if lvl >= 3 or kind == "Actual" else 3, "zap")
+    return out
+
+
 def precursor_alerts(scenarios, prev_ind, state, now, first_run):
     """Alert when a scenario's warning-sign score first crosses the alert line (12 h cooldown)."""
     line = precursors.PLAYBOOK["alert_score"]
@@ -259,6 +296,27 @@ def main():
     except Exception as e:  # noqa: BLE001
         health["maritime"] = {"ok": False, "error": f"{type(e).__name__}: {e}"[:300]}
     alerts += cable_alerts(mar, state, now, first_run)
+    loc, chk, pm = {}, {}, {}
+    for name, fn in (("local_sa", lambda: localsa.fetch_local(state)), ("chokepoints", foresight.fetch_chokepoints),
+                     ("prediction_markets", lambda: foresight.fetch_markets(state, now))):
+        t0 = time.time()
+        try:
+            val = fn()
+            health[name] = {"ok": True, "secs": round(time.time() - t0, 1)}
+            if isinstance(val, dict) and val.get("errors"):
+                health[name]["partial_errors"] = val["errors"][:5]
+        except Exception as e:  # noqa: BLE001
+            val = {}
+            health[name] = {"ok": False, "error": f"{type(e).__name__}: {e}"[:300]}
+        if name == "local_sa":
+            loc = val
+        elif name == "chokepoints":
+            chk = val
+        else:
+            pm = val
+    if loc.get("samples"):
+        save_json("data/debug_samples.json", loc.pop("samples"))
+    alerts += local_alerts(loc, state, now, first_run)
     prev_ind = load_json("data/indicators.json", {})
     ctx = {
         "anomalies": anomalies,
@@ -275,6 +333,9 @@ def main():
         "who": results.get("who") or [],
         "cyber": (results.get("cyber") or {}).get("summary") or {},
         "maritime": mar,
+        "local": loc.get("summary") or {},
+        "chokepoints": chk,
+        "pmarkets": (pm or {}).get("markets") or [],
         "now": now,
     }
     scenarios = precursors.score_scenarios(ctx, {s["key"]: s["score"] for s in prev_ind.get("scenarios", [])})
@@ -316,6 +377,11 @@ def main():
     recent = load_json("data/latest.json", {}).get("recent_alerts", [])
     summary = summarise(results, health, anomalies, now)
     summary["recent_alerts"] = (log + recent)[:25]
+    summary["local_sa"] = loc
+    summary["chokepoints"] = {k: {kk: vv for kk, vv in v.items() if kk != "daily"} for k, v in chk.items()}
+    summary["prediction_markets"] = (pm or {}).get("markets")
+    if chk:
+        save_json("data/chokepoints.json", {"generated_at": iso(now), "chokepoints": chk})
     save_json("data/latest.json", summary)
     save_json("state/state.json", state)
 

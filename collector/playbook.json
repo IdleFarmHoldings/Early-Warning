@@ -22,6 +22,79 @@
   "lookback_hours": 72,
   "scenarios": [
     {
+      "key": "local",
+      "name": "Local emergency in SA (bushfire, heat, power)",
+      "sa_impact": "Direct: bushfires, heatwaves and power cuts are the emergencies most likely to affect the family. In the 2016 statewide blackout, power, phones, traffic lights and fuel pumps failed together.",
+      "why": "The worst local days stack up: extreme fire danger, a heatwave pushing power demand, a tight grid, and storms or fires damaging lines. AEMO warns of supply shortfalls hours to a day ahead; the CFS and Bureau issue ratings and warnings a day or more ahead.",
+      "indicators": [
+        {
+          "id": "ew",
+          "name": "CFS Emergency Warning in SA",
+          "type": "local",
+          "field": "emergency_warnings",
+          "nonempty": true,
+          "weight": 25,
+          "domain": "Bushfire"
+        },
+        {
+          "id": "wa",
+          "name": "CFS Watch and Act in SA",
+          "type": "local",
+          "field": "watch_and_act",
+          "nonempty": true,
+          "weight": 10,
+          "domain": "Bushfire"
+        },
+        {
+          "id": "fdr",
+          "name": "Extreme or Catastrophic fire danger near Adelaide",
+          "type": "local",
+          "field": "worst_fire_danger",
+          "any_of": [
+            "Extreme",
+            "Catastrophic"
+          ],
+          "weight": 20,
+          "domain": "Fire weather"
+        },
+        {
+          "id": "tfb",
+          "name": "Total fire ban for Adelaide or the Hills",
+          "type": "local",
+          "field": "fire_ban_districts",
+          "nonempty": true,
+          "weight": 10,
+          "domain": "Fire weather"
+        },
+        {
+          "id": "bom",
+          "name": "Bureau severe weather or heatwave warning for SA",
+          "type": "local",
+          "field": "bom_severe",
+          "nonempty": true,
+          "weight": 15,
+          "domain": "Weather"
+        },
+        {
+          "id": "grid",
+          "name": "Tight power supply in SA (AEMO lack of reserve, level 2+)",
+          "type": "local",
+          "field": "grid_lor_level",
+          "at_least": 2,
+          "weight": 20,
+          "domain": "Power grid"
+        },
+        {
+          "id": "tel",
+          "name": "Phone / internet carrier outage",
+          "type": "telecom",
+          "min": 20,
+          "weight": 10,
+          "domain": "Communications"
+        }
+      ]
+    },
+    {
       "key": "mideast",
       "name": "Middle East war & Gulf shipping",
       "sa_impact": "Fuel: Australia imports most of its fuel, much of it refined from Gulf crude in Asia. Shipping attacks or a Hormuz closure push up prices within days and can cause local shortages.",
@@ -177,6 +250,36 @@
           "of_interest": false,
           "weight": 5,
           "domain": "Undersea cables"
+        },
+        {
+          "id": "hormuz",
+          "name": "Ship traffic through Hormuz down sharply",
+          "type": "chokepoint",
+          "names": [
+            "Strait of Hormuz"
+          ],
+          "drop_pct": 30,
+          "weight": 15,
+          "domain": "Shipping"
+        },
+        {
+          "id": "redsea",
+          "name": "Ship traffic through Bab el-Mandeb down sharply",
+          "type": "chokepoint",
+          "names": [
+            "Bab el-Mandeb Strait"
+          ],
+          "drop_pct": 30,
+          "weight": 5,
+          "domain": "Shipping"
+        },
+        {
+          "id": "pm",
+          "name": "Forecast markets jump on Iran conflict",
+          "type": "pmarket",
+          "topic": "mideast",
+          "weight": 10,
+          "domain": "Prediction markets"
         }
       ]
     },
@@ -399,6 +502,26 @@
           ],
           "weight": 10,
           "domain": "Undersea cables"
+        },
+        {
+          "id": "straits",
+          "name": "Ship traffic through Taiwan / Luzon Strait down sharply",
+          "type": "chokepoint",
+          "names": [
+            "Taiwan Strait",
+            "Luzon Strait"
+          ],
+          "drop_pct": 30,
+          "weight": 15,
+          "domain": "Shipping"
+        },
+        {
+          "id": "pm",
+          "name": "Forecast markets jump on China-Taiwan conflict",
+          "type": "pmarket",
+          "topic": "taiwan",
+          "weight": 10,
+          "domain": "Prediction markets"
         }
       ]
     },
@@ -498,6 +621,14 @@
           "ratio": 1.4,
           "weight": 10,
           "domain": "Space"
+        },
+        {
+          "id": "pm",
+          "name": "Forecast markets jump on Korea conflict",
+          "type": "pmarket",
+          "topic": "korea",
+          "weight": 10,
+          "domain": "Prediction markets"
         }
       ]
     },
@@ -726,6 +857,14 @@
           ],
           "weight": 10,
           "domain": "Undersea cables"
+        },
+        {
+          "id": "pm",
+          "name": "Forecast markets jump on Russia-NATO conflict",
+          "type": "pmarket",
+          "topic": "russia",
+          "weight": 10,
+          "domain": "Prediction markets"
         }
       ]
     },
@@ -822,6 +961,14 @@
             "leave cancelled",
             "leave canceled"
           ]
+        },
+        {
+          "id": "pm",
+          "name": "Forecast markets jump on nuclear use",
+          "type": "pmarket",
+          "topic": "nuclear",
+          "weight": 15,
+          "domain": "Prediction markets"
         }
       ]
     },
@@ -933,6 +1080,19 @@
           ],
           "weight": 10,
           "domain": "Undersea cables"
+        },
+        {
+          "id": "malacca",
+          "name": "Ship traffic through Malacca / Sunda / Lombok down sharply",
+          "type": "chokepoint",
+          "names": [
+            "Malacca Strait",
+            "Sunda Strait",
+            "Lombok Strait"
+          ],
+          "drop_pct": 30,
+          "weight": 10,
+          "domain": "Shipping"
         }
       ]
     },

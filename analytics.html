@@ -178,6 +178,18 @@ td.num{font-family:var(--mono);text-align:right}
   </section>
 
   <section class="panel">
+    <h2>Shipping chokepoints</h2>
+    <p class="note">Ships passing through the straits that carry Australia's fuel and trade, per day (IMF PortWatch, from satellite ship tracking; updated weekly, so the last few days lag). A drop of 30% or more against the previous two months is a warning sign.</p>
+    <div class="mini-grid" id="chkMinis"><p class="empty">Loading…</p></div>
+  </section>
+
+  <section class="panel">
+    <h2>Prediction markets</h2>
+    <p class="note">What traders on Polymarket are betting on conflict questions. A jump of 10+ points in a day often reflects news or rumours before they are widely reported. These are bets, not facts.</p>
+    <div class="tbl" id="pmTbl"><p class="empty">Loading…</p></div>
+  </section>
+
+  <section class="panel">
     <h2>Sector signals</h2>
     <p class="note">Stock baskets vs their market over 5 trading days. Before COVID, mask, hazmat and vaccine makers jumped weeks before markets fell; defence stocks tend to rise as conflicts escalate. Outperformance by several points is a corroborating sign, never proof on its own.</p>
     <div class="mini-grid" id="secMinis"></div>
@@ -298,6 +310,24 @@ function lineChart(canvas, labels, datasets, opts={}){
   const MIL = [["mil_total","All military aircraft"],["tankers","Refuelling tankers"],["airlift","Military transports"],["raaf","RAAF aircraft"],
     ["mil_mideast","Middle East & Gulf"],["mil_eeurope","Eastern Europe & Black Sea"],["mil_korea","Korea & Japan"],["mil_taiwan","Taiwan & S. China Sea"],["mil_auspng","Australia & PNG"],["nc3","US nuclear command"]];
   minis($("milMinis"), MIL.map(([k,n])=>({key:k, name:n, now:det[k]})));
+
+  // Chokepoints
+  const chk = await get("data/chokepoints.json");
+  const cps = Object.entries((chk&&chk.chokepoints)||{});
+  if(cps.length){
+    $("chkMinis").innerHTML = cps.map(([n,c],i)=>`<div class="mini"><div class="row"><span>${esc(n)}</span><span class="v">${c.avg_7d}</span></div>
+      <div class="muted" style="font-size:.78rem">ships/day, 7-day avg · usual ${c.usual_7d??"—"}${c.change_pct!=null?` · <b style="color:${c.change_pct<=-30?css("--critical"):c.change_pct<=-15?css("--serious"):css("--muted")}">${c.change_pct>0?"+":""}${c.change_pct}%</b>`:""} · to ${esc(c.last_date)}</div>
+      <div class="chart"><canvas id="chk-${i}"></canvas></div></div>`).join("");
+    cps.forEach(([n,c],i)=>{ const d=c.daily||[]; lineChart($(`chk-${i}`), d.map(x=>x.date.slice(5)), [{label:n, data:d.map(x=>x.n), borderColor:c.change_pct<=-30?css("--critical"):css("--s1"), backgroundColor:css("--s1")}], {mini:true}); });
+  } else { $("chkMinis").innerHTML = `<p class="empty">Shipping data arrives with the next collector run.</p>`; }
+
+  // Prediction markets
+  const pms = (lat&&lat.prediction_markets)||[];
+  const TOPIC = {mideast:"Middle East",taiwan:"Taiwan",russia:"Russia–NATO",korea:"Korea",nuclear:"Nuclear"};
+  $("pmTbl").innerHTML = pms.length ? `<table><thead><tr><th>Question</th><th>Topic</th><th>Chance</th><th>24 h</th></tr></thead><tbody>${
+    pms.slice(0,20).map(m=>`<tr><td><a href="${esc(/^https:\/\/polymarket\.com\//.test(m.url)?m.url:"#")}" target="_blank" rel="noopener">${esc(m.question)}</a></td><td>${esc(TOPIC[m.topic]||m.topic)}</td><td class="num">${m.yes_pct}%</td>
+    <td class="num">${m.change_24h==null?"…":`<span style="color:${Math.abs(m.change_24h)>=10?css("--critical"):"inherit"}">${m.change_24h>0?"+":""}${m.change_24h}</span>`}</td></tr>`).join("")}</tbody></table>
+    <p class="note" style="margin-top:6px">24-hour changes appear after a day of tracking.</p>` : `<p class="empty">Prediction-market data arrives with the next collector run.</p>`;
 
   const sec = (lat&&lat.sectors)||{};
   $("secMinis").innerHTML = "";
