@@ -195,6 +195,11 @@ def local_alerts(loc, state, now, first_run):
             add(f"fdr-{d}-{day}-{r}", 20, f"{r} fire danger: {d}",
                 f"{r} fire danger rating for {d}. Review your bushfire plan, avoid high-risk areas and keep "
                 "phones charged. Check cfs.sa.gov.au for total fire bans.", 4, "fire")
+    if sm.get("possible_blackout"):
+        add(f"blackout-{now:%Y%m%d%H}", 3, "UNCONFIRMED: possible large power outage in SA",
+            f"SA electricity demand fell {sm.get('grid_demand_fall_pct')}% in under an hour to {sm.get('grid_demand_mw')} MW "
+            f"(usual ~{sm.get('grid_demand_usual_mw') or '?'} MW). A sudden fall like this can mean a large blackout. "
+            "Charge phones now if you still have power; check SA Power Networks and ABC 891.", 4, "zap")
     lvl = sm.get("grid_lor_level") or 0
     if lvl >= 2:
         kind = "Actual" if sm.get("grid_lor_actual") else "Forecast"

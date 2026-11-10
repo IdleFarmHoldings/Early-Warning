@@ -369,6 +369,7 @@ function renderLatest(l){
     if(ls.reservoirs_pct!=null) h += rowL("Adelaide reservoirs", `${ls.reservoirs_pct}% full${ls.reservoirs_as_of?` · ${ls.reservoirs_as_of}`:""}`, ls.reservoirs_pct<30?"var(--l4)":ls.reservoirs_pct<50?"var(--l3)":"var(--l2)", ls.reservoirs_pct>=30&&ls.reservoirs_pct<50);
     const newsItems = [...pn.map(t=>"Power: "+t), ...wn.map(t=>"Water: "+t), ...mn.map(t=>"River Murray: "+t)];
     if(newsItems.length) h += `<details style="margin-top:6px"><summary>Power &amp; water reports (${newsItems.length})</summary><ul style="margin:6px 0 0;padding-left:1.1em;font-size:.84rem">${newsItems.map(t=>`<li>${esc(t)}</li>`).join("")}</ul></details>`;
+    if(ls.grid_demand_mw!=null) h += rowL("Grid demand (SA)", ls.possible_blackout?`Sudden fall: ${ls.grid_demand_mw} MW`:`${ls.grid_demand_mw} MW${ls.grid_demand_usual_mw?` · usual ~${ls.grid_demand_usual_mw}`:""}`, ls.possible_blackout?"var(--l5)":"var(--l2)");
     h += rowL("Power supply (SA)", lvl>=3?"Critical (LOR3)":lvl===2?"Tight (LOR2)":lvl===1?"Watch (LOR1)":"Normal", lvl>=3?"var(--l5)":lvl===2?"var(--l4)":lvl===1?"var(--l3)":"var(--l2)", lvl===1);
     const ew=(ls.emergency_warnings||[]).length, wa=(ls.watch_and_act||[]).length;
     h += rowL("CFS warnings", ew?`${ew} Emergency`:wa?`${wa} Watch and Act`:`None · ${ls.fires_active||0} fires active`, ew?"var(--l5)":wa?"var(--l4)":"var(--l2)");

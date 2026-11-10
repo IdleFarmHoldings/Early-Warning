@@ -460,3 +460,17 @@ def test_sapn_parse():
     import localsa
     assert localsa.parse_sapn('["ADELAIDE", "Norwood", "adelaide"]') == {"suburbs": ["Adelaide", "Norwood"], "suburb_count": 2}
     assert localsa.parse_sapn('{"Suburbs": [{"SuburbName": "GLENELG"}]}')["suburbs"] == ["Glenelg"]
+
+
+def test_sa_demand():
+    from datetime import datetime, timezone
+    import localsa
+    csv_text = ('C,NEMP.WORLD,DISPATCHIS\nI,DISPATCH,REGIONSUM,8,SETTLEMENTDATE,RUNNO,REGIONID,DISPATCHINTERVAL,INTERVENTION,TOTALDEMAND\n'
+                'D,DISPATCH,REGIONSUM,8,"2026/11/10 22:05:00",1,NSW1,1,0,8000\nD,DISPATCH,REGIONSUM,8,"2026/11/10 22:05:00",1,SA1,1,0,1432.5\n')
+    assert localsa.parse_dispatch_demand(csv_text) == ("2026/11/10 22:05:00", 1432.5)
+    now = datetime(2026, 11, 10, 12, 0, tzinfo=timezone.utc)
+    ts = lambda m: (now - timedelta(minutes=m)).strftime("%Y-%m-%dT%H:%M:%SZ")
+    hist = [[ts(30), 1500]] + [[ts(1440 * d), 1450] for d in (1, 2, 3)]
+    assert localsa.demand_status(now, 1400, hist)["possible_blackout"] is False
+    s = localsa.demand_status(now, 300, hist)
+    assert s["possible_blackout"] and s["usual_mw"] == 1450 and s["fall_pct_30min"] == 80.0

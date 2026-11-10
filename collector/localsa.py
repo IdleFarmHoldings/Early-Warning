@@ -450,6 +450,64 @@ def discover_sapn(samples):
     raise RuntimeError("SA Power Networks outage data not found yet (see debug sample)")
 
 
+# ---------- SA electricity demand (AEMO 5-minute dispatch, open data) ----------
+DISPATCH_DIR = "https://nemweb.com.au/Reports/Current/DispatchIS_Reports/"
+
+
+def parse_dispatch_demand(csv_text, region="SA1"):
+    """AEMO DISPATCHIS file -> (settlement time, total demand MW) for the region (non-intervention run)."""
+    header = None
+    for line in csv_text.splitlines():
+        f = line.strip().split(",")
+        if len(f) < 4 or f[1] != "DISPATCH" or f[2] != "REGIONSUM":
+            continue
+        if f[0] == "I":
+            header = f
+        elif f[0] == "D" and header:
+            row = dict(zip(header, f))
+            if row.get("REGIONID") == region and row.get("INTERVENTION", "0") == "0":
+                return row.get("SETTLEMENTDATE", "").strip('"'), float(row["TOTALDEMAND"])
+    raise ValueError("no REGIONSUM row for " + region)
+
+
+def demand_status(now, mw, hist, drop_pct=30, low_ratio=0.6):
+    """Compare current SA demand with 15-45 minutes ago and with the same time of day over the past week.
+    A large blackout shows as a sudden fall to well below normal; rooftop-solar changes are slower."""
+    from datetime import datetime, timedelta
+    def t(x):
+        return datetime.strptime(x, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=now.tzinfo)
+    recent = [m for ts, m in hist if timedelta(minutes=10) <= now - t(ts) <= timedelta(minutes=50)]
+    same = [m for (ts, m) in hist if now - t(ts) >= timedelta(hours=20) and
+            min((now - t(ts)) % timedelta(days=1), timedelta(days=1) - (now - t(ts)) % timedelta(days=1)) <= timedelta(minutes=40)]
+    usual = sorted(same)[len(same) // 2] if len(same) >= 3 else None
+    prev = max(recent) if recent else None
+    fall = round((prev - mw) / prev * 100, 1) if prev and prev > 0 else None
+    sudden = fall is not None and fall >= drop_pct and (usual is None or mw < usual * low_ratio)
+    return {"mw": round(mw), "usual_mw": round(usual) if usual else None, "fall_pct_30min": fall, "possible_blackout": sudden}
+
+
+def fetch_demand(state):
+    from datetime import datetime, timedelta, timezone
+    import io
+    import zipfile
+    listing = http_get(DISPATCH_DIR, timeout=30).decode("utf-8", "replace")
+    files = sorted(set(re.findall(r'href="([^"]*PUBLIC_DISPATCHIS_[^"]*\.zip)"', listing, re.I)))
+    if not files:
+        raise RuntimeError("no dispatch files listed")
+    f = files[-1]
+    url = f if f.startswith("http") else "https://nemweb.com.au" + (f if f.startswith("/") else "/Reports/Current/DispatchIS_Reports/" + f)
+    z = zipfile.ZipFile(io.BytesIO(http_get(url, timeout=30)))
+    when, mw = parse_dispatch_demand(z.read(z.namelist()[0]).decode("utf-8", "replace"))
+    now = datetime.now(timezone.utc)
+    hist = state.setdefault("sa_demand", [])
+    st = demand_status(now, mw, hist)
+    hist.append([now.strftime("%Y-%m-%dT%H:%M:%SZ"), round(mw)])
+    cutoff = (now - timedelta(days=8)).strftime("%Y-%m-%dT%H:%M:%SZ")
+    state["sa_demand"] = [h for h in hist if h[0] >= cutoff][-1000:]
+    st["interval"] = when
+    return st
+
+
 def fetch_local(state):
     lc = CONFIG["local"]
     out, errors, samples = {}, [], {}
@@ -503,6 +561,7 @@ def fetch_local(state):
     part("grid", lambda: fetch_aemo(state))
     part("roads", lambda: fetch_roads(samples))
     part("ed", lambda: discover_ed(samples))
+    part("demand", lambda: fetch_demand(state))
     part("reservoirs", lambda: fetch_reservoirs(state, samples, __import__("common").iso()))
     # SA Power Networks' outage list refuses automated requests (HTTP 403), so it is not polled;
     # widespread outages are picked up through the "sapn" news watch instead.
@@ -531,6 +590,10 @@ def fetch_local(state):
         "ed_known": len(out.get("ed") or []),
         "power_out_suburbs": (out.get("sapn") or {}).get("suburb_count"),
         "power_out_list": ((out.get("sapn") or {}).get("suburbs") or [])[:30],
+        "grid_demand_mw": (out.get("demand") or {}).get("mw"),
+        "grid_demand_usual_mw": (out.get("demand") or {}).get("usual_mw"),
+        "grid_demand_fall_pct": (out.get("demand") or {}).get("fall_pct_30min"),
+        "possible_blackout": bool((out.get("demand") or {}).get("possible_blackout")),
         "reservoirs_pct": (out.get("reservoirs") or {}).get("total_pct"),
         "reservoirs_as_of": (out.get("reservoirs") or {}).get("as_of"),
         "reservoirs_low": (out.get("reservoirs") or {}).get("low") or [],

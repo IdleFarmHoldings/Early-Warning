@@ -136,6 +136,15 @@
           "nonempty": true,
           "weight": 5,
           "domain": "Water"
+        },
+        {
+          "id": "blackout",
+          "name": "Sudden fall in SA electricity demand (possible large blackout)",
+          "type": "local",
+          "field": "possible_blackout",
+          "at_least": 1,
+          "weight": 25,
+          "domain": "Power grid"
         }
       ]
     },
@@ -1138,6 +1147,15 @@
           "drop_pct": 30,
           "weight": 10,
           "domain": "Shipping"
+        },
+        {
+          "id": "blackout",
+          "name": "Sudden fall in SA electricity demand (possible large blackout)",
+          "type": "local",
+          "field": "possible_blackout",
+          "at_least": 1,
+          "weight": 25,
+          "domain": "Power grid"
         }
       ]
     },
@@ -1429,6 +1447,15 @@
           "min": 20,
           "weight": 10,
           "domain": "Communications"
+        },
+        {
+          "id": "blackout",
+          "name": "Sudden fall in SA electricity demand (possible large blackout)",
+          "type": "local",
+          "field": "possible_blackout",
+          "at_least": 1,
+          "weight": 25,
+          "domain": "Power grid"
         }
       ]
     },
