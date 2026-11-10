@@ -495,3 +495,60 @@ def test_cable_two_stage():
     st3 = {}
     run.cable_alerts(mar, st3, now, False, ok, {})
     assert run.cable_alerts({}, st3, now + timedelta(hours=13), False, bad, {}) == [], "watch expires after 12 h"
+
+
+def test_outbox_bad_files_and_retries(tmp_path, monkeypatch):
+    """A bad outbox file is set aside without stopping anything; an alert that fails to send is kept and retried."""
+    import json as _json
+    import run
+    import common
+    monkeypatch.setattr(run, "ROOT", tmp_path)
+    monkeypatch.setattr(common, "ROOT", tmp_path)
+    ob, sent = tmp_path / "alerts" / "outbox", tmp_path / "alerts" / "sent"
+    ob.mkdir(parents=True)
+    now = now_utc().replace(second=0, microsecond=0)
+    calls = []
+    ok = {"proactive": True, "reactive": True}
+
+    def fake_push(channel, title, message, **kw):
+        calls.append((channel, title, kw.get("priority")))
+        return ok[channel]
+    monkeypatch.setattr(run, "push", fake_push)
+
+    (ob / "a-no-title.json").write_text(_json.dumps({"channel": "proactive", "message": "hi"}))
+    (ob / "b-list.json").write_text("[1, 2]")
+    (ob / "c-broken.json").write_text("{not json")
+    (ob / "d-good.json").write_text(_json.dumps({"channel": " Proactive ", "title": "Good", "message": "m", "priority": 9}))
+    out = run.relay_outbox(now, False)
+    assert [a["title"] for a in out] == ["Good"], "bad files do not block the good one"
+    assert calls == [("proactive", "Good", 5)], "channel name tidied (never falls through to Confirmed only); priority capped"
+    assert sorted(p.name for p in sent.glob("*.invalid.json")) == ["a-no-title.invalid.json", "b-list.invalid.json", "c-broken.invalid.json"]
+    assert not list(ob.glob("*.json"))
+
+    # delivery fails on one channel: the file stays, is not logged yet, and is not rewritten on every retry
+    calls.clear()
+    ok["reactive"] = False
+    (ob / "e-both.json").write_text(_json.dumps({"channel": "both", "title": "Both", "message": "m", "priority": 2}))
+    assert run.relay_outbox(now, False) == [] and (ob / "e-both.json").exists()
+    kept = (ob / "e-both.json").read_text()
+    assert _json.loads(kept)["delivered"] == ["proactive"] and _json.loads(kept)["first_failed_at"] == iso(now)
+    assert run.relay_outbox(now + timedelta(minutes=1), False) == [] and (ob / "e-both.json").read_text() == kept
+    assert [c[0] for c in calls] == ["proactive", "reactive", "reactive"], "the channel that got it is not sent it again"
+    ok["reactive"] = True
+    out = run.relay_outbox(now + timedelta(minutes=2), False)
+    assert len(out) == 1 and out[0]["sent"] == {"proactive": True, "reactive": True} and not list(ob.glob("*.json"))
+    assert (sent / "e-both.json").exists()
+
+    # still failing after the retry window: filed as undelivered so it shows in the log instead of vanishing
+    ok["proactive"] = False
+    (ob / "f-late.json").write_text(_json.dumps({"channel": "proactive", "title": "Late", "message": "m"}))
+    assert run.relay_outbox(now, False) == []
+    out = run.relay_outbox(now + timedelta(hours=run.RETRY_HOURS, minutes=1), False)
+    assert len(out) == 1 and out[0]["undelivered"] == ["proactive"] and not list(ob.glob("*.json"))
+
+    # a collector alert that failed to send is queued for the relay to retry
+    p = run.queue_retry({"id": "20261111T0000-x", "channels": ["proactive"], "sent": {"proactive": False}, "title": "T",
+                         "message": "M", "priority": 4, "tags": ["fire"]}, now)
+    q = _json.loads(p.read_text())
+    assert q["channel"] == "proactive" and q["priority"] == 4 and q["source"] == "collector"
+    assert run.queue_retry({"id": "y", "channels": ["proactive"], "sent": {"proactive": True}, "title": "T", "message": "M"}, now) is None

@@ -4,6 +4,7 @@ import os
 import time
 import urllib.request
 import urllib.error
+import http.client
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -84,7 +85,7 @@ def push(channel, title, message, priority=3, tags=None, click=None, dry_run=Fal
         try:
             with urllib.request.urlopen(req, timeout=20):
                 return True
-        except (urllib.error.URLError, TimeoutError) as e:
+        except (OSError, http.client.HTTPException) as e:  # includes URLError, timeouts and dropped connections
             print(f"ntfy attempt {attempt + 1} failed: {e}")
             time.sleep(3)
     return False

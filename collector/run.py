@@ -75,21 +75,84 @@ def relay_outbox(now, dry_run):
     sent_dir.mkdir(parents=True, exist_ok=True)
     for p in sorted(outbox.glob("*.json")):
         try:
-            a = json.loads(p.read_text())
-        except json.JSONDecodeError:
-            p.rename(sent_dir / (p.stem + ".invalid.json"))
+            a = _relay_one(p, sent_dir, now, dry_run)
+        except Exception as e:  # noqa: BLE001 - one bad file must never stop the collector or the other alerts
+            print(f"outbox: could not handle {p.name}: {type(e).__name__}: {e}")
+            try:
+                p.rename(sent_dir / (p.stem + ".invalid.json"))
+            except OSError:
+                pass
             continue
-        ch = a.get("channel", "proactive")
-        a["channels"] = ["proactive", "reactive"] if ch == "both" else [ch]
-        a.setdefault("tags", ["memo"])
-        a["id"] = alert_id({"id": p.stem}, now)
-        a["sent"] = send(a, dry_run)
-        a["sent_at"] = iso(now)
-        a["source"] = "analysis"
-        (sent_dir / p.name).write_text(json.dumps(a, indent=2) + "\n")
-        p.unlink()
-        out.append(a)
+        if a:
+            out.append(a)
     return out
+
+
+RETRY_HOURS = 6  # keep trying an undelivered alert for this long, then file it as undelivered
+
+
+def _relay_one(p, sent_dir, now, dry_run):
+    """Deliver one outbox file. Returns the alert once it is finished with (delivered, or given up on);
+    returns None while it is still waiting for a retry. Unusable files are set aside as *.invalid.json."""
+    try:
+        a = json.loads(p.read_text())
+    except (json.JSONDecodeError, UnicodeDecodeError):
+        a = None
+    if not isinstance(a, dict) or not str(a.get("title") or "").strip() or not str(a.get("message") or "").strip():
+        print(f"outbox: {p.name} is not a usable alert (needs a title and a message); set aside")
+        p.rename(sent_dir / (p.stem + ".invalid.json"))
+        return None
+    a["title"], a["message"] = str(a["title"]).strip(), str(a["message"]).strip()
+    ch = str(a.get("channel") or "proactive").strip().lower()
+    wanted = ["proactive", "reactive"] if ch == "both" else [ch if ch in ("proactive", "reactive") else "proactive"]
+    done = [c for c in a.get("delivered") or [] if c in wanted]  # channels that got through on an earlier try
+    try:
+        a["priority"] = min(5, max(1, int(a.get("priority", 3))))
+    except (TypeError, ValueError):
+        a["priority"] = 3
+    if not isinstance(a.get("tags"), list) or not a["tags"]:
+        a["tags"] = ["memo"]
+    a["tags"] = [str(t) for t in a["tags"]][:5]
+    a["id"] = alert_id({"id": p.stem}, now)
+    a["channels"] = [c for c in wanted if c not in done]
+    result = send(a, dry_run)
+    a["channels"] = wanted
+    a["sent"] = {**{c: True for c in done}, **result}
+    failed = [c for c in wanted if not a["sent"].get(c)]
+    if failed and not dry_run:
+        first = a.get("first_failed_at") or iso(now)
+        age = now - datetime.strptime(first, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
+        if age < timedelta(hours=RETRY_HOURS):
+            delivered = [c for c in wanted if a["sent"].get(c)]
+            if a.get("first_failed_at") != first or (a.get("delivered") or []) != delivered:
+                keep = {k: v for k, v in a.items() if k not in ("channels", "sent", "id")}
+                keep.update(first_failed_at=first, delivered=delivered)
+                p.write_text(json.dumps(keep, indent=2) + "\n")  # written once, so retries do not create commits
+            print(f"outbox: {p.name} not delivered to {', '.join(failed)}; will retry")
+            return None
+        a["undelivered"] = failed
+        print(f"outbox: giving up on {p.name} after {RETRY_HOURS} h (not delivered to {', '.join(failed)})")
+    a["sent_at"] = iso(now)
+    a.setdefault("source", "analysis")
+    a.pop("delivered", None)
+    (sent_dir / p.name).write_text(json.dumps(a, indent=2) + "\n")
+    p.unlink()
+    return a
+
+
+def queue_retry(alert, now):
+    """A collector alert that did not reach every channel is put in the outbox so the relay keeps trying."""
+    failed = [c for c in alert["channels"] if not alert["sent"].get(c)]
+    if not failed:
+        return None
+    outbox = ROOT / "alerts" / "outbox"
+    outbox.mkdir(parents=True, exist_ok=True)
+    p = outbox / f"{alert['id']}-retry.json"
+    p.write_text(json.dumps({
+        "channel": "both" if len(failed) == 2 else failed[0], "title": alert["title"], "message": alert["message"],
+        "priority": alert.get("priority", 3), "tags": alert.get("tags") or ["memo"], "source": "collector",
+        "first_failed_at": iso(now)}, indent=2) + "\n")
+    return p
 
 
 def summarise(results, health, anomalies, now):
@@ -399,7 +462,12 @@ def main():
         a["at"] = a["sent_at"] = iso(now)
         a["source"] = "collector"
         log.append(a)
-    log += relay_outbox(now, args.dry_run)
+        if not args.dry_run:
+            queue_retry(a, now)
+    try:
+        log += relay_outbox(now, args.dry_run)
+    except Exception as e:  # noqa: BLE001 - never lose this check's data or its "already alerted" record
+        print(f"outbox relay failed: {type(e).__name__}: {e}")
     welcomed = set(state.get("welcomed", []))
     for ch in ("proactive", "reactive"):
         if ch not in welcomed and push(ch, "Early Warning connected",
