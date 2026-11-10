@@ -474,3 +474,24 @@ def test_sa_demand():
     assert localsa.demand_status(now, 1400, hist)["possible_blackout"] is False
     s = localsa.demand_status(now, 300, hist)
     assert s["possible_blackout"] and s["usual_mw"] == 1450 and s["fall_pct_30min"] == 80.0
+
+
+def test_cable_two_stage():
+    import run
+    now = now_utc().replace(second=0, microsecond=0)
+    mar = {"loitering": [{"mmsi": 413000001, "name": "XIN HAI", "flag": "China", "zone": "syd_n", "minutes": 70, "of_interest": True}]}
+    ok = {"Telstra": {"bgp": {"drop_pct": 1.0, "baseline": 50000}}}
+    bad = {"Telstra": {"bgp": {"drop_pct": 14.0, "baseline": 50000}}}
+    state = {}
+    assert run.cable_alerts(mar, state, now, False, ok, {}) == [], "loitering alone only watches"
+    assert "413000001" in state["cable_watch"]
+    al = run.cable_alerts({}, state, now + timedelta(hours=2), False, bad, {})
+    assert len(al) == 1 and "Telstra network down about 14%" in al[0]["message"] and "XIN HAI" in al[0]["message"]
+    assert run.cable_alerts({}, state, now + timedelta(hours=3), False, bad, {}) == [], "12 h cooldown"
+    st2 = {}
+    run.cable_alerts(mar, st2, now, False, ok, {})
+    news = {"cables": {"items": [{"title": "Undersea cable between Sydney and Guam damaged - ABC"}]}}
+    assert len(run.cable_alerts({}, st2, now + timedelta(hours=1), False, ok, news)) == 1
+    st3 = {}
+    run.cable_alerts(mar, st3, now, False, ok, {})
+    assert run.cable_alerts({}, st3, now + timedelta(hours=13), False, bad, {}) == [], "watch expires after 12 h"

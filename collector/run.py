@@ -146,29 +146,51 @@ def recent_titles(items, now, hours):
     return out
 
 
-def cable_alerts(mar, state, now, first_run):
-    """Vessels from flags of interest loitering over Australian cable corridors (unconfirmed)."""
+def cable_alerts(mar, state, now, first_run, telecom=None, news=None):
+    """Two stages. WATCH: a vessel from a flag of interest loitering over an Australian cable corridor goes on a
+    watch list (dashboard only, no phone alert). ESCALATE: if a watched vessel was seen in the last 12 hours AND
+    there is a comms symptom (an Australian carrier down 10%+, or reports of cable damage near Australia),
+    send one alert."""
     mc = CONFIG["maritime"]
     regions = {z["key"]: z["region"] for z in mc["zones"]}
-    cd = state.setdefault("cooldown", {})
-    out = []
+    names = {z["key"]: z["name"] for z in mc["zones"]}
+    watch = state.setdefault("cable_watch", {})
     for v in (mar or {}).get("loitering", []):
-        if not v["of_interest"] or regions.get(v["zone"]) != "Australia" or v["minutes"] < mc["alert_minutes"]:
-            continue
-        key = f"cable-{v['mmsi']}"
-        last = cd.get(key)
-        if last and now - datetime.strptime(last, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc) < timedelta(hours=12):
-            continue
-        cd[key] = iso(now)
-        if first_run:
-            continue
-        zname = next(z["name"] for z in mc["zones"] if z["key"] == v["zone"])
-        out.append({"key": key, "channels": ["proactive"], "category": "cyber",
-                    "title": "UNCONFIRMED: vessel loitering over undersea cables",
-                    "message": (f"{v['flag']}-flagged vessel {v['name'] or v['mmsi']} has been slow or stopped in the {zname} "
-                                f"for about {v['minutes']} min. Cable damage would disrupt internet and phone links. Watching.")[:390],
-                    "priority": 4, "confirmed": False, "tags": ["anchor"]})
-    return out
+        if v["of_interest"] and regions.get(v["zone"]) == "Australia" and v["minutes"] >= mc["alert_minutes"]:
+            w = watch.setdefault(str(v["mmsi"]), {"first": iso(now)})
+            w.update({"last": iso(now), "name": v["name"] or str(v["mmsi"]), "flag": v["flag"], "zone": names[v["zone"]],
+                      "minutes": v["minutes"]})
+    cutoff = iso(now - timedelta(hours=12))
+    for m in [m for m, w in watch.items() if w["last"] < cutoff]:
+        del watch[m]
+    if not watch:
+        return []
+    symptoms = []
+    for name, row in (telecom or {}).items():
+        d = [row[ds]["drop_pct"] for ds in ("ping-slash24", "bgp") if isinstance(row.get(ds), dict)
+             and row[ds].get("drop_pct") is not None and (row[ds].get("baseline") or 0) >= 50]
+        if d and max(d) >= mc.get("comms_drop_pct", 10):
+            symptoms.append(f"{name} network down about {round(max(d))}%")
+    for it in ((news or {}).get("cables") or {}).get("items", []):
+        t = it.get("title", "").rsplit(" - ", 1)[0]
+        if re.search(r"cable", t, re.I) and re.search(r"Australia|Australian|Pacific|Sydney|Perth|Darwin|Tasmania|Indonesia|Singapore|Guam", t):
+            symptoms.append(f"report: {t[:90]}")
+            break
+    if not symptoms:
+        return []
+    cd = state.setdefault("cooldown", {})
+    last = cd.get("cable-escalation")
+    if last and now - datetime.strptime(last, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc) < timedelta(hours=12):
+        return []
+    cd["cable-escalation"] = iso(now)
+    if first_run:
+        return []
+    v = sorted(watch.values(), key=lambda w: w["last"])[-1]
+    return [{"key": "cable-escalation", "channels": ["proactive"], "category": "cyber",
+             "title": "UNCONFIRMED: possible undersea cable incident",
+             "message": (f"{v['flag']}-flagged vessel {v['name']} loitered in the {v['zone']}, and now: {'; '.join(symptoms[:2])}. "
+                         "Internet and phone services may be disrupted; keep phones charged and some cash on hand.")[:390],
+             "priority": 4, "confirmed": False, "tags": ["anchor"]}]
 
 
 def local_alerts(loc, state, now, first_run):
@@ -300,7 +322,6 @@ def main():
         health["maritime"] = {"ok": True, "secs": round(time.time() - t0, 1)}
     except Exception as e:  # noqa: BLE001
         health["maritime"] = {"ok": False, "error": f"{type(e).__name__}: {e}"[:300]}
-    alerts += cable_alerts(mar, state, now, first_run)
     loc, chk, pm = {}, {}, {}
     for name, fn in (("local_sa", lambda: localsa.fetch_local(state)), ("chokepoints", foresight.fetch_chokepoints),
                      ("prediction_markets", lambda: foresight.fetch_markets(state, now))):
@@ -329,6 +350,10 @@ def main():
     if loc.get("samples"):
         save_json("data/debug_samples.json", loc.pop("samples"))
     alerts += local_alerts(loc, state, now, first_run)
+    alerts += cable_alerts(mar, state, now, first_run, (results.get("telecom") or {}).get("networks"),
+                           (results.get("news_watch") or {}).get("watch"))
+    if loc.get("summary") is not None:
+        loc["summary"]["cable_watch"] = [f"{w['flag']} vessel {w['name']} ({w['zone']})" for w in state.get("cable_watch", {}).values()]
     prev_ind = load_json("data/indicators.json", {})
     ctx = {
         "anomalies": anomalies,
