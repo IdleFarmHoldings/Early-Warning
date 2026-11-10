@@ -10,7 +10,7 @@ from common import CONFIG, http_get
 CFS_INCIDENTS = "https://data.eso.sa.gov.au/prod/cfs/criimson/cfs_current_incidents.json"
 CFS_CAP = "https://data.eso.sa.gov.au/feeds/prod/cap-au.xml"
 CFS_FDR = "https://data.eso.sa.gov.au/prod/cfs/criimson/fireDangerRating.xml"
-BOM_SA = "http://www.bom.gov.au/fwo/IDZ00057.warnings_sa.xml"
+BOM_SA = "ftp://ftp.bom.gov.au/anon/gen/fwo/IDZ00057.warnings_sa.xml"  # BoM's public FTP is meant for automated access
 NEMWEB_NOTICES = "https://nemweb.com.au/Reports/Current/Market_Notice/"
 
 LEVELS = ["Emergency Warning", "Watch and Act", "Advice"]
@@ -168,7 +168,9 @@ def fetch_local(state):
 
     def fdr():
         raw = http_get(CFS_FDR, timeout=30)
-        samples["cfs_fdr"] = raw[:2500].decode("utf-8", "replace")
+        txt = raw.decode("utf-8", "replace")
+        i = txt.find("Adelaide Metropolitan")
+        samples["cfs_fdr"] = txt[max(0, i - 300):i + 4000] if i >= 0 else txt[:4000]
         return parse_fdr(raw, lc["fire_districts"])
 
     def bom():

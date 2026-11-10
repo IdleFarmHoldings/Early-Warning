@@ -21,6 +21,9 @@ def iso(dt=None):
 
 
 def http_get(url, timeout=25, accept="*/*"):
+    if url.startswith("ftp://"):
+        with urllib.request.urlopen(url, timeout=timeout) as r:
+            return r.read()
     req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": accept})
     with urllib.request.urlopen(req, timeout=timeout) as r:
         return r.read()
