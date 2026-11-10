@@ -163,9 +163,6 @@ details summary{cursor:pointer;font-size:.84rem;color:var(--accent)}
     <div class="panel side g-side">
       <h2>Adelaide today</h2>
       <div class="list" id="localBox"><p class="empty">Loading…</p></div>
-      <h2 style="margin-top:16px">Markets</h2>
-      <div class="mk" id="markets"><span class="empty">Loading…</span></div>
-      <p class="muted" id="mktTime"></p>
       <h2 style="margin-top:16px">Phone &amp; internet networks</h2>
       <div class="list" id="telco"><p class="empty">Loading…</p></div>
       <p id="feeds" class="muted"></p>
@@ -179,7 +176,7 @@ details summary{cursor:pointer;font-size:.84rem;color:var(--accent)}
   </section>
 
 
-  <a class="cta" href="analytics.html"><div><b>Analytics &amp; heat maps →</b><br><span>Escalation trends, GPS jamming and satellite maps, military activity, warning-sign matrix</span></div></a>
+  <a class="cta" href="analytics.html"><div><b>Analytics &amp; heat maps →</b><br><span>Markets, escalation trends, GPS jamming and satellite maps, cyber attacks, military activity, warning-sign matrix</span></div></a>
 
   <section>
     <h2 style="margin-bottom:4px">Potential events</h2>
@@ -337,10 +334,7 @@ function renderConcerns(st, ind){
 }
 
 function renderLatest(l){
-  if(!l){ $("markets").innerHTML=`<span class="empty">Unavailable.</span>`; renderAlerts([]); return; }
-  $("markets").innerHTML = Object.entries(l.markets||{}).map(([k,v])=>{ const c=Number(v.change_pct)||0;
-    return `<div><span class="muted">${esc(k)}</span><br><b>${esc(v.price)}</b> <span style="color:${c>=0?"var(--l2)":"var(--l5)"}">${c>=0?"+":""}${c.toFixed(2)}%</span></div>`}).join("") || `<span class="empty">No data.</span>`;
-  $("mktTime").textContent = `As of ${fmt(l.generated_at)}`;
+  if(!l){ renderAlerts([]); return; }
   const tel=l.telecom||{}, tn=Object.keys(tel);
   $("telco").innerHTML = tn.length ? tn.map(n=>{
     const ds=[tel[n]["ping-slash24"],tel[n]["bgp"]].filter(x=>x&&x.drop_pct!=null&&(x.baseline||0)>=50);

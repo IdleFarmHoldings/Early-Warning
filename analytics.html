@@ -203,6 +203,13 @@ details.panel>summary:focus-visible{outline:3px solid var(--accent);outline-offs
   </section>
 
   <section class="panel">
+    <h2>Markets</h2>
+    <p class="note">Oil, gold, the Australian dollar and the market fear index (VIX). Sharp moves often follow or anticipate a major shock: oil for Middle East supply, gold and VIX for fear, a falling AUD for Australian risk. Updated every 15 minutes; history covers the last 14 days.</p>
+    <div class="mini-grid" id="mktMinis"><p class="empty">Loading…</p></div>
+    <p class="note" id="mktAsOf" style="margin-top:6px"></p>
+  </section>
+
+  <section class="panel">
     <h2>Sector signals</h2>
     <p class="note">Stock baskets vs their market over 5 trading days. Before COVID, mask, hazmat and vaccine makers jumped weeks before markets fell; defence stocks tend to rise as conflicts escalate. Outperformance by several points is a corroborating sign, never proof on its own.</p>
     <div class="mini-grid" id="secMinis"></div>
@@ -355,6 +362,15 @@ document.querySelectorAll(".wrap .panel").forEach((p, i)=>{
     pms.slice(0,20).map(m=>`<tr><td><a href="${esc(/^https:\/\/polymarket\.com\//.test(m.url)?m.url:"#")}" target="_blank" rel="noopener">${esc(m.question)}</a></td><td>${esc(TOPIC[m.topic]||m.topic)}</td><td class="num">${m.yes_pct}%</td>
     <td class="num">${m.change_24h==null?"…":`<span style="color:${Math.abs(m.change_24h)>=10?css("--critical"):"inherit"}">${m.change_24h>0?"+":""}${m.change_24h}</span>`}</td></tr>`).join("")}</tbody></table>
     <p class="note" style="margin-top:6px">24-hour changes appear after a day of tracking.</p>` : `<p class="empty">Prediction-market data arrives with the next collector run.</p>`;
+
+  const mkts = Object.entries((lat&&lat.markets)||{}).filter(([k,v])=>v&&v.price!=null);
+  $("mktMinis").innerHTML = "";
+  if(mkts.length){
+    minis($("mktMinis"), mkts.map(([k,v])=>{ const c=Number(v.change_pct)||0;
+      return {key:"mkt_"+k, name:`${k} · ${c>=0?"+":""}${c.toFixed(2)}% today`, now:v.price,
+              color: k==="VIX" ? (c>=10?css("--critical"):css("--s1")) : (Math.abs(c)>=4?css("--critical"):css("--s1"))}; }));
+    $("mktAsOf").textContent = `As of ${fmt(lat.generated_at)}.`;
+  } else { $("mktMinis").innerHTML = `<p class="empty">Market data unavailable right now.</p>`; }
 
   const sec = (lat&&lat.sectors)||{};
   $("secMinis").innerHTML = "";
