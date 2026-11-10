@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T00:41:00Z",
+  "generated_at": "2026-11-10T01:44:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -409,7 +409,7 @@
       "key": "ausinfra",
       "lit": [
         {
-          "detail": "China vessel HONG BO 16 ~80 min",
+          "detail": "Hong Kong vessel DA TAI SHAN ~433 min; China vessel HONG BO 16 ~143 min",
           "domain": "Undersea cables",
           "id": "cable",
           "name": "Foreign vessel loitering over Australian cable corridors",
@@ -419,7 +419,7 @@
       "name": "Australian infrastructure disruption",
       "sa_impact": "Direct: loss of phone, internet, EFTPOS and fuel pumps. Cash, fuel and a pre-agreed meeting point matter most in the first 24 hours.",
       "score": 20,
-      "trend": "up",
+      "trend": "steady",
       "unlit": [
         {
           "domain": "Communications",
@@ -468,12 +468,11 @@
     },
     {
       "band": "High",
-      "convergence": "Signs are converging across 4 separate areas (chemical weapons, death statistics, health and markets). Unrelated systems flagging the same scenario at once is the pattern seen before past events. Before COVID-19 (Dec 2019 - Feb 2020): reports of an unknown pneumonia cluster, WHO outbreak notices, mask and hazmat makers (Alpha Pro Tech, Lakeland) and vaccine developers (Moderna, Novavax) surging weeks before broad markets fell, and countries restricting exports of masks and medicines (Taiwan from 24 Jan 2020, then dozens more). The strongest signs not yet showing: countries restricting medical supply exports, australian medicine or ppe shortage reports and market fear index above 30.",
+      "convergence": "Signs are converging across 3 separate areas (chemical weapons, death statistics and health). Unrelated systems flagging the same scenario at once is the pattern seen before past events. Before COVID-19 (Dec 2019 - Feb 2020): reports of an unknown pneumonia cluster, WHO outbreak notices, mask and hazmat makers (Alpha Pro Tech, Lakeland) and vaccine developers (Moderna, Novavax) surging weeks before broad markets fell, and countries restricting exports of masks and medicines (Taiwan from 24 Jan 2020, then dozens more). The strongest signs not yet showing: countries restricting medical supply exports, pandemic-response stocks outperforming (5 days) and australian medicine or ppe shortage reports.",
       "domains": [
         "Chemical weapons",
         "Death statistics",
-        "Health",
-        "Markets"
+        "Health"
       ],
       "key": "bio",
       "lit": [
@@ -489,13 +488,6 @@
           "domain": "Health",
           "id": "illness",
           "name": "Unknown illness / pneumonia cluster reported",
-          "weight": 20
-        },
-        {
-          "detail": "Pandemic-response stocks (masks, hazmat, vaccines, tests) +10.4% vs market over 5 days",
-          "domain": "Markets",
-          "id": "pharma",
-          "name": "Pandemic-response stocks outperforming (5 days)",
           "weight": 20
         },
         {
@@ -515,13 +507,19 @@
       ],
       "name": "Pandemic, biological or chemical emergency",
       "sa_impact": "Health system strain, possible lockdowns and border closures, and shortages of medicines and protective equipment, which Australia mostly imports.",
-      "score": 80,
-      "trend": "steady",
+      "score": 60,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Trade",
           "id": "exports",
           "name": "Countries restricting medical supply exports",
+          "weight": 20
+        },
+        {
+          "domain": "Markets",
+          "id": "pharma",
+          "name": "Pandemic-response stocks outperforming (5 days)",
           "weight": 20
         },
         {
@@ -658,7 +656,7 @@
       "name": "AI-enabled attack (non-traditional)",
       "sa_impact": "Not bombs but disruption: hacking at machine speed across banks, telcos, hospitals and the grid at once; fake videos or alerts from leaders causing panic buying or bank runs; or automated market and fraud shocks. Effects would be outages, payment failures and confusion about what is real.",
       "score": 30,
-      "trend": "up",
+      "trend": "steady",
       "unlit": [
         {
           "domain": "Mass exploitation",
