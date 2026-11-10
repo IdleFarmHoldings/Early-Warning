@@ -1,11 +1,12 @@
 {
-  "generated_at": "2026-11-10T11:40:00Z",
+  "generated_at": "2026-11-10T11:56:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
-      "band": "Low",
-      "convergence": "Only one kind of sign is showing (roads). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: cfs emergency warning in sa, extreme or catastrophic fire danger near adelaide and tight power supply in sa (aemo lack of reserve, level 2+).",
+      "band": "Guarded",
+      "convergence": "Two different kinds of sign are showing together (power grid and roads). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: cfs emergency warning in sa, sudden fall in sa electricity demand (possible large blackout) and extreme or catastrophic fire danger near adelaide.",
       "domains": [
+        "Power grid",
         "Roads"
       ],
       "key": "local",
@@ -16,12 +17,19 @@
           "id": "roads",
           "name": "Fire, flood or storm road closures in SA",
           "weight": 10
+        },
+        {
+          "detail": "Westpac outage hits thousands of Aussies",
+          "domain": "Power grid",
+          "id": "power",
+          "name": "Reports of widespread power outages in SA",
+          "weight": 15
         }
       ],
       "name": "Local emergency in SA (bushfire, heat, power)",
       "sa_impact": "Direct: bushfires, heatwaves and power cuts are the emergencies most likely to affect the family. In the 2016 statewide blackout, power, phones, traffic lights and fuel pumps failed together.",
-      "score": 10,
-      "trend": "steady",
+      "score": 25,
+      "trend": "up",
       "unlit": [
         {
           "domain": "Bushfire",
@@ -72,12 +80,6 @@
           "weight": 10
         },
         {
-          "domain": "Power grid",
-          "id": "power",
-          "name": "Reports of widespread power outages in SA",
-          "weight": 15
-        },
-        {
           "domain": "Water",
           "id": "water",
           "name": "SA Water supply cut or water-quality notice reported",
@@ -91,9 +93,9 @@
         },
         {
           "domain": "Power grid",
-          "id": "sapn",
-          "name": "Power out in 50+ SA suburbs (SA Power Networks)",
-          "weight": 20
+          "id": "blackout",
+          "name": "Sudden fall in SA electricity demand (possible large blackout)",
+          "weight": 25
         }
       ],
       "why": "The worst local days stack up: extreme fire danger, a heatwave pushing power demand, a tight grid, and storms or fires damaging lines. AEMO warns of supply shortfalls hours to a day ahead; the CFS and Bureau issue ratings and warnings a day or more ahead."
@@ -554,7 +556,7 @@
     },
     {
       "band": "Guarded",
-      "convergence": "Only one kind of sign is showing (undersea cables). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: phone / internet carrier outage, gps degradation over sa or nsw and two or more carriers down at once.",
+      "convergence": "Only one kind of sign is showing (undersea cables). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: phone / internet carrier outage, gps degradation over sa or nsw and sudden fall in sa electricity demand (possible large blackout).",
       "domains": [
         "Undersea cables"
       ],
@@ -620,6 +622,12 @@
           "id": "malacca",
           "name": "Ship traffic through Malacca / Sunda / Lombok down sharply",
           "weight": 10
+        },
+        {
+          "domain": "Power grid",
+          "id": "blackout",
+          "name": "Sudden fall in SA electricity demand (possible large blackout)",
+          "weight": 25
         }
       ],
       "why": "The 2023 Optus outage cut mobile, NBN, EFTPOS and some 000 calls nationwide for 12 hours. Hostile states pre-position in critical infrastructure; GPS jamming over Australia would be a new and serious sign."
@@ -707,7 +715,7 @@
     },
     {
       "band": "Guarded",
-      "convergence": "Two different kinds of sign are showing together (australian incidents and state actors). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: global cyber threat level raised (sans infocon not green), several vpn / firewall flaws exploited this week and spike in scanning of industrial-control systems.",
+      "convergence": "Two different kinds of sign are showing together (australian incidents and state actors). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: sudden fall in sa electricity demand (possible large blackout), global cyber threat level raised (sans infocon not green) and several vpn / firewall flaws exploited this week.",
       "domains": [
         "Australian incidents",
         "State actors"
@@ -775,6 +783,12 @@
           "id": "tel",
           "name": "Phone / internet carrier outage",
           "weight": 10
+        },
+        {
+          "domain": "Power grid",
+          "id": "blackout",
+          "name": "Sudden fall in SA electricity demand (possible large blackout)",
+          "weight": 25
         }
       ],
       "why": "Large attacks are usually preceded by quieter steps: a surge in newly exploited flaws in VPNs and firewalls (how state groups like Volt Typhoon get in), scanning of industrial-control systems, a rise in ransomware victims in the target country, and official warnings. Before Russia's 2022 invasion, wiper malware hit Ukraine a day ahead; Chinese groups have been found pre-positioned in US and allied infrastructure."
