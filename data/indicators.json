@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T08:06:00Z",
+  "generated_at": "2026-11-10T08:21:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -514,24 +514,14 @@
     },
     {
       "band": "Low",
-      "convergence": "Only one kind of sign is showing (undersea cables). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: phone / internet carrier outage, gps degradation over sa or nsw and two or more carriers down at once.",
-      "domains": [
-        "Undersea cables"
-      ],
+      "convergence": "No warning signs are showing. The strongest signs not yet showing: phone / internet carrier outage, gps degradation over sa or nsw and two or more carriers down at once.",
+      "domains": [],
       "key": "ausinfra",
-      "lit": [
-        {
-          "detail": "SunCable largely finalises subsea cable route, targets electricity supply from Australia to Singapore around 2035",
-          "domain": "Undersea cables",
-          "id": "cablenews",
-          "name": "Undersea cable damage reported (Australia / Pacific)",
-          "weight": 10
-        }
-      ],
+      "lit": [],
       "name": "Australian infrastructure disruption",
       "sa_impact": "Direct: loss of phone, internet, EFTPOS and fuel pumps. Cash, fuel and a pre-agreed meeting point matter most in the first 24 hours.",
-      "score": 10,
-      "trend": "steady",
+      "score": 0,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Communications",
@@ -574,6 +564,12 @@
           "id": "cable",
           "name": "Foreign vessel loitering over Australian cable corridors",
           "weight": 20
+        },
+        {
+          "domain": "Undersea cables",
+          "id": "cablenews",
+          "name": "Undersea cable damage reported (Australia / Pacific)",
+          "weight": 10
         },
         {
           "domain": "Shipping",
