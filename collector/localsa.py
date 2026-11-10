@@ -65,9 +65,26 @@ def parse_cap(raw):
 
 # ---------- Fire danger ratings & total fire bans ----------
 def parse_fdr(raw, districts):
-    """Return {district: {"ratings": [...], "fire_ban": bool}} for the districts we care about."""
+    """Return {district: {"ratings": [today, tomorrow, ...], "fire_ban": bool}} for the districts we care about.
+    CFS layout: <area type="fire-district" description="Adelaide Metropolitan"><forecast-period index="1">
+    <text type="fire_danger">High</text><text type="fire_ban">false</text>..."""
     root = ET.fromstring(raw)
     out = {}
+    for area in [e for e in root.iter() if _local(e.tag) == "area" and e.get("type") == "fire-district"]:
+        name = area.get("description", "")
+        if not any(name.lower() == d.lower() for d in districts):
+            continue
+        periods = sorted([p for p in area if _local(p.tag) == "forecast-period"], key=lambda p: int(p.get("index", "99")))
+        ratings, bans = [], []
+        for p in periods[:2]:  # today and tomorrow
+            vals = {t.get("type"): (t.text or "").strip() for t in p if _local(t.tag) == "text"}
+            if vals.get("fire_danger"):
+                ratings.append(vals["fire_danger"])
+            bans.append(vals.get("fire_ban", "").lower() == "true")
+        out[name] = {"ratings": ratings, "fire_ban": any(bans), "fire_ban_today": bool(bans and bans[0]),
+                     "text": " / ".join(ratings)}
+    if out:
+        return out
     for el in root.iter():
         texts = [(c.text or "").strip() for c in el.iter() if (c.text or "").strip()]
         joined = " | ".join(texts)
@@ -170,7 +187,7 @@ def fetch_local(state):
         raw = http_get(CFS_FDR, timeout=30)
         txt = raw.decode("utf-8", "replace")
         i = txt.find("Adelaide Metropolitan")
-        samples["cfs_fdr"] = txt[max(0, i - 300):i + 4000] if i >= 0 else txt[:4000]
+        samples["cfs_fdr"] = txt[max(0, i - 300):i + 1500] if i >= 0 else txt[:1500]
         return parse_fdr(raw, lc["fire_districts"])
 
     def bom():

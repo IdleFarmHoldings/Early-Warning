@@ -391,3 +391,20 @@ def test_foresight_and_local_scenario():
     al = run.local_alerts(loc, state, now, first_run=False)
     assert {a["title"] for a in al} == {"CFS Emergency Warning", "Extreme fire danger: Adelaide Metropolitan", "Power supply tight in SA (Actual LOR2)"}
     assert run.local_alerts(loc, state, now, first_run=False) == []  # no repeats
+
+
+def test_fdr_real_layout():
+    import localsa
+    raw = b'''<product><forecast><area description="South Australia" type="region" districtID="0"></area>
+      <area description="Adelaide Metropolitan" type="fire-district" districtID="1">
+        <forecast-period index="1"><text type="fire_danger">No Rating</text><text type="fire_ban">false</text></forecast-period>
+        <forecast-period index="2"><text type="fire_danger">Extreme</text><text type="fire_ban">true</text></forecast-period>
+        <forecast-period index="3"><text type="fire_danger">Catastrophic</text><text type="fire_ban">true</text></forecast-period></area>
+      <area description="Mount Lofty Ranges" type="fire-district" districtID="2">
+        <forecast-period index="1"><text type="fire_danger">High</text><text type="fire_ban">false</text></forecast-period></area>
+      <area description="Flinders" type="fire-district" districtID="9"></area></forecast></product>'''
+    f = localsa.parse_fdr(raw, ["Adelaide Metropolitan", "Mount Lofty Ranges"])
+    assert f["Adelaide Metropolitan"]["ratings"] == ["No Rating", "Extreme"] and f["Adelaide Metropolitan"]["fire_ban"]
+    assert localsa.worst(f["Adelaide Metropolitan"]["ratings"]) == "Extreme"
+    assert f["Mount Lofty Ranges"]["ratings"] == ["High"] and not f["Mount Lofty Ranges"]["fire_ban"]
+    assert "Flinders" not in f
