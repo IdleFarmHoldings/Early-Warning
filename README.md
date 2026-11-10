@@ -45,7 +45,6 @@ Channel names are stored as repository secrets `NTFY_PROACTIVE` and `NTFY_REACTI
 | SANS Internet Storm Center | Global threat level (Infocon), scanning of industrial-control and remote-access ports, top attacking addresses (geolocated by ip-api.com) |
 | abuse.ch Feodo Tracker | Botnet command servers by country |
 | ransomware.live | Ransomware victims by country (7 days) and Australian victims vs normal |
-| Human Mortality Database (STMF) | Weekly deaths vs normal for ~38 countries (lags several weeks) |
 | aisstream.io live AIS (free key) | Vessels loitering over undersea-cable corridors around Australia, Taiwan, the Baltic and Red Sea |
 | Crisis Group, ASPI Strategist, Lowy Interpreter | Analyst headlines for the analysis run (context only, never pushed on their own) |
 

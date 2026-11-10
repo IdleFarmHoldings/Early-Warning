@@ -17,7 +17,6 @@ from common import CONFIG, ROOT, append_jsonl, iso, load_json, now_utc, push, sa
 from rules import extra_metrics, evaluate  # noqa: E402
 from sources import fetch_all  # noqa: E402
 import precursors  # noqa: E402
-import mortality  # noqa: E402
 import maritime  # noqa: E402
 import satellites  # noqa: E402
 
@@ -218,16 +217,6 @@ def main():
         health["satellites"] = {"ok": True, "secs": round(time.time() - t0, 1), "refreshed": bool(fresh)}
     except Exception as e:  # noqa: BLE001
         health["satellites"] = {"ok": False, "error": f"{type(e).__name__}: {e}"[:300]}
-    mort = load_json("data/mortality.json", {})
-    t0 = time.time()
-    try:
-        fresh_m = mortality.refresh(now, mort)
-        if fresh_m:
-            mort = fresh_m
-            save_json("data/mortality.json", mort)
-        health["mortality"] = {"ok": True, "secs": round(time.time() - t0, 1), "refreshed": bool(fresh_m)}
-    except Exception as e:  # noqa: BLE001
-        health["mortality"] = {"ok": False, "error": f"{type(e).__name__}: {e}"[:300]}
     mar = {}
     t0 = time.time()
     try:
@@ -252,7 +241,6 @@ def main():
         "sectors": (results.get("sectors") or {}).get("baskets") or {},
         "who": results.get("who") or [],
         "cyber": (results.get("cyber") or {}).get("summary") or {},
-        "mortality": mortality.summary(mort),
         "maritime": mar,
         "now": now,
     }

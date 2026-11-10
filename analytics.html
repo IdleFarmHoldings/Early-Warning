@@ -69,8 +69,8 @@ td.num{font-family:var(--mono);text-align:right}
 .matrix td:first-child,.matrix th:first-child{text-align:left;font-family:var(--body)}
 .empty{color:var(--muted);font-size:.9rem}
 .leaflet-container{font-family:var(--body)}
-#cyMap,#morMap,#seaMap{height:440px;border-radius:6px;border:1px solid var(--line)}
-@media (max-width:560px){#morMap,#seaMap{height:340px}}
+#cyMap,#seaMap{height:440px;border-radius:6px;border:1px solid var(--line)}
+@media (max-width:560px){#seaMap{height:340px}}
 @media (max-width:560px){#cyMap{height:340px}}
 .vec{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
 .vec .mini p{margin:4px 0 0;font-size:.82rem;color:var(--muted)}
@@ -168,16 +168,6 @@ td.num{font-family:var(--mono);text-align:right}
       <p class="note">How many different machines scanned for each type of control system or remote access yesterday, vs the usual for the past fortnight. A jump often comes before attacks on utilities.</p>
       <div class="tbl" id="portTbl"><p class="empty">Loading…</p></div>
     </div>
-  </section>
-
-  <section class="panel">
-    <h2>Death rates vs normal</h2>
-    <p class="note">Weekly deaths from all causes compared with the same week in the previous three years, from official statistics (Human Mortality Database). A sudden, local jump with no flu season or heatwave to explain it is one sign of a disease outbreak or chemical/biological attack. These figures arrive weeks late, so they confirm rather than warn; the news watches for chemical attacks, mass poisonings and unexplained deaths are the fast signals.</p>
-    <div id="morMap" role="img" aria-label="Map of excess deaths by country"></div>
-    <div class="legend"><span>Deaths vs normal:</span>
-      <span class="chip" style="background:var(--good)">below or within 5%</span><span class="chip" style="background:var(--warning);color:#0b0b0b">+5–15%</span>
-      <span class="chip" style="background:var(--serious)">+15–25%</span><span class="chip" style="background:var(--critical)">+25% or more</span></div>
-    <div class="tbl" id="morTbl" style="margin-top:12px"><p class="empty">Loading…</p></div>
   </section>
 
   <section class="panel">
@@ -325,27 +315,7 @@ function lineChart(canvas, labels, datasets, opts={}){
     IN:[22,79],PK:[30,70],BD:[24,90],LK:[7.8,80.7],NP:[28.4,84],CN:[35,104],HK:[22.3,114.2],TW:[23.7,121],JP:[36.5,138],KR:[36.5,128],KP:[40,127],
     MN:[46.8,103],KZ:[48,67],UZ:[41.4,64.6],VN:[16,107],TH:[15,101],MY:[4,102],SG:[1.35,103.8],ID:[-2,118],PH:[12,122],KH:[12.5,105],MM:[21,96],
     NZ:[-41,174],PG:[-6,145],FJ:[-17.8,178],SC:[-4.7,55.5],PA:[8.5,-80],CR:[10,-84],DO:[19,-70.5],PR:[18.2,-66.5]};
-  // ---------- Mortality ----------
-  const [mor, sea] = await Promise.all([get("data/mortality.json"), get("data/maritime.json")]);
-  const MC = Object.assign({}, C, {"GB-SCT":[56.8,-4.2],"GB-NIR":[54.6,-6.7]});
-  const exColor = v => v==null?css("--line"):v>=25?css("--critical"):v>=15?css("--serious"):v>=5?css("--warning"):css("--good");
-  if(mor && mor.countries){
-    const mm = L.map("morMap",{worldCopyJump:true}).setView([35,20],2);
-    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:6,minZoom:1,attribution:"© OpenStreetMap contributors"}).addTo(mm);
-    const list = Object.values(mor.countries).sort((a,b)=>(b.latest.excess_pct??-99)-(a.latest.excess_pct??-99));
-    for(const c of list){ const p=MC[c.iso2]; if(!p) continue; const v=c.latest.excess_pct;
-      L.circleMarker(p,{radius:9, color:css("--surface"), weight:2, fillColor:exColor(v), fillOpacity:c.age_weeks>10?.35:1})
-        .bindTooltip(`<b>${esc(c.name)}</b><br>${c.latest.week?`Week ${c.latest.week}/${c.latest.year}`:esc(c.latest.date||"")}: ${c.latest.deaths!=null?c.latest.deaths.toLocaleString()+" deaths, ":""}${v>0?"+":""}${v}% vs normal<br>${c.age_weeks} weeks old${c.age_weeks>10?" (stale)":""}`).addTo(mm); }
-    $("morTbl").innerHTML = `<table><thead><tr><th>Country</th><th>Latest week</th><th>Deaths</th><th>Normal</th><th>vs normal</th><th>Data age</th></tr></thead><tbody>${
-      list.map(c=>`<tr><td>${esc(c.name)}</td><td class="num">${c.latest.week?c.latest.week+"/"+c.latest.year:esc(c.latest.date||"—")}</td><td class="num">${c.latest.deaths!=null?c.latest.deaths.toLocaleString():"—"}</td><td class="num">${c.latest.expected!=null?c.latest.expected.toLocaleString():"—"}</td>
-      <td class="num"><span class="chip" style="background:${exColor(c.latest.excess_pct)};${c.latest.excess_pct>=5&&c.latest.excess_pct<15?"color:#0b0b0b":""}">${c.latest.excess_pct>0?"+":""}${c.latest.excess_pct}%</span></td><td class="num">${c.age_weeks??"—"} wk</td></tr>`).join("")}</tbody></table>
-      ${mor.countries_newest_date && mor.countries_newest_date < "2026" ? `<p class="note" style="margin-top:6px"><b>Note:</b> the global country series stopped updating in ${esc(mor.countries_newest_date.slice(0,4))}; it is shown for historical context only. Live death-rate monitoring currently comes from the US (below) and the news watches.</p>`:""}
-      ${(()=>{ const us=mor.us_states||{}; const rows=Object.entries(us).filter(([k,v])=>k!=="_error"&&v.latest).sort((a,b)=>b[1].max_recent-a[1].max_recent);
-        return rows.length?`<h3 style="margin-top:14px">United States — weekly deaths as % of expected (CDC)</h3><table><thead><tr><th>State</th><th>Week ending</th><th>Deaths</th><th>% of expected</th></tr></thead><tbody>${
-        rows.slice(0,15).map(([k,v])=>`<tr><td>${esc(k)}</td><td class="num">${esc(v.latest.date)}</td><td class="num">${Math.round(v.latest.deaths).toLocaleString()}</td><td class="num"><span class="chip" style="background:${exColor(v.latest.pct_expected-100)};${v.latest.pct_expected-100>=5&&v.latest.pct_expected-100<15?"color:#0b0b0b":""}">${v.latest.pct_expected}%</span></td></tr>`).join("")}</tbody></table><p class="note">The newest three weeks are skipped because late death registrations make them look low.</p>`
-        : `<p class="note">US weekly data unavailable${us._error?": "+esc(us._error):""}.</p>`; })()}
-      <p class="note" style="margin-top:6px">Source: ${esc(mor.source||"")}. Refreshed ${fmt(mor.generated_at)}. Faded markers are more than 10 weeks old.</p>`;
-  } else { $("morMap").outerHTML = `<p class="empty">Death-rate data arrives with the next daily refresh.</p>`; $("morTbl").innerHTML=""; }
+  const sea = await get("data/maritime.json");
 
   // ---------- Undersea cables ----------
   if(sea && sea.zones){

@@ -72,6 +72,10 @@ def _lit(ind, ctx):
         for k in keys:
             for it in ((ctx["news"] or {}).get(k) or {}).get("items", []):
                 title = it.get("title", "")
+                if " - " in title:  # Google News appends " - Publisher"; don't match on the publisher's name
+                    title = title.rsplit(" - ", 1)[0]
+                if title.count(";") >= 2:  # newsletter round-ups bundle unrelated stories
+                    continue
                 if _words(title, PLAYBOOK.get("news_exclude", [])):
                     continue
                 if ind.get("require") and not _words(title, ind["require"]):
@@ -125,9 +129,6 @@ def _lit(ind, ctx):
         hits = [v for v in (ctx.get("maritime") or {}).get("loitering", [])
                 if regions.get(v["zone"]) == ind["region"] and (v["of_interest"] or not ind.get("of_interest"))]
         return "; ".join(f"{v['flag']} vessel {v['name'] or v['mmsi']} ~{v['minutes']} min" for v in hits[:3]) or None
-    if t == "mortality":
-        hot = ctx.get("mortality") or []
-        return ("Deaths above normal: " + ", ".join(hot[:4])) if hot else None
     if t == "acsc":
         return ctx["acsc_new"][0][:140] if ctx["acsc_new"] else None
     return None

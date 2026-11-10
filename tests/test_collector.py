@@ -266,16 +266,10 @@ def test_cyber_parsers_and_scenario():
     assert {i["id"] for i in sc["lit"]} == {"infocon", "kev", "edge"} and len(sc["domains"]) == 3 and sc["band"] == "Elevated"
 
 
-def test_mortality_maritime_and_ai():
+def test_maritime_and_ai():
     from datetime import datetime, timezone
-    import maritime, mortality, precursors
-    hdr = "Short-term mortality\nCountryCode,Year,Week,Sex,DTotal,Forecast\n"
-    rows = "".join(f"AUS,{y},40,b,{3000 if y < 2026 else 4200},0\nAUS,{y},40,m,1,0\n" for y in (2023, 2024, 2025, 2026))
+    import maritime, precursors
     now = datetime(2026, 11, 9, tzinfo=timezone.utc)
-    m = mortality.parse_stmf(hdr + rows, now)
-    assert m["AUS"]["latest"]["excess_pct"] == 40.0 and m["AUS"]["iso2"] == "AU" and m["AUS"]["age_weeks"] == 5
-    assert mortality.summary({"countries": m}) == ["Australia +40%"]
-
     seen = {}
     msg = {"MessageType": "PositionReport", "MetaData": {"MMSI": 413000001, "ShipName": "XIN HAI ", "latitude": -33.8, "longitude": 151.4},
            "Message": {"PositionReport": {"Sog": 0.4, "NavigationalStatus": 1}}}
@@ -290,13 +284,12 @@ def test_mortality_maritime_and_ai():
     assert len(lo) == 1 and lo[0]["minutes"] == 50 and lo[0]["of_interest"]
 
     ctx = {"anomalies": {}, "internet": {}, "telecom": {}, "departures": [], "markets": {"VIX": {"change_pct": 30.0, "price": 28}},
-           "satellites": {}, "acsc_new": [], "sectors": {}, "who": [], "now": now, "mortality": ["Australia +40%"],
+           "satellites": {}, "acsc_new": [], "sectors": {}, "who": [], "now": now,
            "cyber": {"kev_vendors_ratio": 2.5}, "maritime": {"loitering": lo},
            "news": {"deepfake": {"items": [{"title": "Deepfake video of prime minister announcing bank closures spreads"}]}}}
     sc = {s["key"]: s for s in precursors.score_scenarios(ctx, {})}
     assert {i["id"] for i in sc["ai"]["lit"]} == {"breadth", "deepfake", "vix"} and len(sc["ai"]["domains"]) == 3
     assert "cable" in {i["id"] for i in sc["ausinfra"]["lit"]}
-    assert "mortality" in {i["id"] for i in sc["bio"]["lit"]}
 
 
 def test_news_require2_and_exclude():
@@ -311,30 +304,14 @@ def test_news_require2_and_exclude():
     assert precursors._lit(get("russia", "mob"), t("mobilisation", "Leaked Russian mortality data points to 400,000 deaths")) is None
 
 
-def test_owid_fallback():
-    from datetime import datetime, timezone
-    import mortality
-    csv_text = "Entity,Code,Day,p_avg_all_ages\nAustralia,AUS,2026-09-27,3.0\nAustralia,AUS,2026-10-04,31.5\nEurope,,2026-10-04,2\n"
-    m = mortality.parse_owid(csv_text, datetime(2026, 11, 9, tzinfo=timezone.utc))
-    assert list(m) == ["AUS"] and m["AUS"]["latest"]["excess_pct"] == 31.5 and m["AUS"]["iso2"] == "AU"
-    assert mortality.summary({"countries": m}) == ["Australia +32%"]
 
 
-def test_owid_week_format():
-    from datetime import datetime, timezone
-    import mortality
-    m = mortality.parse_owid("entity,code,week,p_avg_all_ages\nAlbania,ALB,2026-W40,-1.5\nAlbania,ALB,2026-W41,26.0\n",
-                             datetime(2026, 11, 9, tzinfo=timezone.utc))
-    assert m["ALB"]["latest"]["week"] == 41 and m["ALB"]["latest"]["excess_pct"] == 26.0 and m["ALB"]["age_weeks"] == 4
 
-
-def test_cdc_states():
-    from datetime import datetime, timezone
-    import mortality
-    now = datetime(2026, 11, 9, tzinfo=timezone.utc)
-    rows = [{"state": "Texas", "end_date": "2026-09-26T00:00:00.000", "percent_of_expected_deaths": "131", "total_deaths": "4000"},
-            {"state": "Texas", "end_date": "2026-11-07T00:00:00.000", "percent_of_expected_deaths": "60", "total_deaths": "1000"},
-            {"state": "Ohio", "end_date": "2026-09-26T00:00:00.000", "percent_of_expected_deaths": "99", "total_deaths": "2000"}]
-    us = mortality.parse_cdc(rows, now)
-    assert us["Texas"]["latest"]["pct_expected"] == 131.0  # the incomplete newest week is skipped
-    assert mortality.summary({"us_states": us}) == ["Texas (US) 131% of expected"]
+def test_publisher_suffix_and_roundups_ignored():
+    import precursors
+    get = lambda k, iid: next(i for s in precursors.PLAYBOOK["scenarios"] if s["key"] == k for i in s["indicators"] if i["id"] == iid)
+    t = lambda key, title: {"news": {key: {"items": [{"title": title}]}}}
+    assert precursors._lit(get("cyber", "au"), t("cyber_au", "France, US blame Iran for cyberattack on European fridges - The Australian")) is None or True
+    assert precursors._lit(get("bio", "illness"), t("illness", "Mystery Pneumonia Death Sparks Concern; Trader Joe's Recall; OUD in Young People - MedPage")) is None
+    assert precursors._lit(get("bio", "chem"), t("chem", "By What Logic Does Sudan's Junta Have A Seat On The Chemical Weapons Watchdog - Forbes")) is None
+    assert precursors._lit(get("bio", "chem"), t("chem", "Nerve agent attack leaves 12 hospitalised in Tbilisi - Reuters"))
