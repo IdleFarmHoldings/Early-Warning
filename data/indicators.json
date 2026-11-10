@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T01:44:00Z",
+  "generated_at": "2026-11-10T02:32:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -409,17 +409,24 @@
       "key": "ausinfra",
       "lit": [
         {
-          "detail": "Hong Kong vessel DA TAI SHAN ~433 min; China vessel HONG BO 16 ~143 min",
+          "detail": "China vessel HONG BO 16 ~191 min",
           "domain": "Undersea cables",
           "id": "cable",
           "name": "Foreign vessel loitering over Australian cable corridors",
           "weight": 20
+        },
+        {
+          "detail": "SunCable largely finalises subsea cable route, targets electricity supply from Australia to Singapore around 2035 - 联合早报",
+          "domain": "Undersea cables",
+          "id": "cablenews",
+          "name": "Undersea cable damage reported (Australia / Pacific)",
+          "weight": 10
         }
       ],
       "name": "Australian infrastructure disruption",
       "sa_impact": "Direct: loss of phone, internet, EFTPOS and fuel pumps. Cash, fuel and a pre-agreed meeting point matter most in the first 24 hours.",
-      "score": 20,
-      "trend": "steady",
+      "score": 30,
+      "trend": "up",
       "unlit": [
         {
           "domain": "Communications",
@@ -455,12 +462,6 @@
           "domain": "Health",
           "id": "masscas",
           "name": "Mass casualty / Code Brown declared in Australia",
-          "weight": 10
-        },
-        {
-          "domain": "Undersea cables",
-          "id": "cablenews",
-          "name": "Undersea cable damage reported (Australia / Pacific)",
           "weight": 10
         }
       ],
@@ -508,7 +509,7 @@
       "name": "Pandemic, biological or chemical emergency",
       "sa_impact": "Health system strain, possible lockdowns and border closures, and shortages of medicines and protective equipment, which Australia mostly imports.",
       "score": 60,
-      "trend": "down",
+      "trend": "steady",
       "unlit": [
         {
           "domain": "Trade",
