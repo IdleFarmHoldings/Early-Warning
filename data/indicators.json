@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T06:21:00Z",
+  "generated_at": "2026-11-10T07:38:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -11,7 +11,7 @@
       "key": "mideast",
       "lit": [
         {
-          "detail": "BREAKING NEWS: Iran Hits Qatar, Bahrain, Saudi Arabia, Kuwait & UAE In Retaliation | AH1B Flowers (3yKBVDt3Iw) - Unisba Media",
+          "detail": "BREAKING NEWS: Iran Hits Qatar, Bahrain, Saudi Arabia, Kuwait & UAE In Retaliation | AH1B Flowers (3yKBVDt3Iw)",
           "domain": "Aviation",
           "id": "airspace",
           "name": "Airspace closures reported (Iran / Israel / Gulf)",
@@ -101,7 +101,7 @@
       "key": "taiwan",
       "lit": [
         {
-          "detail": "Exposed: Volt Typhoon's Framework for Silent Espionage - BankInfoSecurity",
+          "detail": "Exposed: Volt Typhoon's Framework for Silent Espionage",
           "domain": "Cyber",
           "id": "cyber",
           "name": "Chinese state hacking reports (Volt / Salt Typhoon)",
@@ -259,7 +259,7 @@
       "key": "russia",
       "lit": [
         {
-          "detail": "Breaking the Gray-Zone Shield: Finland Jails Cargo Ship Officers in Landmark Subsea Cable Sabotage Conviction - Submarine Networks",
+          "detail": "Breaking the Gray-Zone Shield: Finland Jails Cargo Ship Officers in Landmark Subsea Cable Sabotage Conviction",
           "domain": "Undersea cables",
           "id": "cablenews",
           "name": "Baltic undersea cable damage reported",
@@ -269,7 +269,7 @@
       "name": "Russia-NATO escalation",
       "sa_impact": "Indirect: energy and market shock, cyber attacks that can spill over to Australian systems, and nuclear-risk rhetoric.",
       "score": 10,
-      "trend": "up",
+      "trend": "steady",
       "unlit": [
         {
           "domain": "Electronic warfare",
@@ -417,7 +417,7 @@
       "key": "ausinfra",
       "lit": [
         {
-          "detail": "SunCable largely finalises subsea cable route, targets electricity supply from Australia to Singapore around 2035 - 联合早报",
+          "detail": "SunCable largely finalises subsea cable route, targets electricity supply from Australia to Singapore around 2035",
           "domain": "Undersea cables",
           "id": "cablenews",
           "name": "Undersea cable damage reported (Australia / Pacific)",
@@ -475,11 +475,9 @@
       "why": "The 2023 Optus outage cut mobile, NBN, EFTPOS and some 000 calls nationwide for 12 hours. Hostile states pre-position in critical infrastructure; GPS jamming over Australia would be a new and serious sign."
     },
     {
-      "band": "High",
-      "convergence": "Signs are converging across 4 separate areas (chemical weapons, death statistics, health and markets). Unrelated systems flagging the same scenario at once is the pattern seen before past events. Before COVID-19 (Dec 2019 - Feb 2020): reports of an unknown pneumonia cluster, WHO outbreak notices, mask and hazmat makers (Alpha Pro Tech, Lakeland) and vaccine developers (Moderna, Novavax) surging weeks before broad markets fell, and countries restricting exports of masks and medicines (Taiwan from 24 Jan 2020, then dozens more). The strongest signs not yet showing: countries restricting medical supply exports, australian medicine or ppe shortage reports and market fear index above 30.",
+      "band": "Elevated",
+      "convergence": "Two different kinds of sign are showing together (health and markets). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: unknown illness / pneumonia cluster reported, countries restricting medical supply exports and chemical / nerve-agent attack or mass poisoning reported.",
       "domains": [
-        "Chemical weapons",
-        "Death statistics",
         "Health",
         "Markets"
       ],
@@ -493,39 +491,24 @@
           "weight": 15
         },
         {
-          "detail": "Mystery Pneumonia Death Sparks Concern; Trader Joe's Recall; OUD in Young People - MedPage Today",
-          "domain": "Health",
-          "id": "illness",
-          "name": "Unknown illness / pneumonia cluster reported",
-          "weight": 20
-        },
-        {
           "detail": "Pandemic-response stocks (masks, hazmat, vaccines, tests) +10.4% vs market over 5 days",
           "domain": "Markets",
           "id": "pharma",
           "name": "Pandemic-response stocks outperforming (5 days)",
           "weight": 20
-        },
-        {
-          "detail": "Deaths above normal: Arizona (US) 125% of expected, South Carolina (US) 126% of expected, Utah (US) 132% of expected",
-          "domain": "Death statistics",
-          "id": "mortality",
-          "name": "Deaths well above normal in a country (official weekly data)",
-          "weight": 10
-        },
-        {
-          "detail": "By What Logic Does Sudan’s Military Junta Have A Seat On The World’s Chemical Weapons Watchdog? - OpEd - Eurasia Review",
-          "domain": "Chemical weapons",
-          "id": "chem",
-          "name": "Chemical / nerve-agent attack or mass poisoning reported",
-          "weight": 15
         }
       ],
       "name": "Pandemic, biological or chemical emergency",
       "sa_impact": "Health system strain, possible lockdowns and border closures, and shortages of medicines and protective equipment, which Australia mostly imports.",
-      "score": 80,
-      "trend": "steady",
+      "score": 35,
+      "trend": "down",
       "unlit": [
+        {
+          "domain": "Health",
+          "id": "illness",
+          "name": "Unknown illness / pneumonia cluster reported",
+          "weight": 20
+        },
         {
           "domain": "Trade",
           "id": "exports",
@@ -551,6 +534,12 @@
           "weight": 10
         },
         {
+          "domain": "Chemical weapons",
+          "id": "chem",
+          "name": "Chemical / nerve-agent attack or mass poisoning reported",
+          "weight": 15
+        },
+        {
           "domain": "Health",
           "id": "dieoff",
           "name": "Unexplained mass deaths or animal die-offs",
@@ -569,14 +558,14 @@
       "key": "cyber",
       "lit": [
         {
-          "detail": "Exposed: Volt Typhoon's Framework for Silent Espionage - BankInfoSecurity",
+          "detail": "Exposed: Volt Typhoon's Framework for Silent Espionage",
           "domain": "State actors",
           "id": "state",
           "name": "Reports of state hackers / pre-positioning / wipers",
           "weight": 15
         },
         {
-          "detail": "France, US blame Iran for cyberattack on European fridges - The Australian",
+          "detail": "France, US blame Iran for cyberattack on European fridges",
           "domain": "Australian incidents",
           "id": "au",
           "name": "Major Australian cyber incident reported",
@@ -644,21 +633,21 @@
       "key": "ai",
       "lit": [
         {
-          "detail": "Autonomous AI agent executes multi-week cyberattack on European telecommunications provider - SC Media",
+          "detail": "Autonomous AI agent executes multi-week cyberattack on European telecommunications provider",
           "domain": "AI-enabled hacking",
           "id": "aihack",
           "name": "Reports of AI-driven hacking campaigns",
           "weight": 15
         },
         {
-          "detail": "AI Selloff Overdone? Asian Chip Stocks Stage Fierce Comeback; South Korean Market's Opening Surge Triggers Circuit Breaker - BigGo Finance",
+          "detail": "AI Selloff Overdone? Asian Chip Stocks Stage Fierce Comeback; South Korean Market's Opening Surge Triggers Circuit Breaker",
           "domain": "Markets",
           "id": "flash",
           "name": "Flash crash or exchange trading halt",
           "weight": 10
         },
         {
-          "detail": "Expert warns of rise in romance and voice cloning scams - Yahoo",
+          "detail": "Expert warns of rise in romance and voice cloning scams",
           "domain": "Fraud waves",
           "id": "scams",
           "name": "Surge in AI voice-clone / deepfake scams in Australia",
