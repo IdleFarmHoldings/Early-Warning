@@ -427,7 +427,7 @@ document.querySelectorAll(".wrap .panel").forEach((p, i)=>{
     const pairs = [];
     for(const [sc,sn] of srcs) for(const [dc,dn] of dsts) if(sc!==dc) pairs.push([sc,dc,sn*dn]);
     pairs.sort((a,b)=>b[2]-a[2]);
-    const curve = (a, b) => { let [la1,lo1]=a, [la2,lo2]=b; if(lo2-lo1>180) lo2-=360; if(lo1-lo2>180) lo2+=360;
+    const curve = (a, b) => { const [la1,lo1]=a, [la2,lo2]=b;  // no date-line wrap, so every arc ends on its marker
       const mx=(la1+la2)/2, my=(lo1+lo2)/2, dist=Math.hypot(la2-la1, lo2-lo1);
       const cx=Math.min(78, mx + Math.min(35, dist*0.25)), cy=my;  // bulge towards the pole like a ballistic arc
       const pts=[]; for(let t=0;t<=1.0001;t+=1/32){ const u=1-t; pts.push([u*u*la1+2*u*t*cx+t*t*la2, u*u*lo1+2*u*t*cy+t*t*lo2]); } return pts; };
