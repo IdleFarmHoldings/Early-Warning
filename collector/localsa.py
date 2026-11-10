@@ -337,6 +337,91 @@ def parse_ed(body):
     return recs[:40]
 
 
+# ---------- SA Water reservoir volumes (monthly open data) ----------
+CKAN_RES = "https://data.gov.au/data/api/3/action/package_show?id=reservoir-volumes-2018"
+
+
+def parse_reservoirs(text):
+    """CSV with one row per reservoir; finds the name, volume and capacity / % full columns by their headers."""
+    import csv
+    import io
+    rows = list(csv.DictReader(io.StringIO(text.lstrip("\ufeff"))))
+    if not rows:
+        return {}
+    cols = {k.lower(): k for k in rows[0] if k}
+    name_c = next((cols[k] for k in cols if "reservoir" in k or "name" in k), None)
+    pct_c = next((cols[k] for k in cols if "%" in k or "percent" in k or "full" in k), None)
+    vol_c = next((cols[k] for k in cols if "volume" in k and "%" not in k), None)
+    cap_c = next((cols[k] for k in cols if "capacity" in k), None)
+    date_c = next((cols[k] for k in cols if "date" in k), None)
+
+    def num(v):
+        try:
+            return float(str(v).replace(",", "").replace("%", "").strip())
+        except (TypeError, ValueError):
+            return None
+    out, vol_t, cap_t = [], 0.0, 0.0
+    for r in rows:
+        nm = (r.get(name_c) or "").strip() if name_c else ""
+        if not nm or nm.lower().startswith("total"):
+            continue
+        vol, cap = num(r.get(vol_c)) if vol_c else None, num(r.get(cap_c)) if cap_c else None
+        pct = num(r.get(pct_c)) if pct_c else (vol / cap * 100 if vol is not None and cap else None)
+        if vol is not None and cap:
+            vol_t += vol
+            cap_t += cap
+        out.append({"name": nm[:40], "pct": round(pct, 1) if pct is not None else None})
+    return {"reservoirs": out, "total_pct": round(vol_t / cap_t * 100, 1) if cap_t else None,
+            "as_of": (rows[0].get(date_c) or "") if date_c else "",
+            "low": [r["name"] for r in out if r["pct"] is not None and r["pct"] < 30]}
+
+
+def fetch_reservoirs(state, samples, now_iso):
+    cache = state.get("reservoirs_cache") or {}
+    if cache.get("fetched", "") > now_iso[:10] and cache.get("data"):  # once a day is plenty for monthly data
+        return cache["data"]
+    pkg = json.loads(http_get(CKAN_RES, timeout=30))
+    res = [r for r in pkg["result"]["resources"] if (r.get("format") or "").lower() in ("csv", "") and r.get("url")]
+    res.sort(key=lambda r: r.get("created") or r.get("last_modified") or "")
+    latest = res[-1]
+    text = http_get(latest["url"], timeout=30).decode("utf-8", "replace")
+    samples["reservoirs"] = latest.get("name", "") + " | " + text[:600]
+    data = parse_reservoirs(text)
+    data["source_name"] = latest.get("name", "")
+    if not data.get("as_of"):
+        data["as_of"] = latest.get("name", "").replace("Reservoir Volumes for", "").strip()
+    state["reservoirs_cache"] = {"fetched": now_iso, "data": data}
+    return data
+
+
+# ---------- SA Power Networks outages (discovery from the outage page) ----------
+SAPN_PAGE = "https://www.sapowernetworks.com.au/outages/"
+
+
+def discover_sapn(samples):
+    html = http_get(SAPN_PAGE, timeout=30).decode("utf-8", "replace")
+    cands = re.findall(r"""["'](https?://[^"'\s]+(?:outage|Outage)[^"'\s]*)["']""", html)
+    cands += [_abs(SAPN_PAGE, u) for u in re.findall(r"""["'](/[^"'\s]*(?:api|json|outage)[^"'\s]*\.(?:json|js)[^"'\s]*)["']""", html, re.I)]
+    cands = [u for u in dict.fromkeys(cands) if not re.search(r"\.(css|png|jpg|svg|pdf)(\?|$)", u)]
+    samples["sapn_candidates"] = " ".join(cands)[:1500]
+    for u in cands[:10]:
+        try:
+            body = http_get(u, timeout=20).decode("utf-8", "replace")
+        except Exception:  # noqa: BLE001
+            continue
+        if u.endswith(".js") or ".js?" in u:
+            for d in re.findall(r"""["'](https?://[^"'\s]+)["']""", body)[:200]:
+                if re.search(r"outage|incident|api", d, re.I) and not re.search(r"\.(css|png|jpg|svg|js)(\?|$)", d):
+                    samples.setdefault("sapn_js_urls", "")
+                    samples["sapn_js_urls"] = (samples["sapn_js_urls"] + " " + d)[:1500]
+            continue
+        if body.lstrip()[:1] in "[{":
+            samples["sapn_data_url"] = u
+            samples["sapn_data"] = body[:1500]
+            return {"data_url": u}
+    raise RuntimeError("SA Power Networks outage data not found yet (see debug sample)")
+
+
 def fetch_local(state):
     lc = CONFIG["local"]
     out, errors, samples = {}, [], {}
@@ -390,6 +475,8 @@ def fetch_local(state):
     part("grid", lambda: fetch_aemo(state))
     part("roads", lambda: fetch_roads(samples))
     part("ed", lambda: discover_ed(samples))
+    part("reservoirs", lambda: fetch_reservoirs(state, samples, __import__("common").iso()))
+    part("sapn", lambda: discover_sapn(samples))
     if not out:
         raise RuntimeError("; ".join(errors[:3]))
     inc = out.get("incidents") or []
@@ -413,6 +500,9 @@ def fetch_local(state):
         "ed_very_busy": [e["hospital"] for e in (out.get("ed") or []) if re.search(r"very busy", e["status"], re.I)],
         "ed": [{k: e.get(k) for k in ("hospital", "status", "capacity_pct", "avg_wait_min", "waiting")} for e in (out.get("ed") or [])][:12],
         "ed_known": len(out.get("ed") or []),
+        "reservoirs_pct": (out.get("reservoirs") or {}).get("total_pct"),
+        "reservoirs_as_of": (out.get("reservoirs") or {}).get("as_of"),
+        "reservoirs_low": (out.get("reservoirs") or {}).get("low") or [],
     }
     out["errors"] = errors
     out["samples"] = samples

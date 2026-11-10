@@ -359,6 +359,12 @@ function renderLatest(l){
     const lvl = ls.grid_lor_level||0;
     let h = Object.entries(fd).map(([d,r])=>rowL(`Fire danger: ${d}`, r||"No rating", fdC(r), r==="High")).join("");
     h += rowL("Total fire ban", bans.length?bans.join(", "):"None", bans.length?"var(--l4)":"var(--l2)");
+    const pn = ls.power_news||[], wn = ls.sawater_news||[], mn = ls.murray_news||[];
+    h += rowL("Power outages", pn.length?`${pn.length} report${pn.length>1?"s":""} today`:"No major outages reported", pn.length?"var(--l4)":"var(--l2)");
+    h += rowL("Water (SA Water)", wn.length?`${wn.length} supply/quality report${wn.length>1?"s":""}`:"No major issues reported", wn.length?"var(--l3)":"var(--l2)", wn.length>0);
+    if(ls.reservoirs_pct!=null) h += rowL("Adelaide reservoirs", `${ls.reservoirs_pct}% full${ls.reservoirs_as_of?` · ${ls.reservoirs_as_of}`:""}`, ls.reservoirs_pct<30?"var(--l4)":ls.reservoirs_pct<50?"var(--l3)":"var(--l2)", ls.reservoirs_pct>=30&&ls.reservoirs_pct<50);
+    const newsItems = [...pn.map(t=>"Power: "+t), ...wn.map(t=>"Water: "+t), ...mn.map(t=>"River Murray: "+t)];
+    if(newsItems.length) h += `<details style="margin-top:6px"><summary>Power &amp; water reports (${newsItems.length})</summary><ul style="margin:6px 0 0;padding-left:1.1em;font-size:.84rem">${newsItems.map(t=>`<li>${esc(t)}</li>`).join("")}</ul></details>`;
     h += rowL("Power supply (SA)", lvl>=3?"Critical (LOR3)":lvl===2?"Tight (LOR2)":lvl===1?"Watch (LOR1)":"Normal", lvl>=3?"var(--l5)":lvl===2?"var(--l4)":lvl===1?"var(--l3)":"var(--l2)", lvl===1);
     const ew=(ls.emergency_warnings||[]).length, wa=(ls.watch_and_act||[]).length;
     h += rowL("CFS warnings", ew?`${ew} Emergency`:wa?`${wa} Watch and Act`:`None · ${ls.fires_active||0} fires active`, ew?"var(--l5)":wa?"var(--l4)":"var(--l2)");

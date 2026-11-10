@@ -109,6 +109,33 @@
           "min_len": 3,
           "weight": 10,
           "domain": "Hospitals"
+        },
+        {
+          "id": "power",
+          "name": "Reports of widespread power outages in SA",
+          "type": "local",
+          "field": "power_news",
+          "nonempty": true,
+          "weight": 15,
+          "domain": "Power grid"
+        },
+        {
+          "id": "water",
+          "name": "SA Water supply cut or water-quality notice reported",
+          "type": "local",
+          "field": "sawater_news",
+          "nonempty": true,
+          "weight": 10,
+          "domain": "Water"
+        },
+        {
+          "id": "reservoirs",
+          "name": "Adelaide reservoirs below 30% (any)",
+          "type": "local",
+          "field": "reservoirs_low",
+          "nonempty": true,
+          "weight": 5,
+          "domain": "Water"
         }
       ]
     },

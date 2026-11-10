@@ -314,6 +314,13 @@ def main():
             chk = val
         else:
             pm = val
+    if loc.get("summary") is not None:
+        nw = (results.get("news_watch") or {}).get("watch") or {}
+        pick = lambda k, words: [i["title"].rsplit(" - ", 1)[0][:140] for i in (nw.get(k) or {}).get("items", [])
+                                 if re.search(words, i["title"], re.I)][:3]
+        loc["summary"]["sawater_news"] = pick("sawater", r"SA Water")
+        loc["summary"]["power_news"] = pick("sapn", r"(SA Power|South Australia|Adelaide|\bSA\b).*(outage|without power|blackout|power cut)|(outage|without power|blackout|power cut).*(SA Power|South Australia|Adelaide|\bSA\b)")
+        loc["summary"]["murray_news"] = pick("murray", r"River Murray")
     if loc.get("samples"):
         save_json("data/debug_samples.json", loc.pop("samples"))
     alerts += local_alerts(loc, state, now, first_run)

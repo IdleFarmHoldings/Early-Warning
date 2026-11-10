@@ -446,3 +446,11 @@ def test_ed_and_roads_parsing():
     r = localsa.summarise_roads([{"LOCAL_ROAD_NAME": "MORGAN MAIL ROAD", "START_SUBURB": "QUONDONG",
                                   "PLOT_DETAILS": "MORGAN MAIL RD Closed due to flooding over road\r\n\r\nRef# 2138578"}])
     assert r[0]["road"] == "Morgan Mail Road" and r[0]["hazard"] and "Ref#" not in r[0]["type"]
+
+
+def test_reservoirs_csv():
+    import localsa
+    csv_text = "Reservoir,Date,Capacity (ML),Volume (ML),% Full\nMount Bold,30/09/2026,45900,30000,65.4\nHappy Valley,30/09/2026,11600,3000,25.9\nTotal,30/09/2026,57500,33000,57.4\n"
+    r = localsa.parse_reservoirs(csv_text)
+    assert [x["name"] for x in r["reservoirs"]] == ["Mount Bold", "Happy Valley"] and r["low"] == ["Happy Valley"]
+    assert r["total_pct"] == 57.4 and r["as_of"] == "30/09/2026"
