@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T04:23:00Z",
+  "generated_at": "2026-11-11T04:39:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -29,7 +29,7 @@
       "name": "Local emergency in SA (bushfire, heat, power)",
       "sa_impact": "Direct: bushfires, heatwaves and power cuts are the emergencies most likely to affect the family. In the 2016 statewide blackout, power, phones, traffic lights and fuel pumps failed together.",
       "score": 35,
-      "trend": "up",
+      "trend": "steady",
       "unlit": [
         {
           "domain": "Bushfire",
@@ -206,24 +206,14 @@
     },
     {
       "band": "Low",
-      "convergence": "Only one kind of sign is showing (markets). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: missile / live-fire navigation warnings near taiwan, gps jamming over the taiwan strait and internet disruption in taiwan.",
-      "domains": [
-        "Markets"
-      ],
+      "convergence": "No warning signs are showing. The strongest signs not yet showing: missile / live-fire navigation warnings near taiwan, gps jamming over the taiwan strait and internet disruption in taiwan.",
+      "domains": [],
       "key": "taiwan",
-      "lit": [
-        {
-          "detail": "Australian defence stocks +5.2% vs market over 5 days",
-          "domain": "Markets",
-          "id": "def",
-          "name": "Defence stocks outperforming (US / Australia)",
-          "weight": 5
-        }
-      ],
+      "lit": [],
       "name": "Taiwan Strait / South China Sea crisis",
       "sa_impact": "Trade and fuel: most of Australia's refined fuel and many goods pass the South China Sea. A blockade would disrupt fuel, medicines and electronics within weeks; Australian forces could be drawn in.",
-      "score": 5,
-      "trend": "steady",
+      "score": 0,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Maritime",
@@ -284,6 +274,12 @@
           "id": "blood",
           "name": "Military blood drives / field hospitals (China / Taiwan)",
           "weight": 10
+        },
+        {
+          "domain": "Markets",
+          "id": "def",
+          "name": "Defence stocks outperforming (US / Australia)",
+          "weight": 5
         },
         {
           "domain": "Cyber",
@@ -565,7 +561,7 @@
       "name": "Australian infrastructure disruption",
       "sa_impact": "Direct: loss of phone, internet, EFTPOS and fuel pumps. Cash, fuel and a pre-agreed meeting point matter most in the first 24 hours.",
       "score": 25,
-      "trend": "up",
+      "trend": "steady",
       "unlit": [
         {
           "domain": "Communications",
@@ -730,7 +726,7 @@
       "name": "Major cyber attack on Australia",
       "sa_impact": "Banks, payments, hospitals, fuel distribution, telcos and the power grid all run on networks; a large attack can stop card payments and services for hours to days.",
       "score": 35,
-      "trend": "up",
+      "trend": "steady",
       "unlit": [
         {
           "domain": "Global threat level",
