@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T14:39:00Z",
+  "generated_at": "2026-11-11T14:54:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -773,10 +773,11 @@
     },
     {
       "band": "Elevated",
-      "convergence": "Signs are converging across 3 separate areas (ai-enabled hacking, fraud waves and synthetic media). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: a Chinese state-sponsored group used an AI agent to carry out 80-90% of an attack on about 30 organisations, at thousands of requests per second. A fake AI image of a Pentagon explosion briefly moved US markets in May 2023, and a deepfake video call of a CFO tricked a company into paying US$25 million in 2024. The likely signature of an AI attack is breadth and speed: many unrelated systems and vendors hit at once, synthetic media of officials, and shocks with no clear human cause. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, flash crash or exchange trading halt and market fear index jumps 25%+ in a day.",
+      "convergence": "Signs are converging across 4 separate areas (ai-enabled hacking, fraud waves, markets and synthetic media). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: a Chinese state-sponsored group used an AI agent to carry out 80-90% of an attack on about 30 organisations, at thousands of requests per second. A fake AI image of a Pentagon explosion briefly moved US markets in May 2023, and a deepfake video call of a CFO tricked a company into paying US$25 million in 2024. The likely signature of an AI attack is breadth and speed: many unrelated systems and vendors hit at once, synthetic media of officials, and shocks with no clear human cause. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, market fear index jumps 25%+ in a day and major cloud or ai service outage.",
       "domains": [
         "AI-enabled hacking",
         "Fraud waves",
+        "Markets",
         "Synthetic media"
       ],
       "key": "ai",
@@ -796,6 +797,13 @@
           "weight": 15
         },
         {
+          "detail": "Circuit Breaker Inspection Robots Market To 2035: Aging Grids and Predictive Maintenance Drive Growth - News and Statistics",
+          "domain": "Markets",
+          "id": "flash",
+          "name": "Flash crash or exchange trading halt",
+          "weight": 10
+        },
+        {
           "detail": "Deepfake fraud has cost almost $4 billion worldwide since 2020",
           "domain": "Fraud waves",
           "id": "scams",
@@ -805,20 +813,14 @@
       ],
       "name": "AI-enabled attack (non-traditional)",
       "sa_impact": "Not bombs but disruption: hacking at machine speed across banks, telcos, hospitals and the grid at once; fake videos or alerts from leaders causing panic buying or bank runs; or automated market and fraud shocks. Effects would be outages, payment failures and confusion about what is real.",
-      "score": 35,
-      "trend": "steady",
+      "score": 45,
+      "trend": "up",
       "unlit": [
         {
           "domain": "Mass exploitation",
           "id": "breadth",
           "name": "Exploited flaws across unusually many vendors at once",
           "weight": 15
-        },
-        {
-          "domain": "Markets",
-          "id": "flash",
-          "name": "Flash crash or exchange trading halt",
-          "weight": 10
         },
         {
           "domain": "Markets",
