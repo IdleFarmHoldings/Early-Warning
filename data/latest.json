@@ -4,15 +4,15 @@
     "anomalies": {
       "airlift": {
         "status": "learning baseline",
-        "value": 35
+        "value": 28
       },
       "bizjets_airborne": {
         "status": "learning baseline",
-        "value": 22
+        "value": 20
       },
       "dark_auspng": {
         "status": "learning baseline",
-        "value": 2
+        "value": 1
       },
       "dark_eeurope": {
         "status": "learning baseline",
@@ -20,7 +20,7 @@
       },
       "dark_korea": {
         "status": "learning baseline",
-        "value": 0
+        "value": 1
       },
       "dark_mideast": {
         "status": "learning baseline",
@@ -32,15 +32,15 @@
       },
       "gps_adelaide": {
         "status": "learning baseline",
-        "value": 0
+        "value": 3
       },
       "gps_baltic": {
-        "status": "no data",
-        "value": null
+        "status": "learning baseline",
+        "value": 93
       },
       "gps_blacksea": {
         "status": "learning baseline",
-        "value": 54
+        "value": 70
       },
       "gps_gulf": {
         "status": "learning baseline",
@@ -56,7 +56,7 @@
       },
       "gps_sydney": {
         "status": "learning baseline",
-        "value": 1
+        "value": 3
       },
       "gps_taiwan": {
         "status": "learning baseline",
@@ -64,27 +64,27 @@
       },
       "mil_auspng": {
         "status": "learning baseline",
-        "value": 24
+        "value": 23
       },
       "mil_eeurope": {
         "status": "learning baseline",
-        "value": 1
+        "value": 2
       },
       "mil_korea": {
         "status": "learning baseline",
-        "value": 9
+        "value": 5
       },
       "mil_mideast": {
         "status": "learning baseline",
-        "value": 3
+        "value": 2
       },
       "mil_taiwan": {
         "status": "learning baseline",
-        "value": 3
+        "value": 4
       },
       "mil_total": {
         "status": "learning baseline",
-        "value": 187
+        "value": 170
       },
       "navwarn_australia": {
         "status": "no data",
@@ -108,7 +108,7 @@
       },
       "raaf": {
         "status": "learning baseline",
-        "value": 21
+        "value": 19
       },
       "retreat_bizjets": {
         "status": "learning baseline",
@@ -116,42 +116,42 @@
       },
       "tankers": {
         "status": "learning baseline",
-        "value": 10
+        "value": 7
       }
     },
     "detail": {
-      "airlift": 35,
-      "bizjets_airborne": 22,
+      "airlift": 28,
+      "bizjets_airborne": 20,
       "bizjets_by_hub": {
         "Dallas / Houston": 1,
         "Dubai": 1,
-        "Geneva / Zurich": 0,
+        "Geneva / Zurich": 1,
         "Hong Kong": 0,
         "London": 0,
-        "Los Angeles (Van Nuys)": 5,
+        "Los Angeles (Van Nuys)": 4,
         "Moscow": 0,
-        "New York (Teterboro)": 6,
-        "Palm Beach / Miami": 5,
-        "San Francisco Bay": 3,
+        "New York (Teterboro)": 8,
+        "Palm Beach / Miami": 2,
+        "San Francisco Bay": 2,
         "Singapore": 1,
-        "Washington DC": 7
+        "Washington DC": 9
       },
-      "dark_auspng": 2,
+      "dark_auspng": 1,
       "dark_eeurope": 0,
-      "dark_korea": 0,
+      "dark_korea": 1,
       "dark_mideast": 0,
       "dark_taiwan": 0,
       "errors": [],
       "isr": 5,
-      "mil_auspng": 24,
-      "mil_eeurope": 1,
-      "mil_korea": 9,
-      "mil_mideast": 3,
-      "mil_taiwan": 3,
-      "mil_total": 187,
+      "mil_auspng": 23,
+      "mil_eeurope": 2,
+      "mil_korea": 5,
+      "mil_mideast": 2,
+      "mil_taiwan": 4,
+      "mil_total": 170,
       "nc3": 0,
       "nc3_seen": [],
-      "raaf": 21,
+      "raaf": 19,
       "retreat_bizjets": 0,
       "retreat_by_place": {
         "Auckland": 0,
@@ -159,7 +159,7 @@
         "Patagonia": 0,
         "Queenstown / Wanaka": 0
       },
-      "tankers": 10
+      "tankers": 7
     }
   },
   "analyst_latest": {
@@ -375,7 +375,7 @@
       "total": 5
     },
     "errors": [],
-    "generated_at": "2026-11-11T03:04:50Z",
+    "generated_at": "2026-11-11T03:20:22Z",
     "infocon": "green",
     "kev": {
       "all": {
@@ -623,7 +623,6 @@
         "DK": 1,
         "ES": 2,
         "GB": 3,
-        "HK": 1,
         "IN": 1,
         "IT": 1,
         "JP": 1,
@@ -639,18 +638,23 @@
     },
     "sources": {
       "by_country": {
-        "AD": 1588,
-        "BG": 2438,
-        "CA": 10154,
-        "DE": 819,
-        "FR": 10150,
-        "HK": 415,
-        "KZ": 480,
-        "NL": 3900,
+        "AD": 430,
+        "BG": 899,
+        "CA": 2394,
+        "DE": 2064,
+        "FR": 9090,
+        "GB": 428,
+        "HK": 1791,
+        "KZ": 937,
+        "LU": 415,
+        "NL": 21601,
+        "NO": 439,
         "RO": 450,
-        "SC": 1353,
+        "RU": 7310,
+        "SC": 1761,
         "SE": 414,
-        "US": 8879
+        "SG": 447,
+        "US": 31875
       },
       "top_ips": 100
     },
@@ -667,25 +671,25 @@
     }
   },
   "gdacs_current_orange_red": [],
-  "generated_at": "2026-11-11T03:02:00Z",
+  "generated_at": "2026-11-11T03:18:00Z",
   "gps_jamming": {
     "adelaide": {
-      "aircraft": 26,
-      "bad_pct": 0,
+      "aircraft": 39,
+      "bad_pct": 3,
       "name": "South Australia"
     },
     "baltic": {
-      "aircraft": 8,
-      "bad_pct": null,
+      "aircraft": 14,
+      "bad_pct": 93,
       "name": "Baltic / Kaliningrad"
     },
     "blacksea": {
-      "aircraft": 13,
-      "bad_pct": 54,
+      "aircraft": 20,
+      "bad_pct": 70,
       "name": "Black Sea"
     },
     "gulf": {
-      "aircraft": 66,
+      "aircraft": 52,
       "bad_pct": 8,
       "name": "Persian Gulf"
     },
@@ -695,17 +699,17 @@
       "name": "Israel & Eastern Mediterranean"
     },
     "korea": {
-      "aircraft": 93,
+      "aircraft": 87,
       "bad_pct": 1,
       "name": "Korea"
     },
     "sydney": {
-      "aircraft": 73,
-      "bad_pct": 1,
+      "aircraft": 75,
+      "bad_pct": 3,
       "name": "Sydney / NSW"
     },
     "taiwan": {
-      "aircraft": 55,
+      "aircraft": 45,
       "bad_pct": 0,
       "name": "Taiwan Strait"
     }
@@ -716,14 +720,14 @@
         "baseline": 1090467,
         "drop_pct": 0.0,
         "points": 73,
-        "recent": 1090471
+        "recent": 1090473
       },
       "code": "CN",
       "ping-slash24": {
         "baseline": 327217,
         "drop_pct": 0.6,
         "points": 37,
-        "recent": 325098
+        "recent": 325263
       }
     },
     "Iran": {
@@ -736,9 +740,9 @@
       "code": "IR",
       "ping-slash24": {
         "baseline": 11527,
-        "drop_pct": 1.0,
+        "drop_pct": 0.9,
         "points": 37,
-        "recent": 11411
+        "recent": 11421
       }
     },
     "Israel": {
@@ -751,24 +755,24 @@
       "code": "IL",
       "ping-slash24": {
         "baseline": 4712,
-        "drop_pct": 0.4,
+        "drop_pct": 0.1,
         "points": 37,
-        "recent": 4693
+        "recent": 4705
       }
     },
     "Russia": {
       "bgp": {
-        "baseline": 170612,
+        "baseline": 170614,
         "drop_pct": 0.0,
         "points": 73,
-        "recent": 170626
+        "recent": 170628
       },
       "code": "RU",
       "ping-slash24": {
         "baseline": 92235,
         "drop_pct": 0.0,
         "points": 37,
-        "recent": 92301
+        "recent": 92281
       }
     },
     "South Korea": {
@@ -780,10 +784,10 @@
       },
       "code": "KR",
       "ping-slash24": {
-        "baseline": 266993,
+        "baseline": 266998,
         "drop_pct": 0.0,
         "points": 37,
-        "recent": 267329
+        "recent": 267138
       }
     },
     "Taiwan": {
@@ -795,85 +799,85 @@
       },
       "code": "TW",
       "ping-slash24": {
-        "baseline": 30647,
+        "baseline": 30736,
         "drop_pct": 0.0,
         "points": 37,
-        "recent": 31087
+        "recent": 31068
       }
     }
   },
   "local_sa": {
     "bom": [],
     "demand": {
-      "fall_pct_30min": 21.2,
-      "interval": "2026/11/11 13:10:00",
-      "mw": 718,
+      "fall_pct_30min": 30.2,
+      "interval": "2026/11/11 13:25:00",
+      "mw": 636,
       "possible_blackout": false,
       "usual_mw": null
     },
     "ed": [
       {
-        "as_of": "2026-11-11T13:00:00",
-        "avg_wait_min": 51,
+        "as_of": "2026-11-11T13:30:00",
+        "avg_wait_min": 47,
         "capacity_pct": 63.0,
         "code": "FMC",
         "hospital": "Flinders Medical Centre",
         "status": "Normal",
-        "waiting": 13
+        "waiting": 17
       },
       {
-        "as_of": "2026-11-11T13:00:00",
-        "avg_wait_min": 59,
+        "as_of": "2026-11-11T13:30:00",
+        "avg_wait_min": 83,
         "capacity_pct": 57.0,
         "code": "LMH",
         "hospital": "Lyell McEwin",
         "status": "Normal",
-        "waiting": 25
+        "waiting": 20
       },
       {
-        "as_of": "2026-11-11T13:00:00",
-        "avg_wait_min": 62,
+        "as_of": "2026-11-11T13:30:00",
+        "avg_wait_min": 63,
         "capacity_pct": 36.0,
         "code": "MH",
         "hospital": "Modbury",
         "status": "Normal",
-        "waiting": 10
+        "waiting": 12
       },
       {
-        "as_of": "2026-11-11T13:00:00",
+        "as_of": "2026-11-11T13:30:00",
         "avg_wait_min": 49,
         "capacity_pct": 26.0,
         "code": "NHS",
         "hospital": "Noarlunga",
         "status": "Normal",
-        "waiting": 8
+        "waiting": 9
       },
       {
-        "as_of": "2026-11-11T13:00:00",
-        "avg_wait_min": 81,
+        "as_of": "2026-11-11T13:30:00",
+        "avg_wait_min": 103,
         "capacity_pct": 69.0,
         "code": "RAH",
         "hospital": "Royal Adelaide",
         "status": "Normal",
-        "waiting": 25
+        "waiting": 24
       },
       {
-        "as_of": "2026-11-11T13:00:00",
-        "avg_wait_min": 73,
+        "as_of": "2026-11-11T13:30:00",
+        "avg_wait_min": 58,
         "capacity_pct": 44.0,
         "code": "TQEH",
         "hospital": "Queen Elizabeth",
         "status": "Normal",
-        "waiting": 12
+        "waiting": 18
       },
       {
-        "as_of": "2026-11-11T13:00:00",
-        "avg_wait_min": 87,
+        "as_of": "2026-11-11T13:30:00",
+        "avg_wait_min": 90,
         "capacity_pct": 38.0,
         "code": "WCH",
         "hospital": "Women's and Children's",
         "status": "Normal",
-        "waiting": 11
+        "waiting": 16
       }
     ],
     "errors": [
@@ -1017,53 +1021,53 @@
       "cfs_feed_ok": true,
       "ed": [
         {
-          "avg_wait_min": 51,
+          "avg_wait_min": 47,
           "capacity_pct": 63.0,
           "hospital": "Flinders Medical Centre",
           "status": "Normal",
-          "waiting": 13
+          "waiting": 17
         },
         {
-          "avg_wait_min": 59,
+          "avg_wait_min": 83,
           "capacity_pct": 57.0,
           "hospital": "Lyell McEwin",
           "status": "Normal",
-          "waiting": 25
+          "waiting": 20
         },
         {
-          "avg_wait_min": 62,
+          "avg_wait_min": 63,
           "capacity_pct": 36.0,
           "hospital": "Modbury",
           "status": "Normal",
-          "waiting": 10
+          "waiting": 12
         },
         {
           "avg_wait_min": 49,
           "capacity_pct": 26.0,
           "hospital": "Noarlunga",
           "status": "Normal",
-          "waiting": 8
+          "waiting": 9
         },
         {
-          "avg_wait_min": 81,
+          "avg_wait_min": 103,
           "capacity_pct": 69.0,
           "hospital": "Royal Adelaide",
           "status": "Normal",
-          "waiting": 25
+          "waiting": 24
         },
         {
-          "avg_wait_min": 73,
+          "avg_wait_min": 58,
           "capacity_pct": 44.0,
           "hospital": "Queen Elizabeth",
           "status": "Normal",
-          "waiting": 12
+          "waiting": 18
         },
         {
-          "avg_wait_min": 87,
+          "avg_wait_min": 90,
           "capacity_pct": 38.0,
           "hospital": "Women's and Children's",
           "status": "Normal",
-          "waiting": 11
+          "waiting": 16
         }
       ],
       "ed_known": 7,
@@ -1071,9 +1075,9 @@
       "emergency_warnings": [],
       "fire_ban_districts": [],
       "fire_danger_ok": true,
-      "fires_active": 12,
-      "grid_demand_fall_pct": 21.2,
-      "grid_demand_mw": 718,
+      "fires_active": 14,
+      "grid_demand_fall_pct": 30.2,
+      "grid_demand_mw": 636,
       "grid_demand_usual_mw": null,
       "grid_lor_actual": false,
       "grid_lor_level": 0,
@@ -1103,9 +1107,23 @@
     },
     "warnings": [
       {
-        "area": "DANYO NORTH RD MURRAYVILLE",
-        "event": "Grass Fire",
-        "headline": "MURRAYVILLE : GRASS FIRE",
+        "area": "131 WEHL ST MOUNT GAMBIER",
+        "event": "Fire",
+        "headline": "MOUNT GAMBIER : RUBBISH OR WASTE",
+        "level": null,
+        "severity": "Unknown"
+      },
+      {
+        "area": "131 WEHL ST MOUNT GAMBIER",
+        "event": "Fire",
+        "headline": "MOUNT GAMBIER : RUBBISH OR WASTE",
+        "level": null,
+        "severity": "Unknown"
+      },
+      {
+        "area": "104 SYDNEY ST GLENUNGA",
+        "event": "Structure Fire",
+        "headline": "GLENUNGA : STRUCTURE FIRE",
         "level": null,
         "severity": "Unknown"
       },
@@ -1190,19 +1208,19 @@
   },
   "markets": {
     "AUD/USD": {
-      "change_pct": -0.57,
+      "change_pct": -0.55,
       "prev_close": 0.6921,
-      "price": 0.6882
+      "price": 0.6883
     },
     "Brent oil": {
-      "change_pct": -0.13,
-      "prev_close": 92.57,
-      "price": 92.45
+      "change_pct": 0.96,
+      "prev_close": 91.49,
+      "price": 92.37
     },
     "Gold": {
-      "change_pct": -1.56,
-      "prev_close": 4114.5,
-      "price": 4050.3
+      "change_pct": 0.63,
+      "prev_close": 4030.2,
+      "price": 4055.5
     },
     "VIX": {
       "change_pct": -2.31,
@@ -1224,14 +1242,14 @@
           "title": "Israel warns Iran is seeking AI-powered cyberattack capabilities - CTech"
         },
         {
-          "date": "Tue, 10 Nov 2026 18:12:26 GMT",
-          "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTFA4bEVLLUFXTlZBT0ZfRkxMRVF3aE0tWTZ3cDZyNU9sN0lXMTlRSDVKOUNrNHRaZDRzeVBrRVRPSmRyeVdOSGw2cndHX0J1V1RhTEFyWTFsTHQwR3RHTUdrLVZsZW9CZFJvaFHSAW9BVV95cUxQdUk0Ymppamd2Z2d2MVo5ZE1JS1lzMWRqc0xNdWNFcXZwbm56bFIwRUlTNVRZMlVLbEF2c2VmZDQ0cDRlQy1haTV1TmkwWkZRbW03ZjNqVnFMbnN3V1FmaXQ0ME16Umh5Q0VQQ2QzdDg?oc=5",
-          "title": "Railway Reveals How Hackers Used AI Agents to Steal API Keys and Rack Up $740,000 in Charges - CyberSecurityNews"
-        },
-        {
           "date": "Wed, 11 Nov 2026 02:29:00 GMT",
           "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQOWEwUVV3LV9QZ2hxN20tRHZuSGlsZjExNnMwLUVqbTJLVGUxWDZXRU1qQXVYd0k3S0hvV3U3MVgwakZIdEZURTUtR3RwSXkxamJUMndPYWc5aUkzMEI2N0NwSXA5STV5U0hvOWduT0tNWGJhN2laTVNDSkZSYWdLRDNQRFc0cDBadC1OdW4yaVNOalpCS3ZuaWFQUUEzTE5kU3gyR2drUGhDNWQtMWZ6LVFFQ3dRamRJRTNQcdIB0AFBVV95cUxOenN5ZC1yeFN4Y2FhT0Q5dm1iSEE4a0s4QVF4M1FBVDhTdnRmbHlhS0hYSURMcklydmRQelFScWxQMjItc2xPcUl0a0hPakZnZ3lDYmpDdVpqRlVYY2NRcUEycWVRYzBvQ3JwbHg2NlU5Q3hmeU1fSWJUU0JoWFZnVGRJeUgyZVRKeW82bDBGd0dkUGliVE83dmw2TXdEYUE5M2dSU3RmSFZiOEl4eTlRQThJajZLYWhnZ0F4TEZlczBMZTNzMUNuenJueDgzUTl3?oc=5",
           "title": "OSF joins statewide AI cyberattack exercise to strengthen hospital emergency response - WEEK | 25 News Now"
+        },
+        {
+          "date": "Tue, 10 Nov 2026 18:12:26 GMT",
+          "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTFA4bEVLLUFXTlZBT0ZfRkxMRVF3aE0tWTZ3cDZyNU9sN0lXMTlRSDVKOUNrNHRaZDRzeVBrRVRPSmRyeVdOSGw2cndHX0J1V1RhTEFyWTFsTHQwR3RHTUdrLVZsZW9CZFJvaFHSAW9BVV95cUxQdUk0Ymppamd2Z2d2MVo5ZE1JS1lzMWRqc0xNdWNFcXZwbm56bFIwRUlTNVRZMlVLbEF2c2VmZDQ0cDRlQy1haTV1TmkwWkZRbW03ZjNqVnFMbnN3V1FmaXQ0ME16Umh5Q0VQQ2QzdDg?oc=5",
+          "title": "Railway Reveals How Hackers Used AI Agents to Steal API Keys and Rack Up $740,000 in Charges - CyberSecurityNews"
         },
         {
           "date": "Tue, 10 Nov 2026 19:09:07 GMT",
@@ -1289,9 +1307,19 @@
           "title": "Army Reserve medical training site strengthens Total Army nursing readiness at Fort Gordon - U.S. Army Reserve (.mil)"
         },
         {
+          "date": "Wed, 11 Nov 2026 02:15:38 GMT",
+          "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFBaelFvb2g2NzFOZzA4ZXpwYklrOUFHVjlhdkFGbndDNEhjdk9IR2tjOXR0N1dXUGdDVUl4ODc5TDBxLVhIaDNWZ1RuY3l1aDhfZ2pGTElZWXFlQ1BlbWJHYnBxQQ?oc=5",
+          "title": "90 times voluntarily donating blood - Vietnam.vn"
+        },
+        {
           "date": "Tue, 10 Nov 2026 13:44:05 GMT",
           "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQUjctZTBQRHdZV0s2NU90cnRvb0NiNF9CZmtzVlhMLXV5eXZZWW84Yk52WTk0alJWQXZDVU45OUFkYVpKTGI2VUowekNaY1NRS0dTMTRXYXkyUmRYUWZzNFhpOHdoVW5admNVdmxVRm1WMDE1QU1NRjFmbjk0ak5tQlVBN0F4bEdPSEpRLWFZM2PSAZgBQVVfeXFMT083YU1odDA1cTRuTlYtUFU5R2dTLW9xNDBpcWdPUk5xOWQtRVdSX2hJR1h1N1BhQnFRRkNCNGhjTEt6dTVobmZjdklNamZnRlVMWXlIaUxtcEV2TVgxUVVEU0VhWjd3RFFraGtqY3IzM2NOU05zYUlEODhkcVN2V1YyTG9zOUlZemdqaXVoMnpNZmR1cVBmRG8?oc=5",
           "title": "Ukraine war exposes risks of military medical evacuations, Abu Dhabi congress hears - Khaleej Times"
+        },
+        {
+          "date": "Tue, 10 Nov 2026 18:12:10 GMT",
+          "link": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE16WE1jQ0g2azl0YWdrWmI1eHBrdzJ5czhWSlBaVUtTcmN6OTh5X2JlN09sZVJoUU14eHgzZTh0VVo5TU5ycHJucw?oc=5",
+          "title": "Welfare Fund becomes the basis for social security and self-reliance of military families - hariyalinepal.com"
         },
         {
           "date": "Tue, 10 Nov 2026 04:02:00 GMT",
@@ -1302,11 +1330,6 @@
           "date": "Tue, 10 Nov 2026 05:37:00 GMT",
           "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPdVY2V3pTenRfd0VpNjNteU1jdjRKOG9BZFpGb0RQcGlmVDFxYm1iNm1iekZPMnJtYmZUdGVveE1LcDA1X1JlMTZjVFhuMmdTSzg3VFVyQllfbmJOblA0MUlHbzNJb1hPbXBKTTBHblM3RmhBSGgtZlVxM2JRcmxxdUFnVXJWdDlr0gGcAUFVX3lxTE5qRUM5MVFpM1U0eXNQRFJBT0dhYnVWOGxVY1B6RHRxdXNvczAtS2tUWVQ5M3NMeG1zOGZCdnYtLV9EamM5WVVUN0ZlRlZOczlZVnJrM3doZXBiUm11RHliVGpjbjQ5QThPdVlvUzRiQnFQRjlPMGh0VFFNLTMwaVQyQ3ZwOWsyX05VN1hDMEwtMHZwY1Ywa1FTekZjeg?oc=5",
           "title": "France blames IRGC for supermarket fridge hacks, warns EU sanctions - Chosunbiz"
-        },
-        {
-          "date": "Tue, 10 Nov 2026 18:12:10 GMT",
-          "link": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE16WE1jQ0g2azl0YWdrWmI1eHBrdzJ5czhWSlBaVUtTcmN6OTh5X2JlN09sZVJoUU14eHgzZTh0VVo5TU5ycHJucw?oc=5",
-          "title": "Welfare Fund becomes the basis for social security and self-reliance of military families - hariyalinepal.com"
         }
       ],
       "name": "Military blood supplies & field hospitals"
@@ -1317,6 +1340,11 @@
           "date": "Tue, 10 Nov 2026 04:46:44 GMT",
           "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQUGFqenUwX1VEaXh4N1hqRV9xbTRScnYyWDJybnVhWDVjSnlvM3VXaktkMzh6MXp0MFYyV1FTX2ctTEkwTURoZHcwcjFSdzFDQy1uei1HdEl2SEVDb0ltX1M1SjgybGxDWEdaTjFNSVpXMjRkOFo5T3g2NUdVa3Fnb1dUbHNwQklILTF3dTR3WFpBWDNKeGVPUmYtdUw1T1Z2X3JTTktGMkF5N1ZXSkw1Xy1aY1Q?oc=5",
           "title": "Breaking the Gray-Zone Shield: Finland Jails Cargo Ship Officers in Landmark Subsea Cable Sabotage Conviction - Submarine Networks"
+        },
+        {
+          "date": "Wed, 11 Nov 2026 02:03:21 GMT",
+          "link": "https://news.google.com/rss/articles/CBMi2AJBVV95cUxPR1BwQUdwa1ExZzhNQkNUblVJbGxzZ2FTeGg2bnFLZ3VMSEtHTFhyRGphMkN2d05CSWEtcWtmUFNFdUF3LXBZZXA0Y0liNGNxdG5PbWhxUDZkM3BubURpZU40SU8tSlgxSHNHS0hCbVF0Z3FjWjNuVDB1LURQcGJ5dVV5ald6b0IxRjNVUEJjck1BVGlVVXlKZm9uUUxCYTVoZEdHQ1YxRFBTbHRnRzN1a3F0NE9WOE5VdVFTUGFkc29tWjEyV3d6VEhYdjlJMERPUHoxeWxRRS1ham5Da1c3N01RU19mbnFrczdFbkJST0tTZFlLVTJ6MUIwWTBGbEVQdFR0SlVIZ3ZkM01OSUI3VER6aXJnd3k4RlVGT1NSdE51RHd4WFlJa3czY1ZZbUVfZmxwZGhzN3JvLVR2dzFoU2lneXJmZlplRUhzdTVEa1BCUnZ2UXlfNA?oc=5",
+          "title": "WACS Submarine Cable repairs enter critical phase - Tribune Online"
         },
         {
           "date": "Tue, 10 Nov 2026 08:07:06 GMT",
@@ -1337,11 +1365,6 @@
           "date": "Wed, 11 Nov 2026 02:25:56 GMT",
           "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQWUhLRExqbkoyR1BxRERoRERxcGxsajVzMS01ekx1dEpQV1dyaFEwcTg3VzdHQnNBa0YxNGFVbjVUdW92M193S2ozN3ZwdU8tT3JKV0U2M1N4aDFscXo4Qmp4MmMwN2VmMWYySURvcDRPbUFSbS1UWUJITHI0UHc0Ul92VGFueWpVenFQUlNjeUZvTmJHSGo3ZzFaUHFJZFNLZWFmZQ?oc=5",
           "title": "Britain backs plan for subsea cable linking Shetland and Norway - Communications Today"
-        },
-        {
-          "date": "Wed, 11 Nov 2026 01:55:00 GMT",
-          "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQeWxjdWw4aUpnRnBUREJLYzZxRVB4ZkE1aGlYeDNXS3dZWGo4ZUlQOUtPZzNuTHBVZTVsVTh6QUJ1bmpsTjFQcTJqMFJQam1ubWlBRVZFYVdUbzJfazY0b1p6cktTQjQ4YjdFdktFNUpiU2JOMmhDME1iMGFwaDVreGZfMGE?oc=5",
-          "title": "WACS Submarine Cable repairs enter critical phase - Tribune Online"
         }
       ],
       "name": "Undersea cable damage"
@@ -1429,11 +1452,6 @@
     "cyber_au": {
       "items": [
         {
-          "date": "Wed, 11 Nov 2026 01:36:12 GMT",
-          "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNS3VTVWlFcFhMX2JwblAwR3NNRTJTQ2tkU1hjSmxoUzJhWFNZZ2lrYWRnU0drYzdWS3RwMVdzdEdOTTRrLU5BQ0tTZzBVdllmNTUyQjVRbjREb29fdF9qc2wySzlINDd0cEVRVndnOVBKbGo4eXdwdHNEMmhSajlTLVAwV1o0cWNJV0hWQTIyeGdqa3dGU0tVVmx0RHNHODJnN1pBLWZ6RlNXNUd2SXFCMV9lSXhYdFhtc21UQlR2M1RyNllGbzVJQ1NPVHJRRVE?oc=5",
-          "title": "Ransomware Report: 78 per cent of Australian victims pay up as businesses abandon negotiations - Cyber Daily"
-        },
-        {
           "date": "Tue, 10 Nov 2026 15:12:04 GMT",
           "link": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxPUmEyc1l2VmwwTnY3Z08zUWR1c3hsYm80TlhMZ0pLUkJCclhmOVRCRUVVb1RENldUVG4zTHFpUUFHY3BWcmdwSDhaQ1JrZEFJakJnWGRUVnhSeUl1cUd6ZWQ0cDZ6SHlEb3lIbm54ZHI2MG0wekRRWmczbzVFQnBQTllsbTdHYzU3LXpLMUpXcExEeFl3azI2VnhQSE9ZRFBUYW41OWJ5dl8xTER6b2Z1UWFVWTUzaWVEMFdpaXAxbE9FWjh2NEhxVlpkWlpVSUxXVWZGZERLd2JqSWlDNkZSZldHcE1WNEJ0a3lGcUo0TQ?oc=5",
           "title": "France vows tough response to freezer cyberattack blamed on Iran - The Australian"
@@ -1457,6 +1475,11 @@
           "date": "Tue, 10 Nov 2026 04:31:23 GMT",
           "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxObm9vMDk4anZQS0xSaENMYkxzU1BoTkRNdlFMS1E3V3B3SzlUN1RYQjQxajVTc01qejBUYWJxUVNKN1phczdULWJDd1QtZzBHV1h3ajlQYnpUTFNOeWpnVnc2alJiR2RpMktUUzNxdDVpMi1UWk5MVmJmS2RMR1hWaVBYSENEYWNJVmRRaTNtT3B3R1lTb0U2eTk4b203OGlyRHU2Rm1BLWdxLVU2bE5GZF9UbEFnb2lTbVY4eGpDTUhCWnN2d3h2aVVFejc2eEpTUjhENA?oc=5",
           "title": "Australia mulls tougher tech laws after AI health breach - The Nightly"
+        },
+        {
+          "date": "Tue, 10 Nov 2026 04:03:23 GMT",
+          "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOSWRYWmhSOURXbGVQaWdHZVdDS3Y5Zm5DQU54Y191SkdlUlQ0b01aRHpEWlMxYkVTR3FURWZ3bzR5TXVwdVJ5VFRPWlFTcV9XLTdPQUtqMUJpVkFqSTlvYnB0MmxqWTRMZ2J6ZDZ1NXJHZ1VjZ2g0YVh6NDJXMkVaUGN1c0JwOFhUZjBpV0lmcEM4TWNVZ080WVFCcWZQdzFHb19NWA?oc=5",
+          "title": "The new ‘cold’ war: hacked fridges reveal infrastructure-security gaps - The Strategist | ASPI's analysis and commentary site"
         }
       ],
       "name": "Australian cyber incidents"
@@ -1489,6 +1512,11 @@
     "cyber_supply": {
       "items": [
         {
+          "date": "Wed, 11 Nov 2026 03:11:43 GMT",
+          "link": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxNa3dDZmRDRldCQ2p0RVUtb2dHVWtkT1pPaldnUEVTajk2eW15Wmp3a2J4ZldURlFKLW1oOXFiR3B4cUNmczY0cFJrXzdJNU85WUtxQzk5OVJLNy02N1Jqa0lFczFTTU9ZU01wVk1FQ0dhREk5QTFnT3NjVGJiRFAtMHpVNEtGZXo2NXR3ckY3d2hxX3ZHdlJOSnZqOXBJT050eUFxZ2ozNXMwdm1yeTJ0eElmT2Q5cmNWWk9mTGM0QWJTMDRyXzFxRXNwanV6OVQtMzUtWGZueU5QbHc5eUVxYVVrZ0Y3bmJzNUotampVZFR4NTJoZjhuWWwwcw?oc=5",
+          "title": "November 2026 Patch Tuesday: 63 Critical Microsoft fixes, plus an Outlook zero day that allows theft of hashed credentials - www.csoonline.com"
+        },
+        {
           "date": "Tue, 10 Nov 2026 19:02:41 GMT",
           "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQSW1pSllyaXlZQXlNbjdjVFNrX3l5aG5DdGJSa0NubGx1UzhwWGVZMExOUzN5ak1jRl9HLUxFRXlYdlFPR25IYmcybmRwV3B2N1FncTM4SjRYd1NUZ0FPb3djN3hNdEdweHpYV0xIZ1ZpSjZ0NWpFcGFyVHRwaHJDY2dBc1JtUQ?oc=5",
           "title": "The November 2026 Security Update Review - thezdi.com"
@@ -1507,11 +1535,6 @@
           "date": "Tue, 10 Nov 2026 21:25:00 GMT",
           "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1lck1jdFRCVXpfUXpjQ3RyRmV6ZkJ0SE5iY1BBM2tzU2FQeHhwOVlZc3ZkZmRrMVllTm9iWFpHZXdwX2dzS3p5ZU5VVUZWaXZqcm82WlRBUWlwOFlWME1hcFdNOGRsRzZ3dnBTd3F0emNjOTQwN1E?oc=5",
           "title": "Microsoft's November Windows 11 Patch Fixes 1,094 Flaws, One Actively Exploited - BigGo Finance"
-        },
-        {
-          "date": "Tue, 10 Nov 2026 22:43:12 GMT",
-          "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPc1VzeXNPUTNVWXR2amNSWTVQZTFiX0JjaHllbGYxVTJaZGxGTTl1YzRaWFJxUnprU1RxLUpYZlM2cHBuWm1vSENOd3Y3M096NUhMUU12U0JYc0FkallKMHFaQjBjcVpyNnlGT2NiNDhDal9ZOEx4V196eGJTbnI0eTVyTUtCd0FLX1U1c3FmdTRtcy1m?oc=5",
-          "title": "November Patch Tuesday: An Overflowing Cornucopia of CVEs - Dark Reading"
         },
         {
           "date": "Tue, 10 Nov 2026 19:07:36 GMT",
@@ -1594,6 +1617,11 @@
           "title": "Breakthrough Minerals Enters Trading Halt Pending Mineral Exploration Project Divestment Announcement - Kalkine"
         },
         {
+          "date": "Wed, 11 Nov 2026 03:05:00 GMT",
+          "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTFB1aDRzdVRwbm9EYWljMU1wSllpOEJqdUtoNDNZbUNIZHBCTUFleWFsWFQyODFCQUd3bFg1ZjVmSS1mRG5CWGtOV2hWZGc3RGpXeUp1N2x3UkhkZWpweFhGX0MycDNUaC15UW41a3NTMXBreGJNNEE?oc=5",
+          "title": "South Korea's KOSDAQ Surges 4% for Second Day, Triggers Buy-Side Circuit Breaker as It Nears 700 Level - BigGo Finance"
+        },
+        {
           "date": "Wed, 11 Nov 2026 01:32:27 GMT",
           "link": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxOY0MyUmR1Rnh6V3laV3lHd21kak81YUZYTWZmdDl4Q1VtclEwYU9Dc2RjWUY3YWVMWFBmaHRCN1NlZURBdFNfV0h0RU5WT01zemxBVFJ0MDhpWm9fX3poV3lRZXROM1lvcFRMdG0zREl2VkJlb3o4V1N2S3RJTXkwMkY0aFhYWGFGeXZZOUpPTndONFZuQzFLeld3eE9hUnltTFNFa2FUdG5WdjdpektLYUd1TWhVVFVUQVQxMXdXQW42RFZrNEJPLWNfUzFxODlBMnhHWWNpbzV3b2JMalFwOHIwdms?oc=5",
           "title": "Xenora Minerals Enters Trading Halt on 11 November 2026 Pending Acquisition and Capital Raising Announcement - Kalkine"
@@ -1607,11 +1635,6 @@
           "date": "Tue, 10 Nov 2026 14:14:00 GMT",
           "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPME1wRE10YkM1ZktZeTZKeDZka0xEQmFyUGNUWlJrelluQkJ6SnZITVBfci03TU1EZTJHc3RBd2NaUDhGQnhDZ1dJMTFpYUt5TlRiU1BKSHlpWmRuM2J4a19HSE5tU29aR3NwWHFYOHhSYlowS3FMOXRZZXBYV1J5Y250bTkxXzdaWVBnNExNMEhULTRqU2hKUlhvQ184NFNBbnVpQkVMU2FHV0tkSkh0Z1l5TVU1dGFWblJOSnZEekRvc21RNVJPZkZnekNPTlpWYTdR?oc=5",
           "title": "Wildsky Resources trading halt continues pending Zimbabwe acquisition review By Investing.com - Investing.com UK"
-        },
-        {
-          "date": "Tue, 10 Nov 2026 03:05:00 GMT",
-          "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBOdXdyd1VHS1g5dDVlOTdrUjJGdkR6Sy1ZdTNBY0pUelJSdlBEVWJKdFl4eGs1d1V3Y0FhaENPZFV4MzZYVlVVb055QjRtWTNWSUxJQkNqaDZWdUZHTi1GeU5fdFV1MHFNVktqZ2VSeHZYTEN4RFE?oc=5",
-          "title": "AI Selloff Overdone? Asian Chip Stocks Stage Fierce Comeback; South Korean Market's Opening Surge Triggers Circuit Breaker - BigGo Finance"
         },
         {
           "date": "Tue, 10 Nov 2026 04:28:26 GMT",
@@ -1673,6 +1696,11 @@
           "title": "DW News. . An explosion ripped through a steel plant in western Turkey on Monday, killing at least 17 people, with President Recep Tayyip Erdogan vowing to find out who was responsible. #dwnews - Facebook"
         },
         {
+          "date": "Tue, 10 Nov 2026 09:11:12 GMT",
+          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPWnBJQ09UbGNXQl9mRlNXSmhnTG5KdnU3alA1emg1UG5tRzNTLWphQ2x1alJUU2NWT2Izd1llcUNFUVRuWGhYcGVwb0VRWTJEYTE3bzNMT0Uxc19lX3B6VkJsUjdhWS1xaVppNW9SaWZ1VGZYOVhXQmpMcWR4bEdUMzgxaVNUSFdDLWZaRkEtRHRDWTdCZUJPSmZGYW9TaGdXXzBjeF85bHowODVmdHpJQkdtaDU5OVVjYktlWkVB?oc=5",
+          "title": "Mass Casualty Pile-ups Paralyze Bulgaria's Trakia Highway, More Than 10 Dead - Novinite.com"
+        },
+        {
           "date": "Tue, 10 Nov 2026 12:50:38 GMT",
           "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxObFZoNzNtUVAwT2IxbmE1ZXlTNUlMY2RmWUVaRGNRRVJDaFpnRVdBRDNBQnhPZXhWOWhmRklBYkw3OUhRTFUtYnFzaHFFSURfeTZZMThuSnlickxpRjZZU01ZMVhCTXowVllHdVNDS3ljVWlFd0E5cGo0VEFiWHBVVFk4M19YSTU1M3FTWWVhZVU4cTdfQU1HY051U0NDZWtjLTZPZHFmWmNuX2tJVzlLdTZzNERoeU5OQkhGdw?oc=5",
           "title": "Seven days of chaos in the ER: How this country's healthcare system is unraveling - WWNO"
@@ -1686,11 +1714,6 @@
           "date": "Tue, 10 Nov 2026 11:28:27 GMT",
           "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPWi1RTmM2bTdubEY4dWpYVVpwbkFSNWJKMkZqUGZaMnRvdUVveUh3N05FeDN2d2RvblFBTEFxZTk0Q3AzX1pBQWQzWXBaV0RYV1hKbjdBb0xGSnBxZEpkdjk5WEZCNDF1RzJyT0VPUzV6TnV1RHkzcWNTTHZ6MERaM3VENHRocEdUeklVWXBkNm9qUVZobGhIZW9uMmlNTFdGOEZrQ3JkU19MSFB0cDZpcVpROWw3QQ?oc=5",
           "title": "NSU nursing, radiography students participate in airport disaster drill - Rapides Parish Journal"
-        },
-        {
-          "date": "Tue, 10 Nov 2026 15:56:48 GMT",
-          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNQkZHU2o1SWVUUFJ1TEZRdS02M0E3ME9LamhoOThiU0twZlVVU29MYl8tTElpY3lNTDlWbDRvb3pJTXN4SThRN3dFSU50RUNudDFRY0UtTHF5d3dVUS1IcUhzYjRLOW96RWtMNTcydDdvQzF1T2JfbWFjVk14eWdDQ3BfZ1VTeFFUdmFIaDJGOXhqUXoxYmY2X1N3WU5qQm9ld19BTW9SM2NaZldjWjVpZ2JR0gHEAUFVX3lxTE5vVlNvS2hER0R0cy1fanppM3EtcEJUdnExNEIzWEJ3M3ZhenRkODZkbFVtaEpDNDE3QnRid18zTnhQQU1NSk9fMWR3bWNWMTBNbjFkWk1iSzJaVzB0bWFNdEVHWm0tSGw5YXotNEY4UDZtVjRwS2dXYVZ6cWZJSmVVTTVBVDRPUnp2TWNZNWJUSGhia0ZsVldlQzhCelBJcmlfWDFfNmpBNFFWckdUeldxbnA2cEpoYS11ZjdkbGxyT2pmOXA?oc=5",
-          "title": "AI, VR and remote monitoring feature at Abu Dhabi medical congress - Gulf News"
         }
       ],
       "name": "Mass casualty declarations"
@@ -1839,7 +1862,7 @@
       "question": "Will the U.S. invade Iran before 2027?",
       "topic": "mideast",
       "url": "https://polymarket.com/event/will-the-us-invade-iran-before-2027",
-      "volume": 79565916,
+      "volume": 79566027,
       "yes_pct": 7.5
     },
     {
@@ -1847,7 +1870,7 @@
       "question": "US-Iran Final Nuclear Deal by December 31, 2026?",
       "topic": "mideast",
       "url": "https://polymarket.com/event/us-iran-final-nuclear-deal-by-20260621201254412",
-      "volume": 4394743,
+      "volume": 4394753,
       "yes_pct": 12.5
     },
     {
@@ -1959,7 +1982,7 @@
       "question": "Iran-Oman Hormuz Agreement by November 30?",
       "topic": "mideast",
       "url": "https://polymarket.com/event/iran-oman-hormuz-management-agreement-byptptpt-20260804222725871",
-      "volume": 325756,
+      "volume": 325758,
       "yes_pct": 10.0
     },
     {
@@ -1984,7 +2007,7 @@
       "topic": "russia",
       "url": "https://polymarket.com/event/natoeu-troops-fighting-in-ukraine-in-2025",
       "volume": 159748,
-      "yes_pct": 3.5
+      "yes_pct": 3.4
     },
     {
       "change_24h": null,
@@ -2000,7 +2023,7 @@
       "topic": "nuclear",
       "url": "https://polymarket.com/event/us-nuclear-test-by",
       "volume": 89612,
-      "yes_pct": 1.6
+      "yes_pct": 0.7
     },
     {
       "change_24h": null,
@@ -2016,7 +2039,7 @@
       "topic": "russia",
       "url": "https://polymarket.com/event/ukraine-agrees-not-to-join-nato-before-2027",
       "volume": 60429,
-      "yes_pct": 29.0
+      "yes_pct": 28.5
     },
     {
       "change_24h": null,
@@ -2437,15 +2460,15 @@
   ],
   "sectors": {
     "defence_au": {
-      "basket_5d": 7.39,
+      "basket_5d": 8.26,
       "benchmark": "^AXJO",
-      "benchmark_5d": 3.49,
+      "benchmark_5d": 3.45,
       "name": "Australian defence stocks",
-      "relative_5d": 3.9,
+      "relative_5d": 4.81,
       "symbols": {
-        "ASB.AX": 9.74,
-        "DRO.AX": 7.19,
-        "EOS.AX": 7.39
+        "ASB.AX": 9.03,
+        "DRO.AX": 8.26,
+        "EOS.AX": 6.98
       }
     },
     "defence_eu": {
@@ -2502,11 +2525,11 @@
     },
     "analysts": {
       "ok": true,
-      "secs": 2.3
+      "secs": 2.7
     },
     "chokepoints": {
       "ok": true,
-      "secs": 0.4
+      "secs": 0.1
     },
     "cisa": {
       "ok": true,
@@ -2514,30 +2537,30 @@
     },
     "cyber": {
       "ok": true,
-      "secs": 4.8
+      "secs": 4.2
     },
     "gdacs": {
       "ok": true,
-      "secs": 2.2
+      "secs": 2.4
     },
     "gps": {
       "ok": true,
-      "secs": 10.7
+      "secs": 11.0
     },
     "internet": {
       "ok": true,
-      "secs": 3.7
+      "secs": 3.9
     },
     "local_sa": {
       "ok": true,
       "partial_errors": [
         "incidents: JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
       ],
-      "secs": 38.2
+      "secs": 36.5
     },
     "maritime": {
       "ok": true,
-      "secs": 151.6
+      "secs": 151.5
     },
     "markets": {
       "ok": true,
@@ -2549,11 +2572,11 @@
     },
     "news_watch": {
       "ok": true,
-      "secs": 8.9
+      "secs": 7.5
     },
     "prediction_markets": {
       "ok": true,
-      "secs": 2.0
+      "secs": 2.6
     },
     "satellites": {
       "ok": true,
@@ -2566,7 +2589,7 @@
     },
     "telecom": {
       "ok": true,
-      "secs": 4.6
+      "secs": 4.3
     },
     "uk_advice": {
       "ok": true,
@@ -2574,7 +2597,7 @@
     },
     "us_advisories": {
       "ok": true,
-      "secs": 0.8
+      "secs": 0.5
     },
     "usgs": {
       "ok": true,
@@ -2582,7 +2605,7 @@
     },
     "who": {
       "ok": true,
-      "secs": 0.5
+      "secs": 1.1
     }
   },
   "telecom": {
@@ -2596,9 +2619,9 @@
       },
       "ping-slash24": {
         "baseline": 718,
-        "drop_pct": 0.3,
+        "drop_pct": 0.4,
         "points": 37,
-        "recent": 716
+        "recent": 715
       }
     },
     "Optus": {
@@ -2611,9 +2634,9 @@
       },
       "ping-slash24": {
         "baseline": 103,
-        "drop_pct": 1.9,
+        "drop_pct": 0.0,
         "points": 37,
-        "recent": 101
+        "recent": 103
       }
     },
     "TPG": {
@@ -2626,9 +2649,9 @@
       },
       "ping-slash24": {
         "baseline": 9214,
-        "drop_pct": 0.2,
+        "drop_pct": 0.0,
         "points": 37,
-        "recent": 9192
+        "recent": 9215
       }
     },
     "Telstra": {
@@ -2640,10 +2663,10 @@
         "recent": 52342
       },
       "ping-slash24": {
-        "baseline": 2029,
-        "drop_pct": 0.5,
+        "baseline": 2028,
+        "drop_pct": 0.2,
         "points": 37,
-        "recent": 2018
+        "recent": 2024
       }
     },
     "Vodafone": {
@@ -2655,10 +2678,10 @@
         "recent": 4312
       },
       "ping-slash24": {
-        "baseline": 21,
-        "drop_pct": 9.5,
+        "baseline": 20,
+        "drop_pct": 0.0,
         "points": 37,
-        "recent": 19
+        "recent": 21
       }
     }
   },
