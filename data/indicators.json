@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T10:37:00Z",
+  "generated_at": "2026-11-11T10:42:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -773,9 +773,10 @@
     },
     {
       "band": "Guarded",
-      "convergence": "Only one kind of sign is showing (ai-enabled hacking). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, deepfakes of leaders or fake official alerts and flash crash or exchange trading halt.",
+      "convergence": "Two different kinds of sign are showing together (ai-enabled hacking and synthetic media). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, flash crash or exchange trading halt and market fear index jumps 25%+ in a day.",
       "domains": [
-        "AI-enabled hacking"
+        "AI-enabled hacking",
+        "Synthetic media"
       ],
       "key": "ai",
       "lit": [
@@ -785,23 +786,24 @@
           "id": "aihack",
           "name": "Reports of AI-driven hacking campaigns",
           "weight": 15
+        },
+        {
+          "detail": "Madras High Court orders FIR into alleged AI-generated books scam in public libraries, directs freezing of publisher's bank accounts",
+          "domain": "Synthetic media",
+          "id": "deepfake",
+          "name": "Deepfakes of leaders or fake official alerts",
+          "weight": 15
         }
       ],
       "name": "AI-enabled attack (non-traditional)",
       "sa_impact": "Not bombs but disruption: hacking at machine speed across banks, telcos, hospitals and the grid at once; fake videos or alerts from leaders causing panic buying or bank runs; or automated market and fraud shocks. Effects would be outages, payment failures and confusion about what is real.",
-      "score": 15,
-      "trend": "down",
+      "score": 30,
+      "trend": "up",
       "unlit": [
         {
           "domain": "Mass exploitation",
           "id": "breadth",
           "name": "Exploited flaws across unusually many vendors at once",
-          "weight": 15
-        },
-        {
-          "domain": "Synthetic media",
-          "id": "deepfake",
-          "name": "Deepfakes of leaders or fake official alerts",
           "weight": 15
         },
         {
