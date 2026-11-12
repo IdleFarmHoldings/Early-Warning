@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T14:08:00Z",
+  "generated_at": "2026-11-12T14:23:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -375,15 +375,25 @@
       "why": "North Korean missile launches are often preceded by navigation warnings; South Korea and Japan report GPS jamming from the North during tense periods."
     },
     {
-      "band": "Low",
-      "convergence": "No warning signs are showing. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and mobilisation / reservist reports (russia / nato).",
-      "domains": [],
+      "band": "Guarded",
+      "convergence": "Only one kind of sign is showing (mobilisation). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and us nuclear command aircraft unusual.",
+      "domains": [
+        "Mobilisation"
+      ],
       "key": "russia",
-      "lit": [],
+      "lit": [
+        {
+          "detail": "Moscow youth raids spark mobilization fears as Russia struggles to recruit soldiers",
+          "domain": "Mobilisation",
+          "id": "mob",
+          "name": "Mobilisation / reservist reports (Russia / NATO)",
+          "weight": 15
+        }
+      ],
       "name": "Russia-NATO escalation",
       "sa_impact": "Indirect: energy and market shock, cyber attacks that can spill over to Australian systems, and nuclear-risk rhetoric.",
-      "score": 0,
-      "trend": "steady",
+      "score": 15,
+      "trend": "up",
       "unlit": [
         {
           "domain": "Electronic warfare",
@@ -395,12 +405,6 @@
           "domain": "Military air",
           "id": "air",
           "name": "Unusual military air activity (Eastern Europe)",
-          "weight": 15
-        },
-        {
-          "domain": "Mobilisation",
-          "id": "mob",
-          "name": "Mobilisation / reservist reports (Russia / NATO)",
           "weight": 15
         },
         {
@@ -479,15 +483,25 @@
       "why": "Before February 2022: embassy departures, mobilisation reports, airspace closures and a surge in GPS jamming. Baltic and Black Sea jamming is now routine, so only spikes above normal count."
     },
     {
-      "band": "Low",
-      "convergence": "No warning signs are showing. The strongest signs not yet showing: us nuclear command aircraft unusual, private jets heading to retreat destinations and mobilisation reports (any major power).",
-      "domains": [],
+      "band": "Guarded",
+      "convergence": "Only one kind of sign is showing (mobilisation). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: us nuclear command aircraft unusual, private jets heading to retreat destinations and forecast markets jump on nuclear use.",
+      "domains": [
+        "Mobilisation"
+      ],
       "key": "nuclear",
-      "lit": [],
+      "lit": [
+        {
+          "detail": "Moscow youth raids spark mobilization fears as Russia struggles to recruit soldiers",
+          "domain": "Mobilisation",
+          "id": "mob",
+          "name": "Mobilisation reports (any major power)",
+          "weight": 15
+        }
+      ],
       "name": "Nuclear use or alert",
       "sa_impact": "Fallout risk to SA from a northern-hemisphere exchange is very low, but global trade, fuel and finance would be severely disrupted.",
-      "score": 0,
-      "trend": "steady",
+      "score": 15,
+      "trend": "up",
       "unlit": [
         {
           "domain": "Nuclear command",
@@ -524,12 +538,6 @@
           "id": "gold",
           "name": "Gold up 4%+ in a day",
           "weight": 10
-        },
-        {
-          "domain": "Mobilisation",
-          "id": "mob",
-          "name": "Mobilisation reports (any major power)",
-          "weight": 15
         },
         {
           "domain": "Prediction markets",
