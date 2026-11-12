@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T22:55:00Z",
+  "generated_at": "2026-11-12T23:10:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -204,24 +204,14 @@
     },
     {
       "band": "Low",
-      "convergence": "Only one kind of sign is showing (markets). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: missile / live-fire navigation warnings near taiwan, gps jamming over the taiwan strait and internet disruption in taiwan.",
-      "domains": [
-        "Markets"
-      ],
+      "convergence": "No warning signs are showing. The strongest signs not yet showing: missile / live-fire navigation warnings near taiwan, gps jamming over the taiwan strait and internet disruption in taiwan.",
+      "domains": [],
       "key": "taiwan",
-      "lit": [
-        {
-          "detail": "Australian defence stocks +5.3% vs market over 5 days",
-          "domain": "Markets",
-          "id": "def",
-          "name": "Defence stocks outperforming (US / Australia)",
-          "weight": 5
-        }
-      ],
+      "lit": [],
       "name": "Taiwan Strait / South China Sea crisis",
       "sa_impact": "Trade and fuel: most of Australia's refined fuel and many goods pass the South China Sea. A blockade would disrupt fuel, medicines and electronics within weeks; Australian forces could be drawn in.",
-      "score": 5,
-      "trend": "steady",
+      "score": 0,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Maritime",
@@ -282,6 +272,12 @@
           "id": "blood",
           "name": "Military blood drives / field hospitals (China / Taiwan)",
           "weight": 10
+        },
+        {
+          "domain": "Markets",
+          "id": "def",
+          "name": "Defence stocks outperforming (US / Australia)",
+          "weight": 5
         },
         {
           "domain": "Cyber",
