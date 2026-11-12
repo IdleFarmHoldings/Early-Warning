@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T01:31:00Z",
+  "generated_at": "2026-11-12T01:46:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -29,7 +29,7 @@
       "name": "Local emergency in SA (bushfire, heat, power)",
       "sa_impact": "Direct: bushfires, heatwaves and power cuts are the emergencies most likely to affect the family. In the 2016 statewide blackout, power, phones, traffic lights and fuel pumps failed together.",
       "score": 35,
-      "trend": "up",
+      "trend": "steady",
       "unlit": [
         {
           "domain": "Bushfire",
@@ -561,7 +561,7 @@
       "name": "Australian infrastructure disruption",
       "sa_impact": "Direct: loss of phone, internet, EFTPOS and fuel pumps. Cash, fuel and a pre-agreed meeting point matter most in the first 24 hours.",
       "score": 25,
-      "trend": "up",
+      "trend": "steady",
       "unlit": [
         {
           "domain": "Communications",
@@ -699,21 +699,13 @@
       "why": "Before COVID-19 (Dec 2019 - Feb 2020): reports of an unknown pneumonia cluster, WHO outbreak notices, mask and hazmat makers (Alpha Pro Tech, Lakeland) and vaccine developers (Moderna, Novavax) surging weeks before broad markets fell, and countries restricting exports of masks and medicines (Taiwan from 24 Jan 2020, then dozens more)."
     },
     {
-      "band": "Elevated",
-      "convergence": "Two different kinds of sign are showing together (australian incidents and power grid). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: global cyber threat level raised (sans infocon not green), several vpn / firewall flaws exploited this week and spike in scanning of industrial-control systems.",
+      "band": "Guarded",
+      "convergence": "Only one kind of sign is showing (power grid). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: global cyber threat level raised (sans infocon not green), several vpn / firewall flaws exploited this week and spike in scanning of industrial-control systems.",
       "domains": [
-        "Australian incidents",
         "Power grid"
       ],
       "key": "cyber",
       "lit": [
-        {
-          "detail": "Ransomware report: 78% of Australian victims pay up as businesses abandon negotiations",
-          "domain": "Australian incidents",
-          "id": "au",
-          "name": "Major Australian cyber incident reported",
-          "weight": 10
-        },
         {
           "detail": "level True",
           "domain": "Power grid",
@@ -724,8 +716,8 @@
       ],
       "name": "Major cyber attack on Australia",
       "sa_impact": "Banks, payments, hospitals, fuel distribution, telcos and the power grid all run on networks; a large attack can stop card payments and services for hours to days.",
-      "score": 35,
-      "trend": "up",
+      "score": 25,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Global threat level",
@@ -768,6 +760,12 @@
           "id": "state",
           "name": "Reports of state hackers / pre-positioning / wipers",
           "weight": 15
+        },
+        {
+          "domain": "Australian incidents",
+          "id": "au",
+          "name": "Major Australian cyber incident reported",
+          "weight": 10
         },
         {
           "domain": "Communications",
