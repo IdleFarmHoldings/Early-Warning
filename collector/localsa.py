@@ -345,7 +345,7 @@ def parse_reservoirs(text):
     """CSV with one row per reservoir; finds the name, volume and capacity / % full columns by their headers."""
     import csv
     import io
-    rows = list(csv.DictReader(io.StringIO(text.lstrip("\ufeff"))))
+    rows = list(csv.DictReader(io.StringIO(text.lstrip("﻿"))))
     if not rows:
         return {}
     cols = {k.lower(): k for k in rows[0] if k}
@@ -470,29 +470,101 @@ def parse_dispatch_demand(csv_text, region="SA1"):
     raise ValueError("no REGIONSUM row for " + region)
 
 
-def demand_status(now, mw, hist, drop_pct=30, low_ratio=0.6, no_history_drop_pct=60):
+ROOFTOP_PV_DIR = "https://nemweb.com.au/Reports/Current/ROOFTOP_PV/ACTUAL/"
+ADELAIDE_LAT, ADELAIDE_LON = -34.93, 138.60
+
+
+def sun_elevation(now, lat=ADELAIDE_LAT, lon=ADELAIDE_LON):
+    """Approximate solar elevation in degrees (NOAA formula, good to about a degree)."""
+    import math
+    from datetime import timezone
+    t = now.astimezone(timezone.utc)
+    doy = t.timetuple().tm_yday
+    hour = t.hour + t.minute / 60 + t.second / 3600
+    g = 2 * math.pi / 365 * (doy - 1 + (hour - 12) / 24)
+    decl = (0.006918 - 0.399912 * math.cos(g) + 0.070257 * math.sin(g) - 0.006758 * math.cos(2 * g)
+            + 0.000907 * math.sin(2 * g) - 0.002697 * math.cos(3 * g) + 0.00148 * math.sin(3 * g))
+    eqtime = 229.18 * (0.000075 + 0.001868 * math.cos(g) - 0.032077 * math.sin(g)
+                       - 0.014615 * math.cos(2 * g) - 0.040849 * math.sin(2 * g))
+    solar_min = hour * 60 + eqtime + 4 * lon
+    ha = math.radians(solar_min / 4 - 180)
+    la = math.radians(lat)
+    cos_zen = math.sin(la) * math.sin(decl) + math.cos(la) * math.cos(decl) * math.cos(ha)
+    return 90 - math.degrees(math.acos(max(-1.0, min(1.0, cos_zen))))
+
+
+def parse_rooftop_pv(csv_text, region="SA1"):
+    """AEMO ROOFTOP_PV ACTUAL file -> (interval, MW) for the region's latest interval."""
+    header, best = None, None
+    for line in csv_text.splitlines():
+        f = [x.strip('"') for x in line.strip().split(",")]
+        if len(f) < 4 or f[1] != "ROOFTOP" or f[2] != "ACTUAL":
+            continue
+        if f[0] == "I":
+            header = f
+        elif f[0] == "D" and header:
+            row = dict(zip(header, f))
+            if row.get("REGIONID") == region and row.get("POWER") not in (None, ""):
+                when = row.get("INTERVAL_DATETIME", "")
+                if best is None or when > best[0]:
+                    best = (when, float(row["POWER"]))
+    if not best:
+        raise ValueError("no ROOFTOP ACTUAL row for " + region)
+    return best
+
+
+def fetch_rooftop_pv():
+    """Latest AEMO estimate of SA rooftop solar output (30-minute, published shortly after each half hour)."""
+    import io
+    import zipfile
+    listing = http_get(ROOFTOP_PV_DIR, timeout=30).decode("utf-8", "replace")
+    files = sorted(set(re.findall(r'href="([^"]*PUBLIC_ROOFTOP_PV_ACTUAL[^"]*\.zip)"', listing, re.I)),
+                   key=lambda u: re.findall(r"_(\d{14})_", u)[-1] if re.findall(r"_(\d{14})_", u) else u)
+    if not files:
+        raise RuntimeError("no rooftop PV files listed")
+    f = files[-1]
+    url = f if f.startswith("http") else "https://nemweb.com.au" + (f if f.startswith("/") else "/Reports/Current/ROOFTOP_PV/ACTUAL/" + f)
+    z = zipfile.ZipFile(io.BytesIO(http_get(url, timeout=30)))
+    return parse_rooftop_pv(z.read(z.namelist()[0]).decode("utf-8", "replace"))
+
+
+def demand_status(now, mw, hist, drop_pct=30, low_ratio=0.6, no_history_drop_pct=60,
+                  prev10_mw=None, pv_mw=None, sharp_mw=400, sharp_pct=40, solar_pv_mw=100, solar_sun_deg=5):
     """Compare current SA demand with 15-45 minutes ago and with the same time of day over the past week.
-    A large blackout shows as a sudden fall to well below normal; rooftop-solar changes are slower."""
+    At night a large blackout shows as a sudden fall to well below normal.
+    While rooftop solar is generating, grid demand can fall by half or more within the hour as the sun climbs
+    or cloud clears, which looks like a blackout on the hourly check. So in daylight only a near-instant
+    collapse counts: at least sharp_mw and sharp_pct gone within ten minutes (blackouts happen in seconds,
+    solar ramps over tens of minutes)."""
     from datetime import datetime, timedelta
     def t(x):
         return datetime.strptime(x, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=now.tzinfo)
-    recent = [m for ts, m in hist if timedelta(minutes=10) <= now - t(ts) <= timedelta(minutes=50)]
-    same = [m for (ts, m) in hist if now - t(ts) >= timedelta(hours=20) and
-            min((now - t(ts)) % timedelta(days=1), timedelta(days=1) - (now - t(ts)) % timedelta(days=1)) <= timedelta(minutes=40)]
+    recent = [h[1] for h in hist if timedelta(minutes=10) <= now - t(h[0]) <= timedelta(minutes=50)]
+    same = [h[1] for h in hist if now - t(h[0]) >= timedelta(hours=20) and
+            min((now - t(h[0])) % timedelta(days=1), timedelta(days=1) - (now - t(h[0])) % timedelta(days=1)) <= timedelta(minutes=40)]
     usual = sorted(same)[len(same) // 2] if len(same) >= 3 else None
     prev = max(recent) if recent else None
     fall = round((prev - mw) / prev * 100, 1) if prev and prev > 0 else None
-    # With a week of history: a sharp fall to well below the usual level for this time of day.
-    # Before that there is nothing to compare with, and rooftop solar alone can cut demand by a third within
-    # the hour on a sunny morning, so only a much larger fall counts.
-    if usual is None:
-        sudden = fall is not None and fall >= no_history_drop_pct
+    sun = sun_elevation(now)
+    # Solar is "in play" when the sun is up or AEMO's rooftop estimate (which lags by up to half an hour) shows output.
+    solar = sun >= solar_sun_deg or (pv_mw is not None and pv_mw >= solar_pv_mw)
+    fall10_mw = round(prev10_mw - mw) if prev10_mw is not None else None
+    sharp = (fall10_mw is not None and prev10_mw > 0 and fall10_mw >= sharp_mw
+             and fall10_mw / prev10_mw * 100 >= sharp_pct)
+    if solar and fall10_mw is not None:
+        sudden = sharp
+    # At night, or if the ten-minute reading is missing, keep the hourly check (better a false alarm than a missed blackout).
+    elif usual is None:
+        # With no week of history there is nothing to compare with, so only a much larger fall counts.
+        sudden = sharp or (fall is not None and fall >= no_history_drop_pct)
     else:
-        sudden = fall is not None and fall >= drop_pct and mw < usual * low_ratio
-    return {"mw": round(mw), "usual_mw": round(usual) if usual else None, "fall_pct_30min": fall, "possible_blackout": sudden}
+        sudden = sharp or (fall is not None and fall >= drop_pct and mw < usual * low_ratio)
+    return {"mw": round(mw), "usual_mw": round(usual) if usual else None, "fall_pct_30min": fall,
+            "fall_mw_10min": fall10_mw, "rooftop_pv_mw": round(pv_mw) if pv_mw is not None else None,
+            "sun_elevation": round(sun, 1), "solar_active": solar, "possible_blackout": sudden}
 
 
-def fetch_demand(state):
+def fetch_demand(state, samples=None):
     from datetime import datetime, timedelta, timezone
     import io
     import zipfile
@@ -500,13 +572,28 @@ def fetch_demand(state):
     files = sorted(set(re.findall(r'href="([^"]*PUBLIC_DISPATCHIS_[^"]*\.zip)"', listing, re.I)))
     if not files:
         raise RuntimeError("no dispatch files listed")
-    f = files[-1]
-    url = f if f.startswith("http") else "https://nemweb.com.au" + (f if f.startswith("/") else "/Reports/Current/DispatchIS_Reports/" + f)
-    z = zipfile.ZipFile(io.BytesIO(http_get(url, timeout=30)))
-    when, mw = parse_dispatch_demand(z.read(z.namelist()[0]).decode("utf-8", "replace"))
+
+    def read(f):
+        url = f if f.startswith("http") else "https://nemweb.com.au" + (f if f.startswith("/") else "/Reports/Current/DispatchIS_Reports/" + f)
+        z = zipfile.ZipFile(io.BytesIO(http_get(url, timeout=30)))
+        return parse_dispatch_demand(z.read(z.namelist()[0]).decode("utf-8", "replace"))
+
+    when, mw = read(files[-1])
+    prev10 = None
+    if len(files) >= 3:  # 5-minute files: two back is ten minutes earlier
+        try:
+            prev10 = read(files[-3])[1]
+        except Exception:  # noqa: BLE001
+            prev10 = None
+    pv = None
+    try:
+        pv = fetch_rooftop_pv()[1]
+    except Exception as e:  # noqa: BLE001
+        if samples is not None:
+            samples["rooftop_pv_error"] = f"{type(e).__name__}: {e}"[:200]
     now = datetime.now(timezone.utc)
     hist = state.setdefault("sa_demand", [])
-    st = demand_status(now, mw, hist)
+    st = demand_status(now, mw, hist, prev10_mw=prev10, pv_mw=pv)
     hist.append([now.strftime("%Y-%m-%dT%H:%M:%SZ"), round(mw)])
     cutoff = (now - timedelta(days=8)).strftime("%Y-%m-%dT%H:%M:%SZ")
     state["sa_demand"] = [h for h in hist if h[0] >= cutoff][-1000:]
@@ -567,7 +654,7 @@ def fetch_local(state):
     part("grid", lambda: fetch_aemo(state))
     part("roads", lambda: fetch_roads(samples))
     part("ed", lambda: discover_ed(samples))
-    part("demand", lambda: fetch_demand(state))
+    part("demand", lambda: fetch_demand(state, samples))
     part("reservoirs", lambda: fetch_reservoirs(state, samples, __import__("common").iso()))
     # SA Power Networks' outage list refuses automated requests (HTTP 403), so it is not polled;
     # widespread outages are picked up through the "sapn" news watch instead.
@@ -605,6 +692,9 @@ def fetch_local(state):
         "grid_demand_usual_mw": (out.get("demand") or {}).get("usual_mw"),
         "grid_demand_fall_pct": (out.get("demand") or {}).get("fall_pct_30min"),
         "possible_blackout": bool((out.get("demand") or {}).get("possible_blackout")),
+        "grid_solar_active": (out.get("demand") or {}).get("solar_active"),
+        "grid_rooftop_pv_mw": (out.get("demand") or {}).get("rooftop_pv_mw"),
+        "grid_demand_fall_mw_10min": (out.get("demand") or {}).get("fall_mw_10min"),
         "reservoirs_pct": (out.get("reservoirs") or {}).get("total_pct"),
         "reservoirs_as_of": (out.get("reservoirs") or {}).get("as_of"),
         "reservoirs_low": (out.get("reservoirs") or {}).get("low") or [],
