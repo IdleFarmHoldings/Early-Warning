@@ -87,3 +87,13 @@ def test_first_run_is_silent():
     state = {}
     warn = feed("Microsoft outage hits Adelaide hospitals - Adelaide Now", "Microsoft 365 down across Australia - ABC")
     assert I.incident_alerts(I.triage(warn, NOW, state), state, NOW, first_run=True) == []
+
+
+def test_immigration_visas_and_statistics_are_not_bank_outages():
+    assert I.classify("Global Microsoft outage: New Zealand suspends visa processing")[1] == "Microsoft"
+    assert I.classify("Immigration Online: Microsoft outage blocks visa applications")[1] == "Microsoft"
+    assert I.classify("Visa card payments down across Australia")[1] == "Banking & payments"
+    assert I.classify("NAB app down for thousands")[1] == "Banking & payments"
+    assert I.classify("Snab Ltd shares fall")[1] is None
+    news = feed("UK student visa applications down 31% as Russell Group warns of volatility - The PIE News")
+    assert I.triage(news, NOW, {}) == []

@@ -30,7 +30,7 @@ FEEDS = CFG.get("feeds", ["cloud", "cyber_au", "cyber_supply", "sapn", "cables",
 WINDOW_H = CFG.get("window_hours", 12)
 
 IMPACT = re.compile(
-    r"\b(outages?|down|offline|disrupt\w*|crash(es|ed)?|meltdown|fail(s|ed|ure)?|not working|blackouts?|"
+    r"\b(outages?|down(?!\s*(by\s*)?\d)|offline|disrupt\w*|crash(es|ed)?|meltdown|fail(s|ed|ure)?|not working|blackouts?|"
     r"cyber[- ]?attack\w*|hack(ed|ers?)?|breach(ed)?|ransomware|ddos|severed|cut)\b", re.I)
 # Headlines that use the words but do not describe a live incident.
 NOT_LIVE = re.compile(
@@ -43,8 +43,9 @@ TARGETS = [
     (4, "Undersea cables", r"\b(undersea|subsea|submarine) cables?\b"),
     (4, "Internet core (DNS / CDN)", r"\b(Cloudflare|Akamai|DNS|BGP|internet backbone)\b"),
     (4, "Power grid", r"\b(power grid|statewide blackout|SA Power Networks|AEMO|without power|blackouts?)\b"),
-    (3, "Banking & payments", r"\b(Commonwealth Bank|CommBank|CBA|NAB|Westpac|ANZ|Bendigo|ING|Macquarie|banks?|banking|EFTPOS|"
-                              r"card payments?|ATMs?|Visa|Mastercard|Osko|NPP|PayID|Tyro|Square|PayPal|ASX)\b"),
+    (3, "Banking & payments", r"\b(Commonwealth Bank|CommBank|Westpac|Bendigo Bank|Macquarie Bank|banks?|banking|EFTPOS|eftpos|"
+                              r"card payments?|payment systems?|Mastercard|Osko|PayID|Tyro|PayPal|"
+                              r"(?-i:CBA|NAB|ANZ|ING|ATMs?|NPP|ASX)|(?-i:Visa)(?! (applications?|processing|holders?|rules?|system for)))\b"),
     (2, "Microsoft", r"\b(Microsoft( 365)?|Office 365|Outlook|Teams|Azure|Windows|Entra)\b"),
     (2, "Amazon Web Services", r"\b(AWS|Amazon Web Services)\b"),
     (2, "Google", r"\b(Google Cloud|Gmail|Google Workspace|Android)\b"),
@@ -85,8 +86,16 @@ def _when(item):
         return None
 
 
+SUBJECT = r"(?:\W+[\w'-]+){0,2}?\W+(?:outages?|down\b|offline|disrupt\w*|crash\w*|meltdown|fail\w*|hack\w*|breach\w*|cyber[- ]?attack)"
+
+
 def classify(head):
-    """(tier, label) for the most critical target named in a headline (TARGETS is ordered by tier), or (1, None)."""
+    """(tier, label) for the target a headline is about, or (1, None).
+    A target named right before the outage word ("Microsoft outage blocks visa applications") wins; otherwise the
+    most critical target named anywhere (TARGETS is ordered by tier)."""
+    for tier, label, rx in TARGETS:
+        if re.search(rx + SUBJECT, head, re.I):
+            return tier, label
     for tier, label, rx in TARGETS:
         if re.search(rx, head, re.I):
             return tier, label
