@@ -1,77 +1,96 @@
 {
+  "updatedAt": "2026-11-13T16:47:00+10:30",
+  "nextCheck": "2026-11-14T04:39:00+10:30",
+  "level": 2,
+  "levelName": "Watch",
+  "trend": "steady",
+  "headline": "Watch: Iran tensions rose a notch (a reported strike on Iran's Sirik and Trump warnings) and a global Microsoft outage hit Australian services; nothing urgent for SA.",
+  "summary": "Iran reports a strike on Sirik near Hormuz and Trump says he could strike again 'with no hesitation', while Tehran weighs leaving the nuclear treaty; a brief GPS-jamming flag over Israel this afternoon is not confirmed as a new attack. Hormuz traffic is still about 4 ships a day and Brent is about US$96, so SA fuel stays expensive. A global Microsoft 365 outage has disrupted Outlook and Teams for Australian hospitals and government agencies today; Microsoft says there is no sign of a cyber attack. Locally: Moderate fire danger in the Hills, no bans or warnings, grid and phone networks normal.",
   "actions": [
     "Keep the car tank and any generator fuel at least half full while Hormuz stays closed.",
-    "Install this week's Windows/Outlook security updates on family computers if not done yet."
+    "Do not rely on Outlook or Teams alone for anything urgent today; use phone or SMS.",
+    "Install this week's Windows, Outlook and Chrome security updates on family computers if not done yet."
   ],
   "categories": [
     {
-      "confidence": "med",
       "key": "geo",
       "name": "Geopolitical & conflict",
-      "score": 3.2,
+      "score": 3.3,
+      "trend": "up",
+      "confidence": "med",
+      "summary": "Iran reports a strike on Sirik on its Hormuz coast and Trump warns he could strike again 'with no hesitation'; Tehran is weighing exit from the nuclear treaty and the Houthis claim an attack on a Saudi pipeline. GPS jamming over Israel spiked to 57% of a small sample of aircraft this afternoon, unconfirmed and now too few aircraft to measure. Taiwan pressure continues (Chinese 'area denial' drills in the Western Pacific) with no live-fire warnings or jamming.",
       "sources": [
         {
-          "title": "Daily Maverick: Saudi Arabia says debris from intercepted missiles falls in Mecca region",
-          "url": "https://www.dailymaverick.co.za/article/2026-11-12-saudi-arabia-says-debris-from-intercepted-missiles-falls-in-mecca-region/"
+          "title": "Gulf News: Strike hits Iran's Sirik amid Trump warning to Tehran",
+          "url": "https://gulfnews.com/world/mena/us-israel-iran-war-enemy-strike-hits-irans-sirik-as-trump-warns-tehran-over-threats-to-us-officials-houthis-claim-attack-on-saudi-pipeline-1.500745854"
         },
         {
-          "title": "Al Jazeera: Iran says Hormuz will stay shut until demands are met",
-          "url": "https://www.aljazeera.com/news/2026/11/11/iran-denies-talks-with-us-says-hormuz-will-stay-shut-until-demands-are-met"
+          "title": "Fox News: Trump 'no hesitation' strike warning as Tehran weighs nuclear treaty exit",
+          "url": "https://www.foxnews.com/live-news/iran-war-news-trump-israel-hormuz-november-12"
         },
         {
-          "title": "gCaptain: Taiwan tracks second Chinese combat patrol in a week",
-          "url": "https://gcaptain.com/taiwan-tracks-second-chinese-combat-patrol-in-a-week-sends-ships-and-jets-to-monitor"
+          "title": "Critical Threats: Iran Update, November 12, 2026",
+          "url": "https://www.criticalthreats.org/analysis/iran-update-november-12-2026"
         }
-      ],
-      "summary": "Saudi Arabia intercepted two Houthi missiles overnight and debris fell in the Mecca region (the Houthis deny targeting Mecca). Iran still says Hormuz stays shut until its demands are met; no new US or Iranian strikes confirmed. Taiwan reports a second Chinese naval combat patrol in a week and 'area denial' drills in the Western Pacific - pressure, not a blockade.",
-      "trend": "steady"
+      ]
     },
     {
-      "confidence": "med",
       "key": "nuclear",
       "name": "Nuclear & fallout",
-      "score": 1.5,
-      "sources": [],
-      "summary": "US nuclear-command aircraft (3 E-6s seen) and tanker activity are normal; no private-jet movement to retreat destinations. Forecast-market nuclear-test odds are under 3%. The lit 'mobilisation' sign is a Russian recruitment story, not a call-up.",
-      "trend": "steady"
-    },
-    {
+      "score": 1.6,
+      "trend": "up",
       "confidence": "med",
-      "key": "cyber",
-      "name": "Cyber & infrastructure",
-      "score": 1.5,
+      "summary": "US nuclear-command and tanker aircraft are normal and no private-jet movement to retreat destinations. Iran's talk of leaving the nuclear treaty raises long-run risk but there is no sign of any nuclear alert. The lit 'mobilisation' sign is a Russian recruitment story, not a call-up.",
       "sources": [
         {
-          "title": "CISA Known Exploited Vulnerabilities catalog",
-          "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+          "title": "Fox News: Tehran weighs nuclear treaty exit",
+          "url": "https://www.foxnews.com/live-news/iran-war-news-trump-israel-hormuz-november-12"
         }
-      ],
-      "summary": "All Australian carriers are normal (largest drop 4.8% on a tiny Vodafone sample), the SA grid is normal with no reserve warnings and the global threat level is green. CISA added several exploited Barracuda, Cisco and Outlook flaws this week; Australian ransomware listings are below normal. The ACSC feed timed out this run.",
-      "trend": "steady"
+      ]
     },
     {
-      "confidence": "high",
+      "key": "cyber",
+      "name": "Cyber & infrastructure",
+      "score": 2.4,
+      "trend": "up",
+      "confidence": "med",
+      "summary": "A global Microsoft 365 outage has disrupted Outlook, Teams and other services across Australia, including hospitals, ASIO and SA Government; Microsoft says there is no indication of a cyber attack and recovery has been slower than expected. Phone carriers and the SA grid are normal, the global threat level is green and exploited-flaw counts are normal. The ACSC feed returned nothing this run.",
+      "sources": [
+        {
+          "title": "ABC: 'No indication' Outlook outage caused by cyber attack, Microsoft says",
+          "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQa3d4WUpneFA2OVBxXy1NbkgyOFJZSzFZRTgtYjloejloV09jWGstNS1zcU9KM3JVNlpXeEYyVHRrOGZndVRrWktSNmVoaGNfUWVzd3RDd0wweVpWSHR4Y3YxTk9BNm9nLWZRU2p0VlBTNDZxSW5laFZZb3RCcWFvMjJBdk9ybnBWb3dTV2cxT3E?oc=5"
+        },
+        {
+          "title": "InDaily: SA Govt update as Microsoft outage disrupts ASIO",
+          "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQby1HdERYOXFlRmlERTNvRS0xNHVsdkJnSlJGaldFMUI0TnlzNy1iOE5hcXNjWHdWSXo4UGIxUVEtRzhpek1fNmhtbkRiQ091S3pXd05RdjJtTTNmR2UtRzA0Mjh3aVJjWmJHdnBxS205TUJMazVxcE9iWGpCYzhWSzRpZ0RDOEhrdXM2NG9vY1N1dE0zNmd4Vk83a1VSa2cyX3IxOG4tOFpRdw?oc=5"
+        },
+        {
+          "title": "Michael West Media: Microsoft outage recovery 'not progressing as expected'",
+          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOQ0RReFVTS25PTHZCTDE4WHVYRnhPcm5fd0dqTUhCaDhZNENadTMzYmwyQjZzYUJSRGZZREJOa3JieC0xakFTcC1KNmdZUlBzX2ZTYWlOdFRkb2R6WHhrc200UzctUlBzWmRDcmpTX1FsaFB6SDVjX2NHSmdyZDhpb19JSW1HdkR5?oc=5"
+        }
+      ]
+    },
+    {
       "key": "bio",
       "name": "Pandemic & biological",
       "score": 2,
+      "trend": "steady",
+      "confidence": "high",
+      "summary": "The Bundibugyo Ebola outbreak continues in DR Congo, Kenya and Nigeria with no cases outside Africa. The lit 'chemical attack' and 'unexplained deaths' signs are false matches (a Syria trials article and a fitness story). Adelaide emergency departments are normal (only the Royal Adelaide is busy).",
       "sources": [
         {
           "title": "WHO Disease Outbreak News",
           "url": "https://who.int/emergencies/disease-outbreak-news/item/2026-DON618"
-        },
-        {
-          "title": "Nature World News: Ebola cases top 10,000 in Congo",
-          "url": "https://www.natureworldnews.com/articles/73750/20261106/ebola-cases-top-10000-congo-africa-cdc-toll-shows-more-half-patients-have-died.htm"
         }
-      ],
-      "summary": "The Bundibugyo Ebola outbreak continues in DR Congo, Kenya and Nigeria (reports say more than 10,000 cases in Congo), with no cases outside Africa. The lit 'chemical attack' and 'unexplained deaths' signs are false matches (a Syria trials article and a fitness story).",
-      "trend": "steady"
+      ]
     },
     {
-      "confidence": "med",
       "key": "nature",
       "name": "Natural hazards",
       "score": 1,
+      "trend": "steady",
+      "confidence": "high",
+      "summary": "Fire danger Moderate in the Mount Lofty Ranges and no rating for Adelaide; no fire bans, CFS warnings or Bureau severe-weather warnings (the Spencer Gulf wind warning was cancelled). Four small fires active across SA; several outback roads in the north-east remain closed by flooding.",
       "sources": [
         {
           "title": "CFS fire danger ratings",
@@ -81,40 +100,62 @@
           "title": "Bureau of Meteorology SA warnings",
           "url": "https://www.bom.gov.au/sa/warnings/"
         }
-      ],
-      "summary": "Fire danger Moderate in the Mount Lofty Ranges and no rating for Adelaide; no fire bans, CFS warnings or Bureau severe-weather warnings. Six small incidents across SA (grass and structure fires, a burn-off). A strong wind warning covers Spencer Gulf for 14 November and several outback roads in the north-east remain closed by flooding.",
-      "trend": "steady"
+      ]
     },
     {
-      "confidence": "med",
       "key": "supply",
       "name": "Fuel, food & supply",
       "score": 2.9,
+      "trend": "steady",
+      "confidence": "med",
+      "summary": "Hormuz traffic is still only about 4 ships a day (versus 100+ before the war). Brent is about US$95.70 and the Australian dollar slipped to 68 US cents, so SA fuel prices stay high. Malacca, Lombok and Sunda routes into Australia are normal.",
       "sources": [
         {
-          "title": "straits.live: Strait of Hormuz closed, day 257",
+          "title": "straits.live: Strait of Hormuz status",
           "url": "https://straits.live/"
-        },
-        {
-          "title": "Al Jazeera: Iran says Hormuz will stay shut until demands are met",
-          "url": "https://www.aljazeera.com/news/2026/11/11/iran-denies-talks-with-us-says-hormuz-will-stay-shut-until-demands-are-met"
         }
-      ],
-      "summary": "Hormuz traffic is still only about 4 ships a day (versus 100+ before the war). Brent rose 1.9% to US$94.50 and the Australian dollar fell 0.9% to 68 US cents, so SA fuel prices are likely to stay high or rise. Malacca, Lombok and Sunda routes into Australia are normal.",
-      "trend": "steady"
+      ]
     },
     {
-      "confidence": "high",
       "key": "markets",
       "name": "Markets & finance",
       "score": 1.8,
-      "sources": [],
-      "summary": "Brent US$94.50 (+1.9%), VIX 17.5 (flat), gold US$3,881 (-3.0%), AUD 0.681 (-0.9%). Markets calm overall; the weaker dollar and firmer oil are the main cost pressures for SA households.",
-      "trend": "steady"
+      "trend": "steady",
+      "confidence": "high",
+      "summary": "Brent US$95.70 (flat), VIX 18.7 (+6.9%), gold US$3,902 (+0.4%), AUD 0.680 (-0.7%). Markets calm overall; a weaker dollar and firm oil are the main cost pressures for SA households.",
+      "sources": []
     }
   ],
+  "confirmed": [],
   "concerns": [
     {
+      "key": "mideast",
+      "title": "Iran conflict and Strait of Hormuz shipping",
+      "likelihood": 30,
+      "prev_likelihood": 28,
+      "trend": "up",
+      "drivers": [
+        "Iran reports a strike on Sirik on its Hormuz coast and Trump says he could strike again 'with no hesitation'; Tehran is weighing exit from the nuclear treaty and the Houthis claim an attack on a Saudi pipeline.",
+        "GPS jamming over Israel spiked this afternoon on a small sample of aircraft; no new Israeli or US campaign is confirmed.",
+        "Hormuz still carries about 4 ships a day; forecast markets cut the chance of a Hormuz deal by year end to about 25%."
+      ],
+      "scenarios": [
+        {
+          "name": "Standoff drags on, sporadic strikes continue",
+          "likelihood": 58,
+          "sa_impact": "Fuel prices stay high and volatile; occasional regional servo shortages but no rationing."
+        },
+        {
+          "name": "Deal reached, shipping recovers",
+          "likelihood": 22,
+          "sa_impact": "Fuel prices ease over weeks; little direct effect on SA."
+        },
+        {
+          "name": "Major escalation, renewed US/Israeli strike campaign or wider Gulf attacks",
+          "likelihood": 20,
+          "sa_impact": "Fuel price jump and local shortages within 1-3 weeks; possible government fuel measures."
+        }
+      ],
       "actions": [
         {
           "action": "Keep the car and any generator fuel at least half full.",
@@ -124,259 +165,237 @@
           "action": "Hold a little cash at home.",
           "reason": "If fuel is rationed or networks fail, cash still works when cards may not."
         }
-      ],
-      "drivers": [
-        "Saudi Arabia intercepted two Houthi ballistic missiles overnight and debris fell in the Mecca region; the Houthis deny targeting Mecca. Iran says Hormuz stays shut until its demands are met; no new US or Iranian strikes confirmed.",
-        "GPS jamming over the Gulf spiked to 24% of aircraft yesterday evening and is now 15% (usual about 6%), consistent with ongoing missile and drone activity rather than a new campaign.",
-        "Brent rose about 2% to US$94.50; forecast markets give about a 25% chance of a US-Iran Hormuz deal by year end."
-      ],
-      "key": "mideast",
-      "likelihood": 28,
-      "scenarios": [
-        {
-          "likelihood": 58,
-          "name": "Standoff drags on, sporadic attacks continue",
-          "sa_impact": "Fuel prices stay high and volatile; occasional regional servo shortages but no rationing."
-        },
-        {
-          "likelihood": 25,
-          "name": "Deal reached, shipping recovers",
-          "sa_impact": "Fuel prices ease over weeks; little direct effect on SA."
-        },
-        {
-          "likelihood": 17,
-          "name": "Major escalation, wider Gulf attacks on oil sites",
-          "sa_impact": "Fuel price jump and local shortages within 1-3 weeks; possible government fuel measures."
-        }
-      ],
-      "title": "Iran conflict and Strait of Hormuz shipping",
-      "trend": "steady"
+      ]
     },
     {
-      "actions": [
-        {
-          "action": "Check your bushfire plan and the CFS app alert zones before the first hot spell.",
-          "reason": "Early-season fires start fast, and decisions are easier made on a calm day."
-        }
-      ],
+      "key": "cyber",
+      "title": "Cyber attacks and outages hitting Australian services",
+      "likelihood": 9,
+      "prev_likelihood": 7,
+      "trend": "up",
       "drivers": [
-        "Fire danger is Moderate in the Hills with no fire bans, CFS warnings or Bureau severe-weather warnings; six small incidents across SA.",
-        "SA grid demand is normal with no reserve warnings; outback flood road closures are far from Adelaide."
+        "A global Microsoft 365 outage disrupted email and Teams for Australian hospitals and agencies today; Microsoft says it was not a cyber attack. It shows how much depends on one provider.",
+        "Phone carriers are normal, the global threat level is green and Australian ransomware listings are below normal."
       ],
-      "key": "local",
-      "likelihood": 6,
       "scenarios": [
         {
-          "likelihood": 85,
-          "name": "Quiet week",
-          "sa_impact": "No effect."
+          "name": "Ongoing breaches and occasional cloud outages",
+          "likelihood": 84,
+          "sa_impact": "Hours of disruption to email and online services; scam risk from stolen data."
         },
         {
-          "likelihood": 13,
-          "name": "Hot, windy day with fire bans",
-          "sa_impact": "Fire danger High to Extreme in the Hills; travel plans may need changing."
+          "name": "Hours-long outage of payments or a telco",
+          "likelihood": 14,
+          "sa_impact": "Card payments and phones down for hours."
         },
         {
+          "name": "Multi-day multi-sector attack",
           "likelihood": 2,
-          "name": "Damaging fire or major power outage",
-          "sa_impact": "Evacuations, power and phone outages in affected areas."
+          "sa_impact": "Payments, fuel and communications disrupted for days."
         }
       ],
-      "title": "Local SA emergency (bushfire, heat, power) within 7 days",
-      "trend": "steady"
-    },
-    {
       "actions": [
         {
           "action": "Keep devices and banking apps updated.",
           "reason": "Most attacks on households exploit known flaws that updates already fix."
         }
-      ],
-      "drivers": [
-        "No major attack on Australian services reported; all carriers normal and the global cyber threat level is green.",
-        "CISA added exploited Barracuda, Cisco BroadWorks and Outlook flaws this week; Australian ransomware listings are below normal."
-      ],
-      "key": "cyber",
-      "likelihood": 7,
-      "scenarios": [
-        {
-          "likelihood": 85,
-          "name": "Ongoing breaches, no service outages",
-          "sa_impact": "Scam risk from stolen data."
-        },
-        {
-          "likelihood": 13,
-          "name": "Hours-long outage of payments or a telco",
-          "sa_impact": "Card payments and phones down for hours."
-        },
-        {
-          "likelihood": 2,
-          "name": "Multi-day multi-sector attack",
-          "sa_impact": "Payments, fuel and communications disrupted for days."
-        }
-      ],
-      "title": "Cyber attacks on Australian services",
-      "trend": "steady"
+      ]
     },
     {
+      "key": "local",
+      "title": "Local SA emergency (bushfire, heat, power) within 7 days",
+      "likelihood": 6,
+      "prev_likelihood": 6,
+      "trend": "steady",
+      "drivers": [
+        "Fire danger is Moderate in the Hills with no fire bans, CFS warnings or Bureau severe-weather warnings; four small fires active across SA.",
+        "SA grid demand is normal with no reserve warnings; outback flood road closures are far from Adelaide."
+      ],
+      "scenarios": [
+        {
+          "name": "Quiet week",
+          "likelihood": 85,
+          "sa_impact": "No effect."
+        },
+        {
+          "name": "Hot, windy day with fire bans",
+          "likelihood": 13,
+          "sa_impact": "Fire danger High to Extreme in the Hills; travel plans may need changing."
+        },
+        {
+          "name": "Damaging fire or major power outage",
+          "likelihood": 2,
+          "sa_impact": "Evacuations, power and phone outages in affected areas."
+        }
+      ],
+      "actions": [
+        {
+          "action": "Check your bushfire plan and the CFS app alert zones before the first hot spell.",
+          "reason": "Early-season fires start fast, and decisions are easier made on a calm day."
+        }
+      ]
+    },
+    {
+      "key": "ai",
+      "title": "AI-enabled attack (non-traditional)",
+      "likelihood": 7,
+      "prev_likelihood": 7,
+      "trend": "steady",
+      "drivers": [
+        "Reports of an AI-powered attack on crypto firm Chainstack and hackers hijacking AI agents to steal cloud credentials; none targeting Australia.",
+        "A central bank warned of deepfake videos of its governor (overseas); the 'flash crash' sign is a false match and the Microsoft outage is not linked to any attack."
+      ],
+      "scenarios": [
+        {
+          "name": "Background AI-assisted crime and espionage",
+          "likelihood": 85,
+          "sa_impact": "More convincing scams and data breaches; no wide outage."
+        },
+        {
+          "name": "Synthetic-media crisis (fake leader video or alert)",
+          "likelihood": 11,
+          "sa_impact": "Hours of confusion, possible panic buying before it is debunked."
+        },
+        {
+          "name": "Machine-speed attack on many systems at once",
+          "likelihood": 4,
+          "sa_impact": "Payments, telcos, hospitals or the grid disrupted for hours to days."
+        }
+      ],
       "actions": [
         {
           "action": "Agree a family code word for urgent calls.",
           "reason": "AI can clone a voice from seconds of audio; a code word defeats fake 'I need help now' calls."
         }
-      ],
-      "drivers": [
-        "Reports of hackers using AI agents to steal cloud (AWS) credentials and AI-assisted theft of Tajik government documents; none targeting Australia.",
-        "The 'flash crash' warning sign is a false match (a market-research article); no deepfake of Australian officials or mass AI-driven attack found."
-      ],
-      "key": "ai",
-      "likelihood": 7,
-      "scenarios": [
-        {
-          "likelihood": 85,
-          "name": "Background AI-assisted crime and espionage",
-          "sa_impact": "More convincing scams and data breaches; no wide outage."
-        },
-        {
-          "likelihood": 11,
-          "name": "Synthetic-media crisis (fake leader video or alert)",
-          "sa_impact": "Hours of confusion, possible panic buying before it is debunked."
-        },
-        {
-          "likelihood": 4,
-          "name": "Machine-speed attack on many systems at once",
-          "sa_impact": "Payments, telcos, hospitals or the grid disrupted for hours to days."
-        }
-      ],
-      "title": "AI-enabled attack (non-traditional)",
-      "trend": "steady"
+      ]
     },
     {
+      "key": "taiwan",
+      "title": "Taiwan Strait pressure",
+      "likelihood": 5,
+      "prev_likelihood": 5,
+      "trend": "steady",
+      "drivers": [
+        "Chinese navy 'area denial' drills in the Western Pacific and repeated combat patrols continue; this is pressure, not a blockade.",
+        "No live-fire warnings, GPS jamming or internet disruption around Taiwan; Taiwan Strait shipping is normal and forecast markets give about 2% for a clash before 2027."
+      ],
+      "scenarios": [
+        {
+          "name": "Routine grey-zone pressure",
+          "likelihood": 85,
+          "sa_impact": "No effect."
+        },
+        {
+          "name": "Large announced drill",
+          "likelihood": 13,
+          "sa_impact": "Market jitters; no supply effect."
+        },
+        {
+          "name": "Blockade or quarantine",
+          "likelihood": 2,
+          "sa_impact": "Fuel, medicine and electronics disruption within weeks."
+        }
+      ],
       "actions": [
         {
           "action": "Keep 2-3 months of any essential prescription medicines.",
           "reason": "Most medicines are imported via Asian shipping lanes, which any blockade would disrupt first."
         }
-      ],
-      "drivers": [
-        "Taiwan reports a second Chinese naval combat patrol in a week and Chinese 'area denial' drills in the Western Pacific; ASPI reports China's navy mobilising (context, not a blockade sign).",
-        "No live-fire warnings, GPS jamming or internet disruption around Taiwan; Taiwan Strait shipping is normal and forecast markets give about 2% for a clash before 2027."
-      ],
-      "key": "taiwan",
-      "likelihood": 5,
-      "scenarios": [
-        {
-          "likelihood": 85,
-          "name": "Routine grey-zone pressure",
-          "sa_impact": "No effect."
-        },
-        {
-          "likelihood": 13,
-          "name": "Large announced drill",
-          "sa_impact": "Market jitters; no supply effect."
-        },
-        {
-          "likelihood": 2,
-          "name": "Blockade or quarantine",
-          "sa_impact": "Fuel, medicine and electronics disruption within weeks."
-        }
-      ],
-      "title": "Taiwan Strait pressure",
-      "trend": "up"
+      ]
     },
     {
+      "key": "bio",
+      "title": "Bundibugyo Ebola outbreak (Africa)",
+      "likelihood": 4,
+      "prev_likelihood": 4,
+      "trend": "steady",
+      "drivers": [
+        "WHO reports the Bundibugyo Ebola outbreak continuing in DR Congo, Kenya and Nigeria; no cases outside Africa.",
+        "No new unknown-illness cluster confirmed by WHO this week."
+      ],
+      "scenarios": [
+        {
+          "name": "Outbreak stays in Africa",
+          "likelihood": 90,
+          "sa_impact": "No direct effect; possible extra airport screening."
+        },
+        {
+          "name": "Isolated imported case in a Western country",
+          "likelihood": 9,
+          "sa_impact": "Media concern; Australian hospitals manage under existing plans."
+        },
+        {
+          "name": "Spread in Asia-Pacific",
+          "likelihood": 1,
+          "sa_impact": "Travel restrictions and health system alerts."
+        }
+      ],
       "actions": [
         {
           "action": "Check Smartraveller before any travel to Central or East Africa.",
           "reason": "Advice and entry rules can change quickly as the outbreak spreads."
         }
-      ],
-      "drivers": [
-        "WHO reports the Bundibugyo Ebola outbreak continuing in DR Congo, Kenya and Nigeria; reports say Congo cases have passed 10,000. No cases outside Africa.",
-        "No new unknown-illness cluster confirmed by WHO this week."
-      ],
-      "key": "bio",
-      "likelihood": 4,
-      "scenarios": [
-        {
-          "likelihood": 90,
-          "name": "Outbreak stays in Africa",
-          "sa_impact": "No direct effect; possible extra airport screening."
-        },
-        {
-          "likelihood": 9,
-          "name": "Isolated imported case in a Western country",
-          "sa_impact": "Media concern; Australian hospitals manage under existing plans."
-        },
-        {
-          "likelihood": 1,
-          "name": "Spread in Asia-Pacific",
-          "sa_impact": "Travel restrictions and health system alerts."
-        }
-      ],
-      "title": "Bundibugyo Ebola outbreak (Africa)",
-      "trend": "steady"
+      ]
     },
     {
+      "key": "ausinfra",
+      "title": "Undersea cables and Australian networks",
+      "likelihood": 3,
+      "prev_likelihood": 3,
+      "trend": "steady",
+      "drivers": [
+        "One Hong Kong-flagged vessel is on the routine watch list near Sydney's southern cable zone; all Australian carriers are normal.",
+        "No undersea cable damage reported near Australia."
+      ],
+      "scenarios": [
+        {
+          "name": "Routine shipping, no damage",
+          "likelihood": 92,
+          "sa_impact": "No effect."
+        },
+        {
+          "name": "Single cable damaged",
+          "likelihood": 7,
+          "sa_impact": "Slower international internet for days; traffic reroutes via other cables."
+        },
+        {
+          "name": "Several cables cut at once",
+          "likelihood": 1,
+          "sa_impact": "Major internet, payments and cloud disruption across Australia."
+        }
+      ],
       "actions": [
         {
           "action": "Keep some cash at home.",
           "reason": "EFTPOS and card payments are the first thing to fail in a network outage."
         }
-      ],
-      "drivers": [
-        "One Hong Kong-flagged container ship is on the routine watch list near Sydney's cable zone; all Australian carriers are normal.",
-        "No undersea cable damage reported near Australia."
-      ],
-      "key": "ausinfra",
-      "likelihood": 3,
-      "scenarios": [
-        {
-          "likelihood": 92,
-          "name": "Routine shipping, no damage",
-          "sa_impact": "No effect."
-        },
-        {
-          "likelihood": 7,
-          "name": "Single cable damaged",
-          "sa_impact": "Slower international internet for days; traffic reroutes via other cables."
-        },
-        {
-          "likelihood": 1,
-          "name": "Several cables cut at once",
-          "sa_impact": "Major internet, payments and cloud disruption across Australia."
-        }
-      ],
-      "title": "Undersea cables and Australian networks",
-      "trend": "steady"
+      ]
     }
   ],
-  "confirmed": [],
   "events_observed": [
     {
-      "date": "2026-11-03",
       "eventKey": "us-strikes-iran-2026-11-03",
+      "title": "US strikes on Iranian targets around the Strait of Hormuz",
       "scenario": "mideast",
-      "title": "US strikes on Iranian targets around the Strait of Hormuz"
+      "date": "2026-11-03"
     },
     {
-      "date": "2026-11-08",
       "eventKey": "houthi-strike-riyadh-2026-11-08",
+      "title": "Houthi missile strike damages Aramco building in Riyadh",
       "scenario": "mideast",
-      "title": "Houthi missile strike damages Aramco building in Riyadh"
+      "date": "2026-11-08"
     },
     {
-      "date": "2026-11-12",
       "eventKey": "houthi-missiles-mecca-2026-11-12",
+      "title": "Saudi Arabia intercepts Houthi missiles; debris falls in Mecca region",
       "scenario": "mideast",
-      "title": "Saudi Arabia intercepts Houthi missiles; debris falls in Mecca region"
+      "date": "2026-11-12"
+    },
+    {
+      "eventKey": "strike-sirik-iran-2026-11-12",
+      "title": "Iran reports a strike on Sirik on its Hormuz coast",
+      "scenario": "mideast",
+      "date": "2026-11-12"
     }
-  ],
-  "headline": "Watch: the Iran-Hormuz standoff continues and Houthi missiles were intercepted near Mecca, keeping fuel the main risk for SA; nothing locally.",
-  "level": 2,
-  "levelName": "Watch",
-  "nextCheck": "2026-11-13T16:39:00+10:30",
-  "summary": "Saudi Arabia intercepted two Houthi missiles overnight with debris falling in the Mecca region, and Iran still says Hormuz stays shut until its demands are met; no new US or Iranian strikes are confirmed. Brent rose about 2% to US$94.50 while the Australian dollar fell to 68 US cents, so SA fuel prices are likely to stay high. Yesterday's Gulf GPS-jamming flag fits the ongoing missile activity, not a new attack. Locally: Moderate fire danger in the Hills, no bans or warnings, grid and phone networks normal.",
-  "trend": "steady",
-  "updatedAt": "2026-11-13T04:42:00+10:30"
+  ]
 }
