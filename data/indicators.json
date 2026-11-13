@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-13T22:32:00Z",
+  "generated_at": "2026-11-13T22:37:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -99,21 +99,13 @@
       "why": "The worst local days stack up: extreme fire danger, a heatwave pushing power demand, a tight grid, and storms or fires damaging lines. AEMO warns of supply shortfalls hours to a day ahead; the CFS and Bureau issue ratings and warnings a day or more ahead."
     },
     {
-      "band": "Guarded",
-      "convergence": "Two different kinds of sign are showing together (aviation and electronic warfare). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
+      "band": "Low",
+      "convergence": "Only one kind of sign is showing (aviation). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
       "domains": [
-        "Aviation",
-        "Electronic warfare"
+        "Aviation"
       ],
       "key": "mideast",
       "lit": [
-        {
-          "detail": "gps_gulf 44 vs usual 10.0",
-          "domain": "Electronic warfare",
-          "id": "gps",
-          "name": "GPS jamming spike (Gulf / Israel)",
-          "weight": 10
-        },
         {
           "detail": "When Israel's airspace closed, this Utah tour company got its travelers home just 24 hours late",
           "domain": "Aviation",
@@ -124,8 +116,8 @@
       ],
       "name": "Middle East war & Gulf shipping",
       "sa_impact": "Fuel: Australia imports most of its fuel, much of it refined from Gulf crude in Asia. Shipping attacks or a Hormuz closure push up prices within days and can cause local shortages.",
-      "score": 20,
-      "trend": "up",
+      "score": 10,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Military air",
@@ -138,6 +130,12 @@
           "id": "air",
           "name": "Unusual military air activity over the region",
           "weight": 15
+        },
+        {
+          "domain": "Electronic warfare",
+          "id": "gps",
+          "name": "GPS jamming spike (Gulf / Israel)",
+          "weight": 10
         },
         {
           "domain": "Communications",
@@ -548,7 +546,7 @@
     },
     {
       "band": "Low",
-      "convergence": "No warning signs are showing. The strongest signs not yet showing: phone / internet carrier outage, gps degradation over sa or nsw and sudden fall in sa electricity demand (possible large blackout).",
+      "convergence": "No warning signs are showing. The strongest signs not yet showing: phone / internet carrier outage, nationwide flight, power, network or payments halt in australia and gps degradation over sa or nsw.",
       "domains": [],
       "key": "ausinfra",
       "lit": [],
@@ -616,6 +614,12 @@
           "id": "blackout",
           "name": "Sudden fall in SA electricity demand (possible large blackout)",
           "weight": 25
+        },
+        {
+          "domain": "National halt",
+          "id": "shock_au",
+          "name": "Nationwide flight, power, network or payments halt in Australia",
+          "weight": 30
         }
       ],
       "why": "The 2023 Optus outage cut mobile, NBN, EFTPOS and some 000 calls nationwide for 12 hours. Hostile states pre-position in critical infrastructure; GPS jamming over Australia would be a new and serious sign."
@@ -776,17 +780,24 @@
           "id": "blackout",
           "name": "Sudden fall in SA electricity demand (possible large blackout)",
           "weight": 25
+        },
+        {
+          "domain": "Allied infrastructure",
+          "id": "shock_ally",
+          "name": "Nationwide shutdown in an allied country (flights, power, networks, payments)",
+          "weight": 15
         }
       ],
       "why": "Large attacks are usually preceded by quieter steps: a surge in newly exploited flaws in VPNs and firewalls (how state groups like Volt Typhoon get in), scanning of industrial-control systems, a rise in ransomware victims in the target country, and official warnings. Before Russia's 2022 invasion, wiper malware hit Ukraine a day ahead; Chinese groups have been found pre-positioned in US and allied infrastructure."
     },
     {
       "band": "Elevated",
-      "convergence": "Signs are converging across 4 separate areas (ai-enabled hacking, cloud services, fraud waves and synthetic media). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: a Chinese state-sponsored group used an AI agent to carry out 80-90% of an attack on about 30 organisations, at thousands of requests per second. A fake AI image of a Pentagon explosion briefly moved US markets in May 2023, and a deepfake video call of a CFO tricked a company into paying US$25 million in 2024. The likely signature of an AI attack is breadth and speed: many unrelated systems and vendors hit at once, synthetic media of officials, and shocks with no clear human cause. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, flash crash or exchange trading halt and market fear index jumps 25%+ in a day.",
+      "convergence": "Signs are converging across 5 separate areas (ai-enabled hacking, cloud services, fraud waves, markets and synthetic media). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: a Chinese state-sponsored group used an AI agent to carry out 80-90% of an attack on about 30 organisations, at thousands of requests per second. A fake AI image of a Pentagon explosion briefly moved US markets in May 2023, and a deepfake video call of a CFO tricked a company into paying US$25 million in 2024. The likely signature of an AI attack is breadth and speed: many unrelated systems and vendors hit at once, synthetic media of officials, and shocks with no clear human cause. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, market fear index jumps 25%+ in a day and phone / internet carrier outage.",
       "domains": [
         "AI-enabled hacking",
         "Cloud services",
         "Fraud waves",
+        "Markets",
         "Synthetic media"
       ],
       "key": "ai",
@@ -806,6 +817,13 @@
           "weight": 15
         },
         {
+          "detail": "Azum---Hits lower circuit breaker; market reacts negatively to current fiscal year guidance",
+          "domain": "Markets",
+          "id": "flash",
+          "name": "Flash crash or exchange trading halt",
+          "weight": 10
+        },
+        {
           "detail": "A global Microsoft 365 outage has hit millions – what happened and when will it be fixed?",
           "domain": "Cloud services",
           "id": "cloud",
@@ -822,20 +840,14 @@
       ],
       "name": "AI-enabled attack (non-traditional)",
       "sa_impact": "Not bombs but disruption: hacking at machine speed across banks, telcos, hospitals and the grid at once; fake videos or alerts from leaders causing panic buying or bank runs; or automated market and fraud shocks. Effects would be outages, payment failures and confusion about what is real.",
-      "score": 45,
-      "trend": "steady",
+      "score": 55,
+      "trend": "up",
       "unlit": [
         {
           "domain": "Mass exploitation",
           "id": "breadth",
           "name": "Exploited flaws across unusually many vendors at once",
           "weight": 15
-        },
-        {
-          "domain": "Markets",
-          "id": "flash",
-          "name": "Flash crash or exchange trading halt",
-          "weight": 10
         },
         {
           "domain": "Markets",
@@ -853,6 +865,12 @@
           "domain": "Edge-device exploitation",
           "id": "edge",
           "name": "Several VPN / firewall flaws exploited this week",
+          "weight": 10
+        },
+        {
+          "domain": "Allied infrastructure",
+          "id": "shock_ally",
+          "name": "Nationwide shutdown in an allied country, cause unknown",
           "weight": 10
         }
       ],
