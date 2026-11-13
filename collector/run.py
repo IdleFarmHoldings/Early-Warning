@@ -23,6 +23,7 @@ import maritime  # noqa: E402
 import localsa  # noqa: E402
 import foresight  # noqa: E402
 import satellites  # noqa: E402
+import incidents  # noqa: E402
 
 SERIES_DIR = ROOT / "data" / "series"
 
@@ -514,6 +515,16 @@ def main():
                                        "note": "Scores count known warning signs showing now (0-100). They are not probabilities."})
     alerts += precursor_alerts(scenarios, prev_ind, state, now, first_run)
 
+    # Incident triage: proximity x velocity x criticality for outages and cyber incidents
+    inc = []
+    try:
+        inc = incidents.triage((results.get("news_watch") or {}).get("watch"), now, state,
+                               (results.get("telecom") or {}).get("networks"), loc.get("summary") or {})
+        alerts += incidents.incident_alerts(inc, state, now, first_run)
+        health["incidents"] = {"ok": True}
+    except Exception as e:  # noqa: BLE001 - triage must never stop the rest of the check
+        health["incidents"] = {"ok": False, "error": f"{type(e).__name__}: {e}"[:300]}
+
     # Event journal and learned patterns
     journal = load_jsonl("data/events.jsonl")
     for ev in precursors.journal_events(load_json("data/status.json", {}), journal, series + [row], now):
@@ -551,6 +562,7 @@ def main():
     summary["local_sa"] = loc
     summary["chokepoints"] = {k: {kk: vv for kk, vv in v.items() if kk != "daily"} for k, v in chk.items()}
     summary["prediction_markets"] = (pm or {}).get("markets")
+    summary["incidents"] = inc
     if chk:
         save_json("data/chokepoints.json", {"generated_at": iso(now), "chokepoints": chk})
     save_json("data/latest.json", summary)

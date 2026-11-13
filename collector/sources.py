@@ -324,7 +324,7 @@ def fetch_news_watch():
         try:
             raw = http_get(GNEWS.format(q=urllib.parse.quote(w["q"] + " when:1d")), timeout=20)
             out[w["key"]] = {"name": w["name"], "items": [{"title": i["title"], "date": i["date"], "link": i["link"]}
-                                                          for i in parse_rss(raw, limit=6)]}
+                                                          for i in parse_rss(raw, limit=w.get("limit", 6))]}
         except Exception as e:  # noqa: BLE001
             errors.append(f"{w['name']}: {type(e).__name__}: {e}"[:160])
     if not out:

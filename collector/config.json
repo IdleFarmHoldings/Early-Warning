@@ -589,7 +589,8 @@
     {
       "key": "cloud",
       "name": "Major cloud & AI service outages",
-      "q": "(AWS OR Azure OR \"Google Cloud\" OR Cloudflare OR \"Microsoft 365\" OR OpenAI OR Anthropic OR CrowdStrike) (outage OR \"global outage\" OR \"widespread outage\" OR disruption)"
+      "q": "(AWS OR Azure OR \"Google Cloud\" OR Cloudflare OR \"Microsoft 365\" OR OpenAI OR Anthropic OR CrowdStrike) (outage OR \"global outage\" OR \"widespread outage\" OR disruption)",
+      "limit": 12
     },
     {
       "key": "scams",
@@ -610,6 +611,18 @@
       "key": "murray",
       "name": "River Murray flows",
       "q": "\"River Murray\" (flood OR flooding OR \"low flow\" OR drought OR salinity OR \"water allocation\")"
+    },
+    {
+      "key": "outage_au",
+      "name": "Australian service outages",
+      "limit": 15,
+      "q": "(Australia OR Australians OR Adelaide OR \"South Australia\") (outage OR \"down for\" OR \"services down\" OR \"widespread disruption\" OR \"not working\") (Telstra OR Optus OR NBN OR internet OR bank OR payments OR EFTPOS OR Microsoft OR AWS OR Google OR Apple OR CrowdStrike OR Cloudflare OR hospital OR government)"
+    },
+    {
+      "key": "bank_outage",
+      "name": "Bank & payments outages",
+      "limit": 10,
+      "q": "(CommBank OR \"Commonwealth Bank\" OR NAB OR Westpac OR ANZ OR EFTPOS OR \"card payments\" OR ATMs OR Visa OR Mastercard) (outage OR down OR \"not working\" OR disruption OR \"cyber attack\")"
     }
   ],
   "satellites": {
@@ -1021,5 +1034,20 @@
         ]
       }
     ]
+  },
+  "incidents": {
+    "_comment": "Incident triage (collector/incidents.py): proximity x velocity x criticality. Info = board only; Warning = Early warning channel; Critical = both channels.",
+    "feeds": [
+      "cloud",
+      "cyber_au",
+      "cyber_supply",
+      "sapn",
+      "cables",
+      "ai_hack",
+      "outage_au",
+      "bank_outage"
+    ],
+    "window_hours": 12,
+    "carrier_drop_pct": 20
   }
 }
