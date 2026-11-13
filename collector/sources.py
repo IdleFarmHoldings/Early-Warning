@@ -405,17 +405,30 @@ def summarise_aircraft(acs, types):
     return airborne, ground
 
 
+def count_airborne(acs):
+    """All aircraft in the air with a position (any type): a country's flights stopping shows up here."""
+    return sum(1 for a in acs if a.get("alt_baro") != "ground" and isinstance(a.get("lat"), (int, float)))
+
+
 def fetch_aircraft():
     jc = CONFIG["jets"]
     lr = set(jc["long_range_types"])
-    hub_air, by_hub, errors = {}, {}, []
+    hub_air, by_hub, traffic, errors = {}, {}, {}, []
     for h in jc["hubs"]:
         try:
             d = _adsb(f"/v3/lat/{h['lat']}/lon/{h['lon']}/dist/{jc['radius_nm']}")
-            air, _ = summarise_aircraft(d.get("ac") or d.get("aircraft") or [], lr)
+            acs = d.get("ac") or d.get("aircraft") or []
+            air, _ = summarise_aircraft(acs, lr)
             hub_air.update(air)
             by_hub[h["name"]] = len(air)
+            traffic[h["name"]] = count_airborne(acs)
         except Exception as e:  # noqa: BLE001 - one hub failing should not stop the rest
+            errors.append(f"{h['name']}: {e}")
+    for h in jc.get("traffic_hubs", []):  # extra airports counted only for national traffic (Australia, NZ, North Asia)
+        try:
+            d = _adsb(f"/v3/lat/{h['lat']}/lon/{h['lon']}/dist/{jc['radius_nm']}")
+            traffic[h["name"]] = count_airborne(d.get("ac") or d.get("aircraft") or [])
+        except Exception as e:  # noqa: BLE001
             errors.append(f"{h['name']}: {e}")
     retreat_total, by_retreat = {}, {}
     for r in jc["retreats"]:
@@ -456,6 +469,7 @@ def fetch_aircraft():
         "bizjets_by_hub": by_hub,
         "retreat_bizjets": len(retreat_total) if len(by_retreat) == len(jc["retreats"]) else None,
         "retreat_by_place": by_retreat,
+        "traffic_by_hub": traffic,
         **mil,
         "errors": errors,
     }
@@ -482,6 +496,7 @@ def fetch_all():
         "news_watch": fetch_news_watch,
         "sectors": fetch_sectors,
         "cyber": fetch_cyber,
+        "faa": fetch_faa,
     }
     for name, fn in plan.items():
         t0 = time.time()
@@ -495,6 +510,18 @@ def fetch_all():
             results[name] = None
             health[name] = {"ok": False, "error": f"{type(e).__name__}: {e}"[:300]}
     return results, health
+
+
+FAA_STATUS = "https://nasstatus.faa.gov/api/airport-status-information"
+
+
+def fetch_faa():
+    """FAA airport status: active ground stops. Parsed by shocks.parse_faa."""
+    from shocks import parse_faa
+    out = parse_faa(http_get(CONFIG.get("shocks", {}).get("faa_url", FAA_STATUS), timeout=20, accept="application/xml"))
+    if not out["ok"]:
+        raise RuntimeError("FAA status feed unreadable (layout changed?)")
+    return out
 
 
 def _fetch_who():

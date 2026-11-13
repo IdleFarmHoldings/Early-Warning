@@ -398,7 +398,8 @@ const FEED_NAMES = {acsc:"Australian cyber alerts (ACSC)", navwarn:"military nav
   usgs:"earthquakes", who:"WHO outbreak news", us_advisories:"US travel advisories", uk_advice:"UK travel advice", markets:"markets", sectors:"sector stocks",
   aircraft:"aircraft tracking", gps:"GPS interference", telecom:"phone network monitor", internet:"country internet monitor", news_watch:"news watch",
   analysts:"analyst headlines", cyber:"cyber threat feeds", satellites:"satellite tracking", maritime:"ship tracking", local_sa:"local SA feeds",
-  chokepoints:"shipping chokepoints", prediction_markets:"forecast markets"};
+  chokepoints:"shipping chokepoints", prediction_markets:"forecast markets",
+  incidents:"outage and cyber incident check", faa:"FAA airport status (US flights)", shocks:"nationwide shutdown check"};
 const QS = new URLSearchParams(location.search);
 const LINKED = QS.get("alert") ? {id:QS.get("alert"), title:QS.get("t")||"Alert", message:QS.get("m")||"", priority:Number(QS.get("p"))||3} : null;
 let focusDone = false;

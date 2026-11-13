@@ -151,6 +151,10 @@ def _lit(ind, ctx):
         hits = [m for m in ctx.get("pmarkets") or [] if m["topic"] == ind["topic"]
                 and (m.get("change_24h") or 0) >= jump and m["yes_pct"] >= 10]
         return "; ".join(f"{m['question'][:70]} {m['yes_pct']:.0f}% ({m['change_24h']:+.0f} pts)" for m in hits[:2]) or None
+    if t == "shock":
+        hits = [x for x in ctx.get("shocks") or [] if x["code"] in ind["countries"]
+                and x["level"] in ind.get("levels", ["Confirmed"]) and x["sector"] in ind.get("sectors", [x["sector"]])]
+        return "; ".join(f"{x['country']}: {x['sector']} halted nationwide ({x['level'].lower()})" for x in hits[:3]) or None
     if t == "acsc":
         return ctx["acsc_new"][0][:140] if ctx["acsc_new"] else None
     return None

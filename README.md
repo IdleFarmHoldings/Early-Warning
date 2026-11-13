@@ -51,6 +51,9 @@ Channel names are stored as repository secrets `NTFY_PROACTIVE` and `NTFY_REACTI
 | AEMO market notices (NEMWeb) | Lack-of-reserve (tight power supply) notices for the SA region |
 | IMF PortWatch | Daily ship transits through Hormuz, Malacca, Bab el-Mandeb, Taiwan Strait and other chokepoints |
 | Polymarket | Crowd probabilities on conflict questions; jumps of 10+ points in a day are a warning sign |
+| FAA airport status (nasstatus.faa.gov) | US ground stops: a national ground stop, or 15+ airports stopped at once |
+| adsb.fi airborne traffic near big airports (US, Australia, NZ, UK, Japan, Korea, Taiwan, Gulf, Asia) | A country's flights stopping: traffic far below normal for the hour on half its hubs, two runs in a row |
+| Google News: nationwide halts | "Ground stop", "all flights grounded", nationwide blackouts and network or payment outages abroad |
 | Crisis Group, ASPI Strategist, Lowy Interpreter | Analyst headlines for the analysis run (context only, never pushed on their own) |
 
 Aircraft data courtesy of [adsb.fi](https://adsb.fi), used for personal, non-commercial purposes.
@@ -58,6 +61,8 @@ Aircraft data courtesy of [adsb.fi](https://adsb.fi), used for personal, non-com
 Military flights: counts are kept per region (Middle East & Gulf, Taiwan & South China Sea, Korea & Japan, Eastern Europe & Black Sea, Australia & PNG). Three unconfirmed signals can alert: a region suddenly going quiet, an unusual number of aircraft vanishing from tracking at altitude ("going dark"), and surges in military transport or RAAF flights (possible evacuations or deployments). Many military flights never broadcast at all, and tracking gaps cause false alarms, so these are always marked UNCONFIRMED.
 
 Precursor playbook (`collector/playbook.json`): seven scenarios, each with weighted warning signs grouped into domains (military air, maritime, space, diplomatic, markets, health, trade...). Signs from three or more separate domains at once lift a scenario to Elevated, and every scenario carries a plain explanation of how its signs are converging. Real events recorded by the analysis are journaled with the signs that preceded them (`data/events.jsonl`, `data/patterns.json`).
+
+National shocks (`collector/shocks.py`): a whole country's flights, power, networks or payments halted at once. Three independent signals (official FAA feed, measured air traffic, 3+ news outlets): two agreeing, or the FAA alone, sends a warning straight away (Australia: both channels); one signal on its own must persist ~25 minutes and is marked UNCONFIRMED. Weather and single-airline ground stops, single airport areas going quiet, and tracker-wide gaps are ignored. An "appears to be over" note follows once every signal clears.
 
 Flight anomalies need about a week of history before they can alert ("learning baseline").
 

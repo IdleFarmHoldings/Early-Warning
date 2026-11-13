@@ -16,7 +16,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from common import CONFIG, ROOT, append_jsonl, iso, load_json, now_utc, push, save_json  # noqa: E402
-from rules import extra_metrics, evaluate  # noqa: E402
+from rules import baseline, extra_metrics, evaluate  # noqa: E402
 from sources import fetch_all  # noqa: E402
 import precursors  # noqa: E402
 import maritime  # noqa: E402
@@ -24,6 +24,7 @@ import localsa  # noqa: E402
 import foresight  # noqa: E402
 import satellites  # noqa: E402
 import incidents  # noqa: E402
+import shocks  # noqa: E402
 
 SERIES_DIR = ROOT / "data" / "series"
 
@@ -385,7 +386,7 @@ def precursor_alerts(scenarios, prev_ind, state, now, first_run):
 def analytics_series(rows, now, days=14):
     """Hourly (last value per hour) history of the metrics the analytics page charts."""
     cutoff = iso(now - timedelta(days=days))
-    keep = ("esc_", "gps_", "mil_", "dark_", "navwarn_", "mkt_", "rel_", "cy_")
+    keep = ("esc_", "gps_", "mil_", "dark_", "navwarn_", "mkt_", "rel_", "cy_", "trf_")
     extra = {"airlift", "raaf", "tankers", "nc3", "bizjets_airborne", "retreat_bizjets"}
     by_hour = {}
     for r in rows:
@@ -430,7 +431,8 @@ def main():
     row = {"ts": iso(now), **{k: ac.get(k) for k in ("bizjets_airborne", "retreat_bizjets", "mil_total", "tankers", "nc3", "isr")},
            **{k: v for k, v in ac.items() if k.startswith(("mil_", "dark_")) or k in ("airlift", "raaf")},
            **extra_metrics(results),
-           **{f"mkt_{k}": v.get("price") for k, v in mk.items() if isinstance(v, dict)}}
+           **{f"mkt_{k}": v.get("price") for k, v in mk.items() if isinstance(v, dict)},
+           **{shocks.hub_slug(h): n for h, n in (ac.get("traffic_by_hub") or {}).items()}}
 
     # Satellites (refreshed every few hours) and the precursor playbook
     sat_out = load_json("data/satellites.json", {})
@@ -484,6 +486,14 @@ def main():
                            (results.get("news_watch") or {}).get("watch"))
     if loc.get("summary") is not None:
         loc["summary"]["cable_watch"] = [f"{w['flag']} vessel {w['name']} ({w['zone']})" for w in state.get("cable_watch", {}).values()]
+    # National shocks: a whole country's flights, power, networks or payments halted (official + traffic + news)
+    shock_out = {}
+    try:
+        shock_out, shock_alerts = shocks.evaluate(results, series, now, state, first_run, baseline)
+        alerts += shock_alerts
+        health["shocks"] = {"ok": True}
+    except Exception as e:  # noqa: BLE001 - must never stop the rest of the check
+        health["shocks"] = {"ok": False, "error": f"{type(e).__name__}: {e}"[:300]}
     prev_ind = load_json("data/indicators.json", {})
     ctx = {
         "anomalies": anomalies,
@@ -503,6 +513,7 @@ def main():
         "local": loc.get("summary") or {},
         "chokepoints": chk,
         "pmarkets": (pm or {}).get("markets") or [],
+        "shocks": shock_out.get("shocks") or [],
         "now": now,
     }
     scenarios = precursors.score_scenarios(ctx, {s["key"]: s["score"] for s in prev_ind.get("scenarios", [])})
@@ -563,6 +574,7 @@ def main():
     summary["chokepoints"] = {k: {kk: vv for kk, vv in v.items() if kk != "daily"} for k, v in chk.items()}
     summary["prediction_markets"] = (pm or {}).get("markets")
     summary["incidents"] = inc
+    summary["national_shocks"] = shock_out
     if chk:
         save_json("data/chokepoints.json", {"generated_at": iso(now), "chokepoints": chk})
     save_json("data/latest.json", summary)

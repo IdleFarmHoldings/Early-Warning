@@ -228,6 +228,43 @@
           160
         ]
       }
+    ],
+    "traffic_hubs": [
+      {
+        "name": "Sydney",
+        "lat": -33.95,
+        "lon": 151.18
+      },
+      {
+        "name": "Melbourne",
+        "lat": -37.67,
+        "lon": 144.84
+      },
+      {
+        "name": "Adelaide",
+        "lat": -34.95,
+        "lon": 138.53
+      },
+      {
+        "name": "Auckland",
+        "lat": -37.01,
+        "lon": 174.79
+      },
+      {
+        "name": "Tokyo",
+        "lat": 35.55,
+        "lon": 139.78
+      },
+      {
+        "name": "Seoul",
+        "lat": 37.46,
+        "lon": 126.44
+      },
+      {
+        "name": "Taipei",
+        "lat": 25.08,
+        "lon": 121.23
+      }
     ]
   },
   "anomaly": {
@@ -623,6 +660,18 @@
       "name": "Bank & payments outages",
       "limit": 10,
       "q": "(CommBank OR \"Commonwealth Bank\" OR NAB OR Westpac OR ANZ OR EFTPOS OR \"card payments\" OR ATMs OR Visa OR Mastercard) (outage OR down OR \"not working\" OR disruption OR \"cyber attack\")"
+    },
+    {
+      "key": "aviation_halt",
+      "name": "Nationwide flight halts",
+      "limit": 10,
+      "q": "\"ground stop\" OR \"grounds all flights\" OR \"all flights grounded\" OR \"flights grounded\" OR \"halts all flights\" OR \"air traffic control outage\" OR \"closes airspace\" OR \"airspace closed\""
+    },
+    {
+      "key": "national_outage",
+      "name": "Nationwide outages abroad",
+      "limit": 10,
+      "q": "\"nationwide blackout\" OR \"nationwide power outage\" OR \"grid collapse\" OR \"nationwide internet outage\" OR \"nationwide outage\" OR \"plunged into darkness\" OR \"nationwide payments outage\""
     }
   ],
   "satellites": {
@@ -1049,5 +1098,209 @@
     ],
     "window_hours": 12,
     "carrier_drop_pct": 20
+  },
+  "shocks": {
+    "_comment": "National shocks (collector/shocks.py): a whole country's flights, power, networks or payments halted. Signals: official (FAA), traffic (adsb.fi airborne counts near hubs), news (3+ outlets). Confirmed = 2+ signals or official -> Early warning (Australia: both). Possible = 1 signal persisting -> UNCONFIRMED note.",
+    "faa_url": "https://nasstatus.faa.gov/api/airport-status-information",
+    "faa_min_airports": 15,
+    "news_keys": [
+      "aviation_halt",
+      "national_outage",
+      "airspace",
+      "outage_au"
+    ],
+    "news_window_hours": 3,
+    "news_min_outlets": 3,
+    "possible_persist_minutes": 25,
+    "clear_minutes": 30,
+    "cooldown_hours": 12,
+    "traffic": {
+      "max_ratio": 0.6,
+      "z": 3.0,
+      "min_median": 30,
+      "min_hub_share": 0.5,
+      "sustain_minutes": 10,
+      "glitch_countries": 3,
+      "alone_min_hubs": 2
+    },
+    "countries": {
+      "AU": {
+        "name": "Australia",
+        "words": [
+          "Australia",
+          "Australian",
+          "Australians",
+          "Airservices",
+          "Sydney",
+          "Melbourne",
+          "Adelaide",
+          "Brisbane",
+          "Perth",
+          "Qantas",
+          "NBN"
+        ],
+        "hubs": [
+          "Sydney",
+          "Melbourne",
+          "Adelaide"
+        ]
+      },
+      "US": {
+        "name": "United States",
+        "words": [
+          "FAA",
+          "US",
+          "U.S.",
+          "United States",
+          "America",
+          "American airports",
+          "Americans",
+          "nationwide US"
+        ],
+        "hubs": [
+          "New York (Teterboro)",
+          "Washington DC",
+          "Palm Beach / Miami",
+          "Los Angeles (Van Nuys)",
+          "San Francisco Bay",
+          "Dallas / Houston"
+        ]
+      },
+      "NZ": {
+        "name": "New Zealand",
+        "words": [
+          "New Zealand",
+          "NZ",
+          "Auckland",
+          "Wellington",
+          "Airways NZ"
+        ],
+        "hubs": [
+          "Auckland"
+        ]
+      },
+      "UK": {
+        "name": "United Kingdom",
+        "words": [
+          "UK",
+          "U.K.",
+          "Britain",
+          "British",
+          "NATS",
+          "Heathrow",
+          "Gatwick",
+          "England"
+        ],
+        "hubs": [
+          "London"
+        ]
+      },
+      "JP": {
+        "name": "Japan",
+        "words": [
+          "Japan",
+          "Japanese",
+          "Tokyo",
+          "Haneda",
+          "Narita"
+        ],
+        "hubs": [
+          "Tokyo"
+        ]
+      },
+      "KR": {
+        "name": "South Korea",
+        "words": [
+          "South Korea",
+          "South Korean",
+          "Seoul",
+          "Incheon"
+        ],
+        "hubs": [
+          "Seoul"
+        ]
+      },
+      "TW": {
+        "name": "Taiwan",
+        "words": [
+          "Taiwan",
+          "Taiwanese",
+          "Taipei"
+        ],
+        "hubs": [
+          "Taipei"
+        ]
+      },
+      "CN": {
+        "name": "China",
+        "words": [
+          "China",
+          "Chinese",
+          "Beijing",
+          "Shanghai"
+        ],
+        "hubs": []
+      },
+      "HK": {
+        "name": "Hong Kong",
+        "words": [
+          "Hong Kong"
+        ],
+        "hubs": [
+          "Hong Kong"
+        ]
+      },
+      "SG": {
+        "name": "Singapore",
+        "words": [
+          "Singapore",
+          "Changi"
+        ],
+        "hubs": [
+          "Singapore"
+        ]
+      },
+      "RU": {
+        "name": "Russia",
+        "words": [
+          "Russia",
+          "Russian",
+          "Moscow"
+        ],
+        "hubs": [
+          "Moscow"
+        ]
+      },
+      "IL": {
+        "name": "Israel",
+        "words": [
+          "Israel",
+          "Israeli",
+          "Ben Gurion",
+          "Tel Aviv"
+        ],
+        "hubs": []
+      },
+      "IR": {
+        "name": "Iran",
+        "words": [
+          "Iran",
+          "Iranian",
+          "Tehran"
+        ],
+        "hubs": []
+      },
+      "AE": {
+        "name": "United Arab Emirates",
+        "words": [
+          "UAE",
+          "Dubai",
+          "Abu Dhabi"
+        ],
+        "hubs": [
+          "Dubai"
+        ]
+      }
+    }
   }
 }

@@ -1292,6 +1292,20 @@
           "at_least": 1,
           "weight": 25,
           "domain": "Power grid"
+        },
+        {
+          "id": "shock_au",
+          "name": "Nationwide flight, power, network or payments halt in Australia",
+          "type": "shock",
+          "countries": [
+            "AU"
+          ],
+          "levels": [
+            "Confirmed",
+            "Possible"
+          ],
+          "weight": 30,
+          "domain": "National halt"
         }
       ]
     },
@@ -1635,6 +1649,22 @@
           "at_least": 1,
           "weight": 25,
           "domain": "Power grid"
+        },
+        {
+          "id": "shock_ally",
+          "name": "Nationwide shutdown in an allied country (flights, power, networks, payments)",
+          "type": "shock",
+          "countries": [
+            "US",
+            "UK",
+            "NZ",
+            "JP",
+            "KR",
+            "TW",
+            "SG"
+          ],
+          "weight": 15,
+          "domain": "Allied infrastructure"
         }
       ]
     },
@@ -1842,6 +1872,22 @@
           "at_least": 3,
           "weight": 10,
           "domain": "Edge-device exploitation"
+        },
+        {
+          "id": "shock_ally",
+          "name": "Nationwide shutdown in an allied country, cause unknown",
+          "type": "shock",
+          "countries": [
+            "US",
+            "UK",
+            "NZ",
+            "JP",
+            "KR",
+            "TW",
+            "SG"
+          ],
+          "weight": 10,
+          "domain": "Allied infrastructure"
         }
       ]
     }
