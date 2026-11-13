@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-13T07:59:00Z",
+  "generated_at": "2026-11-13T08:04:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -107,7 +107,7 @@
       "name": "Middle East war & Gulf shipping",
       "sa_impact": "Fuel: Australia imports most of its fuel, much of it refined from Gulf crude in Asia. Shipping attacks or a Hormuz closure push up prices within days and can cause local shortages.",
       "score": 0,
-      "trend": "down",
+      "trend": "steady",
       "unlit": [
         {
           "domain": "Military air",
@@ -705,8 +705,9 @@
     },
     {
       "band": "Guarded",
-      "convergence": "Only one kind of sign is showing (state actors). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: sudden fall in sa electricity demand (possible large blackout), global cyber threat level raised (sans infocon not green) and several vpn / firewall flaws exploited this week.",
+      "convergence": "Two different kinds of sign are showing together (australian incidents and state actors). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: sudden fall in sa electricity demand (possible large blackout), global cyber threat level raised (sans infocon not green) and several vpn / firewall flaws exploited this week.",
       "domains": [
+        "Australian incidents",
         "State actors"
       ],
       "key": "cyber",
@@ -717,12 +718,19 @@
           "id": "state",
           "name": "Reports of state hackers / pre-positioning / wipers",
           "weight": 15
+        },
+        {
+          "detail": "Australian minister says Microsoft doesn't believe they are 'dealing with a cyber attack'",
+          "domain": "Australian incidents",
+          "id": "au",
+          "name": "Major Australian cyber incident reported",
+          "weight": 10
         }
       ],
       "name": "Major cyber attack on Australia",
       "sa_impact": "Banks, payments, hospitals, fuel distribution, telcos and the power grid all run on networks; a large attack can stop card payments and services for hours to days.",
-      "score": 15,
-      "trend": "steady",
+      "score": 25,
+      "trend": "up",
       "unlit": [
         {
           "domain": "Global threat level",
@@ -758,12 +766,6 @@
           "domain": "Official alerts",
           "id": "acsc",
           "name": "New Australian cyber alert (ACSC)",
-          "weight": 10
-        },
-        {
-          "domain": "Australian incidents",
-          "id": "au",
-          "name": "Major Australian cyber incident reported",
           "weight": 10
         },
         {
