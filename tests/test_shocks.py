@@ -184,3 +184,10 @@ def test_no_repeat_within_cooldown():
     _, a1, state = run(res, state)
     _, a2, state = run(res, state, when=NOW + timedelta(minutes=15))
     assert len(a1) == 1 and not a2
+
+
+def test_faa_parser_other_layouts():
+    alt = b"""<AIRPORT_STATUS_INFORMATION><Delay_type><Name>Ground Stop Programs</Name>
+<Ground_Stop><ARPT>ATL</ARPT><Reason>equipment outage</Reason></Ground_Stop>
+<Ground_Stop><ARPT>ORD</ARPT><Reason>equipment outage</Reason></Ground_Stop></Delay_type></AIRPORT_STATUS_INFORMATION>"""
+    assert S.parse_faa(alt)["airports"] == 2

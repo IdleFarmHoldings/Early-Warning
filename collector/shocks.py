@@ -112,10 +112,17 @@ def parse_faa(raw):
     if "<" not in text:
         return {"ok": False, "ground_stops": [], "national": False, "airports": 0}
     stops = []
-    for block in re.findall(r"<Ground_Stop_List>(.*?)</Ground_Stop_List>", text, re.S | re.I):
-        for prog in re.findall(r"<Program>(.*?)</Program>", block, re.S | re.I):
+    # Any delay section whose name mentions a ground stop, whatever its inner tag names are
+    blocks = re.findall(r"<Ground_Stop_List>(.*?)</Ground_Stop_List>", text, re.S | re.I)
+    blocks += [b for b in re.findall(r"<Delay_type>(.*?)</Delay_type>", text, re.S | re.I)
+               if re.search(r"<Name>[^<]*ground stop", b, re.I) and "<Ground_Stop_List>" not in b]
+    for block in blocks:
+        progs = re.findall(r"<(?:Program|Ground_Stop)>(.*?)</(?:Program|Ground_Stop)>", block, re.S | re.I) or [block]
+        for prog in progs:
             g = lambda tag: (re.search(f"<{tag}>(.*?)</{tag}>", prog, re.S | re.I) or [None, ""])[1].strip()
-            stops.append({"airport": g("ARPT"), "reason": g("Reason")[:120], "end": g("End_Time")[:40]})
+            for arpt in re.findall(r"<ARPT>(.*?)</ARPT>", prog, re.S | re.I) or [""]:
+                stops.append({"airport": arpt.strip(), "reason": g("Reason")[:120], "end": g("End_Time")[:40]})
+    stops = [s for s in stops if s["airport"] or s["reason"]]
     national_rx = re.compile(r"\b(nationwide|national ground stop|all airports|all (US|U\.S\.) airports|"
                              r"NAS[- ]wide|entire NAS)\b", re.I)
     national = bool(national_rx.search(text))
