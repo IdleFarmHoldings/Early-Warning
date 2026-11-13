@@ -88,6 +88,7 @@ th{font-family:var(--display);text-transform:uppercase;letter-spacing:.05em;font
 .ev .t{font-family:var(--display);font-size:1.2rem;font-weight:600;text-transform:uppercase;line-height:1.15}
 .ev .one{grid-column:1/-1;font-size:.84rem;color:var(--muted);margin-top:-2px}
 .ev .badge2{font-family:var(--display);font-size:1.5rem;font-weight:700;line-height:1;text-align:right;white-space:nowrap}
+.ev .badge2 .mv{font-size:.8em;margin-left:4px;vertical-align:.08em}
 .ev .badge2 small{display:block;font-family:var(--mono);font-size:.66rem;font-weight:400;color:var(--muted);text-transform:none}
 .ev .chev{font-size:1.1rem;color:var(--muted);transition:transform .2s}
 .ev[open] .chev{transform:rotate(90deg)}
@@ -312,6 +313,15 @@ function renderConcerns(st, ind){
   const open = new Set([...document.querySelectorAll("#concerns details[open]")].map(d=>d.dataset.key));
   const col = p => p==null?"var(--line)":p>=60?lc(5):p>=35?lc(4):p>=15?lc(3):lc(2);
   const trendTxt2 = t => ({up:"▲ rising",down:"▼ easing"})[t]||"● steady";
+  // Change in likelihood since the previous assessment (prev_likelihood is written by the analysis run).
+  const delta = c => (c.likelihood!=null && c.prev_likelihood!=null && !isNaN(c.likelihood-c.prev_likelihood)) ? Math.round((c.likelihood-c.prev_likelihood)*10)/10 : null;
+  const moveArrow = c => { const d=delta(c);
+    if(d===null) return "";
+    const [sym,clr,lbl] = d>0?["▲",lc(5),`up ${d} points`]:d<0?["▼",lc(2),`down ${-d} points`]:["▶","var(--muted)","no change"];
+    return `<span class="mv" style="color:${clr}" title="${lbl} since the last check" aria-label="${lbl} since the last check">${sym}</span>`; };
+  const moveTxt = c => { const d=delta(c);
+    if(d===null) return trendTxt2(c.trend);
+    return d>0?`up ${d} pts`:d<0?`down ${-d} pts`:"no change"; };
   $("concerns").innerHTML = list.map(c=>{
     const w = sc[c.key];
     const signs = w ? `<h4>Warning signs showing: ${w.lit.length} of ${w.lit.length+w.unlit.length} · ${esc(w.band)}${(w.domains||[]).length>1?` · ${w.domains.length} areas converging`:""}</h4>
@@ -324,7 +334,7 @@ function renderConcerns(st, ind){
     const drv = (c.drivers||[]).length ? `<h4>What's driving this</h4><ul>${c.drivers.map(d=>`<li>${esc(d)}</li>`).join("")}</ul>` : "";
     const stripe = c.likelihood!=null ? col(c.likelihood) : (w ? col(w.score) : "var(--line)");
     const badge = c.likelihood!=null
-      ? `<span class="badge2" style="color:${col(c.likelihood)}">${esc(c.likelihood)}%<small>${trendTxt2(c.trend)}</small></span>`
+      ? `<span class="badge2" style="color:${col(c.likelihood)}">${esc(c.likelihood)}%${moveArrow(c)}<small>${moveTxt(c)}</small></span>`
       : `<span class="badge2" style="font-size:1rem;color:${w?col(w.score):"var(--muted)"}">${w?esc(w.band):"—"}<small>warning signs</small></span>`;
     const one = (c.drivers&&c.drivers[0]) || (w ? (w.lit.length ? `${w.lit.length} warning sign${w.lit.length>1?"s":""} showing: ${w.lit.slice(0,2).map(i=>i.name.toLowerCase()).join("; ")}` : "No warning signs showing.") : "");
     return `<details class="ev" data-key="${esc(c.key)}" style="border-left-color:${stripe}"${open.has(c.key)?" open":""}>
