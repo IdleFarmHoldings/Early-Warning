@@ -1,4 +1,5 @@
 """Turn fetched data into alerts. Pure functions: easy to test offline."""
+import math
 from datetime import datetime, timedelta, timezone
 from statistics import median
 
@@ -107,7 +108,9 @@ def anomalies(current, series, now):
                 and (ratio >= ANOM["min_ratio"] or metric == "nc3"))
         drop = (metric in DROP_METRICS and b["median"] >= ANOM["drop_min_median"]
                 and ratio <= ANOM["drop_max_ratio"] and z <= -ANOM["z_threshold"])
-        out[metric] = {"value": v, "median": round(b["median"], 1), "z": round(z, 1), "ratio": round(ratio, 2),
+        # A zero baseline gives an infinite ratio; store it as null because JSON has no Infinity (browsers reject the file).
+        out[metric] = {"value": v, "median": round(b["median"], 1), "z": round(z, 1),
+                       "ratio": round(ratio, 2) if math.isfinite(ratio) else None,
                        "samples": b["n"], "status": "ANOMALY" if flag else "DROP" if drop else "normal"}
     return out
 
@@ -254,11 +257,11 @@ def evaluate(results, state, series, now):
                         "Militaries switch off transponders before operations, but tracking gaps also cause this. Watching for confirmation.")
         elif metric in ("airlift", "raaf"):
             title = "UNCONFIRMED: military airlift surge"
-            body = (f"{info['value']} {METRIC_LABELS[metric]} - about {info['ratio']}x normal (usual ~{info['median']}). "
+            body = (f"{info['value']} {METRIC_LABELS[metric]} - about {str(info['ratio']) + 'x' if info['ratio'] else 'many times'} normal (usual ~{info['median']}). "
                     "Surges can mean evacuations or deployments, or just exercises. Watching for confirmation.")
         else:
             title = "UNCONFIRMED: unusual flight activity"
-            body = (f"{info['value']} {METRIC_LABELS[metric]} - about {info['ratio']}x normal for this time of day "
+            body = (f"{info['value']} {METRIC_LABELS[metric]} - about {str(info['ratio']) + 'x' if info['ratio'] else 'many times'} normal for this time of day "
                     f"(usual ~{info['median']}). Watching for confirmation from official sources.")
         alerts.append(_alert(f"air-{metric}", ["proactive"], "geo", title, body,
                              priority=4, confirmed=False, tags=["airplane", "question"]))

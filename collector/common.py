@@ -1,4 +1,5 @@
 """Shared helpers: HTTP, JSON files, time, ntfy push."""
+import math
 import json
 import os
 import time
@@ -42,17 +43,28 @@ def load_json(path, default):
         return default
 
 
+def _finite(o):
+    """Replace NaN/Infinity with None: they are not valid JSON and make browsers reject the whole file."""
+    if isinstance(o, float):
+        return o if math.isfinite(o) else None
+    if isinstance(o, dict):
+        return {k: _finite(v) for k, v in o.items()}
+    if isinstance(o, (list, tuple)):
+        return [_finite(v) for v in o]
+    return o
+
+
 def save_json(path, data):
     p = ROOT / path
     p.parent.mkdir(parents=True, exist_ok=True)
-    p.write_text(json.dumps(data, indent=2, sort_keys=True, ensure_ascii=False) + "\n")
+    p.write_text(json.dumps(_finite(data), indent=2, sort_keys=True, ensure_ascii=False, allow_nan=False) + "\n")
 
 
 def append_jsonl(path, row):
     p = ROOT / path
     p.parent.mkdir(parents=True, exist_ok=True)
     with p.open("a") as f:
-        f.write(json.dumps(row, ensure_ascii=False, sort_keys=True) + "\n")
+        f.write(json.dumps(_finite(row), ensure_ascii=False, sort_keys=True, allow_nan=False) + "\n")
 
 
 def in_box(lat, lon, box):

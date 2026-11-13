@@ -694,3 +694,16 @@ def test_sunshine_coast_zone_removed_and_old_tracks_forgotten():
     tracks = {"477151700": {"mmsi": "477151700", "name": "DA TAI SHAN", "flag": "Hong Kong", "zone": "sunshine",
                             "first": iso(now - timedelta(hours=2)), "last": iso(now), "slow": True, "sog": 0.1}}
     assert maritime.update_tracks(tracks, {}, now, CONFIG["maritime"]) == [] and tracks == {}
+
+
+def test_zero_baseline_writes_valid_json():
+    """A metric whose usual level is 0 must not write Infinity: browsers reject the whole file and the analytics page goes blank."""
+    import json
+    from common import _finite
+    now = now_utc().replace(second=0, microsecond=0)
+    series = [{"ts": iso(now - timedelta(days=d, minutes=m)), "dark_mideast": 0}
+              for d in range(1, 14) for m in (0, 15, 30)]
+    an = anomalies({"dark_mideast": 0}, series, now)
+    json.dumps(an, allow_nan=False)
+    assert an["dark_mideast"]["ratio"] is None
+    assert _finite({"a": [float("inf"), 1.5, float("nan")]}) == {"a": [None, 1.5, None]}
