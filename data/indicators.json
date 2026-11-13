@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-13T01:12:00Z",
+  "generated_at": "2026-11-13T01:27:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -708,25 +708,25 @@
       "why": "Before COVID-19 (Dec 2019 - Feb 2020): reports of an unknown pneumonia cluster, WHO outbreak notices, mask and hazmat makers (Alpha Pro Tech, Lakeland) and vaccine developers (Moderna, Novavax) surging weeks before broad markets fell, and countries restricting exports of masks and medicines (Taiwan from 24 Jan 2020, then dozens more)."
     },
     {
-      "band": "Low",
-      "convergence": "Only one kind of sign is showing (australian incidents). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: sudden fall in sa electricity demand (possible large blackout), global cyber threat level raised (sans infocon not green) and several vpn / firewall flaws exploited this week.",
+      "band": "Guarded",
+      "convergence": "Only one kind of sign is showing (state actors). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: sudden fall in sa electricity demand (possible large blackout), global cyber threat level raised (sans infocon not green) and several vpn / firewall flaws exploited this week.",
       "domains": [
-        "Australian incidents"
+        "State actors"
       ],
       "key": "cyber",
       "lit": [
         {
-          "detail": "Australia cyber attacks rise 39% as ransomware grows",
-          "domain": "Australian incidents",
-          "id": "au",
-          "name": "Major Australian cyber incident reported",
-          "weight": 10
+          "detail": "Emergency Shelters Pre-Positioned in Darwin for Disaster Season",
+          "domain": "State actors",
+          "id": "state",
+          "name": "Reports of state hackers / pre-positioning / wipers",
+          "weight": 15
         }
       ],
       "name": "Major cyber attack on Australia",
       "sa_impact": "Banks, payments, hospitals, fuel distribution, telcos and the power grid all run on networks; a large attack can stop card payments and services for hours to days.",
-      "score": 10,
-      "trend": "steady",
+      "score": 15,
+      "trend": "up",
       "unlit": [
         {
           "domain": "Global threat level",
@@ -765,10 +765,10 @@
           "weight": 10
         },
         {
-          "domain": "State actors",
-          "id": "state",
-          "name": "Reports of state hackers / pre-positioning / wipers",
-          "weight": 15
+          "domain": "Australian incidents",
+          "id": "au",
+          "name": "Major Australian cyber incident reported",
+          "weight": 10
         },
         {
           "domain": "Communications",
@@ -819,7 +819,7 @@
           "weight": 10
         },
         {
-          "detail": "Global Microsoft Outage Disrupts Outlook, Teams and Cloud Services as Company Works to Restore Servers",
+          "detail": "Widespread outage hits Microsoft users",
           "domain": "Cloud services",
           "id": "cloud",
           "name": "Major cloud or AI service outage",
