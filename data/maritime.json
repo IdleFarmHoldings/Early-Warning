@@ -1,12 +1,24 @@
 {
-  "generated_at": "2026-11-13T13:17:29Z",
+  "generated_at": "2026-11-13T13:33:17Z",
   "loitering": [
     {
       "flag": "Other",
       "lat": 60.1556,
       "lon": 24.889,
-      "minutes": 5487,
+      "minutes": 5508,
       "mmsi": "230126390",
+      "name": "",
+      "of_interest": false,
+      "sog": 0.1,
+      "type": null,
+      "zone": "gof"
+    },
+    {
+      "flag": "Other",
+      "lat": 60.1724,
+      "lon": 24.9651,
+      "minutes": 5352,
+      "mmsi": "230132790",
       "name": "",
       "of_interest": false,
       "sog": 0,
@@ -75,21 +87,9 @@
     },
     {
       "flag": "Other",
-      "lat": 60.1765,
-      "lon": 24.962,
-      "minutes": 1405,
-      "mmsi": "230076480",
-      "name": "AMIRAALI",
-      "of_interest": false,
-      "sog": 0,
-      "type": null,
-      "zone": "gof"
-    },
-    {
-      "flag": "Other",
-      "lat": 59.4982,
+      "lat": 59.4983,
       "lon": 24.8166,
-      "minutes": 1383,
+      "minutes": 1399,
       "mmsi": "276853000",
       "name": "",
       "of_interest": false,
@@ -132,18 +132,6 @@
       "sog": 0,
       "type": 30,
       "zone": "gotland"
-    },
-    {
-      "flag": "Other",
-      "lat": 59.8205,
-      "lon": 22.9498,
-      "minutes": 916,
-      "mmsi": "230938490",
-      "name": "KUOKKA PEKKA 2",
-      "of_interest": false,
-      "sog": 0.1,
-      "type": 90,
-      "zone": "gof"
     },
     {
       "flag": "Other",
@@ -197,7 +185,7 @@
       "flag": "Other",
       "lat": 59.8101,
       "lon": 22.9151,
-      "minutes": 363,
+      "minutes": 380,
       "mmsi": "230992370",
       "name": "MT2301",
       "of_interest": false,
@@ -257,13 +245,25 @@
       "flag": "Other",
       "lat": 59.4984,
       "lon": 24.815,
-      "minutes": 131,
+      "minutes": 170,
       "mmsi": "230035000",
       "name": "BALTIK",
       "of_interest": false,
       "sog": 0,
-      "type": null,
+      "type": 30,
       "zone": "gof"
+    },
+    {
+      "flag": "Other",
+      "lat": -33.8111,
+      "lon": 151.2854,
+      "minutes": 169,
+      "mmsi": "319230500",
+      "name": "21.12",
+      "of_interest": false,
+      "sog": 0.1,
+      "type": null,
+      "zone": "syd_n"
     },
     {
       "flag": "Marshall Islands",
@@ -278,16 +278,16 @@
       "zone": "syd_n"
     },
     {
-      "flag": "Other",
-      "lat": 59.8089,
-      "lon": 22.9108,
-      "minutes": 116,
-      "mmsi": "230149160",
-      "name": "PILOT L245",
+      "flag": "Liberia",
+      "lat": -34.0237,
+      "lon": 151.5062,
+      "minutes": 118,
+      "mmsi": "636023183",
+      "name": "ARVIN",
       "of_interest": false,
-      "sog": 0.1,
+      "sog": 0.8,
       "type": null,
-      "zone": "gof"
+      "zone": "syd_s"
     },
     {
       "flag": "Other",
@@ -314,30 +314,6 @@
       "zone": "gof"
     },
     {
-      "flag": "Other",
-      "lat": 56.5259,
-      "lon": 20.7711,
-      "minutes": 85,
-      "mmsi": "205422000",
-      "name": "GOLDEN FORWARD",
-      "of_interest": false,
-      "sog": 0.1,
-      "type": null,
-      "zone": "gotland"
-    },
-    {
-      "flag": "Liberia",
-      "lat": -34.0156,
-      "lon": 151.5154,
-      "minutes": 80,
-      "mmsi": "636023183",
-      "name": "ARVIN",
-      "of_interest": false,
-      "sog": 1.1,
-      "type": null,
-      "zone": "syd_s"
-    },
-    {
       "flag": "Marshall Islands",
       "lat": 59.8373,
       "lon": 25.7063,
@@ -348,9 +324,33 @@
       "sog": 0,
       "type": null,
       "zone": "gof"
+    },
+    {
+      "flag": "Other",
+      "lat": 60.105,
+      "lon": 24.9738,
+      "minutes": 71,
+      "mmsi": "230125910",
+      "name": "PILOT L-139",
+      "of_interest": false,
+      "sog": 0.1,
+      "type": 50,
+      "zone": "gof"
+    },
+    {
+      "flag": "Other",
+      "lat": 60.1662,
+      "lon": 24.7057,
+      "minutes": 67,
+      "mmsi": "230031000",
+      "name": "FURUNOP@",
+      "of_interest": false,
+      "sog": 0,
+      "type": null,
+      "zone": "gof"
     }
   ],
-  "messages_vessels": 56,
+  "messages_vessels": 57,
   "zones": {
     "bab": {
       "box": [
@@ -415,7 +415,7 @@
       "name": "Gulf of Finland cables",
       "of_interest": 0,
       "region": "Baltic",
-      "vessels_now": 47
+      "vessels_now": 48
     },
     "gotland": {
       "box": [
@@ -424,7 +424,7 @@
         17.8,
         20.8
       ],
-      "loitering": 3,
+      "loitering": 2,
       "name": "Baltic Gotland corridor",
       "of_interest": 0,
       "region": "Baltic",
@@ -480,7 +480,7 @@
       "name": "Perth cable protection zone",
       "of_interest": 0,
       "region": "Australia",
-      "vessels_now": 1
+      "vessels_now": 0
     },
     "syd_n": {
       "box": [
@@ -489,7 +489,7 @@
         151.28,
         151.7
       ],
-      "loitering": 1,
+      "loitering": 2,
       "name": "Sydney northern cable protection zone",
       "of_interest": 0,
       "region": "Australia",
@@ -506,7 +506,7 @@
       "name": "Sydney southern cable protection zone",
       "of_interest": 0,
       "region": "Australia",
-      "vessels_now": 0
+      "vessels_now": 1
     }
   }
 }
