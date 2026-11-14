@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T16:39:00Z",
+  "generated_at": "2026-11-14T16:45:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -99,21 +99,13 @@
       "why": "The worst local days stack up: extreme fire danger, a heatwave pushing power demand, a tight grid, and storms or fires damaging lines. AEMO warns of supply shortfalls hours to a day ahead; the CFS and Bureau issue ratings and warnings a day or more ahead."
     },
     {
-      "band": "Guarded",
-      "convergence": "Two different kinds of sign are showing together (aviation and electronic warfare). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
+      "band": "Low",
+      "convergence": "Only one kind of sign is showing (aviation). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
       "domains": [
-        "Aviation",
-        "Electronic warfare"
+        "Aviation"
       ],
       "key": "mideast",
       "lit": [
-        {
-          "detail": "gps_gulf 28 vs usual 6",
-          "domain": "Electronic warfare",
-          "id": "gps",
-          "name": "GPS jamming spike (Gulf / Israel)",
-          "weight": 10
-        },
         {
           "detail": "Shafaq News..Iraq denies reports of 72-hour airspace closure",
           "domain": "Aviation",
@@ -124,8 +116,8 @@
       ],
       "name": "Middle East war & Gulf shipping",
       "sa_impact": "Fuel: Australia imports most of its fuel, much of it refined from Gulf crude in Asia. Shipping attacks or a Hormuz closure push up prices within days and can cause local shortages.",
-      "score": 20,
-      "trend": "up",
+      "score": 10,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Military air",
@@ -138,6 +130,12 @@
           "id": "air",
           "name": "Unusual military air activity over the region",
           "weight": 15
+        },
+        {
+          "domain": "Electronic warfare",
+          "id": "gps",
+          "name": "GPS jamming spike (Gulf / Israel)",
+          "weight": 10
         },
         {
           "domain": "Communications",
