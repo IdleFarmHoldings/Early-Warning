@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T01:05:00Z",
+  "generated_at": "2026-11-14T01:11:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -99,33 +99,25 @@
       "why": "The worst local days stack up: extreme fire danger, a heatwave pushing power demand, a tight grid, and storms or fires damaging lines. AEMO warns of supply shortfalls hours to a day ahead; the CFS and Bureau issue ratings and warnings a day or more ahead."
     },
     {
-      "band": "Guarded",
-      "convergence": "Two different kinds of sign are showing together (aviation and electronic warfare). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
+      "band": "Low",
+      "convergence": "Only one kind of sign is showing (electronic warfare). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
       "domains": [
-        "Aviation",
         "Electronic warfare"
       ],
       "key": "mideast",
       "lit": [
         {
-          "detail": "gps_gulf 27 vs usual 7; gps_israel 50 vs usual 4",
+          "detail": "gps_gulf 30 vs usual 6.5; gps_israel 27 vs usual 3.5",
           "domain": "Electronic warfare",
           "id": "gps",
           "name": "GPS jamming spike (Gulf / Israel)",
-          "weight": 10
-        },
-        {
-          "detail": "When Israel's airspace closed, this Utah tour company got its travelers home just 24 hours late",
-          "domain": "Aviation",
-          "id": "airspace",
-          "name": "Airspace closures reported (Iran / Israel / Gulf)",
           "weight": 10
         }
       ],
       "name": "Middle East war & Gulf shipping",
       "sa_impact": "Fuel: Australia imports most of its fuel, much of it refined from Gulf crude in Asia. Shipping attacks or a Hormuz closure push up prices within days and can cause local shortages.",
-      "score": 20,
-      "trend": "up",
+      "score": 10,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Military air",
@@ -150,6 +142,12 @@
           "id": "dep",
           "name": "New US embassy departure order in the region",
           "weight": 15
+        },
+        {
+          "domain": "Aviation",
+          "id": "airspace",
+          "name": "Airspace closures reported (Iran / Israel / Gulf)",
+          "weight": 10
         },
         {
           "domain": "Maritime",
@@ -628,9 +626,8 @@
     },
     {
       "band": "Guarded",
-      "convergence": "Two different kinds of sign are showing together (chemical weapons and health). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: unknown illness / pneumonia cluster reported, countries restricting medical supply exports and pandemic-response stocks outperforming (5 days).",
+      "convergence": "Only one kind of sign is showing (health). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: unknown illness / pneumonia cluster reported, countries restricting medical supply exports and pandemic-response stocks outperforming (5 days).",
       "domains": [
-        "Chemical weapons",
         "Health"
       ],
       "key": "bio",
@@ -641,19 +638,12 @@
           "id": "who",
           "name": "WHO outbreak report with a high-concern pathogen (last 14 days)",
           "weight": 15
-        },
-        {
-          "detail": "Reporters - The truth about Douma: How Syria covered up a chemical attack",
-          "domain": "Chemical weapons",
-          "id": "chem",
-          "name": "Chemical / nerve-agent attack or mass poisoning reported",
-          "weight": 15
         }
       ],
       "name": "Pandemic, biological or chemical emergency",
       "sa_impact": "Health system strain, possible lockdowns and border closures, and shortages of medicines and protective equipment, which Australia mostly imports.",
-      "score": 30,
-      "trend": "steady",
+      "score": 15,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Health",
@@ -692,6 +682,12 @@
           "weight": 10
         },
         {
+          "domain": "Chemical weapons",
+          "id": "chem",
+          "name": "Chemical / nerve-agent attack or mass poisoning reported",
+          "weight": 15
+        },
+        {
           "domain": "Health",
           "id": "dieoff",
           "name": "Unexplained mass deaths or animal die-offs",
@@ -708,32 +704,24 @@
     },
     {
       "band": "Guarded",
-      "convergence": "Two different kinds of sign are showing together (australian incidents and state actors). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: sudden fall in sa electricity demand (possible large blackout), global cyber threat level raised (sans infocon not green) and several vpn / firewall flaws exploited this week.",
+      "convergence": "Only one kind of sign is showing (allied infrastructure). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: sudden fall in sa electricity demand (possible large blackout), global cyber threat level raised (sans infocon not green) and several vpn / firewall flaws exploited this week.",
       "domains": [
-        "Australian incidents",
-        "State actors"
+        "Allied infrastructure"
       ],
       "key": "cyber",
       "lit": [
         {
-          "detail": "Emergency Shelters Pre-Positioned in Darwin for Disaster Season",
-          "domain": "State actors",
-          "id": "state",
-          "name": "Reports of state hackers / pre-positioning / wipers",
+          "detail": "United States: aviation halted nationwide (confirmed)",
+          "domain": "Allied infrastructure",
+          "id": "shock_ally",
+          "name": "Nationwide shutdown in an allied country (flights, power, networks, payments)",
           "weight": 15
-        },
-        {
-          "detail": "‘We are vulnerable’: Experts warn hackers could target Aussie hospitals, water, transport systems",
-          "domain": "Australian incidents",
-          "id": "au",
-          "name": "Major Australian cyber incident reported",
-          "weight": 10
         }
       ],
       "name": "Major cyber attack on Australia",
       "sa_impact": "Banks, payments, hospitals, fuel distribution, telcos and the power grid all run on networks; a large attack can stop card payments and services for hours to days.",
-      "score": 25,
-      "trend": "steady",
+      "score": 15,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Global threat level",
@@ -772,6 +760,18 @@
           "weight": 10
         },
         {
+          "domain": "State actors",
+          "id": "state",
+          "name": "Reports of state hackers / pre-positioning / wipers",
+          "weight": 15
+        },
+        {
+          "domain": "Australian incidents",
+          "id": "au",
+          "name": "Major Australian cyber incident reported",
+          "weight": 10
+        },
+        {
           "domain": "Communications",
           "id": "tel",
           "name": "Phone / internet carrier outage",
@@ -782,60 +782,30 @@
           "id": "blackout",
           "name": "Sudden fall in SA electricity demand (possible large blackout)",
           "weight": 25
-        },
-        {
-          "domain": "Allied infrastructure",
-          "id": "shock_ally",
-          "name": "Nationwide shutdown in an allied country (flights, power, networks, payments)",
-          "weight": 15
         }
       ],
       "why": "Large attacks are usually preceded by quieter steps: a surge in newly exploited flaws in VPNs and firewalls (how state groups like Volt Typhoon get in), scanning of industrial-control systems, a rise in ransomware victims in the target country, and official warnings. Before Russia's 2022 invasion, wiper malware hit Ukraine a day ahead; Chinese groups have been found pre-positioned in US and allied infrastructure."
     },
     {
-      "band": "Elevated",
-      "convergence": "Signs are converging across 4 separate areas (ai-enabled hacking, cloud services, markets and synthetic media). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: a Chinese state-sponsored group used an AI agent to carry out 80-90% of an attack on about 30 organisations, at thousands of requests per second. A fake AI image of a Pentagon explosion briefly moved US markets in May 2023, and a deepfake video call of a CFO tricked a company into paying US$25 million in 2024. The likely signature of an AI attack is breadth and speed: many unrelated systems and vendors hit at once, synthetic media of officials, and shocks with no clear human cause. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, market fear index jumps 25%+ in a day and phone / internet carrier outage.",
+      "band": "Low",
+      "convergence": "Only one kind of sign is showing (allied infrastructure). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, reports of ai-driven hacking campaigns and deepfakes of leaders or fake official alerts.",
       "domains": [
-        "AI-enabled hacking",
-        "Cloud services",
-        "Markets",
-        "Synthetic media"
+        "Allied infrastructure"
       ],
       "key": "ai",
       "lit": [
         {
-          "detail": "Microsoft says outage was caused by technical issue not related to hacking or AI agents",
-          "domain": "AI-enabled hacking",
-          "id": "aihack",
-          "name": "Reports of AI-driven hacking campaigns",
-          "weight": 15
-        },
-        {
-          "detail": "Central Bank warns public against fake AI-generated videos impersonating Governor",
-          "domain": "Synthetic media",
-          "id": "deepfake",
-          "name": "Deepfakes of leaders or fake official alerts",
-          "weight": 15
-        },
-        {
-          "detail": "Azum---Hits lower circuit breaker; market reacts negatively to current fiscal year guidance",
-          "domain": "Markets",
-          "id": "flash",
-          "name": "Flash crash or exchange trading halt",
-          "weight": 10
-        },
-        {
-          "detail": "Microsoft services down in global outage",
-          "domain": "Cloud services",
-          "id": "cloud",
-          "name": "Major cloud or AI service outage",
+          "detail": "United States: aviation halted nationwide (confirmed)",
+          "domain": "Allied infrastructure",
+          "id": "shock_ally",
+          "name": "Nationwide shutdown in an allied country, cause unknown",
           "weight": 10
         }
       ],
       "name": "AI-enabled attack (non-traditional)",
       "sa_impact": "Not bombs but disruption: hacking at machine speed across banks, telcos, hospitals and the grid at once; fake videos or alerts from leaders causing panic buying or bank runs; or automated market and fraud shocks. Effects would be outages, payment failures and confusion about what is real.",
-      "score": 50,
-      "trend": "steady",
+      "score": 10,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Mass exploitation",
@@ -844,9 +814,33 @@
           "weight": 15
         },
         {
+          "domain": "AI-enabled hacking",
+          "id": "aihack",
+          "name": "Reports of AI-driven hacking campaigns",
+          "weight": 15
+        },
+        {
+          "domain": "Synthetic media",
+          "id": "deepfake",
+          "name": "Deepfakes of leaders or fake official alerts",
+          "weight": 15
+        },
+        {
+          "domain": "Markets",
+          "id": "flash",
+          "name": "Flash crash or exchange trading halt",
+          "weight": 10
+        },
+        {
           "domain": "Markets",
           "id": "vix",
           "name": "Market fear index jumps 25%+ in a day",
+          "weight": 10
+        },
+        {
+          "domain": "Cloud services",
+          "id": "cloud",
+          "name": "Major cloud or AI service outage",
           "weight": 10
         },
         {
@@ -865,12 +859,6 @@
           "domain": "Edge-device exploitation",
           "id": "edge",
           "name": "Several VPN / firewall flaws exploited this week",
-          "weight": 10
-        },
-        {
-          "domain": "Allied infrastructure",
-          "id": "shock_ally",
-          "name": "Nationwide shutdown in an allied country, cause unknown",
           "weight": 10
         }
       ],
