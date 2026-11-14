@@ -191,3 +191,13 @@ def test_faa_parser_other_layouts():
 <Ground_Stop><ARPT>ATL</ARPT><Reason>equipment outage</Reason></Ground_Stop>
 <Ground_Stop><ARPT>ORD</ARPT><Reason>equipment outage</Reason></Ground_Stop></Delay_type></AIRPORT_STATUS_INFORMATION>"""
     assert S.parse_faa(alt)["airports"] == 2
+
+
+def test_faa_real_feed_during_13_nov_national_stop():
+    """Real feed captured 14 Nov 00:52 UTC: the national stop shows only as a delay reason, not a ground stop list."""
+    raw = (Path(__file__).resolve().parent / "fixtures" / "faa_national_stop_20261114.xml").read_bytes()
+    f = S.parse_faa(raw)
+    assert f["ok"] and f["national"] and f["airports"] == 0
+    assert S.official_signal(f)[0]
+    normal = raw.replace(b"OTHER: NATIONAL STOP", b"wind")
+    assert not S.parse_faa(normal)["national"]  # ordinary delays and NOTAM closures do not count

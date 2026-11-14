@@ -123,7 +123,7 @@ def parse_faa(raw):
             for arpt in re.findall(r"<ARPT>(.*?)</ARPT>", prog, re.S | re.I) or [""]:
                 stops.append({"airport": arpt.strip(), "reason": g("Reason")[:120], "end": g("End_Time")[:40]})
     stops = [s for s in stops if s["airport"] or s["reason"]]
-    national_rx = re.compile(r"\b(nationwide|national ground stop|all airports|all (US|U\.S\.) airports|"
+    national_rx = re.compile(r"\b(nationwide|national (ground )?stop|all airports|all (US|U\.S\.) airports|"
                              r"NAS[- ]wide|entire NAS)\b", re.I)
     national = bool(national_rx.search(text))
     airports = len({s["airport"] for s in stops if s["airport"]})
