@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T11:51:00Z",
+  "generated_at": "2026-11-14T12:05:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -705,23 +705,15 @@
       "why": "Before COVID-19 (Dec 2019 - Feb 2020): reports of an unknown pneumonia cluster, WHO outbreak notices, mask and hazmat makers (Alpha Pro Tech, Lakeland) and vaccine developers (Moderna, Novavax) surging weeks before broad markets fell, and countries restricting exports of masks and medicines (Taiwan from 24 Jan 2020, then dozens more)."
     },
     {
-      "band": "Guarded",
-      "convergence": "Two different kinds of sign are showing together (australian incidents and state actors). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: sudden fall in sa electricity demand (possible large blackout), global cyber threat level raised (sans infocon not green) and several vpn / firewall flaws exploited this week.",
+      "band": "Low",
+      "convergence": "Only one kind of sign is showing (australian incidents). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: sudden fall in sa electricity demand (possible large blackout), global cyber threat level raised (sans infocon not green) and several vpn / firewall flaws exploited this week.",
       "domains": [
-        "Australian incidents",
-        "State actors"
+        "Australian incidents"
       ],
       "key": "cyber",
       "lit": [
         {
-          "detail": "Hackers Exploit Check Point PHP2Shell Flaws to Gain Root Access and Deploy Wiper Malware",
-          "domain": "State actors",
-          "id": "state",
-          "name": "Reports of state hackers / pre-positioning / wipers",
-          "weight": 15
-        },
-        {
-          "detail": "‘We are vulnerable’: Experts warn hackers could target Aussie hospitals, water, transport systems",
+          "detail": "‘We’re vulnerable’: Hackers can target Aussie hospitals, water, transport",
           "domain": "Australian incidents",
           "id": "au",
           "name": "Major Australian cyber incident reported",
@@ -730,8 +722,8 @@
       ],
       "name": "Major cyber attack on Australia",
       "sa_impact": "Banks, payments, hospitals, fuel distribution, telcos and the power grid all run on networks; a large attack can stop card payments and services for hours to days.",
-      "score": 25,
-      "trend": "steady",
+      "score": 10,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Global threat level",
@@ -768,6 +760,12 @@
           "id": "acsc",
           "name": "New Australian cyber alert (ACSC)",
           "weight": 10
+        },
+        {
+          "domain": "State actors",
+          "id": "state",
+          "name": "Reports of state hackers / pre-positioning / wipers",
+          "weight": 15
         },
         {
           "domain": "Communications",
