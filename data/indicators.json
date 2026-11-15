@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-15T20:14:00Z",
+  "generated_at": "2026-11-15T20:23:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -100,14 +100,24 @@
     },
     {
       "band": "Low",
-      "convergence": "No warning signs are showing. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
-      "domains": [],
+      "convergence": "Only one kind of sign is showing (aviation). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
+      "domains": [
+        "Aviation"
+      ],
       "key": "mideast",
-      "lit": [],
+      "lit": [
+        {
+          "detail": "Iraq Denies Rumors of 72-Hour Airspace Closure",
+          "domain": "Aviation",
+          "id": "airspace",
+          "name": "Airspace closures reported (Iran / Israel / Gulf)",
+          "weight": 10
+        }
+      ],
       "name": "Middle East war & Gulf shipping",
       "sa_impact": "Fuel: Australia imports most of its fuel, much of it refined from Gulf crude in Asia. Shipping attacks or a Hormuz closure push up prices within days and can cause local shortages.",
-      "score": 0,
-      "trend": "steady",
+      "score": 10,
+      "trend": "up",
       "unlit": [
         {
           "domain": "Military air",
@@ -138,12 +148,6 @@
           "id": "dep",
           "name": "New US embassy departure order in the region",
           "weight": 15
-        },
-        {
-          "domain": "Aviation",
-          "id": "airspace",
-          "name": "Airspace closures reported (Iran / Israel / Gulf)",
-          "weight": 10
         },
         {
           "domain": "Maritime",
@@ -375,15 +379,25 @@
       "why": "North Korean missile launches are often preceded by navigation warnings; South Korea and Japan report GPS jamming from the North during tense periods."
     },
     {
-      "band": "Low",
-      "convergence": "No warning signs are showing. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and mobilisation / reservist reports (russia / nato).",
-      "domains": [],
+      "band": "Guarded",
+      "convergence": "Only one kind of sign is showing (mobilisation). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and us nuclear command aircraft unusual.",
+      "domains": [
+        "Mobilisation"
+      ],
       "key": "russia",
-      "lit": [],
+      "lit": [
+        {
+          "detail": "Latvia to practice military mobilization this weekend / Article",
+          "domain": "Mobilisation",
+          "id": "mob",
+          "name": "Mobilisation / reservist reports (Russia / NATO)",
+          "weight": 15
+        }
+      ],
       "name": "Russia-NATO escalation",
       "sa_impact": "Indirect: energy and market shock, cyber attacks that can spill over to Australian systems, and nuclear-risk rhetoric.",
-      "score": 0,
-      "trend": "steady",
+      "score": 15,
+      "trend": "up",
       "unlit": [
         {
           "domain": "Electronic warfare",
@@ -395,12 +409,6 @@
           "domain": "Military air",
           "id": "air",
           "name": "Unusual military air activity (Eastern Europe)",
-          "weight": 15
-        },
-        {
-          "domain": "Mobilisation",
-          "id": "mob",
-          "name": "Mobilisation / reservist reports (Russia / NATO)",
           "weight": 15
         },
         {
@@ -622,8 +630,9 @@
     },
     {
       "band": "Guarded",
-      "convergence": "Only one kind of sign is showing (health). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: unknown illness / pneumonia cluster reported, countries restricting medical supply exports and pandemic-response stocks outperforming (5 days).",
+      "convergence": "Two different kinds of sign are showing together (chemical weapons and health). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: unknown illness / pneumonia cluster reported, countries restricting medical supply exports and pandemic-response stocks outperforming (5 days).",
       "domains": [
+        "Chemical weapons",
         "Health"
       ],
       "key": "bio",
@@ -634,12 +643,19 @@
           "id": "who",
           "name": "WHO outbreak report with a high-concern pathogen (last 14 days)",
           "weight": 15
+        },
+        {
+          "detail": "Microsoft 365 outage leads to chlorine gas poisoning of 15 hotel guests — email warning system fails, 40 first responders deployed for triag",
+          "domain": "Chemical weapons",
+          "id": "chem",
+          "name": "Chemical / nerve-agent attack or mass poisoning reported",
+          "weight": 15
         }
       ],
       "name": "Pandemic, biological or chemical emergency",
       "sa_impact": "Health system strain, possible lockdowns and border closures, and shortages of medicines and protective equipment, which Australia mostly imports.",
-      "score": 15,
-      "trend": "steady",
+      "score": 30,
+      "trend": "up",
       "unlit": [
         {
           "domain": "Health",
@@ -676,12 +692,6 @@
           "id": "vix",
           "name": "Market fear index above 30",
           "weight": 10
-        },
-        {
-          "domain": "Chemical weapons",
-          "id": "chem",
-          "name": "Chemical / nerve-agent attack or mass poisoning reported",
-          "weight": 15
         },
         {
           "domain": "Health",
@@ -779,26 +789,46 @@
       "why": "Large attacks are usually preceded by quieter steps: a surge in newly exploited flaws in VPNs and firewalls (how state groups like Volt Typhoon get in), scanning of industrial-control systems, a rise in ransomware victims in the target country, and official warnings. Before Russia's 2022 invasion, wiper malware hit Ukraine a day ahead; Chinese groups have been found pre-positioned in US and allied infrastructure."
     },
     {
-      "band": "Low",
-      "convergence": "No warning signs are showing. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, reports of ai-driven hacking campaigns and deepfakes of leaders or fake official alerts.",
-      "domains": [],
+      "band": "Elevated",
+      "convergence": "Signs are converging across 3 separate areas (ai-enabled hacking, cloud services and fraud waves). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: a Chinese state-sponsored group used an AI agent to carry out 80-90% of an attack on about 30 organisations, at thousands of requests per second. A fake AI image of a Pentagon explosion briefly moved US markets in May 2023, and a deepfake video call of a CFO tricked a company into paying US$25 million in 2024. The likely signature of an AI attack is breadth and speed: many unrelated systems and vendors hit at once, synthetic media of officials, and shocks with no clear human cause. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, deepfakes of leaders or fake official alerts and flash crash or exchange trading halt.",
+      "domains": [
+        "AI-enabled hacking",
+        "Cloud services",
+        "Fraud waves"
+      ],
       "key": "ai",
-      "lit": [],
+      "lit": [
+        {
+          "detail": "AI-Powered Cyberattack Campaign Targets Semiconductor and Defence Organisations, Report Reveals",
+          "domain": "AI-enabled hacking",
+          "id": "aihack",
+          "name": "Reports of AI-driven hacking campaigns",
+          "weight": 15
+        },
+        {
+          "detail": "Microsoft says services are now fully restored after global outage",
+          "domain": "Cloud services",
+          "id": "cloud",
+          "name": "Major cloud or AI service outage",
+          "weight": 10
+        },
+        {
+          "detail": "Kozhikode Businessman Loses ₹1.45 Crore in Deepfake Video Scam Featuring Nirmala Sitharaman",
+          "domain": "Fraud waves",
+          "id": "scams",
+          "name": "Surge in AI voice-clone / deepfake scams in Australia",
+          "weight": 5
+        }
+      ],
       "name": "AI-enabled attack (non-traditional)",
       "sa_impact": "Not bombs but disruption: hacking at machine speed across banks, telcos, hospitals and the grid at once; fake videos or alerts from leaders causing panic buying or bank runs; or automated market and fraud shocks. Effects would be outages, payment failures and confusion about what is real.",
-      "score": 0,
-      "trend": "steady",
+      "score": 30,
+      "trend": "up",
       "unlit": [
         {
           "domain": "Mass exploitation",
           "id": "breadth",
           "name": "Exploited flaws across unusually many vendors at once",
-          "weight": 15
-        },
-        {
-          "domain": "AI-enabled hacking",
-          "id": "aihack",
-          "name": "Reports of AI-driven hacking campaigns",
           "weight": 15
         },
         {
@@ -820,22 +850,10 @@
           "weight": 10
         },
         {
-          "domain": "Cloud services",
-          "id": "cloud",
-          "name": "Major cloud or AI service outage",
-          "weight": 10
-        },
-        {
           "domain": "Communications",
           "id": "tel",
           "name": "Phone / internet carrier outage",
           "weight": 10
-        },
-        {
-          "domain": "Fraud waves",
-          "id": "scams",
-          "name": "Surge in AI voice-clone / deepfake scams in Australia",
-          "weight": 5
         },
         {
           "domain": "Edge-device exploitation",
