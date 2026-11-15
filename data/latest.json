@@ -2429,6 +2429,42 @@
   "quakes_m6_24h": [],
   "recent_alerts": [
     {
+      "channel": "proactive",
+      "channels": [
+        "proactive"
+      ],
+      "id": "20261115T1809Z-daily-digest",
+      "message": "Steady. Iran says a supertanker with 2M barrels sank in Hormuz (unconfirmed); oil reopens today, so top up fuel early. Gulf GPS jamming eased, no new strikes. SA quiet: Moderate fire danger in the Hills, no bans or warnings.",
+      "priority": 2,
+      "sent": {
+        "proactive": true
+      },
+      "sent_at": "2026-11-15T18:11:00Z",
+      "source": "analysis",
+      "tags": [
+        "sunrise"
+      ],
+      "title": "Daily digest: Level 3 Elevated"
+    },
+    {
+      "channel": "proactive",
+      "channels": [
+        "proactive"
+      ],
+      "id": "20261115T1809Z-hormuz-supertanker",
+      "message": "Iran says a supertanker carrying ~2M barrels sank after a mine blast; not independently confirmed. Last night's Gulf GPS jamming spike (31%) has eased to 21% with no attack confirmed. Fuel prices may rise this week.",
+      "priority": 4,
+      "sent": {
+        "proactive": true
+      },
+      "sent_at": "2026-11-15T18:11:00Z",
+      "source": "analysis",
+      "tags": [
+        "oil_drum"
+      ],
+      "title": "Hormuz: Iran says supertanker sank"
+    },
+    {
       "at": "2026-11-15T16:34:00Z",
       "category": "geo",
       "channels": [
@@ -2902,49 +2938,6 @@
         "white_check_mark"
       ],
       "title": "Update: United States flights - appears to be over"
-    },
-    {
-      "at": "2026-11-14T01:11:00Z",
-      "category": "cyber",
-      "channels": [
-        "proactive"
-      ],
-      "confirmed": true,
-      "id": "20261114T0120-shock-US-aviation",
-      "key": "shock-US-aviation",
-      "message": "FAA airport status shows a national ground stop. Cause not yet known. Flights to and from there may be disrupted; check the board.",
-      "priority": 4,
-      "sent": {
-        "proactive": true
-      },
-      "sent_at": "2026-11-14T01:11:00Z",
-      "source": "collector",
-      "tags": [
-        "airplane"
-      ],
-      "title": "United States: flights grounded nationwide"
-    },
-    {
-      "at": "2026-11-14T01:05:00Z",
-      "category": "geo",
-      "channels": [
-        "proactive"
-      ],
-      "confirmed": false,
-      "id": "20261114T0110-air-gps-israel",
-      "key": "air-gps_israel",
-      "message": "50% of aircraft over Israel & Eastern Mediterranean reporting degraded GPS (usual ~4%). Jamming often accompanies military operations, but can also be faulty equipment. Watching for confirmation.",
-      "priority": 4,
-      "sent": {
-        "proactive": true
-      },
-      "sent_at": "2026-11-14T01:05:00Z",
-      "source": "collector",
-      "tags": [
-        "airplane",
-        "question"
-      ],
-      "title": "UNCONFIRMED: GPS jamming detected"
     }
   ],
   "sectors": {
