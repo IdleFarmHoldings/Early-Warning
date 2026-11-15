@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-15T01:22:00Z",
+  "generated_at": "2026-11-15T01:37:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -625,8 +625,8 @@
       "why": "The 2023 Optus outage cut mobile, NBN, EFTPOS and some 000 calls nationwide for 12 hours. Hostile states pre-position in critical infrastructure; GPS jamming over Australia would be a new and serious sign."
     },
     {
-      "band": "Guarded",
-      "convergence": "Only one kind of sign is showing (health). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: unknown illness / pneumonia cluster reported, countries restricting medical supply exports and pandemic-response stocks outperforming (5 days).",
+      "band": "Elevated",
+      "convergence": "Only one kind of sign is showing (health). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: countries restricting medical supply exports, pandemic-response stocks outperforming (5 days) and chemical / nerve-agent attack or mass poisoning reported.",
       "domains": [
         "Health"
       ],
@@ -640,6 +640,13 @@
           "weight": 15
         },
         {
+          "detail": "Unknown Illness Spreads in Western Kabul, Residents Report",
+          "domain": "Health",
+          "id": "illness",
+          "name": "Unknown illness / pneumonia cluster reported",
+          "weight": 20
+        },
+        {
           "detail": "The 10 most mysterious deaths in Old Hollywood history",
           "domain": "Health",
           "id": "dieoff",
@@ -649,15 +656,9 @@
       ],
       "name": "Pandemic, biological or chemical emergency",
       "sa_impact": "Health system strain, possible lockdowns and border closures, and shortages of medicines and protective equipment, which Australia mostly imports.",
-      "score": 25,
-      "trend": "steady",
+      "score": 45,
+      "trend": "up",
       "unlit": [
-        {
-          "domain": "Health",
-          "id": "illness",
-          "name": "Unknown illness / pneumonia cluster reported",
-          "weight": 20
-        },
         {
           "domain": "Trade",
           "id": "exports",
