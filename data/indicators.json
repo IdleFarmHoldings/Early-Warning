@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-15T04:27:00Z",
+  "generated_at": "2026-11-15T04:43:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -645,19 +645,12 @@
           "id": "illness",
           "name": "Unknown illness / pneumonia cluster reported",
           "weight": 20
-        },
-        {
-          "detail": "Delhi Police Probe Mysterious Deaths Of Home Guard, Woman",
-          "domain": "Health",
-          "id": "dieoff",
-          "name": "Unexplained mass deaths or animal die-offs",
-          "weight": 10
         }
       ],
       "name": "Pandemic, biological or chemical emergency",
       "sa_impact": "Health system strain, possible lockdowns and border closures, and shortages of medicines and protective equipment, which Australia mostly imports.",
-      "score": 45,
-      "trend": "steady",
+      "score": 35,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Trade",
@@ -694,6 +687,12 @@
           "id": "chem",
           "name": "Chemical / nerve-agent attack or mass poisoning reported",
           "weight": 15
+        },
+        {
+          "domain": "Health",
+          "id": "dieoff",
+          "name": "Unexplained mass deaths or animal die-offs",
+          "weight": 10
         },
         {
           "domain": "Hospitals",
@@ -789,13 +788,21 @@
       "why": "Large attacks are usually preceded by quieter steps: a surge in newly exploited flaws in VPNs and firewalls (how state groups like Volt Typhoon get in), scanning of industrial-control systems, a rise in ransomware victims in the target country, and official warnings. Before Russia's 2022 invasion, wiper malware hit Ukraine a day ahead; Chinese groups have been found pre-positioned in US and allied infrastructure."
     },
     {
-      "band": "Low",
-      "convergence": "Only one kind of sign is showing (cloud services). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, reports of ai-driven hacking campaigns and deepfakes of leaders or fake official alerts.",
+      "band": "Guarded",
+      "convergence": "Two different kinds of sign are showing together (ai-enabled hacking and cloud services). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, deepfakes of leaders or fake official alerts and flash crash or exchange trading halt.",
       "domains": [
+        "AI-enabled hacking",
         "Cloud services"
       ],
       "key": "ai",
       "lit": [
+        {
+          "detail": "Hackers Use Stolen LLM API Keys to Power ARTEX AI Agents and Continue Credential Theft",
+          "domain": "AI-enabled hacking",
+          "id": "aihack",
+          "name": "Reports of AI-driven hacking campaigns",
+          "weight": 15
+        },
         {
           "detail": "Global Microsoft 365 Outage Paralyzes Governments, Airlines, And Workplaces Worldwide",
           "domain": "Cloud services",
@@ -806,19 +813,13 @@
       ],
       "name": "AI-enabled attack (non-traditional)",
       "sa_impact": "Not bombs but disruption: hacking at machine speed across banks, telcos, hospitals and the grid at once; fake videos or alerts from leaders causing panic buying or bank runs; or automated market and fraud shocks. Effects would be outages, payment failures and confusion about what is real.",
-      "score": 10,
-      "trend": "down",
+      "score": 25,
+      "trend": "up",
       "unlit": [
         {
           "domain": "Mass exploitation",
           "id": "breadth",
           "name": "Exploited flaws across unusually many vendors at once",
-          "weight": 15
-        },
-        {
-          "domain": "AI-enabled hacking",
-          "id": "aihack",
-          "name": "Reports of AI-driven hacking campaigns",
           "weight": 15
         },
         {
