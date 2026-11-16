@@ -118,29 +118,30 @@
   },
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
+    "incidents": "ValueError: time data 'Info' does not match format '%Y-%m-%dT%H:%M:%SZ'",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [
     "Drought is on going in Aruba, , Brazil, Colombia, Costa Rica, , French Guiana, Guyana, Panama, Suriname, Venezuela"
   ],
-  "generated_at": "2026-11-16T13:34:00Z",
+  "generated_at": "2026-11-16T13:50:00Z",
   "gps_bad_pct": {
     "Baltic / Kaliningrad": 19,
-    "Black Sea": 29,
-    "Israel & Eastern Mediterranean": 2,
+    "Black Sea": 7,
+    "Israel & Eastern Mediterranean": 3,
     "Korea": 0,
-    "Persian Gulf": 10,
+    "Persian Gulf": 7,
     "South Australia": null,
-    "Sydney / NSW": 0,
+    "Sydney / NSW": null,
     "Taiwan Strait": 0
   },
   "incidents": [
     {
       "confirmed": true,
       "headlines": [
+        "Microsoft 365 Outage Traced to a Network Upgrade as Services Recover",
         "Microsoft 365 outage exposes cascading failures in critical cloud infrastructure",
-        "Microsoft reveals the cause of its catastrophic Outlook outage — incident set off by a ‘cascading failure’ of servers as crash leads to chlorine gas poisoning o",
-        "Microsoft Outage Could Cost Global Economy $7 Billion"
+        "Microsoft reveals the cause of its catastrophic Outlook outage — incident set off by a ‘cascading failure’ of servers as crash leads to chlorine gas poisoning o"
       ],
       "severity": "Warning",
       "target": "Microsoft"
@@ -154,18 +155,56 @@
       "target": "Undersea cables"
     },
     {
-      "confirmed": true,
+      "confirmed": false,
       "headlines": [
-        "AI finds zero-day flaws for just $4 now – even mediocre hackers can cash in",
-        "‘New type’ of AI-powered cyberattack hits one of Poland’s largest online payment platforms",
+        "Coles investigates cyber attack but provides little detail"
+      ],
+      "severity": "Info",
+      "target": "Supermarkets & food"
+    },
+    {
+      "confirmed": false,
+      "headlines": [
         "FBI Warns AI Hacking Tool ARTEX Is Powering Fast, Automated Cyberattacks Worldwide"
       ],
       "severity": "Info",
+      "target": "FBI Warns AI"
+    },
+    {
+      "confirmed": false,
+      "headlines": [
+        "AI finds zero-day flaws for just $4 now – even mediocre hackers can cash in"
+      ],
+      "severity": "Info",
       "target": "Other services"
+    },
+    {
+      "confirmed": false,
+      "headlines": [
+        "‘New type’ of AI-powered cyberattack hits one of Poland’s largest online payment platforms"
+      ],
+      "severity": "Info",
+      "target": "New"
+    },
+    {
+      "confirmed": false,
+      "headlines": [
+        "Hackers turn AI agents and Downloads folders against users"
+      ],
+      "severity": "Info",
+      "target": "Hackers"
+    },
+    {
+      "confirmed": false,
+      "headlines": [
+        "AI-written patches are becoming attack maps for hackers"
+      ],
+      "severity": "Info",
+      "target": "AI-written"
     }
   ],
   "internet_drop_pct": {
-    "China": 1.4,
+    "China": 1.7,
     "Iran": 0.0,
     "Israel": 0.0,
     "Russia": 0.0,
@@ -187,11 +226,45 @@
     },
     "fire_danger_ok": true,
     "fires_active": 1,
-    "grid_demand_fall_pct": -3.6,
-    "grid_demand_mw": 1329,
-    "grid_demand_usual_mw": 1296,
+    "fuel": {
+      "brent_aud": 140.6,
+      "change_pct": 5.4,
+      "pump_cents": 5,
+      "week_ago_aud": 133.4
+    },
+    "grid_demand_fall_pct": 0.8,
+    "grid_demand_mw": 1318,
+    "grid_demand_usual_mw": 1315,
     "grid_lor_level": 0,
     "nearby_incidents": [],
+    "outlook": {
+      "air": {
+        "aqi": 49,
+        "peak_pm25_48h": 13,
+        "pm25": 10
+      },
+      "air_word": "Good",
+      "days": [
+        {
+          "date": "2026-11-16",
+          "gust": 44,
+          "rain": 0,
+          "tmax": 17
+        },
+        {
+          "date": "2026-11-17",
+          "gust": 42,
+          "rain": 0,
+          "tmax": 22
+        },
+        {
+          "date": "2026-11-18",
+          "gust": 40,
+          "rain": 0,
+          "tmax": 24
+        }
+      ]
+    },
     "possible_blackout": false,
     "power_news": [],
     "road_hazards": [
@@ -208,20 +281,20 @@
   },
   "markets": {
     "AUD/USD": {
-      "change_pct": -0.76,
-      "price": 0.6755
+      "change_pct": -0.78,
+      "price": 0.6754
     },
     "Brent oil": {
-      "change_pct": -1.43,
-      "price": 94.47
+      "change_pct": -1.26,
+      "price": 94.63
     },
     "Gold": {
-      "change_pct": -0.32,
-      "price": 3873.8
+      "change_pct": -0.39,
+      "price": 3871.3
     },
     "VIX": {
-      "change_pct": 6.74,
-      "price": 20.6
+      "change_pct": 6.89,
+      "price": 20.63
     }
   },
   "national_shocks": {
@@ -253,7 +326,7 @@
     "bank_outage": [
       "'It was so real': how fake online stores are targeting holiday shoppers - CommBank",
       "Huge change coming for Aussie ATMs - News.com.au",
-      "ANZ IT leaders face rising data centre costs & cyber risk - SecurityBrief Australia"
+      "NSW Blues Women set for Townsville showdown in 2027 State of Origin - New South Wales Rugby League"
     ],
     "blood": [
       "Lagos trains health workers to boost voluntary blood donation - Head Topics"
@@ -270,8 +343,8 @@
     ],
     "cloud": [
       "Microsoft 365 outage loss estimates range from minimal to US$700 million - Insurance Business",
-      "Insurers dodge payouts after global Microsoft outage - The Australian",
-      "Microsoft 365 outage exposes cascading failures in critical cloud infrastructure - Digital Watch Observatory"
+      "Microsoft 365 Outage Traced to a Network Upgrade as Services Recover - Technology Org",
+      "Insurers dodge payouts after global Microsoft outage - The Australian"
     ],
     "cn_signals": [
       "IAF Chief: True Self Reliance is Crucial for Future War Preparedness - Asianet Newsable"
@@ -292,8 +365,8 @@
     ],
     "deepfake": [
       "Satire or propaganda? How AI-generated videos blur the lines - eKathimerini.com",
-      "Japan: Emergency cyber security package announced - Asia Insurance Review",
-      "President Chain Store: 9M26 sales grew 5.7%, with expansion and digital investment driving the growth agenda - TradingView"
+      "Uni-President Enterprises : 9M revenue rose 4.2%, while attributable profit increased 26.1% - TradingView",
+      "Teenagers account for nearly half of digital sex crime suspects: police - The Korea Times"
     ],
     "dieoff": [
       "Mass death of Indian carp raises pollution concerns at Ooty lake - The Hindu",
@@ -305,10 +378,15 @@
       "Gorilla Gold Mines Enters Trading Halt Pending Material Acquisition and Equity Raising Announcement - Kalkine",
       "EPX Limited Requests Trading Halt Pending Capital Raising Bookbuild Outcome - Kalkine"
     ],
+    "fuel_au": [
+      "Nation’s truck driver shortage hits 12pc - GoAuto.com.au",
+      "BMW 3 Series 2027 review: i3 50 and M350 first drive - Chasing Cars",
+      "ASEAN, Australia Strengthen Ties in Trade, Education, and Climate Action - Lokmat Times"
+    ],
     "illness": [
       "Mystery illness causes mass hospitalisation of runners - The Nightly",
       "Zayn Malik hospitalised with mystery illness, forced to cancel upcoming appearances on album release week - Nine.com.au",
-      "Mystery Pneumonia Death Sparks Concern; Trader Joe's Recall; OUD in Young People - MedPage Today"
+      "Zayn Malik hospitalised with mystery illness - News.com.au"
     ],
     "masscas": [
       "Shootout at gun show leaves person dead and SC deputy hospitalized, sheriff says - The State",
@@ -328,8 +406,8 @@
     ],
     "national_outage": [
       "Coal plant failure, not solar PV, triggered Sri Lanka’s latest blackout - pv magazine Global",
-      "NTT Docomo restores 5G service after its third nationwide outage this month, again blaming switch congestion - MLQ.ai",
-      "𝐏𝐨𝐰𝐞𝐫 𝐎𝐮𝐭𝐚𝐠𝐞 𝐃𝐢𝐬𝐫𝐮𝐩𝐭𝐬 𝐁𝐮𝐬𝐢𝐧𝐞𝐬𝐬𝐞𝐬 𝐚𝐧𝐝 𝐃𝐚𝐢𝐥𝐲 𝐀𝐜𝐭𝐢𝐯𝐢𝐭𝐢𝐞𝐬 𝐢𝐧 𝐌𝐚𝐬𝐚𝐥𝐚𝐧𝐢 𝐓𝐨𝐰𝐧 Masalani Town in Ijara Sub County has for the last 24 hours been plunged into darkness following a power outage. The outage has affected major busi - Facebook"
+      "Japan: New nationwide outage on NTT Docomo's 5G network - Agenzia Nova",
+      "NTT Docomo restores 5G service after its third nationwide outage this month, again blaming switch congestion - MLQ.ai"
     ],
     "outage_au": [
       "Microsoft ‘deeply sorry’ for global outage, rules out cyberattack and AI - Nine.com.au",
@@ -434,7 +512,7 @@
     {
       "d24h": null,
       "q": "Iran charges Hormuz fees by December 31?",
-      "yes": 9.5
+      "yes": 9.0
     },
     {
       "d24h": 0.1,
@@ -457,9 +535,9 @@
       "yes": 2.1
     },
     {
-      "d24h": 0.5,
+      "d24h": 0.3,
       "q": "Will the U.S. test a nuclear weapon by December 31 2026?",
-      "yes": 3.0
+      "yes": 2.9
     },
     {
       "d24h": 2.0,
@@ -482,9 +560,9 @@
       "yes": 12.5
     },
     {
-      "d24h": -0.7,
+      "d24h": -1.0,
       "q": "Trump endorses China's claim to Taiwan by end of APEC trip?",
-      "yes": 0.9
+      "yes": 0.6
     }
   ],
   "quakes_m6_24h": [],
@@ -789,16 +867,16 @@
   ],
   "sectors_relative_5d": {
     "defence_au": -0.57,
-    "defence_eu": -0.11,
+    "defence_eu": -0.07,
     "defence_us": 2.2,
     "pandemic": -7.05
   },
   "tankers": "normal",
   "telecom_drop_pct": {
     "Aussie Broadband": 0.0,
-    "Optus": 2.9,
-    "TPG": 0.1,
-    "Telstra": 0.0,
+    "Optus": 0.0,
+    "TPG": 0.0,
+    "Telstra": 0.1,
     "Vodafone": 0.0
   },
   "us_departure_orders": [
@@ -834,6 +912,7 @@
     "Vietnam": 1,
     "Yemen": 4
   },
+  "watching": [],
   "who": [
     "Middle East respiratory syndrome (MERS) – Qatar",
     "Ebola disease caused by Bundibugyo virus - Democratic Republic of the Congo, Kenya and Nigeria",
