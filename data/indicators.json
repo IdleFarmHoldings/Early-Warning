@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T21:20:00Z",
+  "generated_at": "2026-11-16T21:36:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -790,19 +790,19 @@
     },
     {
       "band": "Guarded",
-      "convergence": "Two different kinds of sign are showing together (cloud services and fraud waves). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, reports of ai-driven hacking campaigns and deepfakes of leaders or fake official alerts.",
+      "convergence": "Two different kinds of sign are showing together (ai-enabled hacking and fraud waves). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, deepfakes of leaders or fake official alerts and flash crash or exchange trading halt.",
       "domains": [
-        "Cloud services",
+        "AI-enabled hacking",
         "Fraud waves"
       ],
       "key": "ai",
       "lit": [
         {
-          "detail": "Insurers dodge payouts after global Microsoft outage",
-          "domain": "Cloud services",
-          "id": "cloud",
-          "name": "Major cloud or AI service outage",
-          "weight": 10
+          "detail": "Barracuda links cloud breach to ARTEX AI-powered cyberattack",
+          "domain": "AI-enabled hacking",
+          "id": "aihack",
+          "name": "Reports of AI-driven hacking campaigns",
+          "weight": 15
         },
         {
           "detail": "Deepfake Fraud Has Cost Almost $4 Billion Worldwide Since 2020",
@@ -814,19 +814,13 @@
       ],
       "name": "AI-enabled attack (non-traditional)",
       "sa_impact": "Not bombs but disruption: hacking at machine speed across banks, telcos, hospitals and the grid at once; fake videos or alerts from leaders causing panic buying or bank runs; or automated market and fraud shocks. Effects would be outages, payment failures and confusion about what is real.",
-      "score": 15,
-      "trend": "down",
+      "score": 20,
+      "trend": "up",
       "unlit": [
         {
           "domain": "Mass exploitation",
           "id": "breadth",
           "name": "Exploited flaws across unusually many vendors at once",
-          "weight": 15
-        },
-        {
-          "domain": "AI-enabled hacking",
-          "id": "aihack",
-          "name": "Reports of AI-driven hacking campaigns",
           "weight": 15
         },
         {
@@ -845,6 +839,12 @@
           "domain": "Markets",
           "id": "vix",
           "name": "Market fear index jumps 25%+ in a day",
+          "weight": 10
+        },
+        {
+          "domain": "Cloud services",
+          "id": "cloud",
+          "name": "Major cloud or AI service outage",
           "weight": 10
         },
         {
