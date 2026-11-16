@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T22:06:00Z",
+  "generated_at": "2026-11-16T22:12:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -626,8 +626,9 @@
     },
     {
       "band": "Guarded",
-      "convergence": "Only one kind of sign is showing (health). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: unknown illness / pneumonia cluster reported, countries restricting medical supply exports and pandemic-response stocks outperforming (5 days).",
+      "convergence": "Two different kinds of sign are showing together (chemical weapons and health). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: unknown illness / pneumonia cluster reported, countries restricting medical supply exports and pandemic-response stocks outperforming (5 days).",
       "domains": [
+        "Chemical weapons",
         "Health"
       ],
       "key": "bio",
@@ -638,12 +639,19 @@
           "id": "who",
           "name": "WHO outbreak report with a high-concern pathogen (last 14 days)",
           "weight": 15
+        },
+        {
+          "detail": "Microsoft reveals the cause of its catastrophic Outlook outage — incident set off by a ‘cascading failure’ of servers as crash leads to chlo",
+          "domain": "Chemical weapons",
+          "id": "chem",
+          "name": "Chemical / nerve-agent attack or mass poisoning reported",
+          "weight": 15
         }
       ],
       "name": "Pandemic, biological or chemical emergency",
       "sa_impact": "Health system strain, possible lockdowns and border closures, and shortages of medicines and protective equipment, which Australia mostly imports.",
-      "score": 15,
-      "trend": "steady",
+      "score": 30,
+      "trend": "up",
       "unlit": [
         {
           "domain": "Health",
@@ -680,12 +688,6 @@
           "id": "vix",
           "name": "Market fear index above 30",
           "weight": 10
-        },
-        {
-          "domain": "Chemical weapons",
-          "id": "chem",
-          "name": "Chemical / nerve-agent attack or mass poisoning reported",
-          "weight": 15
         },
         {
           "domain": "Health",
@@ -788,10 +790,11 @@
     },
     {
       "band": "Elevated",
-      "convergence": "Signs are converging across 3 separate areas (ai-enabled hacking, cloud services and synthetic media). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: a Chinese state-sponsored group used an AI agent to carry out 80-90% of an attack on about 30 organisations, at thousands of requests per second. A fake AI image of a Pentagon explosion briefly moved US markets in May 2023, and a deepfake video call of a CFO tricked a company into paying US$25 million in 2024. The likely signature of an AI attack is breadth and speed: many unrelated systems and vendors hit at once, synthetic media of officials, and shocks with no clear human cause. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, flash crash or exchange trading halt and market fear index jumps 25%+ in a day.",
+      "convergence": "Signs are converging across 4 separate areas (ai-enabled hacking, cloud services, fraud waves and synthetic media). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: a Chinese state-sponsored group used an AI agent to carry out 80-90% of an attack on about 30 organisations, at thousands of requests per second. A fake AI image of a Pentagon explosion briefly moved US markets in May 2023, and a deepfake video call of a CFO tricked a company into paying US$25 million in 2024. The likely signature of an AI attack is breadth and speed: many unrelated systems and vendors hit at once, synthetic media of officials, and shocks with no clear human cause. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, flash crash or exchange trading halt and market fear index jumps 25%+ in a day.",
       "domains": [
         "AI-enabled hacking",
         "Cloud services",
+        "Fraud waves",
         "Synthetic media"
       ],
       "key": "ai",
@@ -816,11 +819,18 @@
           "id": "cloud",
           "name": "Major cloud or AI service outage",
           "weight": 10
+        },
+        {
+          "detail": "Deepfake Fraud Has Cost Almost $4 Billion Worldwide Since 2020",
+          "domain": "Fraud waves",
+          "id": "scams",
+          "name": "Surge in AI voice-clone / deepfake scams in Australia",
+          "weight": 5
         }
       ],
       "name": "AI-enabled attack (non-traditional)",
       "sa_impact": "Not bombs but disruption: hacking at machine speed across banks, telcos, hospitals and the grid at once; fake videos or alerts from leaders causing panic buying or bank runs; or automated market and fraud shocks. Effects would be outages, payment failures and confusion about what is real.",
-      "score": 40,
+      "score": 45,
       "trend": "up",
       "unlit": [
         {
@@ -846,12 +856,6 @@
           "id": "tel",
           "name": "Phone / internet carrier outage",
           "weight": 10
-        },
-        {
-          "domain": "Fraud waves",
-          "id": "scams",
-          "name": "Surge in AI voice-clone / deepfake scams in Australia",
-          "weight": 5
         },
         {
           "domain": "Edge-device exploitation",
