@@ -155,6 +155,21 @@ details summary{cursor:pointer;font-size:.84rem;color:var(--accent)}
 .allok{font-size:.9rem;color:var(--muted);margin:8px 0 0}
 #localBox .chip{white-space:normal;text-align:right;max-width:58vw}
 .word{font-family:var(--body);font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.04em}
+
+.ready{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.ready label{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:start;padding:8px 4px;border-top:1px solid var(--line);cursor:pointer}
+.ready li:first-child label{border-top:0}
+.ready input{width:22px;height:22px;margin:1px 0 0;accent-color:var(--l2)}
+.ready .done b{font-weight:400;color:var(--muted);text-decoration:line-through}
+.ready span.why{display:block}
+.prog{height:10px;background:var(--line);border-radius:5px;overflow:hidden;margin:8px 0 4px}
+.prog i{display:block;height:100%;background:var(--l2)}
+.btns{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+.btn{font:600 1.05rem var(--body);border:0;border-radius:8px;padding:14px 10px;color:#fff;cursor:pointer}
+.btn.ok{background:var(--l2)}.btn.help{background:var(--l5)}.btn.plain{background:var(--accent);color:var(--surface)}
+.btn:disabled{opacity:.5}
+.field{display:grid;gap:4px;margin-top:8px;font-size:.88rem}
+.field input{font:inherit;padding:9px 10px;border:1px solid var(--line);border-radius:6px;background:var(--sunk);color:var(--ink);width:100%}
 </style>
 </head>
 <body>
@@ -230,6 +245,32 @@ details summary{cursor:pointer;font-size:.84rem;color:var(--accent)}
   </section>
 
   <section class="panel">
+    <h2>Family check-in</h2>
+    <p class="sec-note">In an emergency, one tap tells everyone you're safe, or that you need help. It goes to every family phone as a notification.</p>
+    <div id="ciMain" hidden>
+      <div class="btns"><button class="btn ok" id="ciOk">I'm OK</button><button class="btn help" id="ciHelp">I need help</button></div>
+      <p class="why" id="ciMsg" style="margin:8px 0 0"></p>
+      <div class="list" id="ciList" style="margin-top:6px"></div>
+    </div>
+    <details id="ciSetup" style="margin-top:8px"><summary>Set up check-in on this phone</summary>
+      <label class="field">Your name<input id="ciName" autocomplete="given-name" maxlength="20" placeholder="e.g. Josh"></label>
+      <label class="field">Family alert topic (the Early warning topic name from the ntfy app)<input id="ciTopic" autocomplete="off" autocapitalize="off" spellcheck="false" maxlength="80" placeholder="as shown in the ntfy app"></label>
+      <button class="btn plain" id="ciSave" style="margin-top:10px">Save on this phone</button>
+      <p class="why" style="margin:8px 0 0">These are kept only on this phone. They are never sent to this website.</p>
+    </details>
+  </section>
+
+  <section class="panel">
+    <h2>Are we ready?</h2>
+    <p class="sec-note" id="readyNote">Tick things off as you do them. Ticks are saved on this phone.</p>
+    <div class="prog" aria-hidden="true"><i id="readyBar" style="width:0"></i></div>
+    <p class="why" id="readyCount" style="margin:0 0 6px"></p>
+    <ul class="ready" id="readyList"></ul>
+    <details id="readyDoneBox" style="margin-top:8px" hidden><summary id="readyDoneSum">Done</summary><ul class="ready" id="readyDone" style="margin-top:6px"></ul></details>
+    <a class="cta" href="plan.html" style="margin-top:14px"><div><b>Our family plan →</b><br><span>Fill it in once, then print it for the fridge and the car. Works when phones don't.</span></div></a>
+  </section>
+
+  <section class="panel">
     <h2>In an emergency</h2>
     <p class="sec-note">Official advice always comes first. If phones are down, use a battery or car radio.</p>
     <div class="calls">
@@ -251,6 +292,14 @@ details summary{cursor:pointer;font-size:.84rem;color:var(--accent)}
       <div><h3 style="margin-bottom:8px">What the five levels mean</h3><div class="guide"><table>
         <thead><tr><th>Level</th><th>Meaning</th><th>What we do</th></tr></thead>
         <tbody id="guideBody"></tbody></table></div></div>
+      <div><h3 style="margin-bottom:8px">Make emergency alerts loud</h3>
+        <p style="margin:0 0 6px;font-size:.9rem">Emergency alerts (CFS Emergency Warnings, Watch and Act near home, Level 5) are sent at the highest priority and repeated twice over nine minutes. For them to sound at night, each phone needs one setting changed:</p>
+        <ul style="margin:0;padding-left:1.1em;font-size:.9rem;display:grid;gap:4px">
+          <li><b>Android:</b> Settings → Apps → ntfy → Notifications → "Max priority" → turn on <b>Override Do Not Disturb</b>, and pick a loud sound.</li>
+          <li><b>iPhone:</b> Settings → Focus → Do Not Disturb (and Sleep) → Apps → add <b>ntfy</b>. Keep the ring switch on at night; ntfy cannot sound through the mute switch.</li>
+          <li>A loud <b>drill</b> is sent at 10 am on the first Saturday of January, April, July and October to prove it works.</li>
+        </ul></div>
+      <div id="scoreBox" hidden><h3 style="margin-bottom:8px">How useful were last month's alerts?</h3><div id="score" style="font-size:.9rem"></div></div>
       <p id="feeds" class="muted" style="margin:0"></p>
       <a class="cta" href="analytics.html"><div><b>Charts and maps →</b><br><span>Markets, trends, GPS jamming and satellite maps, cyber attacks, military activity</span></div></a>
     </div>
@@ -446,6 +495,14 @@ function renderLatest(l){
   if(near.length) more(`<ul style="margin:4px 0 0;padding-left:1.1em;font-size:.86rem">${near.slice(0,5).map(n=>`<li>${esc(n.headline||n.event)}${n.dist?` <span class="why">· ${esc(n.dist)} away</span>`:""}</li>`).join("")}</ul>`);
   if((ls.bom_severe||[]).length){ add("Weather warning", `${ls.bom_severe.length} from the Bureau`, "var(--l4)"); more(`<p class="why" style="margin:4px 0 0">${esc(ls.bom_severe.slice(0,2).join("; "))}</p>`); }
   else add("Weather warnings", "None severe", "var(--l2)");
+  const ol = ls.outlook||{}, tmr = (ol.days||[])[1];
+  if(tmr && tmr.tmax!=null){ const hot=tmr.tmax>=38, windy=(tmr.gust||0)>=90, fw=tmr.tmax>=35&&(tmr.gust||0)>=60;
+    add("Tomorrow's weather", `${tmr.tmax}°C${tmr.gust!=null?` · gusts ${tmr.gust} km/h`:""}`, fw||hot||windy?"var(--l4)":"var(--l2)");
+    if(fw) more(`<p class="why" style="margin:4px 0 0">Hot and windy is bad fire weather. Check the fire danger rating tonight.</p>`); }
+  if(ol.air && ol.air.pm25!=null) add("Air and smoke", `${ol.air_word||""} (${ol.air.pm25} µg/m³)`, ol.air.pm25>=100?"var(--l4)":ol.air.pm25>=50?"var(--l3)":"var(--l2)", ol.air.pm25>=50&&ol.air.pm25<100);
+  const fu = ls.fuel;
+  if(fu){ const up=fu.change_pct>=8; add("Fuel price pressure", `Oil ${fu.change_pct>=0?"up":"down"} ${Math.abs(fu.change_pct)}% this week`, up?"var(--l3)":"var(--l2)", up);
+    if(up) more(`<p class="why" style="margin:4px 0 0">That usually adds about ${fu.pump_cents} cents a litre at the pump within one to two weeks.</p>`); }
   const lvl = ls.grid_lor_level||0, pn = ls.power_news||[], wn = ls.sawater_news||[], mn = ls.murray_news||[], po = ls.power_out_suburbs;
   if(ls.possible_blackout) add("Power", `Possible large outage: demand fell to ${ls.grid_demand_mw} MW`, "var(--l5)");
   else if(lvl>=1) add("Power supply", lvl>=3?"Critical: blackouts possible":lvl===2?"Tight":"Being watched", lvl>=3?"var(--l5)":lvl===2?"var(--l4)":"var(--l3)", lvl===1);
@@ -517,6 +574,86 @@ const DEMO_FILE = /^[1-5]$/.test(demo||"") ? `data/demo-level${demo}.json` : `da
 if(DEMO_OK){ $("sim").hidden=false; $("sim").innerHTML=`Simulation only — not real. <a href="./">See the real status</a>`; document.title="SIMULATION - Early Warning Board"; }
 
 async function get(p){ const r=await fetch(p+(p.includes("?")?"&":"?")+"t="+Date.now(),{cache:"no-store"}); if(!r.ok) throw new Error(r.status); return r.json(); }
+
+// ---------- Readiness checklist (ticks are saved on this phone) ----------
+const READY = [
+  {id:"alertsa", t:"Alert SA app on every phone", w:"It is the official source for fire and emergency warnings; this page is a supplement."},
+  {id:"loud", t:"Emergency alerts set to sound at night", w:"See 'Make emergency alerts loud' under More detail. A warning you sleep through is no warning."},
+  {id:"plan", t:"Family plan filled in and printed", w:"Where we meet, who we call, when we leave. Decided on a calm day, not in a hurry."},
+  {id:"bushfire", t:"Bushfire plan agreed: when we leave and where we go", w:"Leaving early is the safest choice; everyone needs to know the trigger without asking."},
+  {id:"fuel", t:"Car above half a tank", w:"Fuel is the first thing to run short, and you can't evacuate on empty.", lvl:3},
+  {id:"cash", t:"Some cash at home in small notes", w:"Cards and ATMs stop in a power or network outage.", lvl:3},
+  {id:"meds", t:"Two weeks of regular medicines", w:"Pharmacy deliveries are easily disrupted.", lvl:3},
+  {id:"water", t:"Drinking water: 10 litres per person", w:"Enough for three days if the supply is cut or contaminated.", lvl:3},
+  {id:"food", t:"Two weeks of food that keeps", w:"Lets us stay home and out of panic buying.", lvl:3},
+  {id:"radio", t:"Battery or wind-up radio, with spare batteries", w:"ABC 891 AM keeps working when phones and power don't."},
+  {id:"light", t:"Torches and charged power banks", w:"Light and a working phone for the first night of a blackout.", lvl:4},
+  {id:"firstaid", t:"First aid kit stocked", w:"Ambulances are slow to arrive in a wide emergency."},
+  {id:"docs", t:"Copies of ID, insurance and scripts (paper and on phones)", w:"Needed for claims and help if we have to leave quickly.", lvl:4},
+  {id:"pets", t:"Plan for pets and animals", w:"Carriers, leads, food and where they go if we leave."},
+  {id:"gobag", t:"Grab bags by the door in fire season", w:"Clothes, chargers, medicines and water, so leaving takes two minutes."}];
+let CUR_LEVEL = 1;
+function renderReady(){
+  const done = (saved("ready")||{}).v || {};
+  const row = r => `<li><label class="${done[r.id]?"done":""}"><input type="checkbox" data-id="${r.id}"${done[r.id]?" checked":""}><span><b>${esc(r.t)}</b><span class="why">${esc(r.w)}</span></span></label></li>`;
+  const todo = READY.filter(r=>!done[r.id]).sort((a,b)=>((b.lvl||9)<=CUR_LEVEL)-((a.lvl||9)<=CUR_LEVEL));
+  const fin = READY.filter(r=>done[r.id]);
+  const urgent = todo.filter(r=>(r.lvl||9)<=CUR_LEVEL).length;
+  $("readyBar").style.width = `${Math.round(fin.length/READY.length*100)}%`;
+  $("readyCount").textContent = `${fin.length} of ${READY.length} done` + (urgent?` · ${urgent} worth doing now at this level (listed first)`:"");
+  $("readyList").innerHTML = todo.map(row).join("") || `<li>Everything is ticked. Check the kit again in a month.</li>`;
+  $("readyDoneBox").hidden = !fin.length; $("readyDoneSum").textContent = `Done (${fin.length})`;
+  $("readyDone").innerHTML = fin.map(row).join("");
+}
+document.addEventListener("change", e => { const id = e.target && e.target.dataset && e.target.dataset.id;
+  if(!id || !e.target.closest(".ready")) return;
+  const done = (saved("ready")||{}).v || {}; if(e.target.checked) done[id]=Date.now(); else delete done[id];
+  save("ready", done); renderReady(); });
+
+// ---------- Family check-in over the family's own ntfy topic (kept only on this phone) ----------
+const ci = () => (saved("checkin")||{}).v || {};
+const ciTopicOk = t => /^[A-Za-z0-9_-]{6,80}$/.test(t||"");
+async function ciLoad(){
+  const c = ci(); const ready = c.name && ciTopicOk(c.topic);
+  $("ciMain").hidden = !ready; $("ciSetup").open = !ready && $("ciSetup").open;
+  $("ciName").value = c.name||""; $("ciTopic").value = c.topic||"";
+  if(!ready) return;
+  try{
+    const r = await fetch(`https://ntfy.sh/${encodeURIComponent(c.topic)}/json?poll=1&since=24h`, {cache:"no-store"});
+    const rows = (await r.text()).split("\n").filter(Boolean).map(x=>{ try{ return JSON.parse(x); }catch(e){ return null; } })
+      .filter(m=>m && m.event==="message" && (m.tags||[]).includes("checkin"));
+    const latest = {}; rows.forEach(m=>{ const who=(m.title||"").replace(/ (is OK|NEEDS HELP)$/,""); latest[who]=m; });
+    const list = Object.entries(latest).sort((a,b)=>b[1].time-a[1].time);
+    $("ciList").innerHTML = list.length ? list.map(([who,m])=>{ const help=/NEEDS HELP$/.test(m.title||"");
+      return `<div class="item" style="grid-template-columns:1fr auto;align-items:center"><span><span class="t">${esc(who)}</span> <span class="why">· ${fmt(new Date(m.time*1000).toISOString())}${m.message&&m.message!=="."?` · ${esc(m.message)}`:""}</span></span><span class="chip" style="background:${help?"var(--l5)":"var(--l2)"}">${help?"Needs help":"OK"}</span></div>`; }).join("")
+      : `<p class="empty">No check-ins in the last 24 hours.</p>`;
+  }catch(e){ $("ciList").innerHTML = `<p class="empty">Can't reach the alert service right now. If phones are down, use the family plan.</p>`; }
+}
+async function ciSend(help){
+  const c = ci(); if(!c.name || !ciTopicOk(c.topic)) return;
+  if(help && !confirm("Send 'I need help' to every family phone?")) return;
+  $("ciOk").disabled = $("ciHelp").disabled = true;
+  try{
+    const r = await fetch(`https://ntfy.sh/${encodeURIComponent(c.topic)}`, {method:"POST",
+      body: help ? "Call or go to them now if it is safe." : "Checked in from the Early Warning page.",
+      headers:{ "Title": `${c.name} ${help?"NEEDS HELP":"is OK"}`.replace(/[^\x20-\x7E]/g,""), "Priority": help?"5":"3", "Tags": help?"sos,checkin":"white_check_mark,checkin" }});
+    $("ciMsg").textContent = r.ok ? `Sent at ${new Date().toLocaleTimeString("en-AU",{hour:"numeric",minute:"2-digit"})}.` : "Could not send. Try again, or call.";
+  }catch(e){ $("ciMsg").textContent = "Could not send (no connection). Try again, or call."; }
+  $("ciOk").disabled = $("ciHelp").disabled = false; setTimeout(ciLoad, 1500);
+}
+$("ciOk").onclick = () => ciSend(false); $("ciHelp").onclick = () => ciSend(true);
+$("ciSave").onclick = () => { const name=$("ciName").value.trim().replace(/[^\w .'-]/g,""), topic=$("ciTopic").value.trim().replace(/^.*\//,"");
+  if(!name || !ciTopicOk(topic)){ alert("Enter your name and the topic exactly as the ntfy app shows it (letters, numbers, - and _)."); return; }
+  save("checkin", {name, topic}); $("ciSetup").open=false; ciLoad(); };
+
+function renderScore(sc){
+  if(!sc || !sc.month){ $("scoreBox").hidden = true; return; }
+  $("scoreBox").hidden = false;
+  $("score").innerHTML = `<p style="margin:0 0 6px"><b>${esc(sc.month)}:</b> ${esc(sc.sent)} alerts sent · ${esc(sc.useful)} useful · ${esc(sc.noise)} not needed.</p>`
+    + (sc.summary?`<p style="margin:0 0 6px">${esc(sc.summary)}</p>`:"")
+    + ((sc.changes||[]).length?`<ul style="margin:0;padding-left:1.1em">${sc.changes.map(c=>`<li>${esc(c)}</li>`).join("")}</ul>`:"");
+}
+
 // Keep the last good copy on this device so the page still shows something if the internet drops out.
 const save = (k,v) => { try{ localStorage.setItem("ew:"+k, JSON.stringify({at:Date.now(), v})); }catch(e){} };
 const saved = k => { try{ return JSON.parse(localStorage.getItem("ew:"+k)||"null"); }catch(e){ return null; } };
@@ -533,6 +670,8 @@ async function load(){
   renderConcerns(st, ind);
   renderLatest(l);
   renderHappened();
+  CUR_LEVEL = st && st.level ? Math.round(st.level) : 1; renderReady(); ciLoad();
+  if(!DEMO_OK) renderScore(await pull("scorecard", "data/scorecard.json"));
   // Stale-data warning: live data should be under ~30 min old; the analysis runs twice a day.
   const ago = iso => iso ? (Date.now() - new Date(iso).getTime()) / 60000 : Infinity;
   const msgs = [];

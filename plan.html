@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Our Family Plan</title>
+<style>
+:root{--ink:#162028;--muted:#56636d;--line:#c9d0d5;--bg:#e9ecee;--surface:#fff;--accent:#1d3a4f;--red:#c8312b}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif}
+.wrap{max-width:860px;margin:0 auto;padding:16px 16px 48px;display:grid;gap:14px}
+h1{font-size:1.7rem;margin:0}
+h2{font-size:1.05rem;margin:0 0 8px;text-transform:uppercase;letter-spacing:.05em;color:var(--accent)}
+.bar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between}
+.btn{font:600 1rem inherit;border:0;border-radius:8px;padding:11px 16px;background:var(--accent);color:#fff;cursor:pointer;text-decoration:none}
+.btn.ghost{background:transparent;color:var(--accent);border:1px solid var(--accent)}
+.note{color:var(--muted);font-size:.88rem;margin:0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px}
+label{display:grid;gap:3px;font-size:.82rem;color:var(--muted)}
+input,textarea{font:inherit;color:var(--ink);padding:8px 9px;border:1px solid var(--line);border-radius:6px;width:100%;background:#fafbfb}
+textarea{min-height:64px;resize:vertical}
+.rule{border-left:5px solid var(--red);padding:8px 12px;background:#fbeeed;border-radius:4px;font-weight:600}
+.nums{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:6px;font-size:.92rem}
+.nums b{font-size:1.1rem}
+ul.grab{columns:2;margin:0;padding-left:1.1em;font-size:.92rem}
+@media print{
+  body{background:#fff;font-size:11.5px}
+  .wrap{padding:0;gap:8px;max-width:none}
+  .noprint{display:none!important}
+  .card{border:1px solid #999;padding:8px 10px;break-inside:avoid}
+  input,textarea{border:0;border-bottom:1px solid #999;border-radius:0;background:transparent;padding:2px 0;min-height:0}
+  textarea{min-height:34px}
+  h1{font-size:1.4rem}
+  .rule{background:transparent}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="bar">
+    <h1>Our Family Plan</h1>
+    <div class="noprint" style="display:flex;gap:8px"><a class="btn ghost" href="./">← Back</a><button class="btn" onclick="print()">Print</button></div>
+  </div>
+  <p class="note noprint">Fill this in together on a calm day. It saves as you type, on this device only: nothing is sent anywhere. Then print it for the fridge, each car and each grab bag.</p>
+
+  <div class="card">
+    <h2>Call for help</h2>
+    <div class="nums">
+      <span><b>000</b> fire, police, ambulance</span><span><b>132 500</b> SES storm and flood</span>
+      <span><b>1800 362 361</b> CFS bushfire info</span><span><b>13 13 66</b> power outages</span>
+      <span><b>891 AM</b> ABC Radio Adelaide</span><span><b>alert.sa.gov.au</b> warnings map</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Our people</h2>
+    <div class="grid">
+      <label>Name and mobile<input data-k="p1"></label><label>Name and mobile<input data-k="p2"></label>
+      <label>Name and mobile<input data-k="p3"></label><label>Name and mobile<input data-k="p4"></label>
+      <label>Out-of-town contact everyone rings if we can't reach each other<input data-k="away"></label>
+      <label>Neighbour or nearby friend<input data-k="neighbour"></label>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>If we can't call each other</h2>
+    <div class="grid">
+      <label>Meeting place 1 (near home)<input data-k="meet1"></label>
+      <label>Meeting place 2 (out of the area)<input data-k="meet2"></label>
+      <label>How long we wait before moving to place 2<input data-k="wait"></label>
+      <label>Who collects the kids, and from where<input data-k="kids"></label>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Bushfire</h2>
+    <p class="rule">We leave early. We do not wait to see flames or for someone to tell us.</p>
+    <div class="grid" style="margin-top:8px">
+      <label>We leave when (e.g. Catastrophic or Extreme fire danger day; a Watch and Act near home)<textarea data-k="trigger"></textarea></label>
+      <label>Where we go<textarea data-k="firego"></textarea></label>
+      <label>Route 1<input data-k="route1"></label><label>Route 2 if route 1 is blocked<input data-k="route2"></label>
+      <label>If we are caught at home: safest room, and what we do<textarea data-k="shelter"></textarea></label>
+      <label>Before we go: gas off, windows shut, pets in the car, tell…<textarea data-k="beforego"></textarea></label>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Power, phones or internet out</h2>
+    <div class="grid">
+      <label>Where the torches, radio and power banks are<input data-k="kit"></label>
+      <label>Where the cash is<input data-k="cash"></label>
+      <label>Who needs power for medical equipment, and the backup<input data-k="medical"></label>
+      <label>How we cook, keep cool or keep warm without power<input data-k="nopower"></label>
+      <label>Water, gas and power shut-offs are located<input data-k="shutoff"></label>
+      <label>We check on (older family, neighbours)<input data-k="checkon"></label>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Grab and go (two minutes)</h2>
+    <ul class="grab">
+      <li>Phones, chargers, power banks</li><li>Wallets, cash, keys</li><li>Medicines and scripts</li><li>Glasses, hearing aids</li>
+      <li>Water and snacks</li><li>ID, insurance and important papers</li><li>Pets, leads, carriers, food</li><li>Woollen blankets, sturdy shoes, long cotton clothes</li>
+      <li>Battery radio and torch</li><li>Photos and things that can't be replaced</li>
+    </ul>
+    <div class="grid" style="margin-top:8px">
+      <label>Our own extras<textarea data-k="extras"></textarea></label>
+      <label>Pets and animals: who takes what, and where they go<textarea data-k="pets"></textarea></label>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Medical and other needs</h2>
+    <label>Conditions, allergies, medicines, doctor and pharmacy<textarea data-k="health"></textarea></label>
+  </div>
+  <p class="note">Last updated: <span id="when">not yet filled in</span>. Go through it again at the start of every fire season.</p>
+</div>
+<script>
+const KEY = "ew:plan";
+let data = {}; try { data = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) {}
+const stamp = () => { document.getElementById("when").textContent = data._at ? new Date(data._at).toLocaleDateString("en-AU", {day:"numeric", month:"long", year:"numeric"}) : "not yet filled in"; };
+document.querySelectorAll("[data-k]").forEach(el => {
+  el.value = data[el.dataset.k] || "";
+  el.addEventListener("input", () => { data[el.dataset.k] = el.value; data._at = Date.now();
+    try { localStorage.setItem(KEY, JSON.stringify(data)); } catch (e) {} stamp(); });
+});
+stamp();
+</script>
+</body>
+</html>
