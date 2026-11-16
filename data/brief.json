@@ -1,7 +1,13 @@
 {
   "about": "Short form of latest.json + indicators.json for the analysis run. Links and raw samples removed.",
   "acsc": [],
-  "aircraft_flags": {},
+  "aircraft_flags": {
+    "mil_total": {
+      "median": 106,
+      "status": "ANOMALY",
+      "value": 249
+    }
+  },
   "analyst": {
     "ASPI Strategist": [
       "Too dependent on summits, the Quad needs institutional foundations",
@@ -22,7 +28,62 @@
       "AUKUS inquiry scepticism runs only one way"
     ]
   },
-  "chokepoints": {},
+  "chokepoints": {
+    "Bab el-Mandeb Strait": {
+      "avg_7d": 26.3,
+      "change_pct": -3.7,
+      "last_date": "2026-11-08",
+      "usual_7d": 27.3
+    },
+    "Lombok Strait": {
+      "avg_7d": 40.9,
+      "change_pct": 6.3,
+      "last_date": "2026-11-08",
+      "usual_7d": 38.4
+    },
+    "Luzon Strait": {
+      "avg_7d": 96.7,
+      "change_pct": -4.0,
+      "last_date": "2026-11-08",
+      "usual_7d": 100.7
+    },
+    "Malacca Strait": {
+      "avg_7d": 235.9,
+      "change_pct": 4.2,
+      "last_date": "2026-11-08",
+      "usual_7d": 226.3
+    },
+    "Strait of Hormuz": {
+      "avg_7d": 3.9,
+      "change_pct": 3.8,
+      "last_date": "2026-11-08",
+      "usual_7d": 3.7
+    },
+    "Suez Canal": {
+      "avg_7d": 44.4,
+      "change_pct": 6.1,
+      "last_date": "2026-11-08",
+      "usual_7d": 41.9
+    },
+    "Sunda Strait": {
+      "avg_7d": 33.9,
+      "change_pct": 0.9,
+      "last_date": "2026-11-08",
+      "usual_7d": 33.6
+    },
+    "Taiwan Strait": {
+      "avg_7d": 229.9,
+      "change_pct": 0.0,
+      "last_date": "2026-11-08",
+      "usual_7d": 229.9
+    },
+    "Torres Strait": {
+      "avg_7d": 8.0,
+      "change_pct": -5.1,
+      "last_date": "2026-11-08",
+      "usual_7d": 8.4
+    }
+  },
   "cisa": [
     "CISA Adds Two Known Exploited Vulnerabilities to Catalog",
     "Siemens Desigo, Gridscale",
@@ -63,25 +124,43 @@
   },
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
-    "chokepoints": "RuntimeError: PortWatch returned no rows: {\"error\": {\"code\": 499, \"message\": \"Token Required\", \"messageCode\": \"GWM_0003\"",
+    "incidents": "ValueError: time data 'Info' does not match format '%Y-%m-%dT%H:%M:%SZ'",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [
     "Orange notification for tropical cyclone AKVAN-26. Population affected by Category 1 (120 km/h) wind speeds or higher is 0  (20.826 million in Tropical Storm).",
     "Drought is on going in Aruba, , Brazil, Colombia, Costa Rica, , French Guiana, Guyana, Panama, Suriname, Venezuela"
   ],
-  "generated_at": "2026-11-16T23:04:00Z",
+  "generated_at": "2026-11-16T23:20:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 56,
-    "Black Sea": 29,
-    "Israel & Eastern Mediterranean": 10,
+    "Baltic / Kaliningrad": null,
+    "Black Sea": 30,
+    "Israel & Eastern Mediterranean": 11,
     "Korea": 0,
-    "Persian Gulf": 8,
-    "South Australia": 12,
-    "Sydney / NSW": 10,
+    "Persian Gulf": 10,
+    "South Australia": 11,
+    "Sydney / NSW": 7,
     "Taiwan Strait": 0
   },
   "incidents": [
+    {
+      "confirmed": true,
+      "headlines": [
+        "Microsoft says latent July bug triggered global Microsoft 365 outage",
+        "Microsoft says months-old bug caused global Microsoft 365 outage",
+        "Microsoft Says July Windows Patch Triggered 24-Hour Microsoft 365 Outage That Took Down 80% of Gateway Servers"
+      ],
+      "severity": "Warning",
+      "target": "Microsoft"
+    },
+    {
+      "confirmed": false,
+      "headlines": [
+        "Nationwide outage impacts Chase banking online and at some branches"
+      ],
+      "severity": "Info",
+      "target": "Phone & internet networks"
+    },
     {
       "confirmed": false,
       "headlines": [
@@ -89,6 +168,14 @@
       ],
       "severity": "Info",
       "target": "Supermarkets & food"
+    },
+    {
+      "confirmed": false,
+      "headlines": [
+        "Wait, Why Did Every Major Bank Just Go Down?"
+      ],
+      "severity": "Info",
+      "target": "Banking & payments"
     },
     {
       "confirmed": false,
@@ -111,7 +198,7 @@
       "headlines": [
         "US judge strikes down Trump visa policy limiting foreign students to four years, journalists to 240 days",
         "US judge strikes down new visa rules for foreign students, journalists",
-        "AI finds zero-day flaws for just $4 now – even mediocre hackers can cash in"
+        "US judge strikes down new visa rules for foreign students and journalists"
       ],
       "severity": "Info",
       "target": "Other services"
@@ -141,20 +228,20 @@
       "target": "Google Finds Hackers"
     },
     {
-      "confirmed": true,
-      "headlines": [
-        "FBI says Artex AI open source hacking tool used to breach networks in ‘under three hours’"
-      ],
-      "severity": "Info",
-      "target": "FBI"
-    },
-    {
       "confirmed": false,
       "headlines": [
         "‘New type’ of AI-powered cyberattack hits one of Poland’s largest online payment platforms"
       ],
       "severity": "Info",
       "target": "New"
+    },
+    {
+      "confirmed": true,
+      "headlines": [
+        "FBI says Artex AI open source hacking tool used to breach networks in ‘under three hours’"
+      ],
+      "severity": "Info",
+      "target": "FBI"
     },
     {
       "confirmed": false,
@@ -167,11 +254,11 @@
   ],
   "internet_drop_pct": {
     "China": 0.0,
-    "Iran": 0.4,
-    "Israel": 0.0,
-    "Russia": 0.2,
+    "Iran": 0.2,
+    "Israel": 0.5,
+    "Russia": 0.1,
     "South Korea": 0.1,
-    "Taiwan": 0.3
+    "Taiwan": 0.0
   },
   "local_sa": {
     "bom": [
@@ -190,16 +277,16 @@
       "Mount Lofty Ranges": "Moderate / Moderate"
     },
     "fire_danger_ok": true,
-    "fires_active": 2,
+    "fires_active": 1,
     "fuel": {
-      "brent_aud": 138.2,
-      "change_pct": 3.3,
+      "brent_aud": 137.9,
+      "change_pct": 3.1,
       "pump_cents": 3,
       "week_ago_aud": 133.7
     },
-    "grid_demand_fall_pct": 32.0,
-    "grid_demand_mw": 543,
-    "grid_demand_usual_mw": 821,
+    "grid_demand_fall_pct": 56.7,
+    "grid_demand_mw": 300,
+    "grid_demand_usual_mw": 796,
     "grid_lor_level": 0,
     "nearby_incidents": [
       {
@@ -255,16 +342,16 @@
   },
   "markets": {
     "AUD/USD": {
-      "change_pct": -1.06,
-      "price": 0.6735
+      "change_pct": -1.01,
+      "price": 0.6738
     },
     "Brent oil": {
-      "change_pct": -4.17,
-      "price": 91.84
+      "change_pct": -3.9,
+      "price": 92.1
     },
     "Gold": {
-      "change_pct": -0.7,
-      "price": 3859.0
+      "change_pct": -0.75,
+      "price": 3857.2
     },
     "VIX": {
       "change_pct": 18.7,
@@ -292,30 +379,22 @@
     "ai_hack": [
       "Barracuda links cloud breach to ARTEX AI-powered cyberattack - BleepingComputer",
       "Google Finds Hackers Using AI Agents to Build and Run Exploits From Software Patches - The Hacker News",
-      "FBI says Artex AI open source hacking tool used to breach networks in ‘under three hours’ - TechCrunch"
-    ],
-    "airspace": [
-      "Alert in the US: Trump reveals why all flights were grounded — some equipment is up to 55 years old - El Cronista"
-    ],
-    "aviation_halt": [
-      "Trump bristles at criticism over grounding of planes, blaming old tech and Biden for the problems - AP News",
-      "WSJ Opinion: The FAA Ground Stop Blame Game, After 12,000 Canceled Flights - The Australian",
-      "Nationwide ground stop could cost US airlines hundreds of millions - Al Jazeera"
+      "‘New type’ of AI-powered cyberattack hits one of Poland’s largest online payment platforms - TVP World"
     ],
     "bank_outage": [
       "Huge change coming for Aussie ATMs - News.com.au",
-      "JPMorgan says software bug slows its transactions - Reuters",
-      "When Technology Fails, America Needs a Backup Plan - NAB Blog -"
+      "US judge strikes down new visa rules for foreign students and journalists - Le Monde.fr",
+      "JPMorgan says software bug slows its transactions - Reuters"
     ],
     "blood": [
       "Sometimes Hoofbeats Are Zebras: How Misdiagnoses Obscure Narcolepsy - U.S. Medicine",
       "Disrupted Sleep, Shifting Schedules and Stimulants - U.S. Medicine",
       "How Veterans' Cardiovascular, Kidney and Metabolic Disease Shapes Their Sleep Problems, and Their Treatment Choices - U.S. Medicine"
     ],
-    "cables": [
-      "Faridpur’s Narikelbarya remains in darkness for 10 months after cable rupture - www.daily-sun.com",
-      "India looking at new subsea cable landing sites on east coast to cut West Asia risks - Moneycontrol.com",
-      "DoGo's Grid-Forming ESS Delivers Round-the-Clock Power to 2,000 Households on Remote Indonesian Island - The Manila Times"
+    "cloud": [
+      "Insurers dodge payouts after global Microsoft outage - Herald Sun",
+      "Microsoft blames its Microsoft 365 outage on a dormant July update defect - The Next Web",
+      "Wait, Why Did Every Major Bank Just Go Down? - Futurism"
     ],
     "cn_signals": [
       "IAF Chief: True Self Reliance is Crucial for Future War Preparedness - Asianet Newsable"
@@ -335,15 +414,10 @@
       "Satire or propaganda? How AI-generated videos blur the lines - eKathimerini.com",
       "President Chain Store: 9M26 sales grew 5.7%, with expansion and digital investment driving the growth agenda - TradingView"
     ],
-    "fuel_au": [
-      "Minns pulls property crackdown as falling stamp duty hits public sector - The Mandarin",
-      "Could war in Iran affect your retirement nest egg and share portfolio? - The Senior",
-      "Nation’s truck driver shortage hits 12pc - GoAuto.com.au"
-    ],
-    "illness": [
-      "Mystery illness causes mass hospitalisation of runners - The Nightly",
-      "Zayn Malik hospitalised with mystery illness, forced to cancel upcoming appearances on album release week - Nine.com.au",
-      "Mystery Pneumonia Death Sparks Concern; Trader Joe's Recall; OUD in Young People - MedPage Today"
+    "flash": [
+      "REG - Empire Metals Ltd - Capital Access Window - Trading Halt - TradingView",
+      "Lighter and Aster blame outsiders after $15.5M drain, ASTER flash crash - CryptoRank",
+      "Battery Circuit Breakers Market To 2035: EV and Storage Demand Drive Growth - News and Statistics - IndexBox"
     ],
     "masscas": [
       "Preliminary investigation points to steering failure in tanker collision with river cruise ship - WDSU",
@@ -352,6 +426,11 @@
     ],
     "medexport": [
       "Taliban Turn To Iran To Address Medicine Shortages In Afghanistan - Afghanistan International"
+    ],
+    "mobilisation": [
+      "Actor Oleksandr Oleksenko has been called up to serve in the Armed Forces of Ukraine - UA.NEWS",
+      "\"MMC Five-Minute Check\": A Man Claimed He Didn't See Any Doctor, But Was Declared Fit - Судово-юридична газета",
+      "Deferment in Reserve+ did not save: The Territorial Recruitment Center illegally mobilized a student, and the court refused to release him from service - Судово-юридична газета"
     ],
     "national_outage": [
       "Nationwide outage impacts Chase banking online and at some branches - NBC News",
@@ -375,11 +454,6 @@
     ],
     "sawater": [
       "DCWD trains upland brgys on water safety - SunStar Publishing Inc."
-    ],
-    "scams": [
-      "AI agents to drive fraud surge for Australian firms - SecurityBrief Australia",
-      "Deepfake era puts likeness in legal spotlight as EU works to define what’s allowed - Biometric Update",
-      "Call Trust Deepfake Detection introduced as Ribbon Communications targets telecom fraud - Traders Union"
     ]
   },
   "prediction_markets": [
@@ -459,12 +533,12 @@
       "yes": 19.5
     },
     {
-      "d24h": null,
+      "d24h": -1.0,
       "q": "Iran charges Hormuz fees by December 31?",
       "yes": 9.5
     },
     {
-      "d24h": -1.0,
+      "d24h": -0.8,
       "q": "NATO x Russia military clash by November 30, 2026?",
       "yes": 1.8
     },
@@ -484,9 +558,9 @@
       "yes": 2.1
     },
     {
-      "d24h": -0.3,
+      "d24h": 0.4,
       "q": "Will the U.S. test a nuclear weapon by December 31 2026?",
-      "yes": 2.8
+      "yes": 3.0
     },
     {
       "d24h": 1.0,
@@ -800,10 +874,10 @@
     },
     {
       "band": "Elevated",
-      "convergence": "Signs are converging across 3 separate areas (ai-enabled hacking, fraud waves and synthetic media). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: a Chines",
+      "convergence": "Signs are converging across 3 separate areas (ai-enabled hacking, cloud services and synthetic media). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: a Chi",
       "domains": [
         "AI-enabled hacking",
-        "Fraud waves",
+        "Cloud services",
         "Synthetic media"
       ],
       "key": "ai",
@@ -817,16 +891,16 @@
           "name": "Deepfakes of leaders or fake official alerts"
         },
         {
-          "detail": "Deepfake era puts likeness in legal spotlight as EU works to define what’s allowed",
-          "name": "Surge in AI voice-clone / deepfake scams in Australia"
+          "detail": "Insurers dodge payouts after global Microsoft outage",
+          "name": "Major cloud or AI service outage"
         }
       ],
-      "score": 35,
+      "score": 40,
       "trend": "up"
     }
   ],
   "sectors_relative_5d": {
-    "defence_au": -1.08,
+    "defence_au": -6.34,
     "defence_eu": 0.45,
     "defence_us": 1.03,
     "pandemic": -3.06
@@ -836,8 +910,8 @@
     "Aussie Broadband": 0.0,
     "Optus": 0.0,
     "TPG": 0.2,
-    "Telstra": 0.2,
-    "Vodafone": 9.5
+    "Telstra": 0.0,
+    "Vodafone": 0.0
   },
   "us_departure_orders": [
     "Belarus"
@@ -876,9 +950,9 @@
     {
       "active": true,
       "first_seen": "2026-11-16T22:06:00Z",
-      "last_seen": "2026-11-16T22:57:00Z",
+      "last_seen": "2026-11-16T23:20:00Z",
       "region": "several regions",
-      "text": "243 military aircraft airborne (usual ~106.5)",
+      "text": "249 military aircraft airborne (usual ~106)",
       "what": "unusual military flights"
     }
   ],
