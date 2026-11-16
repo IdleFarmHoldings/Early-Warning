@@ -70,14 +70,14 @@
   "gdacs_orange_red": [
     "Drought is on going in Aruba, , Brazil, Colombia, Costa Rica, , French Guiana, Guyana, Panama, Suriname, Venezuela"
   ],
-  "generated_at": "2026-11-16T17:46:00Z",
+  "generated_at": "2026-11-16T17:52:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 21,
+    "Baltic / Kaliningrad": 19,
     "Black Sea": null,
-    "Israel & Eastern Mediterranean": 0,
+    "Israel & Eastern Mediterranean": 3,
     "Korea": null,
-    "Persian Gulf": 41,
-    "South Australia": 0,
+    "Persian Gulf": 14,
+    "South Australia": null,
     "Sydney / NSW": null,
     "Taiwan Strait": 0
   },
@@ -160,10 +160,10 @@
   "internet_drop_pct": {
     "China": 0.0,
     "Iran": 0.0,
-    "Israel": 0.4,
+    "Israel": 0.0,
     "Russia": 0.0,
     "South Korea": 0.3,
-    "Taiwan": 1.2
+    "Taiwan": 1.0
   },
   "local_sa": {
     "bom": [
@@ -186,14 +186,14 @@
     "fire_danger_ok": true,
     "fires_active": 1,
     "fuel": {
-      "brent_aud": 139.5,
-      "change_pct": 4.9,
+      "brent_aud": 139.4,
+      "change_pct": 4.8,
       "pump_cents": 4,
       "week_ago_aud": 133.0
     },
-    "grid_demand_fall_pct": 5.5,
-    "grid_demand_mw": 1192,
-    "grid_demand_usual_mw": 1233,
+    "grid_demand_fall_pct": 1.0,
+    "grid_demand_mw": 1205,
+    "grid_demand_usual_mw": 1226,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
@@ -240,20 +240,20 @@
   },
   "markets": {
     "AUD/USD": {
-      "change_pct": -0.84,
-      "price": 0.675
+      "change_pct": -0.85,
+      "price": 0.6749
     },
     "Brent oil": {
-      "change_pct": -2.87,
-      "price": 93.09
+      "change_pct": -2.71,
+      "price": 93.24
     },
     "Gold": {
-      "change_pct": -0.42,
-      "price": 3869.9
+      "change_pct": -0.55,
+      "price": 3864.9
     },
     "VIX": {
-      "change_pct": 12.02,
-      "price": 21.62
+      "change_pct": 12.9,
+      "price": 21.79
     }
   },
   "national_shocks": {
@@ -262,7 +262,37 @@
       "ground_stops": [],
       "national": false
     },
-    "shocks": [],
+    "shocks": [
+      {
+        "code": "US",
+        "country": "United States",
+        "headlines": [
+          {
+            "at": "2026-11-16T16:52:32Z",
+            "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQMXVvaE5vaTUtelJiNmgtdkk2OEJiN3MyLTRhTExKY1g3R3pOOXRvNFg2ZmhyOXZpZjhTRGNDVldGV2RIRXU4bUt3c2JFWWJxTHh2ZUNfZ0NCYjktUFpFM1lxU0RMdzVncXNFdnNqQ0ZaeHdnNE5ZRE5YdmdxUmtORkFvRUFDZw?oc=5",
+            "pub": "Halldale Group",
+            "title": "FAA Statement on Nationwide Ground Stop"
+          },
+          {
+            "at": "2026-11-16T17:41:00Z",
+            "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQcTFMekl4Znd6WDJjM21SdjdhVzlLLURjRlIxNGN2VW9CM1hreDRnMDFiMlFpMkIxdHVobzRPbmVIQ1JKY3d6S19JRE1SRWswZ0pUN3JhdzVIVThGbWFONFYxSjlyVEgtcHRUODFyQ19WTm4yaVRKNVlvRVhnLS1QYmlQMm8zaEppeEtvdzg1OVhDLUk1dDllcjZfRUE3UDdMWnIzMXlwVDNyU1RVenc?oc=5",
+            "pub": "WXXI News",
+            "title": "FAA: L3Harris router in Arkansas sparked nationwide ground stop"
+          },
+          {
+            "at": "2026-11-16T17:37:19Z",
+            "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQMThEYXBrX09RdURWRlEwa29EczFuU01oYlFBbXNYU2FCR2hhOHg1ZC16dGQ5MG5EcVJ1WVJjRnpSMU9EcmNGWHhjUzlSY0hvNk1FcnpScER1Z25OOTJIa3lXeFhqY21zQnF3UkpURHMwLVBhZ1RnNEdmUjNscWs1b0NkTjBGYll1Qmg3NDRFVEN4M2Q3RW1DTVVoSU1GSWhpTFV3cHRrcFFzRGhvRUVrb2tRX2YzZEVfUGlxTmJMS1EzNS01U0M1d0xRWQ?oc=5",
+            "pub": "El Cronista",
+            "title": "Alert in the US: Trump reveals why all flights were grounded — some equipment is up to 55 years old"
+          }
+        ],
+        "level": "Possible",
+        "sector": "aviation",
+        "signals": {
+          "news": "3 outlets: FAA Statement on Nationwide Ground Stop"
+        }
+      }
+    ],
     "tracking_glitch": false,
     "traffic_not_normal": {}
   },
@@ -279,8 +309,8 @@
       "What Caused the U.S. Flight Shutdown? Unraveling the Clues Behind the System Failure - CubaHeadlines"
     ],
     "aviation_halt": [
+      "Transportation Secretary Duffy says ATC routers' ability to broadcast data turned off, being investigated - ABC News - Breaking News, Latest News and Videos",
       "Nationwide Ground Stop Cost ‘Billions of Dollars,’ Duffy Says - Bloomberg",
-      "Trump blames ground stop on old tech that had 'heart attack' - ABC News - Breaking News, Latest News and Videos",
       "Trump blames Biden for airline ground stop - ABC News & Headlines – Australian Broadcasting Corporation"
     ],
     "bank_outage": [
@@ -336,7 +366,7 @@
     "flash": [
       "REG - Empire Metals Ltd - Capital Access Window - Trading Halt - TradingView",
       "Gorilla Gold Mines Enters Trading Halt Pending Material Acquisition and Equity Raising Announcement - Kalkine",
-      "EPX Limited Requests Trading Halt Pending Capital Raising Bookbuild Outcome - Kalkine"
+      "Lighter and Aster blame outsiders after $15.5M drain, ASTER flash crash - CryptoRank"
     ],
     "fuel_au": [
       "Nation’s truck driver shortage hits 12pc - GoAuto.com.au",
@@ -349,16 +379,16 @@
       "Mystery Pneumonia Death Sparks Concern; Trader Joe's Recall; OUD in Young People - MedPage Today"
     ],
     "masscas": [
-      "5 remain hospitalized as NTSB investigation into tanker, cruise ship crash continues - WDSU",
       "Shootout at gun show leaves person dead and SC deputy hospitalized, sheriff says - The State",
-      "The European Commission, WHO and NATO are calling for urgent measures for European hospitals, which are vulnerable to wars and pandemics - Informat.ro"
+      "5 remain hospitalized as NTSB investigation into tanker, cruise ship crash continues - WDSU",
+      "U.S. Soldiers Googled Hospitals After Deadly Iran Strike - USA Herald"
     ],
     "medexport": [
       "Taliban Turn To Iran To Address Medicine Shortages In Afghanistan - Afghanistan International"
     ],
     "mobilisation": [
-      "Deferment in Reserve+ did not save: The Territorial Recruitment Center illegally mobilized a student, and the court refused to release him from service - Судово-юридична газета",
       "Actor Oleksandr Oleksenko has been called up to serve in the Armed Forces of Ukraine - UA.NEWS",
+      "Lawyer was declared fit without test results and appointed a grenadier: court canceled the MMC conclusion but not the mobilization - Судово-юридична газета",
       "In Moscow, conscripts are being offered the option of replacing compulsory military service with a contract in the drone forces - Українські Національні Новини (УНН)"
     ],
     "murray": [
@@ -495,14 +525,14 @@
       "yes": 2.1
     },
     {
-      "d24h": -0.2,
+      "d24h": -0.1,
       "q": "Will the U.S. test a nuclear weapon by December 31 2026?",
-      "yes": 2.8
+      "yes": 2.9
     },
     {
-      "d24h": 0.5,
+      "d24h": 1.5,
       "q": "Will Russia invade another country by December 31, 2027?",
-      "yes": 18.0
+      "yes": 19.0
     },
     {
       "d24h": 4.0,
@@ -848,8 +878,8 @@
   "sectors_relative_5d": {
     "defence_au": -0.57,
     "defence_eu": -1.09,
-    "defence_us": 0.96,
-    "pandemic": -3.6
+    "defence_us": 0.9,
+    "pandemic": -3.76
   },
   "tankers": "normal",
   "telecom_drop_pct": {
