@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T20:43:00Z",
+  "generated_at": "2026-11-16T20:57:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -19,7 +19,7 @@
           "weight": 10
         },
         {
-          "detail": "Flinders Medical Centre; Modbury; Royal Adelaide; Women's and Children's",
+          "detail": "Flinders Medical Centre; Royal Adelaide; Women's and Children's",
           "domain": "Hospitals",
           "id": "ed",
           "name": "Three or more Adelaide emergency departments 'very busy'",
@@ -651,7 +651,7 @@
           "weight": 15
         },
         {
-          "detail": "Flinders Medical Centre; Modbury; Royal Adelaide; Women's and Children's",
+          "detail": "Flinders Medical Centre; Royal Adelaide; Women's and Children's",
           "domain": "Hospitals",
           "id": "ed",
           "name": "Three or more Adelaide emergency departments 'very busy'",
@@ -710,24 +710,14 @@
     },
     {
       "band": "Low",
-      "convergence": "Only one kind of sign is showing (australian incidents). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: sudden fall in sa electricity demand (possible large blackout), global cyber threat level raised (sans infocon not green) and several vpn / firewall flaws exploited this week.",
-      "domains": [
-        "Australian incidents"
-      ],
+      "convergence": "No warning signs are showing. The strongest signs not yet showing: sudden fall in sa electricity demand (possible large blackout), global cyber threat level raised (sans infocon not green) and several vpn / firewall flaws exploited this week.",
+      "domains": [],
       "key": "cyber",
-      "lit": [
-        {
-          "detail": "French cyber attack highlights risks for Australia's smart buildings",
-          "domain": "Australian incidents",
-          "id": "au",
-          "name": "Major Australian cyber incident reported",
-          "weight": 10
-        }
-      ],
+      "lit": [],
       "name": "Major cyber attack on Australia",
       "sa_impact": "Banks, payments, hospitals, fuel distribution, telcos and the power grid all run on networks; a large attack can stop card payments and services for hours to days.",
-      "score": 10,
-      "trend": "steady",
+      "score": 0,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Global threat level",
@@ -772,6 +762,12 @@
           "weight": 15
         },
         {
+          "domain": "Australian incidents",
+          "id": "au",
+          "name": "Major Australian cyber incident reported",
+          "weight": 10
+        },
+        {
           "domain": "Communications",
           "id": "tel",
           "name": "Phone / internet carrier outage",
@@ -794,43 +790,29 @@
     },
     {
       "band": "Guarded",
-      "convergence": "Two different kinds of sign are showing together (cloud services and fraud waves). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, reports of ai-driven hacking campaigns and deepfakes of leaders or fake official alerts.",
+      "convergence": "Only one kind of sign is showing (ai-enabled hacking). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, deepfakes of leaders or fake official alerts and flash crash or exchange trading halt.",
       "domains": [
-        "Cloud services",
-        "Fraud waves"
+        "AI-enabled hacking"
       ],
       "key": "ai",
       "lit": [
         {
-          "detail": "Insurers dodge payouts after global Microsoft outage",
-          "domain": "Cloud services",
-          "id": "cloud",
-          "name": "Major cloud or AI service outage",
-          "weight": 10
-        },
-        {
-          "detail": "Deepfake Fraud Has Cost Almost $4 Billion Worldwide Since 2020",
-          "domain": "Fraud waves",
-          "id": "scams",
-          "name": "Surge in AI voice-clone / deepfake scams in Australia",
-          "weight": 5
+          "detail": "Barracuda links cloud breach to ARTEX AI-powered cyberattack",
+          "domain": "AI-enabled hacking",
+          "id": "aihack",
+          "name": "Reports of AI-driven hacking campaigns",
+          "weight": 15
         }
       ],
       "name": "AI-enabled attack (non-traditional)",
       "sa_impact": "Not bombs but disruption: hacking at machine speed across banks, telcos, hospitals and the grid at once; fake videos or alerts from leaders causing panic buying or bank runs; or automated market and fraud shocks. Effects would be outages, payment failures and confusion about what is real.",
       "score": 15,
-      "trend": "down",
+      "trend": "steady",
       "unlit": [
         {
           "domain": "Mass exploitation",
           "id": "breadth",
           "name": "Exploited flaws across unusually many vendors at once",
-          "weight": 15
-        },
-        {
-          "domain": "AI-enabled hacking",
-          "id": "aihack",
-          "name": "Reports of AI-driven hacking campaigns",
           "weight": 15
         },
         {
@@ -852,10 +834,22 @@
           "weight": 10
         },
         {
+          "domain": "Cloud services",
+          "id": "cloud",
+          "name": "Major cloud or AI service outage",
+          "weight": 10
+        },
+        {
           "domain": "Communications",
           "id": "tel",
           "name": "Phone / internet carrier outage",
           "weight": 10
+        },
+        {
+          "domain": "Fraud waves",
+          "id": "scams",
+          "name": "Surge in AI voice-clone / deepfake scams in Australia",
+          "weight": 5
         },
         {
           "domain": "Edge-device exploitation",
