@@ -22,7 +22,62 @@
       "First Nations IP protection risks going from “miracle to mirage”"
     ]
   },
-  "chokepoints": {},
+  "chokepoints": {
+    "Bab el-Mandeb Strait": {
+      "avg_7d": 26.3,
+      "change_pct": -3.7,
+      "last_date": "2026-11-08",
+      "usual_7d": 27.3
+    },
+    "Lombok Strait": {
+      "avg_7d": 40.9,
+      "change_pct": 6.3,
+      "last_date": "2026-11-08",
+      "usual_7d": 38.4
+    },
+    "Luzon Strait": {
+      "avg_7d": 96.7,
+      "change_pct": -4.0,
+      "last_date": "2026-11-08",
+      "usual_7d": 100.7
+    },
+    "Malacca Strait": {
+      "avg_7d": 235.9,
+      "change_pct": 4.2,
+      "last_date": "2026-11-08",
+      "usual_7d": 226.3
+    },
+    "Strait of Hormuz": {
+      "avg_7d": 3.9,
+      "change_pct": 3.8,
+      "last_date": "2026-11-08",
+      "usual_7d": 3.7
+    },
+    "Suez Canal": {
+      "avg_7d": 44.4,
+      "change_pct": 6.1,
+      "last_date": "2026-11-08",
+      "usual_7d": 41.9
+    },
+    "Sunda Strait": {
+      "avg_7d": 33.9,
+      "change_pct": 0.9,
+      "last_date": "2026-11-08",
+      "usual_7d": 33.6
+    },
+    "Taiwan Strait": {
+      "avg_7d": 229.9,
+      "change_pct": 0.0,
+      "last_date": "2026-11-08",
+      "usual_7d": 229.9
+    },
+    "Torres Strait": {
+      "avg_7d": 8.0,
+      "change_pct": -5.1,
+      "last_date": "2026-11-08",
+      "usual_7d": 8.4
+    }
+  },
   "cisa": [
     "CISA Adds Two Known Exploited Vulnerabilities to Catalog",
     "Siemens Desigo, Gridscale",
@@ -63,25 +118,33 @@
   },
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
-    "chokepoints": "RuntimeError: PortWatch returned no rows: {\"error\": {\"code\": 429, \"message\": \"Unable to perform query. Too many requests",
     "incidents": "ValueError: time data 'Info' does not match format '%Y-%m-%dT%H:%M:%SZ'",
-    "navwarn": "RuntimeError: cast-warn?status=A&output=json: TimeoutError: The read operation timed out; ons/broadcast-warn?output=json"
+    "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [
     "Drought is on going in Aruba, , Brazil, Colombia, Costa Rica, , French Guiana, Guyana, Panama, Suriname, Venezuela"
   ],
-  "generated_at": "2026-11-16T14:56:00Z",
+  "generated_at": "2026-11-16T15:11:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 24,
-    "Black Sea": 33,
-    "Israel & Eastern Mediterranean": 4,
-    "Korea": 5,
-    "Persian Gulf": 2,
+    "Baltic / Kaliningrad": 25,
+    "Black Sea": 30,
+    "Israel & Eastern Mediterranean": 9,
+    "Korea": 0,
+    "Persian Gulf": 7,
     "South Australia": null,
     "Sydney / NSW": null,
     "Taiwan Strait": 0
   },
   "incidents": [
+    {
+      "confirmed": true,
+      "headlines": [
+        "Coles supermarket cyber attack: Australia’s retailer investigates security breach",
+        "Coles investigates cyber attack but provides little detail"
+      ],
+      "severity": "Warning",
+      "target": "Supermarkets & food"
+    },
     {
       "confirmed": true,
       "headlines": [
@@ -99,14 +162,6 @@
       ],
       "severity": "Info",
       "target": "Undersea cables"
-    },
-    {
-      "confirmed": false,
-      "headlines": [
-        "Coles investigates cyber attack but provides little detail"
-      ],
-      "severity": "Info",
-      "target": "Supermarkets & food"
     },
     {
       "confirmed": false,
@@ -158,12 +213,12 @@
     }
   ],
   "internet_drop_pct": {
-    "China": 1.6,
+    "China": 1.4,
     "Iran": 0.0,
     "Israel": 0.0,
     "Russia": 0.0,
     "South Korea": 0.1,
-    "Taiwan": 0.2
+    "Taiwan": 0.3
   },
   "local_sa": {
     "bom": [
@@ -186,11 +241,11 @@
       "brent_aud": 140.5,
       "change_pct": 5.6,
       "pump_cents": 5,
-      "week_ago_aud": 133.1
+      "week_ago_aud": 133.0
     },
-    "grid_demand_fall_pct": 0.5,
-    "grid_demand_mw": 1358,
-    "grid_demand_usual_mw": 1346,
+    "grid_demand_fall_pct": 4.2,
+    "grid_demand_mw": 1308,
+    "grid_demand_usual_mw": 1336,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
@@ -200,26 +255,7 @@
         "pm25": 9
       },
       "air_word": "Good",
-      "days": [
-        {
-          "date": "2026-11-17",
-          "gust": 42,
-          "rain": 0,
-          "tmax": 22
-        },
-        {
-          "date": "2026-11-18",
-          "gust": 40,
-          "rain": 0,
-          "tmax": 24
-        },
-        {
-          "date": "2026-11-19",
-          "gust": 63,
-          "rain": 3,
-          "tmax": 28
-        }
-      ]
+      "days": []
     },
     "possible_blackout": false,
     "power_news": [],
@@ -237,20 +273,20 @@
   },
   "markets": {
     "AUD/USD": {
-      "change_pct": -0.84,
-      "price": 0.675
+      "change_pct": -0.85,
+      "price": 0.6749
     },
     "Brent oil": {
-      "change_pct": -2.29,
-      "price": 93.65
+      "change_pct": -2.54,
+      "price": 93.41
     },
     "Gold": {
-      "change_pct": -0.05,
-      "price": 3884.4
+      "change_pct": 0.03,
+      "price": 3887.3
     },
     "VIX": {
-      "change_pct": 8.5,
-      "price": 20.94
+      "change_pct": 6.94,
+      "price": 20.64
     }
   },
   "national_shocks": {
@@ -275,14 +311,14 @@
       "What Caused the U.S. Flight Shutdown? Unraveling the Clues Behind the System Failure - CubaHeadlines"
     ],
     "aviation_halt": [
+      "Transportation Secretary Duffy says ATC routers' ability to broadcast data turned off, being investigated - ABC News - Breaking News, Latest News and Videos",
       "Trump blames Biden for airline ground stop - ABC News & Headlines – Australian Broadcasting Corporation",
-      "Top four US airlines face $345 million hit from FAA ground stop, Bernstein estimates - Reuters",
-      "Ground Stop update, France mail cyberattack, Fireworks breach fallout - LinkedIn"
+      "Nationwide Ground Stop Cost ‘Billions of Dollars,’ Duffy Says - Bloomberg"
     ],
     "bank_outage": [
       "'It was so real': how fake online stores are targeting holiday shoppers - CommBank",
       "Huge change coming for Aussie ATMs - News.com.au",
-      "NSW Blues Women set for Townsville showdown in 2027 State of Origin - New South Wales Rugby League"
+      "Westpac NSW Blues Women set for Townsville showdown in 2027 State of Origin - New South Wales Rugby League"
     ],
     "blood": [
       "Lagos trains health workers to boost voluntary blood donation - Head Topics"
@@ -294,21 +330,21 @@
     ],
     "chem": [
       "Spain provides EUR 350,000 in voluntary funding to support OPCW’s work - Organisation for the Prohibition of Chemical Weapons",
-      "Spain allocates €300,000 to support OPCW missions in Syria - سانا",
-      "China urges Japan to speed up destruction of abandoned chemical weapons - 巴士的報"
+      "Finland Gives €50,000 to Boost OPCW Work - Mirage News",
+      "Spain allocates €300,000 to support OPCW missions in Syria - سانا"
     ],
     "cloud": [
+      "Microsoft says three-month-old bug behind global M365 outage - iTnews",
       "Microsoft 365 outage loss estimates range from minimal to US$700 million - Insurance Business",
-      "Microsoft 365 Outage Traced to a Network Upgrade as Services Recover - Technology Org",
-      "Microsoft 365 outage: Company exec lifts lid on the ‘cascading failure’ that caused lengthy disruption - IT Pro"
+      "Microsoft 365 Outage Traced to a Network Upgrade as Services Recover - Technology Org"
     ],
     "cn_signals": [
       "IAF Chief: True Self Reliance is Crucial for Future War Preparedness - Asianet Newsable"
     ],
     "cyber_au": [
       "Coles investigates cyber attack but provides little detail - ABC News & Headlines – Australian Broadcasting Corporation",
-      "What Coles shoppers need to know about cyber attack on the retailer - SBS",
-      "Coles investigates cyber-attack and apologises to customers - The Guardian"
+      "Coles supermarket cyber attack: Australia’s retailer investigates security breach - Beinsure",
+      "What Coles shoppers need to know about cyber attack on the retailer - SBS"
     ],
     "cyber_state": [
       "Cyberwarfare Against The United States Is Edging From Spying Toward Sabotage - StudyFinds",
@@ -321,7 +357,7 @@
     ],
     "deepfake": [
       "Satire or propaganda? How AI-generated videos blur the lines - eKathimerini.com",
-      "Trump Posts Bizarre Troop Video After Shocking Revelation - The Daily Beast",
+      "New in Specto: AI-generated captions and transcripts for audio and video - Clarivate",
       "Uni-President Enterprises : 9M revenue rose 4.2%, while attributable profit increased 26.1% - TradingView"
     ],
     "dieoff": [
@@ -373,7 +409,7 @@
     "reservists": [
       "Serbia opens strategic oil reserve as pipeline outage drags on in Croatia - Upstream Online",
       "Poland’s Defense Ministry plans to introduce a payment of 3,250 zlotys for reservists — RMF24 - UA.NEWS",
-      "Why Israel Religious Powerbrokers Hold The Keys To Power - ИФЗ РАН"
+      "Czechs continue to cut gas consumption, reserves expected to last - oEnergetice.cz"
     ],
     "sapn": [
       "Twist in alleged bizarre 239kg copper theft - Adelaide Now",
@@ -411,7 +447,7 @@
       "yes": 2.9
     },
     {
-      "d24h": -2.0,
+      "d24h": -1.0,
       "q": "US-Iran Hormuz Agreement by November 30?",
       "yes": 4.5
     },
@@ -451,9 +487,9 @@
       "yes": 1.4
     },
     {
-      "d24h": 0.1,
+      "d24h": -0.2,
       "q": "Will China blockade Taiwan in 2026?",
-      "yes": 2.5
+      "yes": 2.2
     },
     {
       "d24h": -1.0,
@@ -461,14 +497,14 @@
       "yes": 7.5
     },
     {
-      "d24h": 1.5,
+      "d24h": 2.0,
       "q": "Iran-Oman Hormuz Agreement by December 31?",
       "yes": 21.0
     },
     {
       "d24h": null,
       "q": "Iran charges Hormuz fees by December 31?",
-      "yes": 8.5
+      "yes": 9.5
     },
     {
       "d24h": 0.1,
@@ -491,7 +527,7 @@
       "yes": 2.1
     },
     {
-      "d24h": 0.2,
+      "d24h": -0.1,
       "q": "Will the U.S. test a nuclear weapon by December 31 2026?",
       "yes": 2.9
     },
@@ -501,9 +537,9 @@
       "yes": 19.5
     },
     {
-      "d24h": 3.0,
+      "d24h": 4.0,
       "q": "Ukraine agrees not to join NATO by December 31, 2027?",
-      "yes": 21.0
+      "yes": 22.0
     },
     {
       "d24h": 0.5,
@@ -511,9 +547,9 @@
       "yes": 19.0
     },
     {
-      "d24h": -7.0,
+      "d24h": -8.0,
       "q": "Iran blockade lifted before Iran-Oman Hormuz agreement?",
-      "yes": 13.5
+      "yes": 12.5
     },
     {
       "d24h": -0.9,
@@ -790,9 +826,19 @@
     },
     {
       "band": "Low",
+      "convergence": "Only one kind of sign is showing (australian incidents). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: sudden fall in sa electricity demand (possible large blackout), global cyber threat level raised (sans infocon not green) and several vpn",
+      "domains": [
+        "Australian incidents"
+      ],
       "key": "cyber",
-      "score": 0,
-      "trend": "steady"
+      "lit": [
+        {
+          "detail": "Coles supermarket cyber attack: Australia’s retailer investigates security breach",
+          "name": "Major Australian cyber incident reported"
+        }
+      ],
+      "score": 10,
+      "trend": "up"
     },
     {
       "band": "Elevated",
@@ -809,7 +855,7 @@
           "name": "Reports of AI-driven hacking campaigns"
         },
         {
-          "detail": "Insurers dodge payouts after global Microsoft outage",
+          "detail": "Microsoft says three-month-old bug behind global M365 outage",
           "name": "Major cloud or AI service outage"
         },
         {
@@ -823,16 +869,16 @@
   ],
   "sectors_relative_5d": {
     "defence_au": -0.57,
-    "defence_eu": -0.07,
-    "defence_us": 1.1,
-    "pandemic": -3.49
+    "defence_eu": -0.06,
+    "defence_us": 1.29,
+    "pandemic": -3.58
   },
   "tankers": "normal",
   "telecom_drop_pct": {
-    "Aussie Broadband": 0.3,
-    "Optus": 0.0,
-    "TPG": 0.4,
-    "Telstra": 0.1,
+    "Aussie Broadband": 1.4,
+    "Optus": 1.0,
+    "TPG": 0.5,
+    "Telstra": 0.5,
     "Vodafone": 0.0
   },
   "us_departure_orders": [
