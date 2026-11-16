@@ -11,6 +11,16 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 CONFIG = json.loads((ROOT / "collector" / "config.json").read_text())
+# The family's home location is private: it comes from the EW_HOME secret (JSON with lat, lon and optionally
+# structure_places), never from the public config. Without it, local alerts centre on the Adelaide CBD.
+try:
+    _home = json.loads(os.environ.get("EW_HOME") or "{}")
+    if _home.get("lat") is not None and _home.get("lon") is not None:
+        CONFIG["local"]["home"] = {"lat": float(_home["lat"]), "lon": float(_home["lon"])}
+    if isinstance(_home.get("structure_places"), list):
+        CONFIG["local"]["structure_places"] = [str(x) for x in _home["structure_places"]]
+except (ValueError, TypeError, AttributeError):
+    print("EW_HOME secret is not valid JSON; using the default home location")
 UA = CONFIG["user_agent"]
 
 

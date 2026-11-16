@@ -794,21 +794,22 @@ def test_cfs_nearby_incidents_alert():
     assert len(w) == 4 and w[0]["id"].startswith("F-261116-0090") and abs(w[0]["lat"] + 34.775) < 1e-6
     assert w[1]["lon"] == 139.98 and w[2]["level"] == "Watch and Act"
     lc = localsa.CONFIG["local"]
-    home = (lc["home"]["lat"], lc["home"]["lon"])
-    near = localsa.nearby_incidents(w, home, lc["nearby_radius_km"], lc["nearby_places"],
-                                    lc["structure_radius_km"], lc["structure_places"])
+    home = (-34.82, 138.96)  # a test home in the Hills (the real one comes from the EW_HOME secret)
+    places = ["Gawler East", "Mount Pleasant"]
+    near = localsa.nearby_incidents(w, home, lc["nearby_radius_km"], lc["nearby_places"], lc["structure_radius_km"], places)
     assert [n["headline"] for n in near] == ["MOUNT PLEASANT : STRUCTURE FIRE", "Watch and Act - Bushfire at Cherryville"]
-    assert 15 <= near[0]["km"] <= 25 and near[1]["km"] is None  # Culburra (~170 km) and the rescue are left out
-    # house fires: close to Williamstown yes, across Adelaide no; burn-offs and car fires never
+    assert 5 <= near[0]["km"] <= 15 and near[1]["km"] is None  # Culburra (~150 km) and the rescue are left out
+    assert localsa.distance_band(near[0]["km"]) == "5-10 km" or localsa.distance_band(near[0]["km"]) == "10-25 km"
+    # house fires: close to home yes, across Adelaide no; burn-offs and car fires never
     more = [{"headline": "GAWLER EAST : STRUCTURE FIRE", "event": "Structure Fire", "area": "GAWLER EAST", "level": None},
             {"headline": "SALISBURY : STRUCTURE FIRE", "event": "Structure Fire", "area": "SALISBURY", "level": None},
-            {"headline": "X : STRUCTURE FIRE", "event": "Structure Fire", "area": "X", "level": None, "lat": -34.60, "lon": 138.75},
+            {"headline": "X : STRUCTURE FIRE", "event": "Structure Fire", "area": "X", "level": None, "lat": -34.75, "lon": 138.90},
             {"headline": "Y : STRUCTURE FIRE", "event": "Structure Fire", "area": "Y", "level": None, "lat": -34.93, "lon": 138.60},
-            {"headline": "LYNDOCH : BURN OFF", "event": "Burn Off", "area": "LYNDOCH", "level": None},
-            {"headline": "LYNDOCH : VEHICLE FIRE", "event": "Vehicle Fire", "area": "LYNDOCH", "level": None}]
-    hits = localsa.nearby_incidents(more, home, lc["nearby_radius_km"], lc["nearby_places"],
-                                    lc["structure_radius_km"], lc["structure_places"])
+            {"headline": "GAWLER EAST : BURN OFF", "event": "Burn Off", "area": "GAWLER EAST", "level": None},
+            {"headline": "GAWLER EAST : VEHICLE FIRE", "event": "Vehicle Fire", "area": "GAWLER EAST", "level": None}]
+    hits = localsa.nearby_incidents(more, home, lc["nearby_radius_km"], lc["nearby_places"], lc["structure_radius_km"], places)
     assert [h["headline"] for h in hits] == ["GAWLER EAST : STRUCTURE FIRE", "X : STRUCTURE FIRE"], hits
+    near = [{**n, "dist": localsa.distance_band(n["km"])} for n in near]
     sm = {"nearby_incidents": near, "emergency_warnings": [],
           "watch_and_act_near": [n["headline"] for n in near if n["level"] == "Watch and Act"]}
     from common import now_utc
@@ -817,5 +818,19 @@ def test_cfs_nearby_incidents_alert():
     out = run.local_alerts({"summary": sm}, state, now, False)
     titles = [a["title"] for a in out]
     assert titles == ["CFS Watch and Act", "CFS: Structure Fire at Mount Pleasant"], titles
-    assert "km from Williamstown" in out[1]["message"] and out[1]["priority"] == 4 and out[0]["priority"] == 4
+    assert " km from home" in out[1]["message"] and out[1]["priority"] == 4 and out[0]["priority"] == 4
+    assert "illiamstown" not in json.dumps(out)
     assert run.local_alerts({"summary": sm}, state, now + timedelta(minutes=15), False) == []  # once per incident
+
+
+def test_home_comes_from_secret():
+    import subprocess
+    code = ("import json,common;print(json.dumps([common.CONFIG['local']['home'],common.CONFIG['local']['structure_places']]))")
+    env = {**__import__("os").environ, "EW_HOME": '{"lat": -34.8, "lon": 138.9, "structure_places": ["Testville"]}'}
+    out = subprocess.run([sys.executable, "-c", code], cwd=str(Path(__file__).resolve().parents[1] / "collector"),
+                         env=env, capture_output=True, text=True, check=True).stdout
+    assert json.loads(out) == [{"lat": -34.8, "lon": 138.9}, ["Testville"]]
+    env["EW_HOME"] = "not json"
+    out = subprocess.run([sys.executable, "-c", code], cwd=str(Path(__file__).resolve().parents[1] / "collector"),
+                         env=env, capture_output=True, text=True, check=True).stdout
+    assert json.loads(out.splitlines()[-1])[0] == {"lat": -34.928, "lon": 138.6}

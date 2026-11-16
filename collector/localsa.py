@@ -106,6 +106,13 @@ VEGETATION = r"grass|bush|scrub|tree|crop|forest|vegetation|stubble"
 SKIP = r"burn ?off|rubbish|waste|vehicle|incident update|false alarm|alarm"
 
 
+def distance_band(km):
+    """Rough distance from home for public files and alerts (exact km could reveal where home is)."""
+    if km is None:
+        return None
+    return "under 5 km" if km < 5 else "5-10 km" if km < 10 else "10-25 km" if km < 25 else "25-60 km" if km < 60 else "60+ km"
+
+
 def nearby_incidents(warnings, home, radius_km, places, structure_radius_km=None, structure_places=()):
     """CFS/MFS incidents worth a phone note near home.
 
@@ -745,7 +752,7 @@ def fetch_local(state):
         "fire_danger_ok": bool(fd),
         "emergency_warnings": [w["headline"] for w in warn if w["level"] == "Emergency Warning"]
         + [f"{i['type']} {i['where']}" for i in inc if i["level"] == "Emergency Warning"],
-        "nearby_incidents": [{k: w.get(k) for k in ("id", "headline", "event", "area", "level", "km")}
+        "nearby_incidents": [{**{k: w.get(k) for k in ("id", "headline", "event", "area", "level")}, "dist": distance_band(w.get("km"))}
                              for w in nearby_incidents(warn, (lc["home"]["lat"], lc["home"]["lon"]),
                                                        lc["nearby_radius_km"], lc["nearby_places"],
                                                        lc.get("structure_radius_km"), lc.get("structure_places", []))][:10],
