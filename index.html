@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex">
-<title>Early Warning Board</title>
+<title>Early Warning</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
@@ -126,6 +126,35 @@ details summary{cursor:pointer;font-size:.84rem;color:var(--accent)}
 .sim a{color:#fff}
 @media (max-width:480px){.wrap{gap:14px;padding-top:12px}h1{font-size:1.7rem}.panel{padding:14px}.lvl-name{font-size:2.1rem}.cat{padding:12px}}
 @media (prefers-reduced-motion:no-preference){.needle{transition:transform .8s cubic-bezier(.3,1.4,.5,1)}}
+
+/* --- plain-language layout --- */
+.wrap{max-width:860px}
+.status{border-radius:8px;padding:18px;color:#fff;display:grid;gap:10px}
+.status.l3{color:var(--l3-ink)}
+.status .lv{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:2.4rem;line-height:1}
+.status .lv small{display:block;font-size:1rem;font-weight:600;letter-spacing:.06em;opacity:.9;margin-bottom:2px}
+.status .mean{font-size:1.05rem;font-weight:600;margin:0}
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:4px}
+.steps i{height:8px;border-radius:2px;background:currentColor;opacity:.28}
+.steps i.on{opacity:1}
+.lead{font-size:1.05rem;font-weight:600;margin:0}
+.sec-note{margin:2px 0 10px;font-size:.88rem;color:var(--muted)}
+.todo{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.todo li{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:start}
+.todo .n{font-family:var(--display);font-weight:700;font-size:1.1rem;background:var(--accent);color:var(--surface);border-radius:50%;width:26px;height:26px;display:grid;place-items:center}
+.todo b{font-weight:600}
+.happ{display:grid}
+.happ .item{grid-template-columns:auto 1fr;gap:2px 12px}
+.happ .d{font-family:var(--mono);font-size:.75rem;color:var(--muted);white-space:nowrap;padding-top:3px}
+.tag{font-family:var(--mono);font-size:.68rem;border:1px solid var(--line);border-radius:3px;padding:0 5px;margin-left:6px;color:var(--muted);white-space:nowrap}
+.tag.live{background:var(--l4);border-color:var(--l4);color:#fff}
+.calls{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin-top:8px}
+.calls a{display:block;border:1px solid var(--line);border-radius:6px;padding:8px 10px;text-decoration:none;color:var(--ink);background:var(--sunk)}
+.calls b{display:block;font-family:var(--display);font-size:1.25rem;line-height:1.1}
+.calls span{font-size:.78rem;color:var(--muted)}
+.allok{font-size:.9rem;color:var(--muted);margin:8px 0 0}
+#localBox .chip{white-space:normal;text-align:right;max-width:58vw}
+.word{font-family:var(--body);font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.04em}
 </style>
 </head>
 <body>
@@ -133,100 +162,117 @@ details summary{cursor:pointer;font-size:.84rem;color:var(--accent)}
   <div id="sim" class="sim" hidden></div>
   <header>
     <div>
-      <h1>Early Warning Board</h1>
-      <div class="muted" style="font-size:.9rem">Threats that could reach South Australia: conflict, disasters, cyber, pandemic, shortages</div>
+      <h1>Early Warning</h1>
+      <div class="muted" style="font-size:.9rem">A heads-up for our family on anything that could reach us in South Australia</div>
     </div>
     <div class="meta mono">
-      <span>Last check: <b id="updated">loading</b></span>
-      <span>Next check: <b id="next">—</b></span>
+      <span>Checked: <b id="updated">loading</b></span>
+      <span>Next: <b id="next">—</b></span>
     </div>
   </header>
 
   <div id="stale" class="banner" hidden style="border-style:solid;border-color:var(--l4);color:var(--ink)"></div>
   <div id="banner" class="banner">Loading the latest assessment…</div>
 
-  <section class="top">
-    <div class="panel g-gauge">
-      <div class="gauge-row">
-        <div class="gauge" aria-hidden="true"><svg id="gauge" viewBox="0 0 240 140"></svg></div>
-        <div>
-          <div class="lvl-name" id="lvlName">—</div>
-          <div class="lvl-sub" id="lvlSub"></div>
-          <p class="headline" id="headline"></p>
-          <p class="summary" id="summary"></p>
-        </div>
-      </div>
-      <div class="actions">
-        <h3 id="actTitle">What to do at this level</h3>
-        <ul id="actList"></ul>
-      </div>
-    </div>
-    <div class="panel side g-side">
-      <h2>Adelaide today</h2>
-      <div class="list" id="localBox"><p class="empty">Loading…</p></div>
-      <h2 style="margin-top:16px">Phone &amp; internet networks</h2>
-      <div class="list" id="telco"><p class="empty">Loading…</p></div>
-      <p id="feeds" class="muted"></p>
-      <p>In an emergency, follow official advice first: <a href="https://www.alert.sa.gov.au/">Alert SA</a>, <a href="https://www.cfs.sa.gov.au/">CFS</a>, <a href="https://www.smartraveller.gov.au/">Smartraveller</a>, ABC Radio Adelaide 891 AM.</p>
-    </div>
-  <div id="alerts-sec" class="g-alerts">
-    <h2 id="alerts" style="margin-bottom:4px;scroll-margin-top:12px">Recent alerts</h2>
-    <p class="muted" style="margin:0 0 10px;font-size:.85rem">The latest alert (or the one you tapped). Tap to read it in full; earlier alerts are under Previous alerts. UNCONFIRMED alerts are early signals that the twice-daily analysis then checks.</p>
+  <section id="statusBox" class="status" style="background:var(--muted)">
+    <div class="lv" id="lvlName"><small>Loading</small>—</div>
+    <div class="steps" id="steps" aria-hidden="true"></div>
+    <p class="mean" id="lvlMean"></p>
+  </section>
+
+  <section class="panel">
+    <h2>What's going on</h2>
+    <p class="lead" id="headline" style="margin-top:8px"></p>
+    <p class="summary" id="summary" style="margin-top:8px"></p>
+  </section>
+
+  <section class="panel">
+    <h2 id="actTitle">What to do now</h2>
+    <p class="sec-note">In order. Each one says why it's worth doing.</p>
+    <ol class="todo" id="actList"></ol>
+    <details id="actMoreBox" style="margin-top:10px" hidden><summary>More things to do at this level</summary><ol class="todo" id="actMore" style="margin-top:10px"></ol></details>
+  </section>
+
+  <section class="panel">
+    <h2>What has actually happened</h2>
+    <p class="sec-note">Real, confirmed events from the last week that matter to us. Not predictions.</p>
+    <div class="happ list" id="happened"><p class="empty">Loading…</p></div>
+  </section>
+
+  <section class="panel side">
+    <h2>Near home</h2>
+    <p class="sec-note">Fire, power, water, phones and roads around us. Only things that need attention are shown.</p>
+    <div class="list" id="localBox"><p class="empty">Loading…</p></div>
+  </section>
+
+  <div id="alerts-sec">
+    <h2 id="alerts" style="margin-bottom:4px;scroll-margin-top:12px">Alerts sent to our phones</h2>
+    <p class="sec-note">The latest one (or the one you tapped). Tap to read it.</p>
     <div class="events" id="alertList"><p class="empty">Loading…</p></div>
   </div>
+
+  <section class="panel">
+    <h2>On watch — no action needed</h2>
+    <p class="sec-note">Early signs the system is holding on to: GPS jamming, unusual military flights and the like. One on its own is usually an exercise or routine. You only get a phone alert if different signs line up in the same place, or something is confirmed.</p>
+    <div class="list" id="watching"><p class="empty">Loading…</p></div>
   </section>
 
-
-  <a class="cta" href="analytics.html"><div><b>Analytics &amp; heat maps →</b><br><span>Markets, escalation trends, GPS jamming and satellite maps, cyber attacks, military activity, warning-sign matrix</span></div></a>
-
   <section>
-    <h2 style="margin-bottom:4px">Potential events</h2>
-    <p class="muted" style="margin:0 0 10px;font-size:.85rem">Tap an event to see what's driving it, possible scenarios for SA, what to do and why, and the warning signs we watch. Percentages are the analyst's judgement of significant escalation in the next 30 days, not certainty.</p>
+    <h2 style="margin-bottom:4px">What could happen next</h2>
+    <p class="sec-note">The chance each of these gets serious enough to affect us in the next 30 days. This is a judgement, not a certainty. Tap one for what it would mean and what to do.</p>
     <div class="events" id="concerns"><p class="empty">Loading…</p></div>
+    <details class="fold" id="lowBox" style="margin-top:8px" hidden><summary id="lowSum">Lower risks</summary><div><div class="events" id="concernsLow"></div></div></details>
   </section>
 
-  <details class="fold">
-    <summary>Category scores (0–5)</summary>
-    <div><div class="cats" id="cats"></div></div>
-  </details>
-
-  <section>
-    <div class="panel">
-      <h2>Confirmed impacts on Australia</h2>
-      <div class="list" id="confirmed"></div>
+  <section class="panel">
+    <h2>In an emergency</h2>
+    <p class="sec-note">Official advice always comes first. If phones are down, use a battery or car radio.</p>
+    <div class="calls">
+      <a href="tel:000"><b>000</b><span>Fire, police, ambulance</span></a>
+      <a href="tel:132500"><b>132 500</b><span>SES: storm and flood help</span></a>
+      <a href="tel:1800362361"><b>1800 362 361</b><span>CFS bushfire information</span></a>
+      <a href="tel:131366"><b>13 13 66</b><span>SA Power Networks: outages</span></a>
+      <a href="https://www.alert.sa.gov.au/"><b>Alert SA</b><span>Live warnings map</span></a>
+      <a href="https://www.cfs.sa.gov.au/"><b>CFS</b><span>Fires and fire bans</span></a>
+      <a href="https://www.abc.net.au/listen/live/adelaide"><b>891 AM</b><span>ABC Radio Adelaide</span></a>
+      <a href="https://www.smartraveller.gov.au/"><b>Smartraveller</b><span>Travel advice</span></a>
     </div>
   </section>
 
   <details class="fold">
-    <summary>Level guide</summary>
-    <div><div class="guide"><table>
-      <thead><tr><th>Level</th><th>Meaning</th><th>Family action</th></tr></thead>
-      <tbody id="guideBody"></tbody>
-    </table></div></div>
+    <summary>More detail</summary>
+    <div style="display:grid;gap:16px">
+      <div><h3 style="margin-bottom:8px">Scores by area (0 to 5)</h3><div class="cats" id="cats"></div></div>
+      <div><h3 style="margin-bottom:8px">What the five levels mean</h3><div class="guide"><table>
+        <thead><tr><th>Level</th><th>Meaning</th><th>What we do</th></tr></thead>
+        <tbody id="guideBody"></tbody></table></div></div>
+      <p id="feeds" class="muted" style="margin:0"></p>
+      <a class="cta" href="analytics.html"><div><b>Charts and maps →</b><br><span>Markets, trends, GPS jamming and satellite maps, cyber attacks, military activity</span></div></a>
+    </div>
   </details>
-  <p class="muted" style="font-size:.8rem;margin:0">Family status page, updated twice daily by analysis; markets and alerts every 15 minutes. Not an official warning service.</p>
+  <p class="muted" style="font-size:.8rem;margin:0">Checked every 15 minutes, with a full review at 4:39 am and 4:39 pm. A family tool, not an official warning service.</p>
 </div>
 
 <script>
 const LEVELS = [null,
-  {name:"Normal", meaning:"Background noise only", actions:[
+  {name:"Normal", plain:"All quiet. Nothing needs doing.", meaning:"Background noise only", actions:[
     {action:"Routine kit check once a month", reason:"Batteries go flat and food expires; a kit that works is what lets you stay calm if things change quickly."},
     {action:"Keep fuel above half a tank", reason:"Fuel is the first thing to run short in any shock — Australia imports most of it, and servos can run dry within days of panic buying."}]},
-  {name:"Watch", meaning:"One category elevated", actions:[
+  {name:"Watch", plain:"Something is worth keeping an eye on. Nothing needs doing yet.", meaning:"One area of concern", actions:[
     {action:"Read the briefing", reason:"Knowing what's driving the risk lets you act early and calmly instead of reacting to headlines."},
     {action:"No purchases needed yet", reason:"Buying early at this level adds to shortages without making you safer."},
     {action:"Check emergency contacts are current", reason:"If phone networks fail, you'll need saved numbers, a meeting point and a plan agreed in advance."}]},
-  {name:"Elevated", meaning:"Two or more categories elevated, or one critical", actions:[
+  {name:"Elevated", plain:"Something real is happening that could affect us. Do the simple steps below this week.", meaning:"Two or more areas of concern, or one serious", actions:[
     {action:"Fill all fuel tanks and jerry cans", reason:"Fuel supply is Australia's weakest link; filling before queues form avoids rationing and price spikes."},
     {action:"Withdraw some cash", reason:"Card payments, EFTPOS and ATMs stop working in network or power outages — cash still buys fuel and food."},
     {action:"Top up regular medications", reason:"Pharmacy supply chains are long; a few weeks' buffer covers delivery disruption."},
     {action:"Check water and food kit against list", reason:"Two weeks of supplies lets the household ride out shortages without joining panic buying."}]},
-  {name:"High", meaning:"Several categories converging and official advisories issued", actions:[
+  {name:"High", plain:"Several things point the same way and authorities are acting. Finish getting ready today.", meaning:"Several areas of concern and official warnings", actions:[
     {action:"Finish stocking food, water and medicines", reason:"Several independent warning signs at once means disruption is likely enough to prepare for now, while shelves are full."},
     {action:"Confirm the family meeting point and plan", reason:"If calls and messages fail, everyone needs to know where to go and when without talking."},
     {action:"Charge power banks, radios and devices", reason:"A battery radio (ABC 891 AM) keeps official information coming if phones and power drop out."},
     {action:"Download offline maps and documents", reason:"Copies of IDs, insurance and maps on your phone work without internet."}]},
-  {name:"Imminent", meaning:"Event underway or confirmed imminent", actions:[
+  {name:"Imminent", plain:"It is happening. Follow the family plan and official instructions now.", meaning:"Event under way or about to be", actions:[
     {action:"Execute the family plan", reason:"The planning is done — acting on it quickly beats deciding under pressure."},
     {action:"Follow official SA emergency instructions first", reason:"Authorities have local information this system doesn't; their instructions override any general advice here."},
     {action:"Check on vulnerable family and neighbours", reason:"Older people and those without transport are hit first by outages and shortages."}]}
@@ -244,16 +290,7 @@ const fmt = iso => { if(!iso) return "—"; const d=new Date(iso); if(isNaN(d)) 
 const trendTxt = t => t==="up"?"▲ rising":t==="down"?"▼ easing":"● steady";
 
 function drawGauge(level){
-  const cx=120, cy=124, r1=58, r2=104; let s="";
-  for(let i=0;i<5;i++){
-    const a0=Math.PI*(1-i/5)-0.012, a1=Math.PI*(1-(i+1)/5)+0.012;
-    const p=(r,a)=>`${(cx+r*Math.cos(a)).toFixed(1)} ${(cy-r*Math.sin(a)).toFixed(1)}`;
-    s+=`<path d="M${p(r2,a0)} A${r2} ${r2} 0 0 1 ${p(r2,a1)} L${p(r1,a1)} A${r1} ${r1} 0 0 0 ${p(r1,a0)} Z" fill="${lc(i+1)}" opacity="${level&&level!==i+1?0.38:1}"/>`;
-    const am=(a0+a1)/2; s+=`<text x="${(cx+(r1+r2)/2*Math.cos(am)).toFixed(1)}" y="${(cy-(r1+r2)/2*Math.sin(am)+6).toFixed(1)}" text-anchor="middle" font-size="17" fill="var(--surface)">${i+1}</text>`;
-  }
-  const ang = level ? 180 - ((level-0.5)/5)*180 : 90;
-  s+=`<g class="needle" style="transform-origin:${cx}px ${cy}px;transform:rotate(${90-ang}deg)"><path d="M${cx-5} ${cy} L${cx} ${cy-r2+6} L${cx+5} ${cy} Z" fill="var(--ink)"/></g><circle cx="${cx}" cy="${cy}" r="9" fill="var(--ink)"/>`;
-  $("gauge").innerHTML=s;
+  $("steps").innerHTML=[1,2,3,4,5].map(i=>`<i class="${level&&i<=level?"on":""}"></i>`).join("");
 }
 
 function renderStatus(st){
@@ -263,26 +300,30 @@ function renderStatus(st){
   const level = has ? Math.max(1,Math.min(5,Math.round(st.level))) : 0;
   drawGauge(level);
   const L = LEVELS[level||1];
-  $("lvlName").textContent = has ? `${level} · ${st.levelName || L.name}` : "—";
-  $("lvlName").style.color = has ? lc(level) : "var(--muted)";
-  $("lvlSub").textContent = has ? `${trendTxt(st.trend)} · ${L.meaning}` : "";
-  $("headline").textContent = has ? (st.headline||"") : "";
+  const sb = $("statusBox");
+  sb.style.background = has ? lc(level) : "var(--muted)";
+  sb.className = "status" + (level===3 ? " l3" : "");
+  $("lvlName").innerHTML = has ? `<small>Level ${level} of 5 · ${esc(trendTxt(st.trend))}</small>${esc(st.levelName || L.name)}` : `<small>No assessment yet</small>—`;
+  $("lvlMean").textContent = has ? L.plain : "";
+  $("headline").textContent = has ? (st.headline||"").replace(/^(Normal|Watch|Elevated|High|Imminent)[, ]+(steady|rising|easing|up|down)[:,]?\s*/i,"").replace(/^./,c=>c.toUpperCase()) : "";
   $("summary").textContent = has ? (st.summary||"") : "";
   $("updated").textContent = has ? fmt(st.updatedAt) : "—";
   $("next").textContent = st && st.nextCheck ? fmt(st.nextCheck) : "—";
-  $("actTitle").textContent = has ? `What to do at level ${level}` : "What to do";
-  // Extra actions from the analysis are skipped when they repeat a standard one (e.g. "Confirm the family meeting point"
-  // vs "Confirm the family meeting point and plan"): same key words, ignoring small words.
+  // Today's specific actions from the analysis come first, then the standing actions for this level.
+  // Extras are skipped when they repeat a standard one: same key words, ignoring small words.
   const STOP = new Set(["the","a","an","and","or","of","to","your","any","at","all","in","on","for","with","now","today"]);
   const words = t => new Set(String(t).toLowerCase().replace(/[^a-z0-9 ]/g," ").split(/\s+/).filter(w=>w&&!STOP.has(w)));
   const dup = (a,b) => { const [x,y] = a.size<=b.size?[a,b]:[b,a]; return x.size>0 && [...x].every(w=>y.has(w)); };
   const acts = [];
-  if(has) for(const a of [...L.actions, ...(Array.isArray(st.actions)?st.actions:[])]){
+  if(has) for(const a of [...(Array.isArray(st.actions)?st.actions:[]), ...L.actions]){
     const w = words(typeof a==="string"?a:a.action);
     if(!acts.some(b=>dup(w, words(typeof b==="string"?b:b.action)))) acts.push(a);
   }
-  $("actList").innerHTML = acts.map(a=> typeof a==="string" ? `<li>${esc(a)}</li>`
-    : `<li><b>${esc(a.action)}</b>${a.reason?`<br><span class="why">Why: ${esc(a.reason)}</span>`:""}</li>`).join("");
+  const li = (a,i) => typeof a==="string" ? `<li><span class="n">${i+1}</span><span><b>${esc(a)}</b></span></li>`
+    : `<li><span class="n">${i+1}</span><span><b>${esc(a.action)}</b>${a.reason?`<br><span class="why">${esc(a.reason)}</span>`:""}</span></li>`;
+  $("actList").innerHTML = acts.slice(0,3).map(li).join("") || `<li><span class="n">✓</span><span>Nothing needs doing right now.</span></li>`;
+  $("actMoreBox").hidden = acts.length<=3;
+  $("actMore").innerHTML = acts.slice(3).map((a,i)=>li(a,i+3)).join("");
   const byKey = {}; (st && Array.isArray(st.categories) ? st.categories : []).forEach(c=>byKey[c.key]=c);
   $("cats").innerHTML = CATS.map(def=>{
     const c = byKey[def.key]; const sc = c && typeof c.score==="number" ? c.score : null;
@@ -295,10 +336,26 @@ function renderStatus(st){
       ${c?`<div class="facts"><span>${trendTxt(c.trend)}</span><span>confidence: ${esc(c.confidence||"—")}</span></div><p>${esc(c.summary||"")}</p>${srcs?`<div class="src">${srcs}</div>`:""}`:`<p class="muted">No data.</p>`}
     </article>`;
   }).join("");
-  const conf = st && Array.isArray(st.confirmed) ? st.confirmed : [];
-  $("confirmed").innerHTML = conf.length ? conf.map(x=>{ const u=safeUrl(x.url);
-    return `<div class="item"><span class="t">${esc(x.title)}</span><span class="w">${esc(x.date||"")}</span><p>${esc(x.impact||"")}${u?` <a href="${esc(u)}" target="_blank" rel="noopener">Source</a>`:""}</p></div>`;
-  }).join("") : `<p class="empty">No confirmed large-scale event affecting Australia right now.</p>`;
+}
+
+// "What has actually happened": confirmed impacts, events the analysis logged this week, and live incidents.
+let LAST_ST=null, LAST_L=null;
+function renderHappened(){
+  const st=LAST_ST, l=LAST_L, rows=[];
+  const day = d => { const x=new Date(d); return isNaN(x)?esc(d||""):x.toLocaleDateString("en-AU",{timeZone:"Australia/Adelaide",weekday:"short",day:"numeric",month:"short"}); };
+  ((st&&st.confirmed)||[]).forEach(x=>rows.push({t:x.date, html:`<div class="item"><span class="d">${day(x.date)}</span><span><span class="t">${esc(x.title)}</span><span class="tag live">affecting Australia</span><p>${esc(x.impact||"")}</p></span></div>`}));
+  if(!DEMO_OK) ((l&&l.incidents)||[]).filter(i=>i.severity&&i.severity!=="Info").forEach(i=>rows.push({t:i.first_seen, html:`<div class="item"><span class="d">${day(i.first_seen)}</span><span><span class="t">${esc(i.target)}: ${i.attack?"cyber attack":"outage"}</span><span class="tag live">happening now</span><p>${esc(((i.headlines||[])[0]||{}).title||"")}</p></span></div>`}));
+  const weekAgo = Date.now()-8*864e5;
+  ((st&&st.events_observed)||[]).filter(e=>new Date(e.date).getTime()>=weekAgo).forEach(e=>rows.push({t:e.date, html:`<div class="item"><span class="d">${day(e.date)}</span><span><span class="t">${esc(e.title)}</span>${e.so_what?`<p>${esc(e.so_what)}</p>`:""}</span></div>`}));
+  rows.sort((a,b)=>String(b.t).localeCompare(String(a.t)));
+  $("happened").innerHTML = rows.length ? rows.slice(0,8).map(r=>r.html).join("") : `<p class="empty">Nothing significant in the last week.</p>`;
+}
+
+function renderWatching(l){
+  const w = ((l&&l.watching)||[]);
+  const since = iso => { const m=(Date.now()-new Date(iso).getTime())/60000; return m<90?`${Math.max(1,Math.round(m))} min ago`:m<2880?`${Math.round(m/60)} hours ago`:`${Math.round(m/1440)} days ago`; };
+  $("watching").innerHTML = w.length ? w.map(x=>`<div class="item"><span class="t">${esc(x.what.charAt(0).toUpperCase()+x.what.slice(1))} · ${esc(x.region)}${x.active?"":`<span class="tag">eased</span>`}</span><p>${esc(x.text)}</p><span class="w">first seen ${since(x.first_seen)} · last seen ${since(x.last_seen)}</span></div>`).join("")
+    : `<p class="empty">Nothing unusual right now.</p>`;
 }
 
 function renderConcerns(st, ind){
@@ -310,7 +367,7 @@ function renderConcerns(st, ind){
   if(!list.length){ $("concerns").innerHTML=`<p class="empty">No events assessed yet.</p>`; return; }
   const rank = c => c.likelihood!=null ? 1000 + c.likelihood : (sc[c.key]?sc[c.key].score:0);
   list.sort((a,b)=>rank(b)-rank(a));
-  const open = new Set([...document.querySelectorAll("#concerns details[open]")].map(d=>d.dataset.key));
+  const open = new Set([...document.querySelectorAll("#concerns details[open], #concernsLow details[open]")].map(d=>d.dataset.key));
   const col = p => p==null?"var(--line)":p>=60?lc(5):p>=35?lc(4):p>=15?lc(3):lc(2);
   const trendTxt2 = t => ({up:"▲ rising",down:"▼ easing"})[t]||"● steady";
   // Change in likelihood since the previous assessment (prev_likelihood is written by the analysis run).
@@ -322,71 +379,84 @@ function renderConcerns(st, ind){
   const moveTxt = c => { const d=delta(c);
     if(d===null) return trendTxt2(c.trend);
     return d>0?`up ${d} pts`:d<0?`down ${-d} pts`:"no change"; };
-  $("concerns").innerHTML = list.map(c=>{
+  const word = p => p==null?"":p>=60?"Very likely":p>=35?"Likely":p>=10?"Possible":"Unlikely";
+  const card = c=>{
     const w = sc[c.key];
-    const signs = w ? `<h4>Warning signs showing: ${w.lit.length} of ${w.lit.length+w.unlit.length} · ${esc(w.band)}${(w.domains||[]).length>1?` · ${w.domains.length} areas converging`:""}</h4>
+    const signs = w ? `<h4>Automatic warning signs showing: ${w.lit.length} of ${w.lit.length+w.unlit.length} · ${esc(w.band)}${(w.domains||[]).length>1?` · ${w.domains.length} areas converging`:""}</h4>
       <div class="meter"><i style="width:${w.score}%;background:${col(w.score)}"></i></div>
       ${w.convergence?`<p class="why" style="margin:0"><b style="color:var(--ink)">How the signs fit together:</b> ${esc(w.convergence)}</p>`:""}
       ${w.lit.length?`<ul>${w.lit.map(i=>`<li>${esc(i.name)} <span class="why">[${esc(i.domain||"")}] ${esc(i.detail)}</span></li>`).join("")}</ul>`:""}
       <details><summary>What we watch for and why</summary><p class="why" style="margin:6px 0">${esc(w.why)}</p><ul>${w.unlit.map(i=>`<li class="why">${esc(i.name)}</li>`).join("")}</ul></details>` : "";
-    const scen = (c.scenarios||[]).length ? `<h4>Possible scenarios</h4><div class="sc">${c.scenarios.map(x=>`<b>${x.likelihood!=null?esc(x.likelihood)+"%":""}</b><span><b style="font-family:var(--body);font-weight:600;text-align:left">${esc(x.name)}</b> — ${esc(x.sa_impact||"")}</span>`).join("")}</div>` : (w?`<h4>What it would mean for SA</h4><p class="why" style="margin:0">${esc(w.sa_impact)}</p>`:"");
-    const acts = (c.actions||[]).length ? `<h4>Suggested actions and why</h4><div class="act">${c.actions.map(a=>`<div>${esc(a.action)}<span>${esc(a.reason||"")}</span></div>`).join("")}</div>` : "";
-    const drv = (c.drivers||[]).length ? `<h4>What's driving this</h4><ul>${c.drivers.map(d=>`<li>${esc(d)}</li>`).join("")}</ul>` : "";
+    const scen = (c.scenarios||[]).length ? `<h4>How it could play out</h4><div class="sc">${c.scenarios.map(x=>`<b>${x.likelihood!=null?esc(x.likelihood)+"%":""}</b><span><b style="font-family:var(--body);font-weight:600;text-align:left">${esc(x.name)}</b> — ${esc(x.sa_impact||"")}</span>`).join("")}</div>` : (w?`<h4>What it would mean for SA</h4><p class="why" style="margin:0">${esc(w.sa_impact)}</p>`:"");
+    const acts = (c.actions||[]).length ? `<h4>What to do, and why</h4><div class="act">${c.actions.map(a=>`<div>${esc(a.action)}<span>${esc(a.reason||"")}</span></div>`).join("")}</div>` : "";
+    const drv = (c.drivers||[]).length ? `<h4>Why we think so</h4><ul>${c.drivers.map(d=>`<li>${esc(d)}</li>`).join("")}</ul>` : "";
     const stripe = c.likelihood!=null ? col(c.likelihood) : (w ? col(w.score) : "var(--line)");
     const badge = c.likelihood!=null
-      ? `<span class="badge2" style="color:${col(c.likelihood)}">${esc(c.likelihood)}%${moveArrow(c)}<small>${moveTxt(c)}</small></span>`
+      ? `<span class="badge2" style="color:${col(c.likelihood)}"><span class="word">${word(c.likelihood)}</span> ${esc(c.likelihood)}%${moveArrow(c)}<small>${moveTxt(c)}</small></span>`
       : `<span class="badge2" style="font-size:1rem;color:${w?col(w.score):"var(--muted)"}">${w?esc(w.band):"—"}<small>warning signs</small></span>`;
     const one = (c.drivers&&c.drivers[0]) || (w ? (w.lit.length ? `${w.lit.length} warning sign${w.lit.length>1?"s":""} showing: ${w.lit.slice(0,2).map(i=>i.name.toLowerCase()).join("; ")}` : "No warning signs showing.") : "");
     return `<details class="ev" data-key="${esc(c.key)}" style="border-left-color:${stripe}"${open.has(c.key)?" open":""}>
       <summary><span class="t">${esc(c.title)}</span>${badge}<span class="chev" aria-hidden="true">›</span><span class="one">${esc(one)}</span></summary>
-      <div class="body">${drv}${scen}${acts}${signs}</div></details>`;
-  }).join("");
+      <div class="body">${acts}${drv}${scen}${signs}</div></details>`;
+  };
+  const main = list.filter((c,i)=> (c.likelihood!=null && c.likelihood>=10) || i<2), low = list.filter(c=>!main.includes(c));
+  $("concerns").innerHTML = main.map(card).join("");
+  $("lowBox").hidden = !low.length;
+  $("lowSum").textContent = `Lower risks (${low.length}) — unlikely for now`;
+  $("concernsLow").innerHTML = low.map(card).join("");
 }
 
 function renderLatest(l){
   if(!l){ renderAlerts([]); return; }
-  const tel=l.telecom||{}, tn=Object.keys(tel);
-  $("telco").innerHTML = tn.length ? tn.map(n=>{
-    const ds=[tel[n]["ping-slash24"],tel[n]["bgp"]].filter(x=>x&&x.drop_pct!=null&&(x.baseline||0)>=50);
-    const d=ds.length?Math.max(...ds.map(x=>x.drop_pct)):null;
-    const st=d===null?["No data","var(--muted)"]:d>=50?["Major outage","var(--l5)"]:d>=20?["Possible outage","var(--l4)"]:["Normal","var(--l2)"];
-    return `<div class="item" style="grid-template-columns:1fr auto;align-items:center"><span class="t">${esc(n)}</span><span class="chip" style="background:${st[1]}">${st[0]}</span></div>`}).join("")
-    : `<p class="empty">Network monitoring starting up.</p>`;
-  const h=l.source_health||{}, bad=Object.keys(h).filter(k=>!h[k].ok);
-  $("feeds").textContent = Object.keys(h).length ? (bad.length?`Data feeds: ${Object.keys(h).length-bad.length} working. Not available right now: ${bad.map(k=>FEED_NAMES[k]||k).join(", ")}.`:"Data feeds: all working.") : "";
+  const h0=l.source_health||{}, bad=Object.keys(h0).filter(k=>!h0[k].ok);
+  $("feeds").textContent = Object.keys(h0).length ? (bad.length?`Data feeds: ${Object.keys(h0).length-bad.length} working. Not available right now: ${bad.map(k=>FEED_NAMES[k]||k).join(", ")}.`:"Data feeds: all working.") : "";
   renderAlerts(l.recent_alerts||[]);
+  renderWatching(l);
   const ls = (l.local_sa||{}).summary;
-  if(ls){
-    const fdC = r => r==="Catastrophic"?"var(--l5)":r==="Extreme"?"var(--l4)":r==="High"?"var(--l3)":r==="Moderate"?"var(--l2)":"var(--muted)";
-    const rowL = (k,v,c,ink) => `<div class="item" style="grid-template-columns:1fr auto;align-items:center"><span class="t">${esc(k)}</span><span class="chip" style="background:${c};${ink?"color:var(--l3-ink)":""}">${esc(v)}</span></div>`;
-    const fd = ls.worst_fire_danger||{}, bans = ls.fire_ban_districts||[];
-    const lvl = ls.grid_lor_level||0;
-    let h = Object.entries(fd).map(([d,r])=>rowL(`Fire danger: ${d}`, r||"No rating", fdC(r), r==="High")).join("");
-    h += rowL("Total fire ban", bans.length?bans.join(", "):"None", bans.length?"var(--l4)":"var(--l2)");
-    const pn = ls.power_news||[], wn = ls.sawater_news||[], mn = ls.murray_news||[];
-    const po = ls.power_out_suburbs;
-    h += po!=null
-      ? rowL("Power outages (SAPN)", po?`${po} suburb${po>1?"s":""} affected`:"None listed", po>=50||pn.length?"var(--l4)":po>=10?"var(--l3)":"var(--l2)", po>=10&&po<50&&!pn.length)
-      : rowL("Power outages", pn.length?`${pn.length} report${pn.length>1?"s":""} today`:"No major outages reported", pn.length?"var(--l4)":"var(--l2)");
-    if(po) h += `<details style="margin-top:4px"><summary>Suburbs with outages</summary><p class="why" style="margin:6px 0 0">${esc((ls.power_out_list||[]).join(", "))}${po>(ls.power_out_list||[]).length?" …":""}</p></details>`;
-    h += rowL("Water (SA Water)", wn.length?`${wn.length} supply/quality report${wn.length>1?"s":""}`:"No major issues reported", wn.length?"var(--l3)":"var(--l2)", wn.length>0);
-    if(ls.reservoirs_pct!=null) h += rowL("Adelaide reservoirs", `${ls.reservoirs_pct}% full${ls.reservoirs_as_of?` · ${ls.reservoirs_as_of}`:""}`, ls.reservoirs_pct<30?"var(--l4)":ls.reservoirs_pct<50?"var(--l3)":"var(--l2)", ls.reservoirs_pct>=30&&ls.reservoirs_pct<50);
-    const newsItems = [...pn.map(t=>"Power: "+t), ...wn.map(t=>"Water: "+t), ...mn.map(t=>"River Murray: "+t)];
-    if(newsItems.length) h += `<details style="margin-top:6px"><summary>Power &amp; water reports (${newsItems.length})</summary><ul style="margin:6px 0 0;padding-left:1.1em;font-size:.84rem">${newsItems.map(t=>`<li>${esc(t)}</li>`).join("")}</ul></details>`;
-    const cw = ls.cable_watch||[];
-    h += rowL("Undersea cables", cw.length?`Watching ${cw.length} vessel${cw.length>1?"s":""}`:"No vessels of concern", cw.length?"var(--l3)":"var(--l2)", cw.length>0);
-    if(cw.length) h += `<p class="why" style="margin:4px 0 0">On watch (no alert unless comms are disrupted): ${esc(cw.join("; "))}</p>`;
-    if(ls.grid_demand_mw!=null) h += rowL("Grid demand (SA)", ls.possible_blackout?`Sudden fall: ${ls.grid_demand_mw} MW`:`${ls.grid_demand_mw} MW${ls.grid_demand_usual_mw?` · usual ~${ls.grid_demand_usual_mw}`:""}`, ls.possible_blackout?"var(--l5)":"var(--l2)");
-    h += rowL("Power supply (SA)", lvl>=3?"Critical (LOR3)":lvl===2?"Tight (LOR2)":lvl===1?"Watch (LOR1)":"Normal", lvl>=3?"var(--l5)":lvl===2?"var(--l4)":lvl===1?"var(--l3)":"var(--l2)", lvl===1);
-    const ew=(ls.emergency_warnings||[]).length, wa=(ls.watch_and_act||[]).length;
-    h += rowL("CFS warnings", ew?`${ew} Emergency`:wa?`${wa} Watch and Act`:ls.cfs_feed_ok===false?"Not available right now · check cfs.sa.gov.au":`None${ls.fires_active!=null?` · ${ls.fires_active} fire${ls.fires_active===1?"":"s"} being attended`:""}`, ew?"var(--l5)":wa?"var(--l4)":ls.cfs_feed_ok===false?"var(--l3)":"var(--l2)");
-    h += rowL("Road closures (SA)", `${ls.road_closures||0} closed${ls.road_incidents?` · ${ls.road_incidents} incidents`:""}${(ls.road_hazards||[]).length?` · ${ls.road_hazards.length} weather/fire`:""}`, (ls.road_hazards||[]).length?"var(--l4)":"var(--l2)");
-    if(ls.ed_known) h += rowL("Hospital EDs very busy", `${(ls.ed_very_busy||[]).length} of ${ls.ed_known}`, (ls.ed_very_busy||[]).length>=3?"var(--l4)":(ls.ed_very_busy||[]).length?"var(--l3)":"var(--l2)", (ls.ed_very_busy||[]).length>0 && (ls.ed_very_busy||[]).length<3);
-    if((ls.ed||[]).length) h += `<details style="margin-top:6px"><summary>Emergency departments now</summary><div class="list">${ls.ed.map(e=>`<div class="item" style="grid-template-columns:1fr auto;align-items:center"><span>${esc(e.hospital)} <span class="why">· ${e.avg_wait_min} min wait · ${e.capacity_pct}% full</span></span><span class="chip" style="background:${e.status==="Very busy"?"var(--l4)":e.status==="Busy"?"var(--l3)":"var(--l2)"};${e.status==="Busy"?"color:var(--l3-ink)":""}">${esc(e.status)}</span></div>`).join("")}</div></details>`;
-    if((ls.road_hazards||[]).length) h += `<p class="why" style="margin:6px 0 0">Weather/fire road closure: ${esc(ls.road_hazards[0])}</p>`;
-    if((ls.bom_severe||[]).length) h += `<p class="why" style="margin:6px 0 0">Bureau warning: ${esc(ls.bom_severe[0])}</p>`;
-    $("localBox").innerHTML = (DEMO_OK ? `<p class="why" style="margin:0 0 8px"><b>These are today's real readings.</b> They are not part of the simulation.</p>` : "") + h;
-  } else { $("localBox").innerHTML = `<p class="empty">Local data arrives with the next check.</p>`; }
+  if(!ls){ $("localBox").innerHTML = `<p class="empty">Local data arrives with the next check.</p>`; return; }
+  const rows = [];
+  const OK = new Set(["var(--l2)","var(--muted)"]);
+  const add = (k,v,c,ink,always) => rows.push({ok:OK.has(c)&&!always, html:`<div class="item" style="grid-template-columns:1fr auto;align-items:center"><span class="t">${esc(k)}</span><span class="chip" style="background:${c};${ink?"color:var(--l3-ink)":""}">${esc(v)}</span></div>`});
+  const more = html => { if(rows.length) rows[rows.length-1].html += html; };
+  const fdC = r => r==="Catastrophic"?"var(--l5)":r==="Extreme"?"var(--l4)":r==="High"?"var(--l3)":r==="Moderate"?"var(--l2)":"var(--muted)";
+  const RANK = ["No Rating","Moderate","High","Extreme","Catastrophic"];
+  const fdAll = (l.local_sa||{}).fire_danger||{}, fd = ls.worst_fire_danger||{}, bans = ls.fire_ban_districts||[];
+  Object.entries(fd).forEach(([d,r])=>{ const rt=(fdAll[d]||{}).ratings||[]; const today=rt[0]||r||"No rating", tom=rt[1];
+    const worst = tom && RANK.indexOf(tom)>RANK.indexOf(today) ? tom : today;
+    add(`Fire danger: ${d}`, tom?`Today ${today} · Tomorrow ${tom}`:today, fdC(worst), worst==="High", true); });
+  if(ls.fire_danger_ok===false) add("Fire danger", "Not available · check cfs.sa.gov.au", "var(--l3)", true);
+  add("Total fire ban", bans.length?bans.join(", "):"None", bans.length?"var(--l4)":"var(--l2)");
+  const ew=(ls.emergency_warnings||[]).length, wa=(ls.watch_and_act||[]).length, near=ls.nearby_incidents||[];
+  add("CFS warnings", ew?`${ew} Emergency Warning`:wa?`${wa} Watch and Act`:ls.cfs_feed_ok===false?"Not available · check cfs.sa.gov.au":"None", ew?"var(--l5)":wa?"var(--l4)":ls.cfs_feed_ok===false?"var(--l3)":"var(--l2)", ls.cfs_feed_ok===false&&!ew&&!wa);
+  if(ew||wa) more(`<p class="why" style="margin:4px 0 0">${esc([...(ls.emergency_warnings||[]),...(ls.watch_and_act||[])].slice(0,3).join("; "))}</p>`);
+  add("Fires near home", near.length?`${near.length} being attended`:"None", near.length?"var(--l3)":"var(--l2)", near.length>0);
+  if(near.length) more(`<ul style="margin:4px 0 0;padding-left:1.1em;font-size:.86rem">${near.slice(0,5).map(n=>`<li>${esc(n.headline||n.event)}${n.dist?` <span class="why">· ${esc(n.dist)} away</span>`:""}</li>`).join("")}</ul>`);
+  if((ls.bom_severe||[]).length){ add("Weather warning", `${ls.bom_severe.length} from the Bureau`, "var(--l4)"); more(`<p class="why" style="margin:4px 0 0">${esc(ls.bom_severe.slice(0,2).join("; "))}</p>`); }
+  else add("Weather warnings", "None severe", "var(--l2)");
+  const lvl = ls.grid_lor_level||0, pn = ls.power_news||[], wn = ls.sawater_news||[], mn = ls.murray_news||[], po = ls.power_out_suburbs;
+  if(ls.possible_blackout) add("Power", `Possible large outage: demand fell to ${ls.grid_demand_mw} MW`, "var(--l5)");
+  else if(lvl>=1) add("Power supply", lvl>=3?"Critical: blackouts possible":lvl===2?"Tight":"Being watched", lvl>=3?"var(--l5)":lvl===2?"var(--l4)":"var(--l3)", lvl===1);
+  else if(po!=null) add("Power", po?`Outages in ${po} suburb${po>1?"s":""}`:"Normal", po>=50||pn.length?"var(--l4)":po>=10?"var(--l3)":"var(--l2)", po>=10&&po<50&&!pn.length);
+  else add("Power", pn.length?`${pn.length} outage report${pn.length>1?"s":""} today`:"Normal", pn.length?"var(--l4)":"var(--l2)");
+  if(pn.length) more(`<ul style="margin:4px 0 0;padding-left:1.1em;font-size:.84rem">${pn.slice(0,3).map(t=>`<li>${esc(t)}</li>`).join("")}</ul>`);
+  add("Water", wn.length?`${wn.length} supply or quality report${wn.length>1?"s":""}`:"Normal", wn.length?"var(--l3)":"var(--l2)", wn.length>0);
+  if(wn.length||mn.length) more(`<ul style="margin:4px 0 0;padding-left:1.1em;font-size:.84rem">${[...wn,...mn.map(t=>"River Murray: "+t)].slice(0,3).map(t=>`<li>${esc(t)}</li>`).join("")}</ul>`);
+  if(ls.reservoirs_pct!=null) add("Reservoirs", `${ls.reservoirs_pct}% full`, ls.reservoirs_pct<30?"var(--l4)":"var(--l2)");
+  const tel=l.telecom||{}, down=[];
+  Object.keys(tel).forEach(n=>{ const ds=[tel[n]["ping-slash24"],tel[n]["bgp"]].filter(x=>x&&x.drop_pct!=null&&(x.baseline||0)>=50);
+    const d=ds.length?Math.max(...ds.map(x=>x.drop_pct)):null; if(d!==null&&d>=20) down.push(`${n} (${d>=50?"major outage":"possible outage"})`); });
+  add("Phones and internet", down.length?down.join(", "):`All ${Object.keys(tel).length||""} networks normal`.replace("  "," "), down.length?"var(--l4)":"var(--l2)");
+  const cw = ls.cable_watch||[];
+  add("Undersea internet cables", cw.length?`Watching ${cw.length} vessel${cw.length>1?"s":""}`:"Nothing of concern", cw.length?"var(--l3)":"var(--l2)", cw.length>0);
+  const rh = ls.road_hazards||[];
+  add("Roads closed by fire or flood", rh.length?`${rh.length} in SA`:"None", rh.length?"var(--l3)":"var(--l2)", rh.length>0);
+  if(rh.length) more(`<p class="why" style="margin:4px 0 0">${esc(rh.slice(0,2).join("; "))}</p>`);
+  const vb=(ls.ed_very_busy||[]).length;
+  if(ls.ed_known) add("Hospital emergency departments", vb?`${vb} of ${ls.ed_known} very busy`:"Normal", vb>=3?"var(--l4)":vb?"var(--l3)":"var(--l2)", vb>0&&vb<3);
+  const show = rows.filter(r=>!r.ok), fine = rows.filter(r=>r.ok);
+  $("localBox").innerHTML = (DEMO_OK ? `<p class="why" style="margin:0 0 8px"><b>These are today's real readings.</b> They are not part of the simulation.</p>` : "")
+    + show.map(r=>r.html).join("")
+    + (fine.length ? `<details style="margin-top:8px"${document.querySelector("#localBox details[open]")?" open":""}><summary>Everything else is normal (${fine.length} checks)</summary><div class="list">${fine.map(r=>r.html).join("")}</div></details>` : "");
 }
 
 $("guideBody").innerHTML = LEVELS.slice(1).map((L,i)=>`<tr>
@@ -434,20 +504,29 @@ const DEMO_FILE = /^[1-5]$/.test(demo||"") ? `data/demo-level${demo}.json` : `da
 if(DEMO_OK){ $("sim").hidden=false; $("sim").innerHTML=`Simulation only — not real. <a href="./">See the real status</a>`; document.title="SIMULATION - Early Warning Board"; }
 
 async function get(p){ const r=await fetch(p+(p.includes("?")?"&":"?")+"t="+Date.now(),{cache:"no-store"}); if(!r.ok) throw new Error(r.status); return r.json(); }
+// Keep the last good copy on this device so the page still shows something if the internet drops out.
+const save = (k,v) => { try{ localStorage.setItem("ew:"+k, JSON.stringify({at:Date.now(), v})); }catch(e){} };
+const saved = k => { try{ return JSON.parse(localStorage.getItem("ew:"+k)||"null"); }catch(e){ return null; } };
 async function load(){
-  let st=null, l=null;
-  try{ st = await get(DEMO_OK ? DEMO_FILE : "data/status.json"); }catch(e){ $("banner").hidden=false; $("banner").textContent="Could not load the assessment. Try again shortly."; }
-  try{ l = await get("data/latest.json"); }catch(e){}
-  let ind=null; try{ ind = await get("data/indicators.json"); }catch(e){}
+  let st=null, l=null, ind=null, offline=null;
+  const pull = async (key, path) => { try{ const v = await get(path); if(!DEMO_OK) save(key, v); return v; }
+    catch(e){ const s = DEMO_OK ? null : saved(key); if(s){ offline = Math.min(offline||Infinity, s.at); return s.v; } return null; } };
+  st = await pull("status", DEMO_OK ? DEMO_FILE : "data/status.json");
+  if(!st){ $("banner").hidden=false; $("banner").textContent="Could not load the assessment. Try again shortly."; }
+  l = await pull("latest", "data/latest.json");
+  ind = DEMO_OK ? null : await pull("indicators", "data/indicators.json");
+  LAST_ST=st; LAST_L=l;
   if(st) renderStatus(st); else drawGauge(0);
-  renderConcerns(DEMO_OK ? st : st, DEMO_OK ? null : ind);
+  renderConcerns(st, ind);
   renderLatest(l);
+  renderHappened();
   // Stale-data warning: live data should be under ~30 min old; the analysis runs twice a day.
   const ago = iso => iso ? (Date.now() - new Date(iso).getTime()) / 60000 : Infinity;
   const msgs = [];
-  if(l && ago(l.generated_at) > 45) msgs.push(`Live data was last updated ${Math.round(ago(l.generated_at)/60*10)/10} hours ago, so the system may be delayed.`);
+  if(offline) msgs.push(`You appear to be offline. Showing the copy saved on this device at ${fmt(new Date(offline).toISOString())}.`);
+  else if(l && ago(l.generated_at) > 45) msgs.push(`Live data was last updated ${Math.round(ago(l.generated_at)/60*10)/10} hours ago, so the system may be delayed.`);
   if(!l) msgs.push("Live data could not be loaded.");
-  if(st && !DEMO_OK && ago(st.updatedAt) > 14*60) msgs.push(`The last analysis was ${Math.round(ago(st.updatedAt)/60)} hours ago (it normally runs at 4:39 am and pm).`);
+  if(st && !DEMO_OK && !offline && ago(st.updatedAt) > 14*60) msgs.push(`The last full review was ${Math.round(ago(st.updatedAt)/60)} hours ago (it normally runs at 4:39 am and pm).`);
   $("stale").hidden = !msgs.length;
   $("stale").innerHTML = msgs.length ? `<b>Heads up:</b> ${esc(msgs.join(" "))} For emergencies, follow <a href="https://www.alert.sa.gov.au/">Alert SA</a> and ABC Radio Adelaide 891 AM.` : "";
 }
