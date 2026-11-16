@@ -106,14 +106,17 @@ VEGETATION = r"grass|bush|scrub|tree|crop|forest|vegetation|stubble"
 SKIP = r"burn ?off|rubbish|waste|vehicle|incident update|false alarm|alarm"
 
 
-def nearby_incidents(warnings, home, radius_km, places):
+def nearby_incidents(warnings, home, radius_km, places, structure_radius_km=None, structure_places=()):
     """CFS/MFS incidents worth a phone note near home.
 
     Grass, bush and scrub fires count within radius_km (or in a named Hills/fringe town when the feed gives no
-    location). Structure fires and hazardous materials count only in the named Hills/fringe towns, so routine
-    suburban house, car and rubbish fires don't buzz phones. Planned burn-offs are skipped. Watch and Act and
-    Emergency Warnings always count within the radius.
+    location). House and building fires and hazardous materials count within structure_radius_km of home (or in a
+    named nearby town). Planned burn-offs, rubbish and vehicle fires are skipped. Watch and Act and Emergency
+    Warnings always count within radius_km.
     """
+    def named_in(lst, text):
+        return any(re.search(r"\b" + re.escape(p.upper()) + r"\b", text) for p in lst)
+
     out = []
     for w in warnings or []:
         kind = (w.get("event", "") + " " + w.get("headline", "")).lower()
@@ -122,11 +125,13 @@ def nearby_incidents(warnings, home, radius_km, places):
             continue
         km = km_between(home, (w["lat"], w["lon"])) if w.get("lat") is not None else None
         text = (w.get("area", "") + " " + w.get("headline", "")).upper()
-        named = any(re.search(r"\b" + re.escape(p.upper()) + r"\b", text) for p in places)
-        inside = km <= radius_km if km is not None else named
-        if not inside:
-            continue
-        if warning or re.search(VEGETATION, kind) or named:
+        if warning or re.search(VEGETATION, kind):
+            inside = km <= radius_km if km is not None else named_in(places, text)
+        elif structure_radius_km is not None:
+            inside = km <= structure_radius_km if km is not None else named_in(structure_places, text)
+        else:
+            inside = False
+        if inside:
             out.append({**w, "km": round(km) if km is not None else None})
     return out
 
@@ -742,7 +747,8 @@ def fetch_local(state):
         + [f"{i['type']} {i['where']}" for i in inc if i["level"] == "Emergency Warning"],
         "nearby_incidents": [{k: w.get(k) for k in ("id", "headline", "event", "area", "level", "km")}
                              for w in nearby_incidents(warn, (lc["home"]["lat"], lc["home"]["lon"]),
-                                                       lc["nearby_radius_km"], lc["nearby_places"])][:10],
+                                                       lc["nearby_radius_km"], lc["nearby_places"],
+                                                       lc.get("structure_radius_km"), lc.get("structure_places", []))][:10],
         "watch_and_act_near": [w["headline"] for w in nearby_incidents(
             [x for x in warn if x["level"] in ("Watch and Act", "Emergency Warning")], (lc["home"]["lat"], lc["home"]["lon"]),
             lc["watch_act_radius_km"], lc["nearby_places"])] if warn else [],

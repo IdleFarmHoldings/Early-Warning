@@ -359,7 +359,9 @@ def local_alerts(loc, state, now, first_run):
         add("cfs-near-" + "".join(ch for ch in (i.get("id") or i.get("headline") or "").lower() if ch.isalnum())[:50], 24,
             f"CFS: {i.get('event') or 'Fire'} at {town}"[:90],
             f"CFS is responding to a {(i.get('event') or 'fire').lower()} at {place}{dist}. No warning has been issued. "
-            "If you're nearby, check the Alert SA app and watch for smoke.", 3, "fire_engine")
+            "If you're nearby, check the Alert SA app and watch for smoke.",
+            3 if re.search(localsa.VEGETATION, (i.get("event") or "") + " " + (i.get("headline") or ""), re.I) else 4,
+            "fire_engine")
     for d, r in (sm.get("worst_fire_danger") or {}).items():
         if r in CONFIG["local"]["fdr_alert"]:
             add(f"fdr-{d}-{day}-{r}", 20, f"{r} fire danger: {d}",

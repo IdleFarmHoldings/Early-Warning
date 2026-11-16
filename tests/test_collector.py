@@ -795,9 +795,20 @@ def test_cfs_nearby_incidents_alert():
     assert w[1]["lon"] == 139.98 and w[2]["level"] == "Watch and Act"
     lc = localsa.CONFIG["local"]
     home = (lc["home"]["lat"], lc["home"]["lon"])
-    near = localsa.nearby_incidents(w, home, lc["nearby_radius_km"], lc["nearby_places"])
+    near = localsa.nearby_incidents(w, home, lc["nearby_radius_km"], lc["nearby_places"],
+                                    lc["structure_radius_km"], lc["structure_places"])
     assert [n["headline"] for n in near] == ["MOUNT PLEASANT : STRUCTURE FIRE", "Watch and Act - Bushfire at Cherryville"]
-    assert 40 <= near[0]["km"] <= 50 and near[1]["km"] is None  # Culburra (~170 km) and the rescue are left out
+    assert 15 <= near[0]["km"] <= 25 and near[1]["km"] is None  # Culburra (~170 km) and the rescue are left out
+    # house fires: close to Williamstown yes, across Adelaide no; burn-offs and car fires never
+    more = [{"headline": "GAWLER EAST : STRUCTURE FIRE", "event": "Structure Fire", "area": "GAWLER EAST", "level": None},
+            {"headline": "SALISBURY : STRUCTURE FIRE", "event": "Structure Fire", "area": "SALISBURY", "level": None},
+            {"headline": "X : STRUCTURE FIRE", "event": "Structure Fire", "area": "X", "level": None, "lat": -34.60, "lon": 138.75},
+            {"headline": "Y : STRUCTURE FIRE", "event": "Structure Fire", "area": "Y", "level": None, "lat": -34.93, "lon": 138.60},
+            {"headline": "LYNDOCH : BURN OFF", "event": "Burn Off", "area": "LYNDOCH", "level": None},
+            {"headline": "LYNDOCH : VEHICLE FIRE", "event": "Vehicle Fire", "area": "LYNDOCH", "level": None}]
+    hits = localsa.nearby_incidents(more, home, lc["nearby_radius_km"], lc["nearby_places"],
+                                    lc["structure_radius_km"], lc["structure_places"])
+    assert [h["headline"] for h in hits] == ["GAWLER EAST : STRUCTURE FIRE", "X : STRUCTURE FIRE"], hits
     sm = {"nearby_incidents": near, "emergency_warnings": [],
           "watch_and_act_near": [n["headline"] for n in near if n["level"] == "Watch and Act"]}
     from common import now_utc
@@ -806,5 +817,5 @@ def test_cfs_nearby_incidents_alert():
     out = run.local_alerts({"summary": sm}, state, now, False)
     titles = [a["title"] for a in out]
     assert titles == ["CFS Watch and Act", "CFS: Structure Fire at Mount Pleasant"], titles
-    assert "about 4" in out[1]["message"] and out[1]["priority"] == 3 and out[0]["priority"] == 4
+    assert "km from Williamstown" in out[1]["message"] and out[1]["priority"] == 4 and out[0]["priority"] == 4
     assert run.local_alerts({"summary": sm}, state, now + timedelta(minutes=15), False) == []  # once per incident
