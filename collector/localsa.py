@@ -50,16 +50,84 @@ def parse_cfs_incidents(data):
 
 
 # ---------- CFS warnings (CAP-AU) ----------
+def _point(el):
+    """(lat, lon) from a CAP <circle> "lat,lon radius", <polygon> "lat,lon lat,lon ..." or GeoRSS <point> "lat lon"."""
+    for c in el.iter():
+        name, txt = _local(c.tag), (c.text or "").strip()
+        if not txt:
+            continue
+        try:
+            if name == "circle":
+                lat, lon = txt.split()[0].split(",")[:2]
+                return float(lat), float(lon)
+            if name == "polygon":
+                pts = [tuple(map(float, p.split(",")[:2])) for p in txt.split() if "," in p]
+                if pts:
+                    return sum(p[0] for p in pts) / len(pts), sum(p[1] for p in pts) / len(pts)
+            if name == "point":
+                lat, lon = txt.replace(",", " ").split()[:2]
+                return float(lat), float(lon)
+        except ValueError:
+            continue
+    return None
+
+
+def km_between(a, b):
+    """Great-circle distance in km between two (lat, lon) points."""
+    import math
+    la1, lo1, la2, lo2 = map(math.radians, (*a, *b))
+    h = math.sin((la2 - la1) / 2) ** 2 + math.cos(la1) * math.cos(la2) * math.sin((lo2 - lo1) / 2) ** 2
+    return 6371 * 2 * math.asin(math.sqrt(h))
+
+
 def parse_cap(raw):
+    """CFS CAP-AU feed -> one row per incident/warning, with its incident id and location when given."""
     root = ET.fromstring(raw)
     out = []
-    for info in [e for e in root.iter() if _local(e.tag) == "info"]:
-        t = _texts(info)
-        headline = t.get("headline") or t.get("event") or ""
-        level = _level(" ".join([headline, t.get("event", ""), t.get("description", "")[:300],
-                                 " ".join(v for k, v in t.items() if k == "value")]))
-        out.append({"headline": headline[:160], "event": t.get("event", ""), "severity": t.get("severity", ""),
-                    "area": t.get("areadesc", "")[:120], "level": level})
+    holders = [e for e in root.iter() if _local(e.tag) in ("entry", "alert")]
+    # Prefer Atom <entry> (holds the GeoRSS point and the CAP alert); fall back to bare <alert> documents.
+    entries = [e for e in holders if _local(e.tag) == "entry"] or [e for e in holders if _local(e.tag) == "alert"] or [root]
+    for ent in entries:
+        top = {_local(c.tag): (c.text or "").strip() for c in ent.iter() if _local(c.tag) in ("identifier", "incidents", "id")}
+        ident = top.get("incidents") or (top.get("identifier") or top.get("id") or "").split("-20")[0]
+        where = _point(ent)
+        for info in [e for e in ent.iter() if _local(e.tag) == "info"]:
+            t = _texts(info)
+            headline = t.get("headline") or t.get("event") or ""
+            level = _level(" ".join([headline, t.get("event", ""), t.get("description", "")[:300],
+                                     " ".join(v for k, v in t.items() if k == "value")]))
+            out.append({"id": ident[:60], "headline": headline[:160], "event": t.get("event", ""),
+                        "severity": t.get("severity", ""), "area": t.get("areadesc", "")[:120], "level": level,
+                        "lat": where[0] if where else None, "lon": where[1] if where else None})
+    return out
+
+
+VEGETATION = r"grass|bush|scrub|tree|crop|forest|vegetation|stubble"
+SKIP = r"burn ?off|rubbish|waste|vehicle|incident update|false alarm|alarm"
+
+
+def nearby_incidents(warnings, home, radius_km, places):
+    """CFS/MFS incidents worth a phone note near home.
+
+    Grass, bush and scrub fires count within radius_km (or in a named Hills/fringe town when the feed gives no
+    location). Structure fires and hazardous materials count only in the named Hills/fringe towns, so routine
+    suburban house, car and rubbish fires don't buzz phones. Planned burn-offs are skipped. Watch and Act and
+    Emergency Warnings always count within the radius.
+    """
+    out = []
+    for w in warnings or []:
+        kind = (w.get("event", "") + " " + w.get("headline", "")).lower()
+        warning = w.get("level") in ("Watch and Act", "Emergency Warning")
+        if not warning and (re.search(SKIP, kind) or not re.search(r"fire|smoke|hazard|chemical|explosion", kind)):
+            continue
+        km = km_between(home, (w["lat"], w["lon"])) if w.get("lat") is not None else None
+        text = (w.get("area", "") + " " + w.get("headline", "")).upper()
+        named = any(re.search(r"\b" + re.escape(p.upper()) + r"\b", text) for p in places)
+        inside = km <= radius_km if km is not None else named
+        if not inside:
+            continue
+        if warning or re.search(VEGETATION, kind) or named:
+            out.append({**w, "km": round(km) if km is not None else None})
     return out
 
 
@@ -618,7 +686,7 @@ def fetch_local(state):
 
     def cap():
         raw = http_get(CFS_CAP, timeout=30)
-        samples["cfs_cap"] = raw[:1500].decode("utf-8", "replace")
+        samples["cfs_cap"] = raw[:5000].decode("utf-8", "replace")
         return parse_cap(raw)
 
     def fdr():
@@ -672,6 +740,12 @@ def fetch_local(state):
         "fire_danger_ok": bool(fd),
         "emergency_warnings": [w["headline"] for w in warn if w["level"] == "Emergency Warning"]
         + [f"{i['type']} {i['where']}" for i in inc if i["level"] == "Emergency Warning"],
+        "nearby_incidents": [{k: w.get(k) for k in ("id", "headline", "event", "area", "level", "km")}
+                             for w in nearby_incidents(warn, (lc["home"]["lat"], lc["home"]["lon"]),
+                                                       lc["nearby_radius_km"], lc["nearby_places"])][:10],
+        "watch_and_act_near": [w["headline"] for w in nearby_incidents(
+            [x for x in warn if x["level"] in ("Watch and Act", "Emergency Warning")], (lc["home"]["lat"], lc["home"]["lon"]),
+            lc["watch_act_radius_km"], lc["nearby_places"])] if warn else [],
         "watch_and_act": [w["headline"] for w in warn if w["level"] == "Watch and Act"]
         + [f"{i['type']} {i['where']}" for i in inc if i["level"] == "Watch and Act"],
         "worst_fire_danger": {d: worst(v["ratings"]) for d, v in fd.items()},

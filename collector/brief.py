@@ -68,6 +68,7 @@ def build(latest, indicators):
             "cfs_feed_ok": ls.get("cfs_feed_ok"), "fire_danger_ok": ls.get("fire_danger_ok"),
             "fire_danger": {d: v.get("text") for d, v in (loc.get("fire_danger") or {}).items()},
             "fire_ban_districts": ls.get("fire_ban_districts"), "cfs_warnings": ls.get("emergency_warnings"),
+            "watch_and_act": ls.get("watch_and_act"), "nearby_incidents": ls.get("nearby_incidents"),
             "fires_active": ls.get("fires_active"),
             "bom": [b.get("title") for b in (loc.get("bom") or [])],
             "grid_lor_level": ls.get("grid_lor_level"), "possible_blackout": ls.get("possible_blackout"),

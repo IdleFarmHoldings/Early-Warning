@@ -770,3 +770,41 @@ def test_brief_is_small_and_keeps_key_fields():
     assert len(json.dumps(b)) < len(json.dumps(latest)) / 3
     assert "\"link\":" not in json.dumps(b) and "news.google.com" not in json.dumps(b)
     assert brief.build({}, {})["recent_alerts"] == []  # empty inputs never crash
+
+
+def test_cfs_nearby_incidents_alert():
+    import localsa, run
+    cap = b'''<feed xmlns="http://www.w3.org/2005/Atom" xmlns:georss="http://www.georss.org/georss">
+      <entry><id>F2611160090-2026-11-16T13:39:00+10:30</id><georss:point>-34.775 139.050</georss:point>
+        <content><alert xmlns="urn:oasis:names:tc:emergency:cap:1.2"><identifier>F2611160090-2026-11-16T13:39:00+10:30</identifier>
+        <incidents>F-261116-0090 MELROSE ST, MOUNT PLEASANT (STRUCTURE FIRE)</incidents>
+        <info><event>Structure Fire</event><severity>Unknown</severity><headline>MOUNT PLEASANT : STRUCTURE FIRE</headline>
+        <area><areaDesc>82 MELROSE ST MOUNT PLEASANT</areaDesc></area></info></alert></content></entry>
+      <entry><id>F2611160156-2026-11-16T21:41:56+10:30</id>
+        <content><alert xmlns="urn:oasis:names:tc:emergency:cap:1.2"><identifier>F2611160156-2026-11-16T21:41:56+10:30</identifier>
+        <info><event>Grass Fire</event><headline>CULBURRA : Grass fire</headline>
+        <area><areaDesc>DUKES HWY CULBURRA</areaDesc><circle>-35.83,139.98 0</circle></area></info></alert></content></entry>
+      <entry><id>F3</id><content><alert xmlns="urn:oasis:names:tc:emergency:cap:1.2"><identifier>F3</identifier>
+        <info><event>Bushfire</event><headline>Watch and Act - Bushfire at Cherryville</headline>
+        <area><areaDesc>CHERRYVILLE</areaDesc></area></info></alert></content></entry>
+      <entry><id>F4</id><content><alert xmlns="urn:oasis:names:tc:emergency:cap:1.2"><identifier>F4</identifier>
+        <info><event>Rescue</event><headline>STIRLING : VEHICLE ACCIDENT RESCUE</headline>
+        <area><areaDesc>STIRLING</areaDesc></area></info></alert></content></entry></feed>'''
+    w = localsa.parse_cap(cap)
+    assert len(w) == 4 and w[0]["id"].startswith("F-261116-0090") and abs(w[0]["lat"] + 34.775) < 1e-6
+    assert w[1]["lon"] == 139.98 and w[2]["level"] == "Watch and Act"
+    lc = localsa.CONFIG["local"]
+    home = (lc["home"]["lat"], lc["home"]["lon"])
+    near = localsa.nearby_incidents(w, home, lc["nearby_radius_km"], lc["nearby_places"])
+    assert [n["headline"] for n in near] == ["MOUNT PLEASANT : STRUCTURE FIRE", "Watch and Act - Bushfire at Cherryville"]
+    assert 40 <= near[0]["km"] <= 50 and near[1]["km"] is None  # Culburra (~170 km) and the rescue are left out
+    sm = {"nearby_incidents": near, "emergency_warnings": [],
+          "watch_and_act_near": [n["headline"] for n in near if n["level"] == "Watch and Act"]}
+    from common import now_utc
+    now = now_utc().replace(second=0, microsecond=0)
+    state = {}
+    out = run.local_alerts({"summary": sm}, state, now, False)
+    titles = [a["title"] for a in out]
+    assert titles == ["CFS Watch and Act", "CFS: Structure Fire at Mount Pleasant"], titles
+    assert "about 4" in out[1]["message"] and out[1]["priority"] == 3 and out[0]["priority"] == 4
+    assert run.local_alerts({"summary": sm}, state, now + timedelta(minutes=15), False) == []  # once per incident

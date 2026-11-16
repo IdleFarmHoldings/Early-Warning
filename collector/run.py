@@ -342,6 +342,24 @@ def local_alerts(loc, state, now, first_run):
     for w in sm.get("emergency_warnings", [])[:3]:
         add("cfs-ew-" + "".join(ch for ch in w.lower() if ch.isalnum())[:40], 12, "CFS Emergency Warning",
             f"{w}. Check alert.sa.gov.au and ABC Radio Adelaide 891 AM and follow CFS advice now.", 5, "fire")
+    for w in sm.get("watch_and_act_near", [])[:3]:
+        if w in sm.get("emergency_warnings", []):
+            continue
+        add("cfs-wa-" + "".join(ch for ch in w.lower() if ch.isalnum())[:40], 12, "CFS Watch and Act",
+            f"{w}. Conditions are changing: check alert.sa.gov.au and ABC Radio Adelaide 891 AM, and be ready to act on your bushfire plan.",
+            4, "fire")
+    home = CONFIG["local"]["home"]["name"]
+    for i in sm.get("nearby_incidents", [])[:3]:
+        if i.get("level") in ("Watch and Act", "Emergency Warning"):
+            continue  # already alerted above
+        place = (i.get("area") or i.get("headline") or "").title()
+        parts = [p.strip() for p in (i.get("headline") or "").split(" : ")]
+        town = next((p for p in parts if p and p.lower() != (i.get("event") or "").lower()), place).title()
+        dist = f", about {i['km']} km from {home}" if i.get("km") is not None else f" near {home}"
+        add("cfs-near-" + "".join(ch for ch in (i.get("id") or i.get("headline") or "").lower() if ch.isalnum())[:50], 24,
+            f"CFS: {i.get('event') or 'Fire'} at {town}"[:90],
+            f"CFS is responding to a {(i.get('event') or 'fire').lower()} at {place}{dist}. No warning has been issued. "
+            "If you're nearby, check the Alert SA app and watch for smoke.", 3, "fire_engine")
     for d, r in (sm.get("worst_fire_danger") or {}).items():
         if r in CONFIG["local"]["fdr_alert"]:
             add(f"fdr-{d}-{day}-{r}", 20, f"{r} fire danger: {d}",
