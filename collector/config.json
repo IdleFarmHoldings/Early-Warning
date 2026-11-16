@@ -431,6 +431,20 @@
       }
     ]
   },
+  "home": {
+    "_comment": "Thresholds for alerts about home (collector/home.py). Weather and smoke come from Open-Meteo's forecast model for the home location, rounded to about 10 km.",
+    "bom_districts": ["Mount Lofty Ranges", "Adelaide Metropolitan", "Adelaide", "South Australia"],
+    "heat_alert_c": 38,
+    "heat_severe_c": 42,
+    "wind_alert_kmh": 90,
+    "fire_weather_temp_c": 35,
+    "fire_weather_gust_kmh": 60,
+    "smoke_alert_pm25": 50,
+    "smoke_severe_pm25": 100,
+    "fuel_jump_pct": 8,
+    "fuel_shortage_outlets": 3,
+    "repeat_minutes": [4, 9]
+  },
   "gps_confirm": {
     "_comment": "GPS jamming only counts as an early sign when it is solid: enough aircraft and high for several runs in a row. 'region' says which watch region it belongs to.",
     "min_aircraft": 20,
@@ -536,6 +550,12 @@
   ],
   "internet_country_drop_pct": 25,
   "news_watch": [
+    {
+      "key": "fuel_au",
+      "name": "Fuel shortages in Australia",
+      "q": "(petrol OR diesel OR fuel) (shortage OR \"run dry\" OR \"ran out\" OR rationing OR \"panic buying\") (Australia OR Adelaide OR \"South Australia\")",
+      "limit": 10
+    },
     {
       "key": "reservists",
       "name": "Reservist call-ups",

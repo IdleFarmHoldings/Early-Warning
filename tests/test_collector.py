@@ -837,8 +837,8 @@ def test_cfs_nearby_incidents_alert():
     state = {}
     out = run.local_alerts({"summary": sm}, state, now, False)
     titles = [a["title"] for a in out]
-    assert titles == ["CFS Watch and Act", "CFS: Structure Fire at Mount Pleasant"], titles
-    assert " km from home" in out[1]["message"] and out[1]["priority"] == 4 and out[0]["priority"] == 4
+    assert titles == ["CFS Watch and Act near home", "CFS: Structure Fire at Mount Pleasant"], titles
+    assert " km from home" in out[1]["message"] and out[1]["priority"] == 4 and out[0]["priority"] == 5
     assert "illiamstown" not in json.dumps(out)
     assert run.local_alerts({"summary": sm}, state, now + timedelta(minutes=15), False) == []  # once per incident
 

@@ -79,6 +79,7 @@ def build(latest, indicators):
             "power_news": _titles(ls.get("power_news"), 5), "sawater_news": _titles(ls.get("sawater_news"), 5),
             "road_hazards": sorted({f"{r.get('road')}, {r.get('suburb')}: {r.get('type')}"[:120]
                                     for r in ((loc.get("roads") or {}).get("closures") or []) if r.get("hazard")}),
+            "outlook": ls.get("outlook"), "fuel": ls.get("fuel"),
             "ed_very_busy": ls.get("ed_very_busy"), "cable_watch": ls.get("cable_watch"),
         },
         "chokepoints": {k: {kk: v.get(kk) for kk in ("avg_7d", "usual_7d", "change_pct", "last_date")}

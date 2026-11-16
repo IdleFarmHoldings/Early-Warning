@@ -20,6 +20,7 @@ from rules import baseline, extra_metrics, evaluate, watch_list  # noqa: E402
 from sources import fetch_all  # noqa: E402
 import precursors  # noqa: E402
 import maritime  # noqa: E402
+import home  # noqa: E402
 import localsa  # noqa: E402
 import foresight  # noqa: E402
 import satellites  # noqa: E402
@@ -105,6 +106,12 @@ def _relay_one(p, sent_dir, now, dry_run):
         p.rename(sent_dir / (p.stem + ".invalid.json"))
         return None
     a["title"], a["message"] = str(a["title"]).strip(), str(a["message"]).strip()
+    nb = a.pop("not_before", None)
+    try:
+        if nb and now < datetime.strptime(nb, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc):
+            return None  # a timed repeat of an emergency alert: not due yet
+    except (TypeError, ValueError):
+        pass
     ch = str(a.get("channel") or "proactive").strip().lower()
     wanted = ["proactive", "reactive"] if ch == "both" else [ch if ch in ("proactive", "reactive") else "proactive"]
     done = [c for c in a.get("delivered") or [] if c in wanted]  # channels that got through on an earlier try
@@ -345,9 +352,11 @@ def local_alerts(loc, state, now, first_run):
     for w in sm.get("watch_and_act_near", [])[:3]:
         if w in sm.get("emergency_warnings", []):
             continue
-        add("cfs-wa-" + "".join(ch for ch in w.lower() if ch.isalnum())[:40], 12, "CFS Watch and Act",
+        close = any(n.get("headline") == w for n in sm.get("nearby_incidents", []))
+        add("cfs-wa-" + "".join(ch for ch in w.lower() if ch.isalnum())[:40], 12,
+            "CFS Watch and Act near home" if close else "CFS Watch and Act",
             f"{w}. Conditions are changing: check alert.sa.gov.au and ABC Radio Adelaide 891 AM, and be ready to act on your bushfire plan.",
-            4, "fire")
+            5 if close else 4, "fire")
     for i in sm.get("nearby_incidents", [])[:3]:
         if i.get("level") in ("Watch and Act", "Emergency Warning"):
             continue  # already alerted above
@@ -510,6 +519,29 @@ def main():
     if loc.get("samples"):
         save_json("data/debug_samples.json", loc.pop("samples"))
     alerts += local_alerts(loc, state, now, first_run)
+    outlook, fuel = {}, None
+    try:
+        t0 = time.time()
+        outlook = home.fetch_outlook()
+        health["outlook"] = {"ok": True, "secs": round(time.time() - t0, 1)}
+    except Exception as e:  # noqa: BLE001
+        health["outlook"] = {"ok": False, "error": f"{type(e).__name__}: {e}"[:300]}
+    try:
+        alerts += home.outlook_alerts(outlook, state, now, first_run)
+        alerts += home.bom_alerts(loc, state, now, first_run)
+        fa, fuel = home.fuel_alerts(series + [row], (results.get("news_watch") or {}).get("watch"), state, now, first_run)
+        alerts += fa
+        week = iso(now - timedelta(days=7))
+        sent_7d = sum(1 for a in load_jsonl("alerts/log.jsonl") if (a.get("sent_at") or a.get("at") or "") >= week
+                      and not str(a.get("title", "")).startswith(("TEST", "System OK", "DRILL")))
+        alerts += home.weekly_ok(health, state, now, first_run, sent_7d)
+        alerts += home.quarterly_drill(state, now, first_run)
+    except Exception as e:  # noqa: BLE001 - home extras must never stop the rest of the check
+        health["home"] = {"ok": False, "error": f"{type(e).__name__}: {e}"[:300]}
+    if loc.get("summary") is not None:
+        loc["summary"]["outlook"] = {"days": (outlook.get("days") or [])[:3], "air": outlook.get("air"),
+                                     "air_word": home.air_word((outlook.get("air") or {}).get("pm25"))}
+        loc["summary"]["fuel"] = fuel
     alerts += source_alerts(health, loc, state, now, first_run)
     alerts += cable_alerts(mar, state, now, first_run, (results.get("telecom") or {}).get("networks"),
                            (results.get("news_watch") or {}).get("watch"))
@@ -573,6 +605,10 @@ def main():
     save_json("data/patterns.json", precursors.learn_patterns(journal, now))
     save_json("data/analytics.json", analytics_series(series + [row], now))
 
+    if not args.dry_run and not first_run:
+        for name, payload in home.nag_files(alerts, now):  # emergencies repeat so they are not slept through
+            (ROOT / "alerts" / "outbox").mkdir(parents=True, exist_ok=True)
+            (ROOT / "alerts" / "outbox" / name).write_text(json.dumps(payload, indent=2) + "\n")
     log = []
     for a in alerts:
         a["sent"] = send(a, args.dry_run)
