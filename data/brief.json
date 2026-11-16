@@ -1,13 +1,7 @@
 {
   "about": "Short form of latest.json + indicators.json for the analysis run. Links and raw samples removed.",
   "acsc": [],
-  "aircraft_flags": {
-    "mil_total": {
-      "median": 106.5,
-      "status": "ANOMALY",
-      "value": 243
-    }
-  },
+  "aircraft_flags": {},
   "analyst": {
     "ASPI Strategist": [
       "Too dependent on summits, the Quad needs institutional foundations",
@@ -28,62 +22,7 @@
       "AUKUS inquiry scepticism runs only one way"
     ]
   },
-  "chokepoints": {
-    "Bab el-Mandeb Strait": {
-      "avg_7d": 26.3,
-      "change_pct": -3.7,
-      "last_date": "2026-11-08",
-      "usual_7d": 27.3
-    },
-    "Lombok Strait": {
-      "avg_7d": 40.9,
-      "change_pct": 6.3,
-      "last_date": "2026-11-08",
-      "usual_7d": 38.4
-    },
-    "Luzon Strait": {
-      "avg_7d": 96.7,
-      "change_pct": -4.0,
-      "last_date": "2026-11-08",
-      "usual_7d": 100.7
-    },
-    "Malacca Strait": {
-      "avg_7d": 235.9,
-      "change_pct": 4.2,
-      "last_date": "2026-11-08",
-      "usual_7d": 226.3
-    },
-    "Strait of Hormuz": {
-      "avg_7d": 3.9,
-      "change_pct": 3.8,
-      "last_date": "2026-11-08",
-      "usual_7d": 3.7
-    },
-    "Suez Canal": {
-      "avg_7d": 44.4,
-      "change_pct": 6.1,
-      "last_date": "2026-11-08",
-      "usual_7d": 41.9
-    },
-    "Sunda Strait": {
-      "avg_7d": 33.9,
-      "change_pct": 0.9,
-      "last_date": "2026-11-08",
-      "usual_7d": 33.6
-    },
-    "Taiwan Strait": {
-      "avg_7d": 229.9,
-      "change_pct": 0.0,
-      "last_date": "2026-11-08",
-      "usual_7d": 229.9
-    },
-    "Torres Strait": {
-      "avg_7d": 8.0,
-      "change_pct": -5.1,
-      "last_date": "2026-11-08",
-      "usual_7d": 8.4
-    }
-  },
+  "chokepoints": {},
   "cisa": [
     "CISA Adds Two Known Exploited Vulnerabilities to Catalog",
     "Siemens Desigo, Gridscale",
@@ -102,7 +41,7 @@
       "online": 1,
       "total": 5
     },
-    "infocon": null,
+    "infocon": "green",
     "kev": {
       "all": {
         "last_7d": 8,
@@ -124,35 +63,25 @@
   },
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
-    "incidents": "ValueError: time data 'Info' does not match format '%Y-%m-%dT%H:%M:%SZ'",
+    "chokepoints": "RuntimeError: PortWatch returned no rows: {\"error\": {\"code\": 499, \"message\": \"Token Required\", \"messageCode\": \"GWM_0003\"",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [
     "Orange notification for tropical cyclone AKVAN-26. Population affected by Category 1 (120 km/h) wind speeds or higher is 0  (20.826 million in Tropical Storm).",
     "Drought is on going in Aruba, , Brazil, Colombia, Costa Rica, , French Guiana, Guyana, Panama, Suriname, Venezuela"
   ],
-  "generated_at": "2026-11-16T22:57:00Z",
+  "generated_at": "2026-11-16T23:04:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 36,
-    "Black Sea": null,
+    "Baltic / Kaliningrad": 56,
+    "Black Sea": 29,
     "Israel & Eastern Mediterranean": 10,
     "Korea": 0,
-    "Persian Gulf": 2,
-    "South Australia": 7,
-    "Sydney / NSW": 12,
+    "Persian Gulf": 8,
+    "South Australia": 12,
+    "Sydney / NSW": 10,
     "Taiwan Strait": 0
   },
   "incidents": [
-    {
-      "confirmed": true,
-      "headlines": [
-        "Microsoft says latent July bug triggered global Microsoft 365 outage",
-        "Microsoft says months-old bug caused global Microsoft 365 outage",
-        "Microsoft Says July Windows Patch Triggered 24-Hour Microsoft 365 Outage That Took Down 80% of Gateway Servers"
-      ],
-      "severity": "Warning",
-      "target": "Microsoft"
-    },
     {
       "confirmed": false,
       "headlines": [
@@ -160,14 +89,6 @@
       ],
       "severity": "Info",
       "target": "Supermarkets & food"
-    },
-    {
-      "confirmed": false,
-      "headlines": [
-        "Wait, Why Did Every Major Bank Just Go Down?"
-      ],
-      "severity": "Info",
-      "target": "Banking & payments"
     },
     {
       "confirmed": false,
@@ -194,6 +115,46 @@
       ],
       "severity": "Info",
       "target": "Other services"
+    },
+    {
+      "confirmed": true,
+      "headlines": [
+        "Expedia confirms data breach following supply chain attack"
+      ],
+      "severity": "Info",
+      "target": "Expedia"
+    },
+    {
+      "confirmed": false,
+      "headlines": [
+        "Barracuda links cloud breach to ARTEX AI-powered cyberattack"
+      ],
+      "severity": "Info",
+      "target": "Barracuda"
+    },
+    {
+      "confirmed": false,
+      "headlines": [
+        "Google Finds Hackers Using AI Agents to Build and Run Exploits From Software Patches"
+      ],
+      "severity": "Info",
+      "target": "Google Finds Hackers"
+    },
+    {
+      "confirmed": true,
+      "headlines": [
+        "FBI says Artex AI open source hacking tool used to breach networks in ‘under three hours’"
+      ],
+      "severity": "Info",
+      "target": "FBI"
+    },
+    {
+      "confirmed": false,
+      "headlines": [
+        "‘New type’ of AI-powered cyberattack hits one of Poland’s largest online payment platforms"
+      ],
+      "severity": "Info",
+      "target": "New"
     },
     {
       "confirmed": false,
@@ -229,18 +190,27 @@
       "Mount Lofty Ranges": "Moderate / Moderate"
     },
     "fire_danger_ok": true,
-    "fires_active": 1,
+    "fires_active": 2,
     "fuel": {
       "brent_aud": 138.2,
       "change_pct": 3.3,
       "pump_cents": 3,
       "week_ago_aud": 133.7
     },
-    "grid_demand_fall_pct": 33.3,
-    "grid_demand_mw": 584,
-    "grid_demand_usual_mw": 832,
+    "grid_demand_fall_pct": 32.0,
+    "grid_demand_mw": 543,
+    "grid_demand_usual_mw": 821,
     "grid_lor_level": 0,
-    "nearby_incidents": [],
+    "nearby_incidents": [
+      {
+        "area": "GAWLER RIVER",
+        "dist": "10-25 km",
+        "event": "Grass Fire",
+        "headline": "GAWLER RIVER : GRASS FIRE",
+        "id": "F-261117-0032 GAWLER RIVER, HEASLIP RD / GAWLER RIVER RD  (G",
+        "level": null
+      }
+    ],
     "outlook": {
       "air": {
         "aqi": 39,
@@ -279,14 +249,14 @@
       "Morgan Vale Road, Pine Valley Station: MORGAN MAIL RD Closed due to flooding over road",
       "Pine Valley Road, Pine Valley Station: PINE VALLEY RD Closed due to flooding over road"
     ],
-    "rooftop_pv_mw": 1279,
+    "rooftop_pv_mw": 1007,
     "sawater_news": [],
     "watch_and_act": []
   },
   "markets": {
     "AUD/USD": {
-      "change_pct": -1.03,
-      "price": 0.6737
+      "change_pct": -1.06,
+      "price": 0.6735
     },
     "Brent oil": {
       "change_pct": -4.17,
@@ -319,6 +289,11 @@
   },
   "nc3": "normal",
   "news_watch": {
+    "ai_hack": [
+      "Barracuda links cloud breach to ARTEX AI-powered cyberattack - BleepingComputer",
+      "Google Finds Hackers Using AI Agents to Build and Run Exploits From Software Patches - The Hacker News",
+      "FBI says Artex AI open source hacking tool used to breach networks in ‘under three hours’ - TechCrunch"
+    ],
     "airspace": [
       "Alert in the US: Trump reveals why all flights were grounded — some equipment is up to 55 years old - El Cronista"
     ],
@@ -333,6 +308,7 @@
       "When Technology Fails, America Needs a Backup Plan - NAB Blog -"
     ],
     "blood": [
+      "Sometimes Hoofbeats Are Zebras: How Misdiagnoses Obscure Narcolepsy - U.S. Medicine",
       "Disrupted Sleep, Shifting Schedules and Stimulants - U.S. Medicine",
       "How Veterans' Cardiovascular, Kidney and Metabolic Disease Shapes Their Sleep Problems, and Their Treatment Choices - U.S. Medicine"
     ],
@@ -341,39 +317,23 @@
       "India looking at new subsea cable landing sites on east coast to cut West Asia risks - Moneycontrol.com",
       "DoGo's Grid-Forming ESS Delivers Round-the-Clock Power to 2,000 Households on Remote Indonesian Island - The Manila Times"
     ],
-    "cloud": [
-      "Insurers dodge payouts after global Microsoft outage - Herald Sun",
-      "Microsoft blames its Microsoft 365 outage on a dormant July bug - The Next Web",
-      "Wait, Why Did Every Major Bank Just Go Down? - Futurism"
+    "cn_signals": [
+      "IAF Chief: True Self Reliance is Crucial for Future War Preparedness - Asianet Newsable"
     ],
     "cyber_au": [
       "Australian businesses pay ransomware demands more often - SecurityBrief Australia",
       "French cyber attack highlights risks for Australia's smart buildings - Pinsent Masons",
       "Coles supermarket cyber attack: Australia’s retailer investigates security breach - Beinsure"
     ],
-    "cyber_state": [
-      "PHP2Shell flaw exploited in chained attacks targeting unpatched Check Point gateways - Cybersecurity Dive",
-      "Duffy's FAA warning gave America's adversaries a roadmap - St. Augustine Record",
-      "Canada Bill C-22 Could Force Apps to Build Intercept Tools: Senate to Hear Signal, Meta Monday - Tech Times"
-    ],
     "cyber_supply": [
+      "Expedia confirms data breach following supply chain attack - SC Media",
       "AI finds zero-day flaws for just $4 now – even mediocre hackers can cash in - ZDNET",
-      "Creating a holistic threat management strategy for Frontier AI - Cybersecurity Dive",
-      "Google Project Zero Sets Course for 30-Day Disclosure Deadline - SecurityWeek"
+      "Creating a holistic threat management strategy for Frontier AI - Cybersecurity Dive"
     ],
     "deepfake": [
       "New in Specto: AI-generated captions and transcripts for audio and video - Clarivate",
       "Satire or propaganda? How AI-generated videos blur the lines - eKathimerini.com",
-      "Uni-President Enterprises : 9M revenue rose 4.2%, while attributable profit increased 26.1% - TradingView"
-    ],
-    "dieoff": [
-      "Mass death of Indian carp raises pollution concerns at Ooty lake - The Hindu",
-      "Clean At Entry, Polluted At Exit: The Data Behind Delhi’s Yamuna Debate - شبكة تواصل الإخبارية"
-    ],
-    "flash": [
-      "REG - Empire Metals Ltd - Capital Access Window - Trading Halt - TradingView",
-      "Gorilla Gold Mines Enters Trading Halt Pending Material Acquisition and Equity Raising Announcement - Kalkine",
-      "Lighter and Aster blame outsiders after $15.5M drain, ASTER flash crash - CryptoRank"
+      "President Chain Store: 9M26 sales grew 5.7%, with expansion and digital investment driving the growth agenda - TradingView"
     ],
     "fuel_au": [
       "Minns pulls property crackdown as falling stamp duty hits public sector - The Mandarin",
@@ -390,13 +350,8 @@
       "U.S. Soldiers Googled Hospitals After Deadly Iran Strike - USA Herald",
       "U.S. troops killed in Iranian drone strike lacked adequate defenses, 60 Minutes investigation finds - SSBCrack"
     ],
-    "mobilisation": [
-      "Lawyer was declared fit without test results and appointed a grenadier: court canceled the MMC conclusion but not the mobilization - Судово-юридична газета",
-      "Actor Oleksandr Oleksenko has been called up to serve in the Armed Forces of Ukraine - UA.NEWS",
-      "Deferment in Reserve+ did not save: The Territorial Recruitment Center illegally mobilized a student, and the court refused to release him from service - Судово-юридична газета"
-    ],
-    "murray": [
-      "Corporate Ladder: Your weekly guide to executive appointments in South Australia - InDaily South Australia"
+    "medexport": [
+      "Taliban Turn To Iran To Address Medicine Shortages In Afghanistan - Afghanistan International"
     ],
     "national_outage": [
       "Nationwide outage impacts Chase banking online and at some branches - NBC News",
@@ -414,9 +369,9 @@
       "Czechs continue to cut gas consumption, reserves expected to last - oEnergetice.cz"
     ],
     "sapn": [
+      "Millions locked out as money chaos spreads - News.com.au",
       "NAB rolls out new ‘smart’ ATMs across Australia - https://newsreel.com.au/",
-      "Twist in alleged bizarre 239kg copper theft - Adelaide Now",
-      "NAB launches new Smart ATMs across Australia - News24"
+      "Twist in alleged bizarre 239kg copper theft - Adelaide Now"
     ],
     "sawater": [
       "DCWD trains upland brgys on water safety - SunStar Publishing Inc."
@@ -529,9 +484,9 @@
       "yes": 2.1
     },
     {
-      "d24h": -0.2,
+      "d24h": -0.3,
       "q": "Will the U.S. test a nuclear weapon by December 31 2026?",
-      "yes": 2.9
+      "yes": 2.8
     },
     {
       "d24h": 1.0,
@@ -544,9 +499,9 @@
       "yes": 20.0
     },
     {
-      "d24h": -8.0,
+      "d24h": -8.5,
       "q": "Will Nick Stewart attend a US x Iran diplomatic meeting by December 31, 2026?",
-      "yes": 10.5
+      "yes": 10.0
     },
     {
       "d24h": -0.6,
@@ -567,6 +522,15 @@
     }
   ],
   "recent_alerts": [
+    {
+      "at": "2026-11-16T23:04:00Z",
+      "channels": [
+        "proactive"
+      ],
+      "confirmed": true,
+      "message": "CFS is responding to a grass fire at Gawler River, 10-25 km from home. No warning has been issued. If you're n",
+      "title": "CFS: Grass Fire at Gawler River"
+    },
     {
       "at": "2026-11-16T18:16:00Z",
       "channels": [
@@ -737,15 +701,6 @@
       "confirmed": false,
       "message": "54% of aircraft over Persian Gulf reporting degraded GPS (usual ~7%). Jamming often accompanies military opera",
       "title": "UNCONFIRMED: GPS jamming detected"
-    },
-    {
-      "at": "2026-11-15T06:17:00Z",
-      "channels": [
-        "proactive"
-      ],
-      "confirmed": null,
-      "message": "Overnight GPS-jamming and US flight flags were not linked to any attack. Gulf jamming has eased; SA and NSW GP",
-      "title": "Update: overnight flags - no attack confirmed"
     }
   ],
   "scenarios": [
@@ -797,7 +752,7 @@
         }
       ],
       "score": 15,
-      "trend": "up"
+      "trend": "steady"
     },
     {
       "band": "Low",
@@ -825,7 +780,7 @@
         }
       ],
       "score": 15,
-      "trend": "down"
+      "trend": "steady"
     },
     {
       "band": "Low",
@@ -845,29 +800,29 @@
     },
     {
       "band": "Elevated",
-      "convergence": "Signs are converging across 3 separate areas (cloud services, fraud waves and synthetic media). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: a Chinese st",
+      "convergence": "Signs are converging across 3 separate areas (ai-enabled hacking, fraud waves and synthetic media). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: a Chines",
       "domains": [
-        "Cloud services",
+        "AI-enabled hacking",
         "Fraud waves",
         "Synthetic media"
       ],
       "key": "ai",
       "lit": [
         {
-          "detail": "FTQ official resigns over AI-generated image of Quebec MNA with black eye",
-          "name": "Deepfakes of leaders or fake official alerts"
+          "detail": "Barracuda links cloud breach to ARTEX AI-powered cyberattack",
+          "name": "Reports of AI-driven hacking campaigns"
         },
         {
-          "detail": "Insurers dodge payouts after global Microsoft outage",
-          "name": "Major cloud or AI service outage"
+          "detail": "FTQ official resigns over AI-generated image of Quebec MNA with black eye",
+          "name": "Deepfakes of leaders or fake official alerts"
         },
         {
           "detail": "Deepfake era puts likeness in legal spotlight as EU works to define what’s allowed",
           "name": "Surge in AI voice-clone / deepfake scams in Australia"
         }
       ],
-      "score": 30,
-      "trend": "down"
+      "score": 35,
+      "trend": "up"
     }
   ],
   "sectors_relative_5d": {
