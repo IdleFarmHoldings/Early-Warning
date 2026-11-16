@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T20:07:00Z",
+  "generated_at": "2026-11-16T20:21:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -19,7 +19,7 @@
           "weight": 10
         },
         {
-          "detail": "Flinders Medical Centre; Modbury; Royal Adelaide",
+          "detail": "Flinders Medical Centre; Modbury; Royal Adelaide; Women's and Children's",
           "domain": "Hospitals",
           "id": "ed",
           "name": "Three or more Adelaide emergency departments 'very busy'",
@@ -627,9 +627,10 @@
       "why": "The 2023 Optus outage cut mobile, NBN, EFTPOS and some 000 calls nationwide for 12 hours. Hostile states pre-position in critical infrastructure; GPS jamming over Australia would be a new and serious sign."
     },
     {
-      "band": "Guarded",
-      "convergence": "Two different kinds of sign are showing together (health and hospitals). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: unknown illness / pneumonia cluster reported, countries restricting medical supply exports and pandemic-response stocks outperforming (5 days).",
+      "band": "Elevated",
+      "convergence": "Signs are converging across 3 separate areas (chemical weapons, health and hospitals). Unrelated systems flagging the same scenario at once is the pattern seen before past events. Before COVID-19 (Dec 2019 - Feb 2020): reports of an unknown pneumonia cluster, WHO outbreak notices, mask and hazmat makers (Alpha Pro Tech, Lakeland) and vaccine developers (Moderna, Novavax) surging weeks before broad markets fell, and countries restricting exports of masks and medicines (Taiwan from 24 Jan 2020, then dozens more). The strongest signs not yet showing: unknown illness / pneumonia cluster reported, countries restricting medical supply exports and pandemic-response stocks outperforming (5 days).",
       "domains": [
+        "Chemical weapons",
         "Health",
         "Hospitals"
       ],
@@ -643,7 +644,14 @@
           "weight": 15
         },
         {
-          "detail": "Flinders Medical Centre; Modbury; Royal Adelaide",
+          "detail": "Microsoft reveals the cause of its catastrophic Outlook outage — incident set off by a ‘cascading failure’ of servers as crash leads to chlo",
+          "domain": "Chemical weapons",
+          "id": "chem",
+          "name": "Chemical / nerve-agent attack or mass poisoning reported",
+          "weight": 15
+        },
+        {
+          "detail": "Flinders Medical Centre; Modbury; Royal Adelaide; Women's and Children's",
           "domain": "Hospitals",
           "id": "ed",
           "name": "Three or more Adelaide emergency departments 'very busy'",
@@ -652,8 +660,8 @@
       ],
       "name": "Pandemic, biological or chemical emergency",
       "sa_impact": "Health system strain, possible lockdowns and border closures, and shortages of medicines and protective equipment, which Australia mostly imports.",
-      "score": 25,
-      "trend": "down",
+      "score": 40,
+      "trend": "up",
       "unlit": [
         {
           "domain": "Health",
@@ -692,12 +700,6 @@
           "weight": 10
         },
         {
-          "domain": "Chemical weapons",
-          "id": "chem",
-          "name": "Chemical / nerve-agent attack or mass poisoning reported",
-          "weight": 15
-        },
-        {
           "domain": "Health",
           "id": "dieoff",
           "name": "Unexplained mass deaths or animal die-offs",
@@ -725,7 +727,7 @@
       "name": "Major cyber attack on Australia",
       "sa_impact": "Banks, payments, hospitals, fuel distribution, telcos and the power grid all run on networks; a large attack can stop card payments and services for hours to days.",
       "score": 10,
-      "trend": "up",
+      "trend": "steady",
       "unlit": [
         {
           "domain": "Global threat level",
@@ -791,10 +793,11 @@
       "why": "Large attacks are usually preceded by quieter steps: a surge in newly exploited flaws in VPNs and firewalls (how state groups like Volt Typhoon get in), scanning of industrial-control systems, a rise in ransomware victims in the target country, and official warnings. Before Russia's 2022 invasion, wiper malware hit Ukraine a day ahead; Chinese groups have been found pre-positioned in US and allied infrastructure."
     },
     {
-      "band": "Low",
-      "convergence": "Only one kind of sign is showing (cloud services). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, reports of ai-driven hacking campaigns and deepfakes of leaders or fake official alerts.",
+      "band": "Guarded",
+      "convergence": "Two different kinds of sign are showing together (cloud services and fraud waves). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, reports of ai-driven hacking campaigns and deepfakes of leaders or fake official alerts.",
       "domains": [
-        "Cloud services"
+        "Cloud services",
+        "Fraud waves"
       ],
       "key": "ai",
       "lit": [
@@ -804,12 +807,19 @@
           "id": "cloud",
           "name": "Major cloud or AI service outage",
           "weight": 10
+        },
+        {
+          "detail": "Deepfake Fraud Has Cost Almost $4 Billion Worldwide Since 2020",
+          "domain": "Fraud waves",
+          "id": "scams",
+          "name": "Surge in AI voice-clone / deepfake scams in Australia",
+          "weight": 5
         }
       ],
       "name": "AI-enabled attack (non-traditional)",
       "sa_impact": "Not bombs but disruption: hacking at machine speed across banks, telcos, hospitals and the grid at once; fake videos or alerts from leaders causing panic buying or bank runs; or automated market and fraud shocks. Effects would be outages, payment failures and confusion about what is real.",
-      "score": 10,
-      "trend": "down",
+      "score": 15,
+      "trend": "up",
       "unlit": [
         {
           "domain": "Mass exploitation",
@@ -846,12 +856,6 @@
           "id": "tel",
           "name": "Phone / internet carrier outage",
           "weight": 10
-        },
-        {
-          "domain": "Fraud waves",
-          "id": "scams",
-          "name": "Surge in AI voice-clone / deepfake scams in Australia",
-          "weight": 5
         },
         {
           "domain": "Edge-device exploitation",
