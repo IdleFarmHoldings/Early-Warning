@@ -1,13 +1,7 @@
 {
   "about": "Short form of latest.json + indicators.json for the analysis run. Links and raw samples removed.",
   "acsc": [],
-  "aircraft_flags": {
-    "gps_gulf": {
-      "median": 6,
-      "status": "ANOMALY",
-      "value": 32
-    }
-  },
+  "aircraft_flags": {},
   "analyst": {
     "ASPI Strategist": [
       "Just by meeting, Quad leaders send a signal to Beijing",
@@ -76,13 +70,13 @@
   "gdacs_orange_red": [
     "Drought is on going in Aruba, , Brazil, Colombia, Costa Rica, , French Guiana, Guyana, Panama, Suriname, Venezuela"
   ],
-  "generated_at": "2026-11-16T16:24:00Z",
+  "generated_at": "2026-11-16T16:39:00Z",
   "gps_bad_pct": {
     "Baltic / Kaliningrad": 22,
     "Black Sea": 50,
-    "Israel & Eastern Mediterranean": 10,
+    "Israel & Eastern Mediterranean": 2,
     "Korea": null,
-    "Persian Gulf": 32,
+    "Persian Gulf": 9,
     "South Australia": null,
     "Sydney / NSW": null,
     "Taiwan Strait": 0
@@ -165,7 +159,7 @@
     }
   ],
   "internet_drop_pct": {
-    "China": 0.2,
+    "China": 0.0,
     "Iran": 0.0,
     "Israel": 0.2,
     "Russia": 0.0,
@@ -192,14 +186,14 @@
     "fire_danger_ok": true,
     "fires_active": 1,
     "fuel": {
-      "brent_aud": 140.5,
-      "change_pct": 5.8,
+      "brent_aud": 140.4,
+      "change_pct": 5.7,
       "pump_cents": 5,
-      "week_ago_aud": 132.7
+      "week_ago_aud": 132.8
     },
-    "grid_demand_fall_pct": 0.4,
-    "grid_demand_mw": 1270,
-    "grid_demand_usual_mw": 1301,
+    "grid_demand_fall_pct": 1.7,
+    "grid_demand_mw": 1254,
+    "grid_demand_usual_mw": 1298,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
@@ -227,16 +221,16 @@
   },
   "markets": {
     "AUD/USD": {
-      "change_pct": -0.78,
-      "price": 0.6754
+      "change_pct": -0.82,
+      "price": 0.6751
     },
     "Brent oil": {
-      "change_pct": -2.48,
-      "price": 93.46
+      "change_pct": -2.54,
+      "price": 93.41
     },
     "Gold": {
-      "change_pct": -0.65,
-      "price": 3860.9
+      "change_pct": -0.64,
+      "price": 3861.6
     },
     "VIX": {
       "change_pct": 8.45,
@@ -283,8 +277,8 @@
       "Lords Urge UK to Keep Terrestrial TV Over Cyber Risks - https://streamlinefeed.co.ke/"
     ],
     "chem": [
-      "Finland Gives €50,000 to Boost OPCW Work - Mirage News",
       "Spain provides EUR 350,000 in voluntary funding to support OPCW’s work - Organisation for the Prohibition of Chemical Weapons",
+      "Finland Gives €50,000 to Boost OPCW Work - Mirage News",
       "Spain allocates €300,000 to support OPCW missions in Syria - سانا"
     ],
     "cloud": [
@@ -322,7 +316,7 @@
     "flash": [
       "REG - Empire Metals Ltd - Capital Access Window - Trading Halt - TradingView",
       "Gorilla Gold Mines Enters Trading Halt Pending Material Acquisition and Equity Raising Announcement - Kalkine",
-      "EPX Limited Requests Trading Halt Pending Capital Raising Bookbuild Outcome - Kalkine"
+      "Canadian Investment Regulatory Organization Trading Halt - EGLX - The Manila Times"
     ],
     "fuel_au": [
       "Nation’s truck driver shortage hits 12pc - GoAuto.com.au",
@@ -335,9 +329,9 @@
       "Mystery Pneumonia Death Sparks Concern; Trader Joe's Recall; OUD in Young People - MedPage Today"
     ],
     "masscas": [
-      "Preliminary investigation points to steering failure in tanker collision with river cruise ship - WDSU",
+      "5 remain hospitalized as NTSB investigation into tanker, cruise ship crash continues - WDSU",
       "Shootout at gun show leaves person dead and SC deputy hospitalized, sheriff says - The State",
-      "The European Commission, WHO and NATO are calling for urgent measures for European hospitals, which are vulnerable to wars and pandemics - Informat.ro"
+      "U.S. Soldiers Googled Hospitals After Deadly Iran Strike - USA Herald"
     ],
     "medexport": [
       "Taliban Turn To Iran To Address Medicine Shortages In Afghanistan - Afghanistan International"
@@ -406,7 +400,7 @@
       "yes": 3.9
     },
     {
-      "d24h": -0.2,
+      "d24h": 0.3,
       "q": "Will the US officially declare war on Iran by December 31, 2026?",
       "yes": 1.5
     },
@@ -483,12 +477,12 @@
     {
       "d24h": 0.3,
       "q": "Will the U.S. test a nuclear weapon by December 31 2026?",
-      "yes": 2.9
+      "yes": 3.1
     },
     {
-      "d24h": 1.5,
+      "d24h": 2.0,
       "q": "Will Russia invade another country by December 31, 2027?",
-      "yes": 19.0
+      "yes": 19.5
     },
     {
       "d24h": 5.0,
@@ -718,19 +712,9 @@
     },
     {
       "band": "Low",
-      "convergence": "Only one kind of sign is showing (electronic warfare). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
-      "domains": [
-        "Electronic warfare"
-      ],
       "key": "mideast",
-      "lit": [
-        {
-          "detail": "gps_gulf 32 vs usual 6",
-          "name": "GPS jamming spike (Gulf / Israel)"
-        }
-      ],
-      "score": 10,
-      "trend": "up"
+      "score": 0,
+      "trend": "down"
     },
     {
       "band": "Low",
@@ -843,9 +827,9 @@
   ],
   "sectors_relative_5d": {
     "defence_au": -0.57,
-    "defence_eu": -0.69,
-    "defence_us": 0.41,
-    "pandemic": -3.31
+    "defence_eu": -0.94,
+    "defence_us": 0.51,
+    "pandemic": -4.1
   },
   "tankers": "normal",
   "telecom_drop_pct": {
