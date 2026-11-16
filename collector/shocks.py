@@ -180,6 +180,14 @@ def traffic_signals(current, series, now, baseline_fn):
 
 
 # ---------- news ----------
+# Coverage of a halt that has already happened ("what to know after the ground stop", "was it faulty wiring?").
+AFTERMATH = re.compile(
+    r"\b(after (the|a|last|this|yesterday'?s?|friday'?s?|\w+day'?s) |following (the|a|last) |in the wake of|aftermath|"
+    r"what (to know|we know|happened|went wrong)|was caused by|caused by|determin(e|es|ing) whether|investigat\w+ (the )?cause|"
+    r"questions|explain(s|ed)?|blame[sd]?|warns? (another|of another)|could happen again|response highlights|"
+    r"faces? .{0,30}(questions|scrutiny)|just another|review of|opinion|analysis)\b", re.I)
+
+
 def news_signals(news, now):
     """{(country, sector): {"outlets": set, "headlines": [...], "recovery": set, "last": dt}} from recent headlines."""
     hours = CFG.get("news_window_hours", 3)
@@ -192,7 +200,7 @@ def news_signals(news, now):
             if not dt or now - dt > timedelta(hours=hours) or dt - now > timedelta(hours=1):
                 continue
             norm = re.sub(r"\W+", " ", head.lower()).strip()
-            if norm in seen or NOT_LIVE.search(head):
+            if norm in seen or NOT_LIVE.search(head) or AFTERMATH.search(head):
                 continue
             seen.add(norm)
             for sector, s in SECTORS.items():
@@ -305,14 +313,19 @@ def _alerts_for(code, sector, level, sig, mem, cd, now, first_run, names):
         if k in alerted:
             cleared = mem.setdefault("clear_since", {}).setdefault(k, iso(now))
             if now - _ts(cleared) >= timedelta(minutes=CFG.get("clear_minutes", 30)):
-                emit(f"shock-over-{code}-{sector}", ["proactive"], f"Update: {name} {s['label']} - appears to be over",
-                     f"The signs of a nationwide {s['label']} halt in {name} have cleared (news, tracking and official feeds). "
-                     "Check the board for what caused it.", 2, True, "white_check_mark")
+                mem.setdefault("over", {})[k] = iso(now)
+                if alerted[k].endswith("|Confirmed"):
+                    emit(f"shock-over-{code}-{sector}", ["proactive"], f"Update: {name} {s['label']} - appears to be over",
+                         f"The signs of a nationwide {s['label']} halt in {name} have cleared (news, tracking and official "
+                         "feeds). Check the board for what caused it.", 2, True, "white_check_mark")
                 alerted.pop(k)
                 mem["clear_since"].pop(k, None)
         return out
     mem.setdefault("clear_since", {}).pop(k, None)
     if level == "Possible":
+        over = mem.get("over", {}).get(k)
+        if over and list(sig) == ["news"] and now - _ts(over) < timedelta(days=CFG.get("aftermath_days", 3)):
+            return out  # headlines still discussing an event that has ended: board only
         first = mem.get("seen", {}).get(k)
         if not first or now - _ts(first) < timedelta(minutes=CFG.get("possible_persist_minutes", 25)):
             return out  # wait for it to persist before pushing a single unconfirmed signal

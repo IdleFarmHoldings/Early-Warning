@@ -16,7 +16,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from common import CONFIG, ROOT, append_jsonl, iso, load_json, now_utc, push, save_json  # noqa: E402
-from rules import baseline, extra_metrics, evaluate  # noqa: E402
+from rules import baseline, extra_metrics, evaluate, watch_list  # noqa: E402
 from sources import fetch_all  # noqa: E402
 import precursors  # noqa: E402
 import maritime  # noqa: E402
@@ -604,6 +604,7 @@ def main():
     summary["prediction_markets"] = (pm or {}).get("markets")
     summary["incidents"] = inc
     summary["national_shocks"] = shock_out
+    summary["watching"] = watch_list(state, now)
     if chk:
         save_json("data/chokepoints.json", {"generated_at": iso(now), "chokepoints": chk})
     save_json("data/latest.json", summary)

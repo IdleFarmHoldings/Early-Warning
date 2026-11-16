@@ -97,3 +97,45 @@ def test_immigration_visas_and_statistics_are_not_bank_outages():
     assert I.classify("Snab Ltd shares fall")[1] is None
     news = feed("UK student visa applications down 31% as Russell Group warns of volatility - The PIE News")
     assert I.triage(news, NOW, {}) == []
+
+
+def test_aftermath_and_unrelated_headlines_do_not_alert():
+    """Replay of real headlines from 13-16 Nov 2026 that each pushed a phone alert under the old rules."""
+    from datetime import datetime, timezone
+    from email.utils import format_datetime
+    import incidents
+    now = datetime(2026, 11, 15, 2, 0, tzinfo=timezone.utc)
+
+    def news(titles, feed="cloud"):
+        return {feed: {"items": [{"title": t, "date": format_datetime(now - timedelta(minutes=20 + i)), "link": ""}
+                                 for i, t in enumerate(titles)]}}
+    after = ["Microsoft 365 services fully restored after global outage - Reuters",
+             "Microsoft 'deeply sorry' as services restored after global outage - Nine.com.au",
+             "Insurers dodge payouts after global Microsoft outage - The Australian",
+             "Microsoft restores services after network outage, rules out cyberattack - ET Datacenters",
+             "The Microsoft Global Outage: Should The Gulf Be Worried? – Analysis - Eurasia Review",
+             "Microsoft 365 outage loss estimates range from minimal to US$700 million - Insurance Business"]
+    state = {}
+    scored = incidents.triage(news(after), now, state)
+    assert incidents.incident_alerts(scored, state, now, False) == [], [s["severity"] for s in scored]
+    # unrelated stories about different companies no longer add up to one "Other services outage in SA"
+    mixed = ["Workday Outage Locks Employees at Thousands of Companies Out of Accounts - Adelaide Now",
+             "1,000 servers suspected of powering AI-driven cyberattacks identified worldwide - InDaily",
+             "UK student visa applications down 31% as Russell Group warns of volatility - The Guardian"]
+    state = {}
+    assert incidents.incident_alerts(incidents.triage(news(mixed), now, state), state, now, False) == []
+    # a live Coles cyber attack alerts once, named properly, and stays quiet as follow-up stories arrive
+    coles = ["Coles investigates cyber attack but provides little detail - ABC News",
+             "Coles investigates cyber-attack and apologises to customers - The Guardian",
+             "Major supermarket chain Coles suffers cyber attack - News24",
+             "Coles Group investigating a cyber incident - iTnews"]
+    state = {}
+    out = incidents.incident_alerts(incidents.triage(news(coles, "cyber_au"), now, state), state, now, False)
+    assert len(out) == 1 and out[0]["title"] == "Supermarkets & food: cyber attack in Australia", out
+    assert "wary of emails" in out[0]["message"]
+    later = now + timedelta(hours=13)
+    more = {"cyber_au": {"items": [{"title": t, "date": format_datetime(later - timedelta(minutes=30)), "link": ""}
+                                   for t in ["What Coles shoppers need to know about cyber attack on the retailer - 9News",
+                                             "Coles cyber attack: stores open as investigation continues - ABC News",
+                                             "Coles cyber attack disrupts online orders - SMH"]]}}
+    assert incidents.incident_alerts(incidents.triage(more, later, state), state, later, False) == []

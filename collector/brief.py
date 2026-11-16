@@ -41,6 +41,8 @@ def build(latest, indicators):
                           for a in (L.get("recent_alerts") or [])[:20]],
         "aircraft_flags": {k: {kk: v.get(kk) for kk in ("status", "value", "median")}
                            for k, v in ac.items() if v.get("status") in ("ANOMALY", "DROP")},
+        "watching": [{k: w.get(k) for k in ("what", "region", "text", "first_seen", "last_seen", "active")}
+                     for w in (L.get("watching") or [])],
         "nc3": (ac.get("nc3") or {}).get("status"),
         "tankers": (ac.get("tankers") or {}).get("status"),
         "national_shocks": {"shocks": ns.get("shocks") or [], "faa": {k: (ns.get("faa") or {}).get(k)

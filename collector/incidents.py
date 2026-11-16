@@ -37,6 +37,16 @@ NOT_LIVE = re.compile(
     r"\b(market size|forecast to|webinar|how to|lessons from|anniversary|years? (ago|after)|report finds|"
     r"named a leader|contest|award|fined|sentenced|court|inquiry into last)\b", re.I)
 
+# Aftermath coverage: the incident is over or being picked over. These never start or repeat an alert.
+AFTERMATH = re.compile(
+    r"\b(restor(es|ed|ing)|fully restored|back online|resolved|recover(s|y|ed|ing)|resum(es|ed|ing)|"
+    r"(deeply )?sorry|apologi[sz]e[sd]?|rules? out|ruled out|explain(s|ed|er)?|explanation|post[- ]?mortem|review|"
+    r"what (to know|we know|happened|went wrong)|what .{2,30} need to know|lessons?|aftermath|in the wake of|"
+    r"after (the|a|an|last|this|yesterday'?s?) |following (the|a|last) |insurers?|insurance|payouts?|class[- ]action|"
+    r"compensation|loss estimates?|cost of|costs? (businesses|firms|the economy)|questions|blame[sd]?|"
+    r"should .{2,40} be worried|analysis|opinion|shows? (the|how|why)|how (a|the) .{3,60} (rocked|unfolded|happened)|"
+    r"warns? (another|of another|it could happen again)|could happen again)\b", re.I)
+
 # Each target: (tier, label, regex). The first match at the highest tier wins.
 TARGETS = [
     (4, "Phone & internet networks", r"\b(Telstra|Optus|TPG|Vodafone|NBN|triple zero|000 calls?|mobile network|internet outage|nationwide outage)\b"),
@@ -46,6 +56,11 @@ TARGETS = [
     (3, "Banking & payments", r"\b(Commonwealth Bank|CommBank|Westpac|Bendigo Bank|Macquarie Bank|banks?|banking|EFTPOS|eftpos|"
                               r"card payments?|payment systems?|Mastercard|Osko|PayID|Tyro|PayPal|"
                               r"(?-i:CBA|NAB|ANZ|ING|ATMs?|NPP|ASX)|(?-i:Visa)(?! (applications?|processing|holders?|rules?|system for)))\b"),
+    (3, "Supermarkets & food", r"\b(Coles|Woolworths|Woolies|Aldi|IGA|Foodland|Drakes|Metcash|supermarkets?)\b"),
+    (3, "Fuel supply", r"\b(Ampol|Viva Energy|BP Australia|Caltex|Mobil|United Petroleum|fuel (terminals?|pumps?|supply|distribution)|"
+                       r"petrol stations?|servos?)\b"),
+    (3, "Health & hospitals", r"\b(SA Health|hospitals?|Medicare|pharmac(y|ies)|ambulance|My Health Record|pathology)\b"),
+    (3, "Government services", r"\b(myGov|Centrelink|Services Australia|ATO|Service SA|SA Government|SA Police)\b"),
     (2, "Microsoft", r"\b(Microsoft( 365)?|Office 365|Outlook|Teams|Azure|Windows|Entra)\b"),
     (2, "Amazon Web Services", r"\b(AWS|Amazon Web Services)\b"),
     (2, "Google", r"\b(Google Cloud|Gmail|Google Workspace|Android)\b"),
@@ -55,7 +70,9 @@ TARGETS = [
     (2, "AI platforms", r"\b(OpenAI|ChatGPT|Anthropic|Claude)\b"),
     (2, "Identity & SaaS", r"\b(Okta|Salesforce|Oracle|SAP|ServiceNow|Starlink)\b"),
 ]
-TIER_NAMES = {4: "core infrastructure", 3: "banking / payments", 2: "major platform", 1: "low-dependency app"}
+AU_ONLY = {"Supermarkets & food", "Fuel supply", "Government services"}  # Australian brands: always local reach
+ATTACK = re.compile(r"\b(cyber[- ]?(attack|incident|security incident)\w*|hack(ed|ers?)?|breach(ed)?|ransomware|ddos)\b", re.I)
+TIER_NAMES = {4: "core infrastructure", 3: "essential service", 2: "major platform", 1: "low-dependency app"}
 
 SA = re.compile(r"\b(South Australia\w*|Adelaide|SA (Govt|Government|Health|Police|Power)|SA\b(?! \d))")
 AU = re.compile(r"\b(Australia\w*|Aussies?|nationwide|ASIO|ATO|Centrelink|myGov|Medicare|NSW|Victoria\w*|Queensland\w*|"
@@ -89,6 +106,14 @@ def _when(item):
 SUBJECT = r"(?:\W+[\w'-]+){0,2}?\W+(?:outages?|down\b|offline|disrupt\w*|crash\w*|meltdown|fail\w*|hack\w*|breach\w*|cyber[- ]?attack)"
 
 
+def _subject(head):
+    """A label for a headline about an organisation we don't track: its leading name ("Workday", "Optimus Bank")."""
+    m = re.match(r"\W*((?:[A-Z][\w&'-]+)(?:\s+[A-Z][\w&'-]+){0,2})", head)
+    name = m.group(1) if m else ""
+    name = re.sub(r"\s+(Outage|Hack|Breach|Cyber\w*|Attack|Investigat\w+|Confirms?|Says|Hit|Down)\b.*$", "", name).strip()
+    return name[:40] if len(name) >= 3 else "Other services"
+
+
 def classify(head):
     """(tier, label) for the target a headline is about, or (1, None).
     A target named right before the outage word ("Microsoft outage blocks visa applications") wins; otherwise the
@@ -119,15 +144,18 @@ def collect(news, now, telecom=None, local=None):
                 continue
             seen.add(norm)
             tier, label = classify(head)
-            label = label or "Other services"
+            label = label or _subject(head)
             c = clusters.setdefault(label, {"label": label, "tier": tier, "reports": [], "pubs": set(),
                                             "first": dt, "last": dt})
             c["tier"] = max(c["tier"], tier)
             c["first"], c["last"] = min(c["first"], dt), max(c["last"], dt)
             c["pubs"].add(pub.strip().lower())
             c["reports"].append({"title": head[:160], "pub": pub.strip(), "at": iso(dt), "link": it.get("link", ""),
-                                 "sa": bool(SA.search(head) or SA_PUBS.search(pub)),
-                                 "au": bool(AU.search(head) or AU_PUBS.search(pub)),
+                                 "sa": bool(SA.search(head)),
+                                 "au": bool(AU.search(head) or AU_PUBS.search(pub) or SA_PUBS.search(pub)
+                                            or (tier == 3 and label in AU_ONLY)),
+                                 "after": bool(AFTERMATH.search(head)),
+                                 "attack": bool(ATTACK.search(head)),
                                  "global": bool(GLOBAL.search(head)),
                                  "spread": sorted({m.group(0).lower() for m in SPREAD.finditer(head)}),
                                  "official": bool(CONFIRM.search(head))})
@@ -152,8 +180,12 @@ def collect(news, now, telecom=None, local=None):
 
 def score(c, prev=None, now=None):
     """Score one cluster on the three signals and decide severity."""
-    reps = c["reports"]
-    n_pubs = len([p for p in c["pubs"] if p])
+    allreps = c["reports"]
+    reps = [r for r in allreps if not r.get("after")] or []
+    winding_down = len(reps) < max(1, len(allreps) - len(reps))  # mostly "restored / what we learned" coverage now
+    if not reps:
+        reps = allreps
+    n_pubs = len({r["pub"].strip().lower() for r in reps if r["pub"]})
     # 1. Proximity: 3 SA, 2 Australia, 1 global (reaches Australian users), 0 elsewhere
     prox = 3 if any(r["sa"] for r in reps) else 2 if any(r["au"] for r in reps) else 1 if any(r["global"] for r in reps) else 0
     # 2. Velocity: reports and publishers in the window, growth since last run, and sectors hit
@@ -178,6 +210,8 @@ def score(c, prev=None, now=None):
         sev = "Warning"
     else:
         sev = "Info"
+    if winding_down:
+        sev = "Info"  # over, or being picked over: board only
     prox_txt = ["outside Australia", "global (reaches Australian users)", "Australia", "South Australia"][prox]
     vel_txt = ["", "slow (isolated reports)", "spreading", "rapid / widespread"][vel]
     why = (f"Proximity: {prox_txt}. Velocity: {vel_txt} - {len(reps)} reports from {n_pubs} outlets"
@@ -185,8 +219,9 @@ def score(c, prev=None, now=None):
     return {"key": re.sub(r"\W+", "-", c["label"].lower()).strip("-"), "target": c["label"], "severity": sev,
             "proximity": prox, "velocity": vel, "criticality": crit, "confirmed": confirmed,
             "reports": len(reps), "outlets": n_pubs, "sectors": sectors, "first_seen": iso(c["first"]),
+            "winding_down": winding_down, "attack": sum(1 for r in reps if r.get("attack")) * 2 >= len(reps),
             "rationale": why, "headlines": [{"title": r["title"], "pub": r["pub"], "at": r["at"], "link": r["link"]}
-                                            for r in sorted(reps, key=lambda r: r["at"], reverse=True)[:4]]}
+                                            for r in sorted(reps, key=lambda r: (not r.get("after"), r["at"]), reverse=True)[:4]]}
 
 
 RANK = {"Info": 0, "Warning": 1, "Critical": 2}
@@ -208,32 +243,38 @@ def triage(news, now, state, telecom=None, local=None):
 
 
 def incident_alerts(scored, state, now, first_run):
-    """Push Warning (Early warning channel) and Critical (both channels) incidents once per target per 12 h,
-    and again if the severity rises."""
+    """Push Warning (Early warning channel) and Critical (both channels) incidents ONCE per incident, and again
+    only if the severity rises. An incident counts as the same one until it has had no live reports for 2 days,
+    so "services restored" and "what went wrong" stories never repeat the alert."""
     cd = state.setdefault("cooldown", {})
     out = []
     for s in scored:
         if s["severity"] == "Info":
             continue
         key = f"inc-{s['key']}"
-        last = cd.get(key)  # "<iso>|<severity>"
+        last = cd.get(key)  # "<iso>|<severity>|<last live report seen>"
         if last:
-            at, sev = (last.split("|") + ["Info"])[:2]
-            recent = now - datetime.strptime(at, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc) < timedelta(hours=12)
-            if recent and RANK[s["severity"]] <= RANK.get(sev, 0):
-                continue
-        cd[key] = f"{iso(now)}|{s['severity']}"
+            at, sev, live = (last.split("|") + ["Info", ""])[:3]
+            same = now - datetime.strptime(live or at, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc) < timedelta(days=2)
+            if same:
+                cd[key] = f"{at}|{sev}|{iso(now)}"
+                if RANK[s["severity"]] <= RANK.get(sev, 0):
+                    continue
+        cd[key] = f"{iso(now)}|{s['severity']}|{iso(now)}"
         if first_run:
             continue
         crit = s["severity"] == "Critical"
         top = s["headlines"][0]["title"] if s["headlines"] else ""
-        where = {3: "in SA", 2: "in Australia", 1: "globally"}.get(s["proximity"], "")
+        where = {3: "in SA", 2: "in Australia", 1: "worldwide"}.get(s["proximity"], "")
+        what = "cyber attack" if s.get("attack") else "outage"
+        advice = ("Be wary of emails or texts about it, and keep some cash handy in case payments are affected."
+                  if s.get("attack") else "Use cash and phone calls as backup." if s["criticality"] >= 3
+                  else "Use phone or SMS for anything urgent.")
         out.append({"key": key, "channels": ["proactive", "reactive"] if crit else ["proactive"], "category": "cyber",
-                    "title": f"{s['severity']}: {s['target']} outage {where}".strip()[:90],
+                    "title": f"{s['target']}: {what} {where}".strip()[:90],
                     "message": (f"{top}. {s['reports']} reports from {s['outlets']} outlets"
-                                + (f"; hitting {', '.join(s['sectors'][:3])}" if s["sectors"] else "")
-                                + (". Use cash and phone calls as backup; check the board." if s["criticality"] >= 3
-                                   else ". Use phone or SMS for anything urgent; check the board."))[:390],
+                                + (f"; also affecting {', '.join(s['sectors'][:3])}" if s["sectors"] else "")
+                                + f". {advice} Check the board.")[:390],
                     "priority": 5 if crit else 4, "confirmed": s["confirmed"],
                     "tags": ["rotating_light" if crit else "warning"]})
     return out

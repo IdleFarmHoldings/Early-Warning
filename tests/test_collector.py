@@ -60,9 +60,8 @@ def test_jet_anomaly_needs_baseline_and_big_jump():
     assert anomalies({"bizjets_airborne": 95}, series[:5], now)["bizjets_airborne"]["status"] == "learning baseline"
     state = {"bootstrapped": True, "primed": ["aircraft"]}
     alerts, state, _ = evaluate({"aircraft": {"bizjets_airborne": 95}}, state, series, now)
-    assert alerts and not alerts[0]["confirmed"] and alerts[0]["channels"] == ["proactive"]
-    alerts, state, _ = evaluate({"aircraft": {"bizjets_airborne": 95}}, state, series, now)
-    assert alerts == [], "cooldown stops repeat pushes"
+    assert alerts == [], "one sensor on its own is held on the watch list, not pushed"
+    assert state["watch"]["bizjets_airborne"]["kind"] == "jets"
 
 
 if __name__ == "__main__":
@@ -128,8 +127,15 @@ def test_military_dark_drop_and_airlift():
     state = {"bootstrapped": True}
     alerts, state, _ = evaluate({"aircraft": {"mil_mideast": 6, "airlift": 30}}, state, series, now)
     titles = {a["title"] for a in alerts}
-    assert "UNCONFIRMED: military aircraft going dark" in titles and "UNCONFIRMED: military airlift surge" in titles
+    # two different kinds of sign in one region (aircraft going dark + an airlift surge) -> one combined alert
+    assert titles == {"Early signs lining up: the Middle East"}, titles
     assert all(len(a["message"]) < 400 for a in alerts)
+    from rules import watch_list
+    assert {w["kind"] for w in watch_list(state, now)} == {"dark", "flights"}
+    # one kind on its own is held on the watch list, never pushed
+    alerts, st2, _ = evaluate({"aircraft": {"airlift": 30, "mil_mideast": 30}}, {"bootstrapped": True}, series, now)
+    assert alerts == [] and [w["kind"] for w in watch_list(st2, now)] == ["flights"]
+    assert watch_list(st2, now + timedelta(hours=30)) and not watch_list(st2, now + timedelta(hours=30))[0]["active"]
 
 
 def test_gps_navwarn_internet():
@@ -150,8 +156,7 @@ def test_gps_navwarn_internet():
            "internet": {"countries": {"Iran": {"bgp": {"drop_pct": 60.0, "baseline": 5000}}}}}
     alerts, state, an = evaluate(res, {"bootstrapped": True}, series, now)
     titles = {a["title"] for a in alerts}
-    assert {"Surge in military navigation warnings", "Internet blackout: Iran"} <= titles, titles
-    assert not any("GPS" in t for t in titles), "a single GPS spike must not push an alert"
+    assert titles == {"Internet blackout: Iran"}, titles  # nav warnings and a single GPS spike are held
     assert all(len(a["message"]) < 400 for a in alerts)
 
 
@@ -169,39 +174,54 @@ def _run_gps(runs, res, series, now, state=None):
     return out, state
 
 
-def test_gps_needs_sustained_signal_and_enough_aircraft():
+def test_gps_is_held_until_sustained_and_only_home_alerts_alone():
+    from rules import watch_list
     now = now_utc().replace(second=0, microsecond=0)
-    series = _gps_series(now, gps_taiwan=2)
+    series = _gps_series(now, gps_taiwan=2, gps_adelaide=1)
     res = {"gps": {"regions": {"taiwan": {"name": "Taiwan Strait", "bad_pct": 40, "aircraft": 39}}}}
     out, state = _run_gps(4, res, series, now)
-    assert [len(x) for x in out] == [0, 0, 1, 0]  # third run in a row alerts, then cooldown
-    assert out[2][0]["title"] == "UNCONFIRMED: sustained GPS jamming over Taiwan Strait"
-    assert "45+ min" in out[2][0]["message"]
-    # too few aircraft to trust the share: never alerts
+    assert not any(out), "jamming away from home is held, not pushed"
+    w = watch_list(state, now + timedelta(minutes=45))
+    assert len(w) == 1 and w[0]["kind"] == "gps" and "45+ min" in w[0]["text"] and w[0]["region"] == "the Taiwan Strait"
+    # too few aircraft to trust the share: not even held
     thin = {"gps": {"regions": {"taiwan": {"name": "Taiwan Strait", "bad_pct": 90, "aircraft": 8}}}}
-    out, _ = _run_gps(4, thin, series, now)
-    assert not any(out)
+    out, state = _run_gps(4, thin, series, now)
+    assert not any(out) and not watch_list(state, now)
     # a normal reading in between resets the streak
     s = {"bootstrapped": True}
     for pct in (40, 40, 2, 40, 40):
         alerts, s, _ = evaluate({"gps": {"regions": {"taiwan": {"name": "T", "bad_pct": pct, "aircraft": 39}}}}, s, series, now)
-        assert not any("GPS" in a["title"] for a in alerts)
+    assert not watch_list(s, now)
+    # sustained jamming over South Australia matters on its own
+    home = {"gps": {"regions": {"adelaide": {"name": "South Australia", "bad_pct": 40, "aircraft": 47}}}}
+    out, _ = _run_gps(4, home, series, now)
+    assert [len(x) for x in out] == [0, 0, 1, 0] and out[2][0]["title"] == "UNCONFIRMED: GPS jamming over Australia"
 
 
-def test_gps_in_routinely_jammed_regions_needs_a_second_sign():
+def test_signs_lining_up_in_one_region_alert_once():
     now = now_utc().replace(second=0, microsecond=0)
     series = _gps_series(now, gps_gulf=8, navwarn_mideast=1)
     res = {"gps": {"regions": {"gulf": {"name": "Persian Gulf", "bad_pct": 40, "aircraft": 72}}}}
-    out, _ = _run_gps(5, res, series, now)
+
+    def run(n, res, state=None):
+        state = state or {"bootstrapped": True}
+        out = []
+        for i in range(n):
+            alerts, state, _ = evaluate(json.loads(json.dumps(res)), state, series, now + timedelta(minutes=15 * i))
+            out.append([a for a in alerts if a["key"].startswith("watch-")])
+        return out, state
+    out, _ = run(5, res)
     assert not any(out), "sustained Gulf jamming alone is routine in this war"
     res["navwarn"] = {"counts": {"mideast": 12}}
-    out, _ = _run_gps(3, res, series, now)
-    assert len(out[2]) == 1 and out[2][0]["title"] == "GPS jamming + other signs: Persian Gulf"
-    assert "navigation warnings" in out[2][0]["message"] and len(out[2][0]["message"]) < 300
-    res.pop("navwarn")
+    out, state = run(5, res)
+    assert [len(x) for x in out] == [0, 0, 1, 0, 0], out  # once GPS is sustained there are two kinds: alert once
+    a = out[2][0]
+    assert a["title"] == "Early signs lining up: the Middle East" and a["confirmed"] is False
+    assert "GPS jamming over Persian Gulf" in a["message"] and "navigation warnings" in a["message"] and len(a["message"]) < 400
+    # a third kind joining re-alerts inside the cooldown
     res["internet"] = {"countries": {"Iran": {"bgp": {"drop_pct": 60.0, "baseline": 5000}}}}
-    out, _ = _run_gps(3, res, series, now)
-    assert "internet blackout in Iran" in out[2][0]["message"]
+    alerts, state, _ = evaluate(json.loads(json.dumps(res)), state, series, now + timedelta(minutes=90))
+    assert any(x["key"] == "watch-mideast" and x["message"].startswith("3 different") for x in alerts)
 
 
 def test_satellite_subpoint_and_hotspots():

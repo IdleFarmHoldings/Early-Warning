@@ -115,56 +115,132 @@ def anomalies(current, series, now):
     return out
 
 
-def gps_alerts(results, an, state, now, bootstrap):
-    """GPS jamming is noisy, so only push it when the signal is solid.
+GLOBAL_KINDS = {"tankers": "flights", "airlift": "flights", "mil_total": "flights", "nc3": "nc3",
+                "bizjets_airborne": "jets", "retreat_bizjets": "jets"}
+KIND_WORDS = {"gps": "GPS jamming", "flights": "unusual military flights", "dark": "military aircraft going dark",
+              "navwarn": "missile / live-fire warnings", "nc3": "US nuclear-command aircraft activity",
+              "jets": "unusual private-jet movements", "internet": "an internet blackout"}
 
-    A region must (1) have enough aircraft to trust the share, (2) stay anomalous for several
-    collector runs in a row, and (3) where jamming is routine (Gulf, Israel, Baltic, Black Sea),
-    coincide with another independent sign in the same region: unusual military flights, aircraft
-    going dark, missile/live-fire warnings, US nuclear-command or tanker activity, or an internet
-    blackout. Spikes that don't qualify stay in the anomalies data for the analysis run.
+
+def _signal_of(metric, info):
+    """(kind, region) for an anomalous metric. Kinds are independent sensor families."""
+    if metric in GLOBAL_KINDS:
+        return GLOBAL_KINDS[metric], "global"
+    if metric == "raaf":
+        return "flights", "auspng"
+    for prefix, kind in (("mil_", "flights"), ("dark_", "dark"), ("navwarn_", "navwarn")):
+        if metric.startswith(prefix):
+            region = metric[len(prefix):]
+            return ("dark" if info["status"] == "DROP" else kind), {"australia": "auspng"}.get(region, region)
+    return None, None
+
+
+def watch_signals(results, an, state, now, bootstrap):
+    """Hold single-sensor early signs on a watch list; alert only when different kinds line up.
+
+    One sensor on its own (GPS jamming, a burst of military flights, aircraft vanishing from tracking, a jump in
+    navigation warnings) is usually an exercise, routine jamming or a tracking gap, so it is recorded in
+    state["watch"] and shown on the board, not pushed. A phone alert goes out when 2+ different kinds of sign
+    are active in the same region within the window - the pattern seen before real operations - or for the few
+    signs that matter on their own at home (sustained GPS jamming over SA / NSW).
     """
-    gcf = CONFIG["gps_confirm"]
-    streaks = state.setdefault("gps_streak", {})
+    wc, gcf = CONFIG["watch"], CONFIG["gps_confirm"]
+    held = state.setdefault("watch", {})
     cooldown = state.setdefault("cooldown", {})
+    streaks = state.setdefault("gps_streak", {})
     regions = (results.get("gps") or {}).get("regions") or {}
-    net = (results.get("internet") or {}).get("countries") or {}
-    out = []
-    for key, rule in gcf["regions"].items():
-        metric = f"gps_{key}"
-        info = an.get(metric) or {}
-        reg = regions.get(key) or {}
+    seen_now = {}
+
+    # GPS: only a solid, sustained reading counts as a sign at all
+    for key, region in gcf["regions"].items():
+        info, reg = an.get(f"gps_{key}") or {}, regions.get(key) or {}
         if info.get("status") == "no data" or info.get("value") is None:
             continue  # a gap in coverage neither builds nor breaks a streak
         solid = info.get("status") == "ANOMALY" and (reg.get("aircraft") or 0) >= gcf["min_aircraft"]
         streaks[key] = streaks.get(key, 0) + 1 if solid else 0
-        if streaks[key] < gcf["sustain_runs"]:
+        if streaks[key] >= gcf["sustain_runs"]:
+            name = reg.get("name") or key
+            seen_now[f"gps_{key}"] = ("gps", region, f"GPS jamming over {name}: {info['value']}% of {reg.get('aircraft')} "
+                                      f"aircraft affected for {gcf['sustain_runs'] * 15}+ min (usual ~{info['median']}%)")
+    # Aircraft and navigation-warning anomalies
+    for metric, info in an.items():
+        if metric.startswith("gps_") or info.get("status") not in ("ANOMALY", "DROP"):
             continue
-        signs = [METRIC_LABELS.get(m, m) for m in rule["corroborate"]
-                 if (an.get(m) or {}).get("status") in ("ANOMALY", "DROP")]
-        for c in rule.get("countries", []):
-            row = net.get(c) or {}
-            drops = [row[ds]["drop_pct"] for ds in ("ping-slash24", "bgp")
-                     if isinstance(row.get(ds), dict) and row[ds].get("drop_pct") is not None]
-            if drops and max(drops) >= CONFIG["internet_country_drop_pct"]:
-                signs.append(f"internet blackout in {c}")
-        if rule["needs"] == "corroborated" and not signs:
+        kind, region = _signal_of(metric, info)
+        if not kind:
             continue
-        last = cooldown.get(metric)
-        if last and now - _parse_ts(last) < timedelta(hours=gcf["cooldown_hours"]):
+        only = "Only " if info["status"] == "DROP" else ""
+        seen_now[metric] = (kind, region, f"{only}{info['value']} {METRIC_LABELS[metric]} (usual ~{info['median']})")
+    # Country internet blackouts (these also push on their own, below)
+    for country, region in wc["internet"].items():
+        row = ((results.get("internet") or {}).get("countries") or {}).get(country) or {}
+        drops = [row[ds]["drop_pct"] for ds in ("ping-slash24", "bgp")
+                 if isinstance(row.get(ds), dict) and row[ds].get("drop_pct") is not None]
+        if drops and max(drops) >= CONFIG["internet_country_drop_pct"]:
+            seen_now[f"net_{country}"] = ("internet", region, f"Internet blackout in {country}: about {round(max(drops))}% down")
+
+    for key, (kind, region, text) in seen_now.items():
+        h = held.setdefault(key, {"first": iso(now)})
+        h.update({"kind": kind, "region": region, "text": text, "last": iso(now)})
+    for key in [k for k, h in held.items() if now - _parse_ts(h["last"]) > timedelta(hours=wc["expire_hours"])]:
+        del held[key]
+
+    out = []
+    window = timedelta(hours=wc["window_hours"])
+    active = {k: h for k, h in held.items() if now - _parse_ts(h["last"]) <= window}
+    # 1. Signs that matter on their own at home
+    for key in wc["alone"]:
+        if key in seen_now:
+            last = cooldown.get(key)
+            if last and now - _parse_ts(last) < timedelta(hours=wc["cooldown_hours"]):
+                continue
+            cooldown[key] = iso(now)
+            if not bootstrap:
+                out.append(_alert(f"air-{key}", ["proactive"], "cyber", "UNCONFIRMED: GPS jamming over Australia",
+                                  f"{seen_now[key][2]}. GPS jamming here would be new and serious; it can also be a "
+                                  "fault. Watching for confirmation.", priority=4, confirmed=False, tags=["satellite", "question"]))
+    # 2. Different kinds of sign lining up in one region
+    by_region = {}
+    for h in active.values():
+        by_region.setdefault(h["region"], []).append(h)
+    glob = by_region.pop("global", [])
+    if len({h["kind"] for h in glob}) >= 2:
+        by_region["global"] = []
+    conv = state.setdefault("watch_alerted", {})
+    for region, own in by_region.items():
+        signs = own + glob
+        kinds = sorted({h["kind"] for h in signs})
+        if len(kinds) < 2:
             continue
-        cooldown[metric] = iso(now)
+        prev = conv.get(region) or {}
+        recent = prev.get("at") and now - _parse_ts(prev["at"]) < timedelta(hours=wc["cooldown_hours"])
+        if recent and len(kinds) <= prev.get("kinds", 0):
+            continue
+        conv[region] = {"at": iso(now), "kinds": len(kinds)}
         if bootstrap:
             continue
-        name = reg.get("name") or key
-        mins = gcf["sustain_runs"] * 15
-        also = f" At the same time: {signs[0]}{' and more' if len(signs) > 1 else ''}." if signs else ""
-        title = f"GPS jamming + other signs: {name}" if signs else f"UNCONFIRMED: sustained GPS jamming over {name}"
-        body = (f"{info['value']}% of {reg.get('aircraft')} aircraft over {name} have degraded GPS for {mins}+ min "
-                f"(usual ~{info['median']}%).{also} Watching for confirmation.")
-        out.append(_alert(f"air-{metric}", ["proactive"], "geo", title, body,
-                          priority=4, confirmed=False, tags=["satellite", "question"]))
+        name = wc["region_names"].get(region, region)
+        first = {}
+        for h in sorted(signs, key=lambda h: h["last"], reverse=True):
+            first.setdefault(h["kind"], h["text"])
+        detail = "; ".join(first[k] for k in kinds)[:230]
+        out.append(_alert(f"watch-{region}", ["proactive"], "geo", f"Early signs lining up: {name}"[:90],
+                          f"{len(kinds)} different kinds of sign in the last {wc['window_hours']} hours: {detail}. "
+                          "Signs lining up like this have come before military action, but nothing is confirmed. Check the board.",
+                          priority=4, confirmed=False, tags=["eyes"]))
     return out
+
+
+def watch_list(state, now):
+    """The held signs, newest first, for the board and the analysis run."""
+    wc = CONFIG["watch"]
+    out = []
+    for key, h in (state.get("watch") or {}).items():
+        out.append({"key": key, "kind": h["kind"], "what": KIND_WORDS.get(h["kind"], h["kind"]),
+                    "region": wc["region_names"].get(h["region"], h["region"]), "text": h["text"],
+                    "first_seen": h["first"], "last_seen": h["last"],
+                    "active": now - _parse_ts(h["last"]) <= timedelta(hours=wc["window_hours"])})
+    return sorted(out, key=lambda x: x["last_seen"], reverse=True)
 
 
 def evaluate(results, state, series, now):
@@ -283,37 +359,7 @@ def evaluate(results, state, series, now):
             ac.update(count_dark(prev, positions, CONFIG["jets"]["dark_min_alt_ft"]))
         state["mil_prev"] = positions
     an = anomalies({**ac, **extra_metrics(results)}, series, now)
-    alerts.extend(gps_alerts(results, an, state, now, bootstrap))
-    for metric, info in an.items():
-        if info["status"] not in ("ANOMALY", "DROP") or metric.startswith("gps_"):
-            continue
-        last = cooldown.get(metric)
-        if last and now - _parse_ts(last) < timedelta(hours=ANOM["cooldown_hours"]):
-            continue
-        cooldown[metric] = iso(now)
-        if bootstrap:
-            continue
-        if metric.startswith("navwarn_"):
-            title = "Surge in military navigation warnings"
-            body = (f"{info['value']} {METRIC_LABELS[metric]} (usual ~{info['median']}). "
-                    "Missile tests and live-fire drills are announced this way, sometimes ahead of major exercises or operations.")
-        elif info["status"] == "DROP" or metric.startswith("dark_"):
-            title = "UNCONFIRMED: military aircraft going dark"
-            body = (f"{info['value']} {METRIC_LABELS[metric]} (usual ~{info['median']} at this time of day). "
-                    "Militaries switch off transponders before operations, but tracking gaps also cause this. Watching for confirmation.")
-            if info["status"] == "DROP":
-                body = (f"Only {info['value']} {METRIC_LABELS[metric]}, usually ~{info['median']} at this time of day. "
-                        "Militaries switch off transponders before operations, but tracking gaps also cause this. Watching for confirmation.")
-        elif metric in ("airlift", "raaf"):
-            title = "UNCONFIRMED: military airlift surge"
-            body = (f"{info['value']} {METRIC_LABELS[metric]} - about {str(info['ratio']) + 'x' if info['ratio'] else 'many times'} normal (usual ~{info['median']}). "
-                    "Surges can mean evacuations or deployments, or just exercises. Watching for confirmation.")
-        else:
-            title = "UNCONFIRMED: unusual flight activity"
-            body = (f"{info['value']} {METRIC_LABELS[metric]} - about {str(info['ratio']) + 'x' if info['ratio'] else 'many times'} normal for this time of day "
-                    f"(usual ~{info['median']}). Watching for confirmation from official sources.")
-        alerts.append(_alert(f"air-{metric}", ["proactive"], "geo", title, body,
-                             priority=4, confirmed=False, tags=["airplane", "question"]))
+    alerts.extend(watch_signals(results, an, state, now, bootstrap))
 
     # Telecom: a big drop in reachable networks for a major Australian carrier
     tc = CONFIG.get("telecom", {})

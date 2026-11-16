@@ -432,20 +432,22 @@
     ]
   },
   "gps_confirm": {
-    "_comment": "GPS jamming only pushes a phone alert when it is solid: enough aircraft, high for several runs in a row, and (outside Australia, Taiwan and Korea) backed by a second independent sign in the same region. Everything is still recorded for the analysis run.",
+    "_comment": "GPS jamming only counts as an early sign when it is solid: enough aircraft and high for several runs in a row. 'region' says which watch region it belongs to.",
     "min_aircraft": 20,
     "sustain_runs": 3,
+    "regions": {"adelaide": "auspng", "sydney": "auspng", "taiwan": "taiwan", "korea": "korea",
+                "israel": "mideast", "gulf": "mideast", "baltic": "eeurope", "blacksea": "eeurope"}
+  },
+  "watch": {
+    "_comment": "Early signs from single sensors (GPS jamming, military flights, aircraft going dark, navigation warnings, private jets, nuclear-command aircraft) are HELD on a watch list, not pushed. A phone alert goes out only when 2+ different kinds of sign show in the same region within window_hours, or for 'alone' signs at home (sustained GPS jamming over SA / NSW). The analysis run reviews the watch list twice a day.",
+    "window_hours": 6,
+    "expire_hours": 24,
     "cooldown_hours": 12,
-    "regions": {
-      "adelaide": {"needs": "sustained", "corroborate": ["mil_auspng", "dark_auspng", "navwarn_australia"], "countries": []},
-      "sydney": {"needs": "sustained", "corroborate": ["mil_auspng", "dark_auspng", "navwarn_australia"], "countries": []},
-      "taiwan": {"needs": "sustained", "corroborate": ["mil_taiwan", "dark_taiwan", "navwarn_taiwan"], "countries": ["Taiwan"]},
-      "korea": {"needs": "sustained", "corroborate": ["mil_korea", "dark_korea", "navwarn_korea"], "countries": ["South Korea"]},
-      "israel": {"needs": "corroborated", "corroborate": ["mil_mideast", "dark_mideast", "navwarn_mideast", "tankers"], "countries": ["Israel", "Iran"]},
-      "gulf": {"needs": "corroborated", "corroborate": ["mil_mideast", "dark_mideast", "navwarn_mideast", "tankers"], "countries": ["Iran", "Israel"]},
-      "baltic": {"needs": "corroborated", "corroborate": ["mil_eeurope", "dark_eeurope", "nc3"], "countries": ["Russia"]},
-      "blacksea": {"needs": "corroborated", "corroborate": ["mil_eeurope", "dark_eeurope", "nc3"], "countries": ["Russia"]}
-    }
+    "alone": ["gps_adelaide", "gps_sydney"],
+    "internet": {"Iran": "mideast", "Israel": "mideast", "Taiwan": "taiwan", "South Korea": "korea", "Russia": "eeurope"},
+    "region_names": {"mideast": "the Middle East", "taiwan": "the Taiwan Strait", "korea": "Korea and Japan",
+                     "eeurope": "Eastern Europe", "auspng": "Australia and PNG", "australia": "Australia and PNG",
+                     "global": "several regions"}
   },
   "navwarn": {
     "_comment": "NGA maritime broadcast warnings (HYDROPAC, NAVAREA IV/XII, HYDROLANT). Military keywords counted per area.",
