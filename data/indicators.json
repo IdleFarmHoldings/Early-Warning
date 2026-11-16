@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T08:19:00Z",
+  "generated_at": "2026-11-16T08:25:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -315,25 +315,15 @@
       "why": "China's large drills around Taiwan (2022, 2023, 2024, 2025) were announced through maritime navigation warnings, with GPS interference and coastguard surges; any real operation would be expected to add mobilisation reports and internet disruption."
     },
     {
-      "band": "Guarded",
-      "convergence": "Only one kind of sign is showing (military air). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: missile navigation warnings (korea / sea of japan), gps jamming over korea and mobilisation / reservist reports (korea).",
-      "domains": [
-        "Military air"
-      ],
+      "band": "Low",
+      "convergence": "No warning signs are showing. The strongest signs not yet showing: missile navigation warnings (korea / sea of japan), gps jamming over korea and unusual military air activity (korea / japan).",
+      "domains": [],
       "key": "korea",
-      "lit": [
-        {
-          "detail": "mil_korea 17 vs usual 4",
-          "domain": "Military air",
-          "id": "air",
-          "name": "Unusual military air activity (Korea / Japan)",
-          "weight": 15
-        }
-      ],
+      "lit": [],
       "name": "Korean Peninsula conflict",
       "sa_impact": "Indirect: market shock, Australian citizens in Korea and Japan, and US-allied commitments. Little direct physical risk to SA.",
-      "score": 15,
-      "trend": "up",
+      "score": 0,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Maritime",
@@ -346,6 +336,12 @@
           "id": "gps",
           "name": "GPS jamming over Korea",
           "weight": 20
+        },
+        {
+          "domain": "Military air",
+          "id": "air",
+          "name": "Unusual military air activity (Korea / Japan)",
+          "weight": 15
         },
         {
           "domain": "Communications",
