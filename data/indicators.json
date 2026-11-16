@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T23:35:00Z",
+  "generated_at": "2026-11-16T23:50:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -100,24 +100,14 @@
     },
     {
       "band": "Low",
-      "convergence": "Only one kind of sign is showing (prediction markets). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
-      "domains": [
-        "Prediction markets"
-      ],
+      "convergence": "No warning signs are showing. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
+      "domains": [],
       "key": "mideast",
-      "lit": [
-        {
-          "detail": "Iran blockade lifted before Iran-Oman Hormuz agreement? 21% (+10 pts)",
-          "domain": "Prediction markets",
-          "id": "pm",
-          "name": "Forecast markets jump on Iran conflict",
-          "weight": 10
-        }
-      ],
+      "lit": [],
       "name": "Middle East war & Gulf shipping",
       "sa_impact": "Fuel: Australia imports most of its fuel, much of it refined from Gulf crude in Asia. Shipping attacks or a Hormuz closure push up prices within days and can cause local shortages.",
-      "score": 10,
-      "trend": "up",
+      "score": 0,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Military air",
@@ -202,6 +192,12 @@
           "id": "redsea",
           "name": "Ship traffic through Bab el-Mandeb down sharply",
           "weight": 5
+        },
+        {
+          "domain": "Prediction markets",
+          "id": "pm",
+          "name": "Forecast markets jump on Iran conflict",
+          "weight": 10
         }
       ],
       "why": "Before the 2024-25 Israel-Iran exchanges and US strikes, watchers saw US tanker surges toward Europe and the Gulf, embassy departure orders, regional GPS jamming, airspace closures and oil price jumps, often 1-3 days ahead."
@@ -630,9 +626,8 @@
     },
     {
       "band": "Guarded",
-      "convergence": "Two different kinds of sign are showing together (chemical weapons and health). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: unknown illness / pneumonia cluster reported, countries restricting medical supply exports and pandemic-response stocks outperforming (5 days).",
+      "convergence": "Only one kind of sign is showing (health). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: unknown illness / pneumonia cluster reported, countries restricting medical supply exports and pandemic-response stocks outperforming (5 days).",
       "domains": [
-        "Chemical weapons",
         "Health"
       ],
       "key": "bio",
@@ -643,19 +638,12 @@
           "id": "who",
           "name": "WHO outbreak report with a high-concern pathogen (last 14 days)",
           "weight": 15
-        },
-        {
-          "detail": "Exclusive: US intelligence points to possible Iranian dirty bomb or chemical attack in Washington, officials say",
-          "domain": "Chemical weapons",
-          "id": "chem",
-          "name": "Chemical / nerve-agent attack or mass poisoning reported",
-          "weight": 15
         }
       ],
       "name": "Pandemic, biological or chemical emergency",
       "sa_impact": "Health system strain, possible lockdowns and border closures, and shortages of medicines and protective equipment, which Australia mostly imports.",
-      "score": 30,
-      "trend": "up",
+      "score": 15,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Health",
@@ -694,6 +682,12 @@
           "weight": 10
         },
         {
+          "domain": "Chemical weapons",
+          "id": "chem",
+          "name": "Chemical / nerve-agent attack or mass poisoning reported",
+          "weight": 15
+        },
+        {
           "domain": "Health",
           "id": "dieoff",
           "name": "Unexplained mass deaths or animal die-offs",
@@ -717,7 +711,7 @@
       "key": "cyber",
       "lit": [
         {
-          "detail": "Australian businesses pay ransomware demands more often",
+          "detail": "Dragos reports 20 Australian industrial ransomware incidents in Q3 2026",
           "domain": "Australian incidents",
           "id": "au",
           "name": "Major Australian cyber incident reported",
@@ -794,27 +788,27 @@
     },
     {
       "band": "Elevated",
-      "convergence": "Signs are converging across 3 separate areas (ai-enabled hacking, fraud waves and synthetic media). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: a Chinese state-sponsored group used an AI agent to carry out 80-90% of an attack on about 30 organisations, at thousands of requests per second. A fake AI image of a Pentagon explosion briefly moved US markets in May 2023, and a deepfake video call of a CFO tricked a company into paying US$25 million in 2024. The likely signature of an AI attack is breadth and speed: many unrelated systems and vendors hit at once, synthetic media of officials, and shocks with no clear human cause. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, flash crash or exchange trading halt and market fear index jumps 25%+ in a day.",
+      "convergence": "Signs are converging across 3 separate areas (fraud waves, markets and synthetic media). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: a Chinese state-sponsored group used an AI agent to carry out 80-90% of an attack on about 30 organisations, at thousands of requests per second. A fake AI image of a Pentagon explosion briefly moved US markets in May 2023, and a deepfake video call of a CFO tricked a company into paying US$25 million in 2024. The likely signature of an AI attack is breadth and speed: many unrelated systems and vendors hit at once, synthetic media of officials, and shocks with no clear human cause. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, reports of ai-driven hacking campaigns and market fear index jumps 25%+ in a day.",
       "domains": [
-        "AI-enabled hacking",
         "Fraud waves",
+        "Markets",
         "Synthetic media"
       ],
       "key": "ai",
       "lit": [
-        {
-          "detail": "Barracuda links cloud breach to ARTEX AI-powered cyberattack",
-          "domain": "AI-enabled hacking",
-          "id": "aihack",
-          "name": "Reports of AI-driven hacking campaigns",
-          "weight": 15
-        },
         {
           "detail": "FTQ official resigns over AI-generated image of Quebec MNA with black eye",
           "domain": "Synthetic media",
           "id": "deepfake",
           "name": "Deepfakes of leaders or fake official alerts",
           "weight": 15
+        },
+        {
+          "detail": "Circuit Breaker Test Sets Market To 2035: Grid Modernization and Renewables Drive Demand - News and Statistics",
+          "domain": "Markets",
+          "id": "flash",
+          "name": "Flash crash or exchange trading halt",
+          "weight": 10
         },
         {
           "detail": "Deepfake era puts likeness in legal spotlight as EU works to define what’s allowed",
@@ -826,7 +820,7 @@
       ],
       "name": "AI-enabled attack (non-traditional)",
       "sa_impact": "Not bombs but disruption: hacking at machine speed across banks, telcos, hospitals and the grid at once; fake videos or alerts from leaders causing panic buying or bank runs; or automated market and fraud shocks. Effects would be outages, payment failures and confusion about what is real.",
-      "score": 35,
+      "score": 30,
       "trend": "down",
       "unlit": [
         {
@@ -836,10 +830,10 @@
           "weight": 15
         },
         {
-          "domain": "Markets",
-          "id": "flash",
-          "name": "Flash crash or exchange trading halt",
-          "weight": 10
+          "domain": "AI-enabled hacking",
+          "id": "aihack",
+          "name": "Reports of AI-driven hacking campaigns",
+          "weight": 15
         },
         {
           "domain": "Markets",
