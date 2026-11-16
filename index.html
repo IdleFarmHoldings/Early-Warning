@@ -174,10 +174,15 @@ details summary{cursor:pointer;font-size:.84rem;color:var(--accent)}
   <div id="stale" class="banner" hidden style="border-style:solid;border-color:var(--l4);color:var(--ink)"></div>
   <div id="banner" class="banner">Loading the latest assessment…</div>
 
-  <section id="statusBox" class="status" style="background:var(--muted)">
-    <div class="lv" id="lvlName"><small>Loading</small>—</div>
-    <div class="steps" id="steps" aria-hidden="true"></div>
-    <p class="mean" id="lvlMean"></p>
+  <section id="statusBox" class="panel">
+    <div class="gauge-row">
+      <div class="gauge" aria-hidden="true"><svg id="gauge" viewBox="0 0 240 140"></svg></div>
+      <div>
+        <div class="lvl-sub" id="lvlSub"></div>
+        <div class="lvl-name" id="lvlName">—</div>
+        <p class="lead" id="lvlMean" style="margin-top:8px"></p>
+      </div>
+    </div>
   </section>
 
   <section class="panel">
@@ -290,7 +295,16 @@ const fmt = iso => { if(!iso) return "—"; const d=new Date(iso); if(isNaN(d)) 
 const trendTxt = t => t==="up"?"▲ rising":t==="down"?"▼ easing":"● steady";
 
 function drawGauge(level){
-  $("steps").innerHTML=[1,2,3,4,5].map(i=>`<i class="${level&&i<=level?"on":""}"></i>`).join("");
+  const cx=120, cy=124, r1=58, r2=104; let s="";
+  for(let i=0;i<5;i++){
+    const a0=Math.PI*(1-i/5)-0.012, a1=Math.PI*(1-(i+1)/5)+0.012;
+    const p=(r,a)=>`${(cx+r*Math.cos(a)).toFixed(1)} ${(cy-r*Math.sin(a)).toFixed(1)}`;
+    s+=`<path d="M${p(r2,a0)} A${r2} ${r2} 0 0 1 ${p(r2,a1)} L${p(r1,a1)} A${r1} ${r1} 0 0 0 ${p(r1,a0)} Z" fill="${lc(i+1)}" opacity="${level&&level!==i+1?0.38:1}"/>`;
+    const am=(a0+a1)/2; s+=`<text x="${(cx+(r1+r2)/2*Math.cos(am)).toFixed(1)}" y="${(cy-(r1+r2)/2*Math.sin(am)+6).toFixed(1)}" text-anchor="middle" font-size="17" fill="var(--surface)">${i+1}</text>`;
+  }
+  const ang = level ? 180 - ((level-0.5)/5)*180 : 90;
+  s+=`<g class="needle" style="transform-origin:${cx}px ${cy}px;transform:rotate(${90-ang}deg)"><path d="M${cx-5} ${cy} L${cx} ${cy-r2+6} L${cx+5} ${cy} Z" fill="var(--ink)"/></g><circle cx="${cx}" cy="${cy}" r="9" fill="var(--ink)"/>`;
+  $("gauge").innerHTML=s;
 }
 
 function renderStatus(st){
@@ -300,10 +314,9 @@ function renderStatus(st){
   const level = has ? Math.max(1,Math.min(5,Math.round(st.level))) : 0;
   drawGauge(level);
   const L = LEVELS[level||1];
-  const sb = $("statusBox");
-  sb.style.background = has ? lc(level) : "var(--muted)";
-  sb.className = "status" + (level===3 ? " l3" : "");
-  $("lvlName").innerHTML = has ? `<small>Level ${level} of 5 · ${esc(trendTxt(st.trend))}</small>${esc(st.levelName || L.name)}` : `<small>No assessment yet</small>—`;
+  $("lvlName").textContent = has ? (st.levelName || L.name) : "—";
+  $("lvlName").style.color = has ? lc(level) : "var(--muted)";
+  $("lvlSub").textContent = has ? `Level ${level} of 5 · ${trendTxt(st.trend)}` : "No assessment yet";
   $("lvlMean").textContent = has ? L.plain : "";
   $("headline").textContent = has ? (st.headline||"").replace(/^(Normal|Watch|Elevated|High|Imminent)[, ]+(steady|rising|easing|up|down)[:,]?\s*/i,"").replace(/^./,c=>c.toUpperCase()) : "";
   $("summary").textContent = has ? (st.summary||"") : "";
