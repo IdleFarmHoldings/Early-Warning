@@ -431,6 +431,22 @@
       }
     ]
   },
+  "gps_confirm": {
+    "_comment": "GPS jamming only pushes a phone alert when it is solid: enough aircraft, high for several runs in a row, and (outside Australia, Taiwan and Korea) backed by a second independent sign in the same region. Everything is still recorded for the analysis run.",
+    "min_aircraft": 20,
+    "sustain_runs": 3,
+    "cooldown_hours": 12,
+    "regions": {
+      "adelaide": {"needs": "sustained", "corroborate": ["mil_auspng", "dark_auspng", "navwarn_australia"], "countries": []},
+      "sydney": {"needs": "sustained", "corroborate": ["mil_auspng", "dark_auspng", "navwarn_australia"], "countries": []},
+      "taiwan": {"needs": "sustained", "corroborate": ["mil_taiwan", "dark_taiwan", "navwarn_taiwan"], "countries": ["Taiwan"]},
+      "korea": {"needs": "sustained", "corroborate": ["mil_korea", "dark_korea", "navwarn_korea"], "countries": ["South Korea"]},
+      "israel": {"needs": "corroborated", "corroborate": ["mil_mideast", "dark_mideast", "navwarn_mideast", "tankers"], "countries": ["Israel", "Iran"]},
+      "gulf": {"needs": "corroborated", "corroborate": ["mil_mideast", "dark_mideast", "navwarn_mideast", "tankers"], "countries": ["Iran", "Israel"]},
+      "baltic": {"needs": "corroborated", "corroborate": ["mil_eeurope", "dark_eeurope", "nc3"], "countries": ["Russia"]},
+      "blacksea": {"needs": "corroborated", "corroborate": ["mil_eeurope", "dark_eeurope", "nc3"], "countries": ["Russia"]}
+    }
+  },
   "navwarn": {
     "_comment": "NGA maritime broadcast warnings (HYDROPAC, NAVAREA IV/XII, HYDROLANT). Military keywords counted per area.",
     "military_keywords": [

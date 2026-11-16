@@ -397,6 +397,15 @@ def analytics_series(rows, now, days=14):
     return {"generated_at": iso(now), "rows": [by_hour[h] for h in sorted(by_hour)]}
 
 
+def save_brief():
+    """Short version of latest.json + indicators.json for the analysis run (see brief.py)."""
+    try:
+        import brief
+        save_json("data/brief.json", brief.build(load_json("data/latest.json", {}), load_json("data/indicators.json", {})))
+    except Exception as e:  # noqa: BLE001 - the brief must never stop the check
+        print(f"brief failed: {type(e).__name__}: {e}")
+
+
 def relay_only(now, dry_run):
     """Quick pass between full checks: push any alerts the analysis has dropped into the outbox."""
     log = relay_outbox(now, dry_run)
@@ -407,6 +416,7 @@ def relay_only(now, dry_run):
     latest = load_json("data/latest.json", {})
     latest["recent_alerts"] = (log + latest.get("recent_alerts", []))[:25]
     save_json("data/latest.json", latest)
+    save_brief()
     print(f"{iso(now)}: relayed {len(log)} alert(s) from the outbox")
 
 
@@ -578,6 +588,7 @@ def main():
     if chk:
         save_json("data/chokepoints.json", {"generated_at": iso(now), "chokepoints": chk})
     save_json("data/latest.json", summary)
+    save_brief()
     save_json("state/state.json", state)
 
     ok = sum(1 for h in health.values() if h["ok"])

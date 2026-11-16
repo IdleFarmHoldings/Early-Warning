@@ -1,3 +1,4 @@
+import json
 import sys
 from datetime import timedelta
 from pathlib import Path
@@ -149,9 +150,58 @@ def test_gps_navwarn_internet():
            "internet": {"countries": {"Iran": {"bgp": {"drop_pct": 60.0, "baseline": 5000}}}}}
     alerts, state, an = evaluate(res, {"bootstrapped": True}, series, now)
     titles = {a["title"] for a in alerts}
-    assert {"UNCONFIRMED: GPS jamming detected", "Surge in military navigation warnings", "Internet blackout: Iran"} <= titles, titles
-    assert any("40% of aircraft over Taiwan Strait" in a["message"] for a in alerts)
+    assert {"Surge in military navigation warnings", "Internet blackout: Iran"} <= titles, titles
+    assert not any("GPS" in t for t in titles), "a single GPS spike must not push an alert"
     assert all(len(a["message"]) < 400 for a in alerts)
+
+
+def _gps_series(now, **metrics):
+    return [{"ts": iso(now - timedelta(days=d, minutes=m)), **metrics}
+            for d in range(1, 8) for m in (-45, -30, -15, 0, 15, 30, 45)]
+
+
+def _run_gps(runs, res, series, now, state=None):
+    state = state or {"bootstrapped": True}
+    out = []
+    for i in range(runs):
+        alerts, state, _ = evaluate(json.loads(json.dumps(res)), state, series, now + timedelta(minutes=15 * i))
+        out.append([a for a in alerts if "GPS" in a["title"]])
+    return out, state
+
+
+def test_gps_needs_sustained_signal_and_enough_aircraft():
+    now = now_utc().replace(second=0, microsecond=0)
+    series = _gps_series(now, gps_taiwan=2)
+    res = {"gps": {"regions": {"taiwan": {"name": "Taiwan Strait", "bad_pct": 40, "aircraft": 39}}}}
+    out, state = _run_gps(4, res, series, now)
+    assert [len(x) for x in out] == [0, 0, 1, 0]  # third run in a row alerts, then cooldown
+    assert out[2][0]["title"] == "UNCONFIRMED: sustained GPS jamming over Taiwan Strait"
+    assert "45+ min" in out[2][0]["message"]
+    # too few aircraft to trust the share: never alerts
+    thin = {"gps": {"regions": {"taiwan": {"name": "Taiwan Strait", "bad_pct": 90, "aircraft": 8}}}}
+    out, _ = _run_gps(4, thin, series, now)
+    assert not any(out)
+    # a normal reading in between resets the streak
+    s = {"bootstrapped": True}
+    for pct in (40, 40, 2, 40, 40):
+        alerts, s, _ = evaluate({"gps": {"regions": {"taiwan": {"name": "T", "bad_pct": pct, "aircraft": 39}}}}, s, series, now)
+        assert not any("GPS" in a["title"] for a in alerts)
+
+
+def test_gps_in_routinely_jammed_regions_needs_a_second_sign():
+    now = now_utc().replace(second=0, microsecond=0)
+    series = _gps_series(now, gps_gulf=8, navwarn_mideast=1)
+    res = {"gps": {"regions": {"gulf": {"name": "Persian Gulf", "bad_pct": 40, "aircraft": 72}}}}
+    out, _ = _run_gps(5, res, series, now)
+    assert not any(out), "sustained Gulf jamming alone is routine in this war"
+    res["navwarn"] = {"counts": {"mideast": 12}}
+    out, _ = _run_gps(3, res, series, now)
+    assert len(out[2]) == 1 and out[2][0]["title"] == "GPS jamming + other signs: Persian Gulf"
+    assert "navigation warnings" in out[2][0]["message"] and len(out[2][0]["message"]) < 300
+    res.pop("navwarn")
+    res["internet"] = {"countries": {"Iran": {"bgp": {"drop_pct": 60.0, "baseline": 5000}}}}
+    out, _ = _run_gps(3, res, series, now)
+    assert "internet blackout in Iran" in out[2][0]["message"]
 
 
 def test_satellite_subpoint_and_hotspots():
@@ -707,3 +757,16 @@ def test_zero_baseline_writes_valid_json():
     json.dumps(an, allow_nan=False)
     assert an["dark_mideast"]["ratio"] is None
     assert _finite({"a": [float("inf"), 1.5, float("nan")]}) == {"a": [None, 1.5, None]}
+
+
+def test_brief_is_small_and_keeps_key_fields():
+    import brief
+    root = Path(__file__).resolve().parents[1] / "data"
+    latest = json.loads((root / "latest.json").read_text())
+    ind = json.loads((root / "indicators.json").read_text())
+    b = brief.build(latest, ind)
+    for k in ("generated_at", "recent_alerts", "local_sa", "scenarios", "markets", "national_shocks", "gps_bad_pct"):
+        assert k in b, k
+    assert len(json.dumps(b)) < len(json.dumps(latest)) / 3
+    assert "\"link\":" not in json.dumps(b) and "news.google.com" not in json.dumps(b)
+    assert brief.build({}, {})["recent_alerts"] == []  # empty inputs never crash

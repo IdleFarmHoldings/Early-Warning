@@ -115,6 +115,58 @@ def anomalies(current, series, now):
     return out
 
 
+def gps_alerts(results, an, state, now, bootstrap):
+    """GPS jamming is noisy, so only push it when the signal is solid.
+
+    A region must (1) have enough aircraft to trust the share, (2) stay anomalous for several
+    collector runs in a row, and (3) where jamming is routine (Gulf, Israel, Baltic, Black Sea),
+    coincide with another independent sign in the same region: unusual military flights, aircraft
+    going dark, missile/live-fire warnings, US nuclear-command or tanker activity, or an internet
+    blackout. Spikes that don't qualify stay in the anomalies data for the analysis run.
+    """
+    gcf = CONFIG["gps_confirm"]
+    streaks = state.setdefault("gps_streak", {})
+    cooldown = state.setdefault("cooldown", {})
+    regions = (results.get("gps") or {}).get("regions") or {}
+    net = (results.get("internet") or {}).get("countries") or {}
+    out = []
+    for key, rule in gcf["regions"].items():
+        metric = f"gps_{key}"
+        info = an.get(metric) or {}
+        reg = regions.get(key) or {}
+        if info.get("status") == "no data" or info.get("value") is None:
+            continue  # a gap in coverage neither builds nor breaks a streak
+        solid = info.get("status") == "ANOMALY" and (reg.get("aircraft") or 0) >= gcf["min_aircraft"]
+        streaks[key] = streaks.get(key, 0) + 1 if solid else 0
+        if streaks[key] < gcf["sustain_runs"]:
+            continue
+        signs = [METRIC_LABELS.get(m, m) for m in rule["corroborate"]
+                 if (an.get(m) or {}).get("status") in ("ANOMALY", "DROP")]
+        for c in rule.get("countries", []):
+            row = net.get(c) or {}
+            drops = [row[ds]["drop_pct"] for ds in ("ping-slash24", "bgp")
+                     if isinstance(row.get(ds), dict) and row[ds].get("drop_pct") is not None]
+            if drops and max(drops) >= CONFIG["internet_country_drop_pct"]:
+                signs.append(f"internet blackout in {c}")
+        if rule["needs"] == "corroborated" and not signs:
+            continue
+        last = cooldown.get(metric)
+        if last and now - _parse_ts(last) < timedelta(hours=gcf["cooldown_hours"]):
+            continue
+        cooldown[metric] = iso(now)
+        if bootstrap:
+            continue
+        name = reg.get("name") or key
+        mins = gcf["sustain_runs"] * 15
+        also = f" At the same time: {signs[0]}{' and more' if len(signs) > 1 else ''}." if signs else ""
+        title = f"GPS jamming + other signs: {name}" if signs else f"UNCONFIRMED: sustained GPS jamming over {name}"
+        body = (f"{info['value']}% of {reg.get('aircraft')} aircraft over {name} have degraded GPS for {mins}+ min "
+                f"(usual ~{info['median']}%).{also} Watching for confirmation.")
+        out.append(_alert(f"air-{metric}", ["proactive"], "geo", title, body,
+                          priority=4, confirmed=False, tags=["satellite", "question"]))
+    return out
+
+
 def evaluate(results, state, series, now):
     """Returns (alerts, state). On the very first run nothing is pushed; we only record what exists."""
     alerts = []
@@ -231,8 +283,9 @@ def evaluate(results, state, series, now):
             ac.update(count_dark(prev, positions, CONFIG["jets"]["dark_min_alt_ft"]))
         state["mil_prev"] = positions
     an = anomalies({**ac, **extra_metrics(results)}, series, now)
+    alerts.extend(gps_alerts(results, an, state, now, bootstrap))
     for metric, info in an.items():
-        if info["status"] not in ("ANOMALY", "DROP"):
+        if info["status"] not in ("ANOMALY", "DROP") or metric.startswith("gps_"):
             continue
         last = cooldown.get(metric)
         if last and now - _parse_ts(last) < timedelta(hours=ANOM["cooldown_hours"]):
@@ -240,11 +293,7 @@ def evaluate(results, state, series, now):
         cooldown[metric] = iso(now)
         if bootstrap:
             continue
-        if metric.startswith("gps_"):
-            title = "UNCONFIRMED: GPS jamming detected"
-            body = (f"{info['value']}{METRIC_LABELS[metric]} (usual ~{info['median']}%). "
-                    "Jamming often accompanies military operations, but can also be faulty equipment. Watching for confirmation.")
-        elif metric.startswith("navwarn_"):
+        if metric.startswith("navwarn_"):
             title = "Surge in military navigation warnings"
             body = (f"{info['value']} {METRIC_LABELS[metric]} (usual ~{info['median']}). "
                     "Missile tests and live-fire drills are announced this way, sometimes ahead of major exercises or operations.")
