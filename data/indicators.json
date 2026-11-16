@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T10:24:00Z",
+  "generated_at": "2026-11-16T10:39:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -206,24 +206,14 @@
     },
     {
       "band": "Low",
-      "convergence": "Only one kind of sign is showing (military air). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: missile / live-fire navigation warnings near taiwan, gps jamming over the taiwan strait and internet disruption in taiwan.",
-      "domains": [
-        "Military air"
-      ],
+      "convergence": "No warning signs are showing. The strongest signs not yet showing: missile / live-fire navigation warnings near taiwan, gps jamming over the taiwan strait and internet disruption in taiwan.",
+      "domains": [],
       "key": "taiwan",
-      "lit": [
-        {
-          "detail": "raaf 8 vs usual 1.0",
-          "domain": "Military air",
-          "id": "lift",
-          "name": "Military airlift or RAAF surge",
-          "weight": 10
-        }
-      ],
+      "lit": [],
       "name": "Taiwan Strait / South China Sea crisis",
       "sa_impact": "Trade and fuel: most of Australia's refined fuel and many goods pass the South China Sea. A blockade would disrupt fuel, medicines and electronics within weeks; Australian forces could be drawn in.",
-      "score": 10,
-      "trend": "steady",
+      "score": 0,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Maritime",
@@ -254,6 +244,12 @@
           "id": "mob",
           "name": "Mobilisation / reservist reports (China or Taiwan)",
           "weight": 15
+        },
+        {
+          "domain": "Military air",
+          "id": "lift",
+          "name": "Military airlift or RAAF surge",
+          "weight": 10
         },
         {
           "domain": "Diplomatic",
@@ -389,7 +385,7 @@
       "name": "Russia-NATO escalation",
       "sa_impact": "Indirect: energy and market shock, cyber attacks that can spill over to Australian systems, and nuclear-risk rhetoric.",
       "score": 0,
-      "trend": "down",
+      "trend": "steady",
       "unlit": [
         {
           "domain": "Electronic warfare",
