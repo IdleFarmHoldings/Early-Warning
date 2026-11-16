@@ -1,7 +1,13 @@
 {
   "about": "Short form of latest.json + indicators.json for the analysis run. Links and raw samples removed.",
   "acsc": [],
-  "aircraft_flags": {},
+  "aircraft_flags": {
+    "gps_gulf": {
+      "median": 6,
+      "status": "ANOMALY",
+      "value": 32
+    }
+  },
   "analyst": {
     "ASPI Strategist": [
       "Just by meeting, Quad leaders send a signal to Beijing",
@@ -70,13 +76,13 @@
   "gdacs_orange_red": [
     "Drought is on going in Aruba, , Brazil, Colombia, Costa Rica, , French Guiana, Guyana, Panama, Suriname, Venezuela"
   ],
-  "generated_at": "2026-11-16T16:09:00Z",
+  "generated_at": "2026-11-16T16:24:00Z",
   "gps_bad_pct": {
     "Baltic / Kaliningrad": 22,
     "Black Sea": 50,
-    "Israel & Eastern Mediterranean": 8,
-    "Korea": 0,
-    "Persian Gulf": 4,
+    "Israel & Eastern Mediterranean": 10,
+    "Korea": null,
+    "Persian Gulf": 32,
     "South Australia": null,
     "Sydney / NSW": null,
     "Taiwan Strait": 0
@@ -104,26 +110,10 @@
     {
       "confirmed": false,
       "headlines": [
-        "India looking at new subsea cable landing sites on east coast to cut West Asia risks"
-      ],
-      "severity": "Info",
-      "target": "Undersea cables"
-    },
-    {
-      "confirmed": false,
-      "headlines": [
         "French cyber attack highlights risks for Australia's smart buildings"
       ],
       "severity": "Info",
       "target": "French"
-    },
-    {
-      "confirmed": false,
-      "headlines": [
-        "FBI Warns AI Hacking Tool ARTEX Is Powering Fast, Automated Cyberattacks Worldwide"
-      ],
-      "severity": "Info",
-      "target": "FBI Warns AI"
     },
     {
       "confirmed": false,
@@ -160,6 +150,14 @@
     {
       "confirmed": false,
       "headlines": [
+        "What Is an Agentic Cyber Attack? Examples and Defense"
+      ],
+      "severity": "Info",
+      "target": "What Is"
+    },
+    {
+      "confirmed": false,
+      "headlines": [
         "AI-written patches are becoming attack maps for hackers"
       ],
       "severity": "Info",
@@ -167,7 +165,7 @@
     }
   ],
   "internet_drop_pct": {
-    "China": 0.5,
+    "China": 0.2,
     "Iran": 0.0,
     "Israel": 0.2,
     "Russia": 0.0,
@@ -197,11 +195,11 @@
       "brent_aud": 140.5,
       "change_pct": 5.8,
       "pump_cents": 5,
-      "week_ago_aud": 132.8
+      "week_ago_aud": 132.7
     },
-    "grid_demand_fall_pct": 1.6,
-    "grid_demand_mw": 1272,
-    "grid_demand_usual_mw": 1305,
+    "grid_demand_fall_pct": 0.4,
+    "grid_demand_mw": 1270,
+    "grid_demand_usual_mw": 1301,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
@@ -233,16 +231,16 @@
       "price": 0.6754
     },
     "Brent oil": {
-      "change_pct": -2.54,
-      "price": 93.41
+      "change_pct": -2.48,
+      "price": 93.46
     },
     "Gold": {
-      "change_pct": -0.63,
-      "price": 3861.7
+      "change_pct": -0.65,
+      "price": 3860.9
     },
     "VIX": {
-      "change_pct": 7.56,
-      "price": 20.76
+      "change_pct": 8.45,
+      "price": 20.93
     }
   },
   "national_shocks": {
@@ -267,7 +265,7 @@
       "What Caused the U.S. Flight Shutdown? Unraveling the Clues Behind the System Failure - CubaHeadlines"
     ],
     "aviation_halt": [
-      "Trump blames ground stop on old tech that had 'heart attack' - ABC News - Breaking News, Latest News and Videos",
+      "Transportation Secretary Duffy says ATC routers' ability to broadcast data turned off, being investigated - ABC News - Breaking News, Latest News and Videos",
       "Trump blames Biden for airline ground stop - ABC News & Headlines – Australian Broadcasting Corporation",
       "Nationwide Ground Stop Cost ‘Billions of Dollars,’ Duffy Says - Bloomberg"
     ],
@@ -285,14 +283,14 @@
       "Lords Urge UK to Keep Terrestrial TV Over Cyber Risks - https://streamlinefeed.co.ke/"
     ],
     "chem": [
-      "Spain provides EUR 350,000 in voluntary funding to support OPCW’s work - Organisation for the Prohibition of Chemical Weapons",
       "Finland Gives €50,000 to Boost OPCW Work - Mirage News",
+      "Spain provides EUR 350,000 in voluntary funding to support OPCW’s work - Organisation for the Prohibition of Chemical Weapons",
       "Spain allocates €300,000 to support OPCW missions in Syria - سانا"
     ],
     "cloud": [
+      "Insurers dodge payouts after global Microsoft outage - Herald Sun",
       "Microsoft says three-month-old bug behind global M365 outage - iTnews",
-      "Microsoft 365 outage loss estimates range from minimal to US$700 million - Insurance Business",
-      "Maintenance, faulty judgment, and a bug from July took Microsoft 365 offline for a day - Techzine Global"
+      "Microsoft 365 outage: Company exec lifts lid on the ‘cascading failure’ that caused lengthy disruption - IT Pro"
     ],
     "cn_signals": [
       "IAF Chief: True Self Reliance is Crucial for Future War Preparedness - Asianet Newsable"
@@ -303,6 +301,7 @@
       "Coles supermarket cyber attack: Australia’s retailer investigates security breach - Beinsure"
     ],
     "cyber_state": [
+      "PHP2Shell flaw exploited in chained attacks targeting unpatched Check Point gateways - Cybersecurity Dive",
       "Cyberwarfare Against The United States Is Edging From Spying Toward Sabotage - StudyFinds",
       "Canada Bill C-22 Could Force Apps to Build Intercept Tools: Senate to Hear Signal, Meta Monday - Tech Times"
     ],
@@ -323,7 +322,7 @@
     "flash": [
       "REG - Empire Metals Ltd - Capital Access Window - Trading Halt - TradingView",
       "Gorilla Gold Mines Enters Trading Halt Pending Material Acquisition and Equity Raising Announcement - Kalkine",
-      "Canadian Investment Regulatory Organization Trading Halt - EGLX - The Manila Times"
+      "EPX Limited Requests Trading Halt Pending Capital Raising Bookbuild Outcome - Kalkine"
     ],
     "fuel_au": [
       "Nation’s truck driver shortage hits 12pc - GoAuto.com.au",
@@ -336,9 +335,9 @@
       "Mystery Pneumonia Death Sparks Concern; Trader Joe's Recall; OUD in Young People - MedPage Today"
     ],
     "masscas": [
-      "5 remain hospitalized as NTSB investigation into tanker, cruise ship crash continues - WDSU",
+      "Preliminary investigation points to steering failure in tanker collision with river cruise ship - WDSU",
       "Shootout at gun show leaves person dead and SC deputy hospitalized, sheriff says - The State",
-      "U.S. Soldiers Googled Hospitals After Deadly Iran Strike - USA Herald"
+      "The European Commission, WHO and NATO are calling for urgent measures for European hospitals, which are vulnerable to wars and pandemics - Informat.ro"
     ],
     "medexport": [
       "Taliban Turn To Iran To Address Medicine Shortages In Afghanistan - Afghanistan International"
@@ -402,9 +401,9 @@
       "yes": 2.6
     },
     {
-      "d24h": -1.7,
+      "d24h": -1.6,
       "q": "US-Iran Hormuz Agreement by November 30?",
-      "yes": 3.8
+      "yes": 3.9
     },
     {
       "d24h": -0.2,
@@ -417,7 +416,7 @@
       "yes": 14.5
     },
     {
-      "d24h": -0.4,
+      "d24h": -0.3,
       "q": "US-Iran Final Nuclear Deal by November 30, 2026?",
       "yes": 1.2
     },
@@ -482,14 +481,14 @@
       "yes": 2.1
     },
     {
-      "d24h": 0.4,
+      "d24h": 0.3,
       "q": "Will the U.S. test a nuclear weapon by December 31 2026?",
       "yes": 2.9
     },
     {
-      "d24h": 2.0,
+      "d24h": 1.5,
       "q": "Will Russia invade another country by December 31, 2027?",
-      "yes": 19.5
+      "yes": 19.0
     },
     {
       "d24h": 5.0,
@@ -719,9 +718,19 @@
     },
     {
       "band": "Low",
+      "convergence": "Only one kind of sign is showing (electronic warfare). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
+      "domains": [
+        "Electronic warfare"
+      ],
       "key": "mideast",
-      "score": 0,
-      "trend": "steady"
+      "lit": [
+        {
+          "detail": "gps_gulf 32 vs usual 6",
+          "name": "GPS jamming spike (Gulf / Israel)"
+        }
+      ],
+      "score": 10,
+      "trend": "up"
     },
     {
       "band": "Low",
@@ -820,7 +829,7 @@
           "name": "Reports of AI-driven hacking campaigns"
         },
         {
-          "detail": "Microsoft says three-month-old bug behind global M365 outage",
+          "detail": "Insurers dodge payouts after global Microsoft outage",
           "name": "Major cloud or AI service outage"
         },
         {
@@ -834,17 +843,17 @@
   ],
   "sectors_relative_5d": {
     "defence_au": -0.57,
-    "defence_eu": -0.71,
-    "defence_us": 1.08,
-    "pandemic": -3.02
+    "defence_eu": -0.69,
+    "defence_us": 0.41,
+    "pandemic": -3.31
   },
   "tankers": "normal",
   "telecom_drop_pct": {
-    "Aussie Broadband": 0.4,
-    "Optus": 0.0,
+    "Aussie Broadband": 0.8,
+    "Optus": 1.9,
     "TPG": 0.0,
-    "Telstra": 0.6,
-    "Vodafone": 9.5
+    "Telstra": 0.0,
+    "Vodafone": 0.0
   },
   "us_departure_orders": [
     "Belarus"
