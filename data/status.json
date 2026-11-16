@@ -1,50 +1,47 @@
 {
-  "updatedAt": "2026-11-16T16:45:00+10:30",
-  "nextCheck": "2026-11-17T04:39:00+10:30",
-  "level": 3,
-  "levelName": "Elevated",
-  "trend": "steady",
-  "headline": "Elevated, steady: oil barely moved when markets reopened after Iran's unconfirmed supertanker-sinking claim, and Coles is investigating a cyber attack but says shop as normal.",
-  "summary": "Brent oil opened the week slightly lower at about US$95.50, so Iran's still-unconfirmed claim that a supertanker sank in Hormuz has not yet pushed prices up; Hormuz traffic stays at about 4 ships a day and Australia remains at Level 2 of the National Fuel Security Plan. Coles is investigating a cyber security incident, says there is no evidence customer data was taken and that stores are trading normally. Overnight GPS-jamming flags over Israel, the Gulf and the Black Sea were not linked to any new attack, and Microsoft 365 is restored with a cyber attack ruled out. Locally it is quiet: Moderate fire danger in the Hills, no fire bans or CFS warnings, and the grid and phone networks are normal.",
   "actions": [
-    "Be wary of emails or texts claiming to be from Coles about the cyber incident; go to the Coles app or website directly rather than clicking links.",
-    "Keep the car topped up as normal; no fuel price jump yet, but Gulf claims are still unresolved."
+    {
+      "action": "Be wary of emails or texts claiming to be from Coles about the cyber incident; use the Coles app or website directly.",
+      "reason": "Scammers send fake 'breach' notices after news like this to steal logins and card details."
+    },
+    {
+      "action": "Keep the car at least half full, as normal.",
+      "reason": "Gulf tensions are unresolved; if they flare, bowser prices can jump within days."
+    }
   ],
   "categories": [
     {
+      "confidence": "med",
       "key": "geo",
       "name": "Geopolitical & conflict",
-      "score": 3.3,
-      "trend": "steady",
-      "confidence": "med",
-      "summary": "Iran's claim that a supertanker with about 2 million barrels sank after a mine blast is still not independently confirmed; reports mention an Iranian drone attack on Bahrain but this run could not confirm a new one. Gulf GPS jamming has eased to 17% and Israel to 0%; Black Sea data is missing. Taiwan, Korea and Russia-NATO show no new warning signs.",
+      "score": 3.2,
       "sources": [
         {
-          "title": "Malay Mail: Iran says supertanker sank in Hormuz after hitting mine",
-          "url": "https://www.malaymail.com/news/world/2026/11/16/iran-says-supertanker-with-two-million-barrels-of-oil-sank-in-strait-of-hormuz-after-hitting-mine/243431"
+          "title": "Iran says supertanker sank after Hormuz mine strike, unconfirmed (investingLive)",
+          "url": "https://investinglive.com/commodities/iran-says-supertanker-with-2-million-barrels-sank-after-hormuz-mine-strike-unconfirmed/"
         },
         {
-          "title": "investingLive: supertanker claim unconfirmed",
-          "url": "https://investinglive.com/commodities/iran-says-supertanker-with-2-million-barrels-sank-after-hormuz-mine-strike-unconfirmed/"
+          "title": "Iran says supertanker sank in Strait of Hormuz (Malay Mail)",
+          "url": "https://www.malaymail.com/news/world/2026/11/16/iran-says-supertanker-with-two-million-barrels-of-oil-sank-in-strait-of-hormuz-after-hitting-mine/243431"
         }
-      ]
+      ],
+      "summary": "Iran's claim that a supertanker with about 2 million barrels sank after a mine blast is still not independently confirmed, and no new attacks were found overnight. The US naval blockade of Iran and talks over a deal continue. Taiwan, Korea and Russia-NATO show no new warning signs.",
+      "trend": "steady"
     },
     {
+      "confidence": "med",
       "key": "nuclear",
       "name": "Nuclear & fallout",
       "score": 1.5,
-      "trend": "steady",
-      "confidence": "med",
-      "summary": "US nuclear-command and tanker aircraft are normal, no unusual private-jet movements, and forecast markets show no jump.",
-      "sources": []
+      "sources": [],
+      "summary": "US nuclear-command and tanker aircraft are normal and forecast markets show no jump.",
+      "trend": "steady"
     },
     {
+      "confidence": "high",
       "key": "cyber",
       "name": "Cyber & infrastructure",
-      "score": 2.3,
-      "trend": "up",
-      "confidence": "high",
-      "summary": "Coles is investigating a cyber security incident; it says there is no evidence customer data was taken and customers can shop as normal. Microsoft 365 is fully restored and Microsoft has ruled out a cyber attack. All Australian carriers and the SA grid are normal; the global threat level is green.",
+      "score": 2.2,
       "sources": [
         {
           "title": "Canberra Times: 'Shop as normal': Coles investigates cyber attack",
@@ -58,15 +55,15 @@
           "title": "CISA: Known exploited vulnerabilities added",
           "url": "https://www.cisa.gov/news-events/alerts/2026/11/13/cisa-adds-two-known-exploited-vulnerabilities-catalog"
         }
-      ]
+      ],
+      "summary": "Coles is still investigating its cyber incident and stores are trading. Microsoft says a months-old software bug, not an attack, caused the global Microsoft 365 outage. The US says a failed router caused its nationwide flight halt. Australian phone networks and the SA grid are normal; the global threat level is green.",
+      "trend": "steady"
     },
     {
+      "confidence": "high",
       "key": "bio",
       "name": "Pandemic & biological",
-      "score": 2,
-      "trend": "steady",
-      "confidence": "high",
-      "summary": "WHO reports the Bundibugyo Ebola outbreak continuing in DR Congo, Kenya and Nigeria and MERS in Qatar and Saudi Arabia, with no spread beyond those regions. A WHO note on pneumonia of unknown cause in Russia and an earlier Burundi illness cluster show no sign of wider spread. No Adelaide emergency departments are very busy.",
+      "score": 2.0,
       "sources": [
         {
           "title": "WHO: Ebola (Bundibugyo) - DRC, Kenya and Nigeria",
@@ -76,15 +73,15 @@
           "title": "CIDRAP: Burundi mystery illness",
           "url": "https://www.cidrap.umn.edu/misc-emerging-topics/least-5-dead-burundi-mystery-illness-africa-cdc"
         }
-      ]
+      ],
+      "summary": "WHO reports the Bundibugyo Ebola outbreak continuing in DR Congo, Kenya and Nigeria and MERS in Qatar and Saudi Arabia, with no spread beyond those regions. Three Adelaide emergency departments were very busy overnight, with no sign of an outbreak. A cluster of sick runners in California is a local US matter.",
+      "trend": "steady"
     },
     {
+      "confidence": "high",
       "key": "nature",
       "name": "Natural hazards",
       "score": 1.2,
-      "trend": "steady",
-      "confidence": "high",
-      "summary": "Fire danger Moderate in the Mount Lofty Ranges today and tomorrow, no rating for Adelaide; no fire bans or CFS warnings. A severe thunderstorm warning covers the far North West Pastoral district only, and outback roads in the north-east remain closed by flooding.",
       "sources": [
         {
           "title": "CFS fire danger ratings",
@@ -94,62 +91,36 @@
           "title": "Bureau of Meteorology SA warnings",
           "url": "https://www.bom.gov.au/sa/warnings/"
         }
-      ]
+      ],
+      "summary": "Fire danger is Moderate in the Mount Lofty Ranges today and tomorrow, with no rating for Adelaide; no fire bans or CFS warnings. Strong wind warnings are for far west coastal waters only, and some outback roads in the north-east remain closed by flooding.",
+      "trend": "steady"
     },
     {
+      "confidence": "med",
       "key": "supply",
       "name": "Fuel, food & supply",
-      "score": 3.1,
-      "trend": "steady",
-      "confidence": "med",
-      "summary": "Hormuz carries about 4 ships a day (100+ before the war). Australia remains at Level 2 of the National Fuel Security Plan. Malacca, Lombok, Sunda and Torres routes are normal, and Coles stores are trading despite the cyber incident.",
+      "score": 3.0,
       "sources": [
         {
           "title": "PM&C: National Fuel Security Plan",
           "url": "https://www.pmc.gov.au/domestic-policy/fuel-supply-taskforce/public-information-fuel-supply"
         }
-      ]
+      ],
+      "summary": "Hormuz still carries only a few ships a day (100+ before the war), and Australia remains at Level 2 of the National Fuel Security Plan. Oil fell overnight. Asian shipping routes are normal and Coles stores are trading despite the cyber incident.",
+      "trend": "steady"
     },
     {
+      "confidence": "high",
       "key": "markets",
       "name": "Markets & finance",
-      "score": 2,
-      "trend": "steady",
-      "confidence": "high",
-      "summary": "Markets shrugged off the weekend Hormuz claims: Brent about US$95.50 (down 0.4%), VIX 19.3, gold US$3,870. The ASX dipped on miners and the Australian dollar eased to about 67.6 US cents.",
-      "sources": []
+      "score": 2.0,
+      "sources": [],
+      "summary": "Brent oil fell about 2.7% to US$93, gold eased, and the Australian dollar slipped to about 67.5 US cents. The VIX fear gauge rose to about 22, a little jumpy but not alarming.",
+      "trend": "steady"
     }
   ],
-  "confirmed": [],
   "concerns": [
     {
-      "key": "mideast",
-      "title": "Iran conflict and Strait of Hormuz shipping",
-      "likelihood": 34,
-      "prev_likelihood": 34,
-      "trend": "steady",
-      "drivers": [
-        "Iran says a supertanker carrying about 2 million barrels sank in Hormuz after a mine blast; this is still not independently confirmed.",
-        "Oil barely moved when markets reopened (Brent about US$95.50), Hormuz carries about 4 ships a day, and Gulf GPS jamming has eased to 17%.",
-        "Forecast markets give about 16% for a US-Iran Hormuz deal by year end."
-      ],
-      "scenarios": [
-        {
-          "name": "Standoff drags on with mine and ship incidents",
-          "likelihood": 62,
-          "sa_impact": "Fuel prices stay high; occasional regional servo shortages but no rationing."
-        },
-        {
-          "name": "Deal reached, shipping recovers",
-          "likelihood": 13,
-          "sa_impact": "Fuel prices ease over weeks; little direct effect on SA."
-        },
-        {
-          "name": "Major escalation: renewed US/Israeli strike campaign or wider Gulf attacks",
-          "likelihood": 25,
-          "sa_impact": "Fuel price jump and local shortages within 1-3 weeks; possible government fuel measures."
-        }
-      ],
       "actions": [
         {
           "action": "Keep the car at least half full.",
@@ -159,249 +130,304 @@
           "action": "Hold a little cash at home.",
           "reason": "If fuel is rationed or networks fail, cash still works when cards may not."
         }
-      ]
-    },
-    {
-      "key": "cyber",
-      "title": "Cyber attacks and outages hitting Australian services",
-      "likelihood": 9,
-      "prev_likelihood": 8,
-      "trend": "up",
-      "drivers": [
-        "Coles is investigating a cyber security incident; it says there is no evidence customer data was taken and stores are trading normally.",
-        "Microsoft 365 is restored and was not an attack; Australian carriers and the SA grid are normal and the global threat level is green."
       ],
+      "drivers": [
+        "Iran says a supertanker carrying about 2 million barrels sank in Hormuz after a mine blast; this is still not independently confirmed.",
+        "Oil fell about 3% overnight to around US$93, and no new attacks on shipping were found.",
+        "Forecast markets give about 15-21% for a Hormuz deal by year end."
+      ],
+      "key": "mideast",
+      "likelihood": 32,
+      "prev_likelihood": 34,
       "scenarios": [
         {
-          "name": "Ongoing breaches and occasional cloud outages",
-          "likelihood": 84,
-          "sa_impact": "Hours of disruption to some online services; scam risk from stolen data."
+          "likelihood": 63,
+          "name": "Standoff drags on with mine and ship incidents",
+          "sa_impact": "Fuel prices stay high; occasional regional servo shortages but no rationing."
         },
         {
-          "name": "Hours-long outage of payments, a retailer or a telco",
           "likelihood": 14,
-          "sa_impact": "Card payments, online orders or phones down for hours."
+          "name": "Deal reached, shipping recovers",
+          "sa_impact": "Fuel prices ease over weeks; little direct effect on SA."
         },
         {
-          "name": "Multi-day multi-sector attack",
-          "likelihood": 2,
-          "sa_impact": "Payments, fuel and communications disrupted for days."
+          "likelihood": 23,
+          "name": "Major escalation: renewed US/Israeli strike campaign or wider Gulf attacks",
+          "sa_impact": "Fuel price jump and local shortages within 1-3 weeks; possible government fuel measures."
         }
       ],
+      "title": "Iran conflict and Strait of Hormuz shipping",
+      "trend": "down"
+    },
+    {
       "actions": [
         {
           "action": "Treat any 'Coles' email or text about the incident with suspicion.",
           "reason": "Scammers follow news of breaches with fake notices; go to the official app or site directly."
         }
-      ]
-    },
-    {
-      "key": "ai",
-      "title": "AI-enabled attack (non-traditional)",
-      "likelihood": 7,
-      "prev_likelihood": 7,
-      "trend": "steady",
-      "drivers": [
-        "The FBI has warned an open-source AI security tool is being used in cyber attacks worldwide, and a French bank reportedly lost about EUR 100 million in an attack likely aided by AI; none target Australia specifically.",
-        "No deepfakes of officials or fake alerts have been reported in Australia."
       ],
+      "drivers": [
+        "Coles is still investigating a cyber security incident; it says stores are trading normally.",
+        "Microsoft's global outage and the US flight halt were both equipment or software faults, not attacks; Australian carriers and the SA grid are normal."
+      ],
+      "key": "cyber",
+      "likelihood": 9,
+      "prev_likelihood": 9,
       "scenarios": [
         {
-          "name": "Background AI-assisted crime and espionage",
-          "likelihood": 85,
-          "sa_impact": "More convincing scams and data breaches; no wide outage."
+          "likelihood": 84,
+          "name": "Ongoing breaches and occasional cloud outages",
+          "sa_impact": "Hours of disruption to some online services; scam risk from stolen data."
         },
         {
-          "name": "Synthetic-media crisis (fake leader video or alert)",
-          "likelihood": 11,
-          "sa_impact": "Hours of confusion, possible panic buying before it is debunked."
+          "likelihood": 14,
+          "name": "Hours-long outage of payments, a retailer or a telco",
+          "sa_impact": "Card payments, online orders or phones down for hours."
         },
         {
-          "name": "Machine-speed attack on many systems at once",
-          "likelihood": 4,
-          "sa_impact": "Payments, telcos, hospitals or the grid disrupted for hours to days."
+          "likelihood": 2,
+          "name": "Multi-day multi-sector attack",
+          "sa_impact": "Payments, fuel and communications disrupted for days."
         }
       ],
+      "title": "Cyber attacks and outages hitting Australian services",
+      "trend": "steady"
+    },
+    {
       "actions": [
         {
           "action": "Agree a family code word for urgent calls.",
           "reason": "AI can clone a voice from seconds of audio; a code word defeats fake 'I need help now' calls."
         }
-      ]
-    },
-    {
-      "key": "local",
-      "title": "Local SA emergency (bushfire, heat, power) within 7 days",
-      "likelihood": 6,
-      "prev_likelihood": 6,
-      "trend": "steady",
-      "drivers": [
-        "Fire danger is Moderate in the Hills and there is no rating for Adelaide; no fire bans or CFS warnings.",
-        "A severe thunderstorm warning covers only the far North West Pastoral district; the SA grid is normal and the low midday demand is rooftop solar, not an outage."
       ],
+      "drivers": [
+        "The FBI has warned an open-source AI security tool is being used in cyber attacks worldwide, and a French bank reportedly lost about EUR 100 million in an attack likely aided by AI; none target Australia specifically.",
+        "No deepfakes of officials or fake alerts have been reported in Australia."
+      ],
+      "key": "ai",
+      "likelihood": 7,
+      "prev_likelihood": 7,
       "scenarios": [
         {
-          "name": "Quiet week",
           "likelihood": 85,
-          "sa_impact": "No effect."
+          "name": "Background AI-assisted crime and espionage",
+          "sa_impact": "More convincing scams and data breaches; no wide outage."
         },
         {
-          "name": "Hot, windy day with fire bans",
-          "likelihood": 13,
-          "sa_impact": "Fire danger High to Extreme in the Hills; travel plans may need changing."
+          "likelihood": 11,
+          "name": "Synthetic-media crisis (fake leader video or alert)",
+          "sa_impact": "Hours of confusion, possible panic buying before it is debunked."
         },
         {
-          "name": "Damaging fire or major power outage",
-          "likelihood": 2,
-          "sa_impact": "Evacuations, power and phone outages in affected areas."
+          "likelihood": 4,
+          "name": "Machine-speed attack on many systems at once",
+          "sa_impact": "Payments, telcos, hospitals or the grid disrupted for hours to days."
         }
       ],
+      "title": "AI-enabled attack (non-traditional)",
+      "trend": "steady"
+    },
+    {
       "actions": [
         {
           "action": "Check your bushfire plan and the CFS app alert zones before the first hot spell.",
           "reason": "Early-season fires start fast, and decisions are easier made on a calm day."
         }
-      ]
-    },
-    {
-      "key": "taiwan",
-      "title": "Taiwan Strait pressure",
-      "likelihood": 5,
-      "prev_likelihood": 5,
-      "trend": "steady",
-      "drivers": [
-        "No live-fire warnings, GPS jamming or internet disruption around Taiwan; strait shipping is normal.",
-        "Forecast markets give about 3% for a China-Taiwan clash before 2027; Quad leaders meeting is diplomatic signalling, not escalation."
       ],
+      "drivers": [
+        "Fire danger is Moderate in the Hills today and tomorrow, with no fire bans or CFS warnings; Wednesday looks warmer and windier (about 28C, gusts near 60 km/h).",
+        "The SA grid and phone networks are normal. Three Adelaide emergency departments were very busy overnight, with no sign of an outbreak."
+      ],
+      "key": "local",
+      "likelihood": 6,
+      "prev_likelihood": 6,
       "scenarios": [
         {
-          "name": "Routine grey-zone pressure",
           "likelihood": 85,
+          "name": "Quiet week",
           "sa_impact": "No effect."
         },
         {
-          "name": "Large announced drill",
           "likelihood": 13,
-          "sa_impact": "Market jitters; no supply effect."
+          "name": "Hot, windy day with fire bans",
+          "sa_impact": "Fire danger High to Extreme in the Hills; travel plans may need changing."
         },
         {
-          "name": "Blockade or quarantine",
           "likelihood": 2,
-          "sa_impact": "Fuel, medicine and electronics disruption within weeks."
+          "name": "Damaging fire or major power outage",
+          "sa_impact": "Evacuations, power and phone outages in affected areas."
         }
       ],
+      "title": "Local SA emergency (bushfire, heat, power) within 7 days",
+      "trend": "steady"
+    },
+    {
       "actions": [
         {
           "action": "Keep 2-3 months of any essential prescription medicines.",
           "reason": "Most medicines are imported via Asian shipping lanes, which any blockade would disrupt first."
         }
-      ]
-    },
-    {
-      "key": "bio",
-      "title": "Ebola in Africa and MERS in the Gulf",
-      "likelihood": 4,
-      "prev_likelihood": 4,
-      "trend": "steady",
-      "drivers": [
-        "WHO reports the Bundibugyo Ebola outbreak continuing in DR Congo, Kenya and Nigeria with no cases outside Africa, and MERS cases in Qatar and Saudi Arabia linked to camel contact.",
-        "No Adelaide emergency departments are very busy."
       ],
+      "drivers": [
+        "No live-fire warnings, GPS jamming or internet disruption around Taiwan; strait shipping is normal.",
+        "Forecast markets give about 3% for a China-Taiwan clash before 2027; Quad leaders meeting is diplomatic signalling, not escalation."
+      ],
+      "key": "taiwan",
+      "likelihood": 5,
+      "prev_likelihood": 5,
       "scenarios": [
         {
-          "name": "Outbreaks stay contained in their regions",
-          "likelihood": 90,
-          "sa_impact": "No direct effect; possible extra airport screening."
+          "likelihood": 85,
+          "name": "Routine grey-zone pressure",
+          "sa_impact": "No effect."
         },
         {
-          "name": "Isolated imported case in a Western country",
-          "likelihood": 9,
-          "sa_impact": "Media concern; Australian hospitals manage under existing plans."
+          "likelihood": 13,
+          "name": "Large announced drill",
+          "sa_impact": "Market jitters; no supply effect."
         },
         {
-          "name": "Spread in Asia-Pacific",
-          "likelihood": 1,
-          "sa_impact": "Travel restrictions and health system alerts."
+          "likelihood": 2,
+          "name": "Blockade or quarantine",
+          "sa_impact": "Fuel, medicine and electronics disruption within weeks."
         }
       ],
+      "title": "Taiwan Strait pressure",
+      "trend": "steady"
+    },
+    {
       "actions": [
         {
           "action": "Check Smartraveller before any travel to Central or East Africa or the Gulf.",
           "reason": "Advice and entry rules can change quickly as outbreaks and the conflict develop."
         }
-      ]
-    },
-    {
-      "key": "ausinfra",
-      "title": "Undersea cables and Australian networks",
-      "likelihood": 3,
-      "prev_likelihood": 3,
-      "trend": "steady",
-      "drivers": [
-        "No foreign vessels are on the cable watch list near Australia and all Australian carriers are normal.",
-        "No undersea cable damage reported near Australia."
       ],
+      "drivers": [
+        "WHO reports the Bundibugyo Ebola outbreak continuing in DR Congo, Kenya and Nigeria with no cases outside Africa, and MERS cases in Qatar and Saudi Arabia linked to camel contact.",
+        "Three Adelaide emergency departments were very busy overnight, but there is no sign of an outbreak; a cluster of sick runners in California has no link to Australia."
+      ],
+      "key": "bio",
+      "likelihood": 4,
+      "prev_likelihood": 4,
       "scenarios": [
         {
-          "name": "Routine shipping, no damage",
-          "likelihood": 92,
-          "sa_impact": "No effect."
+          "likelihood": 90,
+          "name": "Outbreaks stay contained in their regions",
+          "sa_impact": "No direct effect; possible extra airport screening."
         },
         {
-          "name": "Single cable damaged",
-          "likelihood": 7,
-          "sa_impact": "Slower international internet for days; traffic reroutes via other cables."
+          "likelihood": 9,
+          "name": "Isolated imported case in a Western country",
+          "sa_impact": "Media concern; Australian hospitals manage under existing plans."
         },
         {
-          "name": "Several cables cut at once",
           "likelihood": 1,
-          "sa_impact": "Major internet, payments and cloud disruption across Australia."
+          "name": "Spread in Asia-Pacific",
+          "sa_impact": "Travel restrictions and health system alerts."
         }
       ],
+      "title": "Ebola in Africa and MERS in the Gulf",
+      "trend": "steady"
+    },
+    {
       "actions": [
         {
           "action": "Keep some cash at home.",
           "reason": "EFTPOS and card payments are the first thing to fail in a network outage."
         }
-      ]
+      ],
+      "drivers": [
+        "No foreign vessels are on the cable watch list near Australia and all Australian carriers are normal.",
+        "No undersea cable damage reported near Australia."
+      ],
+      "key": "ausinfra",
+      "likelihood": 3,
+      "prev_likelihood": 3,
+      "scenarios": [
+        {
+          "likelihood": 92,
+          "name": "Routine shipping, no damage",
+          "sa_impact": "No effect."
+        },
+        {
+          "likelihood": 7,
+          "name": "Single cable damaged",
+          "sa_impact": "Slower international internet for days; traffic reroutes via other cables."
+        },
+        {
+          "likelihood": 1,
+          "name": "Several cables cut at once",
+          "sa_impact": "Major internet, payments and cloud disruption across Australia."
+        }
+      ],
+      "title": "Undersea cables and Australian networks",
+      "trend": "steady"
     }
   ],
+  "confirmed": [],
   "events_observed": [
     {
       "date": "2026-11-03",
       "eventKey": "us-strikes-iran-2026-11-03",
       "scenario": "mideast",
-      "title": "US strikes on Iranian targets around the Strait of Hormuz"
+      "title": "US strikes on Iranian targets around the Strait of Hormuz",
+      "so_what": "Pushed oil prices up; fuel stays dear at the bowser."
     },
     {
       "date": "2026-11-08",
       "eventKey": "houthi-strike-riyadh-2026-11-08",
       "scenario": "mideast",
-      "title": "Houthi missile strike damages Aramco building in Riyadh"
+      "title": "Houthi missile strike damages Aramco building in Riyadh",
+      "so_what": "No effect on us so far."
     },
     {
       "date": "2026-11-12",
       "eventKey": "houthi-missiles-mecca-2026-11-12",
       "scenario": "mideast",
-      "title": "Saudi Arabia intercepts Houthi missiles; debris falls in Mecca region"
+      "title": "Saudi Arabia intercepts Houthi missiles; debris falls in Mecca region",
+      "so_what": "No effect on us so far."
     },
     {
       "date": "2026-11-12",
       "eventKey": "strike-sirik-iran-2026-11-12",
       "scenario": "mideast",
-      "title": "Iran reports a strike on Sirik on its Hormuz coast"
+      "title": "Iran reports a strike on Sirik on its Hormuz coast",
+      "so_what": "No effect on us so far."
     },
     {
       "date": "2026-11-13",
       "eventKey": "us-faa-nationwide-ground-stop-2026-11-13",
       "scenario": "cyber",
-      "title": "US nationwide flight ground stop (about 4.5 hours), blamed on overloaded air-traffic equipment, not a cyber attack"
+      "title": "US nationwide flight ground stop (about 4.5 hours), traced to a failed air-traffic router in Arkansas, not a cyber attack",
+      "so_what": "Only matters if you were flying via the US; it was not an attack."
     },
     {
       "date": "2026-11-14",
       "eventKey": "irgc-tankers-mines-hormuz-2026-11-14",
       "scenario": "mideast",
-      "title": "Iran's Revolutionary Guards say three tankers hit mines and caught fire in the Strait of Hormuz"
+      "title": "Iran's Revolutionary Guards say three tankers hit mines and caught fire in the Strait of Hormuz",
+      "so_what": "Keeps fuel prices high; no shortages in SA."
+    },
+    {
+      "eventKey": "microsoft-365-global-outage-2026-11-15",
+      "title": "Global Microsoft 365 outage (email, Teams) for about a day, caused by a software bug",
+      "scenario": "cyber",
+      "date": "2026-11-15",
+      "so_what": "Work email and Teams were disrupted; it is fixed and was not an attack."
+    },
+    {
+      "eventKey": "coles-cyber-incident-2026-11-15",
+      "title": "Coles investigates a cyber security incident",
+      "scenario": "cyber",
+      "date": "2026-11-15",
+      "so_what": "Shop as normal, but ignore any 'Coles' email or text asking you to log in or pay."
     }
-  ]
+  ],
+  "headline": "A quiet night: Iran's claim that a supertanker sank in Hormuz is still unconfirmed and oil prices fell, so there is nothing new to do.",
+  "level": 3,
+  "levelName": "Elevated",
+  "nextCheck": "2026-11-17T16:39:00+10:30",
+  "summary": "Brent oil fell about 3% overnight to around US$93, and Iran's claim that a supertanker sank after hitting a mine in Hormuz is still not independently confirmed; the US-Iran standoff continues with no new attacks found. The US says its recent nationwide flight halt was caused by a failed air-traffic router in Arkansas, not a cyber attack, and US flights are running normally. Coles is still investigating its cyber incident and stores are trading. Locally it is quiet: Moderate fire danger in the Hills today and tomorrow, no fire bans or CFS warnings, and the grid and phone networks are normal.",
+  "trend": "steady",
+  "updatedAt": "2026-11-17T04:40:00+10:30"
 }
