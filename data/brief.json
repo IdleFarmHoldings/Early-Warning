@@ -64,24 +64,35 @@
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
     "chokepoints": "RuntimeError: PortWatch returned no rows: {\"error\": {\"code\": 499, \"message\": \"Token Required\", \"messageCode\": \"GWM_0003\"",
-    "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
+    "incidents": "ValueError: time data 'Info' does not match format '%Y-%m-%dT%H:%M:%SZ'",
+    "navwarn": "RuntimeError: cast-warn?status=A&output=json: TimeoutError: The read operation timed out; ons/broadcast-warn?output=json"
   },
   "gdacs_orange_red": [
     "Orange notification for tropical cyclone AKVAN-26. Population affected by Category 1 (120 km/h) wind speeds or higher is 0  (20.826 million in Tropical Storm).",
     "Drought is on going in Aruba, , Brazil, Colombia, Costa Rica, , French Guiana, Guyana, Panama, Suriname, Venezuela"
   ],
-  "generated_at": "2026-11-16T20:27:00Z",
+  "generated_at": "2026-11-16T20:43:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 49,
+    "Baltic / Kaliningrad": 57,
     "Black Sea": null,
     "Israel & Eastern Mediterranean": 0,
     "Korea": 0,
-    "Persian Gulf": 7,
-    "South Australia": 0,
-    "Sydney / NSW": 0,
+    "Persian Gulf": 6,
+    "South Australia": 3,
+    "Sydney / NSW": 1,
     "Taiwan Strait": 0
   },
   "incidents": [
+    {
+      "confirmed": true,
+      "headlines": [
+        "Microsoft says latent July bug triggered global Microsoft 365 outage",
+        "Microsoft says months-old bug caused global Microsoft 365 outage",
+        "Maintenance, faulty judgment, and a bug from July took Microsoft 365 offline for a day"
+      ],
+      "severity": "Warning",
+      "target": "Microsoft"
+    },
     {
       "confirmed": false,
       "headlines": [
@@ -89,6 +100,14 @@
       ],
       "severity": "Info",
       "target": "Supermarkets & food"
+    },
+    {
+      "confirmed": false,
+      "headlines": [
+        "Wait, Why Did Every Major Bank Just Go Down?"
+      ],
+      "severity": "Info",
+      "target": "Banking & payments"
     },
     {
       "confirmed": false,
@@ -101,42 +120,10 @@
     {
       "confirmed": false,
       "headlines": [
-        "Barracuda links cloud breach to ARTEX AI-powered cyberattack"
+        "AI finds zero-day flaws for just $4 now – even mediocre hackers can cash in"
       ],
       "severity": "Info",
-      "target": "Barracuda"
-    },
-    {
-      "confirmed": false,
-      "headlines": [
-        "Google Finds Hackers Using AI Agents to Build and Run Exploits From Software Patches"
-      ],
-      "severity": "Info",
-      "target": "Google Finds Hackers"
-    },
-    {
-      "confirmed": true,
-      "headlines": [
-        "FBI says Artex AI open-source hacking tool used to breach networks in ‘under three hours’"
-      ],
-      "severity": "Info",
-      "target": "FBI"
-    },
-    {
-      "confirmed": false,
-      "headlines": [
-        "‘New type’ of AI-powered cyberattack hits one of Poland’s largest online payment platforms"
-      ],
-      "severity": "Info",
-      "target": "New"
-    },
-    {
-      "confirmed": false,
-      "headlines": [
-        "Google: Russian-speaking hackers used AI agents for autonomous cyberattacks"
-      ],
-      "severity": "Info",
-      "target": "Google"
+      "target": "Other services"
     },
     {
       "confirmed": false,
@@ -149,8 +136,8 @@
   ],
   "internet_drop_pct": {
     "China": 0.0,
-    "Iran": 1.9,
-    "Israel": 0.3,
+    "Iran": 1.8,
+    "Israel": 0.4,
     "Russia": 0.2,
     "South Korea": 0.2,
     "Taiwan": 1.0
@@ -177,14 +164,14 @@
     "fire_danger_ok": true,
     "fires_active": 1,
     "fuel": {
-      "brent_aud": 138.3,
-      "change_pct": 3.7,
+      "brent_aud": 138.2,
+      "change_pct": 3.6,
       "pump_cents": 3,
       "week_ago_aud": 133.4
     },
-    "grid_demand_fall_pct": 7.5,
-    "grid_demand_mw": 1235,
-    "grid_demand_usual_mw": 1351,
+    "grid_demand_fall_pct": 2.0,
+    "grid_demand_mw": 1283,
+    "grid_demand_usual_mw": 1342,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
@@ -194,7 +181,26 @@
         "pm25": 7
       },
       "air_word": "Good",
-      "days": []
+      "days": [
+        {
+          "date": "2026-11-17",
+          "gust": 42,
+          "rain": 0,
+          "tmax": 22
+        },
+        {
+          "date": "2026-11-18",
+          "gust": 41,
+          "rain": 0,
+          "tmax": 26
+        },
+        {
+          "date": "2026-11-19",
+          "gust": 57,
+          "rain": 2,
+          "tmax": 28
+        }
+      ]
     },
     "possible_blackout": false,
     "power_news": [],
@@ -212,20 +218,20 @@
   },
   "markets": {
     "AUD/USD": {
-      "change_pct": -1.0,
-      "price": 0.6739
+      "change_pct": -1.03,
+      "price": 0.6737
     },
     "Brent oil": {
-      "change_pct": -3.7,
-      "price": 92.29
+      "change_pct": -3.6,
+      "price": 92.39
     },
     "Gold": {
-      "change_pct": -0.59,
-      "price": 3863.5
+      "change_pct": -0.68,
+      "price": 3859.9
     },
     "VIX": {
-      "change_pct": 23.73,
-      "price": 23.88
+      "change_pct": 22.9,
+      "price": 23.72
     }
   },
   "national_shocks": {
@@ -234,7 +240,7 @@
       "ground_stops": [
         {
           "airport": "TEB",
-          "end": "3:45 pm EST",
+          "end": "4:45 pm EST",
           "reason": "airport volume"
         }
       ],
@@ -246,11 +252,6 @@
   },
   "nc3": "normal",
   "news_watch": {
-    "ai_hack": [
-      "Barracuda links cloud breach to ARTEX AI-powered cyberattack - BleepingComputer",
-      "Google Finds Hackers Using AI Agents to Build and Run Exploits From Software Patches - The Hacker News",
-      "FBI says Artex AI open-source hacking tool used to breach networks in ‘under three hours’ - TechCrunch"
-    ],
     "bank_outage": [
       "EVs reach record 31% share of global passenger vehicle sales - CommBank",
       "Huge change coming for Aussie ATMs - News.com.au",
@@ -266,8 +267,10 @@
       "Spain provides EUR 350,000 in voluntary funding to support OPCW’s work - Organisation for the Prohibition of Chemical Weapons",
       "Spain allocates €300,000 to support OPCW missions in Syria - سانا"
     ],
-    "cn_signals": [
-      "IAF Chief: True Self Reliance is Crucial for Future War Preparedness - Asianet Newsable"
+    "cloud": [
+      "Insurers dodge payouts after global Microsoft outage - Herald Sun",
+      "Microsoft says three-month-old bug behind global M365 outage - iTnews",
+      "Microsoft says months-old bug caused global Microsoft 365 outage - BleepingComputer"
     ],
     "cyber_au": [
       "French cyber attack highlights risks for Australia's smart buildings - Pinsent Masons",
@@ -278,6 +281,11 @@
       "Canada Bill C-22 Could Force Apps to Build Intercept Tools: Senate to Hear Signal, Meta Monday - Tech Times",
       "PHP2Shell flaw exploited in chained attacks targeting unpatched Check Point gateways - Cybersecurity Dive",
       "America’s Enemies Are Watching Our Infrastructure Fail - The Washington Stand"
+    ],
+    "cyber_supply": [
+      "AI finds zero-day flaws for just $4 now – even mediocre hackers can cash in - ZDNET",
+      "Creating a holistic threat management strategy for Frontier AI - Cybersecurity Dive",
+      "Google Project Zero Sets Course for 30-Day Disclosure Deadline - SecurityWeek"
     ],
     "deepfake": [
       "New in Specto: AI-generated captions and transcripts for audio and video - Clarivate",
@@ -304,9 +312,9 @@
       "Mystery Pneumonia Death Sparks Concern; Trader Joe's Recall; OUD in Young People - MedPage Today"
     ],
     "masscas": [
-      "Shootout at gun show leaves person dead and SC deputy hospitalized, sheriff says - The State",
       "Preliminary investigation points to steering failure in tanker collision with river cruise ship - WDSU",
-      "U.S. Soldiers Googled Hospitals After Deadly Iran Strike - USA Herald"
+      "U.S. Soldiers Googled Hospitals After Deadly Iran Strike - USA Herald",
+      "U.S. troops killed in Iranian drone strike lacked adequate defenses, 60 Minutes investigation finds - SSBCrack"
     ],
     "mobilisation": [
       "Deferment in Reserve+ did not save: The Territorial Recruitment Center illegally mobilized a student, and the court refused to release him from service - Судово-юридична газета",
@@ -316,15 +324,20 @@
     "murray": [
       "Corporate Ladder: Your weekly guide to executive appointments in South Australia - InDaily South Australia"
     ],
+    "national_outage": [
+      "Nationwide outage impacts Chase banking online and at some branches - NBC News",
+      "Multiple banks hit by nationwide outage, users say - KPTV",
+      "Claims there will be nationwide power outage this week 'false', National Grid says - The Bury Times"
+    ],
+    "outage_au": [
+      "Microsoft ‘deeply sorry’ for global outage, rules out cyberattack and AI - Nine.com.au",
+      "The Microsoft outage is part of a growing trend. This is how to prepare for further disruption - SBS",
+      "Microsoft exec reveals details of outage - News.com.au"
+    ],
     "reservists": [
       "Serbia opens strategic oil reserve as pipeline outage drags on in Croatia - Upstream Online",
       "Poland’s Defense Ministry plans to introduce a payment of 3,250 zlotys for reservists — RMF24 - UA.NEWS",
       "Czechs continue to cut gas consumption, reserves expected to last - oEnergetice.cz"
-    ],
-    "sapn": [
-      "Twist in alleged bizarre 239kg copper theft - Adelaide Now",
-      "NAB launches new Smart ATMs across Australia - News24",
-      "Oil holds near US$96 as growing supply surplus clashes with Middle East tensions - Proactive Investors Australia"
     ],
     "scams": [
       "Adactin urges Australian firms to step up fraud defences - SecurityBrief Australia",
@@ -344,7 +357,7 @@
       "yes": 5.5
     },
     {
-      "d24h": 0.0,
+      "d24h": -0.5,
       "q": "NATO x Russia military clash by December 31, 2026?",
       "yes": 11.5
     },
@@ -359,7 +372,7 @@
       "yes": 4.2
     },
     {
-      "d24h": 0.1,
+      "d24h": 0.0,
       "q": "Will the US officially declare war on Iran by December 31, 2026?",
       "yes": 1.5
     },
@@ -394,12 +407,12 @@
       "yes": 1.4
     },
     {
-      "d24h": -0.3,
+      "d24h": -0.4,
       "q": "Will China blockade Taiwan in 2026?",
       "yes": 2.1
     },
     {
-      "d24h": 1.0,
+      "d24h": 2.0,
       "q": "Iran-Oman Hormuz Agreement by November 30?",
       "yes": 8.5
     },
@@ -434,19 +447,19 @@
       "yes": 2.1
     },
     {
-      "d24h": 0.0,
+      "d24h": -0.2,
       "q": "Will the U.S. test a nuclear weapon by December 31 2026?",
       "yes": 2.6
     },
     {
-      "d24h": 0.5,
+      "d24h": 1.0,
       "q": "Will Russia invade another country by December 31, 2027?",
-      "yes": 18.0
+      "yes": 18.5
     },
     {
-      "d24h": 3.0,
+      "d24h": 3.5,
       "q": "Ukraine agrees not to join NATO by December 31, 2027?",
-      "yes": 20.5
+      "yes": 21.0
     },
     {
       "d24h": -9.0,
@@ -754,38 +767,38 @@
     },
     {
       "band": "Guarded",
-      "convergence": "Two different kinds of sign are showing together (ai-enabled hacking and fraud waves). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, deepfakes of leaders or fake off",
+      "convergence": "Two different kinds of sign are showing together (cloud services and fraud waves). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, reports of ai-driven hacking campaig",
       "domains": [
-        "AI-enabled hacking",
+        "Cloud services",
         "Fraud waves"
       ],
       "key": "ai",
       "lit": [
         {
-          "detail": "Barracuda links cloud breach to ARTEX AI-powered cyberattack",
-          "name": "Reports of AI-driven hacking campaigns"
+          "detail": "Insurers dodge payouts after global Microsoft outage",
+          "name": "Major cloud or AI service outage"
         },
         {
           "detail": "Deepfake Fraud Has Cost Almost $4 Billion Worldwide Since 2020",
           "name": "Surge in AI voice-clone / deepfake scams in Australia"
         }
       ],
-      "score": 20,
-      "trend": "up"
+      "score": 15,
+      "trend": "down"
     }
   ],
   "sectors_relative_5d": {
     "defence_au": -2.63,
     "defence_eu": -1.09,
-    "defence_us": 0.92,
-    "pandemic": -3.96
+    "defence_us": 1.02,
+    "pandemic": -3.51
   },
   "tankers": "normal",
   "telecom_drop_pct": {
     "Aussie Broadband": 0.0,
-    "Optus": 1.9,
-    "TPG": 0.0,
-    "Telstra": 0.3,
+    "Optus": 0.0,
+    "TPG": 0.1,
+    "Telstra": 0.0,
     "Vodafone": 0.0
   },
   "us_departure_orders": [
