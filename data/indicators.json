@@ -1,11 +1,12 @@
 {
-  "generated_at": "2026-11-16T15:18:00Z",
+  "generated_at": "2026-11-16T15:33:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
-      "band": "Low",
-      "convergence": "Only one kind of sign is showing (roads). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: cfs emergency warning in sa, sudden fall in sa electricity demand (possible large blackout) and extreme or catastrophic fire danger near adelaide.",
+      "band": "Guarded",
+      "convergence": "Two different kinds of sign are showing together (hospitals and roads). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: cfs emergency warning in sa, sudden fall in sa electricity demand (possible large blackout) and extreme or catastrophic fire danger near adelaide.",
       "domains": [
+        "Hospitals",
         "Roads"
       ],
       "key": "local",
@@ -16,12 +17,19 @@
           "id": "roads",
           "name": "Fire, flood or storm road closures in SA",
           "weight": 10
+        },
+        {
+          "detail": "Flinders Medical Centre; Noarlunga; Royal Adelaide",
+          "domain": "Hospitals",
+          "id": "ed",
+          "name": "Three or more Adelaide emergency departments 'very busy'",
+          "weight": 10
         }
       ],
       "name": "Local emergency in SA (bushfire, heat, power)",
       "sa_impact": "Direct: bushfires, heatwaves and power cuts are the emergencies most likely to affect the family. In the 2016 statewide blackout, power, phones, traffic lights and fuel pumps failed together.",
-      "score": 10,
-      "trend": "steady",
+      "score": 20,
+      "trend": "up",
       "unlit": [
         {
           "domain": "Bushfire",
@@ -63,12 +71,6 @@
           "domain": "Communications",
           "id": "tel",
           "name": "Phone / internet carrier outage",
-          "weight": 10
-        },
-        {
-          "domain": "Hospitals",
-          "id": "ed",
-          "name": "Three or more Adelaide emergency departments 'very busy'",
           "weight": 10
         },
         {
@@ -625,11 +627,12 @@
       "why": "The 2023 Optus outage cut mobile, NBN, EFTPOS and some 000 calls nationwide for 12 hours. Hostile states pre-position in critical infrastructure; GPS jamming over Australia would be a new and serious sign."
     },
     {
-      "band": "Guarded",
-      "convergence": "Two different kinds of sign are showing together (chemical weapons and health). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: unknown illness / pneumonia cluster reported, countries restricting medical supply exports and pandemic-response stocks outperforming (5 days).",
+      "band": "Elevated",
+      "convergence": "Signs are converging across 3 separate areas (chemical weapons, health and hospitals). Unrelated systems flagging the same scenario at once is the pattern seen before past events. Before COVID-19 (Dec 2019 - Feb 2020): reports of an unknown pneumonia cluster, WHO outbreak notices, mask and hazmat makers (Alpha Pro Tech, Lakeland) and vaccine developers (Moderna, Novavax) surging weeks before broad markets fell, and countries restricting exports of masks and medicines (Taiwan from 24 Jan 2020, then dozens more). The strongest signs not yet showing: unknown illness / pneumonia cluster reported, countries restricting medical supply exports and pandemic-response stocks outperforming (5 days).",
       "domains": [
         "Chemical weapons",
-        "Health"
+        "Health",
+        "Hospitals"
       ],
       "key": "bio",
       "lit": [
@@ -646,12 +649,19 @@
           "id": "chem",
           "name": "Chemical / nerve-agent attack or mass poisoning reported",
           "weight": 15
+        },
+        {
+          "detail": "Flinders Medical Centre; Noarlunga; Royal Adelaide",
+          "domain": "Hospitals",
+          "id": "ed",
+          "name": "Three or more Adelaide emergency departments 'very busy'",
+          "weight": 10
         }
       ],
       "name": "Pandemic, biological or chemical emergency",
       "sa_impact": "Health system strain, possible lockdowns and border closures, and shortages of medicines and protective equipment, which Australia mostly imports.",
-      "score": 30,
-      "trend": "steady",
+      "score": 40,
+      "trend": "up",
       "unlit": [
         {
           "domain": "Health",
@@ -694,12 +704,6 @@
           "id": "dieoff",
           "name": "Unexplained mass deaths or animal die-offs",
           "weight": 10
-        },
-        {
-          "domain": "Hospitals",
-          "id": "ed",
-          "name": "Three or more Adelaide emergency departments 'very busy'",
-          "weight": 10
         }
       ],
       "why": "Before COVID-19 (Dec 2019 - Feb 2020): reports of an unknown pneumonia cluster, WHO outbreak notices, mask and hazmat makers (Alpha Pro Tech, Lakeland) and vaccine developers (Moderna, Novavax) surging weeks before broad markets fell, and countries restricting exports of masks and medicines (Taiwan from 24 Jan 2020, then dozens more)."
@@ -713,7 +717,7 @@
       "key": "cyber",
       "lit": [
         {
-          "detail": "Coles supermarket cyber attack: Australia’s retailer investigates security breach",
+          "detail": "French cyber attack highlights risks for Australia's smart buildings",
           "domain": "Australian incidents",
           "id": "au",
           "name": "Major Australian cyber incident reported",
