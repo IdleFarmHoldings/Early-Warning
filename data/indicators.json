@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-17T11:09:00Z",
+  "generated_at": "2026-11-17T11:25:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -378,9 +378,10 @@
     },
     {
       "band": "Guarded",
-      "convergence": "Only one kind of sign is showing (mobilisation). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and us nuclear command aircraft unusual.",
+      "convergence": "Two different kinds of sign are showing together (mobilisation and undersea cables). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and us nuclear command aircraft unusual.",
       "domains": [
-        "Mobilisation"
+        "Mobilisation",
+        "Undersea cables"
       ],
       "key": "russia",
       "lit": [
@@ -390,12 +391,19 @@
           "id": "mob",
           "name": "Mobilisation / reservist reports (Russia / NATO)",
           "weight": 15
+        },
+        {
+          "detail": "Russia vessel MALVA ~50 min",
+          "domain": "Undersea cables",
+          "id": "cable",
+          "name": "Russian / Chinese vessels loitering over Baltic cables",
+          "weight": 10
         }
       ],
       "name": "Russia-NATO escalation",
       "sa_impact": "Indirect: energy and market shock, cyber attacks that can spill over to Australian systems, and nuclear-risk rhetoric.",
-      "score": 15,
-      "trend": "steady",
+      "score": 25,
+      "trend": "up",
       "unlit": [
         {
           "domain": "Electronic warfare",
@@ -461,12 +469,6 @@
           "domain": "Cyber",
           "id": "cyber",
           "name": "Russian wiper / Sandworm activity reports",
-          "weight": 10
-        },
-        {
-          "domain": "Undersea cables",
-          "id": "cable",
-          "name": "Russian / Chinese vessels loitering over Baltic cables",
           "weight": 10
         },
         {
