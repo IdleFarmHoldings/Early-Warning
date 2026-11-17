@@ -71,15 +71,15 @@
     "Orange notification for tropical cyclone AKVAN-26. Population affected by Category 1 (120 km/h) wind speeds or higher is 0  (20.826 million in Tropical Storm).",
     "Drought is on going in Aruba, , Brazil, Colombia, Costa Rica, , French Guiana, Guyana, Panama, Suriname, Venezuela"
   ],
-  "generated_at": "2026-11-17T01:05:00Z",
+  "generated_at": "2026-11-17T01:21:00Z",
   "gps_bad_pct": {
     "Baltic / Kaliningrad": null,
-    "Black Sea": null,
-    "Israel & Eastern Mediterranean": 3,
+    "Black Sea": 40,
+    "Israel & Eastern Mediterranean": 6,
     "Korea": 0,
-    "Persian Gulf": 5,
-    "South Australia": 10,
-    "Sydney / NSW": 5,
+    "Persian Gulf": 13,
+    "South Australia": 7,
+    "Sydney / NSW": 2,
     "Taiwan Strait": 2
   },
   "incidents": [
@@ -88,7 +88,7 @@
       "headlines": [
         "Chase identifies cause of banking outage as Colorado customers report ATM problems",
         "Bank outage vs. bank failure: is your money still safe?",
-        "The Bank Outage May Have Nothing to Do With Your Bank"
+        "Wait, Why Did Every Major Bank Just Go Down?"
       ],
       "severity": "Warning",
       "target": "Banking & payments"
@@ -96,12 +96,44 @@
     {
       "confirmed": true,
       "headlines": [
-        "US judge strikes down Trump visa policy limiting foreign students to four years, journalists to 240 days",
-        "US judge strikes down new visa rules for foreign students, journalists",
-        "US judge strikes down new visa rules for foreign students and journalists"
+        "Microsoft says months-old bug caused global outage",
+        "High volume phishing campaign uses Microsoft 365 outage lures to target multiple industry sectors",
+        "Microsoft outage turns Friday the 13th into a nightmare Staff Reporter THE major Microsoft 365 outage that began on Thursday, 12 November 2026, disrupted email,"
+      ],
+      "severity": "Warning",
+      "target": "Microsoft"
+    },
+    {
+      "confirmed": false,
+      "headlines": [
+        "Coles supermarket cyber attack: Australia’s retailer investigates security breach"
       ],
       "severity": "Info",
-      "target": "Other services"
+      "target": "Supermarkets & food"
+    },
+    {
+      "confirmed": false,
+      "headlines": [
+        "Dragos reports 20 Australian industrial ransomware incidents in Q3 2026"
+      ],
+      "severity": "Info",
+      "target": "Dragos"
+    },
+    {
+      "confirmed": false,
+      "headlines": [
+        "Australia logs 20 industrial ransomware incidents in Q3"
+      ],
+      "severity": "Info",
+      "target": "Australia"
+    },
+    {
+      "confirmed": false,
+      "headlines": [
+        "French cyber attack highlights risks for Australia's smart buildings"
+      ],
+      "severity": "Info",
+      "target": "French"
     },
     {
       "confirmed": true,
@@ -128,12 +160,29 @@
       "target": "Google Finds Hackers"
     },
     {
+      "confirmed": false,
+      "headlines": [
+        "Autonomous AI Hacking Systems Detected in Real-World Cyberattacks, Google Warns"
+      ],
+      "severity": "Info",
+      "target": "Autonomous AI Hacking"
+    },
+    {
       "confirmed": true,
       "headlines": [
         "FBI says Artex AI open source hacking tool used to breach networks in ‘under three hours’"
       ],
       "severity": "Info",
       "target": "FBI"
+    },
+    {
+      "confirmed": true,
+      "headlines": [
+        "US judge strikes down Trump visa policy limiting foreign students to four years, journalists to 240 days",
+        "US judge strikes down new visa rules for foreign students and journalists"
+      ],
+      "severity": "Info",
+      "target": "Other services"
     },
     {
       "confirmed": false,
@@ -145,10 +194,10 @@
     }
   ],
   "internet_drop_pct": {
-    "China": 0.0,
+    "China": 0.4,
     "Iran": 0.6,
-    "Israel": 0.4,
-    "Russia": 0.3,
+    "Israel": 0.0,
+    "Russia": 0.1,
     "South Korea": 0.0,
     "Taiwan": 0.0
   },
@@ -169,13 +218,13 @@
     "fire_danger_ok": true,
     "fires_active": 2,
     "fuel": {
-      "brent_aud": 137.2,
+      "brent_aud": 137.1,
       "change_pct": 2.6,
       "pump_cents": 2,
       "week_ago_aud": 133.7
     },
-    "grid_demand_fall_pct": 41.6,
-    "grid_demand_mw": 101,
+    "grid_demand_fall_pct": 41.9,
+    "grid_demand_mw": 100,
     "grid_demand_usual_mw": 526,
     "grid_lor_level": 0,
     "nearby_incidents": [],
@@ -186,7 +235,26 @@
         "pm25": 7
       },
       "air_word": "Good",
-      "days": []
+      "days": [
+        {
+          "date": "2026-11-17",
+          "gust": 40,
+          "rain": 0,
+          "tmax": 22
+        },
+        {
+          "date": "2026-11-18",
+          "gust": 44,
+          "rain": 0,
+          "tmax": 26
+        },
+        {
+          "date": "2026-11-19",
+          "gust": 54,
+          "rain": 4,
+          "tmax": 26
+        }
+      ]
     },
     "possible_blackout": false,
     "power_news": [],
@@ -204,16 +272,16 @@
   },
   "markets": {
     "AUD/USD": {
-      "change_pct": -0.56,
-      "price": 0.6741
+      "change_pct": -0.65,
+      "price": 0.6735
     },
     "Brent oil": {
-      "change_pct": -4.11,
-      "price": 91.9
+      "change_pct": -3.83,
+      "price": 92.17
     },
     "Gold": {
-      "change_pct": 0.08,
-      "price": 3856.0
+      "change_pct": 0.12,
+      "price": 3857.5
     },
     "VIX": {
       "change_pct": 18.7,
@@ -241,7 +309,11 @@
     "ai_hack": [
       "Barracuda links cloud breach to ARTEX AI-powered cyberattack - BleepingComputer",
       "Google Finds Hackers Using AI Agents to Build and Run Exploits From Software Patches - The Hacker News",
-      "‘New type’ of AI-powered cyberattack hits one of Poland’s largest online payment platforms - TVP World"
+      "Autonomous AI Hacking Systems Detected in Real-World Cyberattacks, Google Warns - 조선일보"
+    ],
+    "airspace": [
+      "Middle East Airspace Closures: Who Decides and What Passengers Are Owed - Diplomacy and Law",
+      "Alert in the US: Trump reveals why all flights were grounded — some equipment is up to 55 years old - El Cronista"
     ],
     "aviation_halt": [
       "Trump bristles at criticism over grounding of planes, blaming old tech and Biden for the problems - AP News",
@@ -253,18 +325,38 @@
       "US judge strikes down new visa rules for foreign students and journalists - Le Monde.fr",
       "Bank outage vs. bank failure: is your money still safe? - qz.com"
     ],
+    "blood": [
+      "Insomnia, Apnea and the Rest: The Sleep Disorders Most Common in the Military - U.S. Medicine",
+      "Disrupted Sleep, Shifting Schedules and Stimulants - U.S. Medicine",
+      "Sometimes Hoofbeats Are Zebras: How Misdiagnoses Obscure Narcolepsy - U.S. Medicine"
+    ],
+    "chem": [
+      "Finland provides EUR 50,000 in voluntary funding to enhance OPCW’s work - Organisation for the Prohibition of Chemical Weapons",
+      "US intelligence warns of Iranian dirty bomb or chemical attack plot targeting Trump officials: CNN - Anadolu Ajansı",
+      "Spain provides EUR 350,000 in voluntary funding to support OPCW’s work - Organisation for the Prohibition of Chemical Weapons"
+    ],
+    "cloud": [
+      "Microsoft says months-old bug caused global outage - Information Age | ACS",
+      "Insurers dodge payouts after global Microsoft outage - The Australian",
+      "High volume phishing campaign uses Microsoft 365 outage lures to target multiple industry sectors - Microsoft"
+    ],
     "cn_signals": [
       "IAF Chief: True Self Reliance is Crucial for Future War Preparedness - Asianet Newsable"
+    ],
+    "cyber_au": [
+      "Dragos reports 20 Australian industrial ransomware incidents in Q3 2026 - Australian Cyber Security Magazine",
+      "Australia logs 20 industrial ransomware incidents in Q3 - SecurityBrief Australia",
+      "Coles launches investigation into cyber incident - Information Age | ACS"
+    ],
+    "cyber_state": [
+      "NT emergency preparedness strengthened before upcoming higher risk weather season - National Indigenous Times",
+      "PHP2Shell flaw exploited in chained attacks targeting unpatched Check Point gateways - Cybersecurity Dive",
+      "Duffy's FAA warning gave America's adversaries a roadmap - St. Augustine Record"
     ],
     "cyber_supply": [
       "Expedia confirms data breach following supply chain attack - SC Media",
       "AI finds zero-day flaws for just $4 now – even mediocre hackers can cash in - ZDNET",
       "Anthropic Cuts Vulnerability Disclosure Window From 90 Days to 30 as AI-Accelerated Discovery Undermines Old Assumptions - BigGo Finance"
-    ],
-    "deepfake": [
-      "Satire or propaganda? How AI-generated videos blur the lines - eKathimerini.com",
-      "Trump Posts Bizarre Troop Video After Shocking Revelation - The Daily Beast",
-      "Chiranjeevi meets Kishan Reddy, flags AI and deepfake threats - Awaz The Voice"
     ],
     "dieoff": [
       "Mass death of Indian carp raises pollution concerns at Ooty lake - The Hindu",
@@ -273,12 +365,22 @@
     "flash": [
       "Red Mountain Mining Requests Trading Halt Pending Capital Raising Announcement - Kalkine",
       "Circuit Breaker Test Sets Market To 2035: Grid Modernization and Renewables Drive Demand - News and Statistics - IndexBox",
-      "REG - Empire Metals Ltd - Capital Access Window - Trading Halt - TradingView"
+      "Metal Hawk Requests Trading Halt Pending Leinster South Project Exploration Results - Kalkine"
     ],
     "fuel_au": [
-      "Minns pulls property crackdown as falling stamp duty hits public sector - The Mandarin",
       "Could war in Iran affect your retirement nest egg and share portfolio? - The Senior",
+      "Minns pulls property crackdown as falling stamp duty hits public sector - The Mandarin",
       "Nation’s truck driver shortage hits 12pc - GoAuto.com.au"
+    ],
+    "illness": [
+      "Mystery illness causes mass hospitalisation of runners - The Nightly",
+      "Zayn Malik hospitalised with mystery illness, forced to cancel upcoming appearances on album release week - Nine.com.au",
+      "Mystery Pneumonia Death Sparks Concern; Trader Joe's Recall; OUD in Young People - MedPage Today"
+    ],
+    "masscas": [
+      "Preliminary investigation points to steering failure in tanker collision with river cruise ship - WDSU",
+      "U.S. Soldiers Googled Hospitals After Deadly Iran Strike - USA Herald",
+      "Billings Clinic announces new name: One Sky Health - Fairfield Sun Times"
     ],
     "medexport": [
       "Taliban Turn To Iran To Address Medicine Shortages In Afghanistan - Afghanistan International"
@@ -290,8 +392,8 @@
     ],
     "national_outage": [
       "Chase bank hit with nationwide outage - NBC News",
-      "Unclaimed luggage piles up at DCA as airlines recover from nationwide outage - WJLA",
-      "Chase issues statement after nationwide outage - Modern Ghana"
+      "Chase bank hit with nationwide outage - Modern Ghana",
+      "Unclaimed luggage piles up at DCA as airlines recover from nationwide outage - WJLA"
     ],
     "outage_au": [
       "The Microsoft outage is part of a growing trend. This is how to prepare for further disruption - SBS",
@@ -307,9 +409,6 @@
       "Millions locked out as money chaos spreads - News.com.au",
       "NAB rolls out new ‘smart’ ATMs across Australia - https://newsreel.com.au/",
       "Twist in alleged bizarre 239kg copper theft - Adelaide Now"
-    ],
-    "sawater": [
-      "DCWD trains upland brgys on water safety - SunStar Publishing Inc."
     ],
     "scams": [
       "AI agents to drive fraud surge for Australian firms - SecurityBrief Australia",
@@ -329,9 +428,9 @@
       "yes": 5.5
     },
     {
-      "d24h": 1.5,
+      "d24h": 0.5,
       "q": "NATO x Russia military clash by December 31, 2026?",
-      "yes": 12.5
+      "yes": 11.5
     },
     {
       "d24h": -0.2,
@@ -379,7 +478,7 @@
       "yes": 1.4
     },
     {
-      "d24h": -0.4,
+      "d24h": -0.3,
       "q": "Will China blockade Taiwan in 2026?",
       "yes": 2.1
     },
@@ -394,9 +493,9 @@
       "yes": 19.5
     },
     {
-      "d24h": -2.0,
+      "d24h": -3.0,
       "q": "Iran charges Hormuz fees by December 31?",
-      "yes": 8.5
+      "yes": 7.0
     },
     {
       "d24h": -0.9,
@@ -419,14 +518,14 @@
       "yes": 2.1
     },
     {
-      "d24h": 0.1,
+      "d24h": 0.0,
       "q": "Will the U.S. test a nuclear weapon by December 31 2026?",
-      "yes": 2.7
+      "yes": 2.9
     },
     {
-      "d24h": 1.0,
+      "d24h": 0.0,
       "q": "Will Russia invade another country by December 31, 2027?",
-      "yes": 18.5
+      "yes": 17.5
     },
     {
       "d24h": 2.5,
@@ -434,12 +533,12 @@
       "yes": 20.0
     },
     {
-      "d24h": -12.0,
+      "d24h": -11.5,
       "q": "Will Nick Stewart attend a US x Iran diplomatic meeting by December 31, 2026?",
-      "yes": 6.5
+      "yes": 7.5
     },
     {
-      "d24h": -0.5,
+      "d24h": -0.4,
       "q": "Trump endorses China's claim to Taiwan by end of APEC trip?",
       "yes": 0.7
     }
@@ -692,7 +791,7 @@
         }
       ],
       "score": 25,
-      "trend": "up"
+      "trend": "steady"
     },
     {
       "band": "Low",
@@ -708,8 +807,9 @@
     },
     {
       "band": "Guarded",
-      "convergence": "Only one kind of sign is showing (health). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: unknown illness / pneumonia cluster reported, countries restricting medical supply exports and pandemic-response stocks outperforming (5 days).",
+      "convergence": "Two different kinds of sign are showing together (chemical weapons and health). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: unknown illness / pneumonia cluster reported, countries restricting medical supply exports and",
       "domains": [
+        "Chemical weapons",
         "Health"
       ],
       "key": "bio",
@@ -717,25 +817,39 @@
         {
           "detail": "Middle East respiratory syndrome (MERS) – Qatar",
           "name": "WHO outbreak report with a high-concern pathogen (last 14 days)"
+        },
+        {
+          "detail": "US intelligence warns of Iranian dirty bomb or chemical attack plot targeting Trump officials: CNN",
+          "name": "Chemical / nerve-agent attack or mass poisoning reported"
         }
       ],
-      "score": 15,
-      "trend": "down"
+      "score": 30,
+      "trend": "up"
     },
     {
       "band": "Low",
+      "convergence": "Only one kind of sign is showing (australian incidents). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: sudden fall in sa electricity demand (possible large blackout), global cyber threat level raised (sans infocon not green) and several vpn",
+      "domains": [
+        "Australian incidents"
+      ],
       "key": "cyber",
-      "score": 0,
-      "trend": "down"
+      "lit": [
+        {
+          "detail": "Dragos reports 20 Australian industrial ransomware incidents in Q3 2026",
+          "name": "Major Australian cyber incident reported"
+        }
+      ],
+      "score": 10,
+      "trend": "up"
     },
     {
       "band": "Elevated",
-      "convergence": "Signs are converging across 4 separate areas (ai-enabled hacking, fraud waves, markets and synthetic media). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign:",
+      "convergence": "Signs are converging across 4 separate areas (ai-enabled hacking, cloud services, fraud waves and markets). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: ",
       "domains": [
         "AI-enabled hacking",
+        "Cloud services",
         "Fraud waves",
-        "Markets",
-        "Synthetic media"
+        "Markets"
       ],
       "key": "ai",
       "lit": [
@@ -744,24 +858,24 @@
           "name": "Reports of AI-driven hacking campaigns"
         },
         {
-          "detail": "FTQ official resigns over AI-generated image of Quebec MNA with black eye",
-          "name": "Deepfakes of leaders or fake official alerts"
-        },
-        {
           "detail": "Circuit Breaker Test Sets Market To 2035: Grid Modernization and Renewables Drive Demand - News and Statistics",
           "name": "Flash crash or exchange trading halt"
+        },
+        {
+          "detail": "Microsoft says months-old bug caused global outage",
+          "name": "Major cloud or AI service outage"
         },
         {
           "detail": "Call Trust Deepfake Detection introduced as Ribbon Communications targets telecom fraud",
           "name": "Surge in AI voice-clone / deepfake scams in Australia"
         }
       ],
-      "score": 45,
-      "trend": "up"
+      "score": 40,
+      "trend": "down"
     }
   ],
   "sectors_relative_5d": {
-    "defence_au": -5.34,
+    "defence_au": -5.23,
     "defence_eu": 0.45,
     "defence_us": 2.2,
     "pandemic": -7.05
@@ -769,9 +883,9 @@
   "tankers": "normal",
   "telecom_drop_pct": {
     "Aussie Broadband": 0.0,
-    "Optus": 0.0,
+    "Optus": 1.0,
     "TPG": 0.0,
-    "Telstra": 0.0,
+    "Telstra": 0.4,
     "Vodafone": 0.0
   },
   "us_departure_orders": [
