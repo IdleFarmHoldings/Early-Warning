@@ -79,11 +79,11 @@
     }
   },
   "cisa": [
-    "Dorsett Controls InfoScan",
     "Siemens Mendix Studio Pro",
-    "CISA Adds One Known Exploited Vulnerability to Catalog",
+    "Siemens .NET Client Library for SIMATIC S7 Webserver API",
     "Siemens meta-iot2050",
-    "Siemens SIMATIC WinCC"
+    "Siemens SIMATIC WinCC",
+    "Siemens RUGGEDCOM APE1808"
   ],
   "cyber": {
     "c2": {
@@ -119,20 +119,19 @@
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
     "incidents": "ValueError: time data 'Info' does not match format '%Y-%m-%dT%H:%M:%SZ'",
-    "markets": "RuntimeError: all market quotes failed",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [
     "Orange notification for tropical cyclone AKVAN-26. Population affected by Category 1 (120 km/h) wind speeds or higher is 0  (11.577 million in Tropical Storm)."
   ],
-  "generated_at": "2026-11-17T21:21:00Z",
+  "generated_at": "2026-11-17T21:27:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 31,
+    "Baltic / Kaliningrad": 32,
     "Black Sea": null,
-    "Israel & Eastern Mediterranean": 4,
-    "Korea": 2,
-    "Persian Gulf": 9,
-    "South Australia": 2,
+    "Israel & Eastern Mediterranean": 0,
+    "Korea": 0,
+    "Persian Gulf": 16,
+    "South Australia": 0,
     "Sydney / NSW": 6,
     "Taiwan Strait": 0
   },
@@ -140,9 +139,9 @@
     {
       "confirmed": true,
       "headlines": [
+        "Microsoft Shares Slip as Software Sector Shudders Over Outages and Anthropic's AI Debut",
         "Microsoft outage cause revealed: It was a perfect storm of problems",
-        "Microsoft 365 Outage Phishing: How the Scam Worked",
-        "Microsoft 365 outage underscores enterprise resiliency issues"
+        "Microsoft 365 Outage Phishing: How the Scam Worked"
       ],
       "severity": "Warning",
       "target": "Microsoft"
@@ -238,9 +237,9 @@
       "pump_cents": 3,
       "week_ago_aud": 134.0
     },
-    "grid_demand_fall_pct": 9.6,
-    "grid_demand_mw": 1147,
-    "grid_demand_usual_mw": 1167,
+    "grid_demand_fall_pct": 6.8,
+    "grid_demand_mw": 1143,
+    "grid_demand_usual_mw": 1159,
     "grid_lor_level": 0,
     "nearby_incidents": [
       {
@@ -300,11 +299,28 @@
       "Morgan Vale Road, Pine Valley Station: MORGAN MAIL RD Closed due to flooding over road",
       "Pine Valley Road, Pine Valley Station: PINE VALLEY RD Closed due to flooding over road"
     ],
-    "rooftop_pv_mw": 115,
+    "rooftop_pv_mw": 273,
     "sawater_news": [],
     "watch_and_act": []
   },
-  "markets": {},
+  "markets": {
+    "AUD/USD": {
+      "change_pct": -0.59,
+      "price": 0.6739
+    },
+    "Brent oil": {
+      "change_pct": 0.57,
+      "price": 92.97
+    },
+    "Gold": {
+      "change_pct": -0.02,
+      "price": 3852.3
+    },
+    "VIX": {
+      "change_pct": 11.31,
+      "price": 25.5
+    }
+  },
   "national_shocks": {
     "faa": {
       "airports": 0,
@@ -313,7 +329,9 @@
     },
     "shocks": [],
     "tracking_glitch": false,
-    "traffic_not_normal": {}
+    "traffic_not_normal": {
+      "NZ": "DOWN"
+    }
   },
   "nc3": "normal",
   "news_watch": {
@@ -368,9 +386,9 @@
       "State deploys mobile telecom units in cyclone-prone districts ahead of Cyclone Akvan threat - The Times of India"
     ],
     "cyber_supply": [
-      "4EverAble2Shell: N-central Zero-Day Exploited - SOC Prime",
       "Supply chain attack compromises nearly 180 major brands, including BBC, CNN, IKEA and Zoom, through Optimizely - Escudo Digital",
-      "MSP ScreenConnect Servers Targeted in Month-Long Campaign - SecurityWeek"
+      "Supply Chain Attack Exposes Major Websites Including BBC, CNN, Fox News, Gitlab, Zoom, Salesforce - LinkedIn",
+      "N-able Kills Legacy APIs, Patches 17 N-central Zero-Days - SecurityWeek"
     ],
     "deepfake": [
       "New Public Platform Tracks Emergency Disruptions Amid Growing Concerns Over AI Generated Hoaxes - EIN Presswire",
@@ -382,10 +400,11 @@
     ],
     "flash": [
       "State Gas Limited Enters Trading Halt Pending LEIP Funding Announcement - Kalkine",
-      "Aster (ASTER) Volatility: Flash Crash and Security Incident - CoinMarketCap",
-      "Circuit Breaker Test Sets Market To 2035: Grid Modernization and Renewables Drive Demand - News and Statistics - IndexBox"
+      "Circuit Breaker Test Sets Market To 2035: Grid Modernization and Renewables Drive Demand - News and Statistics - IndexBox",
+      "Red Mountain Mining Requests Trading Halt Pending Capital Raising Announcement - Kalkine"
     ],
     "fuel_au": [
+      "Government introduces fuel emergency plan - FBC News",
       "Philippines declares national energy emergency as Asia risks energy crisis amid Iran war - ABC News - Breaking News, Latest News and Videos"
     ],
     "illness": [
@@ -422,8 +441,7 @@
     ],
     "sapn": [
       "Eerie Simpsons prediction happening TODAY - Adelaide Now",
-      "Insurers dodge payouts after global Microsoft outage - Adelaide Now",
-      "NAB rolls out new ‘smart’ ATMs across Australia - https://newsreel.com.au/"
+      "Insurers dodge payouts after global Microsoft outage - Adelaide Now"
     ],
     "scams": [
       "CEO deepfakes used to steal $190 million - Information Age | ACS",
@@ -518,9 +536,9 @@
       "yes": 3.0
     },
     {
-      "d24h": 1.9,
+      "d24h": 1.8,
       "q": "Will Russia test a nuclear weapon by December 31 2026?",
-      "yes": 4.0
+      "yes": 3.9
     },
     {
       "d24h": 0.0,
@@ -533,9 +551,9 @@
       "yes": 18.5
     },
     {
-      "d24h": 0.0,
+      "d24h": 1.5,
       "q": "Will Nick Stewart attend a US x Iran diplomatic meeting by December 31, 2026?",
-      "yes": 7.5
+      "yes": 9.0
     },
     {
       "d24h": -0.5,
@@ -543,9 +561,9 @@
       "yes": 19.5
     },
     {
-      "d24h": 0.5,
+      "d24h": 1.5,
       "q": "Iran blockade lifted before Iran-Oman Hormuz agreement?",
-      "yes": 14.0
+      "yes": 15.0
     },
     {
       "d24h": 0.3,
@@ -751,7 +769,7 @@
         }
       ],
       "score": 10,
-      "trend": "down"
+      "trend": "steady"
     },
     {
       "band": "Guarded",
@@ -783,19 +801,24 @@
     },
     {
       "band": "Guarded",
-      "convergence": "Only one kind of sign is showing (mobilisation). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and us nuclear command aircraft unusual.",
+      "convergence": "Two different kinds of sign are showing together (mobilisation and undersea cables). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) an",
       "domains": [
-        "Mobilisation"
+        "Mobilisation",
+        "Undersea cables"
       ],
       "key": "russia",
       "lit": [
         {
           "detail": "Latvia to practice military mobilization this weekend / Article",
           "name": "Mobilisation / reservist reports (Russia / NATO)"
+        },
+        {
+          "detail": "Russia vessel MALVA ~109 min",
+          "name": "Russian / Chinese vessels loitering over Baltic cables"
         }
       ],
-      "score": 15,
-      "trend": "steady"
+      "score": 25,
+      "trend": "up"
     },
     {
       "band": "Low",
@@ -896,7 +919,7 @@
   "tankers": "normal",
   "telecom_drop_pct": {
     "Aussie Broadband": 0.0,
-    "Optus": 0.0,
+    "Optus": 2.0,
     "TPG": 0.0,
     "Telstra": 0.4,
     "Vodafone": 0.0
