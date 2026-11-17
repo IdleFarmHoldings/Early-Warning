@@ -154,6 +154,13 @@ details summary{cursor:pointer;font-size:.84rem;color:var(--accent)}
 .calls span{font-size:.78rem;color:var(--muted)}
 .allok{font-size:.9rem;color:var(--muted);margin:8px 0 0}
 #localBox .chip{white-space:normal;text-align:right;max-width:58vw}
+#localBox details.edd>summary{list-style:none;cursor:pointer}
+#localBox details.edd>summary::-webkit-details-marker{display:none}
+#localBox details.edd>summary:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+#localBox details.edd .chev{display:inline-block;color:var(--muted);transition:transform .2s}
+#localBox details.edd[open] .chev{transform:rotate(90deg)}
+#localBox .edlist{margin:0 0 6px 12px;padding-left:10px;border-left:2px solid var(--line)}
+#localBox .edlist .item{padding:7px 0}
 .word{font-family:var(--body);font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.04em}
 
 .ready{list-style:none;margin:0;padding:0;display:grid;gap:2px}
@@ -477,6 +484,7 @@ function renderLatest(l){
   const ls = (l.local_sa||{}).summary;
   if(!ls){ $("localBox").innerHTML = `<p class="empty">Local data arrives with the next check.</p>`; return; }
   const rows = [];
+  const edOpen = !!document.querySelector("#localBox details.edd[open]"), fineOpen = !!document.querySelector("#localBox details.fine[open]");
   const OK = new Set(["var(--l2)","var(--muted)"]);
   const add = (k,v,c,ink,always) => rows.push({ok:OK.has(c)&&!always, html:`<div class="item" style="grid-template-columns:1fr auto;align-items:center"><span class="t">${esc(k)}</span><span class="chip" style="background:${c};${ink?"color:var(--l3-ink)":""}">${esc(v)}</span></div>`});
   const more = html => { if(rows.length) rows[rows.length-1].html += html; };
@@ -521,12 +529,25 @@ function renderLatest(l){
   const rh = ls.road_hazards||[];
   add("Roads closed by fire or flood", rh.length?`${rh.length} in SA`:"None", rh.length?"var(--l3)":"var(--l2)", rh.length>0);
   if(rh.length) more(`<p class="why" style="margin:4px 0 0">${esc(rh.slice(0,2).join("; "))}</p>`);
-  const vb=(ls.ed_very_busy||[]).length;
-  if(ls.ed_known) add("Hospital emergency departments", vb?`${vb} of ${ls.ed_known} very busy`:"Normal", vb>=3?"var(--l4)":vb?"var(--l3)":"var(--l2)", vb>0&&vb<3);
+  const ed=(ls.ed||[]).slice();
+  if(ed.length){
+    // Dropdown: every Adelaide emergency department, busiest first.
+    const rank=s=>/very busy/i.test(s||"")?2:/busy/i.test(s||"")?1:0;
+    ed.sort((a,b)=>rank(b.status)-rank(a.status)||(b.avg_wait_min||0)-(a.avg_wait_min||0)||(b.capacity_pct||0)-(a.capacity_pct||0));
+    const vb=ed.filter(e=>rank(e.status)===2).length, bz=ed.filter(e=>rank(e.status)===1).length;
+    const c=vb>=3?"var(--l4)":vb?"var(--l3)":"var(--l2)";
+    const label=vb?`${vb} of ${ed.length} very busy`:bz?`None very busy (${bz} busy)`:"All normal";
+    const sc=e=>rank(e.status)===2?"var(--l4)":rank(e.status)===1?"var(--l3)":"var(--l2)";
+    const hm=m=>m==null?"?":m>=60?`${Math.floor(m/60)} h ${String(Math.round(m%60)).padStart(2,"0")} min`:`${Math.round(m)} min`;
+    const asOf=(ed.find(e=>e.as_of)||{}).as_of;
+    rows.push({ok:false, html:`<details class="edd"${edOpen?" open":""}><summary class="item" style="grid-template-columns:1fr auto;align-items:center"><span class="t">Hospital emergency departments <span class="chev" aria-hidden="true">›</span></span><span class="chip" style="background:${c};${c==="var(--l3)"?"color:var(--l3-ink)":""}">${esc(label)}</span></summary>
+      <div class="list edlist">${ed.map(e=>`<div class="item" style="grid-template-columns:1fr auto;align-items:center"><span><span class="t">${esc(e.hospital)}</span><span class="w" style="display:block">Average wait ${hm(e.avg_wait_min)} · ${e.waiting??"?"} waiting to be seen · ${e.capacity_pct!=null?Math.round(e.capacity_pct)+"% full":"capacity unknown"}</span></span><span class="chip" style="background:${sc(e)};${sc(e)==="var(--l3)"?"color:var(--l3-ink)":""}">${esc(e.status||"Unknown")}</span></div>`).join("")}
+      <p class="why" style="margin:6px 0 0">Busiest first. "Very busy" means the emergency department is over capacity or the average wait is 4 hours or more; "Busy" means over 85% full or a wait of 2 hours or more. From SA Health${asOf?`, as of ${esc(String(asOf).replace("T"," ").slice(0,16))}`:""}. For anything life-threatening, call 000.</p></div></details>`});
+  }
   const show = rows.filter(r=>!r.ok), fine = rows.filter(r=>r.ok);
   $("localBox").innerHTML = (DEMO_OK ? `<p class="why" style="margin:0 0 8px"><b>These are today's real readings.</b> They are not part of the simulation.</p>` : "")
     + show.map(r=>r.html).join("")
-    + (fine.length ? `<details style="margin-top:8px"${document.querySelector("#localBox details[open]")?" open":""}><summary>Everything else is normal (${fine.length} checks)</summary><div class="list">${fine.map(r=>r.html).join("")}</div></details>` : "");
+    + (fine.length ? `<details class="fine" style="margin-top:8px"${fineOpen?" open":""}><summary>Everything else is normal (${fine.length} checks)</summary><div class="list">${fine.map(r=>r.html).join("")}</div></details>` : "");
 }
 
 $("guideBody").innerHTML = LEVELS.slice(1).map((L,i)=>`<tr>

@@ -771,7 +771,7 @@ def fetch_local(state):
         "road_hazards": [f"{r['road']}{', ' + r.get('suburb') if r.get('suburb') else ''}: {r['type']}".strip() for k in ("closures", "incidents")
                          for r in ((out.get("roads") or {}).get(k) or []) if r["hazard"]][:5],
         "ed_very_busy": [e["hospital"] for e in (out.get("ed") or []) if re.search(r"very busy", e["status"], re.I)],
-        "ed": [{k: e.get(k) for k in ("hospital", "status", "capacity_pct", "avg_wait_min", "waiting")} for e in (out.get("ed") or [])][:12],
+        "ed": [{k: e.get(k) for k in ("hospital", "status", "capacity_pct", "avg_wait_min", "waiting", "as_of")} for e in (out.get("ed") or [])][:12],
         "ed_known": len(out.get("ed") or []),
         "power_out_suburbs": (out.get("sapn") or {}).get("suburb_count"),
         "power_out_list": ((out.get("sapn") or {}).get("suburbs") or [])[:30],
