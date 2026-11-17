@@ -1,7 +1,13 @@
 {
   "about": "Short form of latest.json + indicators.json for the analysis run. Links and raw samples removed.",
   "acsc": [],
-  "aircraft_flags": {},
+  "aircraft_flags": {
+    "gps_gulf": {
+      "median": 7,
+      "status": "ANOMALY",
+      "value": 41
+    }
+  },
   "analyst": {
     "ASPI Strategist": [
       "Treaty a recognition we need Philippines in China strategy",
@@ -71,24 +77,24 @@
     "Orange notification for tropical cyclone AKVAN-26. Population affected by Category 1 (120 km/h) wind speeds or higher is 0  (11.162 million in Tropical Storm).",
     "Drought is on going in Aruba, , Brazil, Colombia, Costa Rica, , French Guiana, Guyana, Panama, Suriname, Venezuela"
   ],
-  "generated_at": "2026-11-17T08:49:00Z",
+  "generated_at": "2026-11-17T09:04:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 25,
+    "Baltic / Kaliningrad": 27,
     "Black Sea": 26,
-    "Israel & Eastern Mediterranean": 2,
+    "Israel & Eastern Mediterranean": 4,
     "Korea": 0,
-    "Persian Gulf": 13,
+    "Persian Gulf": 41,
     "South Australia": 0,
     "Sydney / NSW": 0,
-    "Taiwan Strait": 0
+    "Taiwan Strait": 3
   },
   "incidents": [
     {
       "confirmed": true,
       "headlines": [
+        "Microsoft Traces Exchange Online Outage to a July Bug",
         "Months-old bug behind global Microsoft 365 outage, executive says",
-        "Microsoft says months-old bug caused global outage",
-        "High volume phishing campaign uses Microsoft 365 outage lures to target multiple industry sectors"
+        "Microsoft says months-old bug caused global outage"
       ],
       "severity": "Warning",
       "target": "Microsoft"
@@ -121,14 +127,6 @@
     {
       "confirmed": false,
       "headlines": [
-        "Russian-speaking hackers launched the world's first fully autonomous AI cyberattack on European websites: Google report"
-      ],
-      "severity": "Info",
-      "target": "Russian-speaking"
-    },
-    {
-      "confirmed": false,
-      "headlines": [
         "Google found hackers using autonomous AI agents to turn security patches into exploits"
       ],
       "severity": "Info",
@@ -154,10 +152,10 @@
   "internet_drop_pct": {
     "China": 0.0,
     "Iran": 0.0,
-    "Israel": 0.4,
-    "Russia": 2.4,
+    "Israel": 0.0,
+    "Russia": 2.3,
     "South Korea": 0.0,
-    "Taiwan": 0.2
+    "Taiwan": 0.1
   },
   "local_sa": {
     "bom": [
@@ -175,34 +173,18 @@
       "Mount Lofty Ranges": "Moderate / Moderate"
     },
     "fire_danger_ok": true,
-    "fires_active": 8,
+    "fires_active": 6,
     "fuel": {
       "brent_aud": 136.3,
       "change_pct": 1.8,
       "pump_cents": 2,
       "week_ago_aud": 133.9
     },
-    "grid_demand_fall_pct": -5.2,
+    "grid_demand_fall_pct": 0.0,
     "grid_demand_mw": 1424,
-    "grid_demand_usual_mw": 1390,
+    "grid_demand_usual_mw": 1395,
     "grid_lor_level": 0,
     "nearby_incidents": [
-      {
-        "area": "WILSON ST MANSFIELD PARK",
-        "dist": "25-60 km",
-        "event": "Grass Fire",
-        "headline": "MANSFIELD PARK : GRASS FIRE",
-        "id": "F-261117-0104 MANSFIELD PARK, WILSON ST (GRASS FIRE)",
-        "level": null
-      },
-      {
-        "area": "278 CARAWATHA DR MYPOLONGA",
-        "dist": "25-60 km",
-        "event": "Grass Fire",
-        "headline": "MYPOLONGA : GRASS FIRE",
-        "id": "F-261117-0081 Mypolonga, Carawatha Dr (Grass Fire)",
-        "level": null
-      },
       {
         "area": "TRURO",
         "dist": "25-60 km",
@@ -250,26 +232,26 @@
       "Morgan Vale Road, Pine Valley Station: MORGAN MAIL RD Closed due to flooding over road",
       "Pine Valley Road, Pine Valley Station: PINE VALLEY RD Closed due to flooding over road"
     ],
-    "rooftop_pv_mw": 526,
+    "rooftop_pv_mw": 301,
     "sawater_news": [],
     "watch_and_act": []
   },
   "markets": {
     "AUD/USD": {
-      "change_pct": -0.56,
-      "price": 0.6741
+      "change_pct": -0.59,
+      "price": 0.6739
     },
     "Brent oil": {
-      "change_pct": -0.36,
-      "price": 92.11
+      "change_pct": -0.25,
+      "price": 92.21
     },
     "Gold": {
-      "change_pct": 0.43,
-      "price": 3869.6
+      "change_pct": 0.55,
+      "price": 3874.2
     },
     "VIX": {
-      "change_pct": 1.05,
-      "price": 23.15
+      "change_pct": 1.57,
+      "price": 23.27
     }
   },
   "national_shocks": {
@@ -286,8 +268,8 @@
   "news_watch": {
     "ai_hack": [
       "China-linked hackers target Korean foreign policy organizations using AI tools - Korea JoongAng Daily",
-      "Russian-speaking hackers launched the world's first fully autonomous AI cyberattack on European websites: Google report - dev.ua",
-      "Barracuda links cloud breach to ARTEX AI-powered cyberattack - BleepingComputer"
+      "Barracuda links cloud breach to ARTEX AI-powered cyberattack - BleepingComputer",
+      "Autonomous AI Hacking Systems Detected in Real-World Attacks - 조선일보"
     ],
     "airspace": [
       "Middle East Airspace Closures: Who Decides and What Passengers Are Owed - Diplomacy and Law",
@@ -297,7 +279,7 @@
     "aviation_halt": [
       "United Airlines rocked by ‘widespread system outage’ days after US flights grounded - News24",
       "Late Night Flies High on the F.A.A. Ground Stop - The New York Times",
-      "BREAKING: United Airlines experiences widespread system outage just days after US ground stop - News24"
+      "Trump says he takes 'no responsibility' for nationwide FAA ground stop - Mashable"
     ],
     "bank_outage": [
       "Huge change coming for Aussie ATMs - News.com.au",
@@ -312,7 +294,7 @@
     "cables": [
       "TM Receives MCMC Approval For RM2.7 Billion Submarine Cable Project Linking Peninsula To East Malaysia - BusinessToday Malaysia",
       "1,500 Faridpur Char Families Left Without Electricity for Five Months - https://www.businesstimes-bd.com/",
-      "TM gets nod for RM2.7bil submarine cable project - NST Online"
+      "Faridpur’s Narikelbarya remains in darkness for 10 months after cable rupture - www.daily-sun.com"
     ],
     "chem": [
       "Finland provides EUR 50,000 in voluntary funding to enhance OPCW’s work - Organisation for the Prohibition of Chemical Weapons",
@@ -341,11 +323,12 @@
     ],
     "deepfake": [
       "New Public Platform Tracks Emergency Disruptions Amid Growing Concerns Over AI Generated Hoaxes - EIN Presswire",
-      "Satire or propaganda? How AI-generated videos blur the lines - eKathimerini.com",
-      "MCMC Removes 13,883 Deepfake Content Items Since 2024, Fahmi Says - BusinessToday Malaysia"
+      "New in Specto: AI-generated captions and transcripts for audio and video - Clarivate",
+      "Satire or propaganda? How AI-generated videos blur the lines - eKathimerini.com"
     ],
     "dieoff": [
-      "Mass death of Indian carp raises pollution concerns at Ooty lake - The Hindu"
+      "Mass death of Indian carp raises pollution concerns at Ooty lake - The Hindu",
+      "Mahendragiri Varahi Ending Explained: The Terrifying 200-Year-Old Curse and Shocking Revenge Mystery (Spoilers) - Vocal"
     ],
     "flash": [
       "State Gas Limited Enters Trading Halt Pending LEIP Funding Announcement - Kalkine",
@@ -364,8 +347,7 @@
     ],
     "masscas": [
       "U.S. Soldiers Googled Hospitals After Deadly Iran Strike - USA Herald",
-      "U.S. troops killed in Iranian drone strike lacked adequate defenses, 60 Minutes investigation finds - SSBCrack",
-      "US Army major alleges warnings ignored before Kuwait drone strike killed six - fish4news.co.uk"
+      "U.S. troops killed in Iranian drone strike lacked adequate defenses, 60 Minutes investigation finds - SSBCrack"
     ],
     "medexport": [
       "Taliban Turn To Iran To Address Medicine Shortages In Afghanistan - Afghanistan International"
@@ -375,10 +357,27 @@
       "Deferment in Reserve+ did not save: The Territorial Recruitment Center illegally mobilized a student, and the court refused to release him from service - Судово-юридична газета",
       "Actor Oleksandr Oleksenko has been called up to serve in the Armed Forces of Ukraine - UA.NEWS"
     ],
+    "murray": [
+      "Flows in the River Murray system for October 2026 - Murray–Darling Basin Authority"
+    ],
+    "national_outage": [
+      "Cuba grid collapse: The situation is growing more dire, experts say - ABC News - Breaking News, Latest News and Videos",
+      "Chase bank hit with nationwide outage - NBC News",
+      "Unclaimed luggage piles up at DCA as airlines recover from nationwide outage - WJLA"
+    ],
     "outage_au": [
       "The Microsoft outage is part of a growing trend. This is how to prepare for further disruption - SBS",
       "Microsoft exec reveals details of outage - News.com.au",
       "‘We’re sorry’: Microsoft reveals cause of global meltdown as it finally restores services. - The Australian"
+    ],
+    "reservists": [
+      "Serbia opens strategic oil reserve as pipeline outage drags on in Croatia - Upstream Online",
+      "Poland’s Defense Ministry plans to introduce a payment of 3,250 zlotys for reservists — RMF24 - UA.NEWS"
+    ],
+    "sapn": [
+      "Insurers dodge payouts after global Microsoft outage - Adelaide Now",
+      "Millions locked out as money chaos spreads - News.com.au",
+      "NAB rolls out new ‘smart’ ATMs across Australia - https://newsreel.com.au/"
     ],
     "sawater": [
       "DCWD trains upland brgys on water safety - SunStar Publishing Inc."
@@ -481,19 +480,19 @@
       "yes": 3.0
     },
     {
-      "d24h": -0.1,
+      "d24h": 0.0,
       "q": "Will Russia test a nuclear weapon by December 31 2026?",
       "yes": 2.1
     },
     {
-      "d24h": -0.2,
+      "d24h": 0.0,
       "q": "Will the U.S. test a nuclear weapon by December 31 2026?",
       "yes": 2.9
     },
     {
-      "d24h": -2.0,
+      "d24h": -1.5,
       "q": "Will Russia invade another country by December 31, 2027?",
-      "yes": 17.5
+      "yes": 18.0
     },
     {
       "d24h": -7.0,
@@ -725,13 +724,23 @@
         }
       ],
       "score": 25,
-      "trend": "up"
+      "trend": "steady"
     },
     {
       "band": "Low",
+      "convergence": "Only one kind of sign is showing (electronic warfare). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
+      "domains": [
+        "Electronic warfare"
+      ],
       "key": "mideast",
-      "score": 0,
-      "trend": "steady"
+      "lit": [
+        {
+          "detail": "gps_gulf 41 vs usual 7",
+          "name": "GPS jamming spike (Gulf / Israel)"
+        }
+      ],
+      "score": 10,
+      "trend": "up"
     },
     {
       "band": "Low",
@@ -746,20 +755,25 @@
       "trend": "steady"
     },
     {
-      "band": "Low",
-      "convergence": "Only one kind of sign is showing (undersea cables). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and mobilisation / reservist reports (russia / nato).",
+      "band": "Guarded",
+      "convergence": "Two different kinds of sign are showing together (mobilisation and undersea cables). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) an",
       "domains": [
+        "Mobilisation",
         "Undersea cables"
       ],
       "key": "russia",
       "lit": [
         {
-          "detail": "Russia vessel MALVA ~72 min",
+          "detail": "Poland’s Defense Ministry plans to introduce a payment of 3,250 zlotys for reservists — RMF24",
+          "name": "Mobilisation / reservist reports (Russia / NATO)"
+        },
+        {
+          "detail": "Russia vessel MALVA ~103 min",
           "name": "Russian / Chinese vessels loitering over Baltic cables"
         }
       ],
-      "score": 10,
-      "trend": "down"
+      "score": 25,
+      "trend": "up"
     },
     {
       "band": "Low",
@@ -812,23 +826,18 @@
     },
     {
       "band": "Elevated",
-      "convergence": "Signs are converging across 5 separate areas (ai-enabled hacking, cloud services, fraud waves, markets and synthetic media). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-esp",
+      "convergence": "Signs are converging across 4 separate areas (ai-enabled hacking, cloud services, fraud waves and markets). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: ",
       "domains": [
         "AI-enabled hacking",
         "Cloud services",
         "Fraud waves",
-        "Markets",
-        "Synthetic media"
+        "Markets"
       ],
       "key": "ai",
       "lit": [
         {
-          "detail": "Russian-speaking hackers launched the world's first fully autonomous AI cyberattack on European websites: Google report",
+          "detail": "Barracuda links cloud breach to ARTEX AI-powered cyberattack",
           "name": "Reports of AI-driven hacking campaigns"
-        },
-        {
-          "detail": "FTQ official resigns over AI-generated image of Quebec MNA with black eye",
-          "name": "Deepfakes of leaders or fake official alerts"
         },
         {
           "detail": "Circuit Breaker Test Sets Market To 2035: Grid Modernization and Renewables Drive Demand - News and Statistics",
@@ -843,23 +852,23 @@
           "name": "Surge in AI voice-clone / deepfake scams in Australia"
         }
       ],
-      "score": 55,
-      "trend": "steady"
+      "score": 40,
+      "trend": "down"
     }
   ],
   "sectors_relative_5d": {
     "defence_au": -4.8,
-    "defence_eu": -1.79,
+    "defence_eu": -2.41,
     "defence_us": 1.03,
     "pandemic": -3.06
   },
   "tankers": "normal",
   "telecom_drop_pct": {
     "Aussie Broadband": 0.0,
-    "Optus": 0.0,
-    "TPG": 0.2,
-    "Telstra": 0.0,
-    "Vodafone": 4.8
+    "Optus": 2.9,
+    "TPG": 0.1,
+    "Telstra": 0.1,
+    "Vodafone": 0.0
   },
   "us_departure_orders": [
     "Belarus"
