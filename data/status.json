@@ -41,23 +41,23 @@
       "confidence": "med",
       "key": "cyber",
       "name": "Cyber & infrastructure",
-      "score": 2,
+      "score": 2.5,
       "sources": [
         {
-          "title": "ANZ digital status",
-          "url": "https://digitalstatus.anz.com/"
+          "title": "Al Jazeera: What caused the Chase outage and Zelle delays",
+          "url": "https://www.aljazeera.com/news/2026/11/17/us-bank-outage-what-caused-chase-problems-and-zelle-payment-delays"
         },
         {
-          "title": "Canberra Times: 'Shop as normal': Coles investigates cyber attack",
+          "title": "Yahoo: Chase is the third major US outage in 5 days, none were hacks",
+          "url": "https://www.yahoo.com/news/us/articles/chase-third-major-us-outage-120044711.html"
+        },
+        {
+          "title": "Canberra Times: Coles investigates cyber attack",
           "url": "https://www.canberratimes.com.au/story/9392045/shop-as-normal-coles-investigates-cyber-attack/"
-        },
-        {
-          "title": "ABC: Coles investigates cybersecurity incident",
-          "url": "https://www.abc.net.au/news/2026-11-16/asx-markets-business-live-news-nov-16/107388134"
         }
       ],
-      "summary": "A headline says Visa confirmed a security incident, but we could not confirm it or any effect on Australian cards. Microsoft's outage is fixed and Coles is still investigating its incident with stores trading. Australian phone networks, banks' status pages and the SA grid look normal; the global threat level is green.",
-      "trend": "steady"
+      "summary": "A run of big outages this week: the US flight halt (a failed router), the global Microsoft outage (a software bug), a nationwide Chase bank outage in the US (a technical fault) and the Coles cyber incident. Only Coles was an attack, and Australian banks, phone networks and the SA grid are normal. A Visa security incident headline could not be confirmed.",
+      "trend": "up"
     },
     {
       "confidence": "high",
@@ -167,11 +167,11 @@
         }
       ],
       "drivers": [
-        "A headline says Visa confirmed a security incident; we could not confirm it or any effect on Australian cards.",
-        "Coles is still investigating its cyber incident; stores are trading normally. Microsoft's outage is fixed."
+        "A run of big outages this week: the US flight halt, Microsoft 365 and a nationwide Chase bank outage in the US were all faults, not hacks; Coles is still investigating a real cyber incident.",
+        "Outages like these show how fragile big systems are and are often followed by scam messages. Australian banks and networks are normal."
       ],
       "key": "cyber",
-      "likelihood": 8,
+      "likelihood": 10,
       "prev_likelihood": 8,
       "scenarios": [
         {
@@ -191,7 +191,7 @@
         }
       ],
       "title": "Cyber attacks and outages hitting Australian services",
-      "trend": "down"
+      "trend": "up"
     },
     {
       "actions": [
@@ -421,13 +421,20 @@
       "scenario": "cyber",
       "so_what": "Shop as normal, but ignore any 'Coles' email or text asking you to log in or pay.",
       "title": "Coles investigates a cyber security incident"
+    },
+    {
+      "date": "2026-11-16",
+      "eventKey": "us-chase-bank-outage-2026-11-16",
+      "scenario": "cyber",
+      "so_what": "No effect on Australian banks. It is the third big US outage in five days, so watch for copycat scam messages.",
+      "title": "Chase and other US banks hit by an hours-long online banking outage; a technical fault, not a hack"
     }
   ],
   "headline": "Iran is still keeping Hormuz shut over the US blockade, which keeps fuel dear, but nothing new happened overnight that needs action.",
   "level": 3,
   "levelName": "Elevated",
   "nextCheck": "2026-11-18T16:39:00+10:30",
-  "summary": "No new attacks were confirmed overnight; the Gulf standoff that keeps fuel prices high is unchanged. A headline about a Visa security incident could not be confirmed and Australian cards and banks look normal. Locally it is calm: Moderate fire danger in the Hills today and tomorrow, no fire bans, and the grid and phones are normal. Friday looks windier.",
+  "summary": "No new attacks were confirmed overnight; the Gulf standoff that keeps fuel prices high is unchanged. A headline about a Visa security incident could not be confirmed and Australian cards and banks look normal. Locally it is calm: Moderate fire danger in the Hills today and tomorrow, no fire bans, and the grid and phones are normal. Friday looks windier. Overseas, a run of big outages this week (US flights, Microsoft, Chase bank) were faults, not hacks.",
   "trend": "steady",
   "updatedAt": "2026-11-18T04:40:00+10:30"
 }
