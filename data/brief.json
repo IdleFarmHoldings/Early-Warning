@@ -1,7 +1,13 @@
 {
   "about": "Short form of latest.json + indicators.json for the analysis run. Links and raw samples removed.",
   "acsc": [],
-  "aircraft_flags": {},
+  "aircraft_flags": {
+    "raaf": {
+      "median": 0.5,
+      "status": "ANOMALY",
+      "value": 5
+    }
+  },
   "analyst": {
     "ASPI Strategist": [
       "Treaty a recognition we need Philippines in China strategy",
@@ -41,7 +47,7 @@
       "online": 1,
       "total": 5
     },
-    "infocon": null,
+    "infocon": "green",
     "kev": {
       "all": {
         "last_7d": 2,
@@ -70,13 +76,13 @@
   "gdacs_orange_red": [
     "Orange notification for tropical cyclone AKVAN-26. Population affected by Category 1 (120 km/h) wind speeds or higher is 0  (11.162 million in Tropical Storm)."
   ],
-  "generated_at": "2026-11-17T12:31:00Z",
+  "generated_at": "2026-11-17T12:46:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 18,
-    "Black Sea": 37,
-    "Israel & Eastern Mediterranean": 0,
+    "Baltic / Kaliningrad": 19,
+    "Black Sea": 40,
+    "Israel & Eastern Mediterranean": 2,
     "Korea": 0,
-    "Persian Gulf": 17,
+    "Persian Gulf": 11,
     "South Australia": null,
     "Sydney / NSW": 0,
     "Taiwan Strait": 0
@@ -87,7 +93,7 @@
       "headlines": [
         "Hackers exploit Microsoft 365 outage to launch credential phishing campaign",
         "Microsoft’s 365 outage traced to undetected software bug, gateway failover, and traffic surges",
-        "Microsoft reveals three causes behind global Microsoft 365 outage"
+        "Microsoft 365 outage phishing targets user logins"
       ],
       "severity": "Warning",
       "target": "Microsoft"
@@ -120,18 +126,18 @@
     {
       "confirmed": false,
       "headlines": [
-        "China-linked hackers target Korean foreign policy organizations using AI tools"
+        "FBI warns of threat: hackers are using Artex, an AI tool created for cybersecurity, to hack corporate networks in less than three hours"
       ],
       "severity": "Info",
-      "target": "China-linked"
+      "target": "FBI"
     },
     {
       "confirmed": false,
       "headlines": [
-        "Russian-speaking hackers launched the world's first fully autonomous AI cyberattack on European websites: Google report"
+        "China-linked hackers target Korean foreign policy organizations using AI tools"
       ],
       "severity": "Info",
-      "target": "Russian-speaking"
+      "target": "China-linked"
     },
     {
       "confirmed": false,
@@ -143,7 +149,7 @@
     }
   ],
   "internet_drop_pct": {
-    "China": 0.8,
+    "China": 0.9,
     "Iran": 0.0,
     "Israel": 0.0,
     "Russia": 0.1,
@@ -173,25 +179,17 @@
       "pump_cents": 2,
       "week_ago_aud": 133.9
     },
-    "grid_demand_fall_pct": 4.0,
-    "grid_demand_mw": 1275,
-    "grid_demand_usual_mw": 1312,
+    "grid_demand_fall_pct": 1.2,
+    "grid_demand_mw": 1300,
+    "grid_demand_usual_mw": 1285,
     "grid_lor_level": 0,
     "nearby_incidents": [
-      {
-        "area": "64 FULFORD TCE LITTLEHAMPTON",
-        "dist": "25-60 km",
-        "event": "Grass Fire",
-        "headline": "LITTLEHAMPTON : GRASS FIRE",
-        "id": "F-261117-0128 LITTLEHAMPTON, FULFORD TCE (GRASS FIRE)",
-        "level": null
-      },
       {
         "area": "TRURO",
         "dist": "25-60 km",
         "event": "Grass Fire",
         "headline": "TRURO : GRASS FIRE",
-        "id": "F-261117-0054 TRURO, THREE CHAIN RD / BALDON RD  (GRASS FIRE",
+        "id": "F-261117-0054 Truro, Three Chain Rd / Baldon Rd  (Grass Fire",
         "level": null
       }
     ],
@@ -220,20 +218,20 @@
   },
   "markets": {
     "AUD/USD": {
-      "change_pct": -0.66,
-      "price": 0.6734
+      "change_pct": -0.62,
+      "price": 0.6737
     },
     "Brent oil": {
-      "change_pct": 0.52,
-      "price": 92.92
+      "change_pct": 0.71,
+      "price": 93.1
     },
     "Gold": {
-      "change_pct": 0.35,
-      "price": 3866.4
+      "change_pct": 0.11,
+      "price": 3857.2
     },
     "VIX": {
-      "change_pct": -1.48,
-      "price": 22.57
+      "change_pct": -0.92,
+      "price": 22.7
     }
   },
   "national_shocks": {
@@ -251,12 +249,17 @@
     "ai_hack": [
       "Google flags first autonomous AI cyberattack, warns of growing threats - Business Standard",
       "Google says hackers use AI agents to find and exploit software flaws - TradingView",
-      "China-linked hackers target Korean foreign policy organizations using AI tools - Korea JoongAng Daily"
+      "FBI warns of threat: hackers are using Artex, an AI tool created for cybersecurity, to hack corporate networks in less than three hours - dev.ua"
     ],
     "airspace": [
       "Middle East Airspace Closures: Who Decides and What Passengers Are Owed - Diplomacy and Law",
       "Alert in the US: Trump reveals why all flights were grounded — some equipment is up to 55 years old - El Cronista",
       "Qatar Airways Operates Limited Flights to and from Doha - https://safariindia.com/"
+    ],
+    "aviation_halt": [
+      "United Airlines rocked by ‘widespread system outage’ days after US flights grounded - News24",
+      "Fabricated airport video circulates after US issues rare ground stop - AFP Fact Check",
+      "FAA says it will rethink how it does upgrades after nationwide ground stop - NPR"
     ],
     "bank_outage": [
       "Huge change coming for Aussie ATMs - News.com.au",
@@ -299,12 +302,11 @@
       "Anthropic Cuts Vulnerability Disclosure Window From 90 Days to 30 as AI-Accelerated Discovery Undermines Old Assumptions - BigGo Finance"
     ],
     "deepfake": [
-      "New Public Platform Tracks Emergency Disruptions Amid Growing Concerns Over AI Generated Hoaxes - EIN Presswire",
+      "New Public Platform Tracks Emergency Disruptions Amid Growing Concerns Over AI Generated Hoaxes - EIN News",
       "Nearly 14,000 deepfake, manipulated content items removed after MCMC requests since 2024 - Malay Mail",
       "MCMC Removes 13,883 Deepfake Content Items Since 2024, Fahmi Says - BusinessToday Malaysia"
     ],
     "dieoff": [
-      "Mass death of Indian carp raises pollution concerns at Ooty lake - The Hindu",
       "Mahendragiri Varahi Ending Explained: The Terrifying 200-Year-Old Curse and Shocking Revenge Mystery (Spoilers) - Vocal"
     ],
     "flash": [
@@ -314,8 +316,8 @@
     ],
     "fuel_au": [
       "Philippines declares national energy emergency as Asia risks energy crisis amid Iran war - ABC News - Breaking News, Latest News and Videos",
-      "Minns pulls property crackdown as falling stamp duty hits public sector - The Mandarin",
-      "Could war in Iran affect your retirement nest egg and share portfolio? - The Senior"
+      "Government introduces fuel emergency plan - FBC News",
+      "Minns pulls property crackdown as falling stamp duty hits public sector - The Mandarin"
     ],
     "illness": [
       "Mystery illness causes mass hospitalisation of runners - The Nightly",
@@ -323,6 +325,7 @@
       "Mystery Pneumonia Death Sparks Concern; Trader Joe's Recall; OUD in Young People - MedPage Today"
     ],
     "masscas": [
+      "Escaping gas injures 6 during drilling at L.A. County landfill - FireRescue1",
       "U.S. Soldiers Googled Hospitals After Deadly Iran Strike - USA Herald"
     ],
     "mobilisation": [
@@ -350,9 +353,6 @@
       "Eerie Simpsons prediction happening TODAY - Adelaide Now",
       "Millions locked out as money chaos spreads - News.com.au",
       "Insurers dodge payouts after global Microsoft outage - Adelaide Now"
-    ],
-    "sawater": [
-      "DCWD trains upland brgys on water safety - SunStar Publishing Inc."
     ],
     "scams": [
       "Aussie model warns of devastating scam - News.com.au",
@@ -452,12 +452,12 @@
       "yes": 2.1
     },
     {
-      "d24h": 0.0,
+      "d24h": -0.2,
       "q": "Will the U.S. test a nuclear weapon by December 31 2026?",
       "yes": 2.9
     },
     {
-      "d24h": -1.0,
+      "d24h": -1.5,
       "q": "Will Russia invade another country by December 31, 2027?",
       "yes": 18.0
     },
@@ -706,9 +706,19 @@
     },
     {
       "band": "Low",
+      "convergence": "Only one kind of sign is showing (military air). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: missile / live-fire navigation warnings near taiwan, gps jamming over the taiwan strait and internet disruption in taiwan.",
+      "domains": [
+        "Military air"
+      ],
       "key": "taiwan",
-      "score": 0,
-      "trend": "down"
+      "lit": [
+        {
+          "detail": "raaf 5 vs usual 0.5",
+          "name": "Military airlift or RAAF surge"
+        }
+      ],
+      "score": 10,
+      "trend": "up"
     },
     {
       "band": "Low",
@@ -730,7 +740,7 @@
           "name": "Mobilisation / reservist reports (Russia / NATO)"
         },
         {
-          "detail": "Russia vessel MALVA ~119 min",
+          "detail": "Russia vessel MALVA ~132 min",
           "name": "Russian / Chinese vessels loitering over Baltic cables"
         }
       ],
@@ -788,23 +798,18 @@
     },
     {
       "band": "Elevated",
-      "convergence": "Signs are converging across 5 separate areas (ai-enabled hacking, cloud services, fraud waves, markets and synthetic media). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-esp",
+      "convergence": "Signs are converging across 4 separate areas (ai-enabled hacking, cloud services, fraud waves and markets). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: ",
       "domains": [
         "AI-enabled hacking",
         "Cloud services",
         "Fraud waves",
-        "Markets",
-        "Synthetic media"
+        "Markets"
       ],
       "key": "ai",
       "lit": [
         {
           "detail": "Google says hackers use AI agents to find and exploit software flaws",
           "name": "Reports of AI-driven hacking campaigns"
-        },
-        {
-          "detail": "FTQ official resigns over AI-generated image of Quebec MNA with black eye",
-          "name": "Deepfakes of leaders or fake official alerts"
         },
         {
           "detail": "Circuit Breaker Test Sets Market To 2035: Grid Modernization and Renewables Drive Demand - News and Statistics",
@@ -819,23 +824,23 @@
           "name": "Surge in AI voice-clone / deepfake scams in Australia"
         }
       ],
-      "score": 55,
-      "trend": "steady"
+      "score": 40,
+      "trend": "down"
     }
   ],
   "sectors_relative_5d": {
     "defence_au": -4.8,
-    "defence_eu": -2.5,
+    "defence_eu": -2.38,
     "defence_us": 1.03,
     "pandemic": -3.06
   },
   "tankers": "normal",
   "telecom_drop_pct": {
     "Aussie Broadband": 0.0,
-    "Optus": 4.8,
-    "TPG": 0.0,
+    "Optus": 1.9,
+    "TPG": 0.1,
     "Telstra": 0.0,
-    "Vodafone": 0.0
+    "Vodafone": 4.8
   },
   "us_departure_orders": [
     "Belarus"
@@ -874,9 +879,9 @@
     {
       "active": true,
       "first_seen": "2026-11-17T10:33:00Z",
-      "last_seen": "2026-11-17T12:16:00Z",
+      "last_seen": "2026-11-17T12:46:00Z",
       "region": "Australia and PNG",
-      "text": "8 RAAF aircraft broadcasting (usual ~1.0)",
+      "text": "5 RAAF aircraft broadcasting (usual ~0.5)",
       "what": "unusual military flights"
     },
     {
