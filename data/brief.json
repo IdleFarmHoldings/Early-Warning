@@ -64,22 +64,21 @@
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
     "chokepoints": "RuntimeError: PortWatch returned no rows: {\"error\": {\"code\": 429, \"message\": \"Unable to perform query. Too many requests",
-    "incidents": "ValueError: time data 'Info' does not match format '%Y-%m-%dT%H:%M:%SZ'",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [
     "Orange notification for tropical cyclone AKVAN-26. Population affected by Category 1 (120 km/h) wind speeds or higher is 0  (20.826 million in Tropical Storm).",
     "Drought is on going in Aruba, , Brazil, Colombia, Costa Rica, , French Guiana, Guyana, Panama, Suriname, Venezuela"
   ],
-  "generated_at": "2026-11-17T01:36:00Z",
+  "generated_at": "2026-11-17T01:42:00Z",
   "gps_bad_pct": {
     "Baltic / Kaliningrad": null,
     "Black Sea": null,
-    "Israel & Eastern Mediterranean": 2,
-    "Korea": 2,
-    "Persian Gulf": 8,
+    "Israel & Eastern Mediterranean": 9,
+    "Korea": 1,
+    "Persian Gulf": 5,
     "South Australia": 2,
-    "Sydney / NSW": 1,
+    "Sydney / NSW": 3,
     "Taiwan Strait": 0
   },
   "incidents": [
@@ -87,53 +86,18 @@
       "confirmed": true,
       "headlines": [
         "Chase identifies cause of banking outage as Colorado customers report ATM problems",
-        "Bank outage vs. bank failure: is your money still safe?",
-        "The Bank Outage May Have Nothing to Do With Your Bank"
+        "Bank outage vs. bank failure: is your money still safe?"
       ],
-      "severity": "Warning",
+      "severity": "Info",
       "target": "Banking & payments"
     },
     {
-      "confirmed": true,
+      "confirmed": false,
       "headlines": [
-        "Microsoft says months-old bug caused global outage",
-        "High volume phishing campaign uses Microsoft 365 outage lures to target multiple industry sectors",
-        "Microsoft outage: A cascading failure that started with an undetected bug"
+        "Insurers dodge payouts after global Microsoft outage"
       ],
-      "severity": "Warning",
+      "severity": "Info",
       "target": "Microsoft"
-    },
-    {
-      "confirmed": false,
-      "headlines": [
-        "Coles supermarket cyber attack: Australia’s retailer investigates security breach"
-      ],
-      "severity": "Info",
-      "target": "Supermarkets & food"
-    },
-    {
-      "confirmed": false,
-      "headlines": [
-        "Dragos reports 20 Australian industrial ransomware incidents in Q3 2026"
-      ],
-      "severity": "Info",
-      "target": "Dragos"
-    },
-    {
-      "confirmed": false,
-      "headlines": [
-        "Australia logs 20 industrial ransomware incidents in Q3"
-      ],
-      "severity": "Info",
-      "target": "Australia"
-    },
-    {
-      "confirmed": false,
-      "headlines": [
-        "French cyber attack highlights risks for Australia's smart buildings"
-      ],
-      "severity": "Info",
-      "target": "French"
     },
     {
       "confirmed": true,
@@ -197,7 +161,7 @@
     "China": 0.5,
     "Iran": 0.7,
     "Israel": 0.1,
-    "Russia": 0.1,
+    "Russia": 0.0,
     "South Korea": 0.0,
     "Taiwan": 0.0
   },
@@ -219,13 +183,13 @@
     "fires_active": 3,
     "fuel": {
       "brent_aud": 137.1,
-      "change_pct": 2.6,
+      "change_pct": 2.5,
       "pump_cents": 2,
       "week_ago_aud": 133.7
     },
-    "grid_demand_fall_pct": 77.7,
-    "grid_demand_mw": 37,
-    "grid_demand_usual_mw": 475,
+    "grid_demand_fall_pct": 71.2,
+    "grid_demand_mw": 29,
+    "grid_demand_usual_mw": 526,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
@@ -272,16 +236,16 @@
   },
   "markets": {
     "AUD/USD": {
-      "change_pct": -0.62,
-      "price": 0.6737
+      "change_pct": -0.59,
+      "price": 0.6739
     },
     "Brent oil": {
-      "change_pct": -4.13,
-      "price": 91.88
+      "change_pct": -4.19,
+      "price": 91.82
     },
     "Gold": {
-      "change_pct": -0.01,
-      "price": 3852.6
+      "change_pct": -0.03,
+      "price": 3851.9
     },
     "VIX": {
       "change_pct": 18.7,
@@ -319,34 +283,34 @@
       "US judge strikes down new visa rules for foreign students and journalists - Le Monde.fr",
       "Bank outage vs. bank failure: is your money still safe? - qz.com"
     ],
+    "blood": [
+      "Insomnia, Apnea and the Rest: The Sleep Disorders Most Common in the Military - U.S. Medicine",
+      "Sometimes Hoofbeats Are Zebras: How Misdiagnoses Obscure Narcolepsy - U.S. Medicine",
+      "Disrupted Sleep, Shifting Schedules and Stimulants - U.S. Medicine"
+    ],
     "chem": [
       "Finland provides EUR 50,000 in voluntary funding to enhance OPCW’s work - Organisation for the Prohibition of Chemical Weapons",
       "US intelligence warns of Iranian dirty bomb or chemical attack plot targeting Trump officials: CNN - Anadolu Ajansı",
       "Spain provides EUR 350,000 in voluntary funding to support OPCW’s work - Organisation for the Prohibition of Chemical Weapons"
-    ],
-    "cloud": [
-      "Microsoft says months-old bug caused global outage - Information Age | ACS",
-      "Insurers dodge payouts after global Microsoft outage - Adelaide Now",
-      "High volume phishing campaign uses Microsoft 365 outage lures to target multiple industry sectors - Microsoft"
-    ],
-    "cyber_au": [
-      "Dragos reports 20 Australian industrial ransomware incidents in Q3 2026 - Australian Cyber Security Magazine",
-      "Australia logs 20 industrial ransomware incidents in Q3 - SecurityBrief Australia",
-      "Coles launches investigation into cyber incident - Information Age | ACS"
-    ],
-    "cyber_state": [
-      "NT emergency preparedness strengthened before upcoming higher risk weather season - National Indigenous Times",
-      "PHP2Shell flaw exploited in chained attacks targeting unpatched Check Point gateways - Cybersecurity Dive",
-      "Duffy's FAA warning gave America's adversaries a roadmap - St. Augustine Record"
     ],
     "cyber_supply": [
       "Expedia confirms data breach following supply chain attack - SC Media",
       "AI finds zero-day flaws for just $4 now – even mediocre hackers can cash in - ZDNET",
       "Anthropic Cuts Vulnerability Disclosure Window From 90 Days to 30 as AI-Accelerated Discovery Undermines Old Assumptions - BigGo Finance"
     ],
+    "deepfake": [
+      "Satire or propaganda? How AI-generated videos blur the lines - eKathimerini.com",
+      "Trump Posts Bizarre Troop Video After Shocking Revelation - The Daily Beast",
+      "Chiranjeevi meets Kishan Reddy, flags AI and deepfake threats - Awaz The Voice"
+    ],
     "dieoff": [
       "Mass death of Indian carp raises pollution concerns at Ooty lake - The Hindu",
       "Clean At Entry, Polluted At Exit: The Data Behind Delhi’s Yamuna Debate - شبكة تواصل الإخبارية"
+    ],
+    "flash": [
+      "State Gas Limited Enters Trading Halt Pending LEIP Funding Announcement - Kalkine",
+      "Circuit Breaker Test Sets Market To 2035: Grid Modernization and Renewables Drive Demand - News and Statistics - IndexBox",
+      "Red Mountain Mining Requests Trading Halt Pending Capital Raising Announcement - Kalkine"
     ],
     "fuel_au": [
       "Minns pulls property crackdown as falling stamp duty hits public sector - The Mandarin",
@@ -366,15 +330,10 @@
     "medexport": [
       "Taliban Turn To Iran To Address Medicine Shortages In Afghanistan - Afghanistan International"
     ],
-    "mobilisation": [
-      "Deferment in Reserve+ did not save: The Territorial Recruitment Center illegally mobilized a student, and the court refused to release him from service - Судово-юридична газета",
-      "Actor Oleksandr Oleksenko has been called up to serve in the Armed Forces of Ukraine - UA.NEWS",
-      "\"MMC Five-Minute Check\": A Man Claimed He Didn't See Any Doctor, But Was Declared Fit - Судово-юридична газета"
-    ],
     "national_outage": [
       "Chase bank hit with nationwide outage - NBC News",
       "Chase bank hit with nationwide outage - Modern Ghana",
-      "Unclaimed luggage piles up at DCA as airlines recover from nationwide outage - WJLA"
+      "Nationwide outage disrupts online banking for Colorado Springs customers - KRDO"
     ],
     "outage_au": [
       "The Microsoft outage is part of a growing trend. This is how to prepare for further disruption - SBS",
@@ -385,6 +344,11 @@
       "Serbia opens strategic oil reserve as pipeline outage drags on in Croatia - Upstream Online",
       "Poland’s Defense Ministry plans to introduce a payment of 3,250 zlotys for reservists — RMF24 - UA.NEWS",
       "Czechs continue to cut gas consumption, reserves expected to last - oEnergetice.cz"
+    ],
+    "sapn": [
+      "Insurers dodge payouts after global Microsoft outage - Adelaide Now",
+      "Millions locked out as money chaos spreads - News.com.au",
+      "NAB rolls out new ‘smart’ ATMs across Australia - https://newsreel.com.au/"
     ],
     "sawater": [
       "DCWD trains upland brgys on water safety - SunStar Publishing Inc."
@@ -457,14 +421,14 @@
       "yes": 1.4
     },
     {
-      "d24h": -0.4,
+      "d24h": -0.3,
       "q": "Will China blockade Taiwan in 2026?",
-      "yes": 2.1
+      "yes": 2.2
     },
     {
-      "d24h": 2.0,
+      "d24h": 1.0,
       "q": "Iran-Oman Hormuz Agreement by November 30?",
-      "yes": 8.5
+      "yes": 7.5
     },
     {
       "d24h": 0.0,
@@ -507,9 +471,9 @@
       "yes": 18.0
     },
     {
-      "d24h": -8.0,
+      "d24h": -8.5,
       "q": "Will Nick Stewart attend a US x Iran diplomatic meeting by December 31, 2026?",
-      "yes": 11.0
+      "yes": 10.5
     },
     {
       "d24h": 2.5,
@@ -807,27 +771,18 @@
     },
     {
       "band": "Low",
-      "convergence": "Only one kind of sign is showing (australian incidents). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: sudden fall in sa electricity demand (possible large blackout), global cyber threat level raised (sans infocon not green) and several vpn",
-      "domains": [
-        "Australian incidents"
-      ],
       "key": "cyber",
-      "lit": [
-        {
-          "detail": "Dragos reports 20 Australian industrial ransomware incidents in Q3 2026",
-          "name": "Major Australian cyber incident reported"
-        }
-      ],
-      "score": 10,
-      "trend": "steady"
+      "score": 0,
+      "trend": "down"
     },
     {
       "band": "Elevated",
-      "convergence": "Signs are converging across 3 separate areas (ai-enabled hacking, cloud services and fraud waves). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: a Chinese",
+      "convergence": "Signs are converging across 4 separate areas (ai-enabled hacking, fraud waves, markets and synthetic media). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign:",
       "domains": [
         "AI-enabled hacking",
-        "Cloud services",
-        "Fraud waves"
+        "Fraud waves",
+        "Markets",
+        "Synthetic media"
       ],
       "key": "ai",
       "lit": [
@@ -836,20 +791,24 @@
           "name": "Reports of AI-driven hacking campaigns"
         },
         {
-          "detail": "Microsoft says months-old bug caused global outage",
-          "name": "Major cloud or AI service outage"
+          "detail": "FTQ official resigns over AI-generated image of Quebec MNA with black eye",
+          "name": "Deepfakes of leaders or fake official alerts"
+        },
+        {
+          "detail": "Circuit Breaker Test Sets Market To 2035: Grid Modernization and Renewables Drive Demand - News and Statistics",
+          "name": "Flash crash or exchange trading halt"
         },
         {
           "detail": "Call Trust Deepfake Detection introduced as Ribbon Communications targets telecom fraud",
           "name": "Surge in AI voice-clone / deepfake scams in Australia"
         }
       ],
-      "score": 30,
-      "trend": "down"
+      "score": 45,
+      "trend": "up"
     }
   ],
   "sectors_relative_5d": {
-    "defence_au": -4.82,
+    "defence_au": -4.94,
     "defence_eu": 0.45,
     "defence_us": 2.2,
     "pandemic": -7.05
