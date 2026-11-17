@@ -124,28 +124,18 @@
   "gdacs_orange_red": [
     "Orange notification for tropical cyclone AKVAN-26. Population affected by Category 1 (120 km/h) wind speeds or higher is 0  (11.577 million in Tropical Storm)."
   ],
-  "generated_at": "2026-11-17T22:34:00Z",
+  "generated_at": "2026-11-17T22:50:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 65,
-    "Black Sea": null,
-    "Israel & Eastern Mediterranean": 4,
+    "Baltic / Kaliningrad": 36,
+    "Black Sea": 64,
+    "Israel & Eastern Mediterranean": 7,
     "Korea": 0,
-    "Persian Gulf": 15,
-    "South Australia": 7,
+    "Persian Gulf": 18,
+    "South Australia": 5,
     "Sydney / NSW": 4,
     "Taiwan Strait": 0
   },
   "incidents": [
-    {
-      "confirmed": true,
-      "headlines": [
-        "States and Cities Crack Down on Crypto ATMs as Scams Surge",
-        "NAB Promotes Broadcast Positioning System Amid Tech Outages",
-        "Visa confirms security incident, JPMorgan knocked down"
-      ],
-      "severity": "Warning",
-      "target": "Banking & payments"
-    },
     {
       "confirmed": true,
       "headlines": [
@@ -155,6 +145,15 @@
       ],
       "severity": "Warning",
       "target": "Microsoft"
+    },
+    {
+      "confirmed": true,
+      "headlines": [
+        "States and Cities Crack Down on Crypto ATMs as Scams Surge",
+        "NAB Promotes Broadcast Positioning System Amid Tech Outages"
+      ],
+      "severity": "Info",
+      "target": "Banking & payments"
     },
     {
       "confirmed": true,
@@ -189,14 +188,6 @@
       ],
       "severity": "Info",
       "target": "Russians Carried Out"
-    },
-    {
-      "confirmed": false,
-      "headlines": [
-        "Google warns hackers are using AI agents to launch cyberattacks at machine speed"
-      ],
-      "severity": "Info",
-      "target": "Google"
     },
     {
       "confirmed": false,
@@ -239,18 +230,27 @@
       "Mount Lofty Ranges": "Moderate / Moderate"
     },
     "fire_danger_ok": true,
-    "fires_active": 5,
+    "fires_active": 7,
     "fuel": {
       "brent_aud": 138.2,
       "change_pct": 3.1,
       "pump_cents": 3,
       "week_ago_aud": 134.0
     },
-    "grid_demand_fall_pct": 12.8,
-    "grid_demand_mw": 857,
-    "grid_demand_usual_mw": 879,
+    "grid_demand_fall_pct": 29.5,
+    "grid_demand_mw": 655,
+    "grid_demand_usual_mw": 824,
     "grid_lor_level": 0,
     "nearby_incidents": [
+      {
+        "area": "UNNAMED  NORTH ADELAIDE",
+        "dist": "25-60 km",
+        "event": "Grass Fire",
+        "headline": "NORTH ADELAIDE : GRASS FIRE",
+        "id": "F-261118-0031 NORTH ADELAIDE, UNNAMED  (GRASS FIRE)",
+        "level": null,
+        "notify": false
+      },
       {
         "area": "TRURO",
         "dist": "25-60 km",
@@ -323,8 +323,19 @@
   },
   "national_shocks": {
     "faa": {
-      "airports": 0,
-      "ground_stops": [],
+      "airports": 2,
+      "ground_stops": [
+        {
+          "airport": "TEB",
+          "end": "6:45 pm EST",
+          "reason": "airport volume"
+        },
+        {
+          "airport": "SFO",
+          "end": "4:00 pm PST",
+          "reason": "low ceilings"
+        }
+      ],
       "national": false
     },
     "shocks": [],
@@ -335,18 +346,18 @@
   "news_watch": {
     "ai_hack": [
       "California sues OpenAI over AI agents hacking a software platform - NPR",
-      "Russians Carried Out the First Autonomous AI Cyberattack — According to Google - Мілітарний",
-      "Artex hacking tool: FBI warns of 3-hour AI breaches - DNE Africa"
+      "Artex hacking tool: FBI warns of 3-hour AI breaches - DNE Africa",
+      "Russians Carried Out the First Autonomous AI Cyberattack — According to Google - Мілітарний"
     ],
     "airspace": [
-      "Moldova closes airspace after 'Shahed-type' drone detected heading towards Chișinău - Euronews.com",
+      "Moldova closes airspace after drone detected heading towards Chișinău - Euronews.com",
       "A Shahed UAV in Moldova’s skies: Airspace closed - URGENT - TodayPress.tv",
       "Moldova closes airspace after Russian Shahed drone spotted over capital – video - Українська правда"
     ],
     "aviation_halt": [
-      "FAA Pauses Router Upgrades to Avoid Repeat of Nationwide Ground Stop - PCMag Australia",
       "Exclusive | FAA Pauses Router Installations After Nationwide Ground Stop - WSJ",
-      "FAA pauses installation of routers linked to ground stop that shut down American skies - Yahoo Lifestyle Australia"
+      "FAA pauses installation of routers linked to ground stop that shut down American skies - Yahoo Lifestyle Australia",
+      "Bags Pile Up at Chicago Airport Days After Nationwide Ground Stop - Herald Sun"
     ],
     "bank_outage": [
       "Labor backs down on backpacker visa cuts amid debate over rents - Real Estate",
@@ -385,7 +396,7 @@
     "cyber_supply": [
       "4EverAble2Shell: N-central Zero-Day Exploited - SOC Prime",
       "Supply chain attack compromises nearly 180 major brands, including BBC, CNN, IKEA and Zoom, through Optimizely - Escudo Digital",
-      "N-able Kills Legacy APIs, Patches 17 N-central Zero-Days - SecurityWeek"
+      "MSP ScreenConnect Servers Targeted in Month-Long Campaign - SecurityWeek"
     ],
     "deepfake": [
       "New Public Platform Tracks Emergency Disruptions Amid Growing Concerns Over AI Generated Hoaxes - EIN Presswire",
@@ -398,10 +409,10 @@
     "flash": [
       "State Gas Limited Enters Trading Halt Pending LEIP Funding Announcement - Kalkine",
       "Aster (ASTER) Volatility: Flash Crash and Security Incident - CoinMarketCap",
-      "Circuit Breaker Test Sets Market To 2035: Grid Modernization and Renewables Drive Demand - News and Statistics - IndexBox"
+      "Red Mountain Mining Requests Trading Halt Pending Capital Raising Announcement - Kalkine"
     ],
     "fuel_au": [
-      "Philippines declares national energy emergency as Asia risks energy crisis amid Iran war - ABC News - Breaking News, Latest News and Videos"
+      "Government introduces fuel emergency plan - FBC News"
     ],
     "illness": [
       "Mystery illness causes mass hospitalisation of runners - The Nightly",
@@ -424,12 +435,12 @@
     "national_outage": [
       "Rumors Of A Nationwide Blackout Are Spreading. Here’s What’s Really Happening Today. - Yahoo News New Zealand",
       "Planned FEMA Emergency Alert System prompts nationwide blackout fears. What to know in Tennessee - Columbia Daily Herald",
-      "Unclaimed luggage piles up at DCA as airlines recover from nationwide outage - KRCG"
+      "Inside the ‘Black Sky’ plans for a nationwide blackout - Herald.Wales"
     ],
     "outage_au": [
       "Australia's Optus apologises for outage that disrupted emergency calls - Reuters",
-      "How a nationwide Telstra outage rocked the Australian economy – and what we can learn - The Conversation",
-      "Multiple triple zero calls affected by another Optus outage - Nine.com.au"
+      "Multiple triple zero calls affected by another Optus outage - Nine.com.au",
+      "Australia to strengthen telecom networks after new Optus outage - Capacity Media"
     ],
     "reservists": [
       "'Life is short': IDF reserve officer dies in Tanzania climbing Mount Kilimanjaro with friends - The Jerusalem Post",
@@ -503,7 +514,7 @@
       "yes": 1.4
     },
     {
-      "d24h": 0.6,
+      "d24h": 0.7,
       "q": "Will China blockade Taiwan in 2026?",
       "yes": 2.8
     },
@@ -548,9 +559,9 @@
       "yes": 18.5
     },
     {
-      "d24h": -4.0,
+      "d24h": -2.5,
       "q": "Will Nick Stewart attend a US x Iran diplomatic meeting by December 31, 2026?",
-      "yes": 7.5
+      "yes": 9.0
     },
     {
       "d24h": -1.0,
@@ -558,9 +569,9 @@
       "yes": 19.0
     },
     {
-      "d24h": 0.0,
+      "d24h": 1.0,
       "q": "Iran blockade lifted before Iran-Oman Hormuz agreement?",
-      "yes": 13.5
+      "yes": 14.5
     },
     {
       "d24h": 0.2,
@@ -798,19 +809,24 @@
     },
     {
       "band": "Guarded",
-      "convergence": "Only one kind of sign is showing (mobilisation). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and us nuclear command aircraft unusual.",
+      "convergence": "Two different kinds of sign are showing together (mobilisation and undersea cables). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) an",
       "domains": [
-        "Mobilisation"
+        "Mobilisation",
+        "Undersea cables"
       ],
       "key": "russia",
       "lit": [
         {
           "detail": "Latvia to practice military mobilization this weekend / Article",
           "name": "Mobilisation / reservist reports (Russia / NATO)"
+        },
+        {
+          "detail": "Russia vessel MALVA ~51 min",
+          "name": "Russian / Chinese vessels loitering over Baltic cables"
         }
       ],
-      "score": 15,
-      "trend": "steady"
+      "score": 25,
+      "trend": "up"
     },
     {
       "band": "Low",
@@ -867,12 +883,11 @@
     },
     {
       "band": "Elevated",
-      "convergence": "Signs are converging across 5 separate areas (ai-enabled hacking, cloud services, fraud waves, markets and synthetic media). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-esp",
+      "convergence": "Signs are converging across 4 separate areas (ai-enabled hacking, cloud services, fraud waves and synthetic media). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage ca",
       "domains": [
         "AI-enabled hacking",
         "Cloud services",
         "Fraud waves",
-        "Markets",
         "Synthetic media"
       ],
       "key": "ai",
@@ -886,10 +901,6 @@
           "name": "Deepfakes of leaders or fake official alerts"
         },
         {
-          "detail": "Circuit Breaker Test Sets Market To 2035: Grid Modernization and Renewables Drive Demand - News and Statistics",
-          "name": "Flash crash or exchange trading halt"
-        },
-        {
           "detail": "Months-old bug behind global Microsoft 365 outage, executive says",
           "name": "Major cloud or AI service outage"
         },
@@ -898,8 +909,8 @@
           "name": "Surge in AI voice-clone / deepfake scams in Australia"
         }
       ],
-      "score": 55,
-      "trend": "steady"
+      "score": 45,
+      "trend": "down"
     }
   ],
   "sectors_relative_5d": {
@@ -910,7 +921,7 @@
   },
   "tankers": "normal",
   "telecom_drop_pct": {
-    "Aussie Broadband": 0.0,
+    "Aussie Broadband": 0.4,
     "Optus": 0.0,
     "TPG": 0.0,
     "Telstra": 0.0,
