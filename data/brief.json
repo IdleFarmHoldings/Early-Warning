@@ -1,7 +1,13 @@
 {
   "about": "Short form of latest.json + indicators.json for the analysis run. Links and raw samples removed.",
   "acsc": [],
-  "aircraft_flags": {},
+  "aircraft_flags": {
+    "gps_gulf": {
+      "median": 7.5,
+      "status": "ANOMALY",
+      "value": 42
+    }
+  },
   "analyst": {
     "ASPI Strategist": [
       "Treaty a recognition we need Philippines in China strategy",
@@ -124,13 +130,13 @@
   "gdacs_orange_red": [
     "Orange notification for tropical cyclone AKVAN-26. Population affected by Category 1 (120 km/h) wind speeds or higher is 0  (15.371 million in Tropical Storm)."
   ],
-  "generated_at": "2026-11-17T16:48:00Z",
+  "generated_at": "2026-11-17T17:02:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 22,
+    "Baltic / Kaliningrad": 15,
     "Black Sea": null,
     "Israel & Eastern Mediterranean": 4,
     "Korea": null,
-    "Persian Gulf": 10,
+    "Persian Gulf": 42,
     "South Australia": null,
     "Sydney / NSW": null,
     "Taiwan Strait": 0
@@ -141,7 +147,7 @@
       "headlines": [
         "Microsoft 365 outage underscores enterprise resiliency issues",
         "Microsoft reveals three causes behind global Microsoft 365 outage",
-        "Hackers exploit Microsoft 365 outage to launch credential phishing campaign"
+        "Phishing scheme exploiting Microsoft outage"
       ],
       "severity": "Warning",
       "target": "Microsoft"
@@ -199,7 +205,7 @@
     {
       "confirmed": false,
       "headlines": [
-        "Cyber Attack Hits 178 Major Websites: Full List of Organizations"
+        "Cyber Attack Hits 178 Major Websites: Full List of Affected Organizations"
       ],
       "severity": "Info",
       "target": "Cyber"
@@ -208,9 +214,9 @@
   "internet_drop_pct": {
     "China": 0.0,
     "Iran": 0.1,
-    "Israel": 1.1,
+    "Israel": 0.8,
     "Russia": 0.0,
-    "South Korea": 0.3,
+    "South Korea": 0.2,
     "Taiwan": 0.9
   },
   "local_sa": {
@@ -237,9 +243,9 @@
       "pump_cents": 2,
       "week_ago_aud": 133.9
     },
-    "grid_demand_fall_pct": 2.3,
-    "grid_demand_mw": 1289,
-    "grid_demand_usual_mw": 1281,
+    "grid_demand_fall_pct": 3.5,
+    "grid_demand_mw": 1272,
+    "grid_demand_usual_mw": 1269,
     "grid_lor_level": 0,
     "nearby_incidents": [
       {
@@ -255,7 +261,7 @@
       "air": {
         "aqi": 39,
         "peak_pm25_48h": 7,
-        "pm25": 6
+        "pm25": 5
       },
       "air_word": "Good",
       "days": []
@@ -276,20 +282,20 @@
   },
   "markets": {
     "AUD/USD": {
-      "change_pct": -0.55,
-      "price": 0.6742
+      "change_pct": -0.58,
+      "price": 0.674
     },
     "Brent oil": {
-      "change_pct": 0.81,
-      "price": 93.19
+      "change_pct": 0.7,
+      "price": 93.09
     },
     "Gold": {
-      "change_pct": 0.5,
-      "price": 3872.3
+      "change_pct": 0.34,
+      "price": 3866.1
     },
     "VIX": {
-      "change_pct": 15.02,
-      "price": 26.35
+      "change_pct": 17.72,
+      "price": 26.97
     }
   },
   "national_shocks": {
@@ -300,7 +306,9 @@
     },
     "shocks": [],
     "tracking_glitch": false,
-    "traffic_not_normal": {}
+    "traffic_not_normal": {
+      "AE": "DOWN"
+    }
   },
   "nc3": "normal",
   "news_watch": {
@@ -312,7 +320,7 @@
     "airspace": [
       "A Shahed UAV in Moldova’s skies: Airspace closed - URGENT - TodayPress.tv",
       "Middle East Airspace Closures: Who Decides and What Passengers Are Owed - Diplomacy and Law",
-      "Did Iranian drones strike a US base or were they intercepted? - Sides issue conflicting STATEMENTS - TodayPress.tv"
+      "Moldova closes airspace after Russian Shahed drone spotted over capital – video - Українська правда"
     ],
     "aviation_halt": [
       "United Airlines rocked by ‘widespread system outage’ days after US flights grounded - News24",
@@ -331,8 +339,8 @@
     ],
     "cables": [
       "Expert urges lawmakers craft law against subsea cable sabotage - Inquirer.net",
-      "Can the internet go down? 10 facts on how outages happen - qz.com",
-      "TM Receives MCMC Approval For RM2.7 Billion Submarine Cable Project Linking Peninsula To East Malaysia - BusinessToday Malaysia"
+      "What makes the North Sea attractive to telecoms companies? - Capacity Media",
+      "Can the internet go down? 10 facts on how outages happen - qz.com"
     ],
     "chem": [
       "Investigation concludes Russia used tear gas against Ukrainian troops - The Washington Post",
@@ -361,8 +369,8 @@
     ],
     "deepfake": [
       "New Public Platform Tracks Emergency Disruptions Amid Growing Concerns Over AI Generated Hoaxes - EIN Presswire",
-      "Qurultay drafts Kazakhstan's first AI-generated bill - Qazinform",
-      "Nearly 14,000 deepfake, manipulated content items removed after MCMC requests since 2024 - Malay Mail"
+      "Nearly 14,000 deepfake, manipulated content items removed after MCMC requests since 2024 - Malay Mail",
+      "MCMC Removes 13,883 Deepfake Content Items Since 2024, Fahmi Says - BusinessToday Malaysia"
     ],
     "dieoff": [
       "Mahendragiri Varahi Ending Explained: The Terrifying 200-Year-Old Curse and Shocking Revenge Mystery (Spoilers) - Vocal"
@@ -374,8 +382,8 @@
     ],
     "fuel_au": [
       "Philippines declares national energy emergency as Asia risks energy crisis amid Iran war - ABC News - Breaking News, Latest News and Videos",
-      "Government introduces fuel emergency plan - FBC News",
-      "Minns pulls property crackdown as falling stamp duty hits public sector - The Mandarin"
+      "Minns pulls property crackdown as falling stamp duty hits public sector - The Mandarin",
+      "Could war in Iran affect your retirement nest egg and share portfolio? - The Senior"
     ],
     "illness": [
       "Mystery illness causes mass hospitalisation of runners - The Nightly",
@@ -397,7 +405,7 @@
     ],
     "national_outage": [
       "Rumors Of A Nationwide Blackout Are Spreading. Here’s What’s Really Happening Today. - Yahoo News New Zealand",
-      "Cuba grid collapse: The situation is growing more dire, experts say - ABC News - Breaking News, Latest News and Videos",
+      "Unclaimed luggage piles up at DCA as airlines recover from nationwide outage - KRCG",
       "Chase bank hit with nationwide outage - NBC News"
     ],
     "outage_au": [
@@ -436,9 +444,9 @@
       "yes": 11.5
     },
     {
-      "d24h": 0.4,
+      "d24h": 0.3,
       "q": "China x Taiwan military clash before 2027?",
-      "yes": 2.9
+      "yes": 2.8
     },
     {
       "d24h": 0.5,
@@ -451,7 +459,7 @@
       "yes": 13.5
     },
     {
-      "d24h": -0.1,
+      "d24h": 0.0,
       "q": "US-Iran Final Nuclear Deal by November 30, 2026?",
       "yes": 1.1
     },
@@ -486,7 +494,7 @@
       "yes": 5.5
     },
     {
-      "d24h": -1.5,
+      "d24h": -1.0,
       "q": "Iran-Oman Hormuz Agreement by December 31?",
       "yes": 18.5
     },
@@ -511,7 +519,7 @@
       "yes": 4.0
     },
     {
-      "d24h": 0.5,
+      "d24h": 0.3,
       "q": "Will the U.S. test a nuclear weapon by December 31 2026?",
       "yes": 3.1
     },
@@ -521,9 +529,9 @@
       "yes": 18.0
     },
     {
-      "d24h": 1.5,
+      "d24h": 1.0,
       "q": "Will Nick Stewart attend a US x Iran diplomatic meeting by December 31, 2026?",
-      "yes": 11.0
+      "yes": 10.5
     },
     {
       "d24h": 1.0,
@@ -531,9 +539,9 @@
       "yes": 22.0
     },
     {
-      "d24h": 0.5,
+      "d24h": 1.5,
       "q": "Iran blockade lifted before Iran-Oman Hormuz agreement?",
-      "yes": 13.5
+      "yes": 14.5
     },
     {
       "d24h": 0.9,
@@ -759,19 +767,24 @@
     },
     {
       "band": "Guarded",
-      "convergence": "Only one kind of sign is showing (shipping). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
+      "convergence": "Two different kinds of sign are showing together (electronic warfare and shipping). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet bl",
       "domains": [
+        "Electronic warfare",
         "Shipping"
       ],
       "key": "mideast",
       "lit": [
         {
+          "detail": "gps_gulf 42 vs usual 7.5",
+          "name": "GPS jamming spike (Gulf / Israel)"
+        },
+        {
           "detail": "Strait of Hormuz -38% vs usual (2.3/day)",
           "name": "Ship traffic through Hormuz down sharply"
         }
       ],
-      "score": 15,
-      "trend": "steady"
+      "score": 25,
+      "trend": "up"
     },
     {
       "band": "Low",
@@ -852,18 +865,23 @@
     },
     {
       "band": "Elevated",
-      "convergence": "Signs are converging across 4 separate areas (ai-enabled hacking, cloud services, fraud waves and markets). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: ",
+      "convergence": "Signs are converging across 5 separate areas (ai-enabled hacking, cloud services, fraud waves, markets and synthetic media). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-esp",
       "domains": [
         "AI-enabled hacking",
         "Cloud services",
         "Fraud waves",
-        "Markets"
+        "Markets",
+        "Synthetic media"
       ],
       "key": "ai",
       "lit": [
         {
           "detail": "Russians Carried Out the First Autonomous AI Cyberattack — According to Google",
           "name": "Reports of AI-driven hacking campaigns"
+        },
+        {
+          "detail": "FTQ official resigns over AI-generated image of Quebec MNA with black eye",
+          "name": "Deepfakes of leaders or fake official alerts"
         },
         {
           "detail": "Circuit Breaker Test Sets Market To 2035: Grid Modernization and Renewables Drive Demand - News and Statistics",
@@ -878,22 +896,22 @@
           "name": "Surge in AI voice-clone / deepfake scams in Australia"
         }
       ],
-      "score": 40,
-      "trend": "steady"
+      "score": 55,
+      "trend": "up"
     }
   ],
   "sectors_relative_5d": {
     "defence_au": -4.8,
     "defence_eu": -2.2,
-    "defence_us": 0.68,
-    "pandemic": -6.67
+    "defence_us": 0.83,
+    "pandemic": -6.47
   },
   "tankers": "normal",
   "telecom_drop_pct": {
-    "Aussie Broadband": 0.3,
+    "Aussie Broadband": 0.0,
     "Optus": 2.0,
-    "TPG": 0.2,
-    "Telstra": 0.1,
+    "TPG": 0.0,
+    "Telstra": 0.0,
     "Vodafone": 0.0
   },
   "us_departure_orders": [
