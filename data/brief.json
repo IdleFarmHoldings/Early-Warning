@@ -119,18 +119,19 @@
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
     "incidents": "ValueError: time data 'Info' does not match format '%Y-%m-%dT%H:%M:%SZ'",
+    "maritime": "TimeoutError: ",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [
     "Orange notification for tropical cyclone AKVAN-26. Population affected by Category 1 (120 km/h) wind speeds or higher is 0  (15.371 million in Tropical Storm)."
   ],
-  "generated_at": "2026-11-17T15:22:00Z",
+  "generated_at": "2026-11-17T15:28:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 28,
-    "Black Sea": 57,
-    "Israel & Eastern Mediterranean": 0,
+    "Baltic / Kaliningrad": 31,
+    "Black Sea": 45,
+    "Israel & Eastern Mediterranean": 2,
     "Korea": 0,
-    "Persian Gulf": 4,
+    "Persian Gulf": 1,
     "South Australia": null,
     "Sydney / NSW": null,
     "Taiwan Strait": 0
@@ -155,6 +156,14 @@
       ],
       "severity": "Info",
       "target": "Google"
+    },
+    {
+      "confirmed": false,
+      "headlines": [
+        "Can the internet go down? 10 facts on how outages happen"
+      ],
+      "severity": "Info",
+      "target": "Can"
     },
     {
       "confirmed": false,
@@ -206,14 +215,14 @@
     "fire_danger_ok": true,
     "fires_active": 4,
     "fuel": {
-      "brent_aud": 137.1,
-      "change_pct": 2.4,
+      "brent_aud": 137.3,
+      "change_pct": 2.5,
       "pump_cents": 2,
       "week_ago_aud": 133.9
     },
-    "grid_demand_fall_pct": 4.5,
-    "grid_demand_mw": 1299,
-    "grid_demand_usual_mw": 1311,
+    "grid_demand_fall_pct": 3.9,
+    "grid_demand_mw": 1306,
+    "grid_demand_usual_mw": 1310,
     "grid_lor_level": 0,
     "nearby_incidents": [
       {
@@ -269,20 +278,20 @@
   },
   "markets": {
     "AUD/USD": {
-      "change_pct": -0.6,
-      "price": 0.6738
+      "change_pct": -0.62,
+      "price": 0.6737
     },
     "Brent oil": {
-      "change_pct": 1.23,
-      "price": 93.58
+      "change_pct": 1.05,
+      "price": 93.41
     },
     "Gold": {
-      "change_pct": 0.18,
-      "price": 3860.1
+      "change_pct": 0.16,
+      "price": 3859.2
     },
     "VIX": {
-      "change_pct": -0.96,
-      "price": 22.69
+      "change_pct": -0.22,
+      "price": 22.86
     }
   },
   "national_shocks": {
@@ -324,7 +333,7 @@
     ],
     "cables": [
       "Expert urges lawmakers craft law against subsea cable sabotage - Inquirer.net",
-      "Four Gulf Subsea Cable Projects Stall With the Conflict as Iran Threatens Cables Under Hormuz - Avi-Go",
+      "Can the internet go down? 10 facts on how outages happen - qz.com",
       "TM Receives MCMC Approval For RM2.7 Billion Submarine Cable Project Linking Peninsula To East Malaysia - BusinessToday Malaysia"
     ],
     "chem": [
@@ -353,7 +362,7 @@
       "MSP ScreenConnect Servers Targeted in Month-Long Campaign - SecurityWeek"
     ],
     "deepfake": [
-      "New Public Platform Tracks Emergency Disruptions Amid Growing Concerns Over AI Generated Hoaxes - EIN Presswire",
+      "New Public Platform Tracks Emergency Disruptions Amid Growing Concerns Over AI Generated Hoaxes - EIN News",
       "Nearly 14,000 deepfake, manipulated content items removed after MCMC requests since 2024 - Malay Mail",
       "MCMC Removes 13,883 Deepfake Content Items Since 2024, Fahmi Says - BusinessToday Malaysia"
     ],
@@ -433,9 +442,9 @@
       "yes": 2.9
     },
     {
-      "d24h": 0.1,
+      "d24h": 0.2,
       "q": "US-Iran Hormuz Agreement by November 30?",
-      "yes": 4.3
+      "yes": 4.4
     },
     {
       "d24h": -1.0,
@@ -503,9 +512,9 @@
       "yes": 2.1
     },
     {
-      "d24h": 0.2,
+      "d24h": 0.0,
       "q": "Will the U.S. test a nuclear weapon by December 31 2026?",
-      "yes": 3.0
+      "yes": 2.8
     },
     {
       "d24h": -1.0,
@@ -513,14 +522,14 @@
       "yes": 18.0
     },
     {
-      "d24h": 6.5,
+      "d24h": 5.5,
       "q": "Will Nick Stewart attend a US x Iran diplomatic meeting by December 31, 2026?",
-      "yes": 11.5
+      "yes": 10.5
     },
     {
-      "d24h": -1.0,
+      "d24h": -1.5,
       "q": "Ukraine agrees not to join NATO by December 31, 2027?",
-      "yes": 20.5
+      "yes": 20.0
     },
     {
       "d24h": 1.5,
@@ -876,9 +885,9 @@
   ],
   "sectors_relative_5d": {
     "defence_au": -4.8,
-    "defence_eu": -2.48,
-    "defence_us": -0.79,
-    "pandemic": -4.43
+    "defence_eu": -2.42,
+    "defence_us": -0.52,
+    "pandemic": -4.34
   },
   "tankers": "normal",
   "telecom_drop_pct": {
