@@ -357,7 +357,7 @@ def local_alerts(loc, state, now, first_run):
             "CFS Watch and Act near home" if close else "CFS Watch and Act",
             f"{w}. Conditions are changing: check alert.sa.gov.au and ABC Radio Adelaide 891 AM, and be ready to act on your bushfire plan.",
             5 if close else 4, "fire")
-    for i in sm.get("nearby_incidents", [])[:3]:
+    for i in [i for i in sm.get("nearby_incidents", []) if i.get("notify") is not False][:3]:
         if i.get("level") in ("Watch and Act", "Emergency Warning"):
             continue  # already alerted above
         place = (i.get("area") or i.get("headline") or "").title()

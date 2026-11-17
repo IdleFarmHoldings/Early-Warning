@@ -841,6 +841,14 @@ def test_cfs_nearby_incidents_alert():
     assert " km from home" in out[1]["message"] and out[1]["priority"] == 4 and out[0]["priority"] == 5
     assert "illiamstown" not in json.dumps(out)
     assert run.local_alerts({"summary": sm}, state, now + timedelta(minutes=15), False) == []  # once per incident
+    # Fires 20-60 km away show on the page but do not push a phone note
+    far = [{"id": "F9", "headline": "TRURO : GRASS FIRE", "event": "Grass Fire", "area": "TRURO", "level": None,
+            "dist": "25-60 km", "notify": False},
+           {"id": "F8", "headline": "NEAR : GRASS FIRE", "event": "Grass Fire", "area": "NEAR", "level": None,
+            "dist": "10-25 km", "notify": True}]
+    out = run.local_alerts({"summary": {"nearby_incidents": far, "emergency_warnings": [], "watch_and_act_near": []}},
+                           {}, now, False)
+    assert [a["title"] for a in out] == ["CFS: Grass Fire at Near"], out
 
 
 def test_home_comes_from_secret():

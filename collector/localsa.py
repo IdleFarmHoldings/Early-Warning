@@ -752,7 +752,9 @@ def fetch_local(state):
         "fire_danger_ok": bool(fd),
         "emergency_warnings": [w["headline"] for w in warn if w["level"] == "Emergency Warning"]
         + [f"{i['type']} {i['where']}" for i in inc if i["level"] == "Emergency Warning"],
-        "nearby_incidents": [{**{k: w.get(k) for k in ("id", "headline", "event", "area", "level")}, "dist": distance_band(w.get("km"))}
+        "nearby_incidents": [{**{k: w.get(k) for k in ("id", "headline", "event", "area", "level")}, "dist": distance_band(w.get("km")),
+                              # Phone note only within notify_radius_km; farther fires still show on the page and board.
+                              "notify": w.get("km") is None or w["km"] <= lc.get("notify_radius_km", lc["nearby_radius_km"])}
                              for w in nearby_incidents(warn, (lc["home"]["lat"], lc["home"]["lon"]),
                                                        lc["nearby_radius_km"], lc["nearby_places"],
                                                        lc.get("structure_radius_km"), lc.get("structure_places", []))][:10],
