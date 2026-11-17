@@ -1,23 +1,15 @@
 {
-  "generated_at": "2026-11-17T21:06:00Z",
+  "generated_at": "2026-11-17T21:21:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
-      "band": "Guarded",
-      "convergence": "Two different kinds of sign are showing together (roads and weather). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: cfs emergency warning in sa, sudden fall in sa electricity demand (possible large blackout) and extreme or catastrophic fire danger near adelaide.",
+      "band": "Low",
+      "convergence": "Only one kind of sign is showing (roads). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: cfs emergency warning in sa, sudden fall in sa electricity demand (possible large blackout) and extreme or catastrophic fire danger near adelaide.",
       "domains": [
-        "Roads",
-        "Weather"
+        "Roads"
       ],
       "key": "local",
       "lit": [
-        {
-          "detail": "Cancellation of Severe Thunderstorm Warning for North West Pastoral forecast district",
-          "domain": "Weather",
-          "id": "bom",
-          "name": "Bureau severe weather or heatwave warning for SA",
-          "weight": 15
-        },
         {
           "detail": "Morgan Mail Road, Quondong: MORGAN MAIL RD Closed due to flooding over road; Morgan Vale Road, Danggali: MORGAN MAIL RD Closed due to flooding over road",
           "domain": "Roads",
@@ -28,8 +20,8 @@
       ],
       "name": "Local emergency in SA (bushfire, heat, power)",
       "sa_impact": "Direct: bushfires, heatwaves and power cuts are the emergencies most likely to affect the family. In the 2016 statewide blackout, power, phones, traffic lights and fuel pumps failed together.",
-      "score": 25,
-      "trend": "steady",
+      "score": 10,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Bushfire",
@@ -54,6 +46,12 @@
           "id": "tfb",
           "name": "Total fire ban for Adelaide or the Hills",
           "weight": 10
+        },
+        {
+          "domain": "Weather",
+          "id": "bom",
+          "name": "Bureau severe weather or heatwave warning for SA",
+          "weight": 15
         },
         {
           "domain": "Power grid",
@@ -399,7 +397,7 @@
       "name": "Russia-NATO escalation",
       "sa_impact": "Indirect: energy and market shock, cyber attacks that can spill over to Australian systems, and nuclear-risk rhetoric.",
       "score": 15,
-      "trend": "down",
+      "trend": "steady",
       "unlit": [
         {
           "domain": "Electronic warfare",
@@ -846,7 +844,7 @@
       "name": "AI-enabled attack (non-traditional)",
       "sa_impact": "Not bombs but disruption: hacking at machine speed across banks, telcos, hospitals and the grid at once; fake videos or alerts from leaders causing panic buying or bank runs; or automated market and fraud shocks. Effects would be outages, payment failures and confusion about what is real.",
       "score": 55,
-      "trend": "up",
+      "trend": "steady",
       "unlit": [
         {
           "domain": "Mass exploitation",
