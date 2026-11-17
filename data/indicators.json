@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-17T15:43:00Z",
+  "generated_at": "2026-11-17T15:59:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -381,33 +381,15 @@
       "why": "North Korean missile launches are often preceded by navigation warnings; South Korea and Japan report GPS jamming from the North during tense periods."
     },
     {
-      "band": "Guarded",
-      "convergence": "Two different kinds of sign are showing together (mobilisation and undersea cables). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and us nuclear command aircraft unusual.",
-      "domains": [
-        "Mobilisation",
-        "Undersea cables"
-      ],
+      "band": "Low",
+      "convergence": "No warning signs are showing. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and mobilisation / reservist reports (russia / nato).",
+      "domains": [],
       "key": "russia",
-      "lit": [
-        {
-          "detail": "Latvia to practice military mobilization this weekend / Article",
-          "domain": "Mobilisation",
-          "id": "mob",
-          "name": "Mobilisation / reservist reports (Russia / NATO)",
-          "weight": 15
-        },
-        {
-          "detail": "Russia vessel MALVA ~52 min",
-          "domain": "Undersea cables",
-          "id": "cable",
-          "name": "Russian / Chinese vessels loitering over Baltic cables",
-          "weight": 10
-        }
-      ],
+      "lit": [],
       "name": "Russia-NATO escalation",
       "sa_impact": "Indirect: energy and market shock, cyber attacks that can spill over to Australian systems, and nuclear-risk rhetoric.",
-      "score": 25,
-      "trend": "up",
+      "score": 0,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Electronic warfare",
@@ -419,6 +401,12 @@
           "domain": "Military air",
           "id": "air",
           "name": "Unusual military air activity (Eastern Europe)",
+          "weight": 15
+        },
+        {
+          "domain": "Mobilisation",
+          "id": "mob",
+          "name": "Mobilisation / reservist reports (Russia / NATO)",
           "weight": 15
         },
         {
@@ -473,6 +461,12 @@
           "domain": "Cyber",
           "id": "cyber",
           "name": "Russian wiper / Sandworm activity reports",
+          "weight": 10
+        },
+        {
+          "domain": "Undersea cables",
+          "id": "cable",
+          "name": "Russian / Chinese vessels loitering over Baltic cables",
           "weight": 10
         },
         {
@@ -634,9 +628,8 @@
     },
     {
       "band": "Guarded",
-      "convergence": "Two different kinds of sign are showing together (chemical weapons and health). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: unknown illness / pneumonia cluster reported, countries restricting medical supply exports and pandemic-response stocks outperforming (5 days).",
+      "convergence": "Only one kind of sign is showing (health). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: unknown illness / pneumonia cluster reported, countries restricting medical supply exports and pandemic-response stocks outperforming (5 days).",
       "domains": [
-        "Chemical weapons",
         "Health"
       ],
       "key": "bio",
@@ -647,19 +640,12 @@
           "id": "who",
           "name": "WHO outbreak report with a high-concern pathogen (last 14 days)",
           "weight": 15
-        },
-        {
-          "detail": "Iran Again Attacks Bahrain; US Intelligence Warns of Chemical Weapons Plot Against Officials",
-          "domain": "Chemical weapons",
-          "id": "chem",
-          "name": "Chemical / nerve-agent attack or mass poisoning reported",
-          "weight": 15
         }
       ],
       "name": "Pandemic, biological or chemical emergency",
       "sa_impact": "Health system strain, possible lockdowns and border closures, and shortages of medicines and protective equipment, which Australia mostly imports.",
-      "score": 30,
-      "trend": "steady",
+      "score": 15,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Health",
@@ -698,6 +684,12 @@
           "weight": 10
         },
         {
+          "domain": "Chemical weapons",
+          "id": "chem",
+          "name": "Chemical / nerve-agent attack or mass poisoning reported",
+          "weight": 15
+        },
+        {
           "domain": "Health",
           "id": "dieoff",
           "name": "Unexplained mass deaths or animal die-offs",
@@ -714,24 +706,14 @@
     },
     {
       "band": "Low",
-      "convergence": "Only one kind of sign is showing (australian incidents). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: sudden fall in sa electricity demand (possible large blackout), global cyber threat level raised (sans infocon not green) and several vpn / firewall flaws exploited this week.",
-      "domains": [
-        "Australian incidents"
-      ],
+      "convergence": "No warning signs are showing. The strongest signs not yet showing: sudden fall in sa electricity demand (possible large blackout), global cyber threat level raised (sans infocon not green) and several vpn / firewall flaws exploited this week.",
+      "domains": [],
       "key": "cyber",
-      "lit": [
-        {
-          "detail": "Dragos reports 20 Australian industrial ransomware incidents in Q3 2026",
-          "domain": "Australian incidents",
-          "id": "au",
-          "name": "Major Australian cyber incident reported",
-          "weight": 10
-        }
-      ],
+      "lit": [],
       "name": "Major cyber attack on Australia",
       "sa_impact": "Banks, payments, hospitals, fuel distribution, telcos and the power grid all run on networks; a large attack can stop card payments and services for hours to days.",
-      "score": 10,
-      "trend": "steady",
+      "score": 0,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Global threat level",
@@ -774,6 +756,12 @@
           "id": "state",
           "name": "Reports of state hackers / pre-positioning / wipers",
           "weight": 15
+        },
+        {
+          "domain": "Australian incidents",
+          "id": "au",
+          "name": "Major Australian cyber incident reported",
+          "weight": 10
         },
         {
           "domain": "Communications",
@@ -822,7 +810,7 @@
           "weight": 10
         },
         {
-          "detail": "Microsoft says months-old bug caused global outage",
+          "detail": "Months-old bug behind global Microsoft 365 outage, executive says",
           "domain": "Cloud services",
           "id": "cloud",
           "name": "Major cloud or AI service outage",
