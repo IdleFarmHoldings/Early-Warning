@@ -65,19 +65,19 @@
     "acsc": "TimeoutError: The read operation timed out",
     "chokepoints": "RuntimeError: PortWatch returned no rows: {\"error\": {\"code\": 499, \"message\": \"Token Required\", \"messageCode\": \"GWM_0003\"",
     "incidents": "ValueError: time data 'Info' does not match format '%Y-%m-%dT%H:%M:%SZ'",
-    "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
+    "navwarn": "RuntimeError: cast-warn?status=A&output=json: TimeoutError: The read operation timed out; ons/broadcast-warn?output=json"
   },
   "gdacs_orange_red": [
     "Orange notification for tropical cyclone AKVAN-26. Population affected by Category 1 (120 km/h) wind speeds or higher is 0  (16.134 million in Tropical Storm).",
     "Drought is on going in Aruba, , Brazil, Colombia, Costa Rica, , French Guiana, Guyana, Panama, Suriname, Venezuela"
   ],
-  "generated_at": "2026-11-17T08:28:00Z",
+  "generated_at": "2026-11-17T08:34:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 28,
-    "Black Sea": 19,
-    "Israel & Eastern Mediterranean": 4,
+    "Baltic / Kaliningrad": 32,
+    "Black Sea": 16,
+    "Israel & Eastern Mediterranean": 2,
     "Korea": 0,
-    "Persian Gulf": 2,
+    "Persian Gulf": 4,
     "South Australia": 3,
     "Sydney / NSW": 0,
     "Taiwan Strait": 0
@@ -111,6 +111,14 @@
       "target": "Dragos"
     },
     {
+      "confirmed": false,
+      "headlines": [
+        "Russian-speaking hackers launched the world's first fully autonomous AI cyberattack on European websites: Google report"
+      ],
+      "severity": "Info",
+      "target": "Russian-speaking"
+    },
+    {
       "confirmed": true,
       "headlines": [
         "Google says hackers are using AI agents to weaponise security patches without human intervention",
@@ -137,12 +145,12 @@
     }
   ],
   "internet_drop_pct": {
-    "China": 0.2,
+    "China": 0.0,
     "Iran": 0.0,
-    "Israel": 0.7,
+    "Israel": 0.3,
     "Russia": 2.7,
     "South Korea": 0.0,
-    "Taiwan": 0.0
+    "Taiwan": 0.1
   },
   "local_sa": {
     "bom": [
@@ -163,28 +171,28 @@
     "fuel": {
       "brent_aud": 136.3,
       "change_pct": 1.8,
-      "pump_cents": 1,
+      "pump_cents": 2,
       "week_ago_aud": 133.9
     },
-    "grid_demand_fall_pct": -0.9,
-    "grid_demand_mw": 1237,
-    "grid_demand_usual_mw": 1309,
+    "grid_demand_fall_pct": -10.4,
+    "grid_demand_mw": 1354,
+    "grid_demand_usual_mw": 1327,
     "grid_lor_level": 0,
     "nearby_incidents": [
-      {
-        "area": "TRURO",
-        "dist": "25-60 km",
-        "event": "Grass Fire",
-        "headline": "TRURO : GRASS FIRE",
-        "id": "F-261117-0054 Truro, Three Chain Rd / Baldon Rd  (Grass Fire",
-        "level": null
-      },
       {
         "area": "278 CARAWATHA DR MYPOLONGA",
         "dist": "25-60 km",
         "event": "Grass Fire",
         "headline": "MYPOLONGA : GRASS FIRE",
         "id": "F-261117-0081 MYPOLONGA, CARAWATHA DR (GRASS FIRE)",
+        "level": null
+      },
+      {
+        "area": "TRURO",
+        "dist": "25-60 km",
+        "event": "Grass Fire",
+        "headline": "TRURO : GRASS FIRE",
+        "id": "F-261117-0054 Truro, Three Chain Rd / Baldon Rd  (Grass Fire",
         "level": null
       }
     ],
@@ -232,20 +240,20 @@
   },
   "markets": {
     "AUD/USD": {
-      "change_pct": -0.6,
-      "price": 0.6738
+      "change_pct": -0.56,
+      "price": 0.6741
     },
     "Brent oil": {
-      "change_pct": -0.34,
-      "price": 92.13
+      "change_pct": -0.39,
+      "price": 92.08
     },
     "Gold": {
-      "change_pct": 0.35,
-      "price": 3866.5
+      "change_pct": 0.42,
+      "price": 3869.1
     },
     "VIX": {
-      "change_pct": 18.7,
-      "price": 22.91
+      "change_pct": 1.13,
+      "price": 23.17
     }
   },
   "national_shocks": {
@@ -261,9 +269,9 @@
   "nc3": "normal",
   "news_watch": {
     "ai_hack": [
+      "Russian-speaking hackers launched the world's first fully autonomous AI cyberattack on European websites: Google report - dev.ua",
       "Barracuda links cloud breach to ARTEX AI-powered cyberattack - BleepingComputer",
-      "Autonomous AI Hacking Systems Detected in Real-World Attacks - 조선일보",
-      "Google found hackers using autonomous AI agents to turn security patches into exploits - The New Stack"
+      "Autonomous AI Hacking Systems Detected in Real-World Attacks - 조선일보"
     ],
     "airspace": [
       "Middle East Airspace Closures: Who Decides and What Passengers Are Owed - Diplomacy and Law",
@@ -272,18 +280,23 @@
     ],
     "aviation_halt": [
       "United Airlines rocked by ‘widespread system outage’ days after US flights grounded - News24",
-      "Late Night Flies High on the F.A.A. Ground Stop - The New York Times",
-      "BREAKING: United Airlines experiences widespread system outage just days after US ground stop - News24"
+      "BREAKING: United Airlines experiences widespread system outage just days after US ground stop - News24",
+      "Late Night Flies High on the F.A.A. Ground Stop - The New York Times"
     ],
     "bank_outage": [
       "Huge change coming for Aussie ATMs - News.com.au",
-      "Labor backs down on backpacker visa cuts amid debate over rents - NT News",
-      "Government backflips on backpacker policy - ABC News & Headlines – Australian Broadcasting Corporation"
+      "Government backflips on backpacker policy - ABC News & Headlines – Australian Broadcasting Corporation",
+      "Labor backs down on backpacker visa cuts amid debate over rents - NT News"
     ],
     "blood": [
       "Jordan evacuates 12 children from Gaza for medical treatment - アラブニュース",
       "Insomnia, Apnea and the Rest: The Sleep Disorders Most Common in the Military - U.S. Medicine",
       "Disrupted Sleep, Shifting Schedules and Stimulants - U.S. Medicine"
+    ],
+    "cables": [
+      "TM Receives MCMC Approval For RM2.7 Billion Submarine Cable Project Linking Peninsula To East Malaysia - BusinessToday Malaysia",
+      "1,500 Faridpur Char Families Left Without Electricity for Five Months - https://www.businesstimes-bd.com/",
+      "TM gets nod for RM2.7bil submarine cable project - NST Online"
     ],
     "chem": [
       "Finland provides EUR 50,000 in voluntary funding to enhance OPCW’s work - Organisation for the Prohibition of Chemical Weapons",
@@ -311,17 +324,22 @@
       "Anthropic Cuts Vulnerability Disclosure Window From 90 Days to 30 as AI-Accelerated Discovery Undermines Old Assumptions - BigGo Finance"
     ],
     "deepfake": [
-      "New Public Platform Tracks Emergency Disruptions Amid Growing Concerns Over AI Generated Hoaxes - EIN Presswire",
+      "New Public Platform Tracks Emergency Disruptions Amid Growing Concerns Over AI Generated Hoaxes - EIN News",
       "Satire or propaganda? How AI-generated videos blur the lines - eKathimerini.com",
       "MCMC Removes 13,883 Deepfake Content Items Since 2024, Fahmi Says - BusinessToday Malaysia"
     ],
     "dieoff": [
       "Mass death of Indian carp raises pollution concerns at Ooty lake - The Hindu"
     ],
+    "flash": [
+      "State Gas Limited Enters Trading Halt Pending LEIP Funding Announcement - Kalkine",
+      "Circuit Breaker Test Sets Market To 2035: Grid Modernization and Renewables Drive Demand - News and Statistics - IndexBox",
+      "Red Mountain Mining Requests Trading Halt Pending Capital Raising Announcement - Kalkine"
+    ],
     "fuel_au": [
-      "Philippines declares national energy emergency as Asia risks energy crisis amid Iran war - ABC News - Breaking News, Latest News and Videos",
       "Minns pulls property crackdown as falling stamp duty hits public sector - The Mandarin",
-      "Could war in Iran affect your retirement nest egg and share portfolio? - The Senior"
+      "Could war in Iran affect your retirement nest egg and share portfolio? - The Senior",
+      "The Hormuz Crude Volume Debate Masks the Real Shortage of Refined Fuels: Russell - EnergyNow"
     ],
     "illness": [
       "Mystery illness causes mass hospitalisation of runners - The Nightly",
@@ -337,9 +355,9 @@
       "Taliban Turn To Iran To Address Medicine Shortages In Afghanistan - Afghanistan International"
     ],
     "mobilisation": [
+      "Ground Forces commander calls mobilization necessity, soldier training quality top priority - Interfax-Ukraine",
       "Deferment in Reserve+ did not save: The Territorial Recruitment Center illegally mobilized a student, and the court refused to release him from service - Судово-юридична газета",
-      "Actor Oleksandr Oleksenko has been called up to serve in the Armed Forces of Ukraine - UA.NEWS",
-      "How laws will be passed if an enemy strike destroys the Rada building: Stefanchuk announced a backup plan - Судово-юридична газета"
+      "Actor Oleksandr Oleksenko has been called up to serve in the Armed Forces of Ukraine - UA.NEWS"
     ],
     "murray": [
       "Flows in the River Murray system for October 2026 - Murray–Darling Basin Authority"
@@ -357,6 +375,11 @@
     "reservists": [
       "Serbia opens strategic oil reserve as pipeline outage drags on in Croatia - Upstream Online",
       "Poland’s Defense Ministry plans to introduce a payment of 3,250 zlotys for reservists — RMF24 - UA.NEWS"
+    ],
+    "sapn": [
+      "Insurers dodge payouts after global Microsoft outage - Adelaide Now",
+      "Millions locked out as money chaos spreads - News.com.au",
+      "NAB rolls out new ‘smart’ ATMs across Australia - https://newsreel.com.au/"
     ],
     "sawater": [
       "DCWD trains upland brgys on water safety - SunStar Publishing Inc."
@@ -474,9 +497,9 @@
       "yes": 18.0
     },
     {
-      "d24h": -8.0,
+      "d24h": -7.5,
       "q": "Will Nick Stewart attend a US x Iran diplomatic meeting by December 31, 2026?",
-      "yes": 11.0
+      "yes": 11.5
     },
     {
       "d24h": 3.5,
@@ -720,19 +743,24 @@
     },
     {
       "band": "Guarded",
-      "convergence": "Only one kind of sign is showing (mobilisation). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and us nuclear command aircraft unusual.",
+      "convergence": "Two different kinds of sign are showing together (mobilisation and undersea cables). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) an",
       "domains": [
-        "Mobilisation"
+        "Mobilisation",
+        "Undersea cables"
       ],
       "key": "russia",
       "lit": [
         {
           "detail": "Poland’s Defense Ministry plans to introduce a payment of 3,250 zlotys for reservists — RMF24",
           "name": "Mobilisation / reservist reports (Russia / NATO)"
+        },
+        {
+          "detail": "Russia vessel MALVA ~72 min",
+          "name": "Russian / Chinese vessels loitering over Baltic cables"
         }
       ],
-      "score": 15,
-      "trend": "steady"
+      "score": 25,
+      "trend": "up"
     },
     {
       "band": "Low",
@@ -785,22 +813,27 @@
     },
     {
       "band": "Elevated",
-      "convergence": "Signs are converging across 4 separate areas (ai-enabled hacking, cloud services, fraud waves and synthetic media). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage ca",
+      "convergence": "Signs are converging across 5 separate areas (ai-enabled hacking, cloud services, fraud waves, markets and synthetic media). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-esp",
       "domains": [
         "AI-enabled hacking",
         "Cloud services",
         "Fraud waves",
+        "Markets",
         "Synthetic media"
       ],
       "key": "ai",
       "lit": [
         {
-          "detail": "Barracuda links cloud breach to ARTEX AI-powered cyberattack",
+          "detail": "Russian-speaking hackers launched the world's first fully autonomous AI cyberattack on European websites: Google report",
           "name": "Reports of AI-driven hacking campaigns"
         },
         {
           "detail": "FTQ official resigns over AI-generated image of Quebec MNA with black eye",
           "name": "Deepfakes of leaders or fake official alerts"
+        },
+        {
+          "detail": "Circuit Breaker Test Sets Market To 2035: Grid Modernization and Renewables Drive Demand - News and Statistics",
+          "name": "Flash crash or exchange trading halt"
         },
         {
           "detail": "Months-old bug behind global Microsoft 365 outage, executive says",
@@ -811,13 +844,13 @@
           "name": "Surge in AI voice-clone / deepfake scams in Australia"
         }
       ],
-      "score": 45,
-      "trend": "down"
+      "score": 55,
+      "trend": "up"
     }
   ],
   "sectors_relative_5d": {
     "defence_au": -4.8,
-    "defence_eu": -1.64,
+    "defence_eu": -1.54,
     "defence_us": 1.03,
     "pandemic": -3.06
   },
@@ -827,7 +860,7 @@
     "Optus": 0.0,
     "TPG": 0.0,
     "Telstra": 0.0,
-    "Vodafone": 0.0
+    "Vodafone": 4.8
   },
   "us_departure_orders": [
     "Belarus"
