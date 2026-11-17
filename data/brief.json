@@ -1,13 +1,7 @@
 {
   "about": "Short form of latest.json + indicators.json for the analysis run. Links and raw samples removed.",
   "acsc": [],
-  "aircraft_flags": {
-    "raaf": {
-      "median": 0,
-      "status": "ANOMALY",
-      "value": 5
-    }
-  },
+  "aircraft_flags": {},
   "analyst": {
     "ASPI Strategist": [
       "Treaty a recognition we need Philippines in China strategy",
@@ -28,7 +22,62 @@
       "Indonesia needs strategic redundancy, not a third pole"
     ]
   },
-  "chokepoints": {},
+  "chokepoints": {
+    "Bab el-Mandeb Strait": {
+      "avg_7d": 25.6,
+      "change_pct": -6.3,
+      "last_date": "2026-11-15",
+      "usual_7d": 27.3
+    },
+    "Lombok Strait": {
+      "avg_7d": 37.0,
+      "change_pct": -3.7,
+      "last_date": "2026-11-15",
+      "usual_7d": 38.4
+    },
+    "Luzon Strait": {
+      "avg_7d": 106.1,
+      "change_pct": 7.2,
+      "last_date": "2026-11-15",
+      "usual_7d": 99.0
+    },
+    "Malacca Strait": {
+      "avg_7d": 229.9,
+      "change_pct": 0.8,
+      "last_date": "2026-11-15",
+      "usual_7d": 228.0
+    },
+    "Strait of Hormuz": {
+      "avg_7d": 2.3,
+      "change_pct": -38.5,
+      "last_date": "2026-11-15",
+      "usual_7d": 3.7
+    },
+    "Suez Canal": {
+      "avg_7d": 46.1,
+      "change_pct": 7.3,
+      "last_date": "2026-11-15",
+      "usual_7d": 43.0
+    },
+    "Sunda Strait": {
+      "avg_7d": 29.7,
+      "change_pct": -12.2,
+      "last_date": "2026-11-15",
+      "usual_7d": 33.9
+    },
+    "Taiwan Strait": {
+      "avg_7d": 220.9,
+      "change_pct": -3.9,
+      "last_date": "2026-11-15",
+      "usual_7d": 229.9
+    },
+    "Torres Strait": {
+      "avg_7d": 11.0,
+      "change_pct": 35.1,
+      "last_date": "2026-11-15",
+      "usual_7d": 8.1
+    }
+  },
   "cisa": [
     "CISA Adds Two Known Exploited Vulnerabilities to Catalog",
     "Siemens Desigo, Gridscale",
@@ -69,22 +118,21 @@
   },
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
-    "chokepoints": "RuntimeError: PortWatch returned no rows: {\"error\": {\"code\": 499, \"message\": \"Token Required\", \"messageCode\": \"GWM_0003\"",
     "incidents": "ValueError: time data 'Info' does not match format '%Y-%m-%dT%H:%M:%SZ'",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [
     "Orange notification for tropical cyclone AKVAN-26. Population affected by Category 1 (120 km/h) wind speeds or higher is 0  (11.162 million in Tropical Storm)."
   ],
-  "generated_at": "2026-11-17T12:53:00Z",
+  "generated_at": "2026-11-17T13:08:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 19,
-    "Black Sea": 62,
+    "Baltic / Kaliningrad": 20,
+    "Black Sea": 42,
     "Israel & Eastern Mediterranean": 2,
     "Korea": 0,
-    "Persian Gulf": 8,
+    "Persian Gulf": 6,
     "South Australia": null,
-    "Sydney / NSW": null,
+    "Sydney / NSW": 0,
     "Taiwan Strait": 0
   },
   "incidents": [
@@ -93,7 +141,7 @@
       "headlines": [
         "Hackers exploit Microsoft 365 outage to launch credential phishing campaign",
         "Microsoft’s 365 outage traced to undetected software bug, gateway failover, and traffic surges",
-        "Microsoft 365 outage phishing targets user logins"
+        "Microsoft reveals three causes behind global Microsoft 365 outage"
       ],
       "severity": "Warning",
       "target": "Microsoft"
@@ -149,10 +197,10 @@
     }
   ],
   "internet_drop_pct": {
-    "China": 1.0,
+    "China": 1.2,
     "Iran": 0.0,
     "Israel": 0.0,
-    "Russia": 0.1,
+    "Russia": 0.0,
     "South Korea": 0.0,
     "Taiwan": 0.0
   },
@@ -172,15 +220,15 @@
       "Mount Lofty Ranges": "Moderate / Moderate"
     },
     "fire_danger_ok": true,
-    "fires_active": 4,
+    "fires_active": 5,
     "fuel": {
       "brent_aud": 136.4,
-      "change_pct": 1.8,
+      "change_pct": 1.9,
       "pump_cents": 2,
       "week_ago_aud": 133.9
     },
-    "grid_demand_fall_pct": 2.5,
-    "grid_demand_mw": 1279,
+    "grid_demand_fall_pct": 4.1,
+    "grid_demand_mw": 1247,
     "grid_demand_usual_mw": 1285,
     "grid_lor_level": 0,
     "nearby_incidents": [
@@ -195,7 +243,7 @@
     ],
     "outlook": {
       "air": {
-        "aqi": 41,
+        "aqi": 40,
         "peak_pm25_48h": 9,
         "pm25": 8
       },
@@ -237,20 +285,20 @@
   },
   "markets": {
     "AUD/USD": {
-      "change_pct": -0.66,
-      "price": 0.6734
+      "change_pct": -0.59,
+      "price": 0.6739
     },
     "Brent oil": {
-      "change_pct": 0.7,
-      "price": 93.09
+      "change_pct": 0.64,
+      "price": 93.03
     },
     "Gold": {
-      "change_pct": 0.22,
-      "price": 3861.5
+      "change_pct": 0.27,
+      "price": 3863.3
     },
     "VIX": {
-      "change_pct": -0.79,
-      "price": 22.73
+      "change_pct": -1.05,
+      "price": 22.67
     }
   },
   "national_shocks": {
@@ -277,8 +325,8 @@
     ],
     "aviation_halt": [
       "United Airlines rocked by ‘widespread system outage’ days after US flights grounded - News24",
-      "Fabricated airport video circulates after US issues rare ground stop - AFP Fact Check",
-      "FAA says it will rethink how it does upgrades after nationwide ground stop - NPR"
+      "Friday’s ground stop should be a wakeup call for Congress - The Hill",
+      "Fabricated airport video circulates after US issues rare ground stop - AFP Fact Check"
     ],
     "bank_outage": [
       "Huge change coming for Aussie ATMs - News.com.au",
@@ -291,9 +339,9 @@
       "Georgetown man relies on donated blood as Big Blue Crush begins - WKYT"
     ],
     "cables": [
+      "Expert urges lawmakers craft law against subsea cable sabotage - Inquirer.net",
       "Four Gulf Subsea Cable Projects Stall With the Conflict as Iran Threatens Cables Under Hormuz - Avi-Go",
-      "TM Receives MCMC Approval For RM2.7 Billion Submarine Cable Project Linking Peninsula To East Malaysia - BusinessToday Malaysia",
-      "MCMC Appoints TM Technology To Develop RM2.7 Billion Undersea Cable System - SAYS"
+      "TM Receives MCMC Approval For RM2.7 Billion Submarine Cable Project Linking Peninsula To East Malaysia - BusinessToday Malaysia"
     ],
     "chem": [
       "Iran Again Attacks Bahrain; US Intelligence Warns of Chemical Weapons Plot Against Officials - The Media Line",
@@ -301,9 +349,9 @@
       "Iran Developing Plans for 'Dirty Bomb' or Chemical Attack in D.C., Report Says - Haaretz"
     ],
     "cloud": [
+      "Months-old bug behind global Microsoft 365 outage, executive says - Human Resources Director",
       "Microsoft says months-old bug caused global outage - Information Age | ACS",
-      "Hackers exploit Microsoft 365 outage to launch credential phishing campaign - Computerworld",
-      "Microsoft’s 365 outage traced to undetected software bug, gateway failover, and traffic surges - SDxCentral"
+      "Hackers exploit Microsoft 365 outage to launch credential phishing campaign - Computerworld"
     ],
     "cyber_au": [
       "Dragos reports 20 Australian industrial ransomware incidents in Q3 2026 - Australian Cyber Security Magazine",
@@ -344,7 +392,6 @@
       "Mystery Pneumonia Death Sparks Concern; Trader Joe's Recall; OUD in Young People - MedPage Today"
     ],
     "masscas": [
-      "9 separate mass shootings across US leave 9 dead, 60 injured over the weekend - ABC News - Breaking News, Latest News and Videos",
       "Escaping gas injures 6 during drilling at L.A. County landfill - FireRescue1",
       "U.S. Soldiers Googled Hospitals After Deadly Iran Strike - USA Herald"
     ],
@@ -370,9 +417,9 @@
       "Latvia to practice military mobilization this weekend / Article - LSM"
     ],
     "sapn": [
-      "Eerie Simpsons prediction happening TODAY - Adelaide Now",
+      "Insurers dodge payouts after global Microsoft outage - Adelaide Now",
       "Millions locked out as money chaos spreads - News.com.au",
-      "Insurers dodge payouts after global Microsoft outage - Adelaide Now"
+      "NAB rolls out new ‘smart’ ATMs across Australia - https://newsreel.com.au/"
     ],
     "scams": [
       "Aussie model warns of devastating scam - News.com.au",
@@ -387,7 +434,7 @@
       "yes": 7.5
     },
     {
-      "d24h": -1.0,
+      "d24h": 0.0,
       "q": "US-Iran Final Nuclear Deal by December 31, 2026?",
       "yes": 5.5
     },
@@ -402,9 +449,9 @@
       "yes": 2.9
     },
     {
-      "d24h": 0.7,
+      "d24h": 0.6,
       "q": "US-Iran Hormuz Agreement by November 30?",
-      "yes": 4.6
+      "yes": 4.5
     },
     {
       "d24h": -1.0,
@@ -412,7 +459,7 @@
       "yes": 13.5
     },
     {
-      "d24h": -0.1,
+      "d24h": 0.0,
       "q": "US-Iran Final Nuclear Deal by November 30, 2026?",
       "yes": 1.1
     },
@@ -472,9 +519,9 @@
       "yes": 2.1
     },
     {
-      "d24h": -0.2,
+      "d24h": 0.1,
       "q": "Will the U.S. test a nuclear weapon by December 31 2026?",
-      "yes": 2.9
+      "yes": 3.0
     },
     {
       "d24h": -1.5,
@@ -482,7 +529,7 @@
       "yes": 18.0
     },
     {
-      "d24h": -5.5,
+      "d24h": 5.5,
       "q": "Will Nick Stewart attend a US x Iran diplomatic meeting by December 31, 2026?",
       "yes": 13.5
     },
@@ -719,26 +766,26 @@
       "trend": "steady"
     },
     {
-      "band": "Low",
+      "band": "Guarded",
+      "convergence": "Only one kind of sign is showing (shipping). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
+      "domains": [
+        "Shipping"
+      ],
       "key": "mideast",
-      "score": 0,
-      "trend": "steady"
+      "lit": [
+        {
+          "detail": "Strait of Hormuz -38% vs usual (2.3/day)",
+          "name": "Ship traffic through Hormuz down sharply"
+        }
+      ],
+      "score": 15,
+      "trend": "up"
     },
     {
       "band": "Low",
-      "convergence": "Only one kind of sign is showing (military air). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: missile / live-fire navigation warnings near taiwan, gps jamming over the taiwan strait and internet disruption in taiwan.",
-      "domains": [
-        "Military air"
-      ],
       "key": "taiwan",
-      "lit": [
-        {
-          "detail": "raaf 5 vs usual 0",
-          "name": "Military airlift or RAAF surge"
-        }
-      ],
-      "score": 10,
-      "trend": "steady"
+      "score": 0,
+      "trend": "down"
     },
     {
       "band": "Low",
@@ -760,7 +807,7 @@
           "name": "Mobilisation / reservist reports (Russia / NATO)"
         },
         {
-          "detail": "Russia vessel MALVA ~132 min",
+          "detail": "Russia vessel MALVA ~155 min",
           "name": "Russian / Chinese vessels loitering over Baltic cables"
         }
       ],
@@ -836,11 +883,11 @@
           "name": "Flash crash or exchange trading halt"
         },
         {
-          "detail": "Microsoft says months-old bug caused global outage",
+          "detail": "Months-old bug behind global Microsoft 365 outage, executive says",
           "name": "Major cloud or AI service outage"
         },
         {
-          "detail": "Deepfake fraud climbs for 44% of anti-fraud teams: report",
+          "detail": "Entrust reports 116 percent rise in APAC deepfake fraud activity",
           "name": "Surge in AI voice-clone / deepfake scams in Australia"
         }
       ],
@@ -850,17 +897,17 @@
   ],
   "sectors_relative_5d": {
     "defence_au": -4.8,
-    "defence_eu": -2.41,
+    "defence_eu": -2.31,
     "defence_us": 1.03,
     "pandemic": -3.06
   },
   "tankers": "normal",
   "telecom_drop_pct": {
     "Aussie Broadband": 0.0,
-    "Optus": 1.0,
+    "Optus": 1.9,
     "TPG": 0.1,
     "Telstra": 0.7,
-    "Vodafone": 4.8
+    "Vodafone": 0.0
   },
   "us_departure_orders": [
     "Belarus"
