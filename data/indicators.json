@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-18T14:29:00Z",
+  "generated_at": "2026-11-18T14:35:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -632,32 +632,39 @@
     },
     {
       "band": "Guarded",
-      "convergence": "Only one kind of sign is showing (health). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: unknown illness / pneumonia cluster reported, countries restricting medical supply exports and pandemic-response stocks outperforming (5 days).",
+      "convergence": "Two different kinds of sign are showing together (chemical weapons and health). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: unknown illness / pneumonia cluster reported, countries restricting medical supply exports and pandemic-response stocks outperforming (5 days).",
       "domains": [
+        "Chemical weapons",
         "Health"
       ],
       "key": "bio",
       "lit": [
-        {
-          "detail": "Middle East respiratory syndrome (MERS) – Qatar",
-          "domain": "Health",
-          "id": "who",
-          "name": "WHO outbreak report with a high-concern pathogen (last 14 days)",
-          "weight": 15
-        },
         {
           "detail": "Prison bus and tanker truck collide in “mass casualty incident” that injured 18",
           "domain": "Health",
           "id": "masscas",
           "name": "Mass casualty declarations (any country)",
           "weight": 5
+        },
+        {
+          "detail": "Reports: Sudanese Army Used Chemical Weapons",
+          "domain": "Chemical weapons",
+          "id": "chem",
+          "name": "Chemical / nerve-agent attack or mass poisoning reported",
+          "weight": 15
         }
       ],
       "name": "Pandemic, biological or chemical emergency",
       "sa_impact": "Health system strain, possible lockdowns and border closures, and shortages of medicines and protective equipment, which Australia mostly imports.",
       "score": 20,
-      "trend": "down",
+      "trend": "steady",
       "unlit": [
+        {
+          "domain": "Health",
+          "id": "who",
+          "name": "WHO outbreak report with a high-concern pathogen (last 14 days)",
+          "weight": 15
+        },
         {
           "domain": "Health",
           "id": "illness",
@@ -687,12 +694,6 @@
           "id": "vix",
           "name": "Market fear index above 30",
           "weight": 10
-        },
-        {
-          "domain": "Chemical weapons",
-          "id": "chem",
-          "name": "Chemical / nerve-agent attack or mass poisoning reported",
-          "weight": 15
         },
         {
           "domain": "Health",
