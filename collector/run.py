@@ -23,6 +23,7 @@ import maritime  # noqa: E402
 import home  # noqa: E402
 import localsa  # noqa: E402
 import foresight  # noqa: E402
+import campaigns  # noqa: E402
 import satellites  # noqa: E402
 import incidents  # noqa: E402
 import shocks  # noqa: E402
@@ -429,7 +430,8 @@ def save_brief():
     """Short version of latest.json + indicators.json for the analysis run (see brief.py)."""
     try:
         import brief
-        save_json("data/brief.json", brief.build(load_json("data/latest.json", {}), load_json("data/indicators.json", {})))
+        save_json("data/brief.json", brief.build(load_json("data/latest.json", {}), load_json("data/indicators.json", {}),
+                                                   load_json("data/campaigns.json", {})))
     except Exception as e:  # noqa: BLE001 - the brief must never stop the check
         print(f"brief failed: {type(e).__name__}: {e}")
 
@@ -596,6 +598,17 @@ def main():
         health["incidents"] = {"ok": True}
     except Exception as e:  # noqa: BLE001 - triage must never stop the rest of the check
         health["incidents"] = {"ok": False, "error": f"{type(e).__name__}: {e}"[:300]}
+
+    # Cyber campaign tracker: link small cyber incidents into suspected campaigns (board and analysis only, no push)
+    try:
+        ledger = load_json("data/cyber_ledger.json", [])
+        campaigns.update_ledger(ledger, campaigns.harvest((results.get("news_watch") or {}).get("watch"),
+                                                           results.get("cisa"), now), now)
+        save_json("data/cyber_ledger.json", ledger)
+        save_json("data/campaigns.json", campaigns.build(ledger, now, load_json("data/campaigns.json", {})))
+        health["campaigns"] = {"ok": True}
+    except Exception as e:  # noqa: BLE001 - the tracker must never stop the rest of the check
+        health["campaigns"] = {"ok": False, "error": f"{type(e).__name__}: {e}"[:300]}
 
     # Event journal and learned patterns
     journal = load_jsonl("data/events.jsonl")

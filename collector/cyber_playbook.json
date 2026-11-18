@@ -1,0 +1,356 @@
+{
+  "_comment": "Cyber campaign tracker (collector/campaigns.py). Small cyber incidents are linked into suspected campaigns and read through an adversary lens: if an enemy is doing this on purpose, what is it trying to achieve, what would it hit next, and what would it mean for the family. Every output is a hypothesis to test, never a confirmed attribution.",
+  "ledger_days": 45,
+  "link_days": 14,
+  "incident_merge_hours": 48,
+  "allies": [
+    "Australia",
+    "United States",
+    "United Kingdom",
+    "New Zealand",
+    "Canada",
+    "Japan",
+    "South Korea",
+    "Taiwan",
+    "Israel",
+    "Europe"
+  ],
+  "countries": {
+    "Australia": {
+      "re": "\\b(australia|australian|aussie|nsw|victoria|queensland|tasmania|adelaide|sydney|melbourne|brisbane|perth|canberra|darwin|hobart)\\b"
+    },
+    "New Zealand": {
+      "re": "\\b(new zealand|nz|kiwi|auckland|wellington)\\b"
+    },
+    "United States": {
+      "re": "\\b(united states|american|america's|americans|washington|texas|california|new york|florida|midwest|pentagon|federal)\\b",
+      "cs": "\\b(US|U\\.S\\.|USA)\\b"
+    },
+    "United Kingdom": {
+      "re": "\\b(united kingdom|britain|british|england|scotland|wales|london|nhs)\\b",
+      "cs": "\\b(UK|U\\.K\\.)\\b"
+    },
+    "Canada": {
+      "re": "\\b(canada|canadian|ontario|quebec|toronto)\\b"
+    },
+    "Europe": {
+      "re": "\\b(europe|european|eu|france|french|germany|german|denmark|danish|netherlands|dutch|belgium|poland|polish|italy|italian|spain|spanish|sweden|swedish|norway|norwegian|finland|finnish|ireland|irish|austria|switzerland|swiss|czech|estonia|latvia|lithuania|romania|moldova|ukraine|ukrainian)\\b"
+    },
+    "Japan": {
+      "re": "\\b(japan|japanese|tokyo)\\b"
+    },
+    "South Korea": {
+      "re": "\\b(south korea|korean|seoul)\\b"
+    },
+    "Taiwan": {
+      "re": "\\b(taiwan|taiwanese|taipei)\\b"
+    },
+    "Israel": {
+      "re": "\\b(israel|israeli)\\b"
+    },
+    "Gulf states": {
+      "re": "\\b(saudi|uae|emirates|qatar|bahrain|kuwait|oman|dubai|abu dhabi)\\b"
+    },
+    "Asia": {
+      "re": "\\b(singapore|india|indian|philippines|malaysia|indonesia|vietnam|thailand)\\b"
+    }
+  },
+  "sectors": {
+    "water": {
+      "name": "water supply",
+      "re": "\\b(water (utility|utilities|station|stations|plant|plants|system|systems|treatment|supply)|wastewater|dam|dams|reservoir)\\b",
+      "for_us": "Tampering with water treatment usually ends in boil-water notices or supply cuts for a few days.",
+      "action": {
+        "action": "Keep two days of bottled water for everyone, and the pets.",
+        "reason": "It covers a boil-water notice or a short supply cut while the problem is fixed."
+      }
+    },
+    "food": {
+      "name": "food and cold storage",
+      "re": "\\b(freezers?|fridges?|refrigerat\\w*|cold[- ]?(chain|storage)|supermarkets?|grocer\\w*|food|meat|dairy|farm\\w*|agricultur\\w*)\\b",
+      "for_us": "Spoiled chilled and frozen stock means gaps on supermarket shelves for days.",
+      "action": {
+        "action": "Keep a week of pantry food that needs no fridge.",
+        "reason": "It rides out empty chilled and frozen shelves without joining any panic buying."
+      }
+    },
+    "finance": {
+      "name": "banks and payments",
+      "re": "\\b(banks?|banking|payments?|visa(?! (cap|caps|cuts?|stays?|holders?|policy|rules|programs?|schemes?|applications?|workers?|changes?))|mastercard|eftpos|atms?|zelle|paypal|card network|stock exchange|crypto\\w*)\\b",
+      "for_us": "Card payments, EFTPOS or online banking can be down for hours.",
+      "action": {
+        "action": "Keep some cash at home.",
+        "reason": "Cash still buys fuel and food when cards and banking apps are down."
+      }
+    },
+    "energy": {
+      "name": "power and gas",
+      "re": "\\b(power (grid|plant|station|company|utility)|electric\\w*|grid|energy (company|firm|sector|infrastructure)|gas (pipeline|company|network)|substations?|solar inverters?)\\b",
+      "for_us": "Power cuts, sometimes over a wide area.",
+      "action": {
+        "action": "Check the torch, power banks and battery radio work.",
+        "reason": "They keep you informed and lit if the power goes out."
+      }
+    },
+    "fuel": {
+      "name": "fuel and shipping",
+      "re": "\\b(tankers?|ships?|shipping|vessels?|ports?|pipelines?|refiner\\w*|fuel|oil (company|terminal)|maritime)\\b",
+      "for_us": "Delays in fuel deliveries and higher prices at the bowser.",
+      "action": {
+        "action": "Keep the car at least half full.",
+        "reason": "Fuel deliveries are the first thing to slip when ports or ships are disrupted."
+      }
+    },
+    "telecom": {
+      "name": "phones and internet",
+      "re": "\\b(telecom\\w*|telcos?|mobile networks?|phone networks?|internet (provider|service)|isps?|undersea cables?|subsea cables?|broadband|dns|satellite)\\b",
+      "for_us": "Phones and internet could drop out, including emergency calls on one network.",
+      "action": {
+        "action": "Agree a family meeting point and save key numbers on paper.",
+        "reason": "If calls and messages fail, everyone still knows where to go."
+      }
+    },
+    "health": {
+      "name": "hospitals and health",
+      "re": "\\b(hospitals?|health ?care|medical|blood bank|blood service|pharmac\\w*|clinics?|patients?|ambulance)\\b",
+      "for_us": "Delays at hospitals, cancelled appointments and pharmacy problems.",
+      "action": {
+        "action": "Keep a few weeks of regular medicines.",
+        "reason": "Pharmacy and hospital systems can be slow to recover after an attack."
+      }
+    },
+    "government": {
+      "name": "government and defence",
+      "re": "\\b(government|ministry|department|agency|council|military|defen[cs]e|army|navy|air force|base|bases|election|parliament)\\b",
+      "for_us": "Usually no direct effect, but it can bring fake official messages and scams.",
+      "action": {
+        "action": "Only trust official messages you look up yourself, not links sent to you.",
+        "reason": "Attackers often follow up with fake 'official' texts and emails."
+      }
+    },
+    "transport": {
+      "name": "flights and transport",
+      "re": "\\b(airports?|airlines?|flights?|aviation|air traffic|rail\\w*|trains?|metro|trucking|logistics|freight)\\b",
+      "for_us": "Flight and transport delays, and slower deliveries.",
+      "action": {
+        "action": "Check flights and deliveries before relying on them this week.",
+        "reason": "Transport systems often take days to fully recover."
+      }
+    },
+    "it": {
+      "name": "software and online services",
+      "re": "\\b(cloud|software|supply[- ]chain|vendor|saas|microsoft|google|amazon|aws|apple|okta|salesforce|optimizely|websites?|platform|it provider|managed service)\\b",
+      "for_us": "Apps and websites you use may be down, or quietly compromised.",
+      "action": {
+        "action": "Don't follow login or payment links in emails or texts; open the app or site yourself.",
+        "reason": "Breaches of software suppliers are often followed by convincing scam messages."
+      }
+    }
+  },
+  "techniques": {
+    "physical": {
+      "name": "tampering with physical equipment",
+      "weight": 20,
+      "re": "\\b(plc|plcs|scada|industrial control|ics|operational technology|ot systems?|controllers?|control panels?|temperatures?|valves?|pumps?|physical (impact|damage))\\b"
+    },
+    "wiper": {
+      "name": "destructive (wiper) attacks",
+      "weight": 20,
+      "re": "\\b(wiper|wiped|destructive|sabotage|bricked|erased)\\b"
+    },
+    "supply_chain": {
+      "name": "hacking a supplier to reach many victims",
+      "weight": 12,
+      "re": "\\b(supply[- ]chain|third[- ]party|vendor|provider|managed service|msp)\\b"
+    },
+    "ransomware": {
+      "name": "ransomware",
+      "weight": 10,
+      "re": "\\b(ransomware|ransom|extortion|encrypted)\\b"
+    },
+    "ddos": {
+      "name": "overloading websites (DDoS)",
+      "weight": 8,
+      "re": "\\b(ddos|denial[- ]of[- ]service|flood\\w* with traffic|knocked offline)\\b"
+    },
+    "ai": {
+      "name": "AI-driven hacking",
+      "weight": 8,
+      "re": "\\b(ai[- ](powered|driven|enabled|orchestrated|agents?)|autonomous ai|artificial intelligence)\\b"
+    },
+    "social": {
+      "name": "tricking staff (phishing and fake calls)",
+      "weight": 6,
+      "re": "\\b(phishing|vishing|social engineering|impersonat\\w*|deepfake|fake calls?)\\b"
+    },
+    "breach": {
+      "name": "stealing data",
+      "weight": 5,
+      "re": "\\b(breach\\w*|data (theft|leak|stolen)|leaked|stole|exfiltrat\\w*)\\b"
+    },
+    "intrusion": {
+      "name": "breaking in (method not reported)",
+      "weight": 4,
+      "re": "\\b(hack\\w*|cyber[- ]?attack\\w*|cyber[- ]?incident|intrusion|compromis\\w*|infiltrat\\w*)\\b"
+    },
+    "outage": {
+      "name": "unexplained outage",
+      "weight": 2,
+      "re": "\\b(outages?|offline|(goes|went|is|are|was|were|been|knocked) down|down for|disrupt\\w*|crash(es|ed)?|glitch\\w*)\\b"
+    }
+  },
+  "actors": {
+    "Iran": {
+      "kind": "state",
+      "re": "\\b(iran|iranian|cyberav3ngers|cyber ?av3ngers|handala|irgc|muddywater|apt ?3[345]|charming kitten|pioneer kitten|pro-iranian)\\b",
+      "motive": "Hit back over the Gulf war and the US blockade by showing it can reach into allies' everyday services, without starting a shooting war with them.",
+      "typical": [
+        "water",
+        "food",
+        "fuel",
+        "energy",
+        "finance",
+        "health"
+      ],
+      "next": [
+        "Water and cold-storage systems in other allied countries, including Australia",
+        "Fuel shipping and ports",
+        "Overloading bank and government websites",
+        "Destructive wiper attacks if US or Israeli strikes resume"
+      ],
+      "au_exposure": "Australia is a close US ally and expelled Iran's ambassador in 2025. Australian water utilities and businesses use the same internet-connected controllers that have been hit overseas.",
+      "escalation": [
+        "the same kind of attack reported in Australia or New Zealand",
+        "attacks that destroy data or damage equipment rather than just disrupt",
+        "an official warning from the Australian Cyber Security Centre naming Iran",
+        "new US or Israeli strikes on Iran"
+      ]
+    },
+    "China": {
+      "kind": "state",
+      "re": "\\b(china|chinese|volt typhoon|salt typhoon|flax typhoon|linen typhoon|apt ?4[01]|prc)\\b",
+      "motive": "Quietly plant footholds in allies' power, water, ports and phone networks, ready to switch them off if there is a war over Taiwan.",
+      "typical": [
+        "telecom",
+        "energy",
+        "water",
+        "fuel",
+        "government",
+        "it"
+      ],
+      "next": [
+        "Phone networks and internet providers",
+        "Power and water utilities",
+        "Ports and shipping",
+        "Defence suppliers"
+      ],
+      "au_exposure": "Australia's spy agencies have warned that Chinese state hackers have been found inside Australian infrastructure networks. This kind of campaign is designed to stay hidden until a crisis.",
+      "escalation": [
+        "a warning about footholds found in Australian power, water or phone networks",
+        "rising tension or military drills around Taiwan",
+        "outages at several allied phone or power companies at once"
+      ]
+    },
+    "Russia": {
+      "kind": "state",
+      "re": "\\b(russia|russian|russians|sandworm|apt ?2[89]|fancy bear|cozy bear|noname057|killnet|cyber army of russia|gru)\\b",
+      "motive": "Pressure Europe and NATO over Ukraine with sabotage and disruption, and scare the public.",
+      "typical": [
+        "energy",
+        "water",
+        "government",
+        "transport",
+        "telecom"
+      ],
+      "next": [
+        "European power and water utilities",
+        "Airports and rail",
+        "Government websites (overload attacks)",
+        "Undersea cables"
+      ],
+      "au_exposure": "Australia supports Ukraine, so government websites and some businesses have been targeted before, mostly with nuisance attacks.",
+      "escalation": [
+        "overload attacks on Australian government or bank websites",
+        "attacks that damage equipment in Europe",
+        "a NATO-Russia clash"
+      ]
+    },
+    "North Korea": {
+      "kind": "state",
+      "re": "\\b(north korea\\w*|dprk|lazarus|kimsuky|andariel)\\b",
+      "motive": "Steal money, mostly cryptocurrency, to fund weapons programs.",
+      "typical": [
+        "finance",
+        "it"
+      ],
+      "next": [
+        "Crypto exchanges and wallets",
+        "Banks and payment companies",
+        "Software developers (fake job offers)"
+      ],
+      "au_exposure": "Mainly a risk to Australians who hold crypto, and to tech workers targeted with fake job offers.",
+      "escalation": [
+        "a large theft from an exchange Australians use",
+        "fake job offers aimed at Australian tech workers"
+      ]
+    },
+    "Criminal gangs": {
+      "kind": "criminal",
+      "re": "\\b(shinyhunters|scattered spider|lockbit|qilin|akira|blackcat|alphv|cl0p|clop|play ransomware|medusa|ransomware gang|cybercriminals?|extortion gang)\\b",
+      "motive": "Money: ransom payments and selling stolen data.",
+      "typical": [
+        "it",
+        "health",
+        "finance",
+        "food"
+      ],
+      "next": [
+        "Other customers of the same software suppliers",
+        "Hospitals and retailers",
+        "Data dumps followed by scam waves"
+      ],
+      "au_exposure": "Australian companies are hit by the same gangs regularly; stolen customer data fuels scam calls and texts.",
+      "escalation": [
+        "an Australian company named as a victim",
+        "your details in a breach notice",
+        "a wave of scam messages using a brand name"
+      ]
+    },
+    "Hacktivists": {
+      "kind": "hacktivist",
+      "re": "\\b(hacktivists?|anonymous sudan|cyber army|pro-palestinian hackers|pro-russian hackers)\\b",
+      "motive": "Publicity for a cause, often working alongside a state.",
+      "typical": [
+        "government",
+        "finance",
+        "transport",
+        "it"
+      ],
+      "next": [
+        "Overloading government, bank and airport websites",
+        "Defacing websites"
+      ],
+      "au_exposure": "Australian government and council websites are regular targets of nuisance attacks.",
+      "escalation": [
+        "attacks shifting from websites to equipment",
+        "a state publicly backing the group"
+      ]
+    }
+  },
+  "unknown": {
+    "motive": "If this is deliberate, an attacker may be testing defences in one sector across several countries before a bigger strike, or wearing it down in the background of a wider conflict.",
+    "next": [
+      "The same kind of target in more allied countries",
+      "A bigger attack on the same sector"
+    ],
+    "au_exposure": "Australia uses the same software and equipment as other allied countries, so a technique that works overseas often works here.",
+    "escalation": [
+      "the same pattern showing up in Australia",
+      "a government naming who is behind it",
+      "attacks becoming destructive"
+    ]
+  },
+  "official_re": "\\b(cisa|fbi|nsa|ncsc|asd|acsc|australian signals directorate|cyber security centre|five eyes|homeland security|joint (advisory|warning|statement)|officials? (say|said|warn\\w*|suspect\\w*|blame\\w*))\\b",
+  "attributed_re": "\\b(attribut\\w*|blame[sd]?|linked to|behind the|responsible for|suspected|state-backed|state-sponsored)\\b",
+  "not_event_re": "\\?\\s*$|\\b(how to|what to know|explained|explainer|facts|webinar|podcast|opinion|could|might|may be|would|ranking|top \\d+|best |lessons|predictions?|forecast|market size|report finds|study|survey|trends?|laws?|bills?|lawmakers|legislation|sues|lawsuit|policy|regulat\\w*|percent|rise in|climbs|rumou?rs?|hoax\\w*)\\b"
+}

@@ -619,17 +619,32 @@
     {
       "key": "cyber_state",
       "name": "State hackers & pre-positioning",
-      "q": "(\"Volt Typhoon\" OR \"Salt Typhoon\" OR Sandworm OR CyberAv3ngers OR \"Iranian hackers\" OR \"Iran-linked hackers\" OR \"pro-Iranian hackers\" OR \"pre-positioning\" OR \"state-sponsored hackers\" OR \"wiper malware\" OR \"CISA and FBI\") (infrastructure OR telecom OR Australia OR grid OR water OR bank OR tanker OR refrigeration OR hospital)"
+      "q": "(\"Volt Typhoon\" OR \"Salt Typhoon\" OR Sandworm OR CyberAv3ngers OR \"Iranian hackers\" OR \"Iran-linked hackers\" OR \"pro-Iranian hackers\" OR \"pre-positioning\" OR \"state-sponsored hackers\" OR \"wiper malware\" OR \"CISA and FBI\") (infrastructure OR telecom OR Australia OR grid OR water OR bank OR tanker OR refrigeration OR hospital)",
+      "limit": 15
+    },
+    {
+      "key": "cyber_ot",
+      "name": "Attacks on equipment and essential services",
+      "q": "(hackers OR hacked OR cyberattack OR \"cyber attack\" OR \"cyber incident\") (\"water utility\" OR \"water system\" OR wastewater OR dam OR pipeline OR refrigeration OR freezers OR \"cold storage\" OR PLC OR \"industrial control\" OR port OR tanker OR rail OR hospital OR \"blood bank\" OR grid)",
+      "limit": 15
+    },
+    {
+      "key": "cyber_attrib",
+      "name": "Official cyber warnings and attribution",
+      "q": "(CISA OR FBI OR NCSC OR \"Australian Cyber Security Centre\" OR ASD OR \"Five Eyes\") (hackers OR cyberattack OR \"cyber attack\" OR \"cyber threat\") (warns OR advisory OR attributed OR blames OR linked)",
+      "limit": 15
     },
     {
       "key": "cyber_au",
       "name": "Australian cyber incidents",
-      "q": "Australia (\"cyber attack\" OR cyberattack OR ransomware OR \"data breach\" OR DDoS OR \"cyber incident\")"
+      "q": "Australia (\"cyber attack\" OR cyberattack OR ransomware OR \"data breach\" OR DDoS OR \"cyber incident\")",
+      "limit": 15
     },
     {
       "key": "cyber_supply",
       "name": "Supply-chain & mass exploitation",
-      "q": "(\"supply chain attack\" OR \"mass exploitation\" OR \"zero-day\" OR \"actively exploited\") (thousands OR worldwide OR critical)"
+      "q": "(\"supply chain attack\" OR \"mass exploitation\" OR \"zero-day\" OR \"actively exploited\") (thousands OR worldwide OR critical)",
+      "limit": 15
     },
     {
       "key": "cables",
@@ -649,7 +664,8 @@
     {
       "key": "ai_hack",
       "name": "AI-enabled hacking",
-      "q": "(\"AI-powered\" OR \"AI-orchestrated\" OR \"AI agents\" OR \"autonomous AI\" OR \"AI-driven\") (\"cyberattack\" OR hacking OR \"cyber attack\" OR hackers)"
+      "q": "(\"AI-powered\" OR \"AI-orchestrated\" OR \"AI agents\" OR \"autonomous AI\" OR \"AI-driven\") (\"cyberattack\" OR hacking OR \"cyber attack\" OR hackers)",
+      "limit": 15
     },
     {
       "key": "deepfake",

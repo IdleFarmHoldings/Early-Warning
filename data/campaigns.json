@@ -1,0 +1,234 @@
+{
+  "campaigns": [
+    {
+      "actor": "Iran",
+      "actor_kind": "state",
+      "attributed_officially": false,
+      "band": "Strong",
+      "countries": [
+        "Europe",
+        "United States"
+      ],
+      "first_seen": "2026-11-04T12:00:00Z",
+      "hypothesis": {
+        "actions": [
+          {
+            "action": "Keep two days of bottled water for everyone, and the pets.",
+            "reason": "It covers a boil-water notice or a short supply cut while the problem is fixed."
+          },
+          {
+            "action": "Keep a week of pantry food that needs no fridge.",
+            "reason": "It rides out empty chilled and frozen shelves without joining any panic buying."
+          }
+        ],
+        "australia": "Australia is a close US ally and expelled Iran's ambassador in 2025. Australian water utilities and businesses use the same internet-connected controllers that have been hit overseas.",
+        "confirm_if": [
+          "the same kind of attack reported in Australia or New Zealand",
+          "attacks that destroy data or damage equipment rather than just disrupt",
+          "an official warning from the Australian Cyber Security Centre naming Iran",
+          "new US or Israeli strikes on Iran"
+        ],
+        "for_us": [
+          "Tampering with water treatment usually ends in boil-water notices or supply cuts for a few days.",
+          "Spoiled chilled and frozen stock means gaps on supermarket shelves for days.",
+          "Delays in fuel deliveries and higher prices at the bowser."
+        ],
+        "if_deliberate": "If this is a deliberate campaign by Iran, the likely aim is: Hit back over the Gulf war and the US blockade by showing it can reach into allies' everyday services, without starting a shooting war with them.",
+        "next_targets": [
+          "Water and cold-storage systems in other allied countries, including Australia",
+          "Fuel shipping and ports",
+          "Overloading bank and government websites",
+          "Destructive wiper attacks if US or Israeli strikes resume",
+          "Not hit yet in this campaign but typical for Iran: power and gas; banks and payments"
+        ],
+        "other_explanations": "These may not be connected: criminal gangs, faulty systems, or reporters linking separate events can look the same. No government has confirmed this as one campaign.",
+        "pattern": "6 incidents over 9 days: tampering with physical equipment, hacking a supplier to reach many victims and breaking in (method not reported) against food and cold storage, fuel and shipping, government and defence, hospitals and health and water supply in Europe and United States."
+      },
+      "incidents": [
+        {
+          "countries": [
+            "United States"
+          ],
+          "date": "2026-11-13",
+          "how": "tampering with physical equipment",
+          "kind": "attack",
+          "link": "https://www.yahoo.com/news/us/articles/iran-expands-cyberattacks-greater-real-132640639.html",
+          "linked_by": "named attacker",
+          "reports": 1,
+          "sector": "water supply",
+          "title": "Suspected Iranian hackers lock operators out of control panels at small US water stations"
+        },
+        {
+          "countries": [
+            "United States"
+          ],
+          "date": "2026-11-13",
+          "how": "breaking in (method not reported)",
+          "kind": "attack",
+          "link": "https://www.yahoo.com/news/us/articles/iran-expands-cyberattacks-greater-real-132640639.html",
+          "linked_by": "named attacker",
+          "reports": 1,
+          "sector": "fuel and shipping",
+          "title": "Hackers hit networks on two Texas-bound energy tankers; US officials probe Iranian link"
+        },
+        {
+          "countries": [
+            "Europe"
+          ],
+          "date": "2026-11-13",
+          "how": "tampering with physical equipment",
+          "kind": "attack",
+          "link": "https://www.yahoo.com/news/us/articles/iran-expands-cyberattacks-greater-real-132640639.html",
+          "linked_by": "named attacker",
+          "reports": 1,
+          "sector": "food and cold storage",
+          "title": "US and French officials suspect Iran in attacks that raised European supermarket freezer temperatures"
+        },
+        {
+          "countries": [
+            "United States",
+            "Europe"
+          ],
+          "date": "2026-11-05",
+          "how": "tampering with physical equipment",
+          "kind": "attack",
+          "link": "https://techcrunch.com/2026/11/05/u-s-government-warns-of-ongoing-cyber-threat-amid-mass-hacks-of-industrial-retail-and-military-freezers/",
+          "linked_by": "same pattern",
+          "reports": 1,
+          "sector": "food and cold storage",
+          "title": "US cyber agencies warn of ongoing hacks of industrial, retail and military freezers"
+        },
+        {
+          "countries": [
+            "United States"
+          ],
+          "date": "2026-11-05",
+          "how": "tampering with physical equipment",
+          "kind": "attack",
+          "link": "https://techcrunch.com/2026/11/05/u-s-government-warns-of-ongoing-cyber-threat-amid-mass-hacks-of-industrial-retail-and-military-freezers/",
+          "linked_by": "same pattern",
+          "reports": 1,
+          "sector": "government and defence",
+          "title": "Pentagon investigates freezer malfunctions at military bases as suspected cyberattack"
+        },
+        {
+          "countries": [
+            "Europe"
+          ],
+          "date": "2026-11-04",
+          "how": "tampering with physical equipment",
+          "kind": "attack",
+          "link": "https://techcrunch.com/2026/11/05/u-s-government-warns-of-ongoing-cyber-threat-amid-mass-hacks-of-industrial-retail-and-military-freezers/",
+          "linked_by": "same pattern",
+          "reports": 1,
+          "sector": "hospitals and health",
+          "title": "French blood service stops cyber incident at its refrigeration equipment supplier"
+        }
+      ],
+      "incidents_7d": 3,
+      "key": "iran",
+      "last_seen": "2026-11-13T12:00:00Z",
+      "official_warning": true,
+      "score": 85,
+      "sectors": [
+        "food and cold storage",
+        "fuel and shipping",
+        "government and defence",
+        "hospitals and health",
+        "water supply"
+      ],
+      "techniques": [
+        "tampering with physical equipment",
+        "hacking a supplier to reach many victims",
+        "breaking in (method not reported)"
+      ],
+      "title": "Suspected Iran campaign",
+      "touches_australia": false,
+      "trend": "steady"
+    },
+    {
+      "actor": "Criminal gangs",
+      "actor_kind": "criminal",
+      "attributed_officially": false,
+      "band": "Possible",
+      "countries": [
+        "Europe",
+        "United States"
+      ],
+      "first_seen": "2026-11-16T09:00:00Z",
+      "hypothesis": {
+        "actions": [
+          {
+            "action": "Don't follow login or payment links in emails or texts; open the app or site yourself.",
+            "reason": "Breaches of software suppliers are often followed by convincing scam messages."
+          }
+        ],
+        "australia": "Australian companies are hit by the same gangs regularly; stolen customer data fuels scam calls and texts.",
+        "confirm_if": [
+          "an Australian company named as a victim",
+          "your details in a breach notice",
+          "a wave of scam messages using a brand name"
+        ],
+        "for_us": [
+          "Apps and websites you use may be down, or quietly compromised."
+        ],
+        "if_deliberate": "If this is a deliberate campaign by Criminal gangs, the likely aim is: Money: ransom payments and selling stolen data.",
+        "next_targets": [
+          "Other customers of the same software suppliers",
+          "Hospitals and retailers",
+          "Data dumps followed by scam waves",
+          "Not hit yet in this campaign but typical for Criminal gangs: hospitals and health; banks and payments; food and cold storage"
+        ],
+        "other_explanations": "These may not be connected: criminal gangs, faulty systems, or reporters linking separate events can look the same. No government has confirmed this as one campaign.",
+        "pattern": "2 incidents over 1 day: hacking a supplier to reach many victims, tricking staff (phishing and fake calls) and stealing data against software and online services in Europe and United States."
+      },
+      "incidents": [
+        {
+          "countries": [],
+          "date": "2026-11-17",
+          "how": "hacking a supplier to reach many victims",
+          "kind": "attack",
+          "link": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxQcGdyQzMxb0Z3VWpQaTlnTU9IVGZpajRjVERlN1B5YzYyMmd1blBEc1hDY3NqU3RDWFprN0lENEdSeXZ2YUpuOTRVMjVKNTFsNE1qZUZLWkVVQlFxRGNoN0ZrSVktSjFHRlpBb0FfczctUmFsa1hJTnBQanRaWXBneXR5M2tTczYyM25xbW1qQzdPTzhYaGlzX3pwN0pTNGFMWUcya21CbXQ2UEVtRnE5TkFrWFQxMzQwTE5FZWhXU2ZWMDBseFh0dEJvMUJVOVNBNGs4UUd5S3hQRXhoMGwtVlpJY3NuM3VYMk9pMGtxUQ?oc=5",
+          "linked_by": "same pattern",
+          "reports": 1,
+          "sector": "software and online services",
+          "title": "Supply chain attack compromises nearly 180 major brands, including BBC, CNN, IKEA and Zoom, through Optimizely"
+        },
+        {
+          "countries": [
+            "United States",
+            "Europe"
+          ],
+          "date": "2026-11-16",
+          "how": "hacking a supplier to reach many victims",
+          "kind": "attack",
+          "link": "https://www.securityweek.com/ad-tech-company-optimizely-confirms-cyberattack/amp/",
+          "linked_by": "named attacker",
+          "reports": 1,
+          "sector": "software and online services",
+          "title": "Ad-tech firm Optimizely confirms breach after fake phone call; big-brand websites affected"
+        }
+      ],
+      "incidents_7d": 2,
+      "key": "criminal-gangs",
+      "last_seen": "2026-11-17T15:45:58Z",
+      "official_warning": false,
+      "score": 45,
+      "sectors": [
+        "software and online services"
+      ],
+      "techniques": [
+        "hacking a supplier to reach many victims",
+        "tricking staff (phishing and fake calls)",
+        "stealing data",
+        "breaking in (method not reported)"
+      ],
+      "title": "Criminal gangs: attacks on software and online services",
+      "touches_australia": false,
+      "trend": "up"
+    }
+  ],
+  "generated_at": "2026-11-18T04:09:31Z",
+  "note": "Small cyber incidents linked into suspected campaigns and read as if deliberate. Scores (0-100) show how much a cluster looks like a deliberate campaign, not a probability or a confirmed finding.",
+  "reports_in_ledger": 30
+}

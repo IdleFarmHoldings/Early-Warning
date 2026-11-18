@@ -17,7 +17,7 @@ def _titles(items, n, key="title"):
     return [i.get(key) for i in (items or [])[:n] if isinstance(i, dict) and i.get(key)]
 
 
-def build(latest, indicators):
+def build(latest, indicators, campaigns=None):
     L = latest or {}
     loc = L.get("local_sa") or {}
     ls = loc.get("summary") or {}
@@ -52,6 +52,14 @@ def build(latest, indicators):
                        "attack_reported": bool(i.get("attack")),
                        "headlines": _titles(i.get("headlines"), 3)}
                       for i in sorted(L.get("incidents") or [], key=lambda i: not i.get("attack"))],
+        "cyber_campaigns": [{**{k: c.get(k) for k in ("title", "actor", "score", "band", "trend", "countries", "sectors",
+                                                     "techniques", "incidents_7d", "touches_australia", "official_warning",
+                                                     "attributed_officially")},
+                             "incidents": [f"{i['date']} {'/'.join(i['countries']) or '?'}: {i['title']} ({i['linked_by']})"
+                                           for i in (c.get("incidents") or [])[:5]],
+                             "hypothesis": {k: (c.get("hypothesis") or {}).get(k) for k in ("if_deliberate", "next_targets",
+                                                                                            "confirm_if", "other_explanations")}}
+                            for c in ((campaigns or {}).get("campaigns") or [])[:4]],
         "us_levels_au_relevant": L.get("us_levels_au_relevant"),
         "us_departure_orders": L.get("us_departure_orders"),
         "gdacs_orange_red": _titles(L.get("gdacs_current_orange_red"), 5),

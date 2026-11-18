@@ -255,6 +255,12 @@ details summary{cursor:pointer;font-size:.84rem;color:var(--accent)}
   </section>
 
   <section>
+    <h2 style="margin-bottom:4px">Cyber attacks: joining the dots</h2>
+    <p class="sec-note">Small cyber attacks around the world, linked into possible campaigns and read as if an enemy is doing them on purpose: what they might be after, what they could hit next, and what it would mean for us. These are ideas to test, not proven facts. Tap one for the detail.</p>
+    <div class="events" id="campaigns"><p class="empty">Loading…</p></div>
+  </section>
+
+  <section>
     <h2 style="margin-bottom:4px">What could happen next</h2>
     <p class="sec-note">The chance each of these gets serious enough to affect us in the next 30 days. This is a judgement, not a certainty. Tap one for what it would mean and what to do.</p>
     <div class="events" id="concerns"><p class="empty">Loading…</p></div>
@@ -437,6 +443,32 @@ function renderWatching(l){
     : `<p class="empty">Nothing unusual right now.</p>`;
 }
 
+function renderCampaigns(cj){
+  const box = $("campaigns"); if(!box) return;
+  const list = (cj && cj.campaigns) || [];
+  if(!list.length){ box.innerHTML = `<p class="empty">No linked cyber campaigns right now. Single incidents are listed under What has actually happened.</p>`; return; }
+  const open = new Set([...box.querySelectorAll("details[open]")].map(d=>d.dataset.key));
+  const col = b => b==="Strong"?lc(4):b==="Likely"?lc(3):lc(2);
+  const tr = t => ({up:" ▲",down:" ▼"})[t]||"";
+  const ul = xs => (xs||[]).length ? `<ul>${xs.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>` : "";
+  box.innerHTML = list.map(c=>{ const h = c.hypothesis||{};
+    const one = `${c.incidents_7d||0} incident${c.incidents_7d===1?"":"s"} in the last week · ${(c.countries||[]).join(", ")||"places not reported"}${c.touches_australia?" · includes Australia/NZ":""}${c.attributed_officially?" · officially attributed":c.official_warning?" · official warning issued":""}`;
+    const incs = (c.incidents||[]).map(i=>{ const u = safeUrl(i.link);
+      return `<div class="item" style="padding:6px 0"><span class="w">${esc(i.date)} · ${esc((i.countries||[]).join(", ")||"place not reported")} · ${esc(i.sector)} · ${esc(i.how)}${i.linked_by==="same pattern"?` <span class="tag">linked by pattern</span>`:""}</span><p>${u?`<a href="${esc(u)}" rel="noopener" target="_blank">${esc(i.title)}</a>`:esc(i.title)}</p></div>`; }).join("");
+    return `<details class="ev" data-key="${esc(c.key)}" style="border-left-color:${col(c.band)}"${open.has(c.key)?" open":""}>
+      <summary><span class="t">${esc(c.title)}</span><span class="badge2" style="color:${col(c.band)};font-size:1.1rem">${esc(c.band)}${tr(c.trend)}<small>${esc(c.score)}/100 looks deliberate</small></span><span class="chev" aria-hidden="true">›</span><span class="one">${esc(one)}</span></summary>
+      <div class="body">
+        <h4>If it's deliberate</h4><p style="margin:0">${esc(h.if_deliberate||"")}</p>
+        <h4>The pattern so far</h4><p style="margin:0">${esc(h.pattern||"")}</p>
+        <h4>What it could hit next</h4>${ul(h.next_targets)}
+        <h4>What it would mean for us</h4>${ul(h.for_us)}<p class="why" style="margin:0">${esc(h.australia||"")}</p>
+        ${(h.actions||[]).length?`<h4>What to do, and why</h4><div class="act">${h.actions.map(a=>`<div>${esc(a.action)}<span>${esc(a.reason||"")}</span></div>`).join("")}</div>`:""}
+        <h4>What would confirm it</h4>${ul(h.confirm_if)}
+        <h4>Other explanations</h4><p class="why" style="margin:0">${esc(h.other_explanations||"")}</p>
+        <h4>Linked incidents</h4><div class="list">${incs}</div>
+      </div></details>`; }).join("");
+}
+
 function renderConcerns(st, ind){
   const sc = {}; ((ind&&ind.scenarios)||[]).forEach(x=>sc[x.key]=x);
   const list = (st && Array.isArray(st.concerns)) ? [...st.concerns] : [];
@@ -570,7 +602,7 @@ const FEED_NAMES = {acsc:"Australian cyber alerts (ACSC)", navwarn:"military nav
   aircraft:"aircraft tracking", gps:"GPS interference", telecom:"phone network monitor", internet:"country internet monitor", news_watch:"news watch",
   analysts:"analyst headlines", cyber:"cyber threat feeds", satellites:"satellite tracking", maritime:"ship tracking", local_sa:"local SA feeds",
   chokepoints:"shipping chokepoints", prediction_markets:"forecast markets",
-  incidents:"outage and cyber incident check", faa:"FAA airport status (US flights)", shocks:"nationwide shutdown check"};
+  incidents:"outage and cyber incident check", campaigns:"cyber campaign tracker", outlook:"weather outlook", faa:"FAA airport status (US flights)", shocks:"nationwide shutdown check"};
 const QS = new URLSearchParams(location.search);
 const LINKED = QS.get("alert") ? {id:QS.get("alert"), title:QS.get("t")||"Alert", message:QS.get("m")||"", priority:Number(QS.get("p"))||3} : null;
 let focusDone = false;
@@ -696,6 +728,7 @@ async function load(){
   if(!st){ $("banner").hidden=false; $("banner").textContent="Could not load the assessment. Try again shortly."; }
   l = await pull("latest", "data/latest.json");
   ind = DEMO_OK ? null : await pull("indicators", "data/indicators.json");
+  if(!DEMO_OK) renderCampaigns(await pull("campaigns", "data/campaigns.json"));
   LAST_ST=st; LAST_L=l;
   if(st) renderStatus(st); else drawGauge(0);
   renderConcerns(st, ind);
