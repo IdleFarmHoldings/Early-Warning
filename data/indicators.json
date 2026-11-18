@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-18T07:24:00Z",
+  "generated_at": "2026-11-18T07:39:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -102,12 +102,20 @@
     },
     {
       "band": "Guarded",
-      "convergence": "Only one kind of sign is showing (shipping). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
+      "convergence": "Two different kinds of sign are showing together (electronic warfare and shipping). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
       "domains": [
+        "Electronic warfare",
         "Shipping"
       ],
       "key": "mideast",
       "lit": [
+        {
+          "detail": "gps_gulf 34 vs usual 7",
+          "domain": "Electronic warfare",
+          "id": "gps",
+          "name": "GPS jamming spike (Gulf / Israel)",
+          "weight": 10
+        },
         {
           "detail": "Strait of Hormuz -38% vs usual (2.3/day)",
           "domain": "Shipping",
@@ -118,8 +126,8 @@
       ],
       "name": "Middle East war & Gulf shipping",
       "sa_impact": "Fuel: Australia imports most of its fuel, much of it refined from Gulf crude in Asia. Shipping attacks or a Hormuz closure push up prices within days and can cause local shortages.",
-      "score": 15,
-      "trend": "steady",
+      "score": 25,
+      "trend": "up",
       "unlit": [
         {
           "domain": "Military air",
@@ -132,12 +140,6 @@
           "id": "air",
           "name": "Unusual military air activity over the region",
           "weight": 15
-        },
-        {
-          "domain": "Electronic warfare",
-          "id": "gps",
-          "name": "GPS jamming spike (Gulf / Israel)",
-          "weight": 10
         },
         {
           "domain": "Communications",
@@ -381,9 +383,10 @@
       "why": "North Korean missile launches are often preceded by navigation warnings; South Korea and Japan report GPS jamming from the North during tense periods."
     },
     {
-      "band": "Guarded",
-      "convergence": "Two different kinds of sign are showing together (mobilisation and undersea cables). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and us nuclear command aircraft unusual.",
+      "band": "Elevated",
+      "convergence": "Signs are converging across 3 separate areas (cyber, mobilisation and undersea cables). Unrelated systems flagging the same scenario at once is the pattern seen before past events. Before February 2022: embassy departures, mobilisation reports, airspace closures and a surge in GPS jamming. Baltic and Black Sea jamming is now routine, so only spikes above normal count. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and us nuclear command aircraft unusual.",
       "domains": [
+        "Cyber",
         "Mobilisation",
         "Undersea cables"
       ],
@@ -397,7 +400,14 @@
           "weight": 15
         },
         {
-          "detail": "Russia vessel MALVA ~257 min",
+          "detail": "ESET Research: Sandworm behind cyberattack on Poland’s power grid in late 2025",
+          "domain": "Cyber",
+          "id": "cyber",
+          "name": "Russian wiper / Sandworm activity reports",
+          "weight": 10
+        },
+        {
+          "detail": "Russia vessel MALVA ~286 min",
           "domain": "Undersea cables",
           "id": "cable",
           "name": "Russian / Chinese vessels loitering over Baltic cables",
@@ -406,8 +416,8 @@
       ],
       "name": "Russia-NATO escalation",
       "sa_impact": "Indirect: energy and market shock, cyber attacks that can spill over to Australian systems, and nuclear-risk rhetoric.",
-      "score": 25,
-      "trend": "down",
+      "score": 35,
+      "trend": "up",
       "unlit": [
         {
           "domain": "Electronic warfare",
@@ -468,12 +478,6 @@
           "id": "def",
           "name": "European defence stocks outperforming (5 days)",
           "weight": 5
-        },
-        {
-          "domain": "Cyber",
-          "id": "cyber",
-          "name": "Russian wiper / Sandworm activity reports",
-          "weight": 10
         },
         {
           "domain": "Undersea cables",
@@ -714,15 +718,25 @@
       "why": "Before COVID-19 (Dec 2019 - Feb 2020): reports of an unknown pneumonia cluster, WHO outbreak notices, mask and hazmat makers (Alpha Pro Tech, Lakeland) and vaccine developers (Moderna, Novavax) surging weeks before broad markets fell, and countries restricting exports of masks and medicines (Taiwan from 24 Jan 2020, then dozens more)."
     },
     {
-      "band": "Low",
-      "convergence": "No warning signs are showing. The strongest signs not yet showing: sudden fall in sa electricity demand (possible large blackout), global cyber threat level raised (sans infocon not green) and several vpn / firewall flaws exploited this week.",
-      "domains": [],
+      "band": "Guarded",
+      "convergence": "Only one kind of sign is showing (state actors). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: sudden fall in sa electricity demand (possible large blackout), global cyber threat level raised (sans infocon not green) and several vpn / firewall flaws exploited this week.",
+      "domains": [
+        "State actors"
+      ],
       "key": "cyber",
-      "lit": [],
+      "lit": [
+        {
+          "detail": "ESET Research: Sandworm behind cyberattack on Poland’s power grid in late 2025",
+          "domain": "State actors",
+          "id": "state",
+          "name": "Reports of state hackers / pre-positioning / wipers",
+          "weight": 15
+        }
+      ],
       "name": "Major cyber attack on Australia",
       "sa_impact": "Banks, payments, hospitals, fuel distribution, telcos and the power grid all run on networks; a large attack can stop card payments and services for hours to days.",
-      "score": 0,
-      "trend": "down",
+      "score": 15,
+      "trend": "up",
       "unlit": [
         {
           "domain": "Global threat level",
@@ -759,12 +773,6 @@
           "id": "acsc",
           "name": "New Australian cyber alert (ACSC)",
           "weight": 10
-        },
-        {
-          "domain": "State actors",
-          "id": "state",
-          "name": "Reports of state hackers / pre-positioning / wipers",
-          "weight": 15
         },
         {
           "domain": "Australian incidents",
@@ -828,7 +836,7 @@
       "name": "AI-enabled attack (non-traditional)",
       "sa_impact": "Not bombs but disruption: hacking at machine speed across banks, telcos, hospitals and the grid at once; fake videos or alerts from leaders causing panic buying or bank runs; or automated market and fraud shocks. Effects would be outages, payment failures and confusion about what is real.",
       "score": 30,
-      "trend": "up",
+      "trend": "steady",
       "unlit": [
         {
           "domain": "Mass exploitation",
