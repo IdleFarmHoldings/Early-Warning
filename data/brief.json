@@ -1,7 +1,13 @@
 {
   "about": "Short form of latest.json + indicators.json for the analysis run. Links and raw samples removed.",
   "acsc": [],
-  "aircraft_flags": {},
+  "aircraft_flags": {
+    "gps_gulf": {
+      "median": 6.0,
+      "status": "ANOMALY",
+      "value": 27
+    }
+  },
   "analyst": {
     "ASPI Strategist": [
       "Collins refurbishment looks like overrunning, hitting availability",
@@ -169,6 +175,56 @@
       "trend": "steady"
     },
     {
+      "actor": "Criminal gangs",
+      "attributed_officially": false,
+      "band": "Strong",
+      "countries": [
+        "Europe",
+        "United States"
+      ],
+      "hypothesis": {
+        "confirm_if": [
+          "an Australian company named as a victim",
+          "your details in a breach notice",
+          "a wave of scam messages using a brand name"
+        ],
+        "if_deliberate": "If this is a deliberate campaign by Criminal gangs, the likely aim is: Money: ransom payments and selling stolen data.",
+        "next_targets": [
+          "Other customers of the same software suppliers",
+          "Hospitals and retailers",
+          "Data dumps followed by scam waves",
+          "Not hit yet in this campaign but typical for Criminal gangs: hospitals and health; food and cold storage"
+        ],
+        "other_explanations": "These may not be connected: criminal gangs, faulty systems, or reporters linking separate events can look the same. No government has confirmed this as one campaign."
+      },
+      "incidents": [
+        "2026-11-17 ?: Visa Confirms Third-Party Cyberattack as Ransomware Gang \"n0n\" Targets Financial Giants (named attacker)",
+        "2026-11-17 ?: Visa Report: AI-Enabled Fraud and Third-Party Attacks Are Scaling Worldwide (same pattern)",
+        "2026-11-17 ?: Microsoft Outage Chaos Exposes The Risks Of Relying On One Cloud Provider (same pattern)",
+        "2026-11-17 ?: FBI warns hackers weaponizing ARTEX AI framework to automate attacks on energy, manufacturing, telecom (same pattern)",
+        "2026-11-16 United States/Europe: Ad-tech firm Optimizely confirms breach after fake phone call; big-brand websites affected (named attacker)"
+      ],
+      "incidents_7d": 6,
+      "official_warning": true,
+      "score": 74,
+      "sectors": [
+        "banks and payments",
+        "software and online services",
+        "phones and internet"
+      ],
+      "techniques": [
+        "hacking a supplier to reach many victims",
+        "ransomware",
+        "AI-driven hacking",
+        "tricking staff (phishing and fake calls)",
+        "stealing data",
+        "breaking in (method not reported)"
+      ],
+      "title": "Criminal gangs: attacks on banks and payments and software and online services",
+      "touches_australia": false,
+      "trend": "up"
+    },
+    {
       "actor": "Russia",
       "attributed_officially": false,
       "band": "Likely",
@@ -209,54 +265,6 @@
         "breaking in (method not reported)"
       ],
       "title": "Suspected Russia campaign",
-      "touches_australia": false,
-      "trend": "steady"
-    },
-    {
-      "actor": "Criminal gangs",
-      "attributed_officially": false,
-      "band": "Likely",
-      "countries": [
-        "Europe",
-        "United States"
-      ],
-      "hypothesis": {
-        "confirm_if": [
-          "an Australian company named as a victim",
-          "your details in a breach notice",
-          "a wave of scam messages using a brand name"
-        ],
-        "if_deliberate": "If this is a deliberate campaign by Criminal gangs, the likely aim is: Money: ransom payments and selling stolen data.",
-        "next_targets": [
-          "Other customers of the same software suppliers",
-          "Hospitals and retailers",
-          "Data dumps followed by scam waves",
-          "Not hit yet in this campaign but typical for Criminal gangs: hospitals and health; food and cold storage"
-        ],
-        "other_explanations": "These may not be connected: criminal gangs, faulty systems, or reporters linking separate events can look the same. No government has confirmed this as one campaign."
-      },
-      "incidents": [
-        "2026-11-17 ?: Visa Confirms Third-Party Cyberattack as Ransomware Gang \"n0n\" Targets Financial Giants (named attacker)",
-        "2026-11-17 ?: Visa Report: AI-Enabled Fraud and Third-Party Attacks Are Scaling Worldwide (same pattern)",
-        "2026-11-17 ?: Microsoft Outage Chaos Exposes The Risks Of Relying On One Cloud Provider (same pattern)",
-        "2026-11-16 United States/Europe: Ad-tech firm Optimizely confirms breach after fake phone call; big-brand websites affected (named attacker)"
-      ],
-      "incidents_7d": 4,
-      "official_warning": false,
-      "score": 59,
-      "sectors": [
-        "banks and payments",
-        "software and online services"
-      ],
-      "techniques": [
-        "hacking a supplier to reach many victims",
-        "ransomware",
-        "AI-driven hacking",
-        "tricking staff (phishing and fake calls)",
-        "stealing data",
-        "breaking in (method not reported)"
-      ],
-      "title": "Criminal gangs: attacks on banks and payments and software and online services",
       "touches_australia": false,
       "trend": "steady"
     },
@@ -306,13 +314,13 @@
   "gdacs_orange_red": [
     "Orange notification for tropical cyclone AKVAN-26. Population affected by Category 1 (120 km/h) wind speeds or higher is 0  (11.538 million in Tropical Storm)."
   ],
-  "generated_at": "2026-11-18T15:27:00Z",
+  "generated_at": "2026-11-18T15:43:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 24,
-    "Black Sea": null,
-    "Israel & Eastern Mediterranean": 6,
-    "Korea": 0,
-    "Persian Gulf": 9,
+    "Baltic / Kaliningrad": 33,
+    "Black Sea": 44,
+    "Israel & Eastern Mediterranean": 7,
+    "Korea": 6,
+    "Persian Gulf": 27,
     "South Australia": null,
     "Sydney / NSW": null,
     "Taiwan Strait": 0
@@ -435,10 +443,10 @@
   "internet_drop_pct": {
     "China": 0.5,
     "Iran": 0.0,
-    "Israel": 0.0,
-    "Russia": 2.5,
+    "Israel": 0.3,
+    "Russia": 0.0,
     "South Korea": 0.1,
-    "Taiwan": 0.2
+    "Taiwan": 0.5
   },
   "local_sa": {
     "bom": [
@@ -456,16 +464,16 @@
       "Mount Lofty Ranges": "High / High"
     },
     "fire_danger_ok": true,
-    "fires_active": 11,
+    "fires_active": 12,
     "fuel": {
-      "brent_aud": 134.0,
-      "change_pct": -0.5,
-      "pump_cents": 0,
-      "week_ago_aud": 134.7
+      "brent_aud": 133.9,
+      "change_pct": -0.6,
+      "pump_cents": -1,
+      "week_ago_aud": 134.8
     },
-    "grid_demand_fall_pct": 6.0,
-    "grid_demand_mw": 1339,
-    "grid_demand_usual_mw": 1306,
+    "grid_demand_fall_pct": 6.2,
+    "grid_demand_mw": 1331,
+    "grid_demand_usual_mw": 1299,
     "grid_lor_level": 0,
     "nearby_incidents": [
       {
@@ -485,7 +493,26 @@
         "pm25": 2
       },
       "air_word": "Good",
-      "days": []
+      "days": [
+        {
+          "date": "2026-11-19",
+          "gust": 52,
+          "rain": 5,
+          "tmax": 27
+        },
+        {
+          "date": "2026-11-20",
+          "gust": 60,
+          "rain": 2,
+          "tmax": 24
+        },
+        {
+          "date": "2026-11-21",
+          "gust": 28,
+          "rain": 0,
+          "tmax": 29
+        }
+      ]
     },
     "possible_blackout": false,
     "power_news": [],
@@ -503,20 +530,20 @@
   },
   "markets": {
     "AUD/USD": {
-      "change_pct": -0.3,
-      "price": 0.6717
+      "change_pct": -0.36,
+      "price": 0.6713
     },
     "Brent oil": {
-      "change_pct": -3.87,
-      "price": 89.54
+      "change_pct": -4.18,
+      "price": 89.25
     },
     "Gold": {
-      "change_pct": -2.74,
-      "price": 3758.3
+      "change_pct": -2.59,
+      "price": 3764.0
     },
     "VIX": {
-      "change_pct": -3.06,
-      "price": 24.68
+      "change_pct": -4.05,
+      "price": 24.43
     }
   },
   "national_shocks": {
@@ -542,9 +569,9 @@
       "Moldova closes airspace after Russian Shahed drone spotted over capital – video - Українська правда"
     ],
     "aviation_halt": [
-      "Congress skeptical as Trump officials seek $50B for air travel system - AP News",
       "FAA pauses Juniper installations as ground-stop cause remains unresolved - iTWire",
-      "Nashville Airport Filled With Suitcases Following Nationwide Ground Stop - News.com.au"
+      "Nashville Airport Filled With Suitcases Following Nationwide Ground Stop - News.com.au",
+      "Congress skeptical as Trump officials seek $50B for air travel system - AP News"
     ],
     "bank_outage": [
       "The NAB share price is down 25% from its high. Is it a bargain buy? - The Motley Fool Australia",
@@ -562,9 +589,9 @@
       "FM Dismisses Western Media Reports on Iran’s Alleged Chemical Weapons Plot as ‘Rubbish’ - تسنیم"
     ],
     "cloud": [
+      "Microsoft Makes Its AI Case After Global Outage and Anthropic Challenge - Barron's",
       "Nadella’s resilience pledge after Microsoft 365 outage - NeoTeo",
-      "Satya Nadella issues apology to customers in wake of Microsoft 365 outage - IT Pro",
-      "Microsoft Makes Its AI Case After Global Outage and Anthropic Challenge - Barron's"
+      "Satya Nadella issues apology to customers in wake of Microsoft 365 outage - IT Pro"
     ],
     "cyber_attrib": [
       "Global cyber attack: Why it happened, and what Aussies need to do - The Daily Telegraph",
@@ -580,6 +607,11 @@
       "Shop fridges and freezers across Europe hit by fresh suspected cyber-attack - The Guardian",
       "Hackers Probe Newly Disclosed Flaws in Copeland Refrigeration Controllers - SecurityWeek",
       "Supermarket freezers and fridges in Europe hit by cyberattack - Nine.com.au"
+    ],
+    "cyber_state": [
+      "ESET Research: Sandworm behind cyberattack on Poland’s power grid in late 2025 - WeLiveSecurity",
+      "ESET attributes DynoWiper-powered attack on Poland’s power grid to Russia-aligned Sandworm group - Industrial Cyber",
+      "Russian state hackers likely behind wiper malware attack on Poland’s power grid - The Record from Recorded Future News"
     ],
     "cyber_supply": [
       "Cognizant and Qualys Redefine AI-Era Managed Security Service - Qualys",
@@ -611,7 +643,7 @@
     ],
     "masscas": [
       "Madigan trauma surgeons help lead regional initiative to bolster combat, disaster medical readiness - Army.mil",
-      "IDF, emergency services to drill mass casualty event in Ashkelon area - The Times of Israel",
+      "Prison bus and tanker truck collide in “mass casualty incident” that injured 18 - CDLLife",
       "18 hurt after crash involving Missouri Dept. of Corrections bus, truck hauling ethanol in Columbia - KMBC"
     ],
     "mobilisation": [
@@ -631,12 +663,12 @@
     "outage_au": [
       "Australia telco complaints surge after Telstra outage - Traders Union",
       "What to know about the online banking delays affecting major US banks - ABC News & Headlines – Australian Broadcasting Corporation",
-      "Multiple triple zero calls affected by another Optus outage - Nine.com.au"
+      "Australia's Optus apologises for outage that disrupted emergency calls - Reuters"
     ],
     "reservists": [
       "Janeway dreams of AFL call-up - The SE Voice",
       "IDF plans shorter reserve duty, more training for standing forces in 2027 - The Times of Israel",
-      "IDF plans to cut reserve duty to 58 days, reduce battalions - The Jerusalem Post"
+      "IDF overhaul: Reserve duty capped at 58 days a year, troop levels cut across all fronts - Israel National News"
     ],
     "ru_signals": [
       "3 things I think: New CFL rules, U.S. hockey power, Ovechkin - CBC"
@@ -732,9 +764,9 @@
       "yes": 14.5
     },
     {
-      "d24h": -0.1,
+      "d24h": -0.2,
       "q": "NATO x Russia military clash by November 30, 2026?",
-      "yes": 1.7
+      "yes": 1.6
     },
     {
       "d24h": 0.1,
@@ -747,14 +779,14 @@
       "yes": 3.8
     },
     {
-      "d24h": -0.2,
+      "d24h": -0.4,
       "q": "Will Russia test a nuclear weapon by December 31 2026?",
-      "yes": 3.7
+      "yes": 3.5
     },
     {
-      "d24h": -0.4,
+      "d24h": -0.2,
       "q": "Will the U.S. test a nuclear weapon by December 31 2026?",
-      "yes": 2.6
+      "yes": 2.4
     },
     {
       "d24h": 0.0,
@@ -762,19 +794,19 @@
       "yes": 18.5
     },
     {
-      "d24h": -1.0,
+      "d24h": -0.5,
       "q": "Ukraine agrees not to join NATO by December 31, 2027?",
-      "yes": 18.5
+      "yes": 19.0
     },
     {
-      "d24h": -1.5,
+      "d24h": 0.0,
       "q": "Will Nick Stewart attend a US x Iran diplomatic meeting by December 31, 2026?",
       "yes": 8.0
     },
     {
-      "d24h": -0.7,
+      "d24h": -0.6,
       "q": "Trump endorses China's claim to Taiwan by end of APEC trip?",
-      "yes": 0.9
+      "yes": 1.0
     }
   ],
   "quakes_m6_24h": [],
@@ -984,19 +1016,24 @@
     },
     {
       "band": "Guarded",
-      "convergence": "Only one kind of sign is showing (shipping). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
+      "convergence": "Two different kinds of sign are showing together (electronic warfare and shipping). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet bl",
       "domains": [
+        "Electronic warfare",
         "Shipping"
       ],
       "key": "mideast",
       "lit": [
         {
+          "detail": "gps_gulf 27 vs usual 6.0",
+          "name": "GPS jamming spike (Gulf / Israel)"
+        },
+        {
           "detail": "Strait of Hormuz -38% vs usual (2.3/day)",
           "name": "Ship traffic through Hormuz down sharply"
         }
       ],
-      "score": 15,
-      "trend": "steady"
+      "score": 25,
+      "trend": "up"
     },
     {
       "band": "Low",
@@ -1012,9 +1049,19 @@
     },
     {
       "band": "Low",
+      "convergence": "Only one kind of sign is showing (cyber). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and mobilisation / reservist reports (russia / nato).",
+      "domains": [
+        "Cyber"
+      ],
       "key": "russia",
-      "score": 0,
-      "trend": "down"
+      "lit": [
+        {
+          "detail": "ESET Research: Sandworm behind cyberattack on Poland’s power grid in late 2025",
+          "name": "Russian wiper / Sandworm activity reports"
+        }
+      ],
+      "score": 10,
+      "trend": "up"
     },
     {
       "band": "Low",
@@ -1054,10 +1101,20 @@
       "trend": "steady"
     },
     {
-      "band": "Low",
+      "band": "Guarded",
+      "convergence": "Only one kind of sign is showing (state actors). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: sudden fall in sa electricity demand (possible large blackout), global cyber threat level raised (sans infocon not green) and several vpn / firew",
+      "domains": [
+        "State actors"
+      ],
       "key": "cyber",
-      "score": 0,
-      "trend": "down"
+      "lit": [
+        {
+          "detail": "ESET Research: Sandworm behind cyberattack on Poland’s power grid in late 2025",
+          "name": "Reports of state hackers / pre-positioning / wipers"
+        }
+      ],
+      "score": 15,
+      "trend": "up"
     },
     {
       "band": "Elevated",
@@ -1088,15 +1145,15 @@
   ],
   "sectors_relative_5d": {
     "defence_au": -8.3,
-    "defence_eu": -1.4,
-    "defence_us": -1.2,
-    "pandemic": -7.33
+    "defence_eu": -1.66,
+    "defence_us": -1.16,
+    "pandemic": -7.29
   },
   "tankers": "normal",
   "telecom_drop_pct": {
-    "Aussie Broadband": 0.6,
-    "Optus": 4.1,
-    "TPG": 0.6,
+    "Aussie Broadband": 0.3,
+    "Optus": 3.1,
+    "TPG": 0.7,
     "Telstra": 0.0,
     "Vodafone": 0.0
   },
