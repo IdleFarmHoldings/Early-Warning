@@ -1,13 +1,7 @@
 {
   "about": "Short form of latest.json + indicators.json for the analysis run. Links and raw samples removed.",
   "acsc": [],
-  "aircraft_flags": {
-    "gps_gulf": {
-      "median": 6.0,
-      "status": "ANOMALY",
-      "value": 23
-    }
-  },
+  "aircraft_flags": {},
   "analyst": {
     "ASPI Strategist": [
       "Collins refurbishment looks like overrunning, hitting availability",
@@ -306,21 +300,22 @@
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
     "incidents": "ValueError: time data 'Info' does not match format '%Y-%m-%dT%H:%M:%SZ'",
+    "maritime": "TimeoutError: ",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [
     "Orange notification for tropical cyclone AKVAN-26. Population affected by Category 1 (120 km/h) wind speeds or higher is 0  (14.328 million in Tropical Storm)."
   ],
-  "generated_at": "2026-11-18T12:02:00Z",
+  "generated_at": "2026-11-18T12:18:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 22,
-    "Black Sea": 30,
-    "Israel & Eastern Mediterranean": 3,
+    "Baltic / Kaliningrad": 15,
+    "Black Sea": null,
+    "Israel & Eastern Mediterranean": 4,
     "Korea": 0,
-    "Persian Gulf": 23,
-    "South Australia": 0,
+    "Persian Gulf": 3,
+    "South Australia": null,
     "Sydney / NSW": 0,
-    "Taiwan Strait": 0
+    "Taiwan Strait": 2
   },
   "incidents": [
     {
@@ -331,7 +326,7 @@
         "MEXC shuts down Visa-linked crypto card less than three months after launch",
         "CBA gives away AI security tool to stop hackers"
       ],
-      "severity": "Critical",
+      "severity": "Warning",
       "target": "Banking & payments"
     },
     {
@@ -428,9 +423,9 @@
       "attack_reported": false,
       "confirmed": true,
       "headlines": [
+        "Hackers Abuse Microsoft 365 Outage Confusion to Launch Fake Email Restoration Scams",
         "Satya Nadella issues apology to customers in wake of Microsoft 365 outage",
-        "Microsoft outage cause revealed: It was a perfect storm of problems",
-        "Since July: Software Bug Lay Hidden Before Causing Massive Global Microsoft 365 Outage, Microsoft Reveals"
+        "Microsoft outage cause revealed: It was a perfect storm of problems"
       ],
       "severity": "Warning",
       "target": "Microsoft"
@@ -467,7 +462,7 @@
     "China": 0.0,
     "Iran": 0.0,
     "Israel": 0.0,
-    "Russia": 0.0,
+    "Russia": 0.2,
     "South Korea": 0.0,
     "Taiwan": 0.0
   },
@@ -487,16 +482,16 @@
       "Mount Lofty Ranges": "Moderate / High"
     },
     "fire_danger_ok": true,
-    "fires_active": 10,
+    "fires_active": 11,
     "fuel": {
       "brent_aud": 137.5,
-      "change_pct": 2.3,
+      "change_pct": 2.2,
       "pump_cents": 2,
       "week_ago_aud": 134.4
     },
-    "grid_demand_fall_pct": 1.7,
-    "grid_demand_mw": 1439,
-    "grid_demand_usual_mw": 1335,
+    "grid_demand_fall_pct": 4.1,
+    "grid_demand_mw": 1404,
+    "grid_demand_usual_mw": 1316,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
@@ -543,20 +538,20 @@
   },
   "markets": {
     "AUD/USD": {
-      "change_pct": -0.09,
-      "price": 0.6731
+      "change_pct": -0.03,
+      "price": 0.6735
     },
     "Brent oil": {
-      "change_pct": -3.41,
-      "price": 89.96
+      "change_pct": -3.39,
+      "price": 89.98
     },
     "Gold": {
-      "change_pct": -2.61,
-      "price": 3763.2
+      "change_pct": -2.33,
+      "price": 3774.0
     },
     "VIX": {
-      "change_pct": -4.91,
-      "price": 24.21
+      "change_pct": -4.24,
+      "price": 24.38
     }
   },
   "national_shocks": {
@@ -573,8 +568,8 @@
   "news_watch": {
     "ai_hack": [
       "California sues OpenAI over AI agents hacking a software platform - NPR",
-      "FBI warns hackers use AI-powered ARTEX framework to automate attacks - Yeni Safak English",
-      "Google uncovers first fully autonomous AI cyberattack | Business Standard - newspaper - Magzter"
+      "The terrifying rise of AI hacking tools - Axios",
+      "FBI warns hackers use AI-powered ARTEX framework to automate attacks - Yeni Safak English"
     ],
     "airspace": [
       "Moldova closes airspace after drone detected heading towards Chișinău - Euronews.com",
@@ -582,8 +577,8 @@
       "A Shahed UAV in Moldova’s skies: Airspace closed - URGENT - TodayPress.tv"
     ],
     "aviation_halt": [
-      "Nashville Airport Filled With Suitcases Following Nationwide Ground Stop - News.com.au",
       "Congress skeptical as Trump officials seek $50B for air travel system - AP News",
+      "Nashville Airport Filled With Suitcases Following Nationwide Ground Stop - News.com.au",
       "FBI Rules Out Hack in FAA Air Traffic Control Outage as the Mystery Deepens - The Australian"
     ],
     "bank_outage": [
@@ -601,7 +596,7 @@
       "Can the internet go down? 10 facts on how outages happen - qz.com"
     ],
     "chem": [
-      "Monaco provides EUR 40,000 in voluntary funding to enhance OPCW’s work - Organisation for the Prohibition of Chemical Weapons",
+      "Monaco Gives OPCW €40,000 to Boost Its Work - Mirage News",
       "How did chemical weapons affect soldiers on the Western Front? - Britannica",
       "FM Dismisses Western Media Reports on Iran’s Alleged Chemical Weapons Plot as ‘Rubbish’ - تسنیم"
     ],
@@ -636,8 +631,8 @@
       "N-able Kills Legacy APIs, Patches 17 N-central Zero-Days - SecurityWeek"
     ],
     "deepfake": [
+      "Paris Hilton and AOC speak against AI-generated deepfakes - Al Jazeera",
       "Türkiye considers labeling requirements for AI-generated content - Hürriyet Daily News",
-      "President cautions against AI video claiming that she has taken over Mines and Energy Ministry Staff Reporter THE Namibian Presidency has alerted the public to an AI-generated video circulating on social media, falsely portraying President Netumbo Nandi- - Instagram",
       "AI-generated ‘doomsday' videos flood social media amid string of major outages - NBC 5 Chicago"
     ],
     "dieoff": [
@@ -675,7 +670,7 @@
     "national_outage": [
       "Properties in eight suburbs plunged into darkness as power is lost - Bendigo Advertiser",
       "Is a nationwide blackout starting this week? Here’s what to know - WKMG",
-      "Rumors Of A Nationwide Blackout Are Spreading. Here’s What’s Really Happening Today. - Yahoo News New Zealand"
+      "Chase issues statement after nationwide outage - NBC News"
     ],
     "outage_au": [
       "How a nationwide Telstra outage rocked the Australian economy – and what we can learn - The Conversation",
@@ -718,7 +713,7 @@
       "yes": 10.5
     },
     {
-      "d24h": 0.3,
+      "d24h": 0.2,
       "q": "China x Taiwan military clash before 2027?",
       "yes": 3.1
     },
@@ -788,14 +783,14 @@
       "yes": 1.7
     },
     {
-      "d24h": 0.6,
+      "d24h": 0.3,
       "q": "Ukraine agrees not to join NATO by December 31, 2026?",
-      "yes": 3.5
+      "yes": 3.2
     },
     {
-      "d24h": 0.9,
+      "d24h": 0.8,
       "q": "NATO/EU troops fighting in Ukraine by December 31, 2026?",
-      "yes": 3.9
+      "yes": 3.8
     },
     {
       "d24h": 1.1,
@@ -818,7 +813,7 @@
       "yes": 8.0
     },
     {
-      "d24h": -0.5,
+      "d24h": -1.0,
       "q": "Ukraine agrees not to join NATO by December 31, 2027?",
       "yes": 20.5
     },
@@ -828,9 +823,9 @@
       "yes": 10.5
     },
     {
-      "d24h": 0.4,
+      "d24h": 0.6,
       "q": "Trump endorses China's claim to Taiwan by end of APEC trip?",
-      "yes": 1.6
+      "yes": 1.8
     }
   ],
   "quakes_m6_24h": [],
@@ -1040,24 +1035,19 @@
     },
     {
       "band": "Guarded",
-      "convergence": "Two different kinds of sign are showing together (electronic warfare and shipping). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet bl",
+      "convergence": "Only one kind of sign is showing (shipping). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
       "domains": [
-        "Electronic warfare",
         "Shipping"
       ],
       "key": "mideast",
       "lit": [
         {
-          "detail": "gps_gulf 23 vs usual 6.0",
-          "name": "GPS jamming spike (Gulf / Israel)"
-        },
-        {
           "detail": "Strait of Hormuz -38% vs usual (2.3/day)",
           "name": "Ship traffic through Hormuz down sharply"
         }
       ],
-      "score": 25,
-      "trend": "up"
+      "score": 15,
+      "trend": "down"
     },
     {
       "band": "Low",
@@ -1169,16 +1159,16 @@
   ],
   "sectors_relative_5d": {
     "defence_au": -8.3,
-    "defence_eu": -0.79,
+    "defence_eu": -0.81,
     "defence_us": 0.21,
     "pandemic": -8.15
   },
   "tankers": "normal",
   "telecom_drop_pct": {
     "Aussie Broadband": 0.0,
-    "Optus": 1.0,
+    "Optus": 0.0,
     "TPG": 0.0,
-    "Telstra": 0.0,
+    "Telstra": 0.2,
     "Vodafone": 0.0
   },
   "us_departure_orders": [
