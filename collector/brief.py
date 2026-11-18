@@ -49,7 +49,9 @@ def build(latest, indicators):
                             for k in ("airports", "national", "ground_stops")},
                             "traffic_not_normal": shocks_traffic, "tracking_glitch": ns.get("tracking_glitch")},
         "incidents": [{"target": i.get("target"), "severity": i.get("severity"), "confirmed": i.get("confirmed"),
-                       "headlines": _titles(i.get("headlines"), 3)} for i in (L.get("incidents") or [])],
+                       "attack_reported": bool(i.get("attack")),
+                       "headlines": _titles(i.get("headlines"), 3)}
+                      for i in sorted(L.get("incidents") or [], key=lambda i: not i.get("attack"))],
         "us_levels_au_relevant": L.get("us_levels_au_relevant"),
         "us_departure_orders": L.get("us_departure_orders"),
         "gdacs_orange_red": _titles(L.get("gdacs_current_orange_red"), 5),

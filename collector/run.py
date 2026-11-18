@@ -180,7 +180,7 @@ def summarise(results, health, anomalies, now):
         "quakes_m6_24h": [q for q in (results.get("usgs") or []) if (q["mag"] or 0) >= 6 and (q["time"] or 0) >= day_ago],
         "who_latest": (results.get("who") or [])[:8],
         "acsc_latest": (results.get("acsc") or [])[:6],
-        "cisa_latest": (results.get("cisa") or [])[:6],
+        "cisa_latest": sorted(results.get("cisa") or [], key=lambda a: "/ics-advisories/" in (a.get("link") or ""))[:8],  # alerts and joint advisories before product bulletins
         "markets": results.get("markets"),
         "telecom": (results.get("telecom") or {}).get("networks"),
         "analyst_latest": (results.get("analysts") or {}).get("feeds"),
