@@ -1,7 +1,13 @@
 {
   "about": "Short form of latest.json + indicators.json for the analysis run. Links and raw samples removed.",
   "acsc": [],
-  "aircraft_flags": {},
+  "aircraft_flags": {
+    "gps_gulf": {
+      "median": 6.0,
+      "status": "ANOMALY",
+      "value": 23
+    }
+  },
   "analyst": {
     "ASPI Strategist": [
       "Collins refurbishment looks like overrunning, hitting availability",
@@ -300,19 +306,18 @@
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
     "incidents": "ValueError: time data 'Info' does not match format '%Y-%m-%dT%H:%M:%SZ'",
-    "maritime": "TimeoutError: ",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [
     "Orange notification for tropical cyclone AKVAN-26. Population affected by Category 1 (120 km/h) wind speeds or higher is 0  (14.328 million in Tropical Storm)."
   ],
-  "generated_at": "2026-11-18T11:58:00Z",
+  "generated_at": "2026-11-18T12:02:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 19,
-    "Black Sea": 50,
+    "Baltic / Kaliningrad": 22,
+    "Black Sea": 30,
     "Israel & Eastern Mediterranean": 3,
     "Korea": 0,
-    "Persian Gulf": 9,
+    "Persian Gulf": 23,
     "South Australia": 0,
     "Sydney / NSW": 0,
     "Taiwan Strait": 0
@@ -462,7 +467,7 @@
     "China": 0.0,
     "Iran": 0.0,
     "Israel": 0.0,
-    "Russia": 0.2,
+    "Russia": 0.0,
     "South Korea": 0.0,
     "Taiwan": 0.0
   },
@@ -489,9 +494,9 @@
       "pump_cents": 2,
       "week_ago_aud": 134.4
     },
-    "grid_demand_fall_pct": 4.5,
-    "grid_demand_mw": 1456,
-    "grid_demand_usual_mw": 1341,
+    "grid_demand_fall_pct": 1.7,
+    "grid_demand_mw": 1439,
+    "grid_demand_usual_mw": 1335,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
@@ -538,20 +543,20 @@
   },
   "markets": {
     "AUD/USD": {
-      "change_pct": -0.11,
-      "price": 0.673
+      "change_pct": -0.09,
+      "price": 0.6731
     },
     "Brent oil": {
-      "change_pct": -3.38,
-      "price": 89.99
+      "change_pct": -3.41,
+      "price": 89.96
     },
     "Gold": {
-      "change_pct": -2.6,
-      "price": 3763.6
+      "change_pct": -2.61,
+      "price": 3763.2
     },
     "VIX": {
-      "change_pct": -4.79,
-      "price": 24.24
+      "change_pct": -4.91,
+      "price": 24.21
     }
   },
   "national_shocks": {
@@ -577,8 +582,8 @@
       "A Shahed UAV in Moldova’s skies: Airspace closed - URGENT - TodayPress.tv"
     ],
     "aviation_halt": [
-      "Congress skeptical as Trump officials seek $50B for air travel system - AP News",
       "Nashville Airport Filled With Suitcases Following Nationwide Ground Stop - News.com.au",
+      "Congress skeptical as Trump officials seek $50B for air travel system - AP News",
       "FBI Rules Out Hack in FAA Air Traffic Control Outage as the Mystery Deepens - The Australian"
     ],
     "bank_outage": [
@@ -628,7 +633,7 @@
     "cyber_supply": [
       "66 Zero-Day Vulnerabilities Found in TCP/IP Stacks Used in Critical Infrastructure - THE ELEC, Korea Electronics Industry Media",
       "Apache warns of Roller RCE vulnerability exploited in attacks - BleepingComputer",
-      "OpenAI's AI model found a critical vulnerability in Java that threatens 90% of top companies - dev.ua"
+      "N-able Kills Legacy APIs, Patches 17 N-central Zero-Days - SecurityWeek"
     ],
     "deepfake": [
       "Türkiye considers labeling requirements for AI-generated content - Hürriyet Daily News",
@@ -645,7 +650,8 @@
     ],
     "fuel_au": [
       "Iran fuel crisis deepens amid war and sanctions - DW.com",
-      "Beyond the green premium: Competitive advantage through decarbonization - Yahoo News Australia"
+      "Beyond the green premium: Competitive advantage through decarbonization - Yahoo News Australia",
+      "Pentagon Says Ukraine's Deep Strikes Backfire, Drawing Rebuke From Germany and Britain - Around Prague"
     ],
     "illness": [
       "Mystery illness causes mass hospitalisation of runners - The Nightly",
@@ -668,8 +674,8 @@
     ],
     "national_outage": [
       "Properties in eight suburbs plunged into darkness as power is lost - Bendigo Advertiser",
-      "Rumors Of A Nationwide Blackout Are Spreading. Here’s What’s Really Happening Today. - Yahoo News New Zealand",
-      "Chase issues statement after nationwide outage - NBC News"
+      "Is a nationwide blackout starting this week? Here’s what to know - WKMG",
+      "Rumors Of A Nationwide Blackout Are Spreading. Here’s What’s Really Happening Today. - Yahoo News New Zealand"
     ],
     "outage_au": [
       "How a nationwide Telstra outage rocked the Australian economy – and what we can learn - The Conversation",
@@ -702,7 +708,7 @@
       "yes": 7.5
     },
     {
-      "d24h": -1.0,
+      "d24h": 0.0,
       "q": "US-Iran Final Nuclear Deal by December 31, 2026?",
       "yes": 4.5
     },
@@ -717,7 +723,7 @@
       "yes": 3.1
     },
     {
-      "d24h": -0.1,
+      "d24h": 0.0,
       "q": "US-Iran Hormuz Agreement by November 30?",
       "yes": 4.3
     },
@@ -792,12 +798,12 @@
       "yes": 3.9
     },
     {
-      "d24h": 3.0,
+      "d24h": 1.1,
       "q": "Will Russia test a nuclear weapon by December 31 2026?",
       "yes": 5.1
     },
     {
-      "d24h": -0.4,
+      "d24h": -0.6,
       "q": "Will the U.S. test a nuclear weapon by December 31 2026?",
       "yes": 2.4
     },
@@ -807,14 +813,14 @@
       "yes": 18.5
     },
     {
-      "d24h": -2.0,
+      "d24h": -3.0,
       "q": "Will Nick Stewart attend a US x Iran diplomatic meeting by December 31, 2026?",
       "yes": 8.0
     },
     {
-      "d24h": 0.5,
+      "d24h": -0.5,
       "q": "Ukraine agrees not to join NATO by December 31, 2027?",
-      "yes": 21.5
+      "yes": 20.5
     },
     {
       "d24h": -4.0,
@@ -1034,19 +1040,24 @@
     },
     {
       "band": "Guarded",
-      "convergence": "Only one kind of sign is showing (shipping). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
+      "convergence": "Two different kinds of sign are showing together (electronic warfare and shipping). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet bl",
       "domains": [
+        "Electronic warfare",
         "Shipping"
       ],
       "key": "mideast",
       "lit": [
         {
+          "detail": "gps_gulf 23 vs usual 6.0",
+          "name": "GPS jamming spike (Gulf / Israel)"
+        },
+        {
           "detail": "Strait of Hormuz -38% vs usual (2.3/day)",
           "name": "Ship traffic through Hormuz down sharply"
         }
       ],
-      "score": 15,
-      "trend": "steady"
+      "score": 25,
+      "trend": "up"
     },
     {
       "band": "Low",
@@ -1158,7 +1169,7 @@
   ],
   "sectors_relative_5d": {
     "defence_au": -8.3,
-    "defence_eu": -0.81,
+    "defence_eu": -0.79,
     "defence_us": 0.21,
     "pandemic": -8.15
   },
