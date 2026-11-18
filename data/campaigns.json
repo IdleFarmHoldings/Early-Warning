@@ -264,7 +264,7 @@
       "actor": "Criminal gangs",
       "actor_kind": "criminal",
       "attributed_officially": false,
-      "band": "Possible",
+      "band": "Likely",
       "countries": [
         "Europe",
         "United States"
@@ -272,6 +272,10 @@
       "first_seen": "2026-11-16T09:00:00Z",
       "hypothesis": {
         "actions": [
+          {
+            "action": "Keep some cash at home.",
+            "reason": "Cash still buys fuel and food when cards and banking apps are down."
+          },
           {
             "action": "Don't follow login or payment links in emails or texts; open the app or site yourself.",
             "reason": "Breaches of software suppliers are often followed by convincing scam messages."
@@ -284,6 +288,7 @@
           "a wave of scam messages using a brand name"
         ],
         "for_us": [
+          "Card payments, EFTPOS or online banking can be down for hours.",
           "Apps and websites you use may be down, or quietly compromised."
         ],
         "if_deliberate": "If this is a deliberate campaign by Criminal gangs, the likely aim is: Money: ransom payments and selling stolen data.",
@@ -291,12 +296,23 @@
           "Other customers of the same software suppliers",
           "Hospitals and retailers",
           "Data dumps followed by scam waves",
-          "Not hit yet in this campaign but typical for Criminal gangs: hospitals and health; banks and payments; food and cold storage"
+          "Not hit yet in this campaign but typical for Criminal gangs: hospitals and health; food and cold storage"
         ],
         "other_explanations": "These may not be connected: criminal gangs, faulty systems, or reporters linking separate events can look the same. No government has confirmed this as one campaign.",
-        "pattern": "2 incidents over 1 day: hacking a supplier to reach many victims, tricking staff (phishing and fake calls) and stealing data against software and online services in Europe and United States."
+        "pattern": "3 incidents over 1 day: hacking a supplier to reach many victims, ransomware and tricking staff (phishing and fake calls) against banks and payments and software and online services in Europe and United States."
       },
       "incidents": [
+        {
+          "countries": [],
+          "date": "2026-11-17",
+          "how": "hacking a supplier to reach many victims",
+          "kind": "attack",
+          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNVlc4OHQ5TUJQMWgza2RFM2JvSXkzVUFvT1V0aTNLdThudm1qM2VMdGRHendLLWdFbjE5RzJDS040c3RlekpjTFFlQWY1cDMtQWZyZ0dwaDFWTnBwZlBZYTZQZ2JyOEZYZFgydXltUUpMaHhhOElxa3lwVzZ1Mzg0cC1BSmxyV2ZfcVFZTDRRbWdJd3hPbk1YNDRtVnVEUkVQTUo2MXRaQUFtQUxzRWd1a29TQnRSQTBENHgxag?oc=5",
+          "linked_by": "named attacker",
+          "reports": 1,
+          "sector": "banks and payments",
+          "title": "Visa Confirms Third-Party Cyberattack as Ransomware Gang \"n0n\" Targets Financial Giants"
+        },
         {
           "countries": [],
           "date": "2026-11-17",
@@ -323,26 +339,28 @@
           "title": "Ad-tech firm Optimizely confirms breach after fake phone call; big-brand websites affected"
         }
       ],
-      "incidents_7d": 2,
+      "incidents_7d": 3,
       "key": "criminal-gangs",
-      "last_seen": "2026-11-17T15:45:58Z",
+      "last_seen": "2026-11-17T17:05:15Z",
       "official_warning": false,
-      "score": 45,
+      "score": 59,
       "sectors": [
+        "banks and payments",
         "software and online services"
       ],
       "techniques": [
         "hacking a supplier to reach many victims",
+        "ransomware",
         "tricking staff (phishing and fake calls)",
         "stealing data",
         "breaking in (method not reported)"
       ],
-      "title": "Criminal gangs: attacks on software and online services",
+      "title": "Criminal gangs: attacks on banks and payments and software and online services",
       "touches_australia": false,
-      "trend": "steady"
+      "trend": "up"
     }
   ],
-  "generated_at": "2026-11-18T08:01:00Z",
+  "generated_at": "2026-11-18T08:16:00Z",
   "note": "Small cyber incidents linked into suspected campaigns and read as if deliberate. Scores (0-100) show how much a cluster looks like a deliberate campaign, not a probability or a confirmed finding.",
-  "reports_in_ledger": 86
+  "reports_in_ledger": 87
 }
