@@ -1,13 +1,7 @@
 {
   "about": "Short form of latest.json + indicators.json for the analysis run. Links and raw samples removed.",
   "acsc": [],
-  "aircraft_flags": {
-    "gps_gulf": {
-      "median": 9,
-      "status": "ANOMALY",
-      "value": 27
-    }
-  },
+  "aircraft_flags": {},
   "analyst": {
     "ASPI Strategist": [
       "Collins refurbishment looks like overrunning, hitting availability",
@@ -265,13 +259,13 @@
   "gdacs_orange_red": [
     "Orange notification for tropical cyclone AKVAN-26. Population affected by Category 1 (120 km/h) wind speeds or higher is 0  (15.432 million in Tropical Storm)."
   ],
-  "generated_at": "2026-11-18T06:18:00Z",
+  "generated_at": "2026-11-18T06:33:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 30,
-    "Black Sea": 40,
+    "Baltic / Kaliningrad": 21,
+    "Black Sea": 64,
     "Israel & Eastern Mediterranean": 0,
     "Korea": 1,
-    "Persian Gulf": 27,
+    "Persian Gulf": 4,
     "South Australia": 3,
     "Sydney / NSW": 1,
     "Taiwan Strait": 0
@@ -282,6 +276,7 @@
       "confirmed": true,
       "headlines": [
         "Sites down as banks, Apple, spy agency deal with cyber attacks, outages; Rubio says ‘no evidence’",
+        "Visa worker pushes pregnant partner down stairs in fit of rage",
         "Tech meltdown: 178 sites down as banks, Apple, spy agency deal with global cyber attacks, outages"
       ],
       "severity": "Warning",
@@ -327,6 +322,15 @@
     },
     {
       "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "Trump brushes off tech outages hours before massive cyber attack"
+      ],
+      "severity": "Info",
+      "target": "Trump"
+    },
+    {
+      "attack_reported": true,
       "confirmed": true,
       "headlines": [
         "FBI warns hackers using AI-powered tool to automate cyberattacks worldwide",
@@ -348,19 +352,10 @@
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
-        "Trump brushes off tech outages hours before massive cyber attack"
+        "Norway's Equinor detects cyberattack on IT systems; operations unaffected"
       ],
       "severity": "Info",
-      "target": "Trump"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
-        "‘Malicious’ Cyberattack on 178 Major Websites Tried to Steal Credit Cards and Crypto — Here's What You Should Do Immediately"
-      ],
-      "severity": "Info",
-      "target": "Malicious"
+      "target": "Norway's Equinor"
     },
     {
       "attack_reported": true,
@@ -390,15 +385,6 @@
       "target": "Google"
     },
     {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
-        "Norway's Equinor detects cyberattack on IT systems; operations unaffected"
-      ],
-      "severity": "Info",
-      "target": "Norway's Equinor"
-    },
-    {
       "attack_reported": false,
       "confirmed": true,
       "headlines": [
@@ -426,13 +412,22 @@
       ],
       "severity": "Info",
       "target": "AI platforms"
+    },
+    {
+      "attack_reported": false,
+      "confirmed": false,
+      "headlines": [
+        "DHS’ 4-year cap on student visa stays struck down by federal judge"
+      ],
+      "severity": "Info",
+      "target": "DHS"
     }
   ],
   "internet_drop_pct": {
-    "China": 2.2,
+    "China": 2.4,
     "Iran": 0.0,
-    "Israel": 0.0,
-    "Russia": 0.4,
+    "Israel": 0.1,
+    "Russia": 0.5,
     "South Korea": 0.0,
     "Taiwan": 0.0
   },
@@ -452,16 +447,16 @@
       "Mount Lofty Ranges": "Moderate / High"
     },
     "fire_danger_ok": true,
-    "fires_active": 14,
+    "fires_active": 13,
     "fuel": {
       "brent_aud": 138.0,
-      "change_pct": 3.0,
+      "change_pct": 2.9,
       "pump_cents": 2,
       "week_ago_aud": 134.1
     },
-    "grid_demand_fall_pct": -13.2,
-    "grid_demand_mw": 1059,
-    "grid_demand_usual_mw": 735,
+    "grid_demand_fall_pct": -0.2,
+    "grid_demand_mw": 1061,
+    "grid_demand_usual_mw": 791,
     "grid_lor_level": 0,
     "nearby_incidents": [
       {
@@ -512,22 +507,22 @@
       "Morgan Vale Road, Pine Valley Station: MORGAN MAIL RD Closed due to flooding over road",
       "Pine Valley Road, Pine Valley Station: PINE VALLEY RD Closed due to flooding over road"
     ],
-    "rooftop_pv_mw": 1251,
+    "rooftop_pv_mw": 1165,
     "sawater_news": [],
     "watch_and_act": []
   },
   "markets": {
     "AUD/USD": {
-      "change_pct": -0.2,
-      "price": 0.6724
+      "change_pct": -0.24,
+      "price": 0.6721
     },
     "Brent oil": {
-      "change_pct": -0.78,
-      "price": 92.41
+      "change_pct": -0.79,
+      "price": 92.4
     },
     "Gold": {
-      "change_pct": -2.04,
-      "price": 3785.4
+      "change_pct": -2.23,
+      "price": 3778.2
     },
     "VIX": {
       "change_pct": 11.13,
@@ -560,6 +555,11 @@
       "Congress skeptical as Trump officials seek $50B for air travel system - AP News",
       "Exclusive | FAA Pauses Router Installations After Nationwide Ground Stop - WSJ",
       "FBI Rules Out Hack in FAA Air Traffic Control Outage as the Mystery Deepens - The Australian"
+    ],
+    "bank_outage": [
+      "The NAB share price is down 25% from its high, is it a bargain buy? - The Motley Fool Australia",
+      "DHS’ 4-year cap on student visa stays struck down by federal judge - Higher Ed Dive",
+      "Labor backs down on backpacker visa cuts amid debate over rents - Real Estate"
     ],
     "blood": [
       "Jordan evacuates 12 children from Gaza for medical treatment - アラブニュース",
@@ -605,6 +605,11 @@
       "N-able Kills Legacy APIs, Patches 17 N-central Zero-Days - SecurityWeek",
       "Google, Anthropic slash disclosure timelines amid AI rush - TechTarget"
     ],
+    "deepfake": [
+      "Saskatchewan introduces legislation targeting malicious AI deepfakes - CBC",
+      "Qurultay drafts Kazakhstan's first AI-generated bill - Qazinform",
+      "AI-generated ‘doomsday' videos flood social media amid string of major outages - NBC 5 Chicago"
+    ],
     "dieoff": [
       "How Vashon chicken owners can protect against bird flu - Vashon-Maury Island Beachcomber",
       "Mahendragiri Varahi Ending Explained: The Terrifying 200-Year-Old Curse and Shocking Revenge Mystery (Spoilers) - Vocal"
@@ -619,10 +624,20 @@
       "Government introduces fuel emergency plan - FBC News",
       "Australian Researchers Develop Bioengineered Cornea to Address Donor Tissue Shortage - UrduPoint"
     ],
+    "illness": [
+      "Mystery illness causes mass hospitalisation of runners - The Nightly",
+      "Zayn Malik hospitalised with mystery illness, forced to cancel upcoming appearances on album release week - Nine.com.au",
+      "Mystery Pneumonia Death Sparks Concern; Trader Joe's Recall; OUD in Young People - MedPage Today"
+    ],
     "masscas": [
       "Prison bus and tanker truck collide in “mass casualty incident” that injured 18 - CDLLife",
       "Multivehicle crash on southbound U.S. 63 involves prison bus and ethanol tanker - KOMU 8",
       "Boone County officials detail regional response to U.S. 63 six-vehicle crash that injured 18 - Branson Tri-Lakes News"
+    ],
+    "mobilisation": [
+      "Latvia to practice military mobilization this weekend / Article - LSM",
+      "The Territorial Recruitment Center canceled a man's reservation and mobilized him within 24 hours: the Seventh Administrative Court of Appeal debunked the myth of the irreversibility of conscription - Судово-юридична газета",
+      "‘We Couldn’t Fight Without It’: Ukrainian Commander Defends Mobilization - Kyiv Post"
     ],
     "murray": [
       "River Murray shack owners blocked by Red Gum tape - News - InDaily South Australia",
@@ -638,13 +653,23 @@
       "Multiple triple zero calls affected by another Optus outage - Nine.com.au",
       "Telstra mobile outage disrupts services across Australia - Australian Cyber Security Magazine"
     ],
+    "reservists": [
+      "'Life is short': IDF reserve officer dies in Tanzania climbing Mount Kilimanjaro with friends - The Jerusalem Post",
+      "Britain sanctions Israeli aid-blocking group and settlement construction companies - Jewish Telegraphic Agency",
+      "Devon Levi with a Goalie Save vs. Florida Panthers - Yahoo Sports"
+    ],
     "ru_signals": [
       "3 things I think: New CFL rules, U.S. hockey power, Ovechkin - CBC"
     ],
     "sapn": [
       "Tech meltdown: 178 sites down as banks, Apple, spy agency deal with global cyber attacks, outages - Adelaide Now",
-      "George Gale’s Growth and 27 Disposals Help WA Beat South Australia - JournalArta",
-      "Trump brushes off tech outages hours before massive cyber attack - Adelaide Now"
+      "Trump brushes off tech outages hours before massive cyber attack - Adelaide Now",
+      "Eerie Simpsons blackout prediction happening TODAY - News.com.au"
+    ],
+    "scams": [
+      "Surrey PCC warns about AI voice cloning scams ahead of Christmas - BBC",
+      "Entrust reports 116 percent rise in APAC deepfake fraud activity - TNGlobal",
+      "Deepfake fraud puts executives and D&O insurers in the firing line - Intelligent Insurer"
     ]
   },
   "prediction_markets": [
@@ -659,17 +684,17 @@
       "yes": 4.5
     },
     {
-      "d24h": 0.0,
+      "d24h": -0.5,
       "q": "NATO x Russia military clash by December 31, 2026?",
-      "yes": 11.5
+      "yes": 11.0
     },
     {
-      "d24h": 0.1,
+      "d24h": 0.2,
       "q": "China x Taiwan military clash before 2027?",
       "yes": 3.0
     },
     {
-      "d24h": 0.3,
+      "d24h": 0.2,
       "q": "US-Iran Hormuz Agreement by November 30?",
       "yes": 4.5
     },
@@ -729,7 +754,7 @@
       "yes": 1.8
     },
     {
-      "d24h": 0.4,
+      "d24h": 0.5,
       "q": "Ukraine agrees not to join NATO by December 31, 2026?",
       "yes": 3.5
     },
@@ -744,9 +769,9 @@
       "yes": 4.0
     },
     {
-      "d24h": -0.3,
+      "d24h": 0.3,
       "q": "Will the U.S. test a nuclear weapon by December 31 2026?",
-      "yes": 2.6
+      "yes": 3.0
     },
     {
       "d24h": 0.5,
@@ -976,24 +1001,19 @@
     },
     {
       "band": "Guarded",
-      "convergence": "Two different kinds of sign are showing together (electronic warfare and shipping). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet bl",
+      "convergence": "Only one kind of sign is showing (shipping). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
       "domains": [
-        "Electronic warfare",
         "Shipping"
       ],
       "key": "mideast",
       "lit": [
         {
-          "detail": "gps_gulf 27 vs usual 9",
-          "name": "GPS jamming spike (Gulf / Israel)"
-        },
-        {
           "detail": "Strait of Hormuz -38% vs usual (2.3/day)",
           "name": "Ship traffic through Hormuz down sharply"
         }
       ],
-      "score": 25,
-      "trend": "up"
+      "score": 15,
+      "trend": "down"
     },
     {
       "band": "Low",
@@ -1008,14 +1028,19 @@
       "trend": "steady"
     },
     {
-      "band": "Guarded",
-      "convergence": "Two different kinds of sign are showing together (cyber and undersea cables). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and mobil",
+      "band": "Elevated",
+      "convergence": "Signs are converging across 3 separate areas (cyber, mobilisation and undersea cables). Unrelated systems flagging the same scenario at once is the pattern seen before past events. Before February 2022: embassy departures, mobilisation reports, airspace closures and a surge in GPS jamming. Baltic an",
       "domains": [
         "Cyber",
+        "Mobilisation",
         "Undersea cables"
       ],
       "key": "russia",
       "lit": [
+        {
+          "detail": "Latvia to practice military mobilization this weekend / Article",
+          "name": "Mobilisation / reservist reports (Russia / NATO)"
+        },
         {
           "detail": "ESET Research: Sandworm behind cyberattack on Poland’s power grid in late 2025",
           "name": "Russian wiper / Sandworm activity reports"
@@ -1025,8 +1050,8 @@
           "name": "Russian / Chinese vessels loitering over Baltic cables"
         }
       ],
-      "score": 20,
-      "trend": "down"
+      "score": 35,
+      "trend": "up"
     },
     {
       "band": "Low",
@@ -1082,11 +1107,12 @@
       "trend": "steady"
     },
     {
-      "band": "Guarded",
-      "convergence": "Two different kinds of sign are showing together (ai-enabled hacking and cloud services). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, deepfakes of leaders or fake ",
+      "band": "Elevated",
+      "convergence": "Signs are converging across 3 separate areas (ai-enabled hacking, cloud services and fraud waves). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: a Chinese",
       "domains": [
         "AI-enabled hacking",
-        "Cloud services"
+        "Cloud services",
+        "Fraud waves"
       ],
       "key": "ai",
       "lit": [
@@ -1097,10 +1123,14 @@
         {
           "detail": "The major Microsoft 365 outage saw Japanese workers fire up their fax machines for the first time in years",
           "name": "Major cloud or AI service outage"
+        },
+        {
+          "detail": "Surrey PCC warns about AI voice cloning scams ahead of Christmas",
+          "name": "Surge in AI voice-clone / deepfake scams in Australia"
         }
       ],
-      "score": 25,
-      "trend": "down"
+      "score": 30,
+      "trend": "up"
     }
   ],
   "sectors_relative_5d": {
@@ -1115,7 +1145,7 @@
     "Optus": 0.0,
     "TPG": 0.0,
     "Telstra": 0.0,
-    "Vodafone": 0.0
+    "Vodafone": 9.5
   },
   "us_departure_orders": [
     "Belarus"
