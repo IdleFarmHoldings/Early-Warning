@@ -1,7 +1,13 @@
 {
   "about": "Short form of latest.json + indicators.json for the analysis run. Links and raw samples removed.",
   "acsc": [],
-  "aircraft_flags": {},
+  "aircraft_flags": {
+    "gps_gulf": {
+      "median": 6.0,
+      "status": "ANOMALY",
+      "value": 42
+    }
+  },
   "analyst": {
     "ASPI Strategist": [
       "Collins refurbishment looks like overrunning, hitting availability",
@@ -305,16 +311,16 @@
   "gdacs_orange_red": [
     "Orange notification for tropical cyclone AKVAN-26. Population affected by Category 1 (120 km/h) wind speeds or higher is 0  (14.328 million in Tropical Storm)."
   ],
-  "generated_at": "2026-11-18T11:07:00Z",
+  "generated_at": "2026-11-18T11:13:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 15,
+    "Baltic / Kaliningrad": 13,
     "Black Sea": null,
-    "Israel & Eastern Mediterranean": 5,
-    "Korea": 0,
-    "Persian Gulf": 1,
-    "South Australia": 5,
+    "Israel & Eastern Mediterranean": 4,
+    "Korea": 1,
+    "Persian Gulf": 42,
+    "South Australia": 6,
     "Sydney / NSW": 0,
-    "Taiwan Strait": 2
+    "Taiwan Strait": 0
   },
   "incidents": [
     {
@@ -325,8 +331,17 @@
         "Sites down as banks, Apple, spy agency deal with cyber attacks, outages; Rubio says ‘no evidence’",
         "CBA gives away AI security tool to stop hackers"
       ],
-      "severity": "Warning",
+      "severity": "Critical",
       "target": "Banking & payments"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "Apple denies cyberattack after widespread service outage"
+      ],
+      "severity": "Info",
+      "target": "Apple"
     },
     {
       "attack_reported": true,
@@ -354,15 +369,6 @@
       ],
       "severity": "Info",
       "target": "Australia"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
-        "Singapore asks AI firms for transparency following Australia data breach"
-      ],
-      "severity": "Info",
-      "target": "Singapore"
     },
     {
       "attack_reported": true,
@@ -460,6 +466,15 @@
       "attack_reported": false,
       "confirmed": false,
       "headlines": [
+        "Rubio: No evidence links US tech outages to each other or cybercrime"
+      ],
+      "severity": "Info",
+      "target": "Rubio"
+    },
+    {
+      "attack_reported": false,
+      "confirmed": false,
+      "headlines": [
         "Seven US outages in six days, each with a different cause"
       ],
       "severity": "Info",
@@ -478,8 +493,8 @@
   "internet_drop_pct": {
     "China": 0.0,
     "Iran": 0.0,
-    "Israel": 0.1,
-    "Russia": 1.7,
+    "Israel": 0.0,
+    "Russia": 1.8,
     "South Korea": 0.0,
     "Taiwan": 0.0
   },
@@ -499,16 +514,16 @@
       "Mount Lofty Ranges": "Moderate / High"
     },
     "fire_danger_ok": true,
-    "fires_active": 10,
+    "fires_active": 11,
     "fuel": {
-      "brent_aud": 137.7,
-      "change_pct": 2.5,
+      "brent_aud": 137.6,
+      "change_pct": 2.4,
       "pump_cents": 2,
       "week_ago_aud": 134.4
     },
-    "grid_demand_fall_pct": 2.9,
-    "grid_demand_mw": 1524,
-    "grid_demand_usual_mw": 1390,
+    "grid_demand_fall_pct": 6.8,
+    "grid_demand_mw": 1463,
+    "grid_demand_usual_mw": 1386,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
@@ -559,16 +574,16 @@
       "price": 0.6732
     },
     "Brent oil": {
-      "change_pct": -3.95,
-      "price": 89.46
+      "change_pct": -3.61,
+      "price": 89.78
     },
     "Gold": {
-      "change_pct": -2.34,
-      "price": 3773.8
+      "change_pct": -2.39,
+      "price": 3771.8
     },
     "VIX": {
-      "change_pct": -7.27,
-      "price": 23.61
+      "change_pct": -7.23,
+      "price": 23.62
     }
   },
   "national_shocks": {
@@ -586,7 +601,7 @@
     "ai_hack": [
       "California sues OpenAI over AI agents hacking a software platform - NPR",
       "FBI warns hackers use AI-powered ARTEX framework to automate attacks - Yeni Safak English",
-      "FBI warns hackers using AI-powered tool to automate cyberattacks worldwide - Anadolu Ajansı"
+      "Google uncovers first fully autonomous AI cyberattack | Business Standard - newspaper - Magzter"
     ],
     "airspace": [
       "Moldova closes airspace after drone detected heading towards Chișinău - Euronews.com",
@@ -606,11 +621,6 @@
     "blood": [
       "Jordan evacuates 12 children from Gaza for medical treatment - アラブニュース",
       "Thalassaemia patients mark Children's Day with blood donation drive - Lokmat Times"
-    ],
-    "cables": [
-      "What makes the North Sea attractive to telecoms companies? - Capacity Media",
-      "Expert urges lawmakers craft law against subsea cable sabotage - Inquirer.net",
-      "Can the internet go down? 10 facts on how outages happen - qz.com"
     ],
     "chem": [
       "Monaco Gives OPCW €40,000 to Boost Its Work - Mirage News",
@@ -660,6 +670,11 @@
       "Aster (ASTER) Volatility: Flash Crash and Security Incident - CoinMarketCap",
       "Canadian Investment Regulatory Organization Trading Halt - LTC - The Manila Times"
     ],
+    "fuel_au": [
+      "Iran fuel crisis deepens amid war and sanctions - DW.com",
+      "Beyond the green premium: Competitive advantage through decarbonization - Yahoo News Australia",
+      "Pentagon Says Ukraine's Deep Strikes Backfire, Drawing Rebuke From Germany and Britain - Around Prague"
+    ],
     "illness": [
       "Mystery illness causes mass hospitalisation of runners - The Nightly",
       "Zayn Malik hospitalised with mystery illness, forced to cancel upcoming appearances on album release week - Nine.com.au",
@@ -689,13 +704,13 @@
       "Australia to strengthen telecom networks after new Optus outage - Capacity Media",
       "Big Four bank issues update after major outage - The Nightly"
     ],
-    "reservists": [
-      "'Life is short': IDF reserve officer dies in Tanzania climbing Mount Kilimanjaro with friends - The Jerusalem Post",
-      "Britain sanctions Israeli aid-blocking group and settlement construction companies - Jewish Telegraphic Agency",
-      "Ukraine does not plan to change the mobilization age, but men over 50 will continue to be drafted, — Venislavskyi - Судово-юридична газета"
-    ],
     "ru_signals": [
       "3 things I think: New CFL rules, U.S. hockey power, Ovechkin - CBC"
+    ],
+    "sapn": [
+      "Rubio: No evidence links US tech outages to each other or cybercrime - News.com.au",
+      "Tech meltdown: 178 sites down as banks, Apple, spy agency deal with global cyber attacks, outages - Adelaide Now",
+      "What time does GTA 6 come out in Australia? Midnight AEDT tonight; the west may get in earlier - Nacionale"
     ],
     "scams": [
       "Surrey PCC warns about AI voice cloning scams ahead of Christmas - BBC",
@@ -1032,25 +1047,30 @@
     },
     {
       "band": "Guarded",
-      "convergence": "Only one kind of sign is showing (shipping). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
+      "convergence": "Two different kinds of sign are showing together (electronic warfare and shipping). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet bl",
       "domains": [
+        "Electronic warfare",
         "Shipping"
       ],
       "key": "mideast",
       "lit": [
         {
+          "detail": "gps_gulf 42 vs usual 6.0",
+          "name": "GPS jamming spike (Gulf / Israel)"
+        },
+        {
           "detail": "Strait of Hormuz -38% vs usual (2.3/day)",
           "name": "Ship traffic through Hormuz down sharply"
         }
       ],
-      "score": 15,
-      "trend": "steady"
+      "score": 25,
+      "trend": "up"
     },
     {
       "band": "Low",
       "key": "taiwan",
       "score": 0,
-      "trend": "down"
+      "trend": "steady"
     },
     {
       "band": "Low",
@@ -1156,7 +1176,7 @@
   ],
   "sectors_relative_5d": {
     "defence_au": -8.3,
-    "defence_eu": -0.81,
+    "defence_eu": -0.88,
     "defence_us": 0.21,
     "pandemic": -8.15
   },
@@ -1165,7 +1185,7 @@
     "Aussie Broadband": 0.0,
     "Optus": 0.0,
     "TPG": 0.0,
-    "Telstra": 0.4,
+    "Telstra": 0.0,
     "Vodafone": 0.0
   },
   "us_departure_orders": [
