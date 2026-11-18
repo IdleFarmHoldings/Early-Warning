@@ -142,9 +142,9 @@
         "2026-11-17 ?: Visa Report: AI-Enabled Fraud and Third-Party Attacks Are Scaling Worldwide (same pattern)",
         "2026-11-17 ?: Microsoft Outage Chaos Exposes The Risks Of Relying On One Cloud Provider (same pattern)",
         "2026-11-17 ?: FBI warns hackers weaponizing ARTEX AI framework to automate attacks on energy, manufacturing, telecom (named attacker)",
-        "2026-11-16 United States/Europe: Ad-tech firm Optimizely confirms breach after fake phone call; big-brand websites affected (same pattern)"
+        "2026-11-16 ?: The FBI Warns That Hackers Are Using This Tool to Break Into Companies in Under 3 Hours (named attacker)"
       ],
-      "incidents_7d": 6,
+      "incidents_7d": 7,
       "official_warning": true,
       "score": 85,
       "sectors": [
@@ -162,7 +162,7 @@
       ],
       "title": "Suspected China campaign",
       "touches_australia": false,
-      "trend": "up"
+      "trend": "steady"
     },
     {
       "actor": "Russia",
@@ -249,18 +249,18 @@
     "acsc": "TimeoutError: The read operation timed out",
     "chokepoints": "RuntimeError: PortWatch returned no rows: {\"error\": {\"code\": 499, \"message\": \"Token Required\", \"messageCode\": \"GWM_0003\"",
     "incidents": "ValueError: time data 'Info' does not match format '%Y-%m-%dT%H:%M:%SZ'",
-    "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
+    "navwarn": "RuntimeError: cast-warn?status=A&output=json: TimeoutError: The read operation timed out; ons/broadcast-warn?output=json"
   },
   "gdacs_orange_red": [
     "Orange notification for tropical cyclone AKVAN-26. Population affected by Category 1 (120 km/h) wind speeds or higher is 0  (11.538 million in Tropical Storm)."
   ],
-  "generated_at": "2026-11-18T17:10:00Z",
+  "generated_at": "2026-11-18T17:26:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 24,
-    "Black Sea": null,
-    "Israel & Eastern Mediterranean": 4,
+    "Baltic / Kaliningrad": 18,
+    "Black Sea": 25,
+    "Israel & Eastern Mediterranean": 6,
     "Korea": null,
-    "Persian Gulf": 6,
+    "Persian Gulf": 3,
     "South Australia": null,
     "Sydney / NSW": null,
     "Taiwan Strait": 0
@@ -381,11 +381,11 @@
   ],
   "internet_drop_pct": {
     "China": 0.0,
-    "Iran": 0.1,
+    "Iran": 0.2,
     "Israel": 0.0,
-    "Russia": 0.3,
+    "Russia": 0.6,
     "South Korea": 0.2,
-    "Taiwan": 1.1
+    "Taiwan": 1.2
   },
   "local_sa": {
     "bom": [
@@ -403,16 +403,16 @@
       "Mount Lofty Ranges": "High / High"
     },
     "fire_danger_ok": true,
-    "fires_active": 12,
+    "fires_active": 10,
     "fuel": {
-      "brent_aud": 133.6,
-      "change_pct": -1.0,
+      "brent_aud": 133.5,
+      "change_pct": -1.1,
       "pump_cents": -1,
       "week_ago_aud": 135.0
     },
-    "grid_demand_fall_pct": 4.9,
-    "grid_demand_mw": 1308,
-    "grid_demand_usual_mw": 1259,
+    "grid_demand_fall_pct": 4.2,
+    "grid_demand_mw": 1295,
+    "grid_demand_usual_mw": 1255,
     "grid_lor_level": 0,
     "nearby_incidents": [
       {
@@ -469,20 +469,20 @@
   },
   "markets": {
     "AUD/USD": {
-      "change_pct": -0.36,
-      "price": 0.6713
+      "change_pct": -0.24,
+      "price": 0.6721
     },
     "Brent oil": {
-      "change_pct": -5.78,
-      "price": 87.76
+      "change_pct": -5.55,
+      "price": 87.97
     },
     "Gold": {
-      "change_pct": -2.93,
-      "price": 3751.0
+      "change_pct": -3.05,
+      "price": 3746.5
     },
     "VIX": {
-      "change_pct": 0.51,
-      "price": 25.59
+      "change_pct": -3.34,
+      "price": 24.61
     }
   },
   "national_shocks": {
@@ -508,9 +508,9 @@
       "Moldova closes airspace after drone detected heading towards Chișinău - Euronews.com"
     ],
     "aviation_halt": [
-      "Congress skeptical as Trump officials seek $50B for air travel system - AP News",
       "FAA pauses Juniper installations as ground-stop cause remains unresolved - iTWire",
-      "Nashville Airport Filled With Suitcases Following Nationwide Ground Stop - News.com.au"
+      "Nashville Airport Filled With Suitcases Following Nationwide Ground Stop - News.com.au",
+      "Exclusive | FAA Pauses Router Installations After Nationwide Ground Stop - WSJ"
     ],
     "bank_outage": [
       "The NAB share price is down 25% from its high. Is it a bargain buy? - The Motley Fool Australia",
@@ -587,8 +587,8 @@
     ],
     "mobilisation": [
       "«Child mobilisation»: manipulation based on a video from a Ukrainian military lyceum - Центр протидії дезінформації",
-      "In Kyiv, a 19-year-old girl poisoned a former Ukrainian Armed Forces soldier from Colombia for a promised $1000 - Судово-юридична газета",
-      "Ali Zaidi orders formation of joint force to control Jurf al-Nasr - کردپرس"
+      "Ali Zaidi orders formation of joint force to control Jurf al-Nasr - کردپرس",
+      "In Kyiv, a 19-year-old girl poisoned a former Ukrainian Armed Forces soldier from Colombia for a promised $1000 - Судово-юридична газета"
     ],
     "murray": [
       "River Murray shack owners blocked by Red Gum tape - News - InDaily South Australia",
@@ -610,6 +610,7 @@
       "IDF plans to cut reserve duty to 58 days, reduce battalions - The Jerusalem Post"
     ],
     "ru_signals": [
+      "Trump’s dream of a nuclear deal meets reality of unwilling Russia and China - The Washington Post",
       "3 things I think: New CFL rules, U.S. hockey power, Ovechkin - CBC"
     ],
     "sapn": [
@@ -648,9 +649,9 @@
       "yes": 3.0
     },
     {
-      "d24h": -0.4,
+      "d24h": -0.3,
       "q": "US-Iran Hormuz Agreement by November 30?",
-      "yes": 4.3
+      "yes": 4.4
     },
     {
       "d24h": 0.2,
@@ -693,12 +694,12 @@
       "yes": 1.4
     },
     {
-      "d24h": 1.5,
+      "d24h": -1.0,
       "q": "Iran-Oman Hormuz Agreement by November 30?",
-      "yes": 6.0
+      "yes": 5.0
     },
     {
-      "d24h": -3.0,
+      "d24h": -2.0,
       "q": "Iran-Oman Hormuz Agreement by December 31?",
       "yes": 14.5
     },
@@ -708,19 +709,19 @@
       "yes": 1.6
     },
     {
-      "d24h": 0.0,
+      "d24h": 0.1,
       "q": "Ukraine agrees not to join NATO by December 31, 2026?",
-      "yes": 3.2
+      "yes": 3.3
     },
     {
-      "d24h": 0.8,
+      "d24h": 0.9,
       "q": "NATO/EU troops fighting in Ukraine by December 31, 2026?",
-      "yes": 3.8
+      "yes": 3.9
     },
     {
-      "d24h": 2.3,
+      "d24h": 2.0,
       "q": "Will Russia test a nuclear weapon by December 31 2026?",
-      "yes": 6.3
+      "yes": 6.0
     },
     {
       "d24h": -0.1,
@@ -733,17 +734,17 @@
       "yes": 18.5
     },
     {
-      "d24h": -1.0,
+      "d24h": -0.5,
       "q": "Ukraine agrees not to join NATO by December 31, 2027?",
       "yes": 19.0
     },
     {
-      "d24h": -2.0,
+      "d24h": 0.0,
       "q": "Will Nick Stewart attend a US x Iran diplomatic meeting by December 31, 2026?",
       "yes": 7.5
     },
     {
-      "d24h": -3.5,
+      "d24h": -3.0,
       "q": "Iran blockade lifted before Iran-Oman Hormuz agreement?",
       "yes": 11.0
     },
@@ -962,7 +963,7 @@
       "band": "Low",
       "key": "mideast",
       "score": 0,
-      "trend": "down"
+      "trend": "steady"
     },
     {
       "band": "Low",
@@ -1075,16 +1076,16 @@
   "sectors_relative_5d": {
     "defence_au": -8.3,
     "defence_eu": -1.8,
-    "defence_us": -1.01,
-    "pandemic": -6.44
+    "defence_us": -1.36,
+    "pandemic": -6.68
   },
   "tankers": "normal",
   "telecom_drop_pct": {
-    "Aussie Broadband": 1.0,
-    "Optus": 1.0,
-    "TPG": 0.4,
+    "Aussie Broadband": 0.8,
+    "Optus": 0.0,
+    "TPG": 0.3,
     "Telstra": 0.2,
-    "Vodafone": 9.5
+    "Vodafone": 0.0
   },
   "us_departure_orders": [
     "Belarus"
