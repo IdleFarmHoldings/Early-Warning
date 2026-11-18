@@ -42,9 +42,20 @@
           "Not hit yet in this campaign but typical for Iran: power and gas; banks and payments"
         ],
         "other_explanations": "These may not be connected: criminal gangs, faulty systems, or reporters linking separate events can look the same. No government has confirmed this as one campaign.",
-        "pattern": "6 incidents over 9 days: tampering with physical equipment, hacking a supplier to reach many victims and breaking in (method not reported) against food and cold storage, fuel and shipping, government and defence, hospitals and health and water supply in Europe and United States."
+        "pattern": "7 incidents over 12 days: tampering with physical equipment, hacking a supplier to reach many victims and breaking in (method not reported) against food and cold storage, fuel and shipping, government and defence, hospitals and health and water supply in Europe and United States."
       },
       "incidents": [
+        {
+          "countries": [],
+          "date": "2026-11-16",
+          "how": "tampering with physical equipment",
+          "kind": "attack",
+          "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNaFR4Y1hscm0yakxiVkh0SlhnSVdMUGVIUDNHU0pBWXhwMlZhakhEYTJ0eTdfRExuM1RSU1hVNFJHamc5bDVFSmNhalI0RUZoSllQdTF5VkluYVpBZ19BWTJiSjVOcVpmNm1FSFhjYzlPQWVvcGd1VWd4dWZMcU1CYjU3YmtxSmplVkt5bXZPcm9fZEJ1MlNnRk9nY2FjeTQtVERIYVFn?oc=5",
+          "linked_by": "same pattern",
+          "reports": 1,
+          "sector": "food and cold storage",
+          "title": "Hackers Probe Newly Disclosed Flaws in Copeland Refrigeration Controllers"
+        },
         {
           "countries": [
             "United States"
@@ -125,9 +136,9 @@
           "title": "French blood service stops cyber incident at its refrigeration equipment supplier"
         }
       ],
-      "incidents_7d": 3,
+      "incidents_7d": 4,
       "key": "iran",
-      "last_seen": "2026-11-13T12:00:00Z",
+      "last_seen": "2026-11-16T11:05:42Z",
       "official_warning": true,
       "score": 85,
       "sectors": [
@@ -225,10 +236,84 @@
       ],
       "title": "Criminal gangs: attacks on software and online services",
       "touches_australia": false,
+      "trend": "steady"
+    },
+    {
+      "actor": "Russia",
+      "actor_kind": "state",
+      "attributed_officially": false,
+      "band": "Possible",
+      "countries": [],
+      "first_seen": "2026-11-17T10:05:59Z",
+      "hypothesis": {
+        "actions": [
+          {
+            "action": "Don't follow login or payment links in emails or texts; open the app or site yourself.",
+            "reason": "Breaches of software suppliers are often followed by convincing scam messages."
+          }
+        ],
+        "australia": "Australia supports Ukraine, so government websites and some businesses have been targeted before, mostly with nuisance attacks.",
+        "confirm_if": [
+          "overload attacks on Australian government or bank websites",
+          "attacks that damage equipment in Europe",
+          "a NATO-Russia clash"
+        ],
+        "for_us": [
+          "Apps and websites you use may be down, or quietly compromised."
+        ],
+        "if_deliberate": "If this is a deliberate campaign by Russia, the likely aim is: Pressure Europe and NATO over Ukraine with sabotage and disruption, and scare the public.",
+        "next_targets": [
+          "European power and water utilities",
+          "Airports and rail",
+          "Government websites (overload attacks)",
+          "Undersea cables",
+          "Not hit yet in this campaign but typical for Russia: power and gas; water supply; government and defence"
+        ],
+        "other_explanations": "These may not be connected: criminal gangs, faulty systems, or reporters linking separate events can look the same. No government has confirmed this as one campaign.",
+        "pattern": "2 incidents over 1 day: AI-driven hacking and breaking in (method not reported) against software and online services."
+      },
+      "incidents": [
+        {
+          "countries": [],
+          "date": "2026-11-17",
+          "how": "AI-driven hacking",
+          "kind": "attack",
+          "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE16VHhTbmFpZ01tMVhxWVVudjQ1ZFFhZmpadDNLQ0FpWExER2lXNXlUTkdyaFVYeHBMQVFtaEota3Qyam1aYVRaWUJlNTU4bDJ5TUM1WFVCWHl6cFNYSnU2UVhyWlVFc2ZLcGxUS3RHVFYtS0VfdFNWczZ5Q2xnUQ?oc=5",
+          "linked_by": "named attacker",
+          "reports": 1,
+          "sector": "software and online services",
+          "title": "Russians Carried Out the First Autonomous AI Cyberattack — According to Google"
+        },
+        {
+          "countries": [],
+          "date": "2026-11-17",
+          "how": "AI-driven hacking",
+          "kind": "attack",
+          "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPb2tBRzFPVzNkWENsbVNtY3hpeGt3T3FvU3ozZllQWlFqemtsTGg2eS0tdlJqT2I1NDdnMVg4WHlCenMwbmJQN1d6RlZiUWJlTDhlMDVmbmNoQi05N21FaGVXRG9fZzFJTlN2T0xvR2RxTkgwcjJpbWZEQ2NtbW8xR3lPUmU1SS1SeVF1LWNiU09DOEdaUkkxMkk0LTNMNVVyS2t2RmliV3EyZzVBWFgwbXdiLWhwUlRzNDNtOUdXX2ZBV2FfWXZfOEpRR2M?oc=5",
+          "linked_by": "same pattern",
+          "reports": 3,
+          "sector": "software and online services",
+          "title": "Google says hackers use AI agents to find and exploit software flaws"
+        }
+      ],
+      "incidents_7d": 2,
+      "key": "russia",
+      "last_seen": "2026-11-17T15:41:54Z",
+      "official_warning": false,
+      "score": 45,
+      "sectors": [
+        "software and online services"
+      ],
+      "techniques": [
+        "AI-driven hacking",
+        "breaking in (method not reported)"
+      ],
+      "title": "Suspected Russia campaign",
+      "touches_australia": false,
       "trend": "up"
     }
   ],
-  "generated_at": "2026-11-18T04:09:31Z",
+  "generated_at": "2026-11-18T04:14:00Z",
   "note": "Small cyber incidents linked into suspected campaigns and read as if deliberate. Scores (0-100) show how much a cluster looks like a deliberate campaign, not a probability or a confirmed finding.",
-  "reports_in_ledger": 30
+  "reports_in_ledger": 72
 }
