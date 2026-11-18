@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-18T18:16:00Z",
+  "generated_at": "2026-11-18T18:32:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -102,12 +102,20 @@
     },
     {
       "band": "Guarded",
-      "convergence": "Only one kind of sign is showing (shipping). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
+      "convergence": "Two different kinds of sign are showing together (aviation and shipping). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
       "domains": [
+        "Aviation",
         "Shipping"
       ],
       "key": "mideast",
       "lit": [
+        {
+          "detail": "When Israel's airspace closed, this Utah tour company got its travelers home just 24 hours late",
+          "domain": "Aviation",
+          "id": "airspace",
+          "name": "Airspace closures reported (Iran / Israel / Gulf)",
+          "weight": 10
+        },
         {
           "detail": "Strait of Hormuz -38% vs usual (2.3/day)",
           "domain": "Shipping",
@@ -118,7 +126,7 @@
       ],
       "name": "Middle East war & Gulf shipping",
       "sa_impact": "Fuel: Australia imports most of its fuel, much of it refined from Gulf crude in Asia. Shipping attacks or a Hormuz closure push up prices within days and can cause local shortages.",
-      "score": 15,
+      "score": 25,
       "trend": "up",
       "unlit": [
         {
@@ -150,12 +158,6 @@
           "id": "dep",
           "name": "New US embassy departure order in the region",
           "weight": 15
-        },
-        {
-          "domain": "Aviation",
-          "id": "airspace",
-          "name": "Airspace closures reported (Iran / Israel / Gulf)",
-          "weight": 10
         },
         {
           "domain": "Maritime",
@@ -381,13 +383,21 @@
       "why": "North Korean missile launches are often preceded by navigation warnings; South Korea and Japan report GPS jamming from the North during tense periods."
     },
     {
-      "band": "Low",
-      "convergence": "Only one kind of sign is showing (cyber). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and mobilisation / reservist reports (russia / nato).",
+      "band": "Guarded",
+      "convergence": "Two different kinds of sign are showing together (cyber and electronic warfare). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: unusual military air activity (eastern europe), mobilisation / reservist reports (russia / nato) and us nuclear command aircraft unusual.",
       "domains": [
-        "Cyber"
+        "Cyber",
+        "Electronic warfare"
       ],
       "key": "russia",
       "lit": [
+        {
+          "detail": "gps_blacksea 50 vs usual 19",
+          "domain": "Electronic warfare",
+          "id": "gps",
+          "name": "GPS jamming spike (Baltic / Black Sea)",
+          "weight": 15
+        },
         {
           "detail": "ESET Research: Sandworm behind cyberattack on Poland’s power grid in late 2025",
           "domain": "Cyber",
@@ -398,15 +408,9 @@
       ],
       "name": "Russia-NATO escalation",
       "sa_impact": "Indirect: energy and market shock, cyber attacks that can spill over to Australian systems, and nuclear-risk rhetoric.",
-      "score": 10,
-      "trend": "steady",
+      "score": 25,
+      "trend": "up",
       "unlit": [
-        {
-          "domain": "Electronic warfare",
-          "id": "gps",
-          "name": "GPS jamming spike (Baltic / Black Sea)",
-          "weight": 15
-        },
         {
           "domain": "Military air",
           "id": "air",
@@ -652,19 +656,12 @@
           "id": "shortage",
           "name": "Australian medicine or PPE shortage reports",
           "weight": 10
-        },
-        {
-          "detail": "Prison bus and tanker truck collide in “mass casualty incident” that injured 18",
-          "domain": "Health",
-          "id": "masscas",
-          "name": "Mass casualty declarations (any country)",
-          "weight": 5
         }
       ],
       "name": "Pandemic, biological or chemical emergency",
       "sa_impact": "Health system strain, possible lockdowns and border closures, and shortages of medicines and protective equipment, which Australia mostly imports.",
-      "score": 30,
-      "trend": "steady",
+      "score": 25,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Health",
@@ -683,6 +680,12 @@
           "id": "pharma",
           "name": "Pandemic-response stocks outperforming (5 days)",
           "weight": 20
+        },
+        {
+          "domain": "Health",
+          "id": "masscas",
+          "name": "Mass casualty declarations (any country)",
+          "weight": 5
         },
         {
           "domain": "Markets",

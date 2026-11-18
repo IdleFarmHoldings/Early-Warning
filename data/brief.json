@@ -1,7 +1,13 @@
 {
   "about": "Short form of latest.json + indicators.json for the analysis run. Links and raw samples removed.",
   "acsc": [],
-  "aircraft_flags": {},
+  "aircraft_flags": {
+    "gps_blacksea": {
+      "median": 19,
+      "status": "ANOMALY",
+      "value": 50
+    }
+  },
   "analyst": {
     "ASPI Strategist": [
       "Collins refurbishment looks like overrunning, hitting availability",
@@ -308,12 +314,12 @@
   "gdacs_orange_red": [
     "Orange notification for tropical cyclone AKVAN-26. Population affected by Category 1 (120 km/h) wind speeds or higher is 0  (11.538 million in Tropical Storm)."
   ],
-  "generated_at": "2026-11-18T18:16:00Z",
+  "generated_at": "2026-11-18T18:32:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 15,
-    "Black Sea": null,
-    "Israel & Eastern Mediterranean": 0,
-    "Korea": 0,
+    "Baltic / Kaliningrad": 14,
+    "Black Sea": 50,
+    "Israel & Eastern Mediterranean": 2,
+    "Korea": 6,
     "Persian Gulf": 11,
     "South Australia": 0,
     "Sydney / NSW": null,
@@ -369,6 +375,15 @@
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
+        "Japan Shuts Down Fugaku Supercomputer After Hackers Breach Internal Servers"
+      ],
+      "severity": "Info",
+      "target": "Japan Shuts"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
         "Hackers use open-source AI agents to automate attacks on companies"
       ],
       "severity": "Info",
@@ -415,9 +430,9 @@
       "attack_reported": false,
       "confirmed": true,
       "headlines": [
+        "We Now Know What Really Caused Microsoft's Massive November Outage",
         "Microsoft Makes Its AI Case After Global Outage and Anthropic Challenge",
-        "Microsoft 365 Outage – Causes of the 24-Hour Blackout",
-        "Microsoft outage sends Japanese workers back to fax machines"
+        "Microsoft 365 Outage – Causes of the 24-Hour Blackout"
       ],
       "severity": "Warning",
       "target": "Microsoft"
@@ -439,24 +454,15 @@
       ],
       "severity": "Info",
       "target": "Banking & payments"
-    },
-    {
-      "attack_reported": false,
-      "confirmed": false,
-      "headlines": [
-        "Seven US outages in six days, each with a different cause"
-      ],
-      "severity": "Info",
-      "target": "Seven US"
     }
   ],
   "internet_drop_pct": {
     "China": 0.0,
-    "Iran": 0.2,
-    "Israel": 0.4,
+    "Iran": 0.5,
+    "Israel": 0.3,
     "Russia": 0.0,
     "South Korea": 0.3,
-    "Taiwan": 1.4
+    "Taiwan": 1.1
   },
   "local_sa": {
     "bom": [
@@ -472,16 +478,16 @@
       "Mount Lofty Ranges": "High / High"
     },
     "fire_danger_ok": true,
-    "fires_active": 10,
+    "fires_active": 11,
     "fuel": {
       "brent_aud": 133.3,
       "change_pct": -1.3,
       "pump_cents": -1,
       "week_ago_aud": 135.0
     },
-    "grid_demand_fall_pct": 0.5,
-    "grid_demand_mw": 1288,
-    "grid_demand_usual_mw": 1218,
+    "grid_demand_fall_pct": -1.5,
+    "grid_demand_mw": 1313,
+    "grid_demand_usual_mw": 1220,
     "grid_lor_level": 0,
     "nearby_incidents": [
       {
@@ -538,20 +544,20 @@
   },
   "markets": {
     "AUD/USD": {
-      "change_pct": -0.24,
-      "price": 0.6721
+      "change_pct": -0.2,
+      "price": 0.6724
     },
     "Brent oil": {
-      "change_pct": -5.24,
-      "price": 88.26
+      "change_pct": -5.22,
+      "price": 88.28
     },
     "Gold": {
-      "change_pct": -3.12,
-      "price": 3743.5
+      "change_pct": -3.16,
+      "price": 3742.1
     },
     "VIX": {
-      "change_pct": -4.87,
-      "price": 24.22
+      "change_pct": -4.36,
+      "price": 24.35
     }
   },
   "national_shocks": {
@@ -560,7 +566,7 @@
       "ground_stops": [
         {
           "airport": "SFO",
-          "end": "10:45 am PST",
+          "end": "12:00 pm PST",
           "reason": "wind"
         }
       ],
@@ -578,19 +584,19 @@
       "Google reports first observed AI-driven cyberattack that automated vulnerability discovery and exploitation - Latin Times"
     ],
     "airspace": [
+      "When Israel's airspace closed, this Utah tour company got its travelers home just 24 hours late - KSL News",
       "Pakistan closes airspace to Taiwanese airlines - The Bangladesh Monitor",
-      "Moldova closes airspace after suspected Russian drone incursions - The Copenhagen Post",
-      "Moldova closes airspace after drone detected heading towards Chișinău - Euronews.com"
+      "Moldova closes airspace after suspected Russian drone incursions - The Copenhagen Post"
     ],
     "aviation_halt": [
       "FAA pauses Juniper installations as ground-stop cause remains unresolved - iTWire",
-      "Nashville Airport Filled With Suitcases Following Nationwide Ground Stop - News.com.au",
-      "One Airline’s Frantic Race to Avoid a Ground-Stop Meltdown - WSJ"
+      "One Airline’s Frantic Race to Avoid a Ground-Stop Meltdown - WSJ",
+      "Investigators make progress in hunt for cause of FAA ground stop - CNBC"
     ],
     "bank_outage": [
       "Ghaiyyath all the rage at Ready to Run - ANZ Bloodstock News",
       "The NAB share price is down 25% from its high. Is it a bargain buy? - The Motley Fool Australia",
-      "Visa Launches Threat Intelligence Platform to Strengthen Cyber and Fraud Defense - aapnews.aap.com.au"
+      "DHS’ 4-year cap on student visa stays struck down by federal judge - Higher Ed Dive"
     ],
     "cables": [
       "EU Funds Baltic Subsea Cable Repair Capacity - SubTel Forum",
@@ -646,7 +652,6 @@
       "Premium Catering faces additional Nasdaq delisting risk - TradingView"
     ],
     "fuel_au": [
-      "The Hormuz Crude Volume Debate Masks the Real Shortage of Refined Fuels: Russell - EnergyNow.com",
       "Pentagon Says Ukraine's Deep Strikes Backfire, Drawing Rebuke From Germany and Britain - Around Prague",
       "ASEAN Regulators Tackle Cross-Border Insurance Risks in Bali - JournalArta"
     ],
@@ -658,7 +663,7 @@
     "masscas": [
       "Madigan trauma surgeons help lead regional initiative to bolster combat, disaster medical readiness - Army.mil",
       "American Doctor: The US medics who witnessed Gaza's genocide - The New Arab",
-      "Prison bus and tanker truck collide in “mass casualty incident” that injured 18 - CDLLife"
+      "18 hurt after crash involving Missouri Dept. of Corrections bus, truck hauling ethanol in Columbia - KMBC"
     ],
     "medshort": [
       "Governance failures blamed for medicine shortage crisis - Juta MedicalBrief"
@@ -674,8 +679,8 @@
     ],
     "national_outage": [
       "Properties in eight suburbs plunged into darkness as power is lost - Bendigo Advertiser",
-      "Is a nationwide blackout starting this week? Here’s what to know - WKMG",
-      "Chase issues statement after nationwide outage - NBC News"
+      "Chase issues statement after nationwide outage - NBC News",
+      "Is a nationwide blackout starting this week? Here’s what to know - WKMG"
     ],
     "outage_au": [
       "Australia telco complaints surge after Telstra outage - Traders Union",
@@ -789,14 +794,14 @@
       "yes": 3.3
     },
     {
-      "d24h": 0.0,
+      "d24h": 0.1,
       "q": "NATO/EU troops fighting in Ukraine by December 31, 2026?",
-      "yes": 3.8
+      "yes": 3.9
     },
     {
-      "d24h": 1.9,
+      "d24h": 1.1,
       "q": "Will Russia test a nuclear weapon by December 31 2026?",
-      "yes": 5.8
+      "yes": 5.1
     },
     {
       "d24h": -0.2,
@@ -819,7 +824,7 @@
       "yes": 7.5
     },
     {
-      "d24h": -2.5,
+      "d24h": -3.0,
       "q": "Iran blockade lifted before Iran-Oman Hormuz agreement?",
       "yes": 11.0
     },
@@ -1036,18 +1041,23 @@
     },
     {
       "band": "Guarded",
-      "convergence": "Only one kind of sign is showing (shipping). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
+      "convergence": "Two different kinds of sign are showing together (aviation and shipping). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in ",
       "domains": [
+        "Aviation",
         "Shipping"
       ],
       "key": "mideast",
       "lit": [
         {
+          "detail": "When Israel's airspace closed, this Utah tour company got its travelers home just 24 hours late",
+          "name": "Airspace closures reported (Iran / Israel / Gulf)"
+        },
+        {
           "detail": "Strait of Hormuz -38% vs usual (2.3/day)",
           "name": "Ship traffic through Hormuz down sharply"
         }
       ],
-      "score": 15,
+      "score": 25,
       "trend": "up"
     },
     {
@@ -1063,20 +1073,25 @@
       "trend": "steady"
     },
     {
-      "band": "Low",
-      "convergence": "Only one kind of sign is showing (cyber). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and mobilisation / reservist reports (russia / nato).",
+      "band": "Guarded",
+      "convergence": "Two different kinds of sign are showing together (cyber and electronic warfare). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: unusual military air activity (eastern europe), mobilisation / reservist reports (russia / na",
       "domains": [
-        "Cyber"
+        "Cyber",
+        "Electronic warfare"
       ],
       "key": "russia",
       "lit": [
+        {
+          "detail": "gps_blacksea 50 vs usual 19",
+          "name": "GPS jamming spike (Baltic / Black Sea)"
+        },
         {
           "detail": "ESET Research: Sandworm behind cyberattack on Poland’s power grid in late 2025",
           "name": "Russian wiper / Sandworm activity reports"
         }
       ],
-      "score": 10,
-      "trend": "steady"
+      "score": 25,
+      "trend": "up"
     },
     {
       "band": "Low",
@@ -1106,14 +1121,10 @@
         {
           "detail": "Governance failures blamed for medicine shortage crisis",
           "name": "Australian medicine or PPE shortage reports"
-        },
-        {
-          "detail": "Prison bus and tanker truck collide in “mass casualty incident” that injured 18",
-          "name": "Mass casualty declarations (any country)"
         }
       ],
-      "score": 30,
-      "trend": "steady"
+      "score": 25,
+      "trend": "down"
     },
     {
       "band": "Guarded",
@@ -1161,15 +1172,15 @@
   "sectors_relative_5d": {
     "defence_au": -8.3,
     "defence_eu": -1.8,
-    "defence_us": -1.2,
-    "pandemic": -6.84
+    "defence_us": -1.5,
+    "pandemic": -6.5
   },
   "tankers": "normal",
   "telecom_drop_pct": {
     "Aussie Broadband": 0.0,
     "Optus": 0.0,
-    "TPG": 0.1,
-    "Telstra": 0.8,
+    "TPG": 0.0,
+    "Telstra": 0.9,
     "Vodafone": 0.0
   },
   "us_departure_orders": [
