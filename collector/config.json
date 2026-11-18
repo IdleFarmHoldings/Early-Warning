@@ -617,6 +617,18 @@
       "q": "(\"don't say we didn't warn\" OR \"ro-ro ferries\" OR \"wartime footing\" OR \"war preparedness\" OR \"strategic stockpile\") China"
     },
     {
+      "key": "strikes",
+      "name": "Attacks on US and allied forces",
+      "q": "(missile OR missiles OR drone OR drones OR rocket OR \"fired on\" OR struck OR strike OR intercepted OR retaliation OR retaliatory) (\"US base\" OR \"air base\" OR \"US forces\" OR \"US troops\" OR \"US warship\" OR \"US destroyer\" OR \"US radar\" OR \"naval base\" OR \"Al Udeid\" OR \"Ali Al Salem\" OR \"Fifth Fleet\" OR Qeshm OR \"launch site\")",
+      "limit": 15
+    },
+    {
+      "key": "shipping_attacks",
+      "name": "Attacks on tankers and ships",
+      "q": "(tanker OR \"oil tanker\" OR \"cargo ship\" OR vessel OR ship OR crew) (attacked OR attack OR struck OR hit OR explosion OR mine OR seized OR missile OR drone OR injured OR missing) (Hormuz OR \"Persian Gulf\" OR \"Gulf of Oman\" OR \"Red Sea\" OR \"Bab el-Mandeb\" OR \"South China Sea\" OR \"Taiwan Strait\")",
+      "limit": 15
+    },
+    {
       "key": "cyber_state",
       "name": "State hackers & pre-positioning",
       "q": "(\"Volt Typhoon\" OR \"Salt Typhoon\" OR Sandworm OR CyberAv3ngers OR \"Iranian hackers\" OR \"Iran-linked hackers\" OR \"pro-Iranian hackers\" OR \"pre-positioning\" OR \"state-sponsored hackers\" OR \"wiper malware\" OR \"CISA and FBI\") (infrastructure OR telecom OR Australia OR grid OR water OR bank OR tanker OR refrigeration OR hospital)",
