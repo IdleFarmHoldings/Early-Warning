@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-18T10:37:00Z",
+  "generated_at": "2026-11-18T10:51:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -12,7 +12,7 @@
       "key": "local",
       "lit": [
         {
-          "detail": "Extreme Fire Weather Warning for Yorke Peninsula fire district for 19 November; Severe Thunderstorm Warning for North West Pastoral forecast district",
+          "detail": "Extreme Fire Weather Warning for Yorke Peninsula fire district for 19 November; Cancellation of Severe Thunderstorm Warning for North West Pastoral forecast district",
           "domain": "Weather",
           "id": "bom",
           "name": "Bureau severe weather or heatwave warning for SA",
@@ -210,14 +210,24 @@
     },
     {
       "band": "Low",
-      "convergence": "No warning signs are showing. The strongest signs not yet showing: missile / live-fire navigation warnings near taiwan, gps jamming over the taiwan strait and internet disruption in taiwan.",
-      "domains": [],
+      "convergence": "Only one kind of sign is showing (military air). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: missile / live-fire navigation warnings near taiwan, gps jamming over the taiwan strait and internet disruption in taiwan.",
+      "domains": [
+        "Military air"
+      ],
       "key": "taiwan",
-      "lit": [],
+      "lit": [
+        {
+          "detail": "raaf 8 vs usual 1",
+          "domain": "Military air",
+          "id": "lift",
+          "name": "Military airlift or RAAF surge",
+          "weight": 10
+        }
+      ],
       "name": "Taiwan Strait / South China Sea crisis",
       "sa_impact": "Trade and fuel: most of Australia's refined fuel and many goods pass the South China Sea. A blockade would disrupt fuel, medicines and electronics within weeks; Australian forces could be drawn in.",
-      "score": 0,
-      "trend": "steady",
+      "score": 10,
+      "trend": "up",
       "unlit": [
         {
           "domain": "Maritime",
@@ -248,12 +258,6 @@
           "id": "mob",
           "name": "Mobilisation / reservist reports (China or Taiwan)",
           "weight": 15
-        },
-        {
-          "domain": "Military air",
-          "id": "lift",
-          "name": "Military airlift or RAAF surge",
-          "weight": 10
         },
         {
           "domain": "Diplomatic",
@@ -381,11 +385,10 @@
       "why": "North Korean missile launches are often preceded by navigation warnings; South Korea and Japan report GPS jamming from the North during tense periods."
     },
     {
-      "band": "Guarded",
-      "convergence": "Two different kinds of sign are showing together (cyber and undersea cables). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and mobilisation / reservist reports (russia / nato).",
+      "band": "Low",
+      "convergence": "Only one kind of sign is showing (cyber). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and mobilisation / reservist reports (russia / nato).",
       "domains": [
-        "Cyber",
-        "Undersea cables"
+        "Cyber"
       ],
       "key": "russia",
       "lit": [
@@ -395,19 +398,12 @@
           "id": "cyber",
           "name": "Russian wiper / Sandworm activity reports",
           "weight": 10
-        },
-        {
-          "detail": "Russia vessel MALVA ~72 min",
-          "domain": "Undersea cables",
-          "id": "cable",
-          "name": "Russian / Chinese vessels loitering over Baltic cables",
-          "weight": 10
         }
       ],
       "name": "Russia-NATO escalation",
       "sa_impact": "Indirect: energy and market shock, cyber attacks that can spill over to Australian systems, and nuclear-risk rhetoric.",
-      "score": 20,
-      "trend": "steady",
+      "score": 10,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Electronic warfare",
@@ -474,6 +470,12 @@
           "id": "def",
           "name": "European defence stocks outperforming (5 days)",
           "weight": 5
+        },
+        {
+          "domain": "Undersea cables",
+          "id": "cable",
+          "name": "Russian / Chinese vessels loitering over Baltic cables",
+          "weight": 10
         },
         {
           "domain": "Undersea cables",
