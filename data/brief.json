@@ -305,20 +305,19 @@
   ],
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
-    "maritime": "TimeoutError: ",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-19T22:17:00Z",
+  "generated_at": "2026-11-19T22:21:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 62,
-    "Black Sea": null,
-    "Israel & Eastern Mediterranean": 10,
+    "Baltic / Kaliningrad": 66,
+    "Black Sea": 50,
+    "Israel & Eastern Mediterranean": 3,
     "Korea": 2,
-    "Persian Gulf": 14,
-    "South Australia": 3,
+    "Persian Gulf": 16,
+    "South Australia": 0,
     "Sydney / NSW": 4,
-    "Taiwan Strait": 0
+    "Taiwan Strait": 4
   },
   "incidents": [
     {
@@ -435,21 +434,21 @@
     },
     {
       "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
-        "AI-powered Cyberattack on the European Commission"
-      ],
-      "severity": "Info",
-      "target": "AI-powered"
-    },
-    {
-      "attack_reported": true,
       "confirmed": true,
       "headlines": [
         "Tech mogul Palmer Luckey says U.S. faces tech mismatch with AI-powered hackers"
       ],
       "severity": "Info",
       "target": "Tech"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "AI-powered Cyberattack on the European Commission"
+      ],
+      "severity": "Info",
+      "target": "AI-powered"
     },
     {
       "attack_reported": true,
@@ -512,10 +511,10 @@
   "internet_drop_pct": {
     "China": 0.0,
     "Iran": 0.3,
-    "Israel": 0.7,
+    "Israel": 0.1,
     "Russia": 0.0,
     "South Korea": 0.2,
-    "Taiwan": 0.8
+    "Taiwan": 0.9
   },
   "local_sa": {
     "bom": [],
@@ -529,16 +528,16 @@
       "Mount Lofty Ranges": "Moderate / Moderate"
     },
     "fire_danger_ok": true,
-    "fires_active": 5,
+    "fires_active": 4,
     "fuel": {
       "brent_aud": 134.5,
       "change_pct": -4.2,
       "pump_cents": -4,
       "week_ago_aud": 140.4
     },
-    "grid_demand_fall_pct": 18.4,
-    "grid_demand_mw": 899,
-    "grid_demand_usual_mw": 935,
+    "grid_demand_fall_pct": 21.3,
+    "grid_demand_mw": 868,
+    "grid_demand_usual_mw": 924,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
@@ -653,14 +652,14 @@
       "Agentic AI frameworks push hacking threat to ‘inflection point,’ Google warns - Cybersecurity Dive"
     ],
     "cyber_au": [
-      "Major credit card companies hit in cyber attack - News24",
+      "Australia's Bell Financial says some client data likely accessed in cyber incident - StreetInsider",
       "Hackers steal data from Visa, MasterCard holders - Adelaide Now",
-      "Australia mulls tougher tech laws after AI health breach - The Nightly"
+      "Australia named in suspected Visa marketing data leak - Starts at 60"
     ],
     "cyber_ot": [
-      "Who is hacking Europe’s supermarket fridges and freezers, and why? - The Guardian",
+      "Shop fridges and freezers across Europe hit by fresh suspected cyber-attack - The Guardian",
       "Shop freezers in seven European countries hit by cyber-attack - BBC",
-      "Supermarket freezers and fridges in Europe hit by cyberattack - Nine.com.au"
+      "Refrigeration under cyber attack - Climate Control News"
     ],
     "cyber_state": [
       "ESET Research: Sandworm behind cyberattack on Poland’s power grid in late 2025 - We Live Security",
@@ -669,13 +668,13 @@
     ],
     "cyber_supply": [
       "Newly Patched VMware vCenter Flaw Exploited as Zero-Day by Chinese APT - SecurityWeek",
-      "Is It AI? After Nationwide Outages, Broadcom and CISA Sound Alarms on Critical Security Flaws - Virtualization Review",
-      "Critical Drupal vulnerability allows attackers to take over sites via the installer - Techzine Global"
+      "Critical Drupal vulnerability allows attackers to take over sites via the installer - Techzine Global",
+      "Is It AI? After Nationwide Outages, Broadcom and CISA Sound Alarms on Critical Security Flaws - Virtualization Review"
     ],
     "deepfake": [
       "AI-generated video misrepresented as revamp of West Bengal's Howrah bus station - AFP Fact Check",
-      "EU Commission confirms AI-generated cyber campaign, no staff-wide breach found - Yeni Safak English",
-      "Kenya and Nigeria agree to strengthen cooperation on government communication and AI-generated misinformation - Tech Review Africa"
+      "Kenya and Nigeria agree to strengthen cooperation on government communication and AI-generated misinformation - Tech Review Africa",
+      "EU Commission confirms AI-generated cyber campaign, no staff-wide breach found - Yeni Safak English"
     ],
     "dieoff": [
       "Chuck Thompson on the mysterious deaths of two Bigfoot hunters in Washington - Crime Reads",
@@ -687,9 +686,9 @@
       "EchoIQ Enters Trading Halt Pending Material Regulatory Pathway Announcement - Kalkine"
     ],
     "fuel_au": [
+      "Crimean Bridge Strikes Spark Fuel Shortage Fears as Gas Station Lines Grow in Occupied Sevastopol - UNITED24 Media",
       "Oil Supply Shock to Worsen as Inventories Fall Further Even if Conflict Ends - EnergyNow.com",
-      "Fuel tanker arrives amid supply concerns and panic buying - FBC News",
-      "Indonesia and Philippines Unionists Tackle Barriers in Bali - JournalArta"
+      "EFL warns of possible power rationing amid fuel cost crisis - FBC News"
     ],
     "illness": [
       "Mystery illness causes mass hospitalisation of runners - The Nightly",
@@ -837,9 +836,9 @@
       "yes": 2.6
     },
     {
-      "d24h": 0.3,
+      "d24h": 0.1,
       "q": "Will the U.S. test a nuclear weapon by December 31 2026?",
-      "yes": 2.4
+      "yes": 2.2
     },
     {
       "d24h": -1.0,
@@ -1154,12 +1153,13 @@
         }
       ],
       "score": 40,
-      "trend": "down"
+      "trend": "steady"
     },
     {
       "band": "Guarded",
-      "convergence": "Only one kind of sign is showing (state actors). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: sudden fall in sa electricity demand (possible large blackout), global cyber threat level raised (sans infocon not green) and several vpn / firew",
+      "convergence": "Two different kinds of sign are showing together (australian incidents and state actors). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: sudden fall in sa electricity demand (possible large blackout), global cyber threat ",
       "domains": [
+        "Australian incidents",
         "State actors"
       ],
       "key": "cyber",
@@ -1167,10 +1167,14 @@
         {
           "detail": "ESET Research: Sandworm behind cyberattack on Poland’s power grid in late 2025",
           "name": "Reports of state hackers / pre-positioning / wipers"
+        },
+        {
+          "detail": "Australia's Bell Financial says some client data likely accessed in cyber incident",
+          "name": "Major Australian cyber incident reported"
         }
       ],
-      "score": 15,
-      "trend": "steady"
+      "score": 25,
+      "trend": "up"
     },
     {
       "band": "Elevated",
@@ -1215,8 +1219,8 @@
     "Aussie Broadband": 0.0,
     "Optus": 0.0,
     "TPG": 0.0,
-    "Telstra": 0.3,
-    "Vodafone": 0.0
+    "Telstra": 0.4,
+    "Vodafone": 4.8
   },
   "us_departure_orders": [
     "Belarus"
