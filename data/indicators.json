@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-19T16:37:00Z",
+  "generated_at": "2026-11-19T16:53:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -11,7 +11,7 @@
       "key": "local",
       "lit": [
         {
-          "detail": "More than 20,000 lose power in SA as storms hit Eyre Peninsula; Multiple transmission towers down in Eyre Peninsula in South Australia on Thursday 19th November 2026, leaving 20,000+ properties without po",
+          "detail": "Multiple transmission towers down in Eyre Peninsula in South Australia on Thursday 19th November 2026, leaving 20,000+ properties without po; Communities without power after massive storm fells transmission towers on South Australia’s Eyre Peninsula",
           "domain": "Power grid",
           "id": "power",
           "name": "Reports of widespread power outages in SA",
@@ -125,7 +125,7 @@
       "name": "Middle East war & Gulf shipping",
       "sa_impact": "Fuel: Australia imports most of its fuel, much of it refined from Gulf crude in Asia. Shipping attacks or a Hormuz closure push up prices within days and can cause local shortages.",
       "score": 25,
-      "trend": "down",
+      "trend": "steady",
       "unlit": [
         {
           "domain": "Military air",
@@ -803,11 +803,11 @@
     },
     {
       "band": "Elevated",
-      "convergence": "Signs are converging across 3 separate areas (ai-enabled hacking, fraud waves and markets). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: a Chinese state-sponsored group used an AI agent to carry out 80-90% of an attack on about 30 organisations, at thousands of requests per second. A fake AI image of a Pentagon explosion briefly moved US markets in May 2023, and a deepfake video call of a CFO tricked a company into paying US$25 million in 2024. The likely signature of an AI attack is breadth and speed: many unrelated systems and vendors hit at once, synthetic media of officials, and shocks with no clear human cause. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, deepfakes of leaders or fake official alerts and market fear index jumps 25%+ in a day.",
+      "convergence": "Signs are converging across 3 separate areas (ai-enabled hacking, cloud services and fraud waves). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: a Chinese state-sponsored group used an AI agent to carry out 80-90% of an attack on about 30 organisations, at thousands of requests per second. A fake AI image of a Pentagon explosion briefly moved US markets in May 2023, and a deepfake video call of a CFO tricked a company into paying US$25 million in 2024. The likely signature of an AI attack is breadth and speed: many unrelated systems and vendors hit at once, synthetic media of officials, and shocks with no clear human cause. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, deepfakes of leaders or fake official alerts and flash crash or exchange trading halt.",
       "domains": [
         "AI-enabled hacking",
-        "Fraud waves",
-        "Markets"
+        "Cloud services",
+        "Fraud waves"
       ],
       "key": "ai",
       "lit": [
@@ -819,10 +819,10 @@
           "weight": 15
         },
         {
-          "detail": "800V DC circuit breaker market for data centers to hit $2.11B by 2036 with 41% CAGR driven by AI infrastructure growth",
-          "domain": "Markets",
-          "id": "flash",
-          "name": "Flash crash or exchange trading halt",
+          "detail": "Microsoft 365 outage: Global cyber insured losses estimated at up to $700 mn",
+          "domain": "Cloud services",
+          "id": "cloud",
+          "name": "Major cloud or AI service outage",
           "weight": 10
         },
         {
@@ -852,14 +852,14 @@
         },
         {
           "domain": "Markets",
-          "id": "vix",
-          "name": "Market fear index jumps 25%+ in a day",
+          "id": "flash",
+          "name": "Flash crash or exchange trading halt",
           "weight": 10
         },
         {
-          "domain": "Cloud services",
-          "id": "cloud",
-          "name": "Major cloud or AI service outage",
+          "domain": "Markets",
+          "id": "vix",
+          "name": "Market fear index jumps 25%+ in a day",
           "weight": 10
         },
         {
