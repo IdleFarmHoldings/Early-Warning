@@ -1,13 +1,19 @@
 {
   "about": "Short form of latest.json + indicators.json for the analysis run. Links and raw samples removed.",
   "acsc": [],
-  "aircraft_flags": {},
+  "aircraft_flags": {
+    "gps_gulf": {
+      "median": 9,
+      "status": "ANOMALY",
+      "value": 38
+    }
+  },
   "analyst": {
     "ASPI Strategist": [
+      "The Chinese Communist Party’s politics are seeping into new AI models",
+      "The unusual people you meet when you go to China",
       "Northern Australia needs government commitment for research partnerships",
-      "Australia and the US should give ANZUS teeth and make it a deterrence network",
-      "Collins refurbishment looks like overrunning, hitting availability",
-      "To make good decisions on AI, stop reducing it to Big Tech"
+      "Australia and the US should give ANZUS teeth and make it a deterrence network"
     ],
     "Crisis Group": [
       "Gideon Rachman on the Risk of World War III",
@@ -310,15 +316,15 @@
   "gdacs_orange_red": [
     "Orange notification for tropical cyclone AKVAN-26. Population affected by Category 1 (120 km/h) wind speeds or higher is 0  (39.362 million in Tropical Storm)."
   ],
-  "generated_at": "2026-11-19T04:51:00Z",
+  "generated_at": "2026-11-19T05:05:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 70,
-    "Black Sea": null,
-    "Israel & Eastern Mediterranean": 0,
+    "Baltic / Kaliningrad": 69,
+    "Black Sea": 64,
+    "Israel & Eastern Mediterranean": 2,
     "Korea": 1,
-    "Persian Gulf": 23,
+    "Persian Gulf": 38,
     "South Australia": 2,
-    "Sydney / NSW": 3,
+    "Sydney / NSW": 2,
     "Taiwan Strait": 0
   },
   "incidents": [
@@ -335,10 +341,28 @@
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
-        "Massive cyber attack hits 178 websites amid US tech chaos"
+        "Minister criticises Belfast IT firm's notification delay over credit unions data breach"
       ],
       "severity": "Info",
-      "target": "Massive"
+      "target": "Minister"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "Michigan Mortgage Lender Stuck With Suit Over 2025 Data Breach"
+      ],
+      "severity": "Info",
+      "target": "Michigan Mortgage Lender"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "Client files at KPMG Canada compromised in data breach, The Globe and Mail reports"
+      ],
+      "severity": "Info",
+      "target": "Client"
     },
     {
       "attack_reported": true,
@@ -348,15 +372,6 @@
       ],
       "severity": "Info",
       "target": "Nvidia Probes"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
-        "Minister criticises Belfast IT firm's notification delay over credit unions data breach"
-      ],
-      "severity": "Info",
-      "target": "Minister"
     },
     {
       "attack_reported": true,
@@ -445,8 +460,8 @@
     }
   ],
   "internet_drop_pct": {
-    "China": 1.3,
-    "Iran": 0.4,
+    "China": 1.5,
+    "Iran": 0.3,
     "Israel": 0.0,
     "Russia": 1.0,
     "South Korea": 0.0,
@@ -467,23 +482,33 @@
       "Mount Lofty Ranges": "High / High"
     },
     "fire_danger_ok": true,
-    "fires_active": 3,
+    "fires_active": 5,
     "fuel": {
       "brent_aud": 132.3,
-      "change_pct": -2.6,
+      "change_pct": -2.5,
       "pump_cents": -2,
       "week_ago_aud": 135.8
     },
-    "grid_demand_fall_pct": -17.3,
-    "grid_demand_mw": 662,
-    "grid_demand_usual_mw": 395,
+    "grid_demand_fall_pct": -31.2,
+    "grid_demand_mw": 869,
+    "grid_demand_usual_mw": 431,
     "grid_lor_level": 0,
-    "nearby_incidents": [],
+    "nearby_incidents": [
+      {
+        "area": "1478 STRATHALBYN RD ECHUNGA",
+        "dist": "25-60 km",
+        "event": "Grass Fire",
+        "headline": "ECHUNGA : GRASS FIRE",
+        "id": "F-261119-0105 ECHUNGA, STRATHALBYN RD (GRASS FIRE)",
+        "level": null,
+        "notify": false
+      }
+    ],
     "outlook": {
       "air": {
-        "aqi": 26,
+        "aqi": 28,
         "peak_pm25_48h": 7,
-        "pm25": 3
+        "pm25": 4
       },
       "air_word": "Good",
       "days": [
@@ -517,22 +542,22 @@
       "Morgan Vale Road, Pine Valley Station: MORGAN MAIL RD Closed due to flooding over road",
       "Pine Valley Road, Pine Valley Station: PINE VALLEY RD Closed due to flooding over road"
     ],
-    "rooftop_pv_mw": 1861,
+    "rooftop_pv_mw": 1826,
     "sawater_news": [],
     "watch_and_act": []
   },
   "markets": {
     "AUD/USD": {
-      "change_pct": -0.9,
-      "price": 0.6679
+      "change_pct": -0.89,
+      "price": 0.668
     },
     "Brent oil": {
-      "change_pct": -2.81,
-      "price": 89.37
+      "change_pct": -4.1,
+      "price": 89.32
     },
     "Gold": {
-      "change_pct": -0.47,
-      "price": 3724.2
+      "change_pct": -3.64,
+      "price": 3723.7
     },
     "VIX": {
       "change_pct": -3.53,
@@ -553,8 +578,8 @@
   "news_watch": {
     "ai_hack": [
       "Google Warns Hackers Are Using AI Agents to Turn Software Patches Into Automated Attacks - LinkedIn",
-      "France Targeted in Unprecedented AI Hacking Operation With Russian-Language Code - UNITED24 Media",
-      "FBI Cyberattack Warning Raises Concerns Over AI-Powered Network Disruptions - AirGuide Business"
+      "FBI Cyberattack Warning Raises Concerns Over AI-Powered Network Disruptions - AirGuide Business",
+      "Google warns of four AI cyberattack tools after FBI alert on ARTEX - The Jerusalem Post"
     ],
     "airspace": [
       "When Israel's airspace closed, this Utah tour company got its travelers home just 24 hours late - KSL",
@@ -581,9 +606,9 @@
       "EU Backs Submarine Cable Project to Connect Greece’s Dodecanese Islands to Mainland Grid - Ocean News & Technology"
     ],
     "chem": [
+      "Marco Rubio lashes out at CNN over chemical attack reports - News24",
       "Monaco Gives OPCW €40,000 to Boost Its Work - Mirage News",
-      "Trump weighs strikes on Iran as Israel warns of chemical weapons - Axios",
-      "EU urges Russia to halt chemical weapons use in Ukraine, warns of further sanctions - Anadolu Ajansı"
+      "Trump weighs strikes on Iran as Israel warns of chemical weapons - Axios"
     ],
     "cloud": [
       "Microsoft 365 outage puts enterprise resilience back in focus across APAC - iTnews Asia",
@@ -597,8 +622,8 @@
     ],
     "cyber_au": [
       "Seven major tech incidents in a week – what’s going on, and what can we do? - The Conversation",
-      "Sites down as banks, Apple, spy agency deal with cyber attacks, outages; Rubio says ‘no evidence’ - Herald Sun",
-      "https://www.cyberdaily.au/security/14463-2shell2much-nginx2root-vulnerabilities-potentially-expose-more-than-10-million-websites - Cyber Daily"
+      "https://www.cyberdaily.au/security/14463-2shell2much-nginx2root-vulnerabilities-potentially-expose-more-than-10-million-websites - Cyber Daily",
+      "Sites down as banks, Apple, spy agency deal with cyber attacks, outages; Rubio says ‘no evidence’ - Herald Sun"
     ],
     "cyber_ot": [
       "Shop fridges and freezers across Europe hit by fresh suspected cyber-attack - The Guardian",
@@ -612,13 +637,13 @@
     ],
     "cyber_supply": [
       "Apache warns of Roller RCE vulnerability exploited in attacks - BleepingComputer",
-      "Critical Apache Roller RCE Flaw Under Active Exploitation, No Authentication Required - The Hacker News",
-      "Intelligence Chief Jay Clayton Rejects Coordinated Cyberattack Fears Behind US Outages, Explains What Could Be Causing Them - TradingView"
+      "Intelligence Chief Jay Clayton Rejects Coordinated Cyberattack Fears Behind US Outages, Explains What Could Be Causing Them - TradingView",
+      "OX Security Launches OX Radar and Response Center to Show Companies Which Cyber Threats Actually Affect Them - markets.businessinsider.com"
     ],
     "deepfake": [
       "Why is the federal government subsidising AI slop? - https://thepoint.com.au/",
-      "AI-generated video falsely promises PhilHealth cash payout - Insurance Business",
-      "European rights court bars Romanian lawyer for 2 years over AI-generated citations - Anadolu Ajansı"
+      "[INTERVIEW] 'AI is not God': NTHU president warns against blind faith in technology - The Korea Times",
+      "AI-generated video falsely promises PhilHealth cash payout - Insurance Business"
     ],
     "flash": [
       "EchoIQ Enters Trading Halt Pending Material Regulatory Pathway Announcement - Kalkine",
@@ -626,7 +651,6 @@
       "First in Korea to Develop and Commercialize Arc-Fault Circuit Breakers... Arcontek Sets a New Standard for Preventing Electrical Fires - 매일경제"
     ],
     "fuel_au": [
-      "Fuel tanker arrives amid supply concerns and panic buying - FBC News",
       "The Hormuz Crude Volume Debate Masks the Real Shortage of Refined Fuels: Russell - EnergyNow",
       "Skydiving Injury Leaves Tourist Medically Unfit to Fly Home From Australia - Wide Open Country"
     ],
@@ -637,8 +661,8 @@
     ],
     "masscas": [
       "House of Commons Defence Committee Inquiry into the Defence Medical Services - King's College London",
-      "IDF, emergency services to drill mass casualty event in Ashkelon area - The Times of Israel",
-      "18 injured in multi-vehicle crash involving prison bus, gas tanker - LehighValleyLive.com"
+      "18 injured in multi-vehicle crash involving prison bus, gas tanker - LehighValleyLive.com",
+      "IDF, emergency services to drill mass casualty event in Ashkelon area - The Times of Israel"
     ],
     "medshort": [
       "Governance failures blamed for medicine shortage crisis - Juta MedicalBrief"
@@ -661,7 +685,7 @@
     "reservists": [
       "Janeway dreams of AFL call-up - The SE Voice",
       "IDF plans shorter reserve duty, more training for standing forces in 2027 - The Times of Israel",
-      "IDF overhaul: Reserve duty capped at 58 days a year, troop levels cut across all fronts - Israel National News"
+      "Who’s counting on you when you come home from war? - San Diego Jewish World"
     ],
     "ru_signals": [
       "Trump’s dream of a nuclear deal meets reality of unwilling Russia and China - The Washington Post"
@@ -699,9 +723,9 @@
       "yes": 4.5
     },
     {
-      "d24h": -0.5,
+      "d24h": -2.0,
       "q": "NATO x Russia military clash by December 31, 2026?",
-      "yes": 10.5
+      "yes": 9.0
     },
     {
       "d24h": -0.1,
@@ -709,7 +733,7 @@
       "yes": 3.0
     },
     {
-      "d24h": -0.3,
+      "d24h": 0.0,
       "q": "US-Iran Hormuz Agreement by November 30?",
       "yes": 4.2
     },
@@ -719,9 +743,9 @@
       "yes": 1.8
     },
     {
-      "d24h": 1.0,
+      "d24h": 0.0,
       "q": "US-Iran Hormuz Agreement by December 31?",
-      "yes": 15.5
+      "yes": 14.5
     },
     {
       "d24h": -0.4,
@@ -729,9 +753,9 @@
       "yes": 0.7
     },
     {
-      "d24h": 0.3,
+      "d24h": 0.1,
       "q": "Will Russia invade another country in 2026?",
-      "yes": 2.4
+      "yes": 2.2
     },
     {
       "d24h": 0.1,
@@ -739,9 +763,9 @@
       "yes": 3.9
     },
     {
-      "d24h": 0.0,
+      "d24h": -0.3,
       "q": "Will Russia invade a NATO country by December 31, 2026?",
-      "yes": 1.7
+      "yes": 1.4
     },
     {
       "d24h": -1.3,
@@ -774,7 +798,7 @@
       "yes": 3.5
     },
     {
-      "d24h": 0.0,
+      "d24h": -0.1,
       "q": "NATO/EU troops fighting in Ukraine by December 31, 2026?",
       "yes": 3.8
     },
@@ -784,9 +808,9 @@
       "yes": 3.5
     },
     {
-      "d24h": -0.7,
+      "d24h": -0.1,
       "q": "Will the U.S. test a nuclear weapon by December 31 2026?",
-      "yes": 2.3
+      "yes": 2.5
     },
     {
       "d24h": -1.0,
@@ -1026,14 +1050,19 @@
       "trend": "steady"
     },
     {
-      "band": "Guarded",
-      "convergence": "Two different kinds of sign are showing together (aviation and shipping). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in ",
+      "band": "Elevated",
+      "convergence": "Signs are converging across 3 separate areas (aviation, electronic warfare and shipping). Unrelated systems flagging the same scenario at once is the pattern seen before past events. Before the 2024-25 Israel-Iran exchanges and US strikes, watchers saw US tanker surges toward Europe and the Gulf, em",
       "domains": [
         "Aviation",
+        "Electronic warfare",
         "Shipping"
       ],
       "key": "mideast",
       "lit": [
+        {
+          "detail": "gps_gulf 38 vs usual 9",
+          "name": "GPS jamming spike (Gulf / Israel)"
+        },
         {
           "detail": "When Israel's airspace closed, this Utah tour company got its travelers home just 24 hours late",
           "name": "Airspace closures reported (Iran / Israel / Gulf)"
@@ -1043,8 +1072,8 @@
           "name": "Ship traffic through Hormuz down sharply"
         }
       ],
-      "score": 25,
-      "trend": "down"
+      "score": 35,
+      "trend": "up"
     },
     {
       "band": "Low",
@@ -1087,9 +1116,10 @@
       "trend": "steady"
     },
     {
-      "band": "Guarded",
-      "convergence": "Two different kinds of sign are showing together (health and trade). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: unknown illness / pneumonia cluster reported, countries restricting medical supply exports and pandemic-r",
+      "band": "Elevated",
+      "convergence": "Signs are converging across 3 separate areas (chemical weapons, health and trade). Unrelated systems flagging the same scenario at once is the pattern seen before past events. Before COVID-19 (Dec 2019 - Feb 2020): reports of an unknown pneumonia cluster, WHO outbreak notices, mask and hazmat makers",
       "domains": [
+        "Chemical weapons",
         "Health",
         "Trade"
       ],
@@ -1102,10 +1132,14 @@
         {
           "detail": "Governance failures blamed for medicine shortage crisis",
           "name": "Australian medicine or PPE shortage reports"
+        },
+        {
+          "detail": "Marco Rubio lashes out at CNN over chemical attack reports",
+          "name": "Chemical / nerve-agent attack or mass poisoning reported"
         }
       ],
-      "score": 25,
-      "trend": "steady"
+      "score": 40,
+      "trend": "up"
     },
     {
       "band": "Guarded",
@@ -1156,17 +1190,17 @@
     }
   ],
   "sectors_relative_5d": {
-    "defence_au": -5.57,
+    "defence_au": -5.64,
     "defence_eu": -0.48,
     "defence_us": -1.05,
     "pandemic": -5.44
   },
   "tankers": "normal",
   "telecom_drop_pct": {
-    "Aussie Broadband": 0.0,
-    "Optus": 0.0,
-    "TPG": 0.2,
-    "Telstra": 0.0,
+    "Aussie Broadband": 0.6,
+    "Optus": 5.0,
+    "TPG": 0.0,
+    "Telstra": 0.4,
     "Vodafone": 0.0
   },
   "us_departure_orders": [
