@@ -254,8 +254,19 @@ def incident_alerts(scored, state, now, first_run):
         key = f"inc-{s['key']}"
         last = cd.get(key)  # "<iso>|<severity>|<last live report seen>"
         if last:
-            at, sev, live = (last.split("|") + ["Info", ""])[:3]
-            same = now - datetime.strptime(live or at, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc) < timedelta(days=2)
+            parts = last.split("|")
+            at = parts[0]
+            sev = parts[1] if len(parts) > 1 and parts[1] else "Info"
+            live = parts[2] if len(parts) > 2 else ""
+            if not live:
+                # Saved before the "last live report" field existed. That alert already went out, so carry on
+                # as the same incident (re-alert only if it gets worse) rather than re-sending it now.
+                same = True
+            else:
+                try:
+                    same = now - datetime.strptime(live, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc) < timedelta(days=2)
+                except ValueError:
+                    same = True  # an unreadable record must never stop the other incidents being checked
             if same:
                 cd[key] = f"{at}|{sev}|{iso(now)}"
                 if RANK[s["severity"]] <= RANK.get(sev, 0):

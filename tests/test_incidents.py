@@ -83,6 +83,25 @@ def test_alerts_once_then_again_only_when_severity_rises():
     assert len(a3) == 1 and set(a3[0]["channels"]) == {"proactive", "reactive"} and a3[0]["priority"] == 5
 
 
+def test_old_two_part_record_does_not_crash_or_resend():
+    # Records saved before the "last live report" field had only "<when>|<severity>" (live state, Nov 2026).
+    state = {"cooldown": {"inc-microsoft": "2026-11-16T13:34:00Z|Warning"}}
+    warn = feed("Microsoft outage hits Adelaide hospitals - Adelaide Now", "Microsoft 365 down across Australia - ABC")
+    assert I.incident_alerts(I.triage(warn, NOW, state), state, NOW, first_run=False) == []
+    assert state["cooldown"]["inc-microsoft"].count("|") == 2, "record upgraded to the three-part form"
+    # ...but it still re-alerts if the same incident gets worse
+    sc = I.triage(warn, NOW + timedelta(minutes=15), state)
+    sc[0]["severity"] = "Critical"
+    out = I.incident_alerts(sc, state, NOW + timedelta(minutes=15), False)
+    assert len(out) == 1 and set(out[0]["channels"]) == {"proactive", "reactive"}
+
+
+def test_unreadable_record_does_not_stop_alerts():
+    state = {"cooldown": {"inc-microsoft": "garbage|Warning|not-a-time"}}
+    warn = feed("Microsoft outage hits Adelaide hospitals - Adelaide Now", "Microsoft 365 down across Australia - ABC")
+    assert I.incident_alerts(I.triage(warn, NOW, state), state, NOW, first_run=False) == []
+
+
 def test_first_run_is_silent():
     state = {}
     warn = feed("Microsoft outage hits Adelaide hospitals - Adelaide Now", "Microsoft 365 down across Australia - ABC")
