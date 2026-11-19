@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-19T11:26:00Z",
+  "generated_at": "2026-11-19T11:41:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -103,22 +103,14 @@
       "why": "The worst local days stack up: extreme fire danger, a heatwave pushing power demand, a tight grid, and storms or fires damaging lines. AEMO warns of supply shortfalls hours to a day ahead; the CFS and Bureau issue ratings and warnings a day or more ahead."
     },
     {
-      "band": "Elevated",
-      "convergence": "Signs are converging across 3 separate areas (aviation, electronic warfare and shipping). Unrelated systems flagging the same scenario at once is the pattern seen before past events. Before the 2024-25 Israel-Iran exchanges and US strikes, watchers saw US tanker surges toward Europe and the Gulf, embassy departure orders, regional GPS jamming, airspace closures and oil price jumps, often 1-3 days ahead. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
+      "band": "Guarded",
+      "convergence": "Two different kinds of sign are showing together (aviation and shipping). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
       "domains": [
         "Aviation",
-        "Electronic warfare",
         "Shipping"
       ],
       "key": "mideast",
       "lit": [
-        {
-          "detail": "gps_gulf 36 vs usual 6.5",
-          "domain": "Electronic warfare",
-          "id": "gps",
-          "name": "GPS jamming spike (Gulf / Israel)",
-          "weight": 10
-        },
         {
           "detail": "When Israel's airspace closed, this Utah tour company got its travelers home just 24 hours late",
           "domain": "Aviation",
@@ -136,8 +128,8 @@
       ],
       "name": "Middle East war & Gulf shipping",
       "sa_impact": "Fuel: Australia imports most of its fuel, much of it refined from Gulf crude in Asia. Shipping attacks or a Hormuz closure push up prices within days and can cause local shortages.",
-      "score": 35,
-      "trend": "up",
+      "score": 25,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Military air",
@@ -150,6 +142,12 @@
           "id": "air",
           "name": "Unusual military air activity over the region",
           "weight": 15
+        },
+        {
+          "domain": "Electronic warfare",
+          "id": "gps",
+          "name": "GPS jamming spike (Gulf / Israel)",
+          "weight": 10
         },
         {
           "domain": "Communications",
@@ -672,12 +670,19 @@
           "id": "chem",
           "name": "Chemical / nerve-agent attack or mass poisoning reported",
           "weight": 15
+        },
+        {
+          "detail": "Chuck Thompson on the mysterious deaths of two Bigfoot hunters in Washington",
+          "domain": "Health",
+          "id": "dieoff",
+          "name": "Unexplained mass deaths or animal die-offs",
+          "weight": 10
         }
       ],
       "name": "Pandemic, biological or chemical emergency",
       "sa_impact": "Health system strain, possible lockdowns and border closures, and shortages of medicines and protective equipment, which Australia mostly imports.",
-      "score": 40,
-      "trend": "down",
+      "score": 50,
+      "trend": "up",
       "unlit": [
         {
           "domain": "Health",
@@ -707,12 +712,6 @@
           "domain": "Markets",
           "id": "vix",
           "name": "Market fear index above 30",
-          "weight": 10
-        },
-        {
-          "domain": "Health",
-          "id": "dieoff",
-          "name": "Unexplained mass deaths or animal die-offs",
           "weight": 10
         },
         {
@@ -810,12 +809,11 @@
     },
     {
       "band": "Elevated",
-      "convergence": "Signs are converging across 4 separate areas (ai-enabled hacking, cloud services, fraud waves and markets). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: a Chinese state-sponsored group used an AI agent to carry out 80-90% of an attack on about 30 organisations, at thousands of requests per second. A fake AI image of a Pentagon explosion briefly moved US markets in May 2023, and a deepfake video call of a CFO tricked a company into paying US$25 million in 2024. The likely signature of an AI attack is breadth and speed: many unrelated systems and vendors hit at once, synthetic media of officials, and shocks with no clear human cause. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, deepfakes of leaders or fake official alerts and market fear index jumps 25%+ in a day.",
+      "convergence": "Signs are converging across 3 separate areas (ai-enabled hacking, cloud services and fraud waves). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: a Chinese state-sponsored group used an AI agent to carry out 80-90% of an attack on about 30 organisations, at thousands of requests per second. A fake AI image of a Pentagon explosion briefly moved US markets in May 2023, and a deepfake video call of a CFO tricked a company into paying US$25 million in 2024. The likely signature of an AI attack is breadth and speed: many unrelated systems and vendors hit at once, synthetic media of officials, and shocks with no clear human cause. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, deepfakes of leaders or fake official alerts and flash crash or exchange trading halt.",
       "domains": [
         "AI-enabled hacking",
         "Cloud services",
-        "Fraud waves",
-        "Markets"
+        "Fraud waves"
       ],
       "key": "ai",
       "lit": [
@@ -827,13 +825,6 @@
           "weight": 15
         },
         {
-          "detail": "Trading Halt on Global X S&P World Natural Resources ETF (ASX:NRES) Due to ASX Administrative Mistake",
-          "domain": "Markets",
-          "id": "flash",
-          "name": "Flash crash or exchange trading halt",
-          "weight": 10
-        },
-        {
           "detail": "Microsoft Makes Its AI Case After Global Outage and Anthropic Challenge",
           "domain": "Cloud services",
           "id": "cloud",
@@ -841,7 +832,7 @@
           "weight": 10
         },
         {
-          "detail": "Coinbase AI Blocks 4.7 Million Dollars in Deepfake Scam",
+          "detail": "Top Deepfake Detection Software for Identity Verification in 2027",
           "domain": "Fraud waves",
           "id": "scams",
           "name": "Surge in AI voice-clone / deepfake scams in Australia",
@@ -850,7 +841,7 @@
       ],
       "name": "AI-enabled attack (non-traditional)",
       "sa_impact": "Not bombs but disruption: hacking at machine speed across banks, telcos, hospitals and the grid at once; fake videos or alerts from leaders causing panic buying or bank runs; or automated market and fraud shocks. Effects would be outages, payment failures and confusion about what is real.",
-      "score": 40,
+      "score": 30,
       "trend": "down",
       "unlit": [
         {
@@ -864,6 +855,12 @@
           "id": "deepfake",
           "name": "Deepfakes of leaders or fake official alerts",
           "weight": 15
+        },
+        {
+          "domain": "Markets",
+          "id": "flash",
+          "name": "Flash crash or exchange trading halt",
+          "weight": 10
         },
         {
           "domain": "Markets",
