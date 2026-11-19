@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-19T10:50:00Z",
+  "generated_at": "2026-11-19T11:04:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -495,15 +495,25 @@
       "why": "Before February 2022: embassy departures, mobilisation reports, airspace closures and a surge in GPS jamming. Baltic and Black Sea jamming is now routine, so only spikes above normal count."
     },
     {
-      "band": "Low",
-      "convergence": "No warning signs are showing. The strongest signs not yet showing: us nuclear command aircraft unusual, private jets heading to retreat destinations and mobilisation reports (any major power).",
-      "domains": [],
+      "band": "Guarded",
+      "convergence": "Only one kind of sign is showing (mobilisation). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: us nuclear command aircraft unusual, private jets heading to retreat destinations and forecast markets jump on nuclear use.",
+      "domains": [
+        "Mobilisation"
+      ],
       "key": "nuclear",
-      "lit": [],
+      "lit": [
+        {
+          "detail": "Military Escalation in the Gulf: Iranian Attacks, US Airstrikes, and Mobilization in the Arabian Sea",
+          "domain": "Mobilisation",
+          "id": "mob",
+          "name": "Mobilisation reports (any major power)",
+          "weight": 15
+        }
+      ],
       "name": "Nuclear use or alert",
       "sa_impact": "Fallout risk to SA from a northern-hemisphere exchange is very low, but global trade, fuel and finance would be severely disrupted.",
-      "score": 0,
-      "trend": "down",
+      "score": 15,
+      "trend": "up",
       "unlit": [
         {
           "domain": "Nuclear command",
@@ -540,12 +550,6 @@
           "id": "gold",
           "name": "Gold up 4%+ in a day",
           "weight": 10
-        },
-        {
-          "domain": "Mobilisation",
-          "id": "mob",
-          "name": "Mobilisation reports (any major power)",
-          "weight": 15
         },
         {
           "domain": "Prediction markets",
@@ -666,19 +670,12 @@
           "id": "chem",
           "name": "Chemical / nerve-agent attack or mass poisoning reported",
           "weight": 15
-        },
-        {
-          "detail": "Chuck Thompson on the mysterious deaths of two Bigfoot hunters in Washington",
-          "domain": "Health",
-          "id": "dieoff",
-          "name": "Unexplained mass deaths or animal die-offs",
-          "weight": 10
         }
       ],
       "name": "Pandemic, biological or chemical emergency",
       "sa_impact": "Health system strain, possible lockdowns and border closures, and shortages of medicines and protective equipment, which Australia mostly imports.",
-      "score": 50,
-      "trend": "up",
+      "score": 40,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Health",
@@ -708,6 +705,12 @@
           "domain": "Markets",
           "id": "vix",
           "name": "Market fear index above 30",
+          "weight": 10
+        },
+        {
+          "domain": "Health",
+          "id": "dieoff",
+          "name": "Unexplained mass deaths or animal die-offs",
           "weight": 10
         },
         {
@@ -844,7 +847,7 @@
           "weight": 10
         },
         {
-          "detail": "Elon Musk deepfake nearly costs coinbase users $4.7 million",
+          "detail": "Coinbase AI Blocks 4.7 Million Dollars in Deepfake Scam",
           "domain": "Fraud waves",
           "id": "scams",
           "name": "Surge in AI voice-clone / deepfake scams in Australia",
