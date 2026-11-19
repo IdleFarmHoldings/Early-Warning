@@ -3684,6 +3684,26 @@
   "quakes_m6_24h": [],
   "recent_alerts": [
     {
+      "channel": "both",
+      "channels": [
+        "proactive",
+        "reactive"
+      ],
+      "id": "20261119T2339Z-test-both",
+      "message": "TEST ONLY, not real. Checking that alerts still reach both the Early warning and Confirmed only channels after today's changes. If you got this, your phone is set up correctly. Nothing to do.",
+      "priority": 4,
+      "sent": {
+        "proactive": true,
+        "reactive": true
+      },
+      "sent_at": "2026-11-19T23:39:00Z",
+      "source": "analysis",
+      "tags": [
+        "white_check_mark"
+      ],
+      "title": "TEST - alerts check after today's update"
+    },
+    {
       "at": "2026-11-19T21:31:00Z",
       "category": "nature",
       "channels": [
@@ -4171,27 +4191,6 @@
         "fire_engine"
       ],
       "title": "CFS: Hazardous Materials at Smithfield"
-    },
-    {
-      "at": "2026-11-17T21:21:00Z",
-      "category": "nature",
-      "channels": [
-        "proactive"
-      ],
-      "confirmed": true,
-      "id": "20261117T2127-cfs-near-f2611180020gorgerdtippettrdchainofpondsgo",
-      "key": "cfs-near-f2611180020gorgerdtippettrdchainofpondsgorgerd",
-      "message": "CFS is responding to a hazardous materials at Cudlee Creek, 10-25 km from home. No warning has been issued. If you're nearby, check the Alert SA app and watch for smoke.",
-      "priority": 4,
-      "sent": {
-        "proactive": true
-      },
-      "sent_at": "2026-11-17T21:21:00Z",
-      "source": "collector",
-      "tags": [
-        "fire_engine"
-      ],
-      "title": "CFS: Hazardous Materials at Cudlee Creek"
     }
   ],
   "sectors": {
