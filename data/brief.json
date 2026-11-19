@@ -310,11 +310,11 @@
   "gdacs_orange_red": [
     "Orange notification for tropical cyclone AKVAN-26. Population affected by Category 1 (120 km/h) wind speeds or higher is 0  (11.754 million in Tropical Storm)."
   ],
-  "generated_at": "2026-11-19T17:44:00Z",
+  "generated_at": "2026-11-19T17:59:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 19,
-    "Black Sea": 20,
-    "Israel & Eastern Mediterranean": 2,
+    "Baltic / Kaliningrad": 18,
+    "Black Sea": null,
+    "Israel & Eastern Mediterranean": 0,
     "Korea": 0,
     "Persian Gulf": 8,
     "South Australia": 0,
@@ -326,11 +326,11 @@
       "attack_reported": true,
       "confirmed": true,
       "headlines": [
+        "Hackers steal data from Visa, MasterCard holders",
         "JPMorgan, Visa, Mastercard say third-party vendors targeted in cyberattack",
-        "Visa, Mastercard and Chase bank customer data hacked — after string of major failures",
-        "JPMorgan Chase reveals data breach, but says it’s unrelated to this week’s banking outage"
+        "Visa, Mastercard and Chase bank customer data hacked — after string of major failures"
       ],
-      "severity": "Warning",
+      "severity": "Critical",
       "target": "Banking & payments"
     },
     {
@@ -341,6 +341,15 @@
       ],
       "severity": "Info",
       "target": "Health & hospitals"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "Breached? The Gentlemen ransomware group claims NVIDIA hack"
+      ],
+      "severity": "Info",
+      "target": "Breached"
     },
     {
       "attack_reported": true,
@@ -458,25 +467,6 @@
     },
     {
       "attack_reported": false,
-      "confirmed": false,
-      "headlines": [
-        "Multiple transmission towers down in Eyre Peninsula in South Australia on Thursday 19th November 2026, leaving 20,000+ properties without power"
-      ],
-      "severity": "Info",
-      "target": "Power grid"
-    },
-    {
-      "attack_reported": false,
-      "confirmed": true,
-      "headlines": [
-        "Damage to an undersea cable in Oman: Internet connection in Pakistan goes down",
-        "Pakistan undersea cable failure causes internet outage near Strait of Hormuz — fault detected offshore weeks after Iran threatened infrastructure in the region"
-      ],
-      "severity": "Info",
-      "target": "Undersea cables"
-    },
-    {
-      "attack_reported": false,
       "confirmed": true,
       "headlines": [
         "Anthropic Claude down: Why it said it was unable to authenticate code"
@@ -496,11 +486,11 @@
   ],
   "internet_drop_pct": {
     "China": 0.0,
-    "Iran": 0.3,
-    "Israel": 0.3,
-    "Russia": 0.1,
-    "South Korea": 0.2,
-    "Taiwan": 1.1
+    "Iran": 0.4,
+    "Israel": 0.0,
+    "Russia": 0.0,
+    "South Korea": 0.3,
+    "Taiwan": 1.2
   },
   "local_sa": {
     "bom": [],
@@ -521,16 +511,16 @@
       "brent_aud": 133.8,
       "change_pct": -3.6,
       "pump_cents": -3,
-      "week_ago_aud": 138.8
+      "week_ago_aud": 138.9
     },
-    "grid_demand_fall_pct": 0.8,
-    "grid_demand_mw": 1270,
-    "grid_demand_usual_mw": 1232,
+    "grid_demand_fall_pct": 0.3,
+    "grid_demand_mw": 1266,
+    "grid_demand_usual_mw": 1221,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
       "air": {
-        "aqi": 24,
+        "aqi": 25,
         "peak_pm25_48h": 9,
         "pm25": 3
       },
@@ -570,20 +560,20 @@
   },
   "markets": {
     "AUD/USD": {
-      "change_pct": -0.92,
-      "price": 0.6678
+      "change_pct": -0.99,
+      "price": 0.6673
     },
     "Brent oil": {
-      "change_pct": -2.01,
-      "price": 90.1
+      "change_pct": -2.11,
+      "price": 90.01
     },
     "Gold": {
-      "change_pct": -1.35,
-      "price": 3691.2
+      "change_pct": -1.54,
+      "price": 3684.4
     },
     "VIX": {
-      "change_pct": 5.5,
-      "price": 25.91
+      "change_pct": 8.18,
+      "price": 26.57
     }
   },
   "national_shocks": {
@@ -609,22 +599,17 @@
       "When Israel's airspace closed, this Utah tour company got its travelers home just 24 hours late - KSL"
     ],
     "aviation_halt": [
-      "‘The Hairiest 90 Minutes of My Career’: How the FAA Ground Stop Went Down - WIRED",
       "FAA Ground Stop: Air Travelers Hit With $2 Billion In Costs—Double What Airlines Lost - Forbes",
-      "Nationwide Aircraft Ground Stop Raises Concerns over Aviation System Modernization - Every CRS Report"
+      "Nationwide Aircraft Ground Stop Raises Concerns over Aviation System Modernization - Every CRS Report",
+      "‘The Hairiest 90 Minutes of My Career’: How the FAA Ground Stop Went Down - WIRED"
     ],
     "bank_outage": [
+      "JPMorgan, Visa, Mastercard say third-party vendors targeted in cyberattack - Reuters",
       "Australia backs down on cuts to working holiday visas but adds tougher conditions - Travel Tomorrow",
-      "Visa, Mastercard and JPMorgan Customer Data Leaked by Hackers - WSJ",
-      "JPMorgan, Visa, Mastercard say third-party vendors targeted in cyberattack - Reuters"
+      "Visa, Mastercard and JPMorgan Customer Data Leaked by Hackers - WSJ"
     ],
     "blood": [
       "News - Naval Medical Center Camp Lejeune employee honored for blood donation milestone - DVIDS"
-    ],
-    "cables": [
-      "Pakistan undersea cable failure causes internet outage near Strait of Hormuz — fault detected offshore weeks after Iran threatened infrastructure in the region - Tom's Hardware",
-      "Pakistan internet problems related to subsea cable faults, telecoms authority says - The National",
-      "SK Broadband to build quantum security testbed on subsea cable - Light Reading"
     ],
     "chem": [
       "OPCW fosters young scientists committed to chemical safety, security and the peaceful uses of chemistry - OPCW",
@@ -632,9 +617,9 @@
       "Has Iran handed the Houthis Assad’s chemical weapons playbook? - Arab News"
     ],
     "cloud": [
-      "The Growth Rate Anthropic Needs to Justify $83 IPO Price Has Never Been Achieved - Disruption Banking",
       "A dozen industries impacted by the Microsoft 365 outage - PropertyCasualty360",
-      "Anthropic Claude down: Why it said it was unable to authenticate code - Mashable"
+      "The Growth Rate Anthropic Needs to Justify $83 IPO Price Has Never Been Achieved - Disruption Banking",
+      "Microsoft’s Outlook outage didn’t end when it was fixed — a backlog of retried emails can take hours to days to clear - Fortune"
     ],
     "cn_signals": [
       "NYT the latest in showcasing bad US-China takes from DC experts - Responsible Statecraft"
@@ -654,6 +639,11 @@
       "Shop freezers in seven European countries hit by cyber-attack - BBC",
       "Supermarket freezers and fridges in Europe hit by cyberattack - Nine.com.au"
     ],
+    "cyber_state": [
+      "ESET Research: Sandworm behind cyberattack on Poland’s power grid in late 2025 - We Live Security",
+      "ESET attributes DynoWiper-powered attack on Poland’s power grid to Russia-aligned Sandworm group - Industrial Cyber",
+      "Russian state hackers likely behind wiper malware attack on Poland’s power grid - The Record from Recorded Future News"
+    ],
     "cyber_supply": [
       "Critical Drupal vulnerability allows attackers to take over sites via the installer - Techzine Global",
       "NGINX2Root: Critical NGINX RCE Vulnerabilities - SOC Prime",
@@ -663,10 +653,6 @@
       "AI-generated video misrepresented as revamp of West Bengal's Howrah bus station - AFP Fact Check",
       "John Swinney apologises after SNP’s AI-generated GTA 6 'memes' spark backlash - The National Scot",
       "[INTERVIEW] 'AI is not God': Nat'l Tsing Hua University president warns against blind faith in technology - The Korea Times"
-    ],
-    "dieoff": [
-      "Chuck Thompson on the mysterious deaths of two Bigfoot hunters in Washington - Crime Reads",
-      "Halloween: Six most haunted castles in Scotland with spooky tales from the past - ScottishNews.com"
     ],
     "flash": [
       "McLaren Minerals Requests Trading Halt Pending Material Capital Raising Announcement - Kalkine",
@@ -678,40 +664,25 @@
       "EFL warns of possible power rationing amid fuel cost crisis - FBC News",
       "Fuel tanker arrives amid supply concerns and panic buying - FBC News"
     ],
+    "illness": [
+      "Mystery illness causes mass hospitalisation of runners - The Nightly",
+      "Zayn Malik hospitalised with mystery illness, forced to cancel upcoming appearances on album release week - Nine.com.au",
+      "Mystery Pneumonia Death Sparks Concern; Trader Joe's Recall; OUD in Young People - MedPage Today"
+    ],
     "masscas": [
       "Scoping Review Maps Decade of Patient Safety and Healthcare Quality Research in Israel - Bioengineer.org",
       "18 injured in multi-vehicle crash involving prison bus, gas tanker - LehighValleyLive.com",
-      "House of Commons Defence Committee Inquiry into the Defence Medical Services - King's College London"
-    ],
-    "mobilisation": [
-      "Iraq strikes compromise with Kataib Hezbollah - Middle East Online",
-      "Baghdad orders 'joint' military deployment in Jurf al-Sakhar after Kataib Hezbollah refuses to withdraw - thecradle.co",
-      "The number of killed combatants from southern Russia in Ukraine has reached 10050. - Caucasian Knot"
-    ],
-    "national_outage": [
-      "FAA Turned Down Free Starlink Offer Before Historic Nationwide Outage - AutoSpies",
-      "What would happen if you couldn’t access your bank tomorrow? Following recent technology outages that affected banks, airlines and major companies, experts recommend keeping cash at home for emergencies. Would your family be prepared if ATMs and b - Facebook",
-      "Cuba’s National Electric Grid Collapses, Reason Unknown - EnergyNow.com"
+      "Parents of Uvalde victim help first responders prepare for mass shootings - KEYE"
     ],
     "outage_au": [
       "Calls for 'automatic compensation' following telco outages - ABC News & Headlines – Australian Broadcasting Corporation",
-      "Australia telco complaints surge after Telstra outage - Traders Union",
-      "Australia's Optus apologises for outage that disrupted emergency calls - Reuters"
+      "Australia's Optus apologises for outage that disrupted emergency calls - Reuters",
+      "Telstra mobile outage disrupts services across Australia - Australian Cyber Security Magazine"
     ],
     "reservists": [
       "ARMENIA : \"New concern\" over criminal prosecutions of conscientious objector reservists - Forum 18",
       "‘Return to service or appeal?’ Government sets out veterans’ rights under new Armed Forces Bill - London Business News",
       "IDF plans to cut reserve duty to 58 days, reduce battalions - The Jerusalem Post"
-    ],
-    "ru_signals": [
-      "Signal ahead of Putin, Trump and Xi Jinping meeting: “Doomsday radio” broadcasts “sinner” message - TodayPress.tv",
-      "Trump’s dream of a nuclear deal meets reality of unwilling Russia and China - The Washington Post",
-      "Leaders adopt declaration on peace – FULL TEXT - TodayPress.tv"
-    ],
-    "sapn": [
-      "Hospitals hit, schools shut as violent storms unleash chaos - Adelaide Now",
-      "Transmission line to take 'days' to fix, forcing closure of Eyre Peninsula schools - ABC News & Headlines – Australian Broadcasting Corporation",
-      "Brutal storm leave 24k homes with no power - News.com.au"
     ],
     "scams": [
       "AI losses are hiding inside existing policies, Allianz Commercial warns - Insurance Business",
@@ -725,8 +696,8 @@
     ],
     "strikes": [
       "Iran widens Gulf attacks by targeting U.S. air base in Kuwait and sites in Bahrain - PBS",
-      "Iran widens Persian Gulf attacks, targeting US air base in Kuwait and facilities in Bahrain - Nacionale",
-      "Iranian army says drone strikes targeted US installations at Kuwait air base - Anadolu Ajansı"
+      "Whistleblower raises alarms over deadly Iran attack on US troops - NewsNation",
+      "Iran widens Persian Gulf attacks, targeting US air base in Kuwait and facilities in Bahrain - Nacionale"
     ]
   },
   "prediction_markets": [
@@ -741,7 +712,7 @@
       "yes": 4.1
     },
     {
-      "d24h": -1.0,
+      "d24h": -1.5,
       "q": "NATO x Russia military clash by December 31, 2026?",
       "yes": 9.5
     },
@@ -756,9 +727,9 @@
       "yes": 5.1
     },
     {
-      "d24h": -1.0,
+      "d24h": -2.0,
       "q": "US-Iran Hormuz Agreement by December 31?",
-      "yes": 13.5
+      "yes": 12.5
     },
     {
       "d24h": -0.5,
@@ -806,12 +777,12 @@
       "yes": 1.3
     },
     {
-      "d24h": -1.6,
+      "d24h": -1.5,
       "q": "Ukraine agrees not to join NATO by December 31, 2026?",
       "yes": 1.8
     },
     {
-      "d24h": -0.1,
+      "d24h": 0.0,
       "q": "NATO/EU troops fighting in Ukraine by December 31, 2026?",
       "yes": 3.8
     },
@@ -821,7 +792,7 @@
       "yes": 2.6
     },
     {
-      "d24h": 0.0,
+      "d24h": -0.1,
       "q": "Will the U.S. test a nuclear weapon by December 31 2026?",
       "yes": 2.4
     },
@@ -859,6 +830,16 @@
     }
   ],
   "recent_alerts": [
+    {
+      "at": "2026-11-19T17:59:00Z",
+      "channels": [
+        "proactive",
+        "reactive"
+      ],
+      "confirmed": true,
+      "message": "Hackers steal data from Visa, MasterCard holders. 5 reports from 5 outlets; also affecting bank. Be wary of em",
+      "title": "Banking & payments: cyber attack in Australia"
+    },
     {
       "at": "2026-11-18T23:12:00Z",
       "channels": [
@@ -1029,23 +1010,13 @@
       "confirmed": true,
       "message": "CFS is responding to a fire at 94 Childers St North Adelaide, 25-60 km from home. No warning has been issued. ",
       "title": "CFS: Fire at North Adelaide"
-    },
-    {
-      "at": "2026-11-17T18:11:00Z",
-      "channels": [
-        "proactive"
-      ],
-      "confirmed": null,
-      "message": "Quiet night. Iran still keeps Hormuz shut over the US blockade, so fuel stays dear; no new attacks. A Visa 'se",
-      "title": "Daily digest: Level 3 Elevated"
     }
   ],
   "scenarios": [
     {
-      "band": "Guarded",
-      "convergence": "Two different kinds of sign are showing together (power grid and roads). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: cfs emergency warning in sa, sudden fall in sa electricity demand (possible large blackout) and extre",
+      "band": "Low",
+      "convergence": "Only one kind of sign is showing (roads). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: cfs emergency warning in sa, sudden fall in sa electricity demand (possible large blackout) and extreme or catastrophic fire danger near adelaide.",
       "domains": [
-        "Power grid",
         "Roads"
       ],
       "key": "local",
@@ -1053,14 +1024,10 @@
         {
           "detail": "BARATTA ROAD: RD_CLOSURE; WAKEFIELD STREET: RD_CLOSURE",
           "name": "Fire, flood or storm road closures in SA"
-        },
-        {
-          "detail": "Multiple transmission towers down in Eyre Peninsula in South Australia on Thursday 19th November 2026, leaving 20,000+ properties without po; Communities withou",
-          "name": "Reports of widespread power outages in SA"
         }
       ],
-      "score": 25,
-      "trend": "steady"
+      "score": 10,
+      "trend": "down"
     },
     {
       "band": "Guarded",
@@ -1097,25 +1064,25 @@
     },
     {
       "band": "Low",
-      "convergence": "Only one kind of sign is showing (state signalling). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and mobilisation / reservist reports (russia / nato).",
+      "convergence": "Only one kind of sign is showing (cyber). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and mobilisation / reservist reports (russia / nato).",
       "domains": [
-        "State signalling"
+        "Cyber"
       ],
       "key": "russia",
       "lit": [
         {
-          "detail": "Signal ahead of Putin, Trump and Xi Jinping meeting: “Doomsday radio” broadcasts “sinner” message",
-          "name": "Russian signalling (Buzzer broadcasts, nuclear drills)"
+          "detail": "ESET Research: Sandworm behind cyberattack on Poland’s power grid in late 2025",
+          "name": "Russian wiper / Sandworm activity reports"
         }
       ],
-      "score": 5,
-      "trend": "down"
+      "score": 10,
+      "trend": "up"
     },
     {
       "band": "Low",
       "key": "nuclear",
       "score": 0,
-      "trend": "down"
+      "trend": "steady"
     },
     {
       "band": "Low",
@@ -1124,7 +1091,7 @@
       "trend": "steady"
     },
     {
-      "band": "Elevated",
+      "band": "Guarded",
       "convergence": "Two different kinds of sign are showing together (chemical weapons and health). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: unknown illness / pneumonia cluster reported, countries restricting medical supply exports and",
       "domains": [
         "Chemical weapons",
@@ -1139,20 +1106,26 @@
         {
           "detail": "Marco Rubio lashes out at CNN over chemical attack reports",
           "name": "Chemical / nerve-agent attack or mass poisoning reported"
-        },
-        {
-          "detail": "Chuck Thompson on the mysterious deaths of two Bigfoot hunters in Washington",
-          "name": "Unexplained mass deaths or animal die-offs"
         }
       ],
-      "score": 40,
-      "trend": "up"
+      "score": 30,
+      "trend": "down"
     },
     {
-      "band": "Low",
+      "band": "Guarded",
+      "convergence": "Only one kind of sign is showing (state actors). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: sudden fall in sa electricity demand (possible large blackout), global cyber threat level raised (sans infocon not green) and several vpn / firew",
+      "domains": [
+        "State actors"
+      ],
       "key": "cyber",
-      "score": 0,
-      "trend": "down"
+      "lit": [
+        {
+          "detail": "ESET Research: Sandworm behind cyberattack on Poland’s power grid in late 2025",
+          "name": "Reports of state hackers / pre-positioning / wipers"
+        }
+      ],
+      "score": 15,
+      "trend": "up"
     },
     {
       "band": "Elevated",
@@ -1183,18 +1156,18 @@
         }
       ],
       "score": 40,
-      "trend": "up"
+      "trend": "steady"
     }
   ],
   "sectors_relative_5d": {
     "defence_au": -5.41,
     "defence_eu": 1.62,
-    "defence_us": 0.48,
-    "pandemic": -5.51
+    "defence_us": 0.47,
+    "pandemic": -5.4
   },
   "tankers": "normal",
   "telecom_drop_pct": {
-    "Aussie Broadband": 0.1,
+    "Aussie Broadband": 0.0,
     "Optus": 0.0,
     "TPG": 0.2,
     "Telstra": 0.0,
