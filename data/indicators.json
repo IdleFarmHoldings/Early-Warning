@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-19T10:35:00Z",
+  "generated_at": "2026-11-19T10:50:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -495,25 +495,15 @@
       "why": "Before February 2022: embassy departures, mobilisation reports, airspace closures and a surge in GPS jamming. Baltic and Black Sea jamming is now routine, so only spikes above normal count."
     },
     {
-      "band": "Guarded",
-      "convergence": "Only one kind of sign is showing (mobilisation). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: us nuclear command aircraft unusual, private jets heading to retreat destinations and forecast markets jump on nuclear use.",
-      "domains": [
-        "Mobilisation"
-      ],
+      "band": "Low",
+      "convergence": "No warning signs are showing. The strongest signs not yet showing: us nuclear command aircraft unusual, private jets heading to retreat destinations and mobilisation reports (any major power).",
+      "domains": [],
       "key": "nuclear",
-      "lit": [
-        {
-          "detail": "Military Escalation in the Gulf: Iranian Attacks, US Airstrikes, and Mobilization in the Arabian Sea",
-          "domain": "Mobilisation",
-          "id": "mob",
-          "name": "Mobilisation reports (any major power)",
-          "weight": 15
-        }
-      ],
+      "lit": [],
       "name": "Nuclear use or alert",
       "sa_impact": "Fallout risk to SA from a northern-hemisphere exchange is very low, but global trade, fuel and finance would be severely disrupted.",
-      "score": 15,
-      "trend": "steady",
+      "score": 0,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Nuclear command",
@@ -550,6 +540,12 @@
           "id": "gold",
           "name": "Gold up 4%+ in a day",
           "weight": 10
+        },
+        {
+          "domain": "Mobilisation",
+          "id": "mob",
+          "name": "Mobilisation reports (any major power)",
+          "weight": 15
         },
         {
           "domain": "Prediction markets",
@@ -670,12 +666,19 @@
           "id": "chem",
           "name": "Chemical / nerve-agent attack or mass poisoning reported",
           "weight": 15
+        },
+        {
+          "detail": "Chuck Thompson on the mysterious deaths of two Bigfoot hunters in Washington",
+          "domain": "Health",
+          "id": "dieoff",
+          "name": "Unexplained mass deaths or animal die-offs",
+          "weight": 10
         }
       ],
       "name": "Pandemic, biological or chemical emergency",
       "sa_impact": "Health system strain, possible lockdowns and border closures, and shortages of medicines and protective equipment, which Australia mostly imports.",
-      "score": 40,
-      "trend": "steady",
+      "score": 50,
+      "trend": "up",
       "unlit": [
         {
           "domain": "Health",
@@ -705,12 +708,6 @@
           "domain": "Markets",
           "id": "vix",
           "name": "Market fear index above 30",
-          "weight": 10
-        },
-        {
-          "domain": "Health",
-          "id": "dieoff",
-          "name": "Unexplained mass deaths or animal die-offs",
           "weight": 10
         },
         {
@@ -857,7 +854,7 @@
       "name": "AI-enabled attack (non-traditional)",
       "sa_impact": "Not bombs but disruption: hacking at machine speed across banks, telcos, hospitals and the grid at once; fake videos or alerts from leaders causing panic buying or bank runs; or automated market and fraud shocks. Effects would be outages, payment failures and confusion about what is real.",
       "score": 55,
-      "trend": "up",
+      "trend": "steady",
       "unlit": [
         {
           "domain": "Mass exploitation",
