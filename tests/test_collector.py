@@ -390,9 +390,9 @@ def test_publisher_suffix_and_roundups_ignored():
 def test_relay_only(tmp_path, monkeypatch):
     import json as _json
     import run
-    monkeypatch.setattr(run, "ROOT", tmp_path)
+    monkeypatch.setattr(run, "DATA_ROOT", tmp_path)
     import common
-    monkeypatch.setattr(common, "ROOT", tmp_path)
+    monkeypatch.setattr(common, "DATA_ROOT", tmp_path)
     (tmp_path / "alerts" / "outbox").mkdir(parents=True)
     (tmp_path / "data").mkdir()
     (tmp_path / "data" / "latest.json").write_text(_json.dumps({"recent_alerts": [{"title": "old"}]}))
@@ -572,8 +572,8 @@ def test_outbox_bad_files_and_retries(tmp_path, monkeypatch):
     import json as _json
     import run
     import common
-    monkeypatch.setattr(run, "ROOT", tmp_path)
-    monkeypatch.setattr(common, "ROOT", tmp_path)
+    monkeypatch.setattr(run, "DATA_ROOT", tmp_path)
+    monkeypatch.setattr(common, "DATA_ROOT", tmp_path)
     ob, sent = tmp_path / "alerts" / "outbox", tmp_path / "alerts" / "sent"
     ob.mkdir(parents=True)
     now = now_utc().replace(second=0, microsecond=0)

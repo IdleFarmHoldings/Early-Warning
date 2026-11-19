@@ -10,6 +10,9 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+# Where the collector's data lives (data/, state/, alerts/). On GitHub Actions this is a checkout of the
+# live-data branch (EW_DATA=_data), so main only ever holds code and pages. Locally it defaults to the repo.
+DATA_ROOT = Path(os.environ["EW_DATA"]).resolve() if os.environ.get("EW_DATA") else ROOT
 CONFIG = json.loads((ROOT / "collector" / "config.json").read_text())
 # The family's home location is private: it comes from the EW_HOME secret (JSON with lat, lon and optionally
 # structure_places), never from the public config. Without it, local alerts centre on the Adelaide CBD.
@@ -46,7 +49,7 @@ def get_json(url, **kw):
 
 
 def load_json(path, default):
-    p = ROOT / path
+    p = DATA_ROOT / path
     try:
         return json.loads(p.read_text())
     except (FileNotFoundError, json.JSONDecodeError):
@@ -65,13 +68,13 @@ def _finite(o):
 
 
 def save_json(path, data):
-    p = ROOT / path
+    p = DATA_ROOT / path
     p.parent.mkdir(parents=True, exist_ok=True)
     p.write_text(json.dumps(_finite(data), indent=2, sort_keys=True, ensure_ascii=False, allow_nan=False) + "\n")
 
 
 def append_jsonl(path, row):
-    p = ROOT / path
+    p = DATA_ROOT / path
     p.parent.mkdir(parents=True, exist_ok=True)
     with p.open("a") as f:
         f.write(json.dumps(_finite(row), ensure_ascii=False, sort_keys=True, allow_nan=False) + "\n")

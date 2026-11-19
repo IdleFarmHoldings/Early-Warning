@@ -15,7 +15,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from common import CONFIG, ROOT, append_jsonl, iso, load_json, now_utc, push, save_json  # noqa: E402
+from common import CONFIG, DATA_ROOT, ROOT, append_jsonl, iso, load_json, now_utc, push, save_json  # noqa: E402
 from rules import baseline, extra_metrics, evaluate, watch_list  # noqa: E402
 from sources import fetch_all  # noqa: E402
 import precursors  # noqa: E402
@@ -28,7 +28,7 @@ import satellites  # noqa: E402
 import incidents  # noqa: E402
 import shocks  # noqa: E402
 
-SERIES_DIR = ROOT / "data" / "series"
+SERIES_DIR = DATA_ROOT / "data" / "series"
 
 
 def load_series(now, days=16):
@@ -75,7 +75,7 @@ def send(alert, dry_run):
 def relay_outbox(now, dry_run):
     """Alerts written by the Claude analysis run land in alerts/outbox/*.json; push them and archive."""
     out = []
-    outbox, sent_dir = ROOT / "alerts" / "outbox", ROOT / "alerts" / "sent"
+    outbox, sent_dir = DATA_ROOT / "alerts" / "outbox", DATA_ROOT / "alerts" / "sent"
     sent_dir.mkdir(parents=True, exist_ok=True)
     for p in sorted(outbox.glob("*.json")):
         try:
@@ -155,7 +155,7 @@ def queue_retry(alert, now):
     failed = [c for c in alert["channels"] if not alert["sent"].get(c)]
     if not failed:
         return None
-    outbox = ROOT / "alerts" / "outbox"
+    outbox = DATA_ROOT / "alerts" / "outbox"
     outbox.mkdir(parents=True, exist_ok=True)
     p = outbox / f"{alert['id']}-retry.json"
     p.write_text(json.dumps({
@@ -195,7 +195,7 @@ def summarise(results, health, anomalies, now):
 
 
 def load_jsonl(path):
-    p = ROOT / path
+    p = DATA_ROOT / path
     if not p.exists():
         return []
     out = []
@@ -644,8 +644,8 @@ def main():
 
     if not args.dry_run and not first_run:
         for name, payload in home.nag_files(alerts, now):  # emergencies repeat so they are not slept through
-            (ROOT / "alerts" / "outbox").mkdir(parents=True, exist_ok=True)
-            (ROOT / "alerts" / "outbox" / name).write_text(json.dumps(payload, indent=2) + "\n")
+            (DATA_ROOT / "alerts" / "outbox").mkdir(parents=True, exist_ok=True)
+            (DATA_ROOT / "alerts" / "outbox" / name).write_text(json.dumps(payload, indent=2) + "\n")
     log = []
     for a in alerts:
         a["sent"] = send(a, args.dry_run)

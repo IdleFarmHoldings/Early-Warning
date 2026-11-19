@@ -4,7 +4,7 @@ import time
 import urllib.parse
 import xml.etree.ElementTree as ET
 
-from common import CONFIG, ROOT, get_json, http_get
+from common import CONFIG, DATA_ROOT, get_json, http_get
 from cyber import fetch_cyber
 
 NS = {
@@ -521,7 +521,7 @@ def fetch_faa():
     raw = http_get(CONFIG.get("shocks", {}).get("faa_url", FAA_STATUS), timeout=20, accept="application/xml")
     out = parse_faa(raw)
     # Keep the latest raw feed (small) so its layout can be checked against what the parser reads.
-    (ROOT / "data" / "faa_status_raw.xml").write_bytes(raw[:60000])
+    (DATA_ROOT / "data" / "faa_status_raw.xml").write_bytes(raw[:60000])
     if not out["ok"]:
         raise RuntimeError("FAA status feed unreadable (layout changed?)")
     return out

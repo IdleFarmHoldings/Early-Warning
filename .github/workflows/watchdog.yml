@@ -1,6 +1,7 @@
 name: Watchdog
 
 # Independent of the collector: restarts it if it has stalled, and alerts phones if data is over 2 hours old.
+# Reads and saves its state on the live-data branch (checked out into _data/), like the collector.
 
 on:
   schedule:
@@ -24,18 +25,25 @@ jobs:
       NTFY_PROACTIVE: ${{ secrets.NTFY_PROACTIVE }}
     steps:
       - uses: actions/checkout@v4
+      - name: Check out the live data
+        id: live
+        continue-on-error: true   # until the collector has created live-data, fall back to main's data
+        uses: actions/checkout@v4
         with:
-          fetch-depth: 60
+          ref: live-data
+          path: _data
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
       - name: Check freshness, restart and alert if needed
         run: |
+          if [ -d _data/.git ]; then export EW_DATA=_data; fi
           running=$(gh run list --workflow collector.yml --status in_progress --json databaseId --jq length || echo 0)
           queued=$(gh run list --workflow collector.yml --status queued --json databaseId --jq length || echo 0)
           python collector/watchdog.py --running "$running" --queued "$queued"
       - name: Save watchdog state
         run: |
+          cd _data 2>/dev/null || { echo "no live-data checkout yet; not saving"; exit 0; }
           git config user.name "early-warning-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/watchdog.json || true

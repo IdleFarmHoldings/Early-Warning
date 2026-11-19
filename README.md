@@ -7,10 +7,10 @@ A family early-warning system for threats that could reach South Australia: conf
 1. **Collector** (`collector/`, runs every 15 minutes on GitHub Actions, free)
    - Polls official feeds and public data, keeps a rolling history, and applies simple rules.
    - Pushes alerts straight to phones through [ntfy](https://ntfy.sh).
-   - Writes `data/latest.json` (current picture) and `data/series/*.jsonl` (history).
+   - Writes `data/latest.json` (current picture) and `data/series/*.jsonl` (history) to the `live-data` branch.
 2. **Analysis** (Claude, twice a day)
-   - Reads `data/latest.json`, checks the news, scores each category, updates the Early Warning Board.
-   - Writes any alert it decides on into `alerts/outbox/`; the collector pushes it on its next run.
+   - Reads `data/brief.json` (on `live-data`), checks the news, scores each category, updates the Early Warning Board.
+   - Writes any alert it decides on into `alerts/outbox/` on `live-data`; the collector pushes it within a minute or two.
 
 ## Alert channels
 
@@ -66,11 +66,18 @@ National shocks (`collector/shocks.py`): a whole country's flights, power, netwo
 
 Flight anomalies need about a week of history before they can alert ("learning baseline").
 
+## Branches
+
+- `main` — code, pages and tests only. Changes here are real changes.
+- `live-data` — everything the bots write: `data/`, `state/` and `alerts/`. The collector, watchdog and the
+  scheduled Claude tasks commit here every few minutes. The family page reads its live data straight from this
+  branch (raw.githubusercontent.com), so GitHub Pages only rebuilds when a page changes.
+
 ## Files
 
 - `collector/config.json` — thresholds, watched aircraft types, hubs, keywords
-- `state/state.json` — what has already been alerted (prevents repeats)
-- `alerts/log.jsonl` — every alert sent
+- `state/state.json` (live-data) — what has already been alerted (prevents repeats)
+- `alerts/log.jsonl` (live-data) — every alert sent
 - `tests/` — offline tests: `python tests/test_collector.py`
 
 ## Ship tracking key (one-off setup)

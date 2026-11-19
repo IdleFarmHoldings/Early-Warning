@@ -2,14 +2,15 @@ name: Collector
 
 # GitHub's free scheduler often runs only about once an hour, so each run keeps working for ~50 minutes:
 # a full check every 15 minutes, and a check of alerts/outbox every minute in between.
+#
+# Code and pages live on main. Everything the collector writes (data/, state/, alerts/) lives on the
+# live-data branch, checked out into _data/, so main's history only shows real changes and GitHub Pages
+# only rebuilds when a page changes. The family page reads live data straight from that branch.
 
 on:
   schedule:
     - cron: "*/15 * * * *"
   workflow_dispatch: {}
-  push:
-    paths:
-      - "alerts/outbox/**"
 
 permissions:
   contents: write
@@ -29,10 +30,31 @@ jobs:
       AISSTREAM_KEY: ${{ secrets.AISSTREAM_KEY }}
       HEALTHCHECK_URL: ${{ secrets.HEALTHCHECK_URL }}
       EW_HOME: ${{ secrets.EW_HOME }}
+      EW_DATA: _data
       PASSES: "4"
       PASS_SECONDS: "900"
     steps:
       - uses: actions/checkout@v4
+
+      - name: Create the live-data branch from main's data (first run after the move only)
+        run: |
+          if git ls-remote --exit-code --heads origin live-data >/dev/null; then echo "live-data exists"; exit 0; fi
+          # Seed from main's newest commit (not this run's checkout, which may predate the last data save).
+          git fetch -q --depth=1 origin main
+          src=$(git rev-parse FETCH_HEAD)
+          for d in data state alerts; do git cat-file -e "$src:$d" || { echo "main has no $d/ to seed from"; exit 1; }; done
+          tree=$(printf '040000 tree %s\tdata\n040000 tree %s\tstate\n040000 tree %s\talerts\n' \
+                 "$(git rev-parse "$src:data")" "$(git rev-parse "$src:state")" "$(git rev-parse "$src:alerts")" | git mktree)
+          commit=$(git -c user.name="early-warning-bot" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+                   commit-tree "$tree" -m "live-data: seeded from main ${src:0:7}")
+          git push -q origin "$commit:refs/heads/live-data"
+          echo "live-data created from main ${src:0:7}"
+
+      - name: Check out the live data
+        uses: actions/checkout@v4
+        with:
+          ref: live-data
+          path: _data
 
       - uses: actions/setup-python@v5
         with:
@@ -43,14 +65,14 @@ jobs:
 
       - name: Collect, alert and save (repeats through the hour)
         run: |
-          git config user.name "early-warning-bot"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git -C _data config user.name "early-warning-bot"
+          git -C _data config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           save() {
-            git add data state alerts
-            if git diff --cached --quiet; then return 0; fi
-            git commit -q -m "$1: $(date -u +%Y-%m-%dT%H:%MZ)"
+            git -C _data add data state alerts
+            if git -C _data diff --cached --quiet; then return 0; fi
+            git -C _data commit -q -m "$1: $(date -u +%Y-%m-%dT%H:%MZ)"
             for i in 1 2 3; do
-              git pull -q --rebase -X theirs && git push -q && return 0
+              git -C _data pull -q --rebase -X theirs && git -C _data push -q && return 0
               sleep 5
             done
             echo "push failed"; return 1
@@ -65,8 +87,9 @@ jobs:
             next=$((start + n * PASS_SECONDS))
             while [ "$(date +%s)" -lt "$next" ]; do
               sleep 60
-              git pull -q --rebase -X theirs || true
-              if ls alerts/outbox/*.json >/dev/null 2>&1; then
+              git pull -q --ff-only || true                      # pick up code changes pushed to main
+              git -C _data pull -q --rebase -X theirs || true    # pick up alerts the analysis wrote
+              if ls _data/alerts/outbox/*.json >/dev/null 2>&1; then
                 python collector/run.py --relay-only || true
                 save "collector relay" || true
               fi
