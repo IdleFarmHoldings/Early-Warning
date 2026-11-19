@@ -305,18 +305,19 @@
   ],
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
+    "maritime": "TimeoutError: ",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-19T21:46:00Z",
+  "generated_at": "2026-11-19T22:01:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 39,
+    "Baltic / Kaliningrad": 58,
     "Black Sea": null,
-    "Israel & Eastern Mediterranean": 3,
+    "Israel & Eastern Mediterranean": 4,
     "Korea": 0,
-    "Persian Gulf": 7,
+    "Persian Gulf": 8,
     "South Australia": 0,
-    "Sydney / NSW": 3,
+    "Sydney / NSW": 2,
     "Taiwan Strait": 0
   },
   "incidents": [
@@ -348,6 +349,15 @@
       ],
       "severity": "Info",
       "target": "EU Targeted"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "Suspected Chinese hackers exploited a VMware vCenter flaw as a zero-day for over two months before Broadcom's patch"
+      ],
+      "severity": "Info",
+      "target": "Suspected Chinese"
     },
     {
       "attack_reported": true,
@@ -485,15 +495,6 @@
       "attack_reported": false,
       "confirmed": false,
       "headlines": [
-        "Pakistan Internet Outage: Did Iran Target Subsea Cables? | Vantage"
-      ],
-      "severity": "Info",
-      "target": "Phone & internet networks"
-    },
-    {
-      "attack_reported": false,
-      "confirmed": false,
-      "headlines": [
         "Is It AI? After Nationwide Outages, Broadcom and CISA Sound Alarms on Critical Security Flaws"
       ],
       "severity": "Info",
@@ -511,8 +512,8 @@
   ],
   "internet_drop_pct": {
     "China": 0.0,
-    "Iran": 0.2,
-    "Israel": 0.0,
+    "Iran": 0.4,
+    "Israel": 0.7,
     "Russia": 0.0,
     "South Korea": 0.2,
     "Taiwan": 0.6
@@ -529,21 +530,21 @@
       "Mount Lofty Ranges": "Moderate / Moderate"
     },
     "fire_danger_ok": true,
-    "fires_active": 4,
+    "fires_active": 5,
     "fuel": {
       "brent_aud": 134.5,
       "change_pct": -4.2,
       "pump_cents": -4,
       "week_ago_aud": 140.4
     },
-    "grid_demand_fall_pct": 10.3,
-    "grid_demand_mw": 1041,
-    "grid_demand_usual_mw": 1037,
+    "grid_demand_fall_pct": 15.8,
+    "grid_demand_mw": 977,
+    "grid_demand_usual_mw": 1018,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
       "air": {
-        "aqi": 27,
+        "aqi": 28,
         "peak_pm25_48h": 9,
         "pm25": 4
       },
@@ -572,22 +573,22 @@
     "possible_blackout": false,
     "power_news": [],
     "road_hazards": [],
-    "rooftop_pv_mw": 503,
+    "rooftop_pv_mw": 469,
     "sawater_news": [],
     "watch_and_act": []
   },
   "markets": {
     "AUD/USD": {
-      "change_pct": -1.18,
-      "price": 0.666
+      "change_pct": -1.02,
+      "price": 0.6671
     },
     "Brent oil": {
-      "change_pct": -1.99,
-      "price": 90.12
+      "change_pct": -2.07,
+      "price": 90.05
     },
     "Gold": {
-      "change_pct": -3.1,
-      "price": 3625.8
+      "change_pct": -3.01,
+      "price": 3629.3
     },
     "VIX": {
       "change_pct": 15.8,
@@ -619,7 +620,7 @@
     "aviation_halt": [
       "The White House needs a ground stop - Silver Bulletin",
       "FAA ground stop suggests how risky air traffic control upgrades can be - Scientific American",
-      "FAA Chief: Ground Stop Not Connected To ATM Modernization - Aviation Week"
+      "US FAA halts router rollout after nationwide ground stop - ch-aviation"
     ],
     "bank_outage": [
       "Visa, Mastercard and JPMorgan Customer Data Leaked by Hackers - WSJ",
@@ -631,8 +632,8 @@
     ],
     "cables": [
       "Pakistan undersea cable failure causes internet outage near Strait of Hormuz — fault detected offshore weeks after Iran threatened infrastructure in the region - Tom's Hardware",
-      "Pakistan internet problems related to subsea cable faults, telecoms authority says - The National",
-      "Damage to an undersea cable in Oman: Internet connection in Pakistan goes down - Il Sole 24 ORE"
+      "Subsea cable firm Trans Americas Fiber lands $205M refinancing - Dealroom",
+      "Pakistan internet problems related to subsea cable faults, telecoms authority says - The National"
     ],
     "chem": [
       "OPCW fosters young scientists committed to chemical safety, security and the peaceful uses of chemistry - OPCW",
@@ -641,8 +642,8 @@
     ],
     "cloud": [
       "A dozen industries impacted by the Microsoft 365 outage - PropertyCasualty360",
-      "Microsoft Outage Raises Questions Over UK Control of Critical Digital Infrastructure - Tech Policy Press",
-      "Microsoft’s Outlook outage didn’t end when it was fixed — a backlog of retried emails can take hours to days to clear - Fortune"
+      "Microsoft’s Outlook outage didn’t end when it was fixed — a backlog of retried emails can take hours to days to clear - Fortune",
+      "Microsoft Outage Raises Questions Over UK Control of Critical Digital Infrastructure - Tech Policy Press"
     ],
     "cn_signals": [
       "NYT the latest in showcasing bad US-China takes from DC experts - Responsible Statecraft"
@@ -658,9 +659,9 @@
       "Seven major tech incidents in a week – what’s going on, and what can we do? - The Conversation"
     ],
     "cyber_ot": [
-      "Who is hacking Europe’s supermarket fridges and freezers, and why? - The Guardian",
+      "Shop fridges and freezers across Europe hit by fresh suspected cyber-attack - The Guardian",
       "Shop freezers in seven European countries hit by cyber-attack - BBC",
-      "Supermarket freezers and fridges in Europe hit by cyberattack - Nine.com.au"
+      "Refrigeration under cyber attack - Climate Control News"
     ],
     "cyber_state": [
       "ESET Research: Sandworm behind cyberattack on Poland’s power grid in late 2025 - We Live Security",
@@ -674,8 +675,8 @@
     ],
     "deepfake": [
       "AI-generated video misrepresented as revamp of West Bengal's Howrah bus station - AFP Fact Check",
-      "EU Commission confirms AI-generated cyber campaign, no staff-wide breach found - Yeni Safak English",
-      "Kenya and Nigeria agree to strengthen cooperation on government communication and AI-generated misinformation - Tech Review Africa"
+      "Kenya and Nigeria agree to strengthen cooperation on government communication and AI-generated misinformation - Tech Review Africa",
+      "John Swinney apologises after SNP’s AI-generated GTA 6 'memes' spark backlash - The National Scot"
     ],
     "dieoff": [
       "Chuck Thompson on the mysterious deaths of two Bigfoot hunters in Washington - Crime Reads",
@@ -684,12 +685,12 @@
     "flash": [
       "McLaren Minerals Requests Trading Halt Pending Material Capital Raising Announcement - Kalkine",
       "Canadian Investment Regulatory Organization Trading Halt - BNKR - The Manila Times",
-      "EchoIQ Enters Trading Halt Pending Material Regulatory Pathway Announcement - Kalkine"
+      "Ethereum’s new DeFi security tool raises questions over censorship - TradingView"
     ],
     "fuel_au": [
       "Oil Supply Shock to Worsen as Inventories Fall Further Even if Conflict Ends - EnergyNow.com",
-      "Fuel tanker arrives amid supply concerns and panic buying - FBC News",
-      "Indonesia and Philippines Unionists Tackle Barriers in Bali - JournalArta"
+      "EFL warns of possible power rationing amid fuel cost crisis - FBC News",
+      "Fuel tanker arrives amid supply concerns and panic buying - FBC News"
     ],
     "illness": [
       "Mystery illness causes mass hospitalisation of runners - The Nightly",
@@ -699,7 +700,7 @@
     "masscas": [
       "Mike O’Callaghan Military Medical Center Integrates with Regional Partners for Mass Casualty Exercise - DVIDS",
       "Scoping Review Maps Decade of Patient Safety and Healthcare Quality Research in Israel - Bioengineer.org",
-      "Nursing home demo underway nearly year after fatal blast | Exclusive - PhillyBurbs"
+      "Potrero, CA – Maria Aguilar Identified as Driver Killed in Crash with School Bus on SR-94According to the California Highway Patrol, the crash occurred at approximately 3:43 p.m. on November 6, 2026, on SR-94 east of Plaskon Lane. San Diego County, CA – - Facebook"
     ],
     "mobilisation": [
       "Iraq strikes compromise with Kataib Hezbollah - Middle East Online",
@@ -708,8 +709,8 @@
     ],
     "national_outage": [
       "Debunking social media posts that claim a 90-day blackout will start Nov. 17 - PBS",
-      "Nationwide Outages Situation Explained - Facebook",
-      "Drivers Identify Biggest Myths, Misconceptions Surrounding EVs - Manufacturing.net"
+      "Drivers Identify Biggest Myths, Misconceptions Surrounding EVs - Manufacturing.net",
+      "Nationwide Outages Situation Explained - Facebook"
     ],
     "outage_au": [
       "Calls for 'automatic compensation' following telco outages - ABC News & Headlines – Australian Broadcasting Corporation",
@@ -726,7 +727,7 @@
     ],
     "sapn": [
       "Thousands in SA remain without power after storm topples transmission towers - ABC News & Headlines – Australian Broadcasting Corporation",
-      "Hospitals hit, schools shut as violent storms unleash chaos - Adelaide Now",
+      "Schools shut, hospitals hit, triple-0 fears as wild storms cause chaos - Adelaide Now",
       "Communities without power after massive storm fells transmission towers on South Australia’s Eyre Peninsula - 7NEWS"
     ],
     "scams": [
@@ -742,7 +743,7 @@
     "strikes": [
       "Iran widens Gulf attacks by targeting U.S. air base in Kuwait and sites in Bahrain - PBS",
       "Iranian army says drone strikes targeted US installations at Kuwait air base - Anadolu Ajansı",
-      "Did Iranian drones strike a US base or were they intercepted? - Sides issue conflicting STATEMENTS - TodayPress.tv"
+      "Iran Attacks US Base in Kuwait: Is Tehran’s Strike Lawful Self-Defense? - Diplomacy and Law"
     ]
   },
   "prediction_markets": [
@@ -822,9 +823,9 @@
       "yes": 1.2
     },
     {
-      "d24h": -0.6,
+      "d24h": -0.4,
       "q": "Ukraine agrees not to join NATO by December 31, 2026?",
-      "yes": 2.9
+      "yes": 3.1
     },
     {
       "d24h": 0.0,
@@ -862,9 +863,9 @@
       "yes": 7.5
     },
     {
-      "d24h": 1.5,
+      "d24h": 2.0,
       "q": "Iran blockade lifted before Iran-Oman Hormuz agreement?",
-      "yes": 12.0
+      "yes": 12.5
     }
   ],
   "quakes_m6_24h": [],
@@ -1137,8 +1138,8 @@
       "trend": "steady"
     },
     {
-      "band": "Elevated",
-      "convergence": "Two different kinds of sign are showing together (chemical weapons and health). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: unknown illness / pneumonia cluster reported, countries restricting medical supply exports and",
+      "band": "High",
+      "convergence": "Two different kinds of sign are showing together (chemical weapons and health). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: countries restricting medical supply exports, pandemic-response stocks outperforming (5 days) ",
       "domains": [
         "Chemical weapons",
         "Health"
@@ -1150,6 +1151,10 @@
           "name": "WHO outbreak report with a high-concern pathogen (last 14 days)"
         },
         {
+          "detail": "What to know about the severe pneumonia cluster on NYC’s Upper East Side",
+          "name": "Unknown illness / pneumonia cluster reported"
+        },
+        {
           "detail": "Marco Rubio lashes out at CNN over chemical attack reports",
           "name": "Chemical / nerve-agent attack or mass poisoning reported"
         },
@@ -1158,8 +1163,8 @@
           "name": "Unexplained mass deaths or animal die-offs"
         }
       ],
-      "score": 40,
-      "trend": "steady"
+      "score": 60,
+      "trend": "up"
     },
     {
       "band": "Guarded",
@@ -1217,10 +1222,10 @@
   },
   "tankers": "normal",
   "telecom_drop_pct": {
-    "Aussie Broadband": 0.6,
-    "Optus": 6.1,
+    "Aussie Broadband": 0.8,
+    "Optus": 0.0,
     "TPG": 0.0,
-    "Telstra": 0.0,
+    "Telstra": 0.1,
     "Vodafone": 0.0
   },
   "us_departure_orders": [
