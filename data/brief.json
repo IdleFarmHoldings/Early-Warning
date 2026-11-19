@@ -308,15 +308,15 @@
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-19T20:05:00Z",
+  "generated_at": "2026-11-19T20:21:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 59,
+    "Baltic / Kaliningrad": 61,
     "Black Sea": null,
-    "Israel & Eastern Mediterranean": 4,
+    "Israel & Eastern Mediterranean": 2,
     "Korea": 0,
-    "Persian Gulf": 21,
+    "Persian Gulf": 17,
     "South Australia": 0,
-    "Sydney / NSW": 1,
+    "Sydney / NSW": 4,
     "Taiwan Strait": 0
   },
   "incidents": [
@@ -325,11 +325,20 @@
       "confirmed": true,
       "headlines": [
         "Visa, Mastercard and Chase hit by cyberattack exposing customer data",
-        "Chase Says New Data Breach Unrelated to Banking Outage",
-        "JPMorgan, Visa, Mastercard say third-party vendors targeted in cyberattack"
+        "Cyberattack may have exposed Chase Bank and Mastercard customer data",
+        "Chase Says New Data Breach Unrelated to Banking Outage"
       ],
       "severity": "Critical",
       "target": "Banking & payments"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "Breached? The Gentlemen ransomware group claims NVIDIA hack"
+      ],
+      "severity": "Info",
+      "target": "Breached"
     },
     {
       "attack_reported": true,
@@ -361,9 +370,8 @@
     },
     {
       "attack_reported": true,
-      "confirmed": true,
+      "confirmed": false,
       "headlines": [
-        "A cyberattack leaks thousands of Chase customer emails and some phone numbers",
         "EU reveals it suffered 'AI-powered' cyber attack"
       ],
       "severity": "Info",
@@ -435,24 +443,6 @@
       "target": "Tech"
     },
     {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
-        "Hackers Use ARTEX AI Agents to Automate Network Intrusions and Gain Privileged Access in Under 3 Hours"
-      ],
-      "severity": "Info",
-      "target": "Hackers Use ARTEX"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
-        "JPMorgan Warns That Some Vendors Were Hit by a Cyberattack"
-      ],
-      "severity": "Info",
-      "target": "JPMorgan Warns That"
-    },
-    {
       "attack_reported": false,
       "confirmed": true,
       "headlines": [
@@ -474,9 +464,10 @@
     },
     {
       "attack_reported": false,
-      "confirmed": false,
+      "confirmed": true,
       "headlines": [
-        "Pakistan undersea cable failure causes internet outage near Strait of Hormuz — fault detected offshore weeks after Iran threatened infrastructure in the region"
+        "Pakistan undersea cable failure causes internet outage near Strait of Hormuz — fault detected offshore weeks after Iran threatened infrastructure in the region",
+        "PTA Shares Fresh Update on Internet Disruption and Submarine Cable Restoration"
       ],
       "severity": "Info",
       "target": "Undersea cables"
@@ -503,15 +494,6 @@
       "attack_reported": false,
       "confirmed": false,
       "headlines": [
-        "Australia backs down on cuts to working holiday visas but adds tougher conditions"
-      ],
-      "severity": "Info",
-      "target": "Australia"
-    },
-    {
-      "attack_reported": false,
-      "confirmed": false,
-      "headlines": [
         "F-1 Student Visa Rules: Cap Struck Down, CPT Restrictions Temporarily Blocked"
       ],
       "severity": "Info",
@@ -520,18 +502,20 @@
   ],
   "internet_drop_pct": {
     "China": 0.0,
-    "Iran": 0.8,
-    "Israel": 0.5,
+    "Iran": 0.4,
+    "Israel": 0.0,
     "Russia": 0.0,
     "South Korea": 0.2,
-    "Taiwan": 0.8
+    "Taiwan": 0.7
   },
   "local_sa": {
     "bom": [],
     "cable_watch": [],
     "cfs_feed_ok": true,
     "cfs_warnings": [],
-    "ed_very_busy": [],
+    "ed_very_busy": [
+      "Modbury"
+    ],
     "fire_ban_districts": [],
     "fire_danger": {
       "Adelaide Metropolitan": "No Rating / No Rating",
@@ -540,14 +524,14 @@
     "fire_danger_ok": true,
     "fires_active": 3,
     "fuel": {
-      "brent_aud": 134.2,
+      "brent_aud": 134.3,
       "change_pct": -4.2,
       "pump_cents": -4,
-      "week_ago_aud": 140.1
+      "week_ago_aud": 140.2
     },
-    "grid_demand_fall_pct": 1.8,
-    "grid_demand_mw": 1320,
-    "grid_demand_usual_mw": 1312,
+    "grid_demand_fall_pct": 5.3,
+    "grid_demand_mw": 1274,
+    "grid_demand_usual_mw": 1283,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
@@ -595,12 +579,12 @@
       "price": 89.63
     },
     "Gold": {
-      "change_pct": -1.94,
-      "price": 3669.2
+      "change_pct": -1.97,
+      "price": 3668.0
     },
     "VIX": {
-      "change_pct": 12.01,
-      "price": 27.51
+      "change_pct": 15.68,
+      "price": 28.41
     }
   },
   "national_shocks": {
@@ -626,8 +610,8 @@
       "Airspace Closure | Major Decision | Aviation Update | 08PM HEADLINES 19 Nov 2026 Aaj News - Aaj TV"
     ],
     "aviation_halt": [
-      "Ground Stop Cost Air Travelers $2 Billion—Double What Airlines Lost - Forbes",
       "FAA Chief: Ground Stop Not Connected To ATM Modernization - Aviation Week",
+      "Ground Stop Cost Air Travelers $2 Billion—Double What Airlines Lost - Forbes",
       "‘The Hairiest 90 Minutes of My Career’: How the FAA Ground Stop Went Down - WIRED"
     ],
     "bank_outage": [
@@ -650,8 +634,8 @@
     ],
     "cloud": [
       "A dozen industries impacted by the Microsoft 365 outage - PropertyCasualty360",
-      "Microsoft’s Outlook outage didn’t end when it was fixed — a backlog of retried emails can take hours to days to clear - Fortune",
-      "The Growth Rate Anthropic Needs to Justify $83 IPO Price Has Never Been Achieved - Disruption Banking"
+      "Microsoft Outage Raises Questions Over UK Control of Critical Digital Infrastructure - Tech Policy Press",
+      "Microsoft’s Outlook outage didn’t end when it was fixed — a backlog of retried emails can take hours to days to clear - Fortune"
     ],
     "cn_signals": [
       "NYT the latest in showcasing bad US-China takes from DC experts - Responsible Statecraft"
@@ -708,7 +692,7 @@
     "masscas": [
       "Mike O’Callaghan Military Medical Center Integrates with Regional Partners for Mass Casualty Exercise - DVIDS",
       "Scoping Review Maps Decade of Patient Safety and Healthcare Quality Research in Israel - Bioengineer.org",
-      "Parents of Uvalde victim help first responders prepare for mass shootings - KEYE"
+      "18 injured in multi-vehicle crash involving prison bus, gas tanker - LehighValleyLive.com"
     ],
     "mobilisation": [
       "Iraq strikes compromise with Kataib Hezbollah - Middle East Online",
@@ -716,9 +700,9 @@
       "Venislavskyi Says Mobilization Conflicts Have Nearly Disappeared - Mezha.net"
     ],
     "national_outage": [
-      "Debunking social media posts that claim a 90-day blackout will start Nov. 17 - PBS",
       "Nationwide Outages Situation Explained - Facebook",
-      "Drivers Identify Biggest Myths, Misconceptions Surrounding EVs - Manufacturing.net"
+      "Drivers Identify Biggest Myths, Misconceptions Surrounding EVs - Manufacturing.net",
+      "FAA Turned Down Free Starlink Offer Before Historic Nationwide Outage - AutoSpies"
     ],
     "outage_au": [
       "Calls for 'automatic compensation' following telco outages - ABC News & Headlines – Australian Broadcasting Corporation",
@@ -738,7 +722,7 @@
     "sapn": [
       "Thousands of South Australians still without power after storm cell topples transmission towers - ABC News & Headlines – Australian Broadcasting Corporation",
       "Hospitals hit, schools shut as violent storms unleash chaos - Adelaide Now",
-      "Multiple transmission towers down in Eyre Peninsula in South Australia on Thursday 19th November 2026, leaving 20,000+ properties without power - WattClarity"
+      "Brutal storm leave 24k homes with no power - News.com.au"
     ],
     "scams": [
       "Top Deepfake Detection Software for Identity Verification in 2027 - CPO Magazine",
@@ -746,14 +730,14 @@
       "Antiques Road Trip star in tears as she says 'I felt stupid' after deepfake porn scam - Daily Express"
     ],
     "shipping_attacks": [
-      "Iran Keeps Up Unrelenting Attacks on Ships in the Strait of Hormuz - The New York Times",
       "Two tankers confirmed struck, Iran claims VLCC sinking in Hormuz - Seatrade Maritime News",
-      "ADNOC L&S says one missing, 11 injured in Strait of Hormuz ship attack - Baird Maritime"
+      "ADNOC L&S says one missing, 11 injured in Strait of Hormuz ship attack - Baird Maritime",
+      "ADNOC CEO Demands Hormuz Reopen Unconditionally After Latest Vessel Attack - https://houseofsaud.com/"
     ],
     "strikes": [
       "Iran widens Gulf attacks by targeting U.S. air base in Kuwait and sites in Bahrain - PBS",
       "Iranian army says drone strikes targeted US installations at Kuwait air base - Anadolu Ajansı",
-      "Iran Attacks US Base in Kuwait: Is Tehran’s Strike Lawful Self-Defense? - Diplomacy and Law"
+      "Did Iranian drones strike a US base or were they intercepted? - Sides issue conflicting STATEMENTS - TodayPress.tv"
     ]
   },
   "prediction_markets": [
@@ -778,9 +762,9 @@
       "yes": 3.0
     },
     {
-      "d24h": 0.0,
+      "d24h": -0.1,
       "q": "US-Iran Hormuz Agreement by November 30?",
-      "yes": 4.2
+      "yes": 4.1
     },
     {
       "d24h": -3.5,
@@ -808,7 +792,7 @@
       "yes": 1.4
     },
     {
-      "d24h": -0.6,
+      "d24h": 0.0,
       "q": "Will China blockade Taiwan in 2026?",
       "yes": 2.1
     },
@@ -818,7 +802,7 @@
       "yes": 1.6
     },
     {
-      "d24h": -0.5,
+      "d24h": 0.0,
       "q": "Iran-Oman Hormuz Agreement by November 30?",
       "yes": 4.5
     },
@@ -833,9 +817,9 @@
       "yes": 1.2
     },
     {
-      "d24h": -1.7,
+      "d24h": -0.6,
       "q": "Ukraine agrees not to join NATO by December 31, 2026?",
-      "yes": 1.8
+      "yes": 2.9
     },
     {
       "d24h": 0.0,
@@ -843,12 +827,12 @@
       "yes": 3.8
     },
     {
-      "d24h": -1.0,
+      "d24h": -0.9,
       "q": "Will Russia test a nuclear weapon by December 31 2026?",
-      "yes": 2.5
+      "yes": 2.6
     },
     {
-      "d24h": -0.2,
+      "d24h": -0.4,
       "q": "Will the U.S. test a nuclear weapon by December 31 2026?",
       "yes": 2.2
     },
@@ -868,9 +852,14 @@
       "yes": 19.0
     },
     {
-      "d24h": 0.0,
+      "d24h": 0.5,
       "q": "Will Nick Stewart attend a US x Iran diplomatic meeting by December 31, 2026?",
-      "yes": 7.5
+      "yes": 8.0
+    },
+    {
+      "d24h": 1.5,
+      "q": "Iran blockade lifted before Iran-Oman Hormuz agreement?",
+      "yes": 12.0
     }
   ],
   "quakes_m6_24h": [],
@@ -1218,8 +1207,8 @@
   "sectors_relative_5d": {
     "defence_au": -0.63,
     "defence_eu": 1.62,
-    "defence_us": 0.62,
-    "pandemic": -5.69
+    "defence_us": 0.6,
+    "pandemic": -5.61
   },
   "tankers": "normal",
   "telecom_drop_pct": {
