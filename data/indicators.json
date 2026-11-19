@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-19T22:21:00Z",
+  "generated_at": "2026-11-19T22:36:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -15,6 +15,7 @@
           "domain": "Power grid",
           "id": "power",
           "name": "Reports of widespread power outages in SA",
+          "short": "Reports of widespread power outages in…",
           "weight": 15
         }
       ],
@@ -112,6 +113,7 @@
           "domain": "Aviation",
           "id": "airspace",
           "name": "Airspace closures reported (Iran / Israel / Gulf)",
+          "short": "Airspace closures reported",
           "weight": 10
         },
         {
@@ -119,6 +121,7 @@
           "domain": "Shipping",
           "id": "hormuz",
           "name": "Ship traffic through Hormuz down sharply",
+          "short": "Ship traffic through Hormuz down sharply",
           "weight": 15
         }
       ],
@@ -381,10 +384,9 @@
       "why": "North Korean missile launches are often preceded by navigation warnings; South Korea and Japan report GPS jamming from the North during tense periods."
     },
     {
-      "band": "Guarded",
-      "convergence": "Two different kinds of sign are showing together (cyber and state signalling). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and mobilisation / reservist reports (russia / nato).",
+      "band": "Low",
+      "convergence": "Only one kind of sign is showing (state signalling). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and mobilisation / reservist reports (russia / nato).",
       "domains": [
-        "Cyber",
         "State signalling"
       ],
       "key": "russia",
@@ -394,20 +396,14 @@
           "domain": "State signalling",
           "id": "signals",
           "name": "Russian signalling (Buzzer broadcasts, nuclear drills)",
+          "short": "Russian signalling",
           "weight": 5
-        },
-        {
-          "detail": "ESET Research: Sandworm behind cyberattack on Poland’s power grid in late 2025",
-          "domain": "Cyber",
-          "id": "cyber",
-          "name": "Russian wiper / Sandworm activity reports",
-          "weight": 10
         }
       ],
       "name": "Russia-NATO escalation",
       "sa_impact": "Indirect: energy and market shock, cyber attacks that can spill over to Australian systems, and nuclear-risk rhetoric.",
-      "score": 15,
-      "trend": "steady",
+      "score": 5,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Electronic warfare",
@@ -468,6 +464,12 @@
           "id": "def",
           "name": "European defence stocks outperforming (5 days)",
           "weight": 5
+        },
+        {
+          "domain": "Cyber",
+          "id": "cyber",
+          "name": "Russian wiper / Sandworm activity reports",
+          "weight": 10
         },
         {
           "domain": "Undersea cables",
@@ -633,10 +635,9 @@
       "why": "The 2023 Optus outage cut mobile, NBN, EFTPOS and some 000 calls nationwide for 12 hours. Hostile states pre-position in critical infrastructure; GPS jamming over Australia would be a new and serious sign."
     },
     {
-      "band": "Elevated",
-      "convergence": "Two different kinds of sign are showing together (chemical weapons and health). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: unknown illness / pneumonia cluster reported, countries restricting medical supply exports and pandemic-response stocks outperforming (5 days).",
+      "band": "Guarded",
+      "convergence": "Only one kind of sign is showing (health). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: unknown illness / pneumonia cluster reported, countries restricting medical supply exports and pandemic-response stocks outperforming (5 days).",
       "domains": [
-        "Chemical weapons",
         "Health"
       ],
       "key": "bio",
@@ -646,27 +647,14 @@
           "domain": "Health",
           "id": "who",
           "name": "WHO outbreak report with a high-concern pathogen (last 14 days)",
+          "short": "WHO outbreak report",
           "weight": 15
-        },
-        {
-          "detail": "Marco Rubio lashes out at CNN over chemical attack reports",
-          "domain": "Chemical weapons",
-          "id": "chem",
-          "name": "Chemical / nerve-agent attack or mass poisoning reported",
-          "weight": 15
-        },
-        {
-          "detail": "Chuck Thompson on the mysterious deaths of two Bigfoot hunters in Washington",
-          "domain": "Health",
-          "id": "dieoff",
-          "name": "Unexplained mass deaths or animal die-offs",
-          "weight": 10
         }
       ],
       "name": "Pandemic, biological or chemical emergency",
       "sa_impact": "Health system strain, possible lockdowns and border closures, and shortages of medicines and protective equipment, which Australia mostly imports.",
-      "score": 40,
-      "trend": "steady",
+      "score": 15,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Health",
@@ -705,6 +693,18 @@
           "weight": 10
         },
         {
+          "domain": "Chemical weapons",
+          "id": "chem",
+          "name": "Chemical / nerve-agent attack or mass poisoning reported",
+          "weight": 15
+        },
+        {
+          "domain": "Health",
+          "id": "dieoff",
+          "name": "Unexplained mass deaths or animal die-offs",
+          "weight": 10
+        },
+        {
           "domain": "Hospitals",
           "id": "ed",
           "name": "Three or more Adelaide emergency departments 'very busy'",
@@ -714,33 +714,26 @@
       "why": "Before COVID-19 (Dec 2019 - Feb 2020): reports of an unknown pneumonia cluster, WHO outbreak notices, mask and hazmat makers (Alpha Pro Tech, Lakeland) and vaccine developers (Moderna, Novavax) surging weeks before broad markets fell, and countries restricting exports of masks and medicines (Taiwan from 24 Jan 2020, then dozens more)."
     },
     {
-      "band": "Guarded",
-      "convergence": "Two different kinds of sign are showing together (australian incidents and state actors). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: sudden fall in sa electricity demand (possible large blackout), global cyber threat level raised (sans infocon not green) and several vpn / firewall flaws exploited this week.",
+      "band": "Low",
+      "convergence": "Only one kind of sign is showing (australian incidents). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: sudden fall in sa electricity demand (possible large blackout), global cyber threat level raised (sans infocon not green) and several vpn / firewall flaws exploited this week.",
       "domains": [
-        "Australian incidents",
-        "State actors"
+        "Australian incidents"
       ],
       "key": "cyber",
       "lit": [
-        {
-          "detail": "ESET Research: Sandworm behind cyberattack on Poland’s power grid in late 2025",
-          "domain": "State actors",
-          "id": "state",
-          "name": "Reports of state hackers / pre-positioning / wipers",
-          "weight": 15
-        },
         {
           "detail": "Australia's Bell Financial says some client data likely accessed in cyber incident",
           "domain": "Australian incidents",
           "id": "au",
           "name": "Major Australian cyber incident reported",
+          "short": "Major Australian cyber incident reported",
           "weight": 10
         }
       ],
       "name": "Major cyber attack on Australia",
       "sa_impact": "Banks, payments, hospitals, fuel distribution, telcos and the power grid all run on networks; a large attack can stop card payments and services for hours to days.",
-      "score": 25,
-      "trend": "up",
+      "score": 10,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Global threat level",
@@ -779,6 +772,12 @@
           "weight": 10
         },
         {
+          "domain": "State actors",
+          "id": "state",
+          "name": "Reports of state hackers / pre-positioning / wipers",
+          "weight": 15
+        },
+        {
           "domain": "Communications",
           "id": "tel",
           "name": "Phone / internet carrier outage",
@@ -815,6 +814,7 @@
           "domain": "AI-enabled hacking",
           "id": "aihack",
           "name": "Reports of AI-driven hacking campaigns",
+          "short": "Reports of AI-driven hacking campaigns",
           "weight": 15
         },
         {
@@ -822,6 +822,7 @@
           "domain": "Markets",
           "id": "flash",
           "name": "Flash crash or exchange trading halt",
+          "short": "Flash crash or exchange trading halt",
           "weight": 10
         },
         {
@@ -829,6 +830,7 @@
           "domain": "Cloud services",
           "id": "cloud",
           "name": "Major cloud or AI service outage",
+          "short": "Major cloud or AI service outage",
           "weight": 10
         },
         {
@@ -836,6 +838,7 @@
           "domain": "Fraud waves",
           "id": "scams",
           "name": "Surge in AI voice-clone / deepfake scams in Australia",
+          "short": "Surge in AI voice-clone / deepfake…",
           "weight": 5
         }
       ],
