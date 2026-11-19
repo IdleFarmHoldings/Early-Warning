@@ -1,23 +1,15 @@
 {
-  "generated_at": "2026-11-19T15:07:00Z",
+  "generated_at": "2026-11-19T15:22:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
       "band": "Guarded",
-      "convergence": "Two different kinds of sign are showing together (power grid and weather). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: cfs emergency warning in sa, sudden fall in sa electricity demand (possible large blackout) and extreme or catastrophic fire danger near adelaide.",
+      "convergence": "Only one kind of sign is showing (power grid). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: cfs emergency warning in sa, sudden fall in sa electricity demand (possible large blackout) and extreme or catastrophic fire danger near adelaide.",
       "domains": [
-        "Power grid",
-        "Weather"
+        "Power grid"
       ],
       "key": "local",
       "lit": [
-        {
-          "detail": "Cancellation of Severe Thunderstorm Warning for North West Pastoral forecast district",
-          "domain": "Weather",
-          "id": "bom",
-          "name": "Bureau severe weather or heatwave warning for SA",
-          "weight": 15
-        },
         {
           "detail": "Multiple transmission towers down in Eyre Peninsula in South Australia on Thursday 19th November 2026, leaving 20,000+ properties without po; Communities without power after massive storm fells transmission towers on South Australia’s Eyre Peninsula",
           "domain": "Power grid",
@@ -28,8 +20,8 @@
       ],
       "name": "Local emergency in SA (bushfire, heat, power)",
       "sa_impact": "Direct: bushfires, heatwaves and power cuts are the emergencies most likely to affect the family. In the 2016 statewide blackout, power, phones, traffic lights and fuel pumps failed together.",
-      "score": 30,
-      "trend": "steady",
+      "score": 15,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Bushfire",
@@ -54,6 +46,12 @@
           "id": "tfb",
           "name": "Total fire ban for Adelaide or the Hills",
           "weight": 10
+        },
+        {
+          "domain": "Weather",
+          "id": "bom",
+          "name": "Bureau severe weather or heatwave warning for SA",
+          "weight": 15
         },
         {
           "domain": "Power grid",
@@ -102,18 +100,18 @@
     },
     {
       "band": "Guarded",
-      "convergence": "Two different kinds of sign are showing together (electronic warfare and shipping). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
+      "convergence": "Two different kinds of sign are showing together (aviation and shipping). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
       "domains": [
-        "Electronic warfare",
+        "Aviation",
         "Shipping"
       ],
       "key": "mideast",
       "lit": [
         {
-          "detail": "gps_gulf 31 vs usual 6.0",
-          "domain": "Electronic warfare",
-          "id": "gps",
-          "name": "GPS jamming spike (Gulf / Israel)",
+          "detail": "Dammam hub kept Gulf Air flying during airspace closure",
+          "domain": "Aviation",
+          "id": "airspace",
+          "name": "Airspace closures reported (Iran / Israel / Gulf)",
           "weight": 10
         },
         {
@@ -142,6 +140,12 @@
           "weight": 15
         },
         {
+          "domain": "Electronic warfare",
+          "id": "gps",
+          "name": "GPS jamming spike (Gulf / Israel)",
+          "weight": 10
+        },
+        {
           "domain": "Communications",
           "id": "net",
           "name": "Internet blackout in Iran or Israel",
@@ -152,12 +156,6 @@
           "id": "dep",
           "name": "New US embassy departure order in the region",
           "weight": 15
-        },
-        {
-          "domain": "Aviation",
-          "id": "airspace",
-          "name": "Airspace closures reported (Iran / Israel / Gulf)",
-          "weight": 10
         },
         {
           "domain": "Maritime",
@@ -672,7 +670,7 @@
       "name": "Pandemic, biological or chemical emergency",
       "sa_impact": "Health system strain, possible lockdowns and border closures, and shortages of medicines and protective equipment, which Australia mostly imports.",
       "score": 40,
-      "trend": "down",
+      "trend": "steady",
       "unlit": [
         {
           "domain": "Health",
@@ -804,36 +802,46 @@
       "why": "Large attacks are usually preceded by quieter steps: a surge in newly exploited flaws in VPNs and firewalls (how state groups like Volt Typhoon get in), scanning of industrial-control systems, a rise in ransomware victims in the target country, and official warnings. Before Russia's 2022 invasion, wiper malware hit Ukraine a day ahead; Chinese groups have been found pre-positioned in US and allied infrastructure."
     },
     {
-      "band": "Low",
-      "convergence": "Only one kind of sign is showing (cloud services). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, reports of ai-driven hacking campaigns and deepfakes of leaders or fake official alerts.",
+      "band": "Elevated",
+      "convergence": "Signs are converging across 3 separate areas (ai-enabled hacking, cloud services and fraud waves). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: a Chinese state-sponsored group used an AI agent to carry out 80-90% of an attack on about 30 organisations, at thousands of requests per second. A fake AI image of a Pentagon explosion briefly moved US markets in May 2023, and a deepfake video call of a CFO tricked a company into paying US$25 million in 2024. The likely signature of an AI attack is breadth and speed: many unrelated systems and vendors hit at once, synthetic media of officials, and shocks with no clear human cause. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, deepfakes of leaders or fake official alerts and flash crash or exchange trading halt.",
       "domains": [
-        "Cloud services"
+        "AI-enabled hacking",
+        "Cloud services",
+        "Fraud waves"
       ],
       "key": "ai",
       "lit": [
+        {
+          "detail": "AI-driven cyberattack disrupts European Commission internal services for over 10 days",
+          "domain": "AI-enabled hacking",
+          "id": "aihack",
+          "name": "Reports of AI-driven hacking campaigns",
+          "weight": 15
+        },
         {
           "detail": "Microsoft Makes Its AI Case After Global Outage and Anthropic Challenge",
           "domain": "Cloud services",
           "id": "cloud",
           "name": "Major cloud or AI service outage",
           "weight": 10
+        },
+        {
+          "detail": "Top Deepfake Detection Software for Identity Verification in 2027",
+          "domain": "Fraud waves",
+          "id": "scams",
+          "name": "Surge in AI voice-clone / deepfake scams in Australia",
+          "weight": 5
         }
       ],
       "name": "AI-enabled attack (non-traditional)",
       "sa_impact": "Not bombs but disruption: hacking at machine speed across banks, telcos, hospitals and the grid at once; fake videos or alerts from leaders causing panic buying or bank runs; or automated market and fraud shocks. Effects would be outages, payment failures and confusion about what is real.",
-      "score": 10,
-      "trend": "down",
+      "score": 30,
+      "trend": "up",
       "unlit": [
         {
           "domain": "Mass exploitation",
           "id": "breadth",
           "name": "Exploited flaws across unusually many vendors at once",
-          "weight": 15
-        },
-        {
-          "domain": "AI-enabled hacking",
-          "id": "aihack",
-          "name": "Reports of AI-driven hacking campaigns",
           "weight": 15
         },
         {
@@ -859,12 +867,6 @@
           "id": "tel",
           "name": "Phone / internet carrier outage",
           "weight": 10
-        },
-        {
-          "domain": "Fraud waves",
-          "id": "scams",
-          "name": "Surge in AI voice-clone / deepfake scams in Australia",
-          "weight": 5
         },
         {
           "domain": "Edge-device exploitation",
