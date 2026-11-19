@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-19T09:07:00Z",
+  "generated_at": "2026-11-19T09:22:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -101,14 +101,22 @@
       "why": "The worst local days stack up: extreme fire danger, a heatwave pushing power demand, a tight grid, and storms or fires damaging lines. AEMO warns of supply shortfalls hours to a day ahead; the CFS and Bureau issue ratings and warnings a day or more ahead."
     },
     {
-      "band": "Guarded",
-      "convergence": "Two different kinds of sign are showing together (aviation and shipping). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
+      "band": "Elevated",
+      "convergence": "Signs are converging across 3 separate areas (aviation, electronic warfare and shipping). Unrelated systems flagging the same scenario at once is the pattern seen before past events. Before the 2024-25 Israel-Iran exchanges and US strikes, watchers saw US tanker surges toward Europe and the Gulf, embassy departure orders, regional GPS jamming, airspace closures and oil price jumps, often 1-3 days ahead. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
       "domains": [
         "Aviation",
+        "Electronic warfare",
         "Shipping"
       ],
       "key": "mideast",
       "lit": [
+        {
+          "detail": "gps_gulf 33 vs usual 7",
+          "domain": "Electronic warfare",
+          "id": "gps",
+          "name": "GPS jamming spike (Gulf / Israel)",
+          "weight": 10
+        },
         {
           "detail": "When Israel's airspace closed, this Utah tour company got its travelers home just 24 hours late",
           "domain": "Aviation",
@@ -126,8 +134,8 @@
       ],
       "name": "Middle East war & Gulf shipping",
       "sa_impact": "Fuel: Australia imports most of its fuel, much of it refined from Gulf crude in Asia. Shipping attacks or a Hormuz closure push up prices within days and can cause local shortages.",
-      "score": 25,
-      "trend": "steady",
+      "score": 35,
+      "trend": "up",
       "unlit": [
         {
           "domain": "Military air",
@@ -140,12 +148,6 @@
           "id": "air",
           "name": "Unusual military air activity over the region",
           "weight": 15
-        },
-        {
-          "domain": "Electronic warfare",
-          "id": "gps",
-          "name": "GPS jamming spike (Gulf / Israel)",
-          "weight": 10
         },
         {
           "domain": "Communications",
@@ -383,13 +385,21 @@
       "why": "North Korean missile launches are often preceded by navigation warnings; South Korea and Japan report GPS jamming from the North during tense periods."
     },
     {
-      "band": "Low",
-      "convergence": "Only one kind of sign is showing (cyber). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and mobilisation / reservist reports (russia / nato).",
+      "band": "Guarded",
+      "convergence": "Two different kinds of sign are showing together (cyber and state signalling). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and mobilisation / reservist reports (russia / nato).",
       "domains": [
-        "Cyber"
+        "Cyber",
+        "State signalling"
       ],
       "key": "russia",
       "lit": [
+        {
+          "detail": "Signal ahead of Putin, Trump and Xi Jinping meeting: “Doomsday radio” broadcasts “sinner” message",
+          "domain": "State signalling",
+          "id": "signals",
+          "name": "Russian signalling (Buzzer broadcasts, nuclear drills)",
+          "weight": 5
+        },
         {
           "detail": "ESET Research: Sandworm behind cyberattack on Poland’s power grid in late 2025",
           "domain": "Cyber",
@@ -400,8 +410,8 @@
       ],
       "name": "Russia-NATO escalation",
       "sa_impact": "Indirect: energy and market shock, cyber attacks that can spill over to Australian systems, and nuclear-risk rhetoric.",
-      "score": 10,
-      "trend": "steady",
+      "score": 15,
+      "trend": "up",
       "unlit": [
         {
           "domain": "Electronic warfare",
@@ -456,12 +466,6 @@
           "id": "blood",
           "name": "Military blood supplies / field hospitals (Russia)",
           "weight": 10
-        },
-        {
-          "domain": "State signalling",
-          "id": "signals",
-          "name": "Russian signalling (Buzzer broadcasts, nuclear drills)",
-          "weight": 5
         },
         {
           "domain": "Markets",
