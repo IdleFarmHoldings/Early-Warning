@@ -1,11 +1,12 @@
 {
-  "generated_at": "2026-11-19T05:42:00Z",
+  "generated_at": "2026-11-19T05:57:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
-      "band": "Guarded",
-      "convergence": "Two different kinds of sign are showing together (roads and weather). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: cfs emergency warning in sa, sudden fall in sa electricity demand (possible large blackout) and extreme or catastrophic fire danger near adelaide.",
+      "band": "Elevated",
+      "convergence": "Signs are converging across 3 separate areas (power grid, roads and weather). Unrelated systems flagging the same scenario at once is the pattern seen before past events. The worst local days stack up: extreme fire danger, a heatwave pushing power demand, a tight grid, and storms or fires damaging lines. AEMO warns of supply shortfalls hours to a day ahead; the CFS and Bureau issue ratings and warnings a day or more ahead. The strongest signs not yet showing: cfs emergency warning in sa, sudden fall in sa electricity demand (possible large blackout) and extreme or catastrophic fire danger near adelaide.",
       "domains": [
+        "Power grid",
         "Roads",
         "Weather"
       ],
@@ -24,12 +25,19 @@
           "id": "roads",
           "name": "Fire, flood or storm road closures in SA",
           "weight": 10
+        },
+        {
+          "detail": "More than 20,000 lose power in SA as storms hit Eyre Peninsula",
+          "domain": "Power grid",
+          "id": "power",
+          "name": "Reports of widespread power outages in SA",
+          "weight": 15
         }
       ],
       "name": "Local emergency in SA (bushfire, heat, power)",
       "sa_impact": "Direct: bushfires, heatwaves and power cuts are the emergencies most likely to affect the family. In the 2016 statewide blackout, power, phones, traffic lights and fuel pumps failed together.",
-      "score": 25,
-      "trend": "steady",
+      "score": 40,
+      "trend": "up",
       "unlit": [
         {
           "domain": "Bushfire",
@@ -72,12 +80,6 @@
           "id": "ed",
           "name": "Three or more Adelaide emergency departments 'very busy'",
           "weight": 10
-        },
-        {
-          "domain": "Power grid",
-          "id": "power",
-          "name": "Reports of widespread power outages in SA",
-          "weight": 15
         },
         {
           "domain": "Water",
@@ -127,7 +129,7 @@
       "name": "Middle East war & Gulf shipping",
       "sa_impact": "Fuel: Australia imports most of its fuel, much of it refined from Gulf crude in Asia. Shipping attacks or a Hormuz closure push up prices within days and can cause local shortages.",
       "score": 25,
-      "trend": "down",
+      "trend": "steady",
       "unlit": [
         {
           "domain": "Military air",
