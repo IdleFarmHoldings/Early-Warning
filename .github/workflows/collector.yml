@@ -36,20 +36,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Create the live-data branch from main's data (first run after the move only)
-        run: |
-          if git ls-remote --exit-code --heads origin live-data >/dev/null; then echo "live-data exists"; exit 0; fi
-          # Seed from main's newest commit (not this run's checkout, which may predate the last data save).
-          git fetch -q --depth=1 origin main
-          src=$(git rev-parse FETCH_HEAD)
-          for d in data state alerts; do git cat-file -e "$src:$d" || { echo "main has no $d/ to seed from"; exit 1; }; done
-          tree=$(printf '040000 tree %s\tdata\n040000 tree %s\tstate\n040000 tree %s\talerts\n' \
-                 "$(git rev-parse "$src:data")" "$(git rev-parse "$src:state")" "$(git rev-parse "$src:alerts")" | git mktree)
-          commit=$(git -c user.name="early-warning-bot" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
-                   commit-tree "$tree" -m "live-data: seeded from main ${src:0:7}")
-          git push -q origin "$commit:refs/heads/live-data"
-          echo "live-data created from main ${src:0:7}"
-
       - name: Check out the live data
         uses: actions/checkout@v4
         with:

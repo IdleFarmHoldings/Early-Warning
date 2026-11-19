@@ -1,3 +1,7 @@
 __pycache__/
-# live-data branch checkout used by the workflows
+# Live data lives on the live-data branch (checked out into _data/ on GitHub Actions), never on main.
 _data/
+/state/
+/alerts/
+/data/*
+!/data/demo-*.json

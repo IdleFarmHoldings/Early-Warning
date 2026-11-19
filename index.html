@@ -631,6 +631,8 @@ function renderAlerts(list){
   }
 }
 
+// Live data is written by the collector to the live-data branch (main holds only code and pages).
+const LIVE = "https://raw.githubusercontent.com/IdleFarmHoldings/Early-Warning/live-data/";
 const demo = new URLSearchParams(location.search).get("demo");
 const DEMO_OK = /^[1-5]$|^[a-z0-9-]{2,24}$/.test(demo||"");
 const DEMO_FILE = /^[1-5]$/.test(demo||"") ? `data/demo-level${demo}.json` : `data/demo-${demo}.json`;
@@ -724,18 +726,18 @@ async function load(){
   let st=null, l=null, ind=null, offline=null;
   const pull = async (key, path) => { try{ const v = await get(path); if(!DEMO_OK) save(key, v); return v; }
     catch(e){ const s = DEMO_OK ? null : saved(key); if(s){ offline = Math.min(offline||Infinity, s.at); return s.v; } return null; } };
-  st = await pull("status", DEMO_OK ? DEMO_FILE : "data/status.json");
+  st = await pull("status", DEMO_OK ? DEMO_FILE : LIVE+"data/status.json");
   if(!st){ $("banner").hidden=false; $("banner").textContent="Could not load the assessment. Try again shortly."; }
-  l = await pull("latest", "data/latest.json");
-  ind = DEMO_OK ? null : await pull("indicators", "data/indicators.json");
-  if(!DEMO_OK) renderCampaigns(await pull("campaigns", "data/campaigns.json"));
+  l = await pull("latest", LIVE+"data/latest.json");
+  ind = DEMO_OK ? null : await pull("indicators", LIVE+"data/indicators.json");
+  if(!DEMO_OK) renderCampaigns(await pull("campaigns", LIVE+"data/campaigns.json"));
   LAST_ST=st; LAST_L=l;
   if(st) renderStatus(st); else drawGauge(0);
   renderConcerns(st, ind);
   renderLatest(l);
   renderHappened();
   CUR_LEVEL = st && st.level ? Math.round(st.level) : 1; renderReady(); ciLoad();
-  if(!DEMO_OK) renderScore(await pull("scorecard", "data/scorecard.json"));
+  if(!DEMO_OK) renderScore(await pull("scorecard", LIVE+"data/scorecard.json"));
   // Stale-data warning: live data should be under ~30 min old; the analysis runs twice a day.
   const ago = iso => iso ? (Date.now() - new Date(iso).getTime()) / 60000 : Infinity;
   const msgs = [];

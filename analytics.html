@@ -243,6 +243,8 @@ const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const fmt = iso => { const d=new Date(iso); return isNaN(d)?"—":d.toLocaleString("en-AU",{timeZone:"Australia/Adelaide",day:"numeric",month:"short",hour:"numeric",minute:"2-digit"}); };
 // await inside try: a file that fails to parse must give null for that panel, not stop the whole page.
+// Live data is written by the collector to the live-data branch (main holds only code and pages).
+const LIVE = "https://raw.githubusercontent.com/IdleFarmHoldings/Early-Warning/live-data/";
 async function get(p){ try{ const r=await fetch(p+"?t="+Date.now(),{cache:"no-store"}); return r.ok? await r.json(): null; }catch(e){ console.warn("Could not load", p, e); return null; } }
 const SERIES = ["--s1","--s2","--s3","--s4","--s5","--s6"];
 // Ten scenarios need ten different line colours, or two lines look like the same scenario.
@@ -291,8 +293,8 @@ document.querySelectorAll(".wrap .panel").forEach((p, i)=>{
 });
 
 (async()=>{
-  const [an, ind, sat, lat, pat] = await Promise.all([get("data/analytics.json"), get("data/indicators.json"),
-    get("data/satellites.json"), get("data/latest.json"), get("data/patterns.json")]);
+  const [an, ind, sat, lat, pat] = await Promise.all([get(LIVE+"data/analytics.json"), get(LIVE+"data/indicators.json"),
+    get(LIVE+"data/satellites.json"), get(LIVE+"data/latest.json"), get(LIVE+"data/patterns.json")]);
   $("asof").textContent = `Data as of ${fmt((lat||{}).generated_at)} · satellites ${fmt((sat||{}).generated_at)}`;
   const ageMin = lat && lat.generated_at ? (Date.now() - new Date(lat.generated_at).getTime())/60000 : Infinity;
   if(ageMin > 45){ $("asof").innerHTML = `<span style="color:${css("--critical")};font-weight:600">Data is ${Math.round(ageMin/6)/10} h old — the system may be delayed.</span> ` + esc($("asof").textContent); }
@@ -370,7 +372,7 @@ document.querySelectorAll(".wrap .panel").forEach((p, i)=>{
   minis($("milMinis"), MIL.map(([k,n])=>({key:k, name:n, now:det[k]})));
 
   // Chokepoints
-  const chk = await get("data/chokepoints.json");
+  const chk = await get(LIVE+"data/chokepoints.json");
   const cps = Object.entries((chk&&chk.chokepoints)||{});
   if(cps.length){
     $("chkMinis").innerHTML = cps.map(([n,c],i)=>`<div class="mini"><div class="row"><span>${esc(n)}</span><span class="v">${c.avg_7d}</span></div>
@@ -412,7 +414,7 @@ document.querySelectorAll(".wrap .panel").forEach((p, i)=>{
     IN:[22,79],PK:[30,70],BD:[24,90],LK:[7.8,80.7],NP:[28.4,84],CN:[35,104],HK:[22.3,114.2],TW:[23.7,121],JP:[36.5,138],KR:[36.5,128],KP:[40,127],
     MN:[46.8,103],KZ:[48,67],UZ:[41.4,64.6],VN:[16,107],TH:[15,101],MY:[4,102],SG:[1.35,103.8],ID:[-2,118],PH:[12,122],KH:[12.5,105],MM:[21,96],
     NZ:[-41,174],PG:[-6,145],FJ:[-17.8,178],SC:[-4.7,55.5],PA:[8.5,-80],CR:[10,-84],DO:[19,-70.5],PR:[18.2,-66.5]};
-  const sea = await get("data/maritime.json");
+  const sea = await get(LIVE+"data/maritime.json");
 
   // ---------- Undersea cables ----------
   if(sea && sea.zones){

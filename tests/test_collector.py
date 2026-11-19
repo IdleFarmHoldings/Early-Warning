@@ -723,7 +723,10 @@ def test_pages_plain_names_and_distinct_colours():
     root = Path(__file__).resolve().parent.parent
     board = (root / "index.html").read_text()
     names = set(re.findall(r"(\w+):\"", board[board.index("const FEED_NAMES"):board.index("const QS")]))
-    feeds = set(_json.loads((root / "data" / "latest.json").read_text())["source_health"])
+    import common
+    live = common.DATA_ROOT / "data" / "latest.json"  # live data if checked out (EW_DATA), else a snapshot
+    src = live if live.exists() else root / "tests" / "fixtures" / "latest_20261119.json"
+    feeds = set(_json.loads(src.read_text())["source_health"])
     assert feeds <= names, f"feeds without a plain name: {sorted(feeds - names)}"
     an = (root / "analytics.html").read_text()
     line = an[an.index("const ESC_COLORS"):].split("\n", 1)[0]
@@ -781,9 +784,9 @@ def test_zero_baseline_writes_valid_json():
 
 def test_brief_is_small_and_keeps_key_fields():
     import brief
-    root = Path(__file__).resolve().parents[1] / "data"
-    latest = json.loads((root / "latest.json").read_text())
-    ind = json.loads((root / "indicators.json").read_text())
+    root = Path(__file__).resolve().parent / "fixtures"  # snapshots from live-data (data is no longer on main)
+    latest = json.loads((root / "latest_20261119.json").read_text())
+    ind = json.loads((root / "indicators_20261119.json").read_text())
     b = brief.build(latest, ind)
     for k in ("generated_at", "recent_alerts", "local_sa", "scenarios", "markets", "national_shocks", "gps_bad_pct"):
         assert k in b, k

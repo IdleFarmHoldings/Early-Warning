@@ -26,8 +26,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Check out the live data
-        id: live
-        continue-on-error: true   # until the collector has created live-data, fall back to main's data
         uses: actions/checkout@v4
         with:
           ref: live-data
@@ -36,14 +34,15 @@ jobs:
         with:
           python-version: "3.12"
       - name: Check freshness, restart and alert if needed
+        env:
+          EW_DATA: _data
         run: |
-          if [ -d _data/.git ]; then export EW_DATA=_data; fi
           running=$(gh run list --workflow collector.yml --status in_progress --json databaseId --jq length || echo 0)
           queued=$(gh run list --workflow collector.yml --status queued --json databaseId --jq length || echo 0)
           python collector/watchdog.py --running "$running" --queued "$queued"
       - name: Save watchdog state
         run: |
-          cd _data 2>/dev/null || { echo "no live-data checkout yet; not saving"; exit 0; }
+          cd _data
           git config user.name "early-warning-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/watchdog.json || true
