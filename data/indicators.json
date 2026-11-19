@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-19T17:14:00Z",
+  "generated_at": "2026-11-19T17:29:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -29,7 +29,7 @@
       "name": "Local emergency in SA (bushfire, heat, power)",
       "sa_impact": "Direct: bushfires, heatwaves and power cuts are the emergencies most likely to affect the family. In the 2016 statewide blackout, power, phones, traffic lights and fuel pumps failed together.",
       "score": 25,
-      "trend": "up",
+      "trend": "steady",
       "unlit": [
         {
           "domain": "Bushfire",
@@ -639,7 +639,7 @@
       "why": "The 2023 Optus outage cut mobile, NBN, EFTPOS and some 000 calls nationwide for 12 hours. Hostile states pre-position in critical infrastructure; GPS jamming over Australia would be a new and serious sign."
     },
     {
-      "band": "Elevated",
+      "band": "Guarded",
       "convergence": "Two different kinds of sign are showing together (chemical weapons and health). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: unknown illness / pneumonia cluster reported, countries restricting medical supply exports and pandemic-response stocks outperforming (5 days).",
       "domains": [
         "Chemical weapons",
@@ -660,19 +660,12 @@
           "id": "chem",
           "name": "Chemical / nerve-agent attack or mass poisoning reported",
           "weight": 15
-        },
-        {
-          "detail": "Chuck Thompson on the mysterious deaths of two Bigfoot hunters in Washington",
-          "domain": "Health",
-          "id": "dieoff",
-          "name": "Unexplained mass deaths or animal die-offs",
-          "weight": 10
         }
       ],
       "name": "Pandemic, biological or chemical emergency",
       "sa_impact": "Health system strain, possible lockdowns and border closures, and shortages of medicines and protective equipment, which Australia mostly imports.",
-      "score": 40,
-      "trend": "steady",
+      "score": 30,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Health",
@@ -708,6 +701,12 @@
           "domain": "Markets",
           "id": "vix",
           "name": "Market fear index above 30",
+          "weight": 10
+        },
+        {
+          "domain": "Health",
+          "id": "dieoff",
+          "name": "Unexplained mass deaths or animal die-offs",
           "weight": 10
         },
         {
@@ -838,7 +837,7 @@
       "name": "AI-enabled attack (non-traditional)",
       "sa_impact": "Not bombs but disruption: hacking at machine speed across banks, telcos, hospitals and the grid at once; fake videos or alerts from leaders causing panic buying or bank runs; or automated market and fraud shocks. Effects would be outages, payment failures and confusion about what is real.",
       "score": 30,
-      "trend": "down",
+      "trend": "steady",
       "unlit": [
         {
           "domain": "Mass exploitation",

@@ -305,23 +305,35 @@
   ],
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
+    "maritime": "TimeoutError: ",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [
     "Orange notification for tropical cyclone AKVAN-26. Population affected by Category 1 (120 km/h) wind speeds or higher is 0  (11.754 million in Tropical Storm)."
   ],
-  "generated_at": "2026-11-19T17:14:00Z",
+  "generated_at": "2026-11-19T17:29:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 14,
-    "Black Sea": 12,
-    "Israel & Eastern Mediterranean": 9,
+    "Baltic / Kaliningrad": 20,
+    "Black Sea": 20,
+    "Israel & Eastern Mediterranean": 3,
     "Korea": 0,
-    "Persian Gulf": 7,
+    "Persian Gulf": 6,
     "South Australia": 0,
     "Sydney / NSW": null,
     "Taiwan Strait": 0
   },
   "incidents": [
+    {
+      "attack_reported": true,
+      "confirmed": true,
+      "headlines": [
+        "Visa, Mastercard and Chase bank customer data hacked — after string of major failures",
+        "Visa, Mastercard and JPMorgan customer data exposed in cyberattack",
+        "Visa, Mastercard and JPMorgan Customer Data Leaked by Hackers"
+      ],
+      "severity": "Warning",
+      "target": "Banking & payments"
+    },
     {
       "attack_reported": true,
       "confirmed": false,
@@ -446,9 +458,9 @@
       "attack_reported": false,
       "confirmed": true,
       "headlines": [
+        "Microsoft 365 outage ‘timely reminder of importance of operational resilience’",
         "Microsoft 365 outage: Global cyber insured losses estimated at up to $700 mn",
-        "A dozen industries impacted by the Microsoft 365 outage",
-        "Microsoft 365 Went Down: What Should IT Teams Do First?"
+        "A dozen industries impacted by the Microsoft 365 outage"
       ],
       "severity": "Warning",
       "target": "Microsoft"
@@ -480,15 +492,24 @@
       ],
       "severity": "Info",
       "target": "AI platforms"
+    },
+    {
+      "attack_reported": false,
+      "confirmed": false,
+      "headlines": [
+        "Australia backs down on cuts to working holiday visas but adds tougher conditions"
+      ],
+      "severity": "Info",
+      "target": "Australia"
     }
   ],
   "internet_drop_pct": {
     "China": 0.0,
-    "Iran": 0.1,
-    "Israel": 0.0,
-    "Russia": 0.0,
+    "Iran": 0.2,
+    "Israel": 0.3,
+    "Russia": 0.1,
     "South Korea": 0.2,
-    "Taiwan": 1.0
+    "Taiwan": 1.2
   },
   "local_sa": {
     "bom": [],
@@ -506,14 +527,14 @@
     "fire_danger_ok": true,
     "fires_active": 3,
     "fuel": {
-      "brent_aud": 133.7,
-      "change_pct": -3.3,
+      "brent_aud": 133.8,
+      "change_pct": -3.5,
       "pump_cents": -3,
-      "week_ago_aud": 138.2
+      "week_ago_aud": 138.6
     },
-    "grid_demand_fall_pct": 1.8,
-    "grid_demand_mw": 1261,
-    "grid_demand_usual_mw": 1259,
+    "grid_demand_fall_pct": 2.5,
+    "grid_demand_mw": 1248,
+    "grid_demand_usual_mw": 1255,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
@@ -523,7 +544,26 @@
         "pm25": 3
       },
       "air_word": "Good",
-      "days": []
+      "days": [
+        {
+          "date": "2026-11-20",
+          "gust": 57,
+          "rain": 0,
+          "tmax": 24
+        },
+        {
+          "date": "2026-11-21",
+          "gust": 28,
+          "rain": 0,
+          "tmax": 29
+        },
+        {
+          "date": "2026-11-22",
+          "gust": 55,
+          "rain": 1,
+          "tmax": 27
+        }
+      ]
     },
     "possible_blackout": false,
     "power_news": [],
@@ -539,20 +579,20 @@
   },
   "markets": {
     "AUD/USD": {
-      "change_pct": -1.11,
-      "price": 0.6665
+      "change_pct": -0.9,
+      "price": 0.6679
     },
     "Brent oil": {
-      "change_pct": -2.44,
-      "price": 89.71
+      "change_pct": -2.28,
+      "price": 89.85
     },
     "Gold": {
-      "change_pct": -1.78,
-      "price": 3675.3
+      "change_pct": -1.4,
+      "price": 3689.4
     },
     "VIX": {
-      "change_pct": 9.04,
-      "price": 26.78
+      "change_pct": 14.94,
+      "price": 28.23
     }
   },
   "national_shocks": {
@@ -574,13 +614,18 @@
     ],
     "airspace": [
       "Dammam hub kept Gulf Air flying during airspace closure - MEED",
-      "When Israel's airspace closed, this Utah tour company got its travelers home just 24 hours late - KSL",
-      "Houthis claim missile attack on King Khalid Airport, Riyadh financial center - Crypto Briefing"
+      "Houthi missile damages Riyadh tower, no injuries reported - Crypto Briefing",
+      "When Israel's airspace closed, this Utah tour company got its travelers home just 24 hours late - KSL"
     ],
     "aviation_halt": [
       "‘The Hairiest 90 Minutes of My Career’: How the FAA Ground Stop Went Down - WIRED",
       "Nationwide Aircraft Ground Stop Raises Concerns over Aviation System Modernization - Every CRS Report",
       "US plans to announce cause of outage that led to nationwide ground stop, FAA says - Reuters"
+    ],
+    "bank_outage": [
+      "Australia backs down on cuts to working holiday visas but adds tougher conditions - Travel Tomorrow",
+      "Visa, Mastercard and JPMorgan Customer Data Leaked by Hackers - WSJ",
+      "Visa Inc Stock (V) Moved Down by 3.45% on Nov 19: What Signal Does It Send? - TradingKey"
     ],
     "blood": [
       "News - Naval Medical Center Camp Lejeune employee honored for blood donation milestone - DVIDS"
@@ -597,8 +642,8 @@
     ],
     "cloud": [
       "The Growth Rate Anthropic Needs to Justify $83 IPO Price Has Never Been Achieved - Disruption Banking",
-      "Anthropic Claude down: Why it said it was unable to authenticate code - Mashable",
-      "A dozen industries impacted by the Microsoft 365 outage - PropertyCasualty360"
+      "A dozen industries impacted by the Microsoft 365 outage - PropertyCasualty360",
+      "Anthropic Claude down: Why it said it was unable to authenticate code - Mashable"
     ],
     "cn_signals": [
       "NYT the latest in showcasing bad US-China takes from DC experts - Responsible Statecraft"
@@ -628,15 +673,6 @@
       "NGINX2Root: Critical NGINX RCE Vulnerabilities - SOC Prime",
       "Apache Roller RCE Flaw CVE-2026-129448 Under Active Attack - Security Affairs"
     ],
-    "deepfake": [
-      "AI-generated video misrepresented as revamp of West Bengal's Howrah bus station - AFP Fact Check",
-      "John Swinney apologises after SNP’s AI-generated GTA 6 'memes' spark backlash - The National Scot",
-      "[INTERVIEW] 'AI is not God': Nat'l Tsing Hua University president warns against blind faith in technology - The Korea Times"
-    ],
-    "dieoff": [
-      "Chuck Thompson on the mysterious deaths of two Bigfoot hunters in Washington - Crime Reads",
-      "Halloween: Six most haunted castles in Scotland with spooky tales from the past - ScottishNews.com"
-    ],
     "flash": [
       "McLaren Minerals Requests Trading Halt Pending Material Capital Raising Announcement - Kalkine",
       "Canadian Investment Regulatory Organization Trading Halt - BNKR - The Manila Times",
@@ -644,8 +680,8 @@
     ],
     "fuel_au": [
       "Oil Supply Shock to Worsen as Inventories Fall Further Even if Conflict Ends - EnergyNow.com",
-      "EFL warns of possible power rationing amid fuel cost crisis - FBC News",
-      "Fuel tanker arrives amid supply concerns and panic buying - FBC News"
+      "Fuel tanker arrives amid supply concerns and panic buying - FBC News",
+      "Skydiving Injury Leaves Tourist Medically Unfit to Fly Home From Australia - Wide Open Country"
     ],
     "illness": [
       "Mystery illness causes mass hospitalisation of runners - The Nightly",
@@ -655,7 +691,7 @@
     "masscas": [
       "Scoping Review Maps Decade of Patient Safety and Healthcare Quality Research in Israel - Bioengineer.org",
       "House of Commons Defence Committee Inquiry into the Defence Medical Services - King's College London",
-      "18 injured in multi-vehicle crash involving prison bus, gas tanker - LehighValleyLive.com"
+      "Parents of Uvalde victim help first responders prepare for mass shootings - KEYE"
     ],
     "mobilisation": [
       "Iraq strikes compromise with Kataib Hezbollah - Middle East Online",
@@ -666,11 +702,6 @@
       "FAA Turned Down Free Starlink Offer Before Historic Nationwide Outage - AutoSpies",
       "Cuba’s National Electric Grid Collapses, Reason Unknown - EnergyNow.com",
       "What would happen if you couldn’t access your bank tomorrow? Following recent technology outages that affected banks, airlines and major companies, experts recommend keeping cash at home for emergencies. Would your family be prepared if ATMs and b - Facebook"
-    ],
-    "outage_au": [
-      "Calls for 'automatic compensation' following telco outages - ABC News & Headlines – Australian Broadcasting Corporation",
-      "Australia telco complaints surge after Telstra outage - Traders Union",
-      "Australia's Optus apologises for outage that disrupted emergency calls - Reuters"
     ],
     "reservists": [
       "ARMENIA : \"New concern\" over criminal prosecutions of conscientious objector reservists - Forum 18",
@@ -685,17 +716,17 @@
     "sapn": [
       "Hospitals hit, schools shut as violent storms unleash chaos - Adelaide Now",
       "Transmission line to take 'days' to fix, forcing closure of Eyre Peninsula schools - ABC News & Headlines – Australian Broadcasting Corporation",
-      "Multiple transmission towers down in Eyre Peninsula in South Australia on Thursday 19th November 2026, leaving 20,000+ properties without power - WattClarity"
+      "Brutal storm leave 24k homes with no power - News.com.au"
     ],
     "scams": [
       "AI losses are hiding inside existing policies, Allianz Commercial warns - Insurance Business",
       "Top Deepfake Detection Software for Identity Verification in 2027 - CPO Magazine",
-      "Antiques Road Trip star in tears as she says 'I felt stupid' after deepfake porn scam - Daily Express"
+      "Bargain Hunt star chokes back tears after deepfake scam 'I was utterly violated' - The Mirror"
     ],
     "shipping_attacks": [
+      "Iran Keeps Up Unrelenting Attacks on Ships in the Strait of Hormuz - The New York Times",
       "ADNOC L&S says one missing, 11 injured in Strait of Hormuz ship attack - Baird Maritime",
-      "ADNOC CEO Demands Hormuz Reopen Unconditionally After Latest Vessel Attack - https://houseofsaud.com/",
-      "Further tanker attacks reported in Strait of Hormuz amid Iranian mine claims - safety4sea"
+      "ADNOC CEO Demands Hormuz Reopen Unconditionally After Latest Vessel Attack - https://houseofsaud.com/"
     ],
     "strikes": [
       "Iran widens Gulf attacks by targeting U.S. air base in Kuwait and sites in Bahrain - PBS",
@@ -705,7 +736,7 @@
   },
   "prediction_markets": [
     {
-      "d24h": -1.0,
+      "d24h": 0.0,
       "q": "Will the U.S. invade Iran before 2027?",
       "yes": 6.5
     },
@@ -800,9 +831,9 @@
       "yes": 2.6
     },
     {
-      "d24h": -0.3,
+      "d24h": -0.1,
       "q": "Will the U.S. test a nuclear weapon by December 31 2026?",
-      "yes": 2.3
+      "yes": 2.4
     },
     {
       "d24h": -1.0,
@@ -1039,7 +1070,7 @@
         }
       ],
       "score": 25,
-      "trend": "up"
+      "trend": "steady"
     },
     {
       "band": "Guarded",
@@ -1118,7 +1149,7 @@
       "trend": "steady"
     },
     {
-      "band": "Elevated",
+      "band": "Guarded",
       "convergence": "Two different kinds of sign are showing together (chemical weapons and health). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: unknown illness / pneumonia cluster reported, countries restricting medical supply exports and",
       "domains": [
         "Chemical weapons",
@@ -1133,14 +1164,10 @@
         {
           "detail": "Marco Rubio lashes out at CNN over chemical attack reports",
           "name": "Chemical / nerve-agent attack or mass poisoning reported"
-        },
-        {
-          "detail": "Chuck Thompson on the mysterious deaths of two Bigfoot hunters in Washington",
-          "name": "Unexplained mass deaths or animal die-offs"
         }
       ],
-      "score": 40,
-      "trend": "steady"
+      "score": 30,
+      "trend": "down"
     },
     {
       "band": "Guarded",
@@ -1182,22 +1209,22 @@
         }
       ],
       "score": 30,
-      "trend": "down"
+      "trend": "steady"
     }
   ],
   "sectors_relative_5d": {
     "defence_au": -5.41,
     "defence_eu": 1.62,
-    "defence_us": 0.46,
-    "pandemic": -5.4
+    "defence_us": -0.02,
+    "pandemic": -5.47
   },
   "tankers": "normal",
   "telecom_drop_pct": {
-    "Aussie Broadband": 0.7,
+    "Aussie Broadband": 0.6,
     "Optus": 0.0,
-    "TPG": 0.0,
+    "TPG": 0.1,
     "Telstra": 0.0,
-    "Vodafone": 9.5
+    "Vodafone": 4.8
   },
   "us_departure_orders": [
     "Belarus"
