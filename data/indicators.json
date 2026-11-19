@@ -1,22 +1,30 @@
 {
-  "generated_at": "2026-11-19T09:28:00Z",
+  "generated_at": "2026-11-19T09:43:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
-      "band": "Guarded",
-      "convergence": "Two different kinds of sign are showing together (power grid and weather). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: cfs emergency warning in sa, sudden fall in sa electricity demand (possible large blackout) and extreme or catastrophic fire danger near adelaide.",
+      "band": "Elevated",
+      "convergence": "Signs are converging across 3 separate areas (power grid, roads and weather). Unrelated systems flagging the same scenario at once is the pattern seen before past events. The worst local days stack up: extreme fire danger, a heatwave pushing power demand, a tight grid, and storms or fires damaging lines. AEMO warns of supply shortfalls hours to a day ahead; the CFS and Bureau issue ratings and warnings a day or more ahead. The strongest signs not yet showing: cfs emergency warning in sa, sudden fall in sa electricity demand (possible large blackout) and extreme or catastrophic fire danger near adelaide.",
       "domains": [
         "Power grid",
+        "Roads",
         "Weather"
       ],
       "key": "local",
       "lit": [
         {
-          "detail": "Extreme Fire Weather Warning for Yorke Peninsula fire district for 19 November; Severe Thunderstorm Warning for North West Pastoral, Eastern Eyre Peninsula and Flinders forecast districts",
+          "detail": "Extreme Fire Weather Warning for Yorke Peninsula fire district for 19 November; Severe Thunderstorm Warning for North West Pastoral forecast district",
           "domain": "Weather",
           "id": "bom",
           "name": "Bureau severe weather or heatwave warning for SA",
           "weight": 15
+        },
+        {
+          "detail": "Morgan Mail Road, Quondong: MORGAN MAIL RD Closed due to flooding over road; Morgan Vale Road, Danggali: MORGAN MAIL RD Closed due to flooding over road",
+          "domain": "Roads",
+          "id": "roads",
+          "name": "Fire, flood or storm road closures in SA",
+          "weight": 10
         },
         {
           "detail": "More than 20,000 lose power in SA as storms hit Eyre Peninsula",
@@ -28,8 +36,8 @@
       ],
       "name": "Local emergency in SA (bushfire, heat, power)",
       "sa_impact": "Direct: bushfires, heatwaves and power cuts are the emergencies most likely to affect the family. In the 2016 statewide blackout, power, phones, traffic lights and fuel pumps failed together.",
-      "score": 30,
-      "trend": "steady",
+      "score": 40,
+      "trend": "up",
       "unlit": [
         {
           "domain": "Bushfire",
@@ -68,12 +76,6 @@
           "weight": 10
         },
         {
-          "domain": "Roads",
-          "id": "roads",
-          "name": "Fire, flood or storm road closures in SA",
-          "weight": 10
-        },
-        {
           "domain": "Hospitals",
           "id": "ed",
           "name": "Three or more Adelaide emergency departments 'very busy'",
@@ -101,22 +103,14 @@
       "why": "The worst local days stack up: extreme fire danger, a heatwave pushing power demand, a tight grid, and storms or fires damaging lines. AEMO warns of supply shortfalls hours to a day ahead; the CFS and Bureau issue ratings and warnings a day or more ahead."
     },
     {
-      "band": "Elevated",
-      "convergence": "Signs are converging across 3 separate areas (aviation, electronic warfare and shipping). Unrelated systems flagging the same scenario at once is the pattern seen before past events. Before the 2024-25 Israel-Iran exchanges and US strikes, watchers saw US tanker surges toward Europe and the Gulf, embassy departure orders, regional GPS jamming, airspace closures and oil price jumps, often 1-3 days ahead. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
+      "band": "Guarded",
+      "convergence": "Two different kinds of sign are showing together (aviation and shipping). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
       "domains": [
         "Aviation",
-        "Electronic warfare",
         "Shipping"
       ],
       "key": "mideast",
       "lit": [
-        {
-          "detail": "gps_gulf 25 vs usual 7.0",
-          "domain": "Electronic warfare",
-          "id": "gps",
-          "name": "GPS jamming spike (Gulf / Israel)",
-          "weight": 10
-        },
         {
           "detail": "When Israel's airspace closed, this Utah tour company got its travelers home just 24 hours late",
           "domain": "Aviation",
@@ -134,8 +128,8 @@
       ],
       "name": "Middle East war & Gulf shipping",
       "sa_impact": "Fuel: Australia imports most of its fuel, much of it refined from Gulf crude in Asia. Shipping attacks or a Hormuz closure push up prices within days and can cause local shortages.",
-      "score": 35,
-      "trend": "steady",
+      "score": 25,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Military air",
@@ -148,6 +142,12 @@
           "id": "air",
           "name": "Unusual military air activity over the region",
           "weight": 15
+        },
+        {
+          "domain": "Electronic warfare",
+          "id": "gps",
+          "name": "GPS jamming spike (Gulf / Israel)",
+          "weight": 10
         },
         {
           "domain": "Communications",

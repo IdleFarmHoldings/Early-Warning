@@ -1,13 +1,7 @@
 {
   "about": "Short form of latest.json + indicators.json for the analysis run. Links and raw samples removed.",
   "acsc": [],
-  "aircraft_flags": {
-    "gps_gulf": {
-      "median": 7.0,
-      "status": "ANOMALY",
-      "value": 25
-    }
-  },
+  "aircraft_flags": {},
   "analyst": {
     "ASPI Strategist": [
       "The Chinese Communist Party’s politics are seeping into new AI models",
@@ -312,22 +306,21 @@
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
     "incidents": "ValueError: time data 'Info' does not match format '%Y-%m-%dT%H:%M:%SZ'",
-    "maritime": "TimeoutError: ",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [
     "Orange notification for tropical cyclone AKVAN-26. Population affected by Category 1 (120 km/h) wind speeds or higher is 0  (12.129 million in Tropical Storm)."
   ],
-  "generated_at": "2026-11-19T09:28:00Z",
+  "generated_at": "2026-11-19T09:43:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 18,
-    "Black Sea": 17,
-    "Israel & Eastern Mediterranean": 2,
+    "Baltic / Kaliningrad": 16,
+    "Black Sea": 21,
+    "Israel & Eastern Mediterranean": 7,
     "Korea": 2,
-    "Persian Gulf": 25,
+    "Persian Gulf": 11,
     "South Australia": 0,
     "Sydney / NSW": 0,
-    "Taiwan Strait": 1
+    "Taiwan Strait": 0
   },
   "incidents": [
     {
@@ -381,19 +374,19 @@
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
-        "FBI Warns: AI Hackers Can Breach Systems in Under Three Hours"
+        "FBI Warns Hackers Are Using AI Tool ARTEX to Automate Cyberattacks"
       ],
       "severity": "Info",
-      "target": "FBI Warns"
+      "target": "FBI Warns Hackers"
     },
     {
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
-        "FBI Warns Hackers Are Using AI Tool ARTEX to Automate Cyberattacks"
+        "FBI Warns: AI Hackers Can Breach Systems in Under Three Hours"
       ],
       "severity": "Info",
-      "target": "FBI Warns Hackers"
+      "target": "FBI Warns"
     },
     {
       "attack_reported": false,
@@ -454,16 +447,16 @@
   "internet_drop_pct": {
     "China": 0.0,
     "Iran": 0.0,
-    "Israel": 0.3,
-    "Russia": 0.0,
+    "Israel": 0.0,
+    "Russia": 0.2,
     "South Korea": 0.0,
-    "Taiwan": 0.1
+    "Taiwan": 0.0
   },
   "local_sa": {
     "bom": [
       "Extreme Fire Weather Warning for Yorke Peninsula fire district for 19 November",
-      "Severe Thunderstorm Warning for North West Pastoral, Eastern Eyre Peninsula and Flinders forecast districts",
-      "Cancellation of Severe Thunderstorm Warning for West Coast, Lower Eyre Peninsula and North East Pastoral forecast districts"
+      "Severe Thunderstorm Warning for North West Pastoral forecast district",
+      "Cancellation of Severe Thunderstorm Warning for Flinders and Eastern Eyre Peninsula forecast districts"
     ],
     "cable_watch": [],
     "cfs_feed_ok": true,
@@ -482,9 +475,9 @@
       "pump_cents": -2,
       "week_ago_aud": 136.3
     },
-    "grid_demand_fall_pct": 6.2,
-    "grid_demand_mw": 1453,
-    "grid_demand_usual_mw": 1436,
+    "grid_demand_fall_pct": -1.5,
+    "grid_demand_mw": 1494,
+    "grid_demand_usual_mw": 1440,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
@@ -517,27 +510,34 @@
     },
     "possible_blackout": false,
     "power_news": [],
-    "road_hazards": [],
-    "rooftop_pv_mw": 175,
+    "road_hazards": [
+      "Baratta Road, Baratta: Baratta Road closed between Baratta and Melton Station due to flooding.",
+      "Eastern Road, Sturt Vale: Eastern Road (South of Sturt Vale Rd) remains closed due to previous severe flooding over the ",
+      "Morgan Mail Road, Quondong: MORGAN MAIL RD Closed due to flooding over road",
+      "Morgan Vale Road, Danggali: MORGAN MAIL RD Closed due to flooding over road",
+      "Morgan Vale Road, Pine Valley Station: MORGAN MAIL RD Closed due to flooding over road",
+      "Pine Valley Road, Pine Valley Station: PINE VALLEY RD Closed due to flooding over road"
+    ],
+    "rooftop_pv_mw": 40,
     "sawater_news": [],
     "watch_and_act": []
   },
   "markets": {
     "AUD/USD": {
-      "change_pct": -0.47,
-      "price": 0.6708
+      "change_pct": -0.43,
+      "price": 0.6711
     },
     "Brent oil": {
-      "change_pct": -2.29,
-      "price": 89.84
+      "change_pct": -2.68,
+      "price": 89.49
     },
     "Gold": {
-      "change_pct": -0.2,
-      "price": 3734.3
+      "change_pct": -0.19,
+      "price": 3734.7
     },
     "VIX": {
-      "change_pct": -10.26,
-      "price": 22.04
+      "change_pct": -9.0,
+      "price": 22.35
     }
   },
   "national_shocks": {
@@ -555,17 +555,12 @@
     "ai_hack": [
       "Google AI Agents Attempt Hacking, Impersonation After Being Told ‘Never Give Up’ - THE ELEC, Korea Electronics Industry Media",
       "Google Warns Hackers Are Using AI Agents to Turn Software Patches Into Automated Attacks - LinkedIn",
-      "AI Hacking Fears Test The Bull Case For CrowdStrike Stock - Simply Wall St"
+      "FBI Warns Hackers Are Using AI Tool ARTEX to Automate Cyberattacks - The SOFX Report"
     ],
     "airspace": [
       "When Israel's airspace closed, this Utah tour company got its travelers home just 24 hours late - KSL News",
       "Pakistan closes airspace to Taiwanese airlines - The Bangladesh Monitor",
       "Houthis claim missile attack on King Khalid Airport, Riyadh financial center - Crypto Briefing"
-    ],
-    "aviation_halt": [
-      "Alone in the Sky During a Nationwide Ground Stop - AVweb",
-      "Is FAA Ground Stop Altering The Investment Case For Delta (DAL)? - Yahoo Finance Singapore",
-      "Duffy keeps blaming L3Harris after FAA ground stop, even as cause remains unknown - PBS"
     ],
     "bank_outage": [
       "Australia backs down on cuts to working holiday visas but adds tougher conditions - Travel Tomorrow",
@@ -588,7 +583,7 @@
     "cloud": [
       "Microsoft 365 outage puts enterprise resilience back in focus across APAC - iTnews Asia",
       "Microsoft outage opens industry debate over cyber policy triggers - Insurance Business",
-      "Microsoft's July bug hit its newest servers hardest, and its tests missed it - Pasquale Pillitteri"
+      "Microsoft Makes Its AI Case After Global Outage and Anthropic Challenge - Barron's"
     ],
     "cn_signals": [
       "NYT the latest in showcasing bad US-China takes from DC experts - Responsible Statecraft"
@@ -671,8 +666,8 @@
     ],
     "ru_signals": [
       "Signal ahead of Putin, Trump and Xi Jinping meeting: “Doomsday radio” broadcasts “sinner” message - TodayPress.tv",
-      "Trump makes a prediction: In 10 years… - TodayPress.tv",
-      "Trump’s dream of a nuclear deal meets reality of unwilling Russia and China - The Washington Post"
+      "Trump’s dream of a nuclear deal meets reality of unwilling Russia and China - The Washington Post",
+      "Why was Kallas excluded from the Ukraine negotiating team? – CLAIM - TodayPress.tv"
     ],
     "sapn": [
       "More than 20,000 lose power in SA as storms hit Eyre Peninsula - ABC News & Headlines – Australian Broadcasting Corporation",
@@ -686,8 +681,8 @@
     ],
     "shipping_attacks": [
       "ADNOC CEO Demands Hormuz Reopen Unconditionally After Latest Vessel Attack - https://houseofsaud.com/",
-      "ADNOC L&S says one missing, 11 injured in Strait of Hormuz ship attack - Baird Maritime",
-      "Two tankers confirmed struck, Iran claims VLCC sinking in Hormuz - Seatrade Maritime News"
+      "Two tankers confirmed struck, Iran claims VLCC sinking in Hormuz - Seatrade Maritime News",
+      "ADNOC L&S says one missing, 11 injured in Strait of Hormuz ship attack - Baird Maritime"
     ],
     "strikes": [
       "Iran widens Gulf attacks by targeting U.S. air base in Kuwait and sites in Bahrain - PBS",
@@ -707,7 +702,7 @@
       "yes": 4.5
     },
     {
-      "d24h": -1.0,
+      "d24h": -2.0,
       "q": "NATO x Russia military clash by December 31, 2026?",
       "yes": 9.5
     },
@@ -732,9 +727,9 @@
       "yes": 14.5
     },
     {
-      "d24h": -0.4,
+      "d24h": -0.7,
       "q": "US-Iran Final Nuclear Deal by November 30, 2026?",
-      "yes": 0.7
+      "yes": 0.4
     },
     {
       "d24h": 0.1,
@@ -782,7 +777,7 @@
       "yes": 3.5
     },
     {
-      "d24h": 0.0,
+      "d24h": -0.1,
       "q": "NATO/EU troops fighting in Ukraine by December 31, 2026?",
       "yes": 3.8
     },
@@ -812,9 +807,9 @@
       "yes": 19.5
     },
     {
-      "d24h": -0.5,
+      "d24h": 0.0,
       "q": "Will Nick Stewart attend a US x Iran diplomatic meeting by December 31, 2026?",
-      "yes": 7.5
+      "yes": 8.0
     }
   ],
   "quakes_m6_24h": [
@@ -1013,40 +1008,40 @@
   ],
   "scenarios": [
     {
-      "band": "Guarded",
-      "convergence": "Two different kinds of sign are showing together (power grid and weather). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: cfs emergency warning in sa, sudden fall in sa electricity demand (possible large blackout) and ext",
+      "band": "Elevated",
+      "convergence": "Signs are converging across 3 separate areas (power grid, roads and weather). Unrelated systems flagging the same scenario at once is the pattern seen before past events. The worst local days stack up: extreme fire danger, a heatwave pushing power demand, a tight grid, and storms or fires damaging l",
       "domains": [
         "Power grid",
+        "Roads",
         "Weather"
       ],
       "key": "local",
       "lit": [
         {
-          "detail": "Extreme Fire Weather Warning for Yorke Peninsula fire district for 19 November; Severe Thunderstorm Warning for North West Pastoral, Eastern Eyre Peninsula and ",
+          "detail": "Extreme Fire Weather Warning for Yorke Peninsula fire district for 19 November; Severe Thunderstorm Warning for North West Pastoral forecast district",
           "name": "Bureau severe weather or heatwave warning for SA"
+        },
+        {
+          "detail": "Morgan Mail Road, Quondong: MORGAN MAIL RD Closed due to flooding over road; Morgan Vale Road, Danggali: MORGAN MAIL RD Closed due to flooding over road",
+          "name": "Fire, flood or storm road closures in SA"
         },
         {
           "detail": "More than 20,000 lose power in SA as storms hit Eyre Peninsula",
           "name": "Reports of widespread power outages in SA"
         }
       ],
-      "score": 30,
-      "trend": "steady"
+      "score": 40,
+      "trend": "up"
     },
     {
-      "band": "Elevated",
-      "convergence": "Signs are converging across 3 separate areas (aviation, electronic warfare and shipping). Unrelated systems flagging the same scenario at once is the pattern seen before past events. Before the 2024-25 Israel-Iran exchanges and US strikes, watchers saw US tanker surges toward Europe and the Gulf, em",
+      "band": "Guarded",
+      "convergence": "Two different kinds of sign are showing together (aviation and shipping). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in ",
       "domains": [
         "Aviation",
-        "Electronic warfare",
         "Shipping"
       ],
       "key": "mideast",
       "lit": [
-        {
-          "detail": "gps_gulf 25 vs usual 7.0",
-          "name": "GPS jamming spike (Gulf / Israel)"
-        },
         {
           "detail": "When Israel's airspace closed, this Utah tour company got its travelers home just 24 hours late",
           "name": "Airspace closures reported (Iran / Israel / Gulf)"
@@ -1056,8 +1051,8 @@
           "name": "Ship traffic through Hormuz down sharply"
         }
       ],
-      "score": 35,
-      "trend": "steady"
+      "score": 25,
+      "trend": "down"
     },
     {
       "band": "Low",
@@ -1190,17 +1185,17 @@
   ],
   "sectors_relative_5d": {
     "defence_au": -5.41,
-    "defence_eu": 0.53,
+    "defence_eu": 0.65,
     "defence_us": -1.05,
     "pandemic": -5.44
   },
   "tankers": "normal",
   "telecom_drop_pct": {
-    "Aussie Broadband": 0.0,
-    "Optus": 0.0,
+    "Aussie Broadband": 0.6,
+    "Optus": 4.0,
     "TPG": 0.0,
     "Telstra": 0.3,
-    "Vodafone": 4.8
+    "Vodafone": 0.0
   },
   "us_departure_orders": [
     "Belarus"
