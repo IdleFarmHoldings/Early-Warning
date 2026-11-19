@@ -620,7 +620,7 @@ function renderAlerts(list){
     const when = a.pending ? "just now" : fmt(a.sent_at||a.at);
     return `<details class="ev al${isLinked?" focus":""}" data-id="${esc(a.id)}" style="border-left-color:${prColor(a.priority)}"${(isLinked&&!focusDone)||open.has(a.id)?" open":""}>
       <summary><span class="t">${esc(a.title)}${isLinked?`<span class="new">you tapped this</span>`:""}</span><span class="chev" aria-hidden="true">›</span><span class="when">${esc(when)}</span></summary>
-      <div class="body"><p>${esc(a.message||"")}</p>${a.pending?`<p class="why">The page is still catching up with this alert; it will appear in the list within a few minutes.</p>`:""}</div></details>`; };
+      <div class="body"><p style="white-space:pre-line">${esc(a.message||"")}</p>${a.pending?`<p class="why">The page is still catching up with this alert; it will appear in the list within a few minutes.</p>`:""}</div></details>`; };
   // Show one alert up top: the one tapped in a notification, otherwise the newest. Everything else goes in one tab.
   const topIdx = LINKED ? Math.max(0, al.findIndex(a=>a.id===LINKED.id)) : 0;
   const top = al[topIdx], older = al.filter((_, i)=>i!==topIdx);

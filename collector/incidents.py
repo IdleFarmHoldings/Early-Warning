@@ -83,6 +83,10 @@ AU_PUBS = re.compile(r"(ABC|Adelaide Now|InDaily|Nine|news\.com\.au|SMH|Sydney M
                      r"iTnews|Information Age|AFR|Financial Review|The Australian|7NEWS|9News|SBS|Crikey|Michael West|"
                      r"Glam Adelaide|The Nightly|Daily Telegraph|Herald Sun|Courier-Mail|Canberra Times|AAP)", re.I)
 SA_PUBS = re.compile(r"(Adelaide Now|InDaily|Glam Adelaide|Advertiser)", re.I)
+# Australian companies: a headline naming one is about Australian customers, wherever it is published.
+AU_BRANDS = re.compile(r"\b(Commonwealth Bank|CommBank|Westpac|Bendigo Bank|Macquarie Bank|(?-i:CBA|NAB|ANZ)|EFTPOS|"
+                       r"Osko|PayID|Tyro|Telstra|Optus|TPG|NBN|triple zero|Aussie Broadband|Medibank|Qantas|"
+                       r"Virgin Australia|Jetstar|Australia Post)\b", re.I)
 # Signs an incident is spreading across society, not staying inside one product.
 SPREAD = re.compile(r"\b(hospitals?|health|government|agenc(y|ies)|spy agency|ASIO|banks?|airports?|airlines?|flights?|"
                     r"emergency services|police|schools?|universit(y|ies)|retailers?|supermarkets?|thousands|millions|"
@@ -154,6 +158,10 @@ def collect(news, now, telecom=None, local=None):
                                  "sa": bool(SA.search(head)),
                                  "au": bool(AU.search(head) or AU_PUBS.search(pub) or SA_PUBS.search(pub)
                                             or (tier == 3 and label in AU_ONLY)),
+                                 # The headline itself says Australians are hit (not just an Australian outlet
+                                 # running a wire story about somewhere else).
+                                 "au_head": bool(SA.search(head) or AU.search(head) or AU_BRANDS.search(head)
+                                                 or (tier == 3 and label in AU_ONLY)),
                                  "after": bool(AFTERMATH.search(head)),
                                  "attack": bool(ATTACK.search(head)),
                                  "global": bool(GLOBAL.search(head)),
@@ -166,14 +174,15 @@ def collect(news, now, telecom=None, local=None):
             c = clusters.setdefault("Phone & internet networks", {"label": "Phone & internet networks", "tier": 4,
                                                                   "reports": [], "pubs": set(), "first": now, "last": now})
             c["reports"].append({"title": f"{name} network measurably down {max(drops):.0f}%", "pub": "telemetry",
-                                 "at": iso(now), "link": "", "sa": False, "au": True, "global": False, "spread": [],
-                                 "official": True})
+                                 "at": iso(now), "link": "", "sa": False, "au": True, "au_head": True, "global": False,
+                                 "spread": [], "official": True})
             c["pubs"].add("telemetry")
     if (local or {}).get("possible_blackout"):
         c = clusters.setdefault("Power grid", {"label": "Power grid", "tier": 4, "reports": [], "pubs": set(),
                                                "first": now, "last": now})
         c["reports"].append({"title": "Sudden large fall in SA electricity demand", "pub": "telemetry", "at": iso(now),
-                             "link": "", "sa": True, "au": True, "global": False, "spread": [], "official": False})
+                             "link": "", "sa": True, "au": True, "au_head": True, "global": False, "spread": [],
+                             "official": False})
         c["pubs"].add("telemetry")
     return clusters
 
@@ -201,8 +210,12 @@ def score(c, prev=None, now=None):
     # 3. Criticality: tier of the target
     crit = c["tier"]
     confirmed = n_pubs >= 2 or any(r["official"] for r in reps)
+    # Critical goes to the Confirmed-only channel, so it needs a headline (or our own telemetry) that says
+    # Australians are affected. An Australian paper carrying an overseas story is not enough on its own
+    # (19 Nov 2026: a US card-data hack in the Herald Sun went out as "cyber attack in Australia").
+    au_proof = any(r.get("sa") or r.get("au_head") for r in reps)
 
-    if prox >= 2 and vel >= 3 and crit >= 3 and confirmed:
+    if prox >= 2 and vel >= 3 and crit >= 3 and confirmed and au_proof:
         sev = "Critical"
     elif prox == 3 and confirmed and crit >= 3:
         sev = "Critical"
@@ -213,12 +226,14 @@ def score(c, prev=None, now=None):
     if winding_down:
         sev = "Info"  # over, or being picked over: board only
     prox_txt = ["outside Australia", "global (reaches Australian users)", "Australia", "South Australia"][prox]
+    if prox == 2 and not au_proof:
+        prox_txt = "reported in Australian media, no sign yet of Australians affected"
     vel_txt = ["", "slow (isolated reports)", "spreading", "rapid / widespread"][vel]
     why = (f"Proximity: {prox_txt}. Velocity: {vel_txt} - {len(reps)} reports from {n_pubs} outlets"
            + (f", hitting {', '.join(sectors[:4])}" if sectors else "") + f". Criticality: {TIER_NAMES[crit]} ({c['label']}).")
     return {"key": re.sub(r"\W+", "-", c["label"].lower()).strip("-"), "target": c["label"], "severity": sev,
             "proximity": prox, "velocity": vel, "criticality": crit, "confirmed": confirmed,
-            "reports": len(reps), "outlets": n_pubs, "sectors": sectors, "first_seen": iso(c["first"]),
+            "reports": len(reps), "outlets": n_pubs, "sectors": sectors, "first_seen": iso(c["first"]), "au_proof": au_proof,
             "winding_down": winding_down, "attack": sum(1 for r in reps if r.get("attack")) * 2 >= len(reps),
             "rationale": why, "headlines": [{"title": r["title"], "pub": r["pub"], "at": r["at"], "link": r["link"]}
                                             for r in sorted(reps, key=lambda r: (not r.get("after"), r["at"]), reverse=True)[:4]]}
@@ -277,6 +292,9 @@ def incident_alerts(scored, state, now, first_run):
         crit = s["severity"] == "Critical"
         top = s["headlines"][0]["title"] if s["headlines"] else ""
         where = {3: "in SA", 2: "in Australia", 1: "worldwide"}.get(s["proximity"], "")
+        unclear = s["proximity"] == 2 and not s.get("au_proof", True)
+        if unclear:
+            where = ""  # only an Australian outlet carrying it: don't claim it is happening here
         what = "cyber attack" if s.get("attack") else "outage"
         advice = ("Be wary of emails or texts about it, and keep some cash handy in case payments are affected."
                   if s.get("attack") else "Use cash and phone calls as backup." if s["criticality"] >= 3
@@ -285,6 +303,7 @@ def incident_alerts(scored, state, now, first_run):
                     "title": f"{s['target']}: {what} {where}".strip()[:90],
                     "message": (f"{top}. {s['reports']} reports from {s['outlets']} outlets"
                                 + (f"; also affecting {', '.join(s['sectors'][:3])}" if s["sectors"] else "")
+                                + (". Not yet clear whether Australians are affected" if unclear else "")
                                 + f". {advice} Check the board.")[:390],
                     "priority": 5 if crit else 4, "confirmed": s["confirmed"],
                     "tags": ["rotating_light" if crit else "warning"]})

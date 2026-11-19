@@ -3,6 +3,7 @@ and learn which signs actually came before real events (lead times). Pure functi
 import json
 import re
 from datetime import timedelta
+from email.utils import parsedate_to_datetime
 from statistics import median
 
 from common import CONFIG, ROOT, iso
@@ -21,6 +22,36 @@ def band(score):
 def _words(text, words):
     """Whole-word, case-insensitive match of any of `words` in text."""
     return any(w and re.search(r"(?<![A-Za-z])" + re.escape(w) + r"(?![A-Za-z])", text, re.I) for w in words)
+
+
+def _strip(text, words):
+    """Text with every whole-word match of `words` removed, so a second keyword test cannot be passed by the
+    first test's own phrase ("chemical attack" must not also count as the "attack" that confirms it)."""
+    for w in sorted((w for w in words if w), key=len, reverse=True):
+        text = re.sub(r"(?<![A-Za-z])" + re.escape(w) + r"(?![A-Za-z])", " ", text, flags=re.I)
+    return text
+
+
+def _too_old(item, now, hours):
+    """True if a news item is dated more than `hours` before now. Google News sometimes returns months-old
+    stories even for a last-24-hours search, and an old story is not a warning sign. Undated items are kept."""
+    if not now:
+        return False
+    try:
+        dt = parsedate_to_datetime(item.get("date") or "")
+    except (TypeError, ValueError):
+        return False
+    if not dt or not dt.tzinfo:
+        return False
+    return now - dt > timedelta(hours=hours)
+
+
+def short_name(ind):
+    """A few words naming a sign, for phone alerts: the playbook's 'short' label, else the name trimmed."""
+    if ind.get("short"):
+        return ind["short"]
+    n = ind["name"].split(" (")[0]
+    return n if len(n) <= 40 else n[:40].rsplit(" ", 1)[0] + "…"
 
 
 def new_departures(current, state, now):
@@ -69,8 +100,11 @@ def _lit(ind, ctx):
         return ("Departure order: " + ", ".join(hits)) if hits else None
     if t == "news":
         keys = ind["key"] if isinstance(ind["key"], list) else [ind["key"]]
+        max_age = ind.get("max_age_hours", PLAYBOOK.get("news_max_age_hours", 72))
         for k in keys:
             for it in ((ctx["news"] or {}).get(k) or {}).get("items", []):
+                if _too_old(it, ctx.get("now"), max_age):
+                    continue
                 title = it.get("title", "")
                 if " - " in title:  # Google News appends " - Publisher"; don't match on the publisher's name
                     title = title.rsplit(" - ", 1)[0]
@@ -80,8 +114,12 @@ def _lit(ind, ctx):
                     continue
                 if ind.get("require") and not _words(title, ind["require"]):
                     continue
-                if ind.get("require2") and not _words(title, ind["require2"]):
-                    continue
+                if ind.get("require2"):
+                    # strip_require: the second test must be passed by other words in the headline, not by the
+                    # first test's own phrase (a "chemical attack" headline still needs a sign it happened).
+                    t2 = _strip(title, ind.get("require") or []) if ind.get("strip_require") else title
+                    if not _words(t2, ind["require2"]):
+                        continue
                 if ind.get("exclude") and _words(title, ind["exclude"]):
                     continue
                 if not any(w for w in ind["words"]) or _words(title, ind["words"]):
@@ -167,7 +205,8 @@ def score_scenarios(ctx, prev_scores):
         for ind in sc["indicators"]:
             d = _lit(ind, ctx)
             if d:
-                lit.append({"id": ind["id"], "name": ind["name"], "detail": d, "weight": ind["weight"]})
+                lit.append({"id": ind["id"], "name": ind["name"], "short": short_name(ind), "detail": d,
+                            "weight": ind["weight"]})
                 score += ind["weight"]
             else:
                 unlit.append({"id": ind["id"], "name": ind["name"], "weight": ind["weight"]})

@@ -20,6 +20,7 @@
   ],
   "alert_score": 60,
   "lookback_hours": 72,
+  "news_max_age_hours": 72,
   "scenarios": [
     {
       "key": "local",
@@ -1318,6 +1319,7 @@
         {
           "id": "who",
           "name": "WHO outbreak report with a high-concern pathogen (last 14 days)",
+          "short": "WHO outbreak report",
           "type": "who",
           "days": 14,
           "weight": 15,
@@ -1326,6 +1328,7 @@
         {
           "id": "illness",
           "name": "Unknown illness / pneumonia cluster reported",
+          "short": "Illness cluster",
           "type": "news",
           "key": "illness",
           "words": [
@@ -1346,6 +1349,7 @@
         {
           "id": "exports",
           "name": "Countries restricting medical supply exports",
+          "short": "Medical export curbs",
           "type": "news",
           "key": "medexport",
           "words": [
@@ -1366,6 +1370,7 @@
         {
           "id": "pharma",
           "name": "Pandemic-response stocks outperforming (5 days)",
+          "short": "Pandemic stocks rising",
           "type": "sector",
           "basket": "pandemic",
           "min_rel": 8,
@@ -1375,6 +1380,7 @@
         {
           "id": "shortage",
           "name": "Australian medicine or PPE shortage reports",
+          "short": "Medicine or PPE shortage",
           "type": "news",
           "key": "medshort",
           "words": [
@@ -1390,6 +1396,7 @@
         {
           "id": "masscas",
           "name": "Mass casualty declarations (any country)",
+          "short": "Mass casualty event",
           "type": "news",
           "key": "masscas",
           "words": [
@@ -1417,6 +1424,7 @@
         {
           "id": "vix",
           "name": "Market fear index above 30",
+          "short": "Market fear high",
           "type": "market",
           "name_mkt": "VIX",
           "price_at_least": 30,
@@ -1426,6 +1434,7 @@
         {
           "id": "chem",
           "name": "Chemical / nerve-agent attack or mass poisoning reported",
+          "short": "Chemical attack",
           "type": "news",
           "key": "chem",
           "words": [
@@ -1453,7 +1462,13 @@
             "convention",
             "museum",
             "film",
-            "movie"
+            "movie",
+            "allegations",
+            "allegation",
+            "lashes out",
+            "fraudulent",
+            "playbook",
+            "threat"
           ],
           "require2": [
             "attack",
@@ -1471,12 +1486,23 @@
             "hospitalised",
             "hospitalized",
             "deaths",
-            "dead"
-          ]
+            "dead",
+            "kills",
+            "kill",
+            "suspected",
+            "injured",
+            "wounded",
+            "dozens",
+            "hospital",
+            "evacuated",
+            "sickened"
+          ],
+          "strip_require": true
         },
         {
           "id": "dieoff",
           "name": "Unexplained mass deaths or animal die-offs",
+          "short": "Mass deaths or die-off",
           "type": "news",
           "key": "dieoff",
           "words": [
@@ -1484,16 +1510,63 @@
           ],
           "require": [
             "die-off",
+            "die-offs",
+            "mass die-off",
             "mass deaths",
             "unexplained deaths",
             "mysterious deaths"
           ],
           "weight": 10,
-          "domain": "Health"
+          "domain": "Health",
+          "require2": [
+            "birds",
+            "fish",
+            "cattle",
+            "livestock",
+            "sheep",
+            "pigs",
+            "poultry",
+            "chickens",
+            "animals",
+            "wildlife",
+            "dolphins",
+            "whales",
+            "seals",
+            "bees",
+            "villagers",
+            "residents",
+            "village",
+            "town",
+            "children",
+            "patients",
+            "outbreak",
+            "illness",
+            "disease",
+            "virus",
+            "dozens",
+            "hundreds",
+            "thousands"
+          ],
+          "strip_require": true,
+          "exclude": [
+            "Bigfoot",
+            "haunted",
+            "ghost",
+            "murder",
+            "murders",
+            "novel",
+            "book",
+            "film",
+            "movie",
+            "podcast",
+            "true crime",
+            "documentary"
+          ]
         },
         {
           "id": "ed",
           "name": "Three or more Adelaide emergency departments 'very busy'",
+          "short": "Adelaide EDs very busy",
           "type": "local",
           "field": "ed_very_busy",
           "min_len": 3,

@@ -310,9 +310,15 @@ def evaluate(results, state, series, now):
                 alerts.append(_alert(f"usgs-{q['id']}", ["proactive"], "nature", f"M{mag:.1f} earthquake: {q['place']}",
                                      f"Magnitude {mag:.1f} near {q['place']}.{tsu} {q['url']}", priority=4, tags=["warning"]))
 
-    # WHO: PHEIC declarations go to both channels; worrying new outbreaks to early warning
+    # WHO: PHEIC declarations go to both channels; worrying new outbreaks to early warning.
+    # Only reports published in the last 14 days can alert: when WHO's sorted feed fails, the fallback returns
+    # archive reports (Ebola 1997, polio 2005...) that look "new" because we have never seen their ids.
+    who_cutoff = iso(now - timedelta(days=14))
     for w in results.get("who") or []:
         text = (w["title"] + " " + w["summary"]).lower()
+        if w.get("date") and str(w["date"])[:19] < who_cutoff[:19]:
+            new(f"who-{w['id']}", "who")  # remember it so it never alerts later either
+            continue
         if "public health emergency of international concern" in text and "declare" in text:
             if new(f"who-pheic-{w['id']}", "who"):
                 alerts.append(_alert(f"who-pheic-{w['id']}", ["proactive", "reactive"], "bio",

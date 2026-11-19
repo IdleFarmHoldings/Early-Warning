@@ -59,7 +59,7 @@ def click_url(alert):
     if isinstance(c, str) and c.startswith(base):
         return c
     q = urllib.parse.urlencode({"alert": alert.get("id", ""), "t": alert.get("title", "")[:120],
-                                "m": alert.get("message", "")[:300], "p": alert.get("priority", 3)})
+                                "m": alert.get("message", "")[:700], "p": alert.get("priority", 3)})
     return f"{base}?{q}#alerts"
 
 
@@ -404,12 +404,36 @@ def precursor_alerts(scenarios, prev_ind, state, now, first_run):
         recent = last and now - datetime.strptime(last, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc) < timedelta(hours=12)
         if s["score"] >= line and prev.get(s["key"], 0) < line and not recent and not first_run:
             cd[key] = iso(now)
-            signs = "; ".join(i["name"] for i in s["lit"][:4])
-            out.append({"key": key, "channels": ["proactive"], "category": "geo",
+            out.append({"key": key, "channels": ["proactive"], "category": SCENARIO_CATEGORY.get(s["key"], "geo"),
                         "title": f"Warning signs building: {s['name']}"[:90],
-                        "message": f"{len(s['lit'])} known warning signs now showing ({signs}). Not confirmed - see the board for detail."[:390],
-                        "priority": 4, "confirmed": False, "tags": ["warning"]})
+                        "message": signs_message(s), "priority": 4, "confirmed": False, "tags": ["warning"]})
     return out
+
+
+SCENARIO_CATEGORY = {"bio": "bio", "nuclear": "nuclear", "cyber": "cyber", "ai": "cyber", "ausinfra": "cyber",
+                     "local": "nature"}
+
+
+def signs_message(s, limit=700):
+    """Phone text for a warning-signs alert: each sign with what actually set it off (the headline or reading),
+    so the family can judge it themselves instead of being told only how many signs there are."""
+    lit = sorted(s["lit"], key=lambda i: -i["weight"])
+    head = f"{len(lit)} automatic warning sign{'s' if len(lit) != 1 else ''} showing. None confirmed:"
+    tail = "\nThese are keyword and data matches, not checked facts. The next analysis will check them."
+    lines = []
+    for i in lit:
+        label = i.get("short") or precursors.short_name(i)
+        detail = re.sub(r"\s+", " ", str(i.get("detail") or "")).strip()
+        lines.append(f"\n• {label}: {detail[:110]}" if detail else f"\n• {label}")
+    body = head
+    for n, ln in enumerate(lines):
+        more = len(lines) - n - 1
+        room = limit - len(body) - len(tail) - (len(f"\n+{more} more on the board") if more else 0)
+        if len(ln) > room:
+            body += f"\n+{len(lines) - n} more on the board"
+            break
+        body += ln
+    return body + tail
 
 
 def analytics_series(rows, now, days=14):
