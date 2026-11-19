@@ -305,19 +305,20 @@
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
     "incidents": "ValueError: time data 'Info' does not match format '%Y-%m-%dT%H:%M:%SZ'",
-    "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
+    "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output=",
+    "us_advisories": "HTTPError: HTTP Error 502: Bad Gateway"
   },
   "gdacs_orange_red": [
     "Orange notification for tropical cyclone AKVAN-26. Population affected by Category 1 (120 km/h) wind speeds or higher is 0  (39.362 million in Tropical Storm)."
   ],
-  "generated_at": "2026-11-19T03:59:00Z",
+  "generated_at": "2026-11-19T04:14:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 72,
-    "Black Sea": 42,
+    "Baltic / Kaliningrad": 58,
+    "Black Sea": null,
     "Israel & Eastern Mediterranean": 0,
     "Korea": 0,
-    "Persian Gulf": 12,
-    "South Australia": 3,
+    "Persian Gulf": 16,
+    "South Australia": 7,
     "Sydney / NSW": 4,
     "Taiwan Strait": 0
   },
@@ -353,10 +354,10 @@
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
-        "Client files at KPMG Canada compromised in data breach, The Globe and Mail reports"
+        "Supply Chain Breach Exposes Vulnerabilities"
       ],
       "severity": "Info",
-      "target": "Client"
+      "target": "Supply Chain"
     },
     {
       "attack_reported": true,
@@ -389,12 +390,23 @@
       "attack_reported": false,
       "confirmed": true,
       "headlines": [
-        "What would happen if you couldn’t access your bank tomorrow? Following recent technology outages that affected banks, airlines and major companies, experts reco",
         "Westpac (ASX:WBC) statutory net profit A$6.813 billion in FY2026, down from A$6.916 billion in FY2025; flat excluding notable items",
-        "Miners weigh down ASX; Unemployment highest since 2021"
+        "Miners weigh down ASX; Unemployment highest since 2021",
+        "Sites down as banks, Apple, spy agency deal with cyber attacks, outages; Rubio says ‘no evidence’"
       ],
-      "severity": "Critical",
+      "severity": "Warning",
       "target": "Banking & payments"
+    },
+    {
+      "attack_reported": false,
+      "confirmed": true,
+      "headlines": [
+        "Microsoft outage opens industry debate over cyber policy triggers",
+        "Microsoft 365 outage puts enterprise resilience back in focus across APAC",
+        "We Now Know What Really Caused Microsoft's Massive November Outage"
+      ],
+      "severity": "Warning",
+      "target": "Microsoft"
     },
     {
       "attack_reported": false,
@@ -425,10 +437,10 @@
     }
   ],
   "internet_drop_pct": {
-    "China": 0.5,
+    "China": 0.4,
     "Iran": 0.6,
     "Israel": 0.0,
-    "Russia": 1.1,
+    "Russia": 0.8,
     "South Korea": 0.0,
     "Taiwan": 0.0
   },
@@ -447,16 +459,16 @@
       "Mount Lofty Ranges": "High / High"
     },
     "fire_danger_ok": true,
-    "fires_active": 4,
+    "fires_active": 5,
     "fuel": {
       "brent_aud": 132.3,
-      "change_pct": -2.4,
+      "change_pct": -2.5,
       "pump_cents": -2,
-      "week_ago_aud": 135.6
+      "week_ago_aud": 135.7
     },
-    "grid_demand_fall_pct": 12.6,
-    "grid_demand_mw": 590,
-    "grid_demand_usual_mw": 209,
+    "grid_demand_fall_pct": 5.2,
+    "grid_demand_mw": 564,
+    "grid_demand_usual_mw": 219,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
@@ -503,16 +515,16 @@
   },
   "markets": {
     "AUD/USD": {
-      "change_pct": -0.93,
-      "price": 0.6677
+      "change_pct": -0.87,
+      "price": 0.6681
     },
     "Brent oil": {
-      "change_pct": -3.07,
-      "price": 89.13
+      "change_pct": -3.01,
+      "price": 89.18
     },
     "Gold": {
-      "change_pct": -0.65,
-      "price": 3717.5
+      "change_pct": -0.41,
+      "price": 3726.7
     },
     "VIX": {
       "change_pct": -3.53,
@@ -548,8 +560,8 @@
     ],
     "bank_outage": [
       "Federal judge throws out Trump rule limiting foreign student visa lengths - The Daily Pennsylvanian",
-      "Miners weigh down ASX; Unemployment highest since 2021 - SMH.com.au",
-      "Ghaiyyath all the rage at Ready to Run - ANZ Bloodstock News"
+      "DHS’ 4-year cap on student visa stays struck down by federal judge - HR Dive",
+      "Middle East - The Latest News on Mobility and Travel Considerations - Fragomen"
     ],
     "blood": [
       "News - Naval Medical Center Camp Lejeune employee honored for blood donation milestone - DVIDS",
@@ -565,6 +577,11 @@
       "Trump weighs strikes on Iran as Israel warns of chemical weapons - Axios",
       "EU urges Russia to halt chemical weapons use in Ukraine, warns of further sanctions - Anadolu Ajansı"
     ],
+    "cloud": [
+      "Microsoft 365 outage puts enterprise resilience back in focus across APAC - iTnews Asia",
+      "Microsoft outage opens industry debate over cyber policy triggers - Insurance Business",
+      "Microsoft Makes Its AI Case After Global Outage and Anthropic Challenge - Barron's"
+    ],
     "cyber_attrib": [
       "FBI warns hackers weaponizing ARTEX AI framework to automate attacks on energy, manufacturing, telecom - Industrial Cyber",
       "FBI warns hackers using AI-powered tool to automate cyberattacks worldwide - Anadolu Ajansı",
@@ -573,7 +590,7 @@
     "cyber_au": [
       "Seven major tech incidents in a week – what’s going on, and what can we do? - The Conversation",
       "Sites down as banks, Apple, spy agency deal with cyber attacks, outages; Rubio says ‘no evidence’ - Herald Sun",
-      "What Aussies need to know as US holds urgent cyber attack talks - The Daily Telegraph"
+      "https://www.cyberdaily.au/security/14463-2shell2much-nginx2root-vulnerabilities-potentially-expose-more-than-10-million-websites - Cyber Daily"
     ],
     "cyber_ot": [
       "Shop fridges and freezers across Europe hit by fresh suspected cyber-attack - The Guardian",
@@ -585,10 +602,15 @@
       "ESET attributes DynoWiper-powered attack on Poland’s power grid to Russia-aligned Sandworm group - Industrial Cyber",
       "Russian state hackers likely behind wiper malware attack on Poland’s power grid - The Record from Recorded Future News"
     ],
+    "cyber_supply": [
+      "Apache warns of Roller RCE vulnerability exploited in attacks - BleepingComputer",
+      "OX Security Launches OX Radar and Response Center to Show Companies Which Cyber Threats Actually Affect Them - markets.businessinsider.com",
+      "Critical Apache Roller RCE Flaw Under Active Exploitation, No Authentication Required - The Hacker News"
+    ],
     "deepfake": [
-      "European rights court bars Romanian lawyer for 2 years over AI-generated citations - Anadolu Ajansı",
       "Why is the federal government subsidising AI slop? - https://thepoint.com.au/",
-      "How data centres are turning AI-generated heat into energy - Al Jazeera"
+      "AI-generated video falsely promises PhilHealth cash payout - Insurance Business",
+      "European rights court bars Romanian lawyer for 2 years over AI-generated citations - Anadolu Ajansı"
     ],
     "flash": [
       "EchoIQ Enters Trading Halt Pending Material Regulatory Pathway Announcement - Kalkine",
@@ -596,9 +618,9 @@
       "First in Korea to Develop and Commercialize Arc-Fault Circuit Breakers... Arcontek Sets a New Standard for Preventing Electrical Fires - 매일경제"
     ],
     "fuel_au": [
+      "Fuel tanker arrives amid supply concerns and panic buying - FBC News",
       "The Hormuz Crude Volume Debate Masks the Real Shortage of Refined Fuels: Russell - EnergyNow",
-      "Skydiving Injury Leaves Tourist Medically Unfit to Fly Home From Australia - Wide Open Country",
-      "ASEAN Regulators Tackle Cross-Border Insurance Risks in Bali - JournalArta"
+      "Skydiving Injury Leaves Tourist Medically Unfit to Fly Home From Australia - Wide Open Country"
     ],
     "illness": [
       "Mystery illness causes mass hospitalisation of runners - The Nightly",
@@ -654,7 +676,7 @@
     "strikes": [
       "Iran widens Gulf attacks by targeting U.S. air base in Kuwait and sites in Bahrain - PBS",
       "Iran Attacks US Base in Kuwait: Is Tehran’s Strike Lawful Self-Defense? - Diplomacy and Law",
-      "Iran widens Gulf attacks, firing on U.S. air base in Kuwait and at targets in Bahrain - MS NOW"
+      "Iran attacks US air base in Kuwait - The Hill"
     ]
   },
   "prediction_markets": [
@@ -734,7 +756,7 @@
       "yes": 15.0
     },
     {
-      "d24h": -0.2,
+      "d24h": -0.1,
       "q": "NATO x Russia military clash by November 30, 2026?",
       "yes": 1.6
     },
@@ -744,24 +766,24 @@
       "yes": 3.5
     },
     {
-      "d24h": -0.1,
+      "d24h": 0.0,
       "q": "NATO/EU troops fighting in Ukraine by December 31, 2026?",
       "yes": 3.8
     },
     {
-      "d24h": -0.4,
+      "d24h": -0.5,
       "q": "Will Russia test a nuclear weapon by December 31 2026?",
       "yes": 3.5
     },
     {
-      "d24h": -0.3,
+      "d24h": -0.6,
       "q": "Will the U.S. test a nuclear weapon by December 31 2026?",
-      "yes": 2.5
+      "yes": 2.3
     },
     {
-      "d24h": -0.5,
+      "d24h": -1.0,
       "q": "Will Russia invade another country by December 31, 2027?",
-      "yes": 18.0
+      "yes": 17.5
     },
     {
       "d24h": -1.5,
@@ -774,7 +796,7 @@
       "yes": 7.5
     },
     {
-      "d24h": -0.2,
+      "d24h": -0.1,
       "q": "Trump endorses China's claim to Taiwan by end of APEC trip?",
       "yes": 0.8
     }
@@ -1094,11 +1116,13 @@
       "trend": "steady"
     },
     {
-      "band": "Guarded",
-      "convergence": "Two different kinds of sign are showing together (ai-enabled hacking and fraud waves). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, deepfakes of leaders or fake off",
+      "band": "Elevated",
+      "convergence": "Signs are converging across 4 separate areas (ai-enabled hacking, cloud services, fraud waves and synthetic media). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage ca",
       "domains": [
         "AI-enabled hacking",
-        "Fraud waves"
+        "Cloud services",
+        "Fraud waves",
+        "Synthetic media"
       ],
       "key": "ai",
       "lit": [
@@ -1107,61 +1131,38 @@
           "name": "Reports of AI-driven hacking campaigns"
         },
         {
+          "detail": "GAO: AI-generated attack plans raise preparedness questions for first responders",
+          "name": "Deepfakes of leaders or fake official alerts"
+        },
+        {
+          "detail": "Microsoft Makes Its AI Case After Global Outage and Anthropic Challenge",
+          "name": "Major cloud or AI service outage"
+        },
+        {
           "detail": "Surrey PCC warns about AI voice cloning scams ahead of Christmas",
           "name": "Surge in AI voice-clone / deepfake scams in Australia"
         }
       ],
-      "score": 20,
-      "trend": "down"
+      "score": 45,
+      "trend": "up"
     }
   ],
   "sectors_relative_5d": {
-    "defence_au": -5.95,
+    "defence_au": -5.9,
     "defence_eu": -0.48,
     "defence_us": -1.05,
     "pandemic": -5.44
   },
   "tankers": "normal",
   "telecom_drop_pct": {
-    "Aussie Broadband": 0.6,
-    "Optus": 0.0,
-    "TPG": 0.4,
+    "Aussie Broadband": 0.0,
+    "Optus": 2.0,
+    "TPG": 0.2,
     "Telstra": 0.0,
     "Vodafone": 0.0
   },
-  "us_departure_orders": [
-    "Belarus"
-  ],
-  "us_levels_au_relevant": {
-    "China": 2,
-    "Fiji": 1,
-    "India": 2,
-    "Indonesia": 2,
-    "Iran": 4,
-    "Israel": 3,
-    "Japan": 1,
-    "Malaysia": 1,
-    "New Zealand": 1,
-    "North Korea": 4,
-    "Papua New Guinea": 3,
-    "Philippines": 2,
-    "Qatar": 3,
-    "Russia": 4,
-    "Samoa": 1,
-    "Saudi Arabia": 3,
-    "Singapore": 1,
-    "Solomon Islands": 2,
-    "South Korea": 1,
-    "Taiwan": 1,
-    "Thailand": 1,
-    "Timor-Leste": 2,
-    "Tonga": 1,
-    "Ukraine": 4,
-    "United Arab Emirates": 3,
-    "Vanuatu": 1,
-    "Vietnam": 1,
-    "Yemen": 4
-  },
+  "us_departure_orders": [],
+  "us_levels_au_relevant": {},
   "watching": [
     {
       "active": false,
