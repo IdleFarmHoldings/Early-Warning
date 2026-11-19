@@ -1,30 +1,22 @@
 {
-  "generated_at": "2026-11-19T13:24:00Z",
+  "generated_at": "2026-11-19T13:39:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
-      "band": "Elevated",
-      "convergence": "Signs are converging across 3 separate areas (power grid, roads and weather). Unrelated systems flagging the same scenario at once is the pattern seen before past events. The worst local days stack up: extreme fire danger, a heatwave pushing power demand, a tight grid, and storms or fires damaging lines. AEMO warns of supply shortfalls hours to a day ahead; the CFS and Bureau issue ratings and warnings a day or more ahead. The strongest signs not yet showing: cfs emergency warning in sa, sudden fall in sa electricity demand (possible large blackout) and extreme or catastrophic fire danger near adelaide.",
+      "band": "Guarded",
+      "convergence": "Two different kinds of sign are showing together (power grid and weather). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: cfs emergency warning in sa, sudden fall in sa electricity demand (possible large blackout) and extreme or catastrophic fire danger near adelaide.",
       "domains": [
         "Power grid",
-        "Roads",
         "Weather"
       ],
       "key": "local",
       "lit": [
         {
-          "detail": "Extreme Fire Weather Warning for Yorke Peninsula fire district for 19 November; Cancellation of Severe Thunderstorm Warning for North West Pastoral forecast district",
+          "detail": "Cancellation of Severe Thunderstorm Warning for North West Pastoral forecast district",
           "domain": "Weather",
           "id": "bom",
           "name": "Bureau severe weather or heatwave warning for SA",
           "weight": 15
-        },
-        {
-          "detail": "Morgan Mail Road, Quondong: MORGAN MAIL RD Closed due to flooding over road; Morgan Vale Road, Danggali: MORGAN MAIL RD Closed due to flooding over road",
-          "domain": "Roads",
-          "id": "roads",
-          "name": "Fire, flood or storm road closures in SA",
-          "weight": 10
         },
         {
           "detail": "Multiple transmission towers down in Eyre Peninsula in South Australia on Thursday 19th November 2026, leaving 20,000+ properties without po; Communities without power after massive storm fells transmission towers on South Australia’s Eyre Peninsula",
@@ -36,8 +28,8 @@
       ],
       "name": "Local emergency in SA (bushfire, heat, power)",
       "sa_impact": "Direct: bushfires, heatwaves and power cuts are the emergencies most likely to affect the family. In the 2016 statewide blackout, power, phones, traffic lights and fuel pumps failed together.",
-      "score": 40,
-      "trend": "steady",
+      "score": 30,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Bushfire",
@@ -73,6 +65,12 @@
           "domain": "Communications",
           "id": "tel",
           "name": "Phone / internet carrier outage",
+          "weight": 10
+        },
+        {
+          "domain": "Roads",
+          "id": "roads",
+          "name": "Fire, flood or storm road closures in SA",
           "weight": 10
         },
         {
