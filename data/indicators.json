@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-19T17:29:00Z",
+  "generated_at": "2026-11-19T17:44:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -383,10 +383,9 @@
       "why": "North Korean missile launches are often preceded by navigation warnings; South Korea and Japan report GPS jamming from the North during tense periods."
     },
     {
-      "band": "Guarded",
-      "convergence": "Two different kinds of sign are showing together (cyber and state signalling). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and mobilisation / reservist reports (russia / nato).",
+      "band": "Low",
+      "convergence": "Only one kind of sign is showing (state signalling). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and mobilisation / reservist reports (russia / nato).",
       "domains": [
-        "Cyber",
         "State signalling"
       ],
       "key": "russia",
@@ -397,19 +396,12 @@
           "id": "signals",
           "name": "Russian signalling (Buzzer broadcasts, nuclear drills)",
           "weight": 5
-        },
-        {
-          "detail": "ESET Research: Sandworm behind cyberattack on Poland’s power grid in late 2025",
-          "domain": "Cyber",
-          "id": "cyber",
-          "name": "Russian wiper / Sandworm activity reports",
-          "weight": 10
         }
       ],
       "name": "Russia-NATO escalation",
       "sa_impact": "Indirect: energy and market shock, cyber attacks that can spill over to Australian systems, and nuclear-risk rhetoric.",
-      "score": 15,
-      "trend": "steady",
+      "score": 5,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Electronic warfare",
@@ -472,6 +464,12 @@
           "weight": 5
         },
         {
+          "domain": "Cyber",
+          "id": "cyber",
+          "name": "Russian wiper / Sandworm activity reports",
+          "weight": 10
+        },
+        {
           "domain": "Undersea cables",
           "id": "cable",
           "name": "Russian / Chinese vessels loitering over Baltic cables",
@@ -493,25 +491,15 @@
       "why": "Before February 2022: embassy departures, mobilisation reports, airspace closures and a surge in GPS jamming. Baltic and Black Sea jamming is now routine, so only spikes above normal count."
     },
     {
-      "band": "Guarded",
-      "convergence": "Only one kind of sign is showing (mobilisation). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: us nuclear command aircraft unusual, private jets heading to retreat destinations and forecast markets jump on nuclear use.",
-      "domains": [
-        "Mobilisation"
-      ],
+      "band": "Low",
+      "convergence": "No warning signs are showing. The strongest signs not yet showing: us nuclear command aircraft unusual, private jets heading to retreat destinations and mobilisation reports (any major power).",
+      "domains": [],
       "key": "nuclear",
-      "lit": [
-        {
-          "detail": "Military Escalation in the Gulf: Iranian Attacks, US Airstrikes, and Mobilization in the Arabian Sea",
-          "domain": "Mobilisation",
-          "id": "mob",
-          "name": "Mobilisation reports (any major power)",
-          "weight": 15
-        }
-      ],
+      "lit": [],
       "name": "Nuclear use or alert",
       "sa_impact": "Fallout risk to SA from a northern-hemisphere exchange is very low, but global trade, fuel and finance would be severely disrupted.",
-      "score": 15,
-      "trend": "steady",
+      "score": 0,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Nuclear command",
@@ -548,6 +536,12 @@
           "id": "gold",
           "name": "Gold up 4%+ in a day",
           "weight": 10
+        },
+        {
+          "domain": "Mobilisation",
+          "id": "mob",
+          "name": "Mobilisation reports (any major power)",
+          "weight": 15
         },
         {
           "domain": "Prediction markets",
@@ -639,7 +633,7 @@
       "why": "The 2023 Optus outage cut mobile, NBN, EFTPOS and some 000 calls nationwide for 12 hours. Hostile states pre-position in critical infrastructure; GPS jamming over Australia would be a new and serious sign."
     },
     {
-      "band": "Guarded",
+      "band": "Elevated",
       "convergence": "Two different kinds of sign are showing together (chemical weapons and health). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: unknown illness / pneumonia cluster reported, countries restricting medical supply exports and pandemic-response stocks outperforming (5 days).",
       "domains": [
         "Chemical weapons",
@@ -660,12 +654,19 @@
           "id": "chem",
           "name": "Chemical / nerve-agent attack or mass poisoning reported",
           "weight": 15
+        },
+        {
+          "detail": "Chuck Thompson on the mysterious deaths of two Bigfoot hunters in Washington",
+          "domain": "Health",
+          "id": "dieoff",
+          "name": "Unexplained mass deaths or animal die-offs",
+          "weight": 10
         }
       ],
       "name": "Pandemic, biological or chemical emergency",
       "sa_impact": "Health system strain, possible lockdowns and border closures, and shortages of medicines and protective equipment, which Australia mostly imports.",
-      "score": 30,
-      "trend": "down",
+      "score": 40,
+      "trend": "up",
       "unlit": [
         {
           "domain": "Health",
@@ -704,12 +705,6 @@
           "weight": 10
         },
         {
-          "domain": "Health",
-          "id": "dieoff",
-          "name": "Unexplained mass deaths or animal die-offs",
-          "weight": 10
-        },
-        {
           "domain": "Hospitals",
           "id": "ed",
           "name": "Three or more Adelaide emergency departments 'very busy'",
@@ -719,25 +714,15 @@
       "why": "Before COVID-19 (Dec 2019 - Feb 2020): reports of an unknown pneumonia cluster, WHO outbreak notices, mask and hazmat makers (Alpha Pro Tech, Lakeland) and vaccine developers (Moderna, Novavax) surging weeks before broad markets fell, and countries restricting exports of masks and medicines (Taiwan from 24 Jan 2020, then dozens more)."
     },
     {
-      "band": "Guarded",
-      "convergence": "Only one kind of sign is showing (state actors). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: sudden fall in sa electricity demand (possible large blackout), global cyber threat level raised (sans infocon not green) and several vpn / firewall flaws exploited this week.",
-      "domains": [
-        "State actors"
-      ],
+      "band": "Low",
+      "convergence": "No warning signs are showing. The strongest signs not yet showing: sudden fall in sa electricity demand (possible large blackout), global cyber threat level raised (sans infocon not green) and several vpn / firewall flaws exploited this week.",
+      "domains": [],
       "key": "cyber",
-      "lit": [
-        {
-          "detail": "ESET Research: Sandworm behind cyberattack on Poland’s power grid in late 2025",
-          "domain": "State actors",
-          "id": "state",
-          "name": "Reports of state hackers / pre-positioning / wipers",
-          "weight": 15
-        }
-      ],
+      "lit": [],
       "name": "Major cyber attack on Australia",
       "sa_impact": "Banks, payments, hospitals, fuel distribution, telcos and the power grid all run on networks; a large attack can stop card payments and services for hours to days.",
-      "score": 15,
-      "trend": "steady",
+      "score": 0,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Global threat level",
@@ -776,6 +761,12 @@
           "weight": 10
         },
         {
+          "domain": "State actors",
+          "id": "state",
+          "name": "Reports of state hackers / pre-positioning / wipers",
+          "weight": 15
+        },
+        {
           "domain": "Australian incidents",
           "id": "au",
           "name": "Major Australian cyber incident reported",
@@ -804,11 +795,12 @@
     },
     {
       "band": "Elevated",
-      "convergence": "Signs are converging across 3 separate areas (ai-enabled hacking, cloud services and fraud waves). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: a Chinese state-sponsored group used an AI agent to carry out 80-90% of an attack on about 30 organisations, at thousands of requests per second. A fake AI image of a Pentagon explosion briefly moved US markets in May 2023, and a deepfake video call of a CFO tricked a company into paying US$25 million in 2024. The likely signature of an AI attack is breadth and speed: many unrelated systems and vendors hit at once, synthetic media of officials, and shocks with no clear human cause. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, deepfakes of leaders or fake official alerts and flash crash or exchange trading halt.",
+      "convergence": "Signs are converging across 4 separate areas (ai-enabled hacking, cloud services, fraud waves and markets). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: a Chinese state-sponsored group used an AI agent to carry out 80-90% of an attack on about 30 organisations, at thousands of requests per second. A fake AI image of a Pentagon explosion briefly moved US markets in May 2023, and a deepfake video call of a CFO tricked a company into paying US$25 million in 2024. The likely signature of an AI attack is breadth and speed: many unrelated systems and vendors hit at once, synthetic media of officials, and shocks with no clear human cause. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, deepfakes of leaders or fake official alerts and market fear index jumps 25%+ in a day.",
       "domains": [
         "AI-enabled hacking",
         "Cloud services",
-        "Fraud waves"
+        "Fraud waves",
+        "Markets"
       ],
       "key": "ai",
       "lit": [
@@ -818,6 +810,13 @@
           "id": "aihack",
           "name": "Reports of AI-driven hacking campaigns",
           "weight": 15
+        },
+        {
+          "detail": "800V DC circuit breaker market for data centers to hit $2.11B by 2036 with 41% CAGR driven by AI infrastructure growth",
+          "domain": "Markets",
+          "id": "flash",
+          "name": "Flash crash or exchange trading halt",
+          "weight": 10
         },
         {
           "detail": "Microsoft 365 outage: Global cyber insured losses estimated at up to $700 mn",
@@ -836,8 +835,8 @@
       ],
       "name": "AI-enabled attack (non-traditional)",
       "sa_impact": "Not bombs but disruption: hacking at machine speed across banks, telcos, hospitals and the grid at once; fake videos or alerts from leaders causing panic buying or bank runs; or automated market and fraud shocks. Effects would be outages, payment failures and confusion about what is real.",
-      "score": 30,
-      "trend": "steady",
+      "score": 40,
+      "trend": "up",
       "unlit": [
         {
           "domain": "Mass exploitation",
@@ -850,12 +849,6 @@
           "id": "deepfake",
           "name": "Deepfakes of leaders or fake official alerts",
           "weight": 15
-        },
-        {
-          "domain": "Markets",
-          "id": "flash",
-          "name": "Flash crash or exchange trading halt",
-          "weight": 10
         },
         {
           "domain": "Markets",
