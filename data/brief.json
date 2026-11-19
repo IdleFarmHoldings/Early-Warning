@@ -305,22 +305,21 @@
   ],
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
-    "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output=",
-    "who": "TimeoutError: The read operation timed out"
+    "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [
-    "Orange notification for tropical cyclone AKVAN-26. Population affected by Category 1 (120 km/h) wind speeds or higher is 0  (12.129 million in Tropical Storm)."
+    "Orange notification for tropical cyclone AKVAN-26. Population affected by Category 1 (120 km/h) wind speeds or higher is 0  (11.754 million in Tropical Storm)."
   ],
-  "generated_at": "2026-11-19T13:45:00Z",
+  "generated_at": "2026-11-19T14:01:00Z",
   "gps_bad_pct": {
     "Baltic / Kaliningrad": 13,
-    "Black Sea": 46,
-    "Israel & Eastern Mediterranean": 1,
+    "Black Sea": 33,
+    "Israel & Eastern Mediterranean": 0,
     "Korea": 0,
-    "Persian Gulf": 19,
+    "Persian Gulf": 18,
     "South Australia": null,
     "Sydney / NSW": null,
-    "Taiwan Strait": 1
+    "Taiwan Strait": 0
   },
   "incidents": [
     {
@@ -371,9 +370,10 @@
     },
     {
       "attack_reported": true,
-      "confirmed": false,
+      "confirmed": true,
       "headlines": [
-        "EU Commission hit by AI-driven cyberattack"
+        "EU Commission hit by AI-driven cyberattack",
+        "EU Commission hit by large-scale cyberattack with data leakage unknown"
       ],
       "severity": "Info",
       "target": "EU Commission"
@@ -473,10 +473,10 @@
     }
   ],
   "internet_drop_pct": {
-    "China": 1.7,
+    "China": 2.5,
     "Iran": 0.0,
-    "Israel": 0.1,
-    "Russia": 0.9,
+    "Israel": 0.5,
+    "Russia": 1.2,
     "South Korea": 0.0,
     "Taiwan": 0.0
   },
@@ -494,32 +494,26 @@
       "Mount Lofty Ranges": "Moderate / Moderate"
     },
     "fire_danger_ok": true,
-    "fires_active": 3,
+    "fires_active": 5,
     "fuel": {
       "brent_aud": 133.6,
       "change_pct": -2.6,
       "pump_cents": -2,
       "week_ago_aud": 137.2
     },
-    "grid_demand_fall_pct": -3.5,
-    "grid_demand_mw": 1386,
-    "grid_demand_usual_mw": 1319,
+    "grid_demand_fall_pct": 0.5,
+    "grid_demand_mw": 1381,
+    "grid_demand_usual_mw": 1331,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
       "air": {
-        "aqi": 25,
+        "aqi": 23,
         "peak_pm25_48h": 9,
-        "pm25": 6
+        "pm25": 4
       },
       "air_word": "Good",
       "days": [
-        {
-          "date": "2026-11-19",
-          "gust": 45,
-          "rain": 0,
-          "tmax": 30
-        },
         {
           "date": "2026-11-20",
           "gust": 57,
@@ -531,6 +525,12 @@
           "gust": 28,
           "rain": 0,
           "tmax": 29
+        },
+        {
+          "date": "2026-11-22",
+          "gust": 55,
+          "rain": 1,
+          "tmax": 27
         }
       ]
     },
@@ -547,16 +547,16 @@
       "price": 0.6712
     },
     "Brent oil": {
-      "change_pct": -1.85,
-      "price": 90.25
+      "change_pct": -2.11,
+      "price": 90.01
     },
     "Gold": {
-      "change_pct": -0.59,
-      "price": 3719.7
+      "change_pct": -0.73,
+      "price": 3714.6
     },
     "VIX": {
-      "change_pct": -9.0,
-      "price": 22.35
+      "change_pct": -8.02,
+      "price": 22.59
     }
   },
   "national_shocks": {
@@ -583,8 +583,8 @@
     ],
     "aviation_halt": [
       "‘The Hairiest 90 Minutes of My Career’: How the FAA Ground Stop Went Down - WIRED",
-      "Flights return to normal at DJT after storm-related ground stop - WPEC",
-      "FAA signed off on router replacement just before ground stop, report states - Mashable"
+      "Nationwide Aircraft Ground Stop Raises Concerns over Aviation System Modernization - Every CRS Report",
+      "Flights return to normal at DJT after storm-related ground stop - WPEC"
     ],
     "bank_outage": [
       "Australia backs down on cuts to working holiday visas but adds tougher conditions - Travel Tomorrow",
@@ -606,8 +606,8 @@
     ],
     "cloud": [
       "Anthropic Claude down: Why it said it was unable to authenticate code - Mashable",
-      "Microsoft 365 outage phishing: fake recovery email - NeoTeo",
-      "The Growth Rate Anthropic Needs to Justify $83 IPO Price Has Never Been Achieved - Disruption Banking"
+      "The Growth Rate Anthropic Needs to Justify $83 IPO Price Has Never Been Achieved - Disruption Banking",
+      "Microsoft 365 outage puts enterprise resilience back in focus across APAC - iTnews Asia"
     ],
     "cn_signals": [
       "NYT the latest in showcasing bad US-China takes from DC experts - Responsible Statecraft"
@@ -620,12 +620,12 @@
     "cyber_au": [
       "Seven major tech incidents in a week – what’s going on, and what can we do? - The Conversation",
       "Australia mulls tougher tech laws after AI health breach - The Nightly",
-      "Apology letters sent after hospital data breach - Yahoo News Australia"
+      "What Aussies need to know as US holds urgent cyber attack talks - The Daily Telegraph"
     ],
     "cyber_ot": [
       "Who is hacking Europe’s supermarket fridges and freezers, and why? - The Guardian",
-      "Supermarket freezers and fridges in Europe hit by cyberattack - Nine.com.au",
-      "Shop freezers in seven European countries hit by cyber-attack - BBC"
+      "Shop freezers in seven European countries hit by cyber-attack - BBC",
+      "Supermarket freezers and fridges in Europe hit by cyberattack - Nine.com.au"
     ],
     "cyber_state": [
       "ESET Research: Sandworm behind cyberattack on Poland’s power grid in late 2025 - We Live Security",
@@ -633,14 +633,14 @@
       "Russian state hackers likely behind wiper malware attack on Poland’s power grid - The Record from Recorded Future News"
     ],
     "cyber_supply": [
+      "AmericanAI Announces AI Research Journal and Calls for Papers on Software Supply Chain Security - Knoxville News Sentinel",
       "Critical Apache Roller RCE Flaw Under Active Exploitation, No Authentication Required - The Hacker News",
-      "Apache Roller RCE Flaw CVE-2026-129448 Under Active Attack - Security Affairs",
-      "Supply Chain Breach Exposes Vulnerabilities - Coinfomania"
+      "Apache Roller RCE Flaw CVE-2026-129448 Under Active Attack - Security Affairs"
     ],
     "deepfake": [
       "European rights court bars Romanian lawyer for 2 years over AI-generated citations - Anadolu Ajansı",
-      "Why is the federal government subsidising AI slop? - https://thepoint.com.au/",
-      "[INTERVIEW] 'AI is not God': Nat'l Tsing Hua University president warns against blind faith in technology - The Korea Times"
+      "[INTERVIEW] 'AI is not God': Nat'l Tsing Hua University president warns against blind faith in technology - The Korea Times",
+      "Why is the federal government subsidising AI slop? - https://thepoint.com.au/"
     ],
     "dieoff": [
       "Chuck Thompson on the mysterious deaths of two Bigfoot hunters in Washington - Crime Reads",
@@ -662,8 +662,8 @@
       "Mystery Pneumonia Death Sparks Concern; Trader Joe's Recall; OUD in Young People - MedPage Today"
     ],
     "masscas": [
-      "House of Commons Defence Committee Inquiry into the Defence Medical Services - King's College London",
       "18 injured in multi-vehicle crash involving prison bus, gas tanker - LehighValleyLive.com",
+      "House of Commons Defence Committee Inquiry into the Defence Medical Services - King's College London",
       "GAO: AI-generated attack plans raise preparedness questions for first responders - EMS1"
     ],
     "medshort": [
@@ -677,7 +677,7 @@
     "national_outage": [
       "FAA Turned Down Free Starlink Offer Before Historic Nationwide Outage - AutoSpies",
       "Cuba’s National Electric Grid Collapses, Reason Unknown - EnergyNow.com",
-      "Nollywood star Kevin Ikeduba bemoans nationwide power outage, says ‘Everybody on Band Zero’ - TheNiche"
+      "What would happen if you couldn’t access your bank tomorrow? Following recent technology outages that affected banks, airlines and major companies, experts recommend keeping cash at home for emergencies. Would your family be prepared if ATMs and b - Facebook"
     ],
     "outage_au": [
       "Australia telco complaints surge after Telstra outage - Traders Union",
@@ -690,8 +690,8 @@
       "IDF plans to cut reserve duty to 58 days, reduce battalions - The Jerusalem Post"
     ],
     "ru_signals": [
-      "Leaders adopt declaration on peace – FULL TEXT - TodayPress.tv",
       "Signal ahead of Putin, Trump and Xi Jinping meeting: “Doomsday radio” broadcasts “sinner” message - TodayPress.tv",
+      "Leaders adopt declaration on peace – FULL TEXT - TodayPress.tv",
       "Why was Kallas excluded from the Ukraine negotiating team? – CLAIM - TodayPress.tv"
     ],
     "sapn": [
@@ -737,9 +737,9 @@
       "yes": 3.0
     },
     {
-      "d24h": 0.6,
+      "d24h": 0.5,
       "q": "US-Iran Hormuz Agreement by November 30?",
-      "yes": 4.9
+      "yes": 4.8
     },
     {
       "d24h": -0.2,
@@ -762,9 +762,9 @@
       "yes": 2.2
     },
     {
-      "d24h": 0.1,
+      "d24h": 0.2,
       "q": "Will China invade Taiwan by June 30, 2027?",
-      "yes": 4.1
+      "yes": 4.2
     },
     {
       "d24h": -0.3,
@@ -807,12 +807,12 @@
       "yes": 3.8
     },
     {
-      "d24h": -3.4,
+      "d24h": -3.9,
       "q": "Will Russia test a nuclear weapon by December 31 2026?",
       "yes": 2.6
     },
     {
-      "d24h": -0.7,
+      "d24h": -0.5,
       "q": "Will the U.S. test a nuclear weapon by December 31 2026?",
       "yes": 2.1
     },
@@ -1140,6 +1140,10 @@
       "key": "bio",
       "lit": [
         {
+          "detail": "Middle East respiratory syndrome (MERS) – Qatar",
+          "name": "WHO outbreak report with a high-concern pathogen (last 14 days)"
+        },
+        {
           "detail": "Governance failures blamed for medicine shortage crisis",
           "name": "Australian medicine or PPE shortage reports"
         },
@@ -1152,8 +1156,8 @@
           "name": "Unexplained mass deaths or animal die-offs"
         }
       ],
-      "score": 35,
-      "trend": "down"
+      "score": 50,
+      "trend": "up"
     },
     {
       "band": "Guarded",
@@ -1200,7 +1204,7 @@
   ],
   "sectors_relative_5d": {
     "defence_au": -5.41,
-    "defence_eu": 1.2,
+    "defence_eu": 1.12,
     "defence_us": -1.05,
     "pandemic": -5.44
   },
@@ -1210,7 +1214,7 @@
     "Optus": 0.0,
     "TPG": 0.5,
     "Telstra": 0.0,
-    "Vodafone": 0.0
+    "Vodafone": 4.8
   },
   "us_departure_orders": [
     "Belarus"
@@ -1255,5 +1259,13 @@
       "what": "GPS jamming"
     }
   ],
-  "who": []
+  "who": [
+    "Chikungunya virus disease - Switzerland",
+    "Middle East respiratory syndrome (MERS) – Qatar",
+    "Ebola disease caused by Bundibugyo virus - Democratic Republic of the Congo, Kenya and Nigeria",
+    "Yellow fever - WHO African Region",
+    "Shamonda virus in human - France",
+    "Middle East respiratory syndrome coronavirus - Kingdom of Saudi Arabia",
+    "Pneumonia of undetermined etiology - the Russian Federation"
+  ]
 }
