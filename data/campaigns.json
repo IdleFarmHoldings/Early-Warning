@@ -6,6 +6,7 @@
       "attributed_officially": true,
       "band": "Strong",
       "countries": [
+        "Australia",
         "Europe",
         "United States"
       ],
@@ -13,12 +14,12 @@
       "hypothesis": {
         "actions": [
           {
-            "action": "Keep some cash at home.",
-            "reason": "Cash still buys fuel and food when cards and banking apps are down."
+            "action": "Keep a week of pantry food that needs no fridge.",
+            "reason": "It rides out empty chilled and frozen shelves without joining any panic buying."
           },
           {
-            "action": "Agree a family meeting point and save key numbers on paper.",
-            "reason": "If calls and messages fail, everyone still knows where to go."
+            "action": "Keep some cash at home.",
+            "reason": "Cash still buys fuel and food when cards and banking apps are down."
           }
         ],
         "australia": "Australia's spy agencies have warned that Chinese state hackers have been found inside Australian infrastructure networks. This kind of campaign is designed to stay hidden until a crisis.",
@@ -28,9 +29,9 @@
           "outages at several allied phone or power companies at once"
         ],
         "for_us": [
+          "Spoiled chilled and frozen stock means gaps on supermarket shelves for days.",
           "Card payments, EFTPOS or online banking can be down for hours.",
-          "Phones and internet could drop out, including emergency calls on one network.",
-          "Apps and websites you use may be down, or quietly compromised."
+          "Phones and internet could drop out, including emergency calls on one network."
         ],
         "if_deliberate": "If this is a deliberate campaign by China, the likely aim is: Quietly plant footholds in allies' power, water, ports and phone networks, ready to switch them off if there is a war over Taiwan.",
         "next_targets": [
@@ -41,7 +42,7 @@
           "Not hit yet in this campaign but typical for China: power and gas; water supply; fuel and shipping"
         ],
         "other_explanations": "A government has publicly linked some of these attacks to China, but not every incident here is confirmed as part of it.",
-        "pattern": "12 incidents over 4 days: hacking a supplier to reach many victims, ransomware and AI-driven hacking against banks and payments, software and online services and phones and internet in Europe and United States."
+        "pattern": "13 incidents over 4 days: hacking a supplier to reach many victims, ransomware and AI-driven hacking against banks and payments, food and cold storage, government and defence, software and online services and phones and internet in Australia, Europe and United States."
       },
       "incidents": [
         {
@@ -169,24 +170,28 @@
           "title": "Ad-tech firm Optimizely confirms breach after fake phone call; big-brand websites affected"
         },
         {
-          "countries": [],
+          "countries": [
+            "Australia"
+          ],
           "date": "2026-11-15",
-          "how": "stealing data",
+          "how": "AI-driven hacking",
           "kind": "attack",
-          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQWDNpQjg4VlY2a2g5Y1Z5S3pSUlJYc0tMbEQtMEZDR3huN0V3c2FpWGhTX1dISUJwY00yTkVwVEROWF9WMDkwZnV6bU5zY0MtU0x0WmxjSlZTamRhcXJrdkdBdEFibG5SUzVsYk9oTDgzblZ0UUFPdzladmthck5CdUtKRVRCQmNSb0JTVWVUTDFiVGgyZDRPOTFUMnZxSTE0bzFSa05tX2RFSmpmVGhQZA?oc=5",
-          "linked_by": "named attacker",
+          "link": "https://www.canberratimes.com.au/story/9392045/shop-as-normal-coles-investigates-cyber-attack/",
+          "linked_by": "same pattern",
           "reports": 5,
-          "sector": "other",
-          "title": "FBI warns ARTEX AI hacking tool is powering global cyberattacks"
+          "sector": "food and cold storage",
+          "title": "Coles investigates a cyber security incident"
         }
       ],
-      "incidents_7d": 12,
+      "incidents_7d": 13,
       "key": "china",
-      "last_seen": "2026-11-19T21:58:37Z",
+      "last_seen": "2026-11-19T23:28:08Z",
       "official_warning": true,
-      "score": 94,
+      "score": 100,
       "sectors": [
         "banks and payments",
+        "food and cold storage",
+        "government and defence",
         "software and online services",
         "phones and internet"
       ],
@@ -196,11 +201,12 @@
         "AI-driven hacking",
         "tricking staff (phishing and fake calls)",
         "stealing data",
-        "breaking in (method not reported)"
+        "breaking in (method not reported)",
+        "unexplained outage"
       ],
       "title": "Suspected China campaign",
-      "touches_australia": false,
-      "trend": "steady"
+      "touches_australia": true,
+      "trend": "up"
     },
     {
       "actor": "Iran",
@@ -578,7 +584,7 @@
       "trend": "steady"
     }
   ],
-  "generated_at": "2026-11-19T23:12:00Z",
+  "generated_at": "2026-11-19T23:28:00Z",
   "note": "Small cyber incidents linked into suspected campaigns and read as if deliberate. Scores (0-100) show how much a cluster looks like a deliberate campaign, not a probability or a confirmed finding.",
-  "reports_in_ledger": 249
+  "reports_in_ledger": 251
 }
