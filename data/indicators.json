@@ -1,0 +1,895 @@
+{
+  "generated_at": "2026-11-19T23:07:00Z",
+  "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
+  "scenarios": [
+    {
+      "band": "Guarded",
+      "convergence": "Two different kinds of sign are showing together (power grid and roads). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: cfs emergency warning in sa, sudden fall in sa electricity demand (possible large blackout) and extreme or catastrophic fire danger near adelaide.",
+      "domains": [
+        "Power grid",
+        "Roads"
+      ],
+      "key": "local",
+      "lit": [
+        {
+          "detail": "Morgan Mail Road, Quondong: MORGAN MAIL RD Closed due to flooding over road; Morgan Vale Road, Danggali: MORGAN MAIL RD Closed due to flooding over road",
+          "domain": "Roads",
+          "id": "roads",
+          "name": "Fire, flood or storm road closures in SA",
+          "short": "Fire, flood or storm road closures in SA",
+          "weight": 10
+        },
+        {
+          "detail": "Thousands in SA remain without power after storm topples transmission towers; Communities without power after massive storm fells transmission towers on South Australia’s Eyre Peninsula",
+          "domain": "Power grid",
+          "id": "power",
+          "name": "Reports of widespread power outages in SA",
+          "short": "Reports of widespread power outages in…",
+          "weight": 15
+        }
+      ],
+      "name": "Local emergency in SA (bushfire, heat, power)",
+      "sa_impact": "Direct: bushfires, heatwaves and power cuts are the emergencies most likely to affect the family. In the 2016 statewide blackout, power, phones, traffic lights and fuel pumps failed together.",
+      "score": 25,
+      "trend": "up",
+      "unlit": [
+        {
+          "domain": "Bushfire",
+          "id": "ew",
+          "name": "CFS Emergency Warning in SA",
+          "weight": 25
+        },
+        {
+          "domain": "Bushfire",
+          "id": "wa",
+          "name": "CFS Watch and Act in SA",
+          "weight": 10
+        },
+        {
+          "domain": "Fire weather",
+          "id": "fdr",
+          "name": "Extreme or Catastrophic fire danger near Adelaide",
+          "weight": 20
+        },
+        {
+          "domain": "Fire weather",
+          "id": "tfb",
+          "name": "Total fire ban for Adelaide or the Hills",
+          "weight": 10
+        },
+        {
+          "domain": "Weather",
+          "id": "bom",
+          "name": "Bureau severe weather or heatwave warning for SA",
+          "weight": 15
+        },
+        {
+          "domain": "Power grid",
+          "id": "grid",
+          "name": "Tight power supply in SA (AEMO lack of reserve, level 2+)",
+          "weight": 20
+        },
+        {
+          "domain": "Communications",
+          "id": "tel",
+          "name": "Phone / internet carrier outage",
+          "weight": 10
+        },
+        {
+          "domain": "Hospitals",
+          "id": "ed",
+          "name": "Three or more Adelaide emergency departments 'very busy'",
+          "weight": 10
+        },
+        {
+          "domain": "Water",
+          "id": "water",
+          "name": "SA Water supply cut or water-quality notice reported",
+          "weight": 10
+        },
+        {
+          "domain": "Water",
+          "id": "reservoirs",
+          "name": "Adelaide reservoirs below 30% (any)",
+          "weight": 5
+        },
+        {
+          "domain": "Power grid",
+          "id": "blackout",
+          "name": "Sudden fall in SA electricity demand (possible large blackout)",
+          "weight": 25
+        }
+      ],
+      "why": "The worst local days stack up: extreme fire danger, a heatwave pushing power demand, a tight grid, and storms or fires damaging lines. AEMO warns of supply shortfalls hours to a day ahead; the CFS and Bureau issue ratings and warnings a day or more ahead."
+    },
+    {
+      "band": "Guarded",
+      "convergence": "Two different kinds of sign are showing together (aviation and shipping). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
+      "domains": [
+        "Aviation",
+        "Shipping"
+      ],
+      "key": "mideast",
+      "lit": [
+        {
+          "detail": "Dammam hub kept Gulf Air flying during airspace closure",
+          "domain": "Aviation",
+          "id": "airspace",
+          "name": "Airspace closures reported (Iran / Israel / Gulf)",
+          "short": "Airspace closures reported",
+          "weight": 10
+        },
+        {
+          "detail": "Strait of Hormuz -38% vs usual (2.3/day)",
+          "domain": "Shipping",
+          "id": "hormuz",
+          "name": "Ship traffic through Hormuz down sharply",
+          "short": "Ship traffic through Hormuz down sharply",
+          "weight": 15
+        }
+      ],
+      "name": "Middle East war & Gulf shipping",
+      "sa_impact": "Fuel: Australia imports most of its fuel, much of it refined from Gulf crude in Asia. Shipping attacks or a Hormuz closure push up prices within days and can cause local shortages.",
+      "score": 25,
+      "trend": "steady",
+      "unlit": [
+        {
+          "domain": "Military air",
+          "id": "tankers",
+          "name": "Air-refuelling tanker surge",
+          "weight": 15
+        },
+        {
+          "domain": "Military air",
+          "id": "air",
+          "name": "Unusual military air activity over the region",
+          "weight": 15
+        },
+        {
+          "domain": "Electronic warfare",
+          "id": "gps",
+          "name": "GPS jamming spike (Gulf / Israel)",
+          "weight": 10
+        },
+        {
+          "domain": "Communications",
+          "id": "net",
+          "name": "Internet blackout in Iran or Israel",
+          "weight": 15
+        },
+        {
+          "domain": "Diplomatic",
+          "id": "dep",
+          "name": "New US embassy departure order in the region",
+          "weight": 15
+        },
+        {
+          "domain": "Maritime",
+          "id": "nav",
+          "name": "Military navigation warnings (Gulf / Red Sea)",
+          "weight": 10
+        },
+        {
+          "domain": "Markets",
+          "id": "oil",
+          "name": "Brent oil up 4%+ in a day",
+          "weight": 10
+        },
+        {
+          "domain": "Space",
+          "id": "sat",
+          "name": "Spy-satellite passes converging on Iran / Israel",
+          "weight": 5
+        },
+        {
+          "domain": "Markets",
+          "id": "def",
+          "name": "US defence stocks outperforming (5 days)",
+          "weight": 5
+        },
+        {
+          "domain": "Health",
+          "id": "masscas",
+          "name": "Mass casualty declarations in the region",
+          "weight": 5
+        },
+        {
+          "domain": "Undersea cables",
+          "id": "cable",
+          "name": "Vessels loitering over Red Sea cables",
+          "weight": 5
+        },
+        {
+          "domain": "Shipping",
+          "id": "redsea",
+          "name": "Ship traffic through Bab el-Mandeb down sharply",
+          "weight": 5
+        },
+        {
+          "domain": "Prediction markets",
+          "id": "pm",
+          "name": "Forecast markets jump on Iran conflict",
+          "weight": 10
+        }
+      ],
+      "why": "Before the 2024-25 Israel-Iran exchanges and US strikes, watchers saw US tanker surges toward Europe and the Gulf, embassy departure orders, regional GPS jamming, airspace closures and oil price jumps, often 1-3 days ahead."
+    },
+    {
+      "band": "Low",
+      "convergence": "No warning signs are showing. The strongest signs not yet showing: missile / live-fire navigation warnings near taiwan, gps jamming over the taiwan strait and internet disruption in taiwan.",
+      "domains": [],
+      "key": "taiwan",
+      "lit": [],
+      "name": "Taiwan Strait / South China Sea crisis",
+      "sa_impact": "Trade and fuel: most of Australia's refined fuel and many goods pass the South China Sea. A blockade would disrupt fuel, medicines and electronics within weeks; Australian forces could be drawn in.",
+      "score": 0,
+      "trend": "steady",
+      "unlit": [
+        {
+          "domain": "Maritime",
+          "id": "nav",
+          "name": "Missile / live-fire navigation warnings near Taiwan",
+          "weight": 20
+        },
+        {
+          "domain": "Electronic warfare",
+          "id": "gps",
+          "name": "GPS jamming over the Taiwan Strait",
+          "weight": 15
+        },
+        {
+          "domain": "Communications",
+          "id": "net",
+          "name": "Internet disruption in Taiwan",
+          "weight": 15
+        },
+        {
+          "domain": "Military air",
+          "id": "air",
+          "name": "Unusual military air activity near Taiwan",
+          "weight": 10
+        },
+        {
+          "domain": "Mobilisation",
+          "id": "mob",
+          "name": "Mobilisation / reservist reports (China or Taiwan)",
+          "weight": 15
+        },
+        {
+          "domain": "Military air",
+          "id": "lift",
+          "name": "Military airlift or RAAF surge",
+          "weight": 10
+        },
+        {
+          "domain": "Diplomatic",
+          "id": "dep",
+          "name": "New US embassy departure order (Taiwan / China)",
+          "weight": 10
+        },
+        {
+          "domain": "Space",
+          "id": "sat",
+          "name": "Spy-satellite passes converging on Taiwan",
+          "weight": 5
+        },
+        {
+          "domain": "State signalling",
+          "id": "signals",
+          "name": "Chinese war-preparation signalling",
+          "weight": 15
+        },
+        {
+          "domain": "Medical preparation",
+          "id": "blood",
+          "name": "Military blood drives / field hospitals (China / Taiwan)",
+          "weight": 10
+        },
+        {
+          "domain": "Markets",
+          "id": "def",
+          "name": "Defence stocks outperforming (US / Australia)",
+          "weight": 5
+        },
+        {
+          "domain": "Cyber",
+          "id": "cyber",
+          "name": "Chinese state hacking reports (Volt / Salt Typhoon)",
+          "weight": 10
+        },
+        {
+          "domain": "Undersea cables",
+          "id": "cable",
+          "name": "Chinese / HK vessels loitering over Taiwan's cables",
+          "weight": 10
+        },
+        {
+          "domain": "Undersea cables",
+          "id": "cablenews",
+          "name": "Taiwan undersea cable damage reported",
+          "weight": 10
+        },
+        {
+          "domain": "Shipping",
+          "id": "straits",
+          "name": "Ship traffic through Taiwan / Luzon Strait down sharply",
+          "weight": 15
+        },
+        {
+          "domain": "Prediction markets",
+          "id": "pm",
+          "name": "Forecast markets jump on China-Taiwan conflict",
+          "weight": 10
+        }
+      ],
+      "why": "China's large drills around Taiwan (2022, 2023, 2024, 2025) were announced through maritime navigation warnings, with GPS interference and coastguard surges; any real operation would be expected to add mobilisation reports and internet disruption."
+    },
+    {
+      "band": "Low",
+      "convergence": "No warning signs are showing. The strongest signs not yet showing: missile navigation warnings (korea / sea of japan), gps jamming over korea and unusual military air activity (korea / japan).",
+      "domains": [],
+      "key": "korea",
+      "lit": [],
+      "name": "Korean Peninsula conflict",
+      "sa_impact": "Indirect: market shock, Australian citizens in Korea and Japan, and US-allied commitments. Little direct physical risk to SA.",
+      "score": 0,
+      "trend": "steady",
+      "unlit": [
+        {
+          "domain": "Maritime",
+          "id": "nav",
+          "name": "Missile navigation warnings (Korea / Sea of Japan)",
+          "weight": 20
+        },
+        {
+          "domain": "Electronic warfare",
+          "id": "gps",
+          "name": "GPS jamming over Korea",
+          "weight": 20
+        },
+        {
+          "domain": "Military air",
+          "id": "air",
+          "name": "Unusual military air activity (Korea / Japan)",
+          "weight": 15
+        },
+        {
+          "domain": "Communications",
+          "id": "net",
+          "name": "Internet disruption in South Korea",
+          "weight": 10
+        },
+        {
+          "domain": "Mobilisation",
+          "id": "mob",
+          "name": "Mobilisation / reservist reports (Korea)",
+          "weight": 15
+        },
+        {
+          "domain": "Nuclear command",
+          "id": "nc3",
+          "name": "US nuclear command aircraft unusual",
+          "weight": 10
+        },
+        {
+          "domain": "Space",
+          "id": "sat",
+          "name": "Spy-satellite passes converging on Korea",
+          "weight": 10
+        },
+        {
+          "domain": "Prediction markets",
+          "id": "pm",
+          "name": "Forecast markets jump on Korea conflict",
+          "weight": 10
+        }
+      ],
+      "why": "North Korean missile launches are often preceded by navigation warnings; South Korea and Japan report GPS jamming from the North during tense periods."
+    },
+    {
+      "band": "Low",
+      "convergence": "Only one kind of sign is showing (state signalling). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and mobilisation / reservist reports (russia / nato).",
+      "domains": [
+        "State signalling"
+      ],
+      "key": "russia",
+      "lit": [
+        {
+          "detail": "Signal ahead of Putin, Trump and Xi Jinping meeting: “Doomsday radio” broadcasts “sinner” message",
+          "domain": "State signalling",
+          "id": "signals",
+          "name": "Russian signalling (Buzzer broadcasts, nuclear drills)",
+          "short": "Russian signalling",
+          "weight": 5
+        }
+      ],
+      "name": "Russia-NATO escalation",
+      "sa_impact": "Indirect: energy and market shock, cyber attacks that can spill over to Australian systems, and nuclear-risk rhetoric.",
+      "score": 5,
+      "trend": "steady",
+      "unlit": [
+        {
+          "domain": "Electronic warfare",
+          "id": "gps",
+          "name": "GPS jamming spike (Baltic / Black Sea)",
+          "weight": 15
+        },
+        {
+          "domain": "Military air",
+          "id": "air",
+          "name": "Unusual military air activity (Eastern Europe)",
+          "weight": 15
+        },
+        {
+          "domain": "Mobilisation",
+          "id": "mob",
+          "name": "Mobilisation / reservist reports (Russia / NATO)",
+          "weight": 15
+        },
+        {
+          "domain": "Communications",
+          "id": "net",
+          "name": "Internet disruption in Russia",
+          "weight": 10
+        },
+        {
+          "domain": "Nuclear command",
+          "id": "nc3",
+          "name": "US nuclear command aircraft unusual",
+          "weight": 15
+        },
+        {
+          "domain": "Diplomatic",
+          "id": "dep",
+          "name": "New US embassy departure order (Russia / Belarus / Ukraine region)",
+          "weight": 10
+        },
+        {
+          "domain": "Elite movement",
+          "id": "jets",
+          "name": "Private jets heading to retreat destinations",
+          "weight": 10
+        },
+        {
+          "domain": "Markets",
+          "id": "vix",
+          "name": "Market fear index above 30",
+          "weight": 10
+        },
+        {
+          "domain": "Medical preparation",
+          "id": "blood",
+          "name": "Military blood supplies / field hospitals (Russia)",
+          "weight": 10
+        },
+        {
+          "domain": "Markets",
+          "id": "def",
+          "name": "European defence stocks outperforming (5 days)",
+          "weight": 5
+        },
+        {
+          "domain": "Cyber",
+          "id": "cyber",
+          "name": "Russian wiper / Sandworm activity reports",
+          "weight": 10
+        },
+        {
+          "domain": "Undersea cables",
+          "id": "cable",
+          "name": "Russian / Chinese vessels loitering over Baltic cables",
+          "weight": 10
+        },
+        {
+          "domain": "Undersea cables",
+          "id": "cablenews",
+          "name": "Baltic undersea cable damage reported",
+          "weight": 10
+        },
+        {
+          "domain": "Prediction markets",
+          "id": "pm",
+          "name": "Forecast markets jump on Russia-NATO conflict",
+          "weight": 10
+        }
+      ],
+      "why": "Before February 2022: embassy departures, mobilisation reports, airspace closures and a surge in GPS jamming. Baltic and Black Sea jamming is now routine, so only spikes above normal count."
+    },
+    {
+      "band": "Low",
+      "convergence": "No warning signs are showing. The strongest signs not yet showing: us nuclear command aircraft unusual, private jets heading to retreat destinations and mobilisation reports (any major power).",
+      "domains": [],
+      "key": "nuclear",
+      "lit": [],
+      "name": "Nuclear use or alert",
+      "sa_impact": "Fallout risk to SA from a northern-hemisphere exchange is very low, but global trade, fuel and finance would be severely disrupted.",
+      "score": 0,
+      "trend": "steady",
+      "unlit": [
+        {
+          "domain": "Nuclear command",
+          "id": "nc3",
+          "name": "US nuclear command aircraft unusual",
+          "weight": 30
+        },
+        {
+          "domain": "Military air",
+          "id": "tankers",
+          "name": "Air-refuelling tanker surge",
+          "weight": 10
+        },
+        {
+          "domain": "Elite movement",
+          "id": "jets",
+          "name": "Private jets heading to retreat destinations",
+          "weight": 15
+        },
+        {
+          "domain": "Elite movement",
+          "id": "bizjets",
+          "name": "Surge of long-range private jets",
+          "weight": 10
+        },
+        {
+          "domain": "Markets",
+          "id": "vix",
+          "name": "Market fear index above 35",
+          "weight": 10
+        },
+        {
+          "domain": "Markets",
+          "id": "gold",
+          "name": "Gold up 4%+ in a day",
+          "weight": 10
+        },
+        {
+          "domain": "Mobilisation",
+          "id": "mob",
+          "name": "Mobilisation reports (any major power)",
+          "weight": 15
+        },
+        {
+          "domain": "Prediction markets",
+          "id": "pm",
+          "name": "Forecast markets jump on nuclear use",
+          "weight": 15
+        }
+      ],
+      "why": "Visible changes to US nuclear command aircraft (E-4B / E-6B), tanker surges, elite flight to remote retreats and market panic are the few public signals that would accompany a nuclear alert."
+    },
+    {
+      "band": "Low",
+      "convergence": "No warning signs are showing. The strongest signs not yet showing: phone / internet carrier outage, nationwide flight, power, network or payments halt in australia and gps degradation over sa or nsw.",
+      "domains": [],
+      "key": "ausinfra",
+      "lit": [],
+      "name": "Australian infrastructure disruption",
+      "sa_impact": "Direct: loss of phone, internet, EFTPOS and fuel pumps. Cash, fuel and a pre-agreed meeting point matter most in the first 24 hours.",
+      "score": 0,
+      "trend": "steady",
+      "unlit": [
+        {
+          "domain": "Communications",
+          "id": "tel",
+          "name": "Phone / internet carrier outage",
+          "weight": 30
+        },
+        {
+          "domain": "Communications",
+          "id": "tel2",
+          "name": "Two or more carriers down at once",
+          "weight": 20
+        },
+        {
+          "domain": "Electronic warfare",
+          "id": "gps",
+          "name": "GPS degradation over SA or NSW",
+          "weight": 25
+        },
+        {
+          "domain": "Cyber",
+          "id": "acsc",
+          "name": "New Australian cyber alert (ACSC)",
+          "weight": 15
+        },
+        {
+          "domain": "Mobilisation",
+          "id": "adf",
+          "name": "ADF reserves called out",
+          "weight": 10
+        },
+        {
+          "domain": "Health",
+          "id": "masscas",
+          "name": "Mass casualty / Code Brown declared in Australia",
+          "weight": 10
+        },
+        {
+          "domain": "Undersea cables",
+          "id": "cable",
+          "name": "Foreign vessel loitering over Australian cable corridors",
+          "weight": 20
+        },
+        {
+          "domain": "Undersea cables",
+          "id": "cablenews",
+          "name": "Undersea cable damage reported (Australia / Pacific)",
+          "weight": 10
+        },
+        {
+          "domain": "Shipping",
+          "id": "malacca",
+          "name": "Ship traffic through Malacca / Sunda / Lombok down sharply",
+          "weight": 10
+        },
+        {
+          "domain": "Power grid",
+          "id": "blackout",
+          "name": "Sudden fall in SA electricity demand (possible large blackout)",
+          "weight": 25
+        },
+        {
+          "domain": "National halt",
+          "id": "shock_au",
+          "name": "Nationwide flight, power, network or payments halt in Australia",
+          "weight": 30
+        }
+      ],
+      "why": "The 2023 Optus outage cut mobile, NBN, EFTPOS and some 000 calls nationwide for 12 hours. Hostile states pre-position in critical infrastructure; GPS jamming over Australia would be a new and serious sign."
+    },
+    {
+      "band": "Guarded",
+      "convergence": "Only one kind of sign is showing (health). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: unknown illness / pneumonia cluster reported, countries restricting medical supply exports and pandemic-response stocks outperforming (5 days).",
+      "domains": [
+        "Health"
+      ],
+      "key": "bio",
+      "lit": [
+        {
+          "detail": "Middle East respiratory syndrome (MERS) – Qatar",
+          "domain": "Health",
+          "id": "who",
+          "name": "WHO outbreak report with a high-concern pathogen (last 14 days)",
+          "short": "WHO outbreak report",
+          "weight": 15
+        },
+        {
+          "detail": "Family of Robb Elementary victim hope their experience inspires mass casualty preparedness at hospitals",
+          "domain": "Health",
+          "id": "masscas",
+          "name": "Mass casualty declarations (any country)",
+          "short": "Mass casualty event",
+          "weight": 5
+        }
+      ],
+      "name": "Pandemic, biological or chemical emergency",
+      "sa_impact": "Health system strain, possible lockdowns and border closures, and shortages of medicines and protective equipment, which Australia mostly imports.",
+      "score": 20,
+      "trend": "up",
+      "unlit": [
+        {
+          "domain": "Health",
+          "id": "illness",
+          "name": "Unknown illness / pneumonia cluster reported",
+          "weight": 20
+        },
+        {
+          "domain": "Trade",
+          "id": "exports",
+          "name": "Countries restricting medical supply exports",
+          "weight": 20
+        },
+        {
+          "domain": "Markets",
+          "id": "pharma",
+          "name": "Pandemic-response stocks outperforming (5 days)",
+          "weight": 20
+        },
+        {
+          "domain": "Trade",
+          "id": "shortage",
+          "name": "Australian medicine or PPE shortage reports",
+          "weight": 10
+        },
+        {
+          "domain": "Markets",
+          "id": "vix",
+          "name": "Market fear index above 30",
+          "weight": 10
+        },
+        {
+          "domain": "Chemical weapons",
+          "id": "chem",
+          "name": "Chemical / nerve-agent attack or mass poisoning reported",
+          "weight": 15
+        },
+        {
+          "domain": "Health",
+          "id": "dieoff",
+          "name": "Unexplained mass deaths or animal die-offs",
+          "weight": 10
+        },
+        {
+          "domain": "Hospitals",
+          "id": "ed",
+          "name": "Three or more Adelaide emergency departments 'very busy'",
+          "weight": 10
+        }
+      ],
+      "why": "Before COVID-19 (Dec 2019 - Feb 2020): reports of an unknown pneumonia cluster, WHO outbreak notices, mask and hazmat makers (Alpha Pro Tech, Lakeland) and vaccine developers (Moderna, Novavax) surging weeks before broad markets fell, and countries restricting exports of masks and medicines (Taiwan from 24 Jan 2020, then dozens more)."
+    },
+    {
+      "band": "Low",
+      "convergence": "Only one kind of sign is showing (australian incidents). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: sudden fall in sa electricity demand (possible large blackout), global cyber threat level raised (sans infocon not green) and several vpn / firewall flaws exploited this week.",
+      "domains": [
+        "Australian incidents"
+      ],
+      "key": "cyber",
+      "lit": [
+        {
+          "detail": "Australia's Bell Financial says some client data likely accessed in cyber incident",
+          "domain": "Australian incidents",
+          "id": "au",
+          "name": "Major Australian cyber incident reported",
+          "short": "Major Australian cyber incident reported",
+          "weight": 10
+        }
+      ],
+      "name": "Major cyber attack on Australia",
+      "sa_impact": "Banks, payments, hospitals, fuel distribution, telcos and the power grid all run on networks; a large attack can stop card payments and services for hours to days.",
+      "score": 10,
+      "trend": "steady",
+      "unlit": [
+        {
+          "domain": "Global threat level",
+          "id": "infocon",
+          "name": "Global cyber threat level raised (SANS Infocon not green)",
+          "weight": 20
+        },
+        {
+          "domain": "Exploited vulnerabilities",
+          "id": "kev",
+          "name": "Surge in newly exploited vulnerabilities (2x normal week)",
+          "weight": 10
+        },
+        {
+          "domain": "Edge-device exploitation",
+          "id": "edge",
+          "name": "Several VPN / firewall flaws exploited this week",
+          "weight": 15
+        },
+        {
+          "domain": "Infrastructure probing",
+          "id": "ics",
+          "name": "Spike in scanning of industrial-control systems",
+          "weight": 15
+        },
+        {
+          "domain": "Ransomware",
+          "id": "ransom",
+          "name": "Australian ransomware victims above normal",
+          "weight": 10
+        },
+        {
+          "domain": "Official alerts",
+          "id": "acsc",
+          "name": "New Australian cyber alert (ACSC)",
+          "weight": 10
+        },
+        {
+          "domain": "State actors",
+          "id": "state",
+          "name": "Reports of state hackers / pre-positioning / wipers",
+          "weight": 15
+        },
+        {
+          "domain": "Communications",
+          "id": "tel",
+          "name": "Phone / internet carrier outage",
+          "weight": 10
+        },
+        {
+          "domain": "Power grid",
+          "id": "blackout",
+          "name": "Sudden fall in SA electricity demand (possible large blackout)",
+          "weight": 25
+        },
+        {
+          "domain": "Allied infrastructure",
+          "id": "shock_ally",
+          "name": "Nationwide shutdown in an allied country (flights, power, networks, payments)",
+          "weight": 15
+        }
+      ],
+      "why": "Large attacks are usually preceded by quieter steps: a surge in newly exploited flaws in VPNs and firewalls (how state groups like Volt Typhoon get in), scanning of industrial-control systems, a rise in ransomware victims in the target country, and official warnings. Before Russia's 2022 invasion, wiper malware hit Ukraine a day ahead; Chinese groups have been found pre-positioned in US and allied infrastructure."
+    },
+    {
+      "band": "Elevated",
+      "convergence": "Signs are converging across 4 separate areas (ai-enabled hacking, cloud services, fraud waves and markets). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: a Chinese state-sponsored group used an AI agent to carry out 80-90% of an attack on about 30 organisations, at thousands of requests per second. A fake AI image of a Pentagon explosion briefly moved US markets in May 2023, and a deepfake video call of a CFO tricked a company into paying US$25 million in 2024. The likely signature of an AI attack is breadth and speed: many unrelated systems and vendors hit at once, synthetic media of officials, and shocks with no clear human cause. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, deepfakes of leaders or fake official alerts and market fear index jumps 25%+ in a day.",
+      "domains": [
+        "AI-enabled hacking",
+        "Cloud services",
+        "Fraud waves",
+        "Markets"
+      ],
+      "key": "ai",
+      "lit": [
+        {
+          "detail": "Cybercriminals Ramp Up Interest in AI-Powered Hacking Tools",
+          "domain": "AI-enabled hacking",
+          "id": "aihack",
+          "name": "Reports of AI-driven hacking campaigns",
+          "short": "Reports of AI-driven hacking campaigns",
+          "weight": 15
+        },
+        {
+          "detail": "800V DC circuit breaker market for data centers to hit $2.11B by 2036 with 41% CAGR driven by AI infrastructure growth",
+          "domain": "Markets",
+          "id": "flash",
+          "name": "Flash crash or exchange trading halt",
+          "short": "Flash crash or exchange trading halt",
+          "weight": 10
+        },
+        {
+          "detail": "Microsoft 365 outage: Global cyber insured losses estimated at up to $700 mn",
+          "domain": "Cloud services",
+          "id": "cloud",
+          "name": "Major cloud or AI service outage",
+          "short": "Major cloud or AI service outage",
+          "weight": 10
+        },
+        {
+          "detail": "Sumsub finds deepfake attacks rising as identity fraud declines in Europe",
+          "domain": "Fraud waves",
+          "id": "scams",
+          "name": "Surge in AI voice-clone / deepfake scams in Australia",
+          "short": "Surge in AI voice-clone / deepfake…",
+          "weight": 5
+        }
+      ],
+      "name": "AI-enabled attack (non-traditional)",
+      "sa_impact": "Not bombs but disruption: hacking at machine speed across banks, telcos, hospitals and the grid at once; fake videos or alerts from leaders causing panic buying or bank runs; or automated market and fraud shocks. Effects would be outages, payment failures and confusion about what is real.",
+      "score": 40,
+      "trend": "steady",
+      "unlit": [
+        {
+          "domain": "Mass exploitation",
+          "id": "breadth",
+          "name": "Exploited flaws across unusually many vendors at once",
+          "weight": 15
+        },
+        {
+          "domain": "Synthetic media",
+          "id": "deepfake",
+          "name": "Deepfakes of leaders or fake official alerts",
+          "weight": 15
+        },
+        {
+          "domain": "Markets",
+          "id": "vix",
+          "name": "Market fear index jumps 25%+ in a day",
+          "weight": 10
+        },
+        {
+          "domain": "Communications",
+          "id": "tel",
+          "name": "Phone / internet carrier outage",
+          "weight": 10
+        },
+        {
+          "domain": "Edge-device exploitation",
+          "id": "edge",
+          "name": "Several VPN / firewall flaws exploited this week",
+          "weight": 10
+        },
+        {
+          "domain": "Allied infrastructure",
+          "id": "shock_ally",
+          "name": "Nationwide shutdown in an allied country, cause unknown",
+          "weight": 10
+        }
+      ],
+      "why": "In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: a Chinese state-sponsored group used an AI agent to carry out 80-90% of an attack on about 30 organisations, at thousands of requests per second. A fake AI image of a Pentagon explosion briefly moved US markets in May 2023, and a deepfake video call of a CFO tricked a company into paying US$25 million in 2024. The likely signature of an AI attack is breadth and speed: many unrelated systems and vendors hit at once, synthetic media of officials, and shocks with no clear human cause."
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+ "updatedAt": "2026-11-12T18:32:00+10:30",
+ "nextCheck": "2026-11-13T04:39:00+10:30",
+ "level": 4,
+ "levelName": "High",
+ "trend": "up",
+ "headline": "SIMULATION: Major cyber attack on Australia.",
+ "summary": "THIS IS A SIMULATION - NOTHING HAS HAPPENED. In this scenario, a major cyber attack is under way against Australia and the Australian Cyber Security Centre has issued a national alert. Banking, payments and some phone services may be disrupted. Level 4 means act on the family plan now.",
+ "actions": [
+  "Get some cash out while ATMs are working",
+  "Charge phones, power banks and radios",
+  "Ignore texts, emails and calls asking you to log in or pay"
+ ],
+ "categories": [
+  {"key": "geo", "name": "Geopolitical & conflict", "score": 2.0, "trend": "steady", "confidence": "med", "summary": "No change.", "sources": []},
+  {"key": "nuclear", "name": "Nuclear & fallout", "score": 1.0, "trend": "steady", "confidence": "med", "summary": "No change.", "sources": []},
+  {"key": "cyber", "name": "Cyber & infrastructure", "score": 4.5, "trend": "up", "confidence": "high", "summary": "SIMULATION. Major cyber attack on Australia; national alert from the Australian Cyber Security Centre.", "sources": []},
+  {"key": "bio", "name": "Pandemic & biological", "score": 1.5, "trend": "steady", "confidence": "high", "summary": "No change.", "sources": []},
+  {"key": "nature", "name": "Natural hazards", "score": 2.0, "trend": "steady", "confidence": "high", "summary": "No change.", "sources": []},
+  {"key": "supply", "name": "Fuel, food & supply", "score": 2.0, "trend": "steady", "confidence": "med", "summary": "No change.", "sources": []},
+  {"key": "markets", "name": "Markets & finance", "score": 2.0, "trend": "steady", "confidence": "high", "summary": "No change.", "sources": []}
+ ],
+ "confirmed": [
+  {
+   "eventKey": "sim-cyber-attack",
+   "title": "SIMULATION: Major cyber attack on Australia",
+   "impact": "Simulated: national cyber alert issued; banking, payments and some phone services may be disrupted.",
+   "date": "2026-11-12",
+   "url": ""
+  }
+ ],
+ "concerns": [
+  {
+   "key": "cyber",
+   "title": "SIMULATION: Cyber attack",
+   "likelihood": 85,
+   "trend": "up",
+   "drivers": [
+    "SIMULATED: The Australian Cyber Security Centre has issued a national alert about a major cyber attack."
+   ],
+   "scenarios": [
+    {"name": "Contained within a day", "likelihood": 50, "sa_impact": "Short outages to some websites and apps."},
+    {"name": "Banking and payments down for days", "likelihood": 35, "sa_impact": "Cards and EFTPOS unreliable; cash needed for food and fuel."},
+    {"name": "Power or phone networks hit", "likelihood": 15, "sa_impact": "Power or mobile outages in parts of SA."}
+   ],
+   "actions": [
+    {"action": "Get some cash out while ATMs are working", "reason": "If card payments go down, shops and servos may only take cash."},
+    {"action": "Charge phones, power banks and radios", "reason": "If phone or internet services fail, ABC Radio Adelaide 891 AM will still carry official updates."},
+    {"action": "Ignore texts, emails and calls asking you to log in or pay", "reason": "Scammers use big cyber attacks as cover; banks and government will not ask for passwords."}
+   ]
+  }
+ ]
+}

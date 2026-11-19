@@ -1,0 +1,155 @@
+{
+ "updatedAt": "2026-11-11T14:20:00+10:30",
+ "nextCheck": "2026-11-11T16:39:00+10:30",
+ "level": 4,
+ "levelName": "High",
+ "trend": "up",
+ "headline": "SIMULATION: Bushfire Emergency Warning near Williamstown in the Adelaide Hills on a Catastrophic fire danger day.",
+ "summary": "THIS IS A SIMULATION - NOTHING HAS HAPPENED. In this scenario, a bushfire is burning out of control near Williamstown and Mount Crawford Forest on a Catastrophic fire danger day, with a CFS Emergency Warning in place. Power is off to about 2,000 homes and roads around the fire are closed. Follow CFS advice on alert.sa.gov.au and ABC Radio Adelaide 891 AM.",
+ "actions": [
+  "Follow CFS advice on alert.sa.gov.au and ABC 891 AM",
+  "If you are near the fire, act on your bushfire plan now",
+  "Keep away from the Hills and keep roads clear"
+ ],
+ "categories": [
+  {
+   "key": "geo",
+   "name": "Geopolitical & conflict",
+   "score": 2.0,
+   "trend": "steady",
+   "confidence": "med",
+   "summary": "No change from the real assessment.",
+   "sources": []
+  },
+  {
+   "key": "nuclear",
+   "name": "Nuclear & fallout",
+   "score": 1.0,
+   "trend": "steady",
+   "confidence": "med",
+   "summary": "No change.",
+   "sources": []
+  },
+  {
+   "key": "cyber",
+   "name": "Cyber & infrastructure",
+   "score": 3.2,
+   "trend": "up",
+   "confidence": "high",
+   "summary": "SIMULATION. Power cut to about 2,000 homes around Williamstown, Kersbrook and Lyndoch as lines are de-energised for firefighting; mobile coverage patchy.",
+   "sources": []
+  },
+  {
+   "key": "bio",
+   "name": "Pandemic & biological",
+   "score": 1.5,
+   "trend": "steady",
+   "confidence": "high",
+   "summary": "No change.",
+   "sources": []
+  },
+  {
+   "key": "nature",
+   "name": "Natural hazards",
+   "score": 4.6,
+   "trend": "up",
+   "confidence": "high",
+   "summary": "SIMULATION. Bushfire burning out of control near Williamstown in the Mount Lofty Ranges; CFS Emergency Warning; Catastrophic fire danger and a Total Fire Ban.",
+   "sources": []
+  },
+  {
+   "key": "supply",
+   "name": "Fuel, food & supply",
+   "score": 2.0,
+   "trend": "steady",
+   "confidence": "med",
+   "summary": "No change.",
+   "sources": []
+  },
+  {
+   "key": "markets",
+   "name": "Markets & finance",
+   "score": 2.0,
+   "trend": "steady",
+   "confidence": "high",
+   "summary": "No change.",
+   "sources": []
+  }
+ ],
+ "confirmed": [
+  {
+   "eventKey": "sim-williamstown-fire",
+   "title": "SIMULATION: Bushfire Emergency Warning - Williamstown",
+   "impact": "Simulated: homes under threat; evacuations around Williamstown and Kersbrook; roads closed; power off to ~2,000 homes.",
+   "date": "2026-11-11",
+   "url": ""
+  }
+ ],
+ "concerns": [
+  {
+   "key": "local",
+   "title": "SIMULATION: Bushfire at Williamstown (Adelaide Hills)",
+   "likelihood": 85,
+   "trend": "up",
+   "drivers": [
+    "SIMULATED: CFS Emergency Warning for a bushfire near Williamstown and Mount Crawford Forest, moving south-east towards Kersbrook.",
+    "Catastrophic fire danger in the Mount Lofty Ranges with hot north-westerly winds; a south-westerly change is expected this evening.",
+    "Roads around Williamstown closed; power off to about 2,000 homes."
+   ],
+   "scenarios": [
+    {
+     "name": "Fire contained before the wind change",
+     "likelihood": 40,
+     "sa_impact": "Smoke over the northern suburbs; Hills roads closed for the day."
+    },
+    {
+     "name": "Wind change pushes fire towards Kersbrook and Mount Pleasant",
+     "likelihood": 45,
+     "sa_impact": "Evacuations in more Hills towns; wider power cuts; heavy smoke across Adelaide."
+    },
+    {
+     "name": "Fire reaches the urban fringe",
+     "likelihood": 15,
+     "sa_impact": "Emergency warnings for outer north-eastern suburbs."
+    }
+   ],
+   "actions": [
+    {
+     "action": "If you are in or near Williamstown, Kersbrook or Lyndoch, leave now if your plan says leave",
+     "reason": "On Catastrophic days the CFS says homes are not built to withstand fire; leaving early is the safest option."
+    },
+    {
+     "action": "Keep away from the Hills and keep roads clear",
+     "reason": "Fire trucks need the roads, and conditions can change fast with the wind change."
+    }
+   ]
+  },
+  {
+   "key": "ausinfra",
+   "title": "SIMULATION: Power and phone outages in the Hills",
+   "likelihood": 40,
+   "trend": "up",
+   "drivers": [
+    "SIMULATED: SA Power Networks has cut power to lines in the fire area; some mobile towers on battery backup."
+   ],
+   "scenarios": [
+    {
+     "name": "Outages limited to the fire area",
+     "likelihood": 75,
+     "sa_impact": "A few thousand homes without power for a day."
+    },
+    {
+     "name": "Wider outages as more lines are cut",
+     "likelihood": 25,
+     "sa_impact": "Outages spreading into the northern Hills and Barossa."
+    }
+   ],
+   "actions": [
+    {
+     "action": "Charge phones and power banks now",
+     "reason": "Mobile towers in fire areas run on batteries that last hours, not days."
+    }
+   ]
+  }
+ ]
+}
