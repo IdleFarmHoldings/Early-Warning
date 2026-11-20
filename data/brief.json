@@ -264,16 +264,16 @@
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output=",
-    "satellites": "HTTPError: HTTP Error 403: Forbidden"
+    "satellites": "TimeoutError: The read operation timed out"
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-20T17:02:00Z",
+  "generated_at": "2026-11-20T17:09:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 20,
-    "Black Sea": 18,
-    "Israel & Eastern Mediterranean": 7,
+    "Baltic / Kaliningrad": 17,
+    "Black Sea": 10,
+    "Israel & Eastern Mediterranean": 4,
     "Korea": null,
-    "Persian Gulf": 33,
+    "Persian Gulf": 26,
     "South Australia": 0,
     "Sydney / NSW": null,
     "Taiwan Strait": 0
@@ -313,15 +313,6 @@
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
-        "New Chinese app allows anyone with a phone to hack sites"
-      ],
-      "severity": "Info",
-      "target": "New Chinese"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
         "Bell Financial Group announces cyberattack in Australia"
       ],
       "severity": "Info",
@@ -335,6 +326,15 @@
       ],
       "severity": "Info",
       "target": "Waffle'"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "New Chinese app allows anyone with a phone to hack sites"
+      ],
+      "severity": "Info",
+      "target": "New Chinese"
     },
     {
       "attack_reported": true,
@@ -467,10 +467,10 @@
   "internet_drop_pct": {
     "China": 0.0,
     "Iran": 0.0,
-    "Israel": 0.5,
-    "Russia": 1.0,
-    "South Korea": 0.1,
-    "Taiwan": 0.7
+    "Israel": 0.3,
+    "Russia": 1.1,
+    "South Korea": 0.2,
+    "Taiwan": 0.9
   },
   "local_sa": {
     "bom": [
@@ -486,16 +486,16 @@
       "Mount Lofty Ranges": "Moderate / Moderate"
     },
     "fire_danger_ok": true,
-    "fires_active": 5,
+    "fires_active": 4,
     "fuel": {
       "brent_aud": 133.6,
       "change_pct": -5.6,
       "pump_cents": -5,
       "week_ago_aud": 141.5
     },
-    "grid_demand_fall_pct": 0.9,
-    "grid_demand_mw": 1299,
-    "grid_demand_usual_mw": 1269,
+    "grid_demand_fall_pct": 1.5,
+    "grid_demand_mw": 1291,
+    "grid_demand_usual_mw": 1261,
     "grid_lor_level": 0,
     "nearby_incidents": [
       {
@@ -556,16 +556,16 @@
       "price": 0.6638
     },
     "Brent oil": {
-      "change_pct": -3.42,
-      "price": 88.83
+      "change_pct": -3.44,
+      "price": 88.82
     },
     "Gold": {
-      "change_pct": -3.94,
-      "price": 3540.2
+      "change_pct": -3.82,
+      "price": 3544.7
     },
     "VIX": {
-      "change_pct": 11.64,
-      "price": 31.75
+      "change_pct": 10.06,
+      "price": 31.3
     }
   },
   "national_shocks": {
@@ -580,10 +580,10 @@
         "country": "United States",
         "headlines": [
           {
-            "at": "2026-11-20T14:51:26Z",
-            "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBOQVFSTk14Uzg4b2VveUVYemN4RFVvUm85ZnRpYS1SN0hndENWb1NSZXVtYVF6ZlFiajFxYjVjSlAtZzlsbzk2UnFTT241dk52Um1FeEJWSmRrWXMxay1KNEVUcno3SHd2czlzSg?oc=5",
-            "pub": "Case Western Reserve University",
-            "title": "FAA issues nationwide ground stop"
+            "at": "2026-11-20T14:52:51Z",
+            "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPS1lDWmpyendldk0xZVAtZlFfeWlDLUpqN1pyZHVDMkhSZzdTNTBkOHBZcGZzVGhDTXY1VmpXeTRSaldQRlhFVGlWREU0WmUwV2VFTlpRbjFnWV9nTk9SZHJoelVNeXBBWThIWmI2VmkteTJWOUxzcmk3VVE0blJqc2QxOFdMWFVrZWoyS1BRdHFNMjNJWVJaRDNkUkQtQURXR2hteUF4NUJVMnl3ellFTlEtVmZyTjRxMXVHZjV3?oc=5",
+            "pub": "Ars Technica",
+            "title": "US will soon announce root cause behind FAA nationwide ground stop"
           },
           {
             "at": "2026-11-20T14:24:39Z",
@@ -592,23 +592,21 @@
             "title": "What Does the FAA’s November 13 Nationwide Ground Stop Mean for Uncrewed Aviation?"
           },
           {
-            "at": "2026-11-20T14:52:51Z",
-            "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPS1lDWmpyendldk0xZVAtZlFfeWlDLUpqN1pyZHVDMkhSZzdTNTBkOHBZcGZzVGhDTXY1VmpXeTRSaldQRlhFVGlWREU0WmUwV2VFTlpRbjFnWV9nTk9SZHJoelVNeXBBWThIWmI2VmkteTJWOUxzcmk3VVE0blJqc2QxOFdMWFVrZWoyS1BRdHFNMjNJWVJaRDNkUkQtQURXR2hteUF4NUJVMnl3ellFTlEtVmZyTjRxMXVHZjV3?oc=5",
-            "pub": "Ars Technica",
-            "title": "US will soon announce root cause behind FAA nationwide ground stop"
+            "at": "2026-11-20T14:51:26Z",
+            "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBOQVFSTk14Uzg4b2VveUVYemN4RFVvUm85ZnRpYS1SN0hndENWb1NSZXVtYVF6ZlFiajFxYjVjSlAtZzlsbzk2UnFTT241dk52Um1FeEJWSmRrWXMxay1KNEVUcno3SHd2czlzSg?oc=5",
+            "pub": "Case Western Reserve University",
+            "title": "FAA issues nationwide ground stop"
           }
         ],
         "level": "Possible",
         "sector": "aviation",
         "signals": {
-          "news": "3 outlets: FAA issues nationwide ground stop"
+          "news": "3 outlets: US will soon announce root cause behind FAA nationwide ground stop"
         }
       }
     ],
     "tracking_glitch": false,
-    "traffic_not_normal": {
-      "AE": "DOWN"
-    }
+    "traffic_not_normal": {}
   },
   "nc3": "normal",
   "news_watch": {
@@ -629,12 +627,8 @@
     ],
     "bank_outage": [
       "Major credit card companies hit in cyber attack - News24",
-      "Wall Street tumbles to its longest losing streak since 2024 as AI stocks slide - CommBank",
-      "Did Banks Get Hacked? Visa, Mastercard, Chase Confirm Vendor Cyberattack - Forbes"
-    ],
-    "blood": [
-      "It's not just supermarkets: How fridge hacks expose stark health care risks - Axios",
-      "Senior Lieutenant General Le Quang Dao visits Department of Military Training and School Management - en.qdnd.vn"
+      "Did Banks Get Hacked? Visa, Mastercard, Chase Confirm Vendor Cyberattack - Forbes",
+      "Wall Street tumbles to its longest losing streak since 2024 as AI stocks slide - CommBank"
     ],
     "cables": [
       "The Multifunctional Seabed - Just Security",
@@ -644,7 +638,7 @@
     "chem": [
       "The Evidence of Chemical Weapons Use in Sudan Is Still Mounting: The World Cannot Afford to Look Away - Counterpunch",
       "Trump Warns Tehran After 'Indications of Chemical Weapons' - الحرة",
-      "Fluffy rabbits, dark past draw tourists to Japan island - The Straits Times"
+      "Germany pledges €1.4 million to support OPCW work in Syria - سانا"
     ],
     "cloud": [
       "Why Did Anthropic’s IPO Fail To Rescue The KOSPI? - Disruption Banking",
@@ -662,9 +656,9 @@
       "Cyberattack tactics are outpacing what renewal forms ask - Insurance Business"
     ],
     "cyber_ot": [
-      "Who is hacking Europe’s supermarket fridges and freezers, and why? - The Guardian",
-      "Shop freezers in seven European countries hit by cyber-attack - BBC",
-      "Tens of thousands of UK fridges secured from hackers in secret nationwide operation - BBC"
+      "Tens of thousands of UK fridges secured from hackers in secret nationwide operation - BBC",
+      "Thousands of UK fridges protected from hackers in secret operation - London Evening Standard",
+      "Shop freezers in seven European countries hit by cyber-attack - BBC"
     ],
     "cyber_state": [
       "ESET Research: Sandworm behind cyberattack on Poland’s power grid in late 2025 - We Live Security",
@@ -678,21 +672,20 @@
     ],
     "deepfake": [
       "Scottish Greens challenge SNP government’s relationship with big tech after First Minister’s apology over AI slop video - Scottish Greens",
-      "Who owns AI-generated work? Copyright rules in the US, UK and EU - CEO경제신문",
-      "TikTok launches tool to help public figures detect deepfakes globally - The Straits Times"
+      "TikTok launches tool to help public figures detect deepfakes globally - Free Malaysia Today",
+      "TikTok Launches Global Deepfake Detection Tool For Public Figures - BusinessToday Malaysia"
     ],
     "dieoff": [
       "Kenya investigates mysterious deaths of seven hippos - Galaxy Television"
     ],
     "flash": [
-      "Carma Limited Enters Trading Halt Pending Material Financier Announcement - Kalkine",
+      "Metal Powder Works Enters Trading Halt Ahead of Capital Raise Announcement - Kalkine",
       "Bunker Hill Silver TSX:BNKR Enters the Spotlight as Trading Halt Signals Pending News (TSX:BNKR) - kalkine.ca",
-      "Metal Powder Works Enters Trading Halt Ahead of Capital Raise Announcement - Kalkine"
+      "Rincon Resources Enters Trading Halt Pending Material Exploration Results at Telfer South Project - Kalkine"
     ],
     "fuel_au": [
       "Honda Avancier 2027: new hybrid large SUV targets Santa Fe and Kluger - Chasing Cars",
-      "Oil Supply Shock to Worsen as Inventories Fall Further Even if Conflict Ends - EnergyNow.com",
-      "No route cuts for Fiji Airways despite global fuel hikes - FBC News"
+      "Oil Supply Shock to Worsen as Inventories Fall Further Even if Conflict Ends - EnergyNow.com"
     ],
     "illness": [
       "Mystery illness causes mass hospitalisation of runners - The Nightly",
@@ -701,13 +694,13 @@
     ],
     "masscas": [
       "Family of Robb Elementary victim hope their experience inspires mass casualty preparedness at hospitals - KXAN Austin",
-      "Scoping Review Maps Decade of Patient Safety and Healthcare Quality Research in Israel - Bioengineer.org",
+      "Melania Trump marks world premiere of Prime Video docuseries - The Hill",
       "Bomb hoax scenario tests multi-agency disaster preparedness ahead of Hornbill Festival - Nagaland Tribune"
     ],
     "mobilisation": [
-      "Iraq reaches compromise with Kataib Hezbollah over armed group’s stronghold - Al Jazeera",
       "Delivered, \"processed\" by the Military Medical Commission, mobilized: the court explained how to properly appeal such a draft - Судово-юридична газета",
-      "Baghdad orders 'joint' military deployment in Jurf al-Sakhar after Kataib Hezbollah refuses to withdraw - thecradle.co"
+      "Iraq reaches compromise with Kataib Hezbollah over armed group’s stronghold - Al Jazeera",
+      "The Territorial Recruitment Center Mobilized a Man with a Certificate of Unfitness, but the Military Unit Submitted Someone Else's Order to the Court - Судово-юридична газета"
     ],
     "national_outage": [
       "Properties in eight suburbs plunged into darkness as power is lost - Bendigo Advertiser",
@@ -720,9 +713,9 @@
       "Telstra mobile outage disrupts services across Australia - Australian Cyber Security Magazine"
     ],
     "reservists": [
-      "Britain sanctions Israeli aid-blocking group and settlement construction companies - South African Jewish Report",
       "Left the US Army in the last 8 years? You may still be on the list of veterans who can be recalled: Here’s how to check - El Cronista",
-      "Armenia: 'New Concern' Over Criminal Prosecutions Of Conscientious Objector Reservists - Analysis - Eurasia Review"
+      "Armenia: 'New Concern' Over Criminal Prosecutions Of Conscientious Objector Reservists - Analysis - Eurasia Review",
+      "Contractors called up for £500m retrofit framework - Construction Enquirer"
     ],
     "sapn": [
       "South Australia cuts rooftop solar after storm sparks power outages - pv magazine Australia",
@@ -1121,7 +1114,7 @@
       "key": "russia",
       "lit": [
         {
-          "detail": "VIX at 31.75",
+          "detail": "VIX at 31.3",
           "name": "Market fear index above 30"
         }
       ],
@@ -1162,7 +1155,7 @@
           "name": "Mass casualty declarations (any country)"
         },
         {
-          "detail": "VIX at 31.75",
+          "detail": "VIX at 31.3",
           "name": "Market fear index above 30"
         }
       ],
@@ -1204,18 +1197,18 @@
         }
       ],
       "score": 20,
-      "trend": "down"
+      "trend": "steady"
     }
   ],
   "sectors_relative_5d": {
     "defence_au": -4.15,
     "defence_eu": 1.27,
-    "defence_us": 3.28,
-    "pandemic": -3.51
+    "defence_us": 3.09,
+    "pandemic": -3.47
   },
   "tankers": "normal",
   "telecom_drop_pct": {
-    "Aussie Broadband": 0.6,
+    "Aussie Broadband": 0.7,
     "Optus": 0.0,
     "TPG": 0.4,
     "Telstra": 0.7,
