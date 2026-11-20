@@ -1,7 +1,8 @@
 name: Collector
 
 # GitHub's free scheduler often runs only about once an hour, so each run keeps working for ~50 minutes:
-# a full check every 15 minutes, and a check of alerts/outbox every minute in between.
+# a full check every 15 minutes, and a check of alerts/outbox every minute in between (and, inside run.py,
+# every minute during a full check too, so an alert from the analysis is never held up for long).
 #
 # Code and pages live on main. Everything the collector writes (data/, state/, alerts/) lives on the
 # live-data branch, checked out into _data/, so main's history only shows real changes and GitHub Pages

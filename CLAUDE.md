@@ -8,7 +8,7 @@ This repo is public: never put the family's town, suburb, home coordinates or nt
 
 | Part | Where | What it does |
 |---|---|---|
-| Collector | `collector/run.py`, GitHub Actions `collector.yml` | Every 15 min: polls feeds, applies rules, pushes alerts to ntfy, writes data. Each run loops ~50 min and checks the outbox every minute. |
+| Collector | `collector/run.py`, GitHub Actions `collector.yml` | Every 15 min: polls feeds, applies rules, pushes alerts to ntfy, writes data. Each run loops ~50 min and checks the outbox every minute, also during a full check (a watcher thread in `run.py`). |
 | Watchdog | `collector/watchdog.py`, `watchdog.yml` | Every 30 min: restarts a stalled collector, alerts if data is over 2 h old. |
 | Analysis | Scheduled Claude task "Early warning analysis" (04:39 and 16:39 Adelaide, Opus 5.5) | Reads `data/brief.json`, searches the news, updates the board and `data/status.json`, writes alerts to `alerts/outbox/`. |
 | Scorecard | Scheduled Claude task "Early warning monthly scorecard" | Judges last month's alerts into `data/scorecard.json`. |

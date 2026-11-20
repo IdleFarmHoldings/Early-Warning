@@ -7,7 +7,10 @@ import time
 from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
 import json
+import os
 import re
+import subprocess
+import threading
 import urllib.parse
 import sys
 from datetime import timedelta
@@ -72,12 +75,25 @@ def send(alert, dry_run):
     return sent
 
 
+_RELAY_LOCK = threading.Lock()  # the outbox watcher and the end-of-check relay never deliver at the same time
+
+
 def relay_outbox(now, dry_run):
     """Alerts written by the Claude analysis run land in alerts/outbox/*.json; push them and archive."""
+    with _RELAY_LOCK:
+        return _relay_all(now, dry_run)
+
+
+def _relay_all(now, dry_run):
     out = []
     outbox, sent_dir = DATA_ROOT / "alerts" / "outbox", DATA_ROOT / "alerts" / "sent"
     sent_dir.mkdir(parents=True, exist_ok=True)
     for p in sorted(outbox.glob("*.json")):
+        if (sent_dir / p.name).exists() or (sent_dir / (p.stem + ".invalid.json")).exists():
+            # Already handled: a copy came back when the data branch was merged. Never send it twice.
+            print(f"outbox: {p.name} was already handled; removed the leftover copy")
+            p.unlink()
+            continue
         try:
             a = _relay_one(p, sent_dir, now, dry_run)
         except Exception as e:  # noqa: BLE001 - one bad file must never stop the collector or the other alerts
@@ -163,6 +179,74 @@ def queue_retry(alert, now):
         "priority": alert.get("priority", 3), "tags": alert.get("tags") or ["memo"], "source": "collector",
         "first_failed_at": iso(now)}, indent=2) + "\n")
     return p
+
+
+WATCH_SECONDS = 60
+
+
+def _git(*args, timeout=60):
+    return subprocess.run(["git", "-C", str(DATA_ROOT), *args], capture_output=True, timeout=timeout)
+
+
+def fetch_new_outbox():
+    """Copy alert files that reached the live-data branch after this check started into the local outbox.
+    Only those files are written, so the rest of the working copy (which the full check is still writing) is
+    left alone. Returns how many were copied."""
+    if _git("fetch", "-q", "origin", "live-data").returncode:
+        return 0
+    ls = _git("ls-tree", "--name-only", "FETCH_HEAD", "alerts/outbox/", timeout=30)
+    sent_dir, n = DATA_ROOT / "alerts" / "sent", 0
+    for path in ls.stdout.decode().split():
+        name = Path(path).name
+        local = DATA_ROOT / "alerts" / "outbox" / name
+        if (not name.endswith(".json") or local.exists() or (sent_dir / name).exists()
+                or (sent_dir / (local.stem + ".invalid.json")).exists()):
+            continue
+        blob = _git("show", f"FETCH_HEAD:{path}", timeout=30)
+        if blob.returncode:
+            continue
+        local.parent.mkdir(parents=True, exist_ok=True)
+        tmp = local.with_name(name + ".tmp")
+        tmp.write_bytes(blob.stdout)
+        tmp.replace(local)  # appears whole, never half-written
+        n += 1
+    return n
+
+
+def watch_outbox(stop, dry_run, out):
+    """Runs beside the full check (which takes several minutes): every minute, deliver alerts that the analysis
+    or the collector has put in the outbox, so they are not held up until the check ends."""
+    while True:
+        try:
+            fetch_new_outbox()
+            if any((DATA_ROOT / "alerts" / "outbox").glob("*.json")):
+                out += relay_outbox(now_utc().replace(second=0, microsecond=0), dry_run)
+        except Exception as e:  # noqa: BLE001 - the watcher must never stop the check
+            print(f"outbox watcher: {type(e).__name__}: {e}")
+        if stop.wait(WATCH_SECONDS):
+            return
+
+
+def start_outbox_watch(dry_run):
+    """Only in the workflow, where the live data is its own git checkout (EW_DATA); never on a local main."""
+    if dry_run or DATA_ROOT == ROOT or not (DATA_ROOT / ".git").exists() or os.environ.get("EW_OUTBOX_WATCH") == "0":
+        return None
+    stop, out = threading.Event(), []
+    t = threading.Thread(target=watch_outbox, args=(stop, dry_run, out), daemon=True)
+    t.start()
+    return stop, t, out
+
+
+def stop_outbox_watch(watch):
+    """Stop the watcher and return the alerts it delivered."""
+    if not watch:
+        return []
+    stop, t, out = watch
+    stop.set()
+    t.join(timeout=150)
+    if t.is_alive():
+        print("outbox watcher did not stop in time")
+    return list(out)
 
 
 def summarise(results, health, anomalies, now):
@@ -484,6 +568,7 @@ def main():
         relay_only(now, args.dry_run)
         return
 
+    watch = start_outbox_watch(args.dry_run)
     state = load_json("state/state.json", {})
     first_run = not state.get("bootstrapped")
     series = load_series(now)
@@ -642,11 +727,12 @@ def main():
     save_json("data/patterns.json", precursors.learn_patterns(journal, now))
     save_json("data/analytics.json", analytics_series(series + [row], now))
 
+    watched = stop_outbox_watch(watch)  # alerts the watcher delivered during this check
     if not args.dry_run and not first_run:
         for name, payload in home.nag_files(alerts, now):  # emergencies repeat so they are not slept through
             (DATA_ROOT / "alerts" / "outbox").mkdir(parents=True, exist_ok=True)
             (DATA_ROOT / "alerts" / "outbox" / name).write_text(json.dumps(payload, indent=2) + "\n")
-    log = []
+    log = list(watched)
     for a in alerts:
         a["sent"] = send(a, args.dry_run)
         a["at"] = a["sent_at"] = iso(now)

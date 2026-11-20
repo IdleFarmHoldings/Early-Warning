@@ -403,6 +403,77 @@ def test_relay_only(tmp_path, monkeypatch):
     assert not list((tmp_path / "alerts" / "outbox").glob("*.json")) and (tmp_path / "alerts" / "sent" / "x-digest.json").exists()
 
 
+def test_relay_never_sends_an_alert_twice(tmp_path, monkeypatch):
+    import json as _json
+    import run
+    monkeypatch.setattr(run, "DATA_ROOT", tmp_path)
+    sent_calls = []
+    monkeypatch.setattr(run, "send", lambda a, dry_run: sent_calls.append(a["title"]) or {c: True for c in a["channels"]})
+    outbox, sent = tmp_path / "alerts" / "outbox", tmp_path / "alerts" / "sent"
+    outbox.mkdir(parents=True)
+    sent.mkdir(parents=True)
+    alert = _json.dumps({"channel": "reactive", "title": "Fire", "message": "m"})
+    (sent / "a-fire.json").write_text(alert)          # delivered earlier
+    (outbox / "a-fire.json").write_text(alert)        # leftover copy from a branch merge
+    (sent / "b-bad.invalid.json").write_text("{}")    # set aside earlier
+    (outbox / "b-bad.json").write_text("{}")
+    (outbox / "c-new.json").write_text(_json.dumps({"channel": "reactive", "title": "New", "message": "m"}))
+    out = run.relay_outbox(now_utc(), dry_run=False)
+    assert sent_calls == ["New"] and [a["title"] for a in out] == ["New"]
+    assert not list(outbox.glob("*.json"))
+
+
+def _git_live_data(tmp_path):
+    """A local 'origin' with a live-data branch, and the workflow's checkout of it (like _data)."""
+    import subprocess
+    run_git = lambda *a, cwd=tmp_path: subprocess.run(["git", "-c", "user.name=t", "-c", "user.email=t@t", *a], cwd=cwd,
+                                                      check=True, capture_output=True)
+    origin, work, data = tmp_path / "origin.git", tmp_path / "work", tmp_path / "_data"
+    run_git("init", "-q", "--bare", str(origin))
+    run_git("init", "-q", "-b", "live-data", str(work))
+    (work / "alerts" / "outbox").mkdir(parents=True)
+    (work / "alerts" / "outbox" / ".gitkeep").write_text("")
+    run_git("add", "-A", cwd=work)
+    run_git("commit", "-q", "-m", "start", cwd=work)
+    run_git("remote", "add", "origin", str(origin), cwd=work)
+    run_git("push", "-q", "origin", "live-data", cwd=work)
+    run_git("clone", "-q", "--branch", "live-data", str(origin), str(data))
+    return work, data, run_git
+
+
+def test_outbox_watcher_delivers_during_the_check(tmp_path, monkeypatch):
+    import json as _json
+    import threading
+    import run
+    work, data, run_git = _git_live_data(tmp_path)
+    monkeypatch.setattr(run, "DATA_ROOT", data)
+    # The analysis adds an alert after the check started; one was also delivered already.
+    (work / "alerts" / "outbox" / "t1-fire.json").write_text(_json.dumps({"channel": "reactive", "title": "TEST fire", "message": "m"}))
+    (work / "alerts" / "outbox" / "t0-old.json").write_text(_json.dumps({"channel": "proactive", "title": "Old", "message": "m"}))
+    run_git("add", "-A", cwd=work)
+    run_git("commit", "-q", "-m", "analysis: alert", cwd=work)
+    run_git("push", "-q", "origin", "live-data", cwd=work)
+    (data / "alerts" / "sent").mkdir(parents=True)
+    (data / "alerts" / "sent" / "t0-old.json").write_text("{}")
+    assert run.fetch_new_outbox() == 1
+    assert (data / "alerts" / "outbox" / "t1-fire.json").exists() and not (data / "alerts" / "outbox" / "t0-old.json").exists()
+    stop, out = threading.Event(), []
+    stop.set()  # run one round
+    run.watch_outbox(stop, True, out)
+    assert [a["title"] for a in out] == ["TEST fire"] and (data / "alerts" / "sent" / "t1-fire.json").exists()
+    assert run.fetch_new_outbox() == 0  # already delivered: not copied again
+
+
+def test_outbox_watcher_only_runs_in_the_workflow(tmp_path, monkeypatch):
+    import run
+    monkeypatch.setattr(run, "DATA_ROOT", run.ROOT)
+    assert run.start_outbox_watch(False) is None   # local run on main
+    monkeypatch.setattr(run, "DATA_ROOT", tmp_path)
+    assert run.start_outbox_watch(False) is None   # not a git checkout
+    assert run.start_outbox_watch(True) is None    # dry run
+    assert run.stop_outbox_watch(None) == []
+
+
 def test_alert_links():
     from datetime import datetime, timezone
     from urllib.parse import parse_qs, urlparse
