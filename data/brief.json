@@ -5,7 +5,7 @@
     "gps_gulf": {
       "median": 7,
       "status": "ANOMALY",
-      "value": 27
+      "value": 55
     }
   },
   "analyst": {
@@ -260,7 +260,7 @@
         "2026-11-18 United States/Europe: Google Reveals How Russian Hackers Used One Cloud Breach to Compromise Another US Organization (named attacker)",
         "2026-11-17 ?: IIHF Website Goes Offline After Cyberattack as Russia Row Over World Juniors Escalates (named attacker)"
       ],
-      "incidents_7d": 7,
+      "incidents_7d": 8,
       "official_warning": false,
       "score": 72,
       "sectors": [
@@ -316,17 +316,18 @@
   ],
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
+    "maritime": "TimeoutError: ",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output=",
-    "satellites": "HTTPError: HTTP Error 403: Forbidden"
+    "satellites": "TimeoutError: The read operation timed out"
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-20T15:57:00Z",
+  "generated_at": "2026-11-20T16:12:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 19,
-    "Black Sea": 17,
+    "Baltic / Kaliningrad": 29,
+    "Black Sea": 25,
     "Israel & Eastern Mediterranean": 0,
     "Korea": 0,
-    "Persian Gulf": 27,
+    "Persian Gulf": 55,
     "South Australia": null,
     "Sydney / NSW": null,
     "Taiwan Strait": 0
@@ -360,15 +361,6 @@
       ],
       "severity": "Info",
       "target": "Bell Financial Group"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
-        "'Waffle': Australian judge blasts Medibank's bid for more time in data-breach cases"
-      ],
-      "severity": "Info",
-      "target": "Waffle'"
     },
     {
       "attack_reported": true,
@@ -455,25 +447,25 @@
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
+        "AI is giving hackers a head start. What's at risk for essential services?"
+      ],
+      "severity": "Info",
+      "target": "Other services"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
         "Equinor Faces Cyberattack as FBI Warns of AI Driven Threats"
       ],
       "severity": "Info",
       "target": "Equinor Faces"
     },
     {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
-        "European Commission hit by AI-powered cyberattack"
-      ],
-      "severity": "Info",
-      "target": "European Commission"
-    },
-    {
       "attack_reported": false,
       "confirmed": false,
       "headlines": [
-        "Major Blackout Hits South Australia After Storm"
+        "Major blackout hits South Australia after storm"
       ],
       "severity": "Info",
       "target": "Power grid"
@@ -508,12 +500,12 @@
     }
   ],
   "internet_drop_pct": {
-    "China": 1.0,
-    "Iran": 0.1,
-    "Israel": 0.2,
-    "Russia": 0.3,
+    "China": 0.5,
+    "Iran": 0.0,
+    "Israel": 0.3,
+    "Russia": 0.4,
     "South Korea": 0.1,
-    "Taiwan": 0.3
+    "Taiwan": 0.6
   },
   "local_sa": {
     "bom": [
@@ -536,9 +528,9 @@
       "pump_cents": -5,
       "week_ago_aud": 141.5
     },
-    "grid_demand_fall_pct": 2.4,
-    "grid_demand_mw": 1274,
-    "grid_demand_usual_mw": 1294,
+    "grid_demand_fall_pct": 1.5,
+    "grid_demand_mw": 1257,
+    "grid_demand_usual_mw": 1290,
     "grid_lor_level": 0,
     "nearby_incidents": [
       {
@@ -595,20 +587,20 @@
   },
   "markets": {
     "AUD/USD": {
-      "change_pct": -0.97,
-      "price": 0.6648
+      "change_pct": -0.94,
+      "price": 0.665
     },
     "Brent oil": {
-      "change_pct": -3.79,
-      "price": 88.49
+      "change_pct": -3.76,
+      "price": 88.52
     },
     "Gold": {
-      "change_pct": -3.65,
-      "price": 3551.0
+      "change_pct": -3.96,
+      "price": 3539.6
     },
     "VIX": {
-      "change_pct": 5.34,
-      "price": 29.96
+      "change_pct": 7.24,
+      "price": 30.5
     }
   },
   "national_shocks": {
@@ -619,16 +611,6 @@
     },
     "shocks": [
       {
-        "code": "AE",
-        "country": "United Arab Emirates",
-        "headlines": [],
-        "level": "Possible",
-        "sector": "aviation",
-        "signals": {
-          "traffic": "airborne traffic near Dubai about 26% of normal"
-        }
-      },
-      {
         "code": "US",
         "country": "United States",
         "headlines": [
@@ -636,7 +618,7 @@
             "at": "2026-11-20T14:52:51Z",
             "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPS1lDWmpyendldk0xZVAtZlFfeWlDLUpqN1pyZHVDMkhSZzdTNTBkOHBZcGZzVGhDTXY1VmpXeTRSaldQRlhFVGlWREU0WmUwV2VFTlpRbjFnWV9nTk9SZHJoelVNeXBBWThIWmI2VmkteTJWOUxzcmk3VVE0blJqc2QxOFdMWFVrZWoyS1BRdHFNMjNJWVJaRDNkUkQtQURXR2hteUF4NUJVMnl3ellFTlEtVmZyTjRxMXVHZjV3?oc=5",
             "pub": "Ars Technica",
-            "title": "How FAA can modernize US national airspace system without emergency ground stops"
+            "title": "US will soon announce root cause behind FAA nationwide ground stop"
           },
           {
             "at": "2026-11-20T14:51:26Z",
@@ -654,14 +636,12 @@
         "level": "Possible",
         "sector": "aviation",
         "signals": {
-          "news": "3 outlets: How FAA can modernize US national airspace system without emergency ground stops"
+          "news": "3 outlets: US will soon announce root cause behind FAA nationwide ground stop"
         }
       }
     ],
     "tracking_glitch": false,
-    "traffic_not_normal": {
-      "AE": "DOWN"
-    }
+    "traffic_not_normal": {}
   },
   "nc3": "normal",
   "news_watch": {
@@ -678,11 +658,11 @@
     "aviation_halt": [
       "US ground stop has led to discussion of major overhaul to air traffic control systems - News24",
       "I Was in the Air When the Ground Stop Hit. My 84-Year-Old Mother Wasn’t So Lucky. - WSJ",
-      "How FAA can modernize US national airspace system without emergency ground stops - Ars Technica"
+      "US will soon announce root cause behind FAA nationwide ground stop - Ars Technica"
     ],
     "bank_outage": [
-      "Major credit card companies hit in cyber attack - News24",
       "Wall Street tumbles to its longest losing streak since 2024 as AI stocks slide - CommBank",
+      "Major credit card companies hit in cyber attack - News24",
       "Did Banks Get Hacked? Visa, Mastercard, Chase Confirm Vendor Cyberattack - Forbes"
     ],
     "blood": [
@@ -691,13 +671,13 @@
     ],
     "cables": [
       "The Multifunctional Seabed - Just Security",
-      "FPT Telecom Joins Vietnam–Singapore Submarine Cable (VTS) - Submarine Networks",
+      "FPT Telecom Joins Vietnam–Thailand–Singapore Submarine Cable (VTS) - Submarine Networks",
       "EU Awards €9.55 Million to Project Merikarhu to Build Rapid Baltic Sub - Submarine Networks"
     ],
     "chem": [
       "Trump Warns Tehran After 'Indications of Chemical Weapons' - الحرة",
-      "Iran may use chemical weapons. Why is Washington starving the OPCW? - Foundation for Defense of Democracies",
-      "Fluffy rabbits, dark past draw tourists to Japan island - The Straits Times"
+      "Fluffy rabbits, dark past draw tourists to Japan island - The Straits Times",
+      "Iran may use chemical weapons. Why is Washington starving the OPCW? - Foundation for Defense of Democracies"
     ],
     "cloud": [
       "Why Did Anthropic’s IPO Fail To Rescue The KOSPI? - Disruption Banking",
@@ -715,14 +695,14 @@
       "Cyberattack tactics are outpacing what renewal forms ask - Insurance Business"
     ],
     "cyber_ot": [
-      "Tens of thousands of UK fridges secured from hackers in secret nationwide operation - BBC",
       "Who is hacking Europe’s supermarket fridges and freezers, and why? - The Guardian",
-      "Shop freezers in seven European countries hit by cyber-attack - BBC"
+      "Shop freezers in seven European countries hit by cyber-attack - BBC",
+      "Supermarket freezers and fridges in Europe hit by cyberattack - Nine.com.au"
     ],
     "cyber_state": [
       "ESET Research: Sandworm behind cyberattack on Poland’s power grid in late 2025 - We Live Security",
       "ESET attributes DynoWiper-powered attack on Poland’s power grid to Russia-aligned Sandworm group - Industrial Cyber",
-      "Russian state hackers likely behind wiper malware attack on Poland’s power grid - The Record from Recorded Future News"
+      "Sandworm Blamed for Wiper Attack on Polish Power Grid - Dark Reading"
     ],
     "cyber_supply": [
       "CVE-2026-123890: Critical VMware vCenter Zero-Day Exploited by China-Linked Hackers - SOC Prime",
@@ -731,21 +711,20 @@
     ],
     "deepfake": [
       "Scottish Greens challenge SNP government’s relationship with big tech after First Minister’s apology over AI slop video - Scottish Greens",
-      "Who owns AI-generated work? Copyright rules in the US, UK and EU - CEO경제신문",
-      "TikTok launches tool to help public figures detect deepfakes globally - Free Malaysia Today"
+      "TikTok launches tool to help public figures detect deepfakes globally - Free Malaysia Today",
+      "TikTok Launches Global Deepfake Detection Tool For Public Figures - BusinessToday Malaysia"
     ],
     "dieoff": [
       "Kenya investigates mysterious deaths of seven hippos - Galaxy Television"
     ],
     "flash": [
-      "Carma Limited Enters Trading Halt Pending Material Financier Announcement - Kalkine",
-      "All About How 23/5 Trading Will Work - Nasdaq",
-      "Bunker Hill Silver TSX:BNKR Enters the Spotlight as Trading Halt Signals Pending News (TSX:BNKR) - kalkine.ca"
+      "Metal Powder Works Enters Trading Halt Ahead of Capital Raise Announcement - Kalkine",
+      "Bunker Hill Silver TSX:BNKR Enters the Spotlight as Trading Halt Signals Pending News (TSX:BNKR) - kalkine.ca",
+      "Rincon Resources Enters Trading Halt Pending Material Exploration Results at Telfer South Project - Kalkine"
     ],
     "fuel_au": [
       "Honda Avancier 2027: new hybrid large SUV targets Santa Fe and Kluger - Chasing Cars",
-      "Oil Supply Shock to Worsen as Inventories Fall Further Even if Conflict Ends - EnergyNow.com",
-      "No route cuts for Fiji Airways despite global fuel hikes - FBC News"
+      "Oil Supply Shock to Worsen as Inventories Fall Further Even if Conflict Ends - EnergyNow.com"
     ],
     "illness": [
       "148 aboard Florida-bound cruise ship sickened by ‘unknown’ GI outbreak: CDC - The Hill",
@@ -754,8 +733,7 @@
     ],
     "masscas": [
       "Mike O’Callaghan Military Medical Center Integrates with Regional Partners for Mass Casualty Exercise - DVIDS",
-      "Family of Robb Elementary victim hope their experience inspires mass casualty preparedness at hospitals - KXAN Austin",
-      "Mass casualty mock drill held at Kisama ahead of Hornbill Festival - Eastern Mirror"
+      "Family of Robb Elementary victim hope their experience inspires mass casualty preparedness at hospitals - KXAN Austin"
     ],
     "mobilisation": [
       "Delivered, \"processed\" by the Military Medical Commission, mobilized: the court explained how to properly appeal such a draft - Судово-юридична газета",
@@ -764,8 +742,8 @@
     ],
     "national_outage": [
       "Properties in eight suburbs plunged into darkness as power is lost - Bendigo Advertiser",
-      "Cuba’s National Electric Grid Collapses, Reason Unknown - EnergyNow.com",
-      "Heatwave can lead to blackouts in Portugal - The Portugal News"
+      "FAA Narrows Cause Of Nationwide Outage, Congress Questions $50 Billion Funding Request - Investor's Business Daily",
+      "Cuba’s National Electric Grid Collapses, Reason Unknown - EnergyNow.com"
     ],
     "outage_au": [
       "Alice Springs and Katherine local news briefing: Friday, November 20, 2026 - ABC News & Headlines – Australian Broadcasting Corporation",
@@ -773,9 +751,9 @@
       "Telstra mobile outage disrupts services across Australia - Australian Cyber Security Magazine"
     ],
     "reservists": [
-      "Armenia: 'New Concern' Over Criminal Prosecutions Of Conscientious Objector Reservists - Analysis - Eurasia Review",
-      "Contractors called up for £500m retrofit framework - Construction Enquirer",
-      "Delivered, \"processed\" by the Military Medical Commission, mobilized: the court explained how to properly appeal such a draft - Судово-юридична газета"
+      "Britain sanctions Israeli aid-blocking group and settlement construction companies - South African Jewish Report",
+      "Left the US Army in the last 8 years? You may still be on the list of veterans who can be recalled: Here’s how to check - El Cronista",
+      "Armenia: 'New Concern' Over Criminal Prosecutions Of Conscientious Objector Reservists - Analysis - Eurasia Review"
     ],
     "sapn": [
       "South Australia cuts rooftop solar after storm sparks power outages - pv magazine Australia",
@@ -800,14 +778,14 @@
   },
   "prediction_markets": [
     {
-      "d24h": 0.0,
+      "d24h": -1.0,
       "q": "Will the U.S. invade Iran before 2027?",
       "yes": 6.5
     },
     {
-      "d24h": 1.1,
+      "d24h": 1.0,
       "q": "US-Iran Final Nuclear Deal by December 31, 2026?",
-      "yes": 5.2
+      "yes": 5.1
     },
     {
       "d24h": 2.0,
@@ -815,9 +793,9 @@
       "yes": 11.5
     },
     {
-      "d24h": -0.1,
+      "d24h": -0.2,
       "q": "China x Taiwan military clash before 2027?",
-      "yes": 2.9
+      "yes": 2.8
     },
     {
       "d24h": -1.6,
@@ -875,12 +853,12 @@
       "yes": 14.0
     },
     {
-      "d24h": 1.0,
+      "d24h": 1.2,
       "q": "NATO x Russia military clash by November 30, 2026?",
-      "yes": 2.2
+      "yes": 2.4
     },
     {
-      "d24h": 1.1,
+      "d24h": 1.2,
       "q": "Ukraine agrees not to join NATO by December 31, 2026?",
       "yes": 3.0
     },
@@ -890,14 +868,14 @@
       "yes": 3.0
     },
     {
-      "d24h": -0.4,
+      "d24h": -0.3,
       "q": "Will Russia test a nuclear weapon by December 31 2026?",
       "yes": 2.2
     },
     {
-      "d24h": 0.8,
+      "d24h": 0.7,
       "q": "Will the U.S. test a nuclear weapon by December 31 2026?",
-      "yes": 2.7
+      "yes": 2.9
     },
     {
       "d24h": 0.0,
@@ -905,9 +883,9 @@
       "yes": 17.5
     },
     {
-      "d24h": 0.5,
+      "d24h": 0.0,
       "q": "Ukraine agrees not to join NATO by December 31, 2027?",
-      "yes": 19.5
+      "yes": 19.0
     },
     {
       "d24h": -1.0,
@@ -915,9 +893,9 @@
       "yes": 10.0
     },
     {
-      "d24h": 0.0,
+      "d24h": 0.5,
       "q": "Will Nick Stewart attend a US x Iran diplomatic meeting by December 31, 2026?",
-      "yes": 7.5
+      "yes": 8.0
     }
   ],
   "quakes_m6_24h": [],
@@ -1127,7 +1105,7 @@
           "name": "Fire, flood or storm road closures in SA"
         },
         {
-          "detail": "South Australia cuts rooftop solar after storm sparks power outages; Major Blackout Hits South Australia After Storm",
+          "detail": "South Australia cuts rooftop solar after storm sparks power outages; Major blackout hits South Australia after storm",
           "name": "Reports of widespread power outages in SA"
         }
       ],
@@ -1144,7 +1122,7 @@
       "key": "mideast",
       "lit": [
         {
-          "detail": "gps_gulf 27 vs usual 7",
+          "detail": "gps_gulf 55 vs usual 7",
           "name": "GPS jamming spike (Gulf / Israel)"
         },
         {
@@ -1169,9 +1147,19 @@
     },
     {
       "band": "Low",
+      "convergence": "Only one kind of sign is showing (markets). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and mobilisation / reservist reports (russia / nato).",
+      "domains": [
+        "Markets"
+      ],
       "key": "russia",
-      "score": 0,
-      "trend": "down"
+      "lit": [
+        {
+          "detail": "VIX at 30.5",
+          "name": "Market fear index above 30"
+        }
+      ],
+      "score": 10,
+      "trend": "up"
     },
     {
       "band": "Low",
@@ -1187,9 +1175,10 @@
     },
     {
       "band": "Elevated",
-      "convergence": "Only one kind of sign is showing (health). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: countries restricting medical supply exports, pandemic-response stocks outperforming (5 days) and chemical / nerve-agent attack or mass poisoning repor",
+      "convergence": "Two different kinds of sign are showing together (health and markets). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: countries restricting medical supply exports, pandemic-response stocks outperforming (5 days) and chemi",
       "domains": [
-        "Health"
+        "Health",
+        "Markets"
       ],
       "key": "bio",
       "lit": [
@@ -1204,10 +1193,14 @@
         {
           "detail": "Family of Robb Elementary victim hope their experience inspires mass casualty preparedness at hospitals",
           "name": "Mass casualty declarations (any country)"
+        },
+        {
+          "detail": "VIX at 30.5",
+          "name": "Market fear index above 30"
         }
       ],
-      "score": 40,
-      "trend": "down"
+      "score": 50,
+      "trend": "up"
     },
     {
       "band": "Low",
@@ -1254,17 +1247,17 @@
   ],
   "sectors_relative_5d": {
     "defence_au": -4.15,
-    "defence_eu": 0.68,
-    "defence_us": 2.76,
-    "pandemic": -2.09
+    "defence_eu": 0.94,
+    "defence_us": 2.74,
+    "pandemic": -2.08
   },
   "tankers": "normal",
   "telecom_drop_pct": {
-    "Aussie Broadband": 0.6,
+    "Aussie Broadband": 0.7,
     "Optus": 0.0,
     "TPG": 0.0,
-    "Telstra": 0.5,
-    "Vodafone": 4.8
+    "Telstra": 0.6,
+    "Vodafone": 0.0
   },
   "us_departure_orders": [
     "Belarus"
@@ -1303,9 +1296,9 @@
     {
       "active": true,
       "first_seen": "2026-11-20T10:12:00Z",
-      "last_seen": "2026-11-20T10:12:00Z",
+      "last_seen": "2026-11-20T16:12:00Z",
       "region": "the Middle East",
-      "text": "GPS jamming over Persian Gulf: 42% of 24 aircraft affected for 45+ min (usual ~8%)",
+      "text": "GPS jamming over Persian Gulf: 55% of 55 aircraft affected for 45+ min (usual ~7%)",
       "what": "GPS jamming"
     },
     {
