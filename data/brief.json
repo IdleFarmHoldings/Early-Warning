@@ -310,16 +310,17 @@
   ],
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
-    "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
+    "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output=",
+    "satellites": "TimeoutError: The read operation timed out"
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-20T14:10:00Z",
+  "generated_at": "2026-11-20T14:24:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 19,
-    "Black Sea": 22,
+    "Baltic / Kaliningrad": 20,
+    "Black Sea": 42,
     "Israel & Eastern Mediterranean": 2,
-    "Korea": 0,
-    "Persian Gulf": 3,
+    "Korea": 5,
+    "Persian Gulf": 1,
     "South Australia": null,
     "Sydney / NSW": null,
     "Taiwan Strait": 0
@@ -362,6 +363,15 @@
       ],
       "severity": "Info",
       "target": "Cyberattack"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "CVE-2026-123890: Critical VMware vCenter Zero-Day Exploited by China-Linked Hackers"
+      ],
+      "severity": "Info",
+      "target": "CVE-2026-123890"
     },
     {
       "attack_reported": true,
@@ -448,7 +458,7 @@
       "attack_reported": false,
       "confirmed": false,
       "headlines": [
-        "Major Blackout Hits South Australia After Storm"
+        "Major blackout hits South Australia after storm"
       ],
       "severity": "Info",
       "target": "Power grid"
@@ -483,10 +493,10 @@
     }
   ],
   "internet_drop_pct": {
-    "China": 1.5,
+    "China": 1.4,
     "Iran": 0.0,
-    "Israel": 0.0,
-    "Russia": 0.0,
+    "Israel": 0.4,
+    "Russia": 0.4,
     "South Korea": 0.0,
     "Taiwan": 0.0
   },
@@ -504,16 +514,16 @@
       "Mount Lofty Ranges": "Moderate / Moderate"
     },
     "fire_danger_ok": true,
-    "fires_active": 3,
+    "fires_active": 5,
     "fuel": {
-      "brent_aud": 134.2,
+      "brent_aud": 134.1,
       "change_pct": -5.2,
       "pump_cents": -5,
       "week_ago_aud": 141.5
     },
-    "grid_demand_fall_pct": -1.7,
-    "grid_demand_mw": 1359,
-    "grid_demand_usual_mw": 1344,
+    "grid_demand_fall_pct": -0.2,
+    "grid_demand_mw": 1362,
+    "grid_demand_usual_mw": 1334,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
@@ -564,16 +574,16 @@
       "price": 0.6671
     },
     "Brent oil": {
-      "change_pct": -3.22,
-      "price": 89.02
+      "change_pct": -3.32,
+      "price": 88.93
     },
     "Gold": {
-      "change_pct": -3.03,
-      "price": 3574.0
+      "change_pct": -2.97,
+      "price": 3576.2
     },
     "VIX": {
-      "change_pct": 7.28,
-      "price": 30.51
+      "change_pct": 4.61,
+      "price": 29.75
     }
   },
   "national_shocks": {
@@ -590,12 +600,12 @@
   "news_watch": {
     "ai_hack": [
       "Opinion | What grounded planes and downed banking systems say about the AI age - The Washington Post",
-      "EU Commission confirms AI-driven cyberattack - The Paypers",
-      "Cybercriminals Ramp Up Interest in AI-Powered Hacking Tools - Redmondmag.com"
+      "Cybercriminals Ramp Up Interest in AI-Powered Hacking Tools - Redmondmag.com",
+      "EU Commission confirms AI-driven cyberattack - The Paypers"
     ],
     "airspace": [
-      "Airspace Closure | Major Decision | Aviation Update | 08PM HEADLINES 19 Nov 2026 Aaj News - Aaj TV",
       "Houthi missile damages Riyadh tower, no injuries reported - Crypto Briefing",
+      "Airspace Closure | Major Decision | Aviation Update | 08PM HEADLINES 19 Nov 2026 Aaj News - Aaj TV",
       "Pakistan extends airspace closure for Indian aircraft - Latest news from Azerbaijan"
     ],
     "aviation_halt": [
@@ -604,8 +614,8 @@
       "After the FAA's ground stop, not all airlines recovered equally - Travel Weekly"
     ],
     "bank_outage": [
-      "Wall Street tumbles to its longest losing streak since 2024 as AI stocks slide - CommBank",
       "Major credit card companies hit in cyber attack - News24",
+      "Wall Street tumbles to its longest losing streak since 2024 as AI stocks slide - CommBank",
       "Chase Bank, Visa and Mastercard confirm third-party cyber attacks - Cyber Daily"
     ],
     "blood": [
@@ -634,7 +644,7 @@
     "cyber_au": [
       "Report of the Rapid Review into Australian Government arrangements for an AI-driven cyber incident - Department of the Prime Minister and Cabinet",
       "Visa, MasterCard, JPMorgan Chase customer data stolen in hack - Herald Sun",
-      "Thousands of customers have data leaked after cyberattack at Visa, Mastercard and US banking giant - Nine.com.au"
+      "Australia's Bell Financial says some client data likely accessed - iTnews"
     ],
     "cyber_ot": [
       "Who is hacking Europe’s supermarket fridges and freezers, and why? - The Guardian",
@@ -647,26 +657,26 @@
       "Russian state hackers likely behind wiper malware attack on Poland’s power grid - The Record from Recorded Future News"
     ],
     "cyber_supply": [
+      "CVE-2026-123890: Critical VMware vCenter Zero-Day Exploited by China-Linked Hackers - SOC Prime",
       "China-Linked Hackers Exploit Critical VMware vCenter Zero-Day to Gain Admin Access and Steal Data - The Hacker News",
-      "Chinese espionage group targets critical flaw in VMware vCenter - Cybersecurity Dive",
-      "Newly Patched VMware vCenter Flaw Exploited as Zero-Day by Chinese APT - SecurityWeek"
+      "Chinese espionage group targets critical flaw in VMware vCenter - Cybersecurity Dive"
     ],
     "deepfake": [
       "Scottish Greens challenge SNP government’s relationship with big tech after First Minister’s apology over AI slop video - Scottish Greens",
-      "Who owns AI-generated work? Copyright rules in the US, UK and EU - CEO경제신문",
-      "TikTok launches tool to help public figures detect deepfakes globally - The Straits Times"
+      "TikTok launches tool to help public figures detect deepfakes globally - The Straits Times",
+      "TikTok Launches Global Deepfake Detection Tool For Public Figures - BusinessToday Malaysia"
     ],
     "dieoff": [
       "Kenya investigates mysterious deaths of seven hippos - Galaxy Television"
     ],
     "flash": [
       "Metal Powder Works Enters Trading Halt Ahead of Capital Raise Announcement - Kalkine",
-      "Rincon Resources Enters Trading Halt Pending Material Exploration Results at Telfer South Project - Kalkine",
+      "Carma Limited Enters Trading Halt Pending Material Financier Announcement - Kalkine",
       "KOSPI, KOSDAQ Plunge 5%, Circuit Breakers Activated - 조선일보"
     ],
     "fuel_au": [
-      "Oil Supply Shock to Worsen as Inventories Fall Further Even if Conflict Ends - EnergyNow.com",
       "Honda Avancier 2027: new hybrid large SUV targets Santa Fe and Kluger - Chasing Cars",
+      "Oil Supply Shock to Worsen as Inventories Fall Further Even if Conflict Ends - EnergyNow.com",
       "No route cuts for Fiji Airways despite global fuel hikes - FBC News"
     ],
     "illness": [
@@ -681,7 +691,7 @@
     "mobilisation": [
       "Delivered, \"processed\" by the Military Medical Commission, mobilized: the court explained how to properly appeal such a draft - Судово-юридична газета",
       "Iraq reaches compromise with Kataib Hezbollah over armed group’s stronghold - Al Jazeera",
-      "Iraq strikes compromise with Kataib Hezbollah - Middle East Online"
+      "100 per cent job retention in exchange for mobilisation: the government is preparing a new model for businesses - UkrMedia News"
     ],
     "national_outage": [
       "Properties in eight suburbs plunged into darkness as power is lost - Bendigo Advertiser",
@@ -690,8 +700,8 @@
     ],
     "outage_au": [
       "Alice Springs and Katherine local news briefing: Friday, November 20, 2026 - ABC News & Headlines – Australian Broadcasting Corporation",
-      "Microsoft exec reveals details of outage - News.com.au",
-      "Microsoft ‘deeply sorry’ for global outage, rules out cyberattack and AI - Nine.com.au"
+      "Calls for 'automatic compensation' following telco outages - ABC News & Headlines – Australian Broadcasting Corporation",
+      "Telstra mobile outage disrupts services across Australia - Australian Cyber Security Magazine"
     ],
     "reservists": [
       "Armenia: 'New Concern' Over Criminal Prosecutions Of Conscientious Objector Reservists - Analysis - Eurasia Review",
@@ -724,7 +734,7 @@
   },
   "prediction_markets": [
     {
-      "d24h": -1.0,
+      "d24h": 0.0,
       "q": "Will the U.S. invade Iran before 2027?",
       "yes": 6.5
     },
@@ -789,9 +799,9 @@
       "yes": 1.6
     },
     {
-      "d24h": -1.0,
+      "d24h": -1.1,
       "q": "Iran-Oman Hormuz Agreement by November 30?",
-      "yes": 3.5
+      "yes": 3.4
     },
     {
       "d24h": -1.0,
@@ -801,10 +811,10 @@
     {
       "d24h": 1.0,
       "q": "NATO x Russia military clash by November 30, 2026?",
-      "yes": 2.3
+      "yes": 2.2
     },
     {
-      "d24h": 0.0,
+      "d24h": 0.2,
       "q": "Ukraine agrees not to join NATO by December 31, 2026?",
       "yes": 3.1
     },
@@ -814,12 +824,12 @@
       "yes": 3.0
     },
     {
-      "d24h": -0.2,
+      "d24h": -0.4,
       "q": "Will Russia test a nuclear weapon by December 31 2026?",
-      "yes": 2.4
+      "yes": 2.2
     },
     {
-      "d24h": 0.2,
+      "d24h": 0.5,
       "q": "Will the U.S. test a nuclear weapon by December 31 2026?",
       "yes": 2.6
     },
@@ -1051,7 +1061,7 @@
           "name": "Fire, flood or storm road closures in SA"
         },
         {
-          "detail": "South Australia cuts rooftop solar after storm sparks power outages; Major Blackout Hits South Australia After Storm",
+          "detail": "South Australia cuts rooftop solar after storm sparks power outages; Major blackout hits South Australia after storm",
           "name": "Reports of widespread power outages in SA"
         }
       ],
@@ -1088,19 +1098,9 @@
     },
     {
       "band": "Low",
-      "convergence": "Only one kind of sign is showing (markets). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and mobilisation / reservist reports (russia / nato).",
-      "domains": [
-        "Markets"
-      ],
       "key": "russia",
-      "lit": [
-        {
-          "detail": "VIX at 30.51",
-          "name": "Market fear index above 30"
-        }
-      ],
-      "score": 10,
-      "trend": "steady"
+      "score": 0,
+      "trend": "down"
     },
     {
       "band": "Low",
@@ -1116,10 +1116,9 @@
     },
     {
       "band": "Guarded",
-      "convergence": "Two different kinds of sign are showing together (health and markets). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: unknown illness / pneumonia cluster reported, countries restricting medical supply exports and pandemic",
+      "convergence": "Only one kind of sign is showing (health). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: unknown illness / pneumonia cluster reported, countries restricting medical supply exports and pandemic-response stocks outperforming (5 days).",
       "domains": [
-        "Health",
-        "Markets"
+        "Health"
       ],
       "key": "bio",
       "lit": [
@@ -1130,14 +1129,10 @@
         {
           "detail": "Family of Robb Elementary victim hope their experience inspires mass casualty preparedness at hospitals",
           "name": "Mass casualty declarations (any country)"
-        },
-        {
-          "detail": "VIX at 30.51",
-          "name": "Market fear index above 30"
         }
       ],
-      "score": 30,
-      "trend": "steady"
+      "score": 20,
+      "trend": "down"
     },
     {
       "band": "Low",
@@ -1167,7 +1162,7 @@
       "key": "ai",
       "lit": [
         {
-          "detail": "EU Commission confirms AI-driven cyberattack",
+          "detail": "Cybercriminals Ramp Up Interest in AI-Powered Hacking Tools",
           "name": "Reports of AI-driven hacking campaigns"
         },
         {
@@ -1189,17 +1184,17 @@
   ],
   "sectors_relative_5d": {
     "defence_au": -4.15,
-    "defence_eu": 0.88,
+    "defence_eu": 1.09,
     "defence_us": 1.12,
     "pandemic": -4.88
   },
   "tankers": "normal",
   "telecom_drop_pct": {
-    "Aussie Broadband": 0.1,
+    "Aussie Broadband": 0.6,
     "Optus": 0.0,
-    "TPG": 0.1,
-    "Telstra": 0.2,
-    "Vodafone": 4.8
+    "TPG": 0.0,
+    "Telstra": 0.6,
+    "Vodafone": 0.0
   },
   "us_departure_orders": [
     "Belarus"

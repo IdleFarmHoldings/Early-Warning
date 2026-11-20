@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-20T14:10:00Z",
+  "generated_at": "2026-11-20T14:24:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -29,7 +29,7 @@
           "weight": 10
         },
         {
-          "detail": "South Australia cuts rooftop solar after storm sparks power outages; Major Blackout Hits South Australia After Storm",
+          "detail": "South Australia cuts rooftop solar after storm sparks power outages; Major blackout hits South Australia after storm",
           "domain": "Power grid",
           "id": "power",
           "name": "Reports of widespread power outages in SA",
@@ -388,25 +388,14 @@
     },
     {
       "band": "Low",
-      "convergence": "Only one kind of sign is showing (markets). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and mobilisation / reservist reports (russia / nato).",
-      "domains": [
-        "Markets"
-      ],
+      "convergence": "No warning signs are showing. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and mobilisation / reservist reports (russia / nato).",
+      "domains": [],
       "key": "russia",
-      "lit": [
-        {
-          "detail": "VIX at 30.51",
-          "domain": "Markets",
-          "id": "vix",
-          "name": "Market fear index above 30",
-          "short": "Market fear index above 30",
-          "weight": 10
-        }
-      ],
+      "lit": [],
       "name": "Russia-NATO escalation",
       "sa_impact": "Indirect: energy and market shock, cyber attacks that can spill over to Australian systems, and nuclear-risk rhetoric.",
-      "score": 10,
-      "trend": "steady",
+      "score": 0,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Electronic warfare",
@@ -448,6 +437,12 @@
           "domain": "Elite movement",
           "id": "jets",
           "name": "Private jets heading to retreat destinations",
+          "weight": 10
+        },
+        {
+          "domain": "Markets",
+          "id": "vix",
+          "name": "Market fear index above 30",
           "weight": 10
         },
         {
@@ -639,10 +634,9 @@
     },
     {
       "band": "Guarded",
-      "convergence": "Two different kinds of sign are showing together (health and markets). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: unknown illness / pneumonia cluster reported, countries restricting medical supply exports and pandemic-response stocks outperforming (5 days).",
+      "convergence": "Only one kind of sign is showing (health). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: unknown illness / pneumonia cluster reported, countries restricting medical supply exports and pandemic-response stocks outperforming (5 days).",
       "domains": [
-        "Health",
-        "Markets"
+        "Health"
       ],
       "key": "bio",
       "lit": [
@@ -661,20 +655,12 @@
           "name": "Mass casualty declarations (any country)",
           "short": "Mass casualty event",
           "weight": 5
-        },
-        {
-          "detail": "VIX at 30.51",
-          "domain": "Markets",
-          "id": "vix",
-          "name": "Market fear index above 30",
-          "short": "Market fear high",
-          "weight": 10
         }
       ],
       "name": "Pandemic, biological or chemical emergency",
       "sa_impact": "Health system strain, possible lockdowns and border closures, and shortages of medicines and protective equipment, which Australia mostly imports.",
-      "score": 30,
-      "trend": "steady",
+      "score": 20,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Health",
@@ -698,6 +684,12 @@
           "domain": "Trade",
           "id": "shortage",
           "name": "Australian medicine or PPE shortage reports",
+          "weight": 10
+        },
+        {
+          "domain": "Markets",
+          "id": "vix",
+          "name": "Market fear index above 30",
           "weight": 10
         },
         {
@@ -818,7 +810,7 @@
       "key": "ai",
       "lit": [
         {
-          "detail": "EU Commission confirms AI-driven cyberattack",
+          "detail": "Cybercriminals Ramp Up Interest in AI-Powered Hacking Tools",
           "domain": "AI-enabled hacking",
           "id": "aihack",
           "name": "Reports of AI-driven hacking campaigns",
