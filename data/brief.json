@@ -144,12 +144,12 @@
       },
       "incidents": [
         "2026-11-19 ?: Chinese Hackers Exploited vCenter Zero-Day CVE-2026-123890 Months Before Broadcom Patch (named attacker)",
+        "2026-11-19 ?: Visa, Mastercard and Chase bank customer data hacked — after string of major failures (same pattern)",
         "2026-11-19 ?: JPMorgan Warns That Some Vendors Were Hit by a Cyberattack (same pattern)",
         "2026-11-19 ?: CISA Warns of 4 Exploited Flaws Linked to Ransomware, Cryptomining, and LLMjacking Attacks (same pattern)",
-        "2026-11-18 ?: The terrifying rise of AI hacking tools (same pattern)",
-        "2026-11-18 ?: Rakuten Bank shares tank as securities arm faces data breach (same pattern)"
+        "2026-11-18 ?: The terrifying rise of AI hacking tools (same pattern)"
       ],
-      "incidents_7d": 13,
+      "incidents_7d": 14,
       "official_warning": true,
       "score": 100,
       "sectors": [
@@ -313,28 +313,37 @@
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-19T23:58:00Z",
+  "generated_at": "2026-11-20T00:04:00Z",
   "gps_bad_pct": {
     "Baltic / Kaliningrad": null,
-    "Black Sea": 47,
-    "Israel & Eastern Mediterranean": 2,
-    "Korea": 1,
-    "Persian Gulf": 8,
-    "South Australia": 3,
-    "Sydney / NSW": 8,
-    "Taiwan Strait": 4
+    "Black Sea": null,
+    "Israel & Eastern Mediterranean": 5,
+    "Korea": 0,
+    "Persian Gulf": 13,
+    "South Australia": 2,
+    "Sydney / NSW": 6,
+    "Taiwan Strait": 5
   },
   "incidents": [
     {
       "attack_reported": true,
       "confirmed": true,
       "headlines": [
+        "Chase Bank, Visa and Mastercard confirm third-party cyber attacks",
         "Cyberattack may have exposed Chase Bank and Mastercard customer data",
-        "Thousands of customers have data leaked after cyberattack at Visa, Mastercard and US banking giant",
-        "JPMorgan, Visa, Mastercard fell victim to supplier hack"
+        "Thousands of customers have data leaked after cyberattack at Visa, Mastercard and US banking giant"
       ],
       "severity": "Warning",
       "target": "Banking & payments"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "Exclusive: Hitachi Vantara informs employees, including Aussies, of data breach"
+      ],
+      "severity": "Info",
+      "target": "Exclusive"
     },
     {
       "attack_reported": true,
@@ -505,11 +514,11 @@
   ],
   "internet_drop_pct": {
     "China": 0.0,
-    "Iran": 0.4,
+    "Iran": 0.1,
     "Israel": 0.0,
-    "Russia": 0.9,
+    "Russia": 1.7,
     "South Korea": 0.0,
-    "Taiwan": 0.0
+    "Taiwan": 0.1
   },
   "local_sa": {
     "bom": [],
@@ -525,14 +534,14 @@
     "fire_danger_ok": true,
     "fires_active": 6,
     "fuel": {
-      "brent_aud": 134.8,
+      "brent_aud": 134.9,
       "change_pct": -4.1,
       "pump_cents": -4,
       "week_ago_aud": 140.6
     },
-    "grid_demand_fall_pct": 22.7,
-    "grid_demand_mw": 541,
-    "grid_demand_usual_mw": 568,
+    "grid_demand_fall_pct": 22.5,
+    "grid_demand_mw": 510,
+    "grid_demand_usual_mw": 562,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
@@ -542,26 +551,7 @@
         "pm25": 4
       },
       "air_word": "Good",
-      "days": [
-        {
-          "date": "2026-11-20",
-          "gust": 54,
-          "rain": 1,
-          "tmax": 23
-        },
-        {
-          "date": "2026-11-21",
-          "gust": 27,
-          "rain": 0,
-          "tmax": 28
-        },
-        {
-          "date": "2026-11-22",
-          "gust": 51,
-          "rain": 0,
-          "tmax": 27
-        }
-      ]
+      "days": []
     },
     "possible_blackout": false,
     "power_news": [],
@@ -579,16 +569,16 @@
   },
   "markets": {
     "AUD/USD": {
-      "change_pct": -1.23,
-      "price": 0.6657
+      "change_pct": -0.88,
+      "price": 0.6654
     },
     "Brent oil": {
-      "change_pct": -2.28,
-      "price": 89.85
+      "change_pct": -2.35,
+      "price": 89.79
     },
     "Gold": {
-      "change_pct": -3.67,
-      "price": 3604.6
+      "change_pct": -3.56,
+      "price": 3608.7
     },
     "VIX": {
       "change_pct": 15.8,
@@ -631,7 +621,7 @@
     "bank_outage": [
       "Major credit card companies hit in cyber attack - News24",
       "Visa, Mastercard and JPMorgan Customer Data Leaked by Hackers - WSJ",
-      "JPMorgan, Visa, Mastercard say third-party vendors targeted in cyberattack - Reuters"
+      "Chase Bank, Visa and Mastercard confirm third-party cyber attacks - Cyber Daily"
     ],
     "blood": [
       "Prince Albert II honours 96 volunteers and blood donors ahead of Monaco National Day - Riviera Radio"
@@ -682,7 +672,7 @@
     "deepfake": [
       "AI-generated video misrepresented as revamp of West Bengal's Howrah bus station - AFP Fact Check",
       "Kenya and Nigeria agree to strengthen cooperation on government communication and AI-generated misinformation - Tech Review Africa",
-      "Nvidia's New Boss Faces a Deepfake Circus as Parody Clips of Ousted Huang Go Viral - BigGo Finance"
+      "John Swinney apologises after SNP’s AI-generated GTA 6 'memes' spark backlash - The National Scot"
     ],
     "dieoff": [
       "Chuck Thompson on the mysterious deaths of two Bigfoot hunters in Washington - Crime Reads",
@@ -695,8 +685,8 @@
     ],
     "fuel_au": [
       "Crimean Bridge Strikes Spark Fuel Shortage Fears as Gas Station Lines Grow in Occupied Sevastopol - UNITED24 Media",
-      "EFL warns of possible power rationing amid fuel cost crisis - FBC News",
-      "Fuel tanker arrives amid supply concerns and panic buying - FBC News"
+      "Fuel tanker arrives amid supply concerns and panic buying - FBC News",
+      "Indonesia and Philippines Unionists Tackle Barriers in Bali - JournalArta"
     ],
     "illness": [
       "Mystery illness causes mass hospitalisation of runners - The Nightly",
@@ -705,13 +695,13 @@
     ],
     "masscas": [
       "Mike O’Callaghan Military Medical Center Integrates with Regional Partners for Mass Casualty Exercise - DVIDS",
-      "Family of Robb Elementary victim hope their experience inspires mass casualty preparedness at hospitals - Yahoo",
+      "Family of Robb Elementary victim hope their experience inspires mass casualty preparedness at hospitals - KWKT - FOX 44",
       "Scoping Review Maps Decade of Patient Safety and Healthcare Quality Research in Israel - Bioengineer.org"
     ],
     "mobilisation": [
-      "The number of killed combatants from southern Russia in Ukraine has reached 10050. - Caucasian Knot",
       "Iraq strikes compromise with Kataib Hezbollah - Middle East Online",
-      "Venislavskyi Says Mobilization Conflicts Have Nearly Disappeared - Mezha.net"
+      "Venislavskyi Says Mobilization Conflicts Have Nearly Disappeared - Mezha.net",
+      "The number of killed combatants from southern Russia in Ukraine has reached 10050. - Caucasian Knot"
     ],
     "national_outage": [
       "Cuba’s National Electric Grid Collapses, Reason Unknown - EnergyNow.com",
@@ -720,8 +710,8 @@
     ],
     "outage_au": [
       "Calls for 'automatic compensation' following telco outages - ABC News & Headlines – Australian Broadcasting Corporation",
-      "Australia's Optus apologises for outage that disrupted emergency calls - Reuters",
-      "Telstra mobile outage disrupts services across Australia - Australian Cyber Security Magazine"
+      "Microsoft ‘deeply sorry’ for global outage, rules out cyberattack and AI - Nine.com.au",
+      "Microsoft exec reveals details of outage - News.com.au"
     ],
     "reservists": [
       "ARMENIA : \"New concern\" over criminal prosecutions of conscientious objector reservists - Forum 18",
@@ -744,7 +734,7 @@
     "shipping_attacks": [
       "Two tankers confirmed struck, Iran claims VLCC sinking in Hormuz - Seatrade Maritime News",
       "ADNOC L&S says one missing, 11 injured in Strait of Hormuz ship attack - Baird Maritime",
-      "Further tanker attacks reported in Strait of Hormuz amid Iranian mine claims - safety4sea"
+      "Iran Keeps Up Unrelenting Attacks on Ships in the Strait of Hormuz - The New York Times"
     ],
     "strikes": [
       "Iran widens Gulf attacks by targeting U.S. air base in Kuwait and sites in Bahrain - PBS",
@@ -764,7 +754,7 @@
       "yes": 4.1
     },
     {
-      "d24h": -0.5,
+      "d24h": -1.5,
       "q": "NATO x Russia military clash by December 31, 2026?",
       "yes": 10.0
     },
@@ -774,9 +764,9 @@
       "yes": 3.0
     },
     {
-      "d24h": -1.7,
+      "d24h": -1.6,
       "q": "US-Iran Hormuz Agreement by November 30?",
-      "yes": 2.5
+      "yes": 2.6
     },
     {
       "d24h": -4.0,
@@ -789,7 +779,7 @@
       "yes": 0.4
     },
     {
-      "d24h": -0.1,
+      "d24h": -0.3,
       "q": "Will Russia invade another country in 2026?",
       "yes": 2.1
     },
@@ -824,9 +814,9 @@
       "yes": 14.0
     },
     {
-      "d24h": -0.4,
+      "d24h": -0.3,
       "q": "NATO x Russia military clash by November 30, 2026?",
-      "yes": 1.2
+      "yes": 1.3
     },
     {
       "d24h": -0.6,
@@ -844,12 +834,12 @@
       "yes": 2.6
     },
     {
-      "d24h": 0.2,
+      "d24h": -0.1,
       "q": "Will the U.S. test a nuclear weapon by December 31 2026?",
       "yes": 2.4
     },
     {
-      "d24h": -1.0,
+      "d24h": -0.5,
       "q": "Will Russia invade another country by December 31, 2027?",
       "yes": 17.5
     },
@@ -859,7 +849,7 @@
       "yes": 19.0
     },
     {
-      "d24h": 0.0,
+      "d24h": 0.5,
       "q": "Will Nick Stewart attend a US x Iran diplomatic meeting by December 31, 2026?",
       "yes": 8.0
     },
@@ -1152,7 +1142,7 @@
           "name": "WHO outbreak report with a high-concern pathogen (last 14 days)"
         },
         {
-          "detail": "Family of Robb Elementary victim hope their experience inspires mass casualty preparedness at hospitals",
+          "detail": "Family of Robb Elementary victim hope their experience inspires mass casualty preparedness at hospitals - KWKT",
           "name": "Mass casualty declarations (any country)"
         }
       ],
@@ -1208,14 +1198,14 @@
     }
   ],
   "sectors_relative_5d": {
-    "defence_au": -1.94,
+    "defence_au": -1.68,
     "defence_eu": -1.8,
     "defence_us": 1.12,
     "pandemic": -4.88
   },
   "tankers": "normal",
   "telecom_drop_pct": {
-    "Aussie Broadband": 1.0,
+    "Aussie Broadband": 0.3,
     "Optus": 0.0,
     "TPG": 0.0,
     "Telstra": 0.3,
