@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-20T21:14:00Z",
+  "generated_at": "2026-11-20T21:29:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -395,7 +395,7 @@
       "key": "russia",
       "lit": [
         {
-          "detail": "VIX at 39.53",
+          "detail": "VIX at 35.89",
           "domain": "Markets",
           "id": "vix",
           "name": "Market fear index above 30",
@@ -504,7 +504,7 @@
       "key": "nuclear",
       "lit": [
         {
-          "detail": "VIX at 39.53",
+          "detail": "VIX at 35.89",
           "domain": "Markets",
           "id": "vix",
           "name": "Market fear index above 35",
@@ -643,8 +643,8 @@
       "why": "The 2023 Optus outage cut mobile, NBN, EFTPOS and some 000 calls nationwide for 12 hours. Hostile states pre-position in critical infrastructure; GPS jamming over Australia would be a new and serious sign."
     },
     {
-      "band": "Elevated",
-      "convergence": "Two different kinds of sign are showing together (health and markets). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: countries restricting medical supply exports, pandemic-response stocks outperforming (5 days) and chemical / nerve-agent attack or mass poisoning reported.",
+      "band": "Guarded",
+      "convergence": "Two different kinds of sign are showing together (health and markets). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: unknown illness / pneumonia cluster reported, countries restricting medical supply exports and pandemic-response stocks outperforming (5 days).",
       "domains": [
         "Health",
         "Markets"
@@ -660,14 +660,6 @@
           "weight": 15
         },
         {
-          "detail": "148 aboard Florida-bound cruise ship sickened by ‘unknown’ GI outbreak: CDC",
-          "domain": "Health",
-          "id": "illness",
-          "name": "Unknown illness / pneumonia cluster reported",
-          "short": "Illness cluster",
-          "weight": 20
-        },
-        {
           "detail": "Family of Robb Elementary victim hope their experience inspires mass casualty preparedness at hospitals",
           "domain": "Health",
           "id": "masscas",
@@ -676,7 +668,7 @@
           "weight": 5
         },
         {
-          "detail": "VIX at 39.53",
+          "detail": "VIX at 35.89",
           "domain": "Markets",
           "id": "vix",
           "name": "Market fear index above 30",
@@ -686,9 +678,15 @@
       ],
       "name": "Pandemic, biological or chemical emergency",
       "sa_impact": "Health system strain, possible lockdowns and border closures, and shortages of medicines and protective equipment, which Australia mostly imports.",
-      "score": 50,
-      "trend": "up",
+      "score": 30,
+      "trend": "down",
       "unlit": [
+        {
+          "domain": "Health",
+          "id": "illness",
+          "name": "Unknown illness / pneumonia cluster reported",
+          "weight": 20
+        },
         {
           "domain": "Trade",
           "id": "exports",
@@ -815,24 +813,24 @@
     },
     {
       "band": "Elevated",
-      "convergence": "Signs are converging across 3 separate areas (ai-enabled hacking, fraud waves and markets). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: a Chinese state-sponsored group used an AI agent to carry out 80-90% of an attack on about 30 organisations, at thousands of requests per second. A fake AI image of a Pentagon explosion briefly moved US markets in May 2023, and a deepfake video call of a CFO tricked a company into paying US$25 million in 2024. The likely signature of an AI attack is breadth and speed: many unrelated systems and vendors hit at once, synthetic media of officials, and shocks with no clear human cause. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, deepfakes of leaders or fake official alerts and flash crash or exchange trading halt.",
+      "convergence": "Signs are converging across 3 separate areas (fraud waves, markets and synthetic media). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: a Chinese state-sponsored group used an AI agent to carry out 80-90% of an attack on about 30 organisations, at thousands of requests per second. A fake AI image of a Pentagon explosion briefly moved US markets in May 2023, and a deepfake video call of a CFO tricked a company into paying US$25 million in 2024. The likely signature of an AI attack is breadth and speed: many unrelated systems and vendors hit at once, synthetic media of officials, and shocks with no clear human cause. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, reports of ai-driven hacking campaigns and flash crash or exchange trading halt.",
       "domains": [
-        "AI-enabled hacking",
         "Fraud waves",
-        "Markets"
+        "Markets",
+        "Synthetic media"
       ],
       "key": "ai",
       "lit": [
         {
-          "detail": "Hackers use autonomous AI tool Cairn to find zero-day, take over server",
-          "domain": "AI-enabled hacking",
-          "id": "aihack",
-          "name": "Reports of AI-driven hacking campaigns",
-          "short": "Reports of AI-driven hacking campaigns",
+          "detail": "Warner on recent tech outages: 'No evidence this is an AI-generated attack'",
+          "domain": "Synthetic media",
+          "id": "deepfake",
+          "name": "Deepfakes of leaders or fake official alerts",
+          "short": "Deepfakes of leaders or fake official…",
           "weight": 15
         },
         {
-          "detail": "VIX +39.0%",
+          "detail": "VIX +26.2%",
           "domain": "Markets",
           "id": "vix",
           "name": "Market fear index jumps 25%+ in a day",
@@ -860,9 +858,9 @@
           "weight": 15
         },
         {
-          "domain": "Synthetic media",
-          "id": "deepfake",
-          "name": "Deepfakes of leaders or fake official alerts",
+          "domain": "AI-enabled hacking",
+          "id": "aihack",
+          "name": "Reports of AI-driven hacking campaigns",
           "weight": 15
         },
         {
