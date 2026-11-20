@@ -264,18 +264,18 @@
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output=",
-    "satellites": "TimeoutError: The read operation timed out"
+    "satellites": "HTTPError: HTTP Error 403: Forbidden"
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-20T23:31:00Z",
+  "generated_at": "2026-11-20T23:46:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 60,
-    "Black Sea": 27,
-    "Israel & Eastern Mediterranean": 0,
+    "Baltic / Kaliningrad": null,
+    "Black Sea": 10,
+    "Israel & Eastern Mediterranean": 3,
     "Korea": 0,
-    "Persian Gulf": 25,
-    "South Australia": 3,
-    "Sydney / NSW": 8,
+    "Persian Gulf": 24,
+    "South Australia": 7,
+    "Sydney / NSW": 6,
     "Taiwan Strait": 0
   },
   "incidents": [
@@ -284,18 +284,16 @@
       "confirmed": true,
       "headlines": [
         "Did Banks Get Hacked? Visa, Mastercard, Chase Confirm Vendor Cyberattack",
-        "Ransomware group reportedly leaks Chase, Visa, and Mastercard customer data, but not credit card numbers",
-        "Visa and Mastercard cyberattack: were Australians affected? Leaked files list Australia, but no card numbers"
+        "Ransomware group reportedly leaks Chase, Visa, and Mastercard customer data, but not credit card numbers"
       ],
-      "severity": "Warning",
+      "severity": "Info",
       "target": "Banking & payments"
     },
     {
       "attack_reported": true,
-      "confirmed": true,
+      "confirmed": false,
       "headlines": [
-        "OpenAI lost control of autonomous AI agents responsible for cyberattack: lawsuit",
-        "Why Did Anthropic’s IPO Fail To Rescue The KOSPI?"
+        "OpenAI lost control of autonomous AI agents responsible for cyberattack: lawsuit"
       ],
       "severity": "Info",
       "target": "AI platforms"
@@ -347,22 +345,21 @@
     },
     {
       "attack_reported": true,
-      "confirmed": true,
-      "headlines": [
-        "Amazon says China-linked hackers used the open-source AI tool Cairn to find an apparent zero-day in a university attack",
-        "Amazon says Chinese hackers used Cairn AI tool to discover apparent zero-day during attack on university"
-      ],
-      "severity": "Info",
-      "target": "Amazon"
-    },
-    {
-      "attack_reported": true,
       "confirmed": false,
       "headlines": [
         "Google Threat Intelligence Group reveals drastic shift in cyberattacks utilizing autonomous AI hacking tools in live intrusions"
       ],
       "severity": "Info",
       "target": "Google Threat Intelligence"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": true,
+      "headlines": [
+        "Amazon says Chinese hackers used Cairn AI tool to discover apparent zero-day during attack on university"
+      ],
+      "severity": "Info",
+      "target": "Amazon"
     },
     {
       "attack_reported": true,
@@ -406,10 +403,10 @@
   "internet_drop_pct": {
     "China": 0.0,
     "Iran": 0.0,
-    "Israel": 0.0,
+    "Israel": 0.2,
     "Russia": 0.0,
     "South Korea": 0.1,
-    "Taiwan": 0.1
+    "Taiwan": 0.0
   },
   "local_sa": {
     "bom": [
@@ -425,16 +422,16 @@
       "Mount Lofty Ranges": "Moderate / Moderate"
     },
     "fire_danger_ok": true,
-    "fires_active": 5,
+    "fires_active": 4,
     "fuel": {
-      "brent_aud": 134.2,
-      "change_pct": -5.1,
-      "pump_cents": -5,
+      "brent_aud": 134.3,
+      "change_pct": -5.0,
+      "pump_cents": -4,
       "week_ago_aud": 141.5
     },
-    "grid_demand_fall_pct": 27.9,
-    "grid_demand_mw": 459,
-    "grid_demand_usual_mw": 686,
+    "grid_demand_fall_pct": 36.8,
+    "grid_demand_mw": 381,
+    "grid_demand_usual_mw": 682,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
@@ -520,9 +517,9 @@
       "What Pakistan's airspace ban is costing Indian airlines | Business - geo.tv - Geo News"
     ],
     "aviation_halt": [
+      "Trump says US flight systems are 'ancient' but 'safe' after ground stop - BBC",
       "US ground stop has led to discussion of major overhaul to air traffic control systems - News24",
-      "BTN Newsbreak: Episode 204 US Flights Grounded (16/11/2026) BTN Newsbreak - ABC iview",
-      "Trump says recent tech outages 'all separate events' and 'bad things happen' with upgrades - NBC News"
+      "BTN Newsbreak: Episode 204 US Flights Grounded (16/11/2026) BTN Newsbreak - ABC iview"
     ],
     "bank_outage": [
       "Did Banks Get Hacked? Visa, Mastercard, Chase Confirm Vendor Cyberattack - Forbes",
@@ -641,13 +638,13 @@
       "Fraud Hits 62% of Finance Teams, Survey Finds - Wisevoter"
     ],
     "shipping_attacks": [
-      "ADNOC L&S says one missing, 11 injured in Strait of Hormuz ship attack - Baird Maritime",
+      "IRGC Says 2 Supertankers Hit Mines in Hormuz Carrying 4 Million Barrels - https://houseofsaud.com/",
       "Another Tanker Hit in Strait of Hormuz as Maritime Attacks Surge Worldwide - gCaptain",
-      "Iran readies tankers to run US blockade, threatens Persian Gulf oil if fired on - Iran International"
+      "ADNOC L&S says one missing, 11 injured in Strait of Hormuz ship attack - Baird Maritime"
     ],
     "strikes": [
-      "Seven bombers from Kola took part in massive strike; two missiles crashed in Poland - The Barents Observer",
       "Iran claims strike on Bahrain air base as tensions persist - Vatican News",
+      "Seven bombers from Kola took part in massive strike; two missiles crashed in Poland - The Barents Observer",
       "Iran widens Gulf attacks by targeting U.S. air base in Kuwait and sites in Bahrain - PBS"
     ]
   },
@@ -733,7 +730,7 @@
       "yes": 3.8
     },
     {
-      "d24h": -1.6,
+      "d24h": -1.8,
       "q": "Ukraine agrees not to join NATO by December 31, 2026?",
       "yes": 1.6
     },
@@ -748,7 +745,7 @@
       "yes": 2.3
     },
     {
-      "d24h": 0.4,
+      "d24h": 0.5,
       "q": "Will the U.S. test a nuclear weapon by December 31 2026?",
       "yes": 2.9
     },
@@ -758,9 +755,9 @@
       "yes": 16.5
     },
     {
-      "d24h": -1.5,
+      "d24h": -1.0,
       "q": "Ukraine agrees not to join NATO by December 31, 2027?",
-      "yes": 17.5
+      "yes": 18.0
     },
     {
       "d24h": -1.0,
@@ -1085,7 +1082,7 @@
         }
       ],
       "score": 65,
-      "trend": "up"
+      "trend": "steady"
     },
     {
       "band": "Low",
@@ -1148,10 +1145,10 @@
   },
   "tankers": "normal",
   "telecom_drop_pct": {
-    "Aussie Broadband": 0.0,
-    "Optus": 1.0,
+    "Aussie Broadband": 0.6,
+    "Optus": 0.0,
     "TPG": 0.0,
-    "Telstra": 0.3,
+    "Telstra": 0.2,
     "Vodafone": 0.0
   },
   "us_departure_orders": [
