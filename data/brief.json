@@ -5,7 +5,7 @@
     "gps_gulf": {
       "median": 7,
       "status": "ANOMALY",
-      "value": 28
+      "value": 27
     }
   },
   "analyst": {
@@ -257,7 +257,7 @@
         "2026-11-19 Europe: Expedia hit by alleged cyberattack from Russia-based extortion group (named attacker)",
         "2026-11-18 ?: JD Vance Addresses Emergency Fears as Google Warns of AI Hackers (same pattern)",
         "2026-11-18 Europe: France Targeted in Unprecedented AI Hacking Operation With Russian-Language Code (named attacker)",
-        "2026-11-18 United States: Google Reveals How Russian Hackers Used One Cloud Breach to Compromise Another US Organization (named attacker)",
+        "2026-11-18 United States/Europe: Google Reveals How Russian Hackers Used One Cloud Breach to Compromise Another US Organization (named attacker)",
         "2026-11-17 ?: IIHF Website Goes Offline After Cyberattack as Russia Row Over World Juniors Escalates (named attacker)"
       ],
       "incidents_7d": 7,
@@ -320,13 +320,13 @@
     "satellites": "HTTPError: HTTP Error 403: Forbidden"
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-20T15:42:00Z",
+  "generated_at": "2026-11-20T15:57:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 14,
-    "Black Sea": 62,
-    "Israel & Eastern Mediterranean": 10,
-    "Korea": 5,
-    "Persian Gulf": 28,
+    "Baltic / Kaliningrad": 19,
+    "Black Sea": 17,
+    "Israel & Eastern Mediterranean": 0,
+    "Korea": 0,
+    "Persian Gulf": 27,
     "South Australia": null,
     "Sydney / NSW": null,
     "Taiwan Strait": 0
@@ -360,6 +360,15 @@
       ],
       "severity": "Info",
       "target": "Bell Financial Group"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "'Waffle': Australian judge blasts Medibank's bid for more time in data-breach cases"
+      ],
+      "severity": "Info",
+      "target": "Waffle'"
     },
     {
       "attack_reported": true,
@@ -461,39 +470,10 @@
       "target": "European Commission"
     },
     {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
-        "Hackers Use AI-Powered ARTEX Framework to Automate Cyberattacks Without Relying on Zero-Day Exploits"
-      ],
-      "severity": "Info",
-      "target": "Hackers Use AI-Powered"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
-        "FBI Warns Chinese AI Tool ARTEX Enables Cyberattacks From iPhones"
-      ],
-      "severity": "Info",
-      "target": "FBI Warns Chinese"
-    },
-    {
-      "attack_reported": false,
-      "confirmed": true,
-      "headlines": [
-        "After Microsoft 365's nearly 24-hour outage, Satya Nadella warns AI could help attackers operate at nation-state scale",
-        "Microsoft outage cause revealed: It was a perfect storm of problems",
-        "Microsoft 365 outage halted social services in Orange County"
-      ],
-      "severity": "Warning",
-      "target": "Microsoft"
-    },
-    {
       "attack_reported": false,
       "confirmed": false,
       "headlines": [
-        "Major blackout hits South Australia after storm"
+        "Major Blackout Hits South Australia After Storm"
       ],
       "severity": "Info",
       "target": "Power grid"
@@ -509,6 +489,16 @@
     },
     {
       "attack_reported": false,
+      "confirmed": true,
+      "headlines": [
+        "After Microsoft 365's nearly 24-hour outage, Satya Nadella warns AI could help attackers operate at nation-state scale",
+        "Microsoft 365 outage halted social services in Orange County"
+      ],
+      "severity": "Info",
+      "target": "Microsoft"
+    },
+    {
+      "attack_reported": false,
       "confirmed": false,
       "headlines": [
         "South Australia cuts rooftop solar after storm sparks power outages"
@@ -518,12 +508,12 @@
     }
   ],
   "internet_drop_pct": {
-    "China": 1.1,
+    "China": 1.0,
     "Iran": 0.1,
     "Israel": 0.2,
-    "Russia": 0.0,
+    "Russia": 0.3,
     "South Korea": 0.1,
-    "Taiwan": 0.2
+    "Taiwan": 0.3
   },
   "local_sa": {
     "bom": [
@@ -539,16 +529,16 @@
       "Mount Lofty Ranges": "Moderate / Moderate"
     },
     "fire_danger_ok": true,
-    "fires_active": 5,
+    "fires_active": 6,
     "fuel": {
-      "brent_aud": 133.9,
-      "change_pct": -5.3,
+      "brent_aud": 133.8,
+      "change_pct": -5.4,
       "pump_cents": -5,
       "week_ago_aud": 141.5
     },
-    "grid_demand_fall_pct": 5.0,
-    "grid_demand_mw": 1276,
-    "grid_demand_usual_mw": 1295,
+    "grid_demand_fall_pct": 2.4,
+    "grid_demand_mw": 1274,
+    "grid_demand_usual_mw": 1294,
     "grid_lor_level": 0,
     "nearby_incidents": [
       {
@@ -563,9 +553,9 @@
     ],
     "outlook": {
       "air": {
-        "aqi": 22,
+        "aqi": 20,
         "peak_pm25_48h": 10,
-        "pm25": 4
+        "pm25": 5
       },
       "air_word": "Good",
       "days": [
@@ -605,20 +595,20 @@
   },
   "markets": {
     "AUD/USD": {
-      "change_pct": -0.77,
-      "price": 0.6661
+      "change_pct": -0.97,
+      "price": 0.6648
     },
     "Brent oil": {
-      "change_pct": -4.19,
-      "price": 88.13
+      "change_pct": -3.79,
+      "price": 88.49
     },
     "Gold": {
-      "change_pct": -3.84,
-      "price": 3543.8
+      "change_pct": -3.65,
+      "price": 3551.0
     },
     "VIX": {
-      "change_pct": 5.77,
-      "price": 30.08
+      "change_pct": 5.34,
+      "price": 29.96
     }
   },
   "national_shocks": {
@@ -628,6 +618,16 @@
       "national": false
     },
     "shocks": [
+      {
+        "code": "AE",
+        "country": "United Arab Emirates",
+        "headlines": [],
+        "level": "Possible",
+        "sector": "aviation",
+        "signals": {
+          "traffic": "airborne traffic near Dubai about 26% of normal"
+        }
+      },
       {
         "code": "US",
         "country": "United States",
@@ -696,13 +696,13 @@
     ],
     "chem": [
       "Trump Warns Tehran After 'Indications of Chemical Weapons' - الحرة",
-      "Fluffy rabbits, dark past draw tourists to Japan island - The Straits Times",
-      "Iran may use chemical weapons. Why is Washington starving the OPCW? - Foundation for Defense of Democracies"
+      "Iran may use chemical weapons. Why is Washington starving the OPCW? - Foundation for Defense of Democracies",
+      "Fluffy rabbits, dark past draw tourists to Japan island - The Straits Times"
     ],
     "cloud": [
       "Why Did Anthropic’s IPO Fail To Rescue The KOSPI? - Disruption Banking",
-      "Microsoft outage cause revealed: It was a perfect storm of problems - Mashable",
-      "Key facts: Azure $47.2B pact; $100B revenue; $1B Anthropic shares - TradingView"
+      "Key facts: Azure $47.2B pact; $100B revenue; $1B Anthropic shares - TradingView",
+      "Anthropic opens 34% above IPO price after $81.34bn offering - Gulf Business"
     ],
     "cyber_attrib": [
       "FBI warns hackers weaponizing ARTEX AI framework to automate attacks on energy, manufacturing, telecom - Industrial Cyber",
@@ -715,14 +715,14 @@
       "Cyberattack tactics are outpacing what renewal forms ask - Insurance Business"
     ],
     "cyber_ot": [
+      "Tens of thousands of UK fridges secured from hackers in secret nationwide operation - BBC",
       "Who is hacking Europe’s supermarket fridges and freezers, and why? - The Guardian",
-      "Shop freezers in seven European countries hit by cyber-attack - BBC",
-      "Supermarket freezers and fridges in Europe hit by cyberattack - Nine.com.au"
+      "Shop freezers in seven European countries hit by cyber-attack - BBC"
     ],
     "cyber_state": [
       "ESET Research: Sandworm behind cyberattack on Poland’s power grid in late 2025 - We Live Security",
       "ESET attributes DynoWiper-powered attack on Poland’s power grid to Russia-aligned Sandworm group - Industrial Cyber",
-      "Sandworm Blamed for Wiper Attack on Polish Power Grid - Dark Reading"
+      "Russian state hackers likely behind wiper malware attack on Poland’s power grid - The Record from Recorded Future News"
     ],
     "cyber_supply": [
       "CVE-2026-123890: Critical VMware vCenter Zero-Day Exploited by China-Linked Hackers - SOC Prime",
@@ -731,20 +731,21 @@
     ],
     "deepfake": [
       "Scottish Greens challenge SNP government’s relationship with big tech after First Minister’s apology over AI slop video - Scottish Greens",
-      "TikTok launches tool to help public figures detect deepfakes globally - Free Malaysia Today",
-      "TikTok Launches Global Deepfake Detection Tool For Public Figures - BusinessToday Malaysia"
+      "Who owns AI-generated work? Copyright rules in the US, UK and EU - CEO경제신문",
+      "TikTok launches tool to help public figures detect deepfakes globally - Free Malaysia Today"
     ],
     "dieoff": [
       "Kenya investigates mysterious deaths of seven hippos - Galaxy Television"
     ],
     "flash": [
-      "Metal Powder Works Enters Trading Halt Ahead of Capital Raise Announcement - Kalkine",
-      "Bunker Hill Silver TSX:BNKR Enters the Spotlight as Trading Halt Signals Pending News (TSX:BNKR) - kalkine.ca",
-      "Rincon Resources Enters Trading Halt Pending Material Exploration Results at Telfer South Project - Kalkine"
+      "Carma Limited Enters Trading Halt Pending Material Financier Announcement - Kalkine",
+      "All About How 23/5 Trading Will Work - Nasdaq",
+      "Bunker Hill Silver TSX:BNKR Enters the Spotlight as Trading Halt Signals Pending News (TSX:BNKR) - kalkine.ca"
     ],
     "fuel_au": [
       "Honda Avancier 2027: new hybrid large SUV targets Santa Fe and Kluger - Chasing Cars",
-      "Oil Supply Shock to Worsen as Inventories Fall Further Even if Conflict Ends - EnergyNow.com"
+      "Oil Supply Shock to Worsen as Inventories Fall Further Even if Conflict Ends - EnergyNow.com",
+      "No route cuts for Fiji Airways despite global fuel hikes - FBC News"
     ],
     "illness": [
       "148 aboard Florida-bound cruise ship sickened by ‘unknown’ GI outbreak: CDC - The Hill",
@@ -753,7 +754,8 @@
     ],
     "masscas": [
       "Mike O’Callaghan Military Medical Center Integrates with Regional Partners for Mass Casualty Exercise - DVIDS",
-      "Family of Robb Elementary victim hope their experience inspires mass casualty preparedness at hospitals - KXAN Austin"
+      "Family of Robb Elementary victim hope their experience inspires mass casualty preparedness at hospitals - KXAN Austin",
+      "Mass casualty mock drill held at Kisama ahead of Hornbill Festival - Eastern Mirror"
     ],
     "mobilisation": [
       "Delivered, \"processed\" by the Military Medical Commission, mobilized: the court explained how to properly appeal such a draft - Судово-юридична газета",
@@ -772,16 +774,13 @@
     ],
     "reservists": [
       "Armenia: 'New Concern' Over Criminal Prosecutions Of Conscientious Objector Reservists - Analysis - Eurasia Review",
-      "Delivered, \"processed\" by the Military Medical Commission, mobilized: the court explained how to properly appeal such a draft - Судово-юридична газета",
-      "Contractors called up for £500m retrofit framework - Construction Enquirer"
+      "Contractors called up for £500m retrofit framework - Construction Enquirer",
+      "Delivered, \"processed\" by the Military Medical Commission, mobilized: the court explained how to properly appeal such a draft - Судово-юридична газета"
     ],
     "sapn": [
       "South Australia cuts rooftop solar after storm sparks power outages - pv magazine Australia",
       "State’s drastic action after storm carnage - News.com.au",
       "Schools shut, hospitals hit, triple-0 fears as wild storms cause chaos - Adelaide Now"
-    ],
-    "sawater": [
-      "FRIDAY BRIEFING | The day email went away - News24"
     ],
     "scams": [
       "Finance leaders face a widening fraud resilience gap as threats become more sophisticated - iTWire",
@@ -806,9 +805,9 @@
       "yes": 6.5
     },
     {
-      "d24h": 1.2,
+      "d24h": 1.1,
       "q": "US-Iran Final Nuclear Deal by December 31, 2026?",
-      "yes": 5.3
+      "yes": 5.2
     },
     {
       "d24h": 2.0,
@@ -821,7 +820,7 @@
       "yes": 2.9
     },
     {
-      "d24h": -1.7,
+      "d24h": -1.6,
       "q": "US-Iran Hormuz Agreement by November 30?",
       "yes": 2.6
     },
@@ -856,9 +855,9 @@
       "yes": 1.6
     },
     {
-      "d24h": 1.1,
+      "d24h": 1.0,
       "q": "Will China blockade Taiwan in 2026?",
-      "yes": 3.2
+      "yes": 3.1
     },
     {
       "d24h": 0.0,
@@ -881,9 +880,9 @@
       "yes": 2.2
     },
     {
-      "d24h": 0.9,
+      "d24h": 1.1,
       "q": "Ukraine agrees not to join NATO by December 31, 2026?",
-      "yes": 3.3
+      "yes": 3.0
     },
     {
       "d24h": -0.8,
@@ -896,9 +895,9 @@
       "yes": 2.2
     },
     {
-      "d24h": 1.2,
+      "d24h": 0.8,
       "q": "Will the U.S. test a nuclear weapon by December 31 2026?",
-      "yes": 3.1
+      "yes": 2.7
     },
     {
       "d24h": 0.0,
@@ -916,7 +915,7 @@
       "yes": 10.0
     },
     {
-      "d24h": -0.5,
+      "d24h": 0.0,
       "q": "Will Nick Stewart attend a US x Iran diplomatic meeting by December 31, 2026?",
       "yes": 7.5
     }
@@ -1128,7 +1127,7 @@
           "name": "Fire, flood or storm road closures in SA"
         },
         {
-          "detail": "South Australia cuts rooftop solar after storm sparks power outages; Major blackout hits South Australia after storm",
+          "detail": "South Australia cuts rooftop solar after storm sparks power outages; Major Blackout Hits South Australia After Storm",
           "name": "Reports of widespread power outages in SA"
         }
       ],
@@ -1145,7 +1144,7 @@
       "key": "mideast",
       "lit": [
         {
-          "detail": "gps_gulf 28 vs usual 7",
+          "detail": "gps_gulf 27 vs usual 7",
           "name": "GPS jamming spike (Gulf / Israel)"
         },
         {
@@ -1154,7 +1153,7 @@
         }
       ],
       "score": 25,
-      "trend": "up"
+      "trend": "steady"
     },
     {
       "band": "Low",
@@ -1170,19 +1169,9 @@
     },
     {
       "band": "Low",
-      "convergence": "Only one kind of sign is showing (markets). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and mobilisation / reservist reports (russia / nato).",
-      "domains": [
-        "Markets"
-      ],
       "key": "russia",
-      "lit": [
-        {
-          "detail": "VIX at 30.08",
-          "name": "Market fear index above 30"
-        }
-      ],
-      "score": 10,
-      "trend": "up"
+      "score": 0,
+      "trend": "down"
     },
     {
       "band": "Low",
@@ -1197,12 +1186,10 @@
       "trend": "steady"
     },
     {
-      "band": "High",
-      "convergence": "Signs are converging across 3 separate areas (chemical weapons, health and markets). Unrelated systems flagging the same scenario at once is the pattern seen before past events. Before COVID-19 (Dec 2019 - Feb 2020): reports of an unknown pneumonia cluster, WHO outbreak notices, mask and hazmat make",
+      "band": "Elevated",
+      "convergence": "Only one kind of sign is showing (health). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: countries restricting medical supply exports, pandemic-response stocks outperforming (5 days) and chemical / nerve-agent attack or mass poisoning repor",
       "domains": [
-        "Chemical weapons",
-        "Health",
-        "Markets"
+        "Health"
       ],
       "key": "bio",
       "lit": [
@@ -1217,18 +1204,10 @@
         {
           "detail": "Family of Robb Elementary victim hope their experience inspires mass casualty preparedness at hospitals",
           "name": "Mass casualty declarations (any country)"
-        },
-        {
-          "detail": "VIX at 30.08",
-          "name": "Market fear index above 30"
-        },
-        {
-          "detail": "Warning of Suspected Chemical Weapons Storage at Sudanese Army Facilities",
-          "name": "Chemical / nerve-agent attack or mass poisoning reported"
         }
       ],
-      "score": 65,
-      "trend": "up"
+      "score": 40,
+      "trend": "down"
     },
     {
       "band": "Low",
@@ -1270,21 +1249,21 @@
         }
       ],
       "score": 30,
-      "trend": "up"
+      "trend": "steady"
     }
   ],
   "sectors_relative_5d": {
     "defence_au": -4.15,
-    "defence_eu": 0.69,
-    "defence_us": 2.47,
-    "pandemic": -1.56
+    "defence_eu": 0.68,
+    "defence_us": 2.76,
+    "pandemic": -2.09
   },
   "tankers": "normal",
   "telecom_drop_pct": {
-    "Aussie Broadband": 0.0,
-    "Optus": 1.0,
+    "Aussie Broadband": 0.6,
+    "Optus": 0.0,
     "TPG": 0.0,
-    "Telstra": 0.2,
+    "Telstra": 0.5,
     "Vodafone": 4.8
   },
   "us_departure_orders": [
