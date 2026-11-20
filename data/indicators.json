@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-20T09:08:00Z",
+  "generated_at": "2026-11-20T09:23:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -106,23 +106,14 @@
       "why": "The worst local days stack up: extreme fire danger, a heatwave pushing power demand, a tight grid, and storms or fires damaging lines. AEMO warns of supply shortfalls hours to a day ahead; the CFS and Bureau issue ratings and warnings a day or more ahead."
     },
     {
-      "band": "Elevated",
-      "convergence": "Signs are converging across 3 separate areas (aviation, electronic warfare and shipping). Unrelated systems flagging the same scenario at once is the pattern seen before past events. Before the 2024-25 Israel-Iran exchanges and US strikes, watchers saw US tanker surges toward Europe and the Gulf, embassy departure orders, regional GPS jamming, airspace closures and oil price jumps, often 1-3 days ahead. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
+      "band": "Guarded",
+      "convergence": "Two different kinds of sign are showing together (aviation and shipping). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
       "domains": [
         "Aviation",
-        "Electronic warfare",
         "Shipping"
       ],
       "key": "mideast",
       "lit": [
-        {
-          "detail": "gps_gulf 34 vs usual 7",
-          "domain": "Electronic warfare",
-          "id": "gps",
-          "name": "GPS jamming spike (Gulf / Israel)",
-          "short": "GPS jamming spike",
-          "weight": 10
-        },
         {
           "detail": "Dammam hub kept Gulf Air flying during airspace closure",
           "domain": "Aviation",
@@ -142,8 +133,8 @@
       ],
       "name": "Middle East war & Gulf shipping",
       "sa_impact": "Fuel: Australia imports most of its fuel, much of it refined from Gulf crude in Asia. Shipping attacks or a Hormuz closure push up prices within days and can cause local shortages.",
-      "score": 35,
-      "trend": "steady",
+      "score": 25,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Military air",
@@ -156,6 +147,12 @@
           "id": "air",
           "name": "Unusual military air activity over the region",
           "weight": 15
+        },
+        {
+          "domain": "Electronic warfare",
+          "id": "gps",
+          "name": "GPS jamming spike (Gulf / Israel)",
+          "weight": 10
         },
         {
           "domain": "Communications",
@@ -401,7 +398,7 @@
       "name": "Russia-NATO escalation",
       "sa_impact": "Indirect: energy and market shock, cyber attacks that can spill over to Australian systems, and nuclear-risk rhetoric.",
       "score": 0,
-      "trend": "down",
+      "trend": "steady",
       "unlit": [
         {
           "domain": "Electronic warfare",
@@ -833,7 +830,7 @@
       "name": "AI-enabled attack (non-traditional)",
       "sa_impact": "Not bombs but disruption: hacking at machine speed across banks, telcos, hospitals and the grid at once; fake videos or alerts from leaders causing panic buying or bank runs; or automated market and fraud shocks. Effects would be outages, payment failures and confusion about what is real.",
       "score": 20,
-      "trend": "down",
+      "trend": "steady",
       "unlit": [
         {
           "domain": "Mass exploitation",
