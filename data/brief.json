@@ -313,16 +313,16 @@
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-20T01:11:00Z",
+  "generated_at": "2026-11-20T01:25:00Z",
   "gps_bad_pct": {
     "Baltic / Kaliningrad": null,
     "Black Sea": null,
-    "Israel & Eastern Mediterranean": 7,
+    "Israel & Eastern Mediterranean": 2,
     "Korea": 1,
-    "Persian Gulf": 16,
+    "Persian Gulf": 14,
     "South Australia": 0,
-    "Sydney / NSW": 2,
-    "Taiwan Strait": 0
+    "Sydney / NSW": 3,
+    "Taiwan Strait": 1
   },
   "incidents": [
     {
@@ -330,8 +330,8 @@
       "confirmed": true,
       "headlines": [
         "Cyberattack may have exposed Chase Bank and Mastercard customer data",
-        "Thousands of customers have data leaked after cyberattack at Visa, Mastercard and US banking giant",
-        "JPMorgan, Visa, Mastercard fell victim to supplier hack"
+        "Chase Bank, Visa and Mastercard confirm third-party cyber attacks",
+        "Thousands of customers have data leaked after cyberattack at Visa, Mastercard and US banking giant"
       ],
       "severity": "Warning",
       "target": "Banking & payments"
@@ -429,15 +429,6 @@
     },
     {
       "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
-        "AI-powered Cyberattack on the European Commission"
-      ],
-      "severity": "Info",
-      "target": "AI-powered"
-    },
-    {
-      "attack_reported": true,
       "confirmed": true,
       "headlines": [
         "Tech mogul Palmer Luckey says U.S. faces tech mismatch with AI-powered hackers"
@@ -449,8 +440,8 @@
       "attack_reported": false,
       "confirmed": true,
       "headlines": [
-        "Luke Kehoe: Microsoft Outage Exposes Concentration Risks in Digital Infrastructure",
         "Microsoft 365 outage cause: how the gateway failed",
+        "Luke Kehoe: Microsoft Outage Exposes Concentration Risks in Digital Infrastructure",
         "Microsoft’s Outlook outage didn’t end when it was fixed — a backlog of retried emails can take hours to days to clear"
       ],
       "severity": "Warning",
@@ -473,6 +464,15 @@
       ],
       "severity": "Info",
       "target": "Undersea cables"
+    },
+    {
+      "attack_reported": false,
+      "confirmed": false,
+      "headlines": [
+        "Pakistan Internet Outage: Did Iran Target Subsea Cables? | Vantage"
+      ],
+      "severity": "Info",
+      "target": "Phone & internet networks"
     },
     {
       "attack_reported": false,
@@ -503,10 +503,10 @@
     }
   ],
   "internet_drop_pct": {
-    "China": 0.1,
+    "China": 0.4,
     "Iran": 0.3,
     "Israel": 0.0,
-    "Russia": 0.2,
+    "Russia": 0.0,
     "South Korea": 0.2,
     "Taiwan": 0.0
   },
@@ -529,9 +529,9 @@
       "pump_cents": -4,
       "week_ago_aud": 140.6
     },
-    "grid_demand_fall_pct": 20.5,
-    "grid_demand_mw": 402,
-    "grid_demand_usual_mw": 372,
+    "grid_demand_fall_pct": 35.9,
+    "grid_demand_mw": 324,
+    "grid_demand_usual_mw": 369,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
@@ -541,7 +541,26 @@
         "pm25": 4
       },
       "air_word": "Good",
-      "days": []
+      "days": [
+        {
+          "date": "2026-11-20",
+          "gust": 58,
+          "rain": 0,
+          "tmax": 25
+        },
+        {
+          "date": "2026-11-21",
+          "gust": 29,
+          "rain": 0,
+          "tmax": 28
+        },
+        {
+          "date": "2026-11-22",
+          "gust": 60,
+          "rain": 0,
+          "tmax": 28
+        }
+      ]
     },
     "possible_blackout": false,
     "power_news": [],
@@ -559,16 +578,16 @@
   },
   "markets": {
     "AUD/USD": {
-      "change_pct": -0.79,
-      "price": 0.666
+      "change_pct": -0.83,
+      "price": 0.6657
     },
     "Brent oil": {
-      "change_pct": -2.62,
-      "price": 89.54
+      "change_pct": -2.5,
+      "price": 89.65
     },
     "Gold": {
-      "change_pct": -3.98,
-      "price": 3593.1
+      "change_pct": -4.02,
+      "price": 3591.4
     },
     "VIX": {
       "change_pct": 15.8,
@@ -599,8 +618,8 @@
     ],
     "aviation_halt": [
       "FAA ground stop suggests how risky air traffic control upgrades can be - Scientific American",
-      "Could Another Ground Stop Upend Holiday Travel? What the Recent Massive Flight Disruptions Revealed - AFAR",
-      "The White House needs a ground stop - Silver Bulletin"
+      "The White House needs a ground stop - Silver Bulletin",
+      "Could Another Ground Stop Upend Holiday Travel? What the Recent Massive Flight Disruptions Revealed - AFAR"
     ],
     "bank_outage": [
       "Major credit card companies hit in cyber attack - News24",
@@ -631,7 +650,7 @@
     "cyber_attrib": [
       "FBI warns hackers weaponizing ARTEX AI framework to automate attacks on energy, manufacturing, telecom - Industrial Cyber",
       "FBI warns hackers using AI-powered tool to automate cyberattacks worldwide - Anadolu Ajansı",
-      "CISA Warns Hackers Are Actively Exploiting Four Flaws in Synology, LiteLLM, Apache Axis and REDCap - CyberSecurityNews"
+      "CISA Warns of 4 Exploited Flaws Linked to Ransomware, Cryptomining, and LLMjacking Attacks - The Hacker News"
     ],
     "cyber_au": [
       "Report of the Rapid Review into Australian Government arrangements for an AI-driven cyber incident - Department of the Prime Minister and Cabinet",
@@ -679,13 +698,12 @@
     ],
     "masscas": [
       "Mike O’Callaghan Military Medical Center Integrates with Regional Partners for Mass Casualty Exercise - DVIDS",
-      "Family of Robb Elementary victim hope their experience inspires mass casualty preparedness at hospitals - KWKT - FOX 44",
-      "Scoping Review Maps Decade of Patient Safety and Healthcare Quality Research in Israel - Bioengineer.org"
+      "Family of Robb Elementary victim hope their experience inspires mass casualty preparedness at hospitals - ConchoValleyHomepage.com"
     ],
     "mobilisation": [
       "Iraq strikes compromise with Kataib Hezbollah - Middle East Online",
       "Venislavskyi Says Mobilization Conflicts Have Nearly Disappeared - Mezha.net",
-      "100 per cent job retention in exchange for mobilisation: the government is preparing a new model for businesses - UkrMedia News"
+      "The number of killed combatants from southern Russia in Ukraine has reached 10050. - Caucasian Knot"
     ],
     "national_outage": [
       "Cuba’s National Electric Grid Collapses, Reason Unknown - EnergyNow.com",
@@ -803,9 +821,9 @@
       "yes": 1.3
     },
     {
-      "d24h": -0.4,
+      "d24h": -0.6,
       "q": "Ukraine agrees not to join NATO by December 31, 2026?",
-      "yes": 3.1
+      "yes": 2.9
     },
     {
       "d24h": -0.8,
@@ -818,9 +836,9 @@
       "yes": 2.6
     },
     {
-      "d24h": -0.1,
+      "d24h": 0.2,
       "q": "Will the U.S. test a nuclear weapon by December 31 2026?",
-      "yes": 2.1
+      "yes": 2.4
     },
     {
       "d24h": 0.0,
@@ -1102,10 +1120,20 @@
       "trend": "steady"
     },
     {
-      "band": "Low",
+      "band": "Guarded",
+      "convergence": "Only one kind of sign is showing (mobilisation). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: us nuclear command aircraft unusual, private jets heading to retreat destinations and forecast markets jump on nuclear use.",
+      "domains": [
+        "Mobilisation"
+      ],
       "key": "nuclear",
-      "score": 0,
-      "trend": "down"
+      "lit": [
+        {
+          "detail": "Military Escalation in the Gulf: Iranian Attacks, US Airstrikes, and Mobilization in the Arabian Sea",
+          "name": "Mobilisation reports (any major power)"
+        }
+      ],
+      "score": 15,
+      "trend": "up"
     },
     {
       "band": "Low",
@@ -1127,7 +1155,7 @@
           "name": "WHO outbreak report with a high-concern pathogen (last 14 days)"
         },
         {
-          "detail": "Family of Robb Elementary victim hope their experience inspires mass casualty preparedness at hospitals - KWKT",
+          "detail": "Family of Robb Elementary victim hope their experience inspires mass casualty preparedness at hospitals",
           "name": "Mass casualty declarations (any country)"
         },
         {
@@ -1187,17 +1215,17 @@
     }
   ],
   "sectors_relative_5d": {
-    "defence_au": -2.88,
+    "defence_au": -2.1,
     "defence_eu": -1.8,
     "defence_us": -1.05,
     "pandemic": -5.44
   },
   "tankers": "normal",
   "telecom_drop_pct": {
-    "Aussie Broadband": 0.8,
-    "Optus": 0.0,
-    "TPG": 0.4,
-    "Telstra": 0.4,
+    "Aussie Broadband": 0.0,
+    "Optus": 2.0,
+    "TPG": 0.5,
+    "Telstra": 0.0,
     "Vodafone": 0.0
   },
   "us_departure_orders": [
