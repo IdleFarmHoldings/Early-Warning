@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-20T10:12:00Z",
+  "generated_at": "2026-11-20T10:18:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -116,7 +116,7 @@
       "key": "mideast",
       "lit": [
         {
-          "detail": "gps_gulf 42 vs usual 8",
+          "detail": "gps_gulf 41 vs usual 8.0",
           "domain": "Electronic warfare",
           "id": "gps",
           "name": "GPS jamming spike (Gulf / Israel)",
@@ -805,11 +805,10 @@
       "why": "Large attacks are usually preceded by quieter steps: a surge in newly exploited flaws in VPNs and firewalls (how state groups like Volt Typhoon get in), scanning of industrial-control systems, a rise in ransomware victims in the target country, and official warnings. Before Russia's 2022 invasion, wiper malware hit Ukraine a day ahead; Chinese groups have been found pre-positioned in US and allied infrastructure."
     },
     {
-      "band": "Elevated",
-      "convergence": "Signs are converging across 3 separate areas (ai-enabled hacking, cloud services and fraud waves). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: a Chinese state-sponsored group used an AI agent to carry out 80-90% of an attack on about 30 organisations, at thousands of requests per second. A fake AI image of a Pentagon explosion briefly moved US markets in May 2023, and a deepfake video call of a CFO tricked a company into paying US$25 million in 2024. The likely signature of an AI attack is breadth and speed: many unrelated systems and vendors hit at once, synthetic media of officials, and shocks with no clear human cause. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, deepfakes of leaders or fake official alerts and flash crash or exchange trading halt.",
+      "band": "Guarded",
+      "convergence": "Two different kinds of sign are showing together (ai-enabled hacking and fraud waves). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, deepfakes of leaders or fake official alerts and flash crash or exchange trading halt.",
       "domains": [
         "AI-enabled hacking",
-        "Cloud services",
         "Fraud waves"
       ],
       "key": "ai",
@@ -823,14 +822,6 @@
           "weight": 15
         },
         {
-          "detail": "Microsoft 365 outage: Global cyber insured losses estimated at up to $700 mn",
-          "domain": "Cloud services",
-          "id": "cloud",
-          "name": "Major cloud or AI service outage",
-          "short": "Major cloud or AI service outage",
-          "weight": 10
-        },
-        {
           "detail": "Sumsub finds deepfake attacks rising as identity fraud declines in Europe",
           "domain": "Fraud waves",
           "id": "scams",
@@ -841,8 +832,8 @@
       ],
       "name": "AI-enabled attack (non-traditional)",
       "sa_impact": "Not bombs but disruption: hacking at machine speed across banks, telcos, hospitals and the grid at once; fake videos or alerts from leaders causing panic buying or bank runs; or automated market and fraud shocks. Effects would be outages, payment failures and confusion about what is real.",
-      "score": 30,
-      "trend": "steady",
+      "score": 20,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Mass exploitation",
@@ -866,6 +857,12 @@
           "domain": "Markets",
           "id": "vix",
           "name": "Market fear index jumps 25%+ in a day",
+          "weight": 10
+        },
+        {
+          "domain": "Cloud services",
+          "id": "cloud",
+          "name": "Major cloud or AI service outage",
           "weight": 10
         },
         {
