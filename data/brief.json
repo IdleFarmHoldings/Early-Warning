@@ -1,13 +1,7 @@
 {
   "about": "Short form of latest.json + indicators.json for the analysis run. Links and raw samples removed.",
   "acsc": [],
-  "aircraft_flags": {
-    "gps_gulf": {
-      "median": 7,
-      "status": "ANOMALY",
-      "value": 24
-    }
-  },
+  "aircraft_flags": {},
   "analyst": {
     "ASPI Strategist": [
       "Let’s see whether North Korea absorbs the experience it’s getting in Ukraine",
@@ -316,17 +310,18 @@
   ],
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
+    "maritime": "TimeoutError: ",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output=",
-    "satellites": "IncompleteRead: IncompleteRead(0 bytes read)"
+    "satellites": "TimeoutError: The read operation timed out"
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-20T14:35:00Z",
+  "generated_at": "2026-11-20T14:51:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 27,
-    "Black Sea": 33,
-    "Israel & Eastern Mediterranean": 0,
+    "Baltic / Kaliningrad": 19,
+    "Black Sea": 71,
+    "Israel & Eastern Mediterranean": 3,
     "Korea": 0,
-    "Persian Gulf": 24,
+    "Persian Gulf": 5,
     "South Australia": null,
     "Sydney / NSW": null,
     "Taiwan Strait": 0
@@ -360,15 +355,6 @@
       ],
       "severity": "Info",
       "target": "Bell Financial Group"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
-        "'Waffle': Australian judge blasts Medibank's bid for more time in data-breach cases"
-      ],
-      "severity": "Info",
-      "target": "Waffle'"
     },
     {
       "attack_reported": true,
@@ -473,7 +459,7 @@
       "attack_reported": false,
       "confirmed": false,
       "headlines": [
-        "Major blackout hits South Australia after storm"
+        "Major Blackout Hits South Australia After Storm"
       ],
       "severity": "Info",
       "target": "Power grid"
@@ -505,15 +491,24 @@
       ],
       "severity": "Info",
       "target": "South Australia"
+    },
+    {
+      "attack_reported": false,
+      "confirmed": false,
+      "headlines": [
+        "Mothballed power station reactivated to rectify Eyre Peninsula outage"
+      ],
+      "severity": "Info",
+      "target": "Mothballed"
     }
   ],
   "internet_drop_pct": {
     "China": 1.5,
-    "Iran": 0.0,
+    "Iran": 0.1,
     "Israel": 0.0,
-    "Russia": 0.4,
+    "Russia": 0.0,
     "South Korea": 0.0,
-    "Taiwan": 0.1
+    "Taiwan": 0.2
   },
   "local_sa": {
     "bom": [
@@ -536,8 +531,8 @@
       "pump_cents": -5,
       "week_ago_aud": 141.5
     },
-    "grid_demand_fall_pct": -0.5,
-    "grid_demand_mw": 1369,
+    "grid_demand_fall_pct": 4.7,
+    "grid_demand_mw": 1298,
     "grid_demand_usual_mw": 1329,
     "grid_lor_level": 0,
     "nearby_incidents": [],
@@ -585,20 +580,20 @@
   },
   "markets": {
     "AUD/USD": {
-      "change_pct": -0.73,
-      "price": 0.6664
+      "change_pct": -0.74,
+      "price": 0.6663
     },
     "Brent oil": {
-      "change_pct": -3.53,
-      "price": 88.73
+      "change_pct": -3.89,
+      "price": 88.4
     },
     "Gold": {
-      "change_pct": -3.03,
-      "price": 3573.9
+      "change_pct": -3.07,
+      "price": 3572.5
     },
     "VIX": {
-      "change_pct": 4.47,
-      "price": 29.71
+      "change_pct": 2.32,
+      "price": 29.1
     }
   },
   "national_shocks": {
@@ -678,16 +673,16 @@
     ],
     "deepfake": [
       "Scottish Greens challenge SNP government’s relationship with big tech after First Minister’s apology over AI slop video - Scottish Greens",
-      "TikTok launches tool to help public figures detect deepfakes globally - The Straits Times",
-      "TikTok Launches Global Deepfake Detection Tool For Public Figures - BusinessToday Malaysia"
+      "Who owns AI-generated work? Copyright rules in the US, UK and EU - CEO경제신문",
+      "TikTok launches tool to help public figures detect deepfakes globally - Free Malaysia Today"
     ],
     "dieoff": [
       "Kenya investigates mysterious deaths of seven hippos - Galaxy Television"
     ],
     "flash": [
       "Metal Powder Works Enters Trading Halt Ahead of Capital Raise Announcement - Kalkine",
-      "China's Tianpu Falls by Daily Limit for Second Straight Session After Trading Resumes Post-Verification; Stock Had Risen Over 50% in Four-Session Streak - BigGo Finance",
-      "Carma Limited Enters Trading Halt Pending Material Financier Announcement - Kalkine"
+      "Rincon Resources Enters Trading Halt Pending Material Exploration Results at Telfer South Project - Kalkine",
+      "KOSPI, KOSDAQ Plunge 5%, Circuit Breakers Activated - 조선일보"
     ],
     "fuel_au": [
       "Honda Avancier 2027: new hybrid large SUV targets Santa Fe and Kluger - Chasing Cars",
@@ -707,6 +702,11 @@
       "Delivered, \"processed\" by the Military Medical Commission, mobilized: the court explained how to properly appeal such a draft - Судово-юридична газета",
       "Iraq reaches compromise with Kataib Hezbollah over armed group’s stronghold - Al Jazeera",
       "Baghdad orders 'joint' military deployment in Jurf al-Sakhar after Kataib Hezbollah refuses to withdraw - thecradle.co"
+    ],
+    "outage_au": [
+      "Alice Springs and Katherine local news briefing: Friday, November 20, 2026 - ABC News & Headlines – Australian Broadcasting Corporation",
+      "Calls for 'automatic compensation' following telco outages - ABC News & Headlines – Australian Broadcasting Corporation",
+      "Telstra mobile outage disrupts services across Australia - Australian Cyber Security Magazine"
     ],
     "reservists": [
       "Armenia: 'New Concern' Over Criminal Prosecutions Of Conscientious Objector Reservists - Analysis - Eurasia Review",
@@ -759,7 +759,7 @@
       "yes": 4.3
     },
     {
-      "d24h": -2.5,
+      "d24h": -1.4,
       "q": "US-Iran Hormuz Agreement by November 30?",
       "yes": 2.6
     },
@@ -769,7 +769,7 @@
       "yes": 1.7
     },
     {
-      "d24h": -3.0,
+      "d24h": -2.0,
       "q": "US-Iran Hormuz Agreement by December 31?",
       "yes": 9.5
     },
@@ -804,12 +804,12 @@
       "yes": 1.6
     },
     {
-      "d24h": -1.1,
+      "d24h": -1.2,
       "q": "Iran-Oman Hormuz Agreement by November 30?",
-      "yes": 3.4
+      "yes": 3.3
     },
     {
-      "d24h": -1.0,
+      "d24h": 1.5,
       "q": "Iran-Oman Hormuz Agreement by December 31?",
       "yes": 14.0
     },
@@ -849,7 +849,7 @@
       "yes": 19.5
     },
     {
-      "d24h": -0.5,
+      "d24h": -1.0,
       "q": "Iran blockade lifted before Iran-Oman Hormuz agreement?",
       "yes": 10.0
     },
@@ -1066,7 +1066,7 @@
           "name": "Fire, flood or storm road closures in SA"
         },
         {
-          "detail": "South Australia cuts rooftop solar after storm sparks power outages; Major blackout hits South Australia after storm",
+          "detail": "South Australia cuts rooftop solar after storm sparks power outages; Major Blackout Hits South Australia After Storm",
           "name": "Reports of widespread power outages in SA"
         }
       ],
@@ -1075,24 +1075,19 @@
     },
     {
       "band": "Guarded",
-      "convergence": "Two different kinds of sign are showing together (electronic warfare and shipping). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet bl",
+      "convergence": "Only one kind of sign is showing (shipping). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
       "domains": [
-        "Electronic warfare",
         "Shipping"
       ],
       "key": "mideast",
       "lit": [
         {
-          "detail": "gps_gulf 24 vs usual 7",
-          "name": "GPS jamming spike (Gulf / Israel)"
-        },
-        {
           "detail": "Strait of Hormuz -38% vs usual (2.3/day)",
           "name": "Ship traffic through Hormuz down sharply"
         }
       ],
-      "score": 25,
-      "trend": "up"
+      "score": 15,
+      "trend": "down"
     },
     {
       "band": "Low",
@@ -1126,9 +1121,8 @@
     },
     {
       "band": "Elevated",
-      "convergence": "Two different kinds of sign are showing together (chemical weapons and health). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: countries restricting medical supply exports, pandemic-response stocks outperforming (5 days) ",
+      "convergence": "Only one kind of sign is showing (health). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: countries restricting medical supply exports, pandemic-response stocks outperforming (5 days) and chemical / nerve-agent attack or mass poisoning repor",
       "domains": [
-        "Chemical weapons",
         "Health"
       ],
       "key": "bio",
@@ -1144,14 +1138,10 @@
         {
           "detail": "Family of Robb Elementary victim hope their experience inspires mass casualty preparedness at hospitals",
           "name": "Mass casualty declarations (any country)"
-        },
-        {
-          "detail": "Warning of Suspected Chemical Weapons Storage at Sudanese Army Facilities",
-          "name": "Chemical / nerve-agent attack or mass poisoning reported"
         }
       ],
-      "score": 55,
-      "trend": "up"
+      "score": 40,
+      "trend": "down"
     },
     {
       "band": "Low",
@@ -1171,17 +1161,22 @@
     },
     {
       "band": "Elevated",
-      "convergence": "Signs are converging across 3 separate areas (ai-enabled hacking, cloud services and fraud waves). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: a Chinese",
+      "convergence": "Signs are converging across 4 separate areas (ai-enabled hacking, cloud services, fraud waves and markets). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: ",
       "domains": [
         "AI-enabled hacking",
         "Cloud services",
-        "Fraud waves"
+        "Fraud waves",
+        "Markets"
       ],
       "key": "ai",
       "lit": [
         {
           "detail": "EU Commission confirms AI-driven cyberattack",
           "name": "Reports of AI-driven hacking campaigns"
+        },
+        {
+          "detail": "800V DC circuit breaker market for data centers to hit $2.11B by 2036 with 41% CAGR driven by AI infrastructure growth",
+          "name": "Flash crash or exchange trading halt"
         },
         {
           "detail": "Microsoft 365 outage: Global cyber insured losses estimated at up to $700 mn",
@@ -1192,23 +1187,23 @@
           "name": "Surge in AI voice-clone / deepfake scams in Australia"
         }
       ],
-      "score": 30,
-      "trend": "down"
+      "score": 40,
+      "trend": "up"
     }
   ],
   "sectors_relative_5d": {
     "defence_au": -4.15,
-    "defence_eu": 1.36,
-    "defence_us": 1.66,
-    "pandemic": -2.8
+    "defence_eu": 1.47,
+    "defence_us": 1.92,
+    "pandemic": -1.56
   },
   "tankers": "normal",
   "telecom_drop_pct": {
     "Aussie Broadband": 1.5,
     "Optus": 0.0,
     "TPG": 0.0,
-    "Telstra": 0.3,
-    "Vodafone": 0.0
+    "Telstra": 0.0,
+    "Vodafone": 9.5
   },
   "us_departure_orders": [
     "Belarus"
