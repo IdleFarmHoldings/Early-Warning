@@ -99,19 +99,19 @@
     "infocon": "green",
     "kev": {
       "all": {
-        "last_7d": 9,
-        "ratio": 0.9,
+        "last_7d": 5,
+        "ratio": 0.5,
         "usual_7d": 10
       },
       "edge": {
-        "last_7d": 1,
-        "ratio": 0.5,
+        "last_7d": 0,
+        "ratio": 0.0,
         "usual_7d": 2
       },
       "ransomware_linked_7d": 0,
       "vendors": {
-        "last_7d": 8,
-        "ratio": 1.0,
+        "last_7d": 5,
+        "ratio": 0.62,
         "usual_7d": 8
       }
     }
@@ -264,16 +264,16 @@
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output=",
-    "satellites": "HTTPError: HTTP Error 403: Forbidden"
+    "satellites": "TimeoutError: The read operation timed out"
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-20T17:55:00Z",
+  "generated_at": "2026-11-20T18:01:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 13,
-    "Black Sea": 30,
-    "Israel & Eastern Mediterranean": 0,
+    "Baltic / Kaliningrad": 21,
+    "Black Sea": null,
+    "Israel & Eastern Mediterranean": 2,
     "Korea": 0,
-    "Persian Gulf": 17,
+    "Persian Gulf": 21,
     "South Australia": 0,
     "Sydney / NSW": null,
     "Taiwan Strait": 0
@@ -284,8 +284,8 @@
       "confirmed": true,
       "headlines": [
         "Did Banks Get Hacked? Visa, Mastercard, Chase Confirm Vendor Cyberattack",
-        "Visa and Mastercard cyberattack: were Australians affected? Leaked files list Australia, but no card numbers",
-        "JPMorgan, Visa, Mastercard fell victim to supplier hack"
+        "JPMorgan Faces Data Leak After Banking Outage: Risks Mount?",
+        "Visa and Mastercard cyberattack: were Australians affected? Leaked files list Australia, but no card numbers"
       ],
       "severity": "Warning",
       "target": "Banking & payments"
@@ -322,55 +322,10 @@
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
-        "Bell Financial Group announces cyberattack in Australia"
-      ],
-      "severity": "Info",
-      "target": "Bell Financial Group"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
         "Cyberattack tactics are outpacing what renewal forms ask"
       ],
       "severity": "Info",
       "target": "Cyberattack"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
-        "CVE-2026-123890: Critical VMware vCenter Zero-Day Exploited by China-Linked Hackers"
-      ],
-      "severity": "Info",
-      "target": "CVE-2026-123890"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
-        "China-Linked Hackers Exploit Critical VMware vCenter Zero-Day to Gain Admin Access and Steal Data"
-      ],
-      "severity": "Info",
-      "target": "China-Linked Hackers Exploit"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
-        "Broadcom patches critical VMware vCenter vulnerability exploited by state-sponsored hackers"
-      ],
-      "severity": "Info",
-      "target": "Broadcom"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
-        "N-able Blames Service Disruption on Cyberattack"
-      ],
-      "severity": "Info",
-      "target": "N-able Blames Service"
     },
     {
       "attack_reported": true,
@@ -450,15 +405,6 @@
       "attack_reported": false,
       "confirmed": false,
       "headlines": [
-        "Major blackout hits South Australia after storm"
-      ],
-      "severity": "Info",
-      "target": "Power grid"
-    },
-    {
-      "attack_reported": false,
-      "confirmed": false,
-      "headlines": [
         "South Australia cuts rooftop solar after storm sparks power outages"
       ],
       "severity": "Info",
@@ -468,10 +414,10 @@
   "internet_drop_pct": {
     "China": 0.0,
     "Iran": 0.0,
-    "Israel": 0.1,
-    "Russia": 1.2,
+    "Israel": 0.3,
+    "Russia": 0.8,
     "South Korea": 0.2,
-    "Taiwan": 1.1
+    "Taiwan": 1.0
   },
   "local_sa": {
     "bom": [
@@ -497,8 +443,8 @@
       "pump_cents": -5,
       "week_ago_aud": 141.5
     },
-    "grid_demand_fall_pct": 5.6,
-    "grid_demand_mw": 1222,
+    "grid_demand_fall_pct": 7.0,
+    "grid_demand_mw": 1205,
     "grid_demand_usual_mw": 1221,
     "grid_lor_level": 0,
     "nearby_incidents": [],
@@ -546,20 +492,20 @@
   },
   "markets": {
     "AUD/USD": {
-      "change_pct": -1.23,
-      "price": 0.663
+      "change_pct": -1.22,
+      "price": 0.6631
     },
     "Brent oil": {
-      "change_pct": -3.14,
-      "price": 89.09
+      "change_pct": -3.03,
+      "price": 89.19
     },
     "Gold": {
-      "change_pct": -4.33,
-      "price": 3526.0
+      "change_pct": -4.28,
+      "price": 3527.7
     },
     "VIX": {
-      "change_pct": 12.59,
-      "price": 32.02
+      "change_pct": 13.78,
+      "price": 32.36
     }
   },
   "national_shocks": {
@@ -633,11 +579,6 @@
       "ESET attributes DynoWiper-powered attack on Poland’s power grid to Russia-aligned Sandworm group - Industrial Cyber",
       "Russian state hackers likely behind wiper malware attack on Poland’s power grid - The Record from Recorded Future News"
     ],
-    "cyber_supply": [
-      "CVE-2026-123890: Critical VMware vCenter Zero-Day Exploited by China-Linked Hackers - SOC Prime",
-      "China-Linked Hackers Exploit Critical VMware vCenter Zero-Day to Gain Admin Access and Steal Data - The Hacker News",
-      "Chinese espionage group targets critical flaw in VMware vCenter - Cybersecurity Dive"
-    ],
     "deepfake": [
       "Scottish Greens challenge SNP government’s relationship with big tech after First Minister’s apology over AI slop video - Scottish Greens",
       "TikTok launches tool to help public figures detect deepfakes globally - Free Malaysia Today",
@@ -647,13 +588,14 @@
       "Kenya investigates mysterious deaths of seven hippos - Galaxy Television"
     ],
     "flash": [
-      "Metal Powder Works Enters Trading Halt Ahead of Capital Raise Announcement - Kalkine",
+      "Carma Limited Enters Trading Halt Pending Material Financier Announcement - Kalkine",
       "Bunker Hill Silver TSX:BNKR Enters the Spotlight as Trading Halt Signals Pending News (TSX:BNKR) - kalkine.ca",
-      "Rincon Resources Enters Trading Halt Pending Material Exploration Results at Telfer South Project - Kalkine"
+      "China's Tianpu Falls by Daily Limit for Second Straight Session After Trading Resumes Post-Verification; Stock Had Risen Over 50% in Four-Session Streak - BigGo Finance"
     ],
     "fuel_au": [
       "Honda Avancier 2027: new hybrid large SUV targets Santa Fe and Kluger - Chasing Cars",
-      "Oil Supply Shock to Worsen as Inventories Fall Further Even if Conflict Ends - EnergyNow.com"
+      "Oil Supply Shock to Worsen as Inventories Fall Further Even if Conflict Ends - EnergyNow.com",
+      "No route cuts for Fiji Airways despite global fuel hikes - FBC News"
     ],
     "illness": [
       "Mystery illness causes mass hospitalisation of runners - The Nightly",
@@ -662,8 +604,8 @@
     ],
     "masscas": [
       "Family of Robb Elementary victim hope their experience inspires mass casualty preparedness at hospitals - KXAN Austin",
-      "Bomb hoax scenario tests multi-agency disaster preparedness ahead of Hornbill Festival - Nagaland Tribune",
-      "Mass casualty mock drill held at Kisama ahead of Hornbill Festival - Eastern Mirror"
+      "Melania Trump marks world premiere of Prime Video docuseries - The Hill",
+      "Bomb hoax scenario tests multi-agency disaster preparedness ahead of Hornbill Festival - Nagaland Tribune"
     ],
     "mobilisation": [
       "Iran’s Wages Collapse as Death Sentences, Bread Shortages and Security Fears Deepen Crisis - National Council of Resistance of Iran - NCRI",
@@ -677,8 +619,8 @@
     ],
     "outage_au": [
       "Alice Springs and Katherine local news briefing: Friday, November 20, 2026 - ABC News & Headlines – Australian Broadcasting Corporation",
-      "Calls for 'automatic compensation' following telco outages - ABC News & Headlines – Australian Broadcasting Corporation",
-      "Telstra mobile outage disrupts services across Australia - Australian Cyber Security Magazine"
+      "Microsoft exec reveals details of outage - News.com.au",
+      "Calls for 'automatic compensation' following telco outages - ABC News & Headlines – Australian Broadcasting Corporation"
     ],
     "reservists": [
       "Left the US Army in the last 8 years? You may still be on the list of veterans who can be recalled: Here’s how to check - El Cronista",
@@ -691,14 +633,13 @@
       "Schools shut, hospitals hit, triple-0 fears as wild storms cause chaos - Adelaide Now"
     ],
     "sawater": [
-      "Going dry no more: why backup water systems are the new normal - weekendargus.co.za",
       "Johannesburg residents brace for Level 2 water restrictions from Saturday - SABC News",
       "FRIDAY BRIEFING | The day email went away - News24"
     ],
     "scams": [
       "Finance leaders face a widening fraud resilience gap as threats become more sophisticated - iTWire",
-      "Deepfake identity fraud surges as criminals go professional - SecurityBrief New Zealand",
-      "SAP Concur warns of rising fraud losses in finance - SecurityBrief Asia"
+      "SAP Concur warns of rising fraud losses in finance - SecurityBrief Asia",
+      "Deepfake identity fraud surges as criminals go professional - SecurityBrief New Zealand"
     ],
     "shipping_attacks": [
       "Another Tanker Hit in Strait of Hormuz as Maritime Attacks Surge Worldwide - gCaptain",
@@ -763,9 +704,9 @@
       "yes": 4.0
     },
     {
-      "d24h": 0.2,
+      "d24h": 0.7,
       "q": "Will Russia invade a NATO country by December 31, 2026?",
-      "yes": 1.6
+      "yes": 2.1
     },
     {
       "d24h": 0.7,
@@ -793,7 +734,7 @@
       "yes": 2.5
     },
     {
-      "d24h": -1.0,
+      "d24h": -1.2,
       "q": "Ukraine agrees not to join NATO by December 31, 2026?",
       "yes": 1.9
     },
@@ -818,12 +759,12 @@
       "yes": 17.5
     },
     {
-      "d24h": -1.5,
+      "d24h": -0.5,
       "q": "Ukraine agrees not to join NATO by December 31, 2027?",
-      "yes": 17.5
+      "yes": 18.5
     },
     {
-      "d24h": -2.0,
+      "d24h": -2.5,
       "q": "Iran blockade lifted before Iran-Oman Hormuz agreement?",
       "yes": 10.0
     },
@@ -1084,7 +1025,7 @@
       "key": "russia",
       "lit": [
         {
-          "detail": "VIX at 32.02",
+          "detail": "VIX at 32.36",
           "name": "Market fear index above 30"
         }
       ],
@@ -1125,7 +1066,7 @@
           "name": "Mass casualty declarations (any country)"
         },
         {
-          "detail": "VIX at 32.02",
+          "detail": "VIX at 32.36",
           "name": "Market fear index above 30"
         }
       ],
@@ -1172,14 +1113,14 @@
         }
       ],
       "score": 35,
-      "trend": "up"
+      "trend": "steady"
     }
   ],
   "sectors_relative_5d": {
     "defence_au": -4.15,
     "defence_eu": 1.27,
-    "defence_us": 3.11,
-    "pandemic": -3.49
+    "defence_us": 3.04,
+    "pandemic": -3.59
   },
   "tankers": "normal",
   "telecom_drop_pct": {
