@@ -313,16 +313,16 @@
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-20T05:59:00Z",
+  "generated_at": "2026-11-20T06:05:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 63,
+    "Baltic / Kaliningrad": 47,
     "Black Sea": null,
     "Israel & Eastern Mediterranean": 10,
-    "Korea": 1,
-    "Persian Gulf": 9,
+    "Korea": 0,
+    "Persian Gulf": 10,
     "South Australia": 0,
-    "Sydney / NSW": 3,
-    "Taiwan Strait": 3
+    "Sydney / NSW": 4,
+    "Taiwan Strait": 0
   },
   "incidents": [
     {
@@ -330,8 +330,8 @@
       "confirmed": true,
       "headlines": [
         "Visa, MasterCard, JPMorgan Chase customer data stolen in hack",
-        "JPMorgan, Visa, Mastercard say third-party vendors targeted in cyberattack",
-        "Visa, Mastercard data leaked by hackers"
+        "Cyberattack may have exposed Chase Bank and Mastercard customer data",
+        "JPMorgan, Visa, Mastercard say third-party vendors targeted in cyberattack"
       ],
       "severity": "Warning",
       "target": "Banking & payments"
@@ -383,6 +383,16 @@
     },
     {
       "attack_reported": false,
+      "confirmed": true,
+      "headlines": [
+        "Microsoft 365 outage causes: how the gateway failed",
+        "Luke Kehoe: Microsoft Outage Exposes Concentration Risks in Digital Infrastructure"
+      ],
+      "severity": "Info",
+      "target": "Microsoft"
+    },
+    {
+      "attack_reported": false,
       "confirmed": false,
       "headlines": [
         "Is It AI? After Nationwide Outages, Broadcom and CISA Sound Alarms on Critical Security Flaws"
@@ -393,9 +403,9 @@
   ],
   "internet_drop_pct": {
     "China": 1.1,
-    "Iran": 0.1,
+    "Iran": 0.0,
     "Israel": 0.0,
-    "Russia": 0.2,
+    "Russia": 0.1,
     "South Korea": 0.0,
     "Taiwan": 0.0
   },
@@ -416,12 +426,12 @@
     "fires_active": 8,
     "fuel": {
       "brent_aud": 135.0,
-      "change_pct": -4.2,
+      "change_pct": -4.3,
       "pump_cents": -4,
       "week_ago_aud": 141.0
     },
-    "grid_demand_fall_pct": -12.8,
-    "grid_demand_mw": 631,
+    "grid_demand_fall_pct": -16.9,
+    "grid_demand_mw": 653,
     "grid_demand_usual_mw": 806,
     "grid_lor_level": 0,
     "nearby_incidents": [],
@@ -469,16 +479,16 @@
   },
   "markets": {
     "AUD/USD": {
-      "change_pct": -0.64,
-      "price": 0.667
+      "change_pct": -0.61,
+      "price": 0.6672
     },
     "Brent oil": {
-      "change_pct": -2.55,
-      "price": 89.63
+      "change_pct": -2.62,
+      "price": 89.57
     },
     "Gold": {
-      "change_pct": -3.79,
-      "price": 3545.8
+      "change_pct": -3.73,
+      "price": 3547.9
     },
     "VIX": {
       "change_pct": 15.8,
@@ -507,18 +517,33 @@
       "Houthi missile damages Riyadh tower, no injuries reported - Crypto Briefing",
       "Airspace Closure | Major Decision | Aviation Update | 08PM HEADLINES 19 Nov 2026 Aaj News - Aaj TV"
     ],
+    "aviation_halt": [
+      "US ground stop has led to discussion of major overhaul to air traffic control systems - News24",
+      "DOT's Duffy said ground stop might have been shorter if L3Harris had spotted the problem sooner - Arkansas Advocate",
+      "FAA ground stop suggests how risky air traffic control upgrades can be - Scientific American"
+    ],
+    "bank_outage": [
+      "Major credit card companies hit in cyber attack - News24",
+      "Wall Street tumbles to its longest losing streak since 2024 as AI stocks slide - CommBank",
+      "Chase Bank, Visa and Mastercard confirm third-party cyber attacks - Cyber Daily"
+    ],
     "blood": [
       "Prince Albert II honours 96 volunteers and blood donors ahead of Monaco National Day - Riviera Radio"
     ],
     "cables": [
-      "Pakistan undersea cable failure causes internet outage near Strait of Hormuz — fault detected offshore weeks after Iran threatened infrastructure in the region - Tom's Hardware",
       "Subsea cable firm Trans Americas Fiber lands $205M refinancing - Dealroom",
+      "Pakistan undersea cable failure causes internet outage near Strait of Hormuz — fault detected offshore weeks after Iran threatened infrastructure in the region - Tom's Hardware",
       "Damage to an undersea cable in Oman: Internet connection in Pakistan goes down - Il Sole 24 ORE"
     ],
     "chem": [
       "OPCW fosters young scientists committed to chemical safety, security and the peaceful uses of chemistry - OPCW",
       "Trump Warns Tehran After 'Indications of Chemical Weapons' - الحرة",
       "Is Iran the New Iraq? Tehran Rejects US Chemical Weapons Claims, Invokes 2003 WMD Controversy - Open Magazine"
+    ],
+    "cloud": [
+      "Microsoft 365 outage causes: how the gateway failed - NeoTeo",
+      "A dozen industries impacted by the Microsoft 365 outage - PropertyCasualty360",
+      "Microsoft Outage Raises Questions Over UK Control of Critical Digital Infrastructure - Tech Policy Press"
     ],
     "cn_signals": [
       "NYT the latest in showcasing bad US-China takes from DC experts - Responsible Statecraft"
@@ -531,12 +556,12 @@
     "cyber_au": [
       "Report of the Rapid Review into Australian Government arrangements for an AI-driven cyber incident - Department of the Prime Minister and Cabinet",
       "Major credit card companies hit in cyber attack - News24",
-      "Thousands of customers have data leaked after cyberattack at Visa, Mastercard and US banking giant - Nine.com.au"
+      "Visa, MasterCard, JPMorgan Chase customer data stolen in hack - Herald Sun"
     ],
     "cyber_ot": [
-      "Who is hacking Europe’s supermarket fridges and freezers, and why? - The Guardian",
+      "Tens of thousands of UK fridges secured from hackers in secret nationwide operation - BBC",
       "Shop freezers in seven European countries hit by cyber-attack - BBC",
-      "Tens of thousands of UK fridges secured from hackers in secret nationwide operation - BBC"
+      "Who is hacking Europe’s supermarket fridges and freezers, and why? - The Guardian"
     ],
     "cyber_state": [
       "ESET Research: Sandworm behind cyberattack on Poland’s power grid in late 2025 - We Live Security",
@@ -631,9 +656,9 @@
       "yes": 4.0
     },
     {
-      "d24h": 0.5,
+      "d24h": 0.0,
       "q": "NATO x Russia military clash by December 31, 2026?",
-      "yes": 10.0
+      "yes": 9.5
     },
     {
       "d24h": -0.5,
@@ -706,9 +731,9 @@
       "yes": 3.0
     },
     {
-      "d24h": -0.9,
+      "d24h": -1.1,
       "q": "Will Russia test a nuclear weapon by December 31 2026?",
-      "yes": 2.6
+      "yes": 2.4
     },
     {
       "d24h": 0.4,
@@ -721,9 +746,9 @@
       "yes": 17.5
     },
     {
-      "d24h": -0.5,
+      "d24h": 0.0,
       "q": "Ukraine agrees not to join NATO by December 31, 2027?",
-      "yes": 19.0
+      "yes": 19.5
     },
     {
       "d24h": 0.0,
@@ -738,6 +763,15 @@
   ],
   "quakes_m6_24h": [],
   "recent_alerts": [
+    {
+      "at": "2026-11-20T06:05:00Z",
+      "channels": [
+        "reactive"
+      ],
+      "confirmed": null,
+      "message": "THIS IS A TEST. There is no real fire. Checking that a fire alert reaches everyone on the Confirmed only chann",
+      "title": "TEST ONLY - Kalgoorlie bush fire"
+    },
     {
       "at": "2026-11-20T04:37:00Z",
       "channels": [
@@ -912,15 +946,6 @@
       "confirmed": true,
       "message": "On 27 March 2023, the National Health Commission of the People’s Republic of China notified WHO of one confirm",
       "title": "WHO outbreak report: Avian Influenza A(H3N8)"
-    },
-    {
-      "at": "2026-11-18T13:59:00Z",
-      "channels": [
-        "proactive"
-      ],
-      "confirmed": true,
-      "message": "From 29 December 2021 to 31 October 2022, four laboratory-confirmed cases of Middle East respiratory syndrome ",
-      "title": "WHO outbreak report: Middle East respiratory syndrome coronavirus – Saudi Arabia"
     }
   ],
   "scenarios": [
@@ -1012,10 +1037,9 @@
       "trend": "steady"
     },
     {
-      "band": "Elevated",
-      "convergence": "Two different kinds of sign are showing together (chemical weapons and health). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: unknown illness / pneumonia cluster reported, countries restricting medical supply exports and",
+      "band": "Guarded",
+      "convergence": "Only one kind of sign is showing (health). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: unknown illness / pneumonia cluster reported, countries restricting medical supply exports and pandemic-response stocks outperforming (5 days).",
       "domains": [
-        "Chemical weapons",
         "Health"
       ],
       "key": "bio",
@@ -1027,14 +1051,10 @@
         {
           "detail": "Family of Robb Elementary victim hope their experience inspires mass casualty preparedness at hospitals",
           "name": "Mass casualty declarations (any country)"
-        },
-        {
-          "detail": "Warning of Suspected Chemical Weapons Storage at Sudanese Army Facilities",
-          "name": "Chemical / nerve-agent attack or mass poisoning reported"
         }
       ],
-      "score": 35,
-      "trend": "steady"
+      "score": 20,
+      "trend": "down"
     },
     {
       "band": "Low",
@@ -1053,10 +1073,11 @@
       "trend": "steady"
     },
     {
-      "band": "Guarded",
-      "convergence": "Two different kinds of sign are showing together (ai-enabled hacking and fraud waves). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, deepfakes of leaders or fake off",
+      "band": "Elevated",
+      "convergence": "Signs are converging across 3 separate areas (ai-enabled hacking, cloud services and fraud waves). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: a Chinese",
       "domains": [
         "AI-enabled hacking",
+        "Cloud services",
         "Fraud waves"
       ],
       "key": "ai",
@@ -1066,12 +1087,16 @@
           "name": "Reports of AI-driven hacking campaigns"
         },
         {
+          "detail": "Microsoft 365 outage: Global cyber insured losses estimated at up to $700 mn",
+          "name": "Major cloud or AI service outage"
+        },
+        {
           "detail": "Sumsub finds deepfake attacks rising as identity fraud declines in Europe",
           "name": "Surge in AI voice-clone / deepfake scams in Australia"
         }
       ],
-      "score": 20,
-      "trend": "down"
+      "score": 30,
+      "trend": "up"
     }
   ],
   "sectors_relative_5d": {
@@ -1082,8 +1107,8 @@
   },
   "tankers": "normal",
   "telecom_drop_pct": {
-    "Aussie Broadband": 0.8,
-    "Optus": 5.1,
+    "Aussie Broadband": 1.2,
+    "Optus": 0.0,
     "TPG": 0.0,
     "Telstra": 0.0,
     "Vodafone": 0.0
