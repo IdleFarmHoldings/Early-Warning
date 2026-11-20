@@ -1,7 +1,13 @@
 {
   "about": "Short form of latest.json + indicators.json for the analysis run. Links and raw samples removed.",
   "acsc": [],
-  "aircraft_flags": {},
+  "aircraft_flags": {
+    "gps_gulf": {
+      "median": 7,
+      "status": "ANOMALY",
+      "value": 24
+    }
+  },
   "analyst": {
     "ASPI Strategist": [
       "Let’s see whether North Korea absorbs the experience it’s getting in Ukraine",
@@ -311,16 +317,16 @@
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output=",
-    "satellites": "TimeoutError: The read operation timed out"
+    "satellites": "IncompleteRead: IncompleteRead(0 bytes read)"
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-20T14:24:00Z",
+  "generated_at": "2026-11-20T14:35:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 20,
-    "Black Sea": 42,
-    "Israel & Eastern Mediterranean": 2,
-    "Korea": 5,
-    "Persian Gulf": 1,
+    "Baltic / Kaliningrad": 27,
+    "Black Sea": 33,
+    "Israel & Eastern Mediterranean": 0,
+    "Korea": 0,
+    "Persian Gulf": 24,
     "South Australia": null,
     "Sydney / NSW": null,
     "Taiwan Strait": 0
@@ -336,6 +342,15 @@
       ],
       "severity": "Critical",
       "target": "Banking & payments"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "Australia mulls tougher tech laws after AI health breach"
+      ],
+      "severity": "Info",
+      "target": "Australia"
     },
     {
       "attack_reported": true,
@@ -493,12 +508,12 @@
     }
   ],
   "internet_drop_pct": {
-    "China": 1.4,
+    "China": 1.5,
     "Iran": 0.0,
-    "Israel": 0.4,
+    "Israel": 0.0,
     "Russia": 0.4,
     "South Korea": 0.0,
-    "Taiwan": 0.0
+    "Taiwan": 0.1
   },
   "local_sa": {
     "bom": [
@@ -516,14 +531,14 @@
     "fire_danger_ok": true,
     "fires_active": 5,
     "fuel": {
-      "brent_aud": 134.1,
-      "change_pct": -5.2,
+      "brent_aud": 134.0,
+      "change_pct": -5.3,
       "pump_cents": -5,
       "week_ago_aud": 141.5
     },
-    "grid_demand_fall_pct": -0.2,
-    "grid_demand_mw": 1362,
-    "grid_demand_usual_mw": 1334,
+    "grid_demand_fall_pct": -0.5,
+    "grid_demand_mw": 1369,
+    "grid_demand_usual_mw": 1329,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
@@ -570,20 +585,20 @@
   },
   "markets": {
     "AUD/USD": {
-      "change_pct": -0.62,
-      "price": 0.6671
+      "change_pct": -0.73,
+      "price": 0.6664
     },
     "Brent oil": {
-      "change_pct": -3.32,
-      "price": 88.93
+      "change_pct": -3.53,
+      "price": 88.73
     },
     "Gold": {
-      "change_pct": -2.97,
-      "price": 3576.2
+      "change_pct": -3.03,
+      "price": 3573.9
     },
     "VIX": {
-      "change_pct": 4.61,
-      "price": 29.75
+      "change_pct": 4.47,
+      "price": 29.71
     }
   },
   "national_shocks": {
@@ -600,8 +615,8 @@
   "news_watch": {
     "ai_hack": [
       "Opinion | What grounded planes and downed banking systems say about the AI age - The Washington Post",
-      "Cybercriminals Ramp Up Interest in AI-Powered Hacking Tools - Redmondmag.com",
-      "EU Commission confirms AI-driven cyberattack - The Paypers"
+      "EU Commission confirms AI-driven cyberattack - The Paypers",
+      "Cybercriminals Ramp Up Interest in AI-Powered Hacking Tools - Redmondmag.com"
     ],
     "airspace": [
       "Houthi missile damages Riyadh tower, no injuries reported - Crypto Briefing",
@@ -643,8 +658,8 @@
     ],
     "cyber_au": [
       "Report of the Rapid Review into Australian Government arrangements for an AI-driven cyber incident - Department of the Prime Minister and Cabinet",
-      "Visa, MasterCard, JPMorgan Chase customer data stolen in hack - Herald Sun",
-      "Australia's Bell Financial says some client data likely accessed - iTnews"
+      "Australia mulls tougher tech laws after AI health breach - The Nightly",
+      "Cyberattack tactics are outpacing what renewal forms ask - Insurance Business"
     ],
     "cyber_ot": [
       "Who is hacking Europe’s supermarket fridges and freezers, and why? - The Guardian",
@@ -671,8 +686,8 @@
     ],
     "flash": [
       "Metal Powder Works Enters Trading Halt Ahead of Capital Raise Announcement - Kalkine",
-      "Carma Limited Enters Trading Halt Pending Material Financier Announcement - Kalkine",
-      "KOSPI, KOSDAQ Plunge 5%, Circuit Breakers Activated - 조선일보"
+      "China's Tianpu Falls by Daily Limit for Second Straight Session After Trading Resumes Post-Verification; Stock Had Risen Over 50% in Four-Session Streak - BigGo Finance",
+      "Carma Limited Enters Trading Halt Pending Material Financier Announcement - Kalkine"
     ],
     "fuel_au": [
       "Honda Avancier 2027: new hybrid large SUV targets Santa Fe and Kluger - Chasing Cars",
@@ -680,9 +695,9 @@
       "No route cuts for Fiji Airways despite global fuel hikes - FBC News"
     ],
     "illness": [
+      "148 aboard Florida-bound cruise ship sickened by ‘unknown’ GI outbreak: CDC - The Hill",
       "Mystery illness causes mass hospitalisation of runners - The Nightly",
-      "Zayn Malik hospitalised with mystery illness, forced to cancel upcoming appearances on album release week - Nine.com.au",
-      "Mystery Pneumonia Death Sparks Concern; Trader Joe's Recall; OUD in Young People - MedPage Today"
+      "Zayn Malik hospitalised with mystery illness, forced to cancel upcoming appearances on album release week - Nine.com.au"
     ],
     "masscas": [
       "Mike O’Callaghan Military Medical Center Integrates with Regional Partners for Mass Casualty Exercise - DVIDS",
@@ -691,17 +706,7 @@
     "mobilisation": [
       "Delivered, \"processed\" by the Military Medical Commission, mobilized: the court explained how to properly appeal such a draft - Судово-юридична газета",
       "Iraq reaches compromise with Kataib Hezbollah over armed group’s stronghold - Al Jazeera",
-      "100 per cent job retention in exchange for mobilisation: the government is preparing a new model for businesses - UkrMedia News"
-    ],
-    "national_outage": [
-      "Properties in eight suburbs plunged into darkness as power is lost - Bendigo Advertiser",
-      "Cuba’s National Electric Grid Collapses, Reason Unknown - EnergyNow.com",
-      "Assembly plunged into darkness, MPs switch on phone lights - Nacionale"
-    ],
-    "outage_au": [
-      "Alice Springs and Katherine local news briefing: Friday, November 20, 2026 - ABC News & Headlines – Australian Broadcasting Corporation",
-      "Calls for 'automatic compensation' following telco outages - ABC News & Headlines – Australian Broadcasting Corporation",
-      "Telstra mobile outage disrupts services across Australia - Australian Cyber Security Magazine"
+      "Baghdad orders 'joint' military deployment in Jurf al-Sakhar after Kataib Hezbollah refuses to withdraw - thecradle.co"
     ],
     "reservists": [
       "Armenia: 'New Concern' Over Criminal Prosecutions Of Conscientious Objector Reservists - Analysis - Eurasia Review",
@@ -739,9 +744,9 @@
       "yes": 6.5
     },
     {
-      "d24h": -0.3,
+      "d24h": -0.2,
       "q": "US-Iran Final Nuclear Deal by December 31, 2026?",
-      "yes": 3.8
+      "yes": 3.9
     },
     {
       "d24h": 2.0,
@@ -749,9 +754,9 @@
       "yes": 11.5
     },
     {
-      "d24h": 1.5,
+      "d24h": 1.3,
       "q": "China x Taiwan military clash before 2027?",
-      "yes": 4.5
+      "yes": 4.3
     },
     {
       "d24h": -2.5,
@@ -769,9 +774,9 @@
       "yes": 9.5
     },
     {
-      "d24h": 0.3,
+      "d24h": 0.4,
       "q": "US-Iran Final Nuclear Deal by November 30, 2026?",
-      "yes": 0.7
+      "yes": 0.8
     },
     {
       "d24h": 0.0,
@@ -829,9 +834,9 @@
       "yes": 2.2
     },
     {
-      "d24h": 0.5,
+      "d24h": 0.4,
       "q": "Will the U.S. test a nuclear weapon by December 31 2026?",
-      "yes": 2.6
+      "yes": 2.5
     },
     {
       "d24h": 0.0,
@@ -1070,19 +1075,24 @@
     },
     {
       "band": "Guarded",
-      "convergence": "Only one kind of sign is showing (shipping). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
+      "convergence": "Two different kinds of sign are showing together (electronic warfare and shipping). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet bl",
       "domains": [
+        "Electronic warfare",
         "Shipping"
       ],
       "key": "mideast",
       "lit": [
         {
+          "detail": "gps_gulf 24 vs usual 7",
+          "name": "GPS jamming spike (Gulf / Israel)"
+        },
+        {
           "detail": "Strait of Hormuz -38% vs usual (2.3/day)",
           "name": "Ship traffic through Hormuz down sharply"
         }
       ],
-      "score": 15,
-      "trend": "steady"
+      "score": 25,
+      "trend": "up"
     },
     {
       "band": "Low",
@@ -1100,7 +1110,7 @@
       "band": "Low",
       "key": "russia",
       "score": 0,
-      "trend": "down"
+      "trend": "steady"
     },
     {
       "band": "Low",
@@ -1115,9 +1125,10 @@
       "trend": "steady"
     },
     {
-      "band": "Guarded",
-      "convergence": "Only one kind of sign is showing (health). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: unknown illness / pneumonia cluster reported, countries restricting medical supply exports and pandemic-response stocks outperforming (5 days).",
+      "band": "Elevated",
+      "convergence": "Two different kinds of sign are showing together (chemical weapons and health). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: countries restricting medical supply exports, pandemic-response stocks outperforming (5 days) ",
       "domains": [
+        "Chemical weapons",
         "Health"
       ],
       "key": "bio",
@@ -1127,12 +1138,20 @@
           "name": "WHO outbreak report with a high-concern pathogen (last 14 days)"
         },
         {
+          "detail": "148 aboard Florida-bound cruise ship sickened by ‘unknown’ GI outbreak: CDC",
+          "name": "Unknown illness / pneumonia cluster reported"
+        },
+        {
           "detail": "Family of Robb Elementary victim hope their experience inspires mass casualty preparedness at hospitals",
           "name": "Mass casualty declarations (any country)"
+        },
+        {
+          "detail": "Warning of Suspected Chemical Weapons Storage at Sudanese Army Facilities",
+          "name": "Chemical / nerve-agent attack or mass poisoning reported"
         }
       ],
-      "score": 20,
-      "trend": "down"
+      "score": 55,
+      "trend": "up"
     },
     {
       "band": "Low",
@@ -1152,22 +1171,17 @@
     },
     {
       "band": "Elevated",
-      "convergence": "Signs are converging across 4 separate areas (ai-enabled hacking, cloud services, fraud waves and markets). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: ",
+      "convergence": "Signs are converging across 3 separate areas (ai-enabled hacking, cloud services and fraud waves). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: a Chinese",
       "domains": [
         "AI-enabled hacking",
         "Cloud services",
-        "Fraud waves",
-        "Markets"
+        "Fraud waves"
       ],
       "key": "ai",
       "lit": [
         {
-          "detail": "Cybercriminals Ramp Up Interest in AI-Powered Hacking Tools",
+          "detail": "EU Commission confirms AI-driven cyberattack",
           "name": "Reports of AI-driven hacking campaigns"
-        },
-        {
-          "detail": "800V DC circuit breaker market for data centers to hit $2.11B by 2036 with 41% CAGR driven by AI infrastructure growth",
-          "name": "Flash crash or exchange trading halt"
         },
         {
           "detail": "Microsoft 365 outage: Global cyber insured losses estimated at up to $700 mn",
@@ -1178,22 +1192,22 @@
           "name": "Surge in AI voice-clone / deepfake scams in Australia"
         }
       ],
-      "score": 40,
-      "trend": "steady"
+      "score": 30,
+      "trend": "down"
     }
   ],
   "sectors_relative_5d": {
     "defence_au": -4.15,
-    "defence_eu": 1.09,
-    "defence_us": 1.12,
-    "pandemic": -4.88
+    "defence_eu": 1.36,
+    "defence_us": 1.66,
+    "pandemic": -2.8
   },
   "tankers": "normal",
   "telecom_drop_pct": {
-    "Aussie Broadband": 0.6,
+    "Aussie Broadband": 1.5,
     "Optus": 0.0,
     "TPG": 0.0,
-    "Telstra": 0.6,
+    "Telstra": 0.3,
     "Vodafone": 0.0
   },
   "us_departure_orders": [
