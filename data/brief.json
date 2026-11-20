@@ -310,19 +310,20 @@
   ],
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
+    "markets": "RuntimeError: all market quotes failed",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-20T00:04:00Z",
+  "generated_at": "2026-11-20T00:19:00Z",
   "gps_bad_pct": {
     "Baltic / Kaliningrad": null,
     "Black Sea": null,
-    "Israel & Eastern Mediterranean": 5,
+    "Israel & Eastern Mediterranean": 0,
     "Korea": 0,
-    "Persian Gulf": 13,
-    "South Australia": 2,
-    "Sydney / NSW": 6,
-    "Taiwan Strait": 5
+    "Persian Gulf": 11,
+    "South Australia": 0,
+    "Sydney / NSW": 3,
+    "Taiwan Strait": 3
   },
   "incidents": [
     {
@@ -335,15 +336,6 @@
       ],
       "severity": "Warning",
       "target": "Banking & payments"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
-        "Exclusive: Hitachi Vantara informs employees, including Aussies, of data breach"
-      ],
-      "severity": "Info",
-      "target": "Exclusive"
     },
     {
       "attack_reported": true,
@@ -428,10 +420,9 @@
     },
     {
       "attack_reported": true,
-      "confirmed": true,
+      "confirmed": false,
       "headlines": [
-        "EU Commission hit by AI-powered cyberattack, digital systems disrupted",
-        "EU Commission hit by AI-driven cyberattack"
+        "EU Commission hit by AI-powered cyberattack, digital systems disrupted"
       ],
       "severity": "Info",
       "target": "EU Commission"
@@ -501,24 +492,15 @@
       ],
       "severity": "Info",
       "target": "Rarer"
-    },
-    {
-      "attack_reported": false,
-      "confirmed": false,
-      "headlines": [
-        "F-1 Student Visa Rules: Cap Struck Down, CPT Restrictions Temporarily Blocked"
-      ],
-      "severity": "Info",
-      "target": "F-1 Student Visa"
     }
   ],
   "internet_drop_pct": {
     "China": 0.0,
     "Iran": 0.1,
     "Israel": 0.0,
-    "Russia": 1.7,
+    "Russia": 1.8,
     "South Korea": 0.0,
-    "Taiwan": 0.1
+    "Taiwan": 0.0
   },
   "local_sa": {
     "bom": [],
@@ -539,9 +521,9 @@
       "pump_cents": -4,
       "week_ago_aud": 140.6
     },
-    "grid_demand_fall_pct": 22.5,
-    "grid_demand_mw": 510,
-    "grid_demand_usual_mw": 562,
+    "grid_demand_fall_pct": 29.7,
+    "grid_demand_mw": 419,
+    "grid_demand_usual_mw": 496,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
@@ -551,7 +533,26 @@
         "pm25": 4
       },
       "air_word": "Good",
-      "days": []
+      "days": [
+        {
+          "date": "2026-11-20",
+          "gust": 58,
+          "rain": 0,
+          "tmax": 25
+        },
+        {
+          "date": "2026-11-21",
+          "gust": 29,
+          "rain": 0,
+          "tmax": 28
+        },
+        {
+          "date": "2026-11-22",
+          "gust": 60,
+          "rain": 0,
+          "tmax": 28
+        }
+      ]
     },
     "possible_blackout": false,
     "power_news": [],
@@ -563,28 +564,11 @@
       "Morgan Vale Road, Pine Valley Station: MORGAN MAIL RD Closed due to flooding over road",
       "Pine Valley Road, Pine Valley Station: PINE VALLEY RD Closed due to flooding over road"
     ],
-    "rooftop_pv_mw": 1322,
+    "rooftop_pv_mw": 1744,
     "sawater_news": [],
     "watch_and_act": []
   },
-  "markets": {
-    "AUD/USD": {
-      "change_pct": -0.88,
-      "price": 0.6654
-    },
-    "Brent oil": {
-      "change_pct": -2.35,
-      "price": 89.79
-    },
-    "Gold": {
-      "change_pct": -3.56,
-      "price": 3608.7
-    },
-    "VIX": {
-      "change_pct": 15.8,
-      "price": 28.44
-    }
-  },
+  "markets": {},
   "national_shocks": {
     "faa": {
       "airports": 1,
@@ -610,25 +594,25 @@
     ],
     "airspace": [
       "Dammam hub kept Gulf Air flying during airspace closure - MEED",
-      "Houthi missile damages Riyadh tower, no injuries reported - Crypto Briefing",
-      "Airspace Closure | Major Decision | Aviation Update | 08PM HEADLINES 19 Nov 2026 Aaj News - Aaj TV"
+      "Airspace Closure | Major Decision | Aviation Update | 08PM HEADLINES 19 Nov 2026 Aaj News - Aaj TV",
+      "Pakistan extends airspace closure for Indian aircraft by another month - Geo News"
     ],
     "aviation_halt": [
-      "Could Another Ground Stop Upend Holiday Travel? What the Recent Massive Flight Disruptions Revealed - AFAR",
       "FAA ground stop suggests how risky air traffic control upgrades can be - Scientific American",
+      "Could Another Ground Stop Upend Holiday Travel? What the Recent Massive Flight Disruptions Revealed - AFAR",
       "The White House needs a ground stop - Silver Bulletin"
     ],
     "bank_outage": [
       "Major credit card companies hit in cyber attack - News24",
       "Visa, Mastercard and JPMorgan Customer Data Leaked by Hackers - WSJ",
-      "Chase Bank, Visa and Mastercard confirm third-party cyber attacks - Cyber Daily"
+      "Thousands of customers have data leaked after cyberattack at Visa, Mastercard and US banking giant - Nine.com.au"
     ],
     "blood": [
       "Prince Albert II honours 96 volunteers and blood donors ahead of Monaco National Day - Riviera Radio"
     ],
     "cables": [
-      "Subsea cable firm Trans Americas Fiber lands $205M refinancing - Dealroom",
       "Pakistan undersea cable failure causes internet outage near Strait of Hormuz — fault detected offshore weeks after Iran threatened infrastructure in the region - Tom's Hardware",
+      "Subsea cable firm Trans Americas Fiber lands $205M refinancing - Dealroom",
       "Pakistan internet problems related to subsea cable faults, telecoms authority says - The National"
     ],
     "chem": [
@@ -679,14 +663,14 @@
       "Halloween: Six most haunted castles in Scotland with spooky tales from the past - ScottishNews.com"
     ],
     "flash": [
+      "Metal Powder Works Enters Trading Halt Ahead of Capital Raise Announcement - Kalkine",
       "Rincon Resources Enters Trading Halt Pending Material Exploration Results at Telfer South Project - Kalkine",
-      "Canadian Investment Regulatory Organization Trading Halt - BNKR - Yahoo Finance UK",
-      "Canadian Investment Regulatory Organization Trading Halt - ANTH - The Manila Times"
+      "Canadian Investment Regulatory Organization Trading Halt - BNKR - Yahoo Finance UK"
     ],
     "fuel_au": [
       "Crimean Bridge Strikes Spark Fuel Shortage Fears as Gas Station Lines Grow in Occupied Sevastopol - UNITED24 Media",
-      "Fuel tanker arrives amid supply concerns and panic buying - FBC News",
-      "Indonesia and Philippines Unionists Tackle Barriers in Bali - JournalArta"
+      "EFL warns of possible power rationing amid fuel cost crisis - FBC News",
+      "Fuel tanker arrives amid supply concerns and panic buying - FBC News"
     ],
     "illness": [
       "Mystery illness causes mass hospitalisation of runners - The Nightly",
@@ -699,9 +683,9 @@
       "Scoping Review Maps Decade of Patient Safety and Healthcare Quality Research in Israel - Bioengineer.org"
     ],
     "mobilisation": [
+      "The number of killed combatants from southern Russia in Ukraine has reached 10050. - Caucasian Knot",
       "Iraq strikes compromise with Kataib Hezbollah - Middle East Online",
-      "Venislavskyi Says Mobilization Conflicts Have Nearly Disappeared - Mezha.net",
-      "The number of killed combatants from southern Russia in Ukraine has reached 10050. - Caucasian Knot"
+      "Venislavskyi Says Mobilization Conflicts Have Nearly Disappeared - Mezha.net"
     ],
     "national_outage": [
       "Cuba’s National Electric Grid Collapses, Reason Unknown - EnergyNow.com",
@@ -710,8 +694,8 @@
     ],
     "outage_au": [
       "Calls for 'automatic compensation' following telco outages - ABC News & Headlines – Australian Broadcasting Corporation",
-      "Microsoft ‘deeply sorry’ for global outage, rules out cyberattack and AI - Nine.com.au",
-      "Microsoft exec reveals details of outage - News.com.au"
+      "Australia's Optus apologises for outage that disrupted emergency calls - Reuters",
+      "Telstra mobile outage disrupts services across Australia - Australian Cyber Security Magazine"
     ],
     "reservists": [
       "ARMENIA : \"New concern\" over criminal prosecutions of conscientious objector reservists - Forum 18",
@@ -734,7 +718,7 @@
     "shipping_attacks": [
       "Two tankers confirmed struck, Iran claims VLCC sinking in Hormuz - Seatrade Maritime News",
       "ADNOC L&S says one missing, 11 injured in Strait of Hormuz ship attack - Baird Maritime",
-      "Iran Keeps Up Unrelenting Attacks on Ships in the Strait of Hormuz - The New York Times"
+      "Further tanker attacks reported in Strait of Hormuz amid Iranian mine claims - safety4sea"
     ],
     "strikes": [
       "Iran widens Gulf attacks by targeting U.S. air base in Kuwait and sites in Bahrain - PBS",
@@ -764,9 +748,9 @@
       "yes": 3.0
     },
     {
-      "d24h": -1.6,
+      "d24h": -1.7,
       "q": "US-Iran Hormuz Agreement by November 30?",
-      "yes": 2.6
+      "yes": 2.5
     },
     {
       "d24h": -4.0,
@@ -834,12 +818,12 @@
       "yes": 2.6
     },
     {
-      "d24h": -0.1,
+      "d24h": -0.3,
       "q": "Will the U.S. test a nuclear weapon by December 31 2026?",
-      "yes": 2.4
+      "yes": 2.0
     },
     {
-      "d24h": -0.5,
+      "d24h": 0.0,
       "q": "Will Russia invade another country by December 31, 2027?",
       "yes": 17.5
     },
@@ -1198,17 +1182,17 @@
     }
   ],
   "sectors_relative_5d": {
-    "defence_au": -1.68,
+    "defence_au": -1.33,
     "defence_eu": -1.8,
     "defence_us": 1.12,
     "pandemic": -4.88
   },
   "tankers": "normal",
   "telecom_drop_pct": {
-    "Aussie Broadband": 0.3,
+    "Aussie Broadband": 0.0,
     "Optus": 0.0,
     "TPG": 0.0,
-    "Telstra": 0.3,
+    "Telstra": 0.4,
     "Vodafone": 0.0
   },
   "us_departure_orders": [
