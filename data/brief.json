@@ -310,20 +310,20 @@
   ],
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
-    "gdacs": "HTTPError: HTTP Error 503: Service Unavailable",
+    "gdacs": "TimeoutError: The read operation timed out",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-20T05:07:00Z",
+  "generated_at": "2026-11-20T05:13:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 80,
-    "Black Sea": 55,
-    "Israel & Eastern Mediterranean": 17,
-    "Korea": 2,
+    "Baltic / Kaliningrad": 69,
+    "Black Sea": 40,
+    "Israel & Eastern Mediterranean": 13,
+    "Korea": 0,
     "Persian Gulf": 8,
-    "South Australia": 4,
+    "South Australia": 2,
     "Sydney / NSW": 6,
-    "Taiwan Strait": 2
+    "Taiwan Strait": 0
   },
   "incidents": [
     {
@@ -392,20 +392,11 @@
       "target": "Chinese Hackers Exploited"
     },
     {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
-        "Hackers Exploit VMware vCenter 0-Day Since September to Hijack Admin Accounts and Steal VM Data"
-      ],
-      "severity": "Info",
-      "target": "Hackers Exploit VMware"
-    },
-    {
       "attack_reported": false,
       "confirmed": true,
       "headlines": [
+        "Microsoft 365 outage causes: how the gateway failed",
         "Luke Kehoe: Microsoft Outage Exposes Concentration Risks in Digital Infrastructure",
-        "Microsoft 365 outage cause: how the gateway failed",
         "Microsoft’s Outlook outage didn’t end when it was fixed — a backlog of retried emails can take hours to days to clear"
       ],
       "severity": "Warning",
@@ -432,8 +423,8 @@
   ],
   "internet_drop_pct": {
     "China": 1.2,
-    "Iran": 0.1,
-    "Israel": 0.0,
+    "Iran": 0.0,
+    "Israel": 0.3,
     "Russia": 0.2,
     "South Korea": 0.0,
     "Taiwan": 0.0
@@ -450,16 +441,16 @@
       "Mount Lofty Ranges": "Moderate / Moderate"
     },
     "fire_danger_ok": true,
-    "fires_active": 8,
+    "fires_active": 7,
     "fuel": {
       "brent_aud": 135.0,
       "change_pct": -4.2,
       "pump_cents": -4,
       "week_ago_aud": 140.9
     },
-    "grid_demand_fall_pct": -13.3,
-    "grid_demand_mw": 410,
-    "grid_demand_usual_mw": 551,
+    "grid_demand_fall_pct": -28.8,
+    "grid_demand_mw": 466,
+    "grid_demand_usual_mw": 646,
     "grid_lor_level": 0,
     "nearby_incidents": [
       {
@@ -479,26 +470,7 @@
         "pm25": 3
       },
       "air_word": "Good",
-      "days": [
-        {
-          "date": "2026-11-20",
-          "gust": 58,
-          "rain": 0,
-          "tmax": 25
-        },
-        {
-          "date": "2026-11-21",
-          "gust": 29,
-          "rain": 0,
-          "tmax": 28
-        },
-        {
-          "date": "2026-11-22",
-          "gust": 60,
-          "rain": 0,
-          "tmax": 28
-        }
-      ]
+      "days": []
     },
     "possible_blackout": false,
     "power_news": [],
@@ -516,16 +488,16 @@
   },
   "markets": {
     "AUD/USD": {
-      "change_pct": -0.68,
-      "price": 0.6667
+      "change_pct": -0.7,
+      "price": 0.6666
     },
     "Brent oil": {
-      "change_pct": -2.07,
-      "price": 90.05
+      "change_pct": -2.13,
+      "price": 90.02
     },
     "Gold": {
-      "change_pct": -5.55,
-      "price": 3534.1
+      "change_pct": -4.31,
+      "price": 3526.7
     },
     "VIX": {
       "change_pct": 15.8,
@@ -557,12 +529,12 @@
     "aviation_halt": [
       "DOT's Duffy said ground stop might have been shorter if L3Harris had spotted the problem sooner - Arkansas Advocate",
       "FAA ground stop suggests how risky air traffic control upgrades can be - Scientific American",
-      "Could Another Ground Stop Upend Holiday Travel? What the Recent Massive Flight Disruptions Revealed - AFAR"
+      "I Was in the Air When the Ground Stop Hit. My 84-Year-Old Mother Wasn’t So Lucky. - WSJ"
     ],
     "bank_outage": [
       "Major credit card companies hit in cyber attack - News24",
       "Wall Street tumbles to its longest losing streak since 2024 as AI stocks slide - CommBank",
-      "Thousands of customers have data leaked after cyberattack at Visa, Mastercard and US banking giant - Nine.com.au"
+      "Chase Bank, Visa and Mastercard confirm third-party cyber attacks - Cyber Daily"
     ],
     "blood": [
       "Prince Albert II honours 96 volunteers and blood donors ahead of Monaco National Day - Riviera Radio"
@@ -578,7 +550,7 @@
       "Is Iran the New Iraq? Tehran Rejects US Chemical Weapons Claims, Invokes 2003 WMD Controversy - Open Magazine"
     ],
     "cloud": [
-      "Microsoft 365 outage cause: how the gateway failed - NeoTeo",
+      "Microsoft 365 outage causes: how the gateway failed - NeoTeo",
       "A dozen industries impacted by the Microsoft 365 outage - PropertyCasualty360",
       "Microsoft Outage Raises Questions Over UK Control of Critical Digital Infrastructure - Tech Policy Press"
     ],
@@ -598,7 +570,7 @@
     "cyber_ot": [
       "Who is hacking Europe’s supermarket fridges and freezers, and why? - The Guardian",
       "Shop freezers in seven European countries hit by cyber-attack - BBC",
-      "Tens of thousands of UK fridges secured from hackers in secret nationwide operation - BBC"
+      "Supermarket freezers and fridges in Europe hit by cyberattack - Nine.com.au"
     ],
     "cyber_state": [
       "ESET Research: Sandworm behind cyberattack on Poland’s power grid in late 2025 - We Live Security",
@@ -615,13 +587,15 @@
       "Kenya and Nigeria agree to strengthen cooperation on government communication and AI-generated misinformation - Tech Review Africa",
       "John Swinney apologises after SNP’s AI-generated GTA 6 'memes' spark backlash - The National Scot"
     ],
+    "dieoff": [
+      "Chuck Thompson on the mysterious deaths of two Bigfoot hunters in Washington - Crime Reads"
+    ],
     "flash": [
-      "Carma Limited Enters Trading Halt Pending Material Financier Announcement - Kalkine",
+      "Metal Powder Works Enters Trading Halt Ahead of Capital Raise Announcement - Kalkine",
       "China's Tianpu Falls by Daily Limit for Second Straight Session After Trading Resumes Post-Verification; Stock Had Risen Over 50% in Four-Session Streak - BigGo Finance",
-      "Metal Powder Works Enters Trading Halt Ahead of Capital Raise Announcement - Kalkine"
+      "Carma Limited Enters Trading Halt Pending Material Financier Announcement - Kalkine"
     ],
     "fuel_au": [
-      "Oil Supply Shock to Worsen as Inventories Fall Further Even if Conflict Ends - EnergyNow.com",
       "Crimean Bridge Strikes Spark Fuel Shortage Fears as Gas Station Lines Grow in Occupied Sevastopol - UNITED24 Media",
       "Indonesia and Philippines Unionists Tackle Barriers in Bali - JournalArta"
     ],
@@ -636,13 +610,13 @@
     ],
     "mobilisation": [
       "Iraq strikes compromise with Kataib Hezbollah - Middle East Online",
-      "The number of killed combatants from southern Russia in Ukraine has reached 10050. - Caucasian Knot",
-      "Venislavskyi Says Mobilization Conflicts Have Nearly Disappeared - Mezha.net"
+      "Venislavskyi Says Mobilization Conflicts Have Nearly Disappeared - Mezha.net",
+      "The number of killed combatants from southern Russia in Ukraine has reached 10050. - Caucasian Knot"
     ],
     "national_outage": [
       "Assembly plunged into darkness, MPs switch on phone lights - Nacionale",
       "Cuba’s National Electric Grid Collapses, Reason Unknown - EnergyNow.com",
-      "Drivers Identify Biggest Myths, Misconceptions Surrounding EVs - Manufacturing.net"
+      "Nationwide Outages Situation Explained - Facebook"
     ],
     "outage_au": [
       "Alice Springs and Katherine local news briefing: Friday, November 20, 2026 - ABC News & Headlines – Australian Broadcasting Corporation",
@@ -660,7 +634,7 @@
     "sapn": [
       "Schools shut, hospitals hit, triple-0 fears as wild storms cause chaos - Adelaide Now",
       "State’s drastic action after storm carnage - News.com.au",
-      "Multiple transmission towers down in Eyre Peninsula in South Australia on Thursday 19th November 2026, leaving 20,000+ properties without power - WattClarity"
+      "Eyre Peninsula 'not out of the woods' after 'extremely ferocious' storm - ABC News & Headlines – Australian Broadcasting Corporation"
     ],
     "scams": [
       "SAP Concur warns of rising fraud losses in finance - SecurityBrief Asia",
@@ -1134,7 +1108,7 @@
     }
   ],
   "sectors_relative_5d": {
-    "defence_au": -4.56,
+    "defence_au": -4.66,
     "defence_eu": -0.81,
     "defence_us": 1.12,
     "pandemic": -4.88
