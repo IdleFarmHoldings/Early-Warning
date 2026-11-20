@@ -263,19 +263,20 @@
   ],
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
+    "maritime": "TimeoutError: ",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output=",
-    "satellites": "HTTPError: HTTP Error 403: Forbidden"
+    "satellites": "TimeoutError: The read operation timed out"
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-20T20:38:00Z",
+  "generated_at": "2026-11-20T20:43:00Z",
   "gps_bad_pct": {
     "Baltic / Kaliningrad": 62,
     "Black Sea": null,
     "Israel & Eastern Mediterranean": 3,
-    "Korea": 2,
-    "Persian Gulf": 29,
+    "Korea": 3,
+    "Persian Gulf": 33,
     "South Australia": 0,
-    "Sydney / NSW": 2,
+    "Sydney / NSW": 0,
     "Taiwan Strait": 0
   },
   "incidents": [
@@ -434,7 +435,7 @@
     "Israel": 0.0,
     "Russia": 0.0,
     "South Korea": 0.2,
-    "Taiwan": 1.1
+    "Taiwan": 1.2
   },
   "local_sa": {
     "bom": [
@@ -459,9 +460,9 @@
       "pump_cents": -5,
       "week_ago_aud": 141.5
     },
-    "grid_demand_fall_pct": 7.9,
-    "grid_demand_mw": 1125,
-    "grid_demand_usual_mw": 1272,
+    "grid_demand_fall_pct": 7.3,
+    "grid_demand_mw": 1102,
+    "grid_demand_usual_mw": 1249,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
@@ -508,20 +509,20 @@
   },
   "markets": {
     "AUD/USD": {
-      "change_pct": -1.46,
-      "price": 0.6615
+      "change_pct": -1.47,
+      "price": 0.6614
     },
     "Brent oil": {
-      "change_pct": -2.14,
-      "price": 90.01
+      "change_pct": -2.03,
+      "price": 90.11
     },
     "Gold": {
-      "change_pct": -4.57,
-      "price": 3517.0
+      "change_pct": -4.85,
+      "price": 3506.7
     },
     "VIX": {
-      "change_pct": 25.28,
-      "price": 35.63
+      "change_pct": 26.55,
+      "price": 35.99
     }
   },
   "national_shocks": {
@@ -594,12 +595,12 @@
     "cyber_au": [
       "New Chinese app allows anyone with a phone to hack sites - Herald Sun",
       "Report of the Rapid Review into Australian Government arrangements for an AI-driven cyber incident - Department of the Prime Minister and Cabinet",
-      "Cyberattack tactics are outpacing what renewal forms ask - Insurance Business"
+      "Australia mulls tougher tech laws after AI health breach - The Nightly"
     ],
     "cyber_ot": [
       "UK operation wards off risk of cyber-attack on supermarket fridges and freezers - The Guardian",
       "Shop freezers in seven European countries hit by cyber-attack - BBC",
-      "Refrigeration under cyber attack - Climate Control News"
+      "Supermarket freezers and fridges in Europe hit by cyberattack - Nine.com.au"
     ],
     "cyber_state": [
       "ESET Research: Sandworm behind cyberattack on Poland’s power grid in late 2025 - We Live Security",
@@ -627,13 +628,7 @@
     ],
     "fuel_au": [
       "Honda Avancier 2027: new hybrid large SUV targets Santa Fe and Kluger - Chasing Cars",
-      "Oil Supply Shock to Worsen as Inventories Fall Further Even if Conflict Ends - EnergyNow.com",
-      "No route cuts for Fiji Airways despite global fuel hikes - FBC News"
-    ],
-    "illness": [
-      "Mystery illness causes mass hospitalisation of runners - The Nightly",
-      "148 aboard Florida-bound cruise ship sickened by ‘unknown’ GI outbreak: CDC - The Hill",
-      "Zayn Malik hospitalised with mystery illness, forced to cancel upcoming appearances on album release week - Nine.com.au"
+      "Oil Supply Shock to Worsen as Inventories Fall Further Even if Conflict Ends - EnergyNow.com"
     ],
     "masscas": [
       "Family of Robb Elementary victim hope their experience inspires mass casualty preparedness at hospitals - KXAN Austin",
@@ -644,11 +639,6 @@
       "Iran’s Wages Collapse as Death Sentences, Bread Shortages and Security Fears Deepen Crisis - National Council of Resistance of Iran - NCRI",
       "Delivered, \"processed\" by the Military Medical Commission, mobilized: the court explained how to properly appeal such a draft - Судово-юридична газета",
       "Iraq reaches compromise with Kataib Hezbollah over armed group’s stronghold - Al Jazeera"
-    ],
-    "national_outage": [
-      "Properties in eight suburbs plunged into darkness as power is lost - Bendigo Advertiser",
-      "When Christmas Is Decreed in a Country Plunged into Darkness - Havana Times",
-      "FAA Narrows Cause Of Nationwide Outage, Congress Questions $50 Billion Funding Request - Investor's Business Daily"
     ],
     "outage_au": [
       "Calls for 'automatic compensation' following telco outages - ABC News & Headlines – Australian Broadcasting Corporation",
@@ -678,11 +668,6 @@
       "Another Tanker Hit in Strait of Hormuz as Maritime Attacks Surge Worldwide - gCaptain",
       "ADNOC L&S says one missing, 11 injured in Strait of Hormuz ship attack - Baird Maritime",
       "Further tanker attacks reported in Strait of Hormuz amid Iranian mine claims - safety4sea"
-    ],
-    "strikes": [
-      "Seven bombers from Kola took part in massive strike; two missiles crashed in Poland - The Barents Observer",
-      "Iran claims strike on Bahrain air base as tensions persist - Vatican News",
-      "Iran widens Gulf attacks by targeting U.S. air base in Kuwait and sites in Bahrain - PBS"
     ]
   },
   "prediction_markets": [
@@ -697,9 +682,9 @@
       "yes": 5.1
     },
     {
-      "d24h": 1.0,
+      "d24h": 1.5,
       "q": "NATO x Russia military clash by December 31, 2026?",
-      "yes": 11.0
+      "yes": 11.5
     },
     {
       "d24h": 1.0,
@@ -762,9 +747,9 @@
       "yes": 12.0
     },
     {
-      "d24h": 2.9,
+      "d24h": 3.0,
       "q": "NATO x Russia military clash by November 30, 2026?",
-      "yes": 4.2
+      "yes": 4.3
     },
     {
       "d24h": -1.4,
@@ -792,9 +777,9 @@
       "yes": 16.5
     },
     {
-      "d24h": -1.5,
+      "d24h": -2.0,
       "q": "Ukraine agrees not to join NATO by December 31, 2027?",
-      "yes": 17.5
+      "yes": 17.0
     },
     {
       "d24h": 0.0,
@@ -1053,7 +1038,7 @@
       "key": "russia",
       "lit": [
         {
-          "detail": "VIX at 35.63",
+          "detail": "VIX at 35.99",
           "name": "Market fear index above 30"
         }
       ],
@@ -1069,7 +1054,7 @@
       "key": "nuclear",
       "lit": [
         {
-          "detail": "VIX at 35.63",
+          "detail": "VIX at 35.99",
           "name": "Market fear index above 35"
         }
       ],
@@ -1083,8 +1068,8 @@
       "trend": "steady"
     },
     {
-      "band": "Elevated",
-      "convergence": "Two different kinds of sign are showing together (health and markets). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: countries restricting medical supply exports, pandemic-response stocks outperforming (5 days) and chemi",
+      "band": "Guarded",
+      "convergence": "Two different kinds of sign are showing together (health and markets). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: unknown illness / pneumonia cluster reported, countries restricting medical supply exports and pandemic",
       "domains": [
         "Health",
         "Markets"
@@ -1096,20 +1081,16 @@
           "name": "WHO outbreak report with a high-concern pathogen (last 14 days)"
         },
         {
-          "detail": "148 aboard Florida-bound cruise ship sickened by ‘unknown’ GI outbreak: CDC",
-          "name": "Unknown illness / pneumonia cluster reported"
-        },
-        {
           "detail": "Family of Robb Elementary victim hope their experience inspires mass casualty preparedness at hospitals",
           "name": "Mass casualty declarations (any country)"
         },
         {
-          "detail": "VIX at 35.63",
+          "detail": "VIX at 35.99",
           "name": "Market fear index above 30"
         }
       ],
-      "score": 50,
-      "trend": "steady"
+      "score": 30,
+      "trend": "down"
     },
     {
       "band": "Low",
@@ -1142,7 +1123,7 @@
           "name": "Reports of AI-driven hacking campaigns"
         },
         {
-          "detail": "VIX +25.3%",
+          "detail": "VIX +26.6%",
           "name": "Market fear index jumps 25%+ in a day"
         },
         {
@@ -1157,13 +1138,13 @@
   "sectors_relative_5d": {
     "defence_au": -1.75,
     "defence_eu": 1.27,
-    "defence_us": 3.32,
-    "pandemic": -3.58
+    "defence_us": 3.17,
+    "pandemic": -3.52
   },
   "tankers": "normal",
   "telecom_drop_pct": {
     "Aussie Broadband": 0.0,
-    "Optus": 4.0,
+    "Optus": 6.0,
     "TPG": 0.0,
     "Telstra": 0.0,
     "Vodafone": 0.0
