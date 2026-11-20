@@ -1,11 +1,12 @@
 {
-  "generated_at": "2026-11-20T19:24:00Z",
+  "generated_at": "2026-11-20T19:38:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
-      "band": "Guarded",
-      "convergence": "Two different kinds of sign are showing together (roads and weather). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: cfs emergency warning in sa, sudden fall in sa electricity demand (possible large blackout) and extreme or catastrophic fire danger near adelaide.",
+      "band": "Elevated",
+      "convergence": "Signs are converging across 3 separate areas (power grid, roads and weather). Unrelated systems flagging the same scenario at once is the pattern seen before past events. The worst local days stack up: extreme fire danger, a heatwave pushing power demand, a tight grid, and storms or fires damaging lines. AEMO warns of supply shortfalls hours to a day ahead; the CFS and Bureau issue ratings and warnings a day or more ahead. The strongest signs not yet showing: cfs emergency warning in sa, sudden fall in sa electricity demand (possible large blackout) and extreme or catastrophic fire danger near adelaide.",
       "domains": [
+        "Power grid",
         "Roads",
         "Weather"
       ],
@@ -26,12 +27,20 @@
           "name": "Fire, flood or storm road closures in SA",
           "short": "Fire, flood or storm road closures in SA",
           "weight": 10
+        },
+        {
+          "detail": "South Australia cuts rooftop solar after storm sparks power outages; Major blackout hits South Australia after storm",
+          "domain": "Power grid",
+          "id": "power",
+          "name": "Reports of widespread power outages in SA",
+          "short": "Reports of widespread power outages in…",
+          "weight": 15
         }
       ],
       "name": "Local emergency in SA (bushfire, heat, power)",
       "sa_impact": "Direct: bushfires, heatwaves and power cuts are the emergencies most likely to affect the family. In the 2016 statewide blackout, power, phones, traffic lights and fuel pumps failed together.",
-      "score": 25,
-      "trend": "down",
+      "score": 40,
+      "trend": "up",
       "unlit": [
         {
           "domain": "Bushfire",
@@ -76,12 +85,6 @@
           "weight": 10
         },
         {
-          "domain": "Power grid",
-          "id": "power",
-          "name": "Reports of widespread power outages in SA",
-          "weight": 15
-        },
-        {
           "domain": "Water",
           "id": "water",
           "name": "SA Water supply cut or water-quality notice reported",
@@ -104,21 +107,12 @@
     },
     {
       "band": "Guarded",
-      "convergence": "Two different kinds of sign are showing together (electronic warfare and shipping). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
+      "convergence": "Only one kind of sign is showing (shipping). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
       "domains": [
-        "Electronic warfare",
         "Shipping"
       ],
       "key": "mideast",
       "lit": [
-        {
-          "detail": "gps_israel 45 vs usual 2",
-          "domain": "Electronic warfare",
-          "id": "gps",
-          "name": "GPS jamming spike (Gulf / Israel)",
-          "short": "GPS jamming spike",
-          "weight": 10
-        },
         {
           "detail": "Strait of Hormuz -38% vs usual (2.3/day)",
           "domain": "Shipping",
@@ -130,8 +124,8 @@
       ],
       "name": "Middle East war & Gulf shipping",
       "sa_impact": "Fuel: Australia imports most of its fuel, much of it refined from Gulf crude in Asia. Shipping attacks or a Hormuz closure push up prices within days and can cause local shortages.",
-      "score": 25,
-      "trend": "up",
+      "score": 15,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Military air",
@@ -144,6 +138,12 @@
           "id": "air",
           "name": "Unusual military air activity over the region",
           "weight": 15
+        },
+        {
+          "domain": "Electronic warfare",
+          "id": "gps",
+          "name": "GPS jamming spike (Gulf / Israel)",
+          "weight": 10
         },
         {
           "domain": "Communications",
@@ -395,7 +395,7 @@
       "key": "russia",
       "lit": [
         {
-          "detail": "VIX at 32.13",
+          "detail": "VIX at 33.6",
           "domain": "Markets",
           "id": "vix",
           "name": "Market fear index above 30",
@@ -671,7 +671,7 @@
           "weight": 5
         },
         {
-          "detail": "VIX at 32.13",
+          "detail": "VIX at 33.6",
           "domain": "Markets",
           "id": "vix",
           "name": "Market fear index above 30",
@@ -682,7 +682,7 @@
       "name": "Pandemic, biological or chemical emergency",
       "sa_impact": "Health system strain, possible lockdowns and border closures, and shortages of medicines and protective equipment, which Australia mostly imports.",
       "score": 50,
-      "trend": "up",
+      "trend": "steady",
       "unlit": [
         {
           "domain": "Trade",
