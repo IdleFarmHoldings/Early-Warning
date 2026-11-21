@@ -1,13 +1,7 @@
 {
   "about": "Short form of latest.json + indicators.json for the analysis run. Links and raw samples removed.",
   "acsc": [],
-  "aircraft_flags": {
-    "gps_baltic": {
-      "median": 25,
-      "status": "ANOMALY",
-      "value": 72
-    }
-  },
+  "aircraft_flags": {},
   "analyst": {
     "ASPI Strategist": [
       "Let’s see whether North Korea absorbs the experience it’s getting in Ukraine",
@@ -271,16 +265,17 @@
   ],
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
+    "maritime": "ConnectionClosedError: no close frame received or sent",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-21T19:07:00Z",
+  "generated_at": "2026-11-21T19:22:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 72,
-    "Black Sea": 14,
-    "Israel & Eastern Mediterranean": 2,
+    "Baltic / Kaliningrad": 67,
+    "Black Sea": 46,
+    "Israel & Eastern Mediterranean": 5,
     "Korea": 0,
-    "Persian Gulf": 9,
+    "Persian Gulf": 18,
     "South Australia": null,
     "Sydney / NSW": 0,
     "Taiwan Strait": 0
@@ -297,10 +292,9 @@
     },
     {
       "attack_reported": true,
-      "confirmed": true,
+      "confirmed": false,
       "headlines": [
-        "FBI investigates suspected breach of crime database",
-        "FBI reportedly investigating apparent hack of its criminal database"
+        "FBI investigates suspected breach of crime database"
       ],
       "severity": "Info",
       "target": "FBI"
@@ -354,10 +348,19 @@
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
-        "Hackers Exploit Critical VMware, Cisco, and Apache Flaws as Espionage Attacks Emerge"
+        "6 Critical F5 BIG-IP Vulnerabilities Could Let Hackers Disrupt Websites and Execute Malicious Code"
       ],
       "severity": "Info",
-      "target": "Hackers Exploit Critical"
+      "target": "Other services"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "Broadcom Patches VMware Zero Day Exploited by Chinese Hackers"
+      ],
+      "severity": "Info",
+      "target": "Broadcom Patches VMware"
     },
     {
       "attack_reported": true,
@@ -433,15 +436,24 @@
       ],
       "severity": "Info",
       "target": "Signal Cracks"
+    },
+    {
+      "attack_reported": false,
+      "confirmed": false,
+      "headlines": [
+        "Tech Outages and Optimizely Attack Warn of Wider CX Tech Risks"
+      ],
+      "severity": "Info",
+      "target": "Tech Outages"
     }
   ],
   "internet_drop_pct": {
     "China": 0.0,
-    "Iran": 0.2,
+    "Iran": 0.3,
     "Israel": 0.0,
     "Russia": 0.0,
     "South Korea": 0.2,
-    "Taiwan": 0.6
+    "Taiwan": 1.3
   },
   "local_sa": {
     "bom": [
@@ -470,9 +482,9 @@
       "pump_cents": -4,
       "week_ago_aud": 141.5
     },
-    "grid_demand_fall_pct": 4.7,
-    "grid_demand_mw": 1321,
-    "grid_demand_usual_mw": 1257,
+    "grid_demand_fall_pct": 2.3,
+    "grid_demand_mw": 1356,
+    "grid_demand_usual_mw": 1265,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
@@ -554,8 +566,8 @@
   "nc3": "normal",
   "news_watch": {
     "ai_hack": [
-      "Amazon: China-Linked Hackers’ AI Agents Exploited Medical Software Zero-Day - SecurityWeek",
       "Opinion | The real cyberthreat is rogue humans, not rogue AI - The Washington Post",
+      "Amazon: China-Linked Hackers’ AI Agents Exploited Medical Software Zero-Day - SecurityWeek",
       "AI Hackers Are Finding Security Flaws Faster Than Indian Banks Can Fix Them - The 420.in"
     ],
     "airspace": [
@@ -569,8 +581,8 @@
     ],
     "bank_outage": [
       "What Does the FY26 Profit Rebound at ANZ Group (ASX:ANZ) Look Like After a Down Week? - Kalkine",
-      "Chase confirms data theft, Visa and Mastercard hit too - Korben",
-      "What Do Higher Credit Charges at NAB (ASX:NAB) Add to Its Weekly Share Update? - Kalkine"
+      "FBI investigates suspected breach of crime database - Herald Sun",
+      "Why this anti-gambling blitz could leave non-gamblers stranded - The Canberra Times"
     ],
     "blood": [
       "Britain Pledges £260 Million Aid Package for Ukraine - dailyasianage.com"
@@ -582,8 +594,8 @@
     ],
     "chem": [
       "IRGC Rejects US Claims of Planned Chemical Attack in Washington - caspiannews.com",
-      "Japan’s ‘Rabbit Island’ draws tourists with fluffy bunnies and dark wartime past - South China Morning Post",
-      "Gharibabadi: Iran Rejects US Accusations, Vows to Break Naval Blockade - WANA News Agency"
+      "Gharibabadi: Iran Rejects US Accusations, Vows to Break Naval Blockade - WANA News Agency",
+      "Japan’s ‘Rabbit Island’ draws tourists with fluffy bunnies and dark wartime past - South China Morning Post"
     ],
     "cloud": [
       "AWS got hit by an outage too. Here's why you didn't hear about it - The Register",
@@ -621,9 +633,9 @@
       "AI-Generated Legal Pleadings Mislead Madhya Pradesh High Court - OECD AI Policy Observatory"
     ],
     "flash": [
-      "Canadian Investment Regulatory Organization Trading Halt - LABZ - Yahoo Finance",
       "Uni-Bio Science Requests Trading Halt Pending Inside Information Announcement - The Globe and Mail",
-      "Canadian Investment Regulatory Organization Trading Halt - LABZ - The Manila Times"
+      "South Korea's exports top $1 trillion for first time on strong chip demand - Gulf News",
+      "Wall Street regulator proposes to take control of market surveillance tool - Devdiscourse"
     ],
     "fuel_au": [
       "Fuel tanker arrives amid supply concerns and panic buying - FBC News",
@@ -658,9 +670,9 @@
       "Alice Springs and Katherine local news briefing: Friday, November 20, 2026 - ABC News & Headlines – Australian Broadcasting Corporation"
     ],
     "reservists": [
+      "UK reservist regiment takes part in overseas Nato exercise - BBC",
       "Strategy Reports $35 Billion Net Reserve, No BTC Collateral - ForkLog",
-      "Strategy Reports $35 Billion Net Reserve: All Bitcoin Holdings Now Unencumbered - Kriptofoni",
-      "UK reservist regiment takes part in overseas Nato exercise - BBC"
+      "Strategy Reports $35 Billion Net Reserve: All Bitcoin Holdings Now Unencumbered - Kriptofoni"
     ],
     "sapn": [
       "Blackout prompts questions over ElectraNet's recent $300m network upgrade - ABC News & Headlines – Australian Broadcasting Corporation",
@@ -688,19 +700,19 @@
       "yes": 7.5
     },
     {
-      "d24h": -1.4,
+      "d24h": -1.5,
       "q": "US-Iran Final Nuclear Deal by December 31, 2026?",
       "yes": 4.2
     },
     {
-      "d24h": 0.0,
+      "d24h": 0.5,
       "q": "NATO x Russia military clash by December 31, 2026?",
       "yes": 11.5
     },
     {
-      "d24h": 0.2,
+      "d24h": -0.1,
       "q": "China x Taiwan military clash before 2027?",
-      "yes": 3.4
+      "yes": 3.1
     },
     {
       "d24h": -0.3,
@@ -708,7 +720,7 @@
       "yes": 2.6
     },
     {
-      "d24h": -0.1,
+      "d24h": -0.2,
       "q": "Will the US officially declare war on Iran by December 31, 2026?",
       "yes": 1.5
     },
@@ -753,9 +765,9 @@
       "yes": 3.5
     },
     {
-      "d24h": 0.5,
+      "d24h": -0.5,
       "q": "Iran-Oman Hormuz Agreement by December 31?",
-      "yes": 12.5
+      "yes": 11.5
     },
     {
       "d24h": null,
@@ -763,7 +775,7 @@
       "yes": 4.5
     },
     {
-      "d24h": 0.5,
+      "d24h": 1.0,
       "q": "NATO x Russia military clash by November 30, 2026?",
       "yes": 4.8
     },
@@ -778,7 +790,7 @@
       "yes": 3.0
     },
     {
-      "d24h": -0.2,
+      "d24h": -0.1,
       "q": "Will Russia test a nuclear weapon by December 31 2026?",
       "yes": 2.1
     },
@@ -793,9 +805,9 @@
       "yes": 16.5
     },
     {
-      "d24h": 0.0,
+      "d24h": -1.0,
       "q": "Will Nick Stewart attend a US x Iran diplomatic meeting by December 31, 2026?",
-      "yes": 7.5
+      "yes": 6.5
     },
     {
       "d24h": 0.5,
@@ -1072,19 +1084,14 @@
       "trend": "steady"
     },
     {
-      "band": "Elevated",
-      "convergence": "Signs are converging across 3 separate areas (electronic warfare, markets and mobilisation). Unrelated systems flagging the same scenario at once is the pattern seen before past events. Before February 2022: embassy departures, mobilisation reports, airspace closures and a surge in GPS jamming. Balt",
+      "band": "Guarded",
+      "convergence": "Two different kinds of sign are showing together (markets and mobilisation). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and us nuc",
       "domains": [
-        "Electronic warfare",
         "Markets",
         "Mobilisation"
       ],
       "key": "russia",
       "lit": [
-        {
-          "detail": "gps_baltic 72 vs usual 25",
-          "name": "GPS jamming spike (Baltic / Black Sea)"
-        },
         {
           "detail": "UK reservist regiment takes part in overseas Nato exercise",
           "name": "Mobilisation / reservist reports (Russia / NATO)"
@@ -1094,8 +1101,8 @@
           "name": "Market fear index above 30"
         }
       ],
-      "score": 40,
-      "trend": "steady"
+      "score": 25,
+      "trend": "down"
     },
     {
       "band": "Low",
@@ -1188,7 +1195,7 @@
         }
       ],
       "score": 30,
-      "trend": "down"
+      "trend": "steady"
     }
   ],
   "sectors_relative_5d": {
@@ -1199,11 +1206,11 @@
   },
   "tankers": "normal",
   "telecom_drop_pct": {
-    "Aussie Broadband": 0.3,
-    "Optus": 0.0,
+    "Aussie Broadband": 0.0,
+    "Optus": 1.0,
     "TPG": 0.0,
     "Telstra": 0.0,
-    "Vodafone": 0.0
+    "Vodafone": 4.8
   },
   "us_departure_orders": [
     "Belarus"
