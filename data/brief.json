@@ -265,18 +265,18 @@
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output=",
-    "satellites": "HTTPError: HTTP Error 403: Forbidden"
+    "satellites": "TimeoutError: The read operation timed out"
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-21T03:28:00Z",
+  "generated_at": "2026-11-21T03:34:00Z",
   "gps_bad_pct": {
     "Baltic / Kaliningrad": null,
-    "Black Sea": 60,
-    "Israel & Eastern Mediterranean": 5,
+    "Black Sea": 48,
+    "Israel & Eastern Mediterranean": 4,
     "Korea": 0,
-    "Persian Gulf": 21,
-    "South Australia": 0,
-    "Sydney / NSW": 13,
+    "Persian Gulf": 15,
+    "South Australia": 5,
+    "Sydney / NSW": 11,
     "Taiwan Strait": 0
   },
   "incidents": [
@@ -369,7 +369,7 @@
   ],
   "internet_drop_pct": {
     "China": 0.9,
-    "Iran": 0.9,
+    "Iran": 0.7,
     "Israel": 1.0,
     "Russia": 0.0,
     "South Korea": 0.0,
@@ -377,6 +377,7 @@
   },
   "local_sa": {
     "bom": [
+      "Strong Wind Warning for coastal waters between WA-SA Border and Fowlers Bay for 21 November",
       "Extreme Fire Weather Warning for West Coast fire district for 21 November"
     ],
     "cable_watch": [],
@@ -397,20 +398,10 @@
       "week_ago_aud": 141.5
     },
     "grid_demand_fall_pct": null,
-    "grid_demand_mw": -85,
-    "grid_demand_usual_mw": 222,
+    "grid_demand_mw": -71,
+    "grid_demand_usual_mw": 245,
     "grid_lor_level": 0,
-    "nearby_incidents": [
-      {
-        "area": "1028 STRATHALBYN RD BIGGS FLAT",
-        "dist": "25-60 km",
-        "event": "Grass Fire",
-        "headline": "BIGGS FLAT : GRASS FIRE",
-        "id": "F-261121-0065 BIGGS FLAT, STRATHALBYN RD (GRASS FIRE)",
-        "level": null,
-        "notify": false
-      }
-    ],
+    "nearby_incidents": [],
     "outlook": {
       "air": {
         "aqi": 25,
@@ -529,7 +520,7 @@
     "cyber_au": [
       "‘Terminator’: Chinese hacking tool lets anyone with an iPhone unleash havoc - Herald Sun",
       "Australia mulls tougher tech laws after AI health breach - The Nightly",
-      "‘Clearly being attacked’: US in panic mode - News.com.au"
+      "Seven major tech incidents in a week – what’s going on, and what can we do? - Canberra Daily"
     ],
     "cyber_ot": [
       "UK operation wards off risk of cyber-attack on supermarket fridges and freezers - The Guardian",
@@ -548,8 +539,8 @@
     ],
     "deepfake": [
       "Scottish Greens challenge SNP government’s relationship with big tech after First Minister’s apology over AI slop video - Scottish Greens",
-      "TikTok launches tool to help public figures detect deepfakes globally - The Malaysian Reserve",
-      "Trump takes down image from his social media platform that depicted him as a Jesus-like figure - ABC News - Breaking News, Latest News and Videos"
+      "Trump takes down image from his social media platform that depicted him as a Jesus-like figure - ABC News - Breaking News, Latest News and Videos",
+      "TikTok launches tool to help public figures detect deepfakes globally - Free Malaysia Today"
     ],
     "dieoff": [
       "Kenya probes deaths of seven hippos at Lake Naivasha - Gulf News",
@@ -561,7 +552,8 @@
       "Bunker Hill Silver TSX:BNKR Enters the Spotlight as Trading Halt Signals Pending News (TSX:BNKR) - kalkine.ca"
     ],
     "fuel_au": [
-      "Honda Avancier 2027: new hybrid large SUV targets Santa Fe and Kluger - Chasing Cars"
+      "Honda Avancier 2027: new hybrid large SUV targets Santa Fe and Kluger - Chasing Cars",
+      "Agathonisi Fuel Shortage Leaves Islanders Waiting More Than 10 Days - Greek City Times"
     ],
     "illness": [
       "Mystery illness causes mass hospitalisation of runners - The Nightly",
@@ -588,8 +580,8 @@
     ],
     "outage_au": [
       "Calls for 'automatic compensation' following telco outages - ABC News & Headlines – Australian Broadcasting Corporation",
-      "Alice Springs and Katherine local news briefing: Friday, November 20, 2026 - ABC News & Headlines – Australian Broadcasting Corporation",
-      "Telstra mobile outage disrupts services across Australia - Australian Cyber Security Magazine"
+      "Microsoft ‘deeply sorry’ for global outage, rules out cyberattack and AI - Nine.com.au",
+      "Microsoft exec reveals details of outage - News.com.au"
     ],
     "reservists": [
       "Britain sanctions Israeli aid-blocking group and settlement construction companies - South African Jewish Report",
@@ -605,7 +597,6 @@
       "South Australia questions ElectraNet network upgrade after Eyre Peninsula blackout - Traders Union"
     ],
     "sawater": [
-      "Going dry no more: why backup water systems are the new normal - weekendargus.co.za",
       "Johannesburg residents brace for Level 2 water restrictions from Saturday - SABC News"
     ],
     "scams": [
@@ -1125,10 +1116,10 @@
   },
   "tankers": "normal",
   "telecom_drop_pct": {
-    "Aussie Broadband": 0.1,
-    "Optus": 0.0,
+    "Aussie Broadband": 0.0,
+    "Optus": 5.1,
     "TPG": 0.0,
-    "Telstra": 0.2,
+    "Telstra": 0.7,
     "Vodafone": 4.8
   },
   "us_departure_orders": [
