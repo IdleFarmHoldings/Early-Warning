@@ -1,13 +1,7 @@
 {
   "about": "Short form of latest.json + indicators.json for the analysis run. Links and raw samples removed.",
   "acsc": [],
-  "aircraft_flags": {
-    "retreat_bizjets": {
-      "median": 0.0,
-      "status": "ANOMALY",
-      "value": 5
-    }
-  },
+  "aircraft_flags": {},
   "analyst": {
     "ASPI Strategist": [
       "Let’s see whether North Korea absorbs the experience it’s getting in Ukraine",
@@ -274,15 +268,15 @@
     "satellites": "TimeoutError: The read operation timed out"
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-21T02:04:00Z",
+  "generated_at": "2026-11-21T02:19:00Z",
   "gps_bad_pct": {
     "Baltic / Kaliningrad": null,
-    "Black Sea": 22,
-    "Israel & Eastern Mediterranean": 5,
+    "Black Sea": 48,
+    "Israel & Eastern Mediterranean": 12,
     "Korea": 1,
-    "Persian Gulf": 27,
-    "South Australia": 6,
-    "Sydney / NSW": 6,
+    "Persian Gulf": 24,
+    "South Australia": 11,
+    "Sydney / NSW": 4,
     "Taiwan Strait": 0
   },
   "incidents": [
@@ -290,8 +284,7 @@
       "attack_reported": true,
       "confirmed": true,
       "headlines": [
-        "Did Banks Get Hacked? Visa, Mastercard, Chase Confirm Vendor Cyberattack",
-        "JPMorgan Faces Data Leak After Banking Outage: Risks Mount?"
+        "Did Banks Get Hacked? Visa, Mastercard, Chase Confirm Vendor Cyberattack"
       ],
       "severity": "Info",
       "target": "Banking & payments"
@@ -305,24 +298,6 @@
       ],
       "severity": "Info",
       "target": "AI platforms"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
-        "Joint trial question in Medibank data breach cases deferred"
-      ],
-      "severity": "Info",
-      "target": "Joint"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
-        "CVE-2026-123890: Critical VMware vCenter Zero-Day Exploited by China-Linked Hackers"
-      ],
-      "severity": "Info",
-      "target": "CVE-2026-123890"
     },
     {
       "attack_reported": true,
@@ -362,32 +337,48 @@
       "target": "JPMorgan"
     },
     {
-      "attack_reported": false,
-      "confirmed": true,
+      "attack_reported": true,
+      "confirmed": false,
       "headlines": [
-        "Microsoft outage cause revealed: It was a perfect storm of problems",
-        "Microsoft outage impact on healthcare: Cloudy with a chance of disruption",
-        "The Microsoft Outage And The Hidden Dependencies Behind AI"
+        "A cyberattack leaks thousands of Chase customer emails and some phone numbers"
       ],
-      "severity": "Warning",
-      "target": "Microsoft"
+      "severity": "Info",
+      "target": "Other services"
+    },
+    {
+      "attack_reported": false,
+      "confirmed": false,
+      "headlines": [
+        "South Australia questions ElectraNet network upgrade after Eyre Peninsula blackout"
+      ],
+      "severity": "Info",
+      "target": "Power grid"
     },
     {
       "attack_reported": false,
       "confirmed": true,
       "headlines": [
-        "South Australia questions ElectraNet network upgrade after Eyre Peninsula blackout",
-        "Blackout prompts questions over ElectraNet's recent $300m network upgrade"
+        "Microsoft outage cause revealed: It was a perfect storm of problems",
+        "The Microsoft Outage And The Hidden Dependencies Behind AI"
       ],
       "severity": "Info",
-      "target": "Power grid"
+      "target": "Microsoft"
+    },
+    {
+      "attack_reported": false,
+      "confirmed": false,
+      "headlines": [
+        "The Outage Flu of 2026: Why is everything breaking at once?"
+      ],
+      "severity": "Info",
+      "target": "The"
     }
   ],
   "internet_drop_pct": {
-    "China": 0.4,
-    "Iran": 0.4,
-    "Israel": 0.2,
-    "Russia": 0.1,
+    "China": 0.5,
+    "Iran": 0.3,
+    "Israel": 0.3,
+    "Russia": 0.0,
     "South Korea": 0.0,
     "Taiwan": 0.0
   },
@@ -407,16 +398,26 @@
     "fire_danger_ok": true,
     "fires_active": 5,
     "fuel": {
-      "brent_aud": 135.6,
-      "change_pct": -4.1,
+      "brent_aud": 135.8,
+      "change_pct": -4.0,
       "pump_cents": -4,
       "week_ago_aud": 141.5
     },
-    "grid_demand_fall_pct": 41.8,
-    "grid_demand_mw": 125,
-    "grid_demand_usual_mw": 315,
+    "grid_demand_fall_pct": 83.3,
+    "grid_demand_mw": 36,
+    "grid_demand_usual_mw": 249,
     "grid_lor_level": 0,
-    "nearby_incidents": [],
+    "nearby_incidents": [
+      {
+        "area": "1028 STRATHALBYN RD BIGGS FLAT",
+        "dist": "25-60 km",
+        "event": "Grass Fire",
+        "headline": "BIGGS FLAT : GRASS FIRE",
+        "id": "F-261121-0065 BIGGS FLAT, STRATHALBYN RD (GRASS FIRE)",
+        "level": null,
+        "notify": false
+      }
+    ],
     "outlook": {
       "air": {
         "aqi": 24,
@@ -507,7 +508,7 @@
     "bank_outage": [
       "Did Banks Get Hacked? Visa, Mastercard, Chase Confirm Vendor Cyberattack - Forbes",
       "Wall Street tumbles to its longest losing streak since 2024 as AI stocks slide - CommBank",
-      "JPMorgan Faces Data Leak After Banking Outage: Risks Mount? - Yahoo Finance Australia"
+      "Grim week wipes $169 billion from Australian sharemarket - SMH.com.au"
     ],
     "blood": [
       "Senior Lieutenant General Le Quang Dao visits Department of Military Training and School Management - en.qdnd.vn"
@@ -524,7 +525,7 @@
     ],
     "cloud": [
       "Anthropic Claude down: Why it said it was unable to authenticate code - Mashable",
-      "‘We ask whether you are now willing to listen’: LibreOffice maker questions backup plans after Microsoft 365 outage - Mezha.net",
+      "'We ask whether you are now willing to listen': LibreOffice maker asks political organizations why there was no backup plan following the major Microsoft 365 outage - TechRadar",
       "Why Did Anthropic’s IPO Fail To Rescue The KOSPI? - Disruption Banking"
     ],
     "cyber_attrib": [
@@ -579,6 +580,11 @@
       "A DECADE LATER: How traffic investigators preserved 'mass casualty' evidence between grieving parents at Woodmore crash - Local 3 News",
       "Shawnee Community College students participate in simulated mass-casualty emergency - KBSI Fox 23 Cape Girardeau News | Paducah News"
     ],
+    "mobilisation": [
+      "Iran expands Basij surveillance network with AI platform amid fears of renewed protests - FDD's Long War Journal",
+      "Iran’s Wages Collapse as Death Sentences, Bread Shortages and Security Fears Deepen Crisis - National Council of Resistance of Iran - NCRI",
+      "Delivered, \"processed\" by the Military Medical Commission, mobilized: the court explained how to properly appeal such a draft - Судово-юридична газета"
+    ],
     "murray": [
       "Acoustic Tracking Reveals Five Distinct Movement Syndromes in Australian Golden Perch - Bioengineer.org"
     ],
@@ -601,12 +607,11 @@
       "What to watch this weekend in international sports - CBC"
     ],
     "sapn": [
-      "Blackout prompts questions over ElectraNet's recent $300m network upgrade - ABC News & Headlines – Australian Broadcasting Corporation",
+      "Eyre Peninsula 'not out of the woods' after 'extremely ferocious' storm - ABC News & Headlines – Australian Broadcasting Corporation",
       "South Australia cuts rooftop solar after storm sparks power outages - pv magazine Australia",
       "South Australia questions ElectraNet network upgrade after Eyre Peninsula blackout - Traders Union"
     ],
     "sawater": [
-      "Going dry no more: why backup water systems are the new normal - weekendargus.co.za",
       "Johannesburg residents brace for Level 2 water restrictions from Saturday - SABC News"
     ],
     "scams": [
@@ -636,7 +641,7 @@
       "yes": 5.8
     },
     {
-      "d24h": 0.5,
+      "d24h": 1.0,
       "q": "NATO x Russia military clash by December 31, 2026?",
       "yes": 10.5
     },
@@ -691,9 +696,9 @@
       "yes": 1.5
     },
     {
-      "d24h": 0.0,
+      "d24h": 0.1,
       "q": "Iran-Oman Hormuz Agreement by November 30?",
-      "yes": 3.5
+      "yes": 3.6
     },
     {
       "d24h": -1.5,
@@ -716,9 +721,9 @@
       "yes": 3.0
     },
     {
-      "d24h": -0.4,
+      "d24h": -0.1,
       "q": "Will Russia test a nuclear weapon by December 31 2026?",
-      "yes": 2.2
+      "yes": 2.3
     },
     {
       "d24h": 0.4,
@@ -731,7 +736,7 @@
       "yes": 16.5
     },
     {
-      "d24h": -0.5,
+      "d24h": -1.0,
       "q": "Ukraine agrees not to join NATO by December 31, 2027?",
       "yes": 18.5
     },
@@ -1000,46 +1005,36 @@
       "trend": "steady"
     },
     {
-      "band": "Guarded",
-      "convergence": "Two different kinds of sign are showing together (elite movement and markets). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and mobi",
+      "band": "Low",
+      "convergence": "Only one kind of sign is showing (markets). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and mobilisation / reservist reports (russia / nato).",
       "domains": [
-        "Elite movement",
         "Markets"
       ],
       "key": "russia",
       "lit": [
         {
-          "detail": "retreat_bizjets 5 vs usual 0.0",
-          "name": "Private jets heading to retreat destinations"
-        },
-        {
           "detail": "VIX at 35.89",
           "name": "Market fear index above 30"
         }
       ],
-      "score": 20,
-      "trend": "up"
+      "score": 10,
+      "trend": "down"
     },
     {
-      "band": "Guarded",
-      "convergence": "Two different kinds of sign are showing together (elite movement and markets). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: us nuclear command aircraft unusual, mobilisation reports (any major power) and forecast market",
+      "band": "Low",
+      "convergence": "Only one kind of sign is showing (markets). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: us nuclear command aircraft unusual, private jets heading to retreat destinations and mobilisation reports (any major power).",
       "domains": [
-        "Elite movement",
         "Markets"
       ],
       "key": "nuclear",
       "lit": [
         {
-          "detail": "retreat_bizjets 5 vs usual 0.0",
-          "name": "Private jets heading to retreat destinations"
-        },
-        {
           "detail": "VIX at 35.89",
           "name": "Market fear index above 35"
         }
       ],
-      "score": 25,
-      "trend": "up"
+      "score": 10,
+      "trend": "down"
     },
     {
       "band": "Low",
@@ -1131,7 +1126,7 @@
         }
       ],
       "score": 55,
-      "trend": "up"
+      "trend": "steady"
     }
   ],
   "sectors_relative_5d": {
@@ -1144,9 +1139,9 @@
   "telecom_drop_pct": {
     "Aussie Broadband": 0.0,
     "Optus": 0.0,
-    "TPG": 0.2,
-    "Telstra": 0.3,
-    "Vodafone": 0.0
+    "TPG": 0.0,
+    "Telstra": 0.6,
+    "Vodafone": 4.8
   },
   "us_departure_orders": [
     "Belarus"
