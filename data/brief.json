@@ -1,7 +1,13 @@
 {
   "about": "Short form of latest.json + indicators.json for the analysis run. Links and raw samples removed.",
   "acsc": [],
-  "aircraft_flags": {},
+  "aircraft_flags": {
+    "gps_gulf": {
+      "median": 8.0,
+      "status": "ANOMALY",
+      "value": 28
+    }
+  },
   "analyst": {
     "ASPI Strategist": [
       "Let’s see whether North Korea absorbs the experience it’s getting in Ukraine",
@@ -265,18 +271,18 @@
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output=",
-    "satellites": "TimeoutError: The read operation timed out"
+    "satellites": "HTTPError: HTTP Error 403: Forbidden"
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-21T03:34:00Z",
+  "generated_at": "2026-11-21T03:49:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": null,
-    "Black Sea": 48,
-    "Israel & Eastern Mediterranean": 4,
-    "Korea": 0,
-    "Persian Gulf": 15,
-    "South Australia": 5,
-    "Sydney / NSW": 11,
+    "Baltic / Kaliningrad": 100,
+    "Black Sea": 53,
+    "Israel & Eastern Mediterranean": 0,
+    "Korea": 2,
+    "Persian Gulf": 28,
+    "South Australia": 8,
+    "Sydney / NSW": 12,
     "Taiwan Strait": 0
   },
   "incidents": [
@@ -369,8 +375,8 @@
   ],
   "internet_drop_pct": {
     "China": 0.9,
-    "Iran": 0.7,
-    "Israel": 1.0,
+    "Iran": 0.2,
+    "Israel": 0.2,
     "Russia": 0.0,
     "South Korea": 0.0,
     "Taiwan": 0.0
@@ -390,7 +396,7 @@
       "Mount Lofty Ranges": "Moderate / Moderate"
     },
     "fire_danger_ok": true,
-    "fires_active": 6,
+    "fires_active": 7,
     "fuel": {
       "brent_aud": 135.8,
       "change_pct": -4.0,
@@ -398,8 +404,8 @@
       "week_ago_aud": 141.5
     },
     "grid_demand_fall_pct": null,
-    "grid_demand_mw": -71,
-    "grid_demand_usual_mw": 245,
+    "grid_demand_mw": -74,
+    "grid_demand_usual_mw": 264,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
@@ -510,7 +516,7 @@
     "cloud": [
       "Anthropic Claude down: Why it said it was unable to authenticate code - Mashable",
       "Who is George Kurtz? The CrowdStrike CEO reportedly in talks to buy Zscaler - Nacionale",
-      "Why Did Anthropic’s IPO Fail To Rescue The KOSPI? - Disruption Banking"
+      "'We ask whether you are now willing to listen': LibreOffice maker asks political organizations why there was no backup plan following the major Microsoft 365 outage - TechRadar"
     ],
     "cyber_attrib": [
       "FBI warns hackers weaponizing ARTEX AI framework to automate attacks on energy, manufacturing, telecom - Industrial Cyber",
@@ -524,8 +530,8 @@
     ],
     "cyber_ot": [
       "UK operation wards off risk of cyber-attack on supermarket fridges and freezers - The Guardian",
-      "Illinois Department of Natural Resources investigating apparent cyberattack attempt at Algonquin Dam on Fox River - ABC7 Chicago",
-      "Supermarket freezers and fridges in Europe hit by cyberattack - Nine.com.au"
+      "State officials investigate cyberattack attempt at Algonquin Dam - Ticker News",
+      "Illinois Department of Natural Resources investigating apparent cyberattack attempt at Algonquin Dam on Fox River - ABC7 Chicago"
     ],
     "cyber_state": [
       "ESET Research: Sandworm behind cyberattack on Poland’s power grid in late 2025 - We Live Security",
@@ -539,8 +545,8 @@
     ],
     "deepfake": [
       "Scottish Greens challenge SNP government’s relationship with big tech after First Minister’s apology over AI slop video - Scottish Greens",
-      "Trump takes down image from his social media platform that depicted him as a Jesus-like figure - ABC News - Breaking News, Latest News and Videos",
-      "TikTok launches tool to help public figures detect deepfakes globally - Free Malaysia Today"
+      "TikTok launches tool to help public figures detect deepfakes globally - The Malaysian Reserve",
+      "Trump takes down image from his social media platform that depicted him as a Jesus-like figure - ABC News - Breaking News, Latest News and Videos"
     ],
     "dieoff": [
       "Kenya probes deaths of seven hippos at Lake Naivasha - Gulf News",
@@ -561,9 +567,9 @@
       "Zayn Malik hospitalised with mystery illness, forced to cancel upcoming appearances on album release week - Nine.com.au"
     ],
     "masscas": [
-      "Family of Robb Elementary victim hope their experience inspires mass casualty preparedness at hospitals - AOL.com",
       "William Beaumont Army Medical Center validates readiness during El Paso mass casualty exercise - DVIDS",
-      "A DECADE LATER: How traffic investigators preserved 'mass casualty' evidence between grieving parents at Woodmore crash - Local 3 News"
+      "Hornbill Festival 2026: Nagaland tests emergency preparedness with mock drill - MorungExpress",
+      "Bomb hoax scenario tests multi-agency disaster preparedness ahead of Hornbill Festival - Nagaland Tribune"
     ],
     "mobilisation": [
       "Iran expands Basij surveillance network with AI platform amid fears of renewed protests - FDD's Long War Journal",
@@ -574,14 +580,14 @@
       "Acoustic Tracking Reveals Five Distinct Movement Syndromes in Australian Golden Perch - Bioengineer.org"
     ],
     "national_outage": [
-      "Ticketmaster experiencing nationwide outage as fans prepare for Usher, Chris Brown concert in New Orleans - FOX 8 Local First",
-      "Properties in eight suburbs plunged into darkness as power is lost - Bendigo Advertiser",
-      "FAA Narrows Cause Of Nationwide Outage, Congress Questions $50 Billion Funding Request - Investor's Business Daily"
+      "Ticketmaster service restored after nationwide outage affected fans at Usher, Chris Brown concert - www.fox8live.com",
+      "Ticketmaster service restored after nationwide outage affected fans at Usher, Chris Brown concert - WAFB",
+      "Properties in eight suburbs plunged into darkness as power is lost - Bendigo Advertiser"
     ],
     "outage_au": [
       "Calls for 'automatic compensation' following telco outages - ABC News & Headlines – Australian Broadcasting Corporation",
-      "Microsoft ‘deeply sorry’ for global outage, rules out cyberattack and AI - Nine.com.au",
-      "Microsoft exec reveals details of outage - News.com.au"
+      "Alice Springs and Katherine local news briefing: Friday, November 20, 2026 - ABC News & Headlines – Australian Broadcasting Corporation",
+      "Telstra mobile outage disrupts services across Australia - Australian Cyber Security Magazine"
     ],
     "reservists": [
       "Britain sanctions Israeli aid-blocking group and settlement construction companies - South African Jewish Report",
@@ -650,7 +656,7 @@
       "yes": 10.5
     },
     {
-      "d24h": 0.4,
+      "d24h": 0.1,
       "q": "US-Iran Final Nuclear Deal by November 30, 2026?",
       "yes": 0.8
     },
@@ -660,9 +666,9 @@
       "yes": 2.0
     },
     {
-      "d24h": -0.2,
+      "d24h": -0.1,
       "q": "Will China invade Taiwan by June 30, 2027?",
-      "yes": 4.0
+      "yes": 4.1
     },
     {
       "d24h": 0.7,
@@ -685,17 +691,17 @@
       "yes": 3.5
     },
     {
-      "d24h": -1.5,
+      "d24h": -2.0,
       "q": "Iran-Oman Hormuz Agreement by December 31?",
-      "yes": 11.5
+      "yes": 11.0
     },
     {
-      "d24h": 0.7,
+      "d24h": 1.0,
       "q": "NATO x Russia military clash by November 30, 2026?",
       "yes": 3.1
     },
     {
-      "d24h": -1.3,
+      "d24h": -1.2,
       "q": "Ukraine agrees not to join NATO by December 31, 2026?",
       "yes": 1.6
     },
@@ -962,19 +968,24 @@
     },
     {
       "band": "Guarded",
-      "convergence": "Only one kind of sign is showing (shipping). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
+      "convergence": "Two different kinds of sign are showing together (electronic warfare and shipping). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet bl",
       "domains": [
+        "Electronic warfare",
         "Shipping"
       ],
       "key": "mideast",
       "lit": [
         {
+          "detail": "gps_gulf 28 vs usual 8.0",
+          "name": "GPS jamming spike (Gulf / Israel)"
+        },
+        {
           "detail": "Strait of Hormuz -38% vs usual (2.3/day)",
           "name": "Ship traffic through Hormuz down sharply"
         }
       ],
-      "score": 15,
-      "trend": "steady"
+      "score": 25,
+      "trend": "up"
     },
     {
       "band": "Low",
@@ -1045,7 +1056,7 @@
           "name": "Unknown illness / pneumonia cluster reported"
         },
         {
-          "detail": "Family of Robb Elementary victim hope their experience inspires mass casualty preparedness at hospitals",
+          "detail": "A DECADE LATER: How traffic investigators preserved 'mass casualty' evidence between grieving parents at Woodmore crash",
           "name": "Mass casualty declarations (any country)"
         },
         {
@@ -1116,11 +1127,11 @@
   },
   "tankers": "normal",
   "telecom_drop_pct": {
-    "Aussie Broadband": 0.0,
-    "Optus": 5.1,
+    "Aussie Broadband": 0.1,
+    "Optus": 6.0,
     "TPG": 0.0,
-    "Telstra": 0.7,
-    "Vodafone": 4.8
+    "Telstra": 0.9,
+    "Vodafone": 0.0
   },
   "us_departure_orders": [
     "Belarus"

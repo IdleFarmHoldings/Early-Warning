@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-21T03:34:00Z",
+  "generated_at": "2026-11-21T03:49:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -107,12 +107,21 @@
     },
     {
       "band": "Guarded",
-      "convergence": "Only one kind of sign is showing (shipping). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
+      "convergence": "Two different kinds of sign are showing together (electronic warfare and shipping). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
       "domains": [
+        "Electronic warfare",
         "Shipping"
       ],
       "key": "mideast",
       "lit": [
+        {
+          "detail": "gps_gulf 28 vs usual 8.0",
+          "domain": "Electronic warfare",
+          "id": "gps",
+          "name": "GPS jamming spike (Gulf / Israel)",
+          "short": "GPS jamming spike",
+          "weight": 10
+        },
         {
           "detail": "Strait of Hormuz -38% vs usual (2.3/day)",
           "domain": "Shipping",
@@ -124,8 +133,8 @@
       ],
       "name": "Middle East war & Gulf shipping",
       "sa_impact": "Fuel: Australia imports most of its fuel, much of it refined from Gulf crude in Asia. Shipping attacks or a Hormuz closure push up prices within days and can cause local shortages.",
-      "score": 15,
-      "trend": "steady",
+      "score": 25,
+      "trend": "up",
       "unlit": [
         {
           "domain": "Military air",
@@ -138,12 +147,6 @@
           "id": "air",
           "name": "Unusual military air activity over the region",
           "weight": 15
-        },
-        {
-          "domain": "Electronic warfare",
-          "id": "gps",
-          "name": "GPS jamming spike (Gulf / Israel)",
-          "weight": 10
         },
         {
           "domain": "Communications",
@@ -669,7 +672,7 @@
           "weight": 20
         },
         {
-          "detail": "Family of Robb Elementary victim hope their experience inspires mass casualty preparedness at hospitals",
+          "detail": "A DECADE LATER: How traffic investigators preserved 'mass casualty' evidence between grieving parents at Woodmore crash",
           "domain": "Health",
           "id": "masscas",
           "name": "Mass casualty declarations (any country)",
