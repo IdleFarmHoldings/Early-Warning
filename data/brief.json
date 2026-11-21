@@ -1,7 +1,13 @@
 {
   "about": "Short form of latest.json + indicators.json for the analysis run. Links and raw samples removed.",
   "acsc": [],
-  "aircraft_flags": {},
+  "aircraft_flags": {
+    "gps_gulf": {
+      "median": 8.0,
+      "status": "ANOMALY",
+      "value": 26
+    }
+  },
   "analyst": {
     "ASPI Strategist": [
       "Let’s see whether North Korea absorbs the experience it’s getting in Ukraine",
@@ -268,15 +274,15 @@
     "satellites": "TimeoutError: The read operation timed out"
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-21T02:19:00Z",
+  "generated_at": "2026-11-21T02:35:00Z",
   "gps_bad_pct": {
     "Baltic / Kaliningrad": null,
-    "Black Sea": 48,
-    "Israel & Eastern Mediterranean": 12,
+    "Black Sea": 40,
+    "Israel & Eastern Mediterranean": 8,
     "Korea": 1,
-    "Persian Gulf": 24,
-    "South Australia": 11,
-    "Sydney / NSW": 4,
+    "Persian Gulf": 26,
+    "South Australia": 9,
+    "Sydney / NSW": 5,
     "Taiwan Strait": 0
   },
   "incidents": [
@@ -303,6 +309,16 @@
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
+        "FBI investigates new hack of national crime database"
+      ],
+      "severity": "Info",
+      "target": "FBI"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": true,
+      "headlines": [
+        "Hackers use AI tool Cairn for zero-day exploit, server takeover",
         "Hackers use autonomous AI tool Cairn to find zero-day, take over server"
       ],
       "severity": "Info",
@@ -312,7 +328,6 @@
       "attack_reported": true,
       "confirmed": true,
       "headlines": [
-        "Amazon says China-linked hackers used the open-source AI tool Cairn to find an apparent zero-day in a university attack",
         "Amazon says Chinese hackers used Cairn AI tool to discover apparent zero-day during attack on university"
       ],
       "severity": "Info",
@@ -347,9 +362,10 @@
     },
     {
       "attack_reported": false,
-      "confirmed": false,
+      "confirmed": true,
       "headlines": [
-        "South Australia questions ElectraNet network upgrade after Eyre Peninsula blackout"
+        "South Australia questions ElectraNet network upgrade after Eyre Peninsula blackout",
+        "Blackout prompts questions over ElectraNet's recent $300m network upgrade"
       ],
       "severity": "Info",
       "target": "Power grid"
@@ -376,8 +392,8 @@
   ],
   "internet_drop_pct": {
     "China": 0.5,
-    "Iran": 0.3,
-    "Israel": 0.3,
+    "Iran": 0.7,
+    "Israel": 0.0,
     "Russia": 0.0,
     "South Korea": 0.0,
     "Taiwan": 0.0
@@ -396,16 +412,16 @@
       "Mount Lofty Ranges": "Moderate / Moderate"
     },
     "fire_danger_ok": true,
-    "fires_active": 5,
+    "fires_active": 6,
     "fuel": {
       "brent_aud": 135.8,
       "change_pct": -4.0,
       "pump_cents": -4,
       "week_ago_aud": 141.5
     },
-    "grid_demand_fall_pct": 83.3,
-    "grid_demand_mw": 36,
-    "grid_demand_usual_mw": 249,
+    "grid_demand_fall_pct": 164.5,
+    "grid_demand_mw": -81,
+    "grid_demand_usual_mw": 231,
     "grid_lor_level": 0,
     "nearby_incidents": [
       {
@@ -456,7 +472,7 @@
       "Morgan Vale Road, Pine Valley Station: MORGAN MAIL RD Closed due to flooding over road",
       "Pine Valley Road, Pine Valley Station: PINE VALLEY RD Closed due to flooding over road"
     ],
-    "rooftop_pv_mw": 2451,
+    "rooftop_pv_mw": 1919,
     "sawater_news": [],
     "watch_and_act": []
   },
@@ -514,8 +530,8 @@
       "Senior Lieutenant General Le Quang Dao visits Department of Military Training and School Management - en.qdnd.vn"
     ],
     "cables": [
-      "EU Awards €9.55 Million to Project Merikarhu to Build Rapid Baltic Sub - Submarine Networks",
       "The Multifunctional Seabed - Just Security",
+      "EU Awards €9.55 Million to Project Merikarhu to Build Rapid Baltic Sub - Submarine Networks",
       "Orange Seeks Strategic Partners to Extend ReuNION Subsea Cable to Singapore - Submarine Networks"
     ],
     "chem": [
@@ -525,8 +541,8 @@
     ],
     "cloud": [
       "Anthropic Claude down: Why it said it was unable to authenticate code - Mashable",
-      "'We ask whether you are now willing to listen': LibreOffice maker asks political organizations why there was no backup plan following the major Microsoft 365 outage - TechRadar",
-      "Why Did Anthropic’s IPO Fail To Rescue The KOSPI? - Disruption Banking"
+      "Why Did Anthropic’s IPO Fail To Rescue The KOSPI? - Disruption Banking",
+      "'We ask whether you are now willing to listen': LibreOffice maker asks political organizations why there was no backup plan following the major Microsoft 365 outage - TechRadar"
     ],
     "cyber_attrib": [
       "FBI warns hackers weaponizing ARTEX AI framework to automate attacks on energy, manufacturing, telecom - Industrial Cyber",
@@ -576,9 +592,9 @@
       "Zayn Malik hospitalised with mystery illness, forced to cancel upcoming appearances on album release week - Nine.com.au"
     ],
     "masscas": [
-      "Family of Robb Elementary victim hope their experience inspires mass casualty preparedness at hospitals - AOL.com",
-      "A DECADE LATER: How traffic investigators preserved 'mass casualty' evidence between grieving parents at Woodmore crash - Local 3 News",
-      "Shawnee Community College students participate in simulated mass-casualty emergency - KBSI Fox 23 Cape Girardeau News | Paducah News"
+      "Hornbill Festival 2026: Nagaland tests emergency preparedness with mock drill - MorungExpress",
+      "Bomb hoax scenario tests multi-agency disaster preparedness ahead of Hornbill Festival - Nagaland Tribune",
+      "Family of Robb Elementary victim hope their experience inspires mass casualty preparedness at hospitals - AOL.com"
     ],
     "mobilisation": [
       "Iran expands Basij surveillance network with AI platform amid fears of renewed protests - FDD's Long War Journal",
@@ -607,7 +623,7 @@
       "What to watch this weekend in international sports - CBC"
     ],
     "sapn": [
-      "Eyre Peninsula 'not out of the woods' after 'extremely ferocious' storm - ABC News & Headlines – Australian Broadcasting Corporation",
+      "Blackout prompts questions over ElectraNet's recent $300m network upgrade - ABC News & Headlines – Australian Broadcasting Corporation",
       "South Australia cuts rooftop solar after storm sparks power outages - pv magazine Australia",
       "South Australia questions ElectraNet network upgrade after Eyre Peninsula blackout - Traders Union"
     ],
@@ -636,7 +652,7 @@
       "yes": 7.5
     },
     {
-      "d24h": 1.8,
+      "d24h": 2.0,
       "q": "US-Iran Final Nuclear Deal by December 31, 2026?",
       "yes": 5.8
     },
@@ -661,7 +677,7 @@
       "yes": 1.6
     },
     {
-      "d24h": -1.0,
+      "d24h": 0.0,
       "q": "US-Iran Hormuz Agreement by December 31?",
       "yes": 10.5
     },
@@ -726,7 +742,7 @@
       "yes": 2.3
     },
     {
-      "d24h": 0.4,
+      "d24h": 0.6,
       "q": "Will the U.S. test a nuclear weapon by December 31 2026?",
       "yes": 2.9
     },
@@ -736,7 +752,7 @@
       "yes": 16.5
     },
     {
-      "d24h": -1.0,
+      "d24h": -0.5,
       "q": "Ukraine agrees not to join NATO by December 31, 2027?",
       "yes": 18.5
     },
@@ -978,19 +994,24 @@
     },
     {
       "band": "Guarded",
-      "convergence": "Only one kind of sign is showing (shipping). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
+      "convergence": "Two different kinds of sign are showing together (electronic warfare and shipping). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet bl",
       "domains": [
+        "Electronic warfare",
         "Shipping"
       ],
       "key": "mideast",
       "lit": [
         {
+          "detail": "gps_gulf 26 vs usual 8.0",
+          "name": "GPS jamming spike (Gulf / Israel)"
+        },
+        {
           "detail": "Strait of Hormuz -38% vs usual (2.3/day)",
           "name": "Ship traffic through Hormuz down sharply"
         }
       ],
-      "score": 15,
-      "trend": "steady"
+      "score": 25,
+      "trend": "up"
     },
     {
       "band": "Low",
@@ -1018,7 +1039,7 @@
         }
       ],
       "score": 10,
-      "trend": "down"
+      "trend": "steady"
     },
     {
       "band": "Low",
@@ -1034,7 +1055,7 @@
         }
       ],
       "score": 10,
-      "trend": "down"
+      "trend": "steady"
     },
     {
       "band": "Low",
@@ -1094,23 +1115,18 @@
     },
     {
       "band": "Elevated",
-      "convergence": "Signs are converging across 5 separate areas (ai-enabled hacking, cloud services, fraud waves, markets and synthetic media). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-esp",
+      "convergence": "Signs are converging across 4 separate areas (ai-enabled hacking, cloud services, fraud waves and markets). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: ",
       "domains": [
         "AI-enabled hacking",
         "Cloud services",
         "Fraud waves",
-        "Markets",
-        "Synthetic media"
+        "Markets"
       ],
       "key": "ai",
       "lit": [
         {
           "detail": "Hackers use autonomous AI tool Cairn to find zero-day, take over server",
           "name": "Reports of AI-driven hacking campaigns"
-        },
-        {
-          "detail": "Warner on recent tech outages: 'No evidence this is an AI-generated attack'",
-          "name": "Deepfakes of leaders or fake official alerts"
         },
         {
           "detail": "VIX +26.2%",
@@ -1125,22 +1141,22 @@
           "name": "Surge in AI voice-clone / deepfake scams in Australia"
         }
       ],
-      "score": 55,
-      "trend": "steady"
+      "score": 40,
+      "trend": "down"
     }
   ],
   "sectors_relative_5d": {
-    "defence_au": -1.75,
-    "defence_eu": 1.62,
-    "defence_us": 1.12,
-    "pandemic": -4.88
+    "defence_au": -2.14,
+    "defence_eu": 3.56,
+    "defence_us": 3.44,
+    "pandemic": -3.85
   },
   "tankers": "normal",
   "telecom_drop_pct": {
-    "Aussie Broadband": 0.0,
-    "Optus": 0.0,
+    "Aussie Broadband": 0.6,
+    "Optus": 2.0,
     "TPG": 0.0,
-    "Telstra": 0.6,
+    "Telstra": 0.0,
     "Vodafone": 4.8
   },
   "us_departure_orders": [
