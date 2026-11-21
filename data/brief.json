@@ -268,15 +268,15 @@
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-21T23:25:00Z",
+  "generated_at": "2026-11-21T23:41:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 60,
+    "Baltic / Kaliningrad": null,
     "Black Sea": 10,
-    "Israel & Eastern Mediterranean": 5,
+    "Israel & Eastern Mediterranean": 4,
     "Korea": 0,
-    "Persian Gulf": 13,
-    "South Australia": 4,
-    "Sydney / NSW": 9,
+    "Persian Gulf": 17,
+    "South Australia": 8,
+    "Sydney / NSW": 8,
     "Taiwan Strait": 0
   },
   "incidents": [
@@ -294,8 +294,8 @@
       "confirmed": true,
       "headlines": [
         "FBI investigates suspected breach of crime database",
-        "FBI database reportedly hacked",
-        "FBI hit by second cyberattack as Trump downplays latest security breach"
+        "FBI database targeted in suspected breach",
+        "FBI database reportedly hacked"
       ],
       "severity": "Info",
       "target": "FBI"
@@ -308,15 +308,6 @@
       ],
       "severity": "Info",
       "target": "Sins"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
-        "The FBI was hacked again, this time the breach targeted its crime database"
-      ],
-      "severity": "Info",
-      "target": "The FBI"
     },
     {
       "attack_reported": true,
@@ -340,19 +331,19 @@
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
-        "Hackers Breached FBI Crime Database"
+        "The HackerNoon Newsletter: Fridges, Hackers, AI and La Flemme (11/21/2026)"
       ],
       "severity": "Info",
-      "target": "Hackers Breached FBI"
+      "target": "The HackerNoon Newsletter"
     },
     {
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
-        "The HackerNoon Newsletter: Fridges, Hackers, AI and La Flemme (11/21/2026)"
+        "Hackers Breached FBI Crime Database"
       ],
       "severity": "Info",
-      "target": "The HackerNoon Newsletter"
+      "target": "Hackers Breached FBI"
     },
     {
       "attack_reported": false,
@@ -369,11 +360,29 @@
       "attack_reported": false,
       "confirmed": true,
       "headlines": [
+        "Anthropic Claude down: Why it said it was unable to authenticate code"
+      ],
+      "severity": "Info",
+      "target": "AI platforms"
+    },
+    {
+      "attack_reported": false,
+      "confirmed": true,
+      "headlines": [
         "AWS outage on Nov. 15 disrupted 11 services in us-east-1 and went unnoticed",
         "AWS got hit by an outage too. Here's why you didn't hear about it"
       ],
       "severity": "Info",
       "target": "Amazon Web Services"
+    },
+    {
+      "attack_reported": false,
+      "confirmed": true,
+      "headlines": [
+        "Signal Cracks Down on AI Agents, Says They Threaten Users’ Privacy"
+      ],
+      "severity": "Info",
+      "target": "Signal Cracks"
     },
     {
       "attack_reported": false,
@@ -388,10 +397,10 @@
   "internet_drop_pct": {
     "China": 0.0,
     "Iran": 0.3,
-    "Israel": 0.0,
+    "Israel": 0.4,
     "Russia": 0.0,
     "South Korea": 0.1,
-    "Taiwan": 0.3
+    "Taiwan": 0.1
   },
   "local_sa": {
     "bom": [
@@ -416,9 +425,9 @@
       "pump_cents": -4,
       "week_ago_aud": 141.5
     },
-    "grid_demand_fall_pct": 8.2,
-    "grid_demand_mw": 1031,
-    "grid_demand_usual_mw": 655,
+    "grid_demand_fall_pct": 1.2,
+    "grid_demand_mw": 1153,
+    "grid_demand_usual_mw": 596,
     "grid_lor_level": 0,
     "nearby_incidents": [
       {
@@ -438,26 +447,7 @@
         "pm25": 6
       },
       "air_word": "Good",
-      "days": [
-        {
-          "date": "2026-11-22",
-          "gust": 50,
-          "rain": 0,
-          "tmax": 27
-        },
-        {
-          "date": "2026-11-23",
-          "gust": 59,
-          "rain": 2,
-          "tmax": 18
-        },
-        {
-          "date": "2026-11-24",
-          "gust": 37,
-          "rain": 0,
-          "tmax": 20
-        }
-      ]
+      "days": []
     },
     "possible_blackout": false,
     "power_news": [],
@@ -469,7 +459,7 @@
       "Morgan Vale Road, Pine Valley Station: MORGAN MAIL RD Closed due to flooding over road",
       "Pine Valley Road, Pine Valley Station: PINE VALLEY RD Closed due to flooding over road"
     ],
-    "rooftop_pv_mw": 765,
+    "rooftop_pv_mw": 820,
     "sawater_news": [],
     "watch_and_act": []
   },
@@ -505,8 +495,8 @@
   "news_watch": {
     "ai_hack": [
       "Amazon: China-Linked Hackers’ AI Agents Exploited Medical Software Zero-Day - SecurityWeek",
-      "Hackers Breached FBI Crime Database - PCMag Australia",
-      "Opinion | The real cyberthreat is rogue humans, not rogue AI - The Washington Post"
+      "Opinion | The real cyberthreat is rogue humans, not rogue AI - The Washington Post",
+      "AI Hackers Are Finding Security Flaws Faster Than Indian Banks Can Fix Them - The 420.in"
     ],
     "airspace": [
       "Saudi coalition intercepts Houthi missile targeting western Saudi Arabia - Crypto Briefing",
@@ -514,9 +504,9 @@
       "Air India plans to combine operations with Air India Express - NewsBytes"
     ],
     "aviation_halt": [
+      "Why do people believe recent tech failures must be connected? - PBS",
       "FAA ground stop: When will it end? Not as soon as you'd like. - Mashable",
-      "Anatomy of the FAA Ground Stop: One Backbone, One Bad Change - BankInfoSecurity",
-      "Trump says US flight systems are 'ancient' but 'safe' after ground stop - BBC"
+      "Anatomy of the FAA Ground Stop: One Backbone, One Bad Change - BankInfoSecurity"
     ],
     "bank_outage": [
       "FBI investigates suspected breach of crime database - Herald Sun",
@@ -537,9 +527,9 @@
       "Gharibabadi: Iran Rejects US Accusations, Vows to Break Naval Blockade - WANA News Agency"
     ],
     "cloud": [
+      "Anthropic Claude down: Why it said it was unable to authenticate code - Mashable",
       "AWS got hit by an outage too. Here's why you didn't hear about it - The Register",
-      "Microsoft’s final Outlook outage report details testing gaps and safeguards that backfired - GeekWire",
-      "Microsoft outage cause revealed: It was a perfect storm of problems - Mashable"
+      "Microsoft’s final Outlook outage report details testing gaps and safeguards that backfired - GeekWire"
     ],
     "cyber_attrib": [
       "FBI warns hackers weaponizing ARTEX AI framework to automate attacks on energy, manufacturing, telecom - Industrial Cyber",
@@ -548,13 +538,13 @@
     ],
     "cyber_au": [
       "FBI investigates suspected breach of crime database - Herald Sun",
-      "Australia mulls tougher tech laws after AI health breach - The Nightly",
-      "Malwarebytes Premium Security Review: Multi-Layered Detection That Eradicates Most Malware - Review 2025 - PCMag Australia"
+      "FBI database targeted in suspected breach - News24",
+      "Australia mulls tougher tech laws after AI health breach - The Nightly"
     ],
     "cyber_ot": [
       "UK operation wards off risk of cyber-attack on supermarket fridges and freezers - The Guardian",
       "Shop freezers in seven European countries hit by cyber-attack - BBC",
-      "Tens of thousands of UK fridges secured from hackers in secret nationwide operation - BBC"
+      "Supermarket freezers and fridges in Europe hit by cyberattack - Nine.com.au"
     ],
     "cyber_state": [
       "ESET Research: Sandworm behind cyberattack on Poland’s power grid in late 2025 - We Live Security",
@@ -572,7 +562,7 @@
       "Lai Mohammed: AI-Generated Fake News Could Undermine Democracy, Public Trust - THISDAYLIVE"
     ],
     "flash": [
-      "Bybit Press - Bybit",
+      "Tesla says FSD v15 is rolling out with Reality View - Digg",
       "South Korea's exports top $1 trillion for first time on strong chip demand - Gulf News",
       "Market Panic Ending The Cycle… History Shows A Recession Is Next - Howl.Link"
     ],
@@ -598,7 +588,7 @@
     "national_outage": [
       "Ticketmaster service restored after nationwide outage affected fans at Usher, Chris Brown concert - fox8live.com",
       "NISO Says No Grid Collapse, Blames Transmission Line Tripping - Daily Champion Newspaper",
-      "Inside the ‘Black Sky’ plans for a nationwide blackout - Herald.Wales"
+      "NISO rules out grid collapse as four transmission lines trip - Punch Newspapers"
     ],
     "outage_au": [
       "Calls for 'automatic compensation' following telco outages - ABC News & Headlines – Australian Broadcasting Corporation",
@@ -651,14 +641,14 @@
       "yes": 3.2
     },
     {
-      "d24h": -0.7,
+      "d24h": 0.4,
       "q": "US-Iran Hormuz Agreement by November 30?",
-      "yes": 2.5
+      "yes": 3.6
     },
     {
-      "d24h": 0.0,
+      "d24h": 1.0,
       "q": "US-Iran Hormuz Agreement by December 31?",
-      "yes": 10.5
+      "yes": 11.5
     },
     {
       "d24h": 0.6,
@@ -691,7 +681,7 @@
       "yes": 1.6
     },
     {
-      "d24h": -0.1,
+      "d24h": 0.0,
       "q": "Iran-Oman Hormuz Agreement by November 30?",
       "yes": 3.5
     },
@@ -706,9 +696,9 @@
       "yes": 4.5
     },
     {
-      "d24h": 0.4,
+      "d24h": 0.3,
       "q": "NATO x Russia military clash by November 30, 2026?",
-      "yes": 3.5
+      "yes": 3.4
     },
     {
       "d24h": 0.3,
@@ -736,7 +726,7 @@
       "yes": 16.5
     },
     {
-      "d24h": 1.0,
+      "d24h": 1.5,
       "q": "Will Nick Stewart attend a US x Iran diplomatic meeting by December 31, 2026?",
       "yes": 8.0
     },
@@ -1074,7 +1064,7 @@
         }
       ],
       "score": 30,
-      "trend": "down"
+      "trend": "steady"
     },
     {
       "band": "Low",
@@ -1118,10 +1108,10 @@
   "tankers": "normal",
   "telecom_drop_pct": {
     "Aussie Broadband": 0.0,
-    "Optus": 0.0,
+    "Optus": 8.1,
     "TPG": 0.0,
-    "Telstra": 0.0,
-    "Vodafone": 9.5
+    "Telstra": 0.1,
+    "Vodafone": 0.0
   },
   "us_departure_orders": [
     "Belarus"
