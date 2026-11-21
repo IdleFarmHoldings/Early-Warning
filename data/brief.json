@@ -3,9 +3,9 @@
   "acsc": [],
   "aircraft_flags": {
     "gps_baltic": {
-      "median": 20.0,
+      "median": 20,
       "status": "ANOMALY",
-      "value": 74
+      "value": 60
     }
   },
   "analyst": {
@@ -274,13 +274,13 @@
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-21T18:09:00Z",
+  "generated_at": "2026-11-21T18:15:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 74,
+    "Baltic / Kaliningrad": 60,
     "Black Sea": null,
-    "Israel & Eastern Mediterranean": 2,
+    "Israel & Eastern Mediterranean": 0,
     "Korea": 0,
-    "Persian Gulf": 12,
+    "Persian Gulf": 7,
     "South Australia": 0,
     "Sydney / NSW": null,
     "Taiwan Strait": 0
@@ -354,10 +354,10 @@
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
-        "Broadcom Patches VMware Zero Day Exploited by Chinese Hackers"
+        "Hackers Exploit Critical VMware, Cisco, and Apache Flaws as Espionage Attacks Emerge"
       ],
       "severity": "Info",
-      "target": "Broadcom Patches VMware"
+      "target": "Hackers Exploit Critical"
     },
     {
       "attack_reported": true,
@@ -414,15 +414,6 @@
       "target": "AI-powered"
     },
     {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
-        "Japan-led probe finds 1,000 servers suspected of supporting AI-driven cyberattacks"
-      ],
-      "severity": "Info",
-      "target": "Japan-led"
-    },
-    {
       "attack_reported": false,
       "confirmed": true,
       "headlines": [
@@ -451,6 +442,24 @@
       ],
       "severity": "Info",
       "target": "AI platforms"
+    },
+    {
+      "attack_reported": false,
+      "confirmed": false,
+      "headlines": [
+        "Tech Outages and Optimizely Attack Warn of Wider CX Tech Risks"
+      ],
+      "severity": "Info",
+      "target": "Tech Outages"
+    },
+    {
+      "attack_reported": false,
+      "confirmed": true,
+      "headlines": [
+        "Signal Cracks Down on AI Agents, Says They Threaten Users’ Privacy"
+      ],
+      "severity": "Info",
+      "target": "Signal Cracks"
     }
   ],
   "internet_drop_pct": {
@@ -484,9 +493,9 @@
       "pump_cents": -4,
       "week_ago_aud": 141.5
     },
-    "grid_demand_fall_pct": 1.3,
-    "grid_demand_mw": 1423,
-    "grid_demand_usual_mw": 1210,
+    "grid_demand_fall_pct": 1.9,
+    "grid_demand_mw": 1411,
+    "grid_demand_usual_mw": 1216,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
@@ -590,8 +599,8 @@
     ],
     "chem": [
       "IRGC Rejects US Claims of Planned Chemical Attack in Washington - caspiannews.com",
-      "Japan’s ‘Rabbit Island’ draws tourists with fluffy bunnies and dark wartime past - South China Morning Post",
-      "Gharibabadi: Iran Rejects US Accusations, Vows to Break Naval Blockade - WANA News Agency"
+      "Gharibabadi: Iran Rejects US Accusations, Vows to Break Naval Blockade - WANA News Agency",
+      "Japan’s ‘Rabbit Island’ draws tourists with fluffy bunnies and dark wartime past - South China Morning Post"
     ],
     "cloud": [
       "AWS got hit by an outage too. Here's why you didn't hear about it - The Register",
@@ -666,9 +675,9 @@
       "Alice Springs and Katherine local news briefing: Friday, November 20, 2026 - ABC News & Headlines – Australian Broadcasting Corporation"
     ],
     "reservists": [
-      "UK reservist regiment takes part in overseas Nato exercise - BBC",
       "Strategy Reports $35 Billion Net Reserve, No BTC Collateral - ForkLog",
-      "Strategy Reports $35 Billion Net Reserve: All Bitcoin Holdings Now Unencumbered - Kriptofoni"
+      "Strategy Reports $35 Billion Net Reserve: All Bitcoin Holdings Now Unencumbered - Kriptofoni",
+      "UK reservist regiment takes part in overseas Nato exercise - BBC"
     ],
     "sapn": [
       "Blackout prompts questions over ElectraNet's recent $300m network upgrade - ABC News & Headlines – Australian Broadcasting Corporation",
@@ -771,9 +780,9 @@
       "yes": 5.5
     },
     {
-      "d24h": -0.2,
+      "d24h": -0.3,
       "q": "NATO x Russia military clash by November 30, 2026?",
-      "yes": 4.1
+      "yes": 4.0
     },
     {
       "d24h": 0.3,
@@ -1085,7 +1094,7 @@
       "key": "russia",
       "lit": [
         {
-          "detail": "gps_baltic 74 vs usual 20.0",
+          "detail": "gps_baltic 60 vs usual 20",
           "name": "GPS jamming spike (Baltic / Black Sea)"
         },
         {
@@ -1164,10 +1173,9 @@
     },
     {
       "band": "Elevated",
-      "convergence": "Signs are converging across 4 separate areas (ai-enabled hacking, cloud services, fraud waves and markets). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: ",
+      "convergence": "Signs are converging across 3 separate areas (ai-enabled hacking, fraud waves and markets). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: a Chinese state-",
       "domains": [
         "AI-enabled hacking",
-        "Cloud services",
         "Fraud waves",
         "Markets"
       ],
@@ -1182,16 +1190,12 @@
           "name": "Market fear index jumps 25%+ in a day"
         },
         {
-          "detail": "'We ask whether you are now willing to listen': LibreOffice maker asks political organizations why there was no backup plan following the ma",
-          "name": "Major cloud or AI service outage"
-        },
-        {
           "detail": "Ribbon Communications launches Call Trust deepfake detection for telecom fraud prevention",
           "name": "Surge in AI voice-clone / deepfake scams in Australia"
         }
       ],
-      "score": 40,
-      "trend": "steady"
+      "score": 30,
+      "trend": "down"
     }
   ],
   "sectors_relative_5d": {
@@ -1206,7 +1210,7 @@
     "Optus": 0.0,
     "TPG": 0.0,
     "Telstra": 0.0,
-    "Vodafone": 0.0
+    "Vodafone": 4.8
   },
   "us_departure_orders": [
     "Belarus"
@@ -1245,9 +1249,9 @@
     {
       "active": true,
       "first_seen": "2026-11-21T16:11:00Z",
-      "last_seen": "2026-11-21T18:09:00Z",
+      "last_seen": "2026-11-21T18:15:00Z",
       "region": "Eastern Europe",
-      "text": "GPS jamming over Baltic / Kaliningrad: 74% of 27 aircraft affected for 45+ min (usual ~20.0%)",
+      "text": "GPS jamming over Baltic / Kaliningrad: 60% of 25 aircraft affected for 45+ min (usual ~20%)",
       "what": "GPS jamming"
     },
     {
