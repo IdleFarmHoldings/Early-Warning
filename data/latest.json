@@ -4,37 +4,21 @@
     "anomalies": {
       "airlift": {
         "median": 26,
-        "ratio": 0.77,
+        "ratio": 0.85,
         "samples": 103,
         "status": "normal",
-        "value": 20,
-        "z": -1.0
-      },
-      "bizjets_airborne": {
-        "median": 17,
-        "ratio": 0.82,
-        "samples": 103,
-        "status": "normal",
-        "value": 14,
+        "value": 22,
         "z": -0.7
       },
+      "bizjets_airborne": {
+        "median": 18,
+        "ratio": 0.72,
+        "samples": 103,
+        "status": "normal",
+        "value": 13,
+        "z": -1.1
+      },
       "dark_auspng": {
-        "median": 0,
-        "ratio": null,
-        "samples": 103,
-        "status": "normal",
-        "value": 2,
-        "z": 2.0
-      },
-      "dark_eeurope": {
-        "median": 1,
-        "ratio": 2.0,
-        "samples": 103,
-        "status": "normal",
-        "value": 2,
-        "z": 0.7
-      },
-      "dark_korea": {
         "median": 0,
         "ratio": null,
         "samples": 103,
@@ -42,13 +26,29 @@
         "value": 0,
         "z": 0.0
       },
-      "dark_mideast": {
+      "dark_eeurope": {
         "median": 1,
-        "ratio": 1.0,
+        "ratio": 0.0,
+        "samples": 103,
+        "status": "normal",
+        "value": 0,
+        "z": -0.7
+      },
+      "dark_korea": {
+        "median": 0,
+        "ratio": null,
         "samples": 103,
         "status": "normal",
         "value": 1,
-        "z": 0.0
+        "z": 1.0
+      },
+      "dark_mideast": {
+        "median": 1,
+        "ratio": 0.0,
+        "samples": 103,
+        "status": "normal",
+        "value": 0,
+        "z": -0.7
       },
       "dark_taiwan": {
         "median": 0,
@@ -63,48 +63,48 @@
         "ratio": null,
         "samples": 102,
         "status": "normal",
-        "value": 6,
-        "z": 6.0
+        "value": 0,
+        "z": 0.0
       },
       "gps_baltic": {
         "median": 20,
-        "ratio": 1.05,
+        "ratio": 0.9,
         "samples": 103,
         "status": "normal",
-        "value": 21,
-        "z": 0.2
+        "value": 18,
+        "z": -0.4
       },
       "gps_blacksea": {
-        "median": 24.5,
-        "ratio": 2.33,
+        "median": 25.0,
+        "ratio": 0.8,
         "samples": 102,
         "status": "normal",
-        "value": 57,
-        "z": 2.3
+        "value": 20,
+        "z": -0.3
       },
       "gps_gulf": {
         "median": 8,
-        "ratio": 3.12,
+        "ratio": 4.12,
         "samples": 103,
-        "status": "normal",
-        "value": 25,
-        "z": 2.9
+        "status": "ANOMALY",
+        "value": 33,
+        "z": 4.2
       },
       "gps_israel": {
         "median": 5,
-        "ratio": 1.2,
+        "ratio": 0.0,
         "samples": 103,
         "status": "normal",
-        "value": 6,
-        "z": 0.3
+        "value": 0,
+        "z": -1.7
       },
       "gps_korea": {
         "median": 0,
         "ratio": null,
         "samples": 103,
         "status": "normal",
-        "value": 0,
-        "z": 0.0
+        "value": 1,
+        "z": 1.0
       },
       "gps_sydney": {
         "median": 0,
@@ -119,8 +119,8 @@
         "ratio": null,
         "samples": 103,
         "status": "normal",
-        "value": 0,
-        "z": 0.0
+        "value": 1,
+        "z": 1.0
       },
       "mil_auspng": {
         "median": 4,
@@ -132,11 +132,11 @@
       },
       "mil_eeurope": {
         "median": 6,
-        "ratio": 0.67,
+        "ratio": 1.17,
         "samples": 103,
         "status": "normal",
-        "value": 4,
-        "z": -0.7
+        "value": 7,
+        "z": 0.3
       },
       "mil_korea": {
         "median": 5,
@@ -148,27 +148,27 @@
       },
       "mil_mideast": {
         "median": 6,
-        "ratio": 0.5,
+        "ratio": 0.67,
         "samples": 103,
         "status": "normal",
-        "value": 3,
-        "z": -1.0
+        "value": 4,
+        "z": -0.7
       },
       "mil_taiwan": {
         "median": 1,
-        "ratio": 0.0,
+        "ratio": 1.0,
         "samples": 103,
         "status": "normal",
-        "value": 0,
-        "z": -0.7
+        "value": 1,
+        "z": 0.0
       },
       "mil_total": {
-        "median": 199,
-        "ratio": 0.41,
+        "median": 204,
+        "ratio": 0.47,
         "samples": 103,
         "status": "normal",
-        "value": 81,
-        "z": -2.9
+        "value": 95,
+        "z": -2.8
       },
       "navwarn_australia": {
         "status": "no data",
@@ -212,43 +212,43 @@
       },
       "tankers": {
         "median": 7,
-        "ratio": 0.43,
+        "ratio": 0.29,
         "samples": 103,
         "status": "normal",
-        "value": 3,
-        "z": -0.9
+        "value": 2,
+        "z": -1.1
       }
     },
     "detail": {
-      "airlift": 20,
-      "bizjets_airborne": 14,
+      "airlift": 22,
+      "bizjets_airborne": 13,
       "bizjets_by_hub": {
-        "Dallas / Houston": 1,
+        "Dallas / Houston": 0,
         "Dubai": 1,
-        "Geneva / Zurich": 8,
-        "Hong Kong": 0,
-        "London": 4,
+        "Geneva / Zurich": 4,
+        "Hong Kong": 1,
+        "London": 5,
         "Los Angeles (Van Nuys)": 0,
         "Moscow": 0,
         "New York (Teterboro)": 0,
-        "Palm Beach / Miami": 2,
+        "Palm Beach / Miami": 1,
         "San Francisco Bay": 0,
-        "Singapore": 1,
+        "Singapore": 2,
         "Washington DC": 0
       },
-      "dark_auspng": 2,
-      "dark_eeurope": 2,
-      "dark_korea": 0,
-      "dark_mideast": 1,
+      "dark_auspng": 0,
+      "dark_eeurope": 0,
+      "dark_korea": 1,
+      "dark_mideast": 0,
       "dark_taiwan": 0,
       "errors": [],
-      "isr": 1,
+      "isr": 2,
       "mil_auspng": 0,
-      "mil_eeurope": 4,
+      "mil_eeurope": 7,
       "mil_korea": 3,
-      "mil_mideast": 3,
-      "mil_taiwan": 0,
-      "mil_total": 81,
+      "mil_mideast": 4,
+      "mil_taiwan": 1,
+      "mil_total": 95,
       "nc3": 0,
       "nc3_seen": [],
       "raaf": 0,
@@ -259,27 +259,27 @@
         "Patagonia": 0,
         "Queenstown / Wanaka": 0
       },
-      "tankers": 3,
+      "tankers": 2,
       "traffic_by_hub": {
-        "Adelaide": 18,
-        "Auckland": 3,
-        "Dallas / Houston": 58,
-        "Dubai": 77,
-        "Geneva / Zurich": 590,
-        "Hong Kong": 59,
-        "London": 485,
-        "Los Angeles (Van Nuys)": 64,
-        "Melbourne": 17,
-        "Moscow": 1,
-        "New York (Teterboro)": 40,
-        "Palm Beach / Miami": 25,
-        "San Francisco Bay": 28,
-        "Seoul": 75,
-        "Singapore": 65,
-        "Sydney": 18,
-        "Taipei": 62,
-        "Tokyo": 177,
-        "Washington DC": 51
+        "Adelaide": 14,
+        "Auckland": 4,
+        "Dallas / Houston": 52,
+        "Dubai": 73,
+        "Geneva / Zurich": 605,
+        "Hong Kong": 62,
+        "London": 535,
+        "Los Angeles (Van Nuys)": 48,
+        "Melbourne": 21,
+        "Moscow": 0,
+        "New York (Teterboro)": 41,
+        "Palm Beach / Miami": 27,
+        "San Francisco Bay": 26,
+        "Seoul": 68,
+        "Singapore": 62,
+        "Sydney": 16,
+        "Taipei": 73,
+        "Tokyo": 166,
+        "Washington DC": 52
       }
     }
   },
@@ -508,7 +508,7 @@
       "total": 5
     },
     "errors": [],
-    "generated_at": "2026-11-21T09:18:41Z",
+    "generated_at": "2026-11-21T09:33:31Z",
     "infocon": "green",
     "kev": {
       "all": {
@@ -763,7 +763,7 @@
         "DE": 34503,
         "NL": 15610,
         "RU": 7310,
-        "US": 179872
+        "US": 180488
       },
       "top_ips": 100
     },
@@ -780,46 +780,46 @@
     }
   },
   "gdacs_current_orange_red": [],
-  "generated_at": "2026-11-21T09:16:00Z",
+  "generated_at": "2026-11-21T09:31:00Z",
   "gps_jamming": {
     "adelaide": {
-      "aircraft": 17,
-      "bad_pct": 6,
+      "aircraft": 14,
+      "bad_pct": 0,
       "name": "South Australia"
     },
     "baltic": {
-      "aircraft": 70,
-      "bad_pct": 21,
+      "aircraft": 60,
+      "bad_pct": 18,
       "name": "Baltic / Kaliningrad"
     },
     "blacksea": {
-      "aircraft": 14,
-      "bad_pct": 57,
+      "aircraft": 15,
+      "bad_pct": 20,
       "name": "Black Sea"
     },
     "gulf": {
-      "aircraft": 64,
-      "bad_pct": 25,
+      "aircraft": 52,
+      "bad_pct": 33,
       "name": "Persian Gulf"
     },
     "israel": {
-      "aircraft": 54,
-      "bad_pct": 6,
+      "aircraft": 32,
+      "bad_pct": 0,
       "name": "Israel & Eastern Mediterranean"
     },
     "korea": {
-      "aircraft": 72,
-      "bad_pct": 0,
+      "aircraft": 68,
+      "bad_pct": 1,
       "name": "Korea"
     },
     "sydney": {
-      "aircraft": 17,
+      "aircraft": 16,
       "bad_pct": 0,
       "name": "Sydney / NSW"
     },
     "taiwan": {
-      "aircraft": 66,
-      "bad_pct": 0,
+      "aircraft": 72,
+      "bad_pct": 1,
       "name": "Taiwan Strait"
     }
   },
@@ -1126,14 +1126,14 @@
         "baseline": 1096315,
         "drop_pct": 0.0,
         "points": 73,
-        "recent": 1096315
+        "recent": 1096314
       },
       "code": "CN",
       "ping-slash24": {
         "baseline": 318038,
         "drop_pct": 0.0,
         "points": 37,
-        "recent": 318523
+        "recent": 318521
       }
     },
     "Iran": {
@@ -1145,10 +1145,10 @@
       },
       "code": "IR",
       "ping-slash24": {
-        "baseline": 11446,
+        "baseline": 11456,
         "drop_pct": 0.0,
         "points": 37,
-        "recent": 11494
+        "recent": 11522
       }
     },
     "Israel": {
@@ -1156,29 +1156,29 @@
         "baseline": 32455,
         "drop_pct": 0.0,
         "points": 73,
-        "recent": 32455
+        "recent": 32454
       },
       "code": "IL",
       "ping-slash24": {
         "baseline": 4727,
         "drop_pct": 0.0,
         "points": 37,
-        "recent": 4726
+        "recent": 4731
       }
     },
     "Russia": {
       "bgp": {
-        "baseline": 170902,
+        "baseline": 170899,
         "drop_pct": 0.0,
         "points": 73,
-        "recent": 170898
+        "recent": 170893
       },
       "code": "RU",
       "ping-slash24": {
         "baseline": 92199,
         "drop_pct": 0.0,
         "points": 37,
-        "recent": 92245
+        "recent": 92246
       }
     },
     "South Korea": {
@@ -1190,10 +1190,10 @@
       },
       "code": "KR",
       "ping-slash24": {
-        "baseline": 268354,
+        "baseline": 268391,
         "drop_pct": 0.0,
         "points": 37,
-        "recent": 268576
+        "recent": 268599
       }
     },
     "Taiwan": {
@@ -1205,10 +1205,10 @@
       },
       "code": "TW",
       "ping-slash24": {
-        "baseline": 30978,
+        "baseline": 30987,
         "drop_pct": 0.0,
         "points": 37,
-        "recent": 30980
+        "recent": 31044
       }
     }
   },
@@ -1240,15 +1240,15 @@
       }
     ],
     "demand": {
-      "fall_mw_10min": 4,
-      "fall_pct_30min": 3.3,
-      "interval": "2026/11/21 19:25:00",
-      "mw": 1551,
+      "fall_mw_10min": -30,
+      "fall_pct_30min": 2.3,
+      "interval": "2026/11/21 19:40:00",
+      "mw": 1568,
       "possible_blackout": false,
-      "rooftop_pv_mw": 278,
+      "rooftop_pv_mw": 147,
       "solar_active": true,
-      "sun_elevation": 1.4,
-      "usual_mw": 1442
+      "sun_elevation": -1.3,
+      "usual_mw": 1446
     },
     "ed": [
       {
@@ -1525,13 +1525,13 @@
         "pump_cents": -4,
         "week_ago_aud": 141.5
       },
-      "grid_demand_fall_mw_10min": 4,
-      "grid_demand_fall_pct": 3.3,
-      "grid_demand_mw": 1551,
-      "grid_demand_usual_mw": 1442,
+      "grid_demand_fall_mw_10min": -30,
+      "grid_demand_fall_pct": 2.3,
+      "grid_demand_mw": 1568,
+      "grid_demand_usual_mw": 1446,
       "grid_lor_actual": false,
       "grid_lor_level": 0,
-      "grid_rooftop_pv_mw": 278,
+      "grid_rooftop_pv_mw": 147,
       "grid_solar_active": true,
       "murray_news": [],
       "nearby_incidents": [],
@@ -1681,9 +1681,9 @@
       "ground_stops": [],
       "national": false,
       "ok": true,
-      "updated": "Sat Nov 21 09:18:09 2026 GMT"
+      "updated": "Sat Nov 21 09:32:45 2026 GMT"
     },
-    "generated_at": "2026-11-21T09:16:00Z",
+    "generated_at": "2026-11-21T09:31:00Z",
     "shocks": [],
     "tracking_glitch": false,
     "traffic": {
@@ -1692,13 +1692,13 @@
         "hubs": [
           {
             "hub": "Dubai",
-            "median": 80,
-            "ratio": 0.96,
-            "value": 77,
-            "z": -0.2
+            "median": 79,
+            "ratio": 0.92,
+            "value": 73,
+            "z": -0.5
           }
         ],
-        "ratio": 0.96,
+        "ratio": 0.92,
         "status": "normal"
       },
       "AU": {
@@ -1707,19 +1707,19 @@
           {
             "hub": "Sydney",
             "median": 47,
-            "ratio": 0.38,
-            "value": 18,
-            "z": -2.0
+            "ratio": 0.34,
+            "value": 16,
+            "z": -2.3
           },
           {
             "hub": "Melbourne",
             "median": 38,
-            "ratio": 0.45,
-            "value": 17,
-            "z": -2.4
+            "ratio": 0.56,
+            "value": 21,
+            "z": -2.0
           }
         ],
-        "ratio": 0.42,
+        "ratio": 0.45,
         "status": "normal"
       },
       "HK": {
@@ -1727,13 +1727,13 @@
         "hubs": [
           {
             "hub": "Hong Kong",
-            "median": 44,
-            "ratio": 1.33,
-            "value": 59,
-            "z": 1.2
+            "median": 46,
+            "ratio": 1.35,
+            "value": 62,
+            "z": 1.3
           }
         ],
-        "ratio": 1.33,
+        "ratio": 1.35,
         "status": "normal"
       },
       "JP": {
@@ -1741,13 +1741,13 @@
         "hubs": [
           {
             "hub": "Tokyo",
-            "median": 172,
-            "ratio": 1.03,
-            "value": 177,
-            "z": 0.7
+            "median": 170,
+            "ratio": 0.98,
+            "value": 166,
+            "z": -0.4
           }
         ],
-        "ratio": 1.03,
+        "ratio": 0.98,
         "status": "normal"
       },
       "KR": {
@@ -1756,12 +1756,12 @@
           {
             "hub": "Seoul",
             "median": 82,
-            "ratio": 0.91,
-            "value": 75,
-            "z": -0.7
+            "ratio": 0.83,
+            "value": 68,
+            "z": -1.3
           }
         ],
-        "ratio": 0.91,
+        "ratio": 0.83,
         "status": "normal"
       },
       "NZ": {
@@ -1777,13 +1777,13 @@
         "hubs": [
           {
             "hub": "Singapore",
-            "median": 66,
-            "ratio": 0.98,
-            "value": 65,
+            "median": 64,
+            "ratio": 0.97,
+            "value": 62,
             "z": -0.2
           }
         ],
-        "ratio": 0.98,
+        "ratio": 0.97,
         "status": "normal"
       },
       "TW": {
@@ -1791,13 +1791,13 @@
         "hubs": [
           {
             "hub": "Taipei",
-            "median": 52,
-            "ratio": 1.18,
-            "value": 62,
-            "z": 0.7
+            "median": 54,
+            "ratio": 1.36,
+            "value": 73,
+            "z": 1.5
           }
         ],
-        "ratio": 1.18,
+        "ratio": 1.36,
         "status": "normal"
       },
       "UK": {
@@ -1805,13 +1805,13 @@
         "hubs": [
           {
             "hub": "London",
-            "median": 450,
-            "ratio": 1.08,
-            "value": 485,
-            "z": 0.5
+            "median": 459,
+            "ratio": 1.17,
+            "value": 535,
+            "z": 0.9
           }
         ],
-        "ratio": 1.08,
+        "ratio": 1.17,
         "status": "normal"
       },
       "US": {
@@ -1819,41 +1819,41 @@
         "hubs": [
           {
             "hub": "New York (Teterboro)",
-            "median": 35,
-            "ratio": 1.14,
-            "value": 40,
-            "z": 0.4
+            "median": 41,
+            "ratio": 1.0,
+            "value": 41,
+            "z": 0.0
           },
           {
             "hub": "Washington DC",
-            "median": 44,
-            "ratio": 1.15,
-            "value": 51,
-            "z": 0.4
+            "median": 50,
+            "ratio": 1.04,
+            "value": 52,
+            "z": 0.1
           },
           {
             "hub": "Los Angeles (Van Nuys)",
-            "median": 52,
-            "ratio": 1.22,
-            "value": 64,
-            "z": 0.6
+            "median": 48,
+            "ratio": 1.0,
+            "value": 48,
+            "z": 0.0
           },
           {
             "hub": "San Francisco Bay",
-            "median": 36,
-            "ratio": 0.78,
-            "value": 28,
-            "z": -0.4
+            "median": 30,
+            "ratio": 0.87,
+            "value": 26,
+            "z": -0.2
           },
           {
             "hub": "Dallas / Houston",
             "median": 37,
-            "ratio": 1.57,
-            "value": 58,
-            "z": 2.8
+            "ratio": 1.41,
+            "value": 52,
+            "z": 1.7
           }
         ],
-        "ratio": 1.17,
+        "ratio": 1.06,
         "status": "normal"
       }
     }
@@ -1927,11 +1927,6 @@
           "title": "White House ousts cybersecurity chief amid tech failures - Escudo Digital"
         },
         {
-          "date": "Sat, 21 Nov 2026 02:42:15 GMT",
-          "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5fU3hrZ1BzNDVfQXhBRExKU083aW9pbmpla3FyZVA4bllnaTd3a1JRTW96bmZjS2FFbzlpc2tpYkp4QUpsRkNDM2NyNDBwbDdYUE50TXkwV1BUWVBHZVprSnF0UFZJaUtGN1JzT3NpQmdkMmVaWENXR0F30gF_QVVfeXFMUE9scGZyb2V6ejB1TGtyeEl2ZTRXU3N5akx1UnMxNDR4UWpoN0prdFRiYTJaX01xTGtveDhCeG9Bb1RSUTFXcmFIN29HVkVmT04zNlRVcFpvUi1lanBramJEVHA2MXp4Q2VKOURoa2xVbmNXb0t5VWc3S2NMME9GTQ?oc=5",
-          "title": "What is ARTEX? The AI hacking tool flagged by the FBI - NewsNation"
-        },
-        {
           "date": "Fri, 20 Nov 2026 11:52:03 GMT",
           "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQVE55QnZPd1B2NEluUFlOSDZiVmtacmVyQVZIX1VtLV9zTkdpRWptY0ZqRUI4VFBBTW9kRThMM0gtejYzYmF6NHJ5Q1c0YlFDSXc5emlFR2pfdkNLVFdSakRTUFZIWk5KWmNnWXpTQW5KZkE3dnNfQjNMWmpsRXA5TUNET0pjTG5lN3lkc1JYQ05IQQ?oc=5",
           "title": "AI agents breach a firm in 14 minutes, bypass 2FA and encrypt files - Pasquale Pillitteri"
@@ -1940,6 +1935,11 @@
           "date": "Sat, 21 Nov 2026 06:40:19 GMT",
           "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNemQ3bkFlRXQ5RjRtWUN5VGpIVy1jTTdGQVQzYzRmdFQ5UlN3TXNydndfWGZYc0kzcGJtVkthenpaOXExMG9jaW9Rc3c4WHhmX1RhSUJPN21zYTJ5dmFmaXJYWGl0dC0tTGlxOGZidm56VDNqSmpKSE1CeFp4VEtNZ215dTNDVjFPb2M2NmcyTUZjU2hJ?oc=5",
           "title": "​China-Linked Hackers Use Cairn AI Tool to Breach Two Asian Universities - The 420.in"
+        },
+        {
+          "date": "Fri, 20 Nov 2026 18:53:47 GMT",
+          "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxOR1E2YU50WkxoNzA0TEFqR0E0VnlSRkxlRmpraktnNGpMZHZoTkVEQi1adGh4a1ZISWJYSHZmWWZ0eG5EbUdaV3lXYkh2TmhaZ2tPMkoyb2VpVzlZSW5OY1p1Ny0zZ1lBM3RqZjZ2bWdfZWVhc1c2WW1ORzBMOWJVaTAyazgwdGhJR0lHVnZqSlBVSTJnUGJrMmQ1cmJrbEZCMjNucFpoNDh6VWl1dHhmb2YwSkc2ZFp4dm1oOUVNZTY3OTlmTjNqSk5vaHMwTHNxWHN2RHg2aw?oc=5",
+          "title": "Amazon says China-linked hackers used the open-source AI tool Cairn to find an apparent zero-day in a university attack - MLQ.ai"
         }
       ],
       "name": "AI-enabled hacking"
@@ -1967,19 +1967,9 @@
           "title": "FAA ground stop: When will it end? Not as soon as you'd like. - Mashable"
         },
         {
-          "date": "Sat, 21 Nov 2026 07:26:43 GMT",
-          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOZHp3MkNTUWEtWmxab0p4QTVUdmpLM3JONkJWQzBaaDNteEdzM1lHb3BIenBnUzVSQ0kzcENibUxNRnRhbnQ3cWxqZFM1QklLYWU4OUItOWhYWkxMV1JaOFN4N21nM21nbmVCUHo1eEJUc0VYNDd0UWt4eFRUeWo2cHdFUHpERkg3MGlVWHBKNjdIeGNwTFFPdDBKNTdPck5INTNKWXhlQTFUNVdQaWhkOQ?oc=5",
-          "title": "US lifts ground stop for airports hours after halting all departures - The Business Standard"
-        },
-        {
           "date": "Sat, 21 Nov 2026 01:29:23 GMT",
           "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOSk1IOHo1cW5aeDdvaGs1d2RiRmFQMms3Nm8tVzQwYlprNWFtZXFqQUxYTWJQVVpaNS1ST196NzJrZ1JRTmE0Q0xrV2swZXlkZFpFa3o5VXFFdDl5Tm0tRC1rckhyb3F4TGtsSGxiakZtVEJfSEVCdTFrY1ZCZWFxYUFZUjlSQkhNc25oWkZUejhHQ2lvN2p0RFJpdEdkcmNKVU43SVJhajRYNWdJZG5ZN2dYSERGUEFKemVxN3M2S242QQ?oc=5",
           "title": "Trump says recent tech outages 'all separate events' and 'bad things happen' with upgrades - NBC News"
-        },
-        {
-          "date": "Sat, 21 Nov 2026 03:18:33 GMT",
-          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPS2YxWlI0dXJVaUtMbkJFNXB3bzB5ZDlZU0hhdlY2anpBQ3Aya1QxQnFuNEROXzNQVWM3NkFKMk1HTWVaWGM2YlhSZ0dEY1cwZ2NZcC1xY0JWNWgtTm42TkpQZFdoazBUTTVQMmxOYURqTXlidGJad0lkcXItUkdYR2VBUWZtcEpSSGNSQkZsSng0SmxnQ3NWUHZCU3J5eFVZNTF2RFFGemREQTRzVUVaQnlncUdBdw?oc=5",
-          "title": "Catch Me Up: How the ground stop unfolded, and a huge launch for 'GTA IV' - Scripps News"
         },
         {
           "date": "Sat, 21 Nov 2026 01:37:44 GMT",
@@ -1990,6 +1980,11 @@
           "date": "Sat, 21 Nov 2026 00:20:00 GMT",
           "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxObE50anpxSFFPQzVfaUNCZ183akxkcm5ZaVRTQkxmd3Exd0QwdXFWVmxYNXRRcGwzakY1elA3THhuUGhaU0ZQN093Q0U5ZGRWbGhOQjBVLWNqa0dZbmNKUUZkOUpkMHlTR1ZCdzU2NmJ5b3Atb1VGcXhRTTZGaS0zcXI1MlQ5azlBR2xlbkwyUTB2TEZuZnhyVV9kbDhwSHhTR1pIS1dxOVh4cTFVVS1oWnM4SW5rVmkzNzBF?oc=5",
           "title": "MSY officials give an update after nationwide ground stop, ahead of holiday travel - WDSU"
+        },
+        {
+          "date": "Sat, 21 Nov 2026 03:18:33 GMT",
+          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPS2YxWlI0dXJVaUtMbkJFNXB3bzB5ZDlZU0hhdlY2anpBQ3Aya1QxQnFuNEROXzNQVWM3NkFKMk1HTWVaWGM2YlhSZ0dEY1cwZ2NZcC1xY0JWNWgtTm42TkpQZFdoazBUTTVQMmxOYURqTXlidGJad0lkcXItUkdYR2VBUWZtcEpSSGNSQkZsSng0SmxnQ3NWUHZCU3J5eFVZNTF2RFFGemREQTRzVUVaQnlncUdBdw?oc=5",
+          "title": "Catch Me Up: How the ground stop unfolded, and a huge launch for 'GTA IV' - Scripps News"
         },
         {
           "date": "Fri, 20 Nov 2026 22:47:56 GMT",
@@ -2007,6 +2002,11 @@
           "title": "Thanksgiving travelers head to airports early following nationwide ground stop - ABC7 New York"
         },
         {
+          "date": "Sat, 21 Nov 2026 03:11:33 GMT",
+          "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9KMGV1NFgwbjNDUzQ4bUxsWHhTM21VRnRielVrNnBGQWRsXzFsanF1Vk9GUmV1dDFxMktjNHRWVF93Q2trZ0Jha0pYWkpZTjlNMklfVC1R?oc=5",
+          "title": "FAA ground stop fuels flight delay worries ahead of holiday travel rush - Fox News"
+        },
+        {
           "date": "Fri, 20 Nov 2026 23:20:00 GMT",
           "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1MSXQxQnNQeXRQZG1SVURUejdEUzF3dDVzZU1lVFBZMlN2SEN3TTFTWlV4c2Q3X0Z1MldXV3hYNGdMMHBBTVlNd1ROMTFiQ25fRlpoNUVOd3RYTUtMZC1n0gFcQVVfeXFMTWFTU0swSWJvWl9qWDZwUk9TSTRQWHB3bnJmSTZWcHZKQTlzZE9jUE9FV2JPYk4zdzJvUUFvbHZsT0NoSnBXT1ktWlltaEdkWURLbmRLd0VsTURVTlM?oc=5",
           "title": "What to expect from Thanksgiving air travel after recent FAA ground stop - Modern Ghana"
@@ -2022,9 +2022,19 @@
           "title": "Did Banks Get Hacked? Visa, Mastercard, Chase Confirm Vendor Cyberattack - Forbes"
         },
         {
+          "date": "Fri, 20 Nov 2026 14:12:00 GMT",
+          "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOczUwbm1NQ3JKaXBLbzlSajBZM2Q4c3QwR3o5bXZIY1hhbmZvWkxnWXpPbFAxWW4tNFJ4VGZYSlhZVlBxSmRWWEhRbUtYQlBidXV1eVVJbHVjV2t3aEI2cGVnQkhwTmQtUVJwMmRtSVJkZlo4bGFVSnlUcTZNTGx2amQtOHVycE9j?oc=5",
+          "title": "JPMorgan Faces Data Leak After Banking Outage: Risks Mount? - Yahoo Finance Australia"
+        },
+        {
           "date": "Fri, 20 Nov 2026 22:57:43 GMT",
           "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOS29iQzF0bWZGY2ZVdEtJWG1Md2ZPVFRJd24xU3pXUG1fMGI5OFdvUWJqaUhwLTRzTDdHb01wVjJ5cTkzNkpyc01mU0QyNzE4XzM0SDRaWUx0SlZaUXBnTGRfWG81b1lJWU9WZG9Lc3Q1ZlRqdGFYLVE5UVpObE5hUU1OT240RFZCVWhuQU1fQUYzV0ROUnVSbnh3RkhpTk1YME54ekdGTDgzOHY4U2tkMVRNYw?oc=5",
           "title": "Why are UK student visas being refused after interview? UKVI turned down 79%, The PIE News reports - Nacionale"
+        },
+        {
+          "date": "Fri, 20 Nov 2026 13:09:53 GMT",
+          "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOQVBkbEFXVEVTaEdreU93UTVjVmhkQUVyUFJHMDJjX29hSjR5dFRkRXZoM05zRXVPZGpJMVdDWVdSYU9pemVYYWxzZWZNSU5RaC1fWHhVeDIxVzI4ZUQxaW9YVy1RVmpMdkRicU9KZE41bjNQQ01nWW1BcTBaQ0pDMS1RWGFoamYwV0oxSHltem96UQ?oc=5",
+          "title": "Ransomware group reportedly leaks Chase, Visa, and Mastercard customer data, but not credit card numbers - Mashable"
         },
         {
           "date": "Fri, 20 Nov 2026 16:15:00 GMT",
@@ -2032,19 +2042,14 @@
           "title": "JPMorgan Confirms Customer Data Breach Following Third-Party Compromise - Infosecurity Magazine"
         },
         {
+          "date": "Fri, 20 Nov 2026 17:54:23 GMT",
+          "link": "https://news.google.com/rss/articles/CBMinwJBVV95cUxQNGcyaU5PLWI5YXZmMldYRVZ6b0kwMGc5SWZmRmhJbVpzTXRtOVBDYUxGd3lPcEZaMGFtcjNaa0FqLS1JY3lnYnBGS1RVREpnRmpnU1ZEM0NZRk1Nb196Q2xwY1hnVW0yWS1lU3NDaTdoNXBPMW1TVGVKbDJyYzl6TTRrNkN3cTFUN1B5aEI5THRydnVNRlZScVRLVEpNZE1hUW9oVzU5SExtT2tfdExXbUlwYV9IXzE3MXQ5UndId2JSMTZpT2ZfS29sVjAyRUFEWHA4VWNEdGZlVFlRaXpkZWpXS1pBdENZUjI5OERFZVA1cnNMMmlYTFpuZEwyclBidUExRWhUbnprV29wckpTTkFqcmg1QWk3MVlRR2tac9IBpAJBVV95cUxNaV9KLXJ3V0tTblZ0aXlEcDZUVzF0VG9jYkVDR0dKLVNIUXNzX3A0Yktpby1Xa2pOV1RNbGFnSXpEUl9zMDdUdnVLYUtHNkt4MUhhejA0MWlpYVU2bDhDanh0bVUzakZWdXV0QjlJcTJWZFBveUNPUFJacEhvTkVxVm5qd1R5Rl9lc0JCQUQzTUZsbzhrUDhVVjNQMzhOSmZTNG4zWm12VFFrcllRWUkwcW94V3FLdEh1bW1EUkxwY1RKRnRTZlJkeFdtaWVSNjc3Rm5naTVZOHZsSnEzblFYQXh6ZzN3anp4eDZfNHZSS1pTT1VHZEZ1WVBURTVuWDZqWFNKc2RhTC1yLXBzM2V5QnA4LVo3Vk5Bdm84Mnl5bU5XZWhT?oc=5",
+          "title": "‘There’s a f**king problem’: Hacker’s warning - News.com.au"
+        },
+        {
           "date": "Fri, 20 Nov 2026 09:36:53 GMT",
           "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9Jb0lGZDhkajdlZHhiMUlEMkNpN2xiQ28tTzc4dTJ0OWwtSmx2dFRFU2xBbFdnYU5DUUtjMEphN0pSZVFkZ3FGck5lMDBfRFRUam80NjdFeTVWN3RIYVRaQ3ZpbHpQS0I1X1FrekJINVh5SjV1eXJ3?oc=5",
           "title": "Ghaiyyath all the rage at Ready to Run - ANZ News - Thursday, November 19, 2026 - ANZ Bloodstock News"
-        },
-        {
-          "date": "Fri, 20 Nov 2026 18:07:07 GMT",
-          "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQU1hkWWJpMGtzOXVrWmtwSlltU3R1aW5XR3VGMkJfYjNOaEFDaGxhck9tcXNZRE1qdHgzdGhtSjFkc3JvWGp2VFFzVFJLQUFtcFFfNWwwNnRtOTJPSU5BZGVaVldrcG1PZ1lrd0hpOUZGSmEzSTBFaVV6VlRfdUVpRmdCQy1LcVd3Y0xJMzFsYy1PYTBHaXZzbGhsUmFmUE5RZGs5MkE1ZldJeTJrOC03RG5SVTJwSkZueDREVjZkaThaSUY3Z2F5bzRXRTlPM215SDNSXzl5ZU12QQ?oc=5",
-          "title": "JPMorgan, Visa and Mastercard Customer Emails May Have Been Exposed in Cyberattacks - TradingView"
-        },
-        {
-          "date": "Fri, 20 Nov 2026 17:38:32 GMT",
-          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxONmh1b1VrNEUtSndHTkJjaW9Xemg4bWUtQlVhenZUTTNrZjA4U2ZlcWNXTzk2WEF6OVBNQTEzTTJtbEZiZFEySTFtRnBuTFA4VWswMjk3UWx6V3c2RDdSdjRKYWdQd2JzTFVfU3RNMUd0VHllYnBMbHR0eVBuR05OS3dVOWtQRWhlUWNpN1NtNTAyLWpNVV9sYkt2V2R6cUlLM2s4SkpaYWRCUEZYeGpDTTRiWU8tZw?oc=5",
-          "title": "JPMorgan, Visa and Mastercard alert customers after cyberattack exposes personal data - El Cronista"
         },
         {
           "date": "Sat, 21 Nov 2026 00:35:00 GMT",
@@ -2052,19 +2057,14 @@
           "title": "H-1B Visa Issuances Plunge by a Third; IBM Leads Pullback in Sponsoring Consulting Division Visas - BigGo Finance"
         },
         {
-          "date": "Fri, 20 Nov 2026 12:29:02 GMT",
-          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxORnZRSVBWcnppTDJ1VkVCWWt2WVBVOXVfMXVWTkE2RjFvWFZydzl4Zkh5NHV3dU9qZER3N0NRcXd5elhQbmwtZlFER1hfeGk5NmVOYkF6YWdibjAycE8wQjFhWFdUNEtXT1Y5LWNaMXUxNnRwaHN0NERfMXJwOGRiSDZtd0NEUGVXOUxFckxTcW1JSE4tai1FV3hhREpQLU1tQnp0S29HSmNJRzd3amNYSDAySGNya2c?oc=5",
-          "title": "Visa report finds AI-enabled fraud and third-party attacks are rising - The Paypers"
+          "date": "Fri, 20 Nov 2026 18:07:07 GMT",
+          "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQU1hkWWJpMGtzOXVrWmtwSlltU3R1aW5XR3VGMkJfYjNOaEFDaGxhck9tcXNZRE1qdHgzdGhtSjFkc3JvWGp2VFFzVFJLQUFtcFFfNWwwNnRtOTJPSU5BZGVaVldrcG1PZ1lrd0hpOUZGSmEzSTBFaVV6VlRfdUVpRmdCQy1LcVd3Y0xJMzFsYy1PYTBHaXZzbGhsUmFmUE5RZGs5MkE1ZldJeTJrOC03RG5SVTJwSkZueDREVjZkaThaSUY3Z2F5bzRXRTlPM215SDNSXzl5ZU12QQ?oc=5",
+          "title": "JPMorgan, Visa and Mastercard Customer Emails May Have Been Exposed in Cyberattacks - TradingView"
         },
         {
-          "date": "Fri, 20 Nov 2026 20:13:22 GMT",
-          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPWE16RUZWak9ZQk1PeUdqNkVhd0l2RjlpbENsc09fdlczZlRmXzItRVFuN2ZacF9YWkplS1FQMzRQS2laOHpyQW9ZdGxsRGJXOS1yWF85OUE5SlAzbW5ka01ibHVFeEl3UDk5ZkY0NDQ0MWVWNFN6RGdhNXJib05saWpwb0NXdjQ5M0ZKZVd3aUxTczlwc1pFY0NKV19HLTVua1pxd3k4YTQxVWhQS2lyaA?oc=5",
-          "title": "A cyberattack leaks thousands of Chase customer emails and some phone numbers - WHEC.com"
-        },
-        {
-          "date": "Fri, 20 Nov 2026 10:05:00 GMT",
-          "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQX1B6TThzNE1qc0Nidzk3TGttNUw1MERNQ0E4VVRjVTF2Slc1ZkMwYzJHMDNXdTVyQ0hERGJPcmNjc2JUdTJnNjZfR2J0UWxQUklhZU5qWkNYdUJlY1pqNEJ4Zk5sMlZ6V0RTd1lMck5KTGpPNHI0YkNsV3pxQ1Fsb3dvWXBiMVFmaUJNUkFuekhyR0xYRWJLdUdzTHA3WE5Wc2hhV0lHeXhGWGlpWVJwTDFKZWQ1T1FWcjNjRkpRM3lpRnpmVmM4SDJLY0thSmFTRV9YTFZn?oc=5",
-          "title": "JPMorgan, Visa, Mastercard say third-party vendors targeted in cyberattack - Hawaii Tribune-Herald"
+          "date": "Fri, 20 Nov 2026 18:31:25 GMT",
+          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQLTM2cEw3cXFlejZxWnl1cElldEVJczJEc3ROOWdjRHlTX05RbXBYY3BWODBWVkVXeTJLYjN2X0NOMkpYWlJWNmNaOUxBRUFhYllUcUFhN1d4ODlseDVNQ1lGOElfVkMtTzg0VFRJakViVE1TNy14dThLWTRkQnB6VFcxNnhNZlA1ckFsV1FvdWtrRy1odWdMQXZvbUZEWk5DWWpVSWw5QmsyWjJOd2Jz?oc=5",
+          "title": "n0n extortion gang leaks data of JPMorgan Chase, Visa, and Mastercard customers - Bitdefender"
         }
       ],
       "name": "Bank & payments outages"
@@ -2142,9 +2142,9 @@
           "title": "Germany pledges €1.4 million to support OPCW work in Syria - سانا"
         },
         {
-          "date": "Fri, 20 Nov 2026 13:40:31 GMT",
-          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQcHhaRG1iQS1UMjlfWktQVlBhWGVGZFVWcHloWnhEVjdwczY4V1ZrYnpzbFgxUDhKd1ZBUldveXFtcDM0ZDhhLXh5ZTNaSjVCbDVhYlhaNUFlY09fcGxxa1kxektBbnBDcUtoVG9xOUkxZ1laa1lMazI5TXkwMWhrZDFIRzdSbV9nUEN6bTBxOUlOMXdJVFQ2Smd6TlFQV3ZabzN5eVIwRnJfcEtjWWpv?oc=5",
-          "title": "Israel seeks swift air campaign against Iran as Trump weighs options - Al-Monitor"
+          "date": "Fri, 20 Nov 2026 16:00:00 GMT",
+          "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1KNnR0N0NVSG1lVWppTXV5S21SMXJFQzM1bHRuaXk3VTg0YURQaGNGdE5OSFFOcVJnRkRZZEtzb0hKZHpaOElMdU5wVERxVWlyQUJEN1ZPaWhOR3llempuSnAxdWVSdDV4Smw2UFpCOTFFLWloRi03RA?oc=5",
+          "title": "Rabbits, dark past draw tourists to Japan island - Taipei Times"
         }
       ],
       "name": "Chemical weapons & mass poisoning"
@@ -2227,7 +2227,7 @@
         },
         {
           "date": "Tue, 17 Nov 2026 19:35:13 GMT",
-          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQLTVSZWxZOWJmREcwN1ZDa2RzeG9PQi1nWGxDaE82azc2ZTduUzdfeG9fOU1nZVRsTThNYUh0YXVNQXFab1BzZFJGNmxaNzVEMVJkM0VoVXZENEd2VGdLSk5uVVp6SDZFLU1ydXdKZUlpdlZtb2M4bTdxUWFialVYdkR6emhUaHF1YW16VXdaX1RDV1Bid2N4RjA3M1hLa3NZaHltWEZSTnB1a1BjOGItSHB3?oc=5",
+          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQaEs1Mm5GeXVFU1VLV3laRDF1cDhlX2JhUnI5Sy03UC13bC1INmlodUlMOE83RW1sSms2YVl3WFBaYXNFQzJ0NmVNUXVLNG0xYlU4bHBtZGtRZGZYVGU4NUF5VkFQS3M0blpvdEFIR2FwMHJidFZLak1sTExvZVRtZm5QSlB0alU3MEtYdFZES2EyQU5GNWJWSkJhMlFxZEJvd0tTMkxiTzlxM25jLUZ0SzlxakRpSlk?oc=5",
           "title": "FBI warns hackers using AI-powered tool to automate cyberattacks worldwide - Anadolu Ajansı"
         },
         {
@@ -2246,19 +2246,14 @@
           "title": "FBI says Artex AI open source hacking tool used to breach networks in ‘under three hours’ - TechCrunch"
         },
         {
-          "date": "Mon, 26 Oct 2026 07:00:00 GMT",
-          "link": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxOM2JSZ2N4T2xMRzVqSzc3M1Q1cnNFbFdIamtBUmVZUlNiZUlER0dLSVJkMmRPSVlFeHVkQUFueUtoWTVoU3MxUlRuSE1OMW0yZUxZdWRpTmVCQld1c0dLTGlWUTBkMzQ4cHhjZ3hQRXEwQ0w1VkdtdFdfcDJFbllOZ1NEWVE4TEV1RDNxWDEzZ1NpSjhRWkNRQ3c4NThwd0ZJMElWeG44cHFRdjBhRVBDSGIxd3JhaENwMC1tekUyd3RfNVZrYlhiS2pfdTZWM3JSbXJIMWdPc3pWaFNpVTNDMGdrM2o5WUhUeHFnUQ?oc=5",
-          "title": "Australians should prepare for online services to go down unexpectedly as threats rise, cyber agency warns - The Guardian"
-        },
-        {
-          "date": "Fri, 20 Nov 2026 16:25:17 GMT",
-          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPalh0TTJhNTdMVDI1Y0hfa2FnRDY3ZHV6eTVtZE1pWWFnaDdzZzBhamhxSzh4dF9sN09maU5YWWlPQ2dfdjNNYUtwS1NHalIyMUZzY0RxZ0ZhN01Ec1Y3RDY0VU52RTV5S3c3U3BpUlFUVXZnRHNsOTZDa3cxc1RlZFlqS3ZwQTJwSHBId1poWU80OFdBWlRFNldHUXVKSDQ3SXNPc0RITjRfb3ZGWDVQYS1n0gG3AUFVX3lxTE9YcmxVSjludjBpWUlFV2p6NXBqcmktajB1ZUxmNnBoREMtYTVLTzV2b3hTUDhTUi11VnR0Smt5SExzcFQ3aXBYcjJOYTFKMEN2S0ZtV1RvLVpsbm9wWk5lQVh4eGY5NU9LNVVpNGVSdTJKVmRUZG9fM1FNSGFMY1hTeDFxT2s4cHB1bWE1bUZzVGI3YXpjTUtZdXBodE9NRkNmME1vUkV4NTRTdHdYYzRXYlRKN2VTRQ?oc=5",
-          "title": "FBI says Chinese hacking group targeted US government agencies for years - ABC News - Breaking News, Latest News and Videos"
-        },
-        {
           "date": "Mon, 16 Nov 2026 17:59:44 GMT",
           "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxONlg1MUQ2RXQ0X2VVSldiM0lqLVpMaFBYZlZDVXRyUHBYTnBxMmhPamIyQUFIRzlwQ3BxVnIwUDhSMzFRSVZXMVhJWHRwUl8yQ3pLZVgyMURtcjdEMElkY1M1Zzh5WF9fVTZKSFd5eHlrN2NKRnkyc29DR3hTc2tkWUZwVHg1emt6Rm1kaENXTkVIS2Y5VDAxYWF5a2YzSUM1amtVNWlNUQ?oc=5",
           "title": "FBI Warns AI Hackers Need Three Hours. Can Companies Stop Them? - PYMNTS.com"
+        },
+        {
+          "date": "Mon, 26 Oct 2026 07:00:00 GMT",
+          "link": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxOM2JSZ2N4T2xMRzVqSzc3M1Q1cnNFbFdIamtBUmVZUlNiZUlER0dLSVJkMmRPSVlFeHVkQUFueUtoWTVoU3MxUlRuSE1OMW0yZUxZdWRpTmVCQld1c0dLTGlWUTBkMzQ4cHhjZ3hQRXEwQ0w1VkdtdFdfcDJFbllOZ1NEWVE4TEV1RDNxWDEzZ1NpSjhRWkNRQ3c4NThwd0ZJMElWeG44cHFRdjBhRVBDSGIxd3JhaENwMC1tekUyd3RfNVZrYlhiS2pfdTZWM3JSbXJIMWdPc3pWaFNpVTNDMGdrM2o5WUhUeHFnUQ?oc=5",
+          "title": "Australians should prepare for online services to go down unexpectedly as threats rise, cyber agency warns - The Guardian"
         },
         {
           "date": "Fri, 20 Nov 2026 17:03:17 GMT",
@@ -2291,6 +2286,11 @@
           "title": "China-linked hackers using AI model ARTEX to infiltrate banks, FBI warns - Yahoo"
         },
         {
+          "date": "Thu, 19 Nov 2026 07:45:15 GMT",
+          "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQMmZ0YnVRQWw0cjBzLV90Q0lZS2tqNTIyakY0UnZLSGVvWnlEZmdsOUdZQUNPY3JLTXpIbDRVT0NGMnhjZmVpazF5YnlaSnFmZHFXa3RsWGZNaGZWbzBrbWF1MUViSkN6UDNJTjJ4TkR4SEFrNmh6eUEzOWNSWnhWVVktTjZSSTRxTnZmR0h5UzdoUExZYmdicW5aUGE3bjY4dUVlc3g3dm9lS2UtVjF1SnZyanY5TmgyTWc4bEV3d3Y3bUE5SXd6amtiWElEZUxiMjA3WGVXdXdfVDFUZUQw?oc=5",
+          "title": "Hackers Linked To China Are Using AI To Target Banks, FBI Warns - Rediff"
+        },
+        {
           "date": "Wed, 18 Nov 2026 15:12:25 GMT",
           "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxObWI4ai1qMHpqaWZESk0wQ3BNQ0I4bVlydlZJMEpKME1oaTVWSDY0ZDQ5UTFSZ09BLVdaRG9sVmFCU21ITE9aazBKcWZPaXdaT04yS0FFNkZ2amZQMkVqUTdPWXhkb0EtbUEySnFEZ3ZZX3o3WEphQ0g3LXZGQ29xSi0yU3M4Z1pCekMwWFV4VlVnenliaHRBVjd3NFJqVWVRcHlSWVluRHk4X0hjUGc?oc=5",
           "title": "FBI warns that hackers worldwide are using AI tool Artex to automate cyberattacks - TechCentral.ie"
@@ -2309,6 +2309,11 @@
           "date": "Sat, 21 Nov 2026 06:36:30 GMT",
           "link": "https://news.google.com/rss/articles/CBMigAJBVV95cUxOeEFrbV9JWTNhMjl1TlJRbm5lTURYR01jNC1UbzBFa2xkMU0zb1BFSlgxNTR0RGRiWnZsMlRfbmlHdmpxU3FMak9ZSDUyd3ExZ0tYVjdGQTlNUUJMZnhEWW1YMEhRMFZacXRBMlRvU192RW1fX0tnVi1TWTNkeW1COFFIRzhhR3NFcnlOanh5anZESDB6MjBjZElBWmdZa3FZSlJmX3dMbGhxWkowaUlNN2Y2UU1oYXBjRVB1cllzeVg0MzJ2b2Z0VUVPRDB3WGtqN3IzU3BIZDQyNzBkeklaWVowRVhZaV9Na2RvTFhud2xvRnZJcWh1YVpmZXVNRDlV0gGGAkFVX3lxTE0yb3diOWxyVHJxNXZfTHJiZDVQSDhKRGJWaXZuY0ZoczZCR0JNM19xYnFwcDNvR0l2RHRUQTctOXpJOUVIbFpzM09oMVc1VzhiVldISUp1N0R3dGlwT0dvc0NVNGRabHFiS1NOSnRiWXE1WVU5X2ZpV0hWNlZsOWk3SHkwYmhnd1piNVNiWl9sWW1kMXNtWWtHTjNxT3dZVEV0bG1td0ExdW5OeV8zdzh4Z25iQ280LWdZeFloUHJFc2ZmUlFndFVrSUxqcEFlcGhKZ09aNjQzNmtoeEF0MldBVEpxMlRPME1RakJmQnAyYVZ5VWFrQ3NiODBHbldWWk5JSGdnNHc?oc=5",
           "title": "‘Clearly being attacked’: US in panic mode - News.com.au"
+        },
+        {
+          "date": "Fri, 20 Nov 2026 14:24:36 GMT",
+          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOUGJfMEVrM2UzdkVqcDVFenU4LVNjOHdLSkdtQlYxSmlUNV9xem1fbmcxSDBhTFJfYmVIc3pDMzh0Z3l1TEJZREdyVE9vY1RfeE1uUmJJcngzTVlFU3d3YzBTVnBHd3M0emNKWTA1dU5UakpoQXhNb2JIZDFtR3NMYy0xekFQUlMwOWs2VlRja2Z6RUNJTVVtYUR6dlc3aU5XY3hFZUNUUUE4Y1BVcXNtXzFsZlJqLWQ4Mnow?oc=5",
+          "title": "Cyberattack tactics are outpacing what renewal forms ask - Insurance Business"
         },
         {
           "date": "Fri, 20 Nov 2026 12:50:41 GMT",
@@ -2331,19 +2336,29 @@
           "title": "Visa and Mastercard cyberattack: were Australians affected? Leaked files list Australia, but no card numbers - Nacionale"
         },
         {
+          "date": "Fri, 20 Nov 2026 16:00:00 GMT",
+          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQMzluUEJGT0hSTk4tdTZKVkt5Nkdxc0xVcllhSm40N2xPZnZFdHpwT2lzTUk3Mm5LQklyblpnZmI0a29NaEJQLTNtVE9laHUwVm95eWJGYmtZLS1jZEhVR0xrRmNxSy1TSjkxcWplallXcldTMnp1VnJLV2NWSTBjcUJPMnRRZG9EWW13MDRieWxId1V1V1V0YzNwaVktSkJuTU9kalVrOFY0YVN3d0pFLUNaVTlRU05DNWwzNzVCSklxa2Fp?oc=5",
+          "title": "Shop Toyota Landcruiser 70 Series Cars - CarsGuide"
+        },
+        {
+          "date": "Fri, 20 Nov 2026 14:32:56 GMT",
+          "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPVGhnYThwa0VaOEY1VXJodXdmNi04MWJOSW1DT1BacElQaGRoZ1hzREN2bmttVzJheEVBaG5DMG9BSXlLZklVOGFFclh6aHZyTjhscFRKcXF0cEVhTm1CSFZKaGh3X2h5V0J0aTlSRTZtVk14cm9QaDlJOVRPaGR4TGZqdWRsUDI1dUd0cC1kQzdHRHRPRWo0?oc=5",
+          "title": "Joint trial question in Medibank data breach cases deferred - Lawyerly"
+        },
+        {
+          "date": "Fri, 20 Nov 2026 14:32:34 GMT",
+          "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOSmxYcEJyRGxKLVpXeXRyeEtONllnRU1sanFrOGlKdFIwNU5CNlNhX1NtVnhOZjhva1RiQUkzMmJic214QzRFM2VYV24yT3FuQjJ1QWtqSUh0SVE5cjJETGRKSWhzeTVBWmZ6MGoxQjN3cXhGYTUxTHF6dl80U3VjOUswb0FaWG9IZUFKbFRjcG1LanVURWxhOWNDaVo?oc=5",
+          "title": "Australia Charges Sydney Man for Terrorism After Sweeping Raids - Tempo.co English"
+        },
+        {
           "date": "Fri, 20 Nov 2026 20:12:56 GMT",
           "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQSmxESTZmMGgtRkwwZTJQQkpBajRLYUhBbDhtY0lGRnAxeGk3bm9SMmIwUHljZEZGem9sbnNmQlNpNWRhLV81YjE0UGNiTmRfUHBYWUNwcGozV1k0SVlJZE1Yc085LWxqUTUzNlZaUGR4eTRJUVBNbmZCTnh4Yk1zZUlicmw0Zw?oc=5",
           "title": "NAB rolls out Smart ATMs as demand for cash stays strong - Ticker News"
         },
         {
-          "date": "Fri, 20 Nov 2026 14:32:00 GMT",
-          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQbnFCTUY4OTdDUkViNEM5S19YWExWZVRwUDFnMkdWbjkzdnNrUFhCLTdFMkc2Zk5GRXhhYWxkQXhpOTJZUEZrTkRIQ1NHQzNMZjVJamJRTDlrRENoLUh0WnI0d1ZXN3R4ZmNYVnQxT0NGWDVIQkhuSWM5NTN3el9nNVJ0YUxwejhCeUZldE5reGlhc3JhN1JMR1d3NA?oc=5",
-          "title": "Australia Charges Sydney Man for Terrorism After Sweeping Raids - Tempo.co English"
-        },
-        {
-          "date": "Fri, 20 Nov 2026 10:04:00 GMT",
-          "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPVDRJWllWRGVqN2MzUHY0X1otRWJvM3hsZXVtRVhTcnZMOExMNWtTdjZlT3loTHNuZlpLQ1U5UGtOc2lqVlREaWFycU9iQzdSZnNkMmxGZzdsMWYtcGMtb3NYSm9YT1dEd2tKa0g5Mkl6QS0zX1BjRGxkYnFJRnQtUHdwVEwtbUZWbTh4MkdxdVdPREpQV1E?oc=5",
-          "title": "‘Staff deserve answers’ on Commission cyberattack, union says - POLITICO.eu"
+          "date": "Fri, 20 Nov 2026 09:46:22 GMT",
+          "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9NZHFpQUNMVGdzb0k0WG1XVlpMemoyR2cxQlRsb09aZlVmVU1HZHlTb1BpbDZVY0hiS1otVmJqd2hGUVBDQ1oyZFNoakRNbzBBbHRreXZ2Szk?oc=5",
+          "title": "Cyber attack on fridges in Europe 'a wake up call' for UK - BBC"
         },
         {
           "date": "Sat, 21 Nov 2026 02:25:08 GMT",
@@ -2356,24 +2371,9 @@
           "title": "State officials investigate cyberattack attempt at Algonquin Dam - Ticker News"
         },
         {
-          "date": "Fri, 20 Nov 2026 16:00:00 GMT",
-          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQMzluUEJGT0hSTk4tdTZKVkt5Nkdxc0xVcllhSm40N2xPZnZFdHpwT2lzTUk3Mm5LQklyblpnZmI0a29NaEJQLTNtVE9laHUwVm95eWJGYmtZLS1jZEhVR0xrRmNxSy1TSjkxcWplallXcldTMnp1VnJLV2NWSTBjcUJPMnRRZG9EWW13MDRieWxId1V1V1V0YzNwaVktSkJuTU9kalVrOFY0YVN3d0pFLUNaVTlRU05DNWwzNzVCSklxa2Fp?oc=5",
-          "title": "Shop Toyota Landcruiser 70 Series Cars - CarsGuide"
-        },
-        {
-          "date": "Sat, 21 Nov 2026 00:30:28 GMT",
-          "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNdXRrV3hSNERHenNfNF9vdFpGUHYxaFZRSmphZVJWbjBVR2xFQ2NwQXVCb1FYaW5qdTR4amRrNjE4aTEybk1NM2plU19LYzMyUkpHUW9KcU53Vi1xdllIZDh1ZXRGZ3YtRU8zZUxJMm1lcGl4MDZYUFNHZTc3Nnd1U3RSUWVQNmc?oc=5",
-          "title": "White House appoints Kirsten Davies as new cyber director - Ticker News"
-        },
-        {
-          "date": "Fri, 20 Nov 2026 15:39:57 GMT",
-          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNMUxJa002MkdDakc2RXBWX0MyU1pQUVBOWTNIcWxzakwxd183eWpiZ1plaEdZaDRUZmVQY3dNLUxFQmJPODItaHo2VHpWX3JSNkg4cWw5UEF6TDNzRXVMZUM2aE0tckNWVjFoUjAzWlluTUVVTE91ZU5qaVdhUmJsNnZKR3R1TGtreFgxdXRKZFRaS01GbFhaczhJZ0NGeEVTa1ZXcnJJX2xzcVRCcUtVNnk1ZFNVblQzbTFGSWd3?oc=5",
-          "title": "Cyberattack tactics are outpacing what renewal forms ask - Insurance Business"
-        },
-        {
-          "date": "Fri, 20 Nov 2026 17:11:29 GMT",
-          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPajhWZjNaSWtsZUluaE1IRjZPU3hHWlpWQzVIaUxOWHdmeWZ5Ny1hNE5pTWZjLTAyeWtSWjR4UTl0U0t3dFlzRk5nWFV5bUpDR2JSRGNLUFloMDg0T1VrX0JKTHlBUmFxMlJDVU5hM3RZSm9Ec0dWel9YUEFIR3JrX0N2LXNfSExqLWpkU3RpWW82UVB1eS1UMGFuOVFsYTlhTGFQYmozTm5rNWVBRWlaMENCUHc3SkRaRENJdG9R?oc=5",
-          "title": "Norway Security Authority: Cyberattack Affect - Moomoo"
+          "date": "Sat, 21 Nov 2026 03:59:52 GMT",
+          "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQNlBEc1Btak5kNnZFaEpFWHBVNmhMQlpPbG1pQ3FzQ3loOXViMkJjZzVCdlFfRzhWQWlpTnRFUGRYRThUNElTbVFfdkxOWFNPNDZ3U3I0UWtRVnY4emM5TTVDQm1CWER0TDhNdHJidHNuV01vM1prWnFJMWdUUjd3SXpJbERwQQ?oc=5",
+          "title": "U.S. agencies warn airlines after al Qaeda backs Flydubai attack - Ticker News"
         }
       ],
       "name": "Australian cyber incidents"
@@ -2391,19 +2391,14 @@
           "title": "Tens of thousands of UK fridges secured from hackers in secret nationwide operation - BBC"
         },
         {
-          "date": "Tue, 03 Nov 2026 08:00:00 GMT",
-          "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxObF9LUXZ2TVpjZm13eW9HNXZ0MkZFVDM5eHl5RXc0aDkzODdvc0VKYVE4YV9MSDZITjVTR01CM3l6ajdCVEFZMXlmdmx3MzBRWHN5QVkyTFU2bkR2Sm5VQm5OWUVfLVJoeHFZaXdrc0F1QTRnT0tHYXRvcVd4S0V2QUxmV3ptOEszT2EyWmFpVjYyUnRwODF1eGhXbGpGcUV2UXRwZFFLOGhPLTY1MWUxal9TY3M0Qm9MOVpSeTFHazNxMUNGSnVfdzVvOE0tUGM?oc=5",
-          "title": "New cyberattack on supermarket fridges sweeps across Europe - Reuters"
-        },
-        {
           "date": "Sat, 21 Nov 2026 02:18:15 GMT",
           "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQNlNwVi12RE0zMDA1TWU0NzJYeE1BaU5ueUNKM0QxbjAtZnd0V1MzNUV5QWZ0QlBlM000LW9wM0JIZWl5OE1iYnVSSjFreXlQTDQ2VUl5b0tzeXNKb1FfMExFeFNxSVpFWTZhaUlsVTZsTmlYSE9UTWRSWWhrME95b0xlMA?oc=5",
           "title": "State officials investigate cyberattack attempt at Algonquin Dam - Ticker News"
         },
         {
-          "date": "Mon, 02 Nov 2026 08:00:00 GMT",
-          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPa3NRNy1HY3VyaHFuTWZXTVVXd1dLOEZLN1V4T3dyVENUQlFWTnBpUFFQcVg1WGFmQklLOHpwU2k3RlZta19fU213dXZsMGVIUjZWclBQeVNxUjRJZFp0MVh6VkNuc0lCYkQ1OXVna2xtRU16QkZsdFJZOW1tSHZ4TEs1angxSlU5c2ZrNzdVTmZHY19GRmxkQnQ3TElyckVtSVljQkhHTE9WS0hLN2ZvMHg0akZ2UGRE?oc=5",
-          "title": "Supermarket freezers and fridges in Europe hit by cyberattack - Nine.com.au"
+          "date": "Tue, 03 Nov 2026 08:00:00 GMT",
+          "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxObF9LUXZ2TVpjZm13eW9HNXZ0MkZFVDM5eHl5RXc0aDkzODdvc0VKYVE4YV9MSDZITjVTR01CM3l6ajdCVEFZMXlmdmx3MzBRWHN5QVkyTFU2bkR2Sm5VQm5OWUVfLVJoeHFZaXdrc0F1QTRnT0tHYXRvcVd4S0V2QUxmV3ptOEszT2EyWmFpVjYyUnRwODF1eGhXbGpGcUV2UXRwZFFLOGhPLTY1MWUxal9TY3M0Qm9MOVpSeTFHazNxMUNGSnVfdzVvOE0tUGM?oc=5",
+          "title": "New cyberattack on supermarket fridges sweeps across Europe - Reuters"
         },
         {
           "date": "Sat, 21 Nov 2026 02:15:28 GMT",
@@ -2411,24 +2406,14 @@
           "title": "Illinois Department of Natural Resources investigating apparent cyberattack attempt at Algonquin Dam on Fox River - ABC7 Chicago"
         },
         {
+          "date": "Mon, 02 Nov 2026 08:00:00 GMT",
+          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPa3NRNy1HY3VyaHFuTWZXTVVXd1dLOEZLN1V4T3dyVENUQlFWTnBpUFFQcVg1WGFmQklLOHpwU2k3RlZta19fU213dXZsMGVIUjZWclBQeVNxUjRJZFp0MVh6VkNuc0lCYkQ1OXVna2xtRU16QkZsdFJZOW1tSHZ4TEs1angxSlU5c2ZrNzdVTmZHY19GRmxkQnQ3TElyckVtSVljQkhHTE9WS0hLN2ZvMHg0akZ2UGRE?oc=5",
+          "title": "Supermarket freezers and fridges in Europe hit by cyberattack - Nine.com.au"
+        },
+        {
           "date": "Tue, 03 Nov 2026 08:00:00 GMT",
           "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNR0VvRGFHeXFvRWNiYkJxRWpSMFJrY0d1RWFJTXlOaHdvM3h4UTh2b3IzV2RDdlRzOHdUV3V2QUVlajg0aFpSN181Q0taZWUya0hVMFYySm93cldMWVZCckxRbDMtM2padEpFakpJcFJLU2o0c01GeWFwNDQ0X3N6dG1pdERjMjczdnU1RDY0M19qbjBiZmdFTUpGaG5HUTgyQ1ZNZENwVm9ZX1VkQzJCQtIBtgFBVV95cUxPdS14UHBuU0lHSnZMcFFkVkNhWThZOXY1Umlkc2hCMHlybjBiRXhBdl9nYm11LTNDV19RV0VFYnhqZXBkTmJwQkVOejA1RVVSZVlEdUR3MVJRbEtPaE1hX1VlQ2dxMTh3SkZTTEQ1TWtkNGtmenNaUE1sdjBpRWs3Q2I3aDZ0TmhSOExEQVVDTW5weVVLeFRmQ3p6M2E5ZVREU043UnMzQ19fR09mNmJzbS1kQzlDUQ?oc=5",
           "title": "Here's what to know about another cyberattack on European supermarket fridges - PBS"
-        },
-        {
-          "date": "Tue, 03 Nov 2026 08:00:00 GMT",
-          "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQRGFNck1TVk81WWVjbFV5Qi1qWlZhLUk0Q3AyQVpMQUhsNmxaN2g3VmpUdHE3dXVjV1lZSzN3Vkp3NmV0a2hrWVExeTRwTGdzNVh4My1CTnlvNW5SNXk3NFJERnpiNDViMm9WWEhDTC1qa1cxZjlYc09xeU9rU25rN18xY05TazVjTFVhRjZHVVVtOVlsXzQtaHU3X2RWeTDSAaQBQVVfeXFMT3hFU180UGM3V285SjlfbURRVlVib1M5RVd4OXNGeTNuVmlJZlNobzBzMEVhOUxhV3hmYXFpT2lwdFZMaTFlcFNpcEtmQ3VUSDJMeEltSWhQQklHYVM0V01QbFBzeFRwVFNndktaNGhIYVN4bWhiOHVLMkdSdjkzbXRVc3ZKd0JacHVoRE1oc0xjMXRvdnhLTjJoUlY5WmFrdGd3YjE?oc=5",
-          "title": "Very cold war: Who’s attacking Europe’s supermarket freezers? - Al Jazeera"
-        },
-        {
-          "date": "Tue, 03 Nov 2026 08:00:00 GMT",
-          "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE03U19lUzF5Wk5FRzNza2JkcTVidnFNa0c0cF9SNm1PcWNNQ00xQjR3YkNKektjbUdKN1FoLV9ibUVDNHJ6Z0RJRGlfZExIVVJjV1B0S0FFWnBxUVJkandJeC1JVkczbTNsemNyUjB2ZDdPUVRldGVmWA?oc=5",
-          "title": "A new cold war: hackers target fridges across the globe - NPR"
-        },
-        {
-          "date": "Mon, 12 Oct 2026 07:00:00 GMT",
-          "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1FaUdFMmNLSmRTUHlPODRKQVQzVzBTRFBLdGVzMHctUTJsNG92aTBES0ZJX21rckV0NVpIbUlTYmlOZjNGZTRydlJzOFFDT3dzc2VNMkFfZnFMdFE?oc=5",
-          "title": "Fridges in French supermarkets hit by cyber attack - BBC"
         },
         {
           "date": "Sat, 21 Nov 2026 00:56:00 GMT",
@@ -2442,8 +2427,8 @@
         },
         {
           "date": "Tue, 03 Nov 2026 08:00:00 GMT",
-          "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQa25IWWhHNnFBb19INzl2YXg4T2lKNFQwOExDclRQeU9kTUpfMHNJNUZTRk90RGU3ZUNEWlZURjctSE1VMy1JclhFWm1nNzN2X0p5bG5wWE4tQUZDZWNlXzZSTFRtZHdwdlVvb2RSNmkxbGZKNE9PMnNLdXpSb2pqWGZGeWxfcDlmRlpYZlo5azdQbHJwc3ZOVkxONGhtUUxGQTM3OHB3?oc=5",
-          "title": "How hackers are turning grocery store freezers into heaters - Scientific American"
+          "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQRGFNck1TVk81WWVjbFV5Qi1qWlZhLUk0Q3AyQVpMQUhsNmxaN2g3VmpUdHE3dXVjV1lZSzN3Vkp3NmV0a2hrWVExeTRwTGdzNVh4My1CTnlvNW5SNXk3NFJERnpiNDViMm9WWEhDTC1qa1cxZjlYc09xeU9rU25rN18xY05TazVjTFVhRjZHVVVtOVlsXzQtaHU3X2RWeTDSAaQBQVVfeXFMT3hFU180UGM3V285SjlfbURRVlVib1M5RVd4OXNGeTNuVmlJZlNobzBzMEVhOUxhV3hmYXFpT2lwdFZMaTFlcFNpcEtmQ3VUSDJMeEltSWhQQklHYVM0V01QbFBzeFRwVFNndktaNGhIYVN4bWhiOHVLMkdSdjkzbXRVc3ZKd0JacHVoRE1oc0xjMXRvdnhLTjJoUlY5WmFrdGd3YjE?oc=5",
+          "title": "Very cold war: Who’s attacking Europe’s supermarket freezers? - Al Jazeera"
         },
         {
           "date": "Fri, 20 Nov 2026 21:06:21 GMT",
@@ -2451,9 +2436,24 @@
           "title": "Thousands of UK fridges protected from hackers in secret operation - London Evening Standard"
         },
         {
-          "date": "Mon, 02 Nov 2026 08:00:00 GMT",
-          "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPT0hnYzNYZFFUWW05NDhXeXd3M0FUTVhCNnNPSXB6Y04taTlHeXVzZXhyRjR1VVg0bHU5R1ZZSGlqYnVqcWdmWTVCYml1M29VdTJ0ZVkxcXpMb0pwRG9Vb2lTNGhkdnFwbGV5QlJIU1NKMzE1TlhBN1R5S2FYTnc2dXI1TTctQlB3TGtSSXFtQzRLbFJsLU5FWFl6QktpZzRmU0ttVw?oc=5",
-          "title": "Who is hacking Europe’s supermarket fridges and freezers, and why? - The Guardian"
+          "date": "Sat, 21 Nov 2026 03:36:34 GMT",
+          "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPajNZdnVSaEdzb2l1MHdyYnBOVjFObUNzaGs2WjRNUlJxendJWjFDa1ZBQVB6NnVYQ05Qa1dnYWQ5eEZ3TjAzcm1VaVU0RFZSOTBkV0pySFZjU1dOckpYblo3c3JxcHVVUTRMRmhNUFNRYXk5by1vbGY2YlVOdmtKY1A5NHd6dGNmZkRmVWV0UjgyNW9pVDF6cFpaVV9ET1XSAaQBQVVfeXFMTjFOcmdfVXJvNlVCNVVhQUJSOWhiOWFjMExycGxnN2hSR1RfZjgteWZpZ1FpVG1sYWVFNElmZUoyYnpTSHFfVkxUeDdZZmRHSm5MbmdVcmlVTzRZYXdIengwcWNKaGZVWHNnRmp3WVNwWnJRaUl5amRtdlBDNlBOMk04Zlp1bkVfWFEwaG5MWDNhSXlrWUFkZGFiMDllcGJiM0tHN2Q?oc=5",
+          "title": "IDNR investigating apparent cyberattack on Algonquin Dam - WGN-TV"
+        },
+        {
+          "date": "Tue, 03 Nov 2026 08:00:00 GMT",
+          "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE03U19lUzF5Wk5FRzNza2JkcTVidnFNa0c0cF9SNm1PcWNNQ00xQjR3YkNKektjbUdKN1FoLV9ibUVDNHJ6Z0RJRGlfZExIVVJjV1B0S0FFWnBxUVJkandJeC1JVkczbTNsemNyUjB2ZDdPUVRldGVmWA?oc=5",
+          "title": "A new cold war: hackers target fridges across the globe - NPR"
+        },
+        {
+          "date": "Mon, 12 Oct 2026 07:00:00 GMT",
+          "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1FaUdFMmNLSmRTUHlPODRKQVQzVzBTRFBLdGVzMHctUTJsNG92aTBES0ZJX21rckV0NVpIbUlTYmlOZjNGZTRydlJzOFFDT3dzc2VNMkFfZnFMdFE?oc=5",
+          "title": "Fridges in French supermarkets hit by cyber attack - BBC"
+        },
+        {
+          "date": "Tue, 03 Nov 2026 08:00:00 GMT",
+          "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQa25IWWhHNnFBb19INzl2YXg4T2lKNFQwOExDclRQeU9kTUpfMHNJNUZTRk90RGU3ZUNEWlZURjctSE1VMy1JclhFWm1nNzN2X0p5bG5wWE4tQUZDZWNlXzZSTFRtZHdwdlVvb2RSNmkxbGZKNE9PMnNLdXpSb2pqWGZGeWxfcDlmRlpYZlo5azdQbHJwc3ZOVkxONGhtUUxGQTM3OHB3?oc=5",
+          "title": "How hackers are turning grocery store freezers into heaters - Scientific American"
         }
       ],
       "name": "Attacks on equipment and essential services"
@@ -2556,11 +2556,6 @@
           "title": "Amazon Exposes AI Agents That Found a Zero-Day and Broke Into University Systems - BigGo Finance"
         },
         {
-          "date": "Sat, 21 Nov 2026 00:51:01 GMT",
-          "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQUjQ5c0hsZDBTcWxGNUVxN0phZDdwRGhzTk1nWWEzZTdOSVpVT2h2WlI3OUVfeVZVMWt4eTFTQXFGZ1hoM1dMS2puekZ1YVYzSWV0aHMtYkVkNUpKdEJtaHlTRE9NRE5YZHRWbDk2YVZPVmdrOXN6cmJGbnFlcWxGODhZTVdaRGJ0aF9icTYwamtYakRaTFY0bGo4dHJMY21mRFFGTjNxYWkzN1J2d2tFX1g4Wk5US25oU0ZKTHoxSlU1dW9qODFRNEYyRTlaQm1aWmhIU05rMzJ4bmN5X1E?oc=5",
-          "title": "Amazon says attackers' AI agents found and exploited a zero-day in 11 minutes, but no patched release is available - VentureBeat"
-        },
-        {
           "date": "Fri, 20 Nov 2026 14:36:37 GMT",
           "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTFA4OVFyZmJubDRoQUpHV0Rfbm93ZFN0cVB6V25QdUdoYU1DMHRhS29sdDRyZURXS2JfdzhiZVlRMnE3NllLYTJ1bTk0ME4tOEV3VWxfV1VyQXN3T3lVa1ZFcjN0bF9xQ2FIRkVKaXg3eV82aUZ1cFlv?oc=5",
           "title": "CVE-2026-123890: vCenter Zero-Day Exploited by Armory Castle - SOCRadar"
@@ -2581,9 +2576,19 @@
           "title": "F5 releases emergency hotfixes for five critical BIG-IP flaws that can allow remote code execution - MLQ.ai"
         },
         {
+          "date": "Sat, 21 Nov 2026 09:23:57 GMT",
+          "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9TS0l3WDI2QXM2QnJaZFhLclRndTlOcFZOc3drbElaWTFrdHhpTVg3LWtnb2lzMkhUcXZncUJtekgwNHg5dE1JMU9IdXVTZG9GeGVHQmpyZVl2MEx3eXctQU1NYzMwbGVJaTBZdQ?oc=5",
+          "title": "AI Agents Exploit MONAI Label Zero Day in 11 Minutes - Demokratis.co.id"
+        },
+        {
           "date": "Fri, 20 Nov 2026 13:54:43 GMT",
           "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE5CMFVUSE5yM2kzLWJTeVZjRmh5NDduTG5xTGZ2STRqMzNDZ3VuQU9kdHd4S1hWc0FjclBabWNyMnpCWjlManNrOXJLWXluWXBmZjBQelllanRKRFRWejJGTE9UazhXbVVHREpiUmtvS2FLQdIBckFVX3lxTE5CMFVUSE5yM2kzLWJTeVZjRmh5NDduTG5xTGZ2STRqMzNDZ3VuQU9kdHd4S1hWc0FjclBabWNyMnpCWjlManNrOXJLWXluWXBmZjBQelllanRKRFRWejJGTE9UazhXbVVHREpiUmtvS2FLQQ?oc=5",
           "title": "New Windows 11 Zero-Day Vulnerability Lets Attackers Bypass Lock Screen and Execute Code - GBHackers News"
+        },
+        {
+          "date": "Sat, 21 Nov 2026 00:51:01 GMT",
+          "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQUjQ5c0hsZDBTcWxGNUVxN0phZDdwRGhzTk1nWWEzZTdOSVpVT2h2WlI3OUVfeVZVMWt4eTFTQXFGZ1hoM1dMS2puekZ1YVYzSWV0aHMtYkVkNUpKdEJtaHlTRE9NRE5YZHRWbDk2YVZPVmdrOXN6cmJGbnFlcWxGODhZTVdaRGJ0aF9icTYwamtYakRaTFY0bGo4dHJMY21mRFFGTjNxYWkzN1J2d2tFX1g4Wk5US25oU0ZKTHoxSlU1dW9qODFRNEYyRTlaQm1aWmhIU05rMzJ4bmN5X1E?oc=5",
+          "title": "Amazon says attackers' AI agents found and exploited a zero-day in 11 minutes, but no patched release is available - VentureBeat"
         },
         {
           "date": "Fri, 20 Nov 2026 22:57:17 GMT",
@@ -2609,11 +2614,6 @@
           "date": "Fri, 20 Nov 2026 14:14:44 GMT",
           "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPYWVxemZiSGtWTHhkbXVFSXpJZGUxVThlcWlrT1RNSmlJamFITnJrWGpwVGk4ZHRONXl3VHFqVTlEdVRzZjQ0STRjOXg3b2EyTHVmWkU0MndySFpRcHNmQkhhazlKUmhFQU1pZ1BDc1V4YXgtalBiUHpyUEFscGdMWE90X19IV3Z2X1JnMjJTSXMtZloyNGlmZXBBUWhSbEY3Wjh4ejVVRlY?oc=5",
           "title": "CVE-2026-120382: Critical Synology DSM OAuth Flaw Enables Arbitrary File Access - SOC Prime"
-        },
-        {
-          "date": "Fri, 20 Nov 2026 16:57:05 GMT",
-          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPblgwd1BUUGlHOVJsaTFlREJwUFNOT1NJS2ItRTh5ZzYwNWlTZTluVlhOLWwtdFViTUdUNnlRNnVSRXhEdXd1RFliNmNCMEQ4S05zSW1yU0daOHpCUi1TOEloMTVua1JkbzBjWXowTlJCcWdyTGkweDNIdm1kYXZZMXctRmtxOE9DNFNheUVWUnhpNnFHdFBRRw?oc=5",
-          "title": "VMware vCenter zero-day CVE-2026-123890 exploited since September, patch now - Pasquale Pillitteri"
         }
       ],
       "name": "Supply-chain & mass exploitation"
@@ -2636,11 +2636,6 @@
           "title": "Scottish Greens challenge SNP government’s relationship with big tech after First Minister’s apology over AI slop video - Scottish Greens"
         },
         {
-          "date": "Sat, 21 Nov 2026 00:14:41 GMT",
-          "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQTTlPS2xVMUJDRi1nYmxqdEJ0ZXBSNG43dGRibkU5bE5ubTdxN2VmSWkyV0NLQ2dRQkQ1cUtiYm5HUHFKT1dCWlJ2dmxwVng2ZFN3RXVNajRHbzVVelF2bVVqZFFRNGRBWTF4Ml81VzhicjFoMkF4UWlwQ01VUWJzcDh3RVd0bFZZdkp1TkhXbGd4X0I0RjNaQUhjcXhOWFRRN2FURXJSUDlRWEFpRTI1azVLWWY3YTI3ZHZ5M1VaWW1Mbi1CQS1ab0FCeHluTDRp0gHQAUFVX3lxTFBNOU9LbFUxQkNGLWdibGp0QnRlcFI0bjd0ZGJuRTlsTm5tN3E3ZWZJaTJXQ0tDZ1FCRDVxS2JibkdQcUpPV0JaUnZ2bHBWeDZkU3dFdU1qNEdvNVV6UXZtVWpkUVE0ZEFZMXgyXzVXOGJyMWgyQXhRaXBDTVVRYnNwOHdFV3RsVll2SnVOSFdsZ3hfQjRGM1pBSGNxeE5YVFE3YVRFclJQOVFYQWlFMjVrNUtZZjdhMjdkdnkzVVpZbUxuLUJBLVpvQUJ4eW5MNGk?oc=5",
-          "title": "Lead azide detonation: Online claims vs. official information on potential impacts in Wisconsin - WEAU"
-        },
-        {
           "date": "Fri, 20 Nov 2026 18:07:28 GMT",
           "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNYXNiOEgwd3JrMjlEeFlzTDNqTXA3SGd4MGZuRTRBaWpuYlN5cUxCVDB0Ulh4THJTYzFjRUh0TmZLcFp5T1l1bFdCam5VZ0hIb09zVlF3dC1aWmZON3dVanlna2hydFJRVDA0SmczdlctRlVSMjcyZnMyN2ZqYndCNUZqQnR0N2lZSEJ4SFhnVjZ6dEx5emVOUDRvQzB4R2UyQ3p3ddIBqgFBVV95cUxPVHVOdk1raXZfc2JQQjJVYk9GTUxNWDMybmowbHBraDFGV2xwMzFlemdYcFdDSmdkVDVqUE83SmxYSk83MV9qZU9oQWk5cU1DNlhnZG5oQXFwX2pfem1OelhxU0UyTGZMc0h1c0tRVGxJRzVfYXpNdkx5RzBJRGlweDdvLTh0WU1HMkh3VV9qOFBuWFFkVlhGMlVGXy1GSENsWGpFRzE1SFlxQQ?oc=5",
           "title": "Trump takes down image from his social media platform that depicted him as a Jesus-like figure - ABC News - Breaking News, Latest News and Videos"
@@ -2649,6 +2644,11 @@
           "date": "Sat, 21 Nov 2026 03:01:48 GMT",
           "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPQ1dLN2UyajVWMG1IUkJnRzZaNU0wbHFsdmRJWTJPMjlXTnJXREI4REJnNXRyMDJmanRpWGRBeWlkejlVZXlxT2JFS1pJc3N5NjV0UDFKV24zYWl0cXRzTW5JLWFIUDNXalhDMVZHa1pLa1ZKcDd6T29mTzlqTE1RZU42NzZUbmlqVWZDcjZtcDBqMzViVGdiR1V0WjNDcXFZTTF5QVB5ODBhVG9lSFhsRDA0NkNTUGRZMmh6bHBjaUVMTVFiREFIdm5VR1NOeDlh0gHWAUFVX3lxTE55LUVuQnNkZ1ljb1haNGFXT3hpUzV6OWFRV2hwZm56Nkx6NVVPSkJiYWk3a3BOTGxYalVEb3FFd296UGdLM2xZcWM2dkZ1TjE3NE1fa1prVHJrNHkxdWIwTFBUNkx5WWZYTmloaW5pQW0xWVlOa0pGOXprNVEyTUFVaU56ZHY2aXhQSEhRRGJ5dDlTbG40S2QtZkRBVEtHemprQU9NSVkycE9vSWVuMWVxUUpyd19UeEFfV0ZNQzFYNVBQZWc0RU9tNEVfcm9RUDY3OEhTSXc?oc=5",
           "title": "UP woman hits husband over photo with another woman, he claims it's AI-generated - India Today"
+        },
+        {
+          "date": "Fri, 20 Nov 2026 18:13:06 GMT",
+          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOMVI4RXAwQ3JWbkc4QjZiT3ZTUGpFVU9jZGoyQnQ1UHBEeDRMZ0YwbS1QTDhBYWFPNVVTREhmR3pDbHhqX1V0SjQxNF90Z1lfbjl4WEh2TFVQVldrSEZ6TnMzdEtTTHdtd2ZfMVZnMkFUc255b1VYSWdzYlFoN2Jtbl9QckFnZW5Ed3Z6ZUtWbHhGZFRSNGstOHFFMV8wOEZGSkwzT2E3SXFFaWxhMFp1ZzdreDc?oc=5",
+          "title": "Lai Mohammed: AI-Generated Fake News Could Undermine Democracy, Public Trust - THISDAYLIVE"
         }
       ],
       "name": "Deepfakes of leaders & fake alerts"
@@ -2696,9 +2696,9 @@
           "title": "South Korea's exports top $1 trillion for first time on strong chip demand - Gulf News"
         },
         {
-          "date": "Fri, 20 Nov 2026 22:36:51 GMT",
-          "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxON0NJMFpRUGYzaDBjYjVnT1hZTUtSMld2ZTc1eVlSSzZ1b2RKeFFmVUFPYjZZUjdsNlJtb0FRbkZ0Q3RUYXY4ejZJdWU0a2JVZGRCS2otRm40S1V5QlJqTmEzTVFtREJxcnNFZEtfQ2kxdVp2b1EtMThlbkwxQXYtLVFDNHo4d1l6Sy1yT1ZzeGJkZEhnSm8tOHN2RVlzY3dKMl9LU213?oc=5",
-          "title": "Wall Street regulator proposes to take control of market surveillance tool - Y100 WNCY"
+          "date": "Fri, 20 Nov 2026 21:06:00 GMT",
+          "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNakh0VHZ1aS1YNFd3UmRwUWg3dDBTemg2Umh1S3IydV9xTDZQUkVHX2k0MFJjWmg4T05XSEhwS0JKOEtHSEdJSDNod0IyWFJnS2ZqaExXNm5nN1JQYkJKaEhVZ3dVcjlzeHdDQnF1RWpyN2Y2UTMybHZlaVFrc0xLUy1YUmxNNkRGbXE3aU1QcGFscWhVbldqNVZEaW54VVZORjNibllBR2JhQk5BbTJjeTU3elBHUmVnNFNtRGE2N1E5LVAxcUQwa1hqS01xaXZjT3g0?oc=5",
+          "title": "Tessera Defense Shares Delisted and Trading Halted on NYSE American Due to Low Stock Price - Kalkine Media"
         }
       ],
       "name": "Flash crashes & trading halts"
@@ -2908,19 +2908,34 @@
           "title": "Calls for 'automatic compensation' following telco outages - ABC News & Headlines – Australian Broadcasting Corporation"
         },
         {
+          "date": "Fri, 13 Nov 2026 23:49:37 GMT",
+          "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNRE1EVUZWYXJDLVdvdDhadEpIVHRxZWhmaHI5TmRGbGItS0hPOGZPQWZEYnhRYmJPWXk3Y2JDLXZqaGttQnFTZFBpZ0QzWWhSZy1DLUU5aVVPWlkyVjVtVG1uUHpfM2hqcFN2VlJYazVTN19jaHBYUXFDWm1EU3p2UzhYSHJuclFrZldoVXV0VUdsdzByelkwYkRNcWtlTFY3d3c?oc=5",
+          "title": "Microsoft ‘deeply sorry’ for global outage, rules out cyberattack and AI - Nine.com.au"
+        },
+        {
+          "date": "Wed, 18 Nov 2026 14:11:35 GMT",
+          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOczByR3p6UDZHMkhNb3EwbFVka3RnUU96QnlObWZKYTNSZlBYalZjTDQ2UXhUUkpwbWdsQUJyM0g1TzlJNWxwWVdvcDNfclNpRkZjSWo3bDdYbjBZWS1fV2RycU5QQUhQMDBOaWpCa0N2NFFNRzV3N1NURmF0bHF0WmZ4ZkxhdXRDbUJ3Y1JuQk9uR1NEOGp5UDVGbw?oc=5",
+          "title": "Australia telco complaints surge after Telstra outage - Traders Union"
+        },
+        {
+          "date": "Sat, 14 Nov 2026 20:51:49 GMT",
+          "link": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxOUUh3Rzd5T28yYTE1U29maFNoQmJqQmk2bDdDZ2JnMm45N2FWRjRDX2g2YlhmUTd6aHltSVI2eDNxeU84TVl4NzBCbnZ6Ynd0dzNTd0RLVUlpUWlmYjAycVRZM1BZQTRPcGt5MWRFTmMtYmhzRDBZZk00STRqS1AyX0k5OURYanJmV2plTUwycWtMdG9GcURRbjZvMDM4OVBqT0N2NW1xMC03STBCcURnM1ZjbS0xU1JSWUNudEtZNl9mOVNQTlVNYlp5a3NwS2x1bFRFbC16OUlSempxcTFRZmZqY1IxMDg2azQ3VjFub9IB9AFBVV95cUxOcVVNVUo1TlQwYzZ0LVh1dzVIRmVzdmNMTmFJemFvNXptNElkWXV6ZC1WVHN0NkF4TXZnSWRMd0Fpd2x0RVdySVU0RzRCT2daQ05MYmxVVXFaTlNJb0RpU2RfV2QwcDlodkhwRVV3YndsRkptZUF1OEtzVDhTc1BudTJpUF9iRDJsOXpfdVJqU3Q5WVo1dnVKV3hIemRfVGZHOUdxc1dRUzZjakJNTW9KQzBwZ1BPWE51b2VnYkgxWkRrYzVNM2FoeVNzOUw1bnZxVHpBWWhGT2Z3bkxwM0dtSGFnaDE2a29YanRuTnVUdEszZjNO?oc=5",
+          "title": "Microsoft exec reveals details of outage - News.com.au"
+        },
+        {
           "date": "Thu, 19 Nov 2026 23:24:31 GMT",
           "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQMEpHbnNMeks0aHV4T0xwTkZGS3JLWklBNUNvOXc5SmljcHVJNWFZVV9MRHZrY1RFWFRzMkZmVnBPRUpmTFlySHZWLVZnOUk1dG9wWXBTQTAtOG9fTVZ2SVdmLTFQX19QNmo4blI2RXY5UnBFTDduVUVSdjBqUXlRdm1CSjRSVVdkRkxXME5LLTFJV3JoR0lsVFpydm4?oc=5",
           "title": "Alice Springs and Katherine local news briefing: Friday, November 20, 2026 - ABC News & Headlines – Australian Broadcasting Corporation"
         },
         {
-          "date": "Wed, 08 Jul 2026 07:00:00 GMT",
-          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQbHRTd05hWFMyNUIzeUlzc1JpdF9LVHNhUmJaUEdaLTJJdXRsM0RCZTJrR1NlQmZRZFZFWGVJY1p5UDdoRkFNckhHaGFIY1JTS19aRW1yQ0x6OEgwNnQ3REJLdFJiRUhzd0NNbkEzaUxISjN4VkpiOXAza2RTa0prTVRtN1Y0WGgxN01yMFkyckNBNEVsODc5bUJxaWUxWGRPbkxtZzJrQQ?oc=5",
-          "title": "Telstra mobile outage disrupts services across Australia - Australian Cyber Security Magazine"
+          "date": "Fri, 13 Nov 2026 04:00:13 GMT",
+          "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxOM3F4TFRXWnpKS2t3eHZSTUlCMHdlR0lGTldfeUdtUUgtemxpODc2bF9KVzFPMFF0engyLUhSTDl1di1XaUxYLUNIRUtrTzBUdkFXY0hmQzh1eDRyZDVuZlZBRnMtaldBV1p6ZkcyZ0QwM2N0WnpIZ0pmTUthR3RmNHdsVTVDV25WUnJqM2t3NU15MHdfZlVGU3ptdUd1cHpMOXJjajRxOWhRN01FeFVLVnBsZFl6VDROcF9hbHlSOGdvRkp0dk0wZXVVd2FpWkFYa3BlVUd3?oc=5",
+          "title": "The Microsoft outage is part of a growing trend. This is how to prepare for further disruption - SBS"
         },
         {
-          "date": "Fri, 11 Sep 2026 07:00:00 GMT",
-          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNVnZNRnlwaGZnaENseTczdWVFQTI4SWRnczF2d1RabjdDN3pQRUktRVNtSkRnLUc1NWxBTFBhM2pPTXV2MWRIUjBIRHFrZjRXcDZiVl93VXV3cU9fb2ZqVHlfejVsTzB2UUhpa01zcVVUVWs1dkNHZlloWlBmSnpBbkRSWjJvd0NfN0hGVGFURFgxaUsyd29ua01mUUpDZ2NtUlFVVlNpeUd0bHhpSzNJZU1DV3BjMUlIMjNMUA?oc=5",
-          "title": "Australia's Optus apologises for outage that disrupted emergency calls - Reuters"
+          "date": "Sat, 14 Nov 2026 01:39:00 GMT",
+          "link": "https://news.google.com/rss/articles/CBMiggJBVV95cUxNOXdLb1IxOEdtSDFDU01CYnBGb25wSXloMktMRVhNZmk4TkVqUjFzMk1mZEpWS3NDR3NfcXdnQ29vTy1OQnpKbUZ2eHhmazRMRFRrekZxcnJ0SUl5Rk01ZFp5VDdNeGVYeXE5QktTS3ZKbXZMeTNrVzBhUnN2UHk2cnRZUksyQm1DejBMSmIxVXptbHRIR2tIMG44WGhJMEdOc2E3VjY4VnAwTV9tdk5DS09aVzVhRjhiYndveW9iaFNzOVVCdUdQZjZBY2pGOXZDMmE2TUFTalZOcG4tQ2ctaklYZi1WTUl3cmxRcmQyUXdzQmQ0QVhWYUNMUmVZMEZuZWc?oc=5",
+          "title": "‘We’re sorry’: Microsoft reveals cause of global meltdown as it finally restores services. - The Australian"
         },
         {
           "date": "Wed, 16 Sep 2026 07:00:00 GMT",
@@ -2928,9 +2943,14 @@
           "title": "Australia to strengthen telecom networks after new Optus outage - Capacity Media"
         },
         {
-          "date": "Tue, 13 Oct 2026 07:00:00 GMT",
-          "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNVUVJaG9Hbm9jSm9CYnBjTE5JcHdZbmxmNzAyb1E3NTlBaGRMUkV3YU1XMGdjaFFSNVJ5NC0yckEyaVlDMkh2cFRfYTN4TWh5bFJEQTd4Wk5DTkhTaUx5aHpiU1YtVmFKcm5UbVhIT3dURG1oa0Zkcjd1ZDU4YmdDRDQtakZkZU5HdU52bkd1aUxCQVliV0FkOU5oa0hFdllt?oc=5",
-          "title": "Telstra outage cost Australia more than half a billion dollars, modelling finds - Nine.com.au"
+          "date": "Wed, 08 Jul 2026 07:00:00 GMT",
+          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQbHRTd05hWFMyNUIzeUlzc1JpdF9LVHNhUmJaUEdaLTJJdXRsM0RCZTJrR1NlQmZRZFZFWGVJY1p5UDdoRkFNckhHaGFIY1JTS19aRW1yQ0x6OEgwNnQ3REJLdFJiRUhzd0NNbkEzaUxISjN4VkpiOXAza2RTa0prTVRtN1Y0WGgxN01yMFkyckNBNEVsODc5bUJxaWUxWGRPbkxtZzJrQQ?oc=5",
+          "title": "Telstra mobile outage disrupts services across Australia - Australian Cyber Security Magazine"
+        },
+        {
+          "date": "Tue, 10 Nov 2026 08:00:00 GMT",
+          "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPZktfd2RGV2tPcTJTZlJVWGhBUTFRX3gzS0d3MU9BRV82UjFnODFoVVNveVg2RHZ6MFRFcGNxRmxnSy1aRjJ0RnhtdFhvQ0pWaU8xQlJVREtCZ1ZpLXUtd3ZKbHhzTXVFVWNOWnJrTnlGeF8tSk9CWTdES1F2RVFnLWVoVENOcG1qMVZqYlBqREJtbFdjanlMWHY3NG53UW1NbngycU1CcXh2ajhaNUQxeENFZnN1THhMY3c0T0l0QmxJV0VLNGxGczRqRHN0TkI0VFEwdDZMdUd6UdIB3wFBVV95cUxOeGpIMEktZnBwRzJsOXhHVmt5MFJ2akpvNGNwaTdwbVM5UEV1bUN1Sm1nanY3blNoelJPeW9yR1QyRWs4Zm8yVjBaWURqdE1vcmN2UFdLNW84S040VTY3Tnp3WWtZQS1aOElLNmdheDloVlgydEd6VWV0cEN5eFRmM3dMNWdTUXREb0N0cVFVZmtTLVBRVl9KMUYyV2huUkM2Q3RyZ0I4UFlQVG5rOFRUQUtabnAtZzVZN0lMRmNzUWwxMUU4OGoxUGlxUHM5S01PVlgyU01xdVFNOTZORVBv?oc=5",
+          "title": "Westpac outage hits thousands of Aussies - News.com.au"
         },
         {
           "date": "Wed, 23 Sep 2026 06:32:35 GMT",
@@ -2938,44 +2958,24 @@
           "title": "Big Four bank issues update after major outage - The Nightly"
         },
         {
-          "date": "Thu, 09 Jul 2026 07:00:00 GMT",
-          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQR3UzYXlNZzladmVLdEt5QWlQODNNWVNBYXpmSERTeExnb1lGQ0ZiUzJLcE9mM0tFWEYybHpXcVVkbF93T0pLTW8tLWd1SDdJTWdZTTEyR0JCMmdnS1FCU2haVXA0LW9fTUFQd1g0TnJtNmVnRU9BenU3WWlGcF92bWJ6eXBBSE0wQ2lFNFVvQ2dvNWU4dkdrdDFqbmh3ZVV3enZCTV9UdnNZOHNuZDlRX2h4aHdpMFRo?oc=5",
-          "title": "How an outage like Telstra’s affects Australians’ health care, beyond emergency calls - The Conversation"
-        },
-        {
-          "date": "Mon, 21 Sep 2026 07:00:00 GMT",
-          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOdHBHTlZPeTEwbDFNUG1qalZLa3lmTmVNVEdrUnFzZGZSVnVCQUdxSFlKc0FwMlAzdXl1OHhDRFZOY0dYb1pjNW1sUXdabmhTSU14c1B1c0cxaC16QlVBUFlrTlhUbnNFa29HaTA2T1dnV1A3RzRxeENGRHI4U2JsZDBzVnpUU3RSQmJaLVBtbmlhVjl6cFhlS2hXdjdHYzFoRE9sMUIzZC1UWjIzSk5hRjZZYl9jU2tyQWhOaA?oc=5",
-          "title": "HubX keeps clients flying as Telstra outage hits millions of Australians - Medianet News Hub"
-        },
-        {
-          "date": "Wed, 08 Jul 2026 07:00:00 GMT",
-          "link": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQTnZLRlN1dGxaLVo5UW16bUJPSl9tV1JFQ2RTeW5CRExfQ0dNS3d2aXdmUGtRRkRkMC1DUHN3SFdFWkZ3cTJHMVNqamdtS1pzNnJ1dVNmem8zdkNWenJoRDlHajNaaGNzdThIakZqREw2b0tYN1JkbmZKOXVkTnpvcG8yclFmWUtnUHh1MVdBdl9lRklUaDFHclk5eG02b3BSTDdYQjBrXzY1bGVLQ014cHZ2S0V6RnFhVzJSaXdIM1lFQktydG9nR2l6QjdVVE1yUGM1TU5MUG9tZVRF?oc=5",
-          "title": "Telstra outage Australia: From trains to EV charging, these are the services affected - SMH.com.au"
-        },
-        {
           "date": "Sat, 12 Sep 2026 07:00:00 GMT",
-          "link": "https://news.google.com/rss/articles/CBMiowJBVV95cUxQZm9kQkd6UUxyU0hDc2FHa210WVdRQVNRNTB2WW9WbmV1VjcxQU14cngxTXZXbkdDLXRLdExtOTJaSEg5X0lvVGY3LWVibGZJVV9KVHd3TElzcUV1RjdZZzN2Yy1jd25TZTBWbjJVYkg4dTZ0ekZibl9zU0xvUExMTEZsZEhNRGEtdjlsSG5QYUlyMWhRZUJZR240MExKbjljbHJ1Wmhna1R6aEFIRE91Y19xN19GeW01RXRXSXA1d011dFB0aGdMak91NGtVbnF1RldUUGNZYjlVUHd5ZUVONTdGMjRyYXJha3BLTXVpQ0FiYjhQZGp0b016QVZuVW1DVXZLTktDNWF4THRkZjQ3eWtMQm9RS2lWSWJsRFlScl9pWlk?oc=5",
-          "title": "SA Optus outage triggers urgent police welfare checks - Adelaide Now"
+          "link": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxQM2JYUzNFUkxfUlJMRlMzd2lNM25JNlZ1aVNDaXJHNjlwUEZBRGtOR1AyWUhDSHZHMV9NWF9uQmpjTHA2R3ZNeGtfWGhSSVF1LUF6ZnJYdF9QZkgzTU9qc1M4R184VThvQXo5U1YwcVJIY19mWkZFMmxnaE1iSkRoWVBVZGFuQ054Uk0yeG5UcXppY2tqejNuZmJyOFNfSUJjazI3RElYdmFNX3d0WVhzTGgybWpkVmdqcmxOT2VtZ21jTE56M0xPLXVQcjJVT1JZRU1Xd29xenVoM04zRG9aY0NNSjktYXZNSHdMd2hScUlKNUZwYlpZUzlMVVlzaUtxYi1pelZIMGI5SUHSAZACQVVfeXFMT0Radnh5bzVCd25DS1NyVmlqMVk1b2xaeHdud0lpSFp5eXdBYTNqT3NPUDFYaWhmX2M5akt3SlpOSl9OellWQm95ZmxJRG9lYzNVaWV0d1RXcVFNbGJxbzNackxZY1F3NlA5YXI2UmprZjdSa3BicXZDOEZ2blVpY19OdUVaZWV1TTRmbmNWd0tlZUswQkliV3U3ZC1MQi1NU0dCUWlmWlM5RU9LV1ZUYlNuZWVhbDRnQ05mSFRKTHhGN3l4bFJJeDU3MHhsOXpxRDlvNl9aQ2VsU1NZR1RKeGxGMG5ZWkZUQ0R6MHhHZXBqNHVHMFh1eUpxS0ppbDc2M1NYQjAxRDJmYVNFV1dJbVM?oc=5",
+          "title": "Optus issues apology after widespread outage sparks urgent welfare checks - News24"
         },
         {
-          "date": "Sat, 12 Sep 2026 07:00:00 GMT",
-          "link": "https://news.google.com/rss/articles/CBMiggJBVV95cUxQVlUzV2ttR3RBUzRfbFcza19XcS04WTBZeXlGVHZkSy1yS3g1eThiQWFid3d1bm9UM0tSVTR1VUpKNUhUd2hzb255X19WbExrTzU0MXZJX2E3dTlmM3ppWFRVN0NsR0ZQSWV0TkhZZmUwV3hKVEFMSkdJNnRvMmU3TnVJN0pUS2VtZkM1bnA3N1FFbTFpd1RyMkcwb3ZnNU1HeEpYam1FYWJfdHc3eXZPcXRyUWRpUjUwVkpmemtveElJY2p1Rk56aUZtZllvdnF6X0x5VkdDaXdraFB5SURNLUlpRFkySy1sVDd4a0VaWkp4ckptMXJiUnRwY0FDX2dFV1E?oc=5",
-          "title": "Update after Aussies hit by Optus outage - The Australian"
+          "date": "Tue, 13 Oct 2026 07:00:00 GMT",
+          "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNVUVJaG9Hbm9jSm9CYnBjTE5JcHdZbmxmNzAyb1E3NTlBaGRMUkV3YU1XMGdjaFFSNVJ5NC0yckEyaVlDMkh2cFRfYTN4TWh5bFJEQTd4Wk5DTkhTaUx5aHpiU1YtVmFKcm5UbVhIT3dURG1oa0Zkcjd1ZDU4YmdDRDQtakZkZU5HdU52bkd1aUxCQVliV0FkOU5oa0hFdllt?oc=5",
+          "title": "Telstra outage cost Australia more than half a billion dollars, modelling finds - Nine.com.au"
         },
         {
-          "date": "Sat, 12 Sep 2026 07:00:00 GMT",
-          "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTFByMGNoejVVdl9xZFhkSHBBNld1WmIwNjdHcW4xTGhlVEZZRlZGSnZqN0syS0xMT3I1alJxZ2h4WnJLT0NVSkR2ZDV0UUZ5UXFGSEhRTGV3UWJEQ205LVVVZURaZ0hEdFZCNmI5Y0tPMmFaNHlZekE?oc=5",
-          "title": "Australia Moves to Strengthen Telecom Resilience After Optus Outage Hits Three States - BigGo Finance"
+          "date": "Fri, 09 Oct 2026 07:00:00 GMT",
+          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOWTEtLVVhbEZfZ0c3eVF5YlBhUHJEMlNsUWg1aHg0alBLQWNuSFNmSWx0V1ptaXlQYzBlMC11Zk5KOVZuUnQtVXBqbng2RVRjUlppUm51Rm9VQ2pnaDJaZHNncDM1Y01LS2FjMEFYM0JYLXhQUDJnekx5ZHE0aWtxQUNTS0hFd2JRYktXZmNnWE5rU2JVLXZaNW5pY2NKazdCN24yQ3dRVGM?oc=5",
+          "title": "Northern Territory outage reignites Australia’s telecom resilience debate - Capacity Media"
         },
         {
-          "date": "Fri, 11 Sep 2026 07:00:00 GMT",
-          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQR0tVVVI1ZV9zdnF3XzJ6bkQtc0pqX2tHSWJGOVFoX01IMXpBZG54TExaQy1xRTU2TTdwMll3QmZBSXJKNnNXNURwa2VTQWdSTXcwZTgzV3Z2M096SzN2REFfUEVfSUVNRDRUVUJSZDBDRWZ3d0VvaVVQeGZ4UEY4VmlxWUNuejduRDZGYnRNa2hMRTBQMFBWT01WMkV0OHhYaVgxNzdLRW8za3dBRFFQemJ2cndwWUQwVWc?oc=5",
-          "title": "Multiple triple zero calls affected by another Optus outage - Nine.com.au"
-        },
-        {
-          "date": "Fri, 11 Sep 2026 07:00:00 GMT",
-          "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxOMmpVUkhHdHJKaE5lQUhCTHh3cTJXN3A3YXliVHFyZmRTeXBjcm92V2lrQV91T2pPS2p0RS1hbFQxU0tURjJpSU03UUJPcmxzTDFjd2dMdXdCYkdDdFVOQ2dnRklwa2V2SjBIczE5RkpiSFA1aE1wS1NZcEd3N1ZRdVNadG9aNWdEUmM3N0xRUTBFcVRaajdXUFFKeVRLSXhXa3l1Y1VZVExGY3AtbHRzLW5kYmVRUE9BN1FHSUdFYVBpb2FaTWRYeUQ1RVJMWjZqXzNiUDBPOFRGaklqQXFj?oc=5",
-          "title": "Optus under fire as emergency calls fail in fresh outage - The Nightly"
+          "date": "Thu, 12 Nov 2026 21:27:32 GMT",
+          "link": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxQRm1HQUt5dVdOeHRiSFNXSi1VTmJlaDFYVnB6dGt5cHZfRWNWU1dONGVESEtSel9NRFFXWXRWSTZ3Vkt5dGJMdUNzVWRqS1RscEZ0dDRUV1Z5RkFDa3Y0X3VTVmI2QVBzbnFoMHJLLUltano1NVBrVzZQN1drTEZvRHhUMjh2R3dWX1lEWTNqR05vWGU5dUR4ZGFKZzlCYnc3OUhleGc2OXlYelN0bmNMMmF2U1AxTG5HaElpM2N3c0V1Y09fcWt0T01jcm1oQ0hvSVM2UTRDQWV6OE9aX2FPTzlEeXpnbXVXNnIw0gHwAUFVX3lxTFBwUzBoRTVGc0FIRVdHOUt1R3JwVVUtVWJSM1VNVTdpV1o2NlBJSkdjM0h6Wk1FdU5Xa24zalZaSFNEWVNPQ1RHTGtONThOOTdmbTZtRWR5MXNCZUhOWTFCV25BVmJLc1d2dUN1MWNmQTRtVzIzOHdRRVg1VHFDWHJkV290WkhuSjlOMUhkXy1idmlKamFXUTNpOE1IY1FsQXhKVmxtUERtRENLbERDZUN5bkpaX1JqbzJ3bGRkczZ2dVprVGNnMVFTeV9Zc2tjVE1iRFFNOGhaWDFYczJOTVotVnBfV3UtVkxFNWFjVG5BSw?oc=5",
+          "title": "Cost of Microsoft outage ‘difficult to quantify’ - News.com.au"
         }
       ],
       "name": "Australian service outages"
@@ -3108,14 +3108,14 @@
           "title": "Iran readies tankers to run US blockade, threatens Persian Gulf oil if fired on - Iran International"
         },
         {
-          "date": "Wed, 18 Nov 2026 13:04:48 GMT",
-          "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9tWnoyWlg0TUFyMGtaaVMyblRiUl9GTEozTGRJSWRfMkhKbTVyLUs4NmswN3phb1gzQ3h1UDdoQWlKWDMtY1htVWFrcGdCMThKM0pyX0FMbldyNzg?oc=5",
-          "title": "Kuwait says it repelled first Iranian attack in two months after US strikes island - BBC"
-        },
-        {
           "date": "Thu, 19 Nov 2026 10:58:32 GMT",
           "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNczJXN3dIbXJITGpRV1BQQzdMRlp4QVl0ZE5jZnM2Vk9SNm5tZ2ZJV1NlbXA4em01SGZxM3p3b0FQemFMS0dTNGhhdzdPZzhCdXZDVzJTRXYtRThDWHRQa3dZQzRTOGdPZWxuQThVTGo5RGVzUHluWnNVaWRmNE5XQ2VpSS1aMVZUT3IyOA?oc=5",
           "title": "Iran Keeps Up Unrelenting Attacks on Ships in the Strait of Hormuz - The New York Times"
+        },
+        {
+          "date": "Wed, 18 Nov 2026 13:04:48 GMT",
+          "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9tWnoyWlg0TUFyMGtaaVMyblRiUl9GTEozTGRJSWRfMkhKbTVyLUs4NmswN3phb1gzQ3h1UDdoQWlKWDMtY1htVWFrcGdCMThKM0pyX0FMbldyNzg?oc=5",
+          "title": "Kuwait says it repelled first Iranian attack in two months after US strikes island - BBC"
         },
         {
           "date": "Wed, 18 Nov 2026 13:20:20 GMT",
@@ -3315,12 +3315,12 @@
       "yes_pct": 2.1
     },
     {
-      "change_24h": 1.3,
+      "change_24h": 1.0,
       "question": "Will China invade Taiwan by June 30, 2027?",
       "topic": "taiwan",
       "url": "https://polymarket.com/event/will-china-invade-taiwan-by-june-30-2027",
       "volume": 622726,
-      "yes_pct": 5.3
+      "yes_pct": 5.0
     },
     {
       "change_24h": 0.3,
@@ -3331,7 +3331,7 @@
       "yes_pct": 1.9
     },
     {
-      "change_24h": 0.3,
+      "change_24h": -0.8,
       "question": "Will China blockade Taiwan in 2026?",
       "topic": "taiwan",
       "url": "https://polymarket.com/event/will-china-blockade-taiwan-by-in-2026",
@@ -3347,7 +3347,7 @@
       "yes_pct": 1.5
     },
     {
-      "change_24h": -0.2,
+      "change_24h": -0.1,
       "question": "Iran-Oman Hormuz Agreement by November 30?",
       "topic": "mideast",
       "url": "https://polymarket.com/event/iran-oman-hormuz-management-agreement-byptptpt-20260804222725871",
@@ -3363,12 +3363,12 @@
       "yes_pct": 14.0
     },
     {
-      "change_24h": 0.6,
+      "change_24h": 0.7,
       "question": "NATO x Russia military clash by November 30, 2026?",
       "topic": "russia",
       "url": "https://polymarket.com/event/nato-x-russia-military-clash-in-2025",
       "volume": 305431,
-      "yes_pct": 4.2
+      "yes_pct": 4.0
     },
     {
       "change_24h": -1.2,
@@ -3395,7 +3395,7 @@
       "yes_pct": 2.1
     },
     {
-      "change_24h": 0.8,
+      "change_24h": 0.4,
       "question": "Will the U.S. test a nuclear weapon by December 31 2026?",
       "topic": "nuclear",
       "url": "https://polymarket.com/event/us-nuclear-test-by",
@@ -3411,7 +3411,7 @@
       "yes_pct": 16.5
     },
     {
-      "change_24h": -0.5,
+      "change_24h": -1.5,
       "question": "Ukraine agrees not to join NATO by December 31, 2027?",
       "topic": "russia",
       "url": "https://polymarket.com/event/ukraine-agrees-not-to-join-nato-before-2027",
@@ -3419,12 +3419,12 @@
       "yes_pct": 18.0
     },
     {
-      "change_24h": -2.0,
+      "change_24h": -1.5,
       "question": "Will Nick Stewart attend a US x Iran diplomatic meeting by December 31, 2026?",
       "topic": "mideast",
       "url": "https://polymarket.com/event/who-will-attend-a-round-of-us-iran-peace-talks-by-december-31-20260812153824803",
       "volume": 62437,
-      "yes_pct": 6.0
+      "yes_pct": 6.5
     }
   ],
   "quakes_m6_24h": [
@@ -4010,11 +4010,11 @@
     },
     "aircraft": {
       "ok": true,
-      "secs": 32.5
+      "secs": 33.5
     },
     "analysts": {
       "ok": true,
-      "secs": 2.0
+      "secs": 4.5
     },
     "campaigns": {
       "ok": true
@@ -4029,7 +4029,7 @@
     },
     "cyber": {
       "ok": true,
-      "secs": 4.8
+      "secs": 4.6
     },
     "faa": {
       "ok": true,
@@ -4037,29 +4037,29 @@
     },
     "gdacs": {
       "ok": true,
-      "secs": 2.6
+      "secs": 2.9
     },
     "gps": {
       "ok": true,
-      "secs": 10.6
+      "secs": 10.5
     },
     "incidents": {
       "ok": true
     },
     "internet": {
       "ok": true,
-      "secs": 5.3
+      "secs": 5.1
     },
     "local_sa": {
       "ok": true,
       "partial_errors": [
         "incidents: JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
       ],
-      "secs": 44.9
+      "secs": 39.3
     },
     "maritime": {
       "ok": true,
-      "secs": 153.5
+      "secs": 155.1
     },
     "markets": {
       "ok": true,
@@ -4071,7 +4071,7 @@
     },
     "news_watch": {
       "ok": true,
-      "secs": 9.1
+      "secs": 9.6
     },
     "outlook": {
       "ok": true,
@@ -4079,7 +4079,7 @@
     },
     "prediction_markets": {
       "ok": true,
-      "secs": 2.5
+      "secs": 1.8
     },
     "satellites": {
       "error": "HTTPError: HTTP Error 403: Forbidden",
@@ -4098,7 +4098,7 @@
     },
     "uk_advice": {
       "ok": true,
-      "secs": 0.1
+      "secs": 0.4
     },
     "us_advisories": {
       "ok": true,
@@ -4110,7 +4110,7 @@
     },
     "who": {
       "ok": true,
-      "secs": 0.6
+      "secs": 0.8
     }
   },
   "telecom": {
@@ -4138,10 +4138,10 @@
         "recent": 20589
       },
       "ping-slash24": {
-        "baseline": 98,
+        "baseline": 100,
         "drop_pct": 0.0,
         "points": 37,
-        "recent": 104
+        "recent": 100
       }
     },
     "TPG": {
