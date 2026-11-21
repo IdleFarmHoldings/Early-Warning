@@ -5,7 +5,7 @@
     "gps_baltic": {
       "median": 24.0,
       "status": "ANOMALY",
-      "value": 44
+      "value": 43
     }
   },
   "analyst": {
@@ -274,13 +274,13 @@
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-21T15:41:00Z",
+  "generated_at": "2026-11-21T15:57:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 44,
-    "Black Sea": null,
-    "Israel & Eastern Mediterranean": 3,
+    "Baltic / Kaliningrad": 43,
+    "Black Sea": 44,
+    "Israel & Eastern Mediterranean": 5,
     "Korea": 0,
-    "Persian Gulf": 16,
+    "Persian Gulf": 14,
     "South Australia": null,
     "Sydney / NSW": null,
     "Taiwan Strait": 0
@@ -345,10 +345,10 @@
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
-        "6 Critical F5 BIG-IP Vulnerabilities Could Let Hackers Disrupt Websites and Execute Malicious Code"
+        "Hackers Breached FBI Crime Database"
       ],
       "severity": "Info",
-      "target": "Other services"
+      "target": "Hackers Breached FBI"
     },
     {
       "attack_reported": true,
@@ -363,28 +363,19 @@
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
-        "Chinese Hackers Use Cairn AI Agents to Exploit Zero-Day Vulnerability in East Asian Universities"
-      ],
-      "severity": "Info",
-      "target": "Chinese Hackers Use"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
-        "Hackers Breached FBI Crime Database"
-      ],
-      "severity": "Info",
-      "target": "Hackers Breached FBI"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
         "AI-powered cyberattacks are here, and the EU just admitted to being a target for weeks"
       ],
       "severity": "Info",
       "target": "AI-powered"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "​China-Linked Hackers Use Cairn AI Tool to Breach Two Asian Universities"
+      ],
+      "severity": "Info",
+      "target": "China-Linked Hackers Use"
     },
     {
       "attack_reported": false,
@@ -443,12 +434,12 @@
     }
   ],
   "internet_drop_pct": {
-    "China": 0.8,
+    "China": 0.7,
     "Iran": 0.0,
     "Israel": 0.0,
     "Russia": 0.7,
     "South Korea": 0.1,
-    "Taiwan": 0.5
+    "Taiwan": 0.3
   },
   "local_sa": {
     "bom": [
@@ -471,14 +462,14 @@
       "pump_cents": -4,
       "week_ago_aud": 141.5
     },
-    "grid_demand_fall_pct": 3.1,
-    "grid_demand_mw": 1506,
-    "grid_demand_usual_mw": 1289,
+    "grid_demand_fall_pct": 3.2,
+    "grid_demand_mw": 1485,
+    "grid_demand_usual_mw": 1282,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
       "air": {
-        "aqi": 29,
+        "aqi": 28,
         "peak_pm25_48h": 12,
         "pm25": 2
       },
@@ -555,28 +546,30 @@
     },
     "shocks": [],
     "tracking_glitch": false,
-    "traffic_not_normal": {}
+    "traffic_not_normal": {
+      "AE": "DOWN"
+    }
   },
   "nc3": "normal",
   "news_watch": {
     "ai_hack": [
+      "Hackers Breached FBI Crime Database - PCMag Australia",
       "Amazon: China-Linked Hackers’ AI Agents Exploited Medical Software Zero-Day - SecurityWeek",
-      "Opinion | The real cyberthreat is rogue humans, not rogue AI - The Washington Post",
-      "AI-Driven Cyberattacks Cause Surge in Insurance Claims in Japan - OECD AI Policy Observatory"
+      "Opinion | The real cyberthreat is rogue humans, not rogue AI - The Washington Post"
     ],
     "airspace": [
       "Qatar Airways Operates Limited Flights to and from Doha - https://safariindia.com/",
       "Air India plans to combine operations with Air India Express - NewsBytes"
     ],
     "aviation_halt": [
-      "Cape Breton Airport Stood Ready for Diverted Flights During Massive U.S. Ground Stop - Frequency News",
       "FAA ground stop: When will it end? Not as soon as you'd like. - Mashable",
+      "Cape Breton Airport Stood Ready for Diverted Flights During Massive U.S. Ground Stop - Frequency News",
       "How Travel Advisors Reworked Thousands of Trips After a Ground Stop - www.luxurytravelreport.com"
     ],
     "bank_outage": [
       "What Does the FY26 Profit Rebound at ANZ Group (ASX:ANZ) Look Like After a Down Week? - Kalkine",
       "Chase confirms data theft, Visa and Mastercard hit too - Korben",
-      "FBI investigates suspected breach of crime database - Herald Sun"
+      "Chase, Visa, Mastercard Customer Data Leaked In Cyberattack - Forbes Middle East"
     ],
     "cables": [
       "Avelacom launches Sydney-US fibre route for financial trading - ET Datacenters",
@@ -619,9 +612,9 @@
       "Broadcom Patches Critical VMware vCenter Zero-Day Exploited By China-Linked Hackers Since September - LinkedIn"
     ],
     "deepfake": [
+      "TikTok launches tool to help public figures detect deepfakes globally - CGTN",
       "What’s after 2028?: Viral AI clip shows Trump as a NURSE - News24",
-      "AI-Generated Legal Pleadings Mislead Madhya Pradesh High Court - OECD AI Policy Observatory",
-      "TikTok launches tool to help public figures detect deepfakes globally - The Malaysian Reserve"
+      "AI-Generated Legal Pleadings Mislead Madhya Pradesh High Court - OECD AI Policy Observatory"
     ],
     "dieoff": [
       "Kenya probes deaths of seven hippos at Lake Naivasha - Gulf News"
@@ -654,9 +647,9 @@
       "Acoustic Tracking Reveals Five Distinct Movement Syndromes in Australian Golden Perch - Bioengineer.org"
     ],
     "national_outage": [
-      "Ticketmaster service restored after nationwide outage affected fans at Usher, Chris Brown concert - FOX 8 Local First",
       "Inside the ‘Black Sky’ plans for a nationwide blackout - Herald.Wales",
-      "NISO denies grid collapse, blames transmission line faults - The Guardian Nigeria News"
+      "Ticketmaster service restored after nationwide outage affected fans at Usher, Chris Brown concert - fox8live.com",
+      "Ticketmaster service restored after nationwide outage affected fans at Usher, Chris Brown concert - WAFB"
     ],
     "outage_au": [
       "Calls for 'automatic compensation' following telco outages - ABC News & Headlines – Australian Broadcasting Corporation",
@@ -665,8 +658,8 @@
     ],
     "reservists": [
       "UK reservist regiment in overseas Nato exercise - BBC",
-      "Left the US Army in the last 8 years? You may still be on the list of veterans who can be recalled: Here’s how to check - El Cronista",
-      "Strategy Reports $35 Billion Net Reserve, No BTC Collateral - ForkLog"
+      "Strategy Reports $35 Billion Net Reserve, No BTC Collateral - ForkLog",
+      "Strategy Reports $35 Billion Net Reserve: All Bitcoin Holdings Now Unencumbered - Kriptofoni"
     ],
     "sapn": [
       "Blackout prompts questions over ElectraNet's recent $300m network upgrade - ABC News & Headlines – Australian Broadcasting Corporation",
@@ -704,7 +697,7 @@
       "yes": 10.0
     },
     {
-      "d24h": -0.5,
+      "d24h": -0.4,
       "q": "China x Taiwan military clash before 2027?",
       "yes": 3.4
     },
@@ -724,9 +717,9 @@
       "yes": 10.5
     },
     {
-      "d24h": 0.7,
+      "d24h": 0.5,
       "q": "US-Iran Final Nuclear Deal by November 30, 2026?",
-      "yes": 1.4
+      "yes": 1.2
     },
     {
       "d24h": 0.1,
@@ -759,9 +752,9 @@
       "yes": 3.2
     },
     {
-      "d24h": 0.5,
+      "d24h": -1.5,
       "q": "Iran-Oman Hormuz Agreement by December 31?",
-      "yes": 14.5
+      "yes": 12.5
     },
     {
       "d24h": null,
@@ -769,12 +762,12 @@
       "yes": 5.5
     },
     {
-      "d24h": -1.1,
+      "d24h": -1.2,
       "q": "NATO x Russia military clash by November 30, 2026?",
-      "yes": 3.1
+      "yes": 3.0
     },
     {
-      "d24h": -0.3,
+      "d24h": -0.2,
       "q": "Ukraine agrees not to join NATO by December 31, 2026?",
       "yes": 1.6
     },
@@ -784,7 +777,7 @@
       "yes": 3.0
     },
     {
-      "d24h": -0.2,
+      "d24h": -0.1,
       "q": "Will Russia test a nuclear weapon by December 31 2026?",
       "yes": 2.1
     },
@@ -1083,7 +1076,7 @@
       "key": "russia",
       "lit": [
         {
-          "detail": "gps_baltic 44 vs usual 24.0",
+          "detail": "gps_baltic 43 vs usual 24.0",
           "name": "GPS jamming spike (Baltic / Black Sea)"
         },
         {
@@ -1096,7 +1089,7 @@
         }
       ],
       "score": 40,
-      "trend": "up"
+      "trend": "steady"
     },
     {
       "band": "Low",
@@ -1200,10 +1193,10 @@
   },
   "tankers": "normal",
   "telecom_drop_pct": {
-    "Aussie Broadband": 0.0,
-    "Optus": 1.0,
-    "TPG": 0.1,
-    "Telstra": 0.2,
+    "Aussie Broadband": 0.6,
+    "Optus": 3.0,
+    "TPG": 0.0,
+    "Telstra": 0.3,
     "Vodafone": 0.0
   },
   "us_departure_orders": [
