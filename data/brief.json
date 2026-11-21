@@ -268,15 +268,15 @@
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-21T22:34:00Z",
+  "generated_at": "2026-11-21T22:50:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 80,
-    "Black Sea": null,
+    "Baltic / Kaliningrad": 62,
+    "Black Sea": 14,
     "Israel & Eastern Mediterranean": 3,
     "Korea": 0,
-    "Persian Gulf": 12,
+    "Persian Gulf": 15,
     "South Australia": 0,
-    "Sydney / NSW": 9,
+    "Sydney / NSW": 6,
     "Taiwan Strait": 0
   },
   "incidents": [
@@ -308,6 +308,15 @@
       ],
       "severity": "Info",
       "target": "Sins"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "The FBI was hacked again, this time the breach targeted its crime database"
+      ],
+      "severity": "Info",
+      "target": "The FBI"
     },
     {
       "attack_reported": true,
@@ -387,11 +396,11 @@
   ],
   "internet_drop_pct": {
     "China": 0.0,
-    "Iran": 0.3,
+    "Iran": 0.5,
     "Israel": 0.0,
     "Russia": 0.0,
-    "South Korea": 0.3,
-    "Taiwan": 0.4
+    "South Korea": 0.2,
+    "Taiwan": 0.2
   },
   "local_sa": {
     "bom": [
@@ -416,11 +425,21 @@
       "pump_cents": -4,
       "week_ago_aud": 141.5
     },
-    "grid_demand_fall_pct": 4.7,
-    "grid_demand_mw": 1016,
-    "grid_demand_usual_mw": 868,
+    "grid_demand_fall_pct": -10.5,
+    "grid_demand_mw": 1123,
+    "grid_demand_usual_mw": 815,
     "grid_lor_level": 0,
-    "nearby_incidents": [],
+    "nearby_incidents": [
+      {
+        "area": "495 STEBONHEATH RD EYRE",
+        "dist": "10-25 km",
+        "event": "Hazardous Materials",
+        "headline": "EYRE : HAZARDOUS MATERIALS",
+        "id": "F-261122-0028 EYRE, STEBONHEATH RD (VEHICLE FUEL LEAK)",
+        "level": null,
+        "notify": false
+      }
+    ],
     "outlook": {
       "air": {
         "aqi": 25,
@@ -459,7 +478,7 @@
       "Morgan Vale Road, Pine Valley Station: MORGAN MAIL RD Closed due to flooding over road",
       "Pine Valley Road, Pine Valley Station: PINE VALLEY RD Closed due to flooding over road"
     ],
-    "rooftop_pv_mw": 575,
+    "rooftop_pv_mw": 489,
     "sawater_news": [],
     "watch_and_act": []
   },
@@ -483,8 +502,14 @@
   },
   "national_shocks": {
     "faa": {
-      "airports": 0,
-      "ground_stops": [],
+      "airports": 1,
+      "ground_stops": [
+        {
+          "airport": "YYZ",
+          "end": "6:45 pm EST",
+          "reason": "fog"
+        }
+      ],
       "national": false
     },
     "shocks": [],
@@ -506,7 +531,7 @@
     "aviation_halt": [
       "FAA ground stop: When will it end? Not as soon as you'd like. - Mashable",
       "Anatomy of the FAA Ground Stop: One Backbone, One Bad Change - BankInfoSecurity",
-      "College Football, pro leagues alter schedules following FAA ground stop - Scripps News"
+      "Trump says US flight systems are 'ancient' but 'safe' after ground stop - BBC"
     ],
     "bank_outage": [
       "FBI investigates suspected breach of crime database - Herald Sun",
@@ -519,7 +544,7 @@
     "cables": [
       "Avelacom launches Sydney-US fibre route for financial trading - ET Datacenters",
       "The darkness of the bottom of the sea, the darkness of the bottom of the heart - Diari ARA",
-      "Internet provider expects submarine cable repairs to finish by December 6 - Daily Times"
+      "Internet slowdown to continue as cable repairs take longer - The Current"
     ],
     "chem": [
       "IRGC Rejects US Claims of Planned Chemical Attack in Washington - caspiannews.com",
@@ -539,12 +564,12 @@
     "cyber_au": [
       "FBI investigates suspected breach of crime database - Herald Sun",
       "Australia mulls tougher tech laws after AI health breach - The Nightly",
-      "FBI hit by second cyberattack as Trump downplays latest security breach - News24"
+      "FBI database targeted in suspected breach - News24"
     ],
     "cyber_ot": [
       "UK operation wards off risk of cyber-attack on supermarket fridges and freezers - The Guardian",
-      "Shop freezers in seven European countries hit by cyber-attack - BBC",
-      "Tens of thousands of UK fridges secured from hackers in secret nationwide operation - BBC"
+      "Tens of thousands of UK fridges secured from hackers in secret nationwide operation - BBC",
+      "Shop freezers in seven European countries hit by cyber-attack - BBC"
     ],
     "cyber_state": [
       "ESET Research: Sandworm behind cyberattack on Poland’s power grid in late 2025 - We Live Security",
@@ -564,16 +589,16 @@
     "flash": [
       "Uni-Bio Science Requests Trading Halt Pending Inside Information Announcement - The Globe and Mail",
       "South Korea's exports top $1 trillion for first time on strong chip demand - Gulf News",
-      "Wall Street regulator proposes to take control of market surveillance tool - Reuters"
+      "Bybit Press - Bybit"
     ],
     "fuel_au": [
       "Fuel tanker arrives amid supply concerns and panic buying - FBC News",
       "Agathonisi Fuel Shortage Leaves Islanders Waiting More Than 10 Days - Greek City Times"
     ],
     "illness": [
-      "148 aboard Florida-bound cruise ship sickened by ‘unknown’ GI outbreak: CDC - The Hill",
       "Mystery illness causes mass hospitalisation of runners - The Nightly",
-      "Zayn Malik hospitalised with mystery illness, forced to cancel upcoming appearances on album release week - Nine.com.au"
+      "Zayn Malik hospitalised with mystery illness, forced to cancel upcoming appearances on album release week - Nine.com.au",
+      "Mystery Pneumonia Death Sparks Concern; Trader Joe's Recall; OUD in Young People - MedPage Today"
     ],
     "masscas": [
       "Portsmouth accident declared a mass casualty incident - WJAR",
@@ -587,8 +612,8 @@
     ],
     "national_outage": [
       "Ticketmaster service restored after nationwide outage affected fans at Usher, Chris Brown concert - fox8live.com",
-      "Inside the ‘Black Sky’ plans for a nationwide blackout - Herald.Wales",
-      "Ticketmaster service restored after nationwide outage affected fans at Usher, Chris Brown concert - WAFB"
+      "NISO Says No Grid Collapse, Blames Transmission Line Tripping - Daily Champion Newspaper",
+      "Inside the ‘Black Sky’ plans for a nationwide blackout - Herald.Wales"
     ],
     "outage_au": [
       "Calls for 'automatic compensation' following telco outages - ABC News & Headlines – Australian Broadcasting Corporation",
@@ -602,8 +627,8 @@
     ],
     "sapn": [
       "South Australia questions ElectraNet network upgrade after Eyre Peninsula blackout - Traders Union",
-      "NBN services restored after major Alice Springs outage - NT News",
-      "Freak storm wipes out ‘once-in-2000-year’ harvest - Adelaide Now"
+      "Freak storm wipes out ‘once-in-2000-year’ harvest - Adelaide Now",
+      "NBN services restored after major Alice Springs outage - NT News"
     ],
     "scams": [
       "Ribbon Communications launches Call Trust deepfake detection for telecom fraud prevention - Traders Union"
@@ -615,8 +640,8 @@
     ],
     "strikes": [
       "Iran widens Gulf attacks by targeting U.S. air base in Kuwait and sites in Bahrain - PBS",
-      "Iran launches drone strike on U.S. base in Bahrain - upi",
-      "Iranian army says drone strikes targeted US installations at Kuwait air base - Anadolu Ajansı"
+      "Iranian army says drone strikes targeted US installations at Kuwait air base - Anadolu Ajansı",
+      "Iran Attacks US Base in Kuwait: Is Tehran’s Strike Lawful Self-Defense? - Diplomacy and Law"
     ]
   },
   "prediction_markets": [
@@ -1042,8 +1067,8 @@
       "trend": "steady"
     },
     {
-      "band": "Elevated",
-      "convergence": "Two different kinds of sign are showing together (health and markets). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: countries restricting medical supply exports, pandemic-response stocks outperforming (5 days) and chemi",
+      "band": "Guarded",
+      "convergence": "Two different kinds of sign are showing together (health and markets). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: unknown illness / pneumonia cluster reported, countries restricting medical supply exports and pandemic",
       "domains": [
         "Health",
         "Markets"
@@ -1055,10 +1080,6 @@
           "name": "WHO outbreak report with a high-concern pathogen (last 14 days)"
         },
         {
-          "detail": "148 aboard Florida-bound cruise ship sickened by ‘unknown’ GI outbreak: CDC",
-          "name": "Unknown illness / pneumonia cluster reported"
-        },
-        {
           "detail": "Portsmouth accident declared a mass casualty incident",
           "name": "Mass casualty declarations (any country)"
         },
@@ -1067,7 +1088,7 @@
           "name": "Market fear index above 30"
         }
       ],
-      "score": 50,
+      "score": 30,
       "trend": "down"
     },
     {
@@ -1113,9 +1134,9 @@
   "telecom_drop_pct": {
     "Aussie Broadband": 0.0,
     "Optus": 0.0,
-    "TPG": 0.4,
+    "TPG": 0.0,
     "Telstra": 0.0,
-    "Vodafone": 4.8
+    "Vodafone": 0.0
   },
   "us_departure_orders": [
     "Belarus"
