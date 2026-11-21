@@ -1,12 +1,11 @@
 {
-  "generated_at": "2026-11-21T20:14:00Z",
+  "generated_at": "2026-11-21T20:29:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
-      "band": "Elevated",
-      "convergence": "Signs are converging across 3 separate areas (power grid, roads and weather). Unrelated systems flagging the same scenario at once is the pattern seen before past events. The worst local days stack up: extreme fire danger, a heatwave pushing power demand, a tight grid, and storms or fires damaging lines. AEMO warns of supply shortfalls hours to a day ahead; the CFS and Bureau issue ratings and warnings a day or more ahead. The strongest signs not yet showing: cfs emergency warning in sa, sudden fall in sa electricity demand (possible large blackout) and extreme or catastrophic fire danger near adelaide.",
+      "band": "Guarded",
+      "convergence": "Two different kinds of sign are showing together (roads and weather). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: cfs emergency warning in sa, sudden fall in sa electricity demand (possible large blackout) and extreme or catastrophic fire danger near adelaide.",
       "domains": [
-        "Power grid",
         "Roads",
         "Weather"
       ],
@@ -27,20 +26,12 @@
           "name": "Fire, flood or storm road closures in SA",
           "short": "Fire, flood or storm road closures in SA",
           "weight": 10
-        },
-        {
-          "detail": "South Australia questions ElectraNet network upgrade after Eyre Peninsula blackout",
-          "domain": "Power grid",
-          "id": "power",
-          "name": "Reports of widespread power outages in SA",
-          "short": "Reports of widespread power outages in…",
-          "weight": 15
         }
       ],
       "name": "Local emergency in SA (bushfire, heat, power)",
       "sa_impact": "Direct: bushfires, heatwaves and power cuts are the emergencies most likely to affect the family. In the 2016 statewide blackout, power, phones, traffic lights and fuel pumps failed together.",
-      "score": 40,
-      "trend": "steady",
+      "score": 25,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Bushfire",
@@ -83,6 +74,12 @@
           "id": "ed",
           "name": "Three or more Adelaide emergency departments 'very busy'",
           "weight": 10
+        },
+        {
+          "domain": "Power grid",
+          "id": "power",
+          "name": "Reports of widespread power outages in SA",
+          "weight": 15
         },
         {
           "domain": "Water",
@@ -387,13 +384,22 @@
       "why": "North Korean missile launches are often preceded by navigation warnings; South Korea and Japan report GPS jamming from the North during tense periods."
     },
     {
-      "band": "Low",
-      "convergence": "Only one kind of sign is showing (markets). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and mobilisation / reservist reports (russia / nato).",
+      "band": "Guarded",
+      "convergence": "Two different kinds of sign are showing together (markets and mobilisation). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and us nuclear command aircraft unusual.",
       "domains": [
-        "Markets"
+        "Markets",
+        "Mobilisation"
       ],
       "key": "russia",
       "lit": [
+        {
+          "detail": "UK reservist regiment takes part in overseas Nato exercise",
+          "domain": "Mobilisation",
+          "id": "mob",
+          "name": "Mobilisation / reservist reports (Russia / NATO)",
+          "short": "Mobilisation / reservist reports",
+          "weight": 15
+        },
         {
           "detail": "VIX at 35.89",
           "domain": "Markets",
@@ -405,8 +411,8 @@
       ],
       "name": "Russia-NATO escalation",
       "sa_impact": "Indirect: energy and market shock, cyber attacks that can spill over to Australian systems, and nuclear-risk rhetoric.",
-      "score": 10,
-      "trend": "down",
+      "score": 25,
+      "trend": "up",
       "unlit": [
         {
           "domain": "Electronic warfare",
@@ -418,12 +424,6 @@
           "domain": "Military air",
           "id": "air",
           "name": "Unusual military air activity (Eastern Europe)",
-          "weight": 15
-        },
-        {
-          "domain": "Mobilisation",
-          "id": "mob",
-          "name": "Mobilisation / reservist reports (Russia / NATO)",
           "weight": 15
         },
         {
@@ -812,23 +812,14 @@
       "why": "Large attacks are usually preceded by quieter steps: a surge in newly exploited flaws in VPNs and firewalls (how state groups like Volt Typhoon get in), scanning of industrial-control systems, a rise in ransomware victims in the target country, and official warnings. Before Russia's 2022 invasion, wiper malware hit Ukraine a day ahead; Chinese groups have been found pre-positioned in US and allied infrastructure."
     },
     {
-      "band": "Elevated",
-      "convergence": "Signs are converging across 3 separate areas (ai-enabled hacking, fraud waves and markets). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: a Chinese state-sponsored group used an AI agent to carry out 80-90% of an attack on about 30 organisations, at thousands of requests per second. A fake AI image of a Pentagon explosion briefly moved US markets in May 2023, and a deepfake video call of a CFO tricked a company into paying US$25 million in 2024. The likely signature of an AI attack is breadth and speed: many unrelated systems and vendors hit at once, synthetic media of officials, and shocks with no clear human cause. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, deepfakes of leaders or fake official alerts and flash crash or exchange trading halt.",
+      "band": "Guarded",
+      "convergence": "Two different kinds of sign are showing together (fraud waves and markets). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, reports of ai-driven hacking campaigns and deepfakes of leaders or fake official alerts.",
       "domains": [
-        "AI-enabled hacking",
         "Fraud waves",
         "Markets"
       ],
       "key": "ai",
       "lit": [
-        {
-          "detail": "Amazon: China-Linked Hackers’ AI Agents Exploited Medical Software Zero-Day",
-          "domain": "AI-enabled hacking",
-          "id": "aihack",
-          "name": "Reports of AI-driven hacking campaigns",
-          "short": "Reports of AI-driven hacking campaigns",
-          "weight": 15
-        },
         {
           "detail": "VIX +26.2%",
           "domain": "Markets",
@@ -848,13 +839,19 @@
       ],
       "name": "AI-enabled attack (non-traditional)",
       "sa_impact": "Not bombs but disruption: hacking at machine speed across banks, telcos, hospitals and the grid at once; fake videos or alerts from leaders causing panic buying or bank runs; or automated market and fraud shocks. Effects would be outages, payment failures and confusion about what is real.",
-      "score": 30,
-      "trend": "steady",
+      "score": 15,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Mass exploitation",
           "id": "breadth",
           "name": "Exploited flaws across unusually many vendors at once",
+          "weight": 15
+        },
+        {
+          "domain": "AI-enabled hacking",
+          "id": "aihack",
+          "name": "Reports of AI-driven hacking campaigns",
           "weight": 15
         },
         {
