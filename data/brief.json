@@ -265,17 +265,17 @@
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output=",
-    "satellites": "TimeoutError: The read operation timed out"
+    "satellites": "HTTPError: HTTP Error 403: Forbidden"
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-21T06:39:00Z",
+  "generated_at": "2026-11-21T06:55:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 28,
-    "Black Sea": null,
-    "Israel & Eastern Mediterranean": 6,
-    "Korea": 1,
+    "Baltic / Kaliningrad": 13,
+    "Black Sea": 18,
+    "Israel & Eastern Mediterranean": 2,
+    "Korea": 2,
     "Persian Gulf": 23,
-    "South Australia": 0,
+    "South Australia": 3,
     "Sydney / NSW": 4,
     "Taiwan Strait": 0
   },
@@ -303,15 +303,6 @@
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
-        "Fridges, Hackers, AI and La Flemme"
-      ],
-      "severity": "Info",
-      "target": "Fridges"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
         "Hackers use AI tool Cairn for zero-day exploit, server takeover"
       ],
       "severity": "Info",
@@ -321,10 +312,19 @@
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
-        "From fintechs to govt payouts: CERT-In flags expanding AI-driven cyberattacks"
+        "Fridges, Hackers, AI and La Flemme"
       ],
       "severity": "Info",
-      "target": "From"
+      "target": "Fridges"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "AI-powered cyberattacks are here, and the EU just admitted to being a target for weeks"
+      ],
+      "severity": "Info",
+      "target": "AI-powered"
     },
     {
       "attack_reported": true,
@@ -385,7 +385,7 @@
     }
   ],
   "internet_drop_pct": {
-    "China": 2.2,
+    "China": 1.9,
     "Iran": 0.0,
     "Israel": 0.0,
     "Russia": 0.0,
@@ -409,26 +409,55 @@
       "Mount Lofty Ranges": "Moderate / High"
     },
     "fire_danger_ok": true,
-    "fires_active": 5,
+    "fires_active": 6,
     "fuel": {
       "brent_aud": 135.8,
       "change_pct": -4.0,
       "pump_cents": -4,
       "week_ago_aud": 141.5
     },
-    "grid_demand_fall_pct": 12.5,
-    "grid_demand_mw": 997,
-    "grid_demand_usual_mw": 917,
+    "grid_demand_fall_pct": -5.4,
+    "grid_demand_mw": 1201,
+    "grid_demand_usual_mw": 966,
     "grid_lor_level": 0,
-    "nearby_incidents": [],
+    "nearby_incidents": [
+      {
+        "area": "LOT 769 MONTEFIORE RD ADELAIDE",
+        "dist": "25-60 km",
+        "event": "Grass Fire",
+        "headline": "ADELAIDE : GRASS FIRE",
+        "id": "F-261121-0111 ADELAIDE, MONTEFIORE RD (GRASS FIRE)",
+        "level": null,
+        "notify": false
+      }
+    ],
     "outlook": {
       "air": {
-        "aqi": 30,
+        "aqi": 33,
         "peak_pm25_48h": 8,
         "pm25": 3
       },
       "air_word": "Good",
-      "days": []
+      "days": [
+        {
+          "date": "2026-11-21",
+          "gust": 42,
+          "rain": 0,
+          "tmax": 30
+        },
+        {
+          "date": "2026-11-22",
+          "gust": 50,
+          "rain": 0,
+          "tmax": 27
+        },
+        {
+          "date": "2026-11-23",
+          "gust": 55,
+          "rain": 0,
+          "tmax": 18
+        }
+      ]
     },
     "possible_blackout": false,
     "power_news": [],
@@ -440,7 +469,7 @@
       "Morgan Vale Road, Pine Valley Station: MORGAN MAIL RD Closed due to flooding over road",
       "Pine Valley Road, Pine Valley Station: PINE VALLEY RD Closed due to flooding over road"
     ],
-    "rooftop_pv_mw": 1270,
+    "rooftop_pv_mw": 1438,
     "sawater_news": [],
     "watch_and_act": []
   },
@@ -491,21 +520,21 @@
     ],
     "bank_outage": [
       "Did Banks Get Hacked? Visa, Mastercard, Chase Confirm Vendor Cyberattack - Forbes",
-      "Ransomware group reportedly leaks Chase, Visa, and Mastercard customer data, but not credit card numbers - Mashable",
-      "Why are UK student visas being refused after interview? UKVI turned down 79%, The PIE News reports - Nacionale"
+      "Why are UK student visas being refused after interview? UKVI turned down 79%, The PIE News reports - Nacionale",
+      "JPMorgan Confirms Customer Data Breach Following Third-Party Compromise - Infosecurity Magazine"
     ],
     "blood": [
       "Senior Lieutenant General Le Quang Dao visits Department of Military Training and School Management - en.qdnd.vn"
     ],
     "cables": [
-      "The Multifunctional Seabed - Just Security",
       "EU Awards €9.55 Million to Project Merikarhu to Build Rapid Baltic Sub - Submarine Networks",
-      "FPT Telecom Joins Vietnam–Thailand–Singapore Submarine Cable (VTS) - Submarine Networks"
+      "The Multifunctional Seabed - Just Security",
+      "Orange Seeks Strategic Partners to Extend ReuNION Subsea Cable to Singapore - Submarine Networks"
     ],
     "chem": [
       "Germany provides EUR 1.4 million in voluntary funding to enhance OPCW’s work - OPCW",
       "The Evidence of Chemical Weapons Use in Sudan Is Still Mounting: The World Cannot Afford to Look Away - Counterpunch",
-      "Australia demands investigation into alleged Russian chemical weapon use in Ukraine - Defence Connect"
+      "Japan’s ‘Rabbit Island’ draws tourists with fluffy bunnies and dark wartime past - South China Morning Post"
     ],
     "cloud": [
       "Anthropic Claude down: Why it said it was unable to authenticate code - Mashable",
@@ -515,11 +544,11 @@
     "cyber_attrib": [
       "FBI warns hackers weaponizing ARTEX AI framework to automate attacks on energy, manufacturing, telecom - Industrial Cyber",
       "FBI warns hackers using AI-powered tool to automate cyberattacks worldwide - Anadolu Ajansı",
-      "FBI warns healthcare and other sectors of agentic AI threat - Healthcare IT News"
+      "CISA Warns of 4 Exploited Flaws Linked to Ransomware, Cryptomining, and LLMjacking Attacks - The Hacker News"
     ],
     "cyber_au": [
       "FBI investigates suspected breach of crime database - Herald Sun",
-      "Cyberattack tactics are outpacing what renewal forms ask - Insurance Business",
+      "‘Clearly being attacked’: US in panic mode - News.com.au",
       "Australia mulls tougher tech laws after AI health breach - The Nightly"
     ],
     "cyber_ot": [
@@ -540,7 +569,7 @@
     "deepfake": [
       "TikTok launches tool to help public figures detect deepfakes globally - The Malaysian Reserve",
       "Scottish Greens challenge SNP government’s relationship with big tech after First Minister’s apology over AI slop video - Scottish Greens",
-      "Loans to agricultural producers rose by 38.5% in a year - agriculture minister - Mezha.net"
+      "Trump takes down image from his social media platform that depicted him as a Jesus-like figure - ABC News - Breaking News, Latest News and Videos"
     ],
     "dieoff": [
       "Kenya probes deaths of seven hippos at Lake Naivasha - Gulf News",
@@ -552,6 +581,7 @@
       "Bunker Hill Silver TSX:BNKR Enters the Spotlight as Trading Halt Signals Pending News (TSX:BNKR) - kalkine.ca"
     ],
     "fuel_au": [
+      "Fuel tanker arrives amid supply concerns and panic buying - FBC News",
       "Agathonisi Fuel Shortage Leaves Islanders Waiting More Than 10 Days - Greek City Times"
     ],
     "illness": [
@@ -561,8 +591,8 @@
     ],
     "masscas": [
       "William Beaumont Army Medical Center validates readiness during El Paso mass casualty exercise - DVIDS",
-      "A DECADE LATER: How traffic investigators preserved 'mass casualty' evidence between grieving parents at Woodmore crash - Local 3 News",
-      "Mass casualty mock drill conducted ahead of Hornbill Festival - Nagaland Post"
+      "Mass casualty mock drill conducted ahead of Hornbill Festival - Nagaland Post",
+      "A DECADE LATER: How traffic investigators preserved 'mass casualty' evidence between grieving parents at Woodmore crash - Local 3 News"
     ],
     "mobilisation": [
       "Iran expands Basij surveillance network with AI platform amid fears of renewed protests - FDD's Long War Journal",
@@ -624,7 +654,7 @@
       "yes": 5.0
     },
     {
-      "d24h": -1.5,
+      "d24h": -2.0,
       "q": "NATO x Russia military clash by December 31, 2026?",
       "yes": 10.0
     },
@@ -659,9 +689,9 @@
       "yes": 2.1
     },
     {
-      "d24h": 1.1,
+      "d24h": 1.2,
       "q": "Will China invade Taiwan by June 30, 2027?",
-      "yes": 5.1
+      "yes": 5.2
     },
     {
       "d24h": 0.4,
@@ -679,9 +709,9 @@
       "yes": 1.5
     },
     {
-      "d24h": 0.4,
+      "d24h": 0.3,
       "q": "Iran-Oman Hormuz Agreement by November 30?",
-      "yes": 3.6
+      "yes": 3.5
     },
     {
       "d24h": 1.0,
@@ -689,12 +719,12 @@
       "yes": 14.5
     },
     {
-      "d24h": -0.7,
+      "d24h": -0.2,
       "q": "NATO x Russia military clash by November 30, 2026?",
       "yes": 3.0
     },
     {
-      "d24h": -1.3,
+      "d24h": -1.6,
       "q": "Ukraine agrees not to join NATO by December 31, 2026?",
       "yes": 1.6
     },
@@ -719,9 +749,9 @@
       "yes": 16.5
     },
     {
-      "d24h": 0.0,
+      "d24h": 0.5,
       "q": "Ukraine agrees not to join NATO by December 31, 2027?",
-      "yes": 19.0
+      "yes": 19.5
     },
     {
       "d24h": -1.5,
@@ -1110,11 +1140,11 @@
   },
   "tankers": "normal",
   "telecom_drop_pct": {
-    "Aussie Broadband": 0.3,
+    "Aussie Broadband": 0.4,
     "Optus": 2.0,
     "TPG": 0.0,
-    "Telstra": 0.0,
-    "Vodafone": 4.8
+    "Telstra": 0.3,
+    "Vodafone": 14.3
   },
   "us_departure_orders": [
     "Belarus"
@@ -1165,14 +1195,6 @@
       "region": "the Middle East",
       "text": "GPS jamming over Persian Gulf: 27% of 44 aircraft affected for 45+ min (usual ~7.0%)",
       "what": "GPS jamming"
-    },
-    {
-      "active": false,
-      "first_seen": "2026-11-20T06:35:00Z",
-      "last_seen": "2026-11-20T06:50:00Z",
-      "region": "several regions",
-      "text": "39 military transport aircraft (C-17, C-130, A400M...) airborne (usual ~19)",
-      "what": "unusual military flights"
     }
   ],
   "who": [
