@@ -265,30 +265,21 @@
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output=",
-    "satellites": "TimeoutError: The read operation timed out"
+    "satellites": "HTTPError: HTTP Error 403: Forbidden"
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-21T02:58:00Z",
+  "generated_at": "2026-11-21T03:12:00Z",
   "gps_bad_pct": {
     "Baltic / Kaliningrad": null,
-    "Black Sea": 39,
-    "Israel & Eastern Mediterranean": 0,
-    "Korea": 2,
-    "Persian Gulf": 23,
-    "South Australia": 3,
+    "Black Sea": 47,
+    "Israel & Eastern Mediterranean": 5,
+    "Korea": 0,
+    "Persian Gulf": 18,
+    "South Australia": 2,
     "Sydney / NSW": 8,
     "Taiwan Strait": 0
   },
   "incidents": [
-    {
-      "attack_reported": true,
-      "confirmed": true,
-      "headlines": [
-        "Did Banks Get Hacked? Visa, Mastercard, Chase Confirm Vendor Cyberattack"
-      ],
-      "severity": "Info",
-      "target": "Banking & payments"
-    },
     {
       "attack_reported": true,
       "confirmed": true,
@@ -346,15 +337,13 @@
       "target": "JPMorgan"
     },
     {
-      "attack_reported": false,
-      "confirmed": true,
+      "attack_reported": true,
+      "confirmed": false,
       "headlines": [
-        "Microsoft outage cause revealed: It was a perfect storm of problems",
-        "Microsoft outage impact on healthcare: Cloudy with a chance of disruption",
-        "The Microsoft Outage And The Hidden Dependencies Behind AI"
+        "A cyberattack leaks thousands of Chase customer emails and some phone numbers"
       ],
-      "severity": "Warning",
-      "target": "Microsoft"
+      "severity": "Info",
+      "target": "Other services"
     },
     {
       "attack_reported": false,
@@ -364,11 +353,30 @@
       ],
       "severity": "Info",
       "target": "Power grid"
+    },
+    {
+      "attack_reported": false,
+      "confirmed": true,
+      "headlines": [
+        "Microsoft outage cause revealed: It was a perfect storm of problems",
+        "The Microsoft Outage And The Hidden Dependencies Behind AI"
+      ],
+      "severity": "Info",
+      "target": "Microsoft"
+    },
+    {
+      "attack_reported": false,
+      "confirmed": false,
+      "headlines": [
+        "The Outage Flu of 2026: Why is everything breaking at once?"
+      ],
+      "severity": "Info",
+      "target": "The"
     }
   ],
   "internet_drop_pct": {
     "China": 0.7,
-    "Iran": 0.8,
+    "Iran": 0.9,
     "Israel": 0.0,
     "Russia": 0.0,
     "South Korea": 0.0,
@@ -388,27 +396,18 @@
       "Mount Lofty Ranges": "Moderate / Moderate"
     },
     "fire_danger_ok": true,
-    "fires_active": 7,
+    "fires_active": 6,
     "fuel": {
       "brent_aud": 135.8,
       "change_pct": -4.0,
       "pump_cents": -4,
       "week_ago_aud": 141.5
     },
-    "grid_demand_fall_pct": 367.0,
-    "grid_demand_mw": -96,
-    "grid_demand_usual_mw": 172,
+    "grid_demand_fall_pct": null,
+    "grid_demand_mw": -81,
+    "grid_demand_usual_mw": 231,
     "grid_lor_level": 0,
     "nearby_incidents": [
-      {
-        "area": "7 ONKAPARINGA VALLEY RD WOODSIDE",
-        "dist": "25-60 km",
-        "event": "Grass Fire",
-        "headline": "WOODSIDE : GRASS FIRE",
-        "id": "F-261121-0070 WOODSIDE, ONKAPARINGA VALLEY RD (GRASS FIRE)",
-        "level": null,
-        "notify": false
-      },
       {
         "area": "1028 STRATHALBYN RD BIGGS FLAT",
         "dist": "25-60 km",
@@ -508,15 +507,15 @@
     ],
     "bank_outage": [
       "Did Banks Get Hacked? Visa, Mastercard, Chase Confirm Vendor Cyberattack - Forbes",
-      "Grim week wipes $169 billion from Australian sharemarket - SMH.com.au",
-      "Visa, MasterCard, JPMorgan Chase customer data stolen in hack - The Weekly Times"
+      "Visa, MasterCard, JPMorgan Chase customer data stolen in hack - The Weekly Times",
+      "Grim week wipes $169 billion from Australian sharemarket - SMH.com.au"
     ],
     "blood": [
       "Senior Lieutenant General Le Quang Dao visits Department of Military Training and School Management - en.qdnd.vn"
     ],
     "cables": [
-      "EU Awards €9.55 Million to Project Merikarhu to Build Rapid Baltic Sub - Submarine Networks",
       "The Multifunctional Seabed - Just Security",
+      "EU Awards €9.55 Million to Project Merikarhu to Build Rapid Baltic Sub - Submarine Networks",
       "Orange Seeks Strategic Partners to Extend ReuNION Subsea Cable to Singapore - Submarine Networks"
     ],
     "chem": [
@@ -527,7 +526,7 @@
     "cloud": [
       "Anthropic Claude down: Why it said it was unable to authenticate code - Mashable",
       "Who is George Kurtz? The CrowdStrike CEO reportedly in talks to buy Zscaler - Nacionale",
-      "‘We ask whether you are now willing to listen’: LibreOffice maker questions backup plans after Microsoft 365 outage - Mezha.net"
+      "Why Did Anthropic’s IPO Fail To Rescue The KOSPI? - Disruption Banking"
     ],
     "cyber_attrib": [
       "FBI warns hackers weaponizing ARTEX AI framework to automate attacks on energy, manufacturing, telecom - Industrial Cyber",
@@ -561,7 +560,7 @@
     ],
     "dieoff": [
       "Kenya probes deaths of seven hippos at Lake Naivasha - Gulf News",
-      "Kenya investigates mysterious deaths of seven hippos - Galaxy Television"
+      "Kenya probes deaths of seven hippos in Lake Naivasha - Galaxy Television"
     ],
     "flash": [
       "Canadian Investment Regulatory Organization Trading Halt - LABZ - Yahoo Finance",
@@ -590,9 +589,9 @@
       "Acoustic Tracking Reveals Five Distinct Movement Syndromes in Australian Golden Perch - Bioengineer.org"
     ],
     "national_outage": [
+      "Ticketmaster experiencing nationwide outage as fans prepare for Usher, Chris Brown concert in New Orleans - FOX 8 Local First",
       "Properties in eight suburbs plunged into darkness as power is lost - Bendigo Advertiser",
-      "FAA Narrows Cause Of Nationwide Outage, Congress Questions $50 Billion Funding Request - Investor's Business Daily",
-      "When Christmas Is Decreed in a Country Plunged into Darkness - Havana Times"
+      "FAA Narrows Cause Of Nationwide Outage, Congress Questions $50 Billion Funding Request - Investor's Business Daily"
     ],
     "outage_au": [
       "Calls for 'automatic compensation' following telco outages - ABC News & Headlines – Australian Broadcasting Corporation",
@@ -722,12 +721,12 @@
       "yes": 3.0
     },
     {
-      "d24h": -0.1,
+      "d24h": -0.2,
       "q": "Will Russia test a nuclear weapon by December 31 2026?",
-      "yes": 2.3
+      "yes": 2.2
     },
     {
-      "d24h": 0.6,
+      "d24h": 0.4,
       "q": "Will the U.S. test a nuclear weapon by December 31 2026?",
       "yes": 2.9
     },
@@ -991,7 +990,7 @@
         }
       ],
       "score": 15,
-      "trend": "down"
+      "trend": "steady"
     },
     {
       "band": "Low",
@@ -1134,10 +1133,10 @@
   "tankers": "normal",
   "telecom_drop_pct": {
     "Aussie Broadband": 0.1,
-    "Optus": 1.0,
+    "Optus": 0.0,
     "TPG": 0.0,
     "Telstra": 0.0,
-    "Vodafone": 0.0
+    "Vodafone": 4.8
   },
   "us_departure_orders": [
     "Belarus"
