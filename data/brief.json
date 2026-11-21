@@ -3,9 +3,9 @@
   "acsc": [],
   "aircraft_flags": {
     "gps_baltic": {
-      "median": 20,
+      "median": 20.0,
       "status": "ANOMALY",
-      "value": 60
+      "value": 77
     }
   },
   "analyst": {
@@ -274,15 +274,15 @@
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-21T18:15:00Z",
+  "generated_at": "2026-11-21T18:30:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 60,
+    "Baltic / Kaliningrad": 77,
     "Black Sea": null,
-    "Israel & Eastern Mediterranean": 0,
+    "Israel & Eastern Mediterranean": 5,
     "Korea": 0,
-    "Persian Gulf": 7,
+    "Persian Gulf": 24,
     "South Australia": 0,
-    "Sydney / NSW": null,
+    "Sydney / NSW": 0,
     "Taiwan Strait": 0
   },
   "incidents": [
@@ -354,15 +354,6 @@
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
-        "Hackers Exploit Critical VMware, Cisco, and Apache Flaws as Espionage Attacks Emerge"
-      ],
-      "severity": "Info",
-      "target": "Hackers Exploit Critical"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
         "AI-Driven Cyberattacks Cause Surge in Insurance Claims in Japan"
       ],
       "severity": "Info",
@@ -403,15 +394,6 @@
       ],
       "severity": "Info",
       "target": "The HackerNoon Newsletter"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
-        "AI-powered cyberattacks are here, and the EU just admitted to being a target for weeks"
-      ],
-      "severity": "Info",
-      "target": "AI-powered"
     },
     {
       "attack_reported": false,
@@ -464,7 +446,7 @@
   ],
   "internet_drop_pct": {
     "China": 0.0,
-    "Iran": 0.0,
+    "Iran": 0.2,
     "Israel": 0.2,
     "Russia": 0.0,
     "South Korea": 0.2,
@@ -479,7 +461,11 @@
     "cable_watch": [],
     "cfs_feed_ok": true,
     "cfs_warnings": [],
-    "ed_very_busy": [],
+    "ed_very_busy": [
+      "Noarlunga",
+      "Royal Adelaide",
+      "Queen Elizabeth"
+    ],
     "fire_ban_districts": [],
     "fire_danger": {
       "Adelaide Metropolitan": "No Rating / No Rating",
@@ -493,9 +479,9 @@
       "pump_cents": -4,
       "week_ago_aud": 141.5
     },
-    "grid_demand_fall_pct": 1.9,
-    "grid_demand_mw": 1411,
-    "grid_demand_usual_mw": 1216,
+    "grid_demand_fall_pct": 2.6,
+    "grid_demand_mw": 1387,
+    "grid_demand_usual_mw": 1220,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
@@ -599,8 +585,8 @@
     ],
     "chem": [
       "IRGC Rejects US Claims of Planned Chemical Attack in Washington - caspiannews.com",
-      "Gharibabadi: Iran Rejects US Accusations, Vows to Break Naval Blockade - WANA News Agency",
-      "Japan’s ‘Rabbit Island’ draws tourists with fluffy bunnies and dark wartime past - South China Morning Post"
+      "Japan’s ‘Rabbit Island’ draws tourists with fluffy bunnies and dark wartime past - South China Morning Post",
+      "Gharibabadi: Iran Rejects US Accusations, Vows to Break Naval Blockade - WANA News Agency"
     ],
     "cloud": [
       "AWS got hit by an outage too. Here's why you didn't hear about it - The Register",
@@ -615,7 +601,7 @@
     "cyber_au": [
       "FBI investigates suspected breach of crime database - Herald Sun",
       "Australia mulls tougher tech laws after AI health breach - The Nightly",
-      "‘Clearly being attacked’: US in panic mode - News.com.au"
+      "Sins of the son: Cyber attack sparks war among top judges - The Daily Telegraph"
     ],
     "cyber_ot": [
       "UK operation wards off risk of cyber-attack on supermarket fridges and freezers - The Guardian",
@@ -671,13 +657,13 @@
     ],
     "outage_au": [
       "Calls for 'automatic compensation' following telco outages - ABC News & Headlines – Australian Broadcasting Corporation",
-      "Telstra mobile outage disrupts services across Australia - Australian Cyber Security Magazine",
-      "Alice Springs and Katherine local news briefing: Friday, November 20, 2026 - ABC News & Headlines – Australian Broadcasting Corporation"
+      "Alice Springs and Katherine local news briefing: Friday, November 20, 2026 - ABC News & Headlines – Australian Broadcasting Corporation",
+      "Telstra mobile outage disrupts services across Australia - Australian Cyber Security Magazine"
     ],
     "reservists": [
+      "UK reservist regiment takes part in overseas Nato exercise - BBC",
       "Strategy Reports $35 Billion Net Reserve, No BTC Collateral - ForkLog",
-      "Strategy Reports $35 Billion Net Reserve: All Bitcoin Holdings Now Unencumbered - Kriptofoni",
-      "UK reservist regiment takes part in overseas Nato exercise - BBC"
+      "Strategy Reports $35 Billion Net Reserve: All Bitcoin Holdings Now Unencumbered - Kriptofoni"
     ],
     "sapn": [
       "Blackout prompts questions over ElectraNet's recent $300m network upgrade - ABC News & Headlines – Australian Broadcasting Corporation",
@@ -715,7 +701,7 @@
       "yes": 11.5
     },
     {
-      "d24h": 0.1,
+      "d24h": 0.2,
       "q": "China x Taiwan military clash before 2027?",
       "yes": 3.4
     },
@@ -765,24 +751,24 @@
       "yes": 1.6
     },
     {
-      "d24h": -0.3,
+      "d24h": 0.0,
       "q": "Iran-Oman Hormuz Agreement by November 30?",
-      "yes": 3.2
+      "yes": 3.5
     },
     {
-      "d24h": 0.5,
+      "d24h": 0.0,
       "q": "Iran-Oman Hormuz Agreement by December 31?",
-      "yes": 12.5
+      "yes": 12.0
     },
     {
       "d24h": null,
       "q": "Iran charges Hormuz fees by December 31?",
-      "yes": 5.5
+      "yes": 4.5
     },
     {
-      "d24h": -0.3,
+      "d24h": -0.2,
       "q": "NATO x Russia military clash by November 30, 2026?",
-      "yes": 4.0
+      "yes": 4.1
     },
     {
       "d24h": 0.3,
@@ -810,9 +796,9 @@
       "yes": 16.5
     },
     {
-      "d24h": -0.5,
+      "d24h": 0.0,
       "q": "Will Nick Stewart attend a US x Iran diplomatic meeting by December 31, 2026?",
-      "yes": 7.5
+      "yes": 8.0
     },
     {
       "d24h": -0.5,
@@ -1031,8 +1017,9 @@
   "scenarios": [
     {
       "band": "Elevated",
-      "convergence": "Signs are converging across 3 separate areas (power grid, roads and weather). Unrelated systems flagging the same scenario at once is the pattern seen before past events. The worst local days stack up: extreme fire danger, a heatwave pushing power demand, a tight grid, and storms or fires damaging l",
+      "convergence": "Signs are converging across 4 separate areas (hospitals, power grid, roads and weather). Unrelated systems flagging the same scenario at once is the pattern seen before past events. The worst local days stack up: extreme fire danger, a heatwave pushing power demand, a tight grid, and storms or fires",
       "domains": [
+        "Hospitals",
         "Power grid",
         "Roads",
         "Weather"
@@ -1048,12 +1035,16 @@
           "name": "Fire, flood or storm road closures in SA"
         },
         {
+          "detail": "Noarlunga; Royal Adelaide; Queen Elizabeth",
+          "name": "Three or more Adelaide emergency departments 'very busy'"
+        },
+        {
           "detail": "South Australia questions ElectraNet network upgrade after Eyre Peninsula blackout",
           "name": "Reports of widespread power outages in SA"
         }
       ],
-      "score": 40,
-      "trend": "steady"
+      "score": 50,
+      "trend": "up"
     },
     {
       "band": "Guarded",
@@ -1094,7 +1085,7 @@
       "key": "russia",
       "lit": [
         {
-          "detail": "gps_baltic 60 vs usual 20",
+          "detail": "gps_baltic 77 vs usual 20.0",
           "name": "GPS jamming spike (Baltic / Black Sea)"
         },
         {
@@ -1133,10 +1124,11 @@
     },
     {
       "band": "High",
-      "convergence": "Signs are converging across 3 separate areas (chemical weapons, health and markets). Unrelated systems flagging the same scenario at once is the pattern seen before past events. Before COVID-19 (Dec 2019 - Feb 2020): reports of an unknown pneumonia cluster, WHO outbreak notices, mask and hazmat make",
+      "convergence": "Signs are converging across 4 separate areas (chemical weapons, health, hospitals and markets). Unrelated systems flagging the same scenario at once is the pattern seen before past events. Before COVID-19 (Dec 2019 - Feb 2020): reports of an unknown pneumonia cluster, WHO outbreak notices, mask and ",
       "domains": [
         "Chemical weapons",
         "Health",
+        "Hospitals",
         "Markets"
       ],
       "key": "bio",
@@ -1160,10 +1152,14 @@
         {
           "detail": "Russian colonel suspected of ordering use of chemical weapons against Ukrainian troops",
           "name": "Chemical / nerve-agent attack or mass poisoning reported"
+        },
+        {
+          "detail": "Noarlunga; Royal Adelaide; Queen Elizabeth",
+          "name": "Three or more Adelaide emergency departments 'very busy'"
         }
       ],
-      "score": 65,
-      "trend": "steady"
+      "score": 75,
+      "trend": "up"
     },
     {
       "band": "Low",
@@ -1195,7 +1191,7 @@
         }
       ],
       "score": 30,
-      "trend": "down"
+      "trend": "steady"
     }
   ],
   "sectors_relative_5d": {
@@ -1206,10 +1202,10 @@
   },
   "tankers": "normal",
   "telecom_drop_pct": {
-    "Aussie Broadband": 1.8,
-    "Optus": 0.0,
-    "TPG": 0.0,
-    "Telstra": 0.0,
+    "Aussie Broadband": 1.5,
+    "Optus": 1.0,
+    "TPG": 0.1,
+    "Telstra": 0.3,
     "Vodafone": 4.8
   },
   "us_departure_orders": [
@@ -1249,9 +1245,9 @@
     {
       "active": true,
       "first_seen": "2026-11-21T16:11:00Z",
-      "last_seen": "2026-11-21T18:15:00Z",
+      "last_seen": "2026-11-21T18:30:00Z",
       "region": "Eastern Europe",
-      "text": "GPS jamming over Baltic / Kaliningrad: 60% of 25 aircraft affected for 45+ min (usual ~20%)",
+      "text": "GPS jamming over Baltic / Kaliningrad: 77% of 31 aircraft affected for 45+ min (usual ~20.0%)",
       "what": "GPS jamming"
     },
     {
