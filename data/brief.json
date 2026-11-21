@@ -1,7 +1,13 @@
 {
   "about": "Short form of latest.json + indicators.json for the analysis run. Links and raw samples removed.",
   "acsc": [],
-  "aircraft_flags": {},
+  "aircraft_flags": {
+    "gps_gulf": {
+      "median": 8,
+      "status": "ANOMALY",
+      "value": 27
+    }
+  },
   "analyst": {
     "ASPI Strategist": [
       "Let’s see whether North Korea absorbs the experience it’s getting in Ukraine",
@@ -265,17 +271,17 @@
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output=",
-    "satellites": "HTTPError: HTTP Error 403: Forbidden"
+    "satellites": "URLError: <urlopen error timed out>"
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-21T04:19:00Z",
+  "generated_at": "2026-11-21T04:25:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 83,
+    "Baltic / Kaliningrad": 88,
     "Black Sea": null,
     "Israel & Eastern Mediterranean": 0,
-    "Korea": 0,
-    "Persian Gulf": 20,
-    "South Australia": 3,
+    "Korea": 1,
+    "Persian Gulf": 27,
+    "South Australia": 0,
     "Sydney / NSW": 11,
     "Taiwan Strait": 0
   },
@@ -341,25 +347,24 @@
       "attack_reported": false,
       "confirmed": false,
       "headlines": [
-        "More than 7000 affected in Alice Springs NBN outage"
-      ],
-      "severity": "Info",
-      "target": "Phone & internet networks"
-    },
-    {
-      "attack_reported": false,
-      "confirmed": true,
-      "headlines": [
-        "Microsoft outage cause revealed: It was a perfect storm of problems",
-        "Microsoft outage impact on healthcare: Cloudy with a chance of disruption"
+        "Microsoft outage cause revealed: It was a perfect storm of problems"
       ],
       "severity": "Info",
       "target": "Microsoft"
+    },
+    {
+      "attack_reported": false,
+      "confirmed": false,
+      "headlines": [
+        "The Outage Flu of 2026: Why is everything breaking at once?"
+      ],
+      "severity": "Info",
+      "target": "The"
     }
   ],
   "internet_drop_pct": {
     "China": 1.2,
-    "Iran": 0.1,
+    "Iran": 0.0,
     "Israel": 0.0,
     "Russia": 0.0,
     "South Korea": 0.0,
@@ -387,9 +392,9 @@
       "pump_cents": -4,
       "week_ago_aud": 141.5
     },
-    "grid_demand_fall_pct": -26.2,
-    "grid_demand_mw": 216,
-    "grid_demand_usual_mw": 323,
+    "grid_demand_fall_pct": -75.4,
+    "grid_demand_mw": 300,
+    "grid_demand_usual_mw": 334,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
@@ -444,8 +449,8 @@
       "price": 89.87
     },
     "Gold": {
-      "change_pct": -3.98,
-      "price": 3539.0
+      "change_pct": -4.62,
+      "price": 3515.4
     },
     "VIX": {
       "change_pct": 26.2,
@@ -477,7 +482,7 @@
     "aviation_halt": [
       "Trump says US flight systems are 'ancient' but 'safe' after ground stop - Yahoo News Australia",
       "Trump says US flight systems are 'ancient' but 'safe' after ground stop - BBC",
-      "Trump says recent tech outages 'all separate events' and 'bad things happen' with upgrades - NBC News"
+      "Flight status tracker: How to check online after FAA grounds all flights - Mashable"
     ],
     "bank_outage": [
       "Did Banks Get Hacked? Visa, Mastercard, Chase Confirm Vendor Cyberattack - Forbes",
@@ -597,8 +602,8 @@
     ],
     "strikes": [
       "Seven bombers from Kola took part in massive strike; two missiles crashed in Poland - The Barents Observer",
-      "Bahrain Says It Intercepted Iranian Attacks As Tehran Claims Strike On US Base - Radio Free Europe/Radio Liberty",
-      "Iran widens Gulf attacks by targeting U.S. air base in Kuwait and sites in Bahrain - PBS"
+      "Iran widens Gulf attacks by targeting U.S. air base in Kuwait and sites in Bahrain - PBS",
+      "Iranian army says drone strikes targeted US installations at Kuwait air base - Anadolu Ajansı"
     ]
   },
   "prediction_markets": [
@@ -950,19 +955,24 @@
     },
     {
       "band": "Guarded",
-      "convergence": "Only one kind of sign is showing (shipping). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
+      "convergence": "Two different kinds of sign are showing together (electronic warfare and shipping). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet bl",
       "domains": [
+        "Electronic warfare",
         "Shipping"
       ],
       "key": "mideast",
       "lit": [
         {
+          "detail": "gps_gulf 27 vs usual 8",
+          "name": "GPS jamming spike (Gulf / Israel)"
+        },
+        {
           "detail": "Strait of Hormuz -38% vs usual (2.3/day)",
           "name": "Ship traffic through Hormuz down sharply"
         }
       ],
-      "score": 15,
-      "trend": "steady"
+      "score": 25,
+      "trend": "up"
     },
     {
       "band": "Low",
@@ -1104,7 +1114,7 @@
   },
   "tankers": "normal",
   "telecom_drop_pct": {
-    "Aussie Broadband": 0.3,
+    "Aussie Broadband": 0.1,
     "Optus": 0.0,
     "TPG": 0.0,
     "Telstra": 0.0,
