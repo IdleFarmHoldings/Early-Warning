@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-21T04:41:00Z",
+  "generated_at": "2026-11-21T04:55:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -107,21 +107,13 @@
     },
     {
       "band": "Guarded",
-      "convergence": "Two different kinds of sign are showing together (electronic warfare and shipping). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
+      "convergence": "Two different kinds of sign are showing together (prediction markets and shipping). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
       "domains": [
-        "Electronic warfare",
+        "Prediction markets",
         "Shipping"
       ],
       "key": "mideast",
       "lit": [
-        {
-          "detail": "gps_gulf 28 vs usual 8",
-          "domain": "Electronic warfare",
-          "id": "gps",
-          "name": "GPS jamming spike (Gulf / Israel)",
-          "short": "GPS jamming spike",
-          "weight": 10
-        },
         {
           "detail": "Strait of Hormuz -38% vs usual (2.3/day)",
           "domain": "Shipping",
@@ -129,6 +121,14 @@
           "name": "Ship traffic through Hormuz down sharply",
           "short": "Ship traffic through Hormuz down sharply",
           "weight": 15
+        },
+        {
+          "detail": "Iran-Oman Hormuz Agreement by December 31? 25% (+12 pts)",
+          "domain": "Prediction markets",
+          "id": "pm",
+          "name": "Forecast markets jump on Iran conflict",
+          "short": "Forecast markets jump on Iran conflict",
+          "weight": 10
         }
       ],
       "name": "Middle East war & Gulf shipping",
@@ -147,6 +147,12 @@
           "id": "air",
           "name": "Unusual military air activity over the region",
           "weight": 15
+        },
+        {
+          "domain": "Electronic warfare",
+          "id": "gps",
+          "name": "GPS jamming spike (Gulf / Israel)",
+          "weight": 10
         },
         {
           "domain": "Communications",
@@ -207,12 +213,6 @@
           "id": "redsea",
           "name": "Ship traffic through Bab el-Mandeb down sharply",
           "weight": 5
-        },
-        {
-          "domain": "Prediction markets",
-          "id": "pm",
-          "name": "Forecast markets jump on Iran conflict",
-          "weight": 10
         }
       ],
       "why": "Before the 2024-25 Israel-Iran exchanges and US strikes, watchers saw US tanker surges toward Europe and the Gulf, embassy departure orders, regional GPS jamming, airspace closures and oil price jumps, often 1-3 days ahead."
