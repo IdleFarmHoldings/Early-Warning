@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-21T17:24:00Z",
+  "generated_at": "2026-11-21T17:40:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -397,7 +397,7 @@
       "key": "russia",
       "lit": [
         {
-          "detail": "gps_baltic 68 vs usual 21.0",
+          "detail": "gps_baltic 61 vs usual 20",
           "domain": "Electronic warfare",
           "id": "gps",
           "name": "GPS jamming spike (Baltic / Black Sea)",
@@ -649,8 +649,8 @@
       "why": "The 2023 Optus outage cut mobile, NBN, EFTPOS and some 000 calls nationwide for 12 hours. Hostile states pre-position in critical infrastructure; GPS jamming over Australia would be a new and serious sign."
     },
     {
-      "band": "Elevated",
-      "convergence": "Signs are converging across 3 separate areas (chemical weapons, health and markets). Unrelated systems flagging the same scenario at once is the pattern seen before past events. Before COVID-19 (Dec 2019 - Feb 2020): reports of an unknown pneumonia cluster, WHO outbreak notices, mask and hazmat makers (Alpha Pro Tech, Lakeland) and vaccine developers (Moderna, Novavax) surging weeks before broad markets fell, and countries restricting exports of masks and medicines (Taiwan from 24 Jan 2020, then dozens more). The strongest signs not yet showing: unknown illness / pneumonia cluster reported, countries restricting medical supply exports and pandemic-response stocks outperforming (5 days).",
+      "band": "High",
+      "convergence": "Signs are converging across 3 separate areas (chemical weapons, health and markets). Unrelated systems flagging the same scenario at once is the pattern seen before past events. Before COVID-19 (Dec 2019 - Feb 2020): reports of an unknown pneumonia cluster, WHO outbreak notices, mask and hazmat makers (Alpha Pro Tech, Lakeland) and vaccine developers (Moderna, Novavax) surging weeks before broad markets fell, and countries restricting exports of masks and medicines (Taiwan from 24 Jan 2020, then dozens more). The strongest signs not yet showing: countries restricting medical supply exports, pandemic-response stocks outperforming (5 days) and australian medicine or ppe shortage reports.",
       "domains": [
         "Chemical weapons",
         "Health",
@@ -667,7 +667,15 @@
           "weight": 15
         },
         {
-          "detail": "A DECADE LATER: How traffic investigators preserved 'mass casualty' evidence between grieving parents at Woodmore crash",
+          "detail": "148 aboard Florida-bound cruise ship sickened by ‘unknown’ GI outbreak: CDC",
+          "domain": "Health",
+          "id": "illness",
+          "name": "Unknown illness / pneumonia cluster reported",
+          "short": "Illness cluster",
+          "weight": 20
+        },
+        {
+          "detail": "Portsmouth accident declared a mass casualty incident",
           "domain": "Health",
           "id": "masscas",
           "name": "Mass casualty declarations (any country)",
@@ -693,15 +701,9 @@
       ],
       "name": "Pandemic, biological or chemical emergency",
       "sa_impact": "Health system strain, possible lockdowns and border closures, and shortages of medicines and protective equipment, which Australia mostly imports.",
-      "score": 45,
-      "trend": "down",
+      "score": 65,
+      "trend": "up",
       "unlit": [
-        {
-          "domain": "Health",
-          "id": "illness",
-          "name": "Unknown illness / pneumonia cluster reported",
-          "weight": 20
-        },
         {
           "domain": "Trade",
           "id": "exports",
