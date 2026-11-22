@@ -1,7 +1,13 @@
 {
   "about": "Short form of latest.json + indicators.json for the analysis run. Links and raw samples removed.",
   "acsc": [],
-  "aircraft_flags": {},
+  "aircraft_flags": {
+    "gps_gulf": {
+      "median": 7.0,
+      "status": "ANOMALY",
+      "value": 22
+    }
+  },
   "analyst": {
     "ASPI Strategist": [
       "Let’s see whether North Korea absorbs the experience it’s getting in Ukraine",
@@ -265,16 +271,17 @@
   ],
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
+    "maritime": "TimeoutError: ",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-22T14:13:00Z",
+  "generated_at": "2026-11-22T14:27:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 35,
-    "Black Sea": 36,
-    "Israel & Eastern Mediterranean": 4,
-    "Korea": 5,
-    "Persian Gulf": 8,
+    "Baltic / Kaliningrad": 34,
+    "Black Sea": 33,
+    "Israel & Eastern Mediterranean": 2,
+    "Korea": 4,
+    "Persian Gulf": 22,
     "South Australia": null,
     "Sydney / NSW": null,
     "Taiwan Strait": 0
@@ -322,19 +329,19 @@
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
-        "Latest FBI cyber-attack ‘likely’ a ‘state sponsored attacker’"
-      ],
-      "severity": "Info",
-      "target": "Latest FBI"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
         "Tower Records Japan reports data breach affecting 10.2 million accounts By Investing.com"
       ],
       "severity": "Info",
       "target": "Tower Records Japan"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": true,
+      "headlines": [
+        "JPMorgan Chase (JPM) Says Vendor Cyberattack Exposed Customer Data"
+      ],
+      "severity": "Info",
+      "target": "JPMorgan Chase"
     },
     {
       "attack_reported": true,
@@ -354,6 +361,15 @@
       ],
       "severity": "Info",
       "target": "China-linked"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "What a Doomsday Cyberattack Could Look Like"
+      ],
+      "severity": "Info",
+      "target": "What"
     },
     {
       "attack_reported": false,
@@ -403,11 +419,11 @@
     }
   ],
   "internet_drop_pct": {
-    "China": 1.3,
+    "China": 1.4,
     "Iran": 0.0,
-    "Israel": 0.0,
+    "Israel": 0.2,
     "Russia": 0.7,
-    "South Korea": 0.0,
+    "South Korea": 0.1,
     "Taiwan": 0.0
   },
   "local_sa": {
@@ -431,9 +447,9 @@
       "pump_cents": -4,
       "week_ago_aud": 141.5
     },
-    "grid_demand_fall_pct": -3.3,
-    "grid_demand_mw": 1421,
-    "grid_demand_usual_mw": 1353,
+    "grid_demand_fall_pct": -0.4,
+    "grid_demand_mw": 1426,
+    "grid_demand_usual_mw": 1359,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
@@ -504,14 +520,21 @@
     },
     "shocks": [],
     "tracking_glitch": false,
-    "traffic_not_normal": {}
+    "traffic_not_normal": {
+      "AE": "DOWN"
+    }
   },
   "nc3": "normal",
   "news_watch": {
     "ai_hack": [
-      "Hacks, AI and conspiracy theories: why are we having so many outages? | Technology - The Guardian",
       "Stupid-simple way we can fix ‘AI doomsday’ - News.com.au",
-      "China-linked hackers used AI agents to exploit a MONAI Label zero-day, Amazon says - Startup Fortune"
+      "China-linked hackers used AI agents to exploit a MONAI Label zero-day, Amazon says - Startup Fortune",
+      "Hackers Breached FBI Crime Database - PCMag Australia"
+    ],
+    "airspace": [
+      "Saudi coalition intercepts Houthi missile targeting western Saudi Arabia - Crypto Briefing",
+      "Belgium’s Airspace Closed 7 AM – 9 PM On Monday (November 23, 2026) & All Flights Canceled At Brussels Airport - LoyaltyLobby",
+      "Qatar Airways Operates Limited Flights to and from Doha - https://safariindia.com/"
     ],
     "aviation_halt": [
       "Flights grounded throughout Midwest after temporary outage at Minnesota air traffic control facility: FAA - ABC News - Breaking News, Latest News and Videos",
@@ -569,9 +592,9 @@
       "How an Open-Source AI Agent Found and Exploited a Zero-Day (And Got Caught by a Missing Password) - Medium"
     ],
     "deepfake": [
-      "Trump takes down image from his social media platform that depicted him as a Jesus-like figure - ABC News - Breaking News, Latest News and Videos",
-      "Major Hack of Danish Data System Affects 8M Residents - GovTech",
-      "Supreme Court refuses to register petition challenging universities’ use of AI detection software - OnlineKhabar English News"
+      "Supreme Court refuses to register petition challenging universities’ use of AI detection software - OnlineKhabar English News",
+      "COP31 climate talks near final deal, summit president says - Mezha.net",
+      "Trump takes down image from his social media platform that depicted him as a Jesus-like figure - ABC News - Breaking News, Latest News and Videos"
     ],
     "dieoff": [
       "Indonesian sports are in turmoil following a series of unexplained deaths. - Vietnam.vn"
@@ -583,8 +606,8 @@
     ],
     "illness": [
       "Mystery illness causes mass hospitalisation of runners - The Nightly",
-      "Zayn Malik hospitalised with mystery illness, forced to cancel upcoming appearances on album release week - Nine.com.au",
-      "Zayn Malik hospitalised with mystery illness - News.com.au"
+      "Mystery Illness Sickens Nearly 150 Passengers and Crew on Caribbean Cruise - Wide Open Country",
+      "Zayn Malik hospitalised with mystery illness, forced to cancel upcoming appearances on album release week - Nine.com.au"
     ],
     "masscas": [
       "Portsmouth accident declared a mass casualty incident - WJAR",
@@ -709,14 +732,14 @@
       "yes": 5.5
     },
     {
-      "d24h": -1.6,
+      "d24h": -1.4,
       "q": "NATO x Russia military clash by November 30, 2026?",
-      "yes": 2.5
+      "yes": 2.6
     },
     {
-      "d24h": 0.7,
+      "d24h": 1.1,
       "q": "Ukraine agrees not to join NATO by December 31, 2026?",
-      "yes": 2.6
+      "yes": 3.0
     },
     {
       "d24h": 0.0,
@@ -958,19 +981,24 @@
     },
     {
       "band": "Guarded",
-      "convergence": "Only one kind of sign is showing (shipping). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
+      "convergence": "Two different kinds of sign are showing together (electronic warfare and shipping). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet bl",
       "domains": [
+        "Electronic warfare",
         "Shipping"
       ],
       "key": "mideast",
       "lit": [
         {
+          "detail": "gps_gulf 22 vs usual 7.0",
+          "name": "GPS jamming spike (Gulf / Israel)"
+        },
+        {
           "detail": "Strait of Hormuz -38% vs usual (2.3/day)",
           "name": "Ship traffic through Hormuz down sharply"
         }
       ],
-      "score": 15,
-      "trend": "steady"
+      "score": 25,
+      "trend": "up"
     },
     {
       "band": "Low",
@@ -1050,7 +1078,7 @@
         }
       ],
       "score": 45,
-      "trend": "down"
+      "trend": "steady"
     },
     {
       "band": "Low",
@@ -1104,9 +1132,9 @@
   "tankers": "normal",
   "telecom_drop_pct": {
     "Aussie Broadband": 1.5,
-    "Optus": 0.0,
-    "TPG": 0.1,
-    "Telstra": 0.0,
+    "Optus": 1.0,
+    "TPG": 0.0,
+    "Telstra": 0.3,
     "Vodafone": 14.3
   },
   "us_departure_orders": [
