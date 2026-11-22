@@ -1,7 +1,13 @@
 {
   "about": "Short form of latest.json + indicators.json for the analysis run. Links and raw samples removed.",
   "acsc": [],
-  "aircraft_flags": {},
+  "aircraft_flags": {
+    "gps_gulf": {
+      "median": 12.0,
+      "status": "ANOMALY",
+      "value": 57
+    }
+  },
   "analyst": {
     "ASPI Strategist": [
       "Let’s see whether North Korea absorbs the experience it’s getting in Ukraine",
@@ -268,16 +274,16 @@
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-22T00:47:00Z",
+  "generated_at": "2026-11-22T01:02:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": null,
+    "Baltic / Kaliningrad": 70,
     "Black Sea": null,
-    "Israel & Eastern Mediterranean": 0,
+    "Israel & Eastern Mediterranean": 3,
     "Korea": 0,
-    "Persian Gulf": 36,
-    "South Australia": 3,
-    "Sydney / NSW": 5,
-    "Taiwan Strait": 0
+    "Persian Gulf": 57,
+    "South Australia": 0,
+    "Sydney / NSW": 8,
+    "Taiwan Strait": 1
   },
   "incidents": [
     {
@@ -318,15 +324,6 @@
       ],
       "severity": "Info",
       "target": "The FBI"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
-        "Broadcom Patches Critical VMware vCenter Zero-Day Exploited By China-Linked Hackers Since September"
-      ],
-      "severity": "Info",
-      "target": "Broadcom Patches Critical"
     },
     {
       "attack_reported": true,
@@ -398,7 +395,7 @@
   "internet_drop_pct": {
     "China": 0.0,
     "Iran": 0.5,
-    "Israel": 0.0,
+    "Israel": 0.1,
     "Russia": 0.0,
     "South Korea": 0.0,
     "Taiwan": 0.0
@@ -426,9 +423,9 @@
       "pump_cents": -4,
       "week_ago_aud": 141.5
     },
-    "grid_demand_fall_pct": 13.0,
-    "grid_demand_mw": 1205,
-    "grid_demand_usual_mw": 372,
+    "grid_demand_fall_pct": 8.1,
+    "grid_demand_mw": 1273,
+    "grid_demand_usual_mw": 361,
     "grid_lor_level": 0,
     "nearby_incidents": [
       {
@@ -443,9 +440,9 @@
     ],
     "outlook": {
       "air": {
-        "aqi": 25,
+        "aqi": 26,
         "peak_pm25_48h": 10,
-        "pm25": 6
+        "pm25": 5
       },
       "air_word": "Good",
       "days": [
@@ -479,7 +476,7 @@
       "Morgan Vale Road, Pine Valley Station: MORGAN MAIL RD Closed due to flooding over road",
       "Pine Valley Road, Pine Valley Station: PINE VALLEY RD Closed due to flooding over road"
     ],
-    "rooftop_pv_mw": 802,
+    "rooftop_pv_mw": 794,
     "sawater_news": [],
     "watch_and_act": []
   },
@@ -509,14 +506,16 @@
     },
     "shocks": [],
     "tracking_glitch": false,
-    "traffic_not_normal": {}
+    "traffic_not_normal": {
+      "AE": "DOWN"
+    }
   },
   "nc3": "normal",
   "news_watch": {
     "ai_hack": [
       "Amazon: China-Linked Hackers’ AI Agents Exploited Medical Software Zero-Day - SecurityWeek",
       "Opinion | The real cyberthreat is rogue humans, not rogue AI - The Washington Post",
-      "AI Hackers Are Finding Security Flaws Faster Than Indian Banks Can Fix Them - The 420.in"
+      "The HackerNoon Newsletter: Fridges, Hackers, AI and La Flemme (11/21/2026) - HackerNoon"
     ],
     "airspace": [
       "Saudi coalition intercepts Houthi missile targeting western Saudi Arabia - Crypto Briefing",
@@ -525,8 +524,8 @@
     ],
     "aviation_halt": [
       "Why do people believe recent tech failures must be connected? - PBS",
-      "FAA ground stop: When will it end? Not as soon as you'd like. - Mashable",
-      "Anatomy of the FAA Ground Stop: One Backbone, One Bad Change - BankInfoSecurity"
+      "Trump says US flight systems are 'ancient' but 'safe' after ground stop - Yahoo News Australia",
+      "FAA ground stop: When will it end? Not as soon as you'd like. - Mashable"
     ],
     "bank_outage": [
       "FBI investigates suspected breach of crime database - Herald Sun",
@@ -553,8 +552,8 @@
     ],
     "cyber_attrib": [
       "FBI warns hackers weaponizing ARTEX AI framework to automate attacks on energy, manufacturing, telecom - Industrial Cyber",
-      "CISA Warns of 4 Exploited Flaws Linked to Ransomware, Cryptomining, and LLMjacking Attacks - The Hacker News",
-      "Google warns of four AI cyberattack tools after FBI alert on ARTEX - The Jerusalem Post"
+      "FBI warns hackers using AI-powered tool to automate cyberattacks worldwide - Anadolu Ajansı",
+      "CISA Warns of 4 Exploited Flaws Linked to Ransomware, Cryptomining, and LLMjacking Attacks - The Hacker News"
     ],
     "cyber_au": [
       "FBI investigates suspected breach of crime database - Herald Sun",
@@ -618,7 +617,7 @@
     "reservists": [
       "Opinion | Another pointless war? Israelis are happy to oblige - Haaretz",
       "UK reservist regiment takes part in overseas Nato exercise - BBC",
-      "Strategy Reports $35 Billion Net Reserve: All Bitcoin Holdings Now Unencumbered - Kriptofoni"
+      "Strategy Reports $35 Billion Net Reserve, No BTC Collateral - ForkLog"
     ],
     "sapn": [
       "NBN services restored after major Alice Springs outage - NT News",
@@ -628,9 +627,9 @@
       "Ribbon Communications launches Call Trust deepfake detection for telecom fraud prevention - Traders Union"
     ],
     "shipping_attacks": [
+      "UKMTO says 2 tankers struck in Hormuz, as Iran says ship on fire - The New Arab",
       "Strait of Hormuz attacks have increased to highest level since Iran war began - ABC News - Breaking News, Latest News and Videos",
-      "UKMTO Reports 2 Tankers Hit by Projectiles Near Hormuz as Iran Claims Mines - https://houseofsaud.com/",
-      "ADNOC L&S says one missing, 11 injured in Strait of Hormuz ship attack - Baird Maritime"
+      "UKMTO Reports 2 Tankers Hit by Projectiles Near Hormuz as Iran Claims Mines - https://houseofsaud.com/"
     ],
     "strikes": [
       "Iran widens Gulf attacks by targeting U.S. air base in Kuwait and sites in Bahrain - PBS",
@@ -660,9 +659,9 @@
       "yes": 3.2
     },
     {
-      "d24h": 0.1,
+      "d24h": -0.4,
       "q": "US-Iran Hormuz Agreement by November 30?",
-      "yes": 3.5
+      "yes": 3.0
     },
     {
       "d24h": 1.0,
@@ -670,9 +669,9 @@
       "yes": 11.5
     },
     {
-      "d24h": 0.8,
+      "d24h": 0.9,
       "q": "US-Iran Final Nuclear Deal by November 30, 2026?",
-      "yes": 1.6
+      "yes": 1.7
     },
     {
       "d24h": 0.1,
@@ -680,9 +679,9 @@
       "yes": 2.1
     },
     {
-      "d24h": 0.6,
+      "d24h": 0.2,
       "q": "Will China invade Taiwan by June 30, 2027?",
-      "yes": 4.8
+      "yes": 4.7
     },
     {
       "d24h": -0.3,
@@ -705,7 +704,7 @@
       "yes": 3.5
     },
     {
-      "d24h": 1.5,
+      "d24h": -12.5,
       "q": "Iran-Oman Hormuz Agreement by December 31?",
       "yes": 12.5
     },
@@ -715,9 +714,9 @@
       "yes": 6.0
     },
     {
-      "d24h": 1.2,
+      "d24h": 1.7,
       "q": "NATO x Russia military clash by November 30, 2026?",
-      "yes": 4.3
+      "yes": 4.8
     },
     {
       "d24h": 1.4,
@@ -975,19 +974,24 @@
     },
     {
       "band": "Guarded",
-      "convergence": "Only one kind of sign is showing (shipping). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
+      "convergence": "Two different kinds of sign are showing together (electronic warfare and shipping). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet bl",
       "domains": [
+        "Electronic warfare",
         "Shipping"
       ],
       "key": "mideast",
       "lit": [
         {
+          "detail": "gps_gulf 57 vs usual 12.0",
+          "name": "GPS jamming spike (Gulf / Israel)"
+        },
+        {
           "detail": "Strait of Hormuz -38% vs usual (2.3/day)",
           "name": "Ship traffic through Hormuz down sharply"
         }
       ],
-      "score": 15,
-      "trend": "steady"
+      "score": 25,
+      "trend": "up"
     },
     {
       "band": "Low",
@@ -1114,11 +1118,11 @@
   },
   "tankers": "normal",
   "telecom_drop_pct": {
-    "Aussie Broadband": 0.0,
-    "Optus": 5.1,
+    "Aussie Broadband": 0.6,
+    "Optus": 1.0,
     "TPG": 0.0,
-    "Telstra": 0.0,
-    "Vodafone": 0.0
+    "Telstra": 0.8,
+    "Vodafone": 4.8
   },
   "us_departure_orders": [
     "Belarus"
