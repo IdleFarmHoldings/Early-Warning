@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T07:08:00Z",
+  "generated_at": "2026-11-22T07:24:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -112,7 +112,7 @@
       "key": "mideast",
       "lit": [
         {
-          "detail": "gps_gulf 35 vs usual 9",
+          "detail": "gps_gulf 35 vs usual 8",
           "domain": "Electronic warfare",
           "id": "gps",
           "name": "GPS jamming spike (Gulf / Israel)",
@@ -387,29 +387,20 @@
       "why": "North Korean missile launches are often preceded by navigation warnings; South Korea and Japan report GPS jamming from the North during tense periods."
     },
     {
-      "band": "Elevated",
-      "convergence": "Signs are converging across 3 separate areas (electronic warfare, markets and mobilisation). Unrelated systems flagging the same scenario at once is the pattern seen before past events. Before February 2022: embassy departures, mobilisation reports, airspace closures and a surge in GPS jamming. Baltic and Black Sea jamming is now routine, so only spikes above normal count. The strongest signs not yet showing: unusual military air activity (eastern europe), us nuclear command aircraft unusual and internet disruption in russia.",
+      "band": "Guarded",
+      "convergence": "Two different kinds of sign are showing together (electronic warfare and markets). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: unusual military air activity (eastern europe), mobilisation / reservist reports (russia / nato) and us nuclear command aircraft unusual.",
       "domains": [
         "Electronic warfare",
-        "Markets",
-        "Mobilisation"
+        "Markets"
       ],
       "key": "russia",
       "lit": [
         {
-          "detail": "gps_baltic 56 vs usual 21",
+          "detail": "gps_baltic 54 vs usual 21",
           "domain": "Electronic warfare",
           "id": "gps",
           "name": "GPS jamming spike (Baltic / Black Sea)",
           "short": "GPS jamming spike",
-          "weight": 15
-        },
-        {
-          "detail": "UK reservist regiment takes part in overseas Nato exercise",
-          "domain": "Mobilisation",
-          "id": "mob",
-          "name": "Mobilisation / reservist reports (Russia / NATO)",
-          "short": "Mobilisation / reservist reports",
           "weight": 15
         },
         {
@@ -423,13 +414,19 @@
       ],
       "name": "Russia-NATO escalation",
       "sa_impact": "Indirect: energy and market shock, cyber attacks that can spill over to Australian systems, and nuclear-risk rhetoric.",
-      "score": 40,
-      "trend": "up",
+      "score": 25,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Military air",
           "id": "air",
           "name": "Unusual military air activity (Eastern Europe)",
+          "weight": 15
+        },
+        {
+          "domain": "Mobilisation",
+          "id": "mob",
+          "name": "Mobilisation / reservist reports (Russia / NATO)",
           "weight": 15
         },
         {
@@ -855,7 +852,7 @@
       "name": "AI-enabled attack (non-traditional)",
       "sa_impact": "Not bombs but disruption: hacking at machine speed across banks, telcos, hospitals and the grid at once; fake videos or alerts from leaders causing panic buying or bank runs; or automated market and fraud shocks. Effects would be outages, payment failures and confusion about what is real.",
       "score": 35,
-      "trend": "down",
+      "trend": "steady",
       "unlit": [
         {
           "domain": "Mass exploitation",
