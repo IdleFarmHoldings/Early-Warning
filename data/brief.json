@@ -3,9 +3,9 @@
   "acsc": [],
   "aircraft_flags": {
     "gps_gulf": {
-      "median": 7.0,
+      "median": 7,
       "status": "ANOMALY",
-      "value": 26
+      "value": 47
     }
   },
   "analyst": {
@@ -271,16 +271,17 @@
   ],
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
+    "maritime": "TimeoutError: ",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-22T15:38:00Z",
+  "generated_at": "2026-11-22T15:53:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 29,
-    "Black Sea": 23,
-    "Israel & Eastern Mediterranean": 0,
+    "Baltic / Kaliningrad": 20,
+    "Black Sea": 39,
+    "Israel & Eastern Mediterranean": 2,
     "Korea": 0,
-    "Persian Gulf": 26,
+    "Persian Gulf": 47,
     "South Australia": null,
     "Sydney / NSW": null,
     "Taiwan Strait": 0
@@ -365,15 +366,6 @@
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
-        "Hackers Leak JPMorgan Client Data"
-      ],
-      "severity": "Info",
-      "target": "Hackers Leak JPMorgan"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
         "What a Doomsday Cyberattack Could Look Like"
       ],
       "severity": "Info",
@@ -399,9 +391,8 @@
     },
     {
       "attack_reported": false,
-      "confirmed": true,
+      "confirmed": false,
       "headlines": [
-        "Microsoft's final Outlook outage report lists 13 fixes after tests on older servers missed the bug",
         "BSP gives banks more time to file forex reports after Microsoft 365 outage"
       ],
       "severity": "Info",
@@ -420,10 +411,10 @@
       "attack_reported": false,
       "confirmed": false,
       "headlines": [
-        "Etzioni on AI: The outage conspiracy theories are wrong — our rush to patch and upgrade is the culprit"
+        "Delta Air Lines Facing Widespread Delays After System-Wide Computer Outage"
       ],
       "severity": "Info",
-      "target": "Etzioni"
+      "target": "Delta Air Lines"
     },
     {
       "attack_reported": false,
@@ -436,12 +427,12 @@
     }
   ],
   "internet_drop_pct": {
-    "China": 1.0,
+    "China": 0.8,
     "Iran": 0.0,
-    "Israel": 0.3,
+    "Israel": 0.1,
     "Russia": 0.0,
     "South Korea": 0.1,
-    "Taiwan": 0.4
+    "Taiwan": 0.5
   },
   "local_sa": {
     "bom": [
@@ -464,9 +455,9 @@
       "pump_cents": -4,
       "week_ago_aud": 141.5
     },
-    "grid_demand_fall_pct": 3.9,
-    "grid_demand_mw": 1350,
-    "grid_demand_usual_mw": 1292,
+    "grid_demand_fall_pct": 4.4,
+    "grid_demand_mw": 1342,
+    "grid_demand_usual_mw": 1283,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
@@ -543,8 +534,8 @@
   "news_watch": {
     "ai_hack": [
       "Hacks, AI and conspiracy theories: why are we having so many outages? | Technology - The Guardian",
-      "China-linked hackers used AI agents to exploit a MONAI Label zero-day, Amazon says - Startup Fortune",
-      "The HackerNoon Newsletter: Fridges, Hackers, AI and La Flemme (11/21/2026) - HackerNoon"
+      "Stupid-simple way we can fix ‘AI doomsday’ - News.com.au",
+      "China-linked hackers used AI agents to exploit a MONAI Label zero-day, Amazon says - Startup Fortune"
     ],
     "airspace": [
       "Saudi coalition intercepts Houthi missile targeting western Saudi Arabia - Crypto Briefing",
@@ -553,8 +544,8 @@
     ],
     "aviation_halt": [
       "Flights grounded throughout Midwest after temporary outage at Minnesota air traffic control facility: FAA - ABC News - Breaking News, Latest News and Videos",
-      "Ground Stop’s Fallout Ripples Into Third Day of Canceled Flights - WSJ",
-      "FAA Ground Stop Exposes Risks in Aging Air Traffic Systems - cwibc.co.id"
+      "Anatomy of the FAA Ground Stop: One Backbone, One Bad Change - BankInfoSecurity",
+      "Ground Stop’s Fallout Ripples Into Third Day of Canceled Flights - WSJ"
     ],
     "bank_outage": [
       "How Did Westpac (ASX:WBC) Trade After a Year of Double-Digit Business Lending Growth? - Kalkine",
@@ -594,7 +585,7 @@
     "cyber_ot": [
       "UK operation wards off risk of cyber-attack on supermarket fridges and freezers - The Guardian",
       "Shop freezers in seven European countries hit by cyber-attack - BBC",
-      "Supermarket freezers and fridges in Europe hit by cyberattack - Nine.com.au"
+      "Tens of thousands of UK fridges secured from hackers in secret nationwide operation - BBC"
     ],
     "cyber_state": [
       "ESET Research: Sandworm behind cyberattack on Poland’s power grid in late 2025 - We Live Security",
@@ -607,9 +598,9 @@
       "How an Open-Source AI Agent Found and Exploited a Zero-Day (And Got Caught by a Missing Password) - Medium"
     ],
     "deepfake": [
-      "Special emergency power outage schedules introduced in Zaporizhzhia region - Mezha.net",
+      "Military engineers and electricians to help restore energy infrastructure - prime minister - Mezha.net",
       "Trump takes down image from his social media platform that depicted him as a Jesus-like figure - ABC News - Breaking News, Latest News and Videos",
-      "Major Hack of Danish Data System Affects 8M Residents - GovTech"
+      "Special emergency power outage schedules introduced in Zaporizhzhia region - Mezha.net"
     ],
     "dieoff": [
       "Indonesian sports are in turmoil following a series of unexplained deaths. - Vietnam.vn"
@@ -626,8 +617,8 @@
     ],
     "masscas": [
       "Portsmouth accident declared a mass casualty incident - WJAR",
-      "Emirates International Burn Conference 2026 examines medical readiness, response - www.indiagazette.com",
-      "Portsmouth accident declared a mass casualty incident - WJAR"
+      "Portsmouth accident declared a mass casualty incident - WJAR",
+      "Spear Corps Strengthens Disaster Preparedness - Brighter Kashmir"
     ],
     "mobilisation": [
       "Associate Professor of Pedagogical University Promised Deferral from Mobilization for $1300 — Court Delivered Verdict - Судово-юридична газета",
@@ -687,14 +678,14 @@
       "yes": 10.5
     },
     {
-      "d24h": 0.0,
+      "d24h": -0.2,
       "q": "China x Taiwan military clash before 2027?",
-      "yes": 3.2
+      "yes": 3.0
     },
     {
-      "d24h": 0.9,
+      "d24h": 0.8,
       "q": "US-Iran Hormuz Agreement by November 30?",
-      "yes": 3.5
+      "yes": 3.4
     },
     {
       "d24h": 1.0,
@@ -742,19 +733,19 @@
       "yes": 13.0
     },
     {
-      "d24h": 0.5,
+      "d24h": -0.5,
       "q": "Iran charges Hormuz fees by December 31?",
       "yes": 5.5
     },
     {
-      "d24h": -2.3,
+      "d24h": -1.0,
       "q": "NATO x Russia military clash by November 30, 2026?",
-      "yes": 2.5
+      "yes": 3.8
     },
     {
-      "d24h": 0.8,
+      "d24h": 0.6,
       "q": "Ukraine agrees not to join NATO by December 31, 2026?",
-      "yes": 2.7
+      "yes": 2.5
     },
     {
       "d24h": 0.0,
@@ -1004,7 +995,7 @@
       "key": "mideast",
       "lit": [
         {
-          "detail": "gps_gulf 26 vs usual 7.0",
+          "detail": "gps_gulf 47 vs usual 7",
           "name": "GPS jamming spike (Gulf / Israel)"
         },
         {
@@ -1013,7 +1004,7 @@
         }
       ],
       "score": 25,
-      "trend": "up"
+      "trend": "steady"
     },
     {
       "band": "Low",
@@ -1150,11 +1141,11 @@
   },
   "tankers": "normal",
   "telecom_drop_pct": {
-    "Aussie Broadband": 0.0,
+    "Aussie Broadband": 0.6,
     "Optus": 0.0,
-    "TPG": 0.3,
-    "Telstra": 0.4,
-    "Vodafone": 0.0
+    "TPG": 0.0,
+    "Telstra": 0.0,
+    "Vodafone": 4.8
   },
   "us_departure_orders": [
     "Belarus"
