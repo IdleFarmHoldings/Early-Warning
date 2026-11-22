@@ -265,18 +265,19 @@
   ],
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
+    "maritime": "TimeoutError: ",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-22T20:42:00Z",
+  "generated_at": "2026-11-22T20:58:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 60,
-    "Black Sea": 42,
-    "Israel & Eastern Mediterranean": 6,
+    "Baltic / Kaliningrad": 52,
+    "Black Sea": null,
+    "Israel & Eastern Mediterranean": 0,
     "Korea": 0,
-    "Persian Gulf": 15,
-    "South Australia": 4,
-    "Sydney / NSW": 3,
+    "Persian Gulf": 8,
+    "South Australia": 10,
+    "Sydney / NSW": 1,
     "Taiwan Strait": 0
   },
   "incidents": [
@@ -350,6 +351,15 @@
       "attack_reported": true,
       "confirmed": true,
       "headlines": [
+        "JPMorgan Chase (JPM) Says Vendor Cyberattack Exposed Customer Data"
+      ],
+      "severity": "Info",
+      "target": "JPMorgan Chase"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": true,
+      "headlines": [
         "China-linked hackers used AI agents to exploit a MONAI Label zero-day, Amazon says"
       ],
       "severity": "Info",
@@ -377,9 +387,9 @@
       "attack_reported": false,
       "confirmed": true,
       "headlines": [
+        "Bessent and Microsoft Warn of AI-Driven Outage Risks",
         "DNI Warns of 'Bumps' as Microsoft, FAA Outages Hit Holiday Travel",
-        "Microsoft outage cause revealed: It was a perfect storm of problems",
-        "Microsoft’s Brad Smith warns AI-fueled patching race could bring more outages"
+        "Microsoft outage cause revealed: It was a perfect storm of problems"
       ],
       "severity": "Warning",
       "target": "Microsoft"
@@ -405,11 +415,11 @@
   ],
   "internet_drop_pct": {
     "China": 0.0,
-    "Iran": 0.4,
+    "Iran": 0.3,
     "Israel": 0.0,
     "Russia": 0.0,
     "South Korea": 0.3,
-    "Taiwan": 1.2
+    "Taiwan": 1.1
   },
   "local_sa": {
     "bom": [
@@ -425,23 +435,23 @@
       "Mount Lofty Ranges": "High / High"
     },
     "fire_danger_ok": true,
-    "fires_active": 5,
+    "fires_active": 6,
     "fuel": {
       "brent_aud": 135.9,
       "change_pct": -3.9,
-      "pump_cents": -4,
-      "week_ago_aud": 141.5
+      "pump_cents": -3,
+      "week_ago_aud": 141.4
     },
-    "grid_demand_fall_pct": 12.3,
-    "grid_demand_mw": 1205,
-    "grid_demand_usual_mw": 1258,
+    "grid_demand_fall_pct": 7.0,
+    "grid_demand_mw": 1231,
+    "grid_demand_usual_mw": 1232,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
       "air": {
-        "aqi": 28,
+        "aqi": 29,
         "peak_pm25_48h": 11,
-        "pm25": 5
+        "pm25": 6
       },
       "air_word": "Good",
       "days": [
@@ -475,7 +485,7 @@
       "Morgan Vale Road, Pine Valley Station: MORGAN MAIL RD Closed due to flooding over road",
       "Pine Valley Road, Pine Valley Station: PINE VALLEY RD Closed due to flooding over road"
     ],
-    "rooftop_pv_mw": 21,
+    "rooftop_pv_mw": 75,
     "sawater_news": [],
     "watch_and_act": []
   },
@@ -526,7 +536,7 @@
       "Qatar Airways Operates Limited Flights to and from Doha - https://safariindia.com/"
     ],
     "aviation_halt": [
-      "Delta delays ‘not related to any FAA air traffic systems,’ administration says - WSB-TV",
+      "Delta Air Lines announces automated services for flights back online, rebooking, refunding travelers - WSB-TV",
       "FAA ground stop: When will it end? Not as soon as you'd like. - Mashable",
       "The FAA Ground Stop Blame Game - WSJ"
     ],
@@ -577,8 +587,8 @@
     ],
     "cyber_supply": [
       "AI agents find a MONAI Label zero-day on their own and hack a server - Pasquale Pillitteri",
-      "China-linked hackers used AI agents to exploit a MONAI Label zero-day, Amazon says - Startup Fortune",
-      "Apache Roller XML-RPC RCE (CVE-2026-129448): Patch Now - Rescana"
+      "Apache Roller XML-RPC RCE (CVE-2026-129448): Patch Now - Rescana",
+      "Bessent and Microsoft Warn of AI-Driven Outage Risks - Demokratis.co.id"
     ],
     "deepfake": [
       "Military engineers and electricians to help restore energy infrastructure - prime minister - Mezha.net",
@@ -656,9 +666,9 @@
       "yes": 5.5
     },
     {
-      "d24h": 0.6,
+      "d24h": 0.7,
       "q": "US-Iran Final Nuclear Deal by December 31, 2026?",
-      "yes": 4.8
+      "yes": 4.9
     },
     {
       "d24h": -1.0,
@@ -716,9 +726,9 @@
       "yes": 2.5
     },
     {
-      "d24h": 9.0,
+      "d24h": 7.5,
       "q": "Iran-Oman Hormuz Agreement by December 31?",
-      "yes": 21.0
+      "yes": 20.0
     },
     {
       "d24h": 0.5,
@@ -726,14 +736,14 @@
       "yes": 6.5
     },
     {
-      "d24h": 0.0,
+      "d24h": -0.9,
       "q": "NATO x Russia military clash by November 30, 2026?",
       "yes": 3.4
     },
     {
-      "d24h": 0.1,
+      "d24h": 0.9,
       "q": "Ukraine agrees not to join NATO by December 31, 2026?",
-      "yes": 3.1
+      "yes": 3.9
     },
     {
       "d24h": 0.0,
@@ -741,7 +751,7 @@
       "yes": 3.0
     },
     {
-      "d24h": -0.3,
+      "d24h": -0.2,
       "q": "Will Russia test a nuclear weapon by December 31 2026?",
       "yes": 1.9
     },
@@ -1015,7 +1025,7 @@
         }
       ],
       "score": 15,
-      "trend": "down"
+      "trend": "steady"
     },
     {
       "band": "Low",
@@ -1120,7 +1130,7 @@
   },
   "tankers": "normal",
   "telecom_drop_pct": {
-    "Aussie Broadband": 0.8,
+    "Aussie Broadband": 0.0,
     "Optus": 1.0,
     "TPG": 0.0,
     "Telstra": 0.0,
