@@ -3,9 +3,9 @@
   "acsc": [],
   "aircraft_flags": {
     "gps_gulf": {
-      "median": 7,
+      "median": 7.0,
       "status": "ANOMALY",
-      "value": 47
+      "value": 40
     }
   },
   "analyst": {
@@ -271,17 +271,16 @@
   ],
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
-    "maritime": "TimeoutError: ",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-22T15:53:00Z",
+  "generated_at": "2026-11-22T16:09:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 20,
-    "Black Sea": 39,
-    "Israel & Eastern Mediterranean": 2,
+    "Baltic / Kaliningrad": 19,
+    "Black Sea": 43,
+    "Israel & Eastern Mediterranean": 7,
     "Korea": 0,
-    "Persian Gulf": 47,
+    "Persian Gulf": 40,
     "South Australia": null,
     "Sydney / NSW": null,
     "Taiwan Strait": 0
@@ -402,15 +401,6 @@
       "attack_reported": false,
       "confirmed": false,
       "headlines": [
-        "United Airlines reports major system outage as US air travel faces fresh disruption"
-      ],
-      "severity": "Info",
-      "target": "United Airlines"
-    },
-    {
-      "attack_reported": false,
-      "confirmed": false,
-      "headlines": [
         "Delta Air Lines Facing Widespread Delays After System-Wide Computer Outage"
       ],
       "severity": "Info",
@@ -420,19 +410,37 @@
       "attack_reported": false,
       "confirmed": false,
       "headlines": [
+        "United Airlines reports major system outage as US air travel faces fresh disruption"
+      ],
+      "severity": "Info",
+      "target": "United Airlines"
+    },
+    {
+      "attack_reported": false,
+      "confirmed": false,
+      "headlines": [
         "Hacks, AI and conspiracy theories: why are we having so many outages? | Technology"
       ],
       "severity": "Info",
       "target": "Hacks"
+    },
+    {
+      "attack_reported": false,
+      "confirmed": false,
+      "headlines": [
+        "How best to practice ‘cyber hygiene’ in the AI age amid recent online outages"
+      ],
+      "severity": "Info",
+      "target": "How"
     }
   ],
   "internet_drop_pct": {
-    "China": 0.8,
+    "China": 0.5,
     "Iran": 0.0,
     "Israel": 0.1,
     "Russia": 0.0,
     "South Korea": 0.1,
-    "Taiwan": 0.5
+    "Taiwan": 0.8
   },
   "local_sa": {
     "bom": [
@@ -455,38 +463,19 @@
       "pump_cents": -4,
       "week_ago_aud": 141.5
     },
-    "grid_demand_fall_pct": 4.4,
-    "grid_demand_mw": 1342,
-    "grid_demand_usual_mw": 1283,
+    "grid_demand_fall_pct": 2.3,
+    "grid_demand_mw": 1325,
+    "grid_demand_usual_mw": 1282,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
       "air": {
-        "aqi": 24,
+        "aqi": 23,
         "peak_pm25_48h": 11,
         "pm25": 6
       },
       "air_word": "Good",
-      "days": [
-        {
-          "date": "2026-11-23",
-          "gust": 57,
-          "rain": 1,
-          "tmax": 18
-        },
-        {
-          "date": "2026-11-24",
-          "gust": 36,
-          "rain": 0,
-          "tmax": 20
-        },
-        {
-          "date": "2026-11-25",
-          "gust": 42,
-          "rain": 0,
-          "tmax": 28
-        }
-      ]
+      "days": []
     },
     "possible_blackout": false,
     "power_news": [],
@@ -522,20 +511,28 @@
   },
   "national_shocks": {
     "faa": {
-      "airports": 0,
-      "ground_stops": [],
+      "airports": 1,
+      "ground_stops": [
+        {
+          "airport": "LGA",
+          "end": "12:15 pm EST",
+          "reason": "low visibility"
+        }
+      ],
       "national": false
     },
     "shocks": [],
     "tracking_glitch": false,
-    "traffic_not_normal": {}
+    "traffic_not_normal": {
+      "AE": "DOWN"
+    }
   },
   "nc3": "normal",
   "news_watch": {
     "ai_hack": [
       "Hacks, AI and conspiracy theories: why are we having so many outages? | Technology - The Guardian",
-      "Stupid-simple way we can fix ‘AI doomsday’ - News.com.au",
-      "China-linked hackers used AI agents to exploit a MONAI Label zero-day, Amazon says - Startup Fortune"
+      "China-linked hackers used AI agents to exploit a MONAI Label zero-day, Amazon says - Startup Fortune",
+      "The HackerNoon Newsletter: Fridges, Hackers, AI and La Flemme (11/21/2026) - HackerNoon"
     ],
     "airspace": [
       "Saudi coalition intercepts Houthi missile targeting western Saudi Arabia - Crypto Briefing",
@@ -543,9 +540,9 @@
       "Qatar Airways Operates Limited Flights to and from Doha - https://safariindia.com/"
     ],
     "aviation_halt": [
+      "Ground stop issued for Delta flights en route to Atlanta - Atlanta News First",
       "Flights grounded throughout Midwest after temporary outage at Minnesota air traffic control facility: FAA - ABC News - Breaking News, Latest News and Videos",
-      "Anatomy of the FAA Ground Stop: One Backbone, One Bad Change - BankInfoSecurity",
-      "Ground Stop’s Fallout Ripples Into Third Day of Canceled Flights - WSJ"
+      "The FAA Ground Stop Blame Game - WSJ"
     ],
     "bank_outage": [
       "How Did Westpac (ASX:WBC) Trade After a Year of Double-Digit Business Lending Growth? - Kalkine",
@@ -585,7 +582,7 @@
     "cyber_ot": [
       "UK operation wards off risk of cyber-attack on supermarket fridges and freezers - The Guardian",
       "Shop freezers in seven European countries hit by cyber-attack - BBC",
-      "Tens of thousands of UK fridges secured from hackers in secret nationwide operation - BBC"
+      "Supermarket freezers and fridges in Europe hit by cyberattack - Nine.com.au"
     ],
     "cyber_state": [
       "ESET Research: Sandworm behind cyberattack on Poland’s power grid in late 2025 - We Live Security",
@@ -609,6 +606,9 @@
       "Kraken upholds Bitcoin trades after BTC/CAD flash crash in Canadian-dollar market - Traders Union",
       "Retail investors' accounts have turned blue… Can we expect a rebound as the securities industry calls the decline \"excessive\"? - 머니투데이",
       "Market Panic Ending The Cycle… History Shows A Recession Is Next - Howl.Link"
+    ],
+    "fuel_au": [
+      "Australia ‘dangerously exposed’ on fuel imports: Grattan - AFR"
     ],
     "illness": [
       "Mystery illness causes mass hospitalisation of runners - The Nightly",
@@ -678,14 +678,14 @@
       "yes": 10.5
     },
     {
-      "d24h": -0.2,
+      "d24h": -0.3,
       "q": "China x Taiwan military clash before 2027?",
-      "yes": 3.0
+      "yes": 2.9
     },
     {
-      "d24h": 0.8,
+      "d24h": 0.7,
       "q": "US-Iran Hormuz Agreement by November 30?",
-      "yes": 3.4
+      "yes": 3.3
     },
     {
       "d24h": 1.0,
@@ -703,9 +703,9 @@
       "yes": 2.1
     },
     {
-      "d24h": -0.3,
+      "d24h": 0.3,
       "q": "Will China invade Taiwan by June 30, 2027?",
-      "yes": 4.5
+      "yes": 5.1
     },
     {
       "d24h": -0.1,
@@ -713,9 +713,9 @@
       "yes": 1.8
     },
     {
-      "d24h": -0.2,
+      "d24h": 0.0,
       "q": "Will China blockade Taiwan in 2026?",
-      "yes": 2.2
+      "yes": 2.4
     },
     {
       "d24h": -0.1,
@@ -728,24 +728,24 @@
       "yes": 3.0
     },
     {
-      "d24h": 0.5,
+      "d24h": 1.0,
       "q": "Iran-Oman Hormuz Agreement by December 31?",
       "yes": 13.0
     },
     {
-      "d24h": -0.5,
+      "d24h": 0.0,
       "q": "Iran charges Hormuz fees by December 31?",
       "yes": 5.5
     },
     {
-      "d24h": -1.0,
+      "d24h": -1.2,
       "q": "NATO x Russia military clash by November 30, 2026?",
-      "yes": 3.8
+      "yes": 3.5
     },
     {
-      "d24h": 0.6,
+      "d24h": 1.1,
       "q": "Ukraine agrees not to join NATO by December 31, 2026?",
-      "yes": 2.5
+      "yes": 3.0
     },
     {
       "d24h": 0.0,
@@ -995,7 +995,7 @@
       "key": "mideast",
       "lit": [
         {
-          "detail": "gps_gulf 47 vs usual 7",
+          "detail": "gps_gulf 40 vs usual 7.0",
           "name": "GPS jamming spike (Gulf / Israel)"
         },
         {
@@ -1125,7 +1125,7 @@
           "name": "Market fear index jumps 25%+ in a day"
         },
         {
-          "detail": "United Airlines reports major system outage as US air travel faces fresh disruption",
+          "detail": "Delta Air Lines Facing Widespread Delays After System-Wide Computer Outage",
           "name": "Major cloud or AI service outage"
         }
       ],
@@ -1141,11 +1141,11 @@
   },
   "tankers": "normal",
   "telecom_drop_pct": {
-    "Aussie Broadband": 0.6,
-    "Optus": 0.0,
+    "Aussie Broadband": 0.8,
+    "Optus": 1.0,
     "TPG": 0.0,
-    "Telstra": 0.0,
-    "Vodafone": 4.8
+    "Telstra": 0.4,
+    "Vodafone": 9.5
   },
   "us_departure_orders": [
     "Belarus"
@@ -1182,11 +1182,11 @@
   },
   "watching": [
     {
-      "active": false,
+      "active": true,
       "first_seen": "2026-11-22T07:24:00Z",
-      "last_seen": "2026-11-22T07:38:00Z",
+      "last_seen": "2026-11-22T16:09:00Z",
       "region": "the Middle East",
-      "text": "GPS jamming over Persian Gulf: 32% of 28 aircraft affected for 45+ min (usual ~8.0%)",
+      "text": "GPS jamming over Persian Gulf: 40% of 40 aircraft affected for 45+ min (usual ~7.0%)",
       "what": "GPS jamming"
     },
     {
