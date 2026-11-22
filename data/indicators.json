@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T21:48:00Z",
+  "generated_at": "2026-11-22T22:03:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -381,11 +381,10 @@
       "why": "North Korean missile launches are often preceded by navigation warnings; South Korea and Japan report GPS jamming from the North during tense periods."
     },
     {
-      "band": "Guarded",
-      "convergence": "Two different kinds of sign are showing together (markets and state signalling). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and mobilisation / reservist reports (russia / nato).",
+      "band": "Low",
+      "convergence": "Only one kind of sign is showing (markets). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and mobilisation / reservist reports (russia / nato).",
       "domains": [
-        "Markets",
-        "State signalling"
+        "Markets"
       ],
       "key": "russia",
       "lit": [
@@ -396,20 +395,12 @@
           "name": "Market fear index above 30",
           "short": "Market fear index above 30",
           "weight": 10
-        },
-        {
-          "detail": "UVB-76 Mystery: Why Doomsday Radio Repeats Code Words",
-          "domain": "State signalling",
-          "id": "signals",
-          "name": "Russian signalling (Buzzer broadcasts, nuclear drills)",
-          "short": "Russian signalling",
-          "weight": 5
         }
       ],
       "name": "Russia-NATO escalation",
       "sa_impact": "Indirect: energy and market shock, cyber attacks that can spill over to Australian systems, and nuclear-risk rhetoric.",
-      "score": 15,
-      "trend": "steady",
+      "score": 10,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Electronic warfare",
@@ -458,6 +449,12 @@
           "id": "blood",
           "name": "Military blood supplies / field hospitals (Russia)",
           "weight": 10
+        },
+        {
+          "domain": "State signalling",
+          "id": "signals",
+          "name": "Russian signalling (Buzzer broadcasts, nuclear drills)",
+          "weight": 5
         },
         {
           "domain": "Markets",
@@ -640,10 +637,9 @@
       "why": "The 2023 Optus outage cut mobile, NBN, EFTPOS and some 000 calls nationwide for 12 hours. Hostile states pre-position in critical infrastructure; GPS jamming over Australia would be a new and serious sign."
     },
     {
-      "band": "Elevated",
-      "convergence": "Signs are converging across 3 separate areas (chemical weapons, health and markets). Unrelated systems flagging the same scenario at once is the pattern seen before past events. Before COVID-19 (Dec 2019 - Feb 2020): reports of an unknown pneumonia cluster, WHO outbreak notices, mask and hazmat makers (Alpha Pro Tech, Lakeland) and vaccine developers (Moderna, Novavax) surging weeks before broad markets fell, and countries restricting exports of masks and medicines (Taiwan from 24 Jan 2020, then dozens more). The strongest signs not yet showing: unknown illness / pneumonia cluster reported, countries restricting medical supply exports and pandemic-response stocks outperforming (5 days).",
+      "band": "Guarded",
+      "convergence": "Two different kinds of sign are showing together (health and markets). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: unknown illness / pneumonia cluster reported, countries restricting medical supply exports and pandemic-response stocks outperforming (5 days).",
       "domains": [
-        "Chemical weapons",
         "Health",
         "Markets"
       ],
@@ -658,34 +654,18 @@
           "weight": 15
         },
         {
-          "detail": "Portsmouth accident declared a mass casualty incident",
-          "domain": "Health",
-          "id": "masscas",
-          "name": "Mass casualty declarations (any country)",
-          "short": "Mass casualty event",
-          "weight": 5
-        },
-        {
           "detail": "VIX at 35.89",
           "domain": "Markets",
           "id": "vix",
           "name": "Market fear index above 30",
           "short": "Market fear high",
           "weight": 10
-        },
-        {
-          "detail": "Meeting Between Iran’s Deputy FM and Chemical Weapons Victims",
-          "domain": "Chemical weapons",
-          "id": "chem",
-          "name": "Chemical / nerve-agent attack or mass poisoning reported",
-          "short": "Chemical attack",
-          "weight": 15
         }
       ],
       "name": "Pandemic, biological or chemical emergency",
       "sa_impact": "Health system strain, possible lockdowns and border closures, and shortages of medicines and protective equipment, which Australia mostly imports.",
-      "score": 45,
-      "trend": "steady",
+      "score": 25,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Health",
@@ -713,6 +693,18 @@
         },
         {
           "domain": "Health",
+          "id": "masscas",
+          "name": "Mass casualty declarations (any country)",
+          "weight": 5
+        },
+        {
+          "domain": "Chemical weapons",
+          "id": "chem",
+          "name": "Chemical / nerve-agent attack or mass poisoning reported",
+          "weight": 15
+        },
+        {
+          "domain": "Health",
           "id": "dieoff",
           "name": "Unexplained mass deaths or animal die-offs",
           "weight": 10
@@ -728,25 +720,14 @@
     },
     {
       "band": "Low",
-      "convergence": "Only one kind of sign is showing (australian incidents). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: sudden fall in sa electricity demand (possible large blackout), global cyber threat level raised (sans infocon not green) and several vpn / firewall flaws exploited this week.",
-      "domains": [
-        "Australian incidents"
-      ],
+      "convergence": "No warning signs are showing. The strongest signs not yet showing: sudden fall in sa electricity demand (possible large blackout), global cyber threat level raised (sans infocon not green) and several vpn / firewall flaws exploited this week.",
+      "domains": [],
       "key": "cyber",
-      "lit": [
-        {
-          "detail": "Australians stockpiling emergency supplies as cyber attack fears grow",
-          "domain": "Australian incidents",
-          "id": "au",
-          "name": "Major Australian cyber incident reported",
-          "short": "Major Australian cyber incident reported",
-          "weight": 10
-        }
-      ],
+      "lit": [],
       "name": "Major cyber attack on Australia",
       "sa_impact": "Banks, payments, hospitals, fuel distribution, telcos and the power grid all run on networks; a large attack can stop card payments and services for hours to days.",
-      "score": 10,
-      "trend": "steady",
+      "score": 0,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Global threat level",
@@ -791,6 +772,12 @@
           "weight": 15
         },
         {
+          "domain": "Australian incidents",
+          "id": "au",
+          "name": "Major Australian cyber incident reported",
+          "weight": 10
+        },
+        {
           "domain": "Communications",
           "id": "tel",
           "name": "Phone / internet carrier outage",
@@ -812,23 +799,13 @@
       "why": "Large attacks are usually preceded by quieter steps: a surge in newly exploited flaws in VPNs and firewalls (how state groups like Volt Typhoon get in), scanning of industrial-control systems, a rise in ransomware victims in the target country, and official warnings. Before Russia's 2022 invasion, wiper malware hit Ukraine a day ahead; Chinese groups have been found pre-positioned in US and allied infrastructure."
     },
     {
-      "band": "Elevated",
-      "convergence": "Signs are converging across 3 separate areas (ai-enabled hacking, cloud services and markets). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: a Chinese state-sponsored group used an AI agent to carry out 80-90% of an attack on about 30 organisations, at thousands of requests per second. A fake AI image of a Pentagon explosion briefly moved US markets in May 2023, and a deepfake video call of a CFO tricked a company into paying US$25 million in 2024. The likely signature of an AI attack is breadth and speed: many unrelated systems and vendors hit at once, synthetic media of officials, and shocks with no clear human cause. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, deepfakes of leaders or fake official alerts and flash crash or exchange trading halt.",
+      "band": "Low",
+      "convergence": "Only one kind of sign is showing (markets). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, reports of ai-driven hacking campaigns and deepfakes of leaders or fake official alerts.",
       "domains": [
-        "AI-enabled hacking",
-        "Cloud services",
         "Markets"
       ],
       "key": "ai",
       "lit": [
-        {
-          "detail": "China-linked hackers used AI agents to exploit a MONAI Label zero-day, Amazon says",
-          "domain": "AI-enabled hacking",
-          "id": "aihack",
-          "name": "Reports of AI-driven hacking campaigns",
-          "short": "Reports of AI-driven hacking campaigns",
-          "weight": 15
-        },
         {
           "detail": "VIX +26.2%",
           "domain": "Markets",
@@ -836,25 +813,23 @@
           "name": "Market fear index jumps 25%+ in a day",
           "short": "Market fear index jumps 25%+ in a day",
           "weight": 10
-        },
-        {
-          "detail": "Delta Air Lines Facing Widespread Delays After System-Wide Computer Outage",
-          "domain": "Cloud services",
-          "id": "cloud",
-          "name": "Major cloud or AI service outage",
-          "short": "Major cloud or AI service outage",
-          "weight": 10
         }
       ],
       "name": "AI-enabled attack (non-traditional)",
       "sa_impact": "Not bombs but disruption: hacking at machine speed across banks, telcos, hospitals and the grid at once; fake videos or alerts from leaders causing panic buying or bank runs; or automated market and fraud shocks. Effects would be outages, payment failures and confusion about what is real.",
-      "score": 35,
-      "trend": "steady",
+      "score": 10,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Mass exploitation",
           "id": "breadth",
           "name": "Exploited flaws across unusually many vendors at once",
+          "weight": 15
+        },
+        {
+          "domain": "AI-enabled hacking",
+          "id": "aihack",
+          "name": "Reports of AI-driven hacking campaigns",
           "weight": 15
         },
         {
@@ -867,6 +842,12 @@
           "domain": "Markets",
           "id": "flash",
           "name": "Flash crash or exchange trading halt",
+          "weight": 10
+        },
+        {
+          "domain": "Cloud services",
+          "id": "cloud",
+          "name": "Major cloud or AI service outage",
           "weight": 10
         },
         {
