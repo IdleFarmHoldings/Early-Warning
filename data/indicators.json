@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T20:38:00Z",
+  "generated_at": "2026-11-22T20:42:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -381,23 +381,14 @@
       "why": "North Korean missile launches are often preceded by navigation warnings; South Korea and Japan report GPS jamming from the North during tense periods."
     },
     {
-      "band": "Elevated",
-      "convergence": "Signs are converging across 3 separate areas (electronic warfare, markets and state signalling). Unrelated systems flagging the same scenario at once is the pattern seen before past events. Before February 2022: embassy departures, mobilisation reports, airspace closures and a surge in GPS jamming. Baltic and Black Sea jamming is now routine, so only spikes above normal count. The strongest signs not yet showing: unusual military air activity (eastern europe), mobilisation / reservist reports (russia / nato) and us nuclear command aircraft unusual.",
+      "band": "Guarded",
+      "convergence": "Two different kinds of sign are showing together (markets and state signalling). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and mobilisation / reservist reports (russia / nato).",
       "domains": [
-        "Electronic warfare",
         "Markets",
         "State signalling"
       ],
       "key": "russia",
       "lit": [
-        {
-          "detail": "gps_blacksea 50 vs usual 20.0",
-          "domain": "Electronic warfare",
-          "id": "gps",
-          "name": "GPS jamming spike (Baltic / Black Sea)",
-          "short": "GPS jamming spike",
-          "weight": 15
-        },
         {
           "detail": "VIX at 35.89",
           "domain": "Markets",
@@ -417,9 +408,15 @@
       ],
       "name": "Russia-NATO escalation",
       "sa_impact": "Indirect: energy and market shock, cyber attacks that can spill over to Australian systems, and nuclear-risk rhetoric.",
-      "score": 30,
-      "trend": "up",
+      "score": 15,
+      "trend": "down",
       "unlit": [
+        {
+          "domain": "Electronic warfare",
+          "id": "gps",
+          "name": "GPS jamming spike (Baltic / Black Sea)",
+          "weight": 15
+        },
         {
           "domain": "Military air",
           "id": "air",
@@ -852,7 +849,7 @@
       "name": "AI-enabled attack (non-traditional)",
       "sa_impact": "Not bombs but disruption: hacking at machine speed across banks, telcos, hospitals and the grid at once; fake videos or alerts from leaders causing panic buying or bank runs; or automated market and fraud shocks. Effects would be outages, payment failures and confusion about what is real.",
       "score": 35,
-      "trend": "up",
+      "trend": "steady",
       "unlit": [
         {
           "domain": "Mass exploitation",
