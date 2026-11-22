@@ -265,17 +265,15 @@
   ],
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
-    "markets": "RuntimeError: all market quotes failed",
-    "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output=",
-    "sectors": "RuntimeError: APT: HTTPError; LAKE: HTTPError; MRNA: HTTPError"
+    "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-22T13:51:00Z",
+  "generated_at": "2026-11-22T13:57:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 35,
-    "Black Sea": 35,
-    "Israel & Eastern Mediterranean": 2,
-    "Korea": 3,
+    "Baltic / Kaliningrad": 36,
+    "Black Sea": 33,
+    "Israel & Eastern Mediterranean": 0,
+    "Korea": 4,
     "Persian Gulf": 7,
     "South Australia": null,
     "Sydney / NSW": null,
@@ -286,11 +284,10 @@
       "attack_reported": true,
       "confirmed": true,
       "headlines": [
-        "External service provider hit by cyberattack; JPMorgan, Visa, and MasterCard respond to data breach",
         "Chase Bank customers may be affected after hackers access marketing data",
         "Chase Bank Outage and Cyberattack Raise New Concerns: Is Your Money Safe?"
       ],
-      "severity": "Warning",
+      "severity": "Info",
       "target": "Banking & payments"
     },
     {
@@ -310,15 +307,6 @@
       ],
       "severity": "Info",
       "target": "Singapore"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
-        "The Next Global Cyberattack Could Have Your Home IP Address – Analysis"
-      ],
-      "severity": "Info",
-      "target": "The Next Global"
     },
     {
       "attack_reported": true,
@@ -377,17 +365,6 @@
     },
     {
       "attack_reported": false,
-      "confirmed": true,
-      "headlines": [
-        "Microsoft Outlook outage impacts governments, courts, hospitals and universities - ABC News",
-        "Microsoft's final Outlook outage report lists 13 fixes after tests on older servers missed the bug",
-        "BSP gives banks more time to file forex reports after Microsoft 365 outage"
-      ],
-      "severity": "Warning",
-      "target": "Microsoft"
-    },
-    {
-      "attack_reported": false,
       "confirmed": false,
       "headlines": [
         "'One-in-2,000-year weather' to be investigated post-blackout"
@@ -403,6 +380,16 @@
       ],
       "severity": "Info",
       "target": "AI platforms"
+    },
+    {
+      "attack_reported": false,
+      "confirmed": true,
+      "headlines": [
+        "Microsoft's final Outlook outage report lists 13 fixes after tests on older servers missed the bug",
+        "BSP gives banks more time to file forex reports after Microsoft 365 outage"
+      ],
+      "severity": "Info",
+      "target": "Microsoft"
     },
     {
       "attack_reported": false,
@@ -454,32 +441,26 @@
       "Mount Lofty Ranges": "High / High"
     },
     "fire_danger_ok": true,
-    "fires_active": 7,
+    "fires_active": 6,
     "fuel": {
       "brent_aud": 135.9,
       "change_pct": -3.9,
       "pump_cents": -4,
       "week_ago_aud": 141.5
     },
-    "grid_demand_fall_pct": -1.2,
-    "grid_demand_mw": 1375,
-    "grid_demand_usual_mw": 1336,
+    "grid_demand_fall_pct": -0.2,
+    "grid_demand_mw": 1362,
+    "grid_demand_usual_mw": 1344,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
       "air": {
-        "aqi": 27,
-        "peak_pm25_48h": 10,
-        "pm25": 4
+        "aqi": 26,
+        "peak_pm25_48h": 11,
+        "pm25": 5
       },
       "air_word": "Good",
       "days": [
-        {
-          "date": "2026-11-22",
-          "gust": 54,
-          "rain": 0,
-          "tmax": 28
-        },
         {
           "date": "2026-11-23",
           "gust": 57,
@@ -491,6 +472,12 @@
           "gust": 36,
           "rain": 0,
           "tmax": 20
+        },
+        {
+          "date": "2026-11-25",
+          "gust": 42,
+          "rain": 0,
+          "tmax": 28
         }
       ]
     },
@@ -508,7 +495,24 @@
     "sawater_news": [],
     "watch_and_act": []
   },
-  "markets": {},
+  "markets": {
+    "AUD/USD": {
+      "change_pct": -0.56,
+      "price": 0.6619
+    },
+    "Brent oil": {
+      "change_pct": -2.21,
+      "price": 89.95
+    },
+    "Gold": {
+      "change_pct": -4.62,
+      "price": 3515.4
+    },
+    "VIX": {
+      "change_pct": 26.2,
+      "price": 35.89
+    }
+  },
   "national_shocks": {
     "faa": {
       "airports": 1,
@@ -593,9 +597,9 @@
       "How an Open-Source AI Agent Found and Exploited a Zero-Day (And Got Caught by a Missing Password) - Medium"
     ],
     "deepfake": [
+      "Supreme Court refuses to register petition challenging universities’ use of AI detection software - OnlineKhabar English News",
       "COP31 climate talks near final deal, summit president says - Mezha.net",
-      "Trump takes down image from his social media platform that depicted him as a Jesus-like figure - ABC News - Breaking News, Latest News and Videos",
-      "Supreme Court refuses to register petition challenging universities’ use of AI detection software - OnlineKhabar English News"
+      "Trump takes down image from his social media platform that depicted him as a Jesus-like figure - ABC News - Breaking News, Latest News and Videos"
     ],
     "dieoff": [
       "Indonesian sports are in turmoil following a series of unexplained deaths. - Vietnam.vn"
@@ -611,12 +615,12 @@
     "illness": [
       "Mystery illness causes mass hospitalisation of runners - The Nightly",
       "148 aboard Florida-bound cruise ship sickened by ‘unknown’ GI outbreak: CDC - The Hill",
-      "Mystery Pneumonia Death Sparks Concern; Trader Joe's Recall; OUD in Young People - MedPage Today"
+      "Zayn Malik hospitalised with mystery illness, forced to cancel upcoming appearances on album release week - Nine.com.au"
     ],
     "masscas": [
       "Portsmouth accident declared a mass casualty incident - WJAR",
-      "Emirates International Burn Conference 2026 examines medical readiness, response - www.indiagazette.com",
-      "10 vehicle pileup shuts down Route 24 in Portsmouth, 5 sent to area hospitals, serious second crash with injuries reported minutes earlier - Fall River Reporter"
+      "10 vehicle pileup shuts down Route 24 in Portsmouth, 5 sent to area hospitals, serious second crash with injuries reported minutes earlier - Fall River Reporter",
+      "Portsmouth accident declared a mass casualty incident - WJAR"
     ],
     "mobilisation": [
       "Associate Professor of Pedagogical University Promised Deferral from Mobilization for $1300 — Court Delivered Verdict - Судово-юридична газета",
@@ -671,7 +675,7 @@
       "yes": 4.0
     },
     {
-      "d24h": 1.0,
+      "d24h": -0.5,
       "q": "NATO x Russia military clash by December 31, 2026?",
       "yes": 10.5
     },
@@ -721,12 +725,12 @@
       "yes": 1.5
     },
     {
-      "d24h": -0.3,
+      "d24h": -0.2,
       "q": "Iran-Oman Hormuz Agreement by November 30?",
       "yes": 3.0
     },
     {
-      "d24h": -2.0,
+      "d24h": -1.0,
       "q": "Iran-Oman Hormuz Agreement by December 31?",
       "yes": 10.5
     },
@@ -736,14 +740,14 @@
       "yes": 5.5
     },
     {
-      "d24h": -0.4,
+      "d24h": -1.3,
       "q": "NATO x Russia military clash by November 30, 2026?",
       "yes": 2.7
     },
     {
-      "d24h": 1.1,
+      "d24h": 1.3,
       "q": "Ukraine agrees not to join NATO by December 31, 2026?",
-      "yes": 2.9
+      "yes": 3.2
     },
     {
       "d24h": 0.0,
@@ -771,7 +775,7 @@
       "yes": 10.0
     },
     {
-      "d24h": 0.0,
+      "d24h": 0.5,
       "q": "Will Nick Stewart attend a US x Iran diplomatic meeting by December 31, 2026?",
       "yes": 8.0
     },
@@ -1013,15 +1017,35 @@
     },
     {
       "band": "Low",
+      "convergence": "Only one kind of sign is showing (markets). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and mobilisation / reservist reports (russia / nato).",
+      "domains": [
+        "Markets"
+      ],
       "key": "russia",
-      "score": 0,
-      "trend": "down"
+      "lit": [
+        {
+          "detail": "VIX at 35.89",
+          "name": "Market fear index above 30"
+        }
+      ],
+      "score": 10,
+      "trend": "up"
     },
     {
       "band": "Low",
+      "convergence": "Only one kind of sign is showing (markets). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: us nuclear command aircraft unusual, private jets heading to retreat destinations and mobilisation reports (any major power).",
+      "domains": [
+        "Markets"
+      ],
       "key": "nuclear",
-      "score": 0,
-      "trend": "down"
+      "lit": [
+        {
+          "detail": "VIX at 35.89",
+          "name": "Market fear index above 35"
+        }
+      ],
+      "score": 10,
+      "trend": "up"
     },
     {
       "band": "Low",
@@ -1030,11 +1054,12 @@
       "trend": "steady"
     },
     {
-      "band": "Elevated",
-      "convergence": "Two different kinds of sign are showing together (chemical weapons and health). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: countries restricting medical supply exports, pandemic-response stocks outperforming (5 days) ",
+      "band": "High",
+      "convergence": "Signs are converging across 3 separate areas (chemical weapons, health and markets). Unrelated systems flagging the same scenario at once is the pattern seen before past events. Before COVID-19 (Dec 2019 - Feb 2020): reports of an unknown pneumonia cluster, WHO outbreak notices, mask and hazmat make",
       "domains": [
         "Chemical weapons",
-        "Health"
+        "Health",
+        "Markets"
       ],
       "key": "bio",
       "lit": [
@@ -1051,12 +1076,16 @@
           "name": "Mass casualty declarations (any country)"
         },
         {
+          "detail": "VIX at 35.89",
+          "name": "Market fear index above 30"
+        },
+        {
           "detail": "Meeting Between Iran’s Deputy FM and Chemical Weapons Victims",
           "name": "Chemical / nerve-agent attack or mass poisoning reported"
         }
       ],
-      "score": 55,
-      "trend": "down"
+      "score": 65,
+      "trend": "up"
     },
     {
       "band": "Low",
@@ -1075,11 +1104,12 @@
       "trend": "steady"
     },
     {
-      "band": "Guarded",
-      "convergence": "Two different kinds of sign are showing together (ai-enabled hacking and cloud services). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, deepfakes of leaders or fake ",
+      "band": "Elevated",
+      "convergence": "Signs are converging across 3 separate areas (ai-enabled hacking, cloud services and markets). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: a Chinese sta",
       "domains": [
         "AI-enabled hacking",
-        "Cloud services"
+        "Cloud services",
+        "Markets"
       ],
       "key": "ai",
       "lit": [
@@ -1088,20 +1118,29 @@
           "name": "Reports of AI-driven hacking campaigns"
         },
         {
+          "detail": "VIX +26.2%",
+          "name": "Market fear index jumps 25%+ in a day"
+        },
+        {
           "detail": "United Airlines reports major system outage as US air travel faces fresh disruption",
           "name": "Major cloud or AI service outage"
         }
       ],
-      "score": 25,
-      "trend": "down"
+      "score": 35,
+      "trend": "up"
     }
   ],
-  "sectors_relative_5d": {},
+  "sectors_relative_5d": {
+    "defence_au": -2.14,
+    "defence_eu": 1.27,
+    "defence_us": 3.44,
+    "pandemic": -3.85
+  },
   "tankers": "normal",
   "telecom_drop_pct": {
-    "Aussie Broadband": 0.0,
-    "Optus": 5.0,
-    "TPG": 0.1,
+    "Aussie Broadband": 0.4,
+    "Optus": 4.0,
+    "TPG": 0.2,
     "Telstra": 0.0,
     "Vodafone": 0.0
   },
