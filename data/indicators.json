@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T14:49:00Z",
+  "generated_at": "2026-11-22T15:04:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -119,7 +119,7 @@
       "name": "Middle East war & Gulf shipping",
       "sa_impact": "Fuel: Australia imports most of its fuel, much of it refined from Gulf crude in Asia. Shipping attacks or a Hormuz closure push up prices within days and can cause local shortages.",
       "score": 15,
-      "trend": "down",
+      "trend": "steady",
       "unlit": [
         {
           "domain": "Military air",
@@ -637,8 +637,8 @@
       "why": "The 2023 Optus outage cut mobile, NBN, EFTPOS and some 000 calls nationwide for 12 hours. Hostile states pre-position in critical infrastructure; GPS jamming over Australia would be a new and serious sign."
     },
     {
-      "band": "High",
-      "convergence": "Signs are converging across 3 separate areas (chemical weapons, health and markets). Unrelated systems flagging the same scenario at once is the pattern seen before past events. Before COVID-19 (Dec 2019 - Feb 2020): reports of an unknown pneumonia cluster, WHO outbreak notices, mask and hazmat makers (Alpha Pro Tech, Lakeland) and vaccine developers (Moderna, Novavax) surging weeks before broad markets fell, and countries restricting exports of masks and medicines (Taiwan from 24 Jan 2020, then dozens more). The strongest signs not yet showing: countries restricting medical supply exports, pandemic-response stocks outperforming (5 days) and australian medicine or ppe shortage reports.",
+      "band": "Elevated",
+      "convergence": "Signs are converging across 3 separate areas (chemical weapons, health and markets). Unrelated systems flagging the same scenario at once is the pattern seen before past events. Before COVID-19 (Dec 2019 - Feb 2020): reports of an unknown pneumonia cluster, WHO outbreak notices, mask and hazmat makers (Alpha Pro Tech, Lakeland) and vaccine developers (Moderna, Novavax) surging weeks before broad markets fell, and countries restricting exports of masks and medicines (Taiwan from 24 Jan 2020, then dozens more). The strongest signs not yet showing: unknown illness / pneumonia cluster reported, countries restricting medical supply exports and pandemic-response stocks outperforming (5 days).",
       "domains": [
         "Chemical weapons",
         "Health",
@@ -653,14 +653,6 @@
           "name": "WHO outbreak report with a high-concern pathogen (last 14 days)",
           "short": "WHO outbreak report",
           "weight": 15
-        },
-        {
-          "detail": "148 aboard Florida-bound cruise ship sickened by ‘unknown’ GI outbreak: CDC",
-          "domain": "Health",
-          "id": "illness",
-          "name": "Unknown illness / pneumonia cluster reported",
-          "short": "Illness cluster",
-          "weight": 20
         },
         {
           "detail": "Portsmouth accident declared a mass casualty incident",
@@ -689,9 +681,15 @@
       ],
       "name": "Pandemic, biological or chemical emergency",
       "sa_impact": "Health system strain, possible lockdowns and border closures, and shortages of medicines and protective equipment, which Australia mostly imports.",
-      "score": 65,
-      "trend": "up",
+      "score": 45,
+      "trend": "down",
       "unlit": [
+        {
+          "domain": "Health",
+          "id": "illness",
+          "name": "Unknown illness / pneumonia cluster reported",
+          "weight": 20
+        },
         {
           "domain": "Trade",
           "id": "exports",
