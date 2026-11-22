@@ -48,6 +48,9 @@ file format or alert rule they depend on, update the prompts too (or tell the us
   not enough. A Microsoft-type platform outage is a Warning.
 - National shocks abroad (a whole country's flights, power, networks or payments halted) are alerted.
 - CFS fires near home, including suburban house fires, must alert. Emergency-level alerts repeat twice.
+- 4chan chatter (`collector/chan.py`, boards /pol/ /k/ /news/) is a tip-off for the analysis only: bursts of
+  new threads on a topic go into `brief.json` as `chan_chatter`. It never pushes, never joins the watch list,
+  and is never quoted to the family. Its baseline is learned per hour of day (~3 days to warm up).
 - News signs ignore stories older than 72 h; keyword matches are noisy, so test new keywords against real
   headlines (see `tests/test_signs.py`) before relying on them.
 

@@ -6,6 +6,7 @@ import xml.etree.ElementTree as ET
 
 from common import CONFIG, DATA_ROOT, get_json, http_get
 from cyber import fetch_cyber
+from chan import fetch_chan
 
 NS = {
     "gdacs": "http://www.gdacs.org",
@@ -497,6 +498,7 @@ def fetch_all():
         "sectors": fetch_sectors,
         "cyber": fetch_cyber,
         "faa": fetch_faa,
+        "chan": fetch_chan,
     }
     for name, fn in plan.items():
         t0 = time.time()

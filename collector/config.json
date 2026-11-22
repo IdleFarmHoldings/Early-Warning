@@ -1385,5 +1385,28 @@
         ]
       }
     }
+  },
+  "chan": {
+    "_comment": "4chan chatter (collector/chan.py): a tip-off for the analysis run only. Counts NEW threads per topic on these boards (generals and threads under min_replies skipped) over window_hours. BURST = at least min_threads AND (well above the usual for this hour, or min_breaking threads using breaking-news words). Never alerts phones, never joins the watch list.",
+    "boards": ["pol", "k", "news"],
+    "window_hours": 3,
+    "min_replies": 15,
+    "min_threads": 3,
+    "min_breaking": 2,
+    "z_threshold": 3.0,
+    "min_ratio": 2.0,
+    "keep_threads": 4,
+    "breaking_words": ["happening", "breaking", "just happened", "explosion", "explosions", "sirens", "air raid", "reports of", "live feed", "livestream", "developing"],
+    "topics": [
+      {"key": "taiwan", "name": "Taiwan / China", "words": ["taiwan", "taipei", "pla", "chinese navy", "chinese military", "south china sea", "blockade", "kinmen", "xi jinping"]},
+      {"key": "korea", "name": "Korea", "words": ["north korea", "dprk", "pyongyang", "kim jong", "norks", "nork"]},
+      {"key": "mideast", "name": "Middle East", "words": ["iran", "iranian", "tehran", "israel", "idf", "hezbollah", "houthi", "houthis", "hormuz", "irgc", "tel aviv", "persian gulf", "red sea"]},
+      {"key": "eeurope", "name": "Russia / NATO", "words": ["russia", "russian", "putin", "nato", "kremlin", "moscow", "kaliningrad", "baltic", "article 5"]},
+      {"key": "nuclear", "name": "Nuclear", "words": ["nuke", "nukes", "nuclear", "icbm", "warhead", "radiation", "fallout", "defcon", "doomsday plane", "e-4b", "looking glass", "tacamo"]},
+      {"key": "cyber", "name": "Outages and hacks", "words": ["outage", "outages", "blackout", "power grid", "grid down", "internet down", "hacked", "cyber attack", "cyberattack", "ransomware", "cloudflare", "aws", "banks down", "atms", "cable cut", "undersea cable"]},
+      {"key": "shutdown", "name": "Nationwide shutdowns", "words": ["martial law", "ground stop", "all flights", "flights grounded", "grounded all", "faa", "emergency alert system", "national emergency", "state of emergency"]},
+      {"key": "bio", "name": "Outbreaks", "words": ["outbreak", "pandemic", "virus", "h5n1", "bird flu", "quarantine", "lockdown", "ebola", "marburg", "bioweapon", "mystery illness"]},
+      {"key": "australia", "name": "Australia", "words": ["australia", "australian", "aussie", "aussies", "straya", "adelaide", "sydney", "melbourne", "canberra", "pine gap", "aukus", "darwin", "albanese"]}
+    ]
   }
 }

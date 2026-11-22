@@ -30,6 +30,7 @@ import campaigns  # noqa: E402
 import satellites  # noqa: E402
 import incidents  # noqa: E402
 import shocks  # noqa: E402
+import chan  # noqa: E402
 
 SERIES_DIR = DATA_ROOT / "data" / "series"
 
@@ -581,7 +582,8 @@ def main():
            **{k: v for k, v in ac.items() if k.startswith(("mil_", "dark_")) or k in ("airlift", "raaf")},
            **extra_metrics(results),
            **{f"mkt_{k}": v.get("price") for k, v in mk.items() if isinstance(v, dict)},
-           **{shocks.hub_slug(h): n for h, n in (ac.get("traffic_by_hub") or {}).items()}}
+           **{shocks.hub_slug(h): n for h, n in (ac.get("traffic_by_hub") or {}).items()},
+           **chan.metrics(results.get("chan"))}
 
     # Satellites (refreshed every few hours) and the precursor playbook
     sat_out = load_json("data/satellites.json", {})
@@ -764,6 +766,10 @@ def main():
     summary["incidents"] = inc
     summary["national_shocks"] = shock_out
     summary["watching"] = watch_list(state, now)
+    try:  # 4chan chatter: tip-off for the analysis only, never a phone alert
+        summary["chan"] = chan.assess(results.get("chan"), series, now)
+    except Exception as e:  # noqa: BLE001
+        print(f"chan assess failed: {type(e).__name__}: {e}")
     if chk:
         save_json("data/chokepoints.json", {"generated_at": iso(now), "chokepoints": chk})
     save_json("data/latest.json", summary)

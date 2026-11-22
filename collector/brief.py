@@ -17,6 +17,17 @@ def _titles(items, n, key="title"):
     return [i.get(key) for i in (items or [])[:n] if isinstance(i, dict) and i.get(key)]
 
 
+def _chan(c):
+    """4chan bursts only (tip-offs to check, never evidence). Quiet topics are left out."""
+    if not isinstance(c, dict):
+        return None
+    bursts = [{"topic": t.get("name"), "new_threads": t.get("new_threads"), "usual": t.get("usual"), "why": t.get("why"),
+               "threads": [f"/{x.get('board')}/ {x.get('title')} ({x.get('replies')} replies in {x.get('age_h')} h) {x.get('url')}"
+                           for x in (t.get("threads") or [])]}
+              for t in (c.get("topics") or {}).values() if t.get("status") == "BURST"]
+    return {"boards": c.get("boards"), "bursts": bursts}
+
+
 def build(latest, indicators, campaigns=None):
     L = latest or {}
     loc = L.get("local_sa") or {}
@@ -97,6 +108,7 @@ def build(latest, indicators, campaigns=None):
         "prediction_markets": [{"q": p.get("question"), "yes": p.get("yes_pct"), "d24h": p.get("change_24h")}
                                for p in (L.get("prediction_markets") or [])],
         "news_watch": news,
+        "chan_chatter": _chan(L.get("chan")),
         "analyst": {src: _titles(items, 4) for src, items in (L.get("analyst_latest") or {}).items()}
         if isinstance(L.get("analyst_latest"), dict) else {},
         "scenarios": [{"key": s.get("key"), "score": s.get("score"), "band": s.get("band"), "trend": s.get("trend")}

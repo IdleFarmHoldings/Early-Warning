@@ -602,7 +602,7 @@ const FEED_NAMES = {acsc:"Australian cyber alerts (ACSC)", navwarn:"military nav
   aircraft:"aircraft tracking", gps:"GPS interference", telecom:"phone network monitor", internet:"country internet monitor", news_watch:"news watch",
   analysts:"analyst headlines", cyber:"cyber threat feeds", satellites:"satellite tracking", maritime:"ship tracking", local_sa:"local SA feeds",
   chokepoints:"shipping chokepoints", prediction_markets:"forecast markets",
-  incidents:"outage and cyber incident check", campaigns:"cyber campaign tracker", outlook:"weather outlook", faa:"FAA airport status (US flights)", shocks:"nationwide shutdown check"};
+  incidents:"outage and cyber incident check", campaigns:"cyber campaign tracker", outlook:"weather outlook", faa:"FAA airport status (US flights)", shocks:"nationwide shutdown check", chan:"online chatter (4chan)"};
 const QS = new URLSearchParams(location.search);
 const LINKED = QS.get("alert") ? {id:QS.get("alert"), title:QS.get("t")||"Alert", message:QS.get("m")||"", priority:Number(QS.get("p"))||3} : null;
 let focusDone = false;
