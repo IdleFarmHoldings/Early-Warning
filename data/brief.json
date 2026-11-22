@@ -1,7 +1,13 @@
 {
   "about": "Short form of latest.json + indicators.json for the analysis run. Links and raw samples removed.",
   "acsc": [],
-  "aircraft_flags": {},
+  "aircraft_flags": {
+    "gps_gulf": {
+      "median": 7.0,
+      "status": "ANOMALY",
+      "value": 26
+    }
+  },
   "analyst": {
     "ASPI Strategist": [
       "Let’s see whether North Korea absorbs the experience it’s getting in Ukraine",
@@ -265,17 +271,16 @@
   ],
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
-    "maritime": "TimeoutError: ",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-22T15:34:00Z",
+  "generated_at": "2026-11-22T15:38:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 28,
-    "Black Sea": 42,
+    "Baltic / Kaliningrad": 29,
+    "Black Sea": 23,
     "Israel & Eastern Mediterranean": 0,
     "Korea": 0,
-    "Persian Gulf": 20,
+    "Persian Gulf": 26,
     "South Australia": null,
     "Sydney / NSW": null,
     "Taiwan Strait": 0
@@ -323,19 +328,19 @@
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
+        "Latest FBI cyber-attack ‘likely’ a ‘state sponsored attacker’"
+      ],
+      "severity": "Info",
+      "target": "Latest FBI"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
         "Tower Records Japan reports data breach affecting 10.2 million accounts By Investing.com"
       ],
       "severity": "Info",
       "target": "Tower Records Japan"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": true,
-      "headlines": [
-        "JPMorgan Chase (JPM) Says Vendor Cyberattack Exposed Customer Data"
-      ],
-      "severity": "Info",
-      "target": "JPMorgan Chase"
     },
     {
       "attack_reported": true,
@@ -355,6 +360,15 @@
       ],
       "severity": "Info",
       "target": "China-linked"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "Hackers Leak JPMorgan Client Data"
+      ],
+      "severity": "Info",
+      "target": "Hackers Leak JPMorgan"
     },
     {
       "attack_reported": true,
@@ -419,15 +433,6 @@
       ],
       "severity": "Info",
       "target": "Hacks"
-    },
-    {
-      "attack_reported": false,
-      "confirmed": false,
-      "headlines": [
-        "Tech outages are piling up, and AI is raising the stakes. Could this be the new normal?"
-      ],
-      "severity": "Info",
-      "target": "Tech"
     }
   ],
   "internet_drop_pct": {
@@ -436,7 +441,7 @@
     "Israel": 0.3,
     "Russia": 0.0,
     "South Korea": 0.1,
-    "Taiwan": 0.3
+    "Taiwan": 0.4
   },
   "local_sa": {
     "bom": [
@@ -459,8 +464,8 @@
       "pump_cents": -4,
       "week_ago_aud": 141.5
     },
-    "grid_demand_fall_pct": 5.1,
-    "grid_demand_mw": 1353,
+    "grid_demand_fall_pct": 3.9,
+    "grid_demand_mw": 1350,
     "grid_demand_usual_mw": 1292,
     "grid_lor_level": 0,
     "nearby_incidents": [],
@@ -526,14 +531,8 @@
   },
   "national_shocks": {
     "faa": {
-      "airports": 1,
-      "ground_stops": [
-        {
-          "airport": "LGA",
-          "end": "11:15 am EST",
-          "reason": "low visibility"
-        }
-      ],
+      "airports": 0,
+      "ground_stops": [],
       "national": false
     },
     "shocks": [],
@@ -544,8 +543,8 @@
   "news_watch": {
     "ai_hack": [
       "Hacks, AI and conspiracy theories: why are we having so many outages? | Technology - The Guardian",
-      "We were warned, time for heads to roll - News.com.au",
-      "China-linked hackers used AI agents to exploit a MONAI Label zero-day, Amazon says - Startup Fortune"
+      "China-linked hackers used AI agents to exploit a MONAI Label zero-day, Amazon says - Startup Fortune",
+      "The HackerNoon Newsletter: Fridges, Hackers, AI and La Flemme (11/21/2026) - HackerNoon"
     ],
     "airspace": [
       "Saudi coalition intercepts Houthi missile targeting western Saudi Arabia - Crypto Briefing",
@@ -555,7 +554,7 @@
     "aviation_halt": [
       "Flights grounded throughout Midwest after temporary outage at Minnesota air traffic control facility: FAA - ABC News - Breaking News, Latest News and Videos",
       "Ground Stop’s Fallout Ripples Into Third Day of Canceled Flights - WSJ",
-      "Osius: Friday the 13th: Stuck in the ground stop - Aspen Daily News"
+      "FAA Ground Stop Exposes Risks in Aging Air Traffic Systems - cwibc.co.id"
     ],
     "bank_outage": [
       "How Did Westpac (ASX:WBC) Trade After a Year of Double-Digit Business Lending Growth? - Kalkine",
@@ -688,14 +687,14 @@
       "yes": 10.5
     },
     {
-      "d24h": 0.1,
+      "d24h": 0.0,
       "q": "China x Taiwan military clash before 2027?",
       "yes": 3.2
     },
     {
-      "d24h": 0.8,
+      "d24h": 0.9,
       "q": "US-Iran Hormuz Agreement by November 30?",
-      "yes": 3.4
+      "yes": 3.5
     },
     {
       "d24h": 1.0,
@@ -738,12 +737,12 @@
       "yes": 3.0
     },
     {
-      "d24h": 1.5,
+      "d24h": 0.5,
       "q": "Iran-Oman Hormuz Agreement by December 31?",
       "yes": 13.0
     },
     {
-      "d24h": 1.0,
+      "d24h": 0.5,
       "q": "Iran charges Hormuz fees by December 31?",
       "yes": 5.5
     },
@@ -753,9 +752,9 @@
       "yes": 2.5
     },
     {
-      "d24h": 1.2,
+      "d24h": 0.8,
       "q": "Ukraine agrees not to join NATO by December 31, 2026?",
-      "yes": 3.1
+      "yes": 2.7
     },
     {
       "d24h": 0.0,
@@ -783,7 +782,7 @@
       "yes": 10.0
     },
     {
-      "d24h": 1.5,
+      "d24h": 1.0,
       "q": "Will Nick Stewart attend a US x Iran diplomatic meeting by December 31, 2026?",
       "yes": 8.0
     },
@@ -997,19 +996,24 @@
     },
     {
       "band": "Guarded",
-      "convergence": "Only one kind of sign is showing (shipping). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
+      "convergence": "Two different kinds of sign are showing together (electronic warfare and shipping). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet bl",
       "domains": [
+        "Electronic warfare",
         "Shipping"
       ],
       "key": "mideast",
       "lit": [
         {
+          "detail": "gps_gulf 26 vs usual 7.0",
+          "name": "GPS jamming spike (Gulf / Israel)"
+        },
+        {
           "detail": "Strait of Hormuz -38% vs usual (2.3/day)",
           "name": "Ship traffic through Hormuz down sharply"
         }
       ],
-      "score": 15,
-      "trend": "steady"
+      "score": 25,
+      "trend": "up"
     },
     {
       "band": "Low",
@@ -1149,7 +1153,7 @@
     "Aussie Broadband": 0.0,
     "Optus": 0.0,
     "TPG": 0.3,
-    "Telstra": 0.3,
+    "Telstra": 0.4,
     "Vodafone": 0.0
   },
   "us_departure_orders": [
