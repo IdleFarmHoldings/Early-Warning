@@ -1,7 +1,13 @@
 {
   "about": "Short form of latest.json + indicators.json for the analysis run. Links and raw samples removed.",
   "acsc": [],
-  "aircraft_flags": {},
+  "aircraft_flags": {
+    "gps_gulf": {
+      "median": 7.0,
+      "status": "ANOMALY",
+      "value": 39
+    }
+  },
   "analyst": {
     "ASPI Strategist": [
       "Let’s see whether North Korea absorbs the experience it’s getting in Ukraine",
@@ -201,13 +207,13 @@
         "other_explanations": "These may not be connected: criminal gangs, faulty systems, or reporters linking separate events can look the same. No government has confirmed this as one campaign."
       },
       "incidents": [
+        "2026-11-22 ?: Trump blames Minnesota governor, not Iran, for cyberattacks on the state's water systems - ABC News (named attacker)",
         "2026-11-16 ?: Hackers Probe Newly Disclosed Flaws in Copeland Refrigeration Controllers (same pattern)",
         "2026-11-13 United States: Suspected Iranian hackers lock operators out of control panels at small US water stations (named attacker)",
         "2026-11-13 United States: Hackers hit networks on two Texas-bound energy tankers; US officials probe Iranian link (named attacker)",
-        "2026-11-13 Europe: US and French officials suspect Iran in attacks that raised European supermarket freezer temperatures (named attacker)",
-        "2026-11-09 Europe: France Blames Iran for Cyberattack on Refrigeration Systems (named attacker)"
+        "2026-11-13 Europe: US and French officials suspect Iran in attacks that raised European supermarket freezer temperatures (named attacker)"
       ],
-      "incidents_7d": 1,
+      "incidents_7d": 2,
       "official_warning": true,
       "score": 85,
       "sectors": [
@@ -268,13 +274,13 @@
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-22T11:20:00Z",
+  "generated_at": "2026-11-22T11:26:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 26,
-    "Black Sea": 24,
-    "Israel & Eastern Mediterranean": 1,
-    "Korea": 1,
-    "Persian Gulf": 5,
+    "Baltic / Kaliningrad": 25,
+    "Black Sea": 25,
+    "Israel & Eastern Mediterranean": 4,
+    "Korea": 0,
+    "Persian Gulf": 39,
     "South Australia": 0,
     "Sydney / NSW": 0,
     "Taiwan Strait": 0
@@ -302,10 +308,10 @@
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
-        "Latest FBI cyber-attack ‘likely’ a ‘state sponsored attacker’"
+        "The Next Global Cyberattack Could Have Your Home IP Address – Analysis"
       ],
       "severity": "Info",
-      "target": "Latest FBI"
+      "target": "The Next Global"
     },
     {
       "attack_reported": true,
@@ -315,6 +321,15 @@
       ],
       "severity": "Info",
       "target": "Tower Records Japan"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "Latest FBI cyber-attack ‘likely’ a ‘state sponsored attacker’"
+      ],
+      "severity": "Info",
+      "target": "Latest FBI"
     },
     {
       "attack_reported": true,
@@ -364,9 +379,8 @@
     },
     {
       "attack_reported": false,
-      "confirmed": true,
+      "confirmed": false,
       "headlines": [
-        "Microsoft's final Outlook outage report lists 13 fixes after tests on older servers missed the bug",
         "BSP gives banks more time to file forex reports after Microsoft 365 outage"
       ],
       "severity": "Info",
@@ -440,9 +454,9 @@
       "pump_cents": -4,
       "week_ago_aud": 141.5
     },
-    "grid_demand_fall_pct": 1.1,
-    "grid_demand_mw": 1415,
-    "grid_demand_usual_mw": 1399,
+    "grid_demand_fall_pct": 1.6,
+    "grid_demand_mw": 1399,
+    "grid_demand_usual_mw": 1398,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
@@ -534,8 +548,8 @@
     ],
     "bank_outage": [
       "Imagine growing up without your yiayia and pappou - Neos Kosmos",
-      "What Does the FY26 Profit Rebound at ANZ Group (ASX:ANZ) Look Like After a Down Week? - Kalkine",
-      "Visa Moves To Close Meme Coin Credit Card Rewards Loophole - CoinMarketCap"
+      "FBI investigates suspected breach of crime database - Herald Sun",
+      "What Does the FY26 Profit Rebound at ANZ Group (ASX:ANZ) Look Like After a Down Week? - Kalkine"
     ],
     "blood": [
       "Air Marshal Sandeep Thareja Reviews Military Medical Infrastructure at Hyderabad Military Station - SSBCrack",
@@ -558,14 +572,14 @@
       "BSP gives banks more time to file forex reports after Microsoft 365 outage - Bilyonaryo Business"
     ],
     "cyber_attrib": [
-      "Spy agency warns active Russian hackers targeting Australian industry - ABC News & Headlines – Australian Broadcasting Corporation",
-      "Australians should prepare for online services to go down unexpectedly as threats rise, cyber agency warns - The Guardian",
-      "CISA Warns of 4 Exploited Flaws Linked to Ransomware, Cryptomining, and LLMjacking Attacks - The Hacker News"
+      "FBI warns hackers weaponizing ARTEX AI framework to automate attacks on energy, manufacturing, telecom - Industrial Cyber",
+      "Trump blames Minnesota governor, not Iran, for cyberattacks on the state's water systems - ABC News - Breaking News, Latest News and Videos",
+      "FBI warns hackers using AI-powered tool to automate cyberattacks worldwide - Anadolu Ajansı"
     ],
     "cyber_au": [
       "FBI investigates suspected breach of crime database - Herald Sun",
-      "FBI database reportedly hacked - ABC News & Headlines – Australian Broadcasting Corporation",
-      "FBI database targeted in suspected breach - News24"
+      "Tower Records Japan reports data breach affecting 10.2 million accounts By Investing.com - Investing.com Australia",
+      "FBI database reportedly hacked - ABC News & Headlines – Australian Broadcasting Corporation"
     ],
     "cyber_ot": [
       "UK operation wards off risk of cyber-attack on supermarket fridges and freezers - The Guardian",
@@ -578,9 +592,9 @@
       "Russian state hackers likely behind wiper malware attack on Poland’s power grid - The Record from Recorded Future News"
     ],
     "cyber_supply": [
+      "MONAI Label Zero-Day: AI Agents Exploit Medical Imaging Research Servers - Cloud Security Alliance (CSA)",
       "Broadcom Patches Critical VMware vCenter Zero-Day Exploited By China-Linked Hackers Since September - LinkedIn",
-      "Amazon: China-Linked Hackers’ AI Agents Exploited Medical Software Zero-Day - SecurityWeek",
-      "How an Open-Source AI Agent Found and Exploited a Zero-Day (And Got Caught by a Missing Password) - Medium"
+      "Amazon: China-Linked Hackers’ AI Agents Exploited Medical Software Zero-Day - SecurityWeek"
     ],
     "deepfake": [
       "TikTok launches tool to help public figures detect deepfakes globally - CGTN",
@@ -620,8 +634,8 @@
     ],
     "outage_au": [
       "Calls for 'automatic compensation' following telco outages - ABC News & Headlines – Australian Broadcasting Corporation",
-      "Alice Springs and Katherine local news briefing: Friday, November 20, 2026 - ABC News & Headlines – Australian Broadcasting Corporation",
-      "Telstra mobile outage disrupts services across Australia - Australian Cyber Security Magazine"
+      "Microsoft ‘deeply sorry’ for global outage, rules out cyberattack and AI - Nine.com.au",
+      "Australia telco complaints surge after Telstra outage - Traders Union"
     ],
     "reservists": [
       "Conscription age limit for women if Putin starts WW3 - AOL.co.uk",
@@ -644,7 +658,7 @@
     "strikes": [
       "Iran widens Gulf attacks by targeting U.S. air base in Kuwait and sites in Bahrain - PBS",
       "Seven bombers from Kola took part in massive strike; two missiles crashed in Poland - The Barents Observer",
-      "Army whistleblower says warnings came before Iran strike killed 6 US troops - Cleveland.com"
+      "Iran launches drone strike on U.S. base in Bahrain - upi"
     ]
   },
   "prediction_markets": [
@@ -964,23 +978,28 @@
         }
       ],
       "score": 10,
-      "trend": "down"
+      "trend": "steady"
     },
     {
       "band": "Guarded",
-      "convergence": "Only one kind of sign is showing (shipping). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
+      "convergence": "Two different kinds of sign are showing together (electronic warfare and shipping). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet bl",
       "domains": [
+        "Electronic warfare",
         "Shipping"
       ],
       "key": "mideast",
       "lit": [
         {
+          "detail": "gps_gulf 39 vs usual 7.0",
+          "name": "GPS jamming spike (Gulf / Israel)"
+        },
+        {
           "detail": "Strait of Hormuz -38% vs usual (2.3/day)",
           "name": "Ship traffic through Hormuz down sharply"
         }
       ],
-      "score": 15,
-      "trend": "steady"
+      "score": 25,
+      "trend": "up"
     },
     {
       "band": "Low",
@@ -1110,7 +1129,7 @@
     "Aussie Broadband": 0.0,
     "Optus": 0.0,
     "TPG": 0.3,
-    "Telstra": 0.0,
+    "Telstra": 0.4,
     "Vodafone": 0.0
   },
   "us_departure_orders": [
