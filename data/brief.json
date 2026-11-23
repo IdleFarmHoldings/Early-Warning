@@ -3,9 +3,9 @@
   "acsc": [],
   "aircraft_flags": {
     "mil_mideast": {
-      "median": 5,
+      "median": 4,
       "status": "ANOMALY",
-      "value": 19
+      "value": 16
     }
   },
   "analyst": {
@@ -280,17 +280,18 @@
   ],
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
+    "maritime": "TimeoutError: ",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-23T11:12:00Z",
+  "generated_at": "2026-11-23T11:18:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 18,
-    "Black Sea": 29,
-    "Israel & Eastern Mediterranean": 7,
+    "Baltic / Kaliningrad": 16,
+    "Black Sea": 18,
+    "Israel & Eastern Mediterranean": 10,
     "Korea": 0,
-    "Persian Gulf": 5,
-    "South Australia": 6,
+    "Persian Gulf": 7,
+    "South Australia": 5,
     "Sydney / NSW": 0,
     "Taiwan Strait": 0
   },
@@ -299,21 +300,11 @@
       "attack_reported": true,
       "confirmed": true,
       "headlines": [
-        "AI-Powered Hackers Exploit Indian Banks’ Payment Systems",
-        "Chase Bank customers may be affected after hackers access marketing data"
+        "Chase Bank customers may be affected after hackers access marketing data",
+        "AI-Powered Hackers Exploit Indian Banks’ Payment Systems"
       ],
       "severity": "Warning",
       "target": "Banking & payments"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": true,
-      "headlines": [
-        "Microsoft confirms data breach due to a bug in Entra Connect Health",
-        "Days After Global Outlook Outage, Microsoft Warns More Disruptions Ahead. Here's Why"
-      ],
-      "severity": "Info",
-      "target": "Microsoft"
     },
     {
       "attack_reported": true,
@@ -326,21 +317,21 @@
     },
     {
       "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
-        "New Zealand Defence Force website remains down days after data breach disclosure"
-      ],
-      "severity": "Info",
-      "target": "New Zealand Defence"
-    },
-    {
-      "attack_reported": true,
       "confirmed": true,
       "headlines": [
         "\"Not A Cyber Attack\" Western Leaders Says As Nearly All Critical Infrastructure Goes Offline At Some Point This Month"
       ],
       "severity": "Info",
       "target": "Not"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "New Zealand Defence Force website remains down days after data breach disclosure"
+      ],
+      "severity": "Info",
+      "target": "New Zealand Defence"
     },
     {
       "attack_reported": true,
@@ -398,6 +389,15 @@
     },
     {
       "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "Autonomous AI Agents Breach 10 Organisations via Everyday Flaws as Singapore Warns of Machine-Speed Threats + Video"
+      ],
+      "severity": "Info",
+      "target": "Autonomous AI Agents"
+    },
+    {
+      "attack_reported": true,
       "confirmed": true,
       "headlines": [
         "China-Linked Hackers’ AI Agents Found a MONAI Label Zero-Day, Amazon Says"
@@ -409,19 +409,21 @@
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
-        "Autonomous AI Agents Breach 10 Organisations via Everyday Flaws as Singapore Warns of Machine-Speed Threats + Video"
-      ],
-      "severity": "Info",
-      "target": "Autonomous AI Agents"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
         "Taiwan financial institutions see increased cyberattack risk from AI"
       ],
       "severity": "Info",
       "target": "Taiwan"
+    },
+    {
+      "attack_reported": false,
+      "confirmed": true,
+      "headlines": [
+        "Microsoft confirms data breach due to a bug in Entra Connect Health",
+        "Days After Global Outlook Outage, Microsoft Warns More Disruptions Ahead. Here's Why",
+        "Microsoft outage cause revealed: It was a perfect storm of problems"
+      ],
+      "severity": "Warning",
+      "target": "Microsoft"
     },
     {
       "attack_reported": false,
@@ -467,13 +469,13 @@
     "fires_active": 8,
     "fuel": {
       "brent_aud": 134.6,
-      "change_pct": -3.7,
+      "change_pct": -3.8,
       "pump_cents": -3,
       "week_ago_aud": 139.9
     },
-    "grid_demand_fall_pct": 1.8,
-    "grid_demand_mw": 1452,
-    "grid_demand_usual_mw": 1429,
+    "grid_demand_fall_pct": 2.0,
+    "grid_demand_mw": 1448,
+    "grid_demand_usual_mw": 1420,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
@@ -483,26 +485,7 @@
         "pm25": 9
       },
       "air_word": "Good",
-      "days": [
-        {
-          "date": "2026-11-23",
-          "gust": 59,
-          "rain": 2,
-          "tmax": 18
-        },
-        {
-          "date": "2026-11-24",
-          "gust": 35,
-          "rain": 0,
-          "tmax": 21
-        },
-        {
-          "date": "2026-11-25",
-          "gust": 49,
-          "rain": 0,
-          "tmax": 28
-        }
-      ]
+      "days": []
     },
     "possible_blackout": false,
     "power_news": [],
@@ -520,20 +503,20 @@
   },
   "markets": {
     "AUD/USD": {
-      "change_pct": -0.24,
-      "price": 0.664
+      "change_pct": -0.26,
+      "price": 0.6639
     },
     "Brent oil": {
-      "change_pct": -4.16,
-      "price": 88.72
+      "change_pct": -4.31,
+      "price": 88.58
     },
     "Gold": {
-      "change_pct": 3.06,
-      "price": 3622.9
+      "change_pct": 3.0,
+      "price": 3621.0
     },
     "VIX": {
-      "change_pct": -17.05,
-      "price": 29.77
+      "change_pct": -17.3,
+      "price": 29.68
     }
   },
   "national_shocks": {
@@ -551,7 +534,7 @@
     "ai_hack": [
       "AI agents exploit zero-day vulnerability in university cyberattack - Tech Wire Asia",
       "With AI-powered cyberattacks, hackers seem more powerful than ever - DW.com",
-      "China-Linked Hackers’ AI Agents Found a MONAI Label Zero-Day, Amazon Says - Technology Org"
+      "Autonomous AI Agents Breach 10 Organisations via Everyday Flaws as Singapore Warns of Machine-Speed Threats + Video - Howl.Link"
     ],
     "airspace": [
       "Belgium’s Airspace Closed 7 AM – 9 PM On Monday (November 23, 2026) & All Flights Canceled At Brussels Airport - LoyaltyLobby",
@@ -559,13 +542,13 @@
     ],
     "aviation_halt": [
       "Delta Outage: Weight-and-Balance Glitch Triggers Atlanta Ground Stop - MiGFlug",
-      "FAA ground stop: When will it end? Not as soon as you'd like. - Mashable",
-      "Anatomy of the FAA Ground Stop: One Backbone, One Bad Change - BankInfoSecurity"
+      "Anatomy of the FAA Ground Stop: One Backbone, One Bad Change - BankInfoSecurity",
+      "Delta Weight-and-Balance System Outage Prompts FAA Ground Stop for Atlanta-Bound Flights Ahead of Thanksgiving - Avi-Go"
     ],
     "bank_outage": [
       "Australian shares sink for eighth straight session - CommBank",
-      "The Australian Dollar: Losing Its Anchors - Westpac IQ",
-      "\"Not A Cyber Attack\" Western Leaders Says As Nearly All Critical Infrastructure Goes Offline At Some Point This Month - The Betoota Advocate"
+      "NAB staff learn of redundancies in massive admin email blunder, bank apologises - Nine.com.au",
+      "The Australian Dollar: Losing Its Anchors - Westpac IQ"
     ],
     "chem": [
       "Conference of the States Parties to the Chemical Weapons Convention opens - OPCW",
@@ -574,23 +557,18 @@
     ],
     "cloud": [
       "Microsoft confirms data breach due to a bug in Entra Connect Health - Techzine Global",
-      "Days After Global Outlook Outage, Microsoft Warns More Disruptions Ahead. Here's Why - NDTV",
-      "7 Ways to prevent phishing scams targeting businesses - PropertyCasualty360"
+      "Microsoft outage cause revealed: It was a perfect storm of problems - Mashable",
+      "Days After Global Outlook Outage, Microsoft Warns More Disruptions Ahead. Here's Why - NDTV"
     ],
     "cyber_attrib": [
       "CISA Warns of 4 Exploited Flaws Linked to Ransomware, Cryptomining, and LLMjacking Attacks - The Hacker News",
       "Australians should prepare for online services to go down unexpectedly as threats rise, cyber agency warns - The Guardian",
-      "FBI Warns Hackers Are Using AI Tool ARTEX to Automate Cyberattacks - The SOFX Report"
+      "Hackers Linked To China Are Using AI To Target Banks, FBI Warns - Rediff"
     ],
     "cyber_au": [
-      "Aussie camping retailer hit by cyber attack - News.com.au",
-      "New Zealand Defence Force website remains down days after data breach disclosure - Cyber Daily",
-      "\"Not A Cyber Attack\" Western Leaders Says As Nearly All Critical Infrastructure Goes Offline At Some Point This Month - The Betoota Advocate"
-    ],
-    "cyber_ot": [
-      "UK operation wards off risk of cyber-attack on supermarket fridges and freezers - The Guardian",
-      "Shop freezers in seven European countries hit by cyber-attack - BBC",
-      "Supermarket freezers and fridges in Europe hit by cyberattack - Nine.com.au"
+      "Aussie camping retailer hit by cyber attack - News24",
+      "\"Not A Cyber Attack\" Western Leaders Says As Nearly All Critical Infrastructure Goes Offline At Some Point This Month - The Betoota Advocate",
+      "Australia mulls tougher tech laws after AI health breach - The Nightly"
     ],
     "cyber_state": [
       "ESET Research: Sandworm behind cyberattack on Poland’s power grid in late 2025 - We Live Security",
@@ -623,12 +601,12 @@
     "illness": [
       "Mystery illness causes mass hospitalisation of runners - The Nightly",
       "Zayn Malik hospitalised with mystery illness, forced to cancel upcoming appearances on album release week - Nine.com.au",
-      "Zayn Malik hospitalised with mystery illness - News.com.au"
+      "Mystery Pneumonia Death Sparks Concern; Trader Joe's Recall; OUD in Young People - MedPage Today"
     ],
     "masscas": [
+      "Emirates International Burn Conference 2026 examines medical readiness, response - www.wam.ae",
       "Berlin hospital fire injures more than a dozen as police suspect patient set bed alight - Brussels Signal",
-      "Somali Region Public Hospitals Demonstrate Suboptimal Disaster Preparedness in Facility Assessment - Bioengineer.org",
-      "Emirates International Burn Conference 2026 examines medical readiness, response - www.wam.ae"
+      "Somali Region Public Hospitals Demonstrate Suboptimal Disaster Preparedness in Facility Assessment - Bioengineer.org"
     ],
     "medexport": [
       "The weak link in Malaysia’s pharmaceutical supply chain - Free Malaysia Today",
@@ -644,8 +622,8 @@
     ],
     "national_outage": [
       "Inside the ‘Black Sky’ plans for a nationwide blackout - Herald.Wales",
-      "Delta Air Lines delays over 1,300 flights as latest outage snarls air traffic - SILive.com",
-      "Heatwave can lead to blackouts in Portugal - The Portugal News"
+      "What Is Causing South Sulawesi's 600 MW Power Shortfall? - Tempo.co English",
+      "Delta Air Lines delays over 1,300 flights as latest outage snarls air traffic - SILive.com"
     ],
     "outage_au": [
       "Calls for 'automatic compensation' following telco outages - ABC News & Headlines – Australian Broadcasting Corporation",
@@ -667,8 +645,8 @@
     ],
     "scams": [
       "Trick or trust? Spot cyber fraud fast - kendranewsaustralia.com.au",
-      "FIS warns Gen Z is hit hardest by AI deepfake scams - IT Brief UK",
-      "Fraud & Digital Identity News – KYC, Scams & Verification - FF News"
+      "Fraud & Digital Identity News – KYC, Scams & Verification - FF News",
+      "FIS warns Gen Z is hit hardest by AI deepfake scams - IT Brief UK"
     ],
     "shipping_attacks": [
       "ADNOC L&S says one missing, 11 injured in Strait of Hormuz ship attack - Baird Maritime",
@@ -793,9 +771,9 @@
       "yes": 12.5
     },
     {
-      "d24h": -1.5,
+      "d24h": -2.0,
       "q": "Ukraine agrees not to join NATO by December 31, 2027?",
-      "yes": 18.5
+      "yes": 18.0
     },
     {
       "d24h": 0.0,
@@ -1033,7 +1011,7 @@
       "key": "mideast",
       "lit": [
         {
-          "detail": "mil_mideast 19 vs usual 5",
+          "detail": "mil_mideast 16 vs usual 4",
           "name": "Unusual military air activity over the region"
         },
         {
@@ -1042,7 +1020,7 @@
         }
       ],
       "score": 30,
-      "trend": "up"
+      "trend": "steady"
     },
     {
       "band": "Low",
@@ -1070,7 +1048,7 @@
         }
       ],
       "score": 5,
-      "trend": "down"
+      "trend": "steady"
     },
     {
       "band": "Low",
@@ -1085,7 +1063,7 @@
       "trend": "steady"
     },
     {
-      "band": "Guarded",
+      "band": "Elevated",
       "convergence": "Two different kinds of sign are showing together (chemical weapons and health). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: unknown illness / pneumonia cluster reported, countries restricting medical supply exports and",
       "domains": [
         "Chemical weapons",
@@ -1098,12 +1076,16 @@
           "name": "WHO outbreak report with a high-concern pathogen (last 14 days)"
         },
         {
+          "detail": "Dozens Fall Ill On Two Condor Flights To Frankfurt, Triggering Mass Casualty Response",
+          "name": "Mass casualty declarations (any country)"
+        },
+        {
           "detail": "Panic at 12,000-strong concert as suspected chemical attack sparks mass evacuation",
           "name": "Chemical / nerve-agent attack or mass poisoning reported"
         }
       ],
-      "score": 30,
-      "trend": "down"
+      "score": 35,
+      "trend": "up"
     },
     {
       "band": "Low",
@@ -1119,7 +1101,7 @@
         }
       ],
       "score": 10,
-      "trend": "up"
+      "trend": "steady"
     },
     {
       "band": "Elevated",
@@ -1150,12 +1132,12 @@
         }
       ],
       "score": 40,
-      "trend": "up"
+      "trend": "steady"
     }
   ],
   "sectors_relative_5d": {
     "defence_au": 0.78,
-    "defence_eu": 0.64,
+    "defence_eu": 0.7,
     "defence_us": 3.44,
     "pandemic": -3.85
   },
@@ -1172,9 +1154,9 @@
   "tankers": "normal",
   "telecom_drop_pct": {
     "Aussie Broadband": 0.0,
-    "Optus": 4.9,
+    "Optus": 0.0,
     "TPG": 0.0,
-    "Telstra": 0.2,
+    "Telstra": 0.0,
     "Vodafone": 9.5
   },
   "us_departure_orders": [
@@ -1214,9 +1196,9 @@
     {
       "active": true,
       "first_seen": "2026-11-23T11:12:00Z",
-      "last_seen": "2026-11-23T11:12:00Z",
+      "last_seen": "2026-11-23T11:18:00Z",
       "region": "the Middle East",
-      "text": "19 military aircraft visible over Middle East & Gulf (usual ~5)",
+      "text": "16 military aircraft visible over Middle East & Gulf (usual ~4)",
       "what": "unusual military flights"
     },
     {
