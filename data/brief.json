@@ -1,13 +1,7 @@
 {
   "about": "Short form of latest.json + indicators.json for the analysis run. Links and raw samples removed.",
   "acsc": [],
-  "aircraft_flags": {
-    "gps_gulf": {
-      "median": 10,
-      "status": "ANOMALY",
-      "value": 54
-    }
-  },
+  "aircraft_flags": {},
   "analyst": {
     "ASPI Strategist": [
       "America cannot destroy Iran’s missiles. China’s will be a far greater challenge",
@@ -285,25 +279,26 @@
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-23T17:14:00Z",
+  "generated_at": "2026-11-23T17:21:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 31,
-    "Black Sea": 21,
+    "Baltic / Kaliningrad": 30,
+    "Black Sea": 15,
     "Israel & Eastern Mediterranean": 9,
     "Korea": 0,
-    "Persian Gulf": 54,
+    "Persian Gulf": 45,
     "South Australia": 0,
     "Sydney / NSW": null,
-    "Taiwan Strait": 0
+    "Taiwan Strait": 3
   },
   "incidents": [
     {
       "attack_reported": true,
-      "confirmed": false,
+      "confirmed": true,
       "headlines": [
+        "Hackers steal bank cards data as fraud fears mount",
         "AI-Powered Hackers Exploit Indian Banks’ Payment Systems"
       ],
-      "severity": "Info",
+      "severity": "Warning",
       "target": "Banking & payments"
     },
     {
@@ -382,19 +377,19 @@
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
-        "Hackers exploit critical Cisco Expressway flaw CVE-2026-76466"
+        "KEPCO Breach, Aeroméxico Leak & RCS Zero-Day Sale"
       ],
       "severity": "Info",
-      "target": "Hackers"
+      "target": "KEPCO"
     },
     {
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
-        "KEPCO Breach, Aeroméxico Leak & RCS Zero-Day Sale"
+        "Hackers exploit critical Cisco Expressway flaw CVE-2026-76466"
       ],
       "severity": "Info",
-      "target": "KEPCO"
+      "target": "Hackers"
     },
     {
       "attack_reported": true,
@@ -499,9 +494,9 @@
       "attack_reported": false,
       "confirmed": true,
       "headlines": [
+        "Microsoft’s Outage Report: Bounced Emails and Silent Security Failures",
         "Microsoft mega outage: Report reveals testing gaps and emails that never arrived",
-        "CyberCube activates cyber catastrophe response after global Microsoft outage",
-        "Microsoft confirms data breach due to a bug in Entra Connect Health"
+        "CyberCube activates cyber catastrophe response after global Microsoft outage"
       ],
       "severity": "Warning",
       "target": "Microsoft"
@@ -528,7 +523,7 @@
   "internet_drop_pct": {
     "China": 0.0,
     "Iran": 0.0,
-    "Israel": 0.6,
+    "Israel": 0.5,
     "Russia": 0.1,
     "South Korea": 0.2,
     "Taiwan": 0.7
@@ -547,15 +542,15 @@
       "Mount Lofty Ranges": "Moderate / Moderate"
     },
     "fire_danger_ok": true,
-    "fires_active": 8,
+    "fires_active": 7,
     "fuel": {
       "brent_aud": 133.9,
       "change_pct": -3.2,
       "pump_cents": -3,
       "week_ago_aud": 138.4
     },
-    "grid_demand_fall_pct": 2.2,
-    "grid_demand_mw": 1249,
+    "grid_demand_fall_pct": 2.5,
+    "grid_demand_mw": 1240,
     "grid_demand_usual_mw": 1289,
     "grid_lor_level": 0,
     "nearby_incidents": [],
@@ -603,20 +598,20 @@
   },
   "markets": {
     "AUD/USD": {
-      "change_pct": -0.5,
-      "price": 0.6623
+      "change_pct": -0.48,
+      "price": 0.6624
     },
     "Brent oil": {
-      "change_pct": -5.94,
-      "price": 87.07
+      "change_pct": -5.55,
+      "price": 87.43
     },
     "Gold": {
-      "change_pct": 4.23,
-      "price": 3664.2
+      "change_pct": 4.21,
+      "price": 3663.4
     },
     "VIX": {
-      "change_pct": -23.18,
-      "price": 27.57
+      "change_pct": -22.68,
+      "price": 27.75
     }
   },
   "national_shocks": {
@@ -649,7 +644,7 @@
     "aviation_halt": [
       "How Elon Musk’s DOGE cuts set up the FAA ground stop - The Verge",
       "Belgium flights grounded by air traffic controller strike - Business Travel News Europe",
-      "Aviation groups urge at least $30 billion boost for FAA modernization - Reuters"
+      "Flights grounded in Belgium due to austerity measures strike - BBC"
     ],
     "bank_outage": [
       "Australian shares sink for eighth straight session - CommBank",
@@ -670,14 +665,14 @@
       "Iran Urges OPCW to Condemn US-Israeli Attacks on Chemical Facilities - WANA News Agency"
     ],
     "cloud": [
-      "Microsoft confirms data breach due to a bug in Entra Connect Health - Techzine Global",
       "Why Did Anthropic’s Shares Drop 8.5% After Record IPO? - Disruption Banking",
+      "Microsoft confirms data breach due to a bug in Entra Connect Health - Techzine Global",
       "Microsoft mega outage: Report reveals testing gaps and emails that never arrived - The Register"
     ],
     "cyber_attrib": [
       "FBI warns AI hackers can breach systems in under 3 hours - Fox News",
-      "FBI warns hackers using AI-powered tool to automate cyberattacks worldwide - Anadolu Ajansı",
-      "CISA Warns Hackers Are Actively Exploiting Cisco, VMware, SAP, and Apache Vulnerabilities - GBHackers News"
+      "CISA Warns Hackers Are Actively Exploiting Cisco, VMware, SAP, and Apache Vulnerabilities - GBHackers News",
+      "CISA Warns of 4 Exploited Flaws Linked to Ransomware, Cryptomining, and LLMjacking Attacks - The Hacker News"
     ],
     "cyber_au": [
       "Aussie camping retailer hit by cyber attack - The Australian",
@@ -721,7 +716,7 @@
     "illness": [
       "Dr. Siegel on measles comeback, mystery illness outbreak on cruise ship - Fox News",
       "Mystery illness causes mass hospitalisation of runners - The Nightly",
-      "Zayn Malik hospitalised with mystery illness, forced to cancel upcoming appearances on album release week - Nine.com.au"
+      "148 aboard Florida-bound cruise ship sickened by ‘unknown’ GI outbreak: CDC - The Hill"
     ],
     "masscas": [
       "Berlin hospital fire injures more than a dozen as police suspect patient set bed alight - Brussels Signal",
@@ -759,9 +754,9 @@
       "Not reliable, not affordable: Report shows ageing coal plants boost blackout risk, push up prices - Renew Economy"
     ],
     "scams": [
+      "Trick or trust? Spot cyber fraud fast - kendranewsaustralia.com.au",
       "Fraud & Digital Identity News – KYC, Scams & Verification - FF News",
-      "FIS warns Gen Z is hit hardest by AI deepfake scams - SecurityBrief UK",
-      "Trick or trust? Spot cyber fraud fast - kendranewsaustralia.com.au"
+      "FIS warns Gen Z is hit hardest by AI deepfake scams - SecurityBrief UK"
     ],
     "shipping_attacks": [
       "Iranian attacks on ships near Strait of Hormuz hit highest level since war began, data shows - The Jerusalem Post",
@@ -1118,24 +1113,19 @@
     },
     {
       "band": "Guarded",
-      "convergence": "Two different kinds of sign are showing together (electronic warfare and shipping). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet bl",
+      "convergence": "Only one kind of sign is showing (shipping). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
       "domains": [
-        "Electronic warfare",
         "Shipping"
       ],
       "key": "mideast",
       "lit": [
         {
-          "detail": "gps_gulf 54 vs usual 10",
-          "name": "GPS jamming spike (Gulf / Israel)"
-        },
-        {
           "detail": "Strait of Hormuz -38% vs usual (2.3/day)",
           "name": "Ship traffic through Hormuz down sharply"
         }
       ],
-      "score": 25,
-      "trend": "up"
+      "score": 15,
+      "trend": "down"
     },
     {
       "band": "Low",
@@ -1220,7 +1210,7 @@
         }
       ],
       "score": 10,
-      "trend": "up"
+      "trend": "steady"
     },
     {
       "band": "Elevated",
@@ -1251,14 +1241,14 @@
         }
       ],
       "score": 40,
-      "trend": "up"
+      "trend": "steady"
     }
   ],
   "sectors_relative_5d": {
     "defence_au": 0.78,
     "defence_eu": -0.4,
-    "defence_us": -0.16,
-    "pandemic": -2.81
+    "defence_us": -0.06,
+    "pandemic": -2.59
   },
   "status_pages": [
     {
@@ -1281,10 +1271,10 @@
   "tankers": "normal",
   "telecom_drop_pct": {
     "Aussie Broadband": 0.0,
-    "Optus": 0.0,
+    "Optus": 2.9,
     "TPG": 0.3,
     "Telstra": 0.6,
-    "Vodafone": 4.8
+    "Vodafone": 0.0
   },
   "us_departure_orders": [
     "Belarus"
