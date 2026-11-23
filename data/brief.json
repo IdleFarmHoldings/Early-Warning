@@ -274,17 +274,16 @@
   ],
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
-    "maritime": "TimeoutError: ",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-23T11:34:00Z",
+  "generated_at": "2026-11-23T11:48:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 16,
-    "Black Sea": 31,
-    "Israel & Eastern Mediterranean": 2,
+    "Baltic / Kaliningrad": 21,
+    "Black Sea": 36,
+    "Israel & Eastern Mediterranean": 16,
     "Korea": 1,
-    "Persian Gulf": 7,
+    "Persian Gulf": 9,
     "South Australia": 0,
     "Sydney / NSW": 0,
     "Taiwan Strait": 0
@@ -294,22 +293,11 @@
       "attack_reported": true,
       "confirmed": true,
       "headlines": [
-        "Worried about another bank outage? 5 simple things you can do to prepare now",
         "Chase Bank customers may be affected after hackers access marketing data",
         "AI-Powered Hackers Exploit Indian Banks’ Payment Systems"
       ],
       "severity": "Warning",
       "target": "Banking & payments"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": true,
-      "headlines": [
-        "Microsoft confirms data breach due to a bug in Entra Connect Health",
-        "Days After Global Outlook Outage, Microsoft Warns More Disruptions Ahead. Here's Why"
-      ],
-      "severity": "Info",
-      "target": "Microsoft"
     },
     {
       "attack_reported": true,
@@ -319,6 +307,15 @@
       ],
       "severity": "Info",
       "target": "Aussie"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "New Zealand Defence Force website remains down days after data breach disclosure"
+      ],
+      "severity": "Info",
+      "target": "New Zealand Defence"
     },
     {
       "attack_reported": true,
@@ -333,19 +330,19 @@
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
-        "New Zealand Defence Force website remains down days after data breach disclosure"
-      ],
-      "severity": "Info",
-      "target": "New Zealand Defence"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
         "Peninsula Energy warns of disruption after Wyoming cyber incident"
       ],
       "severity": "Info",
       "target": "Peninsula Energy"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": true,
+      "headlines": [
+        "Bell MTS Email Outage: Cyberattack Confirmed, 0 Counts"
+      ],
+      "severity": "Info",
+      "target": "Bell MTS Email"
     },
     {
       "attack_reported": true,
@@ -364,15 +361,6 @@
       ],
       "severity": "Info",
       "target": "PEN"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": true,
-      "headlines": [
-        "Bell MTS Email Outage: Cyberattack Confirmed, 0 Counts"
-      ],
-      "severity": "Info",
-      "target": "Bell MTS Email"
     },
     {
       "attack_reported": true,
@@ -430,6 +418,17 @@
     },
     {
       "attack_reported": false,
+      "confirmed": true,
+      "headlines": [
+        "Microsoft confirms data breach due to a bug in Entra Connect Health",
+        "Days After Global Outlook Outage, Microsoft Warns More Disruptions Ahead. Here's Why",
+        "Microsoft outage cause revealed: It was a perfect storm of problems"
+      ],
+      "severity": "Warning",
+      "target": "Microsoft"
+    },
+    {
+      "attack_reported": false,
       "confirmed": false,
       "headlines": [
         "Is Claude / Anthropic Down? Company Investigates Elevated Model Request Errors : Outages : JKN"
@@ -448,7 +447,7 @@
     }
   ],
   "internet_drop_pct": {
-    "China": 0.1,
+    "China": 0.2,
     "Iran": 0.2,
     "Israel": 0.0,
     "Russia": 0.0,
@@ -469,16 +468,16 @@
       "Mount Lofty Ranges": "High / Moderate"
     },
     "fire_danger_ok": true,
-    "fires_active": 6,
+    "fires_active": 7,
     "fuel": {
       "brent_aud": 134.6,
-      "change_pct": -3.7,
+      "change_pct": -3.5,
       "pump_cents": -3,
-      "week_ago_aud": 139.8
+      "week_ago_aud": 139.5
     },
-    "grid_demand_fall_pct": 3.9,
-    "grid_demand_mw": 1408,
-    "grid_demand_usual_mw": 1400,
+    "grid_demand_fall_pct": 5.1,
+    "grid_demand_mw": 1378,
+    "grid_demand_usual_mw": 1394,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
@@ -488,26 +487,7 @@
         "pm25": 9
       },
       "air_word": "Good",
-      "days": [
-        {
-          "date": "2026-11-23",
-          "gust": 59,
-          "rain": 2,
-          "tmax": 18
-        },
-        {
-          "date": "2026-11-24",
-          "gust": 35,
-          "rain": 0,
-          "tmax": 21
-        },
-        {
-          "date": "2026-11-25",
-          "gust": 49,
-          "rain": 0,
-          "tmax": 28
-        }
-      ]
+      "days": []
     },
     "possible_blackout": false,
     "power_news": [],
@@ -525,20 +505,20 @@
   },
   "markets": {
     "AUD/USD": {
-      "change_pct": -0.29,
-      "price": 0.6637
+      "change_pct": -0.3,
+      "price": 0.6636
     },
     "Brent oil": {
-      "change_pct": -4.45,
-      "price": 88.45
+      "change_pct": -4.63,
+      "price": 88.28
     },
     "Gold": {
-      "change_pct": 2.99,
-      "price": 3620.6
+      "change_pct": 3.02,
+      "price": 3621.7
     },
     "VIX": {
-      "change_pct": -16.58,
-      "price": 29.94
+      "change_pct": -16.41,
+      "price": 30.0
     }
   },
   "national_shocks": {
@@ -564,8 +544,8 @@
     ],
     "aviation_halt": [
       "Delta Outage: Weight-and-Balance Glitch Triggers Atlanta Ground Stop - MiGFlug",
-      "Flights grounded in Belgium due to strike against austerity measures - Yahoo",
-      "Anatomy of the FAA Ground Stop: One Backbone, One Bad Change - BankInfoSecurity"
+      "Flights grounded in Belgium due to strike against austerity measures - BBC",
+      "Delta Air Lines announces automated services for flights back online, rebooking, refunding travelers - WSB-TV"
     ],
     "bank_outage": [
       "Australian shares sink for eighth straight session - CommBank",
@@ -580,17 +560,17 @@
     "cloud": [
       "Why Did Anthropic’s Shares Drop 8.5% After Record IPO? - Disruption Banking",
       "Microsoft confirms data breach due to a bug in Entra Connect Health - Techzine Global",
-      "Days After Global Outlook Outage, Microsoft Warns More Disruptions Ahead. Here's Why - NDTV"
+      "Microsoft outage cause revealed: It was a perfect storm of problems - Mashable"
     ],
     "cyber_attrib": [
+      "FBI warns AI hackers can breach systems in under 3 hours - Fox News",
       "Spy agency warns active Russian hackers targeting Australian industry - ABC News & Headlines – Australian Broadcasting Corporation",
-      "Australians should prepare for online services to go down unexpectedly as threats rise, cyber agency warns - The Guardian",
-      "Busted! Alleged Aussie hackers linked to TeamPCP arrested in joint AFP-FBI-WAPF operation - Cyber Daily"
+      "Australians should prepare for online services to go down unexpectedly as threats rise, cyber agency warns - The Guardian"
     ],
     "cyber_au": [
       "Aussie camping retailer hit by cyber attack - News24",
-      "\"Not A Cyber Attack\" Western Leaders Says As Nearly All Critical Infrastructure Goes Offline At Some Point This Month - The Betoota Advocate",
-      "Australia mulls tougher tech laws after AI health breach - The Nightly"
+      "New Zealand Defence Force website remains down days after data breach disclosure - Cyber Daily",
+      "\"Not A Cyber Attack\" Western Leaders Says As Nearly All Critical Infrastructure Goes Offline At Some Point This Month - The Betoota Advocate"
     ],
     "cyber_ot": [
       "UK operation wards off risk of cyber-attack on supermarket fridges and freezers - The Guardian",
@@ -621,8 +601,8 @@
       "AI Shock Sends KOSPI Plunging 5%; Sell-Side Circuit Breaker Triggers for Second Straight Session - BigGo Finance"
     ],
     "fuel_au": [
-      "Gas prices in Europe surge as forecast cold snap feeds supply shortage fears - The Guardian",
       "COMMENTARY: Oil's Iran war recovery masks a stubborn diesel shortage - Reuters",
+      "Gas prices in Europe surge as forecast cold snap feeds supply shortage fears - The Guardian",
       "Australia urged to cut fuel imports through electric trucks and mine electrification - Proactive Investors Australia"
     ],
     "illness": [
@@ -631,11 +611,12 @@
       "Zayn Malik hospitalised with mystery illness - News.com.au"
     ],
     "masscas": [
-      "Berlin hospital fire injures more than a dozen as police suspect patient set bed alight - Brussels Signal",
       "Emirates International Burn Conference 2026 examines medical readiness, response - www.wam.ae",
+      "Berlin hospital fire injures more than a dozen as police suspect patient set bed alight - Brussels Signal",
       "Somali Region Public Hospitals Demonstrate Suboptimal Disaster Preparedness in Facility Assessment - Bioengineer.org"
     ],
     "medexport": [
+      "Ensuring uninterrupted pharmaceutical supply chain - NST Online",
       "The weak link in Malaysia’s pharmaceutical supply chain - Free Malaysia Today",
       "Barbados PM accuses G7 nations of severe hypocrisy - St Vincent Times"
     ],
@@ -643,19 +624,6 @@
       "The offender was prohibited from approaching within 300 meters: The Supreme Court explained how the duration of a restraining order is determined - Судово-юридична газета",
       "28 years ago declared unfit, and in one day — \"healthy\": The Territorial Recruitment Center mobilized a man with vision problems - Судово-юридична газета",
       "Airline tickets in Europe may rise by 20% in 2027 — Ryanair forecast - Судово-юридична газета"
-    ],
-    "murray": [
-      "Art as research: new NIDR Hazard Posters share Indigenous natural hazard knowledge - Monash University"
-    ],
-    "national_outage": [
-      "Inside the ‘Black Sky’ plans for a nationwide blackout - Herald.Wales",
-      "Delta Air Lines delays over 1,300 flights as latest outage snarls air traffic - SILive.com",
-      "Heatwave can lead to blackouts in Portugal - The Portugal News"
-    ],
-    "outage_au": [
-      "Calls for 'automatic compensation' following telco outages - ABC News & Headlines – Australian Broadcasting Corporation",
-      "Telstra mobile outage disrupts services across Australia - Australian Cyber Security Magazine",
-      "Australia's Optus apologises for outage that disrupted emergency calls - Reuters"
     ],
     "reservists": [
       "IDF promises relief for reservists, but 2027 plan raises maximum service days - Ynetnews",
@@ -678,7 +646,7 @@
     "shipping_attacks": [
       "ADNOC L&S says one missing, 11 injured in Strait of Hormuz ship attack - Baird Maritime",
       "UKMTO says 2 tankers struck in Hormuz, as Iran says ship on fire - The New Arab",
-      "Iranian attacks in the Strait of Hormuz are at the highest levels since the conflict began - CNN"
+      "Strait of Hormuz attacks have increased to highest level since Iran war began - ABC News - Breaking News, Latest News and Videos"
     ],
     "strikes": [
       "Iran Warns of Retaliation if US Forces Attack - ASHARQ AL-AWSAT English",
@@ -708,7 +676,7 @@
       "yes": 3.2
     },
     {
-      "d24h": 0.2,
+      "d24h": 0.1,
       "q": "US-Iran Hormuz Agreement by November 30?",
       "yes": 3.6
     },
@@ -728,9 +696,9 @@
       "yes": 2.2
     },
     {
-      "d24h": 0.4,
+      "d24h": 0.3,
       "q": "Will China invade Taiwan by June 30, 2027?",
-      "yes": 4.9
+      "yes": 4.8
     },
     {
       "d24h": 0.0,
@@ -768,7 +736,7 @@
       "yes": 3.1
     },
     {
-      "d24h": 0.0,
+      "d24h": 0.4,
       "q": "Ukraine agrees not to join NATO by December 31, 2026?",
       "yes": 3.1
     },
@@ -798,9 +766,9 @@
       "yes": 12.5
     },
     {
-      "d24h": -1.5,
+      "d24h": -2.0,
       "q": "Ukraine agrees not to join NATO by December 31, 2027?",
-      "yes": 18.5
+      "yes": 18.0
     },
     {
       "d24h": 0.0,
@@ -1042,7 +1010,7 @@
         }
       ],
       "score": 15,
-      "trend": "down"
+      "trend": "steady"
     },
     {
       "band": "Low",
@@ -1057,20 +1025,25 @@
       "trend": "steady"
     },
     {
-      "band": "Low",
-      "convergence": "Only one kind of sign is showing (state signalling). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and mobilisation / reservist reports (russia / nato).",
+      "band": "Guarded",
+      "convergence": "Two different kinds of sign are showing together (markets and state signalling). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and mo",
       "domains": [
+        "Markets",
         "State signalling"
       ],
       "key": "russia",
       "lit": [
         {
+          "detail": "VIX at 30.0",
+          "name": "Market fear index above 30"
+        },
+        {
           "detail": "UVB-76 Mystery: Why Doomsday Radio Repeats Code Words",
           "name": "Russian signalling (Buzzer broadcasts, nuclear drills)"
         }
       ],
-      "score": 5,
-      "trend": "steady"
+      "score": 15,
+      "trend": "up"
     },
     {
       "band": "Low",
@@ -1086,10 +1059,11 @@
     },
     {
       "band": "Elevated",
-      "convergence": "Two different kinds of sign are showing together (chemical weapons and health). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: unknown illness / pneumonia cluster reported, countries restricting medical supply exports and",
+      "convergence": "Signs are converging across 3 separate areas (chemical weapons, health and markets). Unrelated systems flagging the same scenario at once is the pattern seen before past events. Before COVID-19 (Dec 2019 - Feb 2020): reports of an unknown pneumonia cluster, WHO outbreak notices, mask and hazmat make",
       "domains": [
         "Chemical weapons",
-        "Health"
+        "Health",
+        "Markets"
       ],
       "key": "bio",
       "lit": [
@@ -1102,12 +1076,16 @@
           "name": "Mass casualty declarations (any country)"
         },
         {
+          "detail": "VIX at 30.0",
+          "name": "Market fear index above 30"
+        },
+        {
           "detail": "Panic at 12,000-strong concert as suspected chemical attack sparks mass evacuation",
           "name": "Chemical / nerve-agent attack or mass poisoning reported"
         }
       ],
-      "score": 35,
-      "trend": "steady"
+      "score": 45,
+      "trend": "up"
     },
     {
       "band": "Low",
@@ -1159,7 +1137,7 @@
   ],
   "sectors_relative_5d": {
     "defence_au": 0.78,
-    "defence_eu": 0.76,
+    "defence_eu": 0.69,
     "defence_us": 3.44,
     "pandemic": -3.85
   },
@@ -1175,7 +1153,7 @@
   ],
   "tankers": "normal",
   "telecom_drop_pct": {
-    "Aussie Broadband": 0.0,
+    "Aussie Broadband": 1.0,
     "Optus": 3.9,
     "TPG": 0.0,
     "Telstra": 0.1,
