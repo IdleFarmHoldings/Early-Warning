@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-23T01:14:00Z",
+  "generated_at": "2026-11-23T01:30:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -661,14 +661,6 @@
           "weight": 15
         },
         {
-          "detail": "Portsmouth accident declared a mass casualty incident",
-          "domain": "Health",
-          "id": "masscas",
-          "name": "Mass casualty declarations (any country)",
-          "short": "Mass casualty event",
-          "weight": 5
-        },
-        {
           "detail": "VIX at 35.89",
           "domain": "Markets",
           "id": "vix",
@@ -687,8 +679,8 @@
       ],
       "name": "Pandemic, biological or chemical emergency",
       "sa_impact": "Health system strain, possible lockdowns and border closures, and shortages of medicines and protective equipment, which Australia mostly imports.",
-      "score": 45,
-      "trend": "steady",
+      "score": 40,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Health",
@@ -713,6 +705,12 @@
           "id": "shortage",
           "name": "Australian medicine or PPE shortage reports",
           "weight": 10
+        },
+        {
+          "domain": "Health",
+          "id": "masscas",
+          "name": "Mass casualty declarations (any country)",
+          "weight": 5
         },
         {
           "domain": "Health",
