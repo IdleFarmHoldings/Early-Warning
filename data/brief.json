@@ -130,6 +130,7 @@
       "attributed_officially": true,
       "band": "Strong",
       "countries": [
+        "Asia",
         "Australia",
         "Europe",
         "South Korea",
@@ -154,12 +155,12 @@
       },
       "incidents": [
         "2026-11-21 ?: AI Agents Find Zero-Day in Medical-Imaging Software, Attackers Gain Root on University Server (named attacker)",
+        "2026-11-21 Asia: AI Hackers Are Finding Security Flaws Faster Than Indian Banks Can Fix Them (same pattern)",
         "2026-11-20 Australia: Australia, China to hold high-level talks on artificial intelligence (named attacker)",
         "2026-11-20 ?: ‘Terminator’: Chinese hacking tool lets anyone with an iPhone unleash havoc (named attacker)",
-        "2026-11-20 ?: Amazon says China-linked hackers used the open-source AI tool Cairn to find an apparent zero-day in a university attack (named attacker)",
-        "2026-11-20 ?: Chinese-nexus actor’s Cairn AI agents found a zero-day on their own (named attacker)"
+        "2026-11-20 ?: Amazon says China-linked hackers used the open-source AI tool Cairn to find an apparent zero-day in a university attack (named attacker)"
       ],
-      "incidents_7d": 34,
+      "incidents_7d": 35,
       "official_warning": true,
       "score": 100,
       "sectors": [
@@ -276,13 +277,13 @@
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-23T09:36:00Z",
+  "generated_at": "2026-11-23T09:51:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 22,
-    "Black Sea": 11,
-    "Israel & Eastern Mediterranean": 16,
-    "Korea": 1,
-    "Persian Gulf": 10,
+    "Baltic / Kaliningrad": 24,
+    "Black Sea": 39,
+    "Israel & Eastern Mediterranean": 10,
+    "Korea": 0,
+    "Persian Gulf": 11,
     "South Australia": 4,
     "Sydney / NSW": 0,
     "Taiwan Strait": 0
@@ -290,12 +291,22 @@
   "incidents": [
     {
       "attack_reported": true,
-      "confirmed": false,
+      "confirmed": true,
       "headlines": [
+        "AI-Powered Hackers Exploit Indian Banks’ Payment Systems",
         "Chase Bank customers may be affected after hackers access marketing data"
       ],
-      "severity": "Info",
+      "severity": "Warning",
       "target": "Banking & payments"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "Aussie camping retailer hit by cyber attack"
+      ],
+      "severity": "Info",
+      "target": "Aussie"
     },
     {
       "attack_reported": true,
@@ -373,6 +384,15 @@
     },
     {
       "attack_reported": true,
+      "confirmed": true,
+      "headlines": [
+        "China-Linked Hackers’ AI Agents Found a MONAI Label Zero-Day, Amazon Says"
+      ],
+      "severity": "Info",
+      "target": "China-Linked Hackers"
+    },
+    {
+      "attack_reported": true,
       "confirmed": false,
       "headlines": [
         "Autonomous AI Agents Breach 10 Organisations via Everyday Flaws as Singapore Warns of Machine-Speed Threats + Video"
@@ -393,10 +413,11 @@
       "attack_reported": false,
       "confirmed": true,
       "headlines": [
+        "Microsoft confirms data breach due to a bug in Entra Connect Health",
         "Days After Global Outlook Outage, Microsoft Warns More Disruptions Ahead. Here's Why",
         "Microsoft outage cause revealed: It was a perfect storm of problems"
       ],
-      "severity": "Info",
+      "severity": "Warning",
       "target": "Microsoft"
     },
     {
@@ -411,8 +432,8 @@
   ],
   "internet_drop_pct": {
     "China": 0.0,
-    "Iran": 0.3,
-    "Israel": 0.1,
+    "Iran": 0.1,
+    "Israel": 0.2,
     "Russia": 0.0,
     "South Korea": 0.0,
     "Taiwan": 0.0
@@ -432,23 +453,23 @@
       "Mount Lofty Ranges": "High / Moderate"
     },
     "fire_danger_ok": true,
-    "fires_active": 13,
+    "fires_active": 11,
     "fuel": {
       "brent_aud": 135.0,
       "change_pct": -3.8,
       "pump_cents": -3,
       "week_ago_aud": 140.3
     },
-    "grid_demand_fall_pct": -1.1,
-    "grid_demand_mw": 1474,
-    "grid_demand_usual_mw": 1465,
+    "grid_demand_fall_pct": -1.0,
+    "grid_demand_mw": 1488,
+    "grid_demand_usual_mw": 1457,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
       "air": {
-        "aqi": 33,
-        "peak_pm25_48h": 10,
-        "pm25": 9
+        "aqi": 31,
+        "peak_pm25_48h": 11,
+        "pm25": 8
       },
       "air_word": "Good",
       "days": []
@@ -469,20 +490,20 @@
   },
   "markets": {
     "AUD/USD": {
-      "change_pct": -0.02,
-      "price": 0.6655
+      "change_pct": -0.06,
+      "price": 0.6652
     },
     "Brent oil": {
-      "change_pct": -3.75,
-      "price": 89.1
+      "change_pct": -3.48,
+      "price": 89.35
     },
     "Gold": {
-      "change_pct": 2.94,
-      "price": 3618.9
+      "change_pct": 2.9,
+      "price": 3617.2
     },
     "VIX": {
-      "change_pct": -16.1,
-      "price": 30.11
+      "change_pct": -15.1,
+      "price": 30.47
     }
   },
   "national_shocks": {
@@ -500,7 +521,7 @@
     "ai_hack": [
       "AI agents exploit zero-day vulnerability in university cyberattack - Tech Wire Asia",
       "With AI-powered cyberattacks, hackers seem more powerful than ever - DW.com",
-      "Autonomous AI Agents Breach 10 Organisations via Everyday Flaws as Singapore Warns of Machine-Speed Threats + Video - Howl.Link"
+      "China-Linked Hackers’ AI Agents Found a MONAI Label Zero-Day, Amazon Says - Technology Org"
     ],
     "airspace": [
       "Belgium’s Airspace Closed 7 AM – 9 PM On Monday (November 23, 2026) & All Flights Canceled At Brussels Airport - LoyaltyLobby",
@@ -510,7 +531,7 @@
     "aviation_halt": [
       "Delta Outage: Weight-and-Balance Glitch Triggers Atlanta Ground Stop - MiGFlug",
       "FAA ground stop: When will it end? Not as soon as you'd like. - Mashable",
-      "Delta Airlines flights delayed nationwide amid ground stop slowing holiday travel - WXLV"
+      "Anatomy of the FAA Ground Stop: One Backbone, One Bad Change - BankInfoSecurity"
     ],
     "bank_outage": [
       "Australian shares sink for eighth straight session - CommBank",
@@ -527,9 +548,9 @@
       "An extensive anti-aircraft missile exercise will be held on 23.11.26, in the Haifa area. - haipo.co.il"
     ],
     "cloud": [
+      "Microsoft confirms data breach due to a bug in Entra Connect Health - Techzine Global",
       "Microsoft outage cause revealed: It was a perfect storm of problems - Mashable",
-      "Days After Global Outlook Outage, Microsoft Warns More Disruptions Ahead. Here's Why - NDTV",
-      "Set Your LLM Fallback Model Routing Strategy Before the Outage, Not During It - Startup Fortune"
+      "Days After Global Outlook Outage, Microsoft Warns More Disruptions Ahead. Here's Why - NDTV"
     ],
     "cyber_attrib": [
       "FBI warns hackers weaponizing ARTEX AI framework to automate attacks on energy, manufacturing, telecom - Industrial Cyber",
@@ -537,9 +558,9 @@
       "Australians should prepare for online services to go down unexpectedly as threats rise, cyber agency warns - The Guardian"
     ],
     "cyber_au": [
-      "Australia mulls tougher tech laws after AI health breach - The Nightly",
+      "Aussie camping retailer hit by cyber attack - Herald Sun",
       "\"Not A Cyber Attack\" Western Leaders Says As Nearly All Critical Infrastructure Goes Offline At Some Point This Month - The Betoota Advocate",
-      "Australian truck driver fired for wearing smart glasses at work - Information Age | ACS"
+      "Australia mulls tougher tech laws after AI health breach - The Nightly"
     ],
     "cyber_ot": [
       "UK operation wards off risk of cyber-attack on supermarket fridges and freezers - The Guardian",
@@ -579,7 +600,7 @@
     "masscas": [
       "Somali Region Public Hospitals Demonstrate Suboptimal Disaster Preparedness in Facility Assessment - Bioengineer.org",
       "Emirates International Burn Conference 2026 examines medical readiness, response - www.wam.ae",
-      "Tiverton man charged after nine-vehicle crash - EastBayRI.com"
+      "Berlin hospital fire injures more than a dozen as police suspect patient set bed alight - Brussels Signal"
     ],
     "medexport": [
       "The weak link in Malaysia’s pharmaceutical supply chain - Free Malaysia Today",
@@ -623,8 +644,8 @@
     ],
     "shipping_attacks": [
       "Iran readies tanker convoy at Kharg Island to test US oil blockade - Euronews.com",
-      "Iranian attacks in the Strait of Hormuz are at the highest levels since the conflict began - CNN",
-      "ADNOC L&S says one missing, 11 injured in Strait of Hormuz ship attack - Baird Maritime"
+      "ADNOC L&S says one missing, 11 injured in Strait of Hormuz ship attack - Baird Maritime",
+      "Iranian attacks in the Strait of Hormuz are at the highest levels since the conflict began - CNN"
     ],
     "strikes": [
       "Polish special operators evade thousands of US troops in a military drill - TechRadar",
@@ -634,9 +655,9 @@
   },
   "prediction_markets": [
     {
-      "d24h": 0.0,
+      "d24h": 1.0,
       "q": "Will the U.S. invade Iran before 2027?",
-      "yes": 5.5
+      "yes": 6.5
     },
     {
       "d24h": 0.5,
@@ -674,9 +695,9 @@
       "yes": 2.2
     },
     {
-      "d24h": 0.2,
+      "d24h": 0.1,
       "q": "Will China invade Taiwan by June 30, 2027?",
-      "yes": 4.7
+      "yes": 4.6
     },
     {
       "d24h": 0.0,
@@ -699,9 +720,9 @@
       "yes": 2.1
     },
     {
-      "d24h": 4.5,
+      "d24h": 5.5,
       "q": "Iran-Oman Hormuz Agreement by December 31?",
-      "yes": 15.0
+      "yes": 16.0
     },
     {
       "d24h": 1.0,
@@ -709,12 +730,12 @@
       "yes": 6.5
     },
     {
-      "d24h": 0.3,
+      "d24h": 0.4,
       "q": "NATO x Russia military clash by November 30, 2026?",
       "yes": 3.1
     },
     {
-      "d24h": 0.8,
+      "d24h": 0.2,
       "q": "Ukraine agrees not to join NATO by December 31, 2026?",
       "yes": 3.1
     },
@@ -744,9 +765,9 @@
       "yes": 12.5
     },
     {
-      "d24h": -2.0,
+      "d24h": -1.5,
       "q": "Ukraine agrees not to join NATO by December 31, 2027?",
-      "yes": 18.0
+      "yes": 18.5
     },
     {
       "d24h": 0.0,
@@ -988,7 +1009,7 @@
         }
       ],
       "score": 15,
-      "trend": "down"
+      "trend": "steady"
     },
     {
       "band": "Low",
@@ -1012,7 +1033,7 @@
       "key": "russia",
       "lit": [
         {
-          "detail": "VIX at 30.11",
+          "detail": "VIX at 30.47",
           "name": "Market fear index above 30"
         },
         {
@@ -1049,7 +1070,7 @@
           "name": "WHO outbreak report with a high-concern pathogen (last 14 days)"
         },
         {
-          "detail": "VIX at 30.11",
+          "detail": "VIX at 30.47",
           "name": "Market fear index above 30"
         }
       ],
@@ -1065,7 +1086,7 @@
       "key": "cyber",
       "lit": [
         {
-          "detail": "Australians stockpiling emergency supplies as cyber attack fears grow",
+          "detail": "Aussie camping retailer hit by cyber attack",
           "name": "Major Australian cyber incident reported"
         }
       ],
@@ -1096,12 +1117,12 @@
         }
       ],
       "score": 30,
-      "trend": "up"
+      "trend": "steady"
     }
   ],
   "sectors_relative_5d": {
     "defence_au": 0.78,
-    "defence_eu": 0.19,
+    "defence_eu": 0.61,
     "defence_us": 3.44,
     "pandemic": -3.85
   },
@@ -1117,11 +1138,11 @@
   ],
   "tankers": "normal",
   "telecom_drop_pct": {
-    "Aussie Broadband": 0.3,
+    "Aussie Broadband": 0.0,
     "Optus": 1.0,
     "TPG": 0.0,
     "Telstra": 0.2,
-    "Vodafone": 4.8
+    "Vodafone": 0.0
   },
   "us_departure_orders": [
     "Belarus"
