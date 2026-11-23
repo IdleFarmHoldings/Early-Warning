@@ -274,14 +274,15 @@
   ],
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
+    "maritime": "TimeoutError: ",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-23T15:36:00Z",
+  "generated_at": "2026-11-23T15:52:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 23,
-    "Black Sea": 24,
-    "Israel & Eastern Mediterranean": 4,
+    "Baltic / Kaliningrad": 26,
+    "Black Sea": 29,
+    "Israel & Eastern Mediterranean": 7,
     "Korea": 0,
     "Persian Gulf": 5,
     "South Australia": null,
@@ -367,15 +368,6 @@
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
-        "Tower Records is the latest major Japanese firm to be hit with a data breach"
-      ],
-      "severity": "Info",
-      "target": "Tower Records"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
         "Hackers exploit critical Cisco Expressway flaw CVE-2026-76466"
       ],
       "severity": "Info",
@@ -446,15 +438,6 @@
     },
     {
       "attack_reported": true,
-      "confirmed": true,
-      "headlines": [
-        "China-Linked Hackers’ AI Agents Found a MONAI Label Zero-Day, Amazon Says"
-      ],
-      "severity": "Info",
-      "target": "China-Linked Hackers"
-    },
-    {
-      "attack_reported": true,
       "confirmed": false,
       "headlines": [
         "China-Linked Hackers Use AI Agents to Access 10 Organizations and Expose Over 1 Million Records"
@@ -466,19 +449,19 @@
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
-        "Google reports first fully autonomous cyberattack as AI-powered threats reach new milestone"
+        "Hackers Use Autonomous AI to Breach 10 Organizations and Access Over 1 Million Personal Records"
       ],
       "severity": "Info",
-      "target": "Google"
+      "target": "Hackers Use Autonomous"
     },
     {
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
-        "Hackers Use Autonomous AI to Breach 10 Organizations and Access Over 1 Million Personal Records"
+        "Google reports first fully autonomous cyberattack as AI-powered threats reach new milestone"
       ],
       "severity": "Info",
-      "target": "Hackers Use Autonomous"
+      "target": "Google"
     },
     {
       "attack_reported": true,
@@ -517,6 +500,15 @@
       "target": "Next"
     },
     {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "Fashion retailer NEXT investigates cyber attack on third-party online supplier"
+      ],
+      "severity": "Info",
+      "target": "Fashion"
+    },
+    {
       "attack_reported": false,
       "confirmed": false,
       "headlines": [
@@ -536,12 +528,12 @@
     }
   ],
   "internet_drop_pct": {
-    "China": 1.6,
+    "China": 0.9,
     "Iran": 0.0,
     "Israel": 0.6,
     "Russia": 0.0,
     "South Korea": 0.2,
-    "Taiwan": 0.3
+    "Taiwan": 0.6
   },
   "local_sa": {
     "bom": [],
@@ -559,14 +551,14 @@
     "fire_danger_ok": true,
     "fires_active": 6,
     "fuel": {
-      "brent_aud": 134.2,
+      "brent_aud": 134.1,
       "change_pct": -3.2,
       "pump_cents": -3,
-      "week_ago_aud": 138.6
+      "week_ago_aud": 138.5
     },
     "grid_demand_fall_pct": 5.3,
-    "grid_demand_mw": 1277,
-    "grid_demand_usual_mw": 1306,
+    "grid_demand_mw": 1278,
+    "grid_demand_usual_mw": 1299,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
@@ -613,20 +605,20 @@
   },
   "markets": {
     "AUD/USD": {
-      "change_pct": -0.26,
-      "price": 0.6639
+      "change_pct": -0.3,
+      "price": 0.6636
     },
     "Brent oil": {
-      "change_pct": -6.3,
-      "price": 86.74
+      "change_pct": -6.24,
+      "price": 86.79
     },
     "Gold": {
-      "change_pct": 4.7,
-      "price": 3680.6
+      "change_pct": 4.48,
+      "price": 3673.0
     },
     "VIX": {
-      "change_pct": -26.36,
-      "price": 26.43
+      "change_pct": -26.5,
+      "price": 26.38
     }
   },
   "national_shocks": {
@@ -657,21 +649,20 @@
     ],
     "bank_outage": [
       "Australian shares sink for eighth straight session - CommBank",
-      "The Australian Dollar: Losing Its Anchors - Westpac IQ",
-      "NAB staff learn of redundancies in massive admin email blunder, bank apologises - Nine.com.au"
+      "NAB staff learn of redundancies in massive admin email blunder, bank apologises - Nine.com.au",
+      "Buy, hold, sell: Sonic Healthcare, Woolworths, ANZ shares - The Motley Fool Australia"
     ],
     "blood": [
       "Upstate military sergeant reaches milestone blood donation - Spectrum News",
       "NCC Cadets and Army Officials Donate Blood - Prokerala"
     ],
     "cables": [
-      "Du joins Singapore-India-Gulf submarine cable system - DD News",
       "PANI Project: Centre Proposes Undersea Fibre Cable to Connect Eight Andaman and Nicobar Islands - Adda247"
     ],
     "chem": [
       "Conference of the States Parties to the Chemical Weapons Convention opens - OPCW",
       "Iran accuses countries that armed Saddam Hussein of leading chemical weapons allegations against Tehran - Middle East Monitor",
-      "Gharibabadi: Chemical Weapons Are Unjustifiable Under Any Circumstances - WANA News Agency"
+      "US arrears leave chemical weapons watchdog facing budget crisis - The Straits Times"
     ],
     "cloud": [
       "Why Did Anthropic’s Shares Drop 8.5% After Record IPO? - Disruption Banking",
@@ -681,7 +672,7 @@
     "cyber_attrib": [
       "FBI warns AI hackers can breach systems in under 3 hours - Fox News",
       "CISA Warns Hackers Are Actively Exploiting Cisco, VMware, SAP, and Apache Vulnerabilities - GBHackers News",
-      "Spy agency warns active Russian hackers targeting Australian industry - ABC News & Headlines – Australian Broadcasting Corporation"
+      "CISA Warns of 4 Exploited Flaws Linked to Ransomware, Cryptomining, and LLMjacking Attacks - The Hacker News"
     ],
     "cyber_au": [
       "Aussie camping retailer hit by cyber attack - The Australian",
@@ -713,14 +704,14 @@
       "Thriller 'Fagin’s Boys' by author Bruce Harris - Female First"
     ],
     "flash": [
+      "Singular Health Group Requests Trading Halt Pending Material Customer Contract Announcement - Kalkine",
       "Bitcoin Crashes to $17,000 This Weekend: Inside the Bizarre Flash Crash Mystery - BeInCrypto",
-      "South Korean Stocks Plunge 5.8% Intraday, Triggering Circuit Breaker; 10.76 Trillion Won Stabilization Fund on Standby Fails to Stem Selling - BigGo Finance",
-      "Nasdaq trading halted after circuit breaker trips amid a volatile stretch - Crypto Briefing"
+      "South Korean Stocks Plunge 5.8% Intraday, Triggering Circuit Breaker; 10.76 Trillion Won Stabilization Fund on Standby Fails to Stem Selling - BigGo Finance"
     ],
     "fuel_au": [
       "Gas prices in Europe surge as forecast cold snap feeds supply shortage fears - The Guardian",
       "Canberra petrol station runs out as panic buying takes hold - The Canberra Times",
-      "COMMENTARY: Oil's Iran war recovery masks a stubborn diesel shortage - Reuters"
+      "Australia urged to cut fuel imports through electric trucks and mine electrification - Proactive Investors Australia"
     ],
     "illness": [
       "Dr. Siegel on measles comeback, mystery illness outbreak on cruise ship - Fox News",
@@ -774,11 +765,6 @@
       "Iranian attacks on ships near Strait of Hormuz hit highest level since war began, data shows - The Jerusalem Post",
       "Middle East latest: Eisenkot says no immediate Iran threat requiring Israeli military action - The National",
       "ADNOC L&S says one missing, 11 injured in Strait of Hormuz ship attack - Baird Maritime"
-    ],
-    "strikes": [
-      "Iran Warns of Retaliation if US Forces Attack - ASHARQ AL-AWSAT English",
-      "Nearly half of US troops wounded by drones suffered brain injuries – study - NR Times",
-      "Iran warns of retaliation if US forces attack, and other Mideast news - Boston Herald"
     ]
   },
   "prediction_markets": [
@@ -803,7 +789,7 @@
       "yes": 3.1
     },
     {
-      "d24h": -0.7,
+      "d24h": -0.8,
       "q": "US-Iran Hormuz Agreement by November 30?",
       "yes": 3.2
     },
@@ -818,9 +804,9 @@
       "yes": 14.5
     },
     {
-      "d24h": 0.2,
+      "d24h": 0.8,
       "q": "US-Iran Final Nuclear Deal by November 30, 2026?",
-      "yes": 1.1
+      "yes": 1.7
     },
     {
       "d24h": 0.0,
@@ -828,7 +814,7 @@
       "yes": 2.2
     },
     {
-      "d24h": -1.3,
+      "d24h": -1.0,
       "q": "Will China invade Taiwan by June 30, 2027?",
       "yes": 4.2
     },
@@ -848,14 +834,14 @@
       "yes": 1.6
     },
     {
-      "d24h": -1.1,
+      "d24h": -1.2,
       "q": "Iran-Oman Hormuz Agreement by November 30?",
       "yes": 1.5
     },
     {
-      "d24h": -5.0,
+      "d24h": -3.5,
       "q": "Iran-Oman Hormuz Agreement by December 31?",
-      "yes": 16.0
+      "yes": 15.5
     },
     {
       "d24h": 0.0,
@@ -868,7 +854,7 @@
       "yes": 3.1
     },
     {
-      "d24h": -0.2,
+      "d24h": -0.1,
       "q": "Ukraine agrees not to join NATO by December 31, 2026?",
       "yes": 3.1
     },
@@ -878,9 +864,9 @@
       "yes": 3.0
     },
     {
-      "d24h": 5.7,
+      "d24h": 3.2,
       "q": "Will Russia test a nuclear weapon by December 31 2026?",
-      "yes": 7.6
+      "yes": 5.1
     },
     {
       "d24h": -1.0,
@@ -893,12 +879,12 @@
       "yes": 2.8
     },
     {
-      "d24h": 2.5,
+      "d24h": 7.0,
       "q": "Iran blockade lifted before Iran-Oman Hormuz agreement?",
-      "yes": 12.5
+      "yes": 17.0
     },
     {
-      "d24h": -2.0,
+      "d24h": 0.5,
       "q": "Ukraine agrees not to join NATO by December 31, 2027?",
       "yes": 18.0
     }
@@ -1166,7 +1152,7 @@
       "key": "nuclear",
       "lit": [
         {
-          "detail": "Gold +4.7%",
+          "detail": "Gold +4.5%",
           "name": "Gold up 4%+ in a day"
         }
       ],
@@ -1258,9 +1244,9 @@
   ],
   "sectors_relative_5d": {
     "defence_au": 0.78,
-    "defence_eu": -0.74,
-    "defence_us": -1.09,
-    "pandemic": -2.6
+    "defence_eu": -0.81,
+    "defence_us": -0.89,
+    "pandemic": -2.11
   },
   "status_pages": [
     {
@@ -1282,10 +1268,10 @@
   ],
   "tankers": "normal",
   "telecom_drop_pct": {
-    "Aussie Broadband": 0.0,
-    "Optus": 4.9,
+    "Aussie Broadband": 0.6,
+    "Optus": 0.0,
     "TPG": 0.3,
-    "Telstra": 0.3,
+    "Telstra": 0.5,
     "Vodafone": 0.0
   },
   "us_departure_orders": [
