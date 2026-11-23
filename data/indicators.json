@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-23T16:43:00Z",
+  "generated_at": "2026-11-23T16:58:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -496,7 +496,7 @@
       "key": "nuclear",
       "lit": [
         {
-          "detail": "Gold +4.5%",
+          "detail": "Gold +4.2%",
           "domain": "Markets",
           "id": "gold",
           "name": "Gold up 4%+ in a day",
@@ -668,7 +668,7 @@
           "weight": 5
         },
         {
-          "detail": "Survivors of deposed regime’s chemical attacks participate in OPCW meetings",
+          "detail": "Iran Urges OPCW to Condemn US-Israeli Attacks on Chemical Facilities",
           "domain": "Chemical weapons",
           "id": "chem",
           "name": "Chemical / nerve-agent attack or mass poisoning reported",
@@ -722,25 +722,14 @@
     },
     {
       "band": "Low",
-      "convergence": "Only one kind of sign is showing (australian incidents). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: sudden fall in sa electricity demand (possible large blackout), global cyber threat level raised (sans infocon not green) and several vpn / firewall flaws exploited this week.",
-      "domains": [
-        "Australian incidents"
-      ],
+      "convergence": "No warning signs are showing. The strongest signs not yet showing: sudden fall in sa electricity demand (possible large blackout), global cyber threat level raised (sans infocon not green) and several vpn / firewall flaws exploited this week.",
+      "domains": [],
       "key": "cyber",
-      "lit": [
-        {
-          "detail": "Aussie camping retailer hit by cyber attack",
-          "domain": "Australian incidents",
-          "id": "au",
-          "name": "Major Australian cyber incident reported",
-          "short": "Major Australian cyber incident reported",
-          "weight": 10
-        }
-      ],
+      "lit": [],
       "name": "Major cyber attack on Australia",
       "sa_impact": "Banks, payments, hospitals, fuel distribution, telcos and the power grid all run on networks; a large attack can stop card payments and services for hours to days.",
-      "score": 10,
-      "trend": "steady",
+      "score": 0,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Global threat level",
@@ -785,6 +774,12 @@
           "weight": 15
         },
         {
+          "domain": "Australian incidents",
+          "id": "au",
+          "name": "Major Australian cyber incident reported",
+          "weight": 10
+        },
+        {
           "domain": "Communications",
           "id": "tel",
           "name": "Phone / internet carrier outage",
@@ -807,23 +802,14 @@
     },
     {
       "band": "Elevated",
-      "convergence": "Signs are converging across 4 separate areas (ai-enabled hacking, cloud services, fraud waves and markets). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: a Chinese state-sponsored group used an AI agent to carry out 80-90% of an attack on about 30 organisations, at thousands of requests per second. A fake AI image of a Pentagon explosion briefly moved US markets in May 2023, and a deepfake video call of a CFO tricked a company into paying US$25 million in 2024. The likely signature of an AI attack is breadth and speed: many unrelated systems and vendors hit at once, synthetic media of officials, and shocks with no clear human cause. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, deepfakes of leaders or fake official alerts and market fear index jumps 25%+ in a day.",
+      "convergence": "Signs are converging across 3 separate areas (cloud services, fraud waves and markets). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: a Chinese state-sponsored group used an AI agent to carry out 80-90% of an attack on about 30 organisations, at thousands of requests per second. A fake AI image of a Pentagon explosion briefly moved US markets in May 2023, and a deepfake video call of a CFO tricked a company into paying US$25 million in 2024. The likely signature of an AI attack is breadth and speed: many unrelated systems and vendors hit at once, synthetic media of officials, and shocks with no clear human cause. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, reports of ai-driven hacking campaigns and deepfakes of leaders or fake official alerts.",
       "domains": [
-        "AI-enabled hacking",
         "Cloud services",
         "Fraud waves",
         "Markets"
       ],
       "key": "ai",
       "lit": [
-        {
-          "detail": "China-linked hackers' AI agents found a zero-day in 11 minutes, Amazon says",
-          "domain": "AI-enabled hacking",
-          "id": "aihack",
-          "name": "Reports of AI-driven hacking campaigns",
-          "short": "Reports of AI-driven hacking campaigns",
-          "weight": 15
-        },
         {
           "detail": "Nasdaq futures tripped a circuit breaker built for market crashes as Jensen Huang returned to Nvidia",
           "domain": "Markets",
@@ -851,13 +837,19 @@
       ],
       "name": "AI-enabled attack (non-traditional)",
       "sa_impact": "Not bombs but disruption: hacking at machine speed across banks, telcos, hospitals and the grid at once; fake videos or alerts from leaders causing panic buying or bank runs; or automated market and fraud shocks. Effects would be outages, payment failures and confusion about what is real.",
-      "score": 40,
-      "trend": "steady",
+      "score": 25,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Mass exploitation",
           "id": "breadth",
           "name": "Exploited flaws across unusually many vendors at once",
+          "weight": 15
+        },
+        {
+          "domain": "AI-enabled hacking",
+          "id": "aihack",
+          "name": "Reports of AI-driven hacking campaigns",
           "weight": 15
         },
         {
