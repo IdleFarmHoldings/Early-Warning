@@ -3,9 +3,9 @@
   "acsc": [],
   "aircraft_flags": {
     "gps_israel": {
-      "median": 5.0,
+      "median": 5,
       "status": "ANOMALY",
-      "value": 39
+      "value": 42
     }
   },
   "analyst": {
@@ -165,7 +165,7 @@
         "2026-11-20 ?: Amazon says China-linked hackers used the open-source AI tool Cairn to find an apparent zero-day in a university attack (named attacker)",
         "2026-11-20 ?: Chinese-nexus actor’s Cairn AI agents found a zero-day on their own (named attacker)"
       ],
-      "incidents_7d": 35,
+      "incidents_7d": 34,
       "official_warning": true,
       "score": 100,
       "sectors": [
@@ -282,16 +282,16 @@
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-23T08:59:00Z",
+  "generated_at": "2026-11-23T09:14:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 24,
+    "Baltic / Kaliningrad": 25,
     "Black Sea": 17,
-    "Israel & Eastern Mediterranean": 39,
-    "Korea": 0,
-    "Persian Gulf": 6,
-    "South Australia": 0,
+    "Israel & Eastern Mediterranean": 42,
+    "Korea": 1,
+    "Persian Gulf": 3,
+    "South Australia": 4,
     "Sydney / NSW": 0,
-    "Taiwan Strait": 1
+    "Taiwan Strait": 0
   },
   "incidents": [
     {
@@ -307,10 +307,30 @@
       "attack_reported": true,
       "confirmed": true,
       "headlines": [
+        "AI agents exploit zero-day vulnerability in university cyberattack",
+        "US intelligence chief warns of more technology outages amid AI-driven upgrades",
+        "US rivals, hackers could make cyber disruptions daily reality by 2027: Axios"
+      ],
+      "severity": "Info",
+      "target": "Other services"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": true,
+      "headlines": [
         "\"Not A Cyber Attack\" Western Leaders Says As Nearly All Critical Infrastructure Goes Offline At Some Point This Month"
       ],
       "severity": "Info",
       "target": "Not"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "New Zealand Defence Force website remains down days after data breach disclosure"
+      ],
+      "severity": "Info",
+      "target": "New Zealand Defence"
     },
     {
       "attack_reported": true,
@@ -332,15 +352,6 @@
     },
     {
       "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
-        "(LEAD) Personal information of more than 8,000 clients at Samsung Securities breached"
-      ],
-      "severity": "Info",
-      "target": "LEAD"
-    },
-    {
-      "attack_reported": true,
       "confirmed": true,
       "headlines": [
         "Bell MTS Email Outage: Cyberattack Confirmed, 0 Counts"
@@ -352,20 +363,28 @@
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
+        "Hackers Allegedly Claiming Exploit for VMware vCenter 0-day Vulnerability"
+      ],
+      "severity": "Info",
+      "target": "Hackers Allegedly Claiming"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "Amazon Exposes Chinese-Nexus Hackers Using AI Agents to Exploit Zero-Day Flaw in Just 11 Minutes"
+      ],
+      "severity": "Info",
+      "target": "Amazon Exposes Chinese-Nexus"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
         "With AI-powered cyberattacks, hackers seem more powerful than ever"
       ],
       "severity": "Info",
       "target": "With AI-powered"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": true,
-      "headlines": [
-        "US intelligence chief warns of more technology outages amid AI-driven upgrades",
-        "US rivals, hackers could make cyber disruptions daily reality by 2027: Axios"
-      ],
-      "severity": "Info",
-      "target": "Other services"
     },
     {
       "attack_reported": true,
@@ -399,10 +418,10 @@
   "internet_drop_pct": {
     "China": 0.0,
     "Iran": 0.3,
-    "Israel": 0.1,
+    "Israel": 0.0,
     "Russia": 0.0,
     "South Korea": 0.0,
-    "Taiwan": 0.2
+    "Taiwan": 0.3
   },
   "local_sa": {
     "bom": [
@@ -419,16 +438,16 @@
       "Mount Lofty Ranges": "High / Moderate"
     },
     "fire_danger_ok": true,
-    "fires_active": 11,
+    "fires_active": 13,
     "fuel": {
       "brent_aud": 135.0,
-      "change_pct": -3.8,
+      "change_pct": -3.9,
       "pump_cents": -3,
       "week_ago_aud": 140.4
     },
-    "grid_demand_fall_pct": -2.0,
-    "grid_demand_mw": 1454,
-    "grid_demand_usual_mw": 1447,
+    "grid_demand_fall_pct": -0.2,
+    "grid_demand_mw": 1457,
+    "grid_demand_usual_mw": 1457,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
@@ -438,7 +457,26 @@
         "pm25": 9
       },
       "air_word": "Good",
-      "days": []
+      "days": [
+        {
+          "date": "2026-11-23",
+          "gust": 59,
+          "rain": 2,
+          "tmax": 18
+        },
+        {
+          "date": "2026-11-24",
+          "gust": 35,
+          "rain": 0,
+          "tmax": 21
+        },
+        {
+          "date": "2026-11-25",
+          "gust": 49,
+          "rain": 0,
+          "tmax": 28
+        }
+      ]
     },
     "possible_blackout": false,
     "power_news": [],
@@ -456,20 +494,20 @@
   },
   "markets": {
     "AUD/USD": {
-      "change_pct": -0.05,
-      "price": 0.6653
+      "change_pct": -0.0,
+      "price": 0.6656
     },
     "Brent oil": {
-      "change_pct": -3.64,
-      "price": 89.2
+      "change_pct": -3.72,
+      "price": 89.13
     },
     "Gold": {
-      "change_pct": 2.75,
-      "price": 3612.1
+      "change_pct": 2.78,
+      "price": 3613.2
     },
     "VIX": {
-      "change_pct": -13.26,
-      "price": 31.13
+      "change_pct": -14.82,
+      "price": 30.57
     }
   },
   "national_shocks": {
@@ -485,9 +523,9 @@
   "nc3": "normal",
   "news_watch": {
     "ai_hack": [
+      "AI agents exploit zero-day vulnerability in university cyberattack - Tech Wire Asia",
       "With AI-powered cyberattacks, hackers seem more powerful than ever - DW.com",
-      "We were warned, time for heads to roll - News.com.au",
-      "UK acknowledges offensive cyber operations against Russia, China, Iran and North Korea - Escudo Digital"
+      "We were warned, time for heads to roll - News.com.au"
     ],
     "airspace": [
       "Belgium’s Airspace Closed 7 AM – 9 PM On Monday (November 23, 2026) & All Flights Canceled At Brussels Airport - LoyaltyLobby",
@@ -496,13 +534,17 @@
     ],
     "aviation_halt": [
       "FAA ground stop: When will it end? Not as soon as you'd like. - Mashable",
-      "FAA says air travel is safe as airlines clear backlog from nationwide ground stop - Scripps News",
-      "Trump’s callous response to the ground stop is a reminder of what we’re missing in Washington - The Boston Globe"
+      "Trump’s callous response to the ground stop is a reminder of what we’re missing in Washington - The Boston Globe",
+      "Delta Airlines flights delayed nationwide amid ground stop slowing holiday travel - WXLV"
     ],
     "bank_outage": [
       "Australian shares sink for eighth straight session - CommBank",
-      "Commonwealth Bank prepares its workforce for AI job cuts - Capital Brief",
-      "The Australian Dollar: Losing Its Anchors - Westpac IQ"
+      "NAB staff learn of redundancies in massive admin email blunder, bank apologises - Nine.com.au",
+      "Commonwealth Bank prepares its workforce for AI job cuts - Capital Brief"
+    ],
+    "blood": [
+      "Inside KDF's Plan to Train Specialised Military Doctors - Kenyans.co.ke",
+      "Air Marshal Sandeep Thareja Assesses Military Hospitals and Medical Readiness in Hyderabad - Shop SSBCrack"
     ],
     "chem": [
       "Japan's Rabbit Island hides wartime secrets under its fluffy exterior | Daily Sabah - Daily Sabah",
@@ -514,20 +556,35 @@
       "Days After Global Outlook Outage, Microsoft Warns More Disruptions Ahead. Here's Why - NDTV",
       "Anthropic and SpaceX Spark IPO Disruption With Unusual Processes - Global Banking & Finance Review"
     ],
+    "cyber_attrib": [
+      "FBI warns hackers weaponizing ARTEX AI framework to automate attacks on energy, manufacturing, telecom - Industrial Cyber",
+      "Spy agency warns active Russian hackers targeting Australian industry - ABC News & Headlines – Australian Broadcasting Corporation",
+      "Australians should prepare for online services to go down unexpectedly as threats rise, cyber agency warns - The Guardian"
+    ],
     "cyber_au": [
       "Australia mulls tougher tech laws after AI health breach - The Nightly",
       "\"Not A Cyber Attack\" Western Leaders Says As Nearly All Critical Infrastructure Goes Offline At Some Point This Month - The Betoota Advocate",
-      "New security needs emerge as physical access threats surpass cybercrime concerns at data centres for the first time - Medianet News Hub"
+      "Australian truck driver fired for wearing smart glasses at work - Information Age | ACS"
+    ],
+    "cyber_ot": [
+      "UK operation wards off risk of cyber-attack on supermarket fridges and freezers - The Guardian",
+      "Shop freezers in seven European countries hit by cyber-attack - BBC",
+      "Refrigeration under cyber attack - Climate Control News"
     ],
     "cyber_state": [
       "ESET Research: Sandworm behind cyberattack on Poland’s power grid in late 2025 - We Live Security",
       "ESET attributes DynoWiper-powered attack on Poland’s power grid to Russia-aligned Sandworm group - Industrial Cyber",
       "Russian state hackers likely behind wiper malware attack on Poland’s power grid - The Record from Recorded Future News"
     ],
+    "cyber_supply": [
+      "CISA flags critical Cisco RCE flaw as actively exploited in attacks - BleepingComputer",
+      "Google claims last week’s critical VMware bug was under attack in September - The Register",
+      "F5 patches five critical vulnerabilities in BIG-IP APM and iRules - Techzine Global"
+    ],
     "deepfake": [
       "Military engineers and electricians to help restore energy infrastructure - prime minister - Mezha.net",
       "A nine-year-old used AI to create a picture of a python emerging from a toilet, triggering a 48-hour emer - The Times of India",
-      "8th Pay Commission salary hike: Why employees want 50% DA merged with basic pay before fitment factor calculation - Livemint"
+      "TikTok launches tool to help public figures detect deepfakes globally - sundayworld.co.za"
     ],
     "flash": [
       "Singular Health Group Requests Trading Halt Pending Material Customer Contract Announcement - Kalkine",
@@ -563,8 +620,8 @@
     ],
     "outage_au": [
       "Calls for 'automatic compensation' following telco outages - ABC News & Headlines – Australian Broadcasting Corporation",
-      "Microsoft ‘deeply sorry’ for global outage, rules out cyberattack and AI - Nine.com.au",
-      "Australia telco complaints surge after Telstra outage - Traders Union"
+      "Telstra mobile outage disrupts services across Australia - Australian Cyber Security Magazine",
+      "Australia's Optus apologises for outage that disrupted emergency calls - Reuters"
     ],
     "reservists": [
       "IDF promises relief for reservists, but 2027 plan raises maximum service days - Ynetnews",
@@ -595,9 +652,9 @@
   },
   "prediction_markets": [
     {
-      "d24h": 1.0,
+      "d24h": 0.0,
       "q": "Will the U.S. invade Iran before 2027?",
-      "yes": 6.5
+      "yes": 5.5
     },
     {
       "d24h": 0.5,
@@ -660,9 +717,9 @@
       "yes": 2.1
     },
     {
-      "d24h": 4.0,
+      "d24h": 5.5,
       "q": "Iran-Oman Hormuz Agreement by December 31?",
-      "yes": 14.5
+      "yes": 16.0
     },
     {
       "d24h": 0.0,
@@ -945,7 +1002,7 @@
       "key": "mideast",
       "lit": [
         {
-          "detail": "gps_israel 39 vs usual 5.0",
+          "detail": "gps_israel 42 vs usual 5",
           "name": "GPS jamming spike (Gulf / Israel)"
         },
         {
@@ -978,7 +1035,7 @@
       "key": "russia",
       "lit": [
         {
-          "detail": "VIX at 31.13",
+          "detail": "VIX at 30.57",
           "name": "Market fear index above 30"
         },
         {
@@ -1015,7 +1072,7 @@
           "name": "WHO outbreak report with a high-concern pathogen (last 14 days)"
         },
         {
-          "detail": "VIX at 31.13",
+          "detail": "VIX at 30.57",
           "name": "Market fear index above 30"
         }
       ],
@@ -1039,35 +1096,30 @@
       "trend": "steady"
     },
     {
-      "band": "Elevated",
-      "convergence": "Signs are converging across 3 separate areas (ai-enabled hacking, cloud services and markets). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: a Chinese sta",
+      "band": "Guarded",
+      "convergence": "Two different kinds of sign are showing together (ai-enabled hacking and cloud services). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, deepfakes of leaders or fake ",
       "domains": [
         "AI-enabled hacking",
-        "Cloud services",
-        "Markets"
+        "Cloud services"
       ],
       "key": "ai",
       "lit": [
         {
-          "detail": "With AI-powered cyberattacks, hackers seem more powerful than ever",
+          "detail": "AI agents exploit zero-day vulnerability in university cyberattack",
           "name": "Reports of AI-driven hacking campaigns"
-        },
-        {
-          "detail": "\"Foreign investors are also selling\": Sell-side sidecar (futures market circuit breaker) triggered… KOSPI plunges below 4,600, just 400 poin",
-          "name": "Flash crash or exchange trading halt"
         },
         {
           "detail": "Days After Global Outlook Outage, Microsoft Warns More Disruptions Ahead. Here's Why",
           "name": "Major cloud or AI service outage"
         }
       ],
-      "score": 35,
-      "trend": "steady"
+      "score": 25,
+      "trend": "down"
     }
   ],
   "sectors_relative_5d": {
     "defence_au": 0.78,
-    "defence_eu": 0.6,
+    "defence_eu": 0.42,
     "defence_us": 3.44,
     "pandemic": -3.85
   },
@@ -1083,11 +1135,11 @@
   ],
   "tankers": "normal",
   "telecom_drop_pct": {
-    "Aussie Broadband": 0.3,
-    "Optus": 11.8,
+    "Aussie Broadband": 0.4,
+    "Optus": 0.0,
     "TPG": 0.0,
-    "Telstra": 1.0,
-    "Vodafone": 4.8
+    "Telstra": 0.3,
+    "Vodafone": 0.0
   },
   "us_departure_orders": [
     "Belarus"
