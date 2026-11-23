@@ -11,6 +11,7 @@ news outlets. Small incidents (one product, one region, degraded performance) st
 UKMTO: its site format has not been seen from here yet, so for now this only probes the pages and keeps a
 short sample in data/probe/ for writing a proper parser. It never alerts.
 """
+import json
 import re
 import time
 import xml.etree.ElementTree as ET
@@ -180,9 +181,55 @@ def fetch_ukmto():
                 path.write_text(text[:200_000])
         except OSError as e:
             errors.append(f"save {path.name}: {e}"[:160])
-        pages.append({"url": url, "bytes": len(raw), "has_next_data": "__NEXT_DATA__" in text,
+        js_hints = []
+        if i == 0:
+            jp = PROBE_DIR / "ukmto_js.json"
+            try:
+                if not jp.exists() or time.time() - jp.stat().st_mtime > 6 * 3600:
+                    PROBE_DIR.mkdir(parents=True, exist_ok=True)
+                    jp.write_text(json.dumps(_js_hints(text, errors), indent=1))
+                js_hints = f"data/probe/{jp.name}"
+            except OSError as e:
+                errors.append(f"save {jp.name}: {e}"[:160])
+        pages.append({"url": url, "bytes": len(raw), "has_next_data": "__NEXT_DATA__" in text, "js_hints": js_hints,
                       "incident_words": len(re.findall(r"\b(incident|attack|vessel|master reports)\b", text, re.I)),
                       "links": hints, "sample": f"data/probe/{path.name}"})
     if not pages:
         raise RuntimeError("; ".join(errors[:3]))
     return {"probe": True, "pages": pages, "errors": errors}
+
+
+JS_URL = re.compile(r"""["'`]((?:https?:)?//[^"'`\s]{3,200}|/[A-Za-z0-9_./?=&{}$-]{2,200})["'`]""")
+
+
+def _js_hints(html_text, errors, limit=10):
+    """The incident list is loaded by the page's own scripts: read them (at most `limit`, 1 per second) and
+    keep any URL-looking strings that mention an API, incidents or a feed, plus a little context."""
+    srcs = [u if u.startswith("http") else "https://www.ukmto.org" + u
+            for u in re.findall(r'src="([^"]+/_next/static/chunks/[^"]+\.js)"', html_text)]
+    srcs.sort(key=lambda u: ("pages/" not in u and "_app" not in u, u))  # page code first
+    hints = []
+    for n, src in enumerate(srcs[:limit]):
+        if n:
+            time.sleep(1)
+        try:
+            js = http_get(src, timeout=25).decode("utf-8", "replace")
+        except Exception as e:  # noqa: BLE001
+            errors.append(f"{src[-50:]}: {type(e).__name__}"[:160])
+            continue
+        for m in JS_URL.finditer(js):
+            u = m.group(1)
+            if re.search(r"api|incident|feed|rss|graphql|sitecore|layout", u, re.I) and not u.endswith((".js", ".css", ".svg", ".png")):
+                ctx = js[max(0, m.start() - 80):m.end() + 80].replace("\n", " ")
+                hints.append({"file": src.rsplit("/", 1)[-1][:60], "url": u[:200], "context": ctx[:300]})
+        for m in re.finditer(r"RecentIncident|recentIncident|incidents?\b", js):
+            if len(hints) >= 60:
+                break
+            hints.append({"file": src.rsplit("/", 1)[-1][:60], "url": "", "context": js[max(0, m.start() - 150):m.end() + 250][:400]})
+    seen, out = set(), []
+    for h in hints:
+        k = (h["url"], h["context"][:80])
+        if k not in seen:
+            seen.add(k)
+            out.append(h)
+    return out[:60]
