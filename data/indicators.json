@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-23T10:42:00Z",
+  "generated_at": "2026-11-23T10:58:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -213,25 +213,14 @@
     },
     {
       "band": "Low",
-      "convergence": "Only one kind of sign is showing (military air). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: missile / live-fire navigation warnings near taiwan, gps jamming over the taiwan strait and internet disruption in taiwan.",
-      "domains": [
-        "Military air"
-      ],
+      "convergence": "No warning signs are showing. The strongest signs not yet showing: missile / live-fire navigation warnings near taiwan, gps jamming over the taiwan strait and internet disruption in taiwan.",
+      "domains": [],
       "key": "taiwan",
-      "lit": [
-        {
-          "detail": "raaf 7 vs usual 1.0",
-          "domain": "Military air",
-          "id": "lift",
-          "name": "Military airlift or RAAF surge",
-          "short": "Military airlift or RAAF surge",
-          "weight": 10
-        }
-      ],
+      "lit": [],
       "name": "Taiwan Strait / South China Sea crisis",
       "sa_impact": "Trade and fuel: most of Australia's refined fuel and many goods pass the South China Sea. A blockade would disrupt fuel, medicines and electronics within weeks; Australian forces could be drawn in.",
-      "score": 10,
-      "trend": "up",
+      "score": 0,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Maritime",
@@ -262,6 +251,12 @@
           "id": "mob",
           "name": "Mobilisation / reservist reports (China or Taiwan)",
           "weight": 15
+        },
+        {
+          "domain": "Military air",
+          "id": "lift",
+          "name": "Military airlift or RAAF surge",
+          "weight": 10
         },
         {
           "domain": "Diplomatic",
@@ -398,7 +393,7 @@
       "key": "russia",
       "lit": [
         {
-          "detail": "VIX at 30.19",
+          "detail": "VIX at 30.15",
           "domain": "Markets",
           "id": "vix",
           "name": "Market fear index above 30",
@@ -661,7 +656,7 @@
           "weight": 15
         },
         {
-          "detail": "VIX at 30.19",
+          "detail": "VIX at 30.15",
           "domain": "Markets",
           "id": "vix",
           "name": "Market fear index above 30",
@@ -680,7 +675,7 @@
       "name": "Pandemic, biological or chemical emergency",
       "sa_impact": "Health system strain, possible lockdowns and border closures, and shortages of medicines and protective equipment, which Australia mostly imports.",
       "score": 40,
-      "trend": "up",
+      "trend": "steady",
       "unlit": [
         {
           "domain": "Health",
@@ -729,25 +724,14 @@
     },
     {
       "band": "Low",
-      "convergence": "Only one kind of sign is showing (australian incidents). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: sudden fall in sa electricity demand (possible large blackout), global cyber threat level raised (sans infocon not green) and several vpn / firewall flaws exploited this week.",
-      "domains": [
-        "Australian incidents"
-      ],
+      "convergence": "No warning signs are showing. The strongest signs not yet showing: sudden fall in sa electricity demand (possible large blackout), global cyber threat level raised (sans infocon not green) and several vpn / firewall flaws exploited this week.",
+      "domains": [],
       "key": "cyber",
-      "lit": [
-        {
-          "detail": "Aussie camping retailer hit by cyber attack",
-          "domain": "Australian incidents",
-          "id": "au",
-          "name": "Major Australian cyber incident reported",
-          "short": "Major Australian cyber incident reported",
-          "weight": 10
-        }
-      ],
+      "lit": [],
       "name": "Major cyber attack on Australia",
       "sa_impact": "Banks, payments, hospitals, fuel distribution, telcos and the power grid all run on networks; a large attack can stop card payments and services for hours to days.",
-      "score": 10,
-      "trend": "steady",
+      "score": 0,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Global threat level",
@@ -790,6 +774,12 @@
           "id": "state",
           "name": "Reports of state hackers / pre-positioning / wipers",
           "weight": 15
+        },
+        {
+          "domain": "Australian incidents",
+          "id": "au",
+          "name": "Major Australian cyber incident reported",
+          "weight": 10
         },
         {
           "domain": "Communications",
