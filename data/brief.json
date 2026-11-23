@@ -222,22 +222,30 @@
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
     "chokepoints": "RuntimeError: PortWatch returned no rows: {\"error\": {\"code\": 499, \"message\": \"Token Required\", \"messageCode\": \"GWM_0003\"",
-    "maritime": "TimeoutError: ",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-23T19:17:00Z",
+  "generated_at": "2026-11-23T19:32:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 33,
-    "Black Sea": 21,
-    "Israel & Eastern Mediterranean": 6,
+    "Baltic / Kaliningrad": 25,
+    "Black Sea": 7,
+    "Israel & Eastern Mediterranean": 8,
     "Korea": 0,
-    "Persian Gulf": 9,
-    "South Australia": null,
+    "Persian Gulf": 5,
+    "South Australia": 0,
     "Sydney / NSW": 0,
     "Taiwan Strait": 0
   },
   "incidents": [
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "The French supermarket cyber-attacks: implications beyond physical damage"
+      ],
+      "severity": "Info",
+      "target": "Supermarkets & food"
+    },
     {
       "attack_reported": true,
       "confirmed": false,
@@ -285,17 +293,9 @@
     },
     {
       "attack_reported": true,
-      "confirmed": false,
+      "confirmed": true,
       "headlines": [
-        "America's Biggest Oil Export Port Faces Thousands of Cyberattack Attempts"
-      ],
-      "severity": "Info",
-      "target": "America's Biggest Oil"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
+        "LaLiga says cyberattack exposed users’ personal data",
         "LaLiga data breach exposed personal information of fans and clubs"
       ],
       "severity": "Info",
@@ -405,9 +405,9 @@
       "attack_reported": false,
       "confirmed": true,
       "headlines": [
-        "Microsoft faces backlash as a week of outages rattles US systems",
-        "Microsoft warns scammers are exploiting its recent outage",
-        "Japan Microsoft 365 outage response: Furukawa’s requests"
+        "Japan Microsoft 365 outage response: Furukawa’s requests",
+        "Microsoft Outage Report Details Testing Gaps and Lost Emails",
+        "Microsoft mega outage: Report reveals testing gaps and emails that never arrived"
       ],
       "severity": "Warning",
       "target": "Microsoft"
@@ -420,15 +420,24 @@
       ],
       "severity": "Info",
       "target": "AI platforms"
+    },
+    {
+      "attack_reported": false,
+      "confirmed": false,
+      "headlines": [
+        "Set Your LLM Fallback Model Routing Strategy Before the Outage, Not During It"
+      ],
+      "severity": "Info",
+      "target": "Set Your LLM"
     }
   ],
   "internet_drop_pct": {
     "China": 0.0,
-    "Iran": 0.3,
-    "Israel": 0.0,
-    "Russia": 0.0,
+    "Iran": 0.5,
+    "Israel": 0.2,
+    "Russia": 0.1,
     "South Korea": 0.3,
-    "Taiwan": 1.1
+    "Taiwan": 0.9
   },
   "local_sa": {
     "bom": [],
@@ -444,14 +453,14 @@
     "fire_danger_ok": true,
     "fires_active": 6,
     "fuel": {
-      "brent_aud": 133.3,
-      "change_pct": -3.6,
+      "brent_aud": 133.1,
+      "change_pct": -3.7,
       "pump_cents": -3,
       "week_ago_aud": 138.3
     },
-    "grid_demand_fall_pct": 2.1,
-    "grid_demand_mw": 1223,
-    "grid_demand_usual_mw": 1308,
+    "grid_demand_fall_pct": 0.5,
+    "grid_demand_mw": 1244,
+    "grid_demand_usual_mw": 1319,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
@@ -502,16 +511,16 @@
       "price": 0.6631
     },
     "Brent oil": {
-      "change_pct": -5.92,
-      "price": 87.09
+      "change_pct": -6.45,
+      "price": 86.6
     },
     "Gold": {
-      "change_pct": 4.03,
-      "price": 3657.0
+      "change_pct": 3.93,
+      "price": 3653.6
     },
     "VIX": {
-      "change_pct": -24.94,
-      "price": 26.94
+      "change_pct": -25.77,
+      "price": 26.64
     }
   },
   "national_shocks": {
@@ -543,7 +552,7 @@
     "bank_outage": [
       "Australian shares sink for eighth straight session - CommBank",
       "NAB staff learn of redundancies in massive admin email blunder, bank apologises - Nine.com.au",
-      "Big bank axes flashy Christmas bash as leaked docs explain why - The Mercury"
+      "Big bank axes flashy Christmas bash as leaked docs explain why - Townsville Bulletin"
     ],
     "blood": [
       "Upstate military sergeant reaches milestone blood donation - Spectrum News",
@@ -560,19 +569,19 @@
       "Iran accuses countries that armed Saddam Hussein of leading chemical weapons allegations against Tehran - Middle East Monitor"
     ],
     "cloud": [
-      "Microsoft confirms data breach due to a bug in Entra Connect Health - Techzine Global",
       "Japan Microsoft 365 outage response: Furukawa’s requests - NeoTeo",
-      "Why Did Anthropic’s Shares Drop 8.5% After Record IPO? - Disruption Banking"
+      "Why Did Anthropic’s Shares Drop 8.5% After Record IPO? - Disruption Banking",
+      "Microsoft confirms data breach due to a bug in Entra Connect Health - Techzine Global"
     ],
     "cyber_attrib": [
       "FBI warns AI hackers can breach systems in under 3 hours - Fox News",
       "CISA Warns Hackers Are Actively Exploiting Cisco, VMware, SAP, and Apache Vulnerabilities - GBHackers News",
-      "CISA Warns of 4 Exploited Flaws Linked to Ransomware, Cryptomining, and LLMjacking Attacks - The Hacker News"
+      "Spy agency warns active Russian hackers targeting Australian industry - ABC News & Headlines – Australian Broadcasting Corporation"
     ],
     "cyber_au": [
-      "Aussie camping retailer hit by cyber attack - News24",
+      "Aussie camping retailer hit by cyber attack - The Australian",
       "Exclusive: China-backed hackers suspected behind ongoing EU Commission cyberattack - Yahoo News Australia",
-      "Has my Next data been stolen? Next says no customer personal data was taken in supplier cyber attack - Nacionale"
+      "New Zealand Defence Force website remains down days after data breach disclosure - Cyber Daily"
     ],
     "cyber_ot": [
       "UK operation wards off risk of cyber-attack on supermarket fridges and freezers - The Guardian",
@@ -600,8 +609,8 @@
     ],
     "flash": [
       "Nasdaq futures tripped a circuit breaker built for market crashes as Jensen Huang returned to Nvidia - Yahoo Finance",
-      "Lightning Minerals Requests Trading Halt Pending Capital Raising Announcement - Kalkine",
-      "Bitcoin Crashes to $17,000 This Weekend: Inside the Bizarre Flash Crash Mystery - BeInCrypto"
+      "Bitcoin Crashes to $17,000 This Weekend: Inside the Bizarre Flash Crash Mystery - BeInCrypto",
+      "Lightning Minerals Requests Trading Halt Pending Capital Raising Announcement - Kalkine"
     ],
     "fuel_au": [
       "Gas prices in Europe surge as forecast cold snap feeds supply shortage fears - The Guardian",
@@ -656,7 +665,7 @@
     "shipping_attacks": [
       "Iranian attacks on ships near Strait of Hormuz hit highest level since war began, data shows - The Jerusalem Post",
       "IRGC Claims 2 Supertankers Hit Mines in Hormuz, Iran Toll Reaches 6 in 4 Days - https://houseofsaud.com/",
-      "UKMTO says 2 tankers struck in Hormuz, as Iran says ship on fire - The New Arab"
+      "ADNOC L&S says one missing, 11 injured in Strait of Hormuz ship attack - Baird Maritime"
     ],
     "strikes": [
       "Iran Warns of Retaliation if US Forces Attack - ASHARQ AL-AWSAT English",
@@ -731,7 +740,7 @@
       "yes": 1.6
     },
     {
-      "d24h": -1.1,
+      "d24h": -1.2,
       "q": "Iran-Oman Hormuz Agreement by November 30?",
       "yes": 1.1
     },
@@ -779,11 +788,6 @@
       "d24h": -1.0,
       "q": "Ukraine agrees not to join NATO by December 31, 2027?",
       "yes": 18.0
-    },
-    {
-      "d24h": 0.0,
-      "q": "Will Nick Stewart attend a US x Iran diplomatic meeting by December 31, 2026?",
-      "yes": 8.0
     }
   ],
   "quakes_m6_24h": [
@@ -1010,7 +1014,7 @@
       "band": "Low",
       "key": "mideast",
       "score": 0,
-      "trend": "down"
+      "trend": "steady"
     },
     {
       "band": "Low",
@@ -1042,19 +1046,9 @@
     },
     {
       "band": "Low",
-      "convergence": "Only one kind of sign is showing (markets). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: us nuclear command aircraft unusual, private jets heading to retreat destinations and mobilisation reports (any major power).",
-      "domains": [
-        "Markets"
-      ],
       "key": "nuclear",
-      "lit": [
-        {
-          "detail": "Gold +4.0%",
-          "name": "Gold up 4%+ in a day"
-        }
-      ],
-      "score": 10,
-      "trend": "up"
+      "score": 0,
+      "trend": "down"
     },
     {
       "band": "Low",
@@ -1127,7 +1121,7 @@
           "name": "Flash crash or exchange trading halt"
         },
         {
-          "detail": "Days After Global Outlook Outage, Microsoft Warns More Disruptions Ahead. Here's Why",
+          "detail": "Microsoft explains, step by step, how its major global outage happened and why it took so long to restore services",
           "name": "Major cloud or AI service outage"
         },
         {
@@ -1142,8 +1136,8 @@
   "sectors_relative_5d": {
     "defence_au": 5.95,
     "defence_eu": -0.4,
-    "defence_us": -0.13,
-    "pandemic": 0.25
+    "defence_us": -0.08,
+    "pandemic": -0.02
   },
   "status_pages": [
     {
@@ -1165,11 +1159,11 @@
   ],
   "tankers": "normal",
   "telecom_drop_pct": {
-    "Aussie Broadband": 0.3,
-    "Optus": 3.0,
+    "Aussie Broadband": 0.1,
+    "Optus": 1.0,
     "TPG": 0.0,
     "Telstra": 0.0,
-    "Vodafone": 0.0
+    "Vodafone": 9.5
   },
   "us_departure_orders": [
     "Belarus"
