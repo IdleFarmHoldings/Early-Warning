@@ -206,7 +206,7 @@ def _js_hints(html_text, errors, limit=10):
     """The incident list is loaded by the page's own scripts: read them (at most `limit`, 1 per second) and
     keep any URL-looking strings that mention an API, incidents or a feed, plus a little context."""
     srcs = [u if u.startswith("http") else "https://www.ukmto.org" + u
-            for u in re.findall(r'src="([^"]*/_next/static/chunks/[^"]+\.js)"', html_text)]
+            for u in re.findall(r'src="([^"]+/_next/static/chunks/[^"]+\.js)"', html_text)]
     srcs.sort(key=lambda u: ("pages/" not in u and "_app" not in u, u))  # page code first
     hints = []
     for n, src in enumerate(srcs[:limit]):
