@@ -273,18 +273,19 @@
   ],
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
+    "maritime": "TimeoutError: ",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-23T04:03:00Z",
+  "generated_at": "2026-11-23T04:18:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 86,
-    "Black Sea": 61,
+    "Baltic / Kaliningrad": 65,
+    "Black Sea": 45,
     "Israel & Eastern Mediterranean": null,
     "Korea": 2,
-    "Persian Gulf": 4,
-    "South Australia": 0,
-    "Sydney / NSW": 2,
+    "Persian Gulf": 9,
+    "South Australia": 3,
+    "Sydney / NSW": 0,
     "Taiwan Strait": 0
   },
   "incidents": [
@@ -307,15 +308,6 @@
       ],
       "severity": "Info",
       "target": "Other services"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
-        "New Zealand Defence Force website remains down days after data breach disclosure"
-      ],
-      "severity": "Info",
-      "target": "New Zealand Defence"
     },
     {
       "attack_reported": true,
@@ -349,10 +341,9 @@
       "confirmed": true,
       "headlines": [
         "Microsoft outage cause revealed: It was a perfect storm of problems",
-        "Microsoft Outlook outage impacts governments, courts, hospitals and universities - ABC News",
         "Microsoft’s Brad Smith warns AI-fueled patching race could bring more outages"
       ],
-      "severity": "Warning",
+      "severity": "Info",
       "target": "Microsoft"
     },
     {
@@ -376,8 +367,8 @@
   ],
   "internet_drop_pct": {
     "China": 1.0,
-    "Iran": 0.7,
-    "Israel": 0.3,
+    "Iran": 0.6,
+    "Israel": 0.0,
     "Russia": 0.0,
     "South Korea": 0.0,
     "Taiwan": 0.0
@@ -400,13 +391,13 @@
     "fires_active": 11,
     "fuel": {
       "brent_aud": 135.9,
-      "change_pct": -3.7,
+      "change_pct": -3.6,
       "pump_cents": -3,
-      "week_ago_aud": 141.1
+      "week_ago_aud": 141.0
     },
-    "grid_demand_fall_pct": 12.3,
-    "grid_demand_mw": 351,
-    "grid_demand_usual_mw": 222,
+    "grid_demand_fall_pct": 20.7,
+    "grid_demand_mw": 317,
+    "grid_demand_usual_mw": 285,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
@@ -447,22 +438,22 @@
       "Morgan Vale Road, Pine Valley Station: MORGAN MAIL RD Closed due to flooding over road",
       "Pine Valley Road, Pine Valley Station: PINE VALLEY RD Closed due to flooding over road"
     ],
-    "rooftop_pv_mw": 2152,
+    "rooftop_pv_mw": 1642,
     "sawater_news": [],
     "watch_and_act": []
   },
   "markets": {
     "AUD/USD": {
-      "change_pct": -0.27,
-      "price": 0.6638
+      "change_pct": -0.23,
+      "price": 0.6641
     },
     "Brent oil": {
-      "change_pct": -3.05,
-      "price": 89.75
+      "change_pct": -2.79,
+      "price": 89.99
     },
     "Gold": {
-      "change_pct": 2.61,
-      "price": 3607.3
+      "change_pct": 2.53,
+      "price": 3604.3
     },
     "VIX": {
       "change_pct": 26.2,
@@ -491,6 +482,11 @@
       "Qatar Airways Operates Limited Flights to and from Doha - https://safariindia.com/",
       "India Has No Proposal To Use Nepal's Airspace For Military Aircraft: Report - Times Now"
     ],
+    "aviation_halt": [
+      "FAA ground stop: When will it end? Not as soon as you'd like. - Mashable",
+      "FAA says air travel is safe as airlines clear backlog from nationwide ground stop - Scripps News",
+      "The FAA Ground Stop Blame Game - WSJ"
+    ],
     "bank_outage": [
       "Buy, hold, sell: Sonic Healthcare, Woolworths, ANZ shares - The Motley Fool Australia",
       "Australia cracks down on tourism visa overstays - The Portugal News",
@@ -504,7 +500,7 @@
     "cables": [
       "Submarine Cable Repairs Set for December Completion - Digital Pakistan",
       "Andaman and Nicobar to get undersea cable network, 4G coverage in 87 villages - India Today",
-      "PANI project to connect Andaman's eight islands through undersea cable network - The Week"
+      "Pakistan may face slower internet speed until December 6 as cable repair continues - Dunya News"
     ],
     "chem": [
       "Japan's Rabbit Island hides wartime secrets under its fluffy exterior | Daily Sabah - Daily Sabah",
@@ -512,9 +508,9 @@
       "An extensive anti-aircraft missile exercise will be held on 23.11.26, in the Haifa area. - haipo.co.il"
     ],
     "cloud": [
+      "Op-Ed: Patch faster or stay online? Australian organisations shouldn’t have to choose - Cyber Daily",
       "Microsoft outage cause revealed: It was a perfect storm of problems - Mashable",
-      "Microsoft Outlook outage impacts governments, courts, hospitals and universities - ABC News - Breaking News, Latest News and Videos",
-      "Op-Ed: Patch faster or stay online? Australian organisations shouldn’t have to choose - Cyber Daily"
+      "Outlook bug shows external forces ‘changing operational risk’ - Insurance News"
     ],
     "cyber_attrib": [
       "FBI warns hackers weaponizing ARTEX AI framework to automate attacks on energy, manufacturing, telecom - Industrial Cyber",
@@ -544,7 +540,7 @@
     "deepfake": [
       "Military engineers and electricians to help restore energy infrastructure - prime minister - Mezha.net",
       "A nine-year-old used AI to create a picture of a python emerging from a toilet, triggering a 48-hour emergency search involving firefighters and specialist officers in Italy before investigators discovered the shocking truth - The Times of India",
-      "9-Year-Old’s Fake Toilet Snake Photo Sparks 2-Day Emergency Search - Parade Magazine"
+      "TikTok launches tool to help public figures detect deepfakes globally - sundayworld.co.za"
     ],
     "flash": [
       "Lightning Minerals Requests Trading Halt Pending Capital Raising Announcement - Kalkine",
@@ -558,13 +554,13 @@
     ],
     "illness": [
       "Mystery illness causes mass hospitalisation of runners - The Nightly",
-      "Zayn Malik hospitalised with mystery illness, forced to cancel upcoming appearances on album release week - Nine.com.au",
-      "Zayn Malik hospitalised with mystery illness - News.com.au"
+      "Mystery Pneumonia Death Sparks Concern; Trader Joe's Recall; OUD in Young People - MedPage Today",
+      "Mystery illness forces final round cancellation of college golf event in Mississippi - Golfweek"
     ],
     "masscas": [
       "Emirates International Burn Conference 2026 examines medical readiness, response - www.wam.ae",
       "Israel hosts 30 countries in emergency preparedness exercise - Cleveland Jewish News",
-      "Tiverton man charged after nine-vehicle crash - EastBayRI.com"
+      "Israel hosts over 30 countries in emergency preparedness exercise - World Israel News"
     ],
     "medexport": [
       "Barbados PM accuses G7 nations of severe hypocrisy - St Vincent Times",
@@ -578,12 +574,12 @@
     "national_outage": [
       "Inside the ‘Black Sky’ plans for a nationwide blackout - Herald.Wales",
       "What Is Causing South Sulawesi's 600 MW Power Shortfall? - Tempo.co English",
-      "'Tipping point': Humanitarian crisis in Cuba continues to grow, aid group director says - ABC News - Breaking News, Latest News and Videos"
+      "Emergency preparedness expert warns most Americans aren’t ready for a long-term grid collapse | On Balance - WGN Radio 720"
     ],
     "outage_au": [
+      "Calls for 'automatic compensation' following telco outages - ABC News & Headlines – Australian Broadcasting Corporation",
       "Alice Springs and Katherine local news briefing: Friday, November 20, 2026 - ABC News & Headlines – Australian Broadcasting Corporation",
-      "Microsoft ‘deeply sorry’ for global outage, rules out cyberattack and AI - Nine.com.au",
-      "Australia telco complaints surge after Telstra outage - Traders Union"
+      "Australia's Optus apologises for outage that disrupted emergency calls - Reuters"
     ],
     "reservists": [
       "IDF promises relief for reservists, but 2027 plan raises maximum service days - Ynetnews",
@@ -687,14 +683,14 @@
       "yes": 16.0
     },
     {
-      "d24h": -1.5,
+      "d24h": -2.0,
       "q": "Iran charges Hormuz fees by December 31?",
       "yes": 5.5
     },
     {
-      "d24h": -1.2,
+      "d24h": -1.1,
       "q": "NATO x Russia military clash by November 30, 2026?",
-      "yes": 3.2
+      "yes": 3.3
     },
     {
       "d24h": 0.1,
@@ -707,7 +703,7 @@
       "yes": 3.0
     },
     {
-      "d24h": 0.0,
+      "d24h": -0.1,
       "q": "Will Russia test a nuclear weapon by December 31 2026?",
       "yes": 1.9
     },
@@ -727,7 +723,7 @@
       "yes": 10.0
     },
     {
-      "d24h": -1.5,
+      "d24h": 0.5,
       "q": "Ukraine agrees not to join NATO by December 31, 2027?",
       "yes": 18.5
     },
@@ -740,11 +736,11 @@
   "quakes_m6_24h": [
     {
       "id": "us6000ucvm",
-      "lat": -13.6607,
-      "lon": 172.2423,
+      "lat": -13.5846,
+      "lon": 172.2672,
       "mag": 6.5,
       "place": "Vanuatu region",
-      "time": 1795401657933,
+      "time": 1795401658052,
       "tsunami": true,
       "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ucvm"
     }
@@ -1071,7 +1067,7 @@
       "trend": "steady"
     },
     {
-      "band": "Guarded",
+      "band": "Elevated",
       "convergence": "Two different kinds of sign are showing together (ai-enabled hacking and markets). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, deepfakes of leaders or fake officia",
       "domains": [
         "AI-enabled hacking",
@@ -1084,16 +1080,20 @@
           "name": "Reports of AI-driven hacking campaigns"
         },
         {
+          "detail": "\"Foreign investors are also selling\": Sell-side sidecar (futures market circuit breaker) triggered… KOSPI plunges below 4,600, just 400 poin",
+          "name": "Flash crash or exchange trading halt"
+        },
+        {
           "detail": "VIX +26.2%",
           "name": "Market fear index jumps 25%+ in a day"
         }
       ],
-      "score": 25,
-      "trend": "down"
+      "score": 35,
+      "trend": "up"
     }
   ],
   "sectors_relative_5d": {
-    "defence_au": -0.56,
+    "defence_au": -0.48,
     "defence_eu": 1.27,
     "defence_us": 3.44,
     "pandemic": -3.85
