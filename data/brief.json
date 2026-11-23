@@ -274,22 +274,32 @@
   ],
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
-    "maritime": "TimeoutError: ",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-23T14:43:00Z",
+  "generated_at": "2026-11-23T14:59:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 31,
-    "Black Sea": 40,
-    "Israel & Eastern Mediterranean": 5,
+    "Baltic / Kaliningrad": 38,
+    "Black Sea": 32,
+    "Israel & Eastern Mediterranean": 7,
     "Korea": 0,
-    "Persian Gulf": 6,
+    "Persian Gulf": 5,
     "South Australia": null,
     "Sydney / NSW": null,
     "Taiwan Strait": 0
   },
   "incidents": [
+    {
+      "attack_reported": true,
+      "confirmed": true,
+      "headlines": [
+        "CyberCube activates cyber catastrophe response after global Microsoft outage",
+        "Microsoft admits hackers accessed customers' private data",
+        "Microsoft confirms data breach due to a bug in Entra Connect Health"
+      ],
+      "severity": "Warning",
+      "target": "Microsoft"
+    },
     {
       "attack_reported": true,
       "confirmed": false,
@@ -298,15 +308,6 @@
       ],
       "severity": "Info",
       "target": "Banking & payments"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
-        "Microsoft admits hackers accessed customers' private data"
-      ],
-      "severity": "Info",
-      "target": "Microsoft"
     },
     {
       "attack_reported": true,
@@ -325,15 +326,6 @@
       ],
       "severity": "Info",
       "target": "Exclusive"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
-        "New Zealand Defence Force website remains down days after data breach disclosure"
-      ],
-      "severity": "Info",
-      "target": "New Zealand Defence"
     },
     {
       "attack_reported": true,
@@ -366,19 +358,19 @@
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
-        "Soccer-LaLiga data extracted in cyber attack"
+        "New Zealand Defence Force website remains down days after data breach disclosure"
       ],
       "severity": "Info",
-      "target": "Soccer-LaLiga"
+      "target": "New Zealand Defence"
     },
     {
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
-        "Hackers exploit critical Cisco Expressway flaw CVE-2026-76466"
+        "Tower Records is the latest major Japanese firm to be hit with a data breach"
       ],
       "severity": "Info",
-      "target": "Hackers"
+      "target": "Tower Records"
     },
     {
       "attack_reported": true,
@@ -388,6 +380,15 @@
       ],
       "severity": "Info",
       "target": "KEPCO"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "Hackers exploit critical Cisco Expressway flaw CVE-2026-76466"
+      ],
+      "severity": "Info",
+      "target": "Hackers"
     },
     {
       "attack_reported": true,
@@ -409,21 +410,21 @@
     },
     {
       "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
-        "European Commission warns EU Academy users of data leak after AI-driven cyberattack - ABC News"
-      ],
-      "severity": "Info",
-      "target": "European Commission"
-    },
-    {
-      "attack_reported": true,
       "confirmed": true,
       "headlines": [
         "China-linked hackers' AI agents found a zero-day in 11 minutes, Amazon says"
       ],
       "severity": "Info",
       "target": "China-linked"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "European Commission warns EU Academy users of data leak after AI-driven cyberattack"
+      ],
+      "severity": "Info",
+      "target": "European Commission"
     },
     {
       "attack_reported": true,
@@ -514,15 +515,33 @@
       ],
       "severity": "Info",
       "target": "Fashion"
+    },
+    {
+      "attack_reported": false,
+      "confirmed": false,
+      "headlines": [
+        "Is Claude / Anthropic Down? Company Investigates Elevated Model Request Errors : Outages : JKN"
+      ],
+      "severity": "Info",
+      "target": "AI platforms"
+    },
+    {
+      "attack_reported": false,
+      "confirmed": false,
+      "headlines": [
+        "Set Your LLM Fallback Model Routing Strategy Before the Outage, Not During It"
+      ],
+      "severity": "Info",
+      "target": "Set Your LLM"
     }
   ],
   "internet_drop_pct": {
-    "China": 1.8,
+    "China": 2.1,
     "Iran": 0.0,
-    "Israel": 0.4,
+    "Israel": 0.3,
     "Russia": 0.0,
     "South Korea": 0.1,
-    "Taiwan": 0.3
+    "Taiwan": 0.2
   },
   "local_sa": {
     "bom": [],
@@ -545,14 +564,14 @@
       "pump_cents": -3,
       "week_ago_aud": 138.6
     },
-    "grid_demand_fall_pct": 2.0,
-    "grid_demand_mw": 1360,
-    "grid_demand_usual_mw": 1360,
+    "grid_demand_fall_pct": 3.1,
+    "grid_demand_mw": 1349,
+    "grid_demand_usual_mw": 1357,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
       "air": {
-        "aqi": 38,
+        "aqi": 40,
         "peak_pm25_48h": 11,
         "pm25": 10
       },
@@ -594,20 +613,20 @@
   },
   "markets": {
     "AUD/USD": {
-      "change_pct": -0.18,
-      "price": 0.6644
+      "change_pct": -0.24,
+      "price": 0.664
     },
     "Brent oil": {
-      "change_pct": -4.6,
-      "price": 88.31
+      "change_pct": -4.97,
+      "price": 87.97
     },
     "Gold": {
-      "change_pct": 4.66,
-      "price": 3679.2
+      "change_pct": 4.49,
+      "price": 3673.1
     },
     "VIX": {
-      "change_pct": -25.44,
-      "price": 26.76
+      "change_pct": -20.06,
+      "price": 28.69
     }
   },
   "national_shocks": {
@@ -623,12 +642,11 @@
   "nc3": "normal",
   "news_watch": {
     "ai_hack": [
-      "European Commission warns EU Academy users of data leak after AI-driven cyberattack - ABC News - Breaking News, Latest News and Videos",
       "China-linked hackers' AI agents found a zero-day in 11 minutes, Amazon says - Dealroom",
+      "European Commission warns EU Academy users of data leak after AI-driven cyberattack - The Seattle Times",
       "With AI-powered cyberattacks, hackers seem more powerful than ever - DW.com"
     ],
     "airspace": [
-      "Belgian airspace closed due to general strike. More than 60,000 passengers affected - ipn.md",
       "Qatar Airways Operates Limited Flights to and from Doha - https://safariindia.com/"
     ],
     "aviation_halt": [
@@ -638,35 +656,46 @@
     ],
     "bank_outage": [
       "Australian shares sink for eighth straight session - CommBank",
-      "NAB staff learn of redundancies in massive admin email blunder, bank apologises - Nine.com.au",
-      "The Australian Dollar: Losing Its Anchors - Westpac IQ"
+      "The Australian Dollar: Losing Its Anchors - Westpac IQ",
+      "NAB staff learn of redundancies in massive admin email blunder, bank apologises - Nine.com.au"
     ],
     "blood": [
       "Upstate military sergeant reaches milestone blood donation - Spectrum News",
       "NCC Cadets and Army Officials Donate Blood - Prokerala"
     ],
     "cables": [
+      "Du joins Singapore-India-Gulf submarine cable system - DD News",
       "PANI Project: Centre Proposes Undersea Fibre Cable to Connect Eight Andaman and Nicobar Islands - Adda247"
     ],
     "chem": [
       "Conference of the States Parties to the Chemical Weapons Convention opens - OPCW",
       "Iran accuses countries that armed Saddam Hussein of leading chemical weapons allegations against Tehran - Middle East Monitor",
-      "US arrears leave chemical weapons watchdog facing budget crisis - The Straits Times"
+      "Gharibabadi: Chemical Weapons Are Unjustifiable Under Any Circumstances - WANA News Agency"
+    ],
+    "cloud": [
+      "Why Did Anthropic’s Shares Drop 8.5% After Record IPO? - Disruption Banking",
+      "Recap: Anthropic IPO, tech rout, Nvidia, and outage aftermath - Fortune",
+      "Microsoft confirms data breach due to a bug in Entra Connect Health - Techzine Global"
     ],
     "cyber_attrib": [
       "FBI warns AI hackers can breach systems in under 3 hours - Fox News",
-      "Spy agency warns active Russian hackers targeting Australian industry - ABC News & Headlines – Australian Broadcasting Corporation",
-      "Australians should prepare for online services to go down unexpectedly as threats rise, cyber agency warns - The Guardian"
+      "FBI warns hackers using AI-powered tool to automate cyberattacks worldwide - Anadolu Ajansı",
+      "CISA Warns Hackers Are Actively Exploiting Cisco, VMware, SAP, and Apache Vulnerabilities - GBHackers News"
     ],
     "cyber_au": [
       "Aussie camping retailer hit by cyber attack - The Australian",
       "Exclusive: China-backed hackers suspected behind ongoing EU Commission cyberattack - Yahoo News Australia",
-      "Here's Why Data Breach Disclosure is so Hard: Lessons from Hundreds of Emails with Hacked Companies - Troy Hunt"
+      "Has my Next data been stolen? Next says no customer personal data was taken in supplier cyber attack - Nacionale"
     ],
     "cyber_ot": [
       "UK operation wards off risk of cyber-attack on supermarket fridges and freezers - The Guardian",
       "Shop freezers in seven European countries hit by cyber-attack - BBC",
       "Supermarket freezers and fridges in Europe hit by cyberattack - Nine.com.au"
+    ],
+    "cyber_state": [
+      "ESET Research: Sandworm behind cyberattack on Poland’s power grid in late 2025 - We Live Security",
+      "ESET attributes DynoWiper-powered attack on Poland’s power grid to Russia-aligned Sandworm group - Industrial Cyber",
+      "Russian state hackers likely behind wiper malware attack on Poland’s power grid - The Record from Recorded Future News"
     ],
     "cyber_supply": [
       "Critical Zero-Day Alert: Unauthenticated vCenter Authentication Bypass (CVE-2026-123890) Exposes Enterprise & Telco Cloud Infrastructure + Video - Howl.Link",
@@ -679,17 +708,18 @@
       "A nine-year-old used AI to create a picture of a python emerging from a toilet, triggering a 48-hour emer - The Times of India"
     ],
     "dieoff": [
+      "High Power Committee For Manipur Tragedy: Good And Beyond - Imphal Times",
       "Thriller 'Fagin’s Boys' by author Bruce Harris - Female First"
     ],
     "flash": [
-      "Singular Health Group Requests Trading Halt Pending Material Customer Contract Announcement - Kalkine",
       "Bitcoin Crashes to $17,000 This Weekend: Inside the Bizarre Flash Crash Mystery - BeInCrypto",
-      "South Korean Stocks Plunge 5.8% Intraday, Triggering Circuit Breaker; 10.76 Trillion Won Stabilization Fund on Standby Fails to Stem Selling - BigGo Finance"
+      "South Korean Stocks Plunge 5.8% Intraday, Triggering Circuit Breaker; 10.76 Trillion Won Stabilization Fund on Standby Fails to Stem Selling - BigGo Finance",
+      "Nasdaq trading halted after circuit breaker trips amid a volatile stretch - Crypto Briefing"
     ],
     "fuel_au": [
-      "Canberra petrol station runs out as panic buying takes hold - The Canberra Times",
       "Gas prices in Europe surge as forecast cold snap feeds supply shortage fears - The Guardian",
-      "COMMENTARY: Oil's Iran war recovery masks a stubborn diesel shortage - Reuters"
+      "Canberra petrol station runs out as panic buying takes hold - The Canberra Times",
+      "Australia urged to cut fuel imports through electric trucks and mine electrification - Proactive Investors Australia"
     ],
     "illness": [
       "Dr. Siegel on measles comeback, mystery illness outbreak on cruise ship - Fox News",
@@ -706,10 +736,18 @@
       "The weak link in Malaysia’s pharmaceutical supply chain - Free Malaysia Today",
       "Barbados PM accuses G7 nations of severe hypocrisy - St Vincent Times"
     ],
+    "mobilisation": [
+      "A serviceman was declared AWOL despite being hospitalized after a severe injury – the court canceled the command orders and obliged to resume payments - Судово-юридична газета",
+      "Coordination center approves 100% of updated criticality criteria, state bodies to review earlier decisions by end of next week - Interfax-Ukraine",
+      "The offender was prohibited from approaching within 300 meters: The Supreme Court explained how the duration of a restraining order is determined - Судово-юридична газета"
+    ],
+    "murray": [
+      "Art as research: new NIDR Hazard Posters share Indigenous natural hazard knowledge - Monash University"
+    ],
     "national_outage": [
       "Cuba’s National Electric Grid Collapses, Reason Unknown - EnergyNow.com",
-      "Inside the ‘Black Sky’ plans for a nationwide blackout - Herald.Wales",
-      "Delta Air Lines delays over 1,300 flights as latest outage snarls air traffic - SILive.com"
+      "Fallout from ICE arrests at Sea-Tac that sparked nationwide outage - KIRO 7 News Seattle",
+      "Inside the ‘Black Sky’ plans for a nationwide blackout - Herald.Wales"
     ],
     "outage_au": [
       "Calls for 'automatic compensation' following telco outages - ABC News & Headlines – Australian Broadcasting Corporation",
@@ -726,9 +764,14 @@
       "Not reliable, not affordable: Report shows ageing coal plants boost blackout risk, push up prices - Renew Economy"
     ],
     "scams": [
-      "Trick or trust? Spot cyber fraud fast - kendranewsaustralia.com.au",
       "FIS warns Gen Z is hit hardest by AI deepfake scams - SecurityBrief UK",
-      "Fraud & Digital Identity News – KYC, Scams & Verification - FF News"
+      "Fraud & Digital Identity News – KYC, Scams & Verification - FF News",
+      "Trick or trust? Spot cyber fraud fast - kendranewsaustralia.com.au"
+    ],
+    "shipping_attacks": [
+      "Iranian attacks on ships near Strait of Hormuz hit highest level since war began, data shows - The Jerusalem Post",
+      "Middle East latest: Eisenkot says no immediate Iran threat requiring Israeli military action - The National",
+      "ADNOC L&S says one missing, 11 injured in Strait of Hormuz ship attack - Baird Maritime"
     ],
     "strikes": [
       "Iran Warns of Retaliation if US Forces Attack - ASHARQ AL-AWSAT English",
@@ -758,7 +801,7 @@
       "yes": 3.3
     },
     {
-      "d24h": -0.3,
+      "d24h": -0.4,
       "q": "US-Iran Hormuz Agreement by November 30?",
       "yes": 3.2
     },
@@ -803,7 +846,7 @@
       "yes": 1.6
     },
     {
-      "d24h": -1.5,
+      "d24h": -1.3,
       "q": "Iran-Oman Hormuz Agreement by November 30?",
       "yes": 1.5
     },
@@ -848,14 +891,14 @@
       "yes": 2.8
     },
     {
+      "d24h": 2.5,
+      "q": "Iran blockade lifted before Iran-Oman Hormuz agreement?",
+      "yes": 12.5
+    },
+    {
       "d24h": -2.0,
       "q": "Ukraine agrees not to join NATO by December 31, 2027?",
       "yes": 18.0
-    },
-    {
-      "d24h": 0.0,
-      "q": "Will Nick Stewart attend a US x Iran diplomatic meeting by December 31, 2026?",
-      "yes": 8.0
     }
   ],
   "quakes_m6_24h": [
@@ -1110,7 +1153,7 @@
       "band": "Low",
       "key": "russia",
       "score": 0,
-      "trend": "down"
+      "trend": "steady"
     },
     {
       "band": "Low",
@@ -1121,7 +1164,7 @@
       "key": "nuclear",
       "lit": [
         {
-          "detail": "Gold +4.7%",
+          "detail": "Gold +4.5%",
           "name": "Gold up 4%+ in a day"
         }
       ],
@@ -1136,8 +1179,9 @@
     },
     {
       "band": "Elevated",
-      "convergence": "Only one kind of sign is showing (health). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: countries restricting medical supply exports, pandemic-response stocks outperforming (5 days) and chemical / nerve-agent attack or mass poisoning repor",
+      "convergence": "Two different kinds of sign are showing together (chemical weapons and health). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: countries restricting medical supply exports, pandemic-response stocks outperforming (5 days) ",
       "domains": [
+        "Chemical weapons",
         "Health"
       ],
       "key": "bio",
@@ -1153,10 +1197,14 @@
         {
           "detail": "Dozens Fall Ill On Two Condor Flights To Frankfurt, Triggering Mass Casualty Response",
           "name": "Mass casualty declarations (any country)"
+        },
+        {
+          "detail": "Survivors of deposed regime’s chemical attacks participate in OPCW meetings",
+          "name": "Chemical / nerve-agent attack or mass poisoning reported"
         }
       ],
-      "score": 40,
-      "trend": "steady"
+      "score": 55,
+      "trend": "up"
     },
     {
       "band": "Low",
@@ -1176,9 +1224,10 @@
     },
     {
       "band": "Elevated",
-      "convergence": "Signs are converging across 3 separate areas (ai-enabled hacking, fraud waves and markets). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: a Chinese state-",
+      "convergence": "Signs are converging across 4 separate areas (ai-enabled hacking, cloud services, fraud waves and markets). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: ",
       "domains": [
         "AI-enabled hacking",
+        "Cloud services",
         "Fraud waves",
         "Markets"
       ],
@@ -1193,19 +1242,23 @@
           "name": "Flash crash or exchange trading halt"
         },
         {
+          "detail": "Days After Global Outlook Outage, Microsoft Warns More Disruptions Ahead. Here's Why",
+          "name": "Major cloud or AI service outage"
+        },
+        {
           "detail": "FIS warns Gen Z is hit hardest by AI deepfake scams",
           "name": "Surge in AI voice-clone / deepfake scams in Australia"
         }
       ],
-      "score": 30,
-      "trend": "down"
+      "score": 40,
+      "trend": "up"
     }
   ],
   "sectors_relative_5d": {
     "defence_au": 0.78,
     "defence_eu": -0.22,
-    "defence_us": -0.01,
-    "pandemic": -1.77
+    "defence_us": -1.02,
+    "pandemic": -1.5
   },
   "status_pages": [
     {
@@ -1227,10 +1280,10 @@
   ],
   "tankers": "normal",
   "telecom_drop_pct": {
-    "Aussie Broadband": 0.0,
-    "Optus": 3.9,
+    "Aussie Broadband": 0.3,
+    "Optus": null,
     "TPG": 0.0,
-    "Telstra": 0.0,
+    "Telstra": null,
     "Vodafone": 0.0
   },
   "us_departure_orders": [
