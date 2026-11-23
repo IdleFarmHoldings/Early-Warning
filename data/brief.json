@@ -276,21 +276,31 @@
   ],
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
+    "maritime": "TimeoutError: ",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-23T18:06:00Z",
+  "generated_at": "2026-11-23T18:12:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 23,
-    "Black Sea": 17,
-    "Israel & Eastern Mediterranean": 3,
-    "Korea": 0,
-    "Persian Gulf": 11,
+    "Baltic / Kaliningrad": 26,
+    "Black Sea": 27,
+    "Israel & Eastern Mediterranean": 4,
+    "Korea": null,
+    "Persian Gulf": 12,
     "South Australia": 0,
     "Sydney / NSW": null,
     "Taiwan Strait": 0
   },
   "incidents": [
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "The French supermarket cyber-attacks: implications beyond physical damage"
+      ],
+      "severity": "Info",
+      "target": "Supermarkets & food"
+    },
     {
       "attack_reported": true,
       "confirmed": false,
@@ -302,12 +312,66 @@
     },
     {
       "attack_reported": true,
-      "confirmed": true,
+      "confirmed": false,
       "headlines": [
-        "China-linked hackers' AI agents found a zero-day in 11 minutes, Amazon says"
+        "Aussie camping retailer hit by cyber attack"
       ],
       "severity": "Info",
-      "target": "China-linked"
+      "target": "Aussie"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "Exclusive: China-backed hackers suspected behind ongoing EU Commission cyberattack"
+      ],
+      "severity": "Info",
+      "target": "Exclusive"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": true,
+      "headlines": [
+        "Has my Next data been stolen? Next says no customer personal data was taken in supplier cyber attack"
+      ],
+      "severity": "Info",
+      "target": "Has"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": true,
+      "headlines": [
+        "\"Not A Cyber Attack\" Western Leaders Says As Nearly All Critical Infrastructure Goes Offline At Some Point This Month"
+      ],
+      "severity": "Info",
+      "target": "Not"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": true,
+      "headlines": [
+        "EU Commission confirms personal data leak after cyberattack, warns of further disruption"
+      ],
+      "severity": "Info",
+      "target": "EU Commission"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "LaLiga data breach hits fan platform and club data"
+      ],
+      "severity": "Info",
+      "target": "LaLiga"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "Peninsula Energy cybersecurity incident disrupts Lance uranium operations"
+      ],
+      "severity": "Info",
+      "target": "Peninsula Energy"
     },
     {
       "attack_reported": true,
@@ -331,24 +395,6 @@
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
-        "European Commission warns EU Academy users of data leak after AI-driven cyberattack"
-      ],
-      "severity": "Info",
-      "target": "European Commission"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
-        "With AI-powered cyberattacks, hackers seem more powerful than ever"
-      ],
-      "severity": "Info",
-      "target": "With AI-powered"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
         "Hackers Direct AI Agents to Break Into University Networks, Discovering Zero-Day Along the Way"
       ],
       "severity": "Info",
@@ -362,6 +408,33 @@
       ],
       "severity": "Info",
       "target": "Over"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": true,
+      "headlines": [
+        "China-linked hackers' AI agents found a zero-day in 11 minutes, Amazon says"
+      ],
+      "severity": "Info",
+      "target": "China-linked"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "European Commission warns EU Academy users of data leak after AI-driven cyberattack"
+      ],
+      "severity": "Info",
+      "target": "European Commission"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "With AI-powered cyberattacks, hackers seem more powerful than ever"
+      ],
+      "severity": "Info",
+      "target": "With AI-powered"
     },
     {
       "attack_reported": true,
@@ -392,9 +465,10 @@
     },
     {
       "attack_reported": true,
-      "confirmed": false,
+      "confirmed": true,
       "headlines": [
-        "Google reports first fully autonomous cyberattack as AI-powered threats reach new milestone"
+        "Google reports first fully autonomous cyberattack as AI-powered threats reach new milestone",
+        "Google spots the first fully autonomous AI cyberattack"
       ],
       "severity": "Info",
       "target": "Google"
@@ -459,10 +533,10 @@
   "internet_drop_pct": {
     "China": 0.0,
     "Iran": 0.0,
-    "Israel": 0.3,
+    "Israel": 0.4,
     "Russia": 0.1,
     "South Korea": 0.3,
-    "Taiwan": 1.4
+    "Taiwan": 1.3
   },
   "local_sa": {
     "bom": [],
@@ -478,13 +552,13 @@
     "fire_danger_ok": true,
     "fires_active": 7,
     "fuel": {
-      "brent_aud": 133.7,
+      "brent_aud": 133.6,
       "change_pct": -3.3,
       "pump_cents": -3,
       "week_ago_aud": 138.3
     },
-    "grid_demand_fall_pct": 3.8,
-    "grid_demand_mw": 1192,
+    "grid_demand_fall_pct": 2.2,
+    "grid_demand_mw": 1212,
     "grid_demand_usual_mw": 1270,
     "grid_lor_level": 0,
     "nearby_incidents": [],
@@ -532,32 +606,26 @@
   },
   "markets": {
     "AUD/USD": {
-      "change_pct": -0.48,
-      "price": 0.6624
+      "change_pct": -0.42,
+      "price": 0.6628
     },
     "Brent oil": {
-      "change_pct": -5.57,
-      "price": 87.41
+      "change_pct": -5.75,
+      "price": 87.25
     },
     "Gold": {
-      "change_pct": 3.92,
-      "price": 3653.3
+      "change_pct": 4.04,
+      "price": 3657.4
     },
     "VIX": {
-      "change_pct": -22.21,
-      "price": 27.92
+      "change_pct": -22.93,
+      "price": 27.66
     }
   },
   "national_shocks": {
     "faa": {
-      "airports": 1,
-      "ground_stops": [
-        {
-          "airport": "ORD",
-          "end": "12:15 pm CST",
-          "reason": "STAFFING"
-        }
-      ],
+      "airports": 0,
+      "ground_stops": [],
       "national": false
     },
     "shocks": [],
@@ -603,6 +671,16 @@
       "Microsoft confirms data breach due to a bug in Entra Connect Health - Techzine Global",
       "Microsoft mega outage: Report reveals testing gaps and emails that never arrived - The Register"
     ],
+    "cyber_attrib": [
+      "FBI warns AI hackers can breach systems in under 3 hours - Fox News",
+      "FBI warns hackers using AI-powered tool to automate cyberattacks worldwide - Anadolu Ajansı",
+      "CISA Warns Hackers Are Actively Exploiting Cisco, VMware, SAP, and Apache Vulnerabilities - GBHackers News"
+    ],
+    "cyber_au": [
+      "Aussie camping retailer hit by cyber attack - The Australian",
+      "Exclusive: China-backed hackers suspected behind ongoing EU Commission cyberattack - Yahoo News Australia",
+      "The French supermarket cyber-attacks: implications beyond physical damage - Kennedys Law LLP"
+    ],
     "cyber_ot": [
       "UK operation wards off risk of cyber-attack on supermarket fridges and freezers - The Guardian",
       "Next Plc’s Supplier Hit by Cyberattack in Latest UK Retail Breach - Insurance Journal",
@@ -619,9 +697,9 @@
       "Google claims last week’s critical VMware bug was under attack in September - The Register"
     ],
     "deepfake": [
-      "China sentences a government official to death for selling over 100 state secrets for 122,000 euros - El Mundo America",
       "Trump Posts Bizarre AI Meme of Jensen Huang, Holding Up a Bra and Riffing Off 2024 Assassination Attempt on President, After Nvidia Board Reinstates CEO - Yahoo",
-      "Nvidia rehires Jensen Huang after Trump steps in - MassDevice"
+      "China sentences a government official to death for selling over 100 state secrets for 122,000 euros - El Mundo America",
+      "TikTok rolls out Likeness Detection deepfake tool globally, launches public AI-content checker - Music Business Worldwide"
     ],
     "dieoff": [
       "High Power Committee For Manipur Tragedy: Good And Beyond - Imphal Times",
@@ -632,10 +710,15 @@
       "Lightning Minerals Requests Trading Halt Pending Capital Raising Announcement - Kalkine",
       "Bitcoin Crashes to $17,000 This Weekend: Inside the Bizarre Flash Crash Mystery - BeInCrypto"
     ],
+    "fuel_au": [
+      "Gas prices in Europe surge as forecast cold snap feeds supply shortage fears - The Guardian",
+      "Australia urged to cut fuel imports through electric trucks and mine electrification - Proactive Investors Australia",
+      "Think tank calls for electric truck plan to improve fuel security - www.ownerdriver.com.au"
+    ],
     "illness": [
       "Dr. Siegel on measles comeback, mystery illness outbreak on cruise ship - Fox News",
       "Mystery illness causes mass hospitalisation of runners - The Nightly",
-      "Zayn Malik hospitalised with mystery illness, forced to cancel upcoming appearances on album release week - Nine.com.au"
+      "148 aboard Florida-bound cruise ship sickened by ‘unknown’ GI outbreak: CDC - The Hill"
     ],
     "masscas": [
       "Berlin hospital fire injures more than a dozen as police suspect patient set bed alight - Brussels Signal",
@@ -653,8 +736,8 @@
       "The case about a debt of 546 thousand was completely suspended because one guarantor serves in the Armed Forces of Ukraine: Supreme Court decision - Судово-юридична газета"
     ],
     "national_outage": [
-      "Fallout from ICE arrests at Sea-Tac that sparked nationwide outage - KIRO 7 News Seattle",
       "Cuba’s National Electric Grid Collapses, Reason Unknown - EnergyNow.com",
+      "Fallout from ICE arrests at Sea-Tac that sparked nationwide outage - KIRO 7 News Seattle",
       "Fallout from ICE arrests at Sea-Tac that sparked nationwide outage - Yahoo"
     ],
     "outage_au": [
@@ -681,6 +764,11 @@
       "Iranian attacks on ships near Strait of Hormuz hit highest level since war began, data shows - The Jerusalem Post",
       "IRGC Claims 2 Supertankers Hit Mines in Hormuz, Iran Toll Reaches 6 in 4 Days - https://houseofsaud.com/",
       "ADNOC L&S says one missing, 11 injured in Strait of Hormuz ship attack - Baird Maritime"
+    ],
+    "strikes": [
+      "Iran Warns of Retaliation if US Forces Attack - ASHARQ AL-AWSAT English",
+      "Houthi drones target airport, air base in Saudi Arabia - Yeni Safak English",
+      "Nearly half of US troops wounded by drones suffered brain injuries – study - NR Times"
     ]
   },
   "prediction_markets": [
@@ -705,9 +793,9 @@
       "yes": 3.2
     },
     {
-      "d24h": 0.0,
+      "d24h": 0.1,
       "q": "US-Iran Hormuz Agreement by November 30?",
-      "yes": 2.6
+      "yes": 2.7
     },
     {
       "d24h": 0.3,
@@ -755,9 +843,9 @@
       "yes": 1.2
     },
     {
-      "d24h": -2.0,
+      "d24h": -2.5,
       "q": "Iran-Oman Hormuz Agreement by December 31?",
-      "yes": 14.0
+      "yes": 13.5
     },
     {
       "d24h": 1.0,
@@ -1061,9 +1149,19 @@
     },
     {
       "band": "Low",
+      "convergence": "Only one kind of sign is showing (markets). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: us nuclear command aircraft unusual, private jets heading to retreat destinations and mobilisation reports (any major power).",
+      "domains": [
+        "Markets"
+      ],
       "key": "nuclear",
-      "score": 0,
-      "trend": "down"
+      "lit": [
+        {
+          "detail": "Gold +4.0%",
+          "name": "Gold up 4%+ in a day"
+        }
+      ],
+      "score": 10,
+      "trend": "up"
     },
     {
       "band": "Low",
@@ -1102,9 +1200,19 @@
     },
     {
       "band": "Low",
+      "convergence": "Only one kind of sign is showing (australian incidents). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: sudden fall in sa electricity demand (possible large blackout), global cyber threat level raised (sans infocon not green) and several vpn",
+      "domains": [
+        "Australian incidents"
+      ],
       "key": "cyber",
-      "score": 0,
-      "trend": "down"
+      "lit": [
+        {
+          "detail": "Aussie camping retailer hit by cyber attack",
+          "name": "Major Australian cyber incident reported"
+        }
+      ],
+      "score": 10,
+      "trend": "up"
     },
     {
       "band": "Elevated",
@@ -1135,14 +1243,14 @@
         }
       ],
       "score": 40,
-      "trend": "up"
+      "trend": "steady"
     }
   ],
   "sectors_relative_5d": {
     "defence_au": 0.78,
     "defence_eu": -0.4,
-    "defence_us": -0.32,
-    "pandemic": -1.82
+    "defence_us": -0.19,
+    "pandemic": -1.32
   },
   "status_pages": [
     {
