@@ -1,12 +1,11 @@
 {
-  "generated_at": "2026-11-23T20:42:00Z",
+  "generated_at": "2026-11-23T20:58:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
-      "band": "Guarded",
-      "convergence": "Two different kinds of sign are showing together (power grid and roads). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: cfs emergency warning in sa, sudden fall in sa electricity demand (possible large blackout) and extreme or catastrophic fire danger near adelaide.",
+      "band": "Low",
+      "convergence": "Only one kind of sign is showing (roads). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: cfs emergency warning in sa, sudden fall in sa electricity demand (possible large blackout) and extreme or catastrophic fire danger near adelaide.",
       "domains": [
-        "Power grid",
         "Roads"
       ],
       "key": "local",
@@ -18,20 +17,12 @@
           "name": "Fire, flood or storm road closures in SA",
           "short": "Fire, flood or storm road closures in SA",
           "weight": 10
-        },
-        {
-          "detail": "SA Health denies using blackout as smokescreen for apology and backflip",
-          "domain": "Power grid",
-          "id": "power",
-          "name": "Reports of widespread power outages in SA",
-          "short": "Reports of widespread power outages in…",
-          "weight": 15
         }
       ],
       "name": "Local emergency in SA (bushfire, heat, power)",
       "sa_impact": "Direct: bushfires, heatwaves and power cuts are the emergencies most likely to affect the family. In the 2016 statewide blackout, power, phones, traffic lights and fuel pumps failed together.",
-      "score": 25,
-      "trend": "steady",
+      "score": 10,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Bushfire",
@@ -80,6 +71,12 @@
           "id": "ed",
           "name": "Three or more Adelaide emergency departments 'very busy'",
           "weight": 10
+        },
+        {
+          "domain": "Power grid",
+          "id": "power",
+          "name": "Reports of widespread power outages in SA",
+          "weight": 15
         },
         {
           "domain": "Water",
@@ -631,7 +628,7 @@
     },
     {
       "band": "Elevated",
-      "convergence": "Two different kinds of sign are showing together (chemical weapons and health). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: unknown illness / pneumonia cluster reported, countries restricting medical supply exports and pandemic-response stocks outperforming (5 days).",
+      "convergence": "Two different kinds of sign are showing together (chemical weapons and health). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: countries restricting medical supply exports, pandemic-response stocks outperforming (5 days) and australian medicine or ppe shortage reports.",
       "domains": [
         "Chemical weapons",
         "Health"
@@ -645,6 +642,14 @@
           "name": "WHO outbreak report with a high-concern pathogen (last 14 days)",
           "short": "WHO outbreak report",
           "weight": 15
+        },
+        {
+          "detail": "Dr. Siegel on measles comeback, mystery illness outbreak on cruise ship",
+          "domain": "Health",
+          "id": "illness",
+          "name": "Unknown illness / pneumonia cluster reported",
+          "short": "Illness cluster",
+          "weight": 20
         },
         {
           "detail": "Dozens Fall Ill On Two Condor Flights To Frankfurt, Triggering Mass Casualty Response",
@@ -665,15 +670,9 @@
       ],
       "name": "Pandemic, biological or chemical emergency",
       "sa_impact": "Health system strain, possible lockdowns and border closures, and shortages of medicines and protective equipment, which Australia mostly imports.",
-      "score": 35,
-      "trend": "down",
+      "score": 55,
+      "trend": "up",
       "unlit": [
-        {
-          "domain": "Health",
-          "id": "illness",
-          "name": "Unknown illness / pneumonia cluster reported",
-          "weight": 20
-        },
         {
           "domain": "Trade",
           "id": "exports",
