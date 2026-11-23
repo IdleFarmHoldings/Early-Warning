@@ -158,3 +158,26 @@ def test_aftermath_and_unrelated_headlines_do_not_alert():
                                              "Coles cyber attack: stores open as investigation continues - ABC News",
                                              "Coles cyber attack disrupts online orders - SMH"]]}}
     assert incidents.incident_alerts(incidents.triage(more, later, state), state, later, False) == []
+
+
+def test_blackout_risk_and_politics_headlines_are_not_an_sa_power_outage():
+    # 23 Nov 2026: these two went out as a Critical "Power grid: outage in SA" on both channels.
+    news = feed("Not reliable, not affordable: Report shows ageing coal plants boost blackout risk, push up prices - The Advertiser",
+                "SA Health denies using blackout as smokescreen for apology and backflip - InDaily South Australia",
+                key="sapn")
+    assert "Power grid" not in by_target(I.triage(news, NOW, {}))
+
+
+def test_two_slow_sa_reports_are_warning_not_critical():
+    news = feed("Blackout hits Adelaide suburbs - Adelaide Now", "Adelaide suburbs blackouts tonight - InDaily", key="sapn")
+    s = by_target(I.triage(news, NOW, {}))["Power grid"]
+    assert s["reports"] == 2 and s["severity"] == "Warning"
+
+
+def test_real_sa_blackout_still_critical():
+    news = feed("Thousands without power across Adelaide as blackout spreads - ABC News",
+                "Statewide blackout hits South Australia, traffic lights out - Adelaide Now",
+                "SA Power Networks confirms widespread outage across Adelaide - InDaily",
+                key="sapn")
+    s = by_target(I.triage(news, NOW, {}))["Power grid"]
+    assert s["severity"] == "Critical"

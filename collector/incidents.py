@@ -35,7 +35,11 @@ IMPACT = re.compile(
 # Headlines that use the words but do not describe a live incident.
 NOT_LIVE = re.compile(
     r"\b(market size|forecast to|webinar|how to|lessons from|anniversary|years? (ago|after)|report finds|"
-    r"named a leader|contest|award|fined|sentenced|court|inquiry into last)\b", re.I)
+    r"named a leader|contest|award|fined|sentenced|court|inquiry into last|"
+    # Talk about risk or politics, not a live outage (23 Nov 2026: "Report shows ageing coal plants boost
+    # blackout risk" and "SA Health denies using blackout as smokescreen" went out as "Power grid: outage in SA").
+    r"(blackout|outage|grid|cyber) risks?|risks? of (a )?(blackouts?|outages?)|reports? (shows?|finds?|warns?)|"
+    r"study (shows?|finds?)|not reliable|denies|denied|smokescreen|backflip|plans? for)\b", re.I)
 
 # Aftermath coverage: the incident is over or being picked over. These never start or repeat an alert.
 AFTERMATH = re.compile(
@@ -239,7 +243,8 @@ def score(c, prev=None, now=None):
 
     if prox >= 2 and vel >= 3 and crit >= 3 and confirmed and au_proof:
         sev = "Critical"
-    elif prox == 3 and confirmed and crit >= 3:
+    elif prox == 3 and confirmed and crit >= 3 and (len(reps) >= 3 or n_pubs >= 3 or any(r["pub"] == "telemetry" for r in reps)):
+        # In SA, but still needs 3+ reports or outlets (or our own telemetry): two stray headlines are not an emergency.
         sev = "Critical"
     elif (vel >= 2 and crit >= 2 and confirmed) or (prox == 3 and confirmed):
         sev = "Warning"
