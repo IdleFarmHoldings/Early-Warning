@@ -5,7 +5,7 @@
     "gps_israel": {
       "median": 5,
       "status": "ANOMALY",
-      "value": 33
+      "value": 23
     }
   },
   "analyst": {
@@ -279,18 +279,19 @@
   ],
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
+    "maritime": "TimeoutError: ",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-23T08:25:00Z",
+  "generated_at": "2026-11-23T08:40:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 19,
-    "Black Sea": 8,
-    "Israel & Eastern Mediterranean": 33,
+    "Baltic / Kaliningrad": 31,
+    "Black Sea": 19,
+    "Israel & Eastern Mediterranean": 23,
     "Korea": 0,
-    "Persian Gulf": 5,
+    "Persian Gulf": 7,
     "South Australia": 0,
-    "Sydney / NSW": 2,
+    "Sydney / NSW": 0,
     "Taiwan Strait": 0
   },
   "incidents": [
@@ -305,21 +306,21 @@
     },
     {
       "attack_reported": true,
-      "confirmed": true,
-      "headlines": [
-        "\"Not A Cyber Attack\" Western Leaders Says As Nearly All Critical Infrastructure Goes Offline At Some Point This Month"
-      ],
-      "severity": "Info",
-      "target": "Not"
-    },
-    {
-      "attack_reported": true,
       "confirmed": false,
       "headlines": [
         "New Zealand Defence Force website remains down days after data breach disclosure"
       ],
       "severity": "Info",
       "target": "New Zealand Defence"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": true,
+      "headlines": [
+        "\"Not A Cyber Attack\" Western Leaders Says As Nearly All Critical Infrastructure Goes Offline At Some Point This Month"
+      ],
+      "severity": "Info",
+      "target": "Not"
     },
     {
       "attack_reported": true,
@@ -343,19 +344,10 @@
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
-        "Hackers Allegedly Claiming Exploit for VMware vCenter 0-day Vulnerability"
+        "(LEAD) Personal information of more than 8,000 clients at Samsung Securities breached"
       ],
       "severity": "Info",
-      "target": "Hackers Allegedly Claiming"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
-        "Amazon Exposes Chinese-Nexus Hackers Using AI Agents to Exploit Zero-Day Flaw in Just 11 Minutes"
-      ],
-      "severity": "Info",
-      "target": "Amazon Exposes Chinese-Nexus"
+      "target": "LEAD"
     },
     {
       "attack_reported": true,
@@ -406,12 +398,12 @@
     }
   ],
   "internet_drop_pct": {
-    "China": 0.6,
+    "China": 0.5,
     "Iran": 0.2,
     "Israel": 0.0,
     "Russia": 0.0,
     "South Korea": 0.0,
-    "Taiwan": 0.3
+    "Taiwan": 0.1
   },
   "local_sa": {
     "bom": [
@@ -428,16 +420,16 @@
       "Mount Lofty Ranges": "High / Moderate"
     },
     "fire_danger_ok": true,
-    "fires_active": 8,
+    "fires_active": 9,
     "fuel": {
       "brent_aud": 135.2,
       "change_pct": -3.8,
       "pump_cents": -3,
       "week_ago_aud": 140.5
     },
-    "grid_demand_fall_pct": -4.6,
-    "grid_demand_mw": 1353,
-    "grid_demand_usual_mw": 1424,
+    "grid_demand_fall_pct": -5.4,
+    "grid_demand_mw": 1426,
+    "grid_demand_usual_mw": 1447,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
@@ -478,26 +470,26 @@
       "Morgan Vale Road, Pine Valley Station: MORGAN MAIL RD Closed due to flooding over road",
       "Pine Valley Road, Pine Valley Station: PINE VALLEY RD Closed due to flooding over road"
     ],
-    "rooftop_pv_mw": 698,
+    "rooftop_pv_mw": 475,
     "sawater_news": [],
     "watch_and_act": []
   },
   "markets": {
     "AUD/USD": {
-      "change_pct": -0.09,
-      "price": 0.665
+      "change_pct": -0.02,
+      "price": 0.6655
     },
     "Brent oil": {
-      "change_pct": -3.44,
-      "price": 89.39
+      "change_pct": -3.5,
+      "price": 89.33
     },
     "Gold": {
-      "change_pct": 2.51,
-      "price": 3603.6
+      "change_pct": 2.63,
+      "price": 3607.7
     },
     "VIX": {
-      "change_pct": 26.2,
-      "price": 35.89
+      "change_pct": -13.15,
+      "price": 31.17
     }
   },
   "national_shocks": {
@@ -524,8 +516,8 @@
     ],
     "aviation_halt": [
       "FAA ground stop: When will it end? Not as soon as you'd like. - Mashable",
-      "Delta Airlines flights delayed nationwide amid ground stop slowing holiday travel - WXLV",
-      "Anatomy of the FAA Ground Stop: One Backbone, One Bad Change - BankInfoSecurity"
+      "FAA says air travel is safe as airlines clear backlog from nationwide ground stop - Scripps News",
+      "Delta Airlines flights delayed nationwide amid ground stop slowing holiday travel - WXLV"
     ],
     "bank_outage": [
       "Australian shares sink for eighth straight session - CommBank",
@@ -533,8 +525,8 @@
       "Commonwealth Bank prepares its workforce for AI job cuts - Capital Brief"
     ],
     "blood": [
-      "Inside KDF's Plan to Train Specialised Military Doctors - Kenyans.co.ke",
-      "Air Marshal Sandeep Thareja Assesses Military Hospitals and Medical Readiness in Hyderabad - Shop SSBCrack"
+      "Air Marshal Sandeep Thareja Assesses Military Hospitals and Medical Readiness in Hyderabad - Shop SSBCrack",
+      "Inside KDF's Plan to Train Specialised Military Doctors - Kenyans.co.ke"
     ],
     "chem": [
       "Japan's Rabbit Island hides wartime secrets under its fluffy exterior | Daily Sabah - Daily Sabah",
@@ -544,17 +536,17 @@
     "cloud": [
       "Microsoft outage cause revealed: It was a perfect storm of problems - Mashable",
       "Days After Global Outlook Outage, Microsoft Warns More Disruptions Ahead. Here's Why - NDTV",
-      "Is human progress leaving humans behind? - The Korea Times"
+      "Anthropic and SpaceX Spark IPO Disruption With Unusual Processes - Global Banking & Finance Review"
     ],
     "cyber_attrib": [
       "FBI warns hackers weaponizing ARTEX AI framework to automate attacks on energy, manufacturing, telecom - Industrial Cyber",
-      "FBI warns hackers using AI-powered tool to automate cyberattacks worldwide - Anadolu Ajansı",
+      "CISA Warns of 4 Exploited Flaws Linked to Ransomware, Cryptomining, and LLMjacking Attacks - The Hacker News",
       "Australians should prepare for online services to go down unexpectedly as threats rise, cyber agency warns - The Guardian"
     ],
     "cyber_au": [
+      "New Zealand Defence Force website remains down days after data breach disclosure - Cyber Daily",
       "Australia mulls tougher tech laws after AI health breach - The Nightly",
-      "\"Not A Cyber Attack\" Western Leaders Says As Nearly All Critical Infrastructure Goes Offline At Some Point This Month - The Betoota Advocate",
-      "Australian truck driver fired for wearing smart glasses at work - Information Age | ACS"
+      "\"Not A Cyber Attack\" Western Leaders Says As Nearly All Critical Infrastructure Goes Offline At Some Point This Month - The Betoota Advocate"
     ],
     "cyber_ot": [
       "UK operation wards off risk of cyber-attack on supermarket fridges and freezers - The Guardian",
@@ -566,20 +558,15 @@
       "ESET attributes DynoWiper-powered attack on Poland’s power grid to Russia-aligned Sandworm group - Industrial Cyber",
       "Russian state hackers likely behind wiper malware attack on Poland’s power grid - The Record from Recorded Future News"
     ],
-    "cyber_supply": [
-      "CISA flags critical Cisco RCE flaw as actively exploited in attacks - BleepingComputer",
-      "Google claims last week’s critical VMware bug was under attack in September - The Register",
-      "Google says suspected China-linked group exploited VMware flaw in September - Mezha.net"
-    ],
     "deepfake": [
-      "Internet domain administrator warns of scams involving AI-generated online shops - Belga Share",
       "Military engineers and electricians to help restore energy infrastructure - prime minister - Mezha.net",
-      "A nine-year-old used AI to create a picture of a python emerging from a toilet, triggering a 48-hour emer - The Times of India"
+      "A nine-year-old used AI to create a picture of a python emerging from a toilet, triggering a 48-hour emer - The Times of India",
+      "TikTok launches tool to help public figures detect deepfakes globally - sundayworld.co.za"
     ],
     "flash": [
       "Singular Health Group Requests Trading Halt Pending Material Customer Contract Announcement - Kalkine",
-      "Bitcoin Crashes to $17,000 This Weekend: Inside the Bizarre Flash Crash Mystery - Yahoo Finance",
-      "Bitcoin Crashes to $17,000 This Weekend: Inside the Bizarre Flash Crash Mystery - BeInCrypto"
+      "Bitcoin Crashes to $17,000 This Weekend: Inside the Bizarre Flash Crash Mystery - BeInCrypto",
+      "Bitcoin Crashes to $17,000 This Weekend: Inside the Bizarre Flash Crash Mystery - Yahoo Finance"
     ],
     "fuel_au": [
       "Canberra petrol station runs out as panic buying takes hold - The Canberra Times",
@@ -636,7 +623,7 @@
       "Fraud & Digital Identity News – KYC, Scams & Verification - FF News"
     ],
     "shipping_attacks": [
-      "Iran readies tanker convoy at Kharg Island to test US oil blockade - Euronews",
+      "Iran readies tanker convoy at Kharg Island to test US oil blockade - Euronews.com",
       "Iranian attacks in the Strait of Hormuz are at the highest levels since the conflict began - CNN",
       "ADNOC L&S says one missing, 11 injured in Strait of Hormuz ship attack - Baird Maritime"
     ],
@@ -708,7 +695,7 @@
       "yes": 1.6
     },
     {
-      "d24h": -1.0,
+      "d24h": -0.9,
       "q": "Iran-Oman Hormuz Agreement by November 30?",
       "yes": 2.1
     },
@@ -728,7 +715,7 @@
       "yes": 3.1
     },
     {
-      "d24h": 0.1,
+      "d24h": 0.0,
       "q": "Ukraine agrees not to join NATO by December 31, 2026?",
       "yes": 3.1
     },
@@ -998,7 +985,7 @@
       "key": "mideast",
       "lit": [
         {
-          "detail": "gps_israel 33 vs usual 5",
+          "detail": "gps_israel 23 vs usual 5",
           "name": "GPS jamming spike (Gulf / Israel)"
         },
         {
@@ -1031,7 +1018,7 @@
       "key": "russia",
       "lit": [
         {
-          "detail": "VIX at 35.89",
+          "detail": "VIX at 31.17",
           "name": "Market fear index above 30"
         },
         {
@@ -1044,19 +1031,9 @@
     },
     {
       "band": "Low",
-      "convergence": "Only one kind of sign is showing (markets). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: us nuclear command aircraft unusual, private jets heading to retreat destinations and mobilisation reports (any major power).",
-      "domains": [
-        "Markets"
-      ],
       "key": "nuclear",
-      "lit": [
-        {
-          "detail": "VIX at 35.89",
-          "name": "Market fear index above 35"
-        }
-      ],
-      "score": 10,
-      "trend": "steady"
+      "score": 0,
+      "trend": "down"
     },
     {
       "band": "Low",
@@ -1078,7 +1055,7 @@
           "name": "WHO outbreak report with a high-concern pathogen (last 14 days)"
         },
         {
-          "detail": "VIX at 35.89",
+          "detail": "VIX at 31.17",
           "name": "Market fear index above 30"
         }
       ],
@@ -1120,21 +1097,17 @@
           "name": "Flash crash or exchange trading halt"
         },
         {
-          "detail": "VIX +26.2%",
-          "name": "Market fear index jumps 25%+ in a day"
-        },
-        {
           "detail": "Days After Global Outlook Outage, Microsoft Warns More Disruptions Ahead. Here's Why",
           "name": "Major cloud or AI service outage"
         }
       ],
-      "score": 45,
-      "trend": "steady"
+      "score": 35,
+      "trend": "down"
     }
   ],
   "sectors_relative_5d": {
     "defence_au": 0.78,
-    "defence_eu": 0.44,
+    "defence_eu": 0.69,
     "defence_us": 3.44,
     "pandemic": -3.85
   },
@@ -1150,10 +1123,10 @@
   ],
   "tankers": "normal",
   "telecom_drop_pct": {
-    "Aussie Broadband": 1.1,
-    "Optus": 1.0,
+    "Aussie Broadband": 0.0,
+    "Optus": 2.9,
     "TPG": 0.0,
-    "Telstra": 0.1,
+    "Telstra": 0.0,
     "Vodafone": 0.0
   },
   "us_departure_orders": [

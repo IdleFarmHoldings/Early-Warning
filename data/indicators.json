@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-23T08:25:00Z",
+  "generated_at": "2026-11-23T08:40:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -112,7 +112,7 @@
       "key": "mideast",
       "lit": [
         {
-          "detail": "gps_israel 33 vs usual 5",
+          "detail": "gps_israel 23 vs usual 5",
           "domain": "Electronic warfare",
           "id": "gps",
           "name": "GPS jamming spike (Gulf / Israel)",
@@ -396,7 +396,7 @@
       "key": "russia",
       "lit": [
         {
-          "detail": "VIX at 35.89",
+          "detail": "VIX at 31.17",
           "domain": "Markets",
           "id": "vix",
           "name": "Market fear index above 30",
@@ -500,25 +500,14 @@
     },
     {
       "band": "Low",
-      "convergence": "Only one kind of sign is showing (markets). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: us nuclear command aircraft unusual, private jets heading to retreat destinations and mobilisation reports (any major power).",
-      "domains": [
-        "Markets"
-      ],
+      "convergence": "No warning signs are showing. The strongest signs not yet showing: us nuclear command aircraft unusual, private jets heading to retreat destinations and mobilisation reports (any major power).",
+      "domains": [],
       "key": "nuclear",
-      "lit": [
-        {
-          "detail": "VIX at 35.89",
-          "domain": "Markets",
-          "id": "vix",
-          "name": "Market fear index above 35",
-          "short": "Market fear index above 35",
-          "weight": 10
-        }
-      ],
+      "lit": [],
       "name": "Nuclear use or alert",
       "sa_impact": "Fallout risk to SA from a northern-hemisphere exchange is very low, but global trade, fuel and finance would be severely disrupted.",
-      "score": 10,
-      "trend": "steady",
+      "score": 0,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Nuclear command",
@@ -542,6 +531,12 @@
           "domain": "Elite movement",
           "id": "bizjets",
           "name": "Surge of long-range private jets",
+          "weight": 10
+        },
+        {
+          "domain": "Markets",
+          "id": "vix",
+          "name": "Market fear index above 35",
           "weight": 10
         },
         {
@@ -663,7 +658,7 @@
           "weight": 15
         },
         {
-          "detail": "VIX at 35.89",
+          "detail": "VIX at 31.17",
           "domain": "Markets",
           "id": "vix",
           "name": "Market fear index above 30",
@@ -814,7 +809,7 @@
     },
     {
       "band": "Elevated",
-      "convergence": "Signs are converging across 3 separate areas (ai-enabled hacking, cloud services and markets). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: a Chinese state-sponsored group used an AI agent to carry out 80-90% of an attack on about 30 organisations, at thousands of requests per second. A fake AI image of a Pentagon explosion briefly moved US markets in May 2023, and a deepfake video call of a CFO tricked a company into paying US$25 million in 2024. The likely signature of an AI attack is breadth and speed: many unrelated systems and vendors hit at once, synthetic media of officials, and shocks with no clear human cause. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, deepfakes of leaders or fake official alerts and phone / internet carrier outage.",
+      "convergence": "Signs are converging across 3 separate areas (ai-enabled hacking, cloud services and markets). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: a Chinese state-sponsored group used an AI agent to carry out 80-90% of an attack on about 30 organisations, at thousands of requests per second. A fake AI image of a Pentagon explosion briefly moved US markets in May 2023, and a deepfake video call of a CFO tricked a company into paying US$25 million in 2024. The likely signature of an AI attack is breadth and speed: many unrelated systems and vendors hit at once, synthetic media of officials, and shocks with no clear human cause. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, deepfakes of leaders or fake official alerts and market fear index jumps 25%+ in a day.",
       "domains": [
         "AI-enabled hacking",
         "Cloud services",
@@ -839,14 +834,6 @@
           "weight": 10
         },
         {
-          "detail": "VIX +26.2%",
-          "domain": "Markets",
-          "id": "vix",
-          "name": "Market fear index jumps 25%+ in a day",
-          "short": "Market fear index jumps 25%+ in a day",
-          "weight": 10
-        },
-        {
           "detail": "Days After Global Outlook Outage, Microsoft Warns More Disruptions Ahead. Here's Why",
           "domain": "Cloud services",
           "id": "cloud",
@@ -857,8 +844,8 @@
       ],
       "name": "AI-enabled attack (non-traditional)",
       "sa_impact": "Not bombs but disruption: hacking at machine speed across banks, telcos, hospitals and the grid at once; fake videos or alerts from leaders causing panic buying or bank runs; or automated market and fraud shocks. Effects would be outages, payment failures and confusion about what is real.",
-      "score": 45,
-      "trend": "steady",
+      "score": 35,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Mass exploitation",
@@ -871,6 +858,12 @@
           "id": "deepfake",
           "name": "Deepfakes of leaders or fake official alerts",
           "weight": 15
+        },
+        {
+          "domain": "Markets",
+          "id": "vix",
+          "name": "Market fear index jumps 25%+ in a day",
+          "weight": 10
         },
         {
           "domain": "Communications",
