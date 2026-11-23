@@ -109,6 +109,9 @@ def build(latest, indicators, campaigns=None):
                                for p in (L.get("prediction_markets") or [])],
         "news_watch": news,
         "chan_chatter": _chan(L.get("chan")),
+        # Providers' own status pages: first-hand, official. big = the provider's top severity.
+        "status_pages": [{k: i.get(k) for k in ("provider", "title", "big", "started", "where", "au")}
+                         for i in ((L.get("status_pages") or {}).get("active") or [])[:10]],
         "analyst": {src: _titles(items, 4) for src, items in (L.get("analyst_latest") or {}).items()}
         if isinstance(L.get("analyst_latest"), dict) else {},
         "scenarios": [{"key": s.get("key"), "score": s.get("score"), "band": s.get("band"), "trend": s.get("trend")}

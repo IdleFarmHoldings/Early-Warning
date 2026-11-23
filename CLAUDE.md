@@ -54,6 +54,14 @@ file format or alert rule they depend on, update the prompts too (or tell the us
 - News signs ignore stories older than 72 h; keyword matches are noisy, so test new keywords against real
   headlines (see `tests/test_signs.py`) before relying on them.
 
+## First-hand sources
+
+- `collector/firsthand.py`: providers' own status pages (Google Cloud, AWS, Azure, Cloudflare). Only a BIG
+  incident (the provider's top severity) joins incident triage, as one official report: it can push the usual
+  one-off Warning, never Critical on its own. Small ones are listed in `brief.json` `status_pages`.
+- UKMTO: probe only (`latest.json` `ukmto`, samples in `data/probe/` on live-data) until a parser is written.
+- Downdetector is not used: no public API, and its terms forbid scraping.
+
 ## Gotchas
 
 - Google News sometimes returns months-old stories even for "last 24 h" searches.

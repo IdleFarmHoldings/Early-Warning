@@ -704,7 +704,8 @@ def main():
     inc = []
     try:
         inc = incidents.triage((results.get("news_watch") or {}).get("watch"), now, state,
-                               (results.get("telecom") or {}).get("networks"), loc.get("summary") or {})
+                               (results.get("telecom") or {}).get("networks"), loc.get("summary") or {},
+                               (results.get("status_pages") or {}).get("active"))
         alerts += incidents.incident_alerts(inc, state, now, first_run)
         health["incidents"] = {"ok": True}
     except Exception as e:  # noqa: BLE001 - triage must never stop the rest of the check
@@ -766,6 +767,8 @@ def main():
     summary["incidents"] = inc
     summary["national_shocks"] = shock_out
     summary["watching"] = watch_list(state, now)
+    summary["status_pages"] = results.get("status_pages")
+    summary["ukmto"] = results.get("ukmto")
     try:  # 4chan chatter: tip-off for the analysis only, never a phone alert
         summary["chan"] = chan.assess(results.get("chan"), series, now)
     except Exception as e:  # noqa: BLE001

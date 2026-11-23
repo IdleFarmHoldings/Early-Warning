@@ -131,8 +131,10 @@ def classify(head):
     return 1, None
 
 
-def collect(news, now, telecom=None, local=None):
-    """Group recent incident headlines by target. Returns {label: cluster}."""
+def collect(news, now, telecom=None, local=None, status=None):
+    """Group recent incident headlines by target. Returns {label: cluster}.
+    status: active incidents from the providers' own status pages (firsthand.fetch_status()["active"]);
+    only BIG ones join, as one official report each."""
     clusters = {}
     seen = set()
     for key in FEEDS:
@@ -177,6 +179,23 @@ def collect(news, now, telecom=None, local=None):
                                  "at": iso(now), "link": "", "sa": False, "au": True, "au_head": True, "global": False,
                                  "spread": [], "official": True})
             c["pubs"].add("telemetry")
+    # The provider's own status page: first-hand and official, usually before the news.
+    for inc in status or []:
+        if not inc.get("big"):
+            continue
+        tier, label = classify(f"{inc['provider']} {inc['title']}")
+        if not label:
+            tier, label = 2, inc["provider"]
+        c = clusters.setdefault(label, {"label": label, "tier": tier, "reports": [], "pubs": set(),
+                                        "first": now, "last": now})
+        c["tier"] = max(c["tier"], tier)
+        pub = f"{inc['provider']} status page"
+        c["reports"].append({"title": f"{pub}: {inc['title']}"[:160], "pub": pub, "at": inc.get("started") or iso(now),
+                             "link": inc.get("url", ""), "sa": False, "au": inc.get("au", False),
+                             "au_head": inc.get("au", False), "global": not inc.get("au", False), "after": False,
+                             "attack": bool(ATTACK.search(inc["title"])), "spread": [], "official": True,
+                             "status_page": True})
+        c["pubs"].add(pub.lower())
     if (local or {}).get("possible_blackout"):
         c = clusters.setdefault("Power grid", {"label": "Power grid", "tier": 4, "reports": [], "pubs": set(),
                                                "first": now, "last": now})
@@ -207,6 +226,9 @@ def score(c, prev=None, now=None):
         vel = 2
     if (len(reps) >= 5 and n_pubs >= 4) or len(sectors) >= 4 or (growth >= 3 and rate >= 1):
         vel = 3
+    # A provider declaring its own top-severity incident counts as spreading: it has many customers by definition.
+    if any(r.get("status_page") for r in reps):
+        vel = max(vel, 2)
     # 3. Criticality: tier of the target
     crit = c["tier"]
     confirmed = n_pubs >= 2 or any(r["official"] for r in reps)
@@ -242,11 +264,11 @@ def score(c, prev=None, now=None):
 RANK = {"Info": 0, "Warning": 1, "Critical": 2}
 
 
-def triage(news, now, state, telecom=None, local=None):
+def triage(news, now, state, telecom=None, local=None, status=None):
     """Score every current incident. Updates state['incidents'] for velocity tracking."""
     mem = state.setdefault("incidents", {})
     out = []
-    for label, c in collect(news, now, telecom, local).items():
+    for label, c in collect(news, now, telecom, local, status).items():
         s = score(c, mem.get(label), now)
         m = mem.setdefault(label, {"first_seen": s["first_seen"]})
         m.update({"reports": s["reports"], "last_seen": iso(now), "severity": s["severity"]})
@@ -299,6 +321,20 @@ def incident_alerts(scored, state, now, first_run):
         advice = ("Be wary of emails or texts about it, and keep some cash handy in case payments are affected."
                   if s.get("attack") else "Use cash and phone calls as backup." if s["criticality"] >= 3
                   else "Use phone or SMS for anything urgent.")
+        firsthand = [h for h in s["headlines"] if h["pub"].endswith("status page")]
+        if firsthand and s["reports"] == len(firsthand):
+            # Only the provider's own status page so far: say so plainly instead of "1 reports from 1 outlets".
+            h = firsthand[0]
+            out.append({"key": key, "channels": ["proactive", "reactive"] if crit else ["proactive"], "category": "cyber",
+                        "title": f"{s['target']}: {what} {where}".strip()[:90],
+                        "message": (f"{h['title']}. The company has declared a major incident on its own status page, "
+                                    "so websites and apps that rely on it may not work for a while. "
+                                    "No sign yet that it is an attack. Check the board."
+                                    if not s.get("attack") else
+                                    f"{h['title']}. {advice} Check the board.")[:390],
+                        "priority": 5 if crit else 4, "confirmed": True,
+                        "tags": ["rotating_light" if crit else "warning"]})
+            continue
         out.append({"key": key, "channels": ["proactive", "reactive"] if crit else ["proactive"], "category": "cyber",
                     "title": f"{s['target']}: {what} {where}".strip()[:90],
                     "message": (f"{top}. {s['reports']} reports from {s['outlets']} outlets"

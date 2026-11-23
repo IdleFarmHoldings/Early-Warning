@@ -1408,5 +1408,12 @@
       {"key": "bio", "name": "Outbreaks", "words": ["outbreak", "pandemic", "virus", "h5n1", "bird flu", "quarantine", "lockdown", "ebola", "marburg", "bioweapon", "mystery illness"]},
       {"key": "australia", "name": "Australia", "words": ["australia", "australian", "aussie", "aussies", "straya", "adelaide", "sydney", "melbourne", "canberra", "pine gap", "aukus", "darwin", "albanese"]}
     ]
+  },
+  "firsthand": {
+    "_comment": "First-hand sources (collector/firsthand.py). Status pages: Google Cloud, AWS, Azure and these Atlassian Statuspages. A BIG incident (the provider's top severity) joins incident triage as an official report and can push the one-off outage Warning. ukmto_probe: pages fetched and sampled into data/probe/ until a UKMTO parser is written; never alerts.",
+    "statuspages": [
+      {"name": "Cloudflare", "url": "https://www.cloudflarestatus.com"}
+    ],
+    "ukmto_probe": ["https://www.ukmto.org/recent-incidents", "https://www.ukmto.org/"]
   }
 }
