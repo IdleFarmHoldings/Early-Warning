@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-23T19:53:00Z",
+  "generated_at": "2026-11-23T20:09:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -20,7 +20,7 @@
           "weight": 10
         },
         {
-          "detail": "SA Health denies using blackout as smokescreen for apology and backflip; SA Health Chief Denies Blackout Shielded Controversies",
+          "detail": "SA Health denies using blackout as smokescreen for apology and backflip",
           "domain": "Power grid",
           "id": "power",
           "name": "Reports of widespread power outages in SA",
@@ -717,25 +717,14 @@
     },
     {
       "band": "Low",
-      "convergence": "Only one kind of sign is showing (australian incidents). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: sudden fall in sa electricity demand (possible large blackout), global cyber threat level raised (sans infocon not green) and several vpn / firewall flaws exploited this week.",
-      "domains": [
-        "Australian incidents"
-      ],
+      "convergence": "No warning signs are showing. The strongest signs not yet showing: sudden fall in sa electricity demand (possible large blackout), global cyber threat level raised (sans infocon not green) and several vpn / firewall flaws exploited this week.",
+      "domains": [],
       "key": "cyber",
-      "lit": [
-        {
-          "detail": "Aussie camping retailer hit by cyber attack",
-          "domain": "Australian incidents",
-          "id": "au",
-          "name": "Major Australian cyber incident reported",
-          "short": "Major Australian cyber incident reported",
-          "weight": 10
-        }
-      ],
+      "lit": [],
       "name": "Major cyber attack on Australia",
       "sa_impact": "Banks, payments, hospitals, fuel distribution, telcos and the power grid all run on networks; a large attack can stop card payments and services for hours to days.",
-      "score": 10,
-      "trend": "steady",
+      "score": 0,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Global threat level",
@@ -778,6 +767,12 @@
           "id": "state",
           "name": "Reports of state hackers / pre-positioning / wipers",
           "weight": 15
+        },
+        {
+          "domain": "Australian incidents",
+          "id": "au",
+          "name": "Major Australian cyber incident reported",
+          "weight": 10
         },
         {
           "domain": "Communications",
@@ -828,7 +823,7 @@
           "weight": 10
         },
         {
-          "detail": "Microsoft Blames Software Flaw, Traffic Surge and Reduced Capacity for Global Microsoft 365 Outage",
+          "detail": "Microsoft explains, step by step, how its major global outage happened and why it took so long to restore services",
           "domain": "Cloud services",
           "id": "cloud",
           "name": "Major cloud or AI service outage",
