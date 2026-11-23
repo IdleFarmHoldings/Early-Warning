@@ -1,18 +1,7 @@
 {
   "about": "Short form of latest.json + indicators.json for the analysis run. Links and raw samples removed.",
   "acsc": [],
-  "aircraft_flags": {
-    "gps_blacksea": {
-      "median": 29,
-      "status": "ANOMALY",
-      "value": 83
-    },
-    "mil_mideast": {
-      "median": 5.0,
-      "status": "ANOMALY",
-      "value": 19
-    }
-  },
+  "aircraft_flags": {},
   "analyst": {
     "ASPI Strategist": [
       "America cannot destroy Iran’s missiles. China’s will be a far greater challenge",
@@ -288,13 +277,13 @@
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-23T12:04:00Z",
+  "generated_at": "2026-11-23T12:10:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 20,
-    "Black Sea": 83,
-    "Israel & Eastern Mediterranean": 15,
+    "Baltic / Kaliningrad": 27,
+    "Black Sea": 56,
+    "Israel & Eastern Mediterranean": 14,
     "Korea": 1,
-    "Persian Gulf": 7,
+    "Persian Gulf": 8,
     "South Australia": 0,
     "Sydney / NSW": 0,
     "Taiwan Strait": 0
@@ -304,11 +293,21 @@
       "attack_reported": true,
       "confirmed": true,
       "headlines": [
-        "Chase Bank customers may be affected after hackers access marketing data",
+        "Worried about another bank outage? 5 simple things you can do to prepare now",
         "AI-Powered Hackers Exploit Indian Banks’ Payment Systems"
       ],
       "severity": "Warning",
       "target": "Banking & payments"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": true,
+      "headlines": [
+        "Microsoft confirms data breach due to a bug in Entra Connect Health",
+        "Days After Global Outlook Outage, Microsoft Warns More Disruptions Ahead. Here's Why"
+      ],
+      "severity": "Info",
+      "target": "Microsoft"
     },
     {
       "attack_reported": true,
@@ -348,6 +347,15 @@
     },
     {
       "attack_reported": true,
+      "confirmed": true,
+      "headlines": [
+        "Bell MTS Email Outage: Cyberattack Confirmed, 0 Counts"
+      ],
+      "severity": "Info",
+      "target": "Bell MTS Email"
+    },
+    {
+      "attack_reported": true,
       "confirmed": false,
       "headlines": [
         "GoFundMe data breach exposes donors’ personal details"
@@ -366,12 +374,21 @@
     },
     {
       "attack_reported": true,
-      "confirmed": true,
+      "confirmed": false,
       "headlines": [
-        "Bell MTS Email Outage: Cyberattack Confirmed, 0 Counts"
+        "Hackers exploit critical Cisco Expressway flaw CVE-2026-76466"
       ],
       "severity": "Info",
-      "target": "Bell MTS Email"
+      "target": "Hackers"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "KEPCO Breach, Aeroméxico Leak & RCS Zero-Day Sale"
+      ],
+      "severity": "Info",
+      "target": "KEPCO"
     },
     {
       "attack_reported": true,
@@ -422,21 +439,19 @@
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
+        "Taiwan financial institutions see increased cyberattack risk from AI"
+      ],
+      "severity": "Info",
+      "target": "Taiwan"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
         "Next issues cyber-attack warning after ‘benign’ data accessed by hackers"
       ],
       "severity": "Info",
       "target": "Next"
-    },
-    {
-      "attack_reported": false,
-      "confirmed": true,
-      "headlines": [
-        "Microsoft confirms data breach due to a bug in Entra Connect Health",
-        "Days After Global Outlook Outage, Microsoft Warns More Disruptions Ahead. Here's Why",
-        "Microsoft outage cause revealed: It was a perfect storm of problems"
-      ],
-      "severity": "Warning",
-      "target": "Microsoft"
     },
     {
       "attack_reported": false,
@@ -458,8 +473,8 @@
     }
   ],
   "internet_drop_pct": {
-    "China": 0.4,
-    "Iran": 0.4,
+    "China": 0.6,
+    "Iran": 0.1,
     "Israel": 0.0,
     "Russia": 0.0,
     "South Korea": 0.0,
@@ -486,9 +501,9 @@
       "pump_cents": -3,
       "week_ago_aud": 139.2
     },
-    "grid_demand_fall_pct": 6.2,
-    "grid_demand_mw": 1358,
-    "grid_demand_usual_mw": 1361,
+    "grid_demand_fall_pct": 3.3,
+    "grid_demand_mw": 1361,
+    "grid_demand_usual_mw": 1347,
     "grid_lor_level": 0,
     "nearby_incidents": [
       {
@@ -545,20 +560,20 @@
   },
   "markets": {
     "AUD/USD": {
-      "change_pct": -0.33,
-      "price": 0.6634
+      "change_pct": -0.35,
+      "price": 0.6633
     },
     "Brent oil": {
-      "change_pct": -4.27,
-      "price": 88.62
+      "change_pct": -4.02,
+      "price": 88.85
     },
     "Gold": {
-      "change_pct": 2.97,
-      "price": 3619.9
+      "change_pct": 2.94,
+      "price": 3618.8
     },
     "VIX": {
-      "change_pct": -16.58,
-      "price": 29.94
+      "change_pct": -16.02,
+      "price": 30.14
     }
   },
   "national_shocks": {
@@ -583,14 +598,20 @@
       "Qatar Airways Operates Limited Flights to and from Doha - https://safariindia.com/"
     ],
     "aviation_halt": [
-      "Delta Outage: Weight-and-Balance Glitch Triggers Atlanta Ground Stop - MiGFlug",
       "Flights grounded in Belgium due to strike against austerity measures - BBC",
+      "Delta Outage: Weight-and-Balance Glitch Triggers Atlanta Ground Stop - MiGFlug",
       "Delta Air Lines announces automated services for flights back online, rebooking, refunding travelers - WSB-TV"
     ],
     "bank_outage": [
       "Australian shares sink for eighth straight session - CommBank",
-      "NAB staff learn of redundancies in massive admin email blunder, bank apologises - Nine.com.au",
-      "The Australian Dollar: Losing Its Anchors - Westpac IQ"
+      "\"Not A Cyber Attack\" Western Leaders Says As Nearly All Critical Infrastructure Goes Offline At Some Point This Month - The Betoota Advocate",
+      "NAB staff learn of redundancies in massive admin email blunder, bank apologises - Nine.com.au"
+    ],
+    "blood": [
+      "NCC Cadets and Army Officials Donate Blood - Prokerala"
+    ],
+    "cables": [
+      "PANI Project: Centre Proposes Undersea Fibre Cable to Connect Eight Andaman and Nicobar Islands - Adda247"
     ],
     "chem": [
       "Conference of the States Parties to the Chemical Weapons Convention opens - OPCW",
@@ -600,7 +621,7 @@
     "cloud": [
       "Why Did Anthropic’s Shares Drop 8.5% After Record IPO? - Disruption Banking",
       "Microsoft confirms data breach due to a bug in Entra Connect Health - Techzine Global",
-      "Microsoft outage cause revealed: It was a perfect storm of problems - Mashable"
+      "Days After Global Outlook Outage, Microsoft Warns More Disruptions Ahead. Here's Why - NDTV"
     ],
     "cyber_attrib": [
       "FBI warns AI hackers can breach systems in under 3 hours - Fox News",
@@ -647,8 +668,8 @@
     ],
     "illness": [
       "Mystery illness causes mass hospitalisation of runners - The Nightly",
-      "148 aboard Florida-bound cruise ship sickened by ‘unknown’ GI outbreak: CDC - The Hill",
-      "Zayn Malik hospitalised with mystery illness, forced to cancel upcoming appearances on album release week - Nine.com.au"
+      "Zayn Malik hospitalised with mystery illness, forced to cancel upcoming appearances on album release week - Nine.com.au",
+      "Zayn Malik hospitalised with mystery illness - News.com.au"
     ],
     "masscas": [
       "Emirates International Burn Conference 2026 examines medical readiness, response - www.wam.ae",
@@ -703,8 +724,8 @@
     ],
     "strikes": [
       "Iran Warns of Retaliation if US Forces Attack - ASHARQ AL-AWSAT English",
-      "Polish special operators evade thousands of US troops in a military drill - TechRadar",
-      "Iran widens Gulf attacks by targeting U.S. air base in Kuwait and sites in Bahrain - PBS"
+      "Nearly half of US troops wounded by drones suffered brain injuries – study - NR Times",
+      "Polish special operators evade thousands of US troops in a military drill - TechRadar"
     ]
   },
   "prediction_markets": [
@@ -724,12 +745,12 @@
       "yes": 11.5
     },
     {
-      "d24h": 0.2,
+      "d24h": 0.1,
       "q": "China x Taiwan military clash before 2027?",
-      "yes": 3.2
+      "yes": 3.0
     },
     {
-      "d24h": 0.2,
+      "d24h": 0.3,
       "q": "US-Iran Hormuz Agreement by November 30?",
       "yes": 3.6
     },
@@ -749,7 +770,7 @@
       "yes": 2.2
     },
     {
-      "d24h": 0.3,
+      "d24h": -0.3,
       "q": "Will China invade Taiwan by June 30, 2027?",
       "yes": 4.8
     },
@@ -759,7 +780,7 @@
       "yes": 1.8
     },
     {
-      "d24h": 0.2,
+      "d24h": 0.0,
       "q": "Will China blockade Taiwan in 2026?",
       "yes": 2.4
     },
@@ -784,12 +805,12 @@
       "yes": 6.5
     },
     {
-      "d24h": -0.7,
+      "d24h": -0.4,
       "q": "NATO x Russia military clash by November 30, 2026?",
       "yes": 3.1
     },
     {
-      "d24h": 0.6,
+      "d24h": 0.1,
       "q": "Ukraine agrees not to join NATO by December 31, 2026?",
       "yes": 3.1
     },
@@ -1051,24 +1072,19 @@
     },
     {
       "band": "Guarded",
-      "convergence": "Two different kinds of sign are showing together (military air and shipping). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: air-refuelling tanker surge, internet blackout in iran or israel and new us embassy departure or",
+      "convergence": "Only one kind of sign is showing (shipping). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
       "domains": [
-        "Military air",
         "Shipping"
       ],
       "key": "mideast",
       "lit": [
         {
-          "detail": "mil_mideast 19 vs usual 5.0",
-          "name": "Unusual military air activity over the region"
-        },
-        {
           "detail": "Strait of Hormuz -38% vs usual (2.3/day)",
           "name": "Ship traffic through Hormuz down sharply"
         }
       ],
-      "score": 30,
-      "trend": "up"
+      "score": 15,
+      "trend": "down"
     },
     {
       "band": "Low",
@@ -1084,24 +1100,24 @@
     },
     {
       "band": "Guarded",
-      "convergence": "Two different kinds of sign are showing together (electronic warfare and state signalling). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: unusual military air activity (eastern europe), mobilisation / reservist reports (",
+      "convergence": "Two different kinds of sign are showing together (markets and state signalling). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and mo",
       "domains": [
-        "Electronic warfare",
+        "Markets",
         "State signalling"
       ],
       "key": "russia",
       "lit": [
         {
-          "detail": "gps_blacksea 83 vs usual 29",
-          "name": "GPS jamming spike (Baltic / Black Sea)"
+          "detail": "VIX at 30.14",
+          "name": "Market fear index above 30"
         },
         {
           "detail": "UVB-76 Mystery: Why Doomsday Radio Repeats Code Words",
           "name": "Russian signalling (Buzzer broadcasts, nuclear drills)"
         }
       ],
-      "score": 20,
-      "trend": "up"
+      "score": 15,
+      "trend": "down"
     },
     {
       "band": "Low",
@@ -1117,10 +1133,11 @@
     },
     {
       "band": "Elevated",
-      "convergence": "Two different kinds of sign are showing together (chemical weapons and health). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: unknown illness / pneumonia cluster reported, countries restricting medical supply exports and",
+      "convergence": "Signs are converging across 3 separate areas (chemical weapons, health and markets). Unrelated systems flagging the same scenario at once is the pattern seen before past events. Before COVID-19 (Dec 2019 - Feb 2020): reports of an unknown pneumonia cluster, WHO outbreak notices, mask and hazmat make",
       "domains": [
         "Chemical weapons",
-        "Health"
+        "Health",
+        "Markets"
       ],
       "key": "bio",
       "lit": [
@@ -1133,12 +1150,16 @@
           "name": "Mass casualty declarations (any country)"
         },
         {
+          "detail": "VIX at 30.14",
+          "name": "Market fear index above 30"
+        },
+        {
           "detail": "Panic at 12,000-strong concert as suspected chemical attack sparks mass evacuation",
           "name": "Chemical / nerve-agent attack or mass poisoning reported"
         }
       ],
-      "score": 35,
-      "trend": "down"
+      "score": 45,
+      "trend": "up"
     },
     {
       "band": "Low",
@@ -1190,7 +1211,7 @@
   ],
   "sectors_relative_5d": {
     "defence_au": 0.78,
-    "defence_eu": 0.53,
+    "defence_eu": 0.56,
     "defence_us": 3.44,
     "pandemic": -3.85
   },
