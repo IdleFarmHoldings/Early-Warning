@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-23T14:37:00Z",
+  "generated_at": "2026-11-23T14:43:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -385,25 +385,14 @@
     },
     {
       "band": "Low",
-      "convergence": "Only one kind of sign is showing (state signalling). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and mobilisation / reservist reports (russia / nato).",
-      "domains": [
-        "State signalling"
-      ],
+      "convergence": "No warning signs are showing. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and mobilisation / reservist reports (russia / nato).",
+      "domains": [],
       "key": "russia",
-      "lit": [
-        {
-          "detail": "UVB-76 Mystery: Why Doomsday Radio Repeats Code Words",
-          "domain": "State signalling",
-          "id": "signals",
-          "name": "Russian signalling (Buzzer broadcasts, nuclear drills)",
-          "short": "Russian signalling",
-          "weight": 5
-        }
-      ],
+      "lit": [],
       "name": "Russia-NATO escalation",
       "sa_impact": "Indirect: energy and market shock, cyber attacks that can spill over to Australian systems, and nuclear-risk rhetoric.",
-      "score": 5,
-      "trend": "steady",
+      "score": 0,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Electronic warfare",
@@ -460,6 +449,12 @@
           "weight": 10
         },
         {
+          "domain": "State signalling",
+          "id": "signals",
+          "name": "Russian signalling (Buzzer broadcasts, nuclear drills)",
+          "weight": 5
+        },
+        {
           "domain": "Markets",
           "id": "def",
           "name": "European defence stocks outperforming (5 days)",
@@ -501,7 +496,7 @@
       "key": "nuclear",
       "lit": [
         {
-          "detail": "Gold +4.9%",
+          "detail": "Gold +4.7%",
           "domain": "Markets",
           "id": "gold",
           "name": "Gold up 4%+ in a day",
@@ -809,10 +804,9 @@
     },
     {
       "band": "Elevated",
-      "convergence": "Signs are converging across 4 separate areas (ai-enabled hacking, cloud services, fraud waves and markets). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: a Chinese state-sponsored group used an AI agent to carry out 80-90% of an attack on about 30 organisations, at thousands of requests per second. A fake AI image of a Pentagon explosion briefly moved US markets in May 2023, and a deepfake video call of a CFO tricked a company into paying US$25 million in 2024. The likely signature of an AI attack is breadth and speed: many unrelated systems and vendors hit at once, synthetic media of officials, and shocks with no clear human cause. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, deepfakes of leaders or fake official alerts and market fear index jumps 25%+ in a day.",
+      "convergence": "Signs are converging across 3 separate areas (ai-enabled hacking, fraud waves and markets). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: a Chinese state-sponsored group used an AI agent to carry out 80-90% of an attack on about 30 organisations, at thousands of requests per second. A fake AI image of a Pentagon explosion briefly moved US markets in May 2023, and a deepfake video call of a CFO tricked a company into paying US$25 million in 2024. The likely signature of an AI attack is breadth and speed: many unrelated systems and vendors hit at once, synthetic media of officials, and shocks with no clear human cause. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, deepfakes of leaders or fake official alerts and market fear index jumps 25%+ in a day.",
       "domains": [
         "AI-enabled hacking",
-        "Cloud services",
         "Fraud waves",
         "Markets"
       ],
@@ -835,14 +829,6 @@
           "weight": 10
         },
         {
-          "detail": "Days After Global Outlook Outage, Microsoft Warns More Disruptions Ahead. Here's Why",
-          "domain": "Cloud services",
-          "id": "cloud",
-          "name": "Major cloud or AI service outage",
-          "short": "Major cloud or AI service outage",
-          "weight": 10
-        },
-        {
           "detail": "FIS warns Gen Z is hit hardest by AI deepfake scams",
           "domain": "Fraud waves",
           "id": "scams",
@@ -853,8 +839,8 @@
       ],
       "name": "AI-enabled attack (non-traditional)",
       "sa_impact": "Not bombs but disruption: hacking at machine speed across banks, telcos, hospitals and the grid at once; fake videos or alerts from leaders causing panic buying or bank runs; or automated market and fraud shocks. Effects would be outages, payment failures and confusion about what is real.",
-      "score": 40,
-      "trend": "steady",
+      "score": 30,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Mass exploitation",
@@ -872,6 +858,12 @@
           "domain": "Markets",
           "id": "vix",
           "name": "Market fear index jumps 25%+ in a day",
+          "weight": 10
+        },
+        {
+          "domain": "Cloud services",
+          "id": "cloud",
+          "name": "Major cloud or AI service outage",
           "weight": 10
         },
         {
