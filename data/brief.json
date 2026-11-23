@@ -276,11 +276,11 @@
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-23T07:03:00Z",
+  "generated_at": "2026-11-23T07:18:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 29,
-    "Black Sea": 31,
-    "Israel & Eastern Mediterranean": 18,
+    "Baltic / Kaliningrad": 21,
+    "Black Sea": null,
+    "Israel & Eastern Mediterranean": 17,
     "Korea": 0,
     "Persian Gulf": 5,
     "South Australia": 0,
@@ -301,37 +301,19 @@
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
-        "New Zealand Defence Force website remains down days after data breach disclosure"
-      ],
-      "severity": "Info",
-      "target": "New Zealand Defence"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
-        "Peninsula Energy warns of disruption after Wyoming cyber incident"
-      ],
-      "severity": "Info",
-      "target": "Peninsula Energy"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
-        "PEN: Cyberattack and delayed production put the 2027 ramp-up in focus"
-      ],
-      "severity": "Info",
-      "target": "PEN"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
         "Amazon Exposes Chinese-Nexus Hackers Using AI Agents to Exploit Zero-Day Flaw in Just 11 Minutes"
       ],
       "severity": "Info",
       "target": "Amazon Exposes Chinese-Nexus"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "Hackers Allegedly Claiming Exploit for VMware vCenter 0-day Vulnerability"
+      ],
+      "severity": "Info",
+      "target": "Hackers Allegedly Claiming"
     },
     {
       "attack_reported": true,
@@ -363,9 +345,8 @@
     },
     {
       "attack_reported": false,
-      "confirmed": true,
+      "confirmed": false,
       "headlines": [
-        "Microsoft outage disrupts Outlook, Teams and AI services for over five hours",
         "Microsoft outage cause revealed: It was a perfect storm of problems"
       ],
       "severity": "Info",
@@ -373,9 +354,9 @@
     }
   ],
   "internet_drop_pct": {
-    "China": 1.6,
+    "China": 1.5,
     "Iran": 0.0,
-    "Israel": 0.1,
+    "Israel": 0.0,
     "Russia": 0.0,
     "South Korea": 0.0,
     "Taiwan": 0.0
@@ -400,13 +381,23 @@
       "brent_aud": 135.6,
       "change_pct": -3.7,
       "pump_cents": -3,
-      "week_ago_aud": 140.8
+      "week_ago_aud": 140.7
     },
-    "grid_demand_fall_pct": -12.2,
-    "grid_demand_mw": 967,
-    "grid_demand_usual_mw": 1023,
+    "grid_demand_fall_pct": -10.5,
+    "grid_demand_mw": 1076,
+    "grid_demand_usual_mw": 1083,
     "grid_lor_level": 0,
-    "nearby_incidents": [],
+    "nearby_incidents": [
+      {
+        "area": "9 KENNETH ST SALISBURY",
+        "dist": "10-25 km",
+        "event": "Hazardous Materials",
+        "headline": "SALISBURY : HAZARDOUS MATERIALS",
+        "id": "F-261123-0118 SALISBURY, KENNETH ST (DOMESTIC GAS)",
+        "level": null,
+        "notify": false
+      }
+    ],
     "outlook": {
       "air": {
         "aqi": 31,
@@ -423,13 +414,13 @@
         },
         {
           "date": "2026-11-24",
-          "gust": 37,
+          "gust": 35,
           "rain": 0,
-          "tmax": 20
+          "tmax": 21
         },
         {
           "date": "2026-11-25",
-          "gust": 43,
+          "gust": 49,
           "rain": 0,
           "tmax": 28
         }
@@ -451,16 +442,16 @@
   },
   "markets": {
     "AUD/USD": {
-      "change_pct": -0.12,
-      "price": 0.6648
+      "change_pct": -0.06,
+      "price": 0.6652
     },
     "Brent oil": {
-      "change_pct": -3.08,
-      "price": 89.72
+      "change_pct": -3.28,
+      "price": 89.53
     },
     "Gold": {
-      "change_pct": 3.08,
-      "price": 3623.7
+      "change_pct": 3.17,
+      "price": 3626.7
     },
     "VIX": {
       "change_pct": 26.2,
@@ -489,11 +480,6 @@
       "Qatar Airways Operates Limited Flights to and from Doha - https://safariindia.com/",
       "India Has No Proposal To Use Nepal's Airspace For Military Aircraft: Report - Times Now"
     ],
-    "aviation_halt": [
-      "FAA ground stop: When will it end? Not as soon as you'd like. - Mashable",
-      "Delta Airlines flights delayed nationwide amid ground stop slowing holiday travel - WXLV",
-      "Anatomy of the FAA Ground Stop: One Backbone, One Bad Change - BankInfoSecurity"
-    ],
     "bank_outage": [
       "Australian shares sink for eighth straight session - CommBank",
       "NAB staff learn of redundancies in massive admin email blunder, bank apologises - Nine.com.au",
@@ -514,18 +500,13 @@
     ],
     "cloud": [
       "Microsoft outage cause revealed: It was a perfect storm of problems - Mashable",
-      "Microsoft outage disrupts Outlook, Teams and AI services for over five hours - DD News",
+      "Etzioni on AI: The outage conspiracy theories are wrong — our rush to patch and upgrade is the culprit - GeekWire",
       "Anthropic and SpaceX Spark IPO Disruption With Unusual Processes - Global Banking & Finance Review"
     ],
     "cyber_attrib": [
       "FBI warns hackers weaponizing ARTEX AI framework to automate attacks on energy, manufacturing, telecom - Industrial Cyber",
       "CISA Warns of 4 Exploited Flaws Linked to Ransomware, Cryptomining, and LLMjacking Attacks - The Hacker News",
       "Australians should prepare for online services to go down unexpectedly as threats rise, cyber agency warns - The Guardian"
-    ],
-    "cyber_au": [
-      "Australia mulls tougher tech laws after AI health breach - The Nightly",
-      "Australian truck driver fired for wearing smart glasses at work - Information Age | ACS",
-      "New security needs emerge as physical access threats surpass cybercrime concerns at data centres for the first time - Medianet News Hub"
     ],
     "cyber_ot": [
       "UK operation wards off risk of cyber-attack on supermarket fridges and freezers - The Guardian",
@@ -543,8 +524,8 @@
       "VMware vCenter Zero-Day: CVSS 9.8, Hit Since September - shattered.io"
     ],
     "deepfake": [
-      "A nine-year-old used AI to create a picture of a python emerging from a toilet, triggering a 48-hour emer - The Times of India",
       "Military engineers and electricians to help restore energy infrastructure - prime minister - Mezha.net",
+      "A nine-year-old used AI to create a picture of a python emerging from a toilet, triggering a 48-hour emer - The Times of India",
       "9-Year-Old’s Fake Toilet Snake Photo Sparks 2-Day Emergency Search - Parade Magazine"
     ],
     "flash": [
@@ -554,8 +535,8 @@
     ],
     "fuel_au": [
       "Canberra petrol station runs out as panic buying takes hold - The Canberra Times",
-      "Australia urged to cut fuel imports through electric trucks and mine electrification - Proactive Investors Australia",
-      "Think tank calls for electric truck plan to improve fuel security - www.ownerdriver.com.au"
+      "Fiji Airways fuel shortage nears end - FBC News",
+      "Australia ‘dangerously exposed’ on fuel imports: Grattan - AFR"
     ],
     "illness": [
       "Mystery illness causes mass hospitalisation of runners - The Nightly",
@@ -572,22 +553,22 @@
       "Barbados PM accuses G7 nations of severe hypocrisy - St Vincent Times"
     ],
     "mobilisation": [
+      "Going to AWOL to “return” to the required unit: a loophole in bill 16074 - Судово-юридична газета",
       "Associate Professor of Pedagogical University Promised Deferral from Mobilization for $1300 — Court Delivered Verdict - Судово-юридична газета",
-      "Emergency power outages introduced in Zaporizhzhia outside schedules: who may be de-energized - Судово-юридична газета",
-      "The employer notified the TCC about employment, but the letter was not collected: what the law says - Судово-юридична газета"
+      "Emergency power outages introduced in Zaporizhzhia outside schedules: who may be de-energized - Судово-юридична газета"
     ],
     "murray": [
       "Art as research: new NIDR Hazard Posters share Indigenous natural hazard knowledge - Monash University"
     ],
     "national_outage": [
       "Inside the ‘Black Sky’ plans for a nationwide blackout - Herald.Wales",
-      "'Tipping point': Humanitarian crisis in Cuba continues to grow, aid group director says - ABC News - Breaking News, Latest News and Videos",
-      "Delta Air Lines delays over 1,300 flights as latest outage snarls air traffic - SILive.com"
+      "Delta Air Lines delays over 1,300 flights as latest outage snarls air traffic - SILive.com",
+      "'Tipping point': Humanitarian crisis in Cuba continues to grow, aid group director says - ABC News - Breaking News, Latest News and Videos"
     ],
     "outage_au": [
       "Calls for 'automatic compensation' following telco outages - ABC News & Headlines – Australian Broadcasting Corporation",
-      "Telstra mobile outage disrupts services across Australia - Australian Cyber Security Magazine",
-      "Australia's Optus apologises for outage that disrupted emergency calls - Reuters"
+      "Australia's Optus apologises for outage that disrupted emergency calls - Reuters",
+      "Telstra mobile outage disrupts services across Australia - Australian Cyber Security Magazine"
     ],
     "reservists": [
       "IDF promises relief for reservists, but 2027 plan raises maximum service days - Ynetnews",
@@ -605,11 +586,6 @@
     ],
     "scams": [
       "Fraud & Digital Identity News – KYC, Scams & Verification - FF News"
-    ],
-    "shipping_attacks": [
-      "Iran readies tanker convoy at Kharg Island to test US oil blockade - Euronews",
-      "Iranian attacks in the Strait of Hormuz are at the highest levels since the conflict began - CNN",
-      "ADNOC L&S says one missing, 11 injured in Strait of Hormuz ship attack - Baird Maritime"
     ],
     "strikes": [
       "Polish special operators evade thousands of US troops in a military drill - TechRadar",
@@ -639,14 +615,14 @@
       "yes": 2.9
     },
     {
-      "d24h": -1.4,
+      "d24h": -0.9,
       "q": "US-Iran Hormuz Agreement by November 30?",
-      "yes": 2.1
+      "yes": 2.6
     },
     {
-      "d24h": 0.0,
+      "d24h": 3.0,
       "q": "US-Iran Hormuz Agreement by December 31?",
-      "yes": 11.5
+      "yes": 14.5
     },
     {
       "d24h": 0.1,
@@ -724,9 +700,9 @@
       "yes": 2.9
     },
     {
-      "d24h": 0.0,
+      "d24h": 8.5,
       "q": "Iran blockade lifted before Iran-Oman Hormuz agreement?",
-      "yes": 10.0
+      "yes": 18.5
     },
     {
       "d24h": 0.5,
@@ -957,7 +933,7 @@
         }
       ],
       "score": 25,
-      "trend": "up"
+      "trend": "steady"
     },
     {
       "band": "Guarded",
@@ -973,7 +949,7 @@
         }
       ],
       "score": 15,
-      "trend": "down"
+      "trend": "steady"
     },
     {
       "band": "Low",
@@ -1006,7 +982,7 @@
         }
       ],
       "score": 15,
-      "trend": "up"
+      "trend": "steady"
     },
     {
       "band": "Low",
@@ -1053,19 +1029,9 @@
     },
     {
       "band": "Low",
-      "convergence": "Only one kind of sign is showing (australian incidents). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: sudden fall in sa electricity demand (possible large blackout), global cyber threat level raised (sans infocon not green) and several vpn",
-      "domains": [
-        "Australian incidents"
-      ],
       "key": "cyber",
-      "lit": [
-        {
-          "detail": "Australians stockpiling emergency supplies as cyber attack fears grow",
-          "name": "Major Australian cyber incident reported"
-        }
-      ],
-      "score": 10,
-      "trend": "up"
+      "score": 0,
+      "trend": "down"
     },
     {
       "band": "Elevated",
@@ -1095,7 +1061,7 @@
         }
       ],
       "score": 45,
-      "trend": "up"
+      "trend": "steady"
     }
   ],
   "sectors_relative_5d": {
@@ -1117,7 +1083,7 @@
   "tankers": "normal",
   "telecom_drop_pct": {
     "Aussie Broadband": 0.0,
-    "Optus": 3.0,
+    "Optus": 0.0,
     "TPG": 0.0,
     "Telstra": 0.0,
     "Vodafone": 0.0
