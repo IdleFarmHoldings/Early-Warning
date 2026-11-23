@@ -4,10 +4,10 @@
   "aircraft_flags": {},
   "analyst": {
     "ASPI Strategist": [
+      "Sign of the times: CCAs dominate a major fighter conference",
       "America cannot destroy Iran’s missiles. China’s will be a far greater challenge",
       "China targets a candidate for Taipei’s mayoral election",
-      "Bookshelf: China wants to transform the world order",
-      "26 years of WPS: making it count where decisions are made"
+      "Bookshelf: China wants to transform the world order"
     ],
     "Crisis Group": [
       "Gideon Rachman on the Risk of World War III",
@@ -30,62 +30,7 @@
     ],
     "bursts": []
   },
-  "chokepoints": {
-    "Bab el-Mandeb Strait": {
-      "avg_7d": 25.6,
-      "change_pct": -6.3,
-      "last_date": "2026-11-15",
-      "usual_7d": 27.3
-    },
-    "Lombok Strait": {
-      "avg_7d": 37.0,
-      "change_pct": -3.7,
-      "last_date": "2026-11-15",
-      "usual_7d": 38.4
-    },
-    "Luzon Strait": {
-      "avg_7d": 106.1,
-      "change_pct": 7.2,
-      "last_date": "2026-11-15",
-      "usual_7d": 99.0
-    },
-    "Malacca Strait": {
-      "avg_7d": 229.9,
-      "change_pct": 0.8,
-      "last_date": "2026-11-15",
-      "usual_7d": 228.0
-    },
-    "Strait of Hormuz": {
-      "avg_7d": 2.3,
-      "change_pct": -38.5,
-      "last_date": "2026-11-15",
-      "usual_7d": 3.7
-    },
-    "Suez Canal": {
-      "avg_7d": 46.1,
-      "change_pct": 7.3,
-      "last_date": "2026-11-15",
-      "usual_7d": 43.0
-    },
-    "Sunda Strait": {
-      "avg_7d": 29.7,
-      "change_pct": -12.2,
-      "last_date": "2026-11-15",
-      "usual_7d": 33.9
-    },
-    "Taiwan Strait": {
-      "avg_7d": 220.9,
-      "change_pct": -3.9,
-      "last_date": "2026-11-15",
-      "usual_7d": 229.9
-    },
-    "Torres Strait": {
-      "avg_7d": 11.0,
-      "change_pct": 35.1,
-      "last_date": "2026-11-15",
-      "usual_7d": 8.1
-    }
-  },
+  "chokepoints": {},
   "cisa": [
     "CISA Adds Four Known Exploited Vulnerabilities to Catalog",
     "CISA Adds Four Known Exploited Vulnerabilities to Catalog",
@@ -276,19 +221,21 @@
   ],
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
+    "chokepoints": "RuntimeError: PortWatch returned no rows: {\"error\": {\"code\": 499, \"message\": \"Token Required\", \"messageCode\": \"GWM_0003\"",
+    "maritime": "TimeoutError: ",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-23T19:01:00Z",
+  "generated_at": "2026-11-23T19:17:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 40,
-    "Black Sea": 25,
-    "Israel & Eastern Mediterranean": 3,
+    "Baltic / Kaliningrad": 33,
+    "Black Sea": 21,
+    "Israel & Eastern Mediterranean": 6,
     "Korea": 0,
-    "Persian Gulf": 5,
+    "Persian Gulf": 9,
     "South Australia": null,
     "Sydney / NSW": 0,
-    "Taiwan Strait": 2
+    "Taiwan Strait": 0
   },
   "incidents": [
     {
@@ -349,7 +296,7 @@
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
-        "LaLiga data breach hits fan platform and club data"
+        "LaLiga data breach exposed personal information of fans and clubs"
       ],
       "severity": "Info",
       "target": "LaLiga"
@@ -362,15 +309,6 @@
       ],
       "severity": "Info",
       "target": "Peninsula Energy"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": true,
-      "headlines": [
-        "China-linked hackers' AI agents found a zero-day in 11 minutes, Amazon says"
-      ],
-      "severity": "Info",
-      "target": "China-linked"
     },
     {
       "attack_reported": true,
@@ -392,6 +330,15 @@
     },
     {
       "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "Over 1,800 ARTEX Systems Exposed as AI Cyberattacks Grow More Advanced"
+      ],
+      "severity": "Info",
+      "target": "Over"
+    },
+    {
+      "attack_reported": true,
       "confirmed": true,
       "headlines": [
         "European Commission issues alert to EU Academy users after AI-driven cyberattack causes data leak",
@@ -399,6 +346,24 @@
       ],
       "severity": "Info",
       "target": "European Commission"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": true,
+      "headlines": [
+        "China-linked hackers' AI agents found a zero-day in 11 minutes, Amazon says"
+      ],
+      "severity": "Info",
+      "target": "China-linked"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": true,
+      "headlines": [
+        "Amazon Says Chinese Hackers Used AI Agents To Find Zero-day Flaw"
+      ],
+      "severity": "Info",
+      "target": "Amazon"
     },
     {
       "attack_reported": true,
@@ -431,15 +396,6 @@
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
-        "AI-Powered Hackers Access Over 1 Million Personal Records in Attacks on 10 Organizations"
-      ],
-      "severity": "Info",
-      "target": "AI-Powered Hackers Access"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
         "Next issues cyber-attack warning after ‘benign’ data accessed by hackers"
       ],
       "severity": "Info",
@@ -449,9 +405,9 @@
       "attack_reported": false,
       "confirmed": true,
       "headlines": [
+        "Microsoft faces backlash as a week of outages rattles US systems",
         "Microsoft warns scammers are exploiting its recent outage",
-        "Microsoft Outage Report Details Testing Gaps and Lost Emails",
-        "Microsoft mega outage: Report reveals testing gaps and emails that never arrived"
+        "Japan Microsoft 365 outage response: Furukawa’s requests"
       ],
       "severity": "Warning",
       "target": "Microsoft"
@@ -464,22 +420,13 @@
       ],
       "severity": "Info",
       "target": "AI platforms"
-    },
-    {
-      "attack_reported": false,
-      "confirmed": false,
-      "headlines": [
-        "Set Your LLM Fallback Model Routing Strategy Before the Outage, Not During It"
-      ],
-      "severity": "Info",
-      "target": "Set Your LLM"
     }
   ],
   "internet_drop_pct": {
     "China": 0.0,
-    "Iran": 0.2,
+    "Iran": 0.3,
     "Israel": 0.0,
-    "Russia": 0.1,
+    "Russia": 0.0,
     "South Korea": 0.3,
     "Taiwan": 1.1
   },
@@ -502,9 +449,9 @@
       "pump_cents": -3,
       "week_ago_aud": 138.3
     },
-    "grid_demand_fall_pct": 0.9,
-    "grid_demand_mw": 1239,
-    "grid_demand_usual_mw": 1300,
+    "grid_demand_fall_pct": 2.1,
+    "grid_demand_mw": 1223,
+    "grid_demand_usual_mw": 1308,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
@@ -523,7 +470,7 @@
         },
         {
           "date": "2026-11-25",
-          "gust": 47,
+          "gust": 46,
           "rain": 0,
           "tmax": 28
         },
@@ -551,20 +498,20 @@
   },
   "markets": {
     "AUD/USD": {
-      "change_pct": -0.41,
-      "price": 0.6629
+      "change_pct": -0.38,
+      "price": 0.6631
     },
     "Brent oil": {
-      "change_pct": -5.76,
-      "price": 87.24
+      "change_pct": -5.92,
+      "price": 87.09
     },
     "Gold": {
-      "change_pct": 3.89,
-      "price": 3652.2
+      "change_pct": 4.03,
+      "price": 3657.0
     },
     "VIX": {
-      "change_pct": -24.32,
-      "price": 27.16
+      "change_pct": -24.94,
+      "price": 26.94
     }
   },
   "national_shocks": {
@@ -596,13 +543,14 @@
     "bank_outage": [
       "Australian shares sink for eighth straight session - CommBank",
       "NAB staff learn of redundancies in massive admin email blunder, bank apologises - Nine.com.au",
-      "Buy, hold, sell: Sonic Healthcare, Woolworths, ANZ shares - The Motley Fool Australia"
+      "Big bank axes flashy Christmas bash as leaked docs explain why - The Mercury"
     ],
     "blood": [
       "Upstate military sergeant reaches milestone blood donation - Spectrum News",
       "NCC Cadets and Army Officials Donate Blood - Prokerala"
     ],
     "cables": [
+      "New York Funds Brooklyn Hub for Undersea Cable Repairs - Environment+Energy Leader",
       "Du joins Singapore-India-Gulf submarine cable system - DD News",
       "PANI Project: Centre Proposes Undersea Fibre Cable to Connect Eight Andaman and Nicobar Islands - Adda247"
     ],
@@ -612,9 +560,9 @@
       "Iran accuses countries that armed Saddam Hussein of leading chemical weapons allegations against Tehran - Middle East Monitor"
     ],
     "cloud": [
-      "Why Did Anthropic’s Shares Drop 8.5% After Record IPO? - Disruption Banking",
       "Microsoft confirms data breach due to a bug in Entra Connect Health - Techzine Global",
-      "Microsoft mega outage: Report reveals testing gaps and emails that never arrived - The Register"
+      "Japan Microsoft 365 outage response: Furukawa’s requests - NeoTeo",
+      "Why Did Anthropic’s Shares Drop 8.5% After Record IPO? - Disruption Banking"
     ],
     "cyber_attrib": [
       "FBI warns AI hackers can breach systems in under 3 hours - Fox News",
@@ -622,9 +570,9 @@
       "CISA Warns of 4 Exploited Flaws Linked to Ransomware, Cryptomining, and LLMjacking Attacks - The Hacker News"
     ],
     "cyber_au": [
-      "Aussie camping retailer hit by cyber attack - The Australian",
+      "Aussie camping retailer hit by cyber attack - News24",
       "Exclusive: China-backed hackers suspected behind ongoing EU Commission cyberattack - Yahoo News Australia",
-      "\"Not A Cyber Attack\" Western Leaders Says As Nearly All Critical Infrastructure Goes Offline At Some Point This Month - The Betoota Advocate"
+      "Has my Next data been stolen? Next says no customer personal data was taken in supplier cyber attack - Nacionale"
     ],
     "cyber_ot": [
       "UK operation wards off risk of cyber-attack on supermarket fridges and freezers - The Guardian",
@@ -643,8 +591,8 @@
     ],
     "deepfake": [
       "Trump Goes There With Wildly Inappropriate Photo, Comments Celebrating Huang's Nvidia Return - Yahoo News Singapore",
-      "Trump Posts Bizarre AI Meme of Jensen Huang Holding Up Bra Riffing Off Assassination Attempt - Variety",
-      "China sentences a government official to death for selling over 100 state secrets for 122,000 euros - El Mundo America"
+      "China sentences a government official to death for selling over 100 state secrets for 122,000 euros - El Mundo America",
+      "Trump posts jaw-dropping AI photo of Jensen Huang — including a red bra - NJ.com"
     ],
     "dieoff": [
       "High Power Committee For Manipur Tragedy: Good And Beyond - Imphal Times",
@@ -663,7 +611,7 @@
     "illness": [
       "Dr. Siegel on measles comeback, mystery illness outbreak on cruise ship - Fox News",
       "Mystery illness causes mass hospitalisation of runners - The Nightly",
-      "148 aboard Florida-bound cruise ship sickened by ‘unknown’ GI outbreak: CDC - The Hill"
+      "Zayn Malik hospitalised with mystery illness, forced to cancel upcoming appearances on album release week - Nine.com.au"
     ],
     "masscas": [
       "Berlin hospital fire injures more than a dozen as police suspect patient set bed alight - Brussels Signal",
@@ -701,14 +649,14 @@
       "Not reliable, not affordable: Report shows ageing coal plants boost blackout risk, push up prices - Renew Economy"
     ],
     "scams": [
-      "Pindrop flags surge in North Korean job application fraud - SecurityBrief Australia",
+      "Pindrop flags surge in North Korean job application fraud - CFOtech Australia",
       "Trick or trust? Spot cyber fraud fast - kendranewsaustralia.com.au",
       "Fraud & Digital Identity News – KYC, Scams & Verification - FF News"
     ],
     "shipping_attacks": [
       "Iranian attacks on ships near Strait of Hormuz hit highest level since war began, data shows - The Jerusalem Post",
       "IRGC Claims 2 Supertankers Hit Mines in Hormuz, Iran Toll Reaches 6 in 4 Days - https://houseofsaud.com/",
-      "ADNOC L&S says one missing, 11 injured in Strait of Hormuz ship attack - Baird Maritime"
+      "UKMTO says 2 tankers struck in Hormuz, as Iran says ship on fire - The New Arab"
     ],
     "strikes": [
       "Iran Warns of Retaliation if US Forces Attack - ASHARQ AL-AWSAT English",
@@ -753,7 +701,7 @@
       "yes": 10.5
     },
     {
-      "d24h": 0.8,
+      "d24h": 0.9,
       "q": "US-Iran Final Nuclear Deal by November 30, 2026?",
       "yes": 1.9
     },
@@ -803,7 +751,7 @@
       "yes": 3.1
     },
     {
-      "d24h": -0.7,
+      "d24h": -0.8,
       "q": "Ukraine agrees not to join NATO by December 31, 2026?",
       "yes": 3.1
     },
@@ -1059,20 +1007,10 @@
       "trend": "steady"
     },
     {
-      "band": "Guarded",
-      "convergence": "Only one kind of sign is showing (shipping). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
-      "domains": [
-        "Shipping"
-      ],
+      "band": "Low",
       "key": "mideast",
-      "lit": [
-        {
-          "detail": "Strait of Hormuz -38% vs usual (2.3/day)",
-          "name": "Ship traffic through Hormuz down sharply"
-        }
-      ],
-      "score": 15,
-      "trend": "steady"
+      "score": 0,
+      "trend": "down"
     },
     {
       "band": "Low",
@@ -1104,9 +1042,19 @@
     },
     {
       "band": "Low",
+      "convergence": "Only one kind of sign is showing (markets). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: us nuclear command aircraft unusual, private jets heading to retreat destinations and mobilisation reports (any major power).",
+      "domains": [
+        "Markets"
+      ],
       "key": "nuclear",
-      "score": 0,
-      "trend": "steady"
+      "lit": [
+        {
+          "detail": "Gold +4.0%",
+          "name": "Gold up 4%+ in a day"
+        }
+      ],
+      "score": 10,
+      "trend": "up"
     },
     {
       "band": "Low",
@@ -1194,8 +1142,8 @@
   "sectors_relative_5d": {
     "defence_au": 5.95,
     "defence_eu": -0.4,
-    "defence_us": -0.06,
-    "pandemic": 0.26
+    "defence_us": -0.13,
+    "pandemic": 0.25
   },
   "status_pages": [
     {
@@ -1217,9 +1165,9 @@
   ],
   "tankers": "normal",
   "telecom_drop_pct": {
-    "Aussie Broadband": 0.0,
+    "Aussie Broadband": 0.3,
     "Optus": 3.0,
-    "TPG": 0.2,
+    "TPG": 0.0,
     "Telstra": 0.0,
     "Vodafone": 0.0
   },
