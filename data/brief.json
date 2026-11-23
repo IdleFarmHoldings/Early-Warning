@@ -276,29 +276,29 @@
   ],
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
+    "maritime": "TimeoutError: ",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-23T17:21:00Z",
+  "generated_at": "2026-11-23T17:36:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 30,
-    "Black Sea": 15,
-    "Israel & Eastern Mediterranean": 9,
-    "Korea": 0,
-    "Persian Gulf": 45,
+    "Baltic / Kaliningrad": 23,
+    "Black Sea": 18,
+    "Israel & Eastern Mediterranean": 0,
+    "Korea": null,
+    "Persian Gulf": 17,
     "South Australia": 0,
     "Sydney / NSW": null,
-    "Taiwan Strait": 3
+    "Taiwan Strait": 0
   },
   "incidents": [
     {
       "attack_reported": true,
-      "confirmed": true,
+      "confirmed": false,
       "headlines": [
-        "Hackers steal bank cards data as fraud fears mount",
         "AI-Powered Hackers Exploit Indian Banks’ Payment Systems"
       ],
-      "severity": "Warning",
+      "severity": "Info",
       "target": "Banking & payments"
     },
     {
@@ -345,15 +345,6 @@
       ],
       "severity": "Info",
       "target": "EU Commission"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
-        "New Zealand Defence Force website remains down days after data breach disclosure"
-      ],
-      "severity": "Info",
-      "target": "New Zealand Defence"
     },
     {
       "attack_reported": true,
@@ -449,6 +440,15 @@
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
+        "Google Warns China-Linked Hackers Are Building Autonomous AI Attack Systems"
+      ],
+      "severity": "Info",
+      "target": "Google Warns China-Linked"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
         "Hackers Use Autonomous AI to Breach 10 Organizations and Access Over 1 Million Personal Records"
       ],
       "severity": "Info",
@@ -456,9 +456,10 @@
     },
     {
       "attack_reported": true,
-      "confirmed": false,
+      "confirmed": true,
       "headlines": [
-        "Google reports first fully autonomous cyberattack as AI-powered threats reach new milestone"
+        "Google reports first fully autonomous cyberattack as AI-powered threats reach new milestone",
+        "Google spots the first fully autonomous AI cyberattack"
       ],
       "severity": "Info",
       "target": "Google"
@@ -480,15 +481,6 @@
       ],
       "severity": "Info",
       "target": "Amazon Exposes Chinese-Nexus"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
-        "Next issues cyber-attack warning after ‘benign’ data accessed by hackers"
-      ],
-      "severity": "Info",
-      "target": "Next"
     },
     {
       "attack_reported": false,
@@ -523,10 +515,10 @@
   "internet_drop_pct": {
     "China": 0.0,
     "Iran": 0.0,
-    "Israel": 0.5,
-    "Russia": 0.1,
+    "Israel": 0.0,
+    "Russia": 0.0,
     "South Korea": 0.2,
-    "Taiwan": 0.7
+    "Taiwan": 1.0
   },
   "local_sa": {
     "bom": [],
@@ -544,14 +536,14 @@
     "fire_danger_ok": true,
     "fires_active": 7,
     "fuel": {
-      "brent_aud": 133.9,
+      "brent_aud": 133.8,
       "change_pct": -3.2,
       "pump_cents": -3,
-      "week_ago_aud": 138.4
+      "week_ago_aud": 138.3
     },
-    "grid_demand_fall_pct": 2.5,
-    "grid_demand_mw": 1240,
-    "grid_demand_usual_mw": 1289,
+    "grid_demand_fall_pct": 3.5,
+    "grid_demand_mw": 1227,
+    "grid_demand_usual_mw": 1280,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
@@ -598,20 +590,20 @@
   },
   "markets": {
     "AUD/USD": {
-      "change_pct": -0.48,
-      "price": 0.6624
+      "change_pct": -0.44,
+      "price": 0.6627
     },
     "Brent oil": {
-      "change_pct": -5.55,
-      "price": 87.43
+      "change_pct": -5.79,
+      "price": 87.21
     },
     "Gold": {
-      "change_pct": 4.21,
-      "price": 3663.4
+      "change_pct": 4.2,
+      "price": 3663.2
     },
     "VIX": {
-      "change_pct": -22.68,
-      "price": 27.75
+      "change_pct": -23.15,
+      "price": 27.58
     }
   },
   "national_shocks": {
@@ -634,7 +626,7 @@
   "news_watch": {
     "ai_hack": [
       "China-linked hackers' AI agents found a zero-day in 11 minutes, Amazon says - Dealroom",
-      "European Commission warns EU Academy users of data leak after AI-driven cyberattack - The Seattle Times",
+      "European Commission warns EU Academy users of data leak after AI-driven cyberattack - AP News",
       "With AI-powered cyberattacks, hackers seem more powerful than ever - DW.com"
     ],
     "airspace": [
@@ -644,12 +636,12 @@
     "aviation_halt": [
       "How Elon Musk’s DOGE cuts set up the FAA ground stop - The Verge",
       "Belgium flights grounded by air traffic controller strike - Business Travel News Europe",
-      "Flights grounded in Belgium due to austerity measures strike - BBC"
+      "Aviation groups urge at least $30 billion boost for FAA modernization - Reuters"
     ],
     "bank_outage": [
       "Australian shares sink for eighth straight session - CommBank",
       "NAB staff learn of redundancies in massive admin email blunder, bank apologises - Nine.com.au",
-      "Buy, hold, sell: Sonic Healthcare, Woolworths, ANZ shares - The Motley Fool Australia"
+      "\"Not A Cyber Attack\" Western Leaders Says As Nearly All Critical Infrastructure Goes Offline At Some Point This Month - The Betoota Advocate"
     ],
     "blood": [
       "Upstate military sergeant reaches milestone blood donation - Spectrum News",
@@ -716,7 +708,7 @@
     "illness": [
       "Dr. Siegel on measles comeback, mystery illness outbreak on cruise ship - Fox News",
       "Mystery illness causes mass hospitalisation of runners - The Nightly",
-      "148 aboard Florida-bound cruise ship sickened by ‘unknown’ GI outbreak: CDC - The Hill"
+      "Zayn Malik hospitalised with mystery illness, forced to cancel upcoming appearances on album release week - Nine.com.au"
     ],
     "masscas": [
       "Berlin hospital fire injures more than a dozen as police suspect patient set bed alight - Brussels Signal",
@@ -745,7 +737,7 @@
     ],
     "reservists": [
       "Moldova plans to introduce a 42-day accelerated military training program - UA.NEWS",
-      "IDF promises relief for reservists, but 2027 plan raises maximum service days - Ynetnews",
+      "Men aged 18 to 55 could be required to undergo up to six weeks of military training - ipn.md",
       "Shrinking Forests Push Tigers Beyond Reserves, Says Maya Biographer At OCLF Finale - The Times of India"
     ],
     "sapn": [
@@ -791,7 +783,7 @@
       "yes": 3.2
     },
     {
-      "d24h": 0.6,
+      "d24h": 0.8,
       "q": "US-Iran Hormuz Agreement by November 30?",
       "yes": 3.5
     },
@@ -1104,7 +1096,7 @@
           "name": "Fire, flood or storm road closures in SA"
         },
         {
-          "detail": "SA Health denies using blackout as smokescreen for apology and backflip",
+          "detail": "SA Health denies using blackout as smokescreen for apology and backflip; SA Health Chief Denies Blackout Shielded Controversies",
           "name": "Reports of widespread power outages in SA"
         }
       ],
@@ -1125,7 +1117,7 @@
         }
       ],
       "score": 15,
-      "trend": "down"
+      "trend": "steady"
     },
     {
       "band": "Low",
@@ -1247,8 +1239,8 @@
   "sectors_relative_5d": {
     "defence_au": 0.78,
     "defence_eu": -0.4,
-    "defence_us": -0.06,
-    "pandemic": -2.59
+    "defence_us": -0.02,
+    "pandemic": -2.17
   },
   "status_pages": [
     {
@@ -1272,8 +1264,8 @@
   "telecom_drop_pct": {
     "Aussie Broadband": 0.0,
     "Optus": 2.9,
-    "TPG": 0.3,
-    "Telstra": 0.6,
+    "TPG": 0.4,
+    "Telstra": 0.5,
     "Vodafone": 0.0
   },
   "us_departure_orders": [
