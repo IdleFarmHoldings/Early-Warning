@@ -1,7 +1,13 @@
 {
   "about": "Short form of latest.json + indicators.json for the analysis run. Links and raw samples removed.",
   "acsc": [],
-  "aircraft_flags": {},
+  "aircraft_flags": {
+    "gps_israel": {
+      "median": 2.0,
+      "status": "ANOMALY",
+      "value": 19
+    }
+  },
   "analyst": {
     "ASPI Strategist": [
       "America cannot destroy Iran’s missiles. China’s will be a far greater challenge",
@@ -276,14 +282,14 @@
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-23T05:09:00Z",
+  "generated_at": "2026-11-23T05:15:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 57,
-    "Black Sea": 36,
-    "Israel & Eastern Mediterranean": 15,
+    "Baltic / Kaliningrad": 61,
+    "Black Sea": 47,
+    "Israel & Eastern Mediterranean": 19,
     "Korea": 0,
-    "Persian Gulf": 3,
-    "South Australia": 2,
+    "Persian Gulf": 6,
+    "South Australia": 3,
     "Sydney / NSW": 0,
     "Taiwan Strait": 0
   },
@@ -381,7 +387,7 @@
     }
   ],
   "internet_drop_pct": {
-    "China": 1.5,
+    "China": 1.8,
     "Iran": 0.0,
     "Israel": 0.0,
     "Russia": 0.0,
@@ -403,15 +409,15 @@
       "Mount Lofty Ranges": "High / High"
     },
     "fire_danger_ok": true,
-    "fires_active": 9,
+    "fires_active": 10,
     "fuel": {
       "brent_aud": 135.8,
       "change_pct": -3.6,
       "pump_cents": -3,
       "week_ago_aud": 140.9
     },
-    "grid_demand_fall_pct": -6.8,
-    "grid_demand_mw": 438,
+    "grid_demand_fall_pct": -13.2,
+    "grid_demand_mw": 464,
     "grid_demand_usual_mw": 410,
     "grid_lor_level": 0,
     "nearby_incidents": [],
@@ -453,7 +459,7 @@
       "Morgan Vale Road, Pine Valley Station: MORGAN MAIL RD Closed due to flooding over road",
       "Pine Valley Road, Pine Valley Station: PINE VALLEY RD Closed due to flooding over road"
     ],
-    "rooftop_pv_mw": 1540,
+    "rooftop_pv_mw": 1890,
     "sawater_news": [],
     "watch_and_act": []
   },
@@ -463,12 +469,12 @@
       "price": 0.6638
     },
     "Brent oil": {
-      "change_pct": -2.79,
-      "price": 89.99
+      "change_pct": -2.7,
+      "price": 90.07
     },
     "Gold": {
-      "change_pct": 2.6,
-      "price": 3606.8
+      "change_pct": 2.61,
+      "price": 3607.1
     },
     "VIX": {
       "change_pct": 26.2,
@@ -491,11 +497,6 @@
       "We were warned, time for heads to roll - News.com.au",
       "US intelligence chief warns of more technology outages amid AI-driven upgrades - TRT World",
       "Google says autonomous AI tools can now exploit fresh patches in minutes - TechRadar"
-    ],
-    "airspace": [
-      "Belgium’s Airspace Closed 7 AM – 9 PM On Monday (November 23, 2026) & All Flights Canceled At Brussels Airport - LoyaltyLobby",
-      "Qatar Airways Operates Limited Flights to and from Doha - https://safariindia.com/",
-      "India Has No Proposal To Use Nepal's Airspace For Military Aircraft: Report - Times Now"
     ],
     "aviation_halt": [
       "FAA ground stop: When will it end? Not as soon as you'd like. - Mashable",
@@ -566,16 +567,6 @@
       "Think tank calls for electric truck plan to improve fuel security - www.ownerdriver.com.au",
       "Australia ‘dangerously exposed’ on fuel imports: Grattan - AFR"
     ],
-    "illness": [
-      "Mystery illness causes mass hospitalisation of runners - The Nightly",
-      "Zayn Malik hospitalised with mystery illness, forced to cancel upcoming appearances on album release week - Nine.com.au",
-      "Zayn Malik hospitalised with mystery illness - News.com.au"
-    ],
-    "masscas": [
-      "Emirates International Burn Conference 2026 examines medical readiness, response - www.wam.ae",
-      "Israel hosts 30 countries in emergency preparedness exercise - Cleveland Jewish News",
-      "Tiverton man charged after nine-vehicle crash - EastBayRI.com"
-    ],
     "medexport": [
       "The weak link in Malaysia’s pharmaceutical supply chain - Free Malaysia Today",
       "Barbados PM accuses G7 nations of severe hypocrisy - St Vincent Times"
@@ -591,7 +582,7 @@
     "national_outage": [
       "Inside the ‘Black Sky’ plans for a nationwide blackout - Herald.Wales",
       "What Is Causing South Sulawesi's 600 MW Power Shortfall? - Tempo.co English",
-      "Emergency preparedness expert warns most Americans aren’t ready for a long-term grid collapse | On Balance - WGN Radio 720"
+      "'Tipping point': Humanitarian crisis in Cuba continues to grow, aid group director says - ABC News - Breaking News, Latest News and Videos"
     ],
     "outage_au": [
       "Calls for 'automatic compensation' following telco outages - ABC News & Headlines – Australian Broadcasting Corporation",
@@ -971,19 +962,24 @@
     },
     {
       "band": "Guarded",
-      "convergence": "Only one kind of sign is showing (shipping). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
+      "convergence": "Two different kinds of sign are showing together (electronic warfare and shipping). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet bl",
       "domains": [
+        "Electronic warfare",
         "Shipping"
       ],
       "key": "mideast",
       "lit": [
         {
+          "detail": "gps_israel 19 vs usual 2.0",
+          "name": "GPS jamming spike (Gulf / Israel)"
+        },
+        {
           "detail": "Strait of Hormuz -38% vs usual (2.3/day)",
           "name": "Ship traffic through Hormuz down sharply"
         }
       ],
-      "score": 15,
-      "trend": "steady"
+      "score": 25,
+      "trend": "up"
     },
     {
       "band": "Low",
@@ -1084,10 +1080,9 @@
     },
     {
       "band": "Elevated",
-      "convergence": "Signs are converging across 3 separate areas (ai-enabled hacking, cloud services and markets). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: a Chinese sta",
+      "convergence": "Two different kinds of sign are showing together (ai-enabled hacking and markets). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, deepfakes of leaders or fake officia",
       "domains": [
         "AI-enabled hacking",
-        "Cloud services",
         "Markets"
       ],
       "key": "ai",
@@ -1103,18 +1098,14 @@
         {
           "detail": "VIX +26.2%",
           "name": "Market fear index jumps 25%+ in a day"
-        },
-        {
-          "detail": "Delta Air Lines Facing Widespread Delays After System-Wide Computer Outage",
-          "name": "Major cloud or AI service outage"
         }
       ],
-      "score": 45,
-      "trend": "steady"
+      "score": 35,
+      "trend": "down"
     }
   ],
   "sectors_relative_5d": {
-    "defence_au": 1.21,
+    "defence_au": 1.36,
     "defence_eu": 1.27,
     "defence_us": 3.44,
     "pandemic": -3.85
@@ -1131,11 +1122,11 @@
   ],
   "tankers": "normal",
   "telecom_drop_pct": {
-    "Aussie Broadband": 0.3,
+    "Aussie Broadband": 0.1,
     "Optus": 0.0,
     "TPG": 0.0,
-    "Telstra": 0.6,
-    "Vodafone": 0.0
+    "Telstra": 0.0,
+    "Vodafone": 9.5
   },
   "us_departure_orders": [
     "Belarus"
