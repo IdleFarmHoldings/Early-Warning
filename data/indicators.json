@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-24T01:52:00Z",
+  "generated_at": "2026-11-24T02:07:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -220,7 +220,7 @@
       "key": "taiwan",
       "lit": [
         {
-          "detail": "Australian defence stocks +5.2% vs market over 5 days",
+          "detail": "Australian defence stocks +5.3% vs market over 5 days",
           "domain": "Markets",
           "id": "def",
           "name": "Defence stocks outperforming (US / Australia)",
@@ -494,25 +494,14 @@
     },
     {
       "band": "Low",
-      "convergence": "Only one kind of sign is showing (markets). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: us nuclear command aircraft unusual, private jets heading to retreat destinations and mobilisation reports (any major power).",
-      "domains": [
-        "Markets"
-      ],
+      "convergence": "No warning signs are showing. The strongest signs not yet showing: us nuclear command aircraft unusual, private jets heading to retreat destinations and mobilisation reports (any major power).",
+      "domains": [],
       "key": "nuclear",
-      "lit": [
-        {
-          "detail": "Gold +4.5%",
-          "domain": "Markets",
-          "id": "gold",
-          "name": "Gold up 4%+ in a day",
-          "short": "Gold up 4%+ in a day",
-          "weight": 10
-        }
-      ],
+      "lit": [],
       "name": "Nuclear use or alert",
       "sa_impact": "Fallout risk to SA from a northern-hemisphere exchange is very low, but global trade, fuel and finance would be severely disrupted.",
-      "score": 10,
-      "trend": "steady",
+      "score": 0,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Nuclear command",
@@ -542,6 +531,12 @@
           "domain": "Markets",
           "id": "vix",
           "name": "Market fear index above 35",
+          "weight": 10
+        },
+        {
+          "domain": "Markets",
+          "id": "gold",
+          "name": "Gold up 4%+ in a day",
           "weight": 10
         },
         {
