@@ -107,9 +107,9 @@
     "infocon": "green",
     "kev": {
       "all": {
-        "last_7d": 11,
-        "ratio": 1.38,
-        "usual_7d": 8
+        "last_7d": 10,
+        "ratio": 0.91,
+        "usual_7d": 11
       },
       "edge": {
         "last_7d": 1,
@@ -118,9 +118,9 @@
       },
       "ransomware_linked_7d": 1,
       "vendors": {
-        "last_7d": 10,
-        "ratio": 1.43,
-        "usual_7d": 7
+        "last_7d": 9,
+        "ratio": 1.12,
+        "usual_7d": 8
       }
     }
   },
@@ -279,15 +279,15 @@
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-23T23:46:00Z",
+  "generated_at": "2026-11-24T00:01:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 83,
-    "Black Sea": 15,
-    "Israel & Eastern Mediterranean": 4,
+    "Baltic / Kaliningrad": null,
+    "Black Sea": 41,
+    "Israel & Eastern Mediterranean": 7,
     "Korea": 0,
-    "Persian Gulf": 10,
+    "Persian Gulf": 4,
     "South Australia": 0,
-    "Sydney / NSW": 1,
+    "Sydney / NSW": 2,
     "Taiwan Strait": 0
   },
   "incidents": [
@@ -332,10 +332,19 @@
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
-        "LaLiga data breach exposed personal information of fans and clubs"
+        "Cisco Expressway vulnerability exploited to breach internal networks (CVE-2026-76466)"
       ],
       "severity": "Info",
-      "target": "LaLiga"
+      "target": "Cisco Expressway"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": true,
+      "headlines": [
+        "China-linked hackers' AI agents found a zero-day in 11 minutes, Amazon says"
+      ],
+      "severity": "Info",
+      "target": "China-linked"
     },
     {
       "attack_reported": true,
@@ -348,15 +357,6 @@
     },
     {
       "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
-        "Over 1,800 ARTEX Systems Exposed as AI Cyberattacks Grow More Advanced"
-      ],
-      "severity": "Info",
-      "target": "Over"
-    },
-    {
-      "attack_reported": true,
       "confirmed": true,
       "headlines": [
         "European Commission issues alert to EU Academy users after AI-driven cyberattack causes data leak",
@@ -364,15 +364,6 @@
       ],
       "severity": "Info",
       "target": "European Commission"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": true,
-      "headlines": [
-        "China-linked hackers' AI agents found a zero-day in 11 minutes, Amazon says"
-      ],
-      "severity": "Info",
-      "target": "China-linked"
     },
     {
       "attack_reported": true,
@@ -394,10 +385,9 @@
     },
     {
       "attack_reported": true,
-      "confirmed": true,
+      "confirmed": false,
       "headlines": [
-        "Google reports first fully autonomous cyberattack as AI-powered threats reach new milestone",
-        "Google spots the first fully autonomous AI cyberattack"
+        "Google reports first fully autonomous cyberattack as AI-powered threats reach new milestone"
       ],
       "severity": "Info",
       "target": "Google"
@@ -406,18 +396,18 @@
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
-        "AI-powered cyberattack hits European Commission, users' personal data leaked"
+        "Next issues cyber-attack warning after ‘benign’ data accessed by hackers"
       ],
       "severity": "Info",
-      "target": "AI-powered"
+      "target": "Next"
     },
     {
       "attack_reported": false,
       "confirmed": true,
       "headlines": [
-        "Microsoft faces backlash as a week of outages rattles US systems",
         "Microsoft's Outlook outage didn't take long to become phishing bait",
-        "Japan’s Furukawa details requests after Microsoft 365 outage"
+        "Japan’s Furukawa details requests after Microsoft 365 outage",
+        "Microsoft Outage Report Details Testing Gaps and Lost Emails"
       ],
       "severity": "Warning",
       "target": "Microsoft"
@@ -444,10 +434,10 @@
   "internet_drop_pct": {
     "China": 0.0,
     "Iran": 0.5,
-    "Israel": 0.0,
+    "Israel": 0.4,
     "Russia": 0.1,
     "South Korea": 0.0,
-    "Taiwan": 0.0
+    "Taiwan": 0.2
   },
   "local_sa": {
     "bom": [],
@@ -461,26 +451,45 @@
       "Mount Lofty Ranges": "Moderate / Moderate"
     },
     "fire_danger_ok": true,
-    "fires_active": 11,
+    "fires_active": 12,
     "fuel": {
-      "brent_aud": 131.3,
-      "change_pct": -5.0,
+      "brent_aud": 131.0,
+      "change_pct": -5.1,
       "pump_cents": -4,
       "week_ago_aud": 138.1
     },
-    "grid_demand_fall_pct": 39.5,
-    "grid_demand_mw": 329,
-    "grid_demand_usual_mw": 576,
+    "grid_demand_fall_pct": -13.0,
+    "grid_demand_mw": 457,
+    "grid_demand_usual_mw": 510,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
       "air": {
-        "aqi": 46,
+        "aqi": 47,
         "peak_pm25_48h": 11,
-        "pm25": 9
+        "pm25": 8
       },
       "air_word": "Good",
-      "days": []
+      "days": [
+        {
+          "date": "2026-11-24",
+          "gust": 36,
+          "rain": 0,
+          "tmax": 21
+        },
+        {
+          "date": "2026-11-25",
+          "gust": 46,
+          "rain": 0,
+          "tmax": 28
+        },
+        {
+          "date": "2026-11-26",
+          "gust": 46,
+          "rain": 0,
+          "tmax": 29
+        }
+      ]
     },
     "possible_blackout": false,
     "power_news": [],
@@ -492,22 +501,22 @@
       "Morgan Vale Road, Pine Valley Station: MORGAN MAIL RD Closed due to flooding over road",
       "Pine Valley Road, Pine Valley Station: PINE VALLEY RD Closed due to flooding over road"
     ],
-    "rooftop_pv_mw": 1193,
+    "rooftop_pv_mw": 1711,
     "sawater_news": [],
     "watch_and_act": []
   },
   "markets": {
     "AUD/USD": {
-      "change_pct": -0.44,
-      "price": 0.6627
+      "change_pct": -0.39,
+      "price": 0.663
     },
     "Brent oil": {
-      "change_pct": -6.24,
-      "price": 86.79
+      "change_pct": -6.22,
+      "price": 86.81
     },
     "Gold": {
-      "change_pct": 3.37,
-      "price": 3634.0
+      "change_pct": 3.05,
+      "price": 3622.6
     },
     "VIX": {
       "change_pct": -25.83,
@@ -528,8 +537,8 @@
   "news_watch": {
     "ai_hack": [
       "European Commission issues alert to EU Academy users after AI-driven cyberattack causes data leak - European Interest",
-      "European Commission warns EU Academy users of data leak after AI-driven cyberattack - AP News",
-      "With AI-powered cyberattacks, hackers seem more powerful than ever - DW.com"
+      "China-linked hackers' AI agents found a zero-day in 11 minutes, Amazon says - Dealroom",
+      "European Commission warns EU Academy users of data leak after AI-driven cyberattack - AP News"
     ],
     "airspace": [
       "Saudi coalition intercepts Houthi drone targeting southern region - Crypto Briefing",
@@ -537,9 +546,9 @@
       "Qatar Airways Operates Limited Flights to and from Doha - https://safariindia.com/"
     ],
     "aviation_halt": [
-      "L3Harris Router, 400 Fired Engineers and the 4-Hour Ground Stop: Aviation Writer Darryl Campbell on What Really Took Down US Airspace - BigGo Finance",
       "Aviation groups urge at least $30 billion boost for FAA modernization - Reuters",
-      "Staffing Shortage Prompts Ground Stop at Chicago O’Hare - AVweb"
+      "L3Harris Router, 400 Fired Engineers and the 4-Hour Ground Stop: Aviation Writer Darryl Campbell on What Really Took Down US Airspace - BigGo Finance",
+      "Belgium flights grounded by air traffic controller strike - Business Travel News Europe"
     ],
     "bank_outage": [
       "ANZ expects next rate cut to come in June - Australian Broker News",
@@ -549,7 +558,7 @@
     "blood": [
       "Upstate military sergeant reaches milestone blood donation - Spectrum News",
       "BLOOD DONATION BY NCC CADETS - The Times of India",
-      "[In Picutres] Vietnamese military medics at the epicentre of Myanmar’s earthquake - Nhan Dan Online"
+      "Ways to give back in NYC this Thanksgiving - ABC7 New York"
     ],
     "cables": [
       "New York Funds Brooklyn Hub for Undersea Cable Repairs - Environment+Energy Leader",
@@ -559,17 +568,17 @@
     "chem": [
       "Conference of the States Parties to the Chemical Weapons Convention opens - OPCW",
       "US arrears leave chemical weapons watchdog facing budget crisis - Al-Monitor",
-      "US envoy to UN says Syria used chemical weapons 50 times - Yeni Safak English"
+      "Iran accuses countries that armed Saddam Hussein of leading chemical weapons allegations against Tehran - Middle East Monitor"
     ],
     "cloud": [
-      "Microsoft confirms data breach due to a bug in Entra Connect Health - Techzine Global",
       "Japan’s Furukawa details requests after Microsoft 365 outage - NeoTeo",
+      "Microsoft confirms data breach due to a bug in Entra Connect Health - Techzine Global",
       "Why Did Anthropic’s Shares Drop 8.5% After Record IPO? - Disruption Banking"
     ],
     "cyber_attrib": [
       "FBI warns AI hackers can breach systems in under 3 hours - Fox News",
       "FBI warns hackers using AI-powered tool to automate cyberattacks worldwide - Anadolu Ajansı",
-      "FBI Warns Hackers Target U.S. Water Supply Systems - The Patriot KEIB AM 1150"
+      "FBI Warns Hackers Target U.S. Water Supply Systems - Sunny 106.5"
     ],
     "cyber_au": [
       "Exclusive: Darwin-based accountancy firm listed by Hyflock ransomware - Cyber Daily",
@@ -637,8 +646,8 @@
     ],
     "outage_au": [
       "Calls for 'automatic compensation' following telco outages - ABC News & Headlines – Australian Broadcasting Corporation",
-      "Telstra mobile outage disrupts services across Australia - Australian Cyber Security Magazine",
-      "Australia's Optus apologises for outage that disrupted emergency calls - Reuters"
+      "Australia's Optus apologises for outage that disrupted emergency calls - Reuters",
+      "Telstra mobile outage disrupts services across Australia - Australian Cyber Security Magazine"
     ],
     "reservists": [
       "Moldova plans to introduce a 42-day accelerated military training program - UA.NEWS",
@@ -648,7 +657,7 @@
     "sapn": [
       "LGA supports councils through power crisis - Council Magazine",
       "Freak storm wipes out ‘once-in-2000-year’ harvest - Adelaide Now",
-      "SA Health denies using blackout as smokescreen for apology and backflip - ABC News & Headlines – Australian Broadcasting Corporation"
+      "Not reliable, not affordable: Report shows ageing coal plants boost blackout risk, push up prices - Renew Economy"
     ],
     "scams": [
       "Cyber security is one of the biggest risks for Australian businesses - Accountants Daily",
@@ -662,8 +671,8 @@
     ],
     "strikes": [
       "Iran Warns of Retaliation if US Forces Attack - ASHARQ AL-AWSAT English",
-      "Ukrainian naval drones strike a new Russian warship in Libya, and other Mideast news - Boston Herald",
-      "Houthi drones target airport, air base in Saudi Arabia - Yeni Safak English"
+      "Houthi drones target airport, air base in Saudi Arabia - Yeni Safak English",
+      "Ukrainian naval drones strike a new Russian warship in Libya, and other Mideast news - Boston Herald"
     ]
   },
   "prediction_markets": [
@@ -688,9 +697,9 @@
       "yes": 3.2
     },
     {
-      "d24h": 0.9,
+      "d24h": 1.0,
       "q": "US-Iran Hormuz Agreement by November 30?",
-      "yes": 3.0
+      "yes": 3.1
     },
     {
       "d24h": 0.3,
@@ -703,9 +712,9 @@
       "yes": 10.5
     },
     {
-      "d24h": 0.4,
+      "d24h": 0.5,
       "q": "US-Iran Final Nuclear Deal by November 30, 2026?",
-      "yes": 1.4
+      "yes": 1.5
     },
     {
       "d24h": 0.3,
@@ -743,7 +752,7 @@
       "yes": 12.5
     },
     {
-      "d24h": -0.8,
+      "d24h": -0.7,
       "q": "NATO x Russia military clash by November 30, 2026?",
       "yes": 2.5
     },
@@ -758,9 +767,9 @@
       "yes": 3.0
     },
     {
-      "d24h": 3.4,
+      "d24h": 3.2,
       "q": "Will Russia test a nuclear weapon by December 31 2026?",
-      "yes": 5.3
+      "yes": 5.1
     },
     {
       "d24h": -1.0,
@@ -983,10 +992,9 @@
   ],
   "scenarios": [
     {
-      "band": "Guarded",
-      "convergence": "Two different kinds of sign are showing together (power grid and roads). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: cfs emergency warning in sa, sudden fall in sa electricity demand (possible large blackout) and extre",
+      "band": "Low",
+      "convergence": "Only one kind of sign is showing (roads). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: cfs emergency warning in sa, sudden fall in sa electricity demand (possible large blackout) and extreme or catastrophic fire danger near adelaide.",
       "domains": [
-        "Power grid",
         "Roads"
       ],
       "key": "local",
@@ -994,14 +1002,10 @@
         {
           "detail": "Morgan Mail Road, Quondong: MORGAN MAIL RD Closed due to flooding over road; Morgan Vale Road, Danggali: MORGAN MAIL RD Closed due to flooding over road",
           "name": "Fire, flood or storm road closures in SA"
-        },
-        {
-          "detail": "SA Health denies using blackout as smokescreen for apology and backflip",
-          "name": "Reports of widespread power outages in SA"
         }
       ],
-      "score": 25,
-      "trend": "steady"
+      "score": 10,
+      "trend": "down"
     },
     {
       "band": "Guarded",
@@ -1021,19 +1025,9 @@
     },
     {
       "band": "Low",
-      "convergence": "Only one kind of sign is showing (markets). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: missile / live-fire navigation warnings near taiwan, gps jamming over the taiwan strait and internet disruption in taiwan.",
-      "domains": [
-        "Markets"
-      ],
       "key": "taiwan",
-      "lit": [
-        {
-          "detail": "Australian defence stocks +5.4% vs market over 5 days",
-          "name": "Defence stocks outperforming (US / Australia)"
-        }
-      ],
-      "score": 5,
-      "trend": "steady"
+      "score": 0,
+      "trend": "down"
     },
     {
       "band": "Low",
@@ -1137,8 +1131,8 @@
     }
   ],
   "sectors_relative_5d": {
-    "defence_au": 5.39,
-    "defence_eu": 1.14,
+    "defence_au": 4.92,
+    "defence_eu": 1.27,
     "defence_us": 0.08,
     "pandemic": -0.59
   },
@@ -1163,9 +1157,9 @@
   "tankers": "normal",
   "telecom_drop_pct": {
     "Aussie Broadband": 0.4,
-    "Optus": 6.9,
-    "TPG": 0.0,
-    "Telstra": 0.3,
+    "Optus": 2.0,
+    "TPG": 0.2,
+    "Telstra": 0.1,
     "Vodafone": 4.8
   },
   "us_departure_orders": [

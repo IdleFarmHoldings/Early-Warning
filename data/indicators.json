@@ -1,12 +1,11 @@
 {
-  "generated_at": "2026-11-23T23:46:00Z",
+  "generated_at": "2026-11-24T00:01:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
-      "band": "Guarded",
-      "convergence": "Two different kinds of sign are showing together (power grid and roads). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: cfs emergency warning in sa, sudden fall in sa electricity demand (possible large blackout) and extreme or catastrophic fire danger near adelaide.",
+      "band": "Low",
+      "convergence": "Only one kind of sign is showing (roads). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: cfs emergency warning in sa, sudden fall in sa electricity demand (possible large blackout) and extreme or catastrophic fire danger near adelaide.",
       "domains": [
-        "Power grid",
         "Roads"
       ],
       "key": "local",
@@ -18,20 +17,12 @@
           "name": "Fire, flood or storm road closures in SA",
           "short": "Fire, flood or storm road closures in SA",
           "weight": 10
-        },
-        {
-          "detail": "SA Health denies using blackout as smokescreen for apology and backflip",
-          "domain": "Power grid",
-          "id": "power",
-          "name": "Reports of widespread power outages in SA",
-          "short": "Reports of widespread power outages in…",
-          "weight": 15
         }
       ],
       "name": "Local emergency in SA (bushfire, heat, power)",
       "sa_impact": "Direct: bushfires, heatwaves and power cuts are the emergencies most likely to affect the family. In the 2016 statewide blackout, power, phones, traffic lights and fuel pumps failed together.",
-      "score": 25,
-      "trend": "steady",
+      "score": 10,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Bushfire",
@@ -80,6 +71,12 @@
           "id": "ed",
           "name": "Three or more Adelaide emergency departments 'very busy'",
           "weight": 10
+        },
+        {
+          "domain": "Power grid",
+          "id": "power",
+          "name": "Reports of widespread power outages in SA",
+          "weight": 15
         },
         {
           "domain": "Water",
@@ -213,25 +210,14 @@
     },
     {
       "band": "Low",
-      "convergence": "Only one kind of sign is showing (markets). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: missile / live-fire navigation warnings near taiwan, gps jamming over the taiwan strait and internet disruption in taiwan.",
-      "domains": [
-        "Markets"
-      ],
+      "convergence": "No warning signs are showing. The strongest signs not yet showing: missile / live-fire navigation warnings near taiwan, gps jamming over the taiwan strait and internet disruption in taiwan.",
+      "domains": [],
       "key": "taiwan",
-      "lit": [
-        {
-          "detail": "Australian defence stocks +5.4% vs market over 5 days",
-          "domain": "Markets",
-          "id": "def",
-          "name": "Defence stocks outperforming (US / Australia)",
-          "short": "Defence stocks outperforming",
-          "weight": 5
-        }
-      ],
+      "lit": [],
       "name": "Taiwan Strait / South China Sea crisis",
       "sa_impact": "Trade and fuel: most of Australia's refined fuel and many goods pass the South China Sea. A blockade would disrupt fuel, medicines and electronics within weeks; Australian forces could be drawn in.",
-      "score": 5,
-      "trend": "steady",
+      "score": 0,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Maritime",
@@ -292,6 +278,12 @@
           "id": "blood",
           "name": "Military blood drives / field hospitals (China / Taiwan)",
           "weight": 10
+        },
+        {
+          "domain": "Markets",
+          "id": "def",
+          "name": "Defence stocks outperforming (US / Australia)",
+          "weight": 5
         },
         {
           "domain": "Cyber",
