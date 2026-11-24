@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-24T19:20:00Z",
+  "generated_at": "2026-11-24T19:34:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -700,7 +700,7 @@
       "key": "cyber",
       "lit": [
         {
-          "detail": "Australian watchdog secures $8M Court order against Bendigo and Adelaide Bank over cyber incident",
+          "detail": "Australia's Bendigo Bank fined $5.6m over cyberattack-linked breaches (update*)",
           "domain": "Australian incidents",
           "id": "au",
           "name": "Major Australian cyber incident reported",
@@ -778,25 +778,34 @@
     },
     {
       "band": "Guarded",
-      "convergence": "Only one kind of sign is showing (ai-enabled hacking). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, deepfakes of leaders or fake official alerts and flash crash or exchange trading halt.",
+      "convergence": "Two different kinds of sign are showing together (ai-enabled hacking and cloud services). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, deepfakes of leaders or fake official alerts and flash crash or exchange trading halt.",
       "domains": [
-        "AI-enabled hacking"
+        "AI-enabled hacking",
+        "Cloud services"
       ],
       "key": "ai",
       "lit": [
         {
-          "detail": "Allegra Stratton: AI-Powered Cyber-Attack Fears Stalk Westminster",
+          "detail": "Amazon says hackers’ AI agents found and exploited 0-day with little human input",
           "domain": "AI-enabled hacking",
           "id": "aihack",
           "name": "Reports of AI-driven hacking campaigns",
           "short": "Reports of AI-driven hacking campaigns",
           "weight": 15
+        },
+        {
+          "detail": "Microsoft declares ‘code red’ for M365 service health after global outage",
+          "domain": "Cloud services",
+          "id": "cloud",
+          "name": "Major cloud or AI service outage",
+          "short": "Major cloud or AI service outage",
+          "weight": 10
         }
       ],
       "name": "AI-enabled attack (non-traditional)",
       "sa_impact": "Not bombs but disruption: hacking at machine speed across banks, telcos, hospitals and the grid at once; fake videos or alerts from leaders causing panic buying or bank runs; or automated market and fraud shocks. Effects would be outages, payment failures and confusion about what is real.",
-      "score": 15,
-      "trend": "down",
+      "score": 25,
+      "trend": "up",
       "unlit": [
         {
           "domain": "Mass exploitation",
@@ -820,12 +829,6 @@
           "domain": "Markets",
           "id": "vix",
           "name": "Market fear index jumps 25%+ in a day",
-          "weight": 10
-        },
-        {
-          "domain": "Cloud services",
-          "id": "cloud",
-          "name": "Major cloud or AI service outage",
           "weight": 10
         },
         {
