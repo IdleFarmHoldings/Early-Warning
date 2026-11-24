@@ -169,7 +169,8 @@
         "government and defence",
         "hospitals and health",
         "software and online services",
-        "phones and internet"
+        "phones and internet",
+        "flights and transport"
       ],
       "techniques": [
         "hacking a supplier to reach many victims",
@@ -276,17 +277,16 @@
   ],
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
-    "maritime": "TimeoutError: ",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-24T16:43:00Z",
+  "generated_at": "2026-11-24T16:58:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 23,
-    "Black Sea": 25,
-    "Israel & Eastern Mediterranean": 6,
-    "Korea": 0,
-    "Persian Gulf": 11,
+    "Baltic / Kaliningrad": 19,
+    "Black Sea": null,
+    "Israel & Eastern Mediterranean": 3,
+    "Korea": 6,
+    "Persian Gulf": 13,
     "South Australia": null,
     "Sydney / NSW": null,
     "Taiwan Strait": 0
@@ -296,23 +296,13 @@
       "attack_reported": true,
       "confirmed": true,
       "headlines": [
+        "Gatwick Airport customers hit by payment system data breach",
         "Bendigo Bank hit with $8M penalty over 2023 cyber attack",
-        "Bendigo Bank to pay $8m after cyberattack targeted weak passwords",
-        "When will interest rates go down in Australia? ANZ now tips the first RBA cut for June 2027"
+        "Bendigo Bank to pay $8m after cyberattack targeted weak passwords"
       ],
       "needs_confirming": false,
       "severity": "Warning",
       "target": "Banking & payments"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
-        "Retail ranks among least-insured sectors as ransomware attacks peak"
-      ],
-      "needs_confirming": false,
-      "severity": "Info",
-      "target": "Retail"
     },
     {
       "attack_reported": true,
@@ -323,6 +313,16 @@
       "needs_confirming": false,
       "severity": "Info",
       "target": "Other services"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "Retail ranks among least-insured sectors as ransomware attacks peak"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "Retail"
     },
     {
       "attack_reported": true,
@@ -353,16 +353,6 @@
       "needs_confirming": false,
       "severity": "Info",
       "target": "Hackers Exploit N-able"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": true,
-      "headlines": [
-        "Google says the first autonomous AI cyberattack has happened. Expect a lot more like it."
-      ],
-      "needs_confirming": false,
-      "severity": "Info",
-      "target": "Google"
     },
     {
       "attack_reported": true,
@@ -408,29 +398,19 @@
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
-        "AI-Powered Hackers Gain Access to 3,392 User Accounts and Decrypt 50 SSH Private Keys"
+        "Allegra Stratton: AI-Powered Cyber-Attack Fears Stalk Westminster"
       ],
       "needs_confirming": false,
       "severity": "Info",
-      "target": "AI-Powered Hackers Gain"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
-        "Hackers Steal Names and Email Addresses in AI-Powered Cyberattack on European Commission Website"
-      ],
-      "needs_confirming": false,
-      "severity": "Info",
-      "target": "Hackers Steal Names"
+      "target": "Allegra Stratton"
     },
     {
       "attack_reported": false,
       "confirmed": true,
       "headlines": [
-        "Microsoft Stock Falls 7% in a Month as 24-Hour Outage Triggers \"Code Red\"",
-        "Microsoft declares 'Code Red' after historic outage, internal memos show",
-        "Microsoft declares ‘code red’ for M365 service health after global outage"
+        "Microsoft declares ‘code red’ for M365 service health after global outage",
+        "EXCLUSIVE: Microsoft declares 'Code Red' after historic outage, internal memos show",
+        "Microsoft Outage Puts Exchange Dependencies Under the Spotlight"
       ],
       "needs_confirming": false,
       "severity": "Warning",
@@ -460,10 +440,10 @@
   "internet_drop_pct": {
     "China": 0.0,
     "Iran": 0.0,
-    "Israel": 0.5,
+    "Israel": 0.3,
     "Russia": 0.0,
     "South Korea": 0.2,
-    "Taiwan": 1.4
+    "Taiwan": 1.2
   },
   "local_sa": {
     "bom": [],
@@ -484,16 +464,16 @@
       "pump_cents": -4,
       "week_ago_aud": 137.1
     },
-    "grid_demand_fall_pct": 1.0,
-    "grid_demand_mw": 1346,
+    "grid_demand_fall_pct": 1.1,
+    "grid_demand_mw": 1345,
     "grid_demand_usual_mw": 1291,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
       "air": {
-        "aqi": 45,
+        "aqi": 44,
         "peak_pm25_48h": 9,
-        "pm25": 7
+        "pm25": 6
       },
       "air_word": "Good",
       "days": [
@@ -527,23 +507,23 @@
   "markets": {
     "AUD/USD": {
       "big_move": false,
-      "change_pct": -0.13,
-      "price": 0.6632
+      "change_pct": -0.12,
+      "price": 0.6633
     },
     "Brent oil": {
       "big_move": false,
-      "change_pct": -2.51,
-      "price": 87.13
+      "change_pct": -2.07,
+      "price": 87.52
     },
     "Gold": {
       "big_move": false,
-      "change_pct": -2.3,
-      "price": 3567.5
+      "change_pct": -2.16,
+      "price": 3572.4
     },
     "VIX": {
       "big_move": false,
-      "change_pct": 6.87,
-      "price": 28.45
+      "change_pct": 7.18,
+      "price": 28.53
     }
   },
   "national_shocks": {
@@ -554,16 +534,14 @@
     },
     "shocks": [],
     "tracking_glitch": false,
-    "traffic_not_normal": {
-      "AE": "DOWN"
-    }
+    "traffic_not_normal": {}
   },
   "nc3": "normal",
   "news_watch": {
     "ai_hack": [
-      "Google says the first autonomous AI cyberattack has happened. Expect a lot more like it. - Mashable",
       "Amazon says hackers’ AI agents found and exploited 0-day with little human input - Ars Technica",
-      "Hackers Exploit N-able MailAssure Flaw While AI Agents Exploit MONAI Label Zero-Day - The Hacker News"
+      "Hackers Exploit N-able MailAssure Flaw While AI Agents Exploit MONAI Label Zero-Day - The Hacker News",
+      "Google says the first autonomous AI cyberattack has happened. Expect a lot more like it. - Mashable"
     ],
     "airspace": [
       "Saudi Arabia seeks missile interceptors from allies amid Yemen tensions - Crypto Briefing",
@@ -586,9 +564,9 @@
       "Blood Donation in Kremenchuk on November 25 - Полтавська Хвиля | Новини Полтави"
     ],
     "cables": [
+      "DW News. . US tech giants like Meta and Google are increasingly investing in, and in some cases fully owning, submarine cable systems that form the backbone of global internet connectivity. As their influence over the internet's physical infrastructure grows, w - Facebook",
       "Closing Legal Loopholes that Endanger Subsea Cable Infrastructure - Small Wars Journal",
-      "New York Funds Brooklyn Hub for Undersea Cable Repairs - Environment+Energy Leader",
-      "DW News. . US tech giants like Meta and Google are increasingly investing in, and in some cases fully owning, submarine cable systems that form the backbone of global internet connectivity. As their influence over the internet's physical infrastructure grows, w - Facebook"
+      "New York Funds Brooklyn Hub for Undersea Cable Repairs - Environment+Energy Leader"
     ],
     "chem": [
       "OPCW Chief Opens 31st Conference of States Parties - Mirage News",
@@ -596,8 +574,8 @@
       "Abandoned chemical weapons in China: the toxic legacy of Japanese militarism - Global Times"
     ],
     "cloud": [
-      "Microsoft Outage Puts Exchange Dependencies Under the Spotlight - UC Today",
       "Outlook did lose emails during the Microsoft 365 outage - Korben",
+      "Microsoft Outage Puts Exchange Dependencies Under the Spotlight - UC Today",
       "AWS Faces Customer Backlash Over 93-Minute Delay in Outage Alert - THE ELEC, Korea Electronics Industry Media"
     ],
     "cn_signals": [
@@ -605,12 +583,12 @@
     ],
     "cyber_attrib": [
       "Bluetooth Flaws Let Hackers Control Trailer Brakes Without Authentication, CISA Warns - The 420.in",
-      "Water supply hack warning: FBI says threats are rising - Fox 59",
-      "CISA Warns of 4 Exploited Flaws Linked to Ransomware, Cryptomining, and LLMjacking Attacks - The Hacker News"
+      "Spy agency warns active Russian hackers targeting Australian industry - ABC News & Headlines – Australian Broadcasting Corporation",
+      "Australians should prepare for online services to go down unexpectedly as threats rise, cyber agency warns - The Guardian"
     ],
     "cyber_au": [
-      "Retail ranks among least-insured sectors as ransomware attacks peak - Insurance Business",
       "Is the Counter Ransomware Initiative Keeping Up With Ransomware? - Lawfare",
+      "Retail ranks among least-insured sectors as ransomware attacks peak - Insurance Business",
       "Australia's Bendigo Bank fined $5.6m over cyberattack-linked breaches (update*) - MLex"
     ],
     "cyber_ot": [
@@ -640,8 +618,8 @@
     ],
     "flash": [
       "Bitcoin Crashes to $17,000 This Weekend: Inside the Bizarre Flash Crash Mystery - BeInCrypto",
-      "Jensen Huang's First Day Back Sends Nvidia Shares Soaring 31%, Asia-Pacific Chip Stocks Rally as South Korean Market Triggers Circuit Breaker - BigGo Finance",
-      "Theriva Biologics Trading Halt Expected to Continue Until 1-for-30 Reverse Split - TradingView"
+      "Prescient Therapeutics Enters Trading Halt Ahead of PTX-100 Phase 2A Trial Update Following Dose Optimisation Committee Review - Kalkine",
+      "Jensen Huang's First Day Back Sends Nvidia Shares Soaring 31%, Asia-Pacific Chip Stocks Rally as South Korean Market Triggers Circuit Breaker - BigGo Finance"
     ],
     "fuel_au": [
       "Gas prices in Europe surge as forecast cold snap feeds supply shortage fears - The Guardian",
@@ -655,8 +633,8 @@
     ],
     "masscas": [
       "Portsmouth accident declared a mass casualty incident - WJAR",
-      "6 brought to hospital after fire tears through home in Allentown - WFMZ.com",
-      "Healthcare Security Lacks National Oversight Amid Daily Workplace Violence - Security Today"
+      "Israel Hosts Mass-Casualty Drill for 36 Countries - JFeed",
+      "Tata Motors employee’s death sparks major standoff in Jamshedpur, body remains in hospital, factory gates blocked - The Hawk"
     ],
     "medexport": [
       "Africa’s vaccine manufacturing ambition from sovereignty to sustainable resilience - Nature"
@@ -673,12 +651,12 @@
     ],
     "outage_au": [
       "Calls for 'automatic compensation' following telco outages - ABC News & Headlines – Australian Broadcasting Corporation",
-      "Microsoft ‘deeply sorry’ for global outage, rules out cyberattack and AI - Nine.com.au",
-      "The Microsoft outage is part of a growing trend. This is how to prepare for further disruption - SBS"
+      "Australia's Optus apologises for outage that disrupted emergency calls - Reuters",
+      "Telstra mobile outage disrupts services across Australia - Australian Cyber Security Magazine"
     ],
     "reservists": [
-      "Plumbers, babysitters, and dog boarding: The reimbursements reservists can claim before year’s end - The Jerusalem Post",
       "Haaretz reports 23 Israeli soldiers commit suicide, highest toll since 2010 - Egypt Independent",
+      "Plumbers, babysitters, and dog boarding: The reimbursements reservists can claim before year’s end - The Jerusalem Post",
       "Lukashenko signs decree on people’s militia drills - СБ. Беларусь сегодня"
     ],
     "sapn": [
@@ -690,6 +668,11 @@
       "Cyber security is one of the biggest risks for Australian businesses - Accountants Daily",
       "Pindrop flags surge in North Korean job application fraud - CFOtech Australia",
       "Is Digital Lending Ready for the Next Wave of Fraud? - Fintech Singapore"
+    ],
+    "shipping_attacks": [
+      "Spoofed AIS Signal Poses as Iranian Tanker as Trump Warns Ships Will Be Sunk - https://houseofsaud.com/",
+      "UKMTO says 2 tankers struck in Hormuz, as Iran says ship on fire - The New Arab",
+      "Middle East latest: Iran navy says two tankers ablaze in Strait of Hormuz - The National"
     ],
     "strikes": [
       "Iran Warns of Retaliation if US Forces Attack - ASHARQ AL-AWSAT English",
@@ -719,7 +702,7 @@
       "yes": 2.8
     },
     {
-      "d24h": -0.1,
+      "d24h": -0.2,
       "q": "US-Iran Hormuz Agreement by November 30?",
       "yes": 3.0
     },
@@ -744,9 +727,9 @@
       "yes": 2.4
     },
     {
-      "d24h": 0.0,
+      "d24h": -0.1,
       "q": "Will China invade Taiwan by June 30, 2027?",
-      "yes": 4.3
+      "yes": 4.2
     },
     {
       "d24h": 0.0,
@@ -769,9 +752,9 @@
       "yes": 2.8
     },
     {
-      "d24h": 0.0,
+      "d24h": -0.5,
       "q": "Iran-Oman Hormuz Agreement by December 31?",
-      "yes": 12.5
+      "yes": 12.0
     },
     {
       "d24h": 1.0,
@@ -784,9 +767,9 @@
       "yes": 2.5
     },
     {
-      "d24h": -0.3,
+      "d24h": 0.1,
       "q": "Ukraine agrees not to join NATO by December 31, 2026?",
-      "yes": 2.9
+      "yes": 3.0
     },
     {
       "d24h": 0.0,
@@ -814,9 +797,9 @@
       "yes": 18.0
     },
     {
-      "d24h": 0.5,
+      "d24h": -1.0,
       "q": "Will Nick Stewart attend a US x Iran diplomatic meeting by December 31, 2026?",
-      "yes": 8.5
+      "yes": 7.0
     }
   ],
   "quakes_m6_24h": [
@@ -1097,32 +1080,37 @@
       "trend": "steady"
     },
     {
-      "band": "Guarded",
-      "convergence": "Two different kinds of sign are showing together (ai-enabled hacking and cloud services). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, deepfakes of leaders or fake ",
+      "band": "Elevated",
+      "convergence": "Signs are converging across 3 separate areas (ai-enabled hacking, cloud services and markets). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: a Chinese sta",
       "domains": [
         "AI-enabled hacking",
-        "Cloud services"
+        "Cloud services",
+        "Markets"
       ],
       "key": "ai",
       "lit": [
         {
-          "detail": "Google says the first autonomous AI cyberattack has happened. Expect a lot more like it.",
+          "detail": "Amazon says hackers’ AI agents found and exploited 0-day with little human input",
           "name": "Reports of AI-driven hacking campaigns"
+        },
+        {
+          "detail": "Ukrainian Exchange resumes trading halted in 2024",
+          "name": "Flash crash or exchange trading halt"
         },
         {
           "detail": "Microsoft Blames Software Flaw, Traffic Surge and Reduced Capacity for Global Microsoft 365 Outage",
           "name": "Major cloud or AI service outage"
         }
       ],
-      "score": 25,
-      "trend": "down"
+      "score": 35,
+      "trend": "up"
     }
   ],
   "sectors_relative_5d": {
     "defence_au": 3.66,
-    "defence_eu": 2.52,
-    "defence_us": 1.8,
-    "pandemic": 0.47
+    "defence_eu": 2.46,
+    "defence_us": 1.93,
+    "pandemic": 2.04
   },
   "status_pages": [
     {
@@ -1161,7 +1149,7 @@
   "tankers": "normal",
   "telecom_drop_pct": {
     "Aussie Broadband": 0.3,
-    "Optus": 10.9,
+    "Optus": 7.9,
     "TPG": 0.2,
     "Telstra": 0.0,
     "Vodafone": 0.0
@@ -1201,7 +1189,7 @@
   },
   "watching": [
     {
-      "active": true,
+      "active": false,
       "first_seen": "2026-11-23T10:42:00Z",
       "last_seen": "2026-11-24T10:44:00Z",
       "region": "Australia and PNG",
