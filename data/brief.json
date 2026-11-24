@@ -278,17 +278,16 @@
   ],
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
-    "maritime": "TimeoutError: ",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-24T19:55:00Z",
+  "generated_at": "2026-11-24T20:10:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 51,
+    "Baltic / Kaliningrad": 49,
     "Black Sea": null,
-    "Israel & Eastern Mediterranean": 2,
+    "Israel & Eastern Mediterranean": 8,
     "Korea": 0,
-    "Persian Gulf": 6,
+    "Persian Gulf": 15,
     "South Australia": 0,
     "Sydney / NSW": 1,
     "Taiwan Strait": 2
@@ -308,6 +307,16 @@
     },
     {
       "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "Darwin-based accounting firm listed by HYFLOCK ransomware"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "Darwin-based"
+    },
+    {
+      "attack_reported": true,
       "confirmed": true,
       "headlines": [
         "UK warns AI-driven cyberattacks are exposing years of weak security",
@@ -316,16 +325,6 @@
       "needs_confirming": false,
       "severity": "Info",
       "target": "Other services"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
-        "Darwin-based accounting firm listed by HYFLOCK ransomware"
-      ],
-      "needs_confirming": false,
-      "severity": "Info",
-      "target": "Darwin-based"
     },
     {
       "attack_reported": true,
@@ -356,6 +355,16 @@
       "needs_confirming": false,
       "severity": "Info",
       "target": "Hacker"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "Cyberattack hits Peninsula Energy's Lance uranium mine in Wyoming and halts its shares"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "Cyberattack"
     },
     {
       "attack_reported": true,
@@ -401,16 +410,6 @@
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
-        "Hackers Use AI Agents to Hijack Kubernetes Clusters and Steal Sensitive Cloud Credentials"
-      ],
-      "needs_confirming": false,
-      "severity": "Info",
-      "target": "Hackers Use AI"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
         "Young Hackers Turn to AI to Automate Cyberattacks"
       ],
       "needs_confirming": false,
@@ -421,22 +420,32 @@
       "attack_reported": false,
       "confirmed": true,
       "headlines": [
-        "Microsoft M365 Outage: Company launches 'Code Red' to fix service failures after global disruption",
+        "What is Microsoft Code Red? Why Microsoft declared it after global Outlook outage",
         "Microsoft declares a 'Code Red' after its 24-hour Microsoft 365 outage, internal memos show",
         "EXCLUSIVE: Microsoft declares 'Code Red' after historic outage, internal memos show"
       ],
       "needs_confirming": false,
       "severity": "Warning",
       "target": "Microsoft"
+    },
+    {
+      "attack_reported": false,
+      "confirmed": false,
+      "headlines": [
+        "Notable Tech Outages Of 2026"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "Notable Tech Outages"
     }
   ],
   "internet_drop_pct": {
     "China": 0.0,
     "Iran": 0.4,
-    "Israel": 0.0,
+    "Israel": 0.1,
     "Russia": 0.1,
     "South Korea": 0.3,
-    "Taiwan": 0.4
+    "Taiwan": 0.8
   },
   "local_sa": {
     "bom": [],
@@ -452,19 +461,19 @@
     "fire_danger_ok": true,
     "fires_active": 8,
     "fuel": {
-      "brent_aud": 131.2,
+      "brent_aud": 131.3,
       "change_pct": -4.0,
       "pump_cents": -3,
       "week_ago_aud": 136.7
     },
-    "grid_demand_fall_pct": -2.3,
-    "grid_demand_mw": 1346,
-    "grid_demand_usual_mw": 1313,
+    "grid_demand_fall_pct": 2.1,
+    "grid_demand_mw": 1322,
+    "grid_demand_usual_mw": 1283,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
       "air": {
-        "aqi": 43,
+        "aqi": 42,
         "peak_pm25_48h": 9,
         "pm25": 4
       },
@@ -493,30 +502,30 @@
     "possible_blackout": false,
     "power_news": [],
     "road_hazards": [],
-    "rooftop_pv_mw": 0,
+    "rooftop_pv_mw": 11,
     "sawater_news": [],
     "watch_and_act": []
   },
   "markets": {
     "AUD/USD": {
       "big_move": false,
-      "change_pct": 0.02,
-      "price": 0.6642
+      "change_pct": 0.05,
+      "price": 0.6644
     },
     "Brent oil": {
       "big_move": false,
-      "change_pct": -0.87,
-      "price": 88.59
+      "change_pct": -1.07,
+      "price": 88.41
     },
     "Gold": {
       "big_move": false,
-      "change_pct": -2.56,
-      "price": 3558.0
+      "change_pct": -2.69,
+      "price": 3553.3
     },
     "VIX": {
       "big_move": false,
-      "change_pct": 0.98,
-      "price": 26.88
+      "change_pct": 2.33,
+      "price": 27.24
     }
   },
   "national_shocks": {
@@ -542,14 +551,14 @@
       "Saudi Arabia partners with South Korea, Ukraine for $3B air defense boost - Crypto Briefing"
     ],
     "aviation_halt": [
-      "Anatomy of the FAA Ground Stop: One Backbone, One Bad Change - BankInfoSecurity",
       "FAA signed off on router replacement just before ground stop, report states - Mashable",
-      "A nationwide ground stop was unusual. Air traffic control equipment failures aren’t. - KWTX"
+      "A nationwide ground stop was unusual. Air traffic control equipment failures aren’t. - KWTX",
+      "FAA Router Failure Triggers Nationwide Flight Ground Stop - cwibc.co.id"
     ],
     "bank_outage": [
       "NAB’s redundancy email debacle – where to get support and what we’re doing - Finance Sector Union",
-      "Aussie shares gain as confidence in tech trade returns - CommBank",
-      "ANZ-Roy Morgan Inflation Expectations were at 5.7% in late November – down 0.3% points from the month of October - Roy Morgan Research"
+      "ANZ-Roy Morgan Inflation Expectations were at 5.7% in late November – down 0.3% points from the month of October - Roy Morgan Research",
+      "Aussie shares gain as confidence in tech trade returns - CommBank"
     ],
     "blood": [
       "Prevent fires, travel smart, and be ready to save a life | Daily Gate City - Keokuk, Iowa - Daily Gate City",
@@ -575,8 +584,8 @@
       "France is moving to establish a strategic stockpile of rare earth minerals - المتداول العربي"
     ],
     "cyber_attrib": [
-      "Bluetooth Flaws Let Hackers Control Trailer Brakes Without Authentication, CISA Warns - The 420.in",
       "Spy agency warns active Russian hackers targeting Australian industry - ABC News & Headlines – Australian Broadcasting Corporation",
+      "Bluetooth Flaws Let Hackers Control Trailer Brakes Without Authentication, CISA Warns - The 420.in",
       "Australians should prepare for online services to go down unexpectedly as threats rise, cyber agency warns - The Guardian"
     ],
     "cyber_au": [
@@ -597,7 +606,7 @@
     "cyber_supply": [
       "VMware vCenter Hit by Another Critical 9.8-Rated Auth Bypass Flaw After Zero-Day Exploitation - The Hacker News",
       "Microsoft patches actively exploited vulnerability in Azure API Management - Techzine Global",
-      "Hackers Exploit N-able MailAssure Flaw While AI Agents Exploit MONAI Label Zero-Day - The Hacker News"
+      "Amazon says AI agents found and exploited a zero-day with almost no human help - Crypto Briefing"
     ],
     "deepfake": [
       "AI-generated fake news, death notices target Belgium as minister seeks EU-level response - Anadolu Ajansı",
@@ -610,8 +619,8 @@
       "Minister orders urgent probe after mass fish deaths reported at Kilinochchi Tank - Newswire"
     ],
     "flash": [
-      "The Anatomy of 2 Flash Crashes and what caused the Flash Crash for AMEX:SPY by MarthaStokesCMT-TechniTrader - TradingView",
       "Bitcoin Crashes to $17,000 This Weekend: Inside the Bizarre Flash Crash Mystery - BeInCrypto",
+      "Prescient Therapeutics Enters Trading Halt Ahead of PTX-100 Phase 2A Trial Update Following Dose Optimisation Committee Review - Kalkine",
       "Jensen Huang's First Day Back Sends Nvidia Shares Soaring 31%, Asia-Pacific Chip Stocks Rally as South Korean Market Triggers Circuit Breaker - BigGo Finance"
     ],
     "fuel_au": [
@@ -644,8 +653,8 @@
     ],
     "outage_au": [
       "Calls for 'automatic compensation' following telco outages - ABC News & Headlines – Australian Broadcasting Corporation",
-      "Australia's Optus apologises for outage that disrupted emergency calls - Reuters",
-      "Telstra mobile outage disrupts services across Australia - Australian Cyber Security Magazine"
+      "Microsoft ‘deeply sorry’ for global outage, rules out cyberattack and AI - Nine.com.au",
+      "The Microsoft outage is part of a growing trend. This is how to prepare for further disruption - SBS"
     ],
     "reservists": [
       "Plumbers, babysitters, and dog boarding: The reimbursements reservists can claim before year’s end - The Jerusalem Post",
@@ -685,14 +694,14 @@
       "yes": 2.6
     },
     {
-      "d24h": 0.5,
+      "d24h": 2.0,
       "q": "NATO x Russia military clash by December 31, 2026?",
       "yes": 15.5
     },
     {
-      "d24h": -0.4,
+      "d24h": -0.5,
       "q": "China x Taiwan military clash before 2027?",
-      "yes": 2.8
+      "yes": 2.7
     },
     {
       "d24h": -0.2,
@@ -710,7 +719,7 @@
       "yes": 12.5
     },
     {
-      "d24h": -0.6,
+      "d24h": -0.7,
       "q": "US-Iran Final Nuclear Deal by November 30, 2026?",
       "yes": 0.8
     },
@@ -740,7 +749,7 @@
       "yes": 1.6
     },
     {
-      "d24h": 0.9,
+      "d24h": 0.8,
       "q": "Iran-Oman Hormuz Agreement by November 30?",
       "yes": 2.7
     },
@@ -755,14 +764,14 @@
       "yes": 7.5
     },
     {
-      "d24h": 0.3,
+      "d24h": 0.0,
       "q": "NATO x Russia military clash by November 30, 2026?",
-      "yes": 2.8
+      "yes": 2.5
     },
     {
-      "d24h": 0.1,
+      "d24h": 0.0,
       "q": "Ukraine agrees not to join NATO by December 31, 2026?",
-      "yes": 3.0
+      "yes": 2.9
     },
     {
       "d24h": 0.8,
@@ -770,7 +779,7 @@
       "yes": 3.8
     },
     {
-      "d24h": -3.0,
+      "d24h": -2.6,
       "q": "Will Russia test a nuclear weapon by December 31 2026?",
       "yes": 2.3
     },
@@ -1073,37 +1082,27 @@
       "trend": "steady"
     },
     {
-      "band": "Elevated",
-      "convergence": "Signs are converging across 3 separate areas (ai-enabled hacking, cloud services and markets). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: a Chinese sta",
+      "band": "Guarded",
+      "convergence": "Only one kind of sign is showing (ai-enabled hacking). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, deepfakes of leaders or fake official alerts and flash crash or exchange trading hal",
       "domains": [
-        "AI-enabled hacking",
-        "Cloud services",
-        "Markets"
+        "AI-enabled hacking"
       ],
       "key": "ai",
       "lit": [
         {
           "detail": "Google says the first autonomous AI cyberattack has happened. Expect a lot more like it.",
           "name": "Reports of AI-driven hacking campaigns"
-        },
-        {
-          "detail": "Kraken's BTC/CAD market flash crash caused by l...",
-          "name": "Flash crash or exchange trading halt"
-        },
-        {
-          "detail": "Microsoft M365 Outage: Company launches 'Code Red' to fix service failures after global disruption",
-          "name": "Major cloud or AI service outage"
         }
       ],
-      "score": 35,
-      "trend": "up"
+      "score": 15,
+      "trend": "down"
     }
   ],
   "sectors_relative_5d": {
     "defence_au": 4.83,
     "defence_eu": 2.46,
-    "defence_us": 1.74,
-    "pandemic": 3.65
+    "defence_us": 1.94,
+    "pandemic": 2.76
   },
   "status_pages": [
     {
@@ -1141,11 +1140,11 @@
   ],
   "tankers": "normal",
   "telecom_drop_pct": {
-    "Aussie Broadband": 0.0,
-    "Optus": 3.0,
-    "TPG": 0.4,
+    "Aussie Broadband": 0.1,
+    "Optus": 1.0,
+    "TPG": 0.1,
     "Telstra": 0.0,
-    "Vodafone": 0.0
+    "Vodafone": 4.8
   },
   "us_departure_orders": [
     "Belarus"
