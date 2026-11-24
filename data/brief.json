@@ -1,13 +1,7 @@
 {
   "about": "Short form of latest.json + indicators.json for the analysis run. Links and raw samples removed.",
   "acsc": [],
-  "aircraft_flags": {
-    "gps_gulf": {
-      "median": 9,
-      "status": "ANOMALY",
-      "value": 32
-    }
-  },
+  "aircraft_flags": {},
   "analyst": {
     "ASPI Strategist": [
       "Australia’s overlooked metals resource: scrap",
@@ -282,20 +276,19 @@
   ],
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
-    "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output=",
-    "sectors": "RuntimeError: APT: HTTPError; LAKE: HTTPError; MRNA: HTTPError"
+    "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-24T04:57:00Z",
+  "generated_at": "2026-11-24T05:12:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 59,
+    "Baltic / Kaliningrad": 63,
     "Black Sea": null,
-    "Israel & Eastern Mediterranean": 0,
-    "Korea": 1,
-    "Persian Gulf": 32,
-    "South Australia": 3,
+    "Israel & Eastern Mediterranean": 6,
+    "Korea": 0,
+    "Persian Gulf": 6,
+    "South Australia": 2,
     "Sydney / NSW": 0,
-    "Taiwan Strait": 1
+    "Taiwan Strait": 2
   },
   "incidents": [
     {
@@ -318,21 +311,21 @@
     },
     {
       "attack_reported": true,
-      "confirmed": true,
-      "headlines": [
-        "Google says the first autonomous AI cyberattack has happened. Expect a lot more like it."
-      ],
-      "severity": "Info",
-      "target": "Google"
-    },
-    {
-      "attack_reported": true,
       "confirmed": false,
       "headlines": [
         "European Commission issues alert to EU Academy users after AI-driven cyberattack causes data leak"
       ],
       "severity": "Info",
       "target": "European Commission"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": true,
+      "headlines": [
+        "Google says the first autonomous AI cyberattack has happened. Expect a lot more like it."
+      ],
+      "severity": "Info",
+      "target": "Google"
     },
     {
       "attack_reported": true,
@@ -374,28 +367,30 @@
     },
     {
       "attack_reported": false,
+      "confirmed": true,
+      "headlines": [
+        "Microsoft's Outlook outage didn't take long to become phishing bait",
+        "Microsoft’s Outage Report: Bounced Emails and Silent Security Failures",
+        "Japan’s Furukawa details requests after Microsoft 365 outage"
+      ],
+      "severity": "Warning",
+      "target": "Microsoft"
+    },
+    {
+      "attack_reported": false,
       "confirmed": false,
       "headlines": [
         "AWS Faces Customer Backlash Over 93-Minute Delay in Outage Alert"
       ],
       "severity": "Info",
       "target": "Amazon Web Services"
-    },
-    {
-      "attack_reported": false,
-      "confirmed": false,
-      "headlines": [
-        "Japan’s Furukawa details requests after Microsoft 365 outage"
-      ],
-      "severity": "Info",
-      "target": "Microsoft"
     }
   ],
   "internet_drop_pct": {
     "China": 1.5,
     "Iran": 0.0,
-    "Israel": 0.2,
-    "Russia": 0.1,
+    "Israel": 0.0,
+    "Russia": 0.0,
     "South Korea": 0.0,
     "Taiwan": 0.0
   },
@@ -418,9 +413,9 @@
       "pump_cents": -4,
       "week_ago_aud": 137.9
     },
-    "grid_demand_fall_pct": -6.9,
-    "grid_demand_mw": 221,
-    "grid_demand_usual_mw": 406,
+    "grid_demand_fall_pct": 21.0,
+    "grid_demand_mw": 175,
+    "grid_demand_usual_mw": 432,
     "grid_lor_level": 0,
     "nearby_incidents": [
       {
@@ -471,22 +466,22 @@
       "Morgan Vale Road, Pine Valley Station: MORGAN MAIL RD Closed due to flooding over road",
       "Pine Valley Road, Pine Valley Station: PINE VALLEY RD Closed due to flooding over road"
     ],
-    "rooftop_pv_mw": 2423,
+    "rooftop_pv_mw": 2299,
     "sawater_news": [],
     "watch_and_act": []
   },
   "markets": {
     "AUD/USD": {
-      "change_pct": -0.18,
-      "price": 0.6629
+      "change_pct": -0.12,
+      "price": 0.6633
     },
     "Brent oil": {
-      "change_pct": -3.6,
-      "price": 86.15
+      "change_pct": -3.64,
+      "price": 86.12
     },
     "Gold": {
-      "change_pct": -0.44,
-      "price": 3635.4
+      "change_pct": -0.36,
+      "price": 3638.2
     },
     "VIX": {
       "change_pct": -25.83,
@@ -506,8 +501,8 @@
   "nc3": "normal",
   "news_watch": {
     "ai_hack": [
-      "Google says the first autonomous AI cyberattack has happened. Expect a lot more like it. - Mashable",
       "European Commission issues alert to EU Academy users after AI-driven cyberattack causes data leak - European Interest",
+      "Google says the first autonomous AI cyberattack has happened. Expect a lot more like it. - Mashable",
       "China-linked hackers' AI agents found a zero-day in 11 minutes, Amazon says - Dealroom"
     ],
     "airspace": [
@@ -518,12 +513,12 @@
     "aviation_halt": [
       "L3Harris Router, 400 Fired Engineers and the 4-Hour Ground Stop: Aviation Writer Darryl Campbell on What Really Took Down US Airspace - BigGo Finance",
       "Aviation groups urge at least $30 billion boost for FAA modernization - Reuters",
-      "How Elon Musk’s DOGE cuts set up the FAA ground stop - The Verge"
+      "Catch Me Up: How the ground stop unfolded, and a huge launch for 'GTA IV' - Scripps News"
     ],
     "bank_outage": [
       "ANZ expects next rate cut to come in June 2027 - Australian Broker News",
-      "ANZ bank forecasts interest rate cut for June 2027 - Nine.com.au",
-      "Consumer confidence steady - ANZ"
+      "Australian shares sink for eighth straight session - CommBank",
+      "Ransomware group reportedly leaks Chase, Visa, and Mastercard customer data, but not credit card numbers - Mashable"
     ],
     "blood": [
       "Upstate military sergeant reaches milestone blood donation - Spectrum Noticias",
@@ -542,18 +537,18 @@
     ],
     "cloud": [
       "AWS Faces Customer Backlash Over 93-Minute Delay in Outage Alert - THE ELEC, Korea Electronics Industry Media",
-      "Japan’s Furukawa details requests after Microsoft 365 outage - NeoTeo",
-      "Why Did Anthropic’s Shares Drop 8.5% After Record IPO? - Disruption Banking"
+      "Microsoft Outage Review Finds Gaps in Server Testing - The Defiant",
+      "Japan’s Furukawa details requests after Microsoft 365 outage - NeoTeo"
     ],
     "cyber_attrib": [
       "FBI warns AI hackers can breach systems in under 3 hours - Fox News",
-      "FBI Warns Hackers Target U.S. Water Supply Systems - 100.7 WZLX - Boston's Classic Rock",
+      "FBI Warns Hackers Target U.S. Water Supply Systems - Sunny 106.5",
       "CISA Warns Hackers Are Actively Exploiting Cisco, VMware, SAP, and Apache Vulnerabilities - GBHackers News"
     ],
     "cyber_au": [
-      "Why security automation is critical to closing Australia's cyber skills gap - SecurityBrief Australia",
       "Exclusive: Darwin-based accountancy firm listed by Hyflock ransomware - Cyber Daily",
-      "Cyber security is one of the biggest risks for Australian businesses - Accountants Daily"
+      "BlackFog reports record third-quarter ransomware attacks - SecurityBrief Australia",
+      "Aussie camping retailer hit by cyber attack - The Australian"
     ],
     "cyber_ot": [
       "UK operation wards off risk of cyber-attack on supermarket fridges and freezers - The Guardian",
@@ -568,7 +563,7 @@
     "cyber_supply": [
       "Cisco Expressway Zero-Day Exploited in the Wild as CISA Sets Monday Patch Deadline - BigGo Finance",
       "CISA flags critical Cisco RCE flaw as actively exploited in attacks - BleepingComputer",
-      "VMware vCenter Zero-Day Exploited, Entra Connect Health Flaw Disclosed, and ONCD Leadership Shift + Video - Howl.Link"
+      "F5 patches critical vulnerabilities in BIG-IP once again - Techzine Global"
     ],
     "deepfake": [
       "Trump Posts Bizarre AI Meme of Jensen Huang Holding Up Bra Riffing Off Assassination Attempt - Variety",
@@ -580,9 +575,9 @@
       "Thriller 'Fagin’s Boys' by author Bruce Harris - Female First"
     ],
     "flash": [
-      "Bitcoin Crashes to $17,000 This Weekend: Inside the Bizarre Flash Crash Mystery - BeInCrypto",
-      "Nasdaq futures tripped a circuit breaker built for market crashes as Jensen Huang returned to Nvidia - Yahoo Finance",
-      "\"Jensen Huang Returns\" — Buy Sidecar (Futures Market Circuit Breaker) Triggered Right After the Open… \"Semiconductors and AI Infrastructure to Rebound\" - 머니투데이"
+      "Nasdaq DM Ex US Energy NTR Inde (^NQDMXUS60N) charts, data and news - Yahoo Finance Australia",
+      "Jensen Huang's First Day Back Sends Nvidia Shares Soaring 31%, Asia-Pacific Chip Stocks Rally as South Korean Market Triggers Circuit Breaker - BigGo Finance",
+      "Bitcoin Crashes to $17,000 This Weekend: Inside the Bizarre Flash Crash Mystery - BeInCrypto"
     ],
     "fuel_au": [
       "Gas prices in Europe surge as forecast cold snap feeds supply shortage fears - The Guardian",
@@ -592,7 +587,7 @@
     "illness": [
       "Dr. Siegel on measles comeback, mystery illness outbreak on cruise ship - Fox News",
       "Mystery illness causes mass hospitalisation of runners - The Nightly",
-      "Zayn Malik hospitalised with mystery illness, forced to cancel upcoming appearances on album release week - Nine.com.au"
+      "148 aboard Florida-bound cruise ship sickened by ‘unknown’ GI outbreak: CDC - The Hill"
     ],
     "masscas": [
       "Berlin hospital fire injures more than a dozen as police suspect patient set bed alight - Brussels Signal",
@@ -656,9 +651,9 @@
       "yes": 3.8
     },
     {
-      "d24h": 2.5,
+      "d24h": 3.5,
       "q": "NATO x Russia military clash by December 31, 2026?",
-      "yes": 14.5
+      "yes": 15.5
     },
     {
       "d24h": -0.2,
@@ -668,7 +663,7 @@
     {
       "d24h": -0.5,
       "q": "US-Iran Hormuz Agreement by November 30?",
-      "yes": 3.0
+      "yes": 3.1
     },
     {
       "d24h": 0.3,
@@ -676,14 +671,14 @@
       "yes": 1.8
     },
     {
-      "d24h": -2.5,
+      "d24h": -2.0,
       "q": "US-Iran Hormuz Agreement by December 31?",
-      "yes": 12.5
+      "yes": 13.0
     },
     {
-      "d24h": 0.1,
+      "d24h": 0.2,
       "q": "US-Iran Final Nuclear Deal by November 30, 2026?",
-      "yes": 1.1
+      "yes": 1.2
     },
     {
       "d24h": 0.3,
@@ -716,7 +711,7 @@
       "yes": 1.9
     },
     {
-      "d24h": -2.0,
+      "d24h": -1.5,
       "q": "Iran-Oman Hormuz Agreement by December 31?",
       "yes": 13.0
     },
@@ -746,7 +741,7 @@
       "yes": 4.9
     },
     {
-      "d24h": -1.0,
+      "d24h": 0.0,
       "q": "Will Russia invade another country by December 31, 2027?",
       "yes": 14.5
     },
@@ -756,7 +751,7 @@
       "yes": 2.9
     },
     {
-      "d24h": -0.5,
+      "d24h": 0.0,
       "q": "Ukraine agrees not to join NATO by December 31, 2027?",
       "yes": 18.0
     },
@@ -972,24 +967,19 @@
     },
     {
       "band": "Guarded",
-      "convergence": "Two different kinds of sign are showing together (electronic warfare and shipping). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet bl",
+      "convergence": "Only one kind of sign is showing (shipping). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
       "domains": [
-        "Electronic warfare",
         "Shipping"
       ],
       "key": "mideast",
       "lit": [
         {
-          "detail": "gps_gulf 32 vs usual 9",
-          "name": "GPS jamming spike (Gulf / Israel)"
-        },
-        {
           "detail": "Strait of Hormuz -38% vs usual (2.3/day)",
           "name": "Ship traffic through Hormuz down sharply"
         }
       ],
-      "score": 25,
-      "trend": "up"
+      "score": 15,
+      "trend": "down"
     },
     {
       "band": "Low",
@@ -1078,11 +1068,11 @@
       "key": "ai",
       "lit": [
         {
-          "detail": "Google says the first autonomous AI cyberattack has happened. Expect a lot more like it.",
+          "detail": "European Commission issues alert to EU Academy users after AI-driven cyberattack causes data leak",
           "name": "Reports of AI-driven hacking campaigns"
         },
         {
-          "detail": "Nasdaq futures tripped a circuit breaker built for market crashes as Jensen Huang returned to Nvidia",
+          "detail": "Ukrainian Exchange resumes trading halted in 2024",
           "name": "Flash crash or exchange trading halt"
         },
         {
@@ -1098,7 +1088,12 @@
       "trend": "steady"
     }
   ],
-  "sectors_relative_5d": {},
+  "sectors_relative_5d": {
+    "defence_au": 1.94,
+    "defence_eu": -0.7,
+    "defence_us": 0.08,
+    "pandemic": -0.59
+  },
   "status_pages": [
     {
       "au": false,
@@ -1120,10 +1115,10 @@
   "tankers": "normal",
   "telecom_drop_pct": {
     "Aussie Broadband": 0.1,
-    "Optus": 5.9,
-    "TPG": 0.4,
+    "Optus": 0.0,
+    "TPG": 0.3,
     "Telstra": 0.3,
-    "Vodafone": 4.8
+    "Vodafone": 0.0
   },
   "us_departure_orders": [
     "Belarus"
