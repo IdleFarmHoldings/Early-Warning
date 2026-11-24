@@ -276,16 +276,17 @@
   ],
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
+    "maritime": "TimeoutError: ",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-24T02:37:00Z",
+  "generated_at": "2026-11-24T02:43:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": null,
-    "Black Sea": 19,
-    "Israel & Eastern Mediterranean": 11,
-    "Korea": 1,
-    "Persian Gulf": 8,
+    "Baltic / Kaliningrad": 93,
+    "Black Sea": 35,
+    "Israel & Eastern Mediterranean": 7,
+    "Korea": 2,
+    "Persian Gulf": 11,
     "South Australia": 5,
     "Sydney / NSW": 1,
     "Taiwan Strait": 0
@@ -308,6 +309,15 @@
       ],
       "severity": "Info",
       "target": "Cyberattack"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "America's Biggest Oil Export Port Faces Thousands of Cyberattack Attempts"
+      ],
+      "severity": "Info",
+      "target": "America's Biggest Oil"
     },
     {
       "attack_reported": true,
@@ -387,8 +397,8 @@
       "attack_reported": false,
       "confirmed": true,
       "headlines": [
-        "Microsoft's Outlook outage didn't take long to become phishing bait",
         "Japan’s Furukawa details requests after Microsoft 365 outage",
+        "Microsoft Outage Report Details Testing Gaps and Lost Emails",
         "Microsoft mega outage: Report reveals testing gaps and emails that never arrived"
       ],
       "severity": "Warning",
@@ -405,9 +415,9 @@
     }
   ],
   "internet_drop_pct": {
-    "China": 0.7,
+    "China": 0.9,
     "Iran": 0.7,
-    "Israel": 0.1,
+    "Israel": 0.0,
     "Russia": 0.0,
     "South Korea": 0.0,
     "Taiwan": 0.0
@@ -424,15 +434,15 @@
       "Mount Lofty Ranges": "Moderate / Moderate"
     },
     "fire_danger_ok": true,
-    "fires_active": 10,
+    "fires_active": 11,
     "fuel": {
       "brent_aud": 130.8,
       "change_pct": -5.2,
       "pump_cents": -5,
       "week_ago_aud": 138.0
     },
-    "grid_demand_fall_pct": 95.5,
-    "grid_demand_mw": 7,
+    "grid_demand_fall_pct": 99.9,
+    "grid_demand_mw": 0,
     "grid_demand_usual_mw": 172,
     "grid_lor_level": 0,
     "nearby_incidents": [],
@@ -443,7 +453,26 @@
         "pm25": 8
       },
       "air_word": "Good",
-      "days": []
+      "days": [
+        {
+          "date": "2026-11-24",
+          "gust": 34,
+          "rain": 0,
+          "tmax": 21
+        },
+        {
+          "date": "2026-11-25",
+          "gust": 45,
+          "rain": 0,
+          "tmax": 28
+        },
+        {
+          "date": "2026-11-26",
+          "gust": 42,
+          "rain": 0,
+          "tmax": 30
+        }
+      ]
     },
     "possible_blackout": false,
     "power_news": [],
@@ -461,16 +490,16 @@
   },
   "markets": {
     "AUD/USD": {
-      "change_pct": -0.16,
-      "price": 0.663
+      "change_pct": -0.18,
+      "price": 0.6629
     },
     "Brent oil": {
-      "change_pct": -3.4,
-      "price": 86.33
+      "change_pct": -3.45,
+      "price": 86.29
     },
     "Gold": {
-      "change_pct": 0.07,
-      "price": 3654.1
+      "change_pct": -0.06,
+      "price": 3649.3
     },
     "VIX": {
       "change_pct": -25.83,
@@ -502,12 +531,12 @@
     "aviation_halt": [
       "L3Harris Router, 400 Fired Engineers and the 4-Hour Ground Stop: Aviation Writer Darryl Campbell on What Really Took Down US Airspace - BigGo Finance",
       "Aviation groups urge at least $30 billion boost for FAA modernization - Reuters",
-      "How Elon Musk’s DOGE cuts set up the FAA ground stop - The Verge"
+      "Catch Me Up: How the ground stop unfolded, and a huge launch for 'GTA IV' - Scripps News"
     ],
     "bank_outage": [
       "ANZ expects next rate cut to come in June - Australian Broker News",
-      "ANZ bank forecasts interest rate cut for June 2027 - Nine.com.au",
-      "Consumer confidence steady - ANZ"
+      "Australian shares sink for eighth straight session - CommBank",
+      "Ransomware group reportedly leaks Chase, Visa, and Mastercard customer data, but not credit card numbers - Mashable"
     ],
     "blood": [
       "Upstate military sergeant reaches milestone blood donation - Spectrum News",
@@ -535,9 +564,9 @@
       "CISA Warns Hackers Are Actively Exploiting Cisco, VMware, SAP, and Apache Vulnerabilities - GBHackers News"
     ],
     "cyber_au": [
-      "Cyber security is one of the biggest risks for Australian businesses - Accountants Daily",
       "Exclusive: Darwin-based accountancy firm listed by Hyflock ransomware - Cyber Daily",
-      "BlackFog reports record third-quarter ransomware attacks - SecurityBrief Australia"
+      "BlackFog reports record third-quarter ransomware attacks - SecurityBrief Australia",
+      "Aussie camping retailer hit by cyber attack - The Australian"
     ],
     "cyber_ot": [
       "UK operation wards off risk of cyber-attack on supermarket fridges and freezers - The Guardian",
@@ -565,13 +594,13 @@
     ],
     "flash": [
       "Nasdaq futures tripped a circuit breaker built for market crashes as Jensen Huang returned to Nvidia - Yahoo Finance",
-      "Metasphere Labs Inc. (LABZ) Trading Halted Pending Fundamental Change Review - TradingView",
-      "South Korea's KOSPI Reclaims 5,000 Intraday on AI Rally, Triggers Buy-Side Circuit Breaker - BigGo Finance"
+      "Bitcoin Crashes to $17,000 This Weekend: Inside the Bizarre Flash Crash Mystery - BeInCrypto",
+      "Metasphere Labs Inc. (LABZ) Trading Halted Pending Fundamental Change Review - TradingView"
     ],
     "fuel_au": [
+      "Gas prices in Europe surge as forecast cold snap feeds supply shortage fears - The Guardian",
       "Australia's rental crisis spreads beyond capital cities as affordability hits new lows - Proactive Investors Australia",
-      "Getting skilled technicians into workshops - bigrigs.com.au",
-      "Chinese SUV barred from European sale following intellectual property lawsuit - Chasing Cars"
+      "Getting skilled technicians into workshops - bigrigs.com.au"
     ],
     "illness": [
       "Dr. Siegel on measles comeback, mystery illness outbreak on cruise ship - Fox News",
@@ -595,8 +624,8 @@
     ],
     "national_outage": [
       "Cuba’s National Electric Grid Collapses, Reason Unknown - EnergyNow.com",
-      "Tyson Fury, former boxing champ, reveals schizophrenia diagnosis - Yahoo Sports",
-      "Fallout from ICE arrests at Sea-Tac that sparked nationwide outage - KIRO 7 News Seattle"
+      "Fallout from ICE arrests at Sea-Tac that sparked nationwide outage - KIRO 7 News Seattle",
+      "Fallout from ICE arrests at Sea-Tac that sparked nationwide outage - Yahoo"
     ],
     "outage_au": [
       "Calls for 'automatic compensation' following telco outages - ABC News & Headlines – Australian Broadcasting Corporation",
@@ -620,8 +649,8 @@
     ],
     "shipping_attacks": [
       "Iranian attacks on ships near Strait of Hormuz hit highest level since war began, data shows - The Jerusalem Post",
-      "IRGC Claims 2 Supertankers Hit Mines in Hormuz, Iran Toll Reaches 6 in 4 Days - https://houseofsaud.com/",
-      "UKMTO says 2 tankers struck in Hormuz, as Iran says ship on fire - The New Arab"
+      "UKMTO says 2 tankers struck in Hormuz, as Iran says ship on fire - The New Arab",
+      "IRGC Claims 2 Supertankers Hit Mines in Hormuz, Iran Toll Reaches 6 in 4 Days - https://houseofsaud.com/"
     ],
     "strikes": [
       "Iran Warns of Retaliation if US Forces Attack - ASHARQ AL-AWSAT English",
@@ -736,7 +765,7 @@
       "yes": 2.9
     },
     {
-      "d24h": 0.0,
+      "d24h": -0.5,
       "q": "Ukraine agrees not to join NATO by December 31, 2027?",
       "yes": 18.0
     },
@@ -746,18 +775,7 @@
       "yes": 8.0
     }
   ],
-  "quakes_m6_24h": [
-    {
-      "id": "us6000ucvm",
-      "lat": -13.5846,
-      "lon": 172.2672,
-      "mag": 6.5,
-      "place": "Vanuatu region",
-      "time": 1795401658052,
-      "tsunami": true,
-      "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ucvm"
-    }
-  ],
+  "quakes_m6_24h": [],
   "recent_alerts": [
     {
       "at": "2026-11-24T00:53:00Z",
@@ -1090,7 +1108,7 @@
     }
   ],
   "sectors_relative_5d": {
-    "defence_au": 3.4,
+    "defence_au": 3.43,
     "defence_eu": -0.7,
     "defence_us": 0.08,
     "pandemic": -0.59
@@ -1115,10 +1133,10 @@
   ],
   "tankers": "normal",
   "telecom_drop_pct": {
-    "Aussie Broadband": 0.4,
+    "Aussie Broadband": 0.6,
     "Optus": 0.0,
-    "TPG": 0.0,
-    "Telstra": 0.6,
+    "TPG": 0.1,
+    "Telstra": 0.3,
     "Vodafone": 0.0
   },
   "us_departure_orders": [
