@@ -1,28 +1,17 @@
 {
-  "generated_at": "2026-11-24T13:19:00Z",
+  "generated_at": "2026-11-24T13:34:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
       "band": "Low",
-      "convergence": "Only one kind of sign is showing (roads). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: cfs emergency warning in sa, sudden fall in sa electricity demand (possible large blackout) and extreme or catastrophic fire danger near adelaide.",
-      "domains": [
-        "Roads"
-      ],
+      "convergence": "No warning signs are showing. The strongest signs not yet showing: cfs emergency warning in sa, sudden fall in sa electricity demand (possible large blackout) and extreme or catastrophic fire danger near adelaide.",
+      "domains": [],
       "key": "local",
-      "lit": [
-        {
-          "detail": "Morgan Mail Road, Quondong: MORGAN MAIL RD Closed due to flooding over road; Morgan Vale Road, Danggali: MORGAN MAIL RD Closed due to flooding over road",
-          "domain": "Roads",
-          "id": "roads",
-          "name": "Fire, flood or storm road closures in SA",
-          "short": "Fire, flood or storm road closures in SA",
-          "weight": 10
-        }
-      ],
+      "lit": [],
       "name": "Local emergency in SA (bushfire, heat, power)",
       "sa_impact": "Direct: bushfires, heatwaves and power cuts are the emergencies most likely to affect the family. In the 2016 statewide blackout, power, phones, traffic lights and fuel pumps failed together.",
-      "score": 10,
-      "trend": "steady",
+      "score": 0,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Bushfire",
@@ -64,6 +53,12 @@
           "domain": "Communications",
           "id": "tel",
           "name": "Phone / internet carrier outage",
+          "weight": 10
+        },
+        {
+          "domain": "Roads",
+          "id": "roads",
+          "name": "Fire, flood or storm road closures in SA",
           "weight": 10
         },
         {
@@ -377,14 +372,25 @@
     },
     {
       "band": "Low",
-      "convergence": "No warning signs are showing. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and mobilisation / reservist reports (russia / nato).",
-      "domains": [],
+      "convergence": "Only one kind of sign is showing (markets). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and mobilisation / reservist reports (russia / nato).",
+      "domains": [
+        "Markets"
+      ],
       "key": "russia",
-      "lit": [],
+      "lit": [
+        {
+          "detail": "VIX at 30.1",
+          "domain": "Markets",
+          "id": "vix",
+          "name": "Market fear index above 30",
+          "short": "Market fear index above 30",
+          "weight": 10
+        }
+      ],
       "name": "Russia-NATO escalation",
       "sa_impact": "Indirect: energy and market shock, cyber attacks that can spill over to Australian systems, and nuclear-risk rhetoric.",
-      "score": 0,
-      "trend": "steady",
+      "score": 10,
+      "trend": "up",
       "unlit": [
         {
           "domain": "Electronic warfare",
@@ -426,12 +432,6 @@
           "domain": "Elite movement",
           "id": "jets",
           "name": "Private jets heading to retreat destinations",
-          "weight": 10
-        },
-        {
-          "domain": "Markets",
-          "id": "vix",
-          "name": "Market fear index above 30",
           "weight": 10
         },
         {
@@ -705,7 +705,7 @@
       "key": "cyber",
       "lit": [
         {
-          "detail": "Australia's APRA Secures A$8 Million Penalty Against Bendigo And Adelaide Bank Over Cyber Incident",
+          "detail": "Australia's Bendigo Bank fined $5.6m over cyberattack-linked breaches (update*)",
           "domain": "Australian incidents",
           "id": "au",
           "name": "Major Australian cyber incident reported",

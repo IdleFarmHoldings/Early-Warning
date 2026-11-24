@@ -105,7 +105,7 @@
         "2026-11-23 United States: Artificial intelligence flourished in California election advertising — and divided voters (same pattern)",
         "2026-11-23 United States: Visa launches upgraded CLI agent wallet for US users to verify AI agents (same pattern)"
       ],
-      "incidents_7d": 40,
+      "incidents_7d": 41,
       "official_warning": true,
       "score": 100,
       "sectors": [
@@ -226,13 +226,13 @@
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-24T13:19:00Z",
+  "generated_at": "2026-11-24T13:34:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 24,
-    "Black Sea": 19,
-    "Israel & Eastern Mediterranean": 5,
+    "Baltic / Kaliningrad": 26,
+    "Black Sea": 33,
+    "Israel & Eastern Mediterranean": 2,
     "Korea": 0,
-    "Persian Gulf": 1,
+    "Persian Gulf": 8,
     "South Australia": null,
     "Sydney / NSW": null,
     "Taiwan Strait": 0
@@ -339,6 +339,16 @@
       "target": "AI-Powered Hackers Gain"
     },
     {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "Hackers Steal Names and Email Addresses in AI-Powered Cyberattack on European Commission Website"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "Hackers Steal Names"
+    },
+    {
       "attack_reported": false,
       "confirmed": true,
       "headlines": [
@@ -394,9 +404,9 @@
   ],
   "internet_drop_pct": {
     "China": 1.8,
-    "Iran": 0.6,
+    "Iran": 0.0,
     "Israel": 0.0,
-    "Russia": 0.1,
+    "Russia": 0.0,
     "South Korea": 0.0,
     "Taiwan": 0.1
   },
@@ -409,18 +419,18 @@
     "fire_ban_districts": [],
     "fire_danger": {
       "Adelaide Metropolitan": "No Rating / No Rating",
-      "Mount Lofty Ranges": "Moderate / High"
+      "Mount Lofty Ranges": "High / High"
     },
     "fire_danger_ok": true,
     "fires_active": 9,
     "fuel": {
-      "brent_aud": 130.3,
-      "change_pct": -5.3,
+      "brent_aud": 130.4,
+      "change_pct": -5.2,
       "pump_cents": -5,
       "week_ago_aud": 137.5
     },
-    "grid_demand_fall_pct": 3.7,
-    "grid_demand_mw": 1313,
+    "grid_demand_fall_pct": -4.0,
+    "grid_demand_mw": 1388,
     "grid_demand_usual_mw": 1331,
     "grid_lor_level": 0,
     "nearby_incidents": [],
@@ -454,14 +464,7 @@
     },
     "possible_blackout": false,
     "power_news": [],
-    "road_hazards": [
-      "Baratta Road, Baratta: Baratta Road closed between Baratta and Melton Station due to flooding.",
-      "Eastern Road, Sturt Vale: Eastern Road (South of Sturt Vale Rd) remains closed due to previous severe flooding over the ",
-      "Morgan Mail Road, Quondong: MORGAN MAIL RD Closed due to flooding over road",
-      "Morgan Vale Road, Danggali: MORGAN MAIL RD Closed due to flooding over road",
-      "Morgan Vale Road, Pine Valley Station: MORGAN MAIL RD Closed due to flooding over road",
-      "Pine Valley Road, Pine Valley Station: PINE VALLEY RD Closed due to flooding over road"
-    ],
+    "road_hazards": [],
     "rooftop_pv_mw": 0,
     "sawater_news": [],
     "watch_and_act": []
@@ -469,23 +472,23 @@
   "markets": {
     "AUD/USD": {
       "big_move": false,
-      "change_pct": -0.01,
-      "price": 0.664
+      "change_pct": 0.0,
+      "price": 0.6641
     },
     "Brent oil": {
       "big_move": false,
-      "change_pct": -2.45,
-      "price": 87.18
+      "change_pct": -2.33,
+      "price": 87.29
     },
     "Gold": {
       "big_move": false,
-      "change_pct": -0.5,
-      "price": 3633.3
+      "change_pct": -0.65,
+      "price": 3627.7
     },
     "VIX": {
       "big_move": false,
-      "change_pct": 8.56,
-      "price": 28.9
+      "change_pct": 13.07,
+      "price": 30.1
     }
   },
   "national_shocks": {
@@ -513,7 +516,7 @@
     "aviation_halt": [
       "Top Aviation Officials Were Traveling When F.A.A.’s Nationwide Ground Stop Halted Flights - The New York Times",
       "Catch Me Up: How the ground stop unfolded, and a huge launch for 'GTA IV' - Scripps News",
-      "The FAA Ground Stop Blame Game - WSJ"
+      "L3Harris Router, 400 Fired Engineers and the 4-Hour Ground Stop: Aviation Writer Darryl Campbell on What Really Took Down US Airspace - BigGo Finance"
     ],
     "bank_outage": [
       "NAB’s redundancy email debacle – where to get support and what we’re doing - Finance Sector Union",
@@ -532,8 +535,8 @@
     ],
     "chem": [
       "OPCW Chief Opens 31st Conference of States Parties - Mirage News",
-      "China's Ministry of National Defense releases video on Japan's abandoned chemical weapons on its X account - China Daily",
-      "Russia must ‘explain’ latest nerve agent incident: UK - Yeni Safak English"
+      "Abandoned chemical weapons in China: the toxic legacy of Japanese militarism - Global Times",
+      "China's Ministry of National Defense releases video on Japan's abandoned chemical weapons on its X account - China Daily"
     ],
     "cloud": [
       "Outlook did lose emails during the Microsoft 365 outage - Korben",
@@ -541,23 +544,28 @@
       "CrowdStrike Zscaler Acquisition Puts 2024 Outage Sensor and Network Proxy Under One Vendor - Tech Times"
     ],
     "cyber_attrib": [
+      "FBI warns hackers using AI-powered tool to automate cyberattacks worldwide - Anadolu Ajansı",
       "Bluetooth Flaws Let Hackers Control Trailer Brakes Without Authentication, CISA Warns - The 420.in",
-      "CISA Warns of 4 Exploited Flaws Linked to Ransomware, Cryptomining, and LLMjacking Attacks - The Hacker News",
-      "CISA Warns Hackers Are Actively Exploiting Cisco, VMware, SAP, and Apache Vulnerabilities - GBHackers News"
+      "CISA Warns of 4 Exploited Flaws Linked to Ransomware, Cryptomining, and LLMjacking Attacks - The Hacker News"
     ],
     "cyber_au": [
       "Retail ranks among least-insured sectors as ransomware attacks peak - Insurance Business",
-      "Australia's APRA Secures A$8 Million Penalty Against Bendigo And Adelaide Bank Over Cyber Incident - TradingView",
-      "Australian watchdog secures $8M Court order against Bendigo and Adelaide Bank over cyber incident - FX News Group"
+      "Australia's Bendigo Bank fined $5.6m over cyberattack-linked breaches (update*) - MLex",
+      "Australia's APRA Secures A$8 Million Penalty Against Bendigo And Adelaide Bank Over Cyber Incident - TradingView"
     ],
     "cyber_ot": [
       "UK operation wards off risk of cyber-attack on supermarket fridges and freezers - The Guardian",
-      "Cyberattack attempt at Algonquin, Illinois Dam raises concerns about infrastructure security - ABC7 Chicago",
-      "Next Plc’s Supplier Hit by Cyberattack in Latest UK Retail Breach - Insurance Journal"
+      "Shop freezers in seven European countries hit by cyber-attack - BBC",
+      "Cyberattack attempt at Algonquin, Illinois Dam raises concerns about infrastructure security - ABC7 Chicago"
+    ],
+    "cyber_state": [
+      "ESET Research: Sandworm behind cyberattack on Poland’s power grid in late 2025 - We Live Security",
+      "ESET attributes DynoWiper-powered attack on Poland’s power grid to Russia-aligned Sandworm group - Industrial Cyber",
+      "Russian state hackers likely behind wiper malware attack on Poland’s power grid - The Record from Recorded Future News"
     ],
     "cyber_supply": [
       "Microsoft patches actively exploited vulnerability in Azure API Management - Techzine Global",
-      "Hackers Exploit N-able MailAssure Flaw While AI Agents Exploit MONAI Label Zero-Day - The Hacker News",
+      "VMware vCenter Hit by Another Critical 9.8-Rated Auth Bypass Flaw After Zero-Day Exploitation - The Hacker News",
       "Cisco Expressway Zero-Day Exploited in the Wild as CISA Sets Monday Patch Deadline - BigGo Finance"
     ],
     "deepfake": [
@@ -571,9 +579,9 @@
       "Investigation ordered into mass fish deaths in Kilinochchi Tank - Hiru News"
     ],
     "flash": [
-      "Prescient Therapeutics Enters Trading Halt Ahead of PTX-100 Phase 2A Trial Update Following Dose Optimisation Committee Review - Kalkine",
       "Jensen Huang Returns to Lead NVIDIA; South Korean Stocks Surge 6% Triggering Buy-Side Circuit Breaker, Nikkei Jumps Over 2,000 Points in Morning Session - BigGo Finance",
-      "Nasdaq futures tripped a circuit breaker built for market crashes as Jensen Huang returned to Nvidia - Yahoo Finance"
+      "Nasdaq futures tripped a circuit breaker built for market crashes as Jensen Huang returned to Nvidia - Yahoo Finance",
+      "Bitcoin Crashes to $17,000 This Weekend: Inside the Bizarre Flash Crash Mystery - BeInCrypto"
     ],
     "fuel_au": [
       "Gas prices in Europe surge as forecast cold snap feeds supply shortage fears - The Guardian",
@@ -587,8 +595,8 @@
     ],
     "masscas": [
       "Portsmouth accident declared a mass casualty incident - WJAR",
-      "Healthcare Security Lacks National Oversight Amid Daily Workplace Violence - Security Today",
-      "Israel Hosts Mass-Casualty Drill for 36 Countries - JFeed"
+      "6 brought to hospital after fire tears through home in Allentown - WFMZ.com",
+      "Healthcare Security Lacks National Oversight Amid Daily Workplace Violence - Security Today"
     ],
     "medexport": [
       "Africa’s vaccine manufacturing ambition from sovereignty to sustainable resilience - Nature"
@@ -596,7 +604,7 @@
     "mobilisation": [
       "The Territorial Recruitment Center sent the father of a child with a disability to the military without checking the extension of the deferment: the court canceled the conscription order - Судово-юридична газета",
       "Mobilized in One Day, but His Signature Was Missing on the Military Medical Commission Card: Why the Man Lost the Court Case - Судово-юридична газета",
-      "A Jehovah's Witness reported forced detention at the Military Commissariat: why the court did not cancel the mobilization - Судово-юридична газета"
+      "Poltava Critical Enterprise Status: New Rules - Полтавська Хвиля | Новини Полтави"
     ],
     "national_outage": [
       "'Forgot it was Monday night': Farcical reason NFL thriller was plunged into darkness revealed - Fox Sports",
@@ -631,7 +639,7 @@
     "strikes": [
       "Iran Warns of Retaliation if US Forces Attack - ASHARQ AL-AWSAT English",
       "U.S. Navy’s Key Sigonella Air Base in Italy Shut Down After Unidentified Drone Sightings - Мілітарний",
-      "Ukrainian naval drones strike a new Russian warship in Libya, and other Mideast news - Boston Herald"
+      "Houthi drones target airport, air base in Saudi Arabia - Yeni Safak English"
     ]
   },
   "prediction_markets": [
@@ -656,9 +664,9 @@
       "yes": 2.8
     },
     {
-      "d24h": -0.4,
+      "d24h": -0.5,
       "q": "US-Iran Hormuz Agreement by November 30?",
-      "yes": 3.1
+      "yes": 3.0
     },
     {
       "d24h": 0.0,
@@ -701,9 +709,9 @@
       "yes": 1.6
     },
     {
-      "d24h": 1.4,
+      "d24h": 1.3,
       "q": "Iran-Oman Hormuz Agreement by November 30?",
-      "yes": 2.8
+      "yes": 2.7
     },
     {
       "d24h": -2.5,
@@ -957,19 +965,9 @@
   "scenarios": [
     {
       "band": "Low",
-      "convergence": "Only one kind of sign is showing (roads). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: cfs emergency warning in sa, sudden fall in sa electricity demand (possible large blackout) and extreme or catastrophic fire danger near adelaide.",
-      "domains": [
-        "Roads"
-      ],
       "key": "local",
-      "lit": [
-        {
-          "detail": "Morgan Mail Road, Quondong: MORGAN MAIL RD Closed due to flooding over road; Morgan Vale Road, Danggali: MORGAN MAIL RD Closed due to flooding over road",
-          "name": "Fire, flood or storm road closures in SA"
-        }
-      ],
-      "score": 10,
-      "trend": "steady"
+      "score": 0,
+      "trend": "down"
     },
     {
       "band": "Low",
@@ -991,9 +989,19 @@
     },
     {
       "band": "Low",
+      "convergence": "Only one kind of sign is showing (markets). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and mobilisation / reservist reports (russia / nato).",
+      "domains": [
+        "Markets"
+      ],
       "key": "russia",
-      "score": 0,
-      "trend": "steady"
+      "lit": [
+        {
+          "detail": "VIX at 30.1",
+          "name": "Market fear index above 30"
+        }
+      ],
+      "score": 10,
+      "trend": "up"
     },
     {
       "band": "Low",
@@ -1036,7 +1044,7 @@
       "key": "cyber",
       "lit": [
         {
-          "detail": "Australia's APRA Secures A$8 Million Penalty Against Bendigo And Adelaide Bank Over Cyber Incident",
+          "detail": "Australia's Bendigo Bank fined $5.6m over cyberattack-linked breaches (update*)",
           "name": "Major Australian cyber incident reported"
         }
       ],
@@ -1077,7 +1085,7 @@
   ],
   "sectors_relative_5d": {
     "defence_au": 3.66,
-    "defence_eu": 1.09,
+    "defence_eu": 1.37,
     "defence_us": 0.08,
     "pandemic": -0.59
   },
@@ -1109,10 +1117,10 @@
   ],
   "tankers": "normal",
   "telecom_drop_pct": {
-    "Aussie Broadband": 0.0,
+    "Aussie Broadband": 0.1,
     "Optus": 0.0,
     "TPG": 0.0,
-    "Telstra": 0.1,
+    "Telstra": 0.4,
     "Vodafone": 0.0
   },
   "us_departure_orders": [
