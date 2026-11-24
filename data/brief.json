@@ -1,7 +1,13 @@
 {
   "about": "Short form of latest.json + indicators.json for the analysis run. Links and raw samples removed.",
   "acsc": [],
-  "aircraft_flags": {},
+  "aircraft_flags": {
+    "raaf": {
+      "median": 1,
+      "status": "ANOMALY",
+      "value": 8
+    }
+  },
   "analyst": {
     "ASPI Strategist": [
       "Australia’s overlooked metals resource: scrap",
@@ -221,21 +227,20 @@
   ],
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
-    "chokepoints": "RuntimeError: PortWatch returned no rows: {\"error\": {\"code\": 429, \"message\": \"Unable to perform query. Too many requests",
-    "maritime": "TimeoutError: ",
+    "chokepoints": "RuntimeError: PortWatch returned no rows: {\"error\": {\"code\": 499, \"message\": \"Token Required\", \"messageCode\": \"GWM_0003\"",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-24T10:28:00Z",
+  "generated_at": "2026-11-24T10:44:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 31,
-    "Black Sea": 10,
-    "Israel & Eastern Mediterranean": 12,
+    "Baltic / Kaliningrad": 26,
+    "Black Sea": 5,
+    "Israel & Eastern Mediterranean": 6,
     "Korea": 0,
-    "Persian Gulf": 7,
+    "Persian Gulf": 3,
     "South Australia": 0,
     "Sydney / NSW": 0,
-    "Taiwan Strait": 2
+    "Taiwan Strait": 4
   },
   "incidents": [
     {
@@ -292,6 +297,7 @@
       "attack_reported": true,
       "confirmed": true,
       "headlines": [
+        "Google: Hackers Now Use AI Agents to Find and Exploit Bugs Alone",
         "Google says the first autonomous AI cyberattack has happened. Expect a lot more like it."
       ],
       "needs_confirming": false,
@@ -403,9 +409,9 @@
   ],
   "internet_drop_pct": {
     "China": 0.0,
-    "Iran": 0.0,
+    "Iran": 0.1,
     "Israel": 0.3,
-    "Russia": 0.2,
+    "Russia": 0.1,
     "South Korea": 0.0,
     "Taiwan": 0.0
   },
@@ -421,16 +427,16 @@
       "Mount Lofty Ranges": "Moderate / High"
     },
     "fire_danger_ok": true,
-    "fires_active": 11,
+    "fires_active": 10,
     "fuel": {
       "brent_aud": 130.3,
       "change_pct": -5.4,
       "pump_cents": -5,
       "week_ago_aud": 137.7
     },
-    "grid_demand_fall_pct": 0.9,
-    "grid_demand_mw": 1453,
-    "grid_demand_usual_mw": 1466,
+    "grid_demand_fall_pct": -1.6,
+    "grid_demand_mw": 1488,
+    "grid_demand_usual_mw": 1456,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
@@ -471,23 +477,23 @@
   "markets": {
     "AUD/USD": {
       "big_move": false,
-      "change_pct": -0.15,
-      "price": 0.6631
+      "change_pct": -0.21,
+      "price": 0.6627
     },
     "Brent oil": {
       "big_move": false,
-      "change_pct": -2.91,
-      "price": 86.77
+      "change_pct": -2.98,
+      "price": 86.71
     },
     "Gold": {
       "big_move": false,
-      "change_pct": -0.76,
-      "price": 3623.6
+      "change_pct": -0.74,
+      "price": 3624.3
     },
     "VIX": {
       "big_move": false,
-      "change_pct": 3.64,
-      "price": 27.59
+      "change_pct": 4.55,
+      "price": 27.83
     }
   },
   "national_shocks": {
@@ -513,14 +519,14 @@
       "Saudi Arabia partners with South Korea, Ukraine for $3B air defense boost - Crypto Briefing"
     ],
     "aviation_halt": [
-      "Catch Me Up: How the ground stop unfolded, and a huge launch for 'GTA IV' - Scripps News",
-      "Aviation groups urge at least $30 billion boost for FAA modernization - Reuters",
-      "L3Harris Router, 400 Fired Engineers and the 4-Hour Ground Stop: Aviation Writer Darryl Campbell on What Really Took Down US Airspace - BigGo Finance"
+      "The FAA Ground Stop Blame Game - WSJ",
+      "L3Harris Router, 400 Fired Engineers and the 4-Hour Ground Stop: Aviation Writer Darryl Campbell on What Really Took Down US Airspace - BigGo Finance",
+      "Aviation groups urge at least $30 billion boost for FAA modernization - Reuters"
     ],
     "bank_outage": [
       "ANZ-Roy Morgan Inflation Expectations were at 5.7% in late November – down 0.3% points from the month of October - Roy Morgan Research",
-      "Aussie shares gain as confidence in tech trade returns - CommBank",
-      "ANZ bank forecasts interest rate cut for June 2027 - Nine.com.au"
+      "ANZ bank forecasts interest rate cut for June 2027 - Nine.com.au",
+      "Aussie shares gain as confidence in tech trade returns - CommBank"
     ],
     "blood": [
       "Upstate military sergeant reaches milestone blood donation - Spectrum Noticias",
@@ -528,9 +534,9 @@
       "[In Picutres] Vietnamese military medics at the epicentre of Myanmar’s earthquake - Nhan Dan Online"
     ],
     "cables": [
+      "DW News. . US tech giants like Meta and Google are increasingly investing in, and in some cases fully owning, submarine cable systems that form the backbone of global internet connectivity. As their influence over the internet's physical infrastructure grows, w - Facebook",
       "Closing Legal Loopholes that Endanger Subsea Cable Infrastructure - Small Wars Journal",
-      "New York Funds Brooklyn Hub for Undersea Cable Repairs - Environment+Energy Leader",
-      "Will a Philippines-Malaysia power cable ease blackouts or strain grids? - South China Morning Post"
+      "New York Funds Brooklyn Hub for Undersea Cable Repairs - Environment+Energy Leader"
     ],
     "chem": [
       "OPCW Chief Opens 31st Conference of States Parties - Mirage News",
@@ -543,9 +549,9 @@
       "Microsoft Outage Review Finds Gaps in Server Testing - The Defiant"
     ],
     "cyber_attrib": [
+      "FBI warns hackers using AI-powered tool to automate cyberattacks worldwide - Anadolu Ajansı",
       "FBI warns AI hackers can breach systems in under 3 hours - Fox News",
-      "FBI Warns Hackers Target U.S. Water Supply Systems - Sunny 106.5",
-      "CISA Warns of 4 Exploited Flaws Linked to Ransomware, Cryptomining, and LLMjacking Attacks - The Hacker News"
+      "FBI Warns Hackers Target U.S. Water Supply Systems - 93.7 KRQ"
     ],
     "cyber_au": [
       "Retail ranks among least-insured sectors as ransomware attacks peak - Insurance Business",
@@ -555,7 +561,12 @@
     "cyber_ot": [
       "UK operation wards off risk of cyber-attack on supermarket fridges and freezers - The Guardian",
       "Next Plc’s Supplier Hit by Cyberattack in Latest UK Retail Breach - Insurance Journal",
-      "Cyberattack attempt at Algonquin, Illinois Dam raises concerns about infrastructure security - ABC7 Chicago"
+      "Shop freezers in seven European countries hit by cyber-attack - BBC"
+    ],
+    "cyber_state": [
+      "ESET Research: Sandworm behind cyberattack on Poland’s power grid in late 2025 - We Live Security",
+      "ESET attributes DynoWiper-powered attack on Poland’s power grid to Russia-aligned Sandworm group - Industrial Cyber",
+      "Russian state hackers likely behind wiper malware attack on Poland’s power grid - The Record from Recorded Future News"
     ],
     "cyber_supply": [
       "Hackers Exploit N-able MailAssure Flaw While AI Agents Exploit MONAI Label Zero-Day - The Hacker News",
@@ -564,8 +575,8 @@
     ],
     "deepfake": [
       "Fake video of BJP president Nitin Nabin: Delhi Police registers case - The Hindu",
-      "Trump Posts Bizarre AI Meme of Jensen Huang Holding Up Bra Riffing Off Assassination Attempt - Variety",
-      "This video of BJP President Nitin Nabin allegedly saying that China pressured India to invite Pakistan to the SCO summit is a deepfake - FACTLY"
+      "A nine-year-old used AI to create a picture of a python emerging from a toilet, triggering a 48-hour emer - The Times of India",
+      "Trump Posts Bizarre AI Meme of Jensen Huang Holding Up Bra Riffing Off Assassination Attempt - Variety"
     ],
     "dieoff": [
       "Minister orders urgent probe after mass fish deaths reported at Kilinochchi Tank - Newswire",
@@ -579,8 +590,8 @@
     ],
     "fuel_au": [
       "Gas prices in Europe surge as forecast cold snap feeds supply shortage fears - The Guardian",
-      "Getting skilled technicians into workshops - Big Rigs",
-      "Australia's rental crisis spreads beyond capital cities as affordability hits new lows - Proactive Investors Australia"
+      "Australia's rental crisis spreads beyond capital cities as affordability hits new lows - Proactive Investors Australia",
+      "Getting skilled technicians into workshops - Big Rigs"
     ],
     "illness": [
       "Mystery illness causes mass hospitalisation of runners - The Nightly",
@@ -595,6 +606,11 @@
     "medexport": [
       "Africa’s vaccine manufacturing ambition from sovereignty to sustainable resilience - Nature"
     ],
+    "mobilisation": [
+      "The Territorial Recruitment Center sent the father of a child with a disability to the military without checking the extension of the deferment: the court canceled the conscription order - Судово-юридична газета",
+      "Mobilized in One Day, but His Signature Was Missing on the Military Medical Commission Card: Why the Man Lost the Court Case - Судово-юридична газета",
+      "Poltava Critical Enterprise Status: New Rules - Полтавська Хвиля | Новини Полтави"
+    ],
     "national_outage": [
       "'Forgot it was Monday night': Farcical reason NFL thriller was plunged into darkness revealed - Fox Sports",
       "US airline restores system after outage disrupts Thanksgiving travel - ET TravelWorld",
@@ -602,13 +618,18 @@
     ],
     "outage_au": [
       "Calls for 'automatic compensation' following telco outages - ABC News & Headlines – Australian Broadcasting Corporation",
-      "Australia's Optus apologises for outage that disrupted emergency calls - Reuters",
-      "Telstra mobile outage disrupts services across Australia - Australian Cyber Security Magazine"
+      "Microsoft ‘deeply sorry’ for global outage, rules out cyberattack and AI - Nine.com.au",
+      "The Microsoft outage is part of a growing trend. This is how to prepare for further disruption - SBS"
     ],
     "reservists": [
       "V’s reported 5 kills at reserve training revive memories of his elite service - Chosunbiz",
-      "Moldova plans to introduce a 42-day accelerated military training program - UA.NEWS",
-      "Fourth-division talent could make Barcelona debut against Sabah in Baku - İdman.Biz"
+      "BSP airs concern over PH's declining foreign reserves - GMA Network",
+      "Moldova plans to introduce a 42-day accelerated military training program - UA.NEWS"
+    ],
+    "sapn": [
+      "Freak storm wipes out ‘once-in-2000-year’ harvest - Adelaide Now",
+      "Adelaide travellers can book Europe for 2027 in the Qatar Airways Black Friday sale - Glam Adelaide",
+      "Weekend Warm-Up: 28-29 November - Motorsport Australia"
     ],
     "scams": [
       "Cyber security is one of the biggest risks for Australian businesses - Accountants Daily",
@@ -616,9 +637,9 @@
       "Deepfake Cases Surge in Nigeria, Côte d'Ivoire - Wisevoter"
     ],
     "shipping_attacks": [
+      "IRGC Claims 3 Oil Tankers Hit Mines in Hormuz Under US Escort - https://houseofsaud.com/",
       "IRGC: Three oil tankers hit mines, caught fire while transiting Hormuz with US support - report - The Jerusalem Post",
-      "UKMTO says 2 tankers struck in Hormuz, as Iran says ship on fire - The New Arab",
-      "Another Tanker Hit in Strait of Hormuz as Maritime Attacks Surge Worldwide - gCaptain"
+      "UKMTO says 2 tankers struck in Hormuz, as Iran says ship on fire - The New Arab"
     ],
     "strikes": [
       "Iran Warns of Retaliation if US Forces Attack - ASHARQ AL-AWSAT English",
@@ -633,9 +654,9 @@
       "yes": 5.5
     },
     {
-      "d24h": -1.1,
+      "d24h": -1.3,
       "q": "US-Iran Final Nuclear Deal by December 31, 2026?",
-      "yes": 2.8
+      "yes": 2.6
     },
     {
       "d24h": 3.0,
@@ -663,9 +684,9 @@
       "yes": 12.5
     },
     {
-      "d24h": 0.1,
+      "d24h": 0.4,
       "q": "US-Iran Final Nuclear Deal by November 30, 2026?",
-      "yes": 1.2
+      "yes": 1.4
     },
     {
       "d24h": 0.0,
@@ -673,7 +694,7 @@
       "yes": 2.2
     },
     {
-      "d24h": 0.0,
+      "d24h": 0.1,
       "q": "Will China invade Taiwan by June 30, 2027?",
       "yes": 4.3
     },
@@ -723,7 +744,7 @@
       "yes": 3.0
     },
     {
-      "d24h": -1.9,
+      "d24h": -2.9,
       "q": "Will Russia test a nuclear weapon by December 31 2026?",
       "yes": 4.6
     },
@@ -743,9 +764,9 @@
       "yes": 18.0
     },
     {
-      "d24h": 0.5,
+      "d24h": 0.0,
       "q": "Will Nick Stewart attend a US x Iran diplomatic meeting by December 31, 2026?",
-      "yes": 8.5
+      "yes": 8.0
     }
   ],
   "quakes_m6_24h": [],
@@ -950,9 +971,19 @@
     },
     {
       "band": "Low",
+      "convergence": "Only one kind of sign is showing (military air). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: missile / live-fire navigation warnings near taiwan, gps jamming over the taiwan strait and internet disruption in taiwan.",
+      "domains": [
+        "Military air"
+      ],
       "key": "taiwan",
-      "score": 0,
-      "trend": "steady"
+      "lit": [
+        {
+          "detail": "raaf 8 vs usual 1",
+          "name": "Military airlift or RAAF surge"
+        }
+      ],
+      "score": 10,
+      "trend": "up"
     },
     {
       "band": "Low",
@@ -1052,7 +1083,7 @@
   ],
   "sectors_relative_5d": {
     "defence_au": 3.66,
-    "defence_eu": 1.41,
+    "defence_eu": 1.2,
     "defence_us": 0.08,
     "pandemic": -0.59
   },
@@ -1076,11 +1107,11 @@
   ],
   "tankers": "normal",
   "telecom_drop_pct": {
-    "Aussie Broadband": 0.6,
-    "Optus": 0.0,
-    "TPG": 0.0,
-    "Telstra": 0.1,
-    "Vodafone": 4.8
+    "Aussie Broadband": 0.0,
+    "Optus": 3.9,
+    "TPG": 0.2,
+    "Telstra": 0.0,
+    "Vodafone": 0.0
   },
   "us_departure_orders": [
     "Belarus"
@@ -1118,18 +1149,18 @@
   "watching": [
     {
       "active": true,
+      "first_seen": "2026-11-23T10:42:00Z",
+      "last_seen": "2026-11-24T10:44:00Z",
+      "region": "Australia and PNG",
+      "text": "8 RAAF aircraft broadcasting (usual ~1)",
+      "what": "unusual military flights"
+    },
+    {
+      "active": true,
       "first_seen": "2026-11-23T11:12:00Z",
       "last_seen": "2026-11-24T08:24:00Z",
       "region": "the Middle East",
       "text": "25 military aircraft visible over Middle East & Gulf (usual ~6.0)",
-      "what": "unusual military flights"
-    },
-    {
-      "active": false,
-      "first_seen": "2026-11-23T10:42:00Z",
-      "last_seen": "2026-11-23T10:42:00Z",
-      "region": "Australia and PNG",
-      "text": "7 RAAF aircraft broadcasting (usual ~1.0)",
       "what": "unusual military flights"
     }
   ],
