@@ -222,15 +222,16 @@
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
     "chokepoints": "RuntimeError: PortWatch returned no rows: {\"error\": {\"code\": 499, \"message\": \"Token Required\", \"messageCode\": \"GWM_0003\"",
+    "maritime": "TimeoutError: ",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-24T13:03:00Z",
+  "generated_at": "2026-11-24T13:19:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 27,
-    "Black Sea": null,
-    "Israel & Eastern Mediterranean": 0,
-    "Korea": 1,
+    "Baltic / Kaliningrad": 24,
+    "Black Sea": 19,
+    "Israel & Eastern Mediterranean": 5,
+    "Korea": 0,
     "Persian Gulf": 1,
     "South Australia": null,
     "Sydney / NSW": null,
@@ -392,12 +393,12 @@
     }
   ],
   "internet_drop_pct": {
-    "China": 1.5,
+    "China": 1.8,
     "Iran": 0.6,
     "Israel": 0.0,
     "Russia": 0.1,
     "South Korea": 0.0,
-    "Taiwan": 0.0
+    "Taiwan": 0.1
   },
   "local_sa": {
     "bom": [],
@@ -411,16 +412,16 @@
       "Mount Lofty Ranges": "Moderate / High"
     },
     "fire_danger_ok": true,
-    "fires_active": 8,
+    "fires_active": 9,
     "fuel": {
       "brent_aud": 130.3,
       "change_pct": -5.3,
       "pump_cents": -5,
       "week_ago_aud": 137.5
     },
-    "grid_demand_fall_pct": 3.0,
-    "grid_demand_mw": 1322,
-    "grid_demand_usual_mw": 1330,
+    "grid_demand_fall_pct": 3.7,
+    "grid_demand_mw": 1313,
+    "grid_demand_usual_mw": 1331,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
@@ -468,23 +469,23 @@
   "markets": {
     "AUD/USD": {
       "big_move": false,
-      "change_pct": 0.11,
-      "price": 0.6648
+      "change_pct": -0.01,
+      "price": 0.664
     },
     "Brent oil": {
       "big_move": false,
-      "change_pct": -2.52,
-      "price": 87.12
+      "change_pct": -2.45,
+      "price": 87.18
     },
     "Gold": {
       "big_move": false,
-      "change_pct": -0.24,
-      "price": 3642.5
+      "change_pct": -0.5,
+      "price": 3633.3
     },
     "VIX": {
       "big_move": false,
-      "change_pct": 8.38,
-      "price": 28.85
+      "change_pct": 8.56,
+      "price": 28.9
     }
   },
   "national_shocks": {
@@ -510,19 +511,19 @@
       "Saudi Arabia partners with South Korea, Ukraine for $3B air defense boost - Crypto Briefing"
     ],
     "aviation_halt": [
+      "Top Aviation Officials Were Traveling When F.A.A.’s Nationwide Ground Stop Halted Flights - The New York Times",
       "Catch Me Up: How the ground stop unfolded, and a huge launch for 'GTA IV' - Scripps News",
-      "The FAA Ground Stop Blame Game - WSJ",
-      "L3Harris Router, 400 Fired Engineers and the 4-Hour Ground Stop: Aviation Writer Darryl Campbell on What Really Took Down US Airspace - BigGo Finance"
+      "The FAA Ground Stop Blame Game - WSJ"
     ],
     "bank_outage": [
+      "NAB’s redundancy email debacle – where to get support and what we’re doing - Finance Sector Union",
       "ANZ-Roy Morgan Inflation Expectations were at 5.7% in late November – down 0.3% points from the month of October - Roy Morgan Research",
-      "Aussie shares gain as confidence in tech trade returns - CommBank",
-      "ANZ bank forecasts interest rate cut for June 2027 - Nine.com.au"
+      "Aussie shares gain as confidence in tech trade returns - CommBank"
     ],
     "blood": [
       "BLOOD DONATION BY NCC CADETS - The Times of India",
-      "[In Picutres] Vietnamese military medics at the epicentre of Myanmar’s earthquake - Nhan Dan Online",
-      "13 Tripura Bn NCC & 35 A.R Jointly Organized Blood Donation Camp. - TRIPURA STAR NEWS"
+      "Prevent fires, travel smart, and be ready to save a life | Daily Gate City - Keokuk, Iowa - Daily Gate City",
+      "Ways to give back in NYC this Thanksgiving - ABC7 New York"
     ],
     "cables": [
       "DW News. . US tech giants like Meta and Google are increasingly investing in, and in some cases fully owning, submarine cable systems that form the backbone of global internet connectivity. As their influence over the internet's physical infrastructure grows, w - Facebook",
@@ -540,9 +541,9 @@
       "CrowdStrike Zscaler Acquisition Puts 2024 Outage Sensor and Network Proxy Under One Vendor - Tech Times"
     ],
     "cyber_attrib": [
-      "FBI warns hackers using AI-powered tool to automate cyberattacks worldwide - Anadolu Ajansı",
       "Bluetooth Flaws Let Hackers Control Trailer Brakes Without Authentication, CISA Warns - The 420.in",
-      "FBI Warns Hackers Target U.S. Water Supply Systems - 105.9 The X"
+      "CISA Warns of 4 Exploited Flaws Linked to Ransomware, Cryptomining, and LLMjacking Attacks - The Hacker News",
+      "CISA Warns Hackers Are Actively Exploiting Cisco, VMware, SAP, and Apache Vulnerabilities - GBHackers News"
     ],
     "cyber_au": [
       "Retail ranks among least-insured sectors as ransomware attacks peak - Insurance Business",
@@ -551,13 +552,8 @@
     ],
     "cyber_ot": [
       "UK operation wards off risk of cyber-attack on supermarket fridges and freezers - The Guardian",
-      "Shop freezers in seven European countries hit by cyber-attack - BBC",
-      "Cyberattack attempt at Algonquin, Illinois Dam raises concerns about infrastructure security - ABC7 Chicago"
-    ],
-    "cyber_state": [
-      "ESET Research: Sandworm behind cyberattack on Poland’s power grid in late 2025 - We Live Security",
-      "ESET attributes DynoWiper-powered attack on Poland’s power grid to Russia-aligned Sandworm group - Industrial Cyber",
-      "Russian state hackers likely behind wiper malware attack on Poland’s power grid - The Record from Recorded Future News"
+      "Cyberattack attempt at Algonquin, Illinois Dam raises concerns about infrastructure security - ABC7 Chicago",
+      "Next Plc’s Supplier Hit by Cyberattack in Latest UK Retail Breach - Insurance Journal"
     ],
     "cyber_supply": [
       "Microsoft patches actively exploited vulnerability in Azure API Management - Techzine Global",
@@ -575,9 +571,9 @@
       "Investigation ordered into mass fish deaths in Kilinochchi Tank - Hiru News"
     ],
     "flash": [
-      "Nasdaq futures tripped a circuit breaker built for market crashes as Jensen Huang returned to Nvidia - Yahoo Finance",
-      "Bitcoin Crashes to $17,000 This Weekend: Inside the Bizarre Flash Crash Mystery - BeInCrypto",
-      "South Korea's KOSPI Reclaims 5,000 Intraday on AI Rally, Triggers Buy-Side Circuit Breaker - BigGo Finance"
+      "Prescient Therapeutics Enters Trading Halt Ahead of PTX-100 Phase 2A Trial Update Following Dose Optimisation Committee Review - Kalkine",
+      "Jensen Huang Returns to Lead NVIDIA; South Korean Stocks Surge 6% Triggering Buy-Side Circuit Breaker, Nikkei Jumps Over 2,000 Points in Morning Session - BigGo Finance",
+      "Nasdaq futures tripped a circuit breaker built for market crashes as Jensen Huang returned to Nvidia - Yahoo Finance"
     ],
     "fuel_au": [
       "Gas prices in Europe surge as forecast cold snap feeds supply shortage fears - The Guardian",
@@ -587,7 +583,7 @@
     "illness": [
       "Mystery illness causes mass hospitalisation of runners - The Nightly",
       "Dr. Siegel on measles comeback, mystery illness outbreak on cruise ship - Fox News",
-      "148 aboard Florida-bound cruise ship sickened by ‘unknown’ GI outbreak: CDC - The Hill"
+      "Zayn Malik hospitalised with mystery illness, forced to cancel upcoming appearances on album release week - Nine.com.au"
     ],
     "masscas": [
       "Portsmouth accident declared a mass casualty incident - WJAR",
@@ -600,7 +596,7 @@
     "mobilisation": [
       "The Territorial Recruitment Center sent the father of a child with a disability to the military without checking the extension of the deferment: the court canceled the conscription order - Судово-юридична газета",
       "Mobilized in One Day, but His Signature Was Missing on the Military Medical Commission Card: Why the Man Lost the Court Case - Судово-юридична газета",
-      "Poltava Critical Enterprise Status: New Rules - Полтавська Хвиля | Новини Полтави"
+      "A Jehovah's Witness reported forced detention at the Military Commissariat: why the court did not cancel the mobilization - Судово-юридична газета"
     ],
     "national_outage": [
       "'Forgot it was Monday night': Farcical reason NFL thriller was plunged into darkness revealed - Fox Sports",
@@ -609,8 +605,8 @@
     ],
     "outage_au": [
       "Calls for 'automatic compensation' following telco outages - ABC News & Headlines – Australian Broadcasting Corporation",
-      "Microsoft ‘deeply sorry’ for global outage, rules out cyberattack and AI - Nine.com.au",
-      "The Microsoft outage is part of a growing trend. This is how to prepare for further disruption - SBS"
+      "Australia's Optus apologises for outage that disrupted emergency calls - Reuters",
+      "Telstra mobile outage disrupts services across Australia - Australian Cyber Security Magazine"
     ],
     "reservists": [
       "V’s reported 5 kills at reserve training revive memories of his elite service - Chosunbiz",
@@ -660,7 +656,7 @@
       "yes": 2.8
     },
     {
-      "d24h": -0.1,
+      "d24h": -0.4,
       "q": "US-Iran Hormuz Agreement by November 30?",
       "yes": 3.1
     },
@@ -680,7 +676,7 @@
       "yes": 1.3
     },
     {
-      "d24h": 0.2,
+      "d24h": 0.3,
       "q": "Will Russia invade another country in 2026?",
       "yes": 2.4
     },
@@ -705,9 +701,9 @@
       "yes": 1.6
     },
     {
-      "d24h": 1.6,
+      "d24h": 1.4,
       "q": "Iran-Oman Hormuz Agreement by November 30?",
-      "yes": 3.1
+      "yes": 2.8
     },
     {
       "d24h": -2.5,
@@ -740,9 +736,9 @@
       "yes": 2.5
     },
     {
-      "d24h": -0.5,
+      "d24h": -1.0,
       "q": "Will Russia invade another country by December 31, 2027?",
-      "yes": 14.0
+      "yes": 13.5
     },
     {
       "d24h": -0.3,
@@ -1081,7 +1077,7 @@
   ],
   "sectors_relative_5d": {
     "defence_au": 3.66,
-    "defence_eu": 0.92,
+    "defence_eu": 1.09,
     "defence_us": 0.08,
     "pandemic": -0.59
   },
@@ -1114,10 +1110,10 @@
   "tankers": "normal",
   "telecom_drop_pct": {
     "Aussie Broadband": 0.0,
-    "Optus": 1.0,
+    "Optus": 0.0,
     "TPG": 0.0,
-    "Telstra": 0.5,
-    "Vodafone": 4.8
+    "Telstra": 0.1,
+    "Vodafone": 0.0
   },
   "us_departure_orders": [
     "Belarus"
