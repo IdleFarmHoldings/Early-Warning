@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-24T00:38:00Z",
+  "generated_at": "2026-11-24T00:53:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -217,7 +217,7 @@
       "key": "taiwan",
       "lit": [
         {
-          "detail": "Australian defence stocks +5.9% vs market over 5 days",
+          "detail": "Australian defence stocks +5.6% vs market over 5 days",
           "domain": "Markets",
           "id": "def",
           "name": "Defence stocks outperforming (US / Australia)",
@@ -491,14 +491,25 @@
     },
     {
       "band": "Low",
-      "convergence": "No warning signs are showing. The strongest signs not yet showing: us nuclear command aircraft unusual, private jets heading to retreat destinations and mobilisation reports (any major power).",
-      "domains": [],
+      "convergence": "Only one kind of sign is showing (markets). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: us nuclear command aircraft unusual, private jets heading to retreat destinations and mobilisation reports (any major power).",
+      "domains": [
+        "Markets"
+      ],
       "key": "nuclear",
-      "lit": [],
+      "lit": [
+        {
+          "detail": "Gold +4.0%",
+          "domain": "Markets",
+          "id": "gold",
+          "name": "Gold up 4%+ in a day",
+          "short": "Gold up 4%+ in a day",
+          "weight": 10
+        }
+      ],
       "name": "Nuclear use or alert",
       "sa_impact": "Fallout risk to SA from a northern-hemisphere exchange is very low, but global trade, fuel and finance would be severely disrupted.",
-      "score": 0,
-      "trend": "steady",
+      "score": 10,
+      "trend": "up",
       "unlit": [
         {
           "domain": "Nuclear command",
@@ -528,12 +539,6 @@
           "domain": "Markets",
           "id": "vix",
           "name": "Market fear index above 35",
-          "weight": 10
-        },
-        {
-          "domain": "Markets",
-          "id": "gold",
-          "name": "Gold up 4%+ in a day",
           "weight": 10
         },
         {
@@ -633,9 +638,8 @@
     },
     {
       "band": "Elevated",
-      "convergence": "Two different kinds of sign are showing together (chemical weapons and health). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: countries restricting medical supply exports, pandemic-response stocks outperforming (5 days) and australian medicine or ppe shortage reports.",
+      "convergence": "Only one kind of sign is showing (health). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: countries restricting medical supply exports, pandemic-response stocks outperforming (5 days) and chemical / nerve-agent attack or mass poisoning reported.",
       "domains": [
-        "Chemical weapons",
         "Health"
       ],
       "key": "bio",
@@ -663,20 +667,12 @@
           "name": "Mass casualty declarations (any country)",
           "short": "Mass casualty event",
           "weight": 5
-        },
-        {
-          "detail": "US envoy to UN says Syria used chemical weapons 50 times",
-          "domain": "Chemical weapons",
-          "id": "chem",
-          "name": "Chemical / nerve-agent attack or mass poisoning reported",
-          "short": "Chemical attack",
-          "weight": 15
         }
       ],
       "name": "Pandemic, biological or chemical emergency",
       "sa_impact": "Health system strain, possible lockdowns and border closures, and shortages of medicines and protective equipment, which Australia mostly imports.",
-      "score": 55,
-      "trend": "steady",
+      "score": 40,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Trade",
@@ -701,6 +697,12 @@
           "id": "vix",
           "name": "Market fear index above 30",
           "weight": 10
+        },
+        {
+          "domain": "Chemical weapons",
+          "id": "chem",
+          "name": "Chemical / nerve-agent attack or mass poisoning reported",
+          "weight": 15
         },
         {
           "domain": "Health",
@@ -814,7 +816,7 @@
       "key": "ai",
       "lit": [
         {
-          "detail": "Google says the first autonomous AI cyberattack has happened. Expect a lot more like it.",
+          "detail": "European Commission issues alert to EU Academy users after AI-driven cyberattack causes data leak",
           "domain": "AI-enabled hacking",
           "id": "aihack",
           "name": "Reports of AI-driven hacking campaigns",

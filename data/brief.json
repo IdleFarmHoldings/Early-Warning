@@ -279,13 +279,13 @@
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-24T00:38:00Z",
+  "generated_at": "2026-11-24T00:53:00Z",
   "gps_bad_pct": {
     "Baltic / Kaliningrad": null,
-    "Black Sea": null,
-    "Israel & Eastern Mediterranean": 6,
+    "Black Sea": 9,
+    "Israel & Eastern Mediterranean": 5,
     "Korea": 1,
-    "Persian Gulf": 6,
+    "Persian Gulf": 42,
     "South Australia": 5,
     "Sydney / NSW": 3,
     "Taiwan Strait": 0
@@ -293,10 +293,9 @@
   "incidents": [
     {
       "attack_reported": true,
-      "confirmed": true,
+      "confirmed": false,
       "headlines": [
-        "Exclusive: Darwin-based accountancy firm listed by Hyflock ransomware",
-        "Exclusive: China-backed hackers suspected behind ongoing EU Commission cyberattack"
+        "Exclusive: Darwin-based accountancy firm listed by Hyflock ransomware"
       ],
       "severity": "Info",
       "target": "Exclusive"
@@ -323,6 +322,15 @@
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
+        "America's Biggest Oil Export Port Faces Thousands of Cyberattack Attempts"
+      ],
+      "severity": "Info",
+      "target": "America's Biggest Oil"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
         "Cyberattack hits Peninsula’s Wyoming uranium mine"
       ],
       "severity": "Info",
@@ -341,21 +349,20 @@
       "attack_reported": true,
       "confirmed": true,
       "headlines": [
-        "Google says the first autonomous AI cyberattack has happened. Expect a lot more like it.",
-        "Google reports first fully autonomous cyberattack as AI-powered threats reach new milestone"
-      ],
-      "severity": "Info",
-      "target": "Google"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": true,
-      "headlines": [
         "European Commission issues alert to EU Academy users after AI-driven cyberattack causes data leak",
         "European Commission warns EU Academy users of data leak after AI-driven cyberattack"
       ],
       "severity": "Info",
       "target": "European Commission"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": true,
+      "headlines": [
+        "Google says the first autonomous AI cyberattack has happened. Expect a lot more like it."
+      ],
+      "severity": "Info",
+      "target": "Google"
     },
     {
       "attack_reported": true,
@@ -379,6 +386,15 @@
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
+        "Hackers Just Used Hands-Free AI Agents to Breach 11 Organizations in 26 Seconds, Google Warns"
+      ],
+      "severity": "Info",
+      "target": "Hackers Just Used"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
         "Google Warns China-Linked Hackers Are Building Autonomous AI Attack Systems"
       ],
       "severity": "Info",
@@ -389,8 +405,8 @@
       "confirmed": true,
       "headlines": [
         "Microsoft's Outlook outage didn't take long to become phishing bait",
-        "Microsoft’s Outage Report: Bounced Emails and Silent Security Failures",
-        "Japan’s Furukawa details requests after Microsoft 365 outage"
+        "Japan’s Furukawa details requests after Microsoft 365 outage",
+        "Microsoft mega outage: Report reveals testing gaps and emails that never arrived"
       ],
       "severity": "Warning",
       "target": "Microsoft"
@@ -403,22 +419,13 @@
       ],
       "severity": "Info",
       "target": "Banking & payments"
-    },
-    {
-      "attack_reported": false,
-      "confirmed": false,
-      "headlines": [
-        "A few hours offline could expose a retailer’s biggest cyber coverage gap"
-      ],
-      "severity": "Info",
-      "target": "Other services"
     }
   ],
   "internet_drop_pct": {
     "China": 0.0,
-    "Iran": 0.4,
-    "Israel": 0.0,
-    "Russia": 0.1,
+    "Iran": 0.3,
+    "Israel": 0.2,
+    "Russia": 0.0,
     "South Korea": 0.0,
     "Taiwan": 0.0
   },
@@ -434,18 +441,28 @@
       "Mount Lofty Ranges": "Moderate / Moderate"
     },
     "fire_danger_ok": true,
-    "fires_active": 14,
+    "fires_active": 13,
     "fuel": {
       "brent_aud": 131.0,
       "change_pct": -5.1,
       "pump_cents": -4,
       "week_ago_aud": 138.1
     },
-    "grid_demand_fall_pct": 15.5,
-    "grid_demand_mw": 386,
-    "grid_demand_usual_mw": 447,
+    "grid_demand_fall_pct": 46.4,
+    "grid_demand_mw": 244,
+    "grid_demand_usual_mw": 402,
     "grid_lor_level": 0,
-    "nearby_incidents": [],
+    "nearby_incidents": [
+      {
+        "area": "39D SYDNEY RD NAIRNE",
+        "dist": "25-60 km",
+        "event": "Grass Fire",
+        "headline": "NAIRNE : GRASS FIRE",
+        "id": "F-261124-0066 NAIRNE, SYDNEY RD (GRASS FIRE)",
+        "level": null,
+        "notify": false
+      }
+    ],
     "outlook": {
       "air": {
         "aqi": 47,
@@ -456,21 +473,21 @@
       "days": [
         {
           "date": "2026-11-24",
-          "gust": 36,
+          "gust": 34,
           "rain": 0,
           "tmax": 21
         },
         {
           "date": "2026-11-25",
-          "gust": 46,
+          "gust": 45,
           "rain": 0,
           "tmax": 28
         },
         {
           "date": "2026-11-26",
-          "gust": 46,
+          "gust": 42,
           "rain": 0,
-          "tmax": 29
+          "tmax": 30
         }
       ]
     },
@@ -484,22 +501,22 @@
       "Morgan Vale Road, Pine Valley Station: MORGAN MAIL RD Closed due to flooding over road",
       "Pine Valley Road, Pine Valley Station: PINE VALLEY RD Closed due to flooding over road"
     ],
-    "rooftop_pv_mw": 1582,
+    "rooftop_pv_mw": 1922,
     "sawater_news": [],
     "watch_and_act": []
   },
   "markets": {
     "AUD/USD": {
-      "change_pct": -0.18,
-      "price": 0.6629
+      "change_pct": -0.19,
+      "price": 0.6628
     },
     "Brent oil": {
-      "change_pct": -6.07,
-      "price": 86.95
+      "change_pct": -6.1,
+      "price": 86.92
     },
     "Gold": {
-      "change_pct": 3.68,
-      "price": 3644.9
+      "change_pct": 4.02,
+      "price": 3656.7
     },
     "VIX": {
       "change_pct": -25.83,
@@ -519,8 +536,8 @@
   "nc3": "normal",
   "news_watch": {
     "ai_hack": [
-      "Google says the first autonomous AI cyberattack has happened. Expect a lot more like it. - Mashable SEA",
       "European Commission issues alert to EU Academy users after AI-driven cyberattack causes data leak - European Interest",
+      "Google says the first autonomous AI cyberattack has happened. Expect a lot more like it. - Mashable SEA",
       "China-linked hackers' AI agents found a zero-day in 11 minutes, Amazon says - Dealroom"
     ],
     "airspace": [
@@ -535,8 +552,8 @@
     ],
     "bank_outage": [
       "ANZ expects next rate cut to come in June - Australian Broker News",
-      "ANZ-Roy Morgan Consumer Confidence is virtually unchanged at 66.7 in late November - Roy Morgan Research",
-      "Australian shares sink for eighth straight session - CommBank"
+      "Consumer confidence steady - ANZ",
+      "ANZ-Roy Morgan Consumer Confidence is virtually unchanged at 66.7 in late November - Roy Morgan Research"
     ],
     "blood": [
       "Upstate military sergeant reaches milestone blood donation - Spectrum News",
@@ -548,11 +565,6 @@
       "Telecom news: Sierra Leone, Salam Telecom, Huawei, National Broadband Ireland - TelecomLead",
       "Du joins Singapore-India-Gulf submarine cable system - DD News"
     ],
-    "chem": [
-      "Conference of the States Parties to the Chemical Weapons Convention opens - OPCW",
-      "US arrears leave chemical weapons watchdog facing budget crisis - Al-Monitor",
-      "Iran accuses countries that armed Saddam Hussein of leading chemical weapons allegations against Tehran - Middle East Monitor"
-    ],
     "cloud": [
       "Japan’s Furukawa details requests after Microsoft 365 outage - NeoTeo",
       "Microsoft confirms data breach due to a bug in Entra Connect Health - Techzine Global",
@@ -561,7 +573,7 @@
     "cyber_attrib": [
       "FBI warns AI hackers can breach systems in under 3 hours - Fox News",
       "FBI warns hackers using AI-powered tool to automate cyberattacks worldwide - Anadolu Ajansı",
-      "FBI Warns Hackers Target U.S. Water Supply Systems - 100.7 WZLX - Boston's Classic Rock"
+      "FBI Warns Hackers Target U.S. Water Supply Systems - Sunny 106.5"
     ],
     "cyber_au": [
       "Exclusive: Darwin-based accountancy firm listed by Hyflock ransomware - Cyber Daily",
@@ -571,7 +583,7 @@
     "cyber_ot": [
       "UK operation wards off risk of cyber-attack on supermarket fridges and freezers - The Guardian",
       "Next Plc’s Supplier Hit by Cyberattack in Latest UK Retail Breach - Insurance Journal",
-      "Shop freezers in seven European countries hit by cyber-attack - BBC"
+      "Cyberattack attempt at Algonquin, Illinois Dam raises concerns about infrastructure security - ABC7 Chicago"
     ],
     "cyber_state": [
       "ESET Research: Sandworm behind cyberattack on Poland’s power grid in late 2025 - We Live Security",
@@ -584,9 +596,9 @@
       "CISA flags critical Cisco RCE flaw as actively exploited in attacks - BleepingComputer"
     ],
     "deepfake": [
-      "Trump posts jaw-dropping AI photo of Jensen Huang — including a red bra - SILive.com",
       "Two States Sue Elon Musk’s AI Company Over Deepfake Porn - The New Republic",
-      "‘Fake’ video: BJP files complaint - The Times of India"
+      "Trump posts jaw-dropping AI photo of Jensen Huang — including a red bra - OregonLive.com",
+      "'Outrageous,' 'reckless,' 'wow': Here's what politicians are saying about Jensen Huang's return to Nvidia - TechCrunch"
     ],
     "dieoff": [
       "High Power Committee For Manipur Tragedy: Good And Beyond - Imphal Times",
@@ -594,8 +606,8 @@
     ],
     "flash": [
       "Nasdaq futures tripped a circuit breaker built for market crashes as Jensen Huang returned to Nvidia - Yahoo Finance",
-      "Bitcoin Crashes to $17,000 This Weekend: Inside the Bizarre Flash Crash Mystery - BeInCrypto",
-      "South Korean Stocks Plunge 5.8% Intraday, Triggering Circuit Breaker; 10.76 Trillion Won Stabilization Fund on Standby Fails to Stem Selling - BigGo Finance"
+      "Metasphere Labs Inc. (LABZ) Trading Halted Pending Fundamental Change Review - TradingView",
+      "South Korea's KOSPI Reclaims 5,000 Intraday on AI Rally, Triggers Buy-Side Circuit Breaker - BigGo Finance"
     ],
     "fuel_au": [
       "Australia's rental crisis spreads beyond capital cities as affordability hits new lows - Proactive Investors Australia",
@@ -620,7 +632,7 @@
     "mobilisation": [
       "A Jehovah's Witness reported forced detention at the Military Commissariat: why the court did not cancel the mobilization - Судово-юридична газета",
       "Coordination center approves 100% of updated criticality criteria, state bodies to review earlier decisions by end of next week - Interfax-Ukraine",
-      "A serviceman was declared AWOL despite being hospitalized after a severe injury – the court canceled the command orders and obliged to resume payments - Судово-юридична газета"
+      "Mobilized serviceman with spine and joint diseases who moves on crutches challenged the refusal to establish disability but lost the court case - Судово-юридична газета"
     ],
     "national_outage": [
       "Cuba’s National Electric Grid Collapses, Reason Unknown - EnergyNow.com",
@@ -670,9 +682,9 @@
       "yes": 3.9
     },
     {
-      "d24h": 3.5,
+      "d24h": 2.5,
       "q": "NATO x Russia military clash by December 31, 2026?",
-      "yes": 15.5
+      "yes": 14.5
     },
     {
       "d24h": 0.3,
@@ -788,6 +800,15 @@
     }
   ],
   "recent_alerts": [
+    {
+      "at": "2026-11-24T00:53:00Z",
+      "channels": [
+        "proactive"
+      ],
+      "confirmed": true,
+      "message": "Gold at 3656.7 (+4.0% on the day). Sharp moves like this often follow a major shock.",
+      "title": "Market stress: Gold +4.0%"
+    },
     {
       "at": "2026-11-23T18:11:00Z",
       "channels": [
@@ -962,15 +983,6 @@
       "confirmed": null,
       "message": "No new attacks on US bases or tankers found in the last day; Hormuz is still shut and oil eased to about US$89",
       "title": "Daily digest: Level 3 Elevated"
-    },
-    {
-      "at": "2026-11-20T15:42:00Z",
-      "channels": [
-        "proactive"
-      ],
-      "confirmed": false,
-      "message": "5 automatic warning signs showing. None confirmed:\n• Illness cluster: 148 aboard Florida-bound cruise ship sic",
-      "title": "Warning signs building: Pandemic, biological or chemical emergency"
     }
   ],
   "scenarios": [
@@ -1015,7 +1027,7 @@
       "key": "taiwan",
       "lit": [
         {
-          "detail": "Australian defence stocks +5.9% vs market over 5 days",
+          "detail": "Australian defence stocks +5.6% vs market over 5 days",
           "name": "Defence stocks outperforming (US / Australia)"
         }
       ],
@@ -1036,9 +1048,19 @@
     },
     {
       "band": "Low",
+      "convergence": "Only one kind of sign is showing (markets). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: us nuclear command aircraft unusual, private jets heading to retreat destinations and mobilisation reports (any major power).",
+      "domains": [
+        "Markets"
+      ],
       "key": "nuclear",
-      "score": 0,
-      "trend": "steady"
+      "lit": [
+        {
+          "detail": "Gold +4.0%",
+          "name": "Gold up 4%+ in a day"
+        }
+      ],
+      "score": 10,
+      "trend": "up"
     },
     {
       "band": "Low",
@@ -1048,9 +1070,8 @@
     },
     {
       "band": "Elevated",
-      "convergence": "Two different kinds of sign are showing together (chemical weapons and health). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: countries restricting medical supply exports, pandemic-response stocks outperforming (5 days) ",
+      "convergence": "Only one kind of sign is showing (health). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: countries restricting medical supply exports, pandemic-response stocks outperforming (5 days) and chemical / nerve-agent attack or mass poisoning repor",
       "domains": [
-        "Chemical weapons",
         "Health"
       ],
       "key": "bio",
@@ -1066,14 +1087,10 @@
         {
           "detail": "Dozens Fall Ill On Two Condor Flights To Frankfurt, Triggering Mass Casualty Response",
           "name": "Mass casualty declarations (any country)"
-        },
-        {
-          "detail": "US envoy to UN says Syria used chemical weapons 50 times",
-          "name": "Chemical / nerve-agent attack or mass poisoning reported"
         }
       ],
-      "score": 55,
-      "trend": "steady"
+      "score": 40,
+      "trend": "down"
     },
     {
       "band": "Low",
@@ -1103,7 +1120,7 @@
       "key": "ai",
       "lit": [
         {
-          "detail": "Google says the first autonomous AI cyberattack has happened. Expect a lot more like it.",
+          "detail": "European Commission issues alert to EU Academy users after AI-driven cyberattack causes data leak",
           "name": "Reports of AI-driven hacking campaigns"
         },
         {
@@ -1124,7 +1141,7 @@
     }
   ],
   "sectors_relative_5d": {
-    "defence_au": 5.88,
+    "defence_au": 5.62,
     "defence_eu": 1.27,
     "defence_us": 0.08,
     "pandemic": -0.59
@@ -1152,7 +1169,7 @@
     "Aussie Broadband": 0.0,
     "Optus": 0.0,
     "TPG": 0.0,
-    "Telstra": 0.0,
+    "Telstra": 0.1,
     "Vodafone": 0.0
   },
   "us_departure_orders": [
