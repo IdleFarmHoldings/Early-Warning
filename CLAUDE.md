@@ -57,6 +57,9 @@ file format or alert rule they depend on, update the prompts too (or tell the us
   the alert line and coming back do not re-alert.
 - National shocks abroad (a whole country's flights, power, networks or payments halted) are alerted.
 - CFS fires near home, including suburban house fires, must alert. Emergency-level alerts repeat twice.
+  Ordinary CFS incidents push a phone note only under 10 km from home (`notify_radius_km`); farther ones (out to
+  60 km, house fires to 25 km) show on the page and board only. Watch and Act and Emergency Warnings still alert
+  out to 150 km.
 - 4chan chatter (`collector/chan.py`, boards /pol/ /k/ /news/) is a tip-off for the analysis only: bursts of
   new threads on a topic go into `brief.json` as `chan_chatter`. It never pushes, never joins the watch list,
   and is never quoted to the family. Its baseline is learned per hour of day (~3 days to warm up).

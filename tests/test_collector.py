@@ -920,11 +920,19 @@ def test_cfs_nearby_incidents_alert():
     assert " km from home" in out[1]["message"] and out[1]["priority"] == 4 and out[0]["priority"] == 5
     assert "illiamstown" not in json.dumps(out)
     assert run.local_alerts({"summary": sm}, state, now + timedelta(minutes=15), False) == []  # once per incident
-    # Fires 20-60 km away show on the page but do not push a phone note
+    # The family chose 0-10 km for phone notes: anything 10 km or more away shows on the page only,
+    # and the cut-off matches the distance bands, so a note never says "10-25 km from home"
+    assert lc["notify_radius_km"] == 10
+    for km, told in ((0, True), (4, True), (9, True), (10, False), (14, False), (40, False), (None, True)):
+        assert localsa.notify_near(km, lc["notify_radius_km"]) is told, km
+        if told and km is not None:
+            assert localsa.distance_band(km) in ("under 5 km", "5-10 km")
     far = [{"id": "F9", "headline": "TRURO : GRASS FIRE", "event": "Grass Fire", "area": "TRURO", "level": None,
             "dist": "25-60 km", "notify": False},
+           {"id": "F7", "headline": "MID : STRUCTURE FIRE", "event": "Structure Fire", "area": "MID", "level": None,
+            "dist": "10-25 km", "notify": False},
            {"id": "F8", "headline": "NEAR : GRASS FIRE", "event": "Grass Fire", "area": "NEAR", "level": None,
-            "dist": "10-25 km", "notify": True}]
+            "dist": "5-10 km", "notify": True}]
     out = run.local_alerts({"summary": {"nearby_incidents": far, "emergency_warnings": [], "watch_and_act_near": []}},
                            {}, now, False)
     assert [a["title"] for a in out] == ["CFS: Grass Fire at Near"], out

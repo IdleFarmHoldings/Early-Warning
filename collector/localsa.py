@@ -113,6 +113,13 @@ def distance_band(km):
     return "under 5 km" if km < 5 else "5-10 km" if km < 10 else "10-25 km" if km < 25 else "25-60 km" if km < 60 else "60+ km"
 
 
+def notify_near(km, radius_km):
+    """Push a phone note for a CFS incident under radius_km from home. Strictly under, so a note never says
+    "10-25 km from home" when the family chose 0-10 km. A fire with no location (matched by town name) still
+    notifies: it can't be ruled out."""
+    return km is None or km < radius_km
+
+
 def nearby_incidents(warnings, home, radius_km, places, structure_radius_km=None, structure_places=()):
     """CFS/MFS incidents worth a phone note near home.
 
@@ -753,8 +760,8 @@ def fetch_local(state):
         "emergency_warnings": [w["headline"] for w in warn if w["level"] == "Emergency Warning"]
         + [f"{i['type']} {i['where']}" for i in inc if i["level"] == "Emergency Warning"],
         "nearby_incidents": [{**{k: w.get(k) for k in ("id", "headline", "event", "area", "level")}, "dist": distance_band(w.get("km")),
-                              # Phone note only within notify_radius_km; farther fires still show on the page and board.
-                              "notify": w.get("km") is None or w["km"] <= lc.get("notify_radius_km", lc["nearby_radius_km"])}
+                              # Phone note only under notify_radius_km; farther fires still show on the page and board.
+                              "notify": notify_near(w.get("km"), lc.get("notify_radius_km", lc["nearby_radius_km"]))}
                              for w in nearby_incidents(warn, (lc["home"]["lat"], lc["home"]["lon"]),
                                                        lc["nearby_radius_km"], lc["nearby_places"],
                                                        lc.get("structure_radius_km"), lc.get("structure_places", []))][:10],
