@@ -477,21 +477,42 @@ def local_alerts(loc, state, now, first_run):
     return out
 
 
+SIGNS_TOLD_HOURS = 72  # a sign the family was told about stays "known" while lit, and for 72 h after it goes out
+
+
 def precursor_alerts(scenarios, prev_ind, state, now, first_run):
-    """Alert when a scenario's warning-sign score first crosses the alert line (12 h cooldown)."""
+    """Alert when a scenario's warning-sign score is over the alert line AND a sign has lit that the family has not
+    been told about (12 h cooldown). The same signs dipping under the line and coming back are not news: from 19 to
+    23 Nov 2026 the pandemic alert went out five times on much the same signs."""
     line = precursors.PLAYBOOK["alert_score"]
-    prev = {s["key"]: s["score"] for s in prev_ind.get("scenarios", [])}
     cd = state.setdefault("cooldown", {})
+    seed = "signs_told" not in state or first_run  # first sight: remember what is showing, push nothing
+    told_all = state.setdefault("signs_told", {})
     out = []
     for s in scenarios:
         key = f"esc-{s['key']}"
+        told = {k: t for k, t in (told_all.get(s["key"]) or {}).items()
+                if now - datetime.strptime(t, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
+                < timedelta(hours=SIGNS_TOLD_HOURS)}
+        lit = [i["id"] for i in s["lit"]]
+        fresh = {i for i in lit if i not in told}
         last = cd.get(key)
         recent = last and now - datetime.strptime(last, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc) < timedelta(hours=12)
-        if s["score"] >= line and prev.get(s["key"], 0) < line and not recent and not first_run:
+        if s["score"] >= line and seed:
+            told.update({i: iso(now) for i in lit})
+        elif s["score"] >= line and fresh and not recent:
             cd[key] = iso(now)
             out.append({"key": key, "channels": ["proactive"], "category": SCENARIO_CATEGORY.get(s["key"], "geo"),
                         "title": f"Warning signs building: {s['name']}"[:90],
-                        "message": signs_message(s), "priority": 4, "confirmed": False, "tags": ["warning"]})
+                        "message": signs_message(s, new=fresh if len(fresh) < len(lit) else None),
+                        "priority": 4, "confirmed": False, "tags": ["warning"]})
+            told.update({i: iso(now) for i in lit})
+        else:
+            told.update({i: iso(now) for i in lit if i in told})  # known signs stay known while they show
+        if told:
+            told_all[s["key"]] = told
+        else:
+            told_all.pop(s["key"], None)
     return out
 
 
@@ -499,16 +520,19 @@ SCENARIO_CATEGORY = {"bio": "bio", "nuclear": "nuclear", "cyber": "cyber", "ai":
                      "local": "nature"}
 
 
-def signs_message(s, limit=700):
+def signs_message(s, limit=700, new=None):
     """Phone text for a warning-signs alert: each sign with what actually set it off (the headline or reading),
-    so the family can judge it themselves instead of being told only how many signs there are."""
-    lit = sorted(s["lit"], key=lambda i: -i["weight"])
+    so the family can judge it themselves instead of being told only how many signs there are.
+    new: ids of signs the family has not been told about yet; they are listed first and marked NEW."""
+    new = set(new or ())
+    lit = sorted(s["lit"], key=lambda i: (i["id"] not in new, -i["weight"]))
     head = f"{len(lit)} automatic warning sign{'s' if len(lit) != 1 else ''} showing. None confirmed:"
     tail = "\nThese are keyword and data matches, not checked facts. The next analysis will check them."
     lines = []
     for i in lit:
         label = i.get("short") or precursors.short_name(i)
         detail = re.sub(r"\s+", " ", str(i.get("detail") or "")).strip()
+        label = f"NEW {label}" if i["id"] in new else label
         lines.append(f"\n• {label}: {detail[:110]}" if detail else f"\n• {label}")
     body = head
     for n, ln in enumerate(lines):

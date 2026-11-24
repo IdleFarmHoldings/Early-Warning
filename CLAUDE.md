@@ -46,6 +46,15 @@ file format or alert rule they depend on, update the prompts too (or tell the us
   > obscure app). Critical (both channels, priority 5) needs evidence Australians are hit: a headline naming
   Australia or an Australian company, or our own telemetry. An Australian outlet running an overseas story is
   not enough. A Microsoft-type platform outage is a Warning.
+- News alone never sets off the emergency alarm (priority 5, both channels, repeats). Critical also needs something
+  measured or first-hand to agree: our own telemetry (carrier drop, SA grid demand collapse) or a provider's status
+  page. A news-only incident that would be Critical goes out once as a Warning saying so, and is marked
+  `needs_confirming` in `brief.json` for the analysis. Official warnings (CFS, Bureau, WHO, GDACS) and measured
+  signals keep their own emergency paths.
+- Market moves are never pushed on their own: they are marked `big_move` for the board and the daily digest.
+- Warning-sign alerts go out only when a sign the family has not been told about lights up (12 h cooldown); signs
+  already told stay known while they show and for 72 h after (`state.signs_told`). The same signs dipping under
+  the alert line and coming back do not re-alert.
 - National shocks abroad (a whole country's flights, power, networks or payments halted) are alerted.
 - CFS fires near home, including suburban house fires, must alert. Emergency-level alerts repeat twice.
 - 4chan chatter (`collector/chan.py`, boards /pol/ /k/ /news/) is a tip-off for the analysis only: bursts of

@@ -61,6 +61,8 @@ def build(latest, indicators, campaigns=None):
                             "traffic_not_normal": shocks_traffic, "tracking_glitch": ns.get("tracking_glitch")},
         "incidents": [{"target": i.get("target"), "severity": i.get("severity"), "confirmed": i.get("confirmed"),
                        "attack_reported": bool(i.get("attack")),
+                       # would have been an emergency, but only news says so: the analysis should confirm or rule out
+                       "needs_confirming": bool(i.get("news_only_critical")),
                        "headlines": _titles(i.get("headlines"), 3)}
                       for i in sorted(L.get("incidents") or [], key=lambda i: not i.get("attack"))],
         "cyber_campaigns": [{**{k: c.get(k) for k in ("title", "actor", "score", "band", "trend", "countries", "sectors",
@@ -79,7 +81,8 @@ def build(latest, indicators, campaigns=None):
                                            for t in (L.get("who_latest") or [])], 8))),
         "acsc": _titles([{"title": t} if isinstance(t, str) else t for t in (L.get("acsc_latest") or [])], 5),
         "cisa": _titles([{"title": t} if isinstance(t, str) else t for t in (L.get("cisa_latest") or [])], 5),
-        "markets": {k: {"price": v.get("price"), "change_pct": v.get("change_pct")}
+        # big_move: a large daily move; the collector no longer pushes these, mention in the digest if it matters
+        "markets": {k: {"price": v.get("price"), "change_pct": v.get("change_pct"), "big_move": bool(v.get("big_move"))}
                     for k, v in (L.get("markets") or {}).items()},
         "telecom_drop_pct": {k: _drop(v) for k, v in (L.get("telecom") or {}).items()},
         "internet_drop_pct": {k: _drop(v) for k, v in (L.get("internet_countries") or {}).items()},

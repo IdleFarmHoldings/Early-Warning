@@ -339,11 +339,12 @@ def evaluate(results, state, series, now):
     for a in results.get("cisa") or []:
         new(f"cisa-{a['id']}", "cisa")  # recorded for the analysis run; no push
 
-    # Markets: big daily moves
-    mk = results.get("markets") or {}
+    # Markets: big daily moves are marked for the board and the daily digest, never pushed on their own.
+    # They fail the "would the family do anything differently?" test, and keyed by calendar day they re-sent
+    # Friday's VIX jump on Saturday, Sunday and Monday while the US market was shut (21-23 Nov 2026).
+    # Fuel has its own home alert (collector/home.py) for the move that does matter.
     mc = CONFIG["markets"]
-    day = now.strftime("%Y-%m-%d")
-    for name, q in mk.items():
+    for name, q in (results.get("markets") or {}).items():
         ch = q.get("change_pct")
         if ch is None:
             continue
@@ -351,10 +352,8 @@ def evaluate(results, state, series, now):
         hit = lim is not None and ((lim > 0 and ch >= lim) or (lim < 0 and ch <= lim))
         if name == "VIX" and q.get("price", 0) >= mc["vix_level_alert"]:
             hit = True
-        if hit and new(f"mkt-{name}-{day}", "markets"):
-            alerts.append(_alert(f"mkt-{name}", ["proactive"], "markets", f"Market stress: {name} {ch:+.1f}%",
-                                 f"{name} at {q['price']} ({ch:+.1f}% on the day). Sharp moves like this often follow a major shock.",
-                                 priority=3, tags=["chart_with_downwards_trend"]))
+        if hit:
+            q["big_move"] = True
 
     # Aircraft anomalies (unconfirmed, early warning only)
     ac = results.get("aircraft") or {}

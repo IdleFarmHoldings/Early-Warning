@@ -16,7 +16,7 @@ A family early-warning system for threats that could reach South Australia: conf
 
 | Channel | Gets |
 |---|---|
-| Early warning (proactive) | Daily digest, unconfirmed early signals (unusual flight activity, market stress), official advisories and disaster alerts |
+| Early warning (proactive) | Daily digest, unconfirmed early signals, official advisories and disaster alerts (big market moves go in the digest, not on their own) |
 | Confirmed only (reactive) | Confirmed large-scale events affecting Australia: Red disaster alerts in Australia, WHO international health emergencies, and confirmed events the analysis flags |
 
 Channel names are stored as repository secrets `NTFY_PROACTIVE` and `NTFY_REACTIVE`, never in the code.

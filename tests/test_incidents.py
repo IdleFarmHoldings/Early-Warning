@@ -34,14 +34,16 @@ def test_microsoft_outage_in_sa_is_warning():
     assert "Proximity" in s["rationale"] and "Velocity" in s["rationale"] and "Criticality" in s["rationale"]
 
 
-def test_bank_outage_spreading_in_australia_is_critical():
+def test_bank_outage_spreading_in_australia_from_news_only_is_a_warning():
     news = feed("CommBank outage leaves Australians unable to pay - ABC News",
                 "Westpac and NAB customers report card payments down nationwide - 9News",
                 "EFTPOS outage hits supermarkets and airports across Australia - SMH",
                 "Banks confirm payments outage, thousands stranded at checkouts - The Guardian",
                 "ATMs down as bank outage spreads - news.com.au", key="bank_outage")
     s = by_target(I.triage(news, NOW, {}))["Banking & payments"]
-    assert s["severity"] == "Critical" and s["criticality"] == 3 and s["velocity"] == 3
+    # Critical-grade, but only news says so: one Warning buzz, flagged for the analysis to confirm (24 Nov 2026)
+    assert s["severity"] == "Warning" and s["criticality"] == 3 and s["velocity"] == 3
+    assert s["news_only_critical"] is True
 
 
 def test_obscure_app_overseas_is_info():
@@ -174,10 +176,39 @@ def test_two_slow_sa_reports_are_warning_not_critical():
     assert s["reports"] == 2 and s["severity"] == "Warning"
 
 
-def test_real_sa_blackout_still_critical():
-    news = feed("Thousands without power across Adelaide as blackout spreads - ABC News",
-                "Statewide blackout hits South Australia, traffic lights out - Adelaide Now",
-                "SA Power Networks confirms widespread outage across Adelaide - InDaily",
-                key="sapn")
-    s = by_target(I.triage(news, NOW, {}))["Power grid"]
-    assert s["severity"] == "Critical"
+SA_BLACKOUT = ("Thousands without power across Adelaide as blackout spreads - ABC News",
+               "Statewide blackout hits South Australia, traffic lights out - Adelaide Now",
+               "SA Power Networks confirms widespread outage across Adelaide - InDaily")
+
+
+def test_real_sa_blackout_is_critical_when_the_grid_data_agrees():
+    s = by_target(I.triage(feed(*SA_BLACKOUT, key="sapn"), NOW, {}, local={"possible_blackout": True}))["Power grid"]
+    assert s["severity"] == "Critical" and s["measured"] is True and s["news_only_critical"] is False
+    out = I.incident_alerts([s], {}, NOW, first_run=False)
+    assert out[0]["priority"] == 5 and out[0]["channels"] == ["proactive", "reactive"]
+
+
+def test_sa_blackout_in_the_news_only_is_one_warning_until_measured():
+    """24 Nov 2026: headlines alone never set off the loud, repeating emergency alarm. A news-only blackout buzzes
+    once on the Early warning channel; when the grid data agrees it goes up to Critical on both channels."""
+    state = {}
+    s = by_target(I.triage(feed(*SA_BLACKOUT, key="sapn"), NOW, state))["Power grid"]
+    assert s["severity"] == "Warning" and s["news_only_critical"] is True
+    out = I.incident_alerts([s], state, NOW, first_run=False)
+    assert len(out) == 1 and out[0]["priority"] == 4 and out[0]["channels"] == ["proactive"]
+    assert "our own checks have not confirmed it" in out[0]["message"]
+    later = NOW + timedelta(minutes=15)
+    s2 = by_target(I.triage(feed(*SA_BLACKOUT, key="sapn"), later, state, local={"possible_blackout": True}))["Power grid"]
+    out2 = I.incident_alerts([s2], state, later, first_run=False)
+    assert len(out2) == 1 and out2[0]["priority"] == 5 and out2[0]["channels"] == ["proactive", "reactive"]
+
+
+def test_carrier_drop_telemetry_makes_a_phone_outage_critical():
+    news = feed("Telstra outage: mobile network down across Australia - ABC News",
+                "Telstra confirms nationwide mobile outage, triple zero affected - 9News",
+                "Telstra customers across Australia unable to call - SMH",
+                "Thousands hit as Telstra network goes down nationwide - The Guardian",
+                "Telstra outage spreads to hospitals and police - news.com.au", key="outage_au")
+    tele = {"Telstra": {"bgp": {"drop_pct": 45}}}
+    s = by_target(I.triage(news, NOW, {}, telecom=tele))["Phone & internet networks"]
+    assert s["severity"] == "Critical" and s["measured"] is True

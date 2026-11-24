@@ -307,7 +307,12 @@ def test_news_require_filters_noise():
     assert precursors._lit(ind, ctx("Mystery pneumonia cluster in Hubei puts health authorities on alert"))
     mc = next(i for s in precursors.PLAYBOOK["scenarios"] if s["key"] == "bio" for i in s["indicators"] if i["id"] == "masscas")
     assert precursors._lit(mc, {"news": {"masscas": {"items": [{"title": "Opera House terror plot sentencing"}]}}}) is None
-    assert precursors._lit(mc, {"news": {"masscas": {"items": [{"title": "Hospital declares Code Brown after crash"}]}}})
+    crash = {"news": {"masscas": {"items": [{"title": "Hospital declares Code Brown after crash"}]}}}
+    # a crash is a mass-casualty sign for Australian infrastructure, but not a sign of disease (24 Nov 2026)
+    assert precursors._lit(mc, crash) is None
+    au = next(i for s in precursors.PLAYBOOK["scenarios"] if s["key"] == "ausinfra" for i in s["indicators"] if i["id"] == "masscas")
+    assert precursors._lit(au, crash)
+    assert precursors._lit(mc, {"news": {"masscas": {"items": [{"title": "Hospital declares Code Brown as dozens fall ill"}]}}})
 
 
 def test_cyber_parsers_and_scenario():

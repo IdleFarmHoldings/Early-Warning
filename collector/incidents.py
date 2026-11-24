@@ -11,8 +11,10 @@
     1 app       - any other, low-dependency service
 
   Severity:
-    Critical - high proximity (Australia/SA) + rapid spread + high criticality (tier 3+)
-    Warning  - high spread + material criticality (tier 2+), OR confirmed impact in SA
+    Critical - high proximity (Australia/SA) + rapid spread + high criticality (tier 3+), AND something measured or
+               first-hand agrees (our own telemetry or a provider's status page). News alone is never an emergency.
+    Warning  - high spread + material criticality (tier 2+), OR confirmed impact in SA. A news-only incident that
+               would otherwise be Critical is a Warning marked news_only_critical, for the analysis to confirm.
     Info     - anything else (dashboard only, never pushed)
 
 Pure functions apart from the `state` dict, so they can be tested offline.
@@ -240,18 +242,29 @@ def score(c, prev=None, now=None):
     # Australians are affected. An Australian paper carrying an overseas story is not enough on its own
     # (19 Nov 2026: a US card-data hack in the Herald Sun went out as "cyber attack in Australia").
     au_proof = any(r.get("sa") or r.get("au_head") for r in reps)
+    # Something measured or first-hand, not a headline: our own telemetry (carrier drop, grid demand collapse) or
+    # the provider's own status page. Headlines alone set off two false emergencies in five days (19 Nov: an
+    # overseas card hack; 23 Nov: a report on blackout risk), each sent three times to both channels at priority 5.
+    measured = any(r["pub"] == "telemetry" or r.get("status_page") for r in reps)
 
     if prox >= 2 and vel >= 3 and crit >= 3 and confirmed and au_proof:
         sev = "Critical"
-    elif prox == 3 and confirmed and crit >= 3 and (len(reps) >= 3 or n_pubs >= 3 or any(r["pub"] == "telemetry" for r in reps)):
+    elif prox == 3 and confirmed and crit >= 3 and (len(reps) >= 3 or n_pubs >= 3 or measured):
         # In SA, but still needs 3+ reports or outlets (or our own telemetry): two stray headlines are not an emergency.
         sev = "Critical"
     elif (vel >= 2 and crit >= 2 and confirmed) or (prox == 3 and confirmed):
         sev = "Warning"
     else:
         sev = "Info"
+    # The loud, repeating emergency alarm needs a measured or first-hand signal to agree with the news. Without
+    # one it is a Warning (one buzz, Early warning channel); it becomes Critical as soon as telemetry or a status
+    # page agrees, and the analysis can confirm it to the Confirmed-only channel.
+    news_only_critical = sev == "Critical" and not measured
+    if news_only_critical:
+        sev = "Warning"
     if winding_down:
         sev = "Info"  # over, or being picked over: board only
+        news_only_critical = False
     prox_txt = ["outside Australia", "global (reaches Australian users)", "Australia", "South Australia"][prox]
     if prox == 2 and not au_proof:
         prox_txt = "reported in Australian media, no sign yet of Australians affected"
@@ -261,7 +274,8 @@ def score(c, prev=None, now=None):
     return {"key": re.sub(r"\W+", "-", c["label"].lower()).strip("-"), "target": c["label"], "severity": sev,
             "proximity": prox, "velocity": vel, "criticality": crit, "confirmed": confirmed,
             "reports": len(reps), "outlets": n_pubs, "sectors": sectors, "first_seen": iso(c["first"]), "au_proof": au_proof,
-            "winding_down": winding_down, "attack": sum(1 for r in reps if r.get("attack")) * 2 >= len(reps),
+            "winding_down": winding_down, "news_only_critical": news_only_critical, "measured": measured,
+            "attack": sum(1 for r in reps if r.get("attack")) * 2 >= len(reps),
             "rationale": why, "headlines": [{"title": r["title"], "pub": r["pub"], "at": r["at"], "link": r["link"]}
                                             for r in sorted(reps, key=lambda r: (not r.get("after"), r["at"]), reverse=True)[:4]]}
 
@@ -345,6 +359,8 @@ def incident_alerts(scored, state, now, first_run):
                     "message": (f"{top}. {s['reports']} reports from {s['outlets']} outlets"
                                 + (f"; also affecting {', '.join(s['sectors'][:3])}" if s["sectors"] else "")
                                 + (". Not yet clear whether Australians are affected" if unclear else "")
+                                + (". News reports only so far; our own checks have not confirmed it"
+                                   if s.get("news_only_critical") else "")
                                 + f". {advice} Check the board.")[:390],
                     "priority": 5 if crit else 4, "confirmed": s["confirmed"],
                     "tags": ["rotating_light" if crit else "warning"]})
