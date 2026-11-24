@@ -278,18 +278,19 @@
   ],
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
+    "maritime": "TimeoutError: ",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-24T23:16:00Z",
+  "generated_at": "2026-11-24T23:32:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": null,
+    "Baltic / Kaliningrad": 64,
     "Black Sea": null,
-    "Israel & Eastern Mediterranean": 8,
-    "Korea": 1,
-    "Persian Gulf": 12,
-    "South Australia": 5,
-    "Sydney / NSW": 10,
+    "Israel & Eastern Mediterranean": 0,
+    "Korea": 0,
+    "Persian Gulf": 13,
+    "South Australia": 3,
+    "Sydney / NSW": 9,
     "Taiwan Strait": 0
   },
   "incidents": [
@@ -346,16 +347,6 @@
     },
     {
       "attack_reported": true,
-      "confirmed": true,
-      "headlines": [
-        "Google says the first autonomous AI cyberattack has happened. Expect a lot more like it."
-      ],
-      "needs_confirming": false,
-      "severity": "Info",
-      "target": "Google"
-    },
-    {
-      "attack_reported": true,
       "confirmed": false,
       "headlines": [
         "Allegra Stratton: AI-Powered Cyber-Attack Fears Stalk Westminster"
@@ -373,6 +364,16 @@
       "needs_confirming": false,
       "severity": "Info",
       "target": "Amazon"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "What is ARTEX, the AI-powered tool linked to recent cyberattacks?"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "What"
     },
     {
       "attack_reported": true,
@@ -410,6 +411,16 @@
       "attack_reported": false,
       "confirmed": false,
       "headlines": [
+        "Merici College shuts down IT systems following a 'potential cyber 'incident'"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "Merici College"
+    },
+    {
+      "attack_reported": false,
+      "confirmed": false,
+      "headlines": [
         "UK NCSC warns AI-driven hacking surges as security technical debt breaks down"
       ],
       "needs_confirming": false,
@@ -419,11 +430,11 @@
   ],
   "internet_drop_pct": {
     "China": 0.0,
-    "Iran": 0.5,
+    "Iran": 0.6,
     "Israel": 0.0,
     "Russia": 0.0,
     "South Korea": 0.1,
-    "Taiwan": 0.3
+    "Taiwan": 0.2
   },
   "local_sa": {
     "bom": [],
@@ -439,14 +450,14 @@
     "fire_danger_ok": true,
     "fires_active": 11,
     "fuel": {
-      "brent_aud": 132.2,
-      "change_pct": -3.2,
+      "brent_aud": 132.3,
+      "change_pct": -3.1,
       "pump_cents": -3,
       "week_ago_aud": 136.6
     },
-    "grid_demand_fall_pct": 38.2,
-    "grid_demand_mw": 473,
-    "grid_demand_usual_mw": 663,
+    "grid_demand_fall_pct": 39.4,
+    "grid_demand_mw": 408,
+    "grid_demand_usual_mw": 602,
     "grid_lor_level": 0,
     "nearby_incidents": [
       {
@@ -475,30 +486,49 @@
         "pm25": 3
       },
       "air_word": "Good",
-      "days": []
+      "days": [
+        {
+          "date": "2026-11-25",
+          "gust": 45,
+          "rain": 0,
+          "tmax": 28
+        },
+        {
+          "date": "2026-11-26",
+          "gust": 38,
+          "rain": 0,
+          "tmax": 28
+        },
+        {
+          "date": "2026-11-27",
+          "gust": 41,
+          "rain": 0,
+          "tmax": 27
+        }
+      ]
     },
     "possible_blackout": false,
     "power_news": [],
     "road_hazards": [],
-    "rooftop_pv_mw": 1085,
+    "rooftop_pv_mw": 1591,
     "sawater_news": [],
     "watch_and_act": []
   },
   "markets": {
     "AUD/USD": {
       "big_move": false,
-      "change_pct": -0.01,
-      "price": 0.664
+      "change_pct": -0.04,
+      "price": 0.6638
     },
     "Brent oil": {
       "big_move": false,
-      "change_pct": -1.11,
-      "price": 88.38
+      "change_pct": -1.1,
+      "price": 88.39
     },
     "Gold": {
       "big_move": false,
       "change_pct": -2.6,
-      "price": 3556.4
+      "price": 3556.3
     },
     "VIX": {
       "big_move": false,
@@ -519,9 +549,9 @@
   "nc3": "normal",
   "news_watch": {
     "ai_hack": [
-      "Google says the first autonomous AI cyberattack has happened. Expect a lot more like it. - Mashable",
       "Allegra Stratton: AI-Powered Cyber-Attack Fears Stalk Westminster - Bloomberg.com",
-      "Amazon says hackers’ AI agents found and exploited 0-day with little human input - Ars Technica"
+      "Amazon says hackers’ AI agents found and exploited 0-day with little human input - Ars Technica",
+      "UK warns AI-driven cyberattacks are exposing years of weak security - TechCrunch"
     ],
     "airspace": [
       "Saudi Arabia seeks missile interceptors from allies amid Yemen tensions - Crypto Briefing",
@@ -529,9 +559,9 @@
       "Qatar Airways Operates Limited Flights to and from Doha - https://safariindia.com/"
     ],
     "aviation_halt": [
-      "Editorial: Nationwide Ground Stop Highlights Vulnerable Air Traffic Systems - Aviation Pros",
-      "Government watchdog warned of potential disruptions from FAA upgrades before nationwide ground stop - WUSA9",
-      "A Record Holiday Rush Runs Into Outdated US Air Traffic Technology - Bloomberg.com"
+      "FAA issues and lifts ground stop at Chicago’s O’Hare - The Hill",
+      "Chicago O'Hare International Airport briefly issues ground stop amid equipment outage during Thanksgiving week - WUSA9",
+      "Editorial: Nationwide Ground Stop Highlights Vulnerable Air Traffic Systems - Aviation Pros"
     ],
     "bank_outage": [
       "NAB’s redundancy email debacle – where to get support and what we’re doing - Finance Sector Union",
@@ -563,7 +593,7 @@
     ],
     "cyber_attrib": [
       "FBI Warns Hackers Are Using ARTEX AI Tool To Automate Cyberattacks - Yahoo News Canada",
-      "FBI warns hackers using AI-powered tool to automate cyberattacks worldwide - Anadolu Ajansı",
+      "Spy agency warns active Russian hackers targeting Australian industry - ABC News & Headlines – Australian Broadcasting Corporation",
       "Bluetooth Flaws Let Hackers Control Trailer Brakes Without Authentication, CISA Warns - The 420.in"
     ],
     "cyber_au": [
@@ -574,7 +604,7 @@
     "cyber_ot": [
       "UK operation wards off risk of cyber-attack on supermarket fridges and freezers - The Guardian",
       "Shop freezers in seven European countries hit by cyber-attack - BBC",
-      "Next Plc’s Supplier Hit by Cyberattack in Latest UK Retail Breach - Insurance Journal"
+      "Supermarket freezers and fridges in Europe hit by cyberattack - Nine.com.au"
     ],
     "cyber_state": [
       "ESET Research: Sandworm behind cyberattack on Poland’s power grid in late 2025 - We Live Security",
@@ -608,8 +638,8 @@
     ],
     "illness": [
       "Mystery illness causes mass hospitalisation of runners - The Nightly",
-      "148 aboard Florida-bound cruise ship sickened by ‘unknown’ GI outbreak: CDC - The Hill",
-      "Dr. Siegel on measles comeback, mystery illness outbreak on cruise ship - Fox News"
+      "Dr. Siegel on measles comeback, mystery illness outbreak on cruise ship - Fox News",
+      "148 aboard Florida-bound cruise ship sickened by ‘unknown’ GI outbreak: CDC - The Hill"
     ],
     "masscas": [
       "6 hospitalized, including 1 in critical condition, after fire tears through home in Allentown - WFMZ.com",
@@ -624,7 +654,7 @@
     "national_outage": [
       "'Forgot it was Monday night': Farcical reason NFL thriller was plunged into darkness revealed - Fox Sports",
       "A widespread power cut in Dnipro on 24 November - UkrMedia News",
-      "Cuba’s National Electric Grid Collapses, Reason Unknown - EnergyNow.com"
+      "Inside the ‘Black Sky’ plans for a nationwide blackout - Herald.Wales"
     ],
     "outage_au": [
       "Telstra mobile outage disrupts services across Australia - Australian Cyber Security Magazine",
@@ -674,9 +704,9 @@
       "yes": 13.5
     },
     {
-      "d24h": -0.4,
+      "d24h": -0.5,
       "q": "China x Taiwan military clash before 2027?",
-      "yes": 2.7
+      "yes": 2.6
     },
     {
       "d24h": -0.2,
@@ -739,7 +769,7 @@
       "yes": 7.5
     },
     {
-      "d24h": -0.1,
+      "d24h": 0.0,
       "q": "NATO x Russia military clash by November 30, 2026?",
       "yes": 2.4
     },
@@ -999,7 +1029,7 @@
       "key": "taiwan",
       "lit": [
         {
-          "detail": "Australian defence stocks +7.1% vs market over 5 days",
+          "detail": "Australian defence stocks +5.9% vs market over 5 days",
           "name": "Defence stocks outperforming (US / Australia)"
         }
       ],
@@ -1076,7 +1106,7 @@
       "key": "ai",
       "lit": [
         {
-          "detail": "Google says the first autonomous AI cyberattack has happened. Expect a lot more like it.",
+          "detail": "Allegra Stratton: AI-Powered Cyber-Attack Fears Stalk Westminster",
           "name": "Reports of AI-driven hacking campaigns"
         },
         {
@@ -1089,7 +1119,7 @@
     }
   ],
   "sectors_relative_5d": {
-    "defence_au": 7.13,
+    "defence_au": 5.93,
     "defence_eu": -0.18,
     "defence_us": 0.84,
     "pandemic": 1.86
@@ -1125,7 +1155,7 @@
     "Aussie Broadband": 0.0,
     "Optus": 0.0,
     "TPG": 0.0,
-    "Telstra": 0.2,
+    "Telstra": 0.7,
     "Vodafone": 0.0
   },
   "us_departure_orders": [
