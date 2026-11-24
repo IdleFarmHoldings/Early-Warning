@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-24T05:49:00Z",
+  "generated_at": "2026-11-24T06:04:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -628,9 +628,8 @@
     },
     {
       "band": "Elevated",
-      "convergence": "Two different kinds of sign are showing together (chemical weapons and health). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: countries restricting medical supply exports, pandemic-response stocks outperforming (5 days) and australian medicine or ppe shortage reports.",
+      "convergence": "Only one kind of sign is showing (health). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: countries restricting medical supply exports, pandemic-response stocks outperforming (5 days) and chemical / nerve-agent attack or mass poisoning reported.",
       "domains": [
-        "Chemical weapons",
         "Health"
       ],
       "key": "bio",
@@ -658,20 +657,12 @@
           "name": "Mass casualty declarations (any country)",
           "short": "Mass casualty event",
           "weight": 5
-        },
-        {
-          "detail": "US blames UN for spike in chemical weapons attacks",
-          "domain": "Chemical weapons",
-          "id": "chem",
-          "name": "Chemical / nerve-agent attack or mass poisoning reported",
-          "short": "Chemical attack",
-          "weight": 15
         }
       ],
       "name": "Pandemic, biological or chemical emergency",
       "sa_impact": "Health system strain, possible lockdowns and border closures, and shortages of medicines and protective equipment, which Australia mostly imports.",
-      "score": 55,
-      "trend": "steady",
+      "score": 40,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Trade",
@@ -696,6 +687,12 @@
           "id": "vix",
           "name": "Market fear index above 30",
           "weight": 10
+        },
+        {
+          "domain": "Chemical weapons",
+          "id": "chem",
+          "name": "Chemical / nerve-agent attack or mass poisoning reported",
+          "weight": 15
         },
         {
           "domain": "Health",
@@ -817,7 +814,7 @@
           "weight": 15
         },
         {
-          "detail": "Ukrainian Exchange resumes trading halted in 2024",
+          "detail": "Nasdaq futures tripped a circuit breaker built for market crashes as Jensen Huang returned to Nvidia",
           "domain": "Markets",
           "id": "flash",
           "name": "Flash crash or exchange trading halt",
