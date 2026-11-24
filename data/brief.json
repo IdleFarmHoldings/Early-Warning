@@ -30,62 +30,7 @@
     ],
     "bursts": []
   },
-  "chokepoints": {
-    "Bab el-Mandeb Strait": {
-      "avg_7d": 25.6,
-      "change_pct": -6.3,
-      "last_date": "2026-11-15",
-      "usual_7d": 27.3
-    },
-    "Lombok Strait": {
-      "avg_7d": 37.0,
-      "change_pct": -3.7,
-      "last_date": "2026-11-15",
-      "usual_7d": 38.4
-    },
-    "Luzon Strait": {
-      "avg_7d": 106.1,
-      "change_pct": 7.2,
-      "last_date": "2026-11-15",
-      "usual_7d": 99.0
-    },
-    "Malacca Strait": {
-      "avg_7d": 229.9,
-      "change_pct": 0.8,
-      "last_date": "2026-11-15",
-      "usual_7d": 228.0
-    },
-    "Strait of Hormuz": {
-      "avg_7d": 2.3,
-      "change_pct": -38.5,
-      "last_date": "2026-11-15",
-      "usual_7d": 3.7
-    },
-    "Suez Canal": {
-      "avg_7d": 46.1,
-      "change_pct": 7.3,
-      "last_date": "2026-11-15",
-      "usual_7d": 43.0
-    },
-    "Sunda Strait": {
-      "avg_7d": 29.7,
-      "change_pct": -12.2,
-      "last_date": "2026-11-15",
-      "usual_7d": 33.9
-    },
-    "Taiwan Strait": {
-      "avg_7d": 220.9,
-      "change_pct": -3.9,
-      "last_date": "2026-11-15",
-      "usual_7d": 229.9
-    },
-    "Torres Strait": {
-      "avg_7d": 11.0,
-      "change_pct": 35.1,
-      "last_date": "2026-11-15",
-      "usual_7d": 8.1
-    }
-  },
+  "chokepoints": {},
   "cisa": [
     "CISA Adds Two Known Exploited Vulnerabilities to Catalog",
     "CISA Adds Four Known Exploited Vulnerabilities to Catalog",
@@ -276,16 +221,17 @@
   ],
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
+    "chokepoints": "RuntimeError: PortWatch returned no rows: {\"error\": {\"code\": 429, \"message\": \"Unable to perform query. Too many requests",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-24T09:31:00Z",
+  "generated_at": "2026-11-24T09:37:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 15,
-    "Black Sea": 47,
-    "Israel & Eastern Mediterranean": 8,
+    "Baltic / Kaliningrad": 13,
+    "Black Sea": 33,
+    "Israel & Eastern Mediterranean": 11,
     "Korea": 1,
-    "Persian Gulf": 4,
+    "Persian Gulf": 2,
     "South Australia": 0,
     "Sydney / NSW": 0,
     "Taiwan Strait": 0
@@ -300,6 +246,16 @@
       "needs_confirming": false,
       "severity": "Info",
       "target": "Retail"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "Hacker attack forces US uranium mine to shut down operations"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "Hacker"
     },
     {
       "attack_reported": true,
@@ -386,11 +342,11 @@
       "attack_reported": false,
       "confirmed": true,
       "headlines": [
-        "Bendigo Bank to pay $8m after cyberattack targeted weak passwords",
         "When will interest rates go down in Australia? ANZ now tips the first RBA cut for June 2027",
-        "ANZ expects next rate cut to come in June 2027"
+        "ANZ expects next rate cut to come in June 2027",
+        "ANZ bank forecasts interest rate cut for June 2027"
       ],
-      "needs_confirming": true,
+      "needs_confirming": false,
       "severity": "Warning",
       "target": "Banking & payments"
     },
@@ -447,14 +403,14 @@
     "fire_danger_ok": true,
     "fires_active": 13,
     "fuel": {
-      "brent_aud": 130.4,
-      "change_pct": -5.3,
+      "brent_aud": 130.3,
+      "change_pct": -5.4,
       "pump_cents": -5,
       "week_ago_aud": 137.7
     },
-    "grid_demand_fall_pct": 1.6,
-    "grid_demand_mw": 1463,
-    "grid_demand_usual_mw": 1473,
+    "grid_demand_fall_pct": 1.3,
+    "grid_demand_mw": 1467,
+    "grid_demand_usual_mw": 1474,
     "grid_lor_level": 0,
     "nearby_incidents": [
       {
@@ -510,18 +466,18 @@
     },
     "Brent oil": {
       "big_move": false,
-      "change_pct": -3.29,
-      "price": 86.43
+      "change_pct": -3.38,
+      "price": 86.35
     },
     "Gold": {
       "big_move": false,
-      "change_pct": -0.99,
-      "price": 3615.1
+      "change_pct": -0.97,
+      "price": 3615.8
     },
     "VIX": {
       "big_move": false,
-      "change_pct": 3.23,
-      "price": 27.48
+      "change_pct": 3.64,
+      "price": 27.59
     }
   },
   "national_shocks": {
@@ -547,14 +503,14 @@
       "Saudi Arabia partners with South Korea, Ukraine for $3B air defense boost - Crypto Briefing"
     ],
     "aviation_halt": [
+      "Catch Me Up: How the ground stop unfolded, and a huge launch for 'GTA IV' - Scripps News",
       "L3Harris Router, 400 Fired Engineers and the 4-Hour Ground Stop: Aviation Writer Darryl Campbell on What Really Took Down US Airspace - BigGo Finance",
-      "Aviation groups urge at least $30 billion boost for FAA modernization - Reuters",
-      "What does an 'ATC delay' mean on my flight? What to do when air traffic control holds your plane - Nacionale"
+      "Aviation groups urge at least $30 billion boost for FAA modernization - Reuters"
     ],
     "bank_outage": [
       "ANZ-Roy Morgan Inflation Expectations were at 5.7% in late November – down 0.3% points from the month of October - Roy Morgan Research",
       "Aussie shares gain as confidence in tech trade returns - CommBank",
-      "ANZ bank forecasts interest rate cut for June 2027 - Nine.com.au"
+      "ANZ expects next rate cut to come in June 2027 - Australian Broker News"
     ],
     "blood": [
       "Upstate military sergeant reaches milestone blood donation - Spectrum Noticias",
@@ -594,7 +550,7 @@
     "cyber_state": [
       "ESET Research: Sandworm behind cyberattack on Poland’s power grid in late 2025 - We Live Security",
       "ESET attributes DynoWiper-powered attack on Poland’s power grid to Russia-aligned Sandworm group - Industrial Cyber",
-      "Sandworm Blamed for Wiper Attack on Polish Power Grid - Dark Reading"
+      "Russian state hackers likely behind wiper malware attack on Poland’s power grid - The Record from Recorded Future News"
     ],
     "cyber_supply": [
       "Cisco Expressway Zero-Day Exploited in the Wild as CISA Sets Monday Patch Deadline - BigGo Finance",
@@ -612,9 +568,9 @@
       "High Power Committee For Manipur Tragedy: Good And Beyond - Imphal Times"
     ],
     "flash": [
-      "Prescient Therapeutics Enters Trading Halt Ahead of PTX-100 Phase 2A Trial Update Following Dose Optimisation Committee Review - Kalkine",
-      "Jensen Huang's First Day Back Sends Nvidia Shares Soaring 31%, Asia-Pacific Chip Stocks Rally as South Korean Market Triggers Circuit Breaker - BigGo Finance",
-      "Nasdaq futures tripped a circuit breaker built for market crashes as Jensen Huang returned to Nvidia - Yahoo Finance"
+      "Nasdaq futures tripped a circuit breaker built for market crashes as Jensen Huang returned to Nvidia - Yahoo Finance",
+      "Bitcoin Crashes to $17,000 This Weekend: Inside the Bizarre Flash Crash Mystery - BeInCrypto",
+      "South Korea's KOSPI Reclaims 5,000 Intraday on AI Rally, Triggers Buy-Side Circuit Breaker - BigGo Finance"
     ],
     "fuel_au": [
       "Gas prices in Europe surge as forecast cold snap feeds supply shortage fears - The Guardian",
@@ -624,31 +580,31 @@
     "illness": [
       "Dr. Siegel on measles comeback, mystery illness outbreak on cruise ship - Fox News",
       "Mystery illness causes mass hospitalisation of runners - The Nightly",
-      "148 aboard Florida-bound cruise ship sickened by ‘unknown’ GI outbreak: CDC - The Hill"
+      "Zayn Malik hospitalised with mystery illness, forced to cancel upcoming appearances on album release week - Nine.com.au"
     ],
     "masscas": [
       "Portsmouth accident declared a mass casualty incident - WJAR",
-      "Healthcare Security Lacks National Oversight Amid Daily Workplace Violence - Security Today",
-      "'Lunacy': Military doctors fear Iran war catastrophe is coming - Raw Story"
+      "'Lunacy': Military doctors fear Iran war catastrophe is coming - Raw Story",
+      "Dozens Fall Ill On Two Condor Flights To Frankfurt, Triggering Mass Casualty Response - One Mile at a Time"
     ],
     "medexport": [
       "Africa’s vaccine manufacturing ambition from sovereignty to sustainable resilience - Nature",
       "Ensuring uninterrupted pharmaceutical supply chain - NST Online"
     ],
     "mobilisation": [
-      "The Territorial Recruitment Center sent the father of a child with a disability to the military without checking the extension of the deferment: the court canceled the conscription order - Судово-юридична газета",
       "A Jehovah's Witness reported forced detention at the Military Commissariat: why the court did not cancel the mobilization - Судово-юридична газета",
-      "Poltava Critical Enterprise Status: New Rules - Полтавська Хвиля | Новини Полтави"
+      "Poltava Critical Enterprise Status: New Rules - Полтавська Хвиля | Новини Полтави",
+      "Coordination center approves 100% of updated criticality criteria, state bodies to review earlier decisions by end of next week - Interfax-Ukraine"
     ],
     "national_outage": [
       "'Forgot it was Monday night': Farcical reason NFL thriller was plunged into darkness revealed - Fox Sports",
       "US airline restores system after outage disrupts Thanksgiving travel - ET TravelWorld",
-      "Cuba’s National Electric Grid Collapses, Reason Unknown - EnergyNow.com"
+      "Thanksgiving Air Travel to Hit 16-Year High, Testing Reliability - Bloomberg.com"
     ],
     "outage_au": [
       "Calls for 'automatic compensation' following telco outages - ABC News & Headlines – Australian Broadcasting Corporation",
-      "Australia's Optus apologises for outage that disrupted emergency calls - Reuters",
-      "Telstra mobile outage disrupts services across Australia - Australian Cyber Security Magazine"
+      "Microsoft ‘deeply sorry’ for global outage, rules out cyberattack and AI - Nine.com.au",
+      "The Microsoft outage is part of a growing trend. This is how to prepare for further disruption - SBS"
     ],
     "reservists": [
       "V’s reported 5 kills at reserve training revive memories of his elite service - Chosunbiz",
@@ -723,7 +679,7 @@
       "yes": 2.2
     },
     {
-      "d24h": -0.5,
+      "d24h": -0.3,
       "q": "Will China invade Taiwan by June 30, 2027?",
       "yes": 4.2
     },
@@ -773,7 +729,7 @@
       "yes": 3.0
     },
     {
-      "d24h": -1.4,
+      "d24h": -1.5,
       "q": "Will Russia test a nuclear weapon by December 31 2026?",
       "yes": 4.9
     },
@@ -993,20 +949,10 @@
       "trend": "steady"
     },
     {
-      "band": "Guarded",
-      "convergence": "Only one kind of sign is showing (shipping). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
-      "domains": [
-        "Shipping"
-      ],
+      "band": "Low",
       "key": "mideast",
-      "lit": [
-        {
-          "detail": "Strait of Hormuz -38% vs usual (2.3/day)",
-          "name": "Ship traffic through Hormuz down sharply"
-        }
-      ],
-      "score": 15,
-      "trend": "steady"
+      "score": 0,
+      "trend": "down"
     },
     {
       "band": "Low",
@@ -1112,7 +1058,7 @@
   ],
   "sectors_relative_5d": {
     "defence_au": 3.66,
-    "defence_eu": 1.12,
+    "defence_eu": 1.27,
     "defence_us": 0.08,
     "pandemic": -0.59
   },
@@ -1137,10 +1083,10 @@
   "tankers": "normal",
   "telecom_drop_pct": {
     "Aussie Broadband": 0.0,
-    "Optus": 0.0,
+    "Optus": 1.0,
     "TPG": 0.5,
     "Telstra": 0.0,
-    "Vodafone": 0.0
+    "Vodafone": 9.5
   },
   "us_departure_orders": [
     "Belarus"
