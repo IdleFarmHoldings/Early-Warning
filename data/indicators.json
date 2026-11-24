@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-24T10:59:00Z",
+  "generated_at": "2026-11-24T11:14:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -22,7 +22,7 @@
       "name": "Local emergency in SA (bushfire, heat, power)",
       "sa_impact": "Direct: bushfires, heatwaves and power cuts are the emergencies most likely to affect the family. In the 2016 statewide blackout, power, phones, traffic lights and fuel pumps failed together.",
       "score": 10,
-      "trend": "up",
+      "trend": "steady",
       "unlit": [
         {
           "domain": "Bushfire",
@@ -212,7 +212,7 @@
       "name": "Taiwan Strait / South China Sea crisis",
       "sa_impact": "Trade and fuel: most of Australia's refined fuel and many goods pass the South China Sea. A blockade would disrupt fuel, medicines and electronics within weeks; Australian forces could be drawn in.",
       "score": 0,
-      "trend": "down",
+      "trend": "steady",
       "unlit": [
         {
           "domain": "Maritime",
@@ -644,20 +644,12 @@
           "name": "Unknown illness / pneumonia cluster reported",
           "short": "Illness cluster",
           "weight": 20
-        },
-        {
-          "detail": "Dozens Fall Ill On Two Condor Flights To Frankfurt, Triggering Mass Casualty Response",
-          "domain": "Health",
-          "id": "masscas",
-          "name": "Mass casualty declarations (any country)",
-          "short": "Mass casualty event",
-          "weight": 5
         }
       ],
       "name": "Pandemic, biological or chemical emergency",
       "sa_impact": "Health system strain, possible lockdowns and border closures, and shortages of medicines and protective equipment, which Australia mostly imports.",
-      "score": 40,
-      "trend": "steady",
+      "score": 35,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Trade",
@@ -676,6 +668,12 @@
           "id": "shortage",
           "name": "Australian medicine or PPE shortage reports",
           "weight": 10
+        },
+        {
+          "domain": "Health",
+          "id": "masscas",
+          "name": "Mass casualty declarations (any country)",
+          "weight": 5
         },
         {
           "domain": "Chemical weapons",
@@ -795,7 +793,7 @@
       "key": "ai",
       "lit": [
         {
-          "detail": "Hackers Exploit N-able MailAssure Flaw While AI Agents Exploit MONAI Label Zero-Day",
+          "detail": "Google says the first autonomous AI cyberattack has happened. Expect a lot more like it.",
           "domain": "AI-enabled hacking",
           "id": "aihack",
           "name": "Reports of AI-driven hacking campaigns",
