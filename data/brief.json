@@ -155,7 +155,7 @@
       },
       "incidents": [
         "2026-11-24 Asia: Fact Check: Viral video of BJP Chief Nitin Nabin criticising Modi govt over China, Pakistan and Tejas is a deepfake (named attacker)",
-        "2026-11-23 Europe: Exclusive: China-backed hackers suspected behind ongoing EU Commission cyberattack (named attacker)",
+        "2026-11-23 Europe/United States: Exclusive: China-backed hackers suspected behind ongoing EU Commission cyberattack (named attacker)",
         "2026-11-23 ?: How AI Is Transforming China’s Nation-State Hacking Operations (named attacker)",
         "2026-11-23 ?: Hackers Use AI to Discover Zero-Day in 11 Minutes, Then Take Full Control of Server (same pattern)",
         "2026-11-23 United States: Artificial intelligence flourished in California election advertising — and divided voters (same pattern)"
@@ -279,19 +279,18 @@
   ],
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
-    "maritime": "TimeoutError: ",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-25T02:01:00Z",
+  "generated_at": "2026-11-25T02:17:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 85,
-    "Black Sea": 57,
-    "Israel & Eastern Mediterranean": 8,
+    "Baltic / Kaliningrad": null,
+    "Black Sea": 59,
+    "Israel & Eastern Mediterranean": 10,
     "Korea": 0,
-    "Persian Gulf": 4,
-    "South Australia": 4,
-    "Sydney / NSW": 8,
+    "Persian Gulf": 5,
+    "South Australia": 0,
+    "Sydney / NSW": 4,
     "Taiwan Strait": 0
   },
   "incidents": [
@@ -300,11 +299,10 @@
       "confirmed": true,
       "headlines": [
         "NAB fails to silence viral account detailing wild claims",
-        "Bendigo Bank to pay $8m penalty for breaching obligations following 2023 cyber attack",
-        "Bendigo Bank hit with $8M penalty over 2023 cyber attack"
+        "Bendigo Bank to pay $8m penalty for breaching obligations following 2023 cyber attack"
       ],
       "needs_confirming": false,
-      "severity": "Warning",
+      "severity": "Info",
       "target": "Banking & payments"
     },
     {
@@ -372,6 +370,16 @@
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
+        "China suspected in AI-powered cyberattack on CIA and US intelligence agencies"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "China"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
         "Allegra Stratton: AI-Powered Cyber-Attack Fears Stalk Westminster"
       ],
       "needs_confirming": false,
@@ -387,16 +395,6 @@
       "needs_confirming": false,
       "severity": "Info",
       "target": "What"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
-        "Amazon: Hackers’ AI Agents Found a Zero-Day in 11 Minutes"
-      ],
-      "needs_confirming": false,
-      "severity": "Info",
-      "target": "Amazon"
     },
     {
       "attack_reported": false,
@@ -442,9 +440,9 @@
     }
   ],
   "internet_drop_pct": {
-    "China": 0.5,
-    "Iran": 0.6,
-    "Israel": 0.1,
+    "China": 0.6,
+    "Iran": 0.9,
+    "Israel": 0.0,
     "Russia": 0.0,
     "South Korea": 0.0,
     "Taiwan": 0.0
@@ -461,18 +459,28 @@
       "Mount Lofty Ranges": "High / High"
     },
     "fire_danger_ok": true,
-    "fires_active": 10,
+    "fires_active": 11,
     "fuel": {
       "brent_aud": 132.9,
       "change_pct": -2.6,
       "pump_cents": -2,
       "week_ago_aud": 136.5
     },
-    "grid_demand_fall_pct": 14.5,
-    "grid_demand_mw": 181,
-    "grid_demand_usual_mw": 258,
+    "grid_demand_fall_pct": -11.4,
+    "grid_demand_mw": 236,
+    "grid_demand_usual_mw": 257,
     "grid_lor_level": 0,
-    "nearby_incidents": [],
+    "nearby_incidents": [
+      {
+        "area": "1227 WELLINGTON RD HIGHLAND VALLEY",
+        "dist": "25-60 km",
+        "event": "Grass Fire",
+        "headline": "HIGHLAND VALLEY : GRASS FIRE",
+        "id": "F-261125-0079 HIGHLAND VALLEY, WELLINGTON RD (GRASS FIRE)",
+        "level": null,
+        "notify": false
+      }
+    ],
     "outlook": {
       "air": {
         "aqi": 33,
@@ -518,18 +526,18 @@
   "markets": {
     "AUD/USD": {
       "big_move": false,
-      "change_pct": 0.12,
-      "price": 0.6638
+      "change_pct": 0.08,
+      "price": 0.6635
     },
     "Brent oil": {
       "big_move": false,
-      "change_pct": -3.57,
-      "price": 88.14
+      "change_pct": -3.76,
+      "price": 87.96
     },
     "Gold": {
       "big_move": false,
-      "change_pct": -0.46,
-      "price": 3545.4
+      "change_pct": -0.26,
+      "price": 3552.7
     },
     "VIX": {
       "big_move": false,
@@ -557,8 +565,8 @@
   "news_watch": {
     "ai_hack": [
       "Google says the first autonomous AI cyberattack has happened. Expect a lot more like it. - Mashable",
-      "Amazon says hackers’ AI agents found and exploited 0-day with little human input - Ars Technica",
-      "Allegra Stratton: AI-Powered Cyber-Attack Fears Stalk Westminster - Bloomberg.com"
+      "China suspected in AI-powered cyberattack on CIA and US intelligence agencies - Ynetnews",
+      "Amazon says hackers’ AI agents found and exploited 0-day with little human input - Ars Technica"
     ],
     "airspace": [
       "Saudi Arabia seeks missile interceptors from allies amid Yemen tensions - Crypto Briefing",
@@ -566,14 +574,14 @@
       "Qatar Airways Operates Limited Flights to and from Doha - https://safariindia.com/"
     ],
     "aviation_halt": [
-      "Chicago's O’Hare Airport ground stop lifted, flight delays continue after outage - FOX 32 Chicago",
-      "UPDATE: Ground delay program canceled at O'Hare Airport - NBC 5 Chicago",
-      "O'Hare Ground Stop: What the Equipment Outage Means for Thanksgiving Travelers - Around Prague"
+      "O'Hare Airport under ‘constrained facilities' advisory due to equipment outage - NBC 5 Chicago",
+      "O'Hare Ground Stop: What the Equipment Outage Means for Thanksgiving Travelers - Around Prague",
+      "Radar outage prompts second ground stop in two days at Chicago O’Hare - AeroTime"
     ],
     "bank_outage": [
       "Wall Street slides as Nvidia and AI stocks fall back - CommBank",
-      "NAB fails to silence viral account detailing wild claims - The West Australian",
-      "Telstra outage: how long and where else will be affected by the upgrades - The Standard | Warrnambool, VIC"
+      "Gossip account against NAB sparks CEO intervention - Human Resources Director",
+      "NAB fails to silence viral account detailing wild claims - The West Australian"
     ],
     "blood": [
       "Prevent fires, travel smart, and be ready to save a life | Daily Gate City - Keokuk, Iowa - Daily Gate City",
@@ -581,9 +589,9 @@
       "Luminis Health Adds Mobile Blood Donation Bus - NewsBreak: Local News & Alerts"
     ],
     "cables": [
+      "Indo-Pacific Nations Call On Allies to Protect Undersea Cables - National Defense Magazine",
       "DW News. . US tech giants like Meta and Google are increasingly investing in, and in some cases fully owning, submarine cable systems that form the backbone of global internet connectivity. As their influence over the internet's physical infrastructure grows, w - Facebook",
-      "Closing Legal Loopholes that Endanger Subsea Cable Infrastructure - Small Wars Journal",
-      "Indo-Pacific Nations Call On Allies to Protect Undersea Cables - National Defense Magazine"
+      "Closing Legal Loopholes that Endanger Subsea Cable Infrastructure - Small Wars Journal"
     ],
     "chem": [
       "Amid politicized debate in US and Israel, Katz warns Iran developing chemical weapons - The Times of Israel",
@@ -610,8 +618,8 @@
     ],
     "cyber_ot": [
       "UK operation wards off risk of cyber-attack on supermarket fridges and freezers - The Guardian",
-      "Shop freezers in seven European countries hit by cyber-attack - BBC",
-      "Supermarket freezers and fridges in Europe hit by cyberattack - Nine.com.au"
+      "Next Plc’s Supplier Hit by Cyberattack in Latest UK Retail Breach - Insurance Journal",
+      "Shop freezers in seven European countries hit by cyber-attack - BBC"
     ],
     "cyber_state": [
       "ESET Research: Sandworm behind cyberattack on Poland’s power grid in late 2025 - We Live Security",
@@ -621,11 +629,11 @@
     "cyber_supply": [
       "VMware vCenter Hit by Another Critical 9.8-Rated Auth Bypass Flaw After Zero-Day Exploitation - The Hacker News",
       "Microsoft patches actively exploited vulnerability in Azure API Management - Techzine Global",
-      "Cairn AI agents took over server via zero-day flagged by CISA - Notebookcheck"
+      "Amazon says AI agents found and exploited a zero-day with almost no human help - Crypto Briefing"
     ],
     "deepfake": [
       "AI-generated fake news, death notices target Belgium as minister seeks EU-level response - Anadolu Ajansı",
-      "Fake video of BJP president Nitin Nabin: Delhi Police registers case - The Hindu",
+      "Watch: Trump boosts Nvidia boss return but are US politicians on board? - BBC",
       "Rachel Maddow Slams Trump For Posting 'AI Slop' Video Of Her: 'That Is Not Me' - Yahoo News Singapore"
     ],
     "dieoff": [
@@ -661,17 +669,17 @@
     "national_outage": [
       "'Forgot it was Monday night': Farcical reason NFL thriller was plunged into darkness revealed - Fox Sports",
       "A widespread power cut in Dnipro on 24 November - UkrMedia News",
-      "Cuba’s National Electric Grid Collapses, Reason Unknown - EnergyNow.com"
+      "Inside the ‘Black Sky’ plans for a nationwide blackout - Herald.Wales"
     ],
     "outage_au": [
-      "Calls for 'automatic compensation' following telco outages - ABC News & Headlines – Australian Broadcasting Corporation",
-      "Microsoft ‘deeply sorry’ for global outage, rules out cyberattack and AI - Nine.com.au",
-      "The Microsoft outage is part of a growing trend. This is how to prepare for further disruption - SBS"
+      "Telstra mobile outage disrupts services across Australia - Australian Cyber Security Magazine",
+      "Australia's Optus apologises for outage that disrupted emergency calls - Reuters",
+      "How a nationwide Telstra outage rocked the Australian economy – and what we can learn - The Conversation"
     ],
     "reservists": [
-      "Lukashenko signs decree on people’s militia drills - СБ. Беларусь сегодня",
       "Plumbers, babysitters, and dog boarding: The reimbursements reservists can claim before year’s end - The Jerusalem Post",
-      "Haaretz reports 23 Israeli soldiers commit suicide, highest toll since 2010 - Egypt Independent"
+      "Haaretz reports 23 Israeli soldiers commit suicide, highest toll since 2010 - Egypt Independent",
+      "Lukashenko signs decree on people’s militia drills - СБ. Беларусь сегодня"
     ],
     "sapn": [
       "Another outage coming as crews race to reconnect power grid - Adelaide Now",
@@ -746,7 +754,7 @@
       "yes": 4.3
     },
     {
-      "d24h": -0.1,
+      "d24h": -0.2,
       "q": "Will Russia invade a NATO country by December 31, 2026?",
       "yes": 1.7
     },
@@ -756,12 +764,12 @@
       "yes": 1.7
     },
     {
-      "d24h": -0.1,
+      "d24h": 0.0,
       "q": "Will North Korea invade South Korea before 2027?",
-      "yes": 1.5
+      "yes": 1.6
     },
     {
-      "d24h": 0.6,
+      "d24h": -0.5,
       "q": "Iran-Oman Hormuz Agreement by November 30?",
       "yes": 2.5
     },
@@ -1046,7 +1054,7 @@
       "key": "taiwan",
       "lit": [
         {
-          "detail": "Australian defence stocks +5.3% vs market over 5 days",
+          "detail": "Australian defence stocks +5.4% vs market over 5 days",
           "name": "Defence stocks outperforming (US / Australia)"
         }
       ],
@@ -1079,7 +1087,7 @@
         }
       ],
       "score": 15,
-      "trend": "up"
+      "trend": "steady"
     },
     {
       "band": "Low",
@@ -1151,7 +1159,7 @@
     }
   ],
   "sectors_relative_5d": {
-    "defence_au": 5.27,
+    "defence_au": 5.36,
     "defence_eu": -0.4,
     "defence_us": 0.08,
     "pandemic": -0.59
@@ -1177,9 +1185,9 @@
   "tankers": "normal",
   "telecom_drop_pct": {
     "Aussie Broadband": 0.0,
-    "Optus": 0.0,
-    "TPG": 0.4,
-    "Telstra": 0.0,
+    "Optus": 1.0,
+    "TPG": 0.2,
+    "Telstra": 0.1,
     "Vodafone": 4.8
   },
   "us_departure_orders": [
