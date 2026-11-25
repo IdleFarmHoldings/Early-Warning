@@ -1,7 +1,13 @@
 {
   "about": "Short form of latest.json + indicators.json for the analysis run. Links and raw samples removed.",
   "acsc": [],
-  "aircraft_flags": {},
+  "aircraft_flags": {
+    "gps_gulf": {
+      "median": 7,
+      "status": "ANOMALY",
+      "value": 29
+    }
+  },
   "analyst": {
     "ASPI Strategist": [
       "American scandal: Nvidia chips away at our national security",
@@ -284,13 +290,13 @@
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-25T11:26:00Z",
+  "generated_at": "2026-11-25T11:40:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 15,
-    "Black Sea": 21,
-    "Israel & Eastern Mediterranean": 9,
+    "Baltic / Kaliningrad": 21,
+    "Black Sea": 12,
+    "Israel & Eastern Mediterranean": 10,
     "Korea": 0,
-    "Persian Gulf": 16,
+    "Persian Gulf": 29,
     "South Australia": 0,
     "Sydney / NSW": 0,
     "Taiwan Strait": 0
@@ -301,10 +307,11 @@
       "confirmed": true,
       "headlines": [
         "The first autonomous AI cyberattack: why it happened earlier than expected, how agents break Claude, and whether AI can be trusted with bank accounts",
+        "Bendigo Bank hit with $8m penalty over Alliance Bank cyber breach",
         "NAB fails to silence viral account detailing wild claims"
       ],
       "needs_confirming": false,
-      "severity": "Info",
+      "severity": "Warning",
       "target": "Banking & payments"
     },
     {
@@ -336,6 +343,16 @@
       "needs_confirming": false,
       "severity": "Info",
       "target": "Hacked"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": true,
+      "headlines": [
+        "Acronis says AI is speeding up cyberattacks across cloud"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "Acronis"
     },
     {
       "attack_reported": true,
@@ -440,15 +457,25 @@
       "needs_confirming": false,
       "severity": "Info",
       "target": "Expert"
+    },
+    {
+      "attack_reported": false,
+      "confirmed": false,
+      "headlines": [
+        "Recent Outages Expose Risks in Agency Technology Repairs"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "Recent Outages Expose"
     }
   ],
   "internet_drop_pct": {
-    "China": 0.2,
+    "China": 0.4,
     "Iran": 0.2,
     "Israel": 0.0,
     "Russia": 0.0,
     "South Korea": 0.0,
-    "Taiwan": 0.0
+    "Taiwan": 0.2
   },
   "local_sa": {
     "bom": [],
@@ -462,16 +489,16 @@
       "Mount Lofty Ranges": "High / Moderate"
     },
     "fire_danger_ok": true,
-    "fires_active": 11,
+    "fires_active": 10,
     "fuel": {
       "brent_aud": 132.9,
       "change_pct": -0.7,
       "pump_cents": -1,
       "week_ago_aud": 133.8
     },
-    "grid_demand_fall_pct": 4.0,
-    "grid_demand_mw": 1466,
-    "grid_demand_usual_mw": 1421,
+    "grid_demand_fall_pct": 2.9,
+    "grid_demand_mw": 1483,
+    "grid_demand_usual_mw": 1404,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
@@ -481,7 +508,26 @@
         "pm25": 6
       },
       "air_word": "Good",
-      "days": []
+      "days": [
+        {
+          "date": "2026-11-25",
+          "gust": 43,
+          "rain": 0,
+          "tmax": 28
+        },
+        {
+          "date": "2026-11-26",
+          "gust": 38,
+          "rain": 0,
+          "tmax": 28
+        },
+        {
+          "date": "2026-11-27",
+          "gust": 41,
+          "rain": 20,
+          "tmax": 27
+        }
+      ]
     },
     "possible_blackout": false,
     "power_news": [],
@@ -500,23 +546,23 @@
   "markets": {
     "AUD/USD": {
       "big_move": false,
-      "change_pct": -0.87,
-      "price": 0.6572
+      "change_pct": -0.92,
+      "price": 0.6569
     },
     "Brent oil": {
       "big_move": false,
-      "change_pct": -3.68,
-      "price": 88.04
+      "change_pct": -3.59,
+      "price": 88.12
     },
     "Gold": {
       "big_move": false,
-      "change_pct": -0.17,
-      "price": 3556.0
+      "change_pct": -0.51,
+      "price": 3543.9
     },
     "VIX": {
       "big_move": false,
-      "change_pct": 11.99,
-      "price": 29.52
+      "change_pct": 13.43,
+      "price": 29.9
     }
   },
   "national_shocks": {
@@ -533,8 +579,8 @@
   "news_watch": {
     "ai_hack": [
       "China suspected in AI-powered cyberattack on CIA and US intelligence agencies - Ynetnews",
-      "The first autonomous AI cyberattack: why it happened earlier than expected, how agents break Claude, and whether AI can be trusted with bank accounts - dev.ua",
-      "Hackers Compromise 24 Check Point Management Servers in Suspected AI-Driven Attack Campaign - The Hacker News"
+      "Google says the first autonomous AI cyberattack has happened. Expect a lot more like it. - Mashable",
+      "The first autonomous AI cyberattack: why it happened earlier than expected, how agents break Claude, and whether AI can be trusted with bank accounts - dev.ua"
     ],
     "airspace": [
       "Saudi Arabia seeks missile interceptors from allies amid Yemen tensions - Crypto Briefing",
@@ -581,12 +627,12 @@
     "cyber_au": [
       "EXCLUSIVE: Control4 Hit By Major System Outage As Suspected Cyber Attack Raises Serious Security Questions - ChannelNews.com.au",
       "Why has Peninsula Energy (ASX:PEN) been suspended from quotation after the Lance cyber incident? - Kalkine",
-      "Darwin-based accounting firm listed by HYFLOCK ransomware - Accountants Daily"
+      "Brocent flags gap between cyber breach & claim costs - IT Brief Australia"
     ],
     "cyber_ot": [
       "UK operation wards off risk of cyber-attack on supermarket fridges and freezers - The Guardian",
       "Shop freezers in seven European countries hit by cyber-attack - BBC",
-      "Supermarket freezers and fridges in Europe hit by cyberattack - Nine.com.au"
+      "Next Plc’s Supplier Hit by Cyberattack in Latest UK Retail Breach - Insurance Journal"
     ],
     "cyber_state": [
       "ESET Research: Sandworm behind cyberattack on Poland’s power grid in late 2025 - We Live Security",
@@ -596,7 +642,7 @@
     "cyber_supply": [
       "Hackers now exploit critical Drupal RCE flaw to hijack sites - BleepingComputer",
       "VMware vCenter Hit by Another Critical 9.8-Rated Auth Bypass Flaw After Zero-Day Exploitation - The Hacker News",
-      "Idunno AntiCsrf, ACN detects active exploitation of CVE-2026-131914 with CVSS 9.3 - Meteora Web"
+      "VMware vCenter, new critical flaw CVE-2026-123903 rated CVSS 9.8 bypasses authentication - Meteora Web"
     ],
     "deepfake": [
       "Deloitte suspended by WA government after AI report debacle - ABC News & Headlines – Australian Broadcasting Corporation",
@@ -629,9 +675,9 @@
       "6 hurt, 1 critical, in Allentown apartment blaze, fire official says (UPDATE) - LehighValleyLive.com"
     ],
     "mobilisation": [
+      "Resident of Ternopil Region Tried to Cancel Mobilization Due to a “Formal” Military Medical Commission: What the Court Decided - Судово-юридична газета",
       "Algeria's Mobilisation in Niger: A Consolidation of Regional Influence - Bloomsbury Intelligence and Security Institute (BISI)",
-      "The Pentagon's Interceptor Missile Crisis: Depleted US Stockpiles Force Unprecedented Industrial Mobilization Until 2030 - جريدة القدس",
-      "Resident of Ternopil Region Tried to Cancel Mobilization Due to a “Formal” Military Medical Commission: What the Court Decided - Судово-юридична газета"
+      "The Pentagon's Interceptor Missile Crisis: Depleted US Stockpiles Force Unprecedented Industrial Mobilization Until 2030 - جريدة القدس"
     ],
     "national_outage": [
       "Colombia plunged into darkness – President issues emergency order - TodayPress.tv",
@@ -655,13 +701,8 @@
     ],
     "scams": [
       "Fraud & Digital Identity News – KYC, Scams & Verification - FF News",
-      "Is Digital Lending Ready for the Next Wave of Fraud? - Fintech Singapore",
-      "Finmo Adds USDC and USDT Support to Business Accounts - Fintech Singapore"
-    ],
-    "shipping_attacks": [
-      "Three Sinokor VLCCs hit in latest Strait of Hormuz attacks - Riviera Maritime Media",
-      "IRGC Claims 3 Oil Tankers Hit Mines in Hormuz Under US Escort - https://houseofsaud.com/",
-      "Iranian attacks in the Strait of Hormuz are at the highest levels since the conflict began - CNN"
+      "Finmo Adds USDC and USDT Support to Business Accounts - Fintech Singapore",
+      "Is Digital Lending Ready for the Next Wave of Fraud? - Fintech Singapore"
     ],
     "strikes": [
       "Iran Warns of Retaliation if US Forces Attack - ASHARQ AL-AWSAT English",
@@ -686,7 +727,7 @@
       "yes": 13.5
     },
     {
-      "d24h": -0.2,
+      "d24h": -0.1,
       "q": "China x Taiwan military clash before 2027?",
       "yes": 2.6
     },
@@ -706,9 +747,9 @@
       "yes": 12.5
     },
     {
-      "d24h": -0.4,
+      "d24h": -0.2,
       "q": "US-Iran Final Nuclear Deal by November 30, 2026?",
-      "yes": 0.5
+      "yes": 0.7
     },
     {
       "d24h": 0.4,
@@ -736,7 +777,7 @@
       "yes": 1.6
     },
     {
-      "d24h": -0.9,
+      "d24h": -1.0,
       "q": "Iran-Oman Hormuz Agreement by November 30?",
       "yes": 1.9
     },
@@ -751,7 +792,7 @@
       "yes": 2.4
     },
     {
-      "d24h": -1.3,
+      "d24h": -1.6,
       "q": "Ukraine agrees not to join NATO by December 31, 2026?",
       "yes": 1.6
     },
@@ -761,7 +802,7 @@
       "yes": 4.0
     },
     {
-      "d24h": -0.2,
+      "d24h": 0.0,
       "q": "Will Russia test a nuclear weapon by December 31 2026?",
       "yes": 2.2
     },
@@ -781,9 +822,9 @@
       "yes": 18.0
     },
     {
-      "d24h": 1.0,
+      "d24h": -2.0,
       "q": "Will Nick Stewart attend a US x Iran diplomatic meeting by December 31, 2026?",
-      "yes": 9.5
+      "yes": 6.5
     }
   ],
   "quakes_m6_24h": [],
@@ -992,9 +1033,19 @@
     },
     {
       "band": "Low",
+      "convergence": "Only one kind of sign is showing (electronic warfare). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
+      "domains": [
+        "Electronic warfare"
+      ],
       "key": "mideast",
-      "score": 0,
-      "trend": "steady"
+      "lit": [
+        {
+          "detail": "gps_gulf 29 vs usual 7",
+          "name": "GPS jamming spike (Gulf / Israel)"
+        }
+      ],
+      "score": 10,
+      "trend": "up"
     },
     {
       "band": "Low",
@@ -1133,7 +1184,7 @@
   "tankers": "normal",
   "telecom_drop_pct": {
     "Aussie Broadband": 0.0,
-    "Optus": 0.0,
+    "Optus": 4.0,
     "TPG": 0.0,
     "Telstra": 0.0,
     "Vodafone": 0.0
