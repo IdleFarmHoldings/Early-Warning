@@ -281,21 +281,20 @@
   ],
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
-    "maritime": "TimeoutError: ",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output=",
     "satellites": "HTTPError: HTTP Error 503: Service Unavailable"
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-25T15:19:00Z",
+  "generated_at": "2026-11-25T15:23:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 18,
-    "Black Sea": 46,
+    "Baltic / Kaliningrad": 16,
+    "Black Sea": 40,
     "Israel & Eastern Mediterranean": 4,
     "Korea": 0,
-    "Persian Gulf": 6,
+    "Persian Gulf": 5,
     "South Australia": null,
     "Sydney / NSW": null,
-    "Taiwan Strait": 1
+    "Taiwan Strait": 0
   },
   "incidents": [
     {
@@ -390,6 +389,16 @@
       "target": "Treasury"
     },
     {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "China link in CIA data breach? How hackers used AI tool to expose unclassified information - report"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "China"
+    },
+    {
       "attack_reported": false,
       "confirmed": true,
       "headlines": [
@@ -444,7 +453,7 @@
     }
   ],
   "internet_drop_pct": {
-    "China": 0.6,
+    "China": 0.7,
     "Iran": 0.0,
     "Israel": 0.0,
     "Russia": 0.0,
@@ -465,14 +474,14 @@
     "fire_danger_ok": true,
     "fires_active": 8,
     "fuel": {
-      "brent_aud": 133.9,
+      "brent_aud": 134.0,
       "change_pct": 0.2,
       "pump_cents": 0,
       "week_ago_aud": 133.7
     },
-    "grid_demand_fall_pct": 2.4,
-    "grid_demand_mw": 1413,
-    "grid_demand_usual_mw": 1350,
+    "grid_demand_fall_pct": 4.3,
+    "grid_demand_mw": 1386,
+    "grid_demand_usual_mw": 1342,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
@@ -520,23 +529,23 @@
   "markets": {
     "AUD/USD": {
       "big_move": false,
-      "change_pct": -0.8,
-      "price": 0.6577
+      "change_pct": -0.75,
+      "price": 0.658
     },
     "Brent oil": {
       "big_move": false,
-      "change_pct": -1.53,
-      "price": 90.0
+      "change_pct": -1.56,
+      "price": 89.97
     },
     "Gold": {
       "big_move": false,
-      "change_pct": -1.78,
-      "price": 3498.5
+      "change_pct": -1.99,
+      "price": 3491.1
     },
     "VIX": {
       "big_move": false,
-      "change_pct": 21.24,
-      "price": 31.96
+      "change_pct": 22.08,
+      "price": 32.18
     }
   },
   "national_shocks": {
@@ -567,8 +576,8 @@
       "O'Hare Ground Stop: What the Equipment Outage Means for Thanksgiving Travelers - Around Prague"
     ],
     "bank_outage": [
-      "Aussie shares slip as hot inflation pushes back rate cut hopes - CommBank",
       "‘I’d love to take it to court’: NAB’s Instagram antagonist vows not to back down - SMH.com.au",
+      "Aussie shares slip as hot inflation pushes back rate cut hopes - CommBank",
       "Gossip account against NAB sparks CEO intervention - Human Resources Director"
     ],
     "blood": [
@@ -590,9 +599,9 @@
       "Microsoft invokes 'Code Red' after global Outlook and Microsoft 365 outage - TweakTown"
     ],
     "cyber_attrib": [
-      "Trump blames Minnesota governor, not Iran, for cyberattacks on the state's water systems - ABC News - Breaking News, Latest News and Videos",
       "FBI Warns Hackers Are Using ARTEX AI Tool To Automate Cyberattacks - Forbes",
-      "FBI warns hackers weaponizing ARTEX AI framework to automate attacks on energy, manufacturing, telecom - Industrial Cyber"
+      "Spy agency warns active Russian hackers targeting Australian industry - ABC News & Headlines – Australian Broadcasting Corporation",
+      "Busted! Alleged Aussie hackers linked to TeamPCP arrested in joint AFP-FBI-WAPF operation - Cyber Daily"
     ],
     "cyber_au": [
       "How is Peninsula Energy (ASX:PEN) responding to the cyber incident at its Lance uranium project? - Kalkine",
@@ -601,8 +610,8 @@
     ],
     "cyber_ot": [
       "UK operation wards off risk of cyber-attack on supermarket fridges and freezers - The Guardian",
-      "Next Plc’s Supplier Hit by Cyberattack in Latest UK Retail Breach - Insurance Journal",
-      "Refrigeration under cyber attack - Climate Control News"
+      "Shop freezers in seven European countries hit by cyber-attack - BBC",
+      "Supermarket freezers and fridges in Europe hit by cyberattack - Nine.com.au"
     ],
     "cyber_state": [
       "ESET Research: Sandworm behind cyberattack on Poland’s power grid in late 2025 - We Live Security",
@@ -627,7 +636,7 @@
     "flash": [
       "Black Pearl Group Enters Voluntary Suspension on ASX Amid NZX Trading Halt - Kalkine",
       "KOSPI Plunges 4.9% as Philadelphia Semiconductor Index Tumbles 7.9%; Sell-Side Circuit Breaker Triggered - BigGo Finance",
-      "KOSPI Plummets Over 6%, Falls Below 4,700 Mark - 조선일보"
+      "The Anatomy of 2 Flash Crashes and what caused the Flash Crash for AMEX:SPY by MarthaStokesCMT-TechniTrader - TradingView"
     ],
     "fuel_au": [
       "Crisis-tested Matt Halliday never lets a fuel shock go to waste - AFR",
@@ -655,9 +664,9 @@
       "Cuba’s National Electric Grid Collapses, Reason Unknown - EnergyNow.com"
     ],
     "outage_au": [
-      "Calls for 'automatic compensation' following telco outages - ABC News & Headlines – Australian Broadcasting Corporation",
-      "Microsoft ‘deeply sorry’ for global outage, rules out cyberattack and AI - Nine.com.au",
-      "The Microsoft outage is part of a growing trend. This is how to prepare for further disruption - SBS"
+      "Telstra mobile outage disrupts services across Australia - Australian Cyber Security Magazine",
+      "Australia's Optus apologises for outage that disrupted emergency calls - Reuters",
+      "How a nationwide Telstra outage rocked the Australian economy – and what we can learn - The Conversation"
     ],
     "reservists": [
       "Running on empty: the IDF's race to rebuild in 2027 before the next war - Ynetnews",
@@ -669,19 +678,14 @@
       "Festivalgoer struck by lightning, locust plague, freak storm causes major blackout - 9Now",
       "Final four prepare for Adelaide Grand Final clash - Motorsport Australia"
     ],
-    "scams": [
-      "Fraud & Digital Identity News – KYC, Scams & Verification - FF News",
-      "Finmo Adds USDC and USDT Support to Business Accounts - Fintech Singapore",
-      "ASIC Flags Fake Crypto Recovery Offers Targeting Scam Victims - Coin Edition"
-    ],
     "shipping_attacks": [
       "Three Sinokor VLCCs hit in latest Strait of Hormuz attacks - Riviera Maritime Media",
       "IRGC Claims 3 Oil Tankers Hit Mines in Hormuz Under US Escort - https://houseofsaud.com/",
       "Iranian attacks in the Strait of Hormuz are at the highest levels since the conflict began - CNN"
     ],
     "strikes": [
+      "Ukraine says it struck a major Russian air base, damaging five planes - Al Arabiya English",
       "Iran Warns of Retaliation if US Forces Attack - ASHARQ AL-AWSAT English",
-      "Ukraine says it struck a major Russian air base, damaging five planes - Internazionale",
       "Houthi drones target airport, air base in Saudi Arabia - Yeni Safak English"
     ]
   },
@@ -702,7 +706,7 @@
       "yes": 13.5
     },
     {
-      "d24h": -0.2,
+      "d24h": -0.1,
       "q": "China x Taiwan military clash before 2027?",
       "yes": 2.6
     },
@@ -757,7 +761,7 @@
       "yes": 1.9
     },
     {
-      "d24h": 3.0,
+      "d24h": 3.5,
       "q": "Iran-Oman Hormuz Agreement by December 31?",
       "yes": 15.0
     },
@@ -1020,12 +1024,12 @@
       "key": "mideast",
       "lit": [
         {
-          "detail": "US defence stocks +5.4% vs market over 5 days",
+          "detail": "US defence stocks +5.6% vs market over 5 days",
           "name": "US defence stocks outperforming (5 days)"
         }
       ],
       "score": 5,
-      "trend": "up"
+      "trend": "steady"
     },
     {
       "band": "Low",
@@ -1036,12 +1040,12 @@
       "key": "taiwan",
       "lit": [
         {
-          "detail": "US defence stocks +5.4% vs market over 5 days",
+          "detail": "US defence stocks +5.6% vs market over 5 days",
           "name": "Defence stocks outperforming (US / Australia)"
         }
       ],
       "score": 5,
-      "trend": "up"
+      "trend": "steady"
     },
     {
       "band": "Low",
@@ -1063,7 +1067,7 @@
           "name": "Mobilisation / reservist reports (Russia / NATO)"
         },
         {
-          "detail": "VIX at 31.96",
+          "detail": "VIX at 32.18",
           "name": "Market fear index above 30"
         }
       ],
@@ -1157,14 +1161,14 @@
         }
       ],
       "score": 35,
-      "trend": "down"
+      "trend": "steady"
     }
   ],
   "sectors_relative_5d": {
     "defence_au": 3.12,
     "defence_eu": 3.87,
-    "defence_us": 5.41,
-    "pandemic": 0.36
+    "defence_us": 5.62,
+    "pandemic": 0.21
   },
   "status_pages": [
     {
@@ -1180,8 +1184,8 @@
   "telecom_drop_pct": {
     "Aussie Broadband": 0.0,
     "Optus": 2.0,
-    "TPG": 0.3,
-    "Telstra": 0.4,
+    "TPG": 0.0,
+    "Telstra": 0.0,
     "Vodafone": 0.0
   },
   "us_departure_orders": [
