@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-25T11:40:00Z",
+  "generated_at": "2026-11-25T11:55:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -101,25 +101,14 @@
     },
     {
       "band": "Low",
-      "convergence": "Only one kind of sign is showing (electronic warfare). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
-      "domains": [
-        "Electronic warfare"
-      ],
+      "convergence": "No warning signs are showing. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
+      "domains": [],
       "key": "mideast",
-      "lit": [
-        {
-          "detail": "gps_gulf 29 vs usual 7",
-          "domain": "Electronic warfare",
-          "id": "gps",
-          "name": "GPS jamming spike (Gulf / Israel)",
-          "short": "GPS jamming spike",
-          "weight": 10
-        }
-      ],
+      "lit": [],
       "name": "Middle East war & Gulf shipping",
       "sa_impact": "Fuel: Australia imports most of its fuel, much of it refined from Gulf crude in Asia. Shipping attacks or a Hormuz closure push up prices within days and can cause local shortages.",
-      "score": 10,
-      "trend": "up",
+      "score": 0,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Military air",
@@ -132,6 +121,12 @@
           "id": "air",
           "name": "Unusual military air activity over the region",
           "weight": 15
+        },
+        {
+          "domain": "Electronic warfare",
+          "id": "gps",
+          "name": "GPS jamming spike (Gulf / Israel)",
+          "weight": 10
         },
         {
           "domain": "Communications",
@@ -382,8 +377,9 @@
     },
     {
       "band": "Guarded",
-      "convergence": "Only one kind of sign is showing (mobilisation). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and us nuclear command aircraft unusual.",
+      "convergence": "Two different kinds of sign are showing together (markets and mobilisation). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and us nuclear command aircraft unusual.",
       "domains": [
+        "Markets",
         "Mobilisation"
       ],
       "key": "russia",
@@ -395,12 +391,20 @@
           "name": "Mobilisation / reservist reports (Russia / NATO)",
           "short": "Mobilisation / reservist reports",
           "weight": 15
+        },
+        {
+          "detail": "VIX at 30.39",
+          "domain": "Markets",
+          "id": "vix",
+          "name": "Market fear index above 30",
+          "short": "Market fear index above 30",
+          "weight": 10
         }
       ],
       "name": "Russia-NATO escalation",
       "sa_impact": "Indirect: energy and market shock, cyber attacks that can spill over to Australian systems, and nuclear-risk rhetoric.",
-      "score": 15,
-      "trend": "steady",
+      "score": 25,
+      "trend": "up",
       "unlit": [
         {
           "domain": "Electronic warfare",
@@ -436,12 +440,6 @@
           "domain": "Elite movement",
           "id": "jets",
           "name": "Private jets heading to retreat destinations",
-          "weight": 10
-        },
-        {
-          "domain": "Markets",
-          "id": "vix",
-          "name": "Market fear index above 30",
           "weight": 10
         },
         {
@@ -638,9 +636,8 @@
     },
     {
       "band": "Elevated",
-      "convergence": "Two different kinds of sign are showing together (chemical weapons and health). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: countries restricting medical supply exports, pandemic-response stocks outperforming (5 days) and australian medicine or ppe shortage reports.",
+      "convergence": "Only one kind of sign is showing (health). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: countries restricting medical supply exports, pandemic-response stocks outperforming (5 days) and chemical / nerve-agent attack or mass poisoning reported.",
       "domains": [
-        "Chemical weapons",
         "Health"
       ],
       "key": "bio",
@@ -660,20 +657,12 @@
           "name": "Unknown illness / pneumonia cluster reported",
           "short": "Illness cluster",
           "weight": 20
-        },
-        {
-          "detail": "OPCW Honors Chemical Weapons Victims at States Parties Conference",
-          "domain": "Chemical weapons",
-          "id": "chem",
-          "name": "Chemical / nerve-agent attack or mass poisoning reported",
-          "short": "Chemical attack",
-          "weight": 15
         }
       ],
       "name": "Pandemic, biological or chemical emergency",
       "sa_impact": "Health system strain, possible lockdowns and border closures, and shortages of medicines and protective equipment, which Australia mostly imports.",
-      "score": 50,
-      "trend": "steady",
+      "score": 35,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Trade",
@@ -698,6 +687,12 @@
           "id": "masscas",
           "name": "Mass casualty declarations (any country)",
           "weight": 5
+        },
+        {
+          "domain": "Chemical weapons",
+          "id": "chem",
+          "name": "Chemical / nerve-agent attack or mass poisoning reported",
+          "weight": 15
         },
         {
           "domain": "Health",
@@ -810,7 +805,7 @@
       "key": "ai",
       "lit": [
         {
-          "detail": "China suspected in AI-powered cyberattack on CIA and US intelligence agencies",
+          "detail": "The OpenAI hacking case shows corporate liability can work. It doesn’t cover AI agents with no owner",
           "domain": "AI-enabled hacking",
           "id": "aihack",
           "name": "Reports of AI-driven hacking campaigns",
@@ -826,7 +821,7 @@
           "weight": 10
         },
         {
-          "detail": "Microsoft launches “Code Red” overhaul after global Microsoft 365 outage",
+          "detail": "Microsoft declares Code Red after Microsoft 365 outage, targets one-hour recovery for global outages",
           "domain": "Cloud services",
           "id": "cloud",
           "name": "Major cloud or AI service outage",
