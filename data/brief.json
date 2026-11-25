@@ -154,13 +154,13 @@
         "other_explanations": "A government has publicly linked some of these attacks to China, but not every incident here is confirmed as part of it."
       },
       "incidents": [
+        "2026-11-25 ?: China link in CIA data breach? How hackers used AI tool to expose unclassified information - report (named attacker)",
         "2026-11-24 Asia: Fact Check: Viral video of BJP Chief Nitin Nabin criticising Modi govt over China, Pakistan and Tejas is a deepfake (named attacker)",
         "2026-11-23 Europe/United States: Exclusive: China-backed hackers suspected behind ongoing EU Commission cyberattack (named attacker)",
         "2026-11-23 ?: How AI Is Transforming China’s Nation-State Hacking Operations (named attacker)",
-        "2026-11-23 ?: Hackers Use AI to Discover Zero-Day in 11 Minutes, Then Take Full Control of Server (same pattern)",
-        "2026-11-23 United States: Artificial intelligence flourished in California election advertising — and divided voters (same pattern)"
+        "2026-11-23 ?: Hackers Use AI to Discover Zero-Day in 11 Minutes, Then Take Full Control of Server (same pattern)"
       ],
-      "incidents_7d": 41,
+      "incidents_7d": 42,
       "official_warning": true,
       "score": 100,
       "sectors": [
@@ -279,18 +279,17 @@
   ],
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
-    "maritime": "TimeoutError: ",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-25T05:06:00Z",
+  "generated_at": "2026-11-25T05:10:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 56,
-    "Black Sea": null,
-    "Israel & Eastern Mediterranean": 0,
+    "Baltic / Kaliningrad": 61,
+    "Black Sea": 80,
+    "Israel & Eastern Mediterranean": 4,
     "Korea": 3,
-    "Persian Gulf": 9,
-    "South Australia": 0,
+    "Persian Gulf": 17,
+    "South Australia": 2,
     "Sydney / NSW": 2,
     "Taiwan Strait": 0
   },
@@ -348,8 +347,9 @@
     },
     {
       "attack_reported": true,
-      "confirmed": false,
+      "confirmed": true,
       "headlines": [
+        "China link in CIA data breach? How hackers used AI tool to expose unclassified information - report",
         "China suspected in AI-powered cyberattack on CIA and US intelligence agencies"
       ],
       "needs_confirming": false,
@@ -446,26 +446,26 @@
       "pump_cents": -2,
       "week_ago_aud": 136.5
     },
-    "grid_demand_fall_pct": -29.5,
-    "grid_demand_mw": 382,
-    "grid_demand_usual_mw": 418,
+    "grid_demand_fall_pct": -41.4,
+    "grid_demand_mw": 417,
+    "grid_demand_usual_mw": 432,
     "grid_lor_level": 0,
     "nearby_incidents": [
+      {
+        "area": "1227 WELLINGTON RD HIGHLAND VALLEY",
+        "dist": "25-60 km",
+        "event": "Grass Fire",
+        "headline": "HIGHLAND VALLEY : GRASS FIRE",
+        "id": "F-261125-0079 HIGHLAND VALLEY, WELLINGTON RD (GRASS FIRE)",
+        "level": null,
+        "notify": false
+      },
       {
         "area": "89 GULLY RD CAREY GULLY",
         "dist": "25-60 km",
         "event": "Grass Fire",
         "headline": "CAREY GULLY : GRASS FIRE",
         "id": "F-261125-0096 CAREY GULLY, GULLY RD (GRASS FIRE)",
-        "level": null,
-        "notify": false
-      },
-      {
-        "area": "1227 WELLINGTON RD HIGHLAND VALLEY",
-        "dist": "25-60 km",
-        "event": "Grass Fire",
-        "headline": "HIGHLAND VALLEY : GRASS FIRE",
-        "id": "F-261125-0079 Highland Valley, Wellington Rd (Grass Fire)",
         "level": null,
         "notify": false
       }
@@ -508,7 +508,7 @@
       "Morgan Vale Road, Pine Valley Station: MORGAN MAIL RD Closed due to flooding over road",
       "Pine Valley Road, Pine Valley Station: PINE VALLEY RD Closed due to flooding over road"
     ],
-    "rooftop_pv_mw": 1878,
+    "rooftop_pv_mw": 2306,
     "sawater_news": [],
     "watch_and_act": []
   },
@@ -525,8 +525,8 @@
     },
     "Gold": {
       "big_move": false,
-      "change_pct": -2.81,
-      "price": 3548.7
+      "change_pct": -0.43,
+      "price": 3546.6
     },
     "VIX": {
       "big_move": false,
@@ -559,12 +559,12 @@
     "aviation_halt": [
       "O'Hare Airport under ‘constrained facilities' advisory due to equipment outage - NBC 5 Chicago",
       "O'Hare Ground Stop: What the Equipment Outage Means for Thanksgiving Travelers - Around Prague",
-      "Editorial: Nationwide Ground Stop Highlights Vulnerable Air Traffic Systems - Aviation Pros"
+      "Radar outage prompts second ground stop in two days at Chicago O’Hare - AeroTime"
     ],
     "bank_outage": [
-      "Wall Street slides as Nvidia and AI stocks fall back - CommBank",
       "Gossip account against NAB sparks CEO intervention - Human Resources Director",
-      "NAB fails to silence viral account detailing wild claims - The West Australian"
+      "NAB fails to silence viral account detailing wild claims - The West Australian",
+      "‘I’d love to take it to court’: NAB’s Instagram antagonist vows not to back down - SMH.com.au"
     ],
     "blood": [
       "Prevent fires, travel smart, and be ready to save a life | Daily Gate City - Keokuk, Iowa - Daily Gate City",
@@ -596,8 +596,8 @@
     ],
     "cyber_au": [
       "Black Friday cyberattack warning for Australian travel businesses as bookings surge - Karryon",
-      "Airport customers hit by payment data breach - Yahoo News Australia",
-      "Retail ranks among least-insured sectors as ransomware attacks peak - Insurance Business"
+      "Retail ranks among least-insured sectors as ransomware attacks peak - Insurance Business",
+      "Is the Counter Ransomware Initiative Keeping Up With Ransomware? - Lawfare"
     ],
     "cyber_ot": [
       "UK operation wards off risk of cyber-attack on supermarket fridges and freezers - The Guardian",
@@ -616,8 +616,8 @@
     ],
     "deepfake": [
       "AI-generated fake news, death notices target Belgium as minister seeks EU-level response - Anadolu Ajansı",
-      "Tidal Will Now Delete and Reject Any Fully AI-Generated Music - Complex",
-      "Rachel Maddow calls out Trump for posting fake ‘AI slop’ video using her voice: ‘Gross’ - Advocate.com"
+      "China-linked network using AI fakes to smear Taiwan election candidates, BBC Verify finds - BBC",
+      "Tidal Will Now Delete and Reject Any Fully AI-Generated Music - Complex"
     ],
     "dieoff": [
       "Bihar: Two Sisters Found Dead, Father Questioned - Rediff.com",
@@ -627,7 +627,7 @@
     "flash": [
       "Black Pearl Group Enters Voluntary Suspension on ASX Amid NZX Trading Halt - Kalkine",
       "Philadelphia Semiconductor Index Plunges 7.9%; KOSPI Tumbles 4.9% as Sell-Side Circuit Breaker Triggers - BigGo Finance",
-      "The Anatomy of 2 Flash Crashes and what caused the Flash Crash for AMEX:SPY by MarthaStokesCMT-TechniTrader - TradingView"
+      "KOSPI Plunges 5%, Triggers Sell-Side Circuit Breaker, Drops Below 5,000 - 조선일보"
     ],
     "fuel_au": [
       "Global disaster misinformation fuels panic-buying at chain stores in several countries - The Straits Times",
@@ -654,14 +654,14 @@
       "Cuba’s National Electric Grid Collapses, Reason Unknown - EnergyNow.com"
     ],
     "outage_au": [
-      "Telstra mobile outage disrupts services across Australia - Australian Cyber Security Magazine",
-      "Australia's Optus apologises for outage that disrupted emergency calls - Reuters",
-      "How a nationwide Telstra outage rocked the Australian economy – and what we can learn - The Conversation"
+      "Calls for 'automatic compensation' following telco outages - ABC News & Headlines – Australian Broadcasting Corporation",
+      "Microsoft ‘deeply sorry’ for global outage, rules out cyberattack and AI - Nine.com.au",
+      "The Microsoft outage is part of a growing trend. This is how to prepare for further disruption - SBS"
     ],
     "reservists": [
-      "Plumbers, babysitters, and dog boarding: The reimbursements reservists can claim before year’s end - The Jerusalem Post",
+      "Haaretz reports 23 Israeli soldiers commit suicide, highest toll since 2010 - Egypt Independent",
       "Devon Levi with a Goalie Save vs. Vegas Golden Knights - Yahoo Sports",
-      "Haaretz reports 23 Israeli soldiers commit suicide, highest toll since 2010 - Egypt Independent"
+      "Plumbers, babysitters, and dog boarding: The reimbursements reservists can claim before year’s end - The Jerusalem Post"
     ],
     "sapn": [
       "Another outage coming as crews race to reconnect power grid - Adelaide Now",
@@ -1025,7 +1025,7 @@
       "band": "Low",
       "key": "mideast",
       "score": 0,
-      "trend": "down"
+      "trend": "steady"
     },
     {
       "band": "Low",
@@ -1131,7 +1131,7 @@
     }
   ],
   "sectors_relative_5d": {
-    "defence_au": 3.75,
+    "defence_au": 3.83,
     "defence_eu": -1.47,
     "defence_us": 0.84,
     "pandemic": 1.86
