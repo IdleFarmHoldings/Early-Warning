@@ -286,13 +286,13 @@
     "satellites": "HTTPError: HTTP Error 503: Service Unavailable"
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-25T13:42:00Z",
+  "generated_at": "2026-11-25T13:58:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 25,
-    "Black Sea": 20,
-    "Israel & Eastern Mediterranean": 3,
+    "Baltic / Kaliningrad": 28,
+    "Black Sea": 27,
+    "Israel & Eastern Mediterranean": 6,
     "Korea": 0,
-    "Persian Gulf": 1,
+    "Persian Gulf": 9,
     "South Australia": null,
     "Sydney / NSW": null,
     "Taiwan Strait": 0
@@ -328,6 +328,16 @@
       "needs_confirming": false,
       "severity": "Info",
       "target": "Brocent"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": true,
+      "headlines": [
+        "LaLiga Says Cyberattack Exposed Fans’ Personal Data"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "LaLiga"
     },
     {
       "attack_reported": true,
@@ -385,17 +395,6 @@
     },
     {
       "attack_reported": false,
-      "confirmed": true,
-      "headlines": [
-        "Another outage coming as crews race to reconnect power grid",
-        "Festivalgoer struck by lightning, locust plague, freak storm causes major blackout"
-      ],
-      "needs_confirming": false,
-      "severity": "Info",
-      "target": "Power grid"
-    },
-    {
-      "attack_reported": false,
       "confirmed": false,
       "headlines": [
         "Key facts: Buybacks slow; Wedbush Outperform; AWS cooling caused outage"
@@ -440,8 +439,8 @@
     "Iran": 0.0,
     "Israel": 0.0,
     "Russia": 0.0,
-    "South Korea": 0.0,
-    "Taiwan": 0.0
+    "South Korea": 0.1,
+    "Taiwan": 0.4
   },
   "local_sa": {
     "bom": [],
@@ -462,25 +461,19 @@
       "pump_cents": 0,
       "week_ago_aud": 133.7
     },
-    "grid_demand_fall_pct": -3.4,
-    "grid_demand_mw": 1411,
-    "grid_demand_usual_mw": 1353,
+    "grid_demand_fall_pct": 1.2,
+    "grid_demand_mw": 1396,
+    "grid_demand_usual_mw": 1369,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
       "air": {
-        "aqi": 29,
+        "aqi": 27,
         "peak_pm25_48h": 8,
-        "pm25": 7
+        "pm25": 8
       },
       "air_word": "Good",
       "days": [
-        {
-          "date": "2026-11-25",
-          "gust": 45,
-          "rain": 0,
-          "tmax": 28
-        },
         {
           "date": "2026-11-26",
           "gust": 36,
@@ -492,6 +485,12 @@
           "gust": 36,
           "rain": 4,
           "tmax": 23
+        },
+        {
+          "date": "2026-11-28",
+          "gust": 57,
+          "rain": 0,
+          "tmax": 21
         }
       ]
     },
@@ -512,23 +511,23 @@
   "markets": {
     "AUD/USD": {
       "big_move": false,
-      "change_pct": -0.73,
-      "price": 0.6581
+      "change_pct": -0.83,
+      "price": 0.6575
     },
     "Brent oil": {
       "big_move": false,
-      "change_pct": -2.32,
-      "price": 89.28
+      "change_pct": -2.13,
+      "price": 89.45
     },
     "Gold": {
       "big_move": false,
-      "change_pct": -1.1,
-      "price": 3522.8
+      "change_pct": -1.41,
+      "price": 3511.7
     },
     "VIX": {
       "big_move": false,
-      "change_pct": 17.15,
-      "price": 30.88
+      "change_pct": 19.12,
+      "price": 31.4
     }
   },
   "national_shocks": {
@@ -554,23 +553,18 @@
       "US Embassy Middle East Security Alert: What You Need to Know - JFeed"
     ],
     "aviation_halt": [
+      "O'Hare Airport under ‘constrained facilities' advisory due to equipment outage - NBC Chicago",
       "O'Hare Ground Stop: What the Equipment Outage Means for Thanksgiving Travelers - Around Prague",
-      "Editorial: Nationwide Ground Stop Highlights Vulnerable Air Traffic Systems - Aviation Pros",
-      "O'Hare Airport under ‘constrained facilities' advisory due to equipment outage - NBC Chicago"
+      "Editorial: Nationwide Ground Stop Highlights Vulnerable Air Traffic Systems - Aviation Pros"
     ],
     "bank_outage": [
-      "Aussie shares slip as hot inflation pushes back rate cut hopes - CommBank",
       "‘I’d love to take it to court’: NAB’s Instagram antagonist vows not to back down - SMH.com.au",
+      "Wall Street slides as Nvidia and AI stocks fall back - CommBank",
       "Gossip account against NAB sparks CEO intervention - Human Resources Director"
     ],
     "blood": [
       "Mobile Blood Donation Bus to Visit Kremenchuk on November 25 - Полтавська Хвиля | Новини Полтави",
       "Luminis Health Adds Mobile Blood Donation Bus - NewsBreak: Local News & Alerts"
-    ],
-    "cables": [
-      "USTDA Funds Feasibility Study for InfiniVAN’s Silangan Submarine Cable Along the Philippines’ Eastern Seaboard - Submarine Networks",
-      "Indo-Pacific Nations Call On Allies to Protect Undersea Cables - National Defense Magazine",
-      "Expert warns of worrying problem with emergency plans if UK suffers 'black sky event' - LADbible"
     ],
     "chem": [
       "OPCW Honors Chemical Weapons Victims at States Parties Conference - Mirage News",
@@ -605,77 +599,22 @@
     "cyber_supply": [
       "VMware vCenter, new critical flaw CVE-2026-123903 rated CVSS 9.8 bypasses authentication - Meteora Web",
       "Idunno AntiCsrf, ACN detects active exploitation of CVE-2026-131914 with CVSS 9.3 - Meteora Web",
-      "VMware releases third round of critical patches in a week - Techzine Global"
-    ],
-    "deepfake": [
-      "Deloitte suspended by WA government after AI report debacle - ABC News & Headlines – Australian Broadcasting Corporation",
-      "Taiwan election: Is China behind a wave of AI fakes and disinformation? - BBC",
-      "Belgian minister seeks EU response to AI-generated fake death notices - Yeni Safak English"
-    ],
-    "dieoff": [
-      "Dead fish raise alarm at Olympic Rowing Center - eKathimerini.com",
-      "Mystery remains over penguin deaths after bird flu ruled out - Stuff",
-      "Mass fish deaths force Olympic rowing center to temporarily close - eKathimerini.com"
-    ],
-    "flash": [
-      "Why has Janus Electric (ASX:JNS) entered a trading halt ahead of a material capital raising? - Kalkine",
-      "Black Pearl Group Enters Voluntary Suspension on ASX Amid NZX Trading Halt - Kalkine",
-      "KOSPI Plunges 4.9% as Philadelphia Semiconductor Index Tumbles 7.9%; Sell-Side Circuit Breaker Triggered - BigGo Finance"
-    ],
-    "fuel_au": [
-      "Crisis-tested Matt Halliday never lets a fuel shock go to waste - AFR",
-      "Philippines declares national energy emergency as Asia risks energy crisis amid Iran war - ABC News - Breaking News, Latest News and Videos",
-      "Global disaster misinformation fuels panic-buying at chain stores in several countries - The Straits Times"
-    ],
-    "illness": [
-      "Mystery illness causes mass hospitalisation of runners - The Nightly",
-      "Dr. Siegel on measles comeback, mystery illness outbreak on cruise ship - Fox News",
-      "148 aboard Florida-bound cruise ship sickened by ‘unknown’ GI outbreak: CDC - The Hill"
+      "Hackers now exploit critical Drupal RCE flaw to hijack sites - BleepingComputer"
     ],
     "masscas": [
       "Cop wrestles patient trying to grab gun in hospital - Herald Sun",
-      "Cop wrestles patient trying to grab gun in hospital - The Daily Telegraph",
-      "6 hospitalized, including 1 in critical condition, after fire tears through home in Allentown - WFMZ.com"
+      "6 hospitalized, including 1 in critical condition, after fire tears through home in Allentown - WFMZ.com",
+      "1 person in critical condition after latest Allentown fire displaces 16 residents [Updated] - The Morning Call"
     ],
     "mobilisation": [
       "Resident of Ternopil Region Tried to Cancel Mobilization Due to a “Formal” Military Medical Commission: What the Court Decided - Судово-юридична газета",
-      "The Pentagon's Interceptor Missile Crisis: Depleted US Stockpiles Force Unprecedented Industrial Mobilization Until 2030 - جريدة القدس",
-      "Algeria's Mobilisation in Niger: A Consolidation of Regional Influence - Bloomsbury Intelligence and Security Institute (BISI)"
-    ],
-    "national_outage": [
-      "Colombia plunged into darkness – President issues emergency order - TodayPress.tv",
-      "A widespread power cut in Dnipro on 24 November - UkrMedia News",
-      "Cuba’s National Electric Grid Collapses, Reason Unknown - EnergyNow.com"
-    ],
-    "outage_au": [
-      "Calls for 'automatic compensation' following telco outages - ABC News & Headlines – Australian Broadcasting Corporation",
-      "Microsoft ‘deeply sorry’ for global outage, rules out cyberattack and AI - Nine.com.au",
-      "The Microsoft outage is part of a growing trend. This is how to prepare for further disruption - SBS"
+      "Algeria's Mobilisation in Niger: A Consolidation of Regional Influence - Bloomsbury Intelligence and Security Institute (BISI)",
+      "The Pentagon's Interceptor Missile Crisis: Depleted US Stockpiles Force Unprecedented Industrial Mobilization Until 2030 - جريدة القدس"
     ],
     "reservists": [
       "Running on empty: the IDF's race to rebuild in 2027 before the next war - Ynetnews",
       "Plumbers, babysitters, and dog boarding: The reimbursements reservists can claim before year’s end - The Jerusalem Post",
       "Devon Levi with a Goalie Save vs. Vegas Golden Knights - Yahoo Sports"
-    ],
-    "sapn": [
-      "Another outage coming as crews race to reconnect power grid - Adelaide Now",
-      "Festivalgoer struck by lightning, locust plague, freak storm causes major blackout - 9Now",
-      "Final four prepare for Adelaide Grand Final clash - Motorsport Australia"
-    ],
-    "scams": [
-      "Fraud & Digital Identity News – KYC, Scams & Verification - FF News",
-      "Finmo Adds USDC and USDT Support to Business Accounts - Fintech Singapore",
-      "Is Digital Lending Ready for the Next Wave of Fraud? - Fintech Singapore"
-    ],
-    "shipping_attacks": [
-      "Three Sinokor VLCCs hit in latest Strait of Hormuz attacks - Riviera Maritime Media",
-      "IRGC Claims 3 Oil Tankers Hit Mines in Hormuz Under US Escort - https://houseofsaud.com/",
-      "Iranian attacks in the Strait of Hormuz are at the highest levels since the conflict began - CNN"
-    ],
-    "strikes": [
-      "Iran Warns of Retaliation if US Forces Attack - ASHARQ AL-AWSAT English",
-      "Houthi drones target airport, air base in Saudi Arabia - Yeni Safak English",
-      "'Our Missiles Will Find You': Iran's Chief Of Staff Threatens Trump; 'No US Base Is Out Of Range' - The Times of India"
     ]
   },
   "prediction_markets": [
@@ -695,7 +634,7 @@
       "yes": 13.5
     },
     {
-      "d24h": -0.2,
+      "d24h": -0.1,
       "q": "China x Taiwan military clash before 2027?",
       "yes": 2.6
     },
@@ -705,9 +644,9 @@
       "yes": 3.0
     },
     {
-      "d24h": -0.2,
+      "d24h": 0.0,
       "q": "Will the US officially declare war on Iran by December 31, 2026?",
-      "yes": 1.6
+      "yes": 1.8
     },
     {
       "d24h": -1.0,
@@ -745,7 +684,7 @@
       "yes": 1.6
     },
     {
-      "d24h": -0.9,
+      "d24h": -0.8,
       "q": "Iran-Oman Hormuz Agreement by November 30?",
       "yes": 1.9
     },
@@ -795,9 +734,9 @@
       "yes": 18.0
     },
     {
-      "d24h": 1.5,
+      "d24h": 0.5,
       "q": "Will Nick Stewart attend a US x Iran diplomatic meeting by December 31, 2026?",
-      "yes": 9.0
+      "yes": 8.5
     }
   ],
   "quakes_m6_24h": [],
@@ -1036,7 +975,7 @@
           "name": "Mobilisation / reservist reports (Russia / NATO)"
         },
         {
-          "detail": "VIX at 30.88",
+          "detail": "VIX at 31.4",
           "name": "Market fear index above 30"
         }
       ],
@@ -1066,8 +1005,8 @@
       "trend": "steady"
     },
     {
-      "band": "Elevated",
-      "convergence": "Two different kinds of sign are showing together (chemical weapons and health). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: countries restricting medical supply exports, pandemic-response stocks outperforming (5 days) ",
+      "band": "Guarded",
+      "convergence": "Two different kinds of sign are showing together (chemical weapons and health). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: unknown illness / pneumonia cluster reported, countries restricting medical supply exports and",
       "domains": [
         "Chemical weapons",
         "Health"
@@ -1079,16 +1018,12 @@
           "name": "WHO outbreak report with a high-concern pathogen (last 14 days)"
         },
         {
-          "detail": "Dr. Siegel on measles comeback, mystery illness outbreak on cruise ship",
-          "name": "Unknown illness / pneumonia cluster reported"
-        },
-        {
           "detail": "OPCW Honors Chemical Weapons Victims at States Parties Conference",
           "name": "Chemical / nerve-agent attack or mass poisoning reported"
         }
       ],
-      "score": 50,
-      "trend": "steady"
+      "score": 30,
+      "trend": "down"
     },
     {
       "band": "Low",
@@ -1107,12 +1042,11 @@
       "trend": "steady"
     },
     {
-      "band": "Elevated",
-      "convergence": "Signs are converging across 3 separate areas (ai-enabled hacking, cloud services and markets). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: a Chinese sta",
+      "band": "Guarded",
+      "convergence": "Two different kinds of sign are showing together (ai-enabled hacking and cloud services). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, deepfakes of leaders or fake ",
       "domains": [
         "AI-enabled hacking",
-        "Cloud services",
-        "Markets"
+        "Cloud services"
       ],
       "key": "ai",
       "lit": [
@@ -1121,21 +1055,17 @@
           "name": "Reports of AI-driven hacking campaigns"
         },
         {
-          "detail": "KOSPI Plunges 4.9% as Philadelphia Semiconductor Index Tumbles 7.9%; Sell-Side Circuit Breaker Triggered",
-          "name": "Flash crash or exchange trading halt"
-        },
-        {
           "detail": "Microsoft declares Code Red after Microsoft 365 outage, targets one-hour recovery for global outages",
           "name": "Major cloud or AI service outage"
         }
       ],
-      "score": 35,
-      "trend": "steady"
+      "score": 25,
+      "trend": "down"
     }
   ],
   "sectors_relative_5d": {
     "defence_au": 3.12,
-    "defence_eu": 3.2,
+    "defence_eu": 3.85,
     "defence_us": 0.84,
     "pandemic": 1.86
   },
@@ -1153,8 +1083,8 @@
   "telecom_drop_pct": {
     "Aussie Broadband": 0.0,
     "Optus": 0.0,
-    "TPG": 0.1,
-    "Telstra": 0.6,
+    "TPG": 0.0,
+    "Telstra": 0.4,
     "Vodafone": 4.8
   },
   "us_departure_orders": [
