@@ -281,18 +281,19 @@
   ],
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
+    "maritime": "TimeoutError: ",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-25T22:05:00Z",
+  "generated_at": "2026-11-25T22:12:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 55,
+    "Baltic / Kaliningrad": 54,
     "Black Sea": null,
-    "Israel & Eastern Mediterranean": 12,
+    "Israel & Eastern Mediterranean": 4,
     "Korea": 0,
     "Persian Gulf": null,
     "South Australia": 3,
-    "Sydney / NSW": 0,
+    "Sydney / NSW": 2,
     "Taiwan Strait": 0
   },
   "incidents": [
@@ -318,24 +319,33 @@
     },
     {
       "attack_reported": true,
-      "confirmed": false,
+      "confirmed": true,
       "headlines": [
-        "Retailers face rising AI cyberattack threat ahead of Black Friday, many uninsured"
+        "LaLiga Says Cyberattack Exposed Fans’ Personal Data"
       ],
       "needs_confirming": false,
       "severity": "Info",
-      "target": "Retailers"
+      "target": "LaLiga"
     },
     {
       "attack_reported": true,
-      "confirmed": true,
+      "confirmed": false,
       "headlines": [
-        "Hackers may have used AI tool to attack CIA and other US spy agencies",
-        "Hackers now exploit critical Drupal RCE flaw to hijack sites"
+        "Password books surge as data breach fears grow"
       ],
       "needs_confirming": false,
       "severity": "Info",
-      "target": "Hackers"
+      "target": "Password"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "Hackers Exploit Critical Hex.pm Vulnerability to Execute Malicious Commands on Servers"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "Hackers Exploit Critical"
     },
     {
       "attack_reported": true,
@@ -388,6 +398,28 @@
       "target": "Hackers Are Using"
     },
     {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "Hackers may have used AI tool to attack CIA and other US spy agencies"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "Hackers"
+    },
+    {
+      "attack_reported": false,
+      "confirmed": true,
+      "headlines": [
+        "Microsoft declares ‘Code Red’ after 24-hour outage disrupts Outlook, Teams and Copilot",
+        "What’s plan B when Microsoft 365 goes down? IT leaders weigh in",
+        "Microsoft invokes 'Code Red' after global Outlook and Microsoft 365 outage"
+      ],
+      "needs_confirming": false,
+      "severity": "Warning",
+      "target": "Microsoft"
+    },
+    {
       "attack_reported": false,
       "confirmed": false,
       "headlines": [
@@ -399,9 +431,10 @@
     },
     {
       "attack_reported": false,
-      "confirmed": false,
+      "confirmed": true,
       "headlines": [
-        "NAB fails to take down former staffer’s ‘untrue’ Instagram whistleblower account"
+        "NAB fails to take down former staffer’s ‘untrue’ Instagram whistleblower account",
+        "Inflation rise fails to shake ANZ’s revised rate call"
       ],
       "needs_confirming": false,
       "severity": "Info",
@@ -409,40 +442,19 @@
     },
     {
       "attack_reported": false,
-      "confirmed": true,
-      "headlines": [
-        "Microsoft declares ‘Code Red’ after 24-hour outage disrupts Outlook, Teams and Copilot",
-        "Microsoft invokes 'Code Red' after global Outlook and Microsoft 365 outage"
-      ],
-      "needs_confirming": false,
-      "severity": "Info",
-      "target": "Microsoft"
-    },
-    {
-      "attack_reported": false,
       "confirmed": false,
       "headlines": [
-        "4 Ways to Prep Your Finances Before the Next Tech Outage"
+        "Japan's PayPay Hit by System Outage; Credit Card Linkage Services Down, No Recovery Timeline"
       ],
       "needs_confirming": false,
       "severity": "Info",
-      "target": "Other services"
-    },
-    {
-      "attack_reported": false,
-      "confirmed": false,
-      "headlines": [
-        "Reform vow to scrap 'scam' graduate visa route to cut immigration"
-      ],
-      "needs_confirming": false,
-      "severity": "Info",
-      "target": "Reform"
+      "target": "Japan's PayPay"
     }
   ],
   "internet_drop_pct": {
     "China": 0.0,
     "Iran": 0.5,
-    "Israel": 0.2,
+    "Israel": 0.1,
     "Russia": 0.0,
     "South Korea": 0.2,
     "Taiwan": 0.7
@@ -459,16 +471,16 @@
       "Mount Lofty Ranges": "Moderate / Moderate"
     },
     "fire_danger_ok": true,
-    "fires_active": 11,
+    "fires_active": 12,
     "fuel": {
       "brent_aud": 136.1,
       "change_pct": 1.8,
       "pump_cents": 1,
       "week_ago_aud": 133.8
     },
-    "grid_demand_fall_pct": 12.0,
+    "grid_demand_fall_pct": 11.0,
     "grid_demand_mw": 1198,
-    "grid_demand_usual_mw": 982,
+    "grid_demand_usual_mw": 977,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
@@ -521,13 +533,13 @@
     },
     "Brent oil": {
       "big_move": false,
-      "change_pct": -0.69,
-      "price": 90.77
+      "change_pct": -0.63,
+      "price": 90.82
     },
     "Gold": {
       "big_move": false,
-      "change_pct": 1.47,
-      "price": 3614.4
+      "change_pct": 1.57,
+      "price": 3617.8
     },
     "VIX": {
       "big_move": false,
@@ -549,7 +561,7 @@
         "level": "Possible",
         "sector": "aviation",
         "signals": {
-          "traffic": "airborne traffic near Dubai about 13% of normal"
+          "traffic": "airborne traffic near Dubai about 18% of normal"
         }
       }
     ],
@@ -562,8 +574,8 @@
   "news_watch": {
     "ai_hack": [
       "Google says the first autonomous AI cyberattack has happened. It won't be the last. - Mashable",
-      "Italy and Switzerland warn of autonomous AI-driven cyberattacks - BleepingComputer",
-      "Dutch ethical hacking group hit by suspected autonomous AI agents - Anadolu Ajansı"
+      "Dutch ethical hacking group hit by suspected autonomous AI agents - Anadolu Ajansı",
+      "Italy and Switzerland warn of autonomous AI-driven cyberattacks - BleepingComputer"
     ],
     "airspace": [
       "IndiGo Adds Southeast Asia Flights as Westbound Costs Climb - Skift",
@@ -576,9 +588,9 @@
       "O'Hare Equipment Outage Triggers Ground Stop on Nov. 24; Refunds Available, but U.S. Law Sets No Fixed Delay Compensation - Avi-Go"
     ],
     "bank_outage": [
+      "Wall Street recovers most early losses as pullback in AI stocks eases - CommBank",
       "NAB fails to take down former staffer’s ‘untrue’ Instagram whistleblower account - hrleader.com.au",
-      "‘I’d love to take it to court’: NAB’s Instagram antagonist vows not to back down - SMH.com.au",
-      "‘I’d love to take it to court’: NAB’s Instagram antagonist vows not to back down - The Age"
+      "Inflation rise fails to shake ANZ’s revised rate call - Broker Daily"
     ],
     "blood": [
       "Video: Defending Aden, Yemen’s Holdout Against the Houthis - The New York Times"
@@ -598,15 +610,20 @@
       "Microsoft declares Code Red after Microsoft 365 outage, targets one-hour recovery for global outages - ForkLog",
       "Microsoft declares \"Code Red\" following a major service outage - Mezha"
     ],
+    "cyber_attrib": [
+      "FBI Warns Hackers Are Using ARTEX AI Tool To Automate Cyberattacks - Forbes",
+      "Spy agency warns active Russian hackers targeting Australian industry - ABC News & Headlines – Australian Broadcasting Corporation",
+      "Busted! Alleged Aussie hackers linked to TeamPCP arrested in joint AFP-FBI-WAPF operation - Cyber Daily"
+    ],
     "cyber_au": [
       "How is Peninsula Energy (ASX:PEN) responding to the cyber incident at its Lance uranium project? - Kalkine",
-      "Used Todoist for Years? You May Be Involved In a New Data Breach - PCMag Australia",
-      "EXCLUSIVE: Control4 Hit By Major System Outage As Suspected Cyber Attack Raises Serious Security Questions - ChannelNews.com.au"
+      "EXCLUSIVE: Control4 Hit By Major System Outage As Suspected Cyber Attack Raises Serious Security Questions - ChannelNews.com.au",
+      "Brocent flags gap between cyber breach & claim costs - IT Brief Australia"
     ],
     "cyber_ot": [
       "UK operation wards off risk of cyber-attack on supermarket fridges and freezers - The Guardian",
       "Shop freezers in seven European countries hit by cyber-attack - BBC",
-      "Next Plc’s Supplier Hit by Cyberattack in Latest UK Retail Breach - Insurance Journal"
+      "Supermarket freezers and fridges in Europe hit by cyberattack - Nine.com.au"
     ],
     "cyber_state": [
       "ESET Research: Sandworm behind cyberattack on Poland’s power grid in late 2025 - We Live Security",
@@ -620,8 +637,8 @@
     ],
     "deepfake": [
       "Deloitte suspended by WA government after AI report debacle - ABC News & Headlines – Australian Broadcasting Corporation",
-      "Deepfake detections surge as fraudsters utilize AI, report finds - CFO Dive",
-      "AI-generated video misleads Sri Lankans after heavy rains inundate Colombo - AFP Fact Check"
+      "AI-generated video misleads Sri Lankans after heavy rains inundate Colombo - AFP Fact Check",
+      "Deepfake detections surge as fraudsters utilize AI, report finds - CFO Dive"
     ],
     "dieoff": [
       "Dead fish raise alarm at Olympic Rowing Center - eKathimerini.com",
@@ -629,8 +646,8 @@
       "Body Found in St. Johns River Near Hart Bridge - Wisevoter"
     ],
     "flash": [
+      "Why has Janus Electric (ASX:JNS) entered a trading halt ahead of a material capital raising? - Kalkine",
       "Jensen Huang's return to Nvidia was a circuit breaker for the market, says Deutsche's Bankim Chadha - CNBC",
-      "Black Pearl Group Enters Voluntary Suspension on ASX Amid NZX Trading Halt - Kalkine",
       "CME E-Mini Options Briefly Paused During Chaotic Opening Session - Bloomberg"
     ],
     "fuel_au": [
@@ -659,7 +676,7 @@
     "national_outage": [
       "Cuba’s National Electric Grid Collapses, Reason Unknown - EnergyNow.com",
       "Colombia plunged into darkness – President issues emergency order - TodayPress.tv",
-      "Darkness, wild pigs turn night rides risky on Palakkad's Mukkai causeway - Onmanorama"
+      "'Tipping point': Humanitarian crisis in Cuba continues to grow, aid group director says - ABC News - Breaking News, Latest News and Videos"
     ],
     "outage_au": [
       "Calls for 'automatic compensation' following telco outages - ABC News & Headlines – Australian Broadcasting Corporation",
@@ -685,6 +702,11 @@
       "IRGC Claims LNG Carrier Hit Mine in Hormuz Nov 25 - https://houseofsaud.com/",
       "Three Sinokor VLCCs hit in latest Strait of Hormuz attacks - Riviera Maritime Media",
       "Iranian attacks on ships near Strait of Hormuz hit highest level since war began, data shows - The Jerusalem Post"
+    ],
+    "strikes": [
+      "Ukraine says strike on major Russian air base damaged five military jets - AeroTime",
+      "Ukraine says it struck a major Russian air base, damaging five planes - Arab News",
+      "Iran Warns of Retaliation if US Forces Attack - ASHARQ AL-AWSAT English"
     ]
   },
   "prediction_markets": [
@@ -709,9 +731,9 @@
       "yes": 2.8
     },
     {
-      "d24h": 0.7,
+      "d24h": 0.4,
       "q": "US-Iran Hormuz Agreement by November 30?",
-      "yes": 3.5
+      "yes": 3.2
     },
     {
       "d24h": 0.1,
