@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-25T10:36:00Z",
+  "generated_at": "2026-11-25T10:52:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -100,26 +100,31 @@
       "why": "The worst local days stack up: extreme fire danger, a heatwave pushing power demand, a tight grid, and storms or fires damaging lines. AEMO warns of supply shortfalls hours to a day ahead; the CFS and Bureau issue ratings and warnings a day or more ahead."
     },
     {
-      "band": "Low",
-      "convergence": "No warning signs are showing. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
-      "domains": [],
+      "band": "Guarded",
+      "convergence": "Only one kind of sign is showing (military air). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: air-refuelling tanker surge, internet blackout in iran or israel and new us embassy departure order in the region.",
+      "domains": [
+        "Military air"
+      ],
       "key": "mideast",
-      "lit": [],
+      "lit": [
+        {
+          "detail": "mil_mideast 19 vs usual 5",
+          "domain": "Military air",
+          "id": "air",
+          "name": "Unusual military air activity over the region",
+          "short": "Unusual military air activity over the…",
+          "weight": 15
+        }
+      ],
       "name": "Middle East war & Gulf shipping",
       "sa_impact": "Fuel: Australia imports most of its fuel, much of it refined from Gulf crude in Asia. Shipping attacks or a Hormuz closure push up prices within days and can cause local shortages.",
-      "score": 0,
-      "trend": "down",
+      "score": 15,
+      "trend": "up",
       "unlit": [
         {
           "domain": "Military air",
           "id": "tankers",
           "name": "Air-refuelling tanker surge",
-          "weight": 15
-        },
-        {
-          "domain": "Military air",
-          "id": "air",
-          "name": "Unusual military air activity over the region",
           "weight": 15
         },
         {
@@ -633,8 +638,9 @@
     },
     {
       "band": "Elevated",
-      "convergence": "Only one kind of sign is showing (health). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: countries restricting medical supply exports, pandemic-response stocks outperforming (5 days) and chemical / nerve-agent attack or mass poisoning reported.",
+      "convergence": "Two different kinds of sign are showing together (chemical weapons and health). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: countries restricting medical supply exports, pandemic-response stocks outperforming (5 days) and australian medicine or ppe shortage reports.",
       "domains": [
+        "Chemical weapons",
         "Health"
       ],
       "key": "bio",
@@ -654,12 +660,20 @@
           "name": "Unknown illness / pneumonia cluster reported",
           "short": "Illness cluster",
           "weight": 20
+        },
+        {
+          "detail": "OPCW honours victims of chemical weapons at Conference of the States Parties",
+          "domain": "Chemical weapons",
+          "id": "chem",
+          "name": "Chemical / nerve-agent attack or mass poisoning reported",
+          "short": "Chemical attack",
+          "weight": 15
         }
       ],
       "name": "Pandemic, biological or chemical emergency",
       "sa_impact": "Health system strain, possible lockdowns and border closures, and shortages of medicines and protective equipment, which Australia mostly imports.",
-      "score": 35,
-      "trend": "steady",
+      "score": 50,
+      "trend": "up",
       "unlit": [
         {
           "domain": "Trade",
@@ -684,12 +698,6 @@
           "id": "masscas",
           "name": "Mass casualty declarations (any country)",
           "weight": 5
-        },
-        {
-          "domain": "Chemical weapons",
-          "id": "chem",
-          "name": "Chemical / nerve-agent attack or mass poisoning reported",
-          "weight": 15
         },
         {
           "domain": "Health",
@@ -802,7 +810,7 @@
       "key": "ai",
       "lit": [
         {
-          "detail": "China suspected in AI-powered cyberattack on CIA and US intelligence agencies",
+          "detail": "Google says the first autonomous AI cyberattack has happened. Expect a lot more like it.",
           "domain": "AI-enabled hacking",
           "id": "aihack",
           "name": "Reports of AI-driven hacking campaigns",
