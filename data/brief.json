@@ -281,17 +281,18 @@
   ],
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
+    "maritime": "TimeoutError: ",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output=",
     "satellites": "HTTPError: HTTP Error 503: Service Unavailable"
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-25T16:31:00Z",
+  "generated_at": "2026-11-25T16:45:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 26,
-    "Black Sea": 26,
-    "Israel & Eastern Mediterranean": 5,
+    "Baltic / Kaliningrad": 18,
+    "Black Sea": 47,
+    "Israel & Eastern Mediterranean": 2,
     "Korea": 0,
-    "Persian Gulf": 10,
+    "Persian Gulf": 19,
     "South Australia": null,
     "Sydney / NSW": null,
     "Taiwan Strait": 0
@@ -379,6 +380,16 @@
       "target": "Hackers Are Using"
     },
     {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "Treasury Investigates FinCEN Cyberattack as CIO Updates AI Game"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "Treasury"
+    },
+    {
       "attack_reported": false,
       "confirmed": true,
       "headlines": [
@@ -423,12 +434,12 @@
     }
   ],
   "internet_drop_pct": {
-    "China": 0.1,
+    "China": 0.0,
     "Iran": 0.0,
     "Israel": 0.0,
     "Russia": 0.2,
     "South Korea": 0.2,
-    "Taiwan": 0.5
+    "Taiwan": 0.4
   },
   "local_sa": {
     "bom": [],
@@ -442,18 +453,28 @@
       "Mount Lofty Ranges": "Moderate / Moderate"
     },
     "fire_danger_ok": true,
-    "fires_active": 9,
+    "fires_active": 10,
     "fuel": {
-      "brent_aud": 134.2,
+      "brent_aud": 134.3,
       "change_pct": 0.4,
       "pump_cents": 0,
       "week_ago_aud": 133.7
     },
-    "grid_demand_fall_pct": 0.5,
-    "grid_demand_mw": 1375,
-    "grid_demand_usual_mw": 1311,
+    "grid_demand_fall_pct": 1.0,
+    "grid_demand_mw": 1367,
+    "grid_demand_usual_mw": 1319,
     "grid_lor_level": 0,
-    "nearby_incidents": [],
+    "nearby_incidents": [
+      {
+        "area": "COMMERCIAL RD SALISBURY",
+        "dist": "10-25 km",
+        "event": "Grass Fire",
+        "headline": "SALISBURY : GRASS FIRE",
+        "id": "F-261126-0006 SALISBURY, COMMERCIAL RD (GRASS FIRE)",
+        "level": null,
+        "notify": false
+      }
+    ],
     "outlook": {
       "air": {
         "aqi": 24,
@@ -499,23 +520,23 @@
   "markets": {
     "AUD/USD": {
       "big_move": false,
-      "change_pct": -0.66,
-      "price": 0.6586
+      "change_pct": -0.63,
+      "price": 0.6588
     },
     "Brent oil": {
       "big_move": false,
-      "change_pct": -1.84,
-      "price": 89.72
+      "change_pct": -1.87,
+      "price": 89.69
     },
     "Gold": {
       "big_move": false,
-      "change_pct": -2.25,
-      "price": 3481.9
+      "change_pct": -2.29,
+      "price": 3480.5
     },
     "VIX": {
       "big_move": false,
-      "change_pct": 27.73,
-      "price": 33.67
+      "change_pct": 26.02,
+      "price": 33.22
     }
   },
   "national_shocks": {
@@ -533,7 +554,7 @@
     "ai_hack": [
       "Dutch ethical hacking group hit by suspected autonomous AI agents - Anadolu Ajansı",
       "The OpenAI hacking case shows corporate liability can work. It doesn’t cover AI agents with no owner - Fortune",
-      "China suspected in AI-powered cyberattack on CIA and US intelligence agencies - Ynetnews"
+      "Hackers Compromise 24 Check Point Management Servers in Suspected AI-Driven Attack Campaign - The Hacker News"
     ],
     "airspace": [
       "IndiGo Adds Southeast Asia Flights as Westbound Costs Climb - Skift",
@@ -555,8 +576,8 @@
     ],
     "cables": [
       "USTDA Funds Feasibility Study for InfiniVAN’s Silangan Submarine Cable Along the Philippines’ Eastern Seaboard - Submarine Networks",
-      "Indo-Pacific Nations Call On Allies to Protect Undersea Cables - National Defense Magazine",
-      "Expert warns of worrying problem with emergency plans if UK suffers 'black sky event' - LADbible"
+      "Kalypso Offshore Energy Awarded NYSERDA Grant to Develop Subsea Cable Operations & Maintenance Hub in Brooklyn - StreetInsider",
+      "Indo-Pacific Nations Call On Allies to Protect Undersea Cables - National Defense Magazine"
     ],
     "chem": [
       "OPCW Honors Chemical Weapons Victims at States Parties Conference - Mirage News",
@@ -604,8 +625,8 @@
       "KWS Takes Action After Mysterious Deaths of 17 Rhinos - Kenyans.co.ke"
     ],
     "flash": [
+      "Why has Janus Electric (ASX:JNS) entered a trading halt ahead of a material capital raising? - Kalkine",
       "Black Pearl Group Enters Voluntary Suspension on ASX Amid NZX Trading Halt - Kalkine",
-      "Canadian Investment Regulatory Organization Trading Halt - DIV.DB.C - The Manila Times",
       "KOSPI Plunges 4.9% as Philadelphia Semiconductor Index Tumbles 7.9%; Sell-Side Circuit Breaker Triggered - BigGo Finance"
     ],
     "fuel_au": [
@@ -634,14 +655,13 @@
       "Allstate Faces Nationwide Outage Across Insurance Platforms - Demokratis.co.id"
     ],
     "outage_au": [
-      "Telstra mobile outage disrupts services across Australia - Australian Cyber Security Magazine",
-      "Australia's Optus apologises for outage that disrupted emergency calls - Reuters",
-      "How a nationwide Telstra outage rocked the Australian economy – and what we can learn - The Conversation"
+      "Calls for 'automatic compensation' following telco outages - ABC News & Headlines – Australian Broadcasting Corporation",
+      "Microsoft ‘deeply sorry’ for global outage, rules out cyberattack and AI - Nine.com.au",
+      "The Microsoft outage is part of a growing trend. This is how to prepare for further disruption - SBS"
     ],
     "reservists": [
       "Running on empty: the IDF's race to rebuild in 2027 before the next war - Ynetnews",
-      "Devon Levi with a Goalie Save vs. Vegas Golden Knights - Yahoo Sports",
-      "Revenue from military levy rose 24% to UAH 163 billion over 10M - Ukranews"
+      "Devon Levi with a Goalie Save vs. Vegas Golden Knights - Yahoo Sports"
     ],
     "sapn": [
       "Another outage coming as crews race to reconnect power grid - Adelaide Now",
@@ -681,7 +701,7 @@
       "yes": 13.5
     },
     {
-      "d24h": -0.2,
+      "d24h": -0.1,
       "q": "China x Taiwan military clash before 2027?",
       "yes": 2.6
     },
@@ -711,9 +731,9 @@
       "yes": 2.4
     },
     {
-      "d24h": 0.1,
+      "d24h": 0.2,
       "q": "Will China invade Taiwan by June 30, 2027?",
-      "yes": 4.4
+      "yes": 4.5
     },
     {
       "d24h": 0.1,
@@ -746,7 +766,7 @@
       "yes": 2.2
     },
     {
-      "d24h": -1.5,
+      "d24h": -1.1,
       "q": "Ukraine agrees not to join NATO by December 31, 2026?",
       "yes": 1.4
     },
@@ -999,7 +1019,7 @@
       "key": "mideast",
       "lit": [
         {
-          "detail": "US defence stocks +5.6% vs market over 5 days",
+          "detail": "US defence stocks +5.5% vs market over 5 days",
           "name": "US defence stocks outperforming (5 days)"
         }
       ],
@@ -1015,7 +1035,7 @@
       "key": "taiwan",
       "lit": [
         {
-          "detail": "US defence stocks +5.6% vs market over 5 days",
+          "detail": "US defence stocks +5.5% vs market over 5 days",
           "name": "Defence stocks outperforming (US / Australia)"
         }
       ],
@@ -1042,7 +1062,7 @@
           "name": "Mobilisation / reservist reports (Russia / NATO)"
         },
         {
-          "detail": "VIX at 33.67",
+          "detail": "VIX at 33.22",
           "name": "Market fear index above 30"
         }
       ],
@@ -1131,7 +1151,7 @@
           "name": "Flash crash or exchange trading halt"
         },
         {
-          "detail": "VIX +27.7%",
+          "detail": "VIX +26.0%",
           "name": "Market fear index jumps 25%+ in a day"
         },
         {
@@ -1145,11 +1165,19 @@
   ],
   "sectors_relative_5d": {
     "defence_au": 3.12,
-    "defence_eu": 3.44,
-    "defence_us": 5.61,
-    "pandemic": 0.36
+    "defence_eu": 3.48,
+    "defence_us": 5.51,
+    "pandemic": 0.39
   },
   "status_pages": [
+    {
+      "au": false,
+      "big": false,
+      "provider": "Cloudflare",
+      "started": "2026-11-25T16:42:03Z",
+      "title": "Some customers cannot create monitors",
+      "where": "Notifications"
+    },
     {
       "au": false,
       "big": false,
@@ -1161,9 +1189,9 @@
   ],
   "tankers": "normal",
   "telecom_drop_pct": {
-    "Aussie Broadband": 0.6,
-    "Optus": 4.0,
-    "TPG": 0.1,
+    "Aussie Broadband": 0.4,
+    "Optus": 10.1,
+    "TPG": 0.2,
     "Telstra": 0.0,
     "Vodafone": 0.0
   },
