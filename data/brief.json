@@ -107,8 +107,8 @@
     "infocon": "green",
     "kev": {
       "all": {
-        "last_7d": 10,
-        "ratio": 1.11,
+        "last_7d": 19,
+        "ratio": 2.11,
         "usual_7d": 9
       },
       "edge": {
@@ -118,8 +118,8 @@
       },
       "ransomware_linked_7d": 0,
       "vendors": {
-        "last_7d": 10,
-        "ratio": 1.43,
+        "last_7d": 13,
+        "ratio": 1.86,
         "usual_7d": 7
       }
     }
@@ -281,16 +281,17 @@
   ],
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
+    "maritime": "TimeoutError: ",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-25T19:39:00Z",
+  "generated_at": "2026-11-25T19:54:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 28,
-    "Black Sea": 7,
-    "Israel & Eastern Mediterranean": 8,
+    "Baltic / Kaliningrad": 39,
+    "Black Sea": null,
+    "Israel & Eastern Mediterranean": 2,
     "Korea": 0,
-    "Persian Gulf": 31,
+    "Persian Gulf": 19,
     "South Australia": 0,
     "Sydney / NSW": 0,
     "Taiwan Strait": 0
@@ -339,6 +340,16 @@
     },
     {
       "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "Hackers Exploit Critical Hex.pm Vulnerability to Execute Malicious Commands on Servers"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "Hackers Exploit Critical"
+    },
+    {
+      "attack_reported": true,
       "confirmed": true,
       "headlines": [
         "Google says the first autonomous AI cyberattack has happened. It won't be the last."
@@ -346,6 +357,16 @@
       "needs_confirming": false,
       "severity": "Info",
       "target": "Google"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "Italy and Switzerland warn of autonomous AI-driven cyberattacks"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "Italy"
     },
     {
       "attack_reported": true,
@@ -388,16 +409,6 @@
       "target": "Hackers Are Using"
     },
     {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
-        "Treasury Investigates FinCEN Cyberattack as CIO Updates AI Game"
-      ],
-      "needs_confirming": false,
-      "severity": "Info",
-      "target": "Treasury"
-    },
-    {
       "attack_reported": false,
       "confirmed": true,
       "headlines": [
@@ -428,15 +439,25 @@
       "needs_confirming": false,
       "severity": "Info",
       "target": "Expert"
+    },
+    {
+      "attack_reported": false,
+      "confirmed": false,
+      "headlines": [
+        "Japan's PayPay Hit by System Outage; Credit Card Linkage Services Down, No Recovery Timeline"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "Japan's PayPay"
     }
   ],
   "internet_drop_pct": {
     "China": 0.0,
-    "Iran": 0.1,
+    "Iran": 0.2,
     "Israel": 0.0,
     "Russia": 0.0,
-    "South Korea": 0.1,
-    "Taiwan": 1.2
+    "South Korea": 0.2,
+    "Taiwan": 0.9
   },
   "local_sa": {
     "bom": [],
@@ -452,14 +473,14 @@
     "fire_danger_ok": true,
     "fires_active": 8,
     "fuel": {
-      "brent_aud": 135.6,
+      "brent_aud": 135.7,
       "change_pct": 1.4,
       "pump_cents": 1,
-      "week_ago_aud": 133.7
+      "week_ago_aud": 133.8
     },
-    "grid_demand_fall_pct": -1.5,
-    "grid_demand_mw": 1372,
-    "grid_demand_usual_mw": 1320,
+    "grid_demand_fall_pct": -1.3,
+    "grid_demand_mw": 1389,
+    "grid_demand_usual_mw": 1319,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
@@ -512,18 +533,18 @@
     },
     "Brent oil": {
       "big_move": false,
-      "change_pct": -0.85,
-      "price": 90.62
+      "change_pct": -1.16,
+      "price": 90.34
     },
     "Gold": {
       "big_move": false,
-      "change_pct": 0.45,
-      "price": 3577.9
+      "change_pct": 0.09,
+      "price": 3565.0
     },
     "VIX": {
       "big_move": false,
-      "change_pct": 6.56,
-      "price": 28.09
+      "change_pct": 5.31,
+      "price": 27.76
     }
   },
   "national_shocks": {
@@ -541,7 +562,7 @@
     "ai_hack": [
       "Google says the first autonomous AI cyberattack has happened. It won't be the last. - Mashable",
       "Dutch ethical hacking group hit by suspected autonomous AI agents - Anadolu Ajansı",
-      "The OpenAI hacking case shows corporate liability can work. It doesn’t cover AI agents with no owner - Fortune"
+      "Italy and Switzerland warn of autonomous AI-driven cyberattacks - BleepingComputer"
     ],
     "airspace": [
       "IndiGo Adds Southeast Asia Flights as Westbound Costs Climb - Skift",
@@ -554,17 +575,14 @@
       "O'Hare Equipment Outage Triggers Ground Stop on Nov. 24; Refunds Available, but U.S. Law Sets No Fixed Delay Compensation - Avi-Go"
     ],
     "bank_outage": [
+      "Aussie shares slip as hot inflation pushes back rate cut hopes - CommBank",
       "‘I’d love to take it to court’: NAB’s Instagram antagonist vows not to back down - SMH.com.au",
-      "Wall Street slides as Nvidia and AI stocks fall back - CommBank",
       "Gossip account against NAB sparks CEO intervention - Human Resources Director"
     ],
-    "blood": [
-      "Luminis Health Adds Mobile Blood Donation Bus - NewsBreak: Local News & Alerts"
-    ],
     "cables": [
-      "USTDA Funds Feasibility Study for InfiniVAN’s Silangan Submarine Cable Along the Philippines’ Eastern Seaboard - Submarine Networks",
+      "Kalypso Offshore Energy Awarded NYSERDA Grant to Develop Subsea Cable Operations & Maintenance Hub in Brooklyn - 01net",
       "Indo-Pacific Nations Call On Allies to Protect Undersea Cables - National Defense Magazine",
-      "Kalypso Offshore Energy Awarded NYSERDA Grant to Develop Subsea Cable Operations & Maintenance Hub in Brooklyn - Business Wire"
+      "Expert warns of worrying problem with emergency plans if UK suffers 'black sky event' - LADbible"
     ],
     "chem": [
       "OPCW takes key step towards designation of laboratories for biotoxin analysis - OPCW",
@@ -597,14 +615,14 @@
       "Russian state hackers likely behind wiper malware attack on Poland’s power grid - The Record from Recorded Future News"
     ],
     "cyber_supply": [
+      "CVE-2026-123903: Critical VMware vCenter Auth Bypass - SOC Prime",
       "Hackers now exploit critical Drupal RCE flaw to hijack sites - BleepingComputer",
-      "VMware vCenter, new critical flaw CVE-2026-123903 rated CVSS 9.8 bypasses authentication - Meteora Web",
-      "CVE-2026-123903: Critical VMware vCenter Auth Bypass - SOC Prime"
+      "VMware vCenter, new critical flaw CVE-2026-123903 rated CVSS 9.8 bypasses authentication - Meteora Web"
     ],
     "deepfake": [
       "Deloitte suspended by WA government after AI report debacle - ABC News & Headlines – Australian Broadcasting Corporation",
-      "Deepfake detections surge as fraudsters utilize AI, report finds - CFO Dive",
-      "AI-generated video misleads Sri Lankans after heavy rains inundate Colombo - AFP Fact Check"
+      "AI-generated video misleads Sri Lankans after heavy rains inundate Colombo - AFP Fact Check",
+      "Belgian minister seeks EU response to AI-generated fake death notices - Yeni Safak English"
     ],
     "dieoff": [
       "Dead fish raise alarm at Olympic Rowing Center - eKathimerini.com",
@@ -612,8 +630,8 @@
       "KWS Takes Action After Mysterious Deaths of 17 Rhinos - Kenyans.co.ke"
     ],
     "flash": [
-      "Why has Janus Electric (ASX:JNS) entered a trading halt ahead of a material capital raising? - Kalkine",
       "Jensen Huang's return to Nvidia was a circuit breaker for the market, says Deutsche's Bankim Chadha - CNBC",
+      "Black Pearl Group Enters Voluntary Suspension on ASX Amid NZX Trading Halt - Kalkine",
       "CME E-Mini Options Briefly Paused During Chaotic Opening Session - Bloomberg"
     ],
     "fuel_au": [
@@ -627,9 +645,9 @@
       "148 aboard Florida-bound cruise ship sickened by ‘unknown’ GI outbreak: CDC - The Hill"
     ],
     "masscas": [
+      "Cop wrestles patient trying to grab gun in hospital - The Courier Mail",
       "6 hospitalized, including 1 in critical condition, after fire tears through home in Allentown - WFMZ.com",
-      "1 person in critical condition after latest Allentown fire displaces 16 residents [Updated] - The Morning Call",
-      "Cop wrestles patient trying to grab gun in hospital - The Courier Mail"
+      "1 person in critical condition after latest Allentown fire displaces 16 residents [Updated] - The Morning Call"
     ],
     "medshort": [
       "Can Europe fix its chronic medicine shortage and supply chain disruptions? - Yahoo News Australia"
@@ -639,13 +657,18 @@
       "In Poltava region, a man forged a disability certificate of his mother for a deferral — how he was punished - Судово-юридична газета",
       "Algeria's Mobilisation in Niger: A Consolidation of Regional Influence - Bloomsbury Intelligence and Security Institute (BISI)"
     ],
+    "national_outage": [
+      "Colombia plunged into darkness – President issues emergency order - TodayPress.tv",
+      "'Tipping point': Humanitarian crisis in Cuba continues to grow, aid group director says - ABC News - Breaking News, Latest News and Videos",
+      "Darkness, wild pigs turn night rides risky on Palakkad's Mukkai causeway - Onmanorama"
+    ],
     "outage_au": [
-      "Telstra mobile outage disrupts services across Australia - Australian Cyber Security Magazine",
-      "Australia's Optus apologises for outage that disrupted emergency calls - Reuters",
-      "Australia to strengthen telecom networks after new Optus outage - Capacity Media"
+      "Calls for 'automatic compensation' following telco outages - ABC News & Headlines – Australian Broadcasting Corporation",
+      "Microsoft ‘deeply sorry’ for global outage, rules out cyberattack and AI - Nine.com.au",
+      "The Microsoft outage is part of a growing trend. This is how to prepare for further disruption - SBS"
     ],
     "reservists": [
-      "From service to growth: Israeli nonprofit helps IDF reservists rebuild, sustain their own business - The Jerusalem Post",
+      "Israeli nonprofit helps IDF reservists rebuild their careers - The Jerusalem Post",
       "Running on empty: the IDF's race to rebuild in 2027 before the next war - Ynetnews",
       "UK WW3 conscription would see 1 group called to fight first - AOL.co.uk"
     ],
@@ -682,12 +705,12 @@
       "yes": 2.8
     },
     {
-      "d24h": 0.0,
+      "d24h": -1.5,
       "q": "NATO x Russia military clash by December 31, 2026?",
-      "yes": 13.5
+      "yes": 12.0
     },
     {
-      "d24h": 0.2,
+      "d24h": 0.1,
       "q": "China x Taiwan military clash before 2027?",
       "yes": 2.8
     },
@@ -737,7 +760,7 @@
       "yes": 1.6
     },
     {
-      "d24h": 0.3,
+      "d24h": 0.2,
       "q": "Iran-Oman Hormuz Agreement by November 30?",
       "yes": 3.0
     },
@@ -1083,20 +1106,25 @@
       "trend": "steady"
     },
     {
-      "band": "Low",
-      "convergence": "Only one kind of sign is showing (australian incidents). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: sudden fall in sa electricity demand (possible large blackout), global cyber threat level raised (sans infocon not green) and several vpn",
+      "band": "Guarded",
+      "convergence": "Two different kinds of sign are showing together (australian incidents and exploited vulnerabilities). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: sudden fall in sa electricity demand (possible large blackout), global ",
       "domains": [
-        "Australian incidents"
+        "Australian incidents",
+        "Exploited vulnerabilities"
       ],
       "key": "cyber",
       "lit": [
         {
-          "detail": "Darwin-based accounting firm listed by HYFLOCK ransomware",
+          "detail": "kev ratio = 2.11",
+          "name": "Surge in newly exploited vulnerabilities (2x normal week)"
+        },
+        {
+          "detail": "Black Friday cyberattack warning for Australian travel businesses as bookings surge",
           "name": "Major Australian cyber incident reported"
         }
       ],
-      "score": 10,
-      "trend": "steady"
+      "score": 20,
+      "trend": "up"
     },
     {
       "band": "Elevated",
@@ -1127,14 +1155,14 @@
         }
       ],
       "score": 40,
-      "trend": "up"
+      "trend": "steady"
     }
   ],
   "sectors_relative_5d": {
     "defence_au": 1.61,
     "defence_eu": 3.63,
-    "defence_us": 4.03,
-    "pandemic": 1.41
+    "defence_us": 4.07,
+    "pandemic": 1.48
   },
   "status_pages": [
     {
@@ -1156,10 +1184,10 @@
   ],
   "tankers": "normal",
   "telecom_drop_pct": {
-    "Aussie Broadband": 0.1,
-    "Optus": 5.2,
+    "Aussie Broadband": 0.7,
+    "Optus": 0.0,
     "TPG": 0.0,
-    "Telstra": 0.1,
+    "Telstra": 0.0,
     "Vodafone": 0.0
   },
   "us_departure_orders": [
