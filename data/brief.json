@@ -1,7 +1,13 @@
 {
   "about": "Short form of latest.json + indicators.json for the analysis run. Links and raw samples removed.",
   "acsc": [],
-  "aircraft_flags": {},
+  "aircraft_flags": {
+    "mil_mideast": {
+      "median": 5.0,
+      "status": "ANOMALY",
+      "value": 17
+    }
+  },
   "analyst": {
     "ASPI Strategist": [
       "American scandal: Nvidia chips away at our national security",
@@ -285,16 +291,16 @@
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-25T09:29:00Z",
+  "generated_at": "2026-11-25T09:45:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 18,
-    "Black Sea": 57,
-    "Israel & Eastern Mediterranean": 8,
+    "Baltic / Kaliningrad": 23,
+    "Black Sea": 47,
+    "Israel & Eastern Mediterranean": 9,
     "Korea": 0,
-    "Persian Gulf": 12,
+    "Persian Gulf": 8,
     "South Australia": 0,
     "Sydney / NSW": 0,
-    "Taiwan Strait": 0
+    "Taiwan Strait": 1
   },
   "incidents": [
     {
@@ -302,21 +308,12 @@
       "confirmed": true,
       "headlines": [
         "The first autonomous AI cyberattack: why it happened earlier than expected, how agents break Claude, and whether AI can be trusted with bank accounts",
+        "News - Visa and JPMorgan Chase reject cyberattack allegations amid data theft claims",
         "NAB fails to silence viral account detailing wild claims"
       ],
       "needs_confirming": false,
-      "severity": "Info",
+      "severity": "Warning",
       "target": "Banking & payments"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
-        "Services Australia emails reveal chaotic scramble to assess OpenAI breach"
-      ],
-      "needs_confirming": false,
-      "severity": "Info",
-      "target": "AI platforms"
     },
     {
       "attack_reported": true,
@@ -337,26 +334,6 @@
       "needs_confirming": false,
       "severity": "Info",
       "target": "Brocent"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": true,
-      "headlines": [
-        "Hacked! GoFundMe confirms data breach, limited PII compromised"
-      ],
-      "needs_confirming": false,
-      "severity": "Info",
-      "target": "Hacked"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": true,
-      "headlines": [
-        "Acronis says AI is speeding up cyberattacks across cloud"
-      ],
-      "needs_confirming": false,
-      "severity": "Info",
-      "target": "Acronis"
     },
     {
       "attack_reported": true,
@@ -413,6 +390,17 @@
     },
     {
       "attack_reported": false,
+      "confirmed": true,
+      "headlines": [
+        "Another outage coming as crews race to reconnect power grid",
+        "Festivalgoer struck by lightning, locust plague, freak storm causes major blackout"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "Power grid"
+    },
+    {
+      "attack_reported": false,
       "confirmed": false,
       "headlines": [
         "Telstra outage: how long and where else will be affected by the upgrades"
@@ -455,17 +443,17 @@
       "attack_reported": false,
       "confirmed": false,
       "headlines": [
-        "UK NCSC warns AI-driven hacking surges as security technical debt breaks down"
+        "Recent Outages Expose Risks in Agency Technology Repairs"
       ],
       "needs_confirming": false,
       "severity": "Info",
-      "target": "UK NCSC"
+      "target": "Recent Outages Expose"
     }
   ],
   "internet_drop_pct": {
     "China": 0.0,
     "Iran": 0.0,
-    "Israel": 0.0,
+    "Israel": 0.2,
     "Russia": 0.1,
     "South Korea": 0.0,
     "Taiwan": 0.0
@@ -482,16 +470,16 @@
       "Mount Lofty Ranges": "High / Moderate"
     },
     "fire_danger_ok": true,
-    "fires_active": 11,
+    "fires_active": 10,
     "fuel": {
       "brent_aud": 132.9,
       "change_pct": -0.8,
       "pump_cents": -1,
       "week_ago_aud": 134.0
     },
-    "grid_demand_fall_pct": 1.7,
-    "grid_demand_mw": 1603,
-    "grid_demand_usual_mw": 1474,
+    "grid_demand_fall_pct": 3.7,
+    "grid_demand_mw": 1570,
+    "grid_demand_usual_mw": 1484,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
@@ -532,30 +520,30 @@
       "Morgan Vale Road, Pine Valley Station: MORGAN MAIL RD Closed due to flooding over road",
       "Pine Valley Road, Pine Valley Station: PINE VALLEY RD Closed due to flooding over road"
     ],
-    "rooftop_pv_mw": 317,
+    "rooftop_pv_mw": 140,
     "sawater_news": [],
     "watch_and_act": []
   },
   "markets": {
     "AUD/USD": {
       "big_move": false,
-      "change_pct": -0.96,
-      "price": 0.6566
+      "change_pct": -0.9,
+      "price": 0.657
     },
     "Brent oil": {
       "big_move": false,
-      "change_pct": -3.56,
-      "price": 88.15
+      "change_pct": -2.94,
+      "price": 88.71
     },
     "Gold": {
       "big_move": false,
       "change_pct": -0.13,
-      "price": 3557.2
+      "price": 3557.3
     },
     "VIX": {
       "big_move": false,
-      "change_pct": 8.42,
-      "price": 28.58
+      "change_pct": 10.43,
+      "price": 29.11
     }
   },
   "national_shocks": {
@@ -581,13 +569,13 @@
       "Qatar Airways Operates Limited Flights to and from Doha - https://safariindia.com/"
     ],
     "aviation_halt": [
-      "O'Hare Airport under ‘constrained facilities' advisory due to equipment outage - NBC Chicago",
       "O'Hare Ground Stop: What the Equipment Outage Means for Thanksgiving Travelers - Around Prague",
+      "O'Hare Airport under ‘constrained facilities' advisory due to equipment outage - NBC Chicago",
       "Editorial: Nationwide Ground Stop Highlights Vulnerable Air Traffic Systems - Aviation Pros"
     ],
     "bank_outage": [
       "‘I’d love to take it to court’: NAB’s Instagram antagonist vows not to back down - SMH.com.au",
-      "Wall Street slides as Nvidia and AI stocks fall back - CommBank",
+      "Aussie shares slip as hot inflation pushes back rate cut hopes - CommBank",
       "Gossip account against NAB sparks CEO intervention - Human Resources Director"
     ],
     "blood": [
@@ -625,27 +613,32 @@
     "cyber_ot": [
       "UK operation wards off risk of cyber-attack on supermarket fridges and freezers - The Guardian",
       "Shop freezers in seven European countries hit by cyber-attack - BBC",
-      "Next Plc’s Supplier Hit by Cyberattack in Latest UK Retail Breach - Insurance Journal"
+      "Supermarket freezers and fridges in Europe hit by cyberattack - Nine.com.au"
     ],
     "cyber_state": [
       "ESET Research: Sandworm behind cyberattack on Poland’s power grid in late 2025 - We Live Security",
       "ESET attributes DynoWiper-powered attack on Poland’s power grid to Russia-aligned Sandworm group - Industrial Cyber",
       "Russian state hackers likely behind wiper malware attack on Poland’s power grid - The Record from Recorded Future News"
     ],
+    "cyber_supply": [
+      "VMware vCenter Hit by Another Critical 9.8-Rated Auth Bypass Flaw After Zero-Day Exploitation - The Hacker News",
+      "Microsoft patches actively exploited vulnerability in Azure API Management - Techzine Global",
+      "CVE-2026-134401: Critical Chrome Sandbox Escape - SOC Prime"
+    ],
     "deepfake": [
-      "China-linked network using AI fakes to smear Taiwan election candidates, BBC Verify finds - BBC",
+      "Taiwan election: Is China behind a wave of AI fakes and disinformation? - BBC",
       "AI-generated fake news, death notices target Belgium as minister seeks EU-level response - Anadolu Ajansı",
       "Belgian minister seeks EU response to AI-generated fake death notices - Yeni Safak English"
     ],
     "dieoff": [
-      "Mass fish deaths force Olympic rowing center to temporarily close - eKathimerini.com",
+      "Dead fish raise alarm at Olympic Rowing Center - eKathimerini.com",
       "Mystery remains over penguin deaths after bird flu ruled out - Stuff",
-      "Dead fish raise alarm at Olympic Rowing Center - eKathimerini.com"
+      "Mass fish deaths force Olympic rowing center to temporarily close - eKathimerini.com"
     ],
     "flash": [
       "Black Pearl Group Enters Voluntary Suspension on ASX Amid NZX Trading Halt - Kalkine",
       "KOSPI Plunges 4.9% as Philadelphia Semiconductor Index Tumbles 7.9%; Sell-Side Circuit Breaker Triggered - BigGo Finance",
-      "The Anatomy of 2 Flash Crashes and what caused the Flash Crash for AMEX:SPY by MarthaStokesCMT-TechniTrader - TradingView"
+      "KOSPI Plummets Over 6%, Falls Below 4,700 Mark - 조선일보"
     ],
     "fuel_au": [
       "Crisis-tested Matt Halliday never lets a fuel shock go to waste - AFR",
@@ -682,15 +675,20 @@
       "Haaretz reports 23 Israeli soldiers commit suicide, highest toll since 2010 - Egypt Independent",
       "Devon Levi with a Goalie Save vs. Vegas Golden Knights - Yahoo Sports"
     ],
+    "sapn": [
+      "Festivalgoer struck by lightning, locust plague, freak storm causes major blackout - 9Now",
+      "Another outage coming as crews race to reconnect power grid - Adelaide Now",
+      "Final four prepare for Adelaide Grand Final clash - Motorsport Australia"
+    ],
     "scams": [
       "Fraud & Digital Identity News – KYC, Scams & Verification - FF News",
       "Is Digital Lending Ready for the Next Wave of Fraud? - Fintech Singapore",
       "Finmo Adds USDC and USDT Support to Business Accounts - Fintech Singapore"
     ],
     "shipping_attacks": [
-      "Hormuz oil traffic is down 40 percent: Are Iran’s tanker attacks working? - Al Jazeera",
-      "IRGC Claims 3 Oil Tankers Hit Mines in Hormuz Under US Escort - https://houseofsaud.com/",
-      "UKMTO says 2 tankers struck in Hormuz, as Iran says ship on fire - The New Arab"
+      "Three Sinokor VLCCs hit in latest Strait of Hormuz attacks - Riviera Maritime Media",
+      "UKMTO says 2 tankers struck in Hormuz, as Iran says ship on fire - The New Arab",
+      "Spoofed AIS Tanker Signal Poses as Iranian Ship at Hormuz - https://houseofsaud.com/"
     ],
     "strikes": [
       "Iran Warns of Retaliation if US Forces Attack - ASHARQ AL-AWSAT English",
@@ -720,9 +718,9 @@
       "yes": 2.6
     },
     {
-      "d24h": -0.3,
+      "d24h": -0.5,
       "q": "US-Iran Hormuz Agreement by November 30?",
-      "yes": 2.8
+      "yes": 2.5
     },
     {
       "d24h": -0.2,
@@ -765,9 +763,9 @@
       "yes": 1.6
     },
     {
-      "d24h": -0.7,
+      "d24h": -0.3,
       "q": "Iran-Oman Hormuz Agreement by November 30?",
-      "yes": 2.1
+      "yes": 2.4
     },
     {
       "d24h": -2.0,
@@ -810,9 +808,9 @@
       "yes": 18.0
     },
     {
-      "d24h": 1.0,
+      "d24h": 1.5,
       "q": "Will Nick Stewart attend a US x Iran diplomatic meeting by December 31, 2026?",
-      "yes": 9.0
+      "yes": 9.5
     }
   ],
   "quakes_m6_24h": [
@@ -1031,10 +1029,20 @@
       "trend": "steady"
     },
     {
-      "band": "Low",
+      "band": "Guarded",
+      "convergence": "Only one kind of sign is showing (military air). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: air-refuelling tanker surge, internet blackout in iran or israel and new us embassy departure order in the region.",
+      "domains": [
+        "Military air"
+      ],
       "key": "mideast",
-      "score": 0,
-      "trend": "steady"
+      "lit": [
+        {
+          "detail": "mil_mideast 17 vs usual 5.0",
+          "name": "Unusual military air activity over the region"
+        }
+      ],
+      "score": 15,
+      "trend": "up"
     },
     {
       "band": "Low",
@@ -1151,7 +1159,7 @@
   ],
   "sectors_relative_5d": {
     "defence_au": 3.12,
-    "defence_eu": 3.76,
+    "defence_eu": 3.9,
     "defence_us": 0.84,
     "pandemic": 1.86
   },
@@ -1168,9 +1176,9 @@
   "tankers": "normal",
   "telecom_drop_pct": {
     "Aussie Broadband": 0.0,
-    "Optus": 0.0,
-    "TPG": 0.2,
-    "Telstra": 0.6,
+    "Optus": 3.0,
+    "TPG": 0.1,
+    "Telstra": 0.2,
     "Vodafone": 0.0
   },
   "us_departure_orders": [
@@ -1207,6 +1215,14 @@
     "Yemen": 4
   },
   "watching": [
+    {
+      "active": true,
+      "first_seen": "2026-11-25T09:45:00Z",
+      "last_seen": "2026-11-25T09:45:00Z",
+      "region": "the Middle East",
+      "text": "17 military aircraft visible over Middle East & Gulf (usual ~5.0)",
+      "what": "unusual military flights"
+    },
     {
       "active": false,
       "first_seen": "2026-11-23T10:42:00Z",
