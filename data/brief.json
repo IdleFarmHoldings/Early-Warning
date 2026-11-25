@@ -285,15 +285,15 @@
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-25T18:14:00Z",
+  "generated_at": "2026-11-25T18:29:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 20,
-    "Black Sea": 20,
-    "Israel & Eastern Mediterranean": 5,
+    "Baltic / Kaliningrad": 29,
+    "Black Sea": null,
+    "Israel & Eastern Mediterranean": 2,
     "Korea": 0,
-    "Persian Gulf": 44,
+    "Persian Gulf": 30,
     "South Australia": 0,
-    "Sydney / NSW": null,
+    "Sydney / NSW": 0,
     "Taiwan Strait": 0
   },
   "incidents": [
@@ -337,6 +337,16 @@
       "needs_confirming": false,
       "severity": "Info",
       "target": "Hackers"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "Hackers Exploit Critical Hex.pm Vulnerability to Execute Malicious Commands on Servers"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "Hackers Exploit Critical"
     },
     {
       "attack_reported": true,
@@ -393,23 +403,12 @@
       "confirmed": true,
       "headlines": [
         "Microsoft declares ‘Code Red’ following 24-hour outage: Here’s what that means",
-        "What’s plan B when Microsoft 365 goes down? IT leaders weigh in",
+        "Microsoft declares ‘Code Red’ after 24-hour outage disrupts Outlook, Teams and Copilot",
         "Microsoft 365 outage cause: what failed and why"
       ],
       "needs_confirming": false,
       "severity": "Warning",
       "target": "Microsoft"
-    },
-    {
-      "attack_reported": false,
-      "confirmed": true,
-      "headlines": [
-        "Another outage coming as crews race to reconnect power grid",
-        "Festivalgoer struck by lightning, locust plague, freak storm causes major blackout"
-      ],
-      "needs_confirming": false,
-      "severity": "Info",
-      "target": "Power grid"
     },
     {
       "attack_reported": false,
@@ -430,25 +429,15 @@
       "needs_confirming": false,
       "severity": "Info",
       "target": "Expert"
-    },
-    {
-      "attack_reported": false,
-      "confirmed": false,
-      "headlines": [
-        "Japan's PayPay Hit by System Outage; Credit Card Linkage Services Down, No Recovery Timeline"
-      ],
-      "needs_confirming": false,
-      "severity": "Info",
-      "target": "Japan's PayPay"
     }
   ],
   "internet_drop_pct": {
     "China": 0.0,
-    "Iran": 0.0,
-    "Israel": 0.7,
+    "Iran": 0.2,
+    "Israel": 0.1,
     "Russia": 0.0,
     "South Korea": 0.3,
-    "Taiwan": 1.5
+    "Taiwan": 1.8
   },
   "local_sa": {
     "bom": [],
@@ -464,14 +453,14 @@
     "fire_danger_ok": true,
     "fires_active": 8,
     "fuel": {
-      "brent_aud": 135.0,
-      "change_pct": 0.9,
+      "brent_aud": 135.3,
+      "change_pct": 1.1,
       "pump_cents": 1,
       "week_ago_aud": 133.8
     },
-    "grid_demand_fall_pct": 1.2,
-    "grid_demand_mw": 1308,
-    "grid_demand_usual_mw": 1287,
+    "grid_demand_fall_pct": 0.8,
+    "grid_demand_mw": 1305,
+    "grid_demand_usual_mw": 1288,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
@@ -519,23 +508,23 @@
   "markets": {
     "AUD/USD": {
       "big_move": false,
-      "change_pct": -0.04,
-      "price": 0.6627
+      "change_pct": 0.0,
+      "price": 0.663
     },
     "Brent oil": {
       "big_move": false,
-      "change_pct": -1.07,
-      "price": 90.42
+      "change_pct": -1.16,
+      "price": 90.34
     },
     "Gold": {
       "big_move": false,
-      "change_pct": -0.3,
-      "price": 3551.2
+      "change_pct": 0.02,
+      "price": 3562.7
     },
     "VIX": {
       "big_move": false,
-      "change_pct": 13.09,
-      "price": 29.81
+      "change_pct": 11.0,
+      "price": 29.26
     }
   },
   "national_shocks": {
@@ -555,23 +544,15 @@
       "The OpenAI hacking case shows corporate liability can work. It doesn’t cover AI agents with no owner - Fortune",
       "Hackers Compromise 24 Check Point Management Servers in Suspected AI-Driven Attack Campaign - The Hacker News"
     ],
-    "airspace": [
-      "IndiGo Adds Southeast Asia Flights as Westbound Costs Climb - Skift",
-      "Saudi air defenses intercept 209 Houthi aerial threats in two months - Crypto Briefing",
-      "Qatar Airways Operates Limited Flights to and from Doha - https://safariindia.com/"
-    ],
     "aviation_halt": [
+      "Timeline of the FAA nationwide ground stop: How it developed - ABC News - Breaking News, Latest News and Videos",
       "O'Hare Equipment Outage Triggers Ground Stop on Nov. 24; Refunds Available, but U.S. Law Sets No Fixed Delay Compensation - Avi-Go",
-      "O'Hare Airport under ‘constrained facilities' advisory due to equipment outage - NBC Chicago",
       "O'Hare Ground Stop: What the Equipment Outage Means for Thanksgiving Travelers - Around Prague"
     ],
     "bank_outage": [
-      "Aussie shares slip as hot inflation pushes back rate cut hopes - CommBank",
       "‘I’d love to take it to court’: NAB’s Instagram antagonist vows not to back down - SMH.com.au",
+      "Wall Street slides as Nvidia and AI stocks fall back - CommBank",
       "Gossip account against NAB sparks CEO intervention - Human Resources Director"
-    ],
-    "blood": [
-      "Luminis Health Adds Mobile Blood Donation Bus - NewsBreak: Local News & Alerts"
     ],
     "cables": [
       "USTDA Funds Feasibility Study for InfiniVAN’s Silangan Submarine Cable Along the Philippines’ Eastern Seaboard - Submarine Networks",
@@ -579,9 +560,9 @@
       "Indo-Pacific Nations Call On Allies to Protect Undersea Cables - National Defense Magazine"
     ],
     "chem": [
-      "OPCW Advances Biotoxin Lab Designation Process - Mirage News",
-      "OPCW discovers undeclared chemical weapons in Syria - The New Arab",
-      "US arrears leave chemical weapons watchdog facing budget crisis - Sight Magazine"
+      "OPCW takes key step towards designation of laboratories for biotoxin analysis - OPCW",
+      "OPCW Honors Chemical Weapons Victims at States Parties Conference - Mirage News",
+      "OPCW discovers undeclared chemical weapons in Syria - The New Arab"
     ],
     "cloud": [
       "Microsoft 365 outage: will your cyber insurance respond? - Clayton Utz",
@@ -589,9 +570,9 @@
       "Microsoft declares Code Red after Microsoft 365 outage, targets one-hour recovery for global outages - ForkLog"
     ],
     "cyber_attrib": [
+      "Trump blames Minnesota governor, not Iran, for cyberattacks on the state's water systems - ABC News - Breaking News, Latest News and Videos",
       "FBI Warns Hackers Are Using ARTEX AI Tool To Automate Cyberattacks - Forbes",
-      "Spy agency warns active Russian hackers targeting Australian industry - ABC News & Headlines – Australian Broadcasting Corporation",
-      "Busted! Alleged Aussie hackers linked to TeamPCP arrested in joint AFP-FBI-WAPF operation - Cyber Daily"
+      "FBI warns hackers weaponizing ARTEX AI framework to automate attacks on energy, manufacturing, telecom - Industrial Cyber"
     ],
     "cyber_au": [
       "How is Peninsula Energy (ASX:PEN) responding to the cyber incident at its Lance uranium project? - Kalkine",
@@ -601,7 +582,7 @@
     "cyber_ot": [
       "UK operation wards off risk of cyber-attack on supermarket fridges and freezers - The Guardian",
       "Shop freezers in seven European countries hit by cyber-attack - BBC",
-      "Next Plc’s Supplier Hit by Cyberattack in Latest UK Retail Breach - Insurance Journal"
+      "Supermarket freezers and fridges in Europe hit by cyberattack - Nine.com.au"
     ],
     "cyber_state": [
       "ESET Research: Sandworm behind cyberattack on Poland’s power grid in late 2025 - We Live Security",
@@ -609,24 +590,24 @@
       "Russian state hackers likely behind wiper malware attack on Poland’s power grid - The Record from Recorded Future News"
     ],
     "cyber_supply": [
+      "CVE-2026-123903: Critical VMware vCenter Auth Bypass - SOC Prime",
       "Hackers now exploit critical Drupal RCE flaw to hijack sites - BleepingComputer",
-      "VMware vCenter, new critical flaw CVE-2026-123903 rated CVSS 9.8 bypasses authentication - Meteora Web",
-      "CVE-2026-123903: Critical VMware vCenter Auth Bypass - SOC Prime"
+      "VMware vCenter, new critical flaw CVE-2026-123903 rated CVSS 9.8 bypasses authentication - Meteora Web"
     ],
     "deepfake": [
       "Deloitte suspended by WA government after AI report debacle - ABC News & Headlines – Australian Broadcasting Corporation",
       "Deepfake detections surge as fraudsters utilize AI, report finds - CFO Dive",
       "AI-generated video misleads Sri Lankans after heavy rains inundate Colombo - AFP Fact Check"
     ],
-    "dieoff": [
-      "Dead fish raise alarm at Olympic Rowing Center - eKathimerini.com",
-      "Mystery remains over penguin deaths after bird flu ruled out - Stuff",
-      "KWS Takes Action After Mysterious Deaths of 17 Rhinos - Kenyans.co.ke"
-    ],
     "flash": [
-      "Why has Janus Electric (ASX:JNS) entered a trading halt ahead of a material capital raising? - Kalkine",
       "Jensen Huang's return to Nvidia was a circuit breaker for the market, says Deutsche's Bankim Chadha - CNBC",
+      "Black Pearl Group Enters Voluntary Suspension on ASX Amid NZX Trading Halt - Kalkine",
       "Canadian Investment Regulatory Organization Trading Halt - DIV.DB.C - The Manila Times"
+    ],
+    "fuel_au": [
+      "Crisis-tested Matt Halliday never lets a fuel shock go to waste - AFR",
+      "Philippines declares national energy emergency as Asia risks energy crisis amid Iran war - ABC News - Breaking News, Latest News and Videos",
+      "Frank Black: Analysing the new fuel cost recovery order - www.ownerdriver.com.au"
     ],
     "illness": [
       "Mystery illness causes mass hospitalisation of runners - The Nightly",
@@ -634,34 +615,24 @@
       "148 aboard Florida-bound cruise ship sickened by ‘unknown’ GI outbreak: CDC - The Hill"
     ],
     "masscas": [
-      "Cop wrestles patient trying to grab gun in hospital - The Courier Mail",
       "6 hospitalized, including 1 in critical condition, after fire tears through home in Allentown - WFMZ.com",
+      "Cop wrestles patient trying to grab gun in hospital - The Courier Mail",
       "1 person in critical condition after latest Allentown fire displaces 16 residents [Updated] - The Morning Call"
     ],
     "mobilisation": [
+      "Iranian Forces Launch Military Drills Near Russia-Linked Bushehr Nuclear Power Plant - The Times of India",
       "Resident of Ternopil Region Tried to Cancel Mobilization Due to a “Formal” Military Medical Commission: What the Court Decided - Судово-юридична газета",
-      "Algeria's Mobilisation in Niger: A Consolidation of Regional Influence - Bloomsbury Intelligence and Security Institute (BISI)",
       "The Pentagon's Interceptor Missile Crisis: Depleted US Stockpiles Force Unprecedented Industrial Mobilization Until 2030 - جريدة القدس"
     ],
     "national_outage": [
       "Colombia plunged into darkness – President issues emergency order - TodayPress.tv",
-      "Darkness, wild pigs turn night rides risky on Palakkad's Mukkai causeway - Onmanorama",
-      "Allstate Faces Nationwide Outage Across Insurance Platforms - Demokratis.co.id"
+      "Allstate Faces Nationwide Outage Across Insurance Platforms - Demokratis.co.id",
+      "Darkness, wild pigs turn night rides risky on Palakkad's Mukkai causeway - Onmanorama"
     ],
     "outage_au": [
-      "Telstra mobile outage disrupts services across Australia - Australian Cyber Security Magazine",
-      "Australia's Optus apologises for outage that disrupted emergency calls - Reuters",
-      "How a nationwide Telstra outage rocked the Australian economy – and what we can learn - The Conversation"
-    ],
-    "reservists": [
-      "Running on empty: the IDF's race to rebuild in 2027 before the next war - Ynetnews",
-      "Israeli nonprofit helps IDF reservists rebuild their careers - The Jerusalem Post",
-      "Devon Levi with a Goalie Save vs. Vegas Golden Knights - Yahoo Sports"
-    ],
-    "sapn": [
-      "Another outage coming as crews race to reconnect power grid - Adelaide Now",
-      "Festivalgoer struck by lightning, locust plague, freak storm causes major blackout - 9Now",
-      "Final four prepare for Adelaide Grand Final clash - Motorsport Australia"
+      "Calls for 'automatic compensation' following telco outages - ABC News & Headlines – Australian Broadcasting Corporation",
+      "Microsoft ‘deeply sorry’ for global outage, rules out cyberattack and AI - Nine.com.au",
+      "The Microsoft outage is part of a growing trend. This is how to prepare for further disruption - SBS"
     ],
     "scams": [
       "AI scam: Deepfake video falsely advertises 'miracle cure' using RTL journalist's likeness - RTL Today",
@@ -676,7 +647,7 @@
     "strikes": [
       "Ukraine says it struck a major Russian air base, damaging five planes - Arab News",
       "Iran Warns of Retaliation if US Forces Attack - ASHARQ AL-AWSAT English",
-      "Houthi drones target airport, air base in Saudi Arabia - Yeni Safak English"
+      "Bahrain Says It Intercepted Iranian Attacks As Tehran Claims Strike On US Base - Radio Free Europe/Radio Liberty"
     ]
   },
   "prediction_markets": [
@@ -696,14 +667,14 @@
       "yes": 13.5
     },
     {
-      "d24h": 0.1,
+      "d24h": 0.2,
       "q": "China x Taiwan military clash before 2027?",
       "yes": 2.8
     },
     {
-      "d24h": 0.4,
+      "d24h": 0.6,
       "q": "US-Iran Hormuz Agreement by November 30?",
-      "yes": 3.2
+      "yes": 3.4
     },
     {
       "d24h": 0.1,
@@ -761,7 +732,7 @@
       "yes": 2.1
     },
     {
-      "d24h": -0.8,
+      "d24h": -0.2,
       "q": "Ukraine agrees not to join NATO by December 31, 2026?",
       "yes": 1.4
     },
@@ -796,9 +767,9 @@
       "yes": 18.0
     },
     {
-      "d24h": -0.5,
+      "d24h": 1.0,
       "q": "Will Nick Stewart attend a US x Iran diplomatic meeting by December 31, 2026?",
-      "yes": 7.5
+      "yes": 9.5
     }
   ],
   "quakes_m6_24h": [],
@@ -1063,8 +1034,9 @@
     },
     {
       "band": "Elevated",
-      "convergence": "Only one kind of sign is showing (health). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: countries restricting medical supply exports, pandemic-response stocks outperforming (5 days) and chemical / nerve-agent attack or mass poisoning repor",
+      "convergence": "Two different kinds of sign are showing together (chemical weapons and health). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: countries restricting medical supply exports, pandemic-response stocks outperforming (5 days) ",
       "domains": [
+        "Chemical weapons",
         "Health"
       ],
       "key": "bio",
@@ -1076,10 +1048,14 @@
         {
           "detail": "Dr. Siegel on measles comeback, mystery illness outbreak on cruise ship",
           "name": "Unknown illness / pneumonia cluster reported"
+        },
+        {
+          "detail": "OPCW Honors Chemical Weapons Victims at States Parties Conference",
+          "name": "Chemical / nerve-agent attack or mass poisoning reported"
         }
       ],
-      "score": 35,
-      "trend": "steady"
+      "score": 50,
+      "trend": "up"
     },
     {
       "band": "Low",
@@ -1090,7 +1066,7 @@
       "key": "cyber",
       "lit": [
         {
-          "detail": "Darwin-based accounting firm listed by HYFLOCK ransomware",
+          "detail": "Black Friday cyberattack warning for Australian travel businesses as bookings surge",
           "name": "Major Australian cyber incident reported"
         }
       ],
@@ -1132,8 +1108,8 @@
   "sectors_relative_5d": {
     "defence_au": 3.12,
     "defence_eu": 3.63,
-    "defence_us": 4.73,
-    "pandemic": 1.29
+    "defence_us": 4.57,
+    "pandemic": 1.07
   },
   "status_pages": [
     {
@@ -1155,7 +1131,7 @@
   ],
   "tankers": "normal",
   "telecom_drop_pct": {
-    "Aussie Broadband": 0.4,
+    "Aussie Broadband": 0.1,
     "Optus": 0.0,
     "TPG": 0.1,
     "Telstra": 0.0,
