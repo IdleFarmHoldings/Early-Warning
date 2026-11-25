@@ -1,7 +1,13 @@
 {
   "about": "Short form of latest.json + indicators.json for the analysis run. Links and raw samples removed.",
   "acsc": [],
-  "aircraft_flags": {},
+  "aircraft_flags": {
+    "gps_gulf": {
+      "median": 12.0,
+      "status": "ANOMALY",
+      "value": 48
+    }
+  },
   "analyst": {
     "ASPI Strategist": [
       "American scandal: Nvidia chips away at our national security",
@@ -284,13 +290,13 @@
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-25T17:37:00Z",
+  "generated_at": "2026-11-25T17:52:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 20,
-    "Black Sea": 60,
-    "Israel & Eastern Mediterranean": 5,
+    "Baltic / Kaliningrad": 19,
+    "Black Sea": 22,
+    "Israel & Eastern Mediterranean": 4,
     "Korea": 0,
-    "Persian Gulf": 11,
+    "Persian Gulf": 48,
     "South Australia": 0,
     "Sydney / NSW": null,
     "Taiwan Strait": 0
@@ -330,32 +336,12 @@
       "attack_reported": true,
       "confirmed": true,
       "headlines": [
-        "LaLiga Says Cyberattack Exposed Fans’ Personal Data"
-      ],
-      "needs_confirming": false,
-      "severity": "Info",
-      "target": "LaLiga"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": true,
-      "headlines": [
         "Hackers may have used AI tool to attack CIA and other US spy agencies",
         "Hackers now exploit critical Drupal RCE flaw to hijack sites"
       ],
       "needs_confirming": false,
       "severity": "Info",
       "target": "Hackers"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
-        "Hackers Exploit Critical Hex.pm Vulnerability to Execute Malicious Commands on Servers"
-      ],
-      "needs_confirming": false,
-      "severity": "Info",
-      "target": "Hackers Exploit Critical"
     },
     {
       "attack_reported": true,
@@ -401,11 +387,11 @@
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
-        "Treasury Investigates FinCEN Cyberattack as CIO Updates AI Game"
+        "Roundcube Webmail Vulnerabilities Let Hackers Execute Arbitrary Code and Access Sensitive Data"
       ],
       "needs_confirming": false,
       "severity": "Info",
-      "target": "Treasury"
+      "target": "Roundcube Webmail Vulnerabilities"
     },
     {
       "attack_reported": false,
@@ -439,15 +425,25 @@
       "needs_confirming": false,
       "severity": "Info",
       "target": "Aussie"
+    },
+    {
+      "attack_reported": false,
+      "confirmed": false,
+      "headlines": [
+        "Expert commentary: What is causing outages in the digital systems we rely on every day?"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "Expert"
     }
   ],
   "internet_drop_pct": {
     "China": 0.0,
     "Iran": 0.0,
-    "Israel": 0.1,
+    "Israel": 0.2,
     "Russia": 0.0,
     "South Korea": 0.2,
-    "Taiwan": 1.3
+    "Taiwan": 1.4
   },
   "local_sa": {
     "bom": [],
@@ -461,18 +457,28 @@
       "Mount Lofty Ranges": "Moderate / Moderate"
     },
     "fire_danger_ok": true,
-    "fires_active": 9,
+    "fires_active": 10,
     "fuel": {
       "brent_aud": 134.6,
       "change_pct": 0.6,
       "pump_cents": 1,
       "week_ago_aud": 133.7
     },
-    "grid_demand_fall_pct": 4.4,
-    "grid_demand_mw": 1280,
-    "grid_demand_usual_mw": 1291,
+    "grid_demand_fall_pct": 2.3,
+    "grid_demand_mw": 1308,
+    "grid_demand_usual_mw": 1289,
     "grid_lor_level": 0,
-    "nearby_incidents": [],
+    "nearby_incidents": [
+      {
+        "area": "LOFTIS RD ELIZABETH DOWNS",
+        "dist": "10-25 km",
+        "event": "Structure Fire",
+        "headline": "ELIZABETH DOWNS : STRUCTURE FIRE",
+        "id": "F-261126-0008 ELIZABETH DOWNS, LOFTIS RD (STRUCTURE FIRE)",
+        "level": null,
+        "notify": false
+      }
+    ],
     "outlook": {
       "air": {
         "aqi": 24,
@@ -518,23 +524,23 @@
   "markets": {
     "AUD/USD": {
       "big_move": false,
-      "change_pct": -0.18,
-      "price": 0.6618
+      "change_pct": -0.15,
+      "price": 0.662
     },
     "Brent oil": {
       "big_move": false,
-      "change_pct": -1.31,
-      "price": 90.2
+      "change_pct": -1.32,
+      "price": 90.19
     },
     "Gold": {
       "big_move": false,
-      "change_pct": -0.92,
-      "price": 3529.1
+      "change_pct": -0.49,
+      "price": 3544.4
     },
     "VIX": {
       "big_move": false,
-      "change_pct": 16.92,
-      "price": 30.82
+      "change_pct": 15.86,
+      "price": 30.54
     }
   },
   "national_shocks": {
@@ -594,8 +600,8 @@
     ],
     "cyber_au": [
       "How is Peninsula Energy (ASX:PEN) responding to the cyber incident at its Lance uranium project? - Kalkine",
-      "EXCLUSIVE: Control4 Hit By Major System Outage As Suspected Cyber Attack Raises Serious Security Questions - ChannelNews.com.au",
-      "Brocent flags gap between cyber breach & claim costs - IT Brief Australia"
+      "Used Todoist for Years? You May Be Involved In a New Data Breach - PCMag Australia",
+      "EXCLUSIVE: Control4 Hit By Major System Outage As Suspected Cyber Attack Raises Serious Security Questions - ChannelNews.com.au"
     ],
     "cyber_ot": [
       "UK operation wards off risk of cyber-attack on supermarket fridges and freezers - The Guardian",
@@ -608,14 +614,14 @@
       "Russian state hackers likely behind wiper malware attack on Poland’s power grid - The Record from Recorded Future News"
     ],
     "cyber_supply": [
-      "CVE-2026-123903: Critical VMware vCenter Auth Bypass - SOC Prime",
       "Hackers now exploit critical Drupal RCE flaw to hijack sites - BleepingComputer",
-      "VMware vCenter, new critical flaw CVE-2026-123903 rated CVSS 9.8 bypasses authentication - Meteora Web"
+      "VMware vCenter, new critical flaw CVE-2026-123903 rated CVSS 9.8 bypasses authentication - Meteora Web",
+      "CVE-2026-123903: Critical VMware vCenter Auth Bypass - SOC Prime"
     ],
     "deepfake": [
       "Deloitte suspended by WA government after AI report debacle - ABC News & Headlines – Australian Broadcasting Corporation",
-      "Deepfake detections surge as fraudsters utilize AI, report finds - CFO Dive",
-      "AI-generated video misleads Sri Lankans after heavy rains inundate Colombo - AFP Fact Check"
+      "AI-generated video misleads Sri Lankans after heavy rains inundate Colombo - AFP Fact Check",
+      "Taiwan election: Is China behind a wave of AI fakes and disinformation? - BBC"
     ],
     "dieoff": [
       "Dead fish raise alarm at Olympic Rowing Center - eKathimerini.com",
@@ -623,14 +629,14 @@
       "KWS Takes Action After Mysterious Deaths of 17 Rhinos - Kenyans.co.ke"
     ],
     "flash": [
+      "Why has Janus Electric (ASX:JNS) entered a trading halt ahead of a material capital raising? - Kalkine",
       "Jensen Huang's return to Nvidia was a circuit breaker for the market, says Deutsche's Bankim Chadha - CNBC",
-      "Black Pearl Group Enters Voluntary Suspension on ASX Amid NZX Trading Halt - Kalkine",
       "Canadian Investment Regulatory Organization Trading Halt - DIV.DB.C - The Manila Times"
     ],
     "fuel_au": [
       "Crisis-tested Matt Halliday never lets a fuel shock go to waste - AFR",
       "Philippines declares national energy emergency as Asia risks energy crisis amid Iran war - ABC News - Breaking News, Latest News and Videos",
-      "Global disaster misinformation fuels panic-buying at chain stores in several countries - The Straits Times"
+      "Frank Black: Analysing the new fuel cost recovery order - www.ownerdriver.com.au"
     ],
     "illness": [
       "Mystery illness causes mass hospitalisation of runners - The Nightly",
@@ -689,9 +695,9 @@
       "yes": 5.5
     },
     {
-      "d24h": -0.1,
+      "d24h": 0.1,
       "q": "US-Iran Final Nuclear Deal by December 31, 2026?",
-      "yes": 2.5
+      "yes": 2.7
     },
     {
       "d24h": -2.0,
@@ -740,7 +746,7 @@
     },
     {
       "d24h": 0.2,
-      "q": "Will China blockade Taiwan in 2026?",
+      "q": "Will China blockade Taiwan by December 31, 2026??",
       "yes": 1.9
     },
     {
@@ -799,9 +805,9 @@
       "yes": 18.0
     },
     {
-      "d24h": 0.0,
+      "d24h": -0.5,
       "q": "Will Nick Stewart attend a US x Iran diplomatic meeting by December 31, 2026?",
-      "yes": 8.0
+      "yes": 7.5
     }
   ],
   "quakes_m6_24h": [],
@@ -1010,35 +1016,25 @@
     },
     {
       "band": "Low",
-      "convergence": "Only one kind of sign is showing (markets). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
+      "convergence": "Only one kind of sign is showing (electronic warfare). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
       "domains": [
-        "Markets"
+        "Electronic warfare"
       ],
       "key": "mideast",
       "lit": [
         {
-          "detail": "US defence stocks +5.0% vs market over 5 days",
-          "name": "US defence stocks outperforming (5 days)"
+          "detail": "gps_gulf 48 vs usual 12.0",
+          "name": "GPS jamming spike (Gulf / Israel)"
         }
       ],
-      "score": 5,
-      "trend": "steady"
+      "score": 10,
+      "trend": "up"
     },
     {
       "band": "Low",
-      "convergence": "Only one kind of sign is showing (markets). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: missile / live-fire navigation warnings near taiwan, gps jamming over the taiwan strait and internet disruption in taiwan.",
-      "domains": [
-        "Markets"
-      ],
       "key": "taiwan",
-      "lit": [
-        {
-          "detail": "US defence stocks +5.0% vs market over 5 days",
-          "name": "Defence stocks outperforming (US / Australia)"
-        }
-      ],
-      "score": 5,
-      "trend": "steady"
+      "score": 0,
+      "trend": "down"
     },
     {
       "band": "Low",
@@ -1060,7 +1056,7 @@
           "name": "Mobilisation / reservist reports (Russia / NATO)"
         },
         {
-          "detail": "VIX at 30.82",
+          "detail": "VIX at 30.54",
           "name": "Market fear index above 30"
         }
       ],
@@ -1154,14 +1150,14 @@
         }
       ],
       "score": 40,
-      "trend": "up"
+      "trend": "steady"
     }
   ],
   "sectors_relative_5d": {
     "defence_au": 3.12,
     "defence_eu": 3.63,
-    "defence_us": 5.04,
-    "pandemic": 0.82
+    "defence_us": 4.69,
+    "pandemic": 0.73
   },
   "status_pages": [
     {
@@ -1176,14 +1172,6 @@
       "au": false,
       "big": false,
       "provider": "Cloudflare",
-      "started": "2026-11-25T16:42:03Z",
-      "title": "Some customers cannot create monitors",
-      "where": "Notifications"
-    },
-    {
-      "au": false,
-      "big": false,
-      "provider": "Cloudflare",
       "started": "2026-11-10T01:53:58Z",
       "title": "Changes to Cloudflare Workers are not producing Event Subscription events",
       "where": "Workers, Queues"
@@ -1191,8 +1179,8 @@
   ],
   "tankers": "normal",
   "telecom_drop_pct": {
-    "Aussie Broadband": 0.7,
-    "Optus": 8.2,
+    "Aussie Broadband": 1.4,
+    "Optus": 3.1,
     "TPG": 0.1,
     "Telstra": 0.0,
     "Vodafone": 0.0
