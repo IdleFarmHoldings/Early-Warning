@@ -1,13 +1,7 @@
 {
   "about": "Short form of latest.json + indicators.json for the analysis run. Links and raw samples removed.",
   "acsc": [],
-  "aircraft_flags": {
-    "gps_gulf": {
-      "median": 8,
-      "status": "ANOMALY",
-      "value": 33
-    }
-  },
+  "aircraft_flags": {},
   "analyst": {
     "ASPI Strategist": [
       "Northern Australia’s new challenge: preparing for overlapping projects",
@@ -288,15 +282,15 @@
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-25T04:21:00Z",
+  "generated_at": "2026-11-25T04:36:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 62,
+    "Baltic / Kaliningrad": 67,
     "Black Sea": null,
-    "Israel & Eastern Mediterranean": 0,
-    "Korea": 2,
-    "Persian Gulf": 33,
-    "South Australia": 2,
-    "Sydney / NSW": 8,
+    "Israel & Eastern Mediterranean": 3,
+    "Korea": 1,
+    "Persian Gulf": 10,
+    "South Australia": 0,
+    "Sydney / NSW": 3,
     "Taiwan Strait": 0
   },
   "incidents": [
@@ -304,12 +298,23 @@
       "attack_reported": true,
       "confirmed": true,
       "headlines": [
+        "Bendigo Bank to pay $8 million penalty over cyber attack hacking scandal",
         "NAB fails to silence viral account detailing wild claims",
         "Bendigo Bank to pay $8m penalty for breaching obligations following 2023 cyber attack"
       ],
       "needs_confirming": false,
-      "severity": "Info",
+      "severity": "Warning",
       "target": "Banking & payments"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "Services Australia emails reveal chaotic scramble to assess OpenAI breach"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "AI platforms"
     },
     {
       "attack_reported": true,
@@ -330,6 +335,26 @@
       "needs_confirming": false,
       "severity": "Info",
       "target": "Darwin-based"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "Brocent flags gap between cyber breach & claim costs"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "Brocent"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "Merici College shuts down IT systems following a 'potential cyber incident'"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "Merici College"
     },
     {
       "attack_reported": true,
@@ -415,8 +440,8 @@
     }
   ],
   "internet_drop_pct": {
-    "China": 1.0,
-    "Iran": 0.1,
+    "China": 1.1,
+    "Iran": 0.0,
     "Israel": 0.0,
     "Russia": 0.0,
     "South Korea": 0.0,
@@ -441,11 +466,20 @@
       "pump_cents": -2,
       "week_ago_aud": 136.5
     },
-    "grid_demand_fall_pct": 1.8,
-    "grid_demand_mw": 267,
-    "grid_demand_usual_mw": 323,
+    "grid_demand_fall_pct": -8.5,
+    "grid_demand_mw": 295,
+    "grid_demand_usual_mw": 362,
     "grid_lor_level": 0,
     "nearby_incidents": [
+      {
+        "area": "DAWESLEY",
+        "dist": "25-60 km",
+        "event": "Grass Fire",
+        "headline": "DAWESLEY : GRASS FIRE",
+        "id": "F-261125-0092 DAWESLEY, OLD PRINCES HWY / IRONSTONE RANGE RD",
+        "level": null,
+        "notify": false
+      },
       {
         "area": "LOT 564 ADELAIDE RD MALLALA",
         "dist": "25-60 km",
@@ -512,25 +546,25 @@
       "Morgan Vale Road, Pine Valley Station: MORGAN MAIL RD Closed due to flooding over road",
       "Pine Valley Road, Pine Valley Station: PINE VALLEY RD Closed due to flooding over road"
     ],
-    "rooftop_pv_mw": 2511,
+    "rooftop_pv_mw": 1933,
     "sawater_news": [],
     "watch_and_act": []
   },
   "markets": {
     "AUD/USD": {
       "big_move": false,
-      "change_pct": -0.33,
-      "price": 0.6608
+      "change_pct": -0.37,
+      "price": 0.6605
     },
     "Brent oil": {
       "big_move": false,
-      "change_pct": -4.3,
-      "price": 87.47
+      "change_pct": -4.2,
+      "price": 87.56
     },
     "Gold": {
       "big_move": false,
-      "change_pct": -0.53,
-      "price": 3543.1
+      "change_pct": -0.28,
+      "price": 3552.0
     },
     "VIX": {
       "big_move": false,
@@ -561,14 +595,14 @@
       "Saudi Arabia partners with South Korea, Ukraine for $3B air defense boost - Crypto Briefing"
     ],
     "aviation_halt": [
-      "Chicago's O’Hare Airport ground stop lifted, flight delays continue after outage - FOX 32 Chicago",
       "O'Hare Airport under ‘constrained facilities' advisory due to equipment outage - NBC 5 Chicago",
+      "Chicago's O’Hare Airport ground stop lifted, flight delays continue after outage - FOX 32 Chicago",
       "O'Hare Ground Stop: What the Equipment Outage Means for Thanksgiving Travelers - Around Prague"
     ],
     "bank_outage": [
+      "Wall Street slides as Nvidia and AI stocks fall back - CommBank",
       "Gossip account against NAB sparks CEO intervention - Human Resources Director",
-      "NAB fails to silence viral account detailing wild claims - The West Australian",
-      "Telstra outage: how long and where else will be affected by the upgrades - The Standard | Warrnambool, VIC"
+      "NAB fails to silence viral account detailing wild claims - The West Australian"
     ],
     "blood": [
       "Prevent fires, travel smart, and be ready to save a life | Daily Gate City - Keokuk, Iowa - Daily Gate City",
@@ -576,9 +610,9 @@
       "Luminis Health Adds Mobile Blood Donation Bus - NewsBreak: Local News & Alerts"
     ],
     "cables": [
+      "Indo-Pacific Nations Call On Allies to Protect Undersea Cables - National Defense Magazine",
       "DW News. . US tech giants like Meta and Google are increasingly investing in, and in some cases fully owning, submarine cable systems that form the backbone of global internet connectivity. As their influence over the internet's physical infrastructure grows, w - Facebook",
-      "Closing Legal Loopholes that Endanger Subsea Cable Infrastructure - Small Wars Journal",
-      "Indo-Pacific Nations Call On Allies to Protect Undersea Cables - National Defense Magazine"
+      "Closing Legal Loopholes that Endanger Subsea Cable Infrastructure - Small Wars Journal"
     ],
     "chem": [
       "Amid politicized debate in US and Israel, Katz warns Iran developing chemical weapons - The Times of Israel",
@@ -595,18 +629,18 @@
     ],
     "cyber_attrib": [
       "FBI Warns Hackers Are Using ARTEX AI Tool To Automate Cyberattacks - Forbes",
-      "Spy agency warns active Russian hackers targeting Australian industry - ABC News & Headlines – Australian Broadcasting Corporation",
-      "Australians should prepare for online services to go down unexpectedly as threats rise, cyber agency warns - The Guardian"
+      "Water supply hack warning: FBI says threats are rising - Fox 59",
+      "Bluetooth Flaws Let Hackers Control Trailer Brakes Without Authentication, CISA Warns - The 420.in"
     ],
     "cyber_au": [
+      "Darwin-based accounting firm listed by HYFLOCK ransomware - Accountants Daily",
       "Black Friday cyberattack warning for Australian travel businesses as bookings surge - Karryon",
-      "Retail ranks among least-insured sectors as ransomware attacks peak - Insurance Business",
-      "Is the Counter Ransomware Initiative Keeping Up With Ransomware? - Lawfare"
+      "Bendigo Bank to pay $8m penalty for breaching obligations following 2023 cyber attack - Cyber Daily"
     ],
     "cyber_ot": [
       "UK operation wards off risk of cyber-attack on supermarket fridges and freezers - The Guardian",
       "Shop freezers in seven European countries hit by cyber-attack - BBC",
-      "Supermarket freezers and fridges in Europe hit by cyberattack - Nine.com.au"
+      "Next Plc’s Supplier Hit by Cyberattack in Latest UK Retail Breach - Insurance Journal"
     ],
     "cyber_state": [
       "ESET Research: Sandworm behind cyberattack on Poland’s power grid in late 2025 - We Live Security",
@@ -647,8 +681,8 @@
       "1 person in critical condition after latest Allentown fire displaces 16 residents [Updated] - The Morning Call"
     ],
     "mobilisation": [
-      "Leaked Russian records reveal devastating Ukraine war toll: Up to 720,000 dead - Israel Hayom",
       "The Pentagon's Interceptor Missile Crisis: Depleted US Stockpiles Force Unprecedented Industrial Mobilization Until 2030 - جريدة القدس",
+      "Leaked Russian records reveal devastating Ukraine war toll: Up to 720,000 dead - Israel Hayom",
       "The Territorial Recruitment Center sent the father of a child with a disability to the military without checking the extension of the deferment: the court canceled the conscription order - Судово-юридична газета"
     ],
     "national_outage": [
@@ -657,9 +691,9 @@
       "Cuba’s National Electric Grid Collapses, Reason Unknown - EnergyNow.com"
     ],
     "outage_au": [
-      "Telstra mobile outage disrupts services across Australia - Australian Cyber Security Magazine",
-      "Australia's Optus apologises for outage that disrupted emergency calls - Reuters",
-      "How a nationwide Telstra outage rocked the Australian economy – and what we can learn - The Conversation"
+      "Calls for 'automatic compensation' following telco outages - ABC News & Headlines – Australian Broadcasting Corporation",
+      "Microsoft ‘deeply sorry’ for global outage, rules out cyberattack and AI - Nine.com.au",
+      "The Microsoft outage is part of a growing trend. This is how to prepare for further disruption - SBS"
     ],
     "reservists": [
       "Plumbers, babysitters, and dog boarding: The reimbursements reservists can claim before year’s end - The Jerusalem Post",
@@ -724,7 +758,7 @@
       "yes": 12.5
     },
     {
-      "d24h": -0.6,
+      "d24h": -0.5,
       "q": "US-Iran Final Nuclear Deal by November 30, 2026?",
       "yes": 0.5
     },
@@ -794,9 +828,9 @@
       "yes": 13.5
     },
     {
-      "d24h": -0.2,
+      "d24h": -0.1,
       "q": "Will the U.S. test a nuclear weapon by December 31 2026?",
-      "yes": 2.6
+      "yes": 2.7
     },
     {
       "d24h": 0.0,
@@ -1026,19 +1060,9 @@
     },
     {
       "band": "Low",
-      "convergence": "Only one kind of sign is showing (electronic warfare). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
-      "domains": [
-        "Electronic warfare"
-      ],
       "key": "mideast",
-      "lit": [
-        {
-          "detail": "gps_gulf 33 vs usual 8",
-          "name": "GPS jamming spike (Gulf / Israel)"
-        }
-      ],
-      "score": 10,
-      "trend": "up"
+      "score": 0,
+      "trend": "down"
     },
     {
       "band": "Low",
@@ -1109,7 +1133,7 @@
       "key": "cyber",
       "lit": [
         {
-          "detail": "Black Friday cyberattack warning for Australian travel businesses as bookings surge",
+          "detail": "Darwin-based accounting firm listed by HYFLOCK ransomware",
           "name": "Major Australian cyber incident reported"
         }
       ],
@@ -1144,7 +1168,7 @@
     }
   ],
   "sectors_relative_5d": {
-    "defence_au": 4.06,
+    "defence_au": 3.93,
     "defence_eu": -1.47,
     "defence_us": 0.84,
     "pandemic": 1.86
@@ -1170,10 +1194,10 @@
   "tankers": "normal",
   "telecom_drop_pct": {
     "Aussie Broadband": 0.4,
-    "Optus": 1.0,
+    "Optus": 2.9,
     "TPG": 0.0,
-    "Telstra": 0.4,
-    "Vodafone": 4.8
+    "Telstra": 0.3,
+    "Vodafone": 0.0
   },
   "us_departure_orders": [
     "Belarus"
