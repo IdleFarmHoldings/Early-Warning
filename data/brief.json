@@ -281,35 +281,22 @@
   ],
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
-    "maritime": "TimeoutError: ",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output=",
     "satellites": "HTTPError: HTTP Error 503: Service Unavailable"
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-25T14:33:00Z",
+  "generated_at": "2026-11-25T14:49:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 19,
-    "Black Sea": 21,
-    "Israel & Eastern Mediterranean": 4,
+    "Baltic / Kaliningrad": 22,
+    "Black Sea": 38,
+    "Israel & Eastern Mediterranean": 3,
     "Korea": 0,
-    "Persian Gulf": 7,
+    "Persian Gulf": 8,
     "South Australia": null,
     "Sydney / NSW": null,
-    "Taiwan Strait": 1
+    "Taiwan Strait": 2
   },
   "incidents": [
-    {
-      "attack_reported": true,
-      "confirmed": true,
-      "headlines": [
-        "The first autonomous AI cyberattack: why it happened earlier than expected, how agents break Claude, and whether AI can be trusted with bank accounts",
-        "Bendigo Bank hit with $8m penalty over Alliance Bank cyber breach",
-        "Bendigo Bank to pay $8 million penalty over cyber attack hacking scandal"
-      ],
-      "needs_confirming": false,
-      "severity": "Warning",
-      "target": "Banking & payments"
-    },
     {
       "attack_reported": true,
       "confirmed": false,
@@ -342,19 +329,8 @@
     },
     {
       "attack_reported": true,
-      "confirmed": true,
+      "confirmed": false,
       "headlines": [
-        "Acronis says AI is speeding up cyberattacks across cloud"
-      ],
-      "needs_confirming": false,
-      "severity": "Info",
-      "target": "Acronis"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": true,
-      "headlines": [
-        "Hackers may have used AI tool to attack CIA and other US spy agencies",
         "Hackers now exploit critical Drupal RCE flaw to hijack sites"
       ],
       "needs_confirming": false,
@@ -362,42 +338,12 @@
       "target": "Hackers"
     },
     {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
-        "Hackers Compromise 24 Check Point Management Servers in Suspected AI-Driven Attack Campaign"
-      ],
-      "needs_confirming": false,
-      "severity": "Info",
-      "target": "Hackers Compromise"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
-        "CIA and other US spy agencies suffer intelligence system breach, AI tool suspected"
-      ],
-      "needs_confirming": false,
-      "severity": "Info",
-      "target": "CIA"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
-        "UK Cyber Agency Warns of Sharp Increase in AI-Driven Cyberattacks"
-      ],
-      "needs_confirming": false,
-      "severity": "Info",
-      "target": "Other services"
-    },
-    {
       "attack_reported": false,
       "confirmed": true,
       "headlines": [
         "Microsoft’s reported ‘Code Red’ follows a day-long outage—and 11 very busy Teams chats",
         "Microsoft declares code red following historic outage",
-        "Microsoft launches “Code Red” overhaul after global Microsoft 365 outage"
+        "Microsoft declares ‘Code Red’ after 24-hour outage disrupts services"
       ],
       "needs_confirming": false,
       "severity": "Warning",
@@ -446,12 +392,12 @@
     }
   ],
   "internet_drop_pct": {
-    "China": 1.3,
+    "China": 1.1,
     "Iran": 0.0,
     "Israel": 0.0,
     "Russia": 0.0,
     "South Korea": 0.1,
-    "Taiwan": 0.2
+    "Taiwan": 0.3
   },
   "local_sa": {
     "bom": [],
@@ -465,16 +411,16 @@
       "Mount Lofty Ranges": "Moderate / Moderate"
     },
     "fire_danger_ok": true,
-    "fires_active": 8,
+    "fires_active": 9,
     "fuel": {
       "brent_aud": 133.5,
-      "change_pct": -0.2,
+      "change_pct": -0.1,
       "pump_cents": 0,
       "week_ago_aud": 133.7
     },
-    "grid_demand_fall_pct": 0.7,
-    "grid_demand_mw": 1432,
-    "grid_demand_usual_mw": 1387,
+    "grid_demand_fall_pct": 1.1,
+    "grid_demand_mw": 1426,
+    "grid_demand_usual_mw": 1369,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
@@ -522,23 +468,23 @@
   "markets": {
     "AUD/USD": {
       "big_move": false,
-      "change_pct": -0.7,
-      "price": 0.6583
+      "change_pct": -0.73,
+      "price": 0.6581
     },
     "Brent oil": {
       "big_move": false,
-      "change_pct": -1.9,
-      "price": 89.66
+      "change_pct": -2.02,
+      "price": 89.55
     },
     "Gold": {
       "big_move": false,
-      "change_pct": -1.62,
-      "price": 3504.1
+      "change_pct": -2.03,
+      "price": 3489.7
     },
     "VIX": {
       "big_move": false,
-      "change_pct": 20.22,
-      "price": 31.69
+      "change_pct": 25.34,
+      "price": 33.04
     }
   },
   "national_shocks": {
@@ -553,24 +499,14 @@
   },
   "nc3": "normal",
   "news_watch": {
-    "ai_hack": [
-      "The OpenAI hacking case shows corporate liability can work. It doesn’t cover AI agents with no owner - Fortune",
-      "China suspected in AI-powered cyberattack on CIA and US intelligence agencies - Ynetnews",
-      "The first autonomous AI cyberattack: why it happened earlier than expected, how agents break Claude, and whether AI can be trusted with bank accounts - dev.ua"
-    ],
-    "airspace": [
-      "IndiGo Adds Southeast Asia Flights as Westbound Costs Climb - Skift",
-      "Saudi air defenses intercept 209 Houthi aerial threats in two months - Crypto Briefing",
-      "Qatar Airways Operates Limited Flights to and from Doha - https://safariindia.com/"
-    ],
     "aviation_halt": [
       "O'Hare Airport under ‘constrained facilities' advisory due to equipment outage - NBC Chicago",
-      "O'Hare Ground Stop: What the Equipment Outage Means for Thanksgiving Travelers - Around Prague",
-      "Editorial: Nationwide Ground Stop Highlights Vulnerable Air Traffic Systems - Aviation Pros"
+      "Duffy asked for $50B for air traffic control after ground stop, a marked increase - ABC News - Breaking News, Latest News and Videos",
+      "O'Hare Ground Stop: What the Equipment Outage Means for Thanksgiving Travelers - Around Prague"
     ],
     "bank_outage": [
-      "Aussie shares slip as hot inflation pushes back rate cut hopes - CommBank",
       "‘I’d love to take it to court’: NAB’s Instagram antagonist vows not to back down - SMH.com.au",
+      "Wall Street slides as Nvidia and AI stocks fall back - CommBank",
       "Gossip account against NAB sparks CEO intervention - Human Resources Director"
     ],
     "blood": [
@@ -592,9 +528,9 @@
       "EXCLUSIVE: Microsoft declares 'Code Red' after historic outage, internal memos show - Reuters"
     ],
     "cyber_attrib": [
-      "Trump blames Minnesota governor, not Iran, for cyberattacks on the state's water systems - ABC News - Breaking News, Latest News and Videos",
       "FBI Warns Hackers Are Using ARTEX AI Tool To Automate Cyberattacks - Forbes",
-      "FBI warns hackers weaponizing ARTEX AI framework to automate attacks on energy, manufacturing, telecom - Industrial Cyber"
+      "Spy agency warns active Russian hackers targeting Australian industry - ABC News & Headlines – Australian Broadcasting Corporation",
+      "Busted! Alleged Aussie hackers linked to TeamPCP arrested in joint AFP-FBI-WAPF operation - Cyber Daily"
     ],
     "cyber_au": [
       "How is Peninsula Energy (ASX:PEN) responding to the cyber incident at its Lance uranium project? - Kalkine",
@@ -606,25 +542,15 @@
       "Next Plc’s Supplier Hit by Cyberattack in Latest UK Retail Breach - Insurance Journal",
       "Refrigeration under cyber attack - Climate Control News"
     ],
-    "cyber_state": [
-      "ESET Research: Sandworm behind cyberattack on Poland’s power grid in late 2025 - We Live Security",
-      "ESET attributes DynoWiper-powered attack on Poland’s power grid to Russia-aligned Sandworm group - Industrial Cyber",
-      "Russian state hackers likely behind wiper malware attack on Poland’s power grid - The Record from Recorded Future News"
-    ],
     "cyber_supply": [
       "VMware vCenter, new critical flaw CVE-2026-123903 rated CVSS 9.8 bypasses authentication - Meteora Web",
       "Idunno AntiCsrf, ACN detects active exploitation of CVE-2026-131914 with CVSS 9.3 - Meteora Web",
       "CVE-2026-123903: Critical VMware vCenter Auth Bypass - SOC Prime"
     ],
-    "deepfake": [
-      "Deloitte suspended by WA government after AI report debacle - ABC News & Headlines – Australian Broadcasting Corporation",
-      "Taiwan election: Is China behind a wave of AI fakes and disinformation? - BBC",
-      "Belgian minister seeks EU response to AI-generated fake death notices - Yeni Safak English"
-    ],
     "dieoff": [
       "Dead fish raise alarm at Olympic Rowing Center - eKathimerini.com",
       "Mystery remains over penguin deaths after bird flu ruled out - Stuff",
-      "Mass fish deaths force Olympic rowing center to temporarily close - eKathimerini.com"
+      "Halloween: Six most haunted castles in Scotland with spooky tales from the past - ScottishNews.com"
     ],
     "flash": [
       "Black Pearl Group Enters Voluntary Suspension on ASX Amid NZX Trading Halt - Kalkine",
@@ -634,7 +560,7 @@
     "fuel_au": [
       "Crisis-tested Matt Halliday never lets a fuel shock go to waste - AFR",
       "Philippines declares national energy emergency as Asia risks energy crisis amid Iran war - ABC News - Breaking News, Latest News and Videos",
-      "Global disaster misinformation fuels panic-buying at chain stores in several countries - The Straits Times"
+      "Frank Black: Analysing the new fuel cost recovery order - www.ownerdriver.com.au"
     ],
     "illness": [
       "Mystery illness causes mass hospitalisation of runners - The Nightly",
@@ -648,18 +574,13 @@
     ],
     "mobilisation": [
       "Resident of Ternopil Region Tried to Cancel Mobilization Due to a “Formal” Military Medical Commission: What the Court Decided - Судово-юридична газета",
-      "Algeria's Mobilisation in Niger: A Consolidation of Regional Influence - Bloomsbury Intelligence and Security Institute (BISI)",
-      "The Pentagon's Interceptor Missile Crisis: Depleted US Stockpiles Force Unprecedented Industrial Mobilization Until 2030 - جريدة القدس"
+      "The Pentagon's Interceptor Missile Crisis: Depleted US Stockpiles Force Unprecedented Industrial Mobilization Until 2030 - جريدة القدس",
+      "Algeria's Mobilisation in Niger: A Consolidation of Regional Influence - Bloomsbury Intelligence and Security Institute (BISI)"
     ],
     "national_outage": [
       "Colombia plunged into darkness – President issues emergency order - TodayPress.tv",
       "A widespread power cut in Dnipro on 24 November - UkrMedia News",
       "Cuba’s National Electric Grid Collapses, Reason Unknown - EnergyNow.com"
-    ],
-    "outage_au": [
-      "Calls for 'automatic compensation' following telco outages - ABC News & Headlines – Australian Broadcasting Corporation",
-      "Microsoft ‘deeply sorry’ for global outage, rules out cyberattack and AI - Nine.com.au",
-      "The Microsoft outage is part of a growing trend. This is how to prepare for further disruption - SBS"
     ],
     "reservists": [
       "Running on empty: the IDF's race to rebuild in 2027 before the next war - Ynetnews",
@@ -694,7 +615,7 @@
       "yes": 5.5
     },
     {
-      "d24h": 0.0,
+      "d24h": -0.2,
       "q": "US-Iran Final Nuclear Deal by December 31, 2026?",
       "yes": 2.4
     },
@@ -709,9 +630,9 @@
       "yes": 2.6
     },
     {
-      "d24h": 0.4,
+      "d24h": 0.5,
       "q": "US-Iran Hormuz Agreement by November 30?",
-      "yes": 3.3
+      "yes": 3.4
     },
     {
       "d24h": 0.0,
@@ -724,9 +645,9 @@
       "yes": 12.5
     },
     {
-      "d24h": 0.0,
+      "d24h": -0.2,
       "q": "US-Iran Final Nuclear Deal by November 30, 2026?",
-      "yes": 0.9
+      "yes": 0.7
     },
     {
       "d24h": 0.2,
@@ -734,9 +655,9 @@
       "yes": 2.5
     },
     {
-      "d24h": 0.1,
+      "d24h": 0.2,
       "q": "Will China invade Taiwan by June 30, 2027?",
-      "yes": 4.4
+      "yes": 4.5
     },
     {
       "d24h": 0.1,
@@ -764,14 +685,14 @@
       "yes": 17.5
     },
     {
-      "d24h": -0.6,
+      "d24h": -0.5,
       "q": "NATO x Russia military clash by November 30, 2026?",
       "yes": 2.2
     },
     {
-      "d24h": -1.3,
+      "d24h": -1.5,
       "q": "Ukraine agrees not to join NATO by December 31, 2026?",
-      "yes": 1.6
+      "yes": 1.4
     },
     {
       "d24h": 0.2,
@@ -779,14 +700,14 @@
       "yes": 4.0
     },
     {
-      "d24h": -0.4,
+      "d24h": -0.5,
       "q": "Will Russia test a nuclear weapon by December 31 2026?",
-      "yes": 1.9
+      "yes": 1.8
     },
     {
-      "d24h": 0.0,
+      "d24h": -3.0,
       "q": "Will Russia invade another country by December 31, 2027?",
-      "yes": 13.5
+      "yes": 10.5
     },
     {
       "d24h": 0.8,
@@ -804,7 +725,7 @@
       "yes": 18.0
     },
     {
-      "d24h": 0.5,
+      "d24h": 2.0,
       "q": "Will Nick Stewart attend a US x Iran diplomatic meeting by December 31, 2026?",
       "yes": 8.5
     }
@@ -1015,15 +936,35 @@
     },
     {
       "band": "Low",
+      "convergence": "Only one kind of sign is showing (markets). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
+      "domains": [
+        "Markets"
+      ],
       "key": "mideast",
-      "score": 0,
-      "trend": "steady"
+      "lit": [
+        {
+          "detail": "US defence stocks +5.5% vs market over 5 days",
+          "name": "US defence stocks outperforming (5 days)"
+        }
+      ],
+      "score": 5,
+      "trend": "up"
     },
     {
       "band": "Low",
+      "convergence": "Only one kind of sign is showing (markets). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: missile / live-fire navigation warnings near taiwan, gps jamming over the taiwan strait and internet disruption in taiwan.",
+      "domains": [
+        "Markets"
+      ],
       "key": "taiwan",
-      "score": 0,
-      "trend": "steady"
+      "lit": [
+        {
+          "detail": "US defence stocks +5.5% vs market over 5 days",
+          "name": "Defence stocks outperforming (US / Australia)"
+        }
+      ],
+      "score": 5,
+      "trend": "up"
     },
     {
       "band": "Low",
@@ -1045,7 +986,7 @@
           "name": "Mobilisation / reservist reports (Russia / NATO)"
         },
         {
-          "detail": "VIX at 31.69",
+          "detail": "VIX at 33.04",
           "name": "Market fear index above 30"
         }
       ],
@@ -1116,37 +1057,36 @@
       "trend": "steady"
     },
     {
-      "band": "Elevated",
-      "convergence": "Signs are converging across 3 separate areas (ai-enabled hacking, cloud services and markets). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: a Chinese sta",
+      "band": "Guarded",
+      "convergence": "Two different kinds of sign are showing together (cloud services and markets). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, reports of ai-driven hacking campaigns a",
       "domains": [
-        "AI-enabled hacking",
         "Cloud services",
         "Markets"
       ],
       "key": "ai",
       "lit": [
         {
-          "detail": "The OpenAI hacking case shows corporate liability can work. It doesn’t cover AI agents with no owner",
-          "name": "Reports of AI-driven hacking campaigns"
-        },
-        {
           "detail": "KOSPI Plunges 4.9% as Philadelphia Semiconductor Index Tumbles 7.9%; Sell-Side Circuit Breaker Triggered",
           "name": "Flash crash or exchange trading halt"
+        },
+        {
+          "detail": "VIX +25.3%",
+          "name": "Market fear index jumps 25%+ in a day"
         },
         {
           "detail": "Microsoft declares Code Red after Microsoft 365 outage, targets one-hour recovery for global outages",
           "name": "Major cloud or AI service outage"
         }
       ],
-      "score": 35,
-      "trend": "up"
+      "score": 30,
+      "trend": "down"
     }
   ],
   "sectors_relative_5d": {
     "defence_au": 3.12,
-    "defence_eu": 3.1,
-    "defence_us": 4.71,
-    "pandemic": 1.26
+    "defence_eu": 3.25,
+    "defence_us": 5.46,
+    "pandemic": 1.31
   },
   "status_pages": [
     {
@@ -1161,10 +1101,10 @@
   "tankers": "normal",
   "telecom_drop_pct": {
     "Aussie Broadband": 0.8,
-    "Optus": 3.0,
-    "TPG": 0.0,
+    "Optus": 5.0,
+    "TPG": 0.2,
     "Telstra": 0.0,
-    "Vodafone": 0.0
+    "Vodafone": 9.5
   },
   "us_departure_orders": [
     "Belarus"
