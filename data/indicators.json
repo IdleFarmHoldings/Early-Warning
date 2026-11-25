@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-25T11:55:00Z",
+  "generated_at": "2026-11-25T11:59:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -108,7 +108,7 @@
       "name": "Middle East war & Gulf shipping",
       "sa_impact": "Fuel: Australia imports most of its fuel, much of it refined from Gulf crude in Asia. Shipping attacks or a Hormuz closure push up prices within days and can cause local shortages.",
       "score": 0,
-      "trend": "down",
+      "trend": "steady",
       "unlit": [
         {
           "domain": "Military air",
@@ -393,7 +393,7 @@
           "weight": 15
         },
         {
-          "detail": "VIX at 30.39",
+          "detail": "VIX at 30.32",
           "domain": "Markets",
           "id": "vix",
           "name": "Market fear index above 30",
@@ -404,7 +404,7 @@
       "name": "Russia-NATO escalation",
       "sa_impact": "Indirect: energy and market shock, cyber attacks that can spill over to Australian systems, and nuclear-risk rhetoric.",
       "score": 25,
-      "trend": "up",
+      "trend": "steady",
       "unlit": [
         {
           "domain": "Electronic warfare",
@@ -662,7 +662,7 @@
       "name": "Pandemic, biological or chemical emergency",
       "sa_impact": "Health system strain, possible lockdowns and border closures, and shortages of medicines and protective equipment, which Australia mostly imports.",
       "score": 35,
-      "trend": "down",
+      "trend": "steady",
       "unlit": [
         {
           "domain": "Trade",
@@ -795,17 +795,16 @@
       "why": "Large attacks are usually preceded by quieter steps: a surge in newly exploited flaws in VPNs and firewalls (how state groups like Volt Typhoon get in), scanning of industrial-control systems, a rise in ransomware victims in the target country, and official warnings. Before Russia's 2022 invasion, wiper malware hit Ukraine a day ahead; Chinese groups have been found pre-positioned in US and allied infrastructure."
     },
     {
-      "band": "Elevated",
-      "convergence": "Signs are converging across 3 separate areas (ai-enabled hacking, cloud services and markets). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: a Chinese state-sponsored group used an AI agent to carry out 80-90% of an attack on about 30 organisations, at thousands of requests per second. A fake AI image of a Pentagon explosion briefly moved US markets in May 2023, and a deepfake video call of a CFO tricked a company into paying US$25 million in 2024. The likely signature of an AI attack is breadth and speed: many unrelated systems and vendors hit at once, synthetic media of officials, and shocks with no clear human cause. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, deepfakes of leaders or fake official alerts and market fear index jumps 25%+ in a day.",
+      "band": "Guarded",
+      "convergence": "Two different kinds of sign are showing together (ai-enabled hacking and markets). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, deepfakes of leaders or fake official alerts and market fear index jumps 25%+ in a day.",
       "domains": [
         "AI-enabled hacking",
-        "Cloud services",
         "Markets"
       ],
       "key": "ai",
       "lit": [
         {
-          "detail": "The OpenAI hacking case shows corporate liability can work. It doesn’t cover AI agents with no owner",
+          "detail": "Hackers Compromise 24 Check Point Management Servers in Suspected AI-Driven Attack Campaign",
           "domain": "AI-enabled hacking",
           "id": "aihack",
           "name": "Reports of AI-driven hacking campaigns",
@@ -819,20 +818,12 @@
           "name": "Flash crash or exchange trading halt",
           "short": "Flash crash or exchange trading halt",
           "weight": 10
-        },
-        {
-          "detail": "Microsoft declares Code Red after Microsoft 365 outage, targets one-hour recovery for global outages",
-          "domain": "Cloud services",
-          "id": "cloud",
-          "name": "Major cloud or AI service outage",
-          "short": "Major cloud or AI service outage",
-          "weight": 10
         }
       ],
       "name": "AI-enabled attack (non-traditional)",
       "sa_impact": "Not bombs but disruption: hacking at machine speed across banks, telcos, hospitals and the grid at once; fake videos or alerts from leaders causing panic buying or bank runs; or automated market and fraud shocks. Effects would be outages, payment failures and confusion about what is real.",
-      "score": 35,
-      "trend": "steady",
+      "score": 25,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Mass exploitation",
@@ -850,6 +841,12 @@
           "domain": "Markets",
           "id": "vix",
           "name": "Market fear index jumps 25%+ in a day",
+          "weight": 10
+        },
+        {
+          "domain": "Cloud services",
+          "id": "cloud",
+          "name": "Major cloud or AI service outage",
           "weight": 10
         },
         {
