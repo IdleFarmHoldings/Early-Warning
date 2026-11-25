@@ -282,16 +282,16 @@
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output=",
-    "satellites": "HTTPError: HTTP Error 503: Service Unavailable"
+    "satellites": "URLError: <urlopen error timed out>"
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-25T17:07:00Z",
+  "generated_at": "2026-11-25T17:22:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 18,
-    "Black Sea": 29,
-    "Israel & Eastern Mediterranean": 3,
+    "Baltic / Kaliningrad": 19,
+    "Black Sea": 9,
+    "Israel & Eastern Mediterranean": 2,
     "Korea": 0,
-    "Persian Gulf": 27,
+    "Persian Gulf": 35,
     "South Australia": null,
     "Sydney / NSW": null,
     "Taiwan Strait": 0
@@ -299,10 +299,9 @@
   "incidents": [
     {
       "attack_reported": true,
-      "confirmed": true,
+      "confirmed": false,
       "headlines": [
-        "The first autonomous AI cyberattack: why it happened earlier than expected, how agents break Claude, and whether AI can be trusted with bank accounts",
-        "Bendigo Bank hit with $8m penalty over Alliance Bank cyber breach"
+        "The first autonomous AI cyberattack: why it happened earlier than expected, how agents break Claude, and whether AI can be trusted with bank accounts"
       ],
       "needs_confirming": false,
       "severity": "Info",
@@ -383,9 +382,9 @@
       "attack_reported": false,
       "confirmed": true,
       "headlines": [
+        "Microsoft declares ‘Code Red’ after 24-hour outage disrupts Outlook, Teams and Copilot",
         "Microsoft 365 outage cause: what failed and why",
-        "Microsoft invokes 'Code Red' after global Outlook and Microsoft 365 outage",
-        "Microsoft’s reported ‘Code Red’ follows a day-long outage—and 11 very busy Teams chats"
+        "Microsoft invokes 'Code Red' after global Outlook and Microsoft 365 outage"
       ],
       "needs_confirming": false,
       "severity": "Warning",
@@ -426,10 +425,10 @@
   "internet_drop_pct": {
     "China": 0.0,
     "Iran": 0.0,
-    "Israel": 0.3,
+    "Israel": 0.1,
     "Russia": 0.0,
-    "South Korea": 0.3,
-    "Taiwan": 0.9
+    "South Korea": 0.2,
+    "Taiwan": 1.1
   },
   "local_sa": {
     "bom": [],
@@ -443,28 +442,18 @@
       "Mount Lofty Ranges": "Moderate / Moderate"
     },
     "fire_danger_ok": true,
-    "fires_active": 10,
+    "fires_active": 9,
     "fuel": {
-      "brent_aud": 134.3,
-      "change_pct": 0.5,
+      "brent_aud": 134.5,
+      "change_pct": 0.6,
       "pump_cents": 0,
       "week_ago_aud": 133.7
     },
-    "grid_demand_fall_pct": 2.6,
-    "grid_demand_mw": 1339,
-    "grid_demand_usual_mw": 1301,
+    "grid_demand_fall_pct": 3.2,
+    "grid_demand_mw": 1324,
+    "grid_demand_usual_mw": 1294,
     "grid_lor_level": 0,
-    "nearby_incidents": [
-      {
-        "area": "COMMERCIAL RD SALISBURY",
-        "dist": "10-25 km",
-        "event": "Grass Fire",
-        "headline": "SALISBURY : GRASS FIRE",
-        "id": "F-261126-0006 SALISBURY, COMMERCIAL RD (GRASS FIRE)",
-        "level": null,
-        "notify": false
-      }
-    ],
+    "nearby_incidents": [],
     "outlook": {
       "air": {
         "aqi": 24,
@@ -510,23 +499,23 @@
   "markets": {
     "AUD/USD": {
       "big_move": false,
-      "change_pct": -0.31,
-      "price": 0.6609
+      "change_pct": -0.13,
+      "price": 0.6621
     },
     "Brent oil": {
       "big_move": false,
-      "change_pct": -1.93,
-      "price": 89.64
+      "change_pct": -1.54,
+      "price": 89.99
     },
     "Gold": {
       "big_move": false,
-      "change_pct": -1.98,
-      "price": 3491.2
+      "change_pct": -1.38,
+      "price": 3512.8
     },
     "VIX": {
       "big_move": false,
-      "change_pct": 27.96,
-      "price": 33.73
+      "change_pct": 18.63,
+      "price": 31.27
     }
   },
   "national_shocks": {
@@ -552,9 +541,9 @@
       "Qatar Airways Operates Limited Flights to and from Doha - https://safariindia.com/"
     ],
     "aviation_halt": [
-      "Duffy asked for $50B for air traffic control after ground stop, a marked increase - ABC News - Breaking News, Latest News and Videos",
       "O'Hare Equipment Outage Triggers Ground Stop on Nov. 24; Refunds Available, but U.S. Law Sets No Fixed Delay Compensation - Avi-Go",
-      "O'Hare Airport under ‘constrained facilities' advisory due to equipment outage - NBC Chicago"
+      "O'Hare Airport under ‘constrained facilities' advisory due to equipment outage - NBC Chicago",
+      "O'Hare Ground Stop: What the Equipment Outage Means for Thanksgiving Travelers - Around Prague"
     ],
     "bank_outage": [
       "Aussie shares slip as hot inflation pushes back rate cut hopes - CommBank",
@@ -570,7 +559,7 @@
       "Indo-Pacific Nations Call On Allies to Protect Undersea Cables - National Defense Magazine"
     ],
     "chem": [
-      "OPCW Honors Chemical Weapons Victims at States Parties Conference - Mirage News",
+      "OPCW Advances Biotoxin Lab Designation Process - Mirage News",
       "US arrears leave chemical weapons watchdog facing budget crisis - Sight Magazine",
       "Eisenkot Ally Says Israel Need Not Strike Iran Now Over Chemical Weapons - ASHARQ AL-AWSAT English"
     ],
@@ -592,7 +581,7 @@
     "cyber_ot": [
       "UK operation wards off risk of cyber-attack on supermarket fridges and freezers - The Guardian",
       "Shop freezers in seven European countries hit by cyber-attack - BBC",
-      "Next Plc’s Supplier Hit by Cyberattack in Latest UK Retail Breach - Insurance Journal"
+      "Supermarket freezers and fridges in Europe hit by cyberattack - Nine.com.au"
     ],
     "cyber_state": [
       "ESET Research: Sandworm behind cyberattack on Poland’s power grid in late 2025 - We Live Security",
@@ -615,8 +604,8 @@
       "KWS Takes Action After Mysterious Deaths of 17 Rhinos - Kenyans.co.ke"
     ],
     "flash": [
+      "Jensen Huang's return to Nvidia was a circuit breaker for the market, says Deutsche's Bankim Chadha - CNBC",
       "Black Pearl Group Enters Voluntary Suspension on ASX Amid NZX Trading Halt - Kalkine",
-      "KOSPI Plunges 4.9% as Philadelphia Semiconductor Index Tumbles 7.9%; Sell-Side Circuit Breaker Triggered - BigGo Finance",
       "Canadian Investment Regulatory Organization Trading Halt - DIV.DB.C - The Manila Times"
     ],
     "fuel_au": [
@@ -645,9 +634,9 @@
       "Allstate Faces Nationwide Outage Across Insurance Platforms - Demokratis.co.id"
     ],
     "outage_au": [
-      "Telstra mobile outage disrupts services across Australia - Australian Cyber Security Magazine",
-      "Australia's Optus apologises for outage that disrupted emergency calls - Reuters",
-      "How a nationwide Telstra outage rocked the Australian economy – and what we can learn - The Conversation"
+      "Calls for 'automatic compensation' following telco outages - ABC News & Headlines – Australian Broadcasting Corporation",
+      "Microsoft ‘deeply sorry’ for global outage, rules out cyberattack and AI - Nine.com.au",
+      "The Microsoft outage is part of a growing trend. This is how to prepare for further disruption - SBS"
     ],
     "reservists": [
       "Running on empty: the IDF's race to rebuild in 2027 before the next war - Ynetnews",
@@ -659,6 +648,7 @@
       "Final four prepare for Adelaide Grand Final clash - Motorsport Australia"
     ],
     "scams": [
+      "Fraud & Digital Identity News – KYC, Scams & Verification - FF News",
       "Finmo Adds USDC and USDT Support to Business Accounts - Fintech Singapore",
       "ASIC Flags Fake Crypto Recovery Offers Targeting Scam Victims - Coin Edition"
     ],
@@ -715,7 +705,7 @@
       "yes": 0.9
     },
     {
-      "d24h": -0.2,
+      "d24h": -0.1,
       "q": "Will Russia invade another country in 2026?",
       "yes": 2.4
     },
@@ -740,14 +730,14 @@
       "yes": 1.6
     },
     {
-      "d24h": -0.8,
+      "d24h": 0.3,
       "q": "Iran-Oman Hormuz Agreement by November 30?",
-      "yes": 1.9
+      "yes": 3.0
     },
     {
-      "d24h": 0.5,
+      "d24h": 0.0,
       "q": "Iran-Oman Hormuz Agreement by December 31?",
-      "yes": 12.0
+      "yes": 11.5
     },
     {
       "d24h": -0.2,
@@ -1051,7 +1041,7 @@
           "name": "Mobilisation / reservist reports (Russia / NATO)"
         },
         {
-          "detail": "VIX at 33.73",
+          "detail": "VIX at 31.27",
           "name": "Market fear index above 30"
         }
       ],
@@ -1082,9 +1072,8 @@
     },
     {
       "band": "Elevated",
-      "convergence": "Two different kinds of sign are showing together (chemical weapons and health). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: countries restricting medical supply exports, pandemic-response stocks outperforming (5 days) ",
+      "convergence": "Only one kind of sign is showing (health). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: countries restricting medical supply exports, pandemic-response stocks outperforming (5 days) and chemical / nerve-agent attack or mass poisoning repor",
       "domains": [
-        "Chemical weapons",
         "Health"
       ],
       "key": "bio",
@@ -1096,14 +1085,10 @@
         {
           "detail": "Dr. Siegel on measles comeback, mystery illness outbreak on cruise ship",
           "name": "Unknown illness / pneumonia cluster reported"
-        },
-        {
-          "detail": "OPCW Honors Chemical Weapons Victims at States Parties Conference",
-          "name": "Chemical / nerve-agent attack or mass poisoning reported"
         }
       ],
-      "score": 50,
-      "trend": "steady"
+      "score": 35,
+      "trend": "down"
     },
     {
       "band": "Low",
@@ -1136,27 +1121,23 @@
           "name": "Reports of AI-driven hacking campaigns"
         },
         {
-          "detail": "KOSPI Plunges 4.9% as Philadelphia Semiconductor Index Tumbles 7.9%; Sell-Side Circuit Breaker Triggered",
+          "detail": "Jensen Huang's return to Nvidia was a circuit breaker for the market, says Deutsche's Bankim Chadha",
           "name": "Flash crash or exchange trading halt"
-        },
-        {
-          "detail": "VIX +28.0%",
-          "name": "Market fear index jumps 25%+ in a day"
         },
         {
           "detail": "Microsoft declares Code Red after Microsoft 365 outage, targets one-hour recovery for global outages",
           "name": "Major cloud or AI service outage"
         }
       ],
-      "score": 45,
-      "trend": "steady"
+      "score": 35,
+      "trend": "down"
     }
   ],
   "sectors_relative_5d": {
     "defence_au": 3.12,
     "defence_eu": 3.63,
-    "defence_us": 5.14,
-    "pandemic": 0.67
+    "defence_us": 5.07,
+    "pandemic": 0.34
   },
   "status_pages": [
     {
@@ -1186,11 +1167,11 @@
   ],
   "tankers": "normal",
   "telecom_drop_pct": {
-    "Aussie Broadband": 0.3,
+    "Aussie Broadband": 0.0,
     "Optus": 0.0,
-    "TPG": 0.3,
+    "TPG": 0.0,
     "Telstra": 0.0,
-    "Vodafone": 0.0
+    "Vodafone": 9.5
   },
   "us_departure_orders": [
     "Belarus"
