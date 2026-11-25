@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-25T07:25:00Z",
+  "generated_at": "2026-11-25T07:40:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -108,7 +108,7 @@
       "name": "Middle East war & Gulf shipping",
       "sa_impact": "Fuel: Australia imports most of its fuel, much of it refined from Gulf crude in Asia. Shipping attacks or a Hormuz closure push up prices within days and can cause local shortages.",
       "score": 0,
-      "trend": "down",
+      "trend": "steady",
       "unlit": [
         {
           "domain": "Military air",
@@ -376,15 +376,26 @@
       "why": "North Korean missile launches are often preceded by navigation warnings; South Korea and Japan report GPS jamming from the North during tense periods."
     },
     {
-      "band": "Low",
-      "convergence": "No warning signs are showing. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and mobilisation / reservist reports (russia / nato).",
-      "domains": [],
+      "band": "Guarded",
+      "convergence": "Only one kind of sign is showing (mobilisation). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and us nuclear command aircraft unusual.",
+      "domains": [
+        "Mobilisation"
+      ],
       "key": "russia",
-      "lit": [],
+      "lit": [
+        {
+          "detail": "Russia conducts covert general mobilization amid massive military losses – The Telegraph",
+          "domain": "Mobilisation",
+          "id": "mob",
+          "name": "Mobilisation / reservist reports (Russia / NATO)",
+          "short": "Mobilisation / reservist reports",
+          "weight": 15
+        }
+      ],
       "name": "Russia-NATO escalation",
       "sa_impact": "Indirect: energy and market shock, cyber attacks that can spill over to Australian systems, and nuclear-risk rhetoric.",
-      "score": 0,
-      "trend": "steady",
+      "score": 15,
+      "trend": "up",
       "unlit": [
         {
           "domain": "Electronic warfare",
@@ -396,12 +407,6 @@
           "domain": "Military air",
           "id": "air",
           "name": "Unusual military air activity (Eastern Europe)",
-          "weight": 15
-        },
-        {
-          "domain": "Mobilisation",
-          "id": "mob",
-          "name": "Mobilisation / reservist reports (Russia / NATO)",
           "weight": 15
         },
         {
@@ -797,7 +802,7 @@
       "key": "ai",
       "lit": [
         {
-          "detail": "Google says the first autonomous AI cyberattack has happened. Expect a lot more like it.",
+          "detail": "The first autonomous AI cyberattack: why it happened earlier than expected, how agents break Claude, and whether AI can be trusted with bank",
           "domain": "AI-enabled hacking",
           "id": "aihack",
           "name": "Reports of AI-driven hacking campaigns",
@@ -805,7 +810,7 @@
           "weight": 15
         },
         {
-          "detail": "Philadelphia Semiconductor Index Plunges 7.9%; KOSPI Tumbles 4.9% as Sell-Side Circuit Breaker Triggers",
+          "detail": "KOSPI Plunges 4.9% as Philadelphia Semiconductor Index Tumbles 7.9%; Sell-Side Circuit Breaker Triggered",
           "domain": "Markets",
           "id": "flash",
           "name": "Flash crash or exchange trading halt",
