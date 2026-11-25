@@ -1,13 +1,19 @@
 {
   "about": "Short form of latest.json + indicators.json for the analysis run. Links and raw samples removed.",
   "acsc": [],
-  "aircraft_flags": {},
+  "aircraft_flags": {
+    "gps_gulf": {
+      "median": 9.0,
+      "status": "ANOMALY",
+      "value": 30
+    }
+  },
   "analyst": {
     "ASPI Strategist": [
+      "American scandal: Nvidia chips away at our national security",
       "Northern Australia’s new challenge: preparing for overlapping projects",
       "To help themselves and US, Australia and Japan should service missiles together",
-      "Australia must turn its quantum edge into a powerful deterrent",
-      "Australia’s overlooked metals resource: scrap"
+      "Australia must turn its quantum edge into a powerful deterrent"
     ],
     "Crisis Group": [
       "High Stakes in Iraq’s Push to Reclaim Jurf al-Sakhar",
@@ -279,18 +285,19 @@
   ],
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
+    "maritime": "TimeoutError: ",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-25T04:36:00Z",
+  "generated_at": "2026-11-25T04:51:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 67,
-    "Black Sea": null,
-    "Israel & Eastern Mediterranean": 3,
-    "Korea": 1,
-    "Persian Gulf": 10,
-    "South Australia": 0,
-    "Sydney / NSW": 3,
+    "Baltic / Kaliningrad": 62,
+    "Black Sea": 77,
+    "Israel & Eastern Mediterranean": 2,
+    "Korea": 4,
+    "Persian Gulf": 30,
+    "South Australia": 4,
+    "Sydney / NSW": 2,
     "Taiwan Strait": 0
   },
   "incidents": [
@@ -298,12 +305,11 @@
       "attack_reported": true,
       "confirmed": true,
       "headlines": [
-        "Bendigo Bank to pay $8 million penalty over cyber attack hacking scandal",
         "NAB fails to silence viral account detailing wild claims",
         "Bendigo Bank to pay $8m penalty for breaching obligations following 2023 cyber attack"
       ],
       "needs_confirming": false,
-      "severity": "Warning",
+      "severity": "Info",
       "target": "Banking & payments"
     },
     {
@@ -397,6 +403,16 @@
       "target": "What"
     },
     {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "CIA Hacked: US Spy Agencies Face AI Cyberattack As Artex Tool Raises China Fears"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "CIA Hacked"
+    },
+    {
       "attack_reported": false,
       "confirmed": true,
       "headlines": [
@@ -440,7 +456,7 @@
     }
   ],
   "internet_drop_pct": {
-    "China": 1.1,
+    "China": 1.2,
     "Iran": 0.0,
     "Israel": 0.0,
     "Russia": 0.0,
@@ -466,26 +482,35 @@
       "pump_cents": -2,
       "week_ago_aud": 136.5
     },
-    "grid_demand_fall_pct": -8.5,
-    "grid_demand_mw": 295,
-    "grid_demand_usual_mw": 362,
+    "grid_demand_fall_pct": 4.2,
+    "grid_demand_mw": 283,
+    "grid_demand_usual_mw": 403,
     "grid_lor_level": 0,
     "nearby_incidents": [
+      {
+        "area": "89 GULLY RD CAREY GULLY",
+        "dist": "25-60 km",
+        "event": "Grass Fire",
+        "headline": "CAREY GULLY : GRASS FIRE",
+        "id": "F-261125-0096 CAREY GULLY, GULLY RD (GRASS FIRE)",
+        "level": null,
+        "notify": false
+      },
+      {
+        "area": "1227 WELLINGTON RD HIGHLAND VALLEY",
+        "dist": "25-60 km",
+        "event": "Grass Fire",
+        "headline": "HIGHLAND VALLEY : GRASS FIRE",
+        "id": "F-261125-0079 HIGHLAND VALLEY, WELLINGTON RD (GRASS FIRE)",
+        "level": null,
+        "notify": false
+      },
       {
         "area": "DAWESLEY",
         "dist": "25-60 km",
         "event": "Grass Fire",
         "headline": "DAWESLEY : GRASS FIRE",
-        "id": "F-261125-0092 DAWESLEY, OLD PRINCES HWY / IRONSTONE RANGE RD",
-        "level": null,
-        "notify": false
-      },
-      {
-        "area": "LOT 564 ADELAIDE RD MALLALA",
-        "dist": "25-60 km",
-        "event": "Grass Fire",
-        "headline": "MALLALA : Grass fire",
-        "id": "F-261125-0085 Mallala, Adelaide Rd (Grass Fire)",
+        "id": "F-261125-0092 Dawesley, Old Princes Hwy / Ironstone Range Rd",
         "level": null,
         "notify": false
       },
@@ -495,15 +520,6 @@
         "event": "Grass Fire",
         "headline": "MALLALA : GRASS FIRE",
         "id": "F-261125-0083 Mallala, Feltwell Rd (Grass Fire)",
-        "level": null,
-        "notify": false
-      },
-      {
-        "area": "1227 WELLINGTON RD HIGHLAND VALLEY",
-        "dist": "25-60 km",
-        "event": "Grass Fire",
-        "headline": "HIGHLAND VALLEY : Grass fire",
-        "id": "F-261125-0079 Highland Valley, Wellington Rd (Grass Fire)",
         "level": null,
         "notify": false
       }
@@ -546,25 +562,25 @@
       "Morgan Vale Road, Pine Valley Station: MORGAN MAIL RD Closed due to flooding over road",
       "Pine Valley Road, Pine Valley Station: PINE VALLEY RD Closed due to flooding over road"
     ],
-    "rooftop_pv_mw": 1933,
+    "rooftop_pv_mw": 2425,
     "sawater_news": [],
     "watch_and_act": []
   },
   "markets": {
     "AUD/USD": {
       "big_move": false,
-      "change_pct": -0.37,
-      "price": 0.6605
+      "change_pct": -0.49,
+      "price": 0.6597
     },
     "Brent oil": {
       "big_move": false,
-      "change_pct": -4.2,
-      "price": 87.56
+      "change_pct": -4.23,
+      "price": 87.53
     },
     "Gold": {
       "big_move": false,
-      "change_pct": -0.28,
-      "price": 3552.0
+      "change_pct": -0.46,
+      "price": 3545.6
     },
     "VIX": {
       "big_move": false,
@@ -590,9 +606,9 @@
       "Amazon says hackers’ AI agents found and exploited 0-day with little human input - Ars Technica"
     ],
     "airspace": [
-      "Saudi Arabia seeks missile interceptors from allies amid Yemen tensions - Crypto Briefing",
       "Saudi air defenses intercept 209 Houthi aerial threats in two months - Crypto Briefing",
-      "Saudi Arabia partners with South Korea, Ukraine for $3B air defense boost - Crypto Briefing"
+      "Saudi Arabia seeks missile interceptors from allies amid Yemen tensions - Crypto Briefing",
+      "Qatar Airways Operates Limited Flights to and from Doha - https://safariindia.com/"
     ],
     "aviation_halt": [
       "O'Hare Airport under ‘constrained facilities' advisory due to equipment outage - NBC 5 Chicago",
@@ -600,9 +616,9 @@
       "O'Hare Ground Stop: What the Equipment Outage Means for Thanksgiving Travelers - Around Prague"
     ],
     "bank_outage": [
-      "Wall Street slides as Nvidia and AI stocks fall back - CommBank",
       "Gossip account against NAB sparks CEO intervention - Human Resources Director",
-      "NAB fails to silence viral account detailing wild claims - The West Australian"
+      "NAB fails to silence viral account detailing wild claims - The West Australian",
+      "Telstra outage: how long and where else will be affected by the upgrades - The Standard | Warrnambool, VIC"
     ],
     "blood": [
       "Prevent fires, travel smart, and be ready to save a life | Daily Gate City - Keokuk, Iowa - Daily Gate City",
@@ -639,8 +655,8 @@
     ],
     "cyber_ot": [
       "UK operation wards off risk of cyber-attack on supermarket fridges and freezers - The Guardian",
-      "Shop freezers in seven European countries hit by cyber-attack - BBC",
-      "Next Plc’s Supplier Hit by Cyberattack in Latest UK Retail Breach - Insurance Journal"
+      "Next Plc’s Supplier Hit by Cyberattack in Latest UK Retail Breach - Insurance Journal",
+      "Shop freezers in seven European countries hit by cyber-attack - BBC"
     ],
     "cyber_state": [
       "ESET Research: Sandworm behind cyberattack on Poland’s power grid in late 2025 - We Live Security",
@@ -650,12 +666,12 @@
     "cyber_supply": [
       "VMware vCenter Hit by Another Critical 9.8-Rated Auth Bypass Flaw After Zero-Day Exploitation - The Hacker News",
       "Microsoft patches actively exploited vulnerability in Azure API Management - Techzine Global",
-      "Cairn AI agents took over server via zero-day flagged by CISA - Notebookcheck"
+      "CVE-2026-123890: Patching VCenter Zero-Day Is Only Step One - Cyble"
     ],
     "deepfake": [
       "AI-generated fake news, death notices target Belgium as minister seeks EU-level response - Anadolu Ajansı",
-      "China-linked network using AI fakes to smear Taiwan election candidates, BBC Verify finds - BBC",
-      "Rachel Maddow Slams Trump For Posting 'AI Slop' Video Of Her: 'That Is Not Me' - Yahoo News Singapore"
+      "Fake video of BJP president Nitin Nabin: Delhi Police registers case - The Hindu",
+      "Rachel Maddow blasts Trump’s “weird” & “gross” AI deepfake video of her praising him - LGBTQ Nation"
     ],
     "dieoff": [
       "Bihar: Two Sisters Found Dead, Father Questioned - Rediff.com",
@@ -668,6 +684,7 @@
       "KOSPI Plunges 5%, Triggers Sell-Side Circuit Breaker, Drops Below 5,000 - 조선일보"
     ],
     "fuel_au": [
+      "Global disaster misinformation fuels panic-buying at chain stores in several countries - The Straits Times",
       "Australia's Average Vehicle Age Hits 11.54 Years - Wisevoter"
     ],
     "illness": [
@@ -703,7 +720,7 @@
     "sapn": [
       "Another outage coming as crews race to reconnect power grid - Adelaide Now",
       "Adelaide travellers can book Europe for 2027 in the Qatar Airways Black Friday sale - Glam Adelaide",
-      "Weekend Warm-Up: 28-29 November - Motorsport Australia"
+      "Freak storm wipes out ‘once-in-2000-year’ harvest - Adelaide Now"
     ],
     "scams": [
       "Fraud & Digital Identity News – KYC, Scams & Verification - FF News",
@@ -711,9 +728,9 @@
       "Is Digital Lending Ready for the Next Wave of Fraud? - Fintech Singapore"
     ],
     "shipping_attacks": [
+      "Hormuz oil traffic is down 40 percent: Are Iran’s tanker attacks working? - Al Jazeera",
       "IRGC Claims 3 Oil Tankers Hit Mines in Hormuz Under US Escort - https://houseofsaud.com/",
-      "UKMTO says 2 tankers struck in Hormuz, as Iran says ship on fire - The New Arab",
-      "Iran says it struck vessel in Strait of Hormuz — Anadolu Agency - UA.NEWS"
+      "UKMTO says 2 tankers struck in Hormuz, as Iran says ship on fire - The New Arab"
     ],
     "strikes": [
       "Iran Warns of Retaliation if US Forces Attack - ASHARQ AL-AWSAT English",
@@ -728,9 +745,9 @@
       "yes": 5.5
     },
     {
-      "d24h": 0.2,
+      "d24h": 0.3,
       "q": "US-Iran Final Nuclear Deal by December 31, 2026?",
-      "yes": 2.6
+      "yes": 2.7
     },
     {
       "d24h": -1.0,
@@ -758,12 +775,12 @@
       "yes": 12.5
     },
     {
-      "d24h": -0.5,
+      "d24h": -0.4,
       "q": "US-Iran Final Nuclear Deal by November 30, 2026?",
       "yes": 0.5
     },
     {
-      "d24h": 0.1,
+      "d24h": 0.3,
       "q": "Will Russia invade another country in 2026?",
       "yes": 2.5
     },
@@ -808,7 +825,7 @@
       "yes": 2.4
     },
     {
-      "d24h": -1.4,
+      "d24h": -1.3,
       "q": "Ukraine agrees not to join NATO by December 31, 2026?",
       "yes": 1.6
     },
@@ -838,7 +855,7 @@
       "yes": 18.0
     },
     {
-      "d24h": 0.0,
+      "d24h": -1.0,
       "q": "Will Nick Stewart attend a US x Iran diplomatic meeting by December 31, 2026?",
       "yes": 8.0
     }
@@ -1060,9 +1077,19 @@
     },
     {
       "band": "Low",
+      "convergence": "Only one kind of sign is showing (electronic warfare). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
+      "domains": [
+        "Electronic warfare"
+      ],
       "key": "mideast",
-      "score": 0,
-      "trend": "down"
+      "lit": [
+        {
+          "detail": "gps_gulf 30 vs usual 9.0",
+          "name": "GPS jamming spike (Gulf / Israel)"
+        }
+      ],
+      "score": 10,
+      "trend": "up"
     },
     {
       "band": "Low",
@@ -1159,7 +1186,7 @@
           "name": "Flash crash or exchange trading halt"
         },
         {
-          "detail": "Microsoft Blames Software Flaw, Traffic Surge and Reduced Capacity for Global Microsoft 365 Outage",
+          "detail": "Microsoft Declares Code Red After 24-Hour Global Microsoft 365 Outage: 16 outlets compared",
           "name": "Major cloud or AI service outage"
         }
       ],
@@ -1168,7 +1195,7 @@
     }
   ],
   "sectors_relative_5d": {
-    "defence_au": 3.93,
+    "defence_au": 3.9,
     "defence_eu": -1.47,
     "defence_us": 0.84,
     "pandemic": 1.86
@@ -1193,10 +1220,10 @@
   ],
   "tankers": "normal",
   "telecom_drop_pct": {
-    "Aussie Broadband": 0.4,
-    "Optus": 2.9,
+    "Aussie Broadband": 0.1,
+    "Optus": 3.9,
     "TPG": 0.0,
-    "Telstra": 0.3,
+    "Telstra": 0.0,
     "Vodafone": 0.0
   },
   "us_departure_orders": [
