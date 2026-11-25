@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-25T00:21:00Z",
+  "generated_at": "2026-11-25T00:36:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -205,14 +205,25 @@
     },
     {
       "band": "Low",
-      "convergence": "No warning signs are showing. The strongest signs not yet showing: missile / live-fire navigation warnings near taiwan, gps jamming over the taiwan strait and internet disruption in taiwan.",
-      "domains": [],
+      "convergence": "Only one kind of sign is showing (markets). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: missile / live-fire navigation warnings near taiwan, gps jamming over the taiwan strait and internet disruption in taiwan.",
+      "domains": [
+        "Markets"
+      ],
       "key": "taiwan",
-      "lit": [],
+      "lit": [
+        {
+          "detail": "Australian defence stocks +5.2% vs market over 5 days",
+          "domain": "Markets",
+          "id": "def",
+          "name": "Defence stocks outperforming (US / Australia)",
+          "short": "Defence stocks outperforming",
+          "weight": 5
+        }
+      ],
       "name": "Taiwan Strait / South China Sea crisis",
       "sa_impact": "Trade and fuel: most of Australia's refined fuel and many goods pass the South China Sea. A blockade would disrupt fuel, medicines and electronics within weeks; Australian forces could be drawn in.",
-      "score": 0,
-      "trend": "down",
+      "score": 5,
+      "trend": "up",
       "unlit": [
         {
           "domain": "Maritime",
@@ -273,12 +284,6 @@
           "id": "blood",
           "name": "Military blood drives / field hospitals (China / Taiwan)",
           "weight": 10
-        },
-        {
-          "domain": "Markets",
-          "id": "def",
-          "name": "Defence stocks outperforming (US / Australia)",
-          "weight": 5
         },
         {
           "domain": "Cyber",
@@ -705,7 +710,7 @@
       "key": "cyber",
       "lit": [
         {
-          "detail": "Darwin-based accounting firm listed by HYFLOCK ransomware",
+          "detail": "Black Friday cyberattack warning for Australian travel businesses as bookings surge",
           "domain": "Australian incidents",
           "id": "au",
           "name": "Major Australian cyber incident reported",
@@ -782,21 +787,30 @@
       "why": "Large attacks are usually preceded by quieter steps: a surge in newly exploited flaws in VPNs and firewalls (how state groups like Volt Typhoon get in), scanning of industrial-control systems, a rise in ransomware victims in the target country, and official warnings. Before Russia's 2022 invasion, wiper malware hit Ukraine a day ahead; Chinese groups have been found pre-positioned in US and allied infrastructure."
     },
     {
-      "band": "Guarded",
-      "convergence": "Two different kinds of sign are showing together (ai-enabled hacking and cloud services). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, deepfakes of leaders or fake official alerts and flash crash or exchange trading halt.",
+      "band": "Elevated",
+      "convergence": "Signs are converging across 3 separate areas (ai-enabled hacking, cloud services and markets). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: a Chinese state-sponsored group used an AI agent to carry out 80-90% of an attack on about 30 organisations, at thousands of requests per second. A fake AI image of a Pentagon explosion briefly moved US markets in May 2023, and a deepfake video call of a CFO tricked a company into paying US$25 million in 2024. The likely signature of an AI attack is breadth and speed: many unrelated systems and vendors hit at once, synthetic media of officials, and shocks with no clear human cause. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, deepfakes of leaders or fake official alerts and market fear index jumps 25%+ in a day.",
       "domains": [
         "AI-enabled hacking",
-        "Cloud services"
+        "Cloud services",
+        "Markets"
       ],
       "key": "ai",
       "lit": [
         {
-          "detail": "Amazon says hackers’ AI agents found and exploited 0-day with little human input",
+          "detail": "Google says the first autonomous AI cyberattack has happened. Expect a lot more like it.",
           "domain": "AI-enabled hacking",
           "id": "aihack",
           "name": "Reports of AI-driven hacking campaigns",
           "short": "Reports of AI-driven hacking campaigns",
           "weight": 15
+        },
+        {
+          "detail": "Kraken's BTC/CAD market flash crash caused by l...",
+          "domain": "Markets",
+          "id": "flash",
+          "name": "Flash crash or exchange trading halt",
+          "short": "Flash crash or exchange trading halt",
+          "weight": 10
         },
         {
           "detail": "Microsoft Declares Code Red After 24-Hour Global Microsoft 365 Outage: 16 outlets compared",
@@ -809,8 +823,8 @@
       ],
       "name": "AI-enabled attack (non-traditional)",
       "sa_impact": "Not bombs but disruption: hacking at machine speed across banks, telcos, hospitals and the grid at once; fake videos or alerts from leaders causing panic buying or bank runs; or automated market and fraud shocks. Effects would be outages, payment failures and confusion about what is real.",
-      "score": 25,
-      "trend": "steady",
+      "score": 35,
+      "trend": "up",
       "unlit": [
         {
           "domain": "Mass exploitation",
@@ -823,12 +837,6 @@
           "id": "deepfake",
           "name": "Deepfakes of leaders or fake official alerts",
           "weight": 15
-        },
-        {
-          "domain": "Markets",
-          "id": "flash",
-          "name": "Flash crash or exchange trading halt",
-          "weight": 10
         },
         {
           "domain": "Markets",
