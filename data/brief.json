@@ -281,20 +281,19 @@
   ],
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
-    "maritime": "TimeoutError: ",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-25T20:30:00Z",
+  "generated_at": "2026-11-25T20:45:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 62,
-    "Black Sea": 9,
-    "Israel & Eastern Mediterranean": 4,
+    "Baltic / Kaliningrad": 59,
+    "Black Sea": 25,
+    "Israel & Eastern Mediterranean": 6,
     "Korea": 0,
-    "Persian Gulf": 16,
-    "South Australia": 6,
-    "Sydney / NSW": 0,
-    "Taiwan Strait": 2
+    "Persian Gulf": 19,
+    "South Australia": 4,
+    "Sydney / NSW": 2,
+    "Taiwan Strait": 7
   },
   "incidents": [
     {
@@ -390,18 +389,6 @@
     },
     {
       "attack_reported": false,
-      "confirmed": true,
-      "headlines": [
-        "What’s plan B when Microsoft 365 goes down? IT leaders weigh in",
-        "Microsoft invokes 'Code Red' after global Outlook and Microsoft 365 outage",
-        "Microsoft declares code red following historic outage"
-      ],
-      "needs_confirming": false,
-      "severity": "Warning",
-      "target": "Microsoft"
-    },
-    {
-      "attack_reported": false,
       "confirmed": false,
       "headlines": [
         "Another outage coming as crews race to reconnect power grid"
@@ -412,23 +399,43 @@
     },
     {
       "attack_reported": false,
-      "confirmed": true,
+      "confirmed": false,
       "headlines": [
-        "NAB fails to take down former staffer’s ‘untrue’ Instagram whistleblower account",
-        "Inflation rise fails to shake ANZ’s revised rate call"
+        "NAB fails to take down former staffer’s ‘untrue’ Instagram whistleblower account"
       ],
       "needs_confirming": false,
       "severity": "Info",
       "target": "Banking & payments"
+    },
+    {
+      "attack_reported": false,
+      "confirmed": true,
+      "headlines": [
+        "What’s plan B when Microsoft 365 goes down? IT leaders weigh in",
+        "Microsoft invokes 'Code Red' after global Outlook and Microsoft 365 outage"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "Microsoft"
+    },
+    {
+      "attack_reported": false,
+      "confirmed": false,
+      "headlines": [
+        "Japan's PayPay Hit by System Outage; Credit Card Linkage Services Down, No Recovery Timeline"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "Japan's PayPay"
     }
   ],
   "internet_drop_pct": {
     "China": 0.0,
     "Iran": 0.4,
-    "Israel": 0.0,
+    "Israel": 0.2,
     "Russia": 0.0,
     "South Korea": 0.2,
-    "Taiwan": 0.5
+    "Taiwan": 0.6
   },
   "local_sa": {
     "bom": [],
@@ -442,16 +449,16 @@
       "Mount Lofty Ranges": "Moderate / Moderate"
     },
     "fire_danger_ok": true,
-    "fires_active": 10,
+    "fires_active": 11,
     "fuel": {
-      "brent_aud": 135.8,
+      "brent_aud": 135.9,
       "change_pct": 1.6,
       "pump_cents": 1,
-      "week_ago_aud": 133.7
+      "week_ago_aud": 133.8
     },
-    "grid_demand_fall_pct": -2.4,
-    "grid_demand_mw": 1438,
-    "grid_demand_usual_mw": 1274,
+    "grid_demand_fall_pct": 0.8,
+    "grid_demand_mw": 1427,
+    "grid_demand_usual_mw": 1245,
     "grid_lor_level": 0,
     "nearby_incidents": [
       {
@@ -471,26 +478,7 @@
         "pm25": 6
       },
       "air_word": "Good",
-      "days": [
-        {
-          "date": "2026-11-26",
-          "gust": 37,
-          "rain": 0,
-          "tmax": 28
-        },
-        {
-          "date": "2026-11-27",
-          "gust": 44,
-          "rain": 5,
-          "tmax": 25
-        },
-        {
-          "date": "2026-11-28",
-          "gust": 57,
-          "rain": 0,
-          "tmax": 20
-        }
-      ]
+      "days": []
     },
     "possible_blackout": false,
     "power_news": [],
@@ -514,18 +502,18 @@
     },
     "Brent oil": {
       "big_move": false,
-      "change_pct": -0.79,
-      "price": 90.68
+      "change_pct": -0.86,
+      "price": 90.61
     },
     "Gold": {
       "big_move": false,
-      "change_pct": 1.12,
-      "price": 3601.7
+      "change_pct": 1.05,
+      "price": 3599.3
     },
     "VIX": {
       "big_move": false,
-      "change_pct": 6.18,
-      "price": 27.99
+      "change_pct": 8.46,
+      "price": 28.59
     }
   },
   "national_shocks": {
@@ -558,7 +546,7 @@
     "bank_outage": [
       "NAB fails to take down former staffer’s ‘untrue’ Instagram whistleblower account - hrleader.com.au",
       "‘I’d love to take it to court’: NAB’s Instagram antagonist vows not to back down - SMH.com.au",
-      "Gossip account against NAB sparks CEO intervention - Human Resources Director"
+      "Wall Street slides as Nvidia and AI stocks fall back - CommBank"
     ],
     "cables": [
       "Kalypso Offshore Energy Awarded NYSERDA Grant to Develop Subsea Cable Operations & Maintenance Hub in Brooklyn - 01net",
@@ -587,8 +575,8 @@
     ],
     "cyber_ot": [
       "UK operation wards off risk of cyber-attack on supermarket fridges and freezers - The Guardian",
-      "Next Plc’s Supplier Hit by Cyberattack in Latest UK Retail Breach - Insurance Journal",
-      "Refrigeration under cyber attack - Climate Control News"
+      "Shop freezers in seven European countries hit by cyber-attack - BBC",
+      "Next Plc’s Supplier Hit by Cyberattack in Latest UK Retail Breach - Insurance Journal"
     ],
     "cyber_state": [
       "ESET Research: Sandworm behind cyberattack on Poland’s power grid in late 2025 - We Live Security",
@@ -603,7 +591,7 @@
     "deepfake": [
       "Deloitte suspended by WA government after AI report debacle - ABC News & Headlines – Australian Broadcasting Corporation",
       "AI-generated video misleads Sri Lankans after heavy rains inundate Colombo - AFP Fact Check",
-      "Belgian minister seeks EU response to AI-generated fake death notices - Yeni Safak English"
+      "Deepfake detections surge as fraudsters utilize AI, report finds - CFO Dive"
     ],
     "dieoff": [
       "Dead fish raise alarm at Olympic Rowing Center - eKathimerini.com",
@@ -611,8 +599,8 @@
       "Body Found in St. Johns River Near Hart Bridge - Wisevoter"
     ],
     "flash": [
+      "Why has Janus Electric (ASX:JNS) entered a trading halt ahead of a material capital raising? - Kalkine",
       "Jensen Huang's return to Nvidia was a circuit breaker for the market, says Deutsche's Bankim Chadha - CNBC",
-      "Black Pearl Group Enters Voluntary Suspension on ASX Amid NZX Trading Halt - Kalkine",
       "CME E-Mini Options Briefly Paused During Chaotic Opening Session - Bloomberg"
     ],
     "fuel_au": [
@@ -628,7 +616,7 @@
     "masscas": [
       "Cop wrestles patient trying to grab gun in hospital - The Courier Mail",
       "6 hospitalized, including 1 in critical condition, after fire tears through home in Allentown - WFMZ.com",
-      "1 person in critical condition after latest Allentown fire displaces 16 residents [Updated] - The Morning Call"
+      "Ukraine’s blood banking system remains in operation despite war conditions, UW study finds - dailyuw.com"
     ],
     "medshort": [
       "Can Europe fix its chronic medicine shortage and supply chain disruptions? - Yahoo News Australia"
@@ -646,7 +634,7 @@
     "outage_au": [
       "Telstra mobile outage disrupts services across Australia - Australian Cyber Security Magazine",
       "Australia's Optus apologises for outage that disrupted emergency calls - Reuters",
-      "How a nationwide Telstra outage rocked the Australian economy – and what we can learn - The Conversation"
+      "Australia to strengthen telecom networks after new Optus outage - Capacity Media"
     ],
     "reservists": [
       "From service to growth: Israeli nonprofit helps IDF reservists rebuild, sustain their own business - The Jerusalem Post",
@@ -681,7 +669,7 @@
       "yes": 5.5
     },
     {
-      "d24h": 0.4,
+      "d24h": 0.2,
       "q": "US-Iran Final Nuclear Deal by December 31, 2026?",
       "yes": 2.8
     },
@@ -741,7 +729,7 @@
       "yes": 1.6
     },
     {
-      "d24h": 0.2,
+      "d24h": 0.4,
       "q": "Iran-Oman Hormuz Agreement by November 30?",
       "yes": 3.0
     },
@@ -761,7 +749,7 @@
       "yes": 1.4
     },
     {
-      "d24h": -0.6,
+      "d24h": 0.0,
       "q": "NATO/EU troops fighting in Ukraine by December 31, 2026?",
       "yes": 4.0
     },
@@ -791,9 +779,9 @@
       "yes": 18.0
     },
     {
-      "d24h": -0.5,
+      "d24h": 1.5,
       "q": "Will Nick Stewart attend a US x Iran diplomatic meeting by December 31, 2026?",
-      "yes": 8.0
+      "yes": 10.0
     }
   ],
   "quakes_m6_24h": [],
@@ -1142,8 +1130,8 @@
   "sectors_relative_5d": {
     "defence_au": 1.61,
     "defence_eu": 3.63,
-    "defence_us": 4.08,
-    "pandemic": 0.82
+    "defence_us": 4.14,
+    "pandemic": 0.15
   },
   "status_pages": [
     {
@@ -1166,10 +1154,10 @@
   "tankers": "normal",
   "telecom_drop_pct": {
     "Aussie Broadband": 0.4,
-    "Optus": 0.0,
-    "TPG": 0.0,
+    "Optus": 4.1,
+    "TPG": 0.1,
     "Telstra": 0.0,
-    "Vodafone": 4.8
+    "Vodafone": 9.5
   },
   "us_departure_orders": [
     "Belarus"
