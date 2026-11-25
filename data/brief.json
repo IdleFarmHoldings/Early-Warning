@@ -281,18 +281,19 @@
   ],
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
+    "maritime": "TimeoutError: ",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-25T08:54:00Z",
+  "generated_at": "2026-11-25T09:09:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 26,
-    "Black Sea": 40,
-    "Israel & Eastern Mediterranean": 9,
-    "Korea": 0,
-    "Persian Gulf": 29,
-    "South Australia": 3,
-    "Sydney / NSW": 2,
+    "Baltic / Kaliningrad": 24,
+    "Black Sea": 45,
+    "Israel & Eastern Mediterranean": 8,
+    "Korea": 1,
+    "Persian Gulf": 9,
+    "South Australia": 0,
+    "Sydney / NSW": 0,
     "Taiwan Strait": 0
   },
   "incidents": [
@@ -307,6 +308,16 @@
       "needs_confirming": false,
       "severity": "Warning",
       "target": "Banking & payments"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "Services Australia emails reveal chaotic scramble to assess OpenAI breach"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "AI platforms"
     },
     {
       "attack_reported": true,
@@ -330,6 +341,26 @@
     },
     {
       "attack_reported": true,
+      "confirmed": true,
+      "headlines": [
+        "Hacked! GoFundMe confirms data breach, limited PII compromised"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "Hacked"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": true,
+      "headlines": [
+        "Acronis says AI is speeding up cyberattacks across cloud"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "Acronis"
+    },
+    {
+      "attack_reported": true,
       "confirmed": false,
       "headlines": [
         "Merici College shuts down IT systems following a 'potential cyber incident'"
@@ -337,6 +368,17 @@
       "needs_confirming": false,
       "severity": "Info",
       "target": "Merici College"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": true,
+      "headlines": [
+        "China link in CIA data breach? How hackers used AI tool to expose unclassified information - report",
+        "China suspected in AI-powered cyberattack on CIA and US intelligence agencies"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "China"
     },
     {
       "attack_reported": true,
@@ -357,17 +399,6 @@
       "needs_confirming": false,
       "severity": "Info",
       "target": "Hackers Compromise"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": true,
-      "headlines": [
-        "China link in CIA data breach? How hackers used AI tool to expose unclassified information - report",
-        "China suspected in AI-powered cyberattack on CIA and US intelligence agencies"
-      ],
-      "needs_confirming": false,
-      "severity": "Info",
-      "target": "China"
     },
     {
       "attack_reported": true,
@@ -483,16 +514,16 @@
       "Mount Lofty Ranges": "High / Moderate"
     },
     "fire_danger_ok": true,
-    "fires_active": 12,
+    "fires_active": 11,
     "fuel": {
       "brent_aud": 132.9,
-      "change_pct": -1.0,
+      "change_pct": -0.9,
       "pump_cents": -1,
-      "week_ago_aud": 134.2
+      "week_ago_aud": 134.1
     },
-    "grid_demand_fall_pct": 3.5,
-    "grid_demand_mw": 1569,
-    "grid_demand_usual_mw": 1469,
+    "grid_demand_fall_pct": -0.3,
+    "grid_demand_mw": 1631,
+    "grid_demand_usual_mw": 1473,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
@@ -533,30 +564,30 @@
       "Morgan Vale Road, Pine Valley Station: MORGAN MAIL RD Closed due to flooding over road",
       "Pine Valley Road, Pine Valley Station: PINE VALLEY RD Closed due to flooding over road"
     ],
-    "rooftop_pv_mw": 552,
+    "rooftop_pv_mw": 318,
     "sawater_news": [],
     "watch_and_act": []
   },
   "markets": {
     "AUD/USD": {
       "big_move": false,
-      "change_pct": -0.86,
-      "price": 0.6573
+      "change_pct": -0.81,
+      "price": 0.6576
     },
     "Brent oil": {
       "big_move": false,
-      "change_pct": -4.02,
-      "price": 87.73
+      "change_pct": -3.24,
+      "price": 88.44
     },
     "Gold": {
       "big_move": false,
-      "change_pct": 0.05,
-      "price": 3563.8
+      "change_pct": 0.01,
+      "price": 3562.4
     },
     "VIX": {
       "big_move": false,
-      "change_pct": 5.16,
-      "price": 27.72
+      "change_pct": 6.18,
+      "price": 27.99
     }
   },
   "national_shocks": {
@@ -572,14 +603,14 @@
   "nc3": "normal",
   "news_watch": {
     "ai_hack": [
+      "China suspected in AI-powered cyberattack on CIA and US intelligence agencies - Ynetnews",
       "The first autonomous AI cyberattack: why it happened earlier than expected, how agents break Claude, and whether AI can be trusted with bank accounts - dev.ua",
-      "Google says the first autonomous AI cyberattack has happened. Expect a lot more like it. - Mashable",
-      "Hackers Compromise 24 Check Point Management Servers in Suspected AI-Driven Attack Campaign - The Hacker News"
+      "Google says the first autonomous AI cyberattack has happened. Expect a lot more like it. - Mashable"
     ],
     "airspace": [
       "Saudi air defenses intercept 209 Houthi aerial threats in two months - Crypto Briefing",
       "Saudi Arabia seeks missile interceptors from allies amid Yemen tensions - Crypto Briefing",
-      "US Embassy Middle East Security Alert: What You Need to Know - JFeed"
+      "Qatar Airways Operates Limited Flights to and from Doha - https://safariindia.com/"
     ],
     "aviation_halt": [
       "O'Hare Airport under ‘constrained facilities' advisory due to equipment outage - NBC Chicago",
@@ -600,11 +631,6 @@
       "Indo-Pacific Nations Call On Allies to Protect Undersea Cables - National Defense Magazine",
       "Cap-Haitien : Site survey visit to prepare for the arrival of the TAM-1 submarine cable - IciHaiti.com"
     ],
-    "chem": [
-      "US arrears leave chemical weapons watchdog facing budget crisis - Sight Magazine",
-      "Amid politicized debate in US and Israel, Katz warns Iran developing chemical weapons - The Times of Israel",
-      "Katz accuses Iran of developing chemical weapons, seeking to revive nuclear program - Arab News"
-    ],
     "cloud": [
       "Microsoft 365 outage: will your cyber insurance respond? - Clayton Utz",
       "EXCLUSIVE: Microsoft declares 'Code Red' after historic outage, internal memos show - Reuters",
@@ -615,8 +641,8 @@
     ],
     "cyber_attrib": [
       "FBI Warns Hackers Are Using ARTEX AI Tool To Automate Cyberattacks - Forbes",
-      "Spy agency warns active Russian hackers targeting Australian industry - ABC News & Headlines – Australian Broadcasting Corporation",
-      "Australians should prepare for online services to go down unexpectedly as threats rise, cyber agency warns - The Guardian"
+      "FBI warns hackers using AI-powered tool to automate cyberattacks worldwide - Anadolu Ajansı",
+      "Water supply hack warning: FBI says threats are rising - Fox 59"
     ],
     "cyber_au": [
       "Why has Peninsula Energy (ASX:PEN) been suspended from quotation after the Lance cyber incident? - Kalkine",
@@ -635,18 +661,13 @@
     ],
     "cyber_supply": [
       "VMware vCenter Hit by Another Critical 9.8-Rated Auth Bypass Flaw After Zero-Day Exploitation - The Hacker News",
-      "Idunno AntiCsrf, ACN detects active exploitation of CVE-2026-131914 with CVSS 9.3 - Meteora Web",
-      "Microsoft patches actively exploited vulnerability in Azure API Management - Techzine Global"
+      "Microsoft patches actively exploited vulnerability in Azure API Management - Techzine Global",
+      "Cairn AI agents took over server via zero-day flagged by CISA - Notebookcheck"
     ],
     "deepfake": [
+      "China-linked network using AI fakes to smear Taiwan election candidates, BBC Verify finds - BBC",
       "AI-generated fake news, death notices target Belgium as minister seeks EU-level response - Anadolu Ajansı",
-      "Belgian minister seeks EU response to AI-generated fake death notices - Yeni Safak English",
-      "China-linked network using AI fakes to smear Taiwan election candidates, BBC Verify finds - BBC"
-    ],
-    "dieoff": [
-      "Dead fish raise alarm at Olympic Rowing Center - eKathimerini.com",
-      "Mystery remains over penguin deaths after bird flu ruled out - Stuff",
-      "Mass fish deaths force Olympic rowing center to temporarily close - eKathimerini.com"
+      "Belgian minister seeks EU response to AI-generated fake death notices - Yeni Safak English"
     ],
     "flash": [
       "Black Pearl Group Enters Voluntary Suspension on ASX Amid NZX Trading Halt - Kalkine",
@@ -678,9 +699,9 @@
       "Cuba’s National Electric Grid Collapses, Reason Unknown - EnergyNow.com"
     ],
     "outage_au": [
-      "Telstra mobile outage disrupts services across Australia - Australian Cyber Security Magazine",
-      "Australia's Optus apologises for outage that disrupted emergency calls - Reuters",
-      "How a nationwide Telstra outage rocked the Australian economy – and what we can learn - The Conversation"
+      "Calls for 'automatic compensation' following telco outages - ABC News & Headlines – Australian Broadcasting Corporation",
+      "Microsoft ‘deeply sorry’ for global outage, rules out cyberattack and AI - Nine.com.au",
+      "The Microsoft outage is part of a growing trend. This is how to prepare for further disruption - SBS"
     ],
     "reservists": [
       "Plumbers, babysitters, and dog boarding: The reimbursements reservists can claim before year’s end - The Jerusalem Post",
@@ -692,20 +713,10 @@
       "Another outage coming as crews race to reconnect power grid - Adelaide Now",
       "Final four prepare for Adelaide Grand Final clash - Motorsport Australia"
     ],
-    "scams": [
-      "Fraud & Digital Identity News – KYC, Scams & Verification - FF News",
-      "Finmo Adds USDC and USDT Support to Business Accounts - Fintech Singapore",
-      "Is Digital Lending Ready for the Next Wave of Fraud? - Fintech Singapore"
-    ],
     "shipping_attacks": [
       "Hormuz oil traffic is down 40 percent: Are Iran’s tanker attacks working? - Al Jazeera",
       "UKMTO says 2 tankers struck in Hormuz, as Iran says ship on fire - The New Arab",
       "Spoofed AIS Tanker Signal Poses as Iranian Ship at Hormuz - https://houseofsaud.com/"
-    ],
-    "strikes": [
-      "Iran Warns of Retaliation if US Forces Attack - ASHARQ AL-AWSAT English",
-      "NATO fighter jet cleared to shoot down Russian missile over Poland as Warsaw pushes for US troops - Fox News",
-      "Houthi drones target airport, air base in Saudi Arabia - Yeni Safak English"
     ]
   },
   "prediction_markets": [
@@ -740,7 +751,7 @@
       "yes": 1.6
     },
     {
-      "d24h": 0.0,
+      "d24h": -1.0,
       "q": "US-Iran Hormuz Agreement by December 31?",
       "yes": 12.5
     },
@@ -775,7 +786,7 @@
       "yes": 1.6
     },
     {
-      "d24h": -0.9,
+      "d24h": -1.0,
       "q": "Iran-Oman Hormuz Agreement by November 30?",
       "yes": 2.1
     },
@@ -785,9 +796,9 @@
       "yes": 14.5
     },
     {
-      "d24h": 0.2,
+      "d24h": 0.1,
       "q": "NATO x Russia military clash by November 30, 2026?",
-      "yes": 2.4
+      "yes": 2.3
     },
     {
       "d24h": -1.3,
@@ -800,12 +811,12 @@
       "yes": 4.0
     },
     {
-      "d24h": -0.8,
+      "d24h": -0.3,
       "q": "Will Russia test a nuclear weapon by December 31 2026?",
       "yes": 2.2
     },
     {
-      "d24h": -1.0,
+      "d24h": -0.5,
       "q": "Will Russia invade another country by December 31, 2027?",
       "yes": 13.5
     },
@@ -820,9 +831,9 @@
       "yes": 18.0
     },
     {
-      "d24h": -0.5,
+      "d24h": -1.0,
       "q": "Will Nick Stewart attend a US x Iran diplomatic meeting by December 31, 2026?",
-      "yes": 7.5
+      "yes": 7.0
     }
   ],
   "quakes_m6_24h": [
@@ -1143,7 +1154,7 @@
       "key": "ai",
       "lit": [
         {
-          "detail": "The first autonomous AI cyberattack: why it happened earlier than expected, how agents break Claude, and whether AI can be trusted with bank",
+          "detail": "China suspected in AI-powered cyberattack on CIA and US intelligence agencies",
           "name": "Reports of AI-driven hacking campaigns"
         },
         {
@@ -1161,7 +1172,7 @@
   ],
   "sectors_relative_5d": {
     "defence_au": 3.12,
-    "defence_eu": 3.8,
+    "defence_eu": 3.9,
     "defence_us": 0.84,
     "pandemic": 1.86
   },
@@ -1186,9 +1197,9 @@
   "tankers": "normal",
   "telecom_drop_pct": {
     "Aussie Broadband": 0.4,
-    "Optus": 4.0,
+    "Optus": 0.0,
     "TPG": 0.0,
-    "Telstra": 0.3,
+    "Telstra": 0.7,
     "Vodafone": 9.5
   },
   "us_departure_orders": [
