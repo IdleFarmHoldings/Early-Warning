@@ -1,7 +1,13 @@
 {
   "about": "Short form of latest.json + indicators.json for the analysis run. Links and raw samples removed.",
   "acsc": [],
-  "aircraft_flags": {},
+  "aircraft_flags": {
+    "gps_gulf": {
+      "median": 9.5,
+      "status": "ANOMALY",
+      "value": 63
+    }
+  },
   "analyst": {
     "ASPI Strategist": [
       "Solomons treaty locks in a strategic shift towards Australia, away from China",
@@ -285,15 +291,15 @@
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-26T01:20:00Z",
+  "generated_at": "2026-11-26T01:35:00Z",
   "gps_bad_pct": {
     "Baltic / Kaliningrad": null,
-    "Black Sea": null,
-    "Israel & Eastern Mediterranean": 4,
-    "Korea": 1,
-    "Persian Gulf": 22,
-    "South Australia": 2,
-    "Sydney / NSW": 2,
+    "Black Sea": 25,
+    "Israel & Eastern Mediterranean": 5,
+    "Korea": 0,
+    "Persian Gulf": 63,
+    "South Australia": 0,
+    "Sydney / NSW": 1,
     "Taiwan Strait": 0
   },
   "incidents": [
@@ -341,6 +347,26 @@
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
+        "FBI’s criminal database targeted in massive cyber attack"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "FBI"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "Flight Centre probes data breach in booking system, shares fall By Investing.com"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "Flight Centre"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
         "Flight Centre Travel Group Probes Potential Data Breach"
       ],
       "needs_confirming": false,
@@ -351,21 +377,11 @@
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
-        "Flight Centre flags ‘significant’ customer data breach"
+        "Used Todoist for Years? You May Be Involved In a New Data Breach"
       ],
       "needs_confirming": false,
       "severity": "Info",
-      "target": "Flight Centre"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
-        "FBI’s criminal database targeted in massive cyber attack"
-      ],
-      "needs_confirming": false,
-      "severity": "Info",
-      "target": "FBI"
+      "target": "Used Todoist"
     },
     {
       "attack_reported": true,
@@ -412,8 +428,8 @@
       "confirmed": true,
       "headlines": [
         "Microsoft issues 'Code Red' after huge global outage",
-        "Microsoft declares ‘Code Red’ after 24-hour outage disrupts Outlook, Teams and Copilot",
-        "What’s plan B when Microsoft 365 goes down? IT leaders weigh in"
+        "Hackers exploit Microsoft 365 outage",
+        "Microsoft declares ‘Code Red’ after 24-hour outage disrupts Outlook, Teams and Copilot"
       ],
       "needs_confirming": false,
       "severity": "Warning",
@@ -449,11 +465,21 @@
       "needs_confirming": false,
       "severity": "Info",
       "target": "Digital Outages"
+    },
+    {
+      "attack_reported": false,
+      "confirmed": false,
+      "headlines": [
+        "4 Ways to Prep Your Finances Before the Next Tech Outage"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "Other services"
     }
   ],
   "internet_drop_pct": {
-    "China": 0.0,
-    "Iran": 0.8,
+    "China": 0.2,
+    "Iran": 0.7,
     "Israel": 0.0,
     "Russia": 0.0,
     "South Korea": 0.0,
@@ -471,16 +497,16 @@
       "Mount Lofty Ranges": "Moderate / Moderate"
     },
     "fire_danger_ok": true,
-    "fires_active": 13,
+    "fires_active": 12,
     "fuel": {
       "brent_aud": 136.5,
       "change_pct": 2.0,
       "pump_cents": 2,
       "week_ago_aud": 133.8
     },
-    "grid_demand_fall_pct": 2.0,
-    "grid_demand_mw": 830,
-    "grid_demand_usual_mw": 323,
+    "grid_demand_fall_pct": -13.6,
+    "grid_demand_mw": 962,
+    "grid_demand_usual_mw": 317,
     "grid_lor_level": 0,
     "nearby_incidents": [
       {
@@ -531,25 +557,25 @@
       "Morgan Vale Road, Pine Valley Station: MORGAN MAIL RD Closed due to flooding over road",
       "Pine Valley Road, Pine Valley Station: PINE VALLEY RD Closed due to flooding over road"
     ],
-    "rooftop_pv_mw": 1246,
+    "rooftop_pv_mw": 1401,
     "sawater_news": [],
     "watch_and_act": []
   },
   "markets": {
     "AUD/USD": {
       "big_move": false,
-      "change_pct": 0.06,
-      "price": 0.6638
+      "change_pct": -0.01,
+      "price": 0.6633
     },
     "Brent oil": {
       "big_move": false,
-      "change_pct": -0.48,
-      "price": 90.96
+      "change_pct": -0.43,
+      "price": 91.01
     },
     "Gold": {
       "big_move": false,
-      "change_pct": 1.04,
-      "price": 3599.0
+      "change_pct": 1.0,
+      "price": 3597.5
     },
     "VIX": {
       "big_move": false,
@@ -559,8 +585,14 @@
   },
   "national_shocks": {
     "faa": {
-      "airports": 0,
-      "ground_stops": [],
+      "airports": 1,
+      "ground_stops": [
+        {
+          "airport": "MIA",
+          "end": "9:45 pm EST",
+          "reason": "disabled aircraft on the runway"
+        }
+      ],
       "national": false
     },
     "shocks": [],
@@ -572,7 +604,7 @@
     "ai_hack": [
       "Google says the first autonomous AI cyberattack has happened. It won't be the last. - Mashable",
       "AI-powered hacking tools are becoming a new weapon for cybercriminals - Digital Journal",
-      "Dutch ethical hacking group hit by suspected autonomous AI agents - Anadolu Ajansı"
+      "Italy and Switzerland warn of autonomous AI-driven cyberattacks - BleepingComputer"
     ],
     "airspace": [
       "IndiGo Adds Southeast Asia Flights as Westbound Costs Climb - Skift",
@@ -581,8 +613,8 @@
     ],
     "aviation_halt": [
       "FAA chief to testify before Congress following nationwide ground stop - upi",
-      "Letter | Ground stop shows administration's incompetence - The Cap Times",
-      "O'Hare Equipment Outage Triggers Ground Stop on Nov. 24; Refunds Available, but U.S. Law Sets No Fixed Delay Compensation - Avi-Go"
+      "FAA signed off on router replacement just before ground stop, report states - Mashable",
+      "Letter | Ground stop shows administration's incompetence - The Cap Times"
     ],
     "bank_outage": [
       "Wall Street recovers most early losses as pullback in AI stocks eases - CommBank",
@@ -616,7 +648,7 @@
     "cyber_ot": [
       "UK operation wards off risk of cyber-attack on supermarket fridges and freezers - The Guardian",
       "Shop freezers in seven European countries hit by cyber-attack - BBC",
-      "Refrigeration under cyber attack - Climate Control News"
+      "Supermarket freezers and fridges in Europe hit by cyberattack - Nine.com.au"
     ],
     "cyber_state": [
       "ESET Research: Sandworm behind cyberattack on Poland’s power grid in late 2025 - We Live Security",
@@ -635,8 +667,8 @@
     ],
     "dieoff": [
       "Dead fish raise alarm at Olympic Rowing Center - eKathimerini.com",
-      "KWS Takes Action After Mysterious Deaths of 17 Rhinos - Kenyans.co.ke",
-      "Body Found in St. Johns River Near Hart Bridge - Wisevoter"
+      "15% of Peru's Sea Lions Die in Mass Die-Off... 'Strongest El Niño' Cuts Off Food Supply - 아시아경제",
+      "KWS Takes Action After Mysterious Deaths of 17 Rhinos - Kenyans.co.ke"
     ],
     "flash": [
       "Legend Mining Requests Trading Halt Pending Research and Development Claims Announcement - Kalkine",
@@ -672,19 +704,19 @@
       "'Tipping point': Humanitarian crisis in Cuba continues to grow, aid group director says - ABC News - Breaking News, Latest News and Videos"
     ],
     "outage_au": [
-      "Calls for 'automatic compensation' following telco outages - ABC News & Headlines – Australian Broadcasting Corporation",
-      "Microsoft ‘deeply sorry’ for global outage, rules out cyberattack and AI - Nine.com.au",
-      "The Microsoft outage is part of a growing trend. This is how to prepare for further disruption - SBS"
+      "Telstra mobile outage disrupts services across Australia - Australian Cyber Security Magazine",
+      "Australia's Optus apologises for outage that disrupted emergency calls - Reuters",
+      "How a nationwide Telstra outage rocked the Australian economy – and what we can learn - The Conversation"
     ],
     "reservists": [
       "MoD tells 100,000 reservists: be ready for call-up - The Times",
       "MoD prepares veterans to be called up for war - The Telegraph",
-      "From service to growth: Israeli nonprofit helps IDF reservists rebuild, sustain their own business - The Jerusalem Post"
+      "Newspaper headlines: 'Six-day streak \"smashes\" global temperature record' and 'Gord speed' - BBC"
     ],
     "sapn": [
       "Another outage coming as crews race to reconnect power grid - Adelaide Now",
-      "Festivalgoer struck by lightning, locust plague, freak storm causes major blackout - 9Now",
-      "Final four prepare for Adelaide Grand Final clash - Motorsport Australia"
+      "Multimillion-dollar bill to replace Outback power line - InDaily South Australia",
+      "Festivalgoer struck by lightning, locust plague, freak storm causes major blackout - 9Now"
     ],
     "scams": [
       "Retired teacher duped by AI deepfake applauds new Sask. legislation - Yahoo News Canada",
@@ -694,7 +726,7 @@
     "shipping_attacks": [
       "IRGC Claims LNG Carrier Hit Mine in Hormuz as Oil Tankers Catch Fire - https://houseofsaud.com/",
       "Three Sinokor VLCCs hit in latest Strait of Hormuz attacks - Riviera Maritime Media",
-      "Iranian attacks on ships near Strait of Hormuz hit highest level since war began, data shows - The Jerusalem Post"
+      "Iranian attacks in the Strait of Hormuz are at the highest levels since the conflict began - CNN"
     ],
     "strikes": [
       "Ukraine says strike on major Russian air base damaged five military jets - AeroTime",
@@ -779,9 +811,9 @@
       "yes": 11.5
     },
     {
-      "d24h": -0.7,
+      "d24h": -0.6,
       "q": "NATO x Russia military clash by November 30, 2026?",
-      "yes": 1.7
+      "yes": 1.8
     },
     {
       "d24h": -0.2,
@@ -814,9 +846,9 @@
       "yes": 18.0
     },
     {
-      "d24h": -0.5,
+      "d24h": 1.0,
       "q": "Will Nick Stewart attend a US x Iran diplomatic meeting by December 31, 2026?",
-      "yes": 7.5
+      "yes": 9.0
     }
   ],
   "quakes_m6_24h": [],
@@ -1025,9 +1057,19 @@
     },
     {
       "band": "Low",
+      "convergence": "Only one kind of sign is showing (electronic warfare). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
+      "domains": [
+        "Electronic warfare"
+      ],
       "key": "mideast",
-      "score": 0,
-      "trend": "steady"
+      "lit": [
+        {
+          "detail": "gps_gulf 63 vs usual 9.5",
+          "name": "GPS jamming spike (Gulf / Israel)"
+        }
+      ],
+      "score": 10,
+      "trend": "up"
     },
     {
       "band": "Low",
@@ -1159,11 +1201,11 @@
         }
       ],
       "score": 40,
-      "trend": "up"
+      "trend": "steady"
     }
   ],
   "sectors_relative_5d": {
-    "defence_au": 0.43,
+    "defence_au": 0.33,
     "defence_eu": 2.46,
     "defence_us": 0.84,
     "pandemic": 1.86
@@ -1180,8 +1222,8 @@
   ],
   "tankers": "normal",
   "telecom_drop_pct": {
-    "Aussie Broadband": 0.7,
-    "Optus": 0.0,
+    "Aussie Broadband": 0.0,
+    "Optus": 5.2,
     "TPG": 0.0,
     "Telstra": 0.0,
     "Vodafone": 0.0
