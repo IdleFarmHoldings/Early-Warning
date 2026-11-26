@@ -1,7 +1,13 @@
 {
   "about": "Short form of latest.json + indicators.json for the analysis run. Links and raw samples removed.",
   "acsc": [],
-  "aircraft_flags": {},
+  "aircraft_flags": {
+    "gps_gulf": {
+      "median": 6,
+      "status": "ANOMALY",
+      "value": 29
+    }
+  },
   "analyst": {
     "ASPI Strategist": [
       "For its own good, Australia should help strengthen the US nuclear umbrella",
@@ -282,18 +288,17 @@
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
     "internet": "RuntimeError: Iran ping-slash24: TimeoutError: The read operation timed out; Iran bgp: TimeoutError: The read operation ",
-    "maritime": "TimeoutError: ",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output=",
     "telecom": "RuntimeError: Telstra ping-slash24: TimeoutError: The read operation timed out; Telstra bgp: TimeoutError: The read oper"
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-26T13:41:00Z",
+  "generated_at": "2026-11-26T13:57:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 24,
-    "Black Sea": 15,
-    "Israel & Eastern Mediterranean": 0,
+    "Baltic / Kaliningrad": 21,
+    "Black Sea": 23,
+    "Israel & Eastern Mediterranean": 2,
     "Korea": 0,
-    "Persian Gulf": 13,
+    "Persian Gulf": 29,
     "South Australia": null,
     "Sydney / NSW": null,
     "Taiwan Strait": 0
@@ -335,6 +340,16 @@
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
+        "‘Significant’: Flight Centre hit by cyber attack"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "Significant"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
         "Travel giant Flight Centre hit by cyber attack with customer passport details potentially exposed"
       ],
       "needs_confirming": false,
@@ -362,16 +377,6 @@
       "needs_confirming": false,
       "severity": "Info",
       "target": "New Danish"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
-        "‘Significant’: Flight Centre hit by cyber attack"
-      ],
-      "needs_confirming": false,
-      "severity": "Info",
-      "target": "Significant"
     },
     {
       "attack_reported": true,
@@ -407,43 +412,43 @@
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
-        "AI Hackers Target Swiss Electricity and Water Utilities"
-      ],
-      "needs_confirming": false,
-      "severity": "Info",
-      "target": "AI Hackers Target"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": true,
-      "headlines": [
-        "Switzerland Confirms First Cyberattacks Involving AI Agents Against Multiple Organizations"
+        "Switzerland reports first successful AI agent cyberattacks"
       ],
       "needs_confirming": false,
       "severity": "Info",
       "target": "Switzerland"
     },
     {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "[AI Hacking] Two Pillars of U.S. Intelligence Breached, Exposing Limits of U.S. Cyber Defenses Against AI-Driven Attacks"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "AI Hacking"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "CIA was hacked, but what did the attackers actually get?"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "CIA"
+    },
+    {
       "attack_reported": false,
       "confirmed": true,
       "headlines": [
         "Hackers exploit Microsoft 365 outage",
-        "Microsoft Declares Code Red: 24-Hour Outage & NCR Impact",
-        "Microsoft launches ‘Code Red’ overhaul after 24-hour outage exposes engineering flaws"
+        "Microsoft details how state-backed hackers use the ARTEX AI framework to automate cyberattacks",
+        "Microsoft Declares Code Red: 24-Hour Outage & NCR Impact"
       ],
       "needs_confirming": false,
       "severity": "Warning",
       "target": "Microsoft"
-    },
-    {
-      "attack_reported": false,
-      "confirmed": false,
-      "headlines": [
-        "Another outage coming as crews race to reconnect power grid"
-      ],
-      "needs_confirming": false,
-      "severity": "Info",
-      "target": "Power grid"
     },
     {
       "attack_reported": false,
@@ -488,38 +493,19 @@
       "pump_cents": 2,
       "week_ago_aud": 133.8
     },
-    "grid_demand_fall_pct": 2.1,
-    "grid_demand_mw": 1479,
-    "grid_demand_usual_mw": 1369,
+    "grid_demand_fall_pct": 8.7,
+    "grid_demand_mw": 1404,
+    "grid_demand_usual_mw": 1388,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
       "air": {
-        "aqi": 31,
+        "aqi": 32,
         "peak_pm25_48h": 12,
         "pm25": 10
       },
       "air_word": "Good",
-      "days": [
-        {
-          "date": "2026-11-26",
-          "gust": 37,
-          "rain": 0,
-          "tmax": 29
-        },
-        {
-          "date": "2026-11-27",
-          "gust": 35,
-          "rain": 0,
-          "tmax": 28
-        },
-        {
-          "date": "2026-11-28",
-          "gust": 58,
-          "rain": 0,
-          "tmax": 21
-        }
-      ]
+      "days": []
     },
     "possible_blackout": false,
     "power_news": [],
@@ -538,8 +524,8 @@
   "markets": {
     "AUD/USD": {
       "big_move": false,
-      "change_pct": 0.05,
-      "price": 0.6637
+      "change_pct": 0.08,
+      "price": 0.6639
     },
     "Brent oil": {
       "big_move": false,
@@ -548,13 +534,13 @@
     },
     "Gold": {
       "big_move": false,
-      "change_pct": 1.78,
-      "price": 3598.6
+      "change_pct": 1.76,
+      "price": 3598.0
     },
     "VIX": {
       "big_move": false,
-      "change_pct": -4.91,
-      "price": 26.9
+      "change_pct": -4.81,
+      "price": 26.93
     }
   },
   "national_shocks": {
@@ -587,7 +573,7 @@
     "bank_outage": [
       "Wall Street recovers most early losses as pullback in AI stocks eases - CommBank",
       "NAB fails to take down former staffer’s ‘untrue’ Instagram whistleblower account - hrleader.com.au",
-      "Student visa decline ‘damaging universities and economy’ - Research Professional News"
+      "Morning Report - Westpac IQ"
     ],
     "blood": [
       "Defense Min. Meets Vice President of Equatorial Guinea - Sada Elbalad English"
@@ -628,8 +614,8 @@
     ],
     "cyber_supply": [
       "Critical Zero-Day Wave Strikes Hypervisors, Edge Appliances, and AI Medical Imaging + Video - Howl.Link",
-      "VMware fixes third vCenter auth bypass days after patching exploited flaw - iTnews",
-      "1Password Hit by Backend Breach via Hijacked Employee GitHub Account - Infosecurity Magazine"
+      "1Password Hit by Backend Breach via Hijacked Employee GitHub Account - Infosecurity Magazine",
+      "CISA Warns of 10 Actively Exploited Vulnerabilities in Juniper, Mitel, Danfoss, and Vates Products - GBHackers News"
     ],
     "deepfake": [
       "Video of Trump slamming Papua New Guinea's politicians is an AI-fake - www.aap.com.au",
@@ -652,14 +638,14 @@
     "gulf_strikes": [
       "Houthis target Saudi Arabia’s Red Sea ports as strikes escalate - Al Jazeera",
       "Powerful Explosions Reported in Riyadh following Yemeni Missile Attack - تسنیم",
+      "Houthis Claim Attack on Saudi Ras Tanura Refinery - The Defense Post",
       "Saudis say they intercepted Houthi drone near key port in Jeddah - The Times of Israel",
-      "Saudi Coalition Intercepts 2 Houthi Ballistic Missiles Targeting Riyadh - https://houseofsaud.com/",
-      "Saudi-led coalition intercepts 2 Houthi ballistic missiles launched toward Riyadh - Anadolu Ajansı"
+      "Houthi Attacks Gut Riyadh’s Peak Season - Skift"
     ],
     "illness": [
       "Mystery illness causes mass hospitalisation of runners - The Nightly",
       "Dr. Siegel on measles comeback, mystery illness outbreak on cruise ship - Fox News",
-      "Zayn Malik hospitalised with mystery illness, forced to cancel upcoming appearances on album release week - Nine.com.au"
+      "148 aboard Florida-bound cruise ship sickened by ‘unknown’ GI outbreak: CDC - The Hill"
     ],
     "masscas": [
       "15 hospitalized after possible food poisoning during Thanksgiving luncheon at Doral medical center headquarters - CBS News",
@@ -684,9 +670,9 @@
       "Chainsaw damage on a GRIDCo line and ECG upgrades cut power in Kumasi and Accra - 3News"
     ],
     "outage_au": [
-      "Calls for 'automatic compensation' following telco outages - ABC News & Headlines – Australian Broadcasting Corporation",
-      "Microsoft ‘deeply sorry’ for global outage, rules out cyberattack and AI - Nine.com.au",
-      "The Microsoft outage is part of a growing trend. This is how to prepare for further disruption - SBS"
+      "Telstra mobile outage disrupts services across Australia - Australian Cyber Security Magazine",
+      "Australia's Optus apologises for outage that disrupted emergency calls - Reuters",
+      "How a nationwide Telstra outage rocked the Australian economy – and what we can learn - The Conversation"
     ],
     "reservists": [
       "MoD prepares veterans for war - The Telegraph",
@@ -714,8 +700,8 @@
       "Ukraine says strike on major Russian air base damaged five military jets - AeroTime",
       "Iran Warns of Retaliation if US Forces Attack - ASHARQ AL-AWSAT English",
       "Ukraine says it struck a major Russian air base, damaging five planes - Arab News",
-      "Ukraine hits Marinovka air base, home to Russia's Su-34 bombers, with Neptune missiles - RBC-Ukraine",
-      "What is Savasleyka air base? The Russian home of Kinzhal-carrying MiG-31s that Ukraine says it hit - Nacionale"
+      "Ukrainian Neptunes Attacked Marinovka Air Base, Which Housed Russian Su-34s - Мілітарний",
+      "Ukraine hits Marinovka air base, home to Russia's Su-34 bombers, with Neptune missiles - RBC-Ukraine"
     ]
   },
   "prediction_markets": [
@@ -725,9 +711,9 @@
       "yes": 5.5
     },
     {
-      "d24h": 0.8,
+      "d24h": 0.7,
       "q": "US-Iran Final Nuclear Deal by December 31, 2026?",
-      "yes": 3.3
+      "yes": 3.4
     },
     {
       "d24h": -1.0,
@@ -741,7 +727,7 @@
     },
     {
       "d24h": -0.7,
-      "q": "US-Iran Hormuz Agreement by November 30?",
+      "q": "US-Iran Hormuz Agreement by November 30, 2026?",
       "yes": 2.7
     },
     {
@@ -751,7 +737,7 @@
     },
     {
       "d24h": 0.0,
-      "q": "US-Iran Hormuz Agreement by December 31?",
+      "q": "US-Iran Hormuz Agreement by December 31, 2026?",
       "yes": 12.5
     },
     {
@@ -805,14 +791,14 @@
       "yes": 3.4
     },
     {
-      "d24h": 0.0,
+      "d24h": -0.5,
       "q": "NATO/EU troops fighting in Ukraine by December 31, 2026?",
-      "yes": 4.0
+      "yes": 3.5
     },
     {
-      "d24h": 0.5,
+      "d24h": 0.6,
       "q": "Will Russia test a nuclear weapon by December 31 2026?",
-      "yes": 2.2
+      "yes": 2.3
     },
     {
       "d24h": 1.0,
@@ -830,9 +816,9 @@
       "yes": 18.0
     },
     {
-      "d24h": -2.0,
+      "d24h": -0.5,
       "q": "Will Nick Stewart attend a US x Iran diplomatic meeting by December 31, 2026?",
-      "yes": 6.0
+      "yes": 7.0
     }
   ],
   "quakes_m6_24h": [],
@@ -1051,9 +1037,19 @@
     },
     {
       "band": "Low",
+      "convergence": "Only one kind of sign is showing (electronic warfare). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
+      "domains": [
+        "Electronic warfare"
+      ],
       "key": "mideast",
-      "score": 0,
-      "trend": "steady"
+      "lit": [
+        {
+          "detail": "gps_gulf 29 vs usual 6",
+          "name": "GPS jamming spike (Gulf / Israel)"
+        }
+      ],
+      "score": 10,
+      "trend": "up"
     },
     {
       "band": "Low",
@@ -1176,7 +1172,7 @@
   ],
   "sectors_relative_5d": {
     "defence_au": -0.38,
-    "defence_eu": 3.82,
+    "defence_eu": 3.75,
     "defence_us": 4.21,
     "pandemic": 0.09
   },
