@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-26T07:13:00Z",
+  "generated_at": "2026-11-26T07:29:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -108,7 +108,7 @@
       "key": "mideast",
       "lit": [
         {
-          "detail": "gps_gulf 42 vs usual 9.0",
+          "detail": "gps_gulf 37 vs usual 8.0",
           "domain": "Electronic warfare",
           "id": "gps",
           "name": "GPS jamming spike (Gulf / Israel)",
@@ -381,26 +381,15 @@
       "why": "North Korean missile launches are often preceded by navigation warnings; South Korea and Japan report GPS jamming from the North during tense periods."
     },
     {
-      "band": "Guarded",
-      "convergence": "Only one kind of sign is showing (mobilisation). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and us nuclear command aircraft unusual.",
-      "domains": [
-        "Mobilisation"
-      ],
+      "band": "Low",
+      "convergence": "No warning signs are showing. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and mobilisation / reservist reports (russia / nato).",
+      "domains": [],
       "key": "russia",
-      "lit": [
-        {
-          "detail": "Russia conducts covert general mobilization amid massive military losses – The Telegraph",
-          "domain": "Mobilisation",
-          "id": "mob",
-          "name": "Mobilisation / reservist reports (Russia / NATO)",
-          "short": "Mobilisation / reservist reports",
-          "weight": 15
-        }
-      ],
+      "lit": [],
       "name": "Russia-NATO escalation",
       "sa_impact": "Indirect: energy and market shock, cyber attacks that can spill over to Australian systems, and nuclear-risk rhetoric.",
-      "score": 15,
-      "trend": "steady",
+      "score": 0,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Electronic warfare",
@@ -412,6 +401,12 @@
           "domain": "Military air",
           "id": "air",
           "name": "Unusual military air activity (Eastern Europe)",
+          "weight": 15
+        },
+        {
+          "domain": "Mobilisation",
+          "id": "mob",
+          "name": "Mobilisation / reservist reports (Russia / NATO)",
           "weight": 15
         },
         {
@@ -490,26 +485,15 @@
       "why": "Before February 2022: embassy departures, mobilisation reports, airspace closures and a surge in GPS jamming. Baltic and Black Sea jamming is now routine, so only spikes above normal count."
     },
     {
-      "band": "Guarded",
-      "convergence": "Only one kind of sign is showing (mobilisation). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: us nuclear command aircraft unusual, private jets heading to retreat destinations and forecast markets jump on nuclear use.",
-      "domains": [
-        "Mobilisation"
-      ],
+      "band": "Low",
+      "convergence": "No warning signs are showing. The strongest signs not yet showing: us nuclear command aircraft unusual, private jets heading to retreat destinations and mobilisation reports (any major power).",
+      "domains": [],
       "key": "nuclear",
-      "lit": [
-        {
-          "detail": "Russia conducts covert general mobilization amid massive military losses – The Telegraph",
-          "domain": "Mobilisation",
-          "id": "mob",
-          "name": "Mobilisation reports (any major power)",
-          "short": "Mobilisation reports",
-          "weight": 15
-        }
-      ],
+      "lit": [],
       "name": "Nuclear use or alert",
       "sa_impact": "Fallout risk to SA from a northern-hemisphere exchange is very low, but global trade, fuel and finance would be severely disrupted.",
-      "score": 15,
-      "trend": "steady",
+      "score": 0,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Nuclear command",
@@ -546,6 +530,12 @@
           "id": "gold",
           "name": "Gold up 4%+ in a day",
           "weight": 10
+        },
+        {
+          "domain": "Mobilisation",
+          "id": "mob",
+          "name": "Mobilisation reports (any major power)",
+          "weight": 15
         },
         {
           "domain": "Prediction markets",
@@ -682,7 +672,7 @@
       "name": "Pandemic, biological or chemical emergency",
       "sa_impact": "Health system strain, possible lockdowns and border closures, and shortages of medicines and protective equipment, which Australia mostly imports.",
       "score": 60,
-      "trend": "up",
+      "trend": "steady",
       "unlit": [
         {
           "domain": "Trade",
@@ -849,7 +839,7 @@
       "name": "AI-enabled attack (non-traditional)",
       "sa_impact": "Not bombs but disruption: hacking at machine speed across banks, telcos, hospitals and the grid at once; fake videos or alerts from leaders causing panic buying or bank runs; or automated market and fraud shocks. Effects would be outages, payment failures and confusion about what is real.",
       "score": 40,
-      "trend": "up",
+      "trend": "steady",
       "unlit": [
         {
           "domain": "Mass exploitation",
