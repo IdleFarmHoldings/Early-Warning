@@ -1,13 +1,7 @@
 {
   "about": "Short form of latest.json + indicators.json for the analysis run. Links and raw samples removed.",
   "acsc": [],
-  "aircraft_flags": {
-    "gps_gulf": {
-      "median": 6.0,
-      "status": "ANOMALY",
-      "value": 21
-    }
-  },
+  "aircraft_flags": {},
   "analyst": {
     "ASPI Strategist": [
       "For its own good, Australia should help strengthen the US nuclear umbrella",
@@ -290,16 +284,16 @@
     "internet": "RuntimeError: Iran ping-slash24: TimeoutError: The read operation timed out; Iran bgp: TimeoutError: The read operation ",
     "maritime": "TimeoutError: ",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output=",
-    "telecom": "RuntimeError: Telstra ping-slash24: TimeoutError: The read operation timed out; Telstra bgp: HTTPError: HTTP Error 500: "
+    "telecom": "RuntimeError: Telstra ping-slash24: TimeoutError: The read operation timed out; Telstra bgp: TimeoutError: The read oper"
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-26T14:39:00Z",
+  "generated_at": "2026-11-26T14:54:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 24,
-    "Black Sea": 30,
-    "Israel & Eastern Mediterranean": 3,
+    "Baltic / Kaliningrad": 28,
+    "Black Sea": 13,
+    "Israel & Eastern Mediterranean": 1,
     "Korea": 0,
-    "Persian Gulf": 21,
+    "Persian Gulf": 11,
     "South Australia": null,
     "Sydney / NSW": null,
     "Taiwan Strait": 0
@@ -310,8 +304,7 @@
       "confirmed": true,
       "headlines": [
         "Flight Centre investigates data breach affecting customer records in Australia",
-        "Flight Centre investigating mass cyber breach",
-        "Flight Centre probes data breach of third-party booking system"
+        "Flight Centre investigating mass cyber breach"
       ],
       "needs_confirming": false,
       "severity": "Info",
@@ -359,18 +352,6 @@
     },
     {
       "attack_reported": true,
-      "confirmed": true,
-      "headlines": [
-        "AI agents used in five cyber attacks in Switzerland, government says",
-        "1Password Hit by Backend Breach via Hijacked Employee GitHub Account",
-        "US student visa rule struck down: Relief for Indians, but what next?"
-      ],
-      "needs_confirming": false,
-      "severity": "Info",
-      "target": "Other services"
-    },
-    {
-      "attack_reported": true,
       "confirmed": false,
       "headlines": [
         "New Danish data breach hits 11,000 despite security upgrades"
@@ -378,6 +359,16 @@
       "needs_confirming": false,
       "severity": "Info",
       "target": "New Danish"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "Wyoming uranium operation shuts down after cyberattack"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "Wyoming"
     },
     {
       "attack_reported": true,
@@ -391,13 +382,13 @@
     },
     {
       "attack_reported": true,
-      "confirmed": false,
+      "confirmed": true,
       "headlines": [
-        "Hackers Actively Exploit Critical Drupal Vulnerability to Take Over Websites"
+        "AI agents used in five cyber attacks in Switzerland, government says"
       ],
       "needs_confirming": false,
       "severity": "Info",
-      "target": "Hackers Actively Exploit"
+      "target": "Other services"
     },
     {
       "attack_reported": true,
@@ -450,16 +441,6 @@
       "needs_confirming": false,
       "severity": "Info",
       "target": "South Australia"
-    },
-    {
-      "attack_reported": false,
-      "confirmed": false,
-      "headlines": [
-        "F-1 Student Visa Rules: Cap Struck Down, CPT Restrictions Temporarily Blocked"
-      ],
-      "needs_confirming": false,
-      "severity": "Info",
-      "target": "F-1 Student Visa"
     }
   ],
   "internet_drop_pct": {},
@@ -479,19 +460,19 @@
     "fire_danger_ok": true,
     "fires_active": 11,
     "fuel": {
-      "brent_aud": 137.0,
-      "change_pct": 2.4,
+      "brent_aud": 137.1,
+      "change_pct": 2.5,
       "pump_cents": 2,
       "week_ago_aud": 133.8
     },
-    "grid_demand_fall_pct": -6.5,
-    "grid_demand_mw": 1518,
-    "grid_demand_usual_mw": 1393,
+    "grid_demand_fall_pct": 0.7,
+    "grid_demand_mw": 1511,
+    "grid_demand_usual_mw": 1372,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
       "air": {
-        "aqi": 32,
+        "aqi": 33,
         "peak_pm25_48h": 12,
         "pm25": 10
       },
@@ -534,23 +515,23 @@
   "markets": {
     "AUD/USD": {
       "big_move": false,
-      "change_pct": 0.12,
-      "price": 0.6642
+      "change_pct": 0.11,
+      "price": 0.6641
     },
     "Brent oil": {
       "big_move": false,
-      "change_pct": -3.31,
-      "price": 91.48
+      "change_pct": -3.32,
+      "price": 91.47
     },
     "Gold": {
       "big_move": false,
-      "change_pct": 1.85,
-      "price": 3601.1
+      "change_pct": 1.95,
+      "price": 3604.7
     },
     "VIX": {
       "big_move": false,
-      "change_pct": -3.99,
-      "price": 27.16
+      "change_pct": -4.52,
+      "price": 27.01
     }
   },
   "national_shocks": {
@@ -575,27 +556,13 @@
       "Qatar Airways Operates Limited Flights to and from Doha - https://safariindia.com/",
       "US advises citizens to leave Iran immediately amid growing security risks - Zoom News"
     ],
-    "aviation_halt": [
-      "Miami Airport Issues Ground Stop After FedEx Plane Overshoots Runway - The Weekly Times",
-      "FedEx cargo plane runs off Miami International Airport runway, causing ground stop during Thanksgiving travel - CBS News",
-      "FedEx MD-11 overruns runway at Miami airport, triggering ground stop - AeroTime"
-    ],
-    "bank_outage": [
-      "Wall Street recovers most early losses as pullback in AI stocks eases - CommBank",
-      "NAB fails to take down former staffer’s ‘untrue’ Instagram whistleblower account - hrleader.com.au",
-      "Morning Report - Westpac IQ"
-    ],
     "blood": [
       "Defense Min. Meets Vice President of Equatorial Guinea - Sada Elbalad English"
-    ],
-    "cables": [
-      "Kalypso Offshore Energy Awarded NYSERDA Grant to Develop Subsea Cable Operations & Maintenance Hub in Brooklyn - 01net",
-      "Viettel-Singtel consortium breaks ground on submarine cable linking Vietnam, Thailand and Singapore - Theinvestor"
     ],
     "chem": [
       "OPCW takes key step towards designation of laboratories for biotoxin analysis - OPCW",
       "MND releases video on its X account urging Japan to fulfill its chemical weapons obligations - China Daily",
-      "Embassy of Ukraine welcomes Spain’s rejection of Russia’s use of chemical weapons - thediplomatinspain.com"
+      "Araghchi: Israel’s chemical weapons claims aim to drag US into another war - Middle East Monitor"
     ],
     "cloud": [
       "Microsoft issues 'Code Red' after huge global outage - Information Age | ACS",
@@ -617,14 +584,14 @@
       "Shop freezers in seven European countries hit by cyber-attack - BBC",
       "Supermarket freezers and fridges in Europe hit by cyberattack - Nine.com.au"
     ],
-    "cyber_supply": [
-      "Critical Zero-Day Wave Strikes Hypervisors, Edge Appliances, and AI Medical Imaging + Video - Howl.Link",
-      "1Password Hit by Backend Breach via Hijacked Employee GitHub Account - Infosecurity Magazine",
-      "CISA Warns of 10 Actively Exploited Vulnerabilities in Juniper, Mitel, Danfoss, and Vates Products - GBHackers News"
+    "cyber_state": [
+      "ESET Research: Sandworm behind cyberattack on Poland’s power grid in late 2025 - We Live Security",
+      "ESET attributes DynoWiper-powered attack on Poland’s power grid to Russia-aligned Sandworm group - Industrial Cyber",
+      "Russian state hackers likely behind wiper malware attack on Poland’s power grid - The Record from Recorded Future News"
     ],
     "deepfake": [
       "Video of Trump slamming Papua New Guinea's politicians is an AI-fake - www.aap.com.au",
-      "Deloitte banned after AI-generated government report exposed - 7NEWS",
+      "Deloitte Banned by WA Government Over AI-Generated Report Errors - OECD AI Policy Observatory",
       "Taiwan ruling party candidate targeted by AI-generated image before elections - AFP Fact Check"
     ],
     "dieoff": [
@@ -633,7 +600,7 @@
     "flash": [
       "TerraCom Limited Enters Trading Halt Ahead of Board Composition Announcement Following AGM Vote - Kalkine",
       "Toppoint Q3 Earnings Show Narrower Loss Amid Trading Halt Concerns - Yahoo Finance",
-      "Legend Mining Requests Trading Halt Pending Research and Development Claims Announcement - Kalkine"
+      "Crypto's Thanksgiving Reckoning: $3,000 Split Across Bitcoin, Dogecoin and Ether Now Worth About $1,565 - BigGo Finance"
     ],
     "fuel_au": [
       "The Refill Gap: Australia’s Fuel Reserve and the Test of Strategic Endurance - Australian Institute of International Affairs",
@@ -647,10 +614,15 @@
       "Houthi Attacks Gut Riyadh’s Peak Season - Skift",
       "Saudi downs Houthi missiles, drones as attacks continue - Quantum Commodity Intelligence"
     ],
+    "illness": [
+      "Mystery illness causes mass hospitalisation of runners - The Nightly",
+      "Dr. Siegel on measles comeback, mystery illness outbreak on cruise ship - Fox News",
+      "Zayn Malik hospitalised with mystery illness, forced to cancel upcoming appearances on album release week - Nine.com.au"
+    ],
     "masscas": [
+      "Cop wrestles patient trying to grab gun in hospital - The Daily Telegraph",
       "15 hospitalized after possible food poisoning during Thanksgiving luncheon at Doral medical center headquarters - CBS News",
-      "18 sick after possible food poisoning during luncheon at Leon Medical HQ; patients not affected - NBC 6 South Florida",
-      "Cop wrestles patient trying to grab gun in hospital - The Daily Telegraph"
+      "18 sick after possible food poisoning during luncheon at Leon Medical HQ; patients not affected - NBC 6 South Florida"
     ],
     "medexport": [
       "European Parliament approves Critical Medicines Act to expand EU drug production - CEO Magazyn"
@@ -668,6 +640,11 @@
       "Inside the ‘Black Sky’ plans for a nationwide blackout - Herald.Wales",
       "Cuba’s National Electric Grid Collapses, Reason Unknown - EnergyNow.com",
       "Chainsaw damage on a GRIDCo line and ECG upgrades cut power in Kumasi and Accra - 3News"
+    ],
+    "outage_au": [
+      "Telstra mobile outage disrupts services across Australia - Australian Cyber Security Magazine",
+      "Australia's Optus apologises for outage that disrupted emergency calls - Reuters",
+      "How a nationwide Telstra outage rocked the Australian economy – and what we can learn - The Conversation"
     ],
     "reservists": [
       "MoD prepares veterans for war - The Telegraph",
@@ -693,8 +670,8 @@
     ],
     "strikes": [
       "Ukraine says strike on major Russian air base damaged five military jets - AeroTime",
-      "Iran Warns of Retaliation if US Forces Attack - ASHARQ AL-AWSAT English",
       "Ukrainian Neptunes Attacked Marinovka Air Base, Which Housed Russian Su-34s - Мілітарний",
+      "Iran Warns of Retaliation if US Forces Attack - ASHARQ AL-AWSAT English",
       "Ukraine says it struck a major Russian air base, damaging five planes - Arab News",
       "Multiple Russian jets damaged during strike at major military air base, Ukraine says - The Independent"
     ]
@@ -708,7 +685,7 @@
     {
       "d24h": 0.6,
       "q": "US-Iran Final Nuclear Deal by December 31, 2026?",
-      "yes": 3.3
+      "yes": 3.4
     },
     {
       "d24h": -1.0,
@@ -736,7 +713,7 @@
       "yes": 12.5
     },
     {
-      "d24h": -0.6,
+      "d24h": -0.5,
       "q": "US-Iran Final Nuclear Deal by November 30, 2026?",
       "yes": 0.4
     },
@@ -778,7 +755,7 @@
     {
       "d24h": -0.5,
       "q": "NATO x Russia military clash by November 30, 2026?",
-      "yes": 1.6
+      "yes": 1.5
     },
     {
       "d24h": 2.0,
@@ -811,9 +788,9 @@
       "yes": 18.0
     },
     {
-      "d24h": -2.0,
+      "d24h": 1.5,
       "q": "Will Nick Stewart attend a US x Iran diplomatic meeting by December 31, 2026?",
-      "yes": 7.5
+      "yes": 9.5
     }
   ],
   "quakes_m6_24h": [],
@@ -1032,19 +1009,9 @@
     },
     {
       "band": "Low",
-      "convergence": "Only one kind of sign is showing (electronic warfare). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
-      "domains": [
-        "Electronic warfare"
-      ],
       "key": "mideast",
-      "lit": [
-        {
-          "detail": "gps_gulf 21 vs usual 6.0",
-          "name": "GPS jamming spike (Gulf / Israel)"
-        }
-      ],
-      "score": 10,
-      "trend": "up"
+      "score": 0,
+      "trend": "down"
     },
     {
       "band": "Low",
@@ -1167,7 +1134,7 @@
   ],
   "sectors_relative_5d": {
     "defence_au": -0.38,
-    "defence_eu": 3.57,
+    "defence_eu": 3.71,
     "defence_us": 4.21,
     "pandemic": 0.09
   },
