@@ -3,9 +3,9 @@
   "acsc": [],
   "aircraft_flags": {
     "gps_gulf": {
-      "median": 9.0,
+      "median": 9,
       "status": "ANOMALY",
-      "value": 67
+      "value": 39
     }
   },
   "analyst": {
@@ -290,38 +290,38 @@
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-26T03:22:00Z",
+  "generated_at": "2026-11-26T03:37:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": null,
-    "Black Sea": 69,
-    "Israel & Eastern Mediterranean": 3,
+    "Baltic / Kaliningrad": 76,
+    "Black Sea": 57,
+    "Israel & Eastern Mediterranean": 0,
     "Korea": 0,
-    "Persian Gulf": 67,
-    "South Australia": 6,
-    "Sydney / NSW": 6,
-    "Taiwan Strait": 0
+    "Persian Gulf": 39,
+    "South Australia": 2,
+    "Sydney / NSW": 3,
+    "Taiwan Strait": 1
   },
   "incidents": [
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "‘Significant’: Flight Centre hit by cyber attack"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "Significant"
+    },
     {
       "attack_reported": true,
       "confirmed": true,
       "headlines": [
         "Flight Centre probes data breach of third-party booking system",
-        "Flight Centre flags ‘significant’ customer data breach"
+        "Flight Centre probes data breach in booking system, shares fall By Investing.com"
       ],
       "needs_confirming": false,
       "severity": "Info",
       "target": "Flight Centre"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
-        "What Flight Centre customers must do now after cyber attack hits passport and personal data"
-      ],
-      "needs_confirming": false,
-      "severity": "Info",
-      "target": "What Flight Centre"
     },
     {
       "attack_reported": true,
@@ -332,6 +332,16 @@
       "needs_confirming": false,
       "severity": "Info",
       "target": "Australia's Flight Centre"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "What Flight Centre customers must do now after cyber attack hits passport and personal data"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "What Flight Centre"
     },
     {
       "attack_reported": true,
@@ -352,16 +362,6 @@
       "needs_confirming": false,
       "severity": "Info",
       "target": "FBI"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
-        "Retailers face rising AI cyberattack threat ahead of Black Friday, many uninsured"
-      ],
-      "needs_confirming": false,
-      "severity": "Info",
-      "target": "Retailers"
     },
     {
       "attack_reported": true,
@@ -427,10 +427,9 @@
     },
     {
       "attack_reported": false,
-      "confirmed": true,
+      "confirmed": false,
       "headlines": [
-        "NAB fails to take down former staffer’s ‘untrue’ Instagram whistleblower account",
-        "Inflation rise fails to shake ANZ’s revised rate call"
+        "NAB fails to take down former staffer’s ‘untrue’ Instagram whistleblower account"
       ],
       "needs_confirming": false,
       "severity": "Info",
@@ -440,15 +439,26 @@
       "attack_reported": false,
       "confirmed": false,
       "headlines": [
-        "Japan's PayPay Hit by System Outage; Credit Card Linkage Services Down, No Recovery Timeline"
+        "Digital Outages and Business Continuity"
       ],
       "needs_confirming": false,
       "severity": "Info",
-      "target": "Japan's PayPay"
+      "target": "Digital Outages"
+    },
+    {
+      "attack_reported": false,
+      "confirmed": true,
+      "headlines": [
+        "US student visa rule struck down: Relief for Indians, but what next?",
+        "4 Ways to Prep Your Finances Before the Next Tech Outage"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "Other services"
     }
   ],
   "internet_drop_pct": {
-    "China": 0.7,
+    "China": 0.6,
     "Iran": 0.7,
     "Israel": 0.0,
     "Russia": 0.0,
@@ -474,9 +484,9 @@
       "pump_cents": 2,
       "week_ago_aud": 133.8
     },
-    "grid_demand_fall_pct": -4.7,
-    "grid_demand_mw": 804,
-    "grid_demand_usual_mw": 245,
+    "grid_demand_fall_pct": -17.5,
+    "grid_demand_mw": 944,
+    "grid_demand_usual_mw": 264,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
@@ -517,25 +527,25 @@
       "Morgan Vale Road, Pine Valley Station: MORGAN MAIL RD Closed due to flooding over road",
       "Pine Valley Road, Pine Valley Station: PINE VALLEY RD Closed due to flooding over road"
     ],
-    "rooftop_pv_mw": 1520,
+    "rooftop_pv_mw": 1498,
     "sawater_news": [],
     "watch_and_act": []
   },
   "markets": {
     "AUD/USD": {
       "big_move": false,
-      "change_pct": 0.09,
-      "price": 0.664
+      "change_pct": 0.14,
+      "price": 0.6643
     },
     "Brent oil": {
       "big_move": false,
-      "change_pct": -4.02,
-      "price": 90.81
+      "change_pct": -3.76,
+      "price": 91.05
     },
     "Gold": {
       "big_move": false,
-      "change_pct": 2.05,
-      "price": 3608.4
+      "change_pct": 1.99,
+      "price": 3606.0
     },
     "VIX": {
       "big_move": false,
@@ -572,9 +582,9 @@
       "Iran, US-Israel War Live Updates | US announces civilian nuclear deal with Saudi Arabia: Report - Deccan Herald"
     ],
     "aviation_halt": [
+      "FedEx plane overshoots Miami runway, causing temporary ground stop at airport - BBC",
       "Timeline of the FAA nationwide ground stop: How it developed - ABC News - Breaking News, Latest News and Videos",
-      "FedEx McDonnell Douglas MD-11 Overshoots Runway In Miami, Triggers Ground Stop - Simple Flying",
-      "FAA orders ground stop for Miami-bound flights after FedEx cargo plane goes off runway - CBS News"
+      "FAA orders ground stop in Miami after cargo plane goes off runway - newscentermaine.com"
     ],
     "bank_outage": [
       "Wall Street recovers most early losses as pullback in AI stocks eases - CommBank",
@@ -596,14 +606,14 @@
       "Microsoft Overhauls Its Outage Response Plan After Major Outlook Problems - PCMag Middle East"
     ],
     "cyber_attrib": [
-      "FBI Warns Hackers Are Using ARTEX AI Tool To Automate Cyberattacks - Forbes",
-      "Spy agency warns active Russian hackers targeting Australian industry - ABC News & Headlines – Australian Broadcasting Corporation",
-      "Busted! Alleged Aussie hackers linked to TeamPCP arrested in joint AFP-FBI-WAPF operation - Cyber Daily"
+      "Trump blames Minnesota governor, not Iran, for cyberattacks on the state's water systems - ABC News - Breaking News, Latest News and Videos",
+      "FBI warns hackers weaponizing ARTEX AI framework to automate attacks on energy, manufacturing, telecom - Industrial Cyber",
+      "FBI Warns Hackers Are Using ARTEX AI Tool To Automate Cyberattacks - Forbes"
     ],
     "cyber_au": [
+      "‘Significant’: Flight Centre hit by cyber attack - The Australian",
       "Flight Centre probes data breach of third-party booking system - iTnews",
-      "What Flight Centre customers must do now after cyber attack hits passport and personal data - The Australian",
-      "Australia's Flight Centre probes data breach in third-party system - TradingView"
+      "Flight Centre cyber incident puts vendor cover back in focus - Insurance Business"
     ],
     "cyber_ot": [
       "UK operation wards off risk of cyber-attack on supermarket fridges and freezers - The Guardian",
@@ -637,8 +647,8 @@
     ],
     "fuel_au": [
       "Crisis-tested Matt Halliday never lets a fuel shock go to waste - AFR",
-      "LBRCA launches fuel tax credit campaign - www.ownerdriver.com.au",
-      "Chinese luxury brand HongQi aims to raise ‘red flag’ at BMW, Lexus and Mercedes - Chasing Cars"
+      "Chinese luxury brand HongQi aims to raise ‘red flag’ at BMW, Lexus and Mercedes - Chasing Cars",
+      "LBRCA launches fuel tax credit campaign - www.ownerdriver.com.au"
     ],
     "illness": [
       "Mystery illness causes mass hospitalisation of runners - The Nightly",
@@ -646,17 +656,18 @@
       "148 aboard Florida-bound cruise ship sickened by ‘unknown’ GI outbreak: CDC - The Hill"
     ],
     "masscas": [
-      "15 hospitalized after reports of possible food poisoning at Doral medical center, MDFR says - CBS News",
+      "15 hospitalized after possible food poisoning during Thanksgiving luncheon at Doral medical center headquarters - CBS News",
       "18 sick after possible food poisoning during luncheon at Leon Medical HQ; patients not affected - NBC 6 South Florida",
       "Cop wrestles patient trying to grab gun in hospital - Herald Sun"
     ],
     "medshort": [
+      "newsGP - In Practice: Medication shortages update - Royal Australian College of General Practitioners (RACGP)",
       "Can Europe fix its chronic medicine shortage and supply chain disruptions? - Yahoo News Australia"
     ],
     "mobilisation": [
       "The Territorial Recruitment Center mobilized the father of a child with Down syndrome who is abroad: the court ordered his release from service - Судово-юридична газета",
-      "Iranian Forces Launch Military Drills Near Russia-Linked Bushehr Nuclear Power Plant - The Times of India",
-      "Algeria's Mobilisation in Niger: A Consolidation of Regional Influence - Bloomsbury Intelligence and Security Institute (BISI)"
+      "Algeria's Mobilisation in Niger: A Consolidation of Regional Influence - Bloomsbury Intelligence and Security Institute (BISI)",
+      "Iranian Forces Launch Military Drills Near Russia-Linked Bushehr Nuclear Power Plant - The Times of India"
     ],
     "national_outage": [
       "Inside the ‘Black Sky’ plans for a nationwide blackout - Herald.Wales",
@@ -675,8 +686,8 @@
     ],
     "sapn": [
       "Another outage coming as crews race to reconnect power grid - Adelaide Now",
-      "Multimillion-dollar bill to replace Outback power line - InDaily South Australia",
-      "Festivalgoer struck by lightning, locust plague, freak storm causes major blackout - 9Now"
+      "Festivalgoer struck by lightning, locust plague, freak storm causes major blackout - 9Now",
+      "Final four prepare for Adelaide Grand Final clash - Motorsport Australia"
     ],
     "scams": [
       "How to defend against cyber hackers who log on, not break in - CommBank",
@@ -806,9 +817,9 @@
       "yes": 18.0
     },
     {
-      "d24h": -1.5,
+      "d24h": -1.0,
       "q": "Will Nick Stewart attend a US x Iran diplomatic meeting by December 31, 2026?",
-      "yes": 6.5
+      "yes": 7.0
     }
   ],
   "quakes_m6_24h": [],
@@ -1024,7 +1035,7 @@
       "key": "mideast",
       "lit": [
         {
-          "detail": "gps_gulf 67 vs usual 9.0",
+          "detail": "gps_gulf 39 vs usual 9",
           "name": "GPS jamming spike (Gulf / Israel)"
         }
       ],
@@ -1100,7 +1111,7 @@
           "name": "Unknown illness / pneumonia cluster reported"
         },
         {
-          "detail": "Can Europe fix its chronic medicine shortage and supply chain disruptions?",
+          "detail": "newsGP - In Practice: Medication shortages update",
           "name": "Australian medicine or PPE shortage reports"
         },
         {
@@ -1160,7 +1171,7 @@
     }
   ],
   "sectors_relative_5d": {
-    "defence_au": -0.03,
+    "defence_au": 0.02,
     "defence_eu": 2.5,
     "defence_us": 4.21,
     "pandemic": 0.09
@@ -1177,11 +1188,11 @@
   ],
   "tankers": "normal",
   "telecom_drop_pct": {
-    "Aussie Broadband": 0.3,
-    "Optus": 0.0,
-    "TPG": 0.3,
+    "Aussie Broadband": 0.0,
+    "Optus": 3.1,
+    "TPG": 0.0,
     "Telstra": 0.0,
-    "Vodafone": 5.0
+    "Vodafone": 10.0
   },
   "us_departure_orders": [
     "Belarus"
@@ -1217,6 +1228,14 @@
     "Yemen": 4
   },
   "watching": [
+    {
+      "active": true,
+      "first_seen": "2026-11-26T03:37:00Z",
+      "last_seen": "2026-11-26T03:37:00Z",
+      "region": "the Middle East",
+      "text": "GPS jamming over Persian Gulf: 39% of 44 aircraft affected for 45+ min (usual ~9%)",
+      "what": "GPS jamming"
+    },
     {
       "active": false,
       "first_seen": "2026-11-25T09:45:00Z",
