@@ -282,33 +282,23 @@
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
     "internet": "RuntimeError: Iran ping-slash24: TimeoutError: The read operation timed out; Iran bgp: TimeoutError: The read operation ",
+    "maritime": "TimeoutError: ",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output=",
-    "telecom": "RuntimeError: Telstra ping-slash24: URLError: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violati"
+    "telecom": "RuntimeError: Telstra ping-slash24: TimeoutError: The read operation timed out; Telstra bgp: TimeoutError: The read oper"
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-26T22:29:00Z",
+  "generated_at": "2026-11-26T22:44:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 57,
-    "Black Sea": 27,
-    "Israel & Eastern Mediterranean": 0,
+    "Baltic / Kaliningrad": 78,
+    "Black Sea": 24,
+    "Israel & Eastern Mediterranean": 7,
     "Korea": 3,
-    "Persian Gulf": 44,
+    "Persian Gulf": 43,
     "South Australia": 0,
-    "Sydney / NSW": 6,
+    "Sydney / NSW": 5,
     "Taiwan Strait": 0
   },
   "incidents": [
-    {
-      "attack_reported": true,
-      "confirmed": true,
-      "headlines": [
-        "Flight Centre investigates data breach affecting customer records in Australia",
-        "Flight Centre investigating mass cyber breach"
-      ],
-      "needs_confirming": false,
-      "severity": "Info",
-      "target": "Flight Centre"
-    },
     {
       "attack_reported": true,
       "confirmed": false,
@@ -333,6 +323,16 @@
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
+        "Flight Centre investigates data breach affecting customer records in Australia"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "Flight Centre"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
         "School targeted by 'sophisticated' cyber attack"
       ],
       "needs_confirming": false,
@@ -348,16 +348,6 @@
       "needs_confirming": false,
       "severity": "Info",
       "target": "Wyoming"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
-        "Hackers Actively Exploit Critical Drupal Vulnerability to Take Over Websites"
-      ],
-      "needs_confirming": false,
-      "severity": "Info",
-      "target": "Hackers Actively Exploit"
     },
     {
       "attack_reported": true,
@@ -443,7 +433,7 @@
     "cfs_feed_ok": true,
     "cfs_warnings": [],
     "ed_very_busy": [
-      "Flinders Medical Centre",
+      "Lyell McEwin",
       "Modbury",
       "Queen Elizabeth"
     ],
@@ -453,28 +443,18 @@
       "Mount Lofty Ranges": "Moderate / Moderate"
     },
     "fire_danger_ok": true,
-    "fires_active": 14,
+    "fires_active": 12,
     "fuel": {
       "brent_aud": 137.8,
       "change_pct": 2.7,
       "pump_cents": 2,
       "week_ago_aud": 134.2
     },
-    "grid_demand_fall_pct": 9.3,
-    "grid_demand_mw": 1434,
-    "grid_demand_usual_mw": 899,
+    "grid_demand_fall_pct": 10.3,
+    "grid_demand_mw": 1370,
+    "grid_demand_usual_mw": 868,
     "grid_lor_level": 0,
-    "nearby_incidents": [
-      {
-        "area": "BRIDGE RD SALISBURY EAST",
-        "dist": "10-25 km",
-        "event": "Grass Fire",
-        "headline": "SALISBURY EAST : GRASS FIRE",
-        "id": "F-261127-0042 SALISBURY EAST, BRIDGE RD (GRASS FIRE)",
-        "level": null,
-        "notify": false
-      }
-    ],
+    "nearby_incidents": [],
     "outlook": {
       "air": {
         "aqi": 37,
@@ -549,11 +529,18 @@
       {
         "code": "US",
         "country": "United States",
-        "headlines": [],
+        "headlines": [
+          {
+            "at": "2026-11-26T21:36:28Z",
+            "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNdk9uZ0Y0OEJXTFMxSmJmVUM5MFA5cTFJbmxZUGxzOHJGbVJ2UVhZLXV3TEpVRlRBU0Z6TmRtVTN5MktpVm41b25XdV9NWnVISlREa2ZEcHFGbEVoNDlZc2RKMkViWXczS1RiYm1wWE9rSHlIRFpjeTN6Um1udUJQc29LZEFjbTVNNUx6eXVyTERXMklxUjZiMDdTNEktZnNTZmJXRzhsTFV5M2xqendXcnVB?oc=5",
+            "pub": "Anadolu Ajansı",
+            "title": "US grounds flights to Washington National Airport due to thunderstorms"
+          }
+        ],
         "level": "Possible",
         "sector": "aviation",
         "signals": {
-          "traffic": "airborne traffic near New York (Teterboro), Washington DC, Los Angeles (Van Nuys) about 24% of normal"
+          "traffic": "airborne traffic near New York (Teterboro), Washington DC, Los Angeles (Van Nuys) about 28% of normal"
         }
       }
     ],
@@ -584,6 +571,7 @@
       "Track UK's latest migration numbers - net migration, visas, asylum and small boats - BBC"
     ],
     "blood": [
+      "AYANG organises blood donation camp - The Arunachal Times",
       "The Ordinary to Turn Stores Into Blood Donation Centers - Wisevoter",
       "Meghalaya High Court marks Constitution Day with exhibition, blood donation camp - Northeast News"
     ],
@@ -604,18 +592,13 @@
     ],
     "cyber_attrib": [
       "FBI Warns Hackers Are Using ARTEX AI Tool To Automate Cyberattacks - Forbes",
-      "Spy agency warns active Russian hackers targeting Australian industry - ABC News & Headlines – Australian Broadcasting Corporation",
-      "Busted! Alleged Aussie hackers linked to TeamPCP arrested in joint AFP-FBI-WAPF operation - Cyber Daily"
+      "FBI warns hackers weaponizing ARTEX AI framework to automate attacks on energy, manufacturing, telecom - Industrial Cyber",
+      "FBI warns hackers using AI-powered tool to automate cyberattacks worldwide - Anadolu Ajansı"
     ],
     "cyber_au": [
-      "Flight Centre investigating mass cyber breach - ABC News & Headlines – Australian Broadcasting Corporation",
       "School targeted by 'sophisticated' cyber attack - Yahoo News Australia",
-      "Australia’s Flight Centre Data Breach Exposes Customer Records and Passport Details - Security Affairs"
-    ],
-    "cyber_ot": [
-      "UK operation wards off risk of cyber-attack on supermarket fridges and freezers - The Guardian",
-      "Shop freezers in seven European countries hit by cyber-attack - BBC",
-      "Supermarket freezers and fridges in Europe hit by cyberattack - Nine.com.au"
+      "Australia’s Flight Centre Data Breach Exposes Customer Records and Passport Details - Security Affairs",
+      "Flight Centre investigating mass cyber breach - ABC News & Headlines – Australian Broadcasting Corporation"
     ],
     "cyber_state": [
       "ESET Research: Sandworm behind cyberattack on Poland’s power grid in late 2025 - We Live Security",
@@ -625,7 +608,7 @@
     "cyber_supply": [
       "Warning: Actively Exploited Critical Vulnerabilities in Mitel MiCollab, Patch Immediately! - CCB Belgium",
       "Critical Zero-Day Wave Strikes Hypervisors, Edge Appliances, and AI Medical Imaging + Video - Howl.Link",
-      "CISA Warns of 10 Actively Exploited Vulnerabilities in Juniper, Mitel, Danfoss, and Vates Products - GBHackers News"
+      "VMware patches 23 flaws, including another critical vCenter authentication bypass - Field Effect"
     ],
     "deepfake": [
       "Deloitte Suspended From Western Australian Government Contracts Over AI Report Errors - https://www.big4news.com/",
@@ -680,14 +663,14 @@
       "Chainsaw damage on a GRIDCo line and ECG upgrades cut power in Kumasi and Accra - 3News"
     ],
     "outage_au": [
-      "Australia's Optus apologises for outage that disrupted emergency calls - Reuters",
-      "Telstra mobile outage disrupts services across Australia - Australian Cyber Security Magazine",
-      "Australia to strengthen telecom networks after new Optus outage - Capacity Media"
+      "Calls for 'automatic compensation' following telco outages - ABC News & Headlines – Australian Broadcasting Corporation",
+      "Microsoft ‘deeply sorry’ for global outage, rules out cyberattack and AI - Nine.com.au",
+      "The Microsoft outage is part of a growing trend. This is how to prepare for further disruption - SBS"
     ],
     "reservists": [
       "MoD prepares veterans for war - The Telegraph",
       "UK tells 100,000 strategic reservists to prepare for possible call-up: Report - Anadolu Ajansı",
-      "UK tells 100,000 military reservists to prepare for possible war call-up: Report - Türkiye Today"
+      "MoD Strategic Reserve Call-Up: UK Urges 100,000 Reservists to Update Details and Join Exercises - Мілітарний"
     ],
     "ru_signals": [
       "NATO intern suspected of spying to remain in jail in Belgium after appeal - News24"
@@ -705,14 +688,14 @@
       "Three Sinokor VLCCs hit in Strait of Hormuz attacks - Riviera Maritime Media",
       "Middle East latest: Two Italians killed in Iranian drone attack in Kuwait - The National",
       "IRGC Claims 3 Oil Tankers Hit Mines in Hormuz Under US Escort - https://houseofsaud.com/",
-      "Iran says it struck vessel in Strait of Hormuz — Anadolu Agency - UA.NEWS"
+      "ADNOC L&S says one missing, 11 injured in Strait of Hormuz ship attack - Baird Maritime"
     ],
     "strikes": [
       "Iran Warns of Retaliation if US Forces Attack - ASHARQ AL-AWSAT English",
       "Ukraine says strike on major Russian air base damaged five military jets - AeroTime",
       "Ukrainian Neptunes Attacked Marinovka Air Base, Which Housed Russian Su-34s - Мілітарний",
       "Ukraine says it struck a major Russian air base, damaging five planes - Arab News",
-      "Bahrain Says It Intercepted Iranian Attacks As Tehran Claims Strike On US Base - Radio Free Europe/Radio Liberty"
+      "Ukrainian naval drones strike a new Russian warship in Libya, and other Mideast news - Boston Herald"
     ]
   },
   "prediction_markets": [
@@ -767,9 +750,9 @@
       "yes": 4.4
     },
     {
-      "d24h": 0.2,
+      "d24h": 0.3,
       "q": "Will Russia invade a NATO country by December 31, 2026?",
-      "yes": 2.0
+      "yes": 2.1
     },
     {
       "d24h": 0.2,
@@ -787,9 +770,9 @@
       "yes": 1.5
     },
     {
-      "d24h": 1.2,
+      "d24h": 2.1,
       "q": "Ukraine agrees not to join NATO by December 31, 2026?",
-      "yes": 2.6
+      "yes": 3.5
     },
     {
       "d24h": -0.5,
@@ -807,14 +790,14 @@
       "yes": 10.5
     },
     {
-      "d24h": 0.0,
+      "d24h": 0.1,
       "q": "Will the U.S. test a nuclear weapon by December 31 2026?",
-      "yes": 2.5
+      "yes": 2.6
     },
     {
-      "d24h": -1.0,
+      "d24h": -0.5,
       "q": "Ukraine agrees not to join NATO by December 31, 2027?",
-      "yes": 17.0
+      "yes": 17.5
     }
   ],
   "quakes_m6_24h": [],
@@ -1020,7 +1003,7 @@
           "name": "Fire, flood or storm road closures in SA"
         },
         {
-          "detail": "Flinders Medical Centre; Modbury; Queen Elizabeth",
+          "detail": "Lyell McEwin; Modbury; Queen Elizabeth",
           "name": "Three or more Adelaide emergency departments 'very busy'"
         }
       ],
@@ -1102,7 +1085,7 @@
           "name": "Australian medicine or PPE shortage reports"
         },
         {
-          "detail": "Flinders Medical Centre; Modbury; Queen Elizabeth",
+          "detail": "Lyell McEwin; Modbury; Queen Elizabeth",
           "name": "Three or more Adelaide emergency departments 'very busy'"
         }
       ],
