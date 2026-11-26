@@ -13,6 +13,11 @@ def _drop(row):
     return max(vals) if vals else None
 
 
+# Attack topics get 5 headlines, not 3: the analysis missed the 19 and 24 Nov 2026 Houthi strikes on Riyadh's
+# tallest tower, and 3 out of 15 easily hides a new attack behind repeats of an older story.
+ATTACK_TOPICS = {"strikes", "shipping_attacks", "gulf_strikes"}
+
+
 def _titles(items, n, key="title"):
     return [i.get(key) for i in (items or [])[:n] if isinstance(i, dict) and i.get(key)]
 
@@ -38,7 +43,7 @@ def build(latest, indicators, campaigns=None):
                       if t.get("status") not in ("normal", "learning baseline")}
     news = {}
     for topic, items in ((L.get("news_watch") or {}).items() if isinstance(L.get("news_watch"), dict) else []):
-        t = _titles(items.get("items") if isinstance(items, dict) else items, 3)
+        t = _titles(items.get("items") if isinstance(items, dict) else items, 5 if topic in ATTACK_TOPICS else 3)
         if t:
             news[topic] = t
     return {
