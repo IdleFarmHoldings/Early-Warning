@@ -1,608 +1,630 @@
 {
-  "actions": [
+ "actions": [
+  {
+   "action": "If anyone has booked travel with Flight Centre (or its brands), watch for its official email and do not click links in any message about a booking, refund or passport.",
+   "reason": "Stolen booking and passport details are used to send convincing fake messages."
+  },
+  {
+   "action": "Keep the car at least half full, as normal.",
+   "reason": "Attacks around the Gulf keep fuel supply tight; a big escalation could push bowser prices up within days."
+  },
+  {
+   "action": "Tie down loose outdoor items before Saturday.",
+   "reason": "Gusts up to about 55-60 km/h are forecast Saturday and Sunday."
+  }
+ ],
+ "categories": [
+  {
+   "confidence": "med",
+   "key": "geo",
+   "name": "Geopolitical & conflict",
+   "score": 3.3,
+   "sources": [
     {
-      "action": "If anyone in the family has booked travel with Flight Centre (or its brands), watch for its official email, and do not click links in any message about your booking or passport.",
-      "reason": "Stolen booking and passport details are used to send convincing fake 'booking problem' or 'refund' messages."
+     "title": "ABC News: Two Italian workers killed in Iranian drone strike on Kuwait",
+     "url": "https://www.abc.net.au/news/2026-11-27/italians-killed-in-kuwait-attack-iran/107432996"
     },
     {
-      "action": "Keep the car at least half full, as normal.",
-      "reason": "Attacks on ships in the Gulf and Red Sea keep fuel supply tight; a big escalation could push bowser prices up within days."
+     "title": "ABC News (US): Iran live updates",
+     "url": "https://abcnews.com/International/live-updates/iran-live-updates-tehran-strait-hormuz-safe-demands/?id=138369648"
+    },
+    {
+     "title": "NST: Houthis say they hit two Saudi ports",
+     "url": "https://www.nst.com.my/world/world/2026/11/1585880/houthis-say-they-hit-two-saudi-ports-response-coalition-strikes"
     }
-  ],
-  "categories": [
+   ],
+   "summary": "Kuwait says an Iranian drone attack killed two Italian defence workers (Iran denies it), the first deaths of allied personnel in Kuwait in this round. The Houthis keep attacking Saudi Red Sea ports and a refinery in the south-west; Saudi Arabia says it intercepted most of them and no oil export damage is confirmed. One outlet reports renewed US strikes on Iran; not confirmed by our searches. Taiwan and Korea are quiet.",
+   "trend": "up"
+  },
+  {
+   "confidence": "med",
+   "key": "nuclear",
+   "name": "Nuclear & fallout",
+   "score": 1.5,
+   "sources": [],
+   "summary": "US nuclear-command aircraft are normal. Forecast markets give a Russian or US nuclear test this year only about 2-3%. Britain asking 100,000 former troops to update details for a possible call-up is planning, not a nuclear sign.",
+   "trend": "steady"
+  },
+  {
+   "confidence": "med",
+   "key": "cyber",
+   "name": "Cyber & infrastructure",
+   "score": 3.2,
+   "sources": [
     {
-      "confidence": "med",
-      "key": "geo",
-      "name": "Geopolitical & conflict",
-      "score": 3.2,
-      "sources": [
-        {
-          "title": "NST: Houthis say they hit two Saudi ports",
-          "url": "https://www.nst.com.my/world/world/2026/11/1585880/houthis-say-they-hit-two-saudi-ports-response-coalition-strikes"
-        },
-        {
-          "title": "The Sun (Malaysia): Saudis down missiles targeting capital",
-          "url": "https://thesun.my/news/saudis-down-missiles-targeting-capital-after-yemen-port-strikes/"
-        },
-        {
-          "title": "Al-Monitor: Iran attacks US bases in Gulf countries",
-          "url": "https://www.al-monitor.com/originals/2026/11/iran-attacks-us-bases-gulf-countries-despite-diplomatic-efforts"
-        }
-      ],
-      "summary": "Houthis say they hit two Saudi Red Sea ports after coalition strikes on Yemen's Hodeidah port; Saudi Arabia says it intercepted a drone near Jeddah and two missiles aimed at Riyadh, and no oil site damage is reported. Reports say attacks on ships near Hormuz are at their highest since the war began. No new confirmed attacks on US bases since 21 November. Taiwan and Korea are quiet.",
-      "trend": "steady"
+     "title": "iTnews: Flight Centre probes data breach",
+     "url": "https://www.itnews.com.au/"
     },
     {
-      "confidence": "med",
-      "key": "nuclear",
-      "name": "Nuclear & fallout",
-      "score": 1.5,
-      "sources": [],
-      "summary": "US nuclear-command aircraft are normal. Forecast markets give a Russian or US nuclear test this year only about 2-3%.",
-      "trend": "steady"
-    },
-    {
-      "confidence": "med",
-      "key": "cyber",
-      "name": "Cyber & infrastructure",
-      "score": 3.2,
-      "sources": [
-        {
-          "title": "iTnews: Flight Centre probes data breach of third-party booking system",
-          "url": "https://www.itnews.com.au/"
-        }
-      ],
-      "summary": "Flight Centre says hackers got into an outside booking system used by three of its brands and took a large number of customers' details, including passports; it has called in outside investigators (Mandiant). Who did it is not known. The suspected China campaign (partly blamed on China by governments) goes on, and the FBI warns hackers are using an AI tool to automate attacks on energy and telecoms. Some linked items are just articles about AI hacking, not attacks. Australian phones, banks and the grid are normal.",
-      "trend": "up"
-    },
-    {
-      "confidence": "high",
-      "key": "bio",
-      "name": "Pandemic & biological",
-      "score": 2,
-      "sources": [
-        {
-          "title": "WHO: Ebola (Bundibugyo) - DRC, Kenya and Nigeria",
-          "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON625"
-        },
-        {
-          "title": "CIDRAP: Burundi mystery illness",
-          "url": "https://www.cidrap.umn.edu/misc-emerging-topics/least-5-dead-burundi-mystery-illness-africa-cdc"
-        }
-      ],
-      "summary": "WHO reports bird flu (H5N1) in the United States, Ebola in DR Congo, Kenya and Nigeria, and MERS in Qatar; none is spreading toward Australia. The automatic 'warning signs building' note was mostly noise (a chemical weapons memorial event, a stomach bug on a US cruise ship, routine medicine shortage updates). No Adelaide emergency departments are very busy.",
-      "trend": "steady"
-    },
-    {
-      "confidence": "high",
-      "key": "nature",
-      "name": "Natural hazards",
-      "score": 1.5,
-      "sources": [
-        {
-          "title": "Bureau of Meteorology: SA fire danger ratings",
-          "url": "https://www.bom.gov.au/sa/forecasts/fire-danger-ratings.shtml"
-        },
-        {
-          "title": "CFS",
-          "url": "https://www.cfs.sa.gov.au/"
-        }
-      ],
-      "summary": "Fire danger in the Mount Lofty Ranges is Moderate today and tomorrow, with no fire bans, CFS warnings or Watch and Act messages near home; 13 fires active across SA. Rain likely Friday (around 20 mm), then gusty winds up to about 55 km/h Saturday. Some outback roads remain closed by flooding.",
-      "trend": "steady"
-    },
-    {
-      "confidence": "med",
-      "key": "supply",
-      "name": "Fuel, food & supply",
-      "score": 2.6,
-      "sources": [
-        {
-          "title": "Khaleej Times: Oil falls almost 5% as Trump signals restraint on Iran",
-          "url": "https://www.khaleejtimes.com/business/oil-falls-almost-5-as-trump-signals-restraint-on-iran"
-        },
-        {
-          "title": "PM&C: National Fuel Security Plan",
-          "url": "https://www.pmc.gov.au/domestic-policy/fuel-supply-taskforce/public-information-fuel-supply"
-        }
-      ],
-      "summary": "Hormuz is still effectively shut (100+ ships a day before the war; about 3 a day now), and the Houthis are now aiming at Saudi Red Sea ports, Saudi Arabia's other export route. Brent oil fell about 3% to about US$92. SA pump prices are steady with no shortages.",
-      "trend": "steady"
-    },
-    {
-      "confidence": "high",
-      "key": "markets",
-      "name": "Markets & finance",
-      "score": 2,
-      "sources": [],
-      "summary": "The US 'fear gauge' (VIX) is about 28, gold rose about 2%, and oil fell. The Australian dollar is about 66 US cents. No sign of bank trouble in Australia.",
-      "trend": "steady"
+     "title": "Al Jazeera: How an OpenAI agent hacked Australia's Medicare (Sept 2026)",
+     "url": "https://www.aljazeera.com/news/2026/9/24/how-an-openai-agent-hacked-australias-medicare-and-what-that-means"
     }
-  ],
-  "concerns": [
+   ],
+   "summary": "Flight Centre is still investigating the theft of customer details, including passports, from an outside booking system; who did it is not known. Switzerland's government says hackers used AI agents in five attacks, including on power and water utilities, and the FBI warns of an AI attack tool used by Chinese and North Korean hackers. The suspected China campaign touches Australia (partly blamed on China by governments). An 'AI agents in Australian government systems' item in the campaign is an old OpenAI research mishap from September, not part of it. Australian phones, banks and the grid are normal.",
+   "trend": "steady"
+  },
+  {
+   "confidence": "high",
+   "key": "bio",
+   "name": "Pandemic & biological",
+   "score": 2,
+   "sources": [
     {
-      "actions": [
-        {
-          "action": "Keep the car at least half full.",
-          "reason": "A sudden escalation would push bowser prices up within days, and queues form fast."
-        },
-        {
-          "action": "Hold a little cash at home.",
-          "reason": "If fuel is rationed or networks fail, cash still works when cards may not."
-        }
-      ],
-      "drivers": [
-        "The Houthis say they hit two Saudi Red Sea ports after coalition strikes on Yemen; Saudi Arabia says it intercepted a drone near Jeddah and missiles aimed at Riyadh. No damage to oil export sites is reported, but the Red Sea is Saudi Arabia's main way around a shut Hormuz.",
-        "Reports say attacks on ships near Hormuz are at their highest since the war began (several tanker hits are Iran's own claims). No new confirmed attacks on US bases since 21 November, and oil fell to about US$92."
-      ],
-      "key": "mideast",
-      "likelihood": 30,
-      "prev_likelihood": 30,
-      "scenarios": [
-        {
-          "likelihood": 63,
-          "name": "Standoff drags on with mine and ship incidents",
-          "sa_impact": "Fuel prices stay high; occasional regional servo shortages but no rationing."
-        },
-        {
-          "likelihood": 13,
-          "name": "Deal reached, shipping recovers",
-          "sa_impact": "Fuel prices ease over weeks; little direct effect on SA."
-        },
-        {
-          "likelihood": 24,
-          "name": "Major escalation: US sinks convoy ships or renewed strike campaign",
-          "sa_impact": "Fuel price jump and local shortages within 1-3 weeks; possible government fuel measures."
-        }
-      ],
-      "title": "Iran conflict and Strait of Hormuz shipping",
-      "trend": "steady"
+     "title": "WHO: Ebola (Bundibugyo) - DRC, Kenya and Nigeria",
+     "url": "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON625"
     },
     {
-      "actions": [
-        {
-          "action": "Ignore any text, call or email about a booking, refund, passport or 'card security issue'; check only in the company's own app or website.",
-          "reason": "Scammers use stolen data and news of hacks to send fake alerts."
-        }
-      ],
-      "drivers": [
-        "Flight Centre, an Australian company, says hackers took customer details including passports from an outside booking system. Who did it is not known; it may be criminals, not a state.",
-        "If the China-linked hacking is one deliberate campaign, the likely aim is quiet footholds in allies' phone, power and water networks ahead of any Taiwan crisis, with phone networks, utilities and ports the likely next targets. This is a hypothesis, though governments have blamed China for parts of it.",
-        "A run of big overseas hacks and outages continues (EU Commission, US intelligence systems, FBI database). Suspected Iran-linked attacks on shop freezers, small water systems and ships remain overseas."
-      ],
-      "key": "cyber",
-      "likelihood": 15,
-      "prev_likelihood": 13,
-      "scenarios": [
-        {
-          "name": "Campaign stays mostly overseas; data breaches like Flight Centre",
-          "likelihood": 80,
-          "sa_impact": "Scam messages using stolen details; some online services down for hours."
-        },
-        {
-          "name": "Same attacks reach Australian supermarkets, water or ports",
-          "likelihood": 16,
-          "sa_impact": "Spoiled chilled stock and patchy shelves for days; local water warnings possible."
-        },
-        {
-          "name": "Turns destructive (wiper attacks) if US or Israeli strikes resume",
-          "likelihood": 4,
-          "sa_impact": "Payments, fuel or communications disrupted for days."
-        }
-      ],
-      "title": "Cyber attacks on Australian services",
-      "trend": "up"
-    },
-    {
-      "actions": [
-        {
-          "action": "Agree a family code word for urgent calls.",
-          "reason": "AI can clone a voice from seconds of audio; a code word defeats fake 'I need help now' calls."
-        }
-      ],
-      "drivers": [
-        "The FBI warns hackers are using an AI tool to automate attacks on energy, factories and telecoms, and Italy and Switzerland warn of AI-driven attacks; none targets Australia specifically.",
-        "AI voice-clone scams are rising overseas ahead of Christmas; no fake official alerts have been seen in Australia."
-      ],
-      "key": "ai",
-      "likelihood": 7,
-      "prev_likelihood": 7,
-      "scenarios": [
-        {
-          "likelihood": 85,
-          "name": "Background AI-assisted crime and espionage",
-          "sa_impact": "More convincing scams and data breaches; no wide outage."
-        },
-        {
-          "likelihood": 11,
-          "name": "Synthetic-media crisis (fake leader video or alert)",
-          "sa_impact": "Hours of confusion, possible panic buying before it is debunked."
-        },
-        {
-          "likelihood": 4,
-          "name": "Machine-speed attack on many systems at once",
-          "sa_impact": "Payments, telcos, hospitals or the grid disrupted for hours to days."
-        }
-      ],
-      "title": "AI-enabled attack (non-traditional)",
-      "trend": "steady"
-    },
-    {
-      "actions": [
-        {
-          "action": "Keep the CFS app on, and avoid using machinery on dry grass on hot afternoons.",
-          "reason": "Grass is curing; on High days a spark can start a fast grass fire."
-        }
-      ],
-      "drivers": [
-        "Fire danger in the Hills is Moderate today and tomorrow, with no fire ban or CFS warnings near home. The SA grid is normal.",
-        "This covers the next 7 days; rain likely Friday, then gusty winds Saturday."
-      ],
-      "key": "local",
-      "likelihood": 6,
-      "prev_likelihood": 6,
-      "scenarios": [
-        {
-          "likelihood": 84,
-          "name": "Warm, windy but quiet week",
-          "sa_impact": "No effect."
-        },
-        {
-          "likelihood": 14,
-          "name": "Fast-running grass fire near the Hills on a High day",
-          "sa_impact": "Road closures and smoke; possible Watch and Act messages."
-        },
-        {
-          "likelihood": 2,
-          "name": "Damaging fire or major power outage",
-          "sa_impact": "Evacuations, power and phone outages in affected areas."
-        }
-      ],
-      "title": "Local SA emergency (bushfire, heat, power) within 7 days",
-      "trend": "steady"
-    },
-    {
-      "actions": [
-        {
-          "action": "No action needed; it is on the board so you know why markets are jumpy.",
-          "reason": "The risk to SA is indirect, through prices."
-        }
-      ],
-      "drivers": [
-        "Two Russian cruise missiles and a drone fell in Poland on 20 November; NATO has not taken military action and there have been no repeat incidents. Ukraine says it damaged five jets at a major Russian air base.",
-        "A UK newspaper reports Britain told 100,000 reservists to be ready for call-up (not checked this run). Betting markets give about 11% for a NATO-Russia clash by year end; any effect on us would come through markets and fuel prices."
-      ],
-      "key": "russia",
-      "likelihood": 5,
-      "prev_likelihood": 5,
-      "scenarios": [
-        {
-          "likelihood": 85,
-          "name": "Protests and extra air defence in Poland, no fighting",
-          "sa_impact": "No effect beyond jittery markets."
-        },
-        {
-          "likelihood": 12,
-          "name": "Repeat incidents and NATO shoots down Russian aircraft",
-          "sa_impact": "Share and fuel price jumps for some days."
-        },
-        {
-          "likelihood": 3,
-          "name": "Direct NATO-Russia fighting",
-          "sa_impact": "Big market falls, fuel price spikes, higher cyber attack risk to allies including Australia."
-        }
-      ],
-      "title": "Russia and NATO (missiles landing in Poland)",
-      "trend": "steady"
-    },
-    {
-      "actions": [
-        {
-          "action": "Keep 2-3 months of any essential prescription medicines.",
-          "reason": "Most medicines are imported via Asian shipping lanes, which any blockade would disrupt first."
-        }
-      ],
-      "drivers": [
-        "No live-fire warnings, GPS jamming or internet disruption around Taiwan; strait shipping is normal.",
-        "Forecast markets give about 3% for a China-Taiwan clash before 2027."
-      ],
-      "key": "taiwan",
-      "likelihood": 5,
-      "prev_likelihood": 5,
-      "scenarios": [
-        {
-          "likelihood": 85,
-          "name": "Routine grey-zone pressure",
-          "sa_impact": "No effect."
-        },
-        {
-          "likelihood": 13,
-          "name": "Large announced drill",
-          "sa_impact": "Market jitters; no supply effect."
-        },
-        {
-          "likelihood": 2,
-          "name": "Blockade or quarantine",
-          "sa_impact": "Fuel, medicine and electronics disruption within weeks."
-        }
-      ],
-      "title": "Taiwan Strait pressure",
-      "trend": "steady"
-    },
-    {
-      "actions": [
-        {
-          "action": "Check Smartraveller before any travel to Central or East Africa or the Gulf.",
-          "reason": "Advice and entry rules can change quickly as outbreaks and the conflict develop."
-        }
-      ],
-      "drivers": [
-        "WHO reports bird flu (H5N1) cases in the United States, Ebola continuing in DR Congo, Kenya and Nigeria, and MERS in Qatar linked to camels.",
-        "None shows spread between people toward Australia."
-      ],
-      "key": "bio",
-      "likelihood": 4,
-      "prev_likelihood": 4,
-      "scenarios": [
-        {
-          "likelihood": 90,
-          "name": "Outbreaks stay contained in their regions",
-          "sa_impact": "No direct effect; possible extra airport screening."
-        },
-        {
-          "likelihood": 9,
-          "name": "Isolated imported case in a Western country",
-          "sa_impact": "Media concern; Australian hospitals manage under existing plans."
-        },
-        {
-          "likelihood": 1,
-          "name": "Spread in Asia-Pacific",
-          "sa_impact": "Travel restrictions and health system alerts."
-        }
-      ],
-      "title": "Bird flu in the US, Ebola in Africa, MERS in the Gulf",
-      "trend": "steady"
+     "title": "CIDRAP: Burundi mystery illness",
+     "url": "https://www.cidrap.umn.edu/misc-emerging-topics/least-5-dead-burundi-mystery-illness-africa-cdc"
     }
-  ],
-  "confirmed": [],
-  "events_observed": [
+   ],
+   "summary": "WHO reports bird flu (H5N1) in the United States, Ebola in DR Congo, Kenya and Nigeria, and MERS in Qatar; none is spreading toward Australia. One Adelaide emergency department (Royal Adelaide) is very busy, which on its own is normal.",
+   "trend": "steady"
+  },
+  {
+   "confidence": "high",
+   "key": "nature",
+   "name": "Natural hazards",
+   "score": 1.5,
+   "sources": [
     {
-      "date": "2026-11-03",
-      "eventKey": "us-strikes-iran-2026-11-03",
-      "scenario": "mideast",
-      "so_what": "Pushed oil prices up; fuel stays dear at the bowser.",
-      "title": "US strikes on Iranian targets around the Strait of Hormuz"
+     "title": "Bureau of Meteorology: SA fire danger ratings",
+     "url": "https://www.bom.gov.au/sa/forecasts/fire-danger-ratings.shtml"
     },
     {
-      "date": "2026-11-05",
-      "eventKey": "us-cisa-fbi-coldchain-warning-2026-11-05",
-      "scenario": "cyber",
-      "so_what": "No attacks reported in Australia so far; it shows hackers going after everyday equipment, not just computers.",
-      "title": "US cyber agencies (CISA and FBI) warn of an ongoing campaign hacking internet-connected freezers and cold-storage systems; units hit in at least a dozen countries and at US military bases"
-    },
-    {
-      "date": "2026-11-08",
-      "eventKey": "houthi-strike-riyadh-2026-11-08",
-      "scenario": "mideast",
-      "so_what": "No effect on us so far.",
-      "title": "Houthi missile strike damages Aramco building in Riyadh"
-    },
-    {
-      "date": "2026-11-12",
-      "eventKey": "houthi-missiles-mecca-2026-11-12",
-      "scenario": "mideast",
-      "so_what": "No effect on us so far.",
-      "title": "Saudi Arabia intercepts Houthi missiles; debris falls in Mecca region"
-    },
-    {
-      "date": "2026-11-12",
-      "eventKey": "strike-sirik-iran-2026-11-12",
-      "scenario": "mideast",
-      "so_what": "No effect on us so far.",
-      "title": "Iran reports a strike on Sirik on its Hormuz coast"
-    },
-    {
-      "date": "2026-11-13",
-      "eventKey": "us-faa-nationwide-ground-stop-2026-11-13",
-      "scenario": "cyber",
-      "so_what": "Only matters if you were flying via the US; it was not an attack.",
-      "title": "US nationwide flight ground stop (about 4.5 hours), traced to a failed air-traffic router in Arkansas, not a cyber attack"
-    },
-    {
-      "date": "2026-11-13",
-      "eventKey": "iran-linked-attacks-us-water-tankers-2026-11-13",
-      "scenario": "cyber",
-      "so_what": "No effect on us so far, but Iran-linked hackers are hitting allied infrastructure during the Gulf conflict.",
-      "title": "Suspected Iranian hackers locked operators out of small US water stations and hit systems on two tankers headed for Texas (attribution not yet official)"
-    },
-    {
-      "date": "2026-11-14",
-      "eventKey": "irgc-tankers-mines-hormuz-2026-11-14",
-      "scenario": "mideast",
-      "so_what": "Keeps fuel prices high; no shortages in SA.",
-      "title": "Iran's Revolutionary Guards say three tankers hit mines and caught fire in the Strait of Hormuz"
-    },
-    {
-      "date": "2026-11-15",
-      "eventKey": "microsoft-365-global-outage-2026-11-15",
-      "scenario": "cyber",
-      "so_what": "Work email and Teams were disrupted; it is fixed and was not an attack.",
-      "title": "Global Microsoft 365 outage (email, Teams) for about a day, caused by a software bug"
-    },
-    {
-      "date": "2026-11-15",
-      "eventKey": "coles-cyber-incident-2026-11-15",
-      "scenario": "cyber",
-      "so_what": "Shop as normal, but ignore any 'Coles' email or text asking you to log in or pay.",
-      "title": "Coles investigates a cyber security incident"
-    },
-    {
-      "date": "2026-11-16",
-      "eventKey": "us-chase-bank-outage-2026-11-16",
-      "scenario": "cyber",
-      "so_what": "No effect on Australian banks. It is the third big US outage in five days, so watch for copycat scam messages.",
-      "title": "Chase and other US banks hit by an hours-long online banking outage; a technical fault, not a hack"
-    },
-    {
-      "date": "2026-11-16",
-      "eventKey": "optimizely-supply-chain-breach-2026-11-16",
-      "scenario": "cyber",
-      "so_what": "Be wary of odd pop-ups or payment requests on big-brand websites for the next while.",
-      "title": "Hackers breached ad-tech firm Optimizely, affecting websites of big brands including BBC, CNN, IKEA and Zoom (criminal gang, not a state)"
-    },
-    {
-      "date": "2026-11-17",
-      "eventKey": "apple-global-outage-2026-11-17",
-      "scenario": "cyber",
-      "so_what": "No lasting effect on us; watch for fake 'Apple ID' emails that use it as cover.",
-      "title": "Apple services down worldwide for hours; Apple says it was not a cyber attack (cause not yet published)"
-    },
-    {
-      "date": "2026-11-17",
-      "eventKey": "iran-strikes-us-radar-bahrain-2026-11-17",
-      "scenario": "mideast",
-      "so_what": "A step up in direct US-Iran fighting; it keeps fuel prices high and supply tight.",
-      "title": "Iran struck a US radar site in Bahrain; a US jet then hit an Iranian Revolutionary Guards missile launch site on Qeshm Island in the Strait of Hormuz"
-    },
-    {
-      "date": "2026-11-17",
-      "eventKey": "tanker-attacked-hormuz-2026-11-17",
-      "scenario": "mideast",
-      "so_what": "Attacks on tankers push oil and bowser prices up; keep the car at least half full.",
-      "title": "A tanker was attacked in the Strait of Hormuz: one crew member missing and 11 injured, according to the UAE oil company ADNOC"
-    },
-    {
-      "date": "2026-11-18",
-      "eventKey": "iran-fires-on-us-base-kuwait-2026-11-18",
-      "scenario": "mideast",
-      "so_what": "No damage, but it shows the US-Iran exchange is spreading to more Gulf countries.",
-      "title": "Iran fired drones at the US Ali Al Salem air base in Kuwait and at targets in Bahrain; Kuwait says they were shot down with no damage"
-    },
-    {
-      "date": "2026-11-18",
-      "eventKey": "us-nsa-network-outage-2026-11-18",
-      "scenario": "cyber",
-      "so_what": "No effect on us; it adds to a run of US outages that scammers may exploit.",
-      "title": "A US spy agency (NSA) classified network went down, the latest in a string of US outages; US officials say there is no evidence of a cyber attack (cause not published)"
-    },
-    {
-      "date": "2026-11-19",
-      "eventKey": "sa-eyre-storm-blackouts-2026-11-19",
-      "scenario": "local",
-      "so_what": "No effect near home; a reminder to keep torches and a charged power bank handy in storm season.",
-      "title": "Storms cut power to more than 20,000 homes on SA's Eyre Peninsula (weather, not an attack)"
-    },
-    {
-      "date": "2026-11-19",
-      "eventKey": "visa-mastercard-jpm-vendor-hack-2026-11-19",
-      "scenario": "cyber",
-      "so_what": "One report says the leaked files list some Australians but no card numbers; expect fake 'card security' texts and check only in your bank's app.",
-      "title": "Hackers broke into outside suppliers of Visa, Mastercard and JPMorgan and leaked data on thousands of mostly US customers (a hack; a ransomware gang claims it; card numbers reportedly not taken)"
-    },
-    {
-      "date": "2026-11-21",
-      "eventKey": "fbi-crime-database-hack-2026-11-21",
-      "scenario": "cyber",
-      "so_what": "No effect on us; it adds to a run of US hacks and outages that scammers may exploit.",
-      "title": "The FBI is investigating a suspected hack of a US national crime database (a hack; who did it is not known)"
-    },
-    {
-      "date": "2026-11-21",
-      "eventKey": "two-tankers-hit-khasab-2026-11-21",
-      "scenario": "mideast",
-      "so_what": "More tanker attacks keep fuel prices high; keep the car at least half full.",
-      "title": "Two tankers were hit by unidentified projectiles within an hour off Khasab, Oman, at the mouth of Hormuz; no injuries reported (confirmed by the UK maritime agency, UKMTO)"
-    },
-    {
-      "date": "2026-11-20",
-      "eventKey": "russia-missiles-poland-2026-11-20",
-      "scenario": "russia",
-      "so_what": "No effect on us so far; it raises the risk of a wider Europe crisis that would move markets and fuel prices.",
-      "title": "Two Russian cruise missiles and a drone crashed inside Poland, a NATO member, during a massive Russian attack on Ukraine (confirmed by Poland's government)"
-    },
-    {
-      "date": "2026-11-21",
-      "eventKey": "iran-attacks-us-bases-bahrain-2026-11-21",
-      "scenario": "mideast",
-      "so_what": "No damage reported, but it keeps the Gulf tense and fuel prices high.",
-      "title": "Iran launched attacks on US bases in Bahrain; Bahrain says it intercepted them, as Iran readies tankers to break the US blockade"
-    },
-    {
-      "date": "2026-11-23",
-      "eventKey": "belgium-airspace-closed-strike-2026-11-23",
-      "scenario": "cyber",
-      "so_what": "Only matters if you were flying via Brussels; it was a strike, not an attack.",
-      "title": "Belgium closed its airspace for the day and all Brussels Airport flights were cancelled, reportedly because of a strike (not a hack)"
-    },
-    {
-      "date": "2026-11-23",
-      "eventKey": "eu-commission-cyberattack-2026-11-23",
-      "scenario": "cyber",
-      "so_what": "No effect on us so far; it adds to a run of overseas hacks that scammers may exploit.",
-      "title": "The European Commission confirmed personal data leaked in an ongoing cyber attack (a hack); reports say China-backed hackers are suspected, not officially confirmed"
-    },
-    {
-      "date": "2026-11-23",
-      "eventKey": "irgc-claims-supertankers-mines-2026-11-23",
-      "scenario": "mideast",
-      "so_what": "Keeps Hormuz shut and fuel tight, though oil prices fell this time.",
-      "title": "Iran's Revolutionary Guards say two supertankers hit mines near the Strait of Hormuz (Iranian state claim, not independently confirmed)"
-    },
-    {
-      "date": "2026-11-24",
-      "eventKey": "irgc-claims-three-tankers-mines-2026-11-24",
-      "scenario": "mideast",
-      "so_what": "Keeps Hormuz shut and fuel tight; no shortages in SA.",
-      "title": "Iran's Revolutionary Guards say three oil tankers hit mines and caught fire in the Strait of Hormuz (Iranian state claim, not independently confirmed)"
-    },
-    {
-      "date": "2026-11-23",
-      "eventKey": "ukmto-tanker-fire-uae-2026-11-23",
-      "scenario": "mideast",
-      "so_what": "Keeps Hormuz shut and fuel tight; no shortages in SA.",
-      "title": "A tanker was attacked and caught fire off the UAE coast; no injuries (confirmed by the UK maritime agency, UKMTO)"
-    },
-    {
-      "date": "2026-11-24",
-      "eventKey": "houthi-strike-riyadh-tower-2026-11-24",
-      "scenario": "mideast",
-      "so_what": "No effect on us so far.",
-      "title": "A Houthi strike hit a tower in Riyadh, Saudi Arabia, injuring 11 (confirmed by Saudi civil defence)"
-    },
-    {
-      "date": "2026-11-24",
-      "eventKey": "cia-odni-ai-hack-2026-11-24",
-      "scenario": "cyber",
-      "so_what": "No effect on us; it adds to a run of overseas hacks that scammers may exploit.",
-      "title": "US reports say hackers used AI tools to get into CIA and US intelligence analysis systems (a hack; China suspected, not officially confirmed)"
-    },
-    {
-      "date": "2026-11-25",
-      "eventKey": "iran-army-claims-tanker-mine-2026-11-25",
-      "scenario": "mideast",
-      "so_what": "Keeps Hormuz shut and fuel tight; no shortages in SA.",
-      "title": "Iran's army says another oil tanker hit a mine and caught fire in the Strait of Hormuz (Iranian state media claim, not independently confirmed)"
-    },
-    {
-      "eventKey": "flight-centre-data-breach-2026-11-25",
-      "title": "Flight Centre says hackers got into an outside booking system and took a large number of customers' details, including passports (a hack; who did it is not known)",
-      "scenario": "cyber",
-      "date": "2026-11-25",
-      "so_what": "If you have booked with Flight Centre, expect its email and be wary of any booking, refund or passport message with a link."
-    },
-    {
-      "eventKey": "houthis-saudi-red-sea-ports-2026-11-25",
-      "title": "Houthis say they hit two Saudi Red Sea ports after coalition strikes on Yemen; Saudi Arabia says it intercepted a drone near Jeddah and missiles aimed at Riyadh (no oil site damage reported)",
-      "scenario": "mideast",
-      "date": "2026-11-25",
-      "so_what": "No effect on us so far; attacks on Saudi Arabia's Red Sea route could tighten fuel supply further."
+     "title": "CFS",
+     "url": "https://www.cfs.sa.gov.au/"
     }
-  ],
-  "headline": "Flight Centre says hackers took passport and personal details of a large number of customers; if you have booked with Flight Centre, watch for scam messages.",
-  "level": 3,
-  "levelName": "Elevated",
-  "nextCheck": "2026-11-27T04:39:00+10:30",
-  "summary": "Flight Centre, an Australian travel company, says hackers got into an outside booking system and took customer details, including passport information. In the Gulf, the Houthis say they hit two Saudi ports on the Red Sea; Saudi Arabia says it shot down a drone near Jeddah and missiles aimed at Riyadh, with no oil sites reported damaged. No new attacks on US bases found since 21 November, and oil fell about 3% to US$92. Fire danger in the Hills is only Moderate, and Australian phones, banks and power are normal.",
-  "trend": "steady",
-  "updatedAt": "2026-11-26T16:45:00+10:30"
+   ],
+   "summary": "Fire danger in the Mount Lofty Ranges is Moderate today and tomorrow, with no fire bans, CFS warnings or Watch and Act messages near home; 13 fires active across SA. Cooler and windy at the weekend, with gusts to about 55-60 km/h Saturday and Sunday. Some outback roads remain closed by flooding.",
+   "trend": "steady"
+  },
+  {
+   "confidence": "med",
+   "key": "supply",
+   "name": "Fuel, food & supply",
+   "score": 2.6,
+   "sources": [
+    {
+     "title": "Khaleej Times: Oil falls almost 5% as Trump signals restraint on Iran",
+     "url": "https://www.khaleejtimes.com/business/oil-falls-almost-5-as-trump-signals-restraint-on-iran"
+    },
+    {
+     "title": "PM&C: National Fuel Security Plan",
+     "url": "https://www.pmc.gov.au/domestic-policy/fuel-supply-taskforce/public-information-fuel-supply"
+    }
+   ],
+   "summary": "Hormuz is still effectively shut (100+ ships a day before the war; about 3 a day now), and the Houthis keep aiming at Saudi Red Sea ports, Saudi Arabia's other export route. Brent oil fell about 3% to about US$92. SA pump prices are steady with no shortages.",
+   "trend": "steady"
+  },
+  {
+   "confidence": "high",
+   "key": "markets",
+   "name": "Markets & finance",
+   "score": 2,
+   "sources": [],
+   "summary": "The US 'fear gauge' (VIX) eased to about 27, gold rose about 2%, and oil fell 3%. The Australian dollar is about 66 US cents. No sign of bank trouble in Australia.",
+   "trend": "steady"
+  }
+ ],
+ "concerns": [
+  {
+   "actions": [
+    {
+     "action": "Keep the car at least half full.",
+     "reason": "A sudden escalation would push bowser prices up within days, and queues form fast."
+    },
+    {
+     "action": "Hold a little cash at home.",
+     "reason": "If fuel is rationed or networks fail, cash still works when cards may not."
+    }
+   ],
+   "drivers": [
+    "Kuwait says an Iranian drone attack killed two Italian defence workers; Iran denies it. Deaths among allied personnel raise the chance of a US response.",
+    "The Houthis keep firing at Saudi Red Sea ports and a refinery, mostly intercepted; Hormuz stays shut. One outlet reports renewed US strikes on Iran, not confirmed. Oil fell to about US$92."
+   ],
+   "key": "mideast",
+   "likelihood": 31,
+   "prev_likelihood": 30,
+   "scenarios": [
+    {
+     "likelihood": 63,
+     "name": "Standoff drags on with mine and ship incidents",
+     "sa_impact": "Fuel prices stay high; occasional regional servo shortages but no rationing."
+    },
+    {
+     "likelihood": 13,
+     "name": "Deal reached, shipping recovers",
+     "sa_impact": "Fuel prices ease over weeks; little direct effect on SA."
+    },
+    {
+     "likelihood": 24,
+     "name": "Major escalation: US sinks convoy ships or renewed strike campaign",
+     "sa_impact": "Fuel price jump and local shortages within 1-3 weeks; possible government fuel measures."
+    }
+   ],
+   "title": "Iran conflict and Strait of Hormuz shipping",
+   "trend": "up"
+  },
+  {
+   "actions": [
+    {
+     "action": "Ignore any text, call or email about a booking, refund, passport or 'card security issue'; check only in the company's own app or website.",
+     "reason": "Scammers use stolen data and news of hacks to send fake alerts."
+    }
+   ],
+   "drivers": [
+    "Flight Centre, an Australian company, says hackers took customer details including passports from an outside booking system. Who did it is not known; it may be criminals, not a state.",
+    "If the China-linked hacking is one deliberate campaign, the likely aim is quiet footholds in allies' phone, power and water networks ahead of any Taiwan crisis, with phone networks, utilities and ports the likely next targets. This is a hypothesis, though governments have blamed China for parts of it.",
+    "A run of big overseas hacks continues (EU Commission, US intelligence systems, FBI database), and Switzerland says AI agents were used in five attacks including on utilities. Suspected Iran-linked attacks on shop freezers and small water systems remain overseas."
+   ],
+   "key": "cyber",
+   "likelihood": 15,
+   "prev_likelihood": 15,
+   "scenarios": [
+    {
+     "likelihood": 80,
+     "name": "Campaign stays mostly overseas; data breaches like Flight Centre",
+     "sa_impact": "Scam messages using stolen details; some online services down for hours."
+    },
+    {
+     "likelihood": 16,
+     "name": "Same attacks reach Australian supermarkets, water or ports",
+     "sa_impact": "Spoiled chilled stock and patchy shelves for days; local water warnings possible."
+    },
+    {
+     "likelihood": 4,
+     "name": "Turns destructive (wiper attacks) if US or Israeli strikes resume",
+     "sa_impact": "Payments, fuel or communications disrupted for days."
+    }
+   ],
+   "title": "Cyber attacks on Australian services",
+   "trend": "steady"
+  },
+  {
+   "actions": [
+    {
+     "action": "Agree a family code word for urgent calls.",
+     "reason": "AI can clone a voice from seconds of audio; a code word defeats fake 'I need help now' calls."
+    }
+   ],
+   "drivers": [
+    "The FBI warns hackers are using an AI tool to automate attacks on energy, factories and telecoms, and Italy and Switzerland warn of AI-driven attacks; none targets Australia specifically.",
+    "AI voice-clone scams are rising overseas ahead of Christmas; no fake official alerts have been seen in Australia."
+   ],
+   "key": "ai",
+   "likelihood": 7,
+   "prev_likelihood": 7,
+   "scenarios": [
+    {
+     "likelihood": 85,
+     "name": "Background AI-assisted crime and espionage",
+     "sa_impact": "More convincing scams and data breaches; no wide outage."
+    },
+    {
+     "likelihood": 11,
+     "name": "Synthetic-media crisis (fake leader video or alert)",
+     "sa_impact": "Hours of confusion, possible panic buying before it is debunked."
+    },
+    {
+     "likelihood": 4,
+     "name": "Machine-speed attack on many systems at once",
+     "sa_impact": "Payments, telcos, hospitals or the grid disrupted for hours to days."
+    }
+   ],
+   "title": "AI-enabled attack (non-traditional)",
+   "trend": "steady"
+  },
+  {
+   "actions": [
+    {
+     "action": "Keep the CFS app on, and avoid using machinery on dry grass on hot afternoons.",
+     "reason": "Grass is curing; on High days a spark can start a fast grass fire."
+    }
+   ],
+   "drivers": [
+    "Fire danger in the Hills is Moderate today and tomorrow, with no fire ban or CFS warnings near home. The SA grid is normal.",
+    "This covers the next 7 days; cooler and gusty at the weekend (gusts about 55-60 km/h)."
+   ],
+   "key": "local",
+   "likelihood": 6,
+   "prev_likelihood": 6,
+   "scenarios": [
+    {
+     "likelihood": 84,
+     "name": "Warm, windy but quiet week",
+     "sa_impact": "No effect."
+    },
+    {
+     "likelihood": 14,
+     "name": "Fast-running grass fire near the Hills on a High day",
+     "sa_impact": "Road closures and smoke; possible Watch and Act messages."
+    },
+    {
+     "likelihood": 2,
+     "name": "Damaging fire or major power outage",
+     "sa_impact": "Evacuations, power and phone outages in affected areas."
+    }
+   ],
+   "title": "Local SA emergency (bushfire, heat, power) within 7 days",
+   "trend": "steady"
+  },
+  {
+   "actions": [
+    {
+     "action": "No action needed; it is on the board so you know why markets are jumpy.",
+     "reason": "The risk to SA is indirect, through prices."
+    }
+   ],
+   "drivers": [
+    "Two Russian cruise missiles and a drone fell in Poland on 20 November; NATO has not taken military action and there have been no repeat incidents. Ukraine says it damaged five jets at a major Russian air base.",
+    "Britain has written to 100,000 former troops to prepare for a possible call-up (planning, not mobilisation). Betting markets give about 12% for a NATO-Russia clash by year end; any effect on us would come through markets and fuel prices."
+   ],
+   "key": "russia",
+   "likelihood": 5,
+   "prev_likelihood": 5,
+   "scenarios": [
+    {
+     "likelihood": 85,
+     "name": "Protests and extra air defence in Poland, no fighting",
+     "sa_impact": "No effect beyond jittery markets."
+    },
+    {
+     "likelihood": 12,
+     "name": "Repeat incidents and NATO shoots down Russian aircraft",
+     "sa_impact": "Share and fuel price jumps for some days."
+    },
+    {
+     "likelihood": 3,
+     "name": "Direct NATO-Russia fighting",
+     "sa_impact": "Big market falls, fuel price spikes, higher cyber attack risk to allies including Australia."
+    }
+   ],
+   "title": "Russia and NATO (missiles landing in Poland)",
+   "trend": "steady"
+  },
+  {
+   "actions": [
+    {
+     "action": "Keep 2-3 months of any essential prescription medicines.",
+     "reason": "Most medicines are imported via Asian shipping lanes, which any blockade would disrupt first."
+    }
+   ],
+   "drivers": [
+    "No live-fire warnings, GPS jamming or internet disruption around Taiwan; strait shipping is normal.",
+    "Forecast markets give about 3% for a China-Taiwan clash before 2027."
+   ],
+   "key": "taiwan",
+   "likelihood": 5,
+   "prev_likelihood": 5,
+   "scenarios": [
+    {
+     "likelihood": 85,
+     "name": "Routine grey-zone pressure",
+     "sa_impact": "No effect."
+    },
+    {
+     "likelihood": 13,
+     "name": "Large announced drill",
+     "sa_impact": "Market jitters; no supply effect."
+    },
+    {
+     "likelihood": 2,
+     "name": "Blockade or quarantine",
+     "sa_impact": "Fuel, medicine and electronics disruption within weeks."
+    }
+   ],
+   "title": "Taiwan Strait pressure",
+   "trend": "steady"
+  },
+  {
+   "actions": [
+    {
+     "action": "Check Smartraveller before any travel to Central or East Africa or the Gulf.",
+     "reason": "Advice and entry rules can change quickly as outbreaks and the conflict develop."
+    }
+   ],
+   "drivers": [
+    "WHO reports bird flu (H5N1) cases in the United States, Ebola continuing in DR Congo, Kenya and Nigeria, and MERS in Qatar linked to camels.",
+    "None shows spread between people toward Australia."
+   ],
+   "key": "bio",
+   "likelihood": 4,
+   "prev_likelihood": 4,
+   "scenarios": [
+    {
+     "likelihood": 90,
+     "name": "Outbreaks stay contained in their regions",
+     "sa_impact": "No direct effect; possible extra airport screening."
+    },
+    {
+     "likelihood": 9,
+     "name": "Isolated imported case in a Western country",
+     "sa_impact": "Media concern; Australian hospitals manage under existing plans."
+    },
+    {
+     "likelihood": 1,
+     "name": "Spread in Asia-Pacific",
+     "sa_impact": "Travel restrictions and health system alerts."
+    }
+   ],
+   "title": "Bird flu in the US, Ebola in Africa, MERS in the Gulf",
+   "trend": "steady"
+  }
+ ],
+ "confirmed": [],
+ "events_observed": [
+  {
+   "date": "2026-11-03",
+   "eventKey": "us-strikes-iran-2026-11-03",
+   "scenario": "mideast",
+   "so_what": "Pushed oil prices up; fuel stays dear at the bowser.",
+   "title": "US strikes on Iranian targets around the Strait of Hormuz"
+  },
+  {
+   "date": "2026-11-05",
+   "eventKey": "us-cisa-fbi-coldchain-warning-2026-11-05",
+   "scenario": "cyber",
+   "so_what": "No attacks reported in Australia so far; it shows hackers going after everyday equipment, not just computers.",
+   "title": "US cyber agencies (CISA and FBI) warn of an ongoing campaign hacking internet-connected freezers and cold-storage systems; units hit in at least a dozen countries and at US military bases"
+  },
+  {
+   "date": "2026-11-08",
+   "eventKey": "houthi-strike-riyadh-2026-11-08",
+   "scenario": "mideast",
+   "so_what": "No effect on us so far.",
+   "title": "Houthi missile strike damages Aramco building in Riyadh"
+  },
+  {
+   "date": "2026-11-12",
+   "eventKey": "houthi-missiles-mecca-2026-11-12",
+   "scenario": "mideast",
+   "so_what": "No effect on us so far.",
+   "title": "Saudi Arabia intercepts Houthi missiles; debris falls in Mecca region"
+  },
+  {
+   "date": "2026-11-12",
+   "eventKey": "strike-sirik-iran-2026-11-12",
+   "scenario": "mideast",
+   "so_what": "No effect on us so far.",
+   "title": "Iran reports a strike on Sirik on its Hormuz coast"
+  },
+  {
+   "date": "2026-11-13",
+   "eventKey": "us-faa-nationwide-ground-stop-2026-11-13",
+   "scenario": "cyber",
+   "so_what": "Only matters if you were flying via the US; it was not an attack.",
+   "title": "US nationwide flight ground stop (about 4.5 hours), traced to a failed air-traffic router in Arkansas, not a cyber attack"
+  },
+  {
+   "date": "2026-11-13",
+   "eventKey": "iran-linked-attacks-us-water-tankers-2026-11-13",
+   "scenario": "cyber",
+   "so_what": "No effect on us so far, but Iran-linked hackers are hitting allied infrastructure during the Gulf conflict.",
+   "title": "Suspected Iranian hackers locked operators out of small US water stations and hit systems on two tankers headed for Texas (attribution not yet official)"
+  },
+  {
+   "date": "2026-11-14",
+   "eventKey": "irgc-tankers-mines-hormuz-2026-11-14",
+   "scenario": "mideast",
+   "so_what": "Keeps fuel prices high; no shortages in SA.",
+   "title": "Iran's Revolutionary Guards say three tankers hit mines and caught fire in the Strait of Hormuz"
+  },
+  {
+   "date": "2026-11-15",
+   "eventKey": "microsoft-365-global-outage-2026-11-15",
+   "scenario": "cyber",
+   "so_what": "Work email and Teams were disrupted; it is fixed and was not an attack.",
+   "title": "Global Microsoft 365 outage (email, Teams) for about a day, caused by a software bug"
+  },
+  {
+   "date": "2026-11-15",
+   "eventKey": "coles-cyber-incident-2026-11-15",
+   "scenario": "cyber",
+   "so_what": "Shop as normal, but ignore any 'Coles' email or text asking you to log in or pay.",
+   "title": "Coles investigates a cyber security incident"
+  },
+  {
+   "date": "2026-11-16",
+   "eventKey": "us-chase-bank-outage-2026-11-16",
+   "scenario": "cyber",
+   "so_what": "No effect on Australian banks. It is the third big US outage in five days, so watch for copycat scam messages.",
+   "title": "Chase and other US banks hit by an hours-long online banking outage; a technical fault, not a hack"
+  },
+  {
+   "date": "2026-11-16",
+   "eventKey": "optimizely-supply-chain-breach-2026-11-16",
+   "scenario": "cyber",
+   "so_what": "Be wary of odd pop-ups or payment requests on big-brand websites for the next while.",
+   "title": "Hackers breached ad-tech firm Optimizely, affecting websites of big brands including BBC, CNN, IKEA and Zoom (criminal gang, not a state)"
+  },
+  {
+   "date": "2026-11-17",
+   "eventKey": "apple-global-outage-2026-11-17",
+   "scenario": "cyber",
+   "so_what": "No lasting effect on us; watch for fake 'Apple ID' emails that use it as cover.",
+   "title": "Apple services down worldwide for hours; Apple says it was not a cyber attack (cause not yet published)"
+  },
+  {
+   "date": "2026-11-17",
+   "eventKey": "iran-strikes-us-radar-bahrain-2026-11-17",
+   "scenario": "mideast",
+   "so_what": "A step up in direct US-Iran fighting; it keeps fuel prices high and supply tight.",
+   "title": "Iran struck a US radar site in Bahrain; a US jet then hit an Iranian Revolutionary Guards missile launch site on Qeshm Island in the Strait of Hormuz"
+  },
+  {
+   "date": "2026-11-17",
+   "eventKey": "tanker-attacked-hormuz-2026-11-17",
+   "scenario": "mideast",
+   "so_what": "Attacks on tankers push oil and bowser prices up; keep the car at least half full.",
+   "title": "A tanker was attacked in the Strait of Hormuz: one crew member missing and 11 injured, according to the UAE oil company ADNOC"
+  },
+  {
+   "date": "2026-11-18",
+   "eventKey": "iran-fires-on-us-base-kuwait-2026-11-18",
+   "scenario": "mideast",
+   "so_what": "No damage, but it shows the US-Iran exchange is spreading to more Gulf countries.",
+   "title": "Iran fired drones at the US Ali Al Salem air base in Kuwait and at targets in Bahrain; Kuwait says they were shot down with no damage"
+  },
+  {
+   "date": "2026-11-18",
+   "eventKey": "us-nsa-network-outage-2026-11-18",
+   "scenario": "cyber",
+   "so_what": "No effect on us; it adds to a run of US outages that scammers may exploit.",
+   "title": "A US spy agency (NSA) classified network went down, the latest in a string of US outages; US officials say there is no evidence of a cyber attack (cause not published)"
+  },
+  {
+   "date": "2026-11-19",
+   "eventKey": "sa-eyre-storm-blackouts-2026-11-19",
+   "scenario": "local",
+   "so_what": "No effect near home; a reminder to keep torches and a charged power bank handy in storm season.",
+   "title": "Storms cut power to more than 20,000 homes on SA's Eyre Peninsula (weather, not an attack)"
+  },
+  {
+   "date": "2026-11-19",
+   "eventKey": "visa-mastercard-jpm-vendor-hack-2026-11-19",
+   "scenario": "cyber",
+   "so_what": "One report says the leaked files list some Australians but no card numbers; expect fake 'card security' texts and check only in your bank's app.",
+   "title": "Hackers broke into outside suppliers of Visa, Mastercard and JPMorgan and leaked data on thousands of mostly US customers (a hack; a ransomware gang claims it; card numbers reportedly not taken)"
+  },
+  {
+   "date": "2026-11-21",
+   "eventKey": "fbi-crime-database-hack-2026-11-21",
+   "scenario": "cyber",
+   "so_what": "No effect on us; it adds to a run of US hacks and outages that scammers may exploit.",
+   "title": "The FBI is investigating a suspected hack of a US national crime database (a hack; who did it is not known)"
+  },
+  {
+   "date": "2026-11-21",
+   "eventKey": "two-tankers-hit-khasab-2026-11-21",
+   "scenario": "mideast",
+   "so_what": "More tanker attacks keep fuel prices high; keep the car at least half full.",
+   "title": "Two tankers were hit by unidentified projectiles within an hour off Khasab, Oman, at the mouth of Hormuz; no injuries reported (confirmed by the UK maritime agency, UKMTO)"
+  },
+  {
+   "date": "2026-11-20",
+   "eventKey": "russia-missiles-poland-2026-11-20",
+   "scenario": "russia",
+   "so_what": "No effect on us so far; it raises the risk of a wider Europe crisis that would move markets and fuel prices.",
+   "title": "Two Russian cruise missiles and a drone crashed inside Poland, a NATO member, during a massive Russian attack on Ukraine (confirmed by Poland's government)"
+  },
+  {
+   "date": "2026-11-21",
+   "eventKey": "iran-attacks-us-bases-bahrain-2026-11-21",
+   "scenario": "mideast",
+   "so_what": "No damage reported, but it keeps the Gulf tense and fuel prices high.",
+   "title": "Iran launched attacks on US bases in Bahrain; Bahrain says it intercepted them, as Iran readies tankers to break the US blockade"
+  },
+  {
+   "date": "2026-11-23",
+   "eventKey": "belgium-airspace-closed-strike-2026-11-23",
+   "scenario": "cyber",
+   "so_what": "Only matters if you were flying via Brussels; it was a strike, not an attack.",
+   "title": "Belgium closed its airspace for the day and all Brussels Airport flights were cancelled, reportedly because of a strike (not a hack)"
+  },
+  {
+   "date": "2026-11-23",
+   "eventKey": "eu-commission-cyberattack-2026-11-23",
+   "scenario": "cyber",
+   "so_what": "No effect on us so far; it adds to a run of overseas hacks that scammers may exploit.",
+   "title": "The European Commission confirmed personal data leaked in an ongoing cyber attack (a hack); reports say China-backed hackers are suspected, not officially confirmed"
+  },
+  {
+   "date": "2026-11-23",
+   "eventKey": "irgc-claims-supertankers-mines-2026-11-23",
+   "scenario": "mideast",
+   "so_what": "Keeps Hormuz shut and fuel tight, though oil prices fell this time.",
+   "title": "Iran's Revolutionary Guards say two supertankers hit mines near the Strait of Hormuz (Iranian state claim, not independently confirmed)"
+  },
+  {
+   "date": "2026-11-24",
+   "eventKey": "irgc-claims-three-tankers-mines-2026-11-24",
+   "scenario": "mideast",
+   "so_what": "Keeps Hormuz shut and fuel tight; no shortages in SA.",
+   "title": "Iran's Revolutionary Guards say three oil tankers hit mines and caught fire in the Strait of Hormuz (Iranian state claim, not independently confirmed)"
+  },
+  {
+   "date": "2026-11-23",
+   "eventKey": "ukmto-tanker-fire-uae-2026-11-23",
+   "scenario": "mideast",
+   "so_what": "Keeps Hormuz shut and fuel tight; no shortages in SA.",
+   "title": "A tanker was attacked and caught fire off the UAE coast; no injuries (confirmed by the UK maritime agency, UKMTO)"
+  },
+  {
+   "date": "2026-11-24",
+   "eventKey": "houthi-strike-riyadh-tower-2026-11-24",
+   "scenario": "mideast",
+   "so_what": "No effect on us so far.",
+   "title": "A Houthi strike hit a tower in Riyadh, Saudi Arabia, injuring 11 (confirmed by Saudi civil defence)"
+  },
+  {
+   "date": "2026-11-24",
+   "eventKey": "cia-odni-ai-hack-2026-11-24",
+   "scenario": "cyber",
+   "so_what": "No effect on us; it adds to a run of overseas hacks that scammers may exploit.",
+   "title": "US reports say hackers used AI tools to get into CIA and US intelligence analysis systems (a hack; China suspected, not officially confirmed)"
+  },
+  {
+   "date": "2026-11-25",
+   "eventKey": "iran-army-claims-tanker-mine-2026-11-25",
+   "scenario": "mideast",
+   "so_what": "Keeps Hormuz shut and fuel tight; no shortages in SA.",
+   "title": "Iran's army says another oil tanker hit a mine and caught fire in the Strait of Hormuz (Iranian state media claim, not independently confirmed)"
+  },
+  {
+   "date": "2026-11-25",
+   "eventKey": "flight-centre-data-breach-2026-11-25",
+   "scenario": "cyber",
+   "so_what": "If you have booked with Flight Centre, expect its email and be wary of any booking, refund or passport message with a link.",
+   "title": "Flight Centre says hackers got into an outside booking system and took a large number of customers' details, including passports (a hack; who did it is not known)"
+  },
+  {
+   "date": "2026-11-25",
+   "eventKey": "houthis-saudi-red-sea-ports-2026-11-25",
+   "scenario": "mideast",
+   "so_what": "No effect on us so far; attacks on Saudi Arabia's Red Sea route could tighten fuel supply further.",
+   "title": "Houthis say they hit two Saudi Red Sea ports after coalition strikes on Yemen; Saudi Arabia says it intercepted a drone near Jeddah and missiles aimed at Riyadh (no oil site damage reported)"
+  },
+  {
+   "eventKey": "italians-killed-kuwait-drone-2026-11-26",
+   "title": "Kuwait says an Iranian drone attack killed two Italian defence workers; Iran denies responsibility",
+   "scenario": "mideast",
+   "date": "2026-11-26",
+   "so_what": "No effect on us so far; deaths of allied personnel could bring a US response that pushes fuel prices up."
+  },
+  {
+   "eventKey": "switzerland-ai-agent-attacks-2026-11-26",
+   "title": "Switzerland's government says hackers used AI agents in five cyber attacks, including on utilities (a hack; who did it not stated)",
+   "scenario": "cyber",
+   "date": "2026-11-26",
+   "so_what": "No effect on us; it shows AI-driven hacking is now real and could reach Australian services."
+  }
+ ],
+ "headline": "Kuwait says an Iranian drone attack killed two Italian defence workers; the Gulf war keeps fuel supply tight, but oil prices fell and SA fuel is normal.",
+ "level": 3,
+ "levelName": "Elevated",
+ "nextCheck": "2026-11-27T16:39:00+10:30",
+ "summary": "Kuwait says an Iranian drone attack killed two Italian defence workers; Iran denies it. The Houthis keep firing missiles and drones at Saudi ports and a refinery, and Saudi Arabia says it shot most of them down; no oil export damage is confirmed. One outlet reports renewed US strikes on Iran, but our searches did not confirm it. Oil fell about 3% to US$92, Hills fire danger is only Moderate, and Australian phones, banks and power are normal.",
+ "trend": "steady",
+ "updatedAt": "2026-11-27T04:40:41+10:30"
 }
