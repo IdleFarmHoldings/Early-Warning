@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-26T06:58:00Z",
+  "generated_at": "2026-11-26T07:13:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -637,9 +637,10 @@
       "why": "The 2023 Optus outage cut mobile, NBN, EFTPOS and some 000 calls nationwide for 12 hours. Hostile states pre-position in critical infrastructure; GPS jamming over Australia would be a new and serious sign."
     },
     {
-      "band": "Guarded",
-      "convergence": "Two different kinds of sign are showing together (health and trade). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: unknown illness / pneumonia cluster reported, countries restricting medical supply exports and pandemic-response stocks outperforming (5 days).",
+      "band": "High",
+      "convergence": "Signs are converging across 3 separate areas (chemical weapons, health and trade). Unrelated systems flagging the same scenario at once is the pattern seen before past events. Before COVID-19 (Dec 2019 - Feb 2020): reports of an unknown pneumonia cluster, WHO outbreak notices, mask and hazmat makers (Alpha Pro Tech, Lakeland) and vaccine developers (Moderna, Novavax) surging weeks before broad markets fell, and countries restricting exports of masks and medicines (Taiwan from 24 Jan 2020, then dozens more). The strongest signs not yet showing: countries restricting medical supply exports, pandemic-response stocks outperforming (5 days) and unexplained mass deaths or animal die-offs.",
       "domains": [
+        "Chemical weapons",
         "Health",
         "Trade"
       ],
@@ -654,25 +655,35 @@
           "weight": 15
         },
         {
+          "detail": "Dr. Siegel on measles comeback, mystery illness outbreak on cruise ship",
+          "domain": "Health",
+          "id": "illness",
+          "name": "Unknown illness / pneumonia cluster reported",
+          "short": "Illness cluster",
+          "weight": 20
+        },
+        {
           "detail": "newsGP - In Practice: Medication shortages update",
           "domain": "Trade",
           "id": "shortage",
           "name": "Australian medicine or PPE shortage reports",
           "short": "Medicine or PPE shortage",
           "weight": 10
+        },
+        {
+          "detail": "OPCW Honors Chemical Weapons Victims at States Parties Conference",
+          "domain": "Chemical weapons",
+          "id": "chem",
+          "name": "Chemical / nerve-agent attack or mass poisoning reported",
+          "short": "Chemical attack",
+          "weight": 15
         }
       ],
       "name": "Pandemic, biological or chemical emergency",
       "sa_impact": "Health system strain, possible lockdowns and border closures, and shortages of medicines and protective equipment, which Australia mostly imports.",
-      "score": 25,
-      "trend": "down",
+      "score": 60,
+      "trend": "up",
       "unlit": [
-        {
-          "domain": "Health",
-          "id": "illness",
-          "name": "Unknown illness / pneumonia cluster reported",
-          "weight": 20
-        },
         {
           "domain": "Trade",
           "id": "exports",
@@ -690,12 +701,6 @@
           "id": "masscas",
           "name": "Mass casualty declarations (any country)",
           "weight": 5
-        },
-        {
-          "domain": "Chemical weapons",
-          "id": "chem",
-          "name": "Chemical / nerve-agent attack or mass poisoning reported",
-          "weight": 15
         },
         {
           "domain": "Health",
@@ -799,10 +804,11 @@
     },
     {
       "band": "Elevated",
-      "convergence": "Signs are converging across 3 separate areas (ai-enabled hacking, cloud services and markets). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: a Chinese state-sponsored group used an AI agent to carry out 80-90% of an attack on about 30 organisations, at thousands of requests per second. A fake AI image of a Pentagon explosion briefly moved US markets in May 2023, and a deepfake video call of a CFO tricked a company into paying US$25 million in 2024. The likely signature of an AI attack is breadth and speed: many unrelated systems and vendors hit at once, synthetic media of officials, and shocks with no clear human cause. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, deepfakes of leaders or fake official alerts and market fear index jumps 25%+ in a day.",
+      "convergence": "Signs are converging across 4 separate areas (ai-enabled hacking, cloud services, fraud waves and markets). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: a Chinese state-sponsored group used an AI agent to carry out 80-90% of an attack on about 30 organisations, at thousands of requests per second. A fake AI image of a Pentagon explosion briefly moved US markets in May 2023, and a deepfake video call of a CFO tricked a company into paying US$25 million in 2024. The likely signature of an AI attack is breadth and speed: many unrelated systems and vendors hit at once, synthetic media of officials, and shocks with no clear human cause. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, deepfakes of leaders or fake official alerts and market fear index jumps 25%+ in a day.",
       "domains": [
         "AI-enabled hacking",
         "Cloud services",
+        "Fraud waves",
         "Markets"
       ],
       "key": "ai",
@@ -830,12 +836,20 @@
           "name": "Major cloud or AI service outage",
           "short": "Major cloud or AI service outage",
           "weight": 10
+        },
+        {
+          "detail": "Retired teacher duped by AI deepfake applauds new Sask. legislation",
+          "domain": "Fraud waves",
+          "id": "scams",
+          "name": "Surge in AI voice-clone / deepfake scams in Australia",
+          "short": "Surge in AI voice-clone / deepfake…",
+          "weight": 5
         }
       ],
       "name": "AI-enabled attack (non-traditional)",
       "sa_impact": "Not bombs but disruption: hacking at machine speed across banks, telcos, hospitals and the grid at once; fake videos or alerts from leaders causing panic buying or bank runs; or automated market and fraud shocks. Effects would be outages, payment failures and confusion about what is real.",
-      "score": 35,
-      "trend": "down",
+      "score": 40,
+      "trend": "up",
       "unlit": [
         {
           "domain": "Mass exploitation",
@@ -860,12 +874,6 @@
           "id": "tel",
           "name": "Phone / internet carrier outage",
           "weight": 10
-        },
-        {
-          "domain": "Fraud waves",
-          "id": "scams",
-          "name": "Surge in AI voice-clone / deepfake scams in Australia",
-          "weight": 5
         },
         {
           "domain": "Edge-device exploitation",
