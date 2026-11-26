@@ -282,18 +282,17 @@
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
     "internet": "RuntimeError: Iran ping-slash24: TimeoutError: The read operation timed out; Iran bgp: TimeoutError: The read operation ",
-    "maritime": "TimeoutError: ",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output=",
     "telecom": "RuntimeError: Telstra ping-slash24: TimeoutError: The read operation timed out; Telstra bgp: TimeoutError: The read oper"
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-26T16:04:00Z",
+  "generated_at": "2026-11-26T16:19:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 15,
-    "Black Sea": 44,
-    "Israel & Eastern Mediterranean": 5,
+    "Baltic / Kaliningrad": 11,
+    "Black Sea": 35,
+    "Israel & Eastern Mediterranean": 3,
     "Korea": 0,
-    "Persian Gulf": 20,
+    "Persian Gulf": 12,
     "South Australia": null,
     "Sydney / NSW": null,
     "Taiwan Strait": 0
@@ -322,10 +321,9 @@
     },
     {
       "attack_reported": true,
-      "confirmed": true,
+      "confirmed": false,
       "headlines": [
-        "Australia’s Flight Centre Data Breach Exposes Customer Records and Passport Details",
-        "Australia’s Flight Centre probes data breach in third-party system"
+        "Australia’s Flight Centre Data Breach Exposes Customer Records and Passport Details"
       ],
       "needs_confirming": false,
       "severity": "Info",
@@ -365,6 +363,17 @@
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
+        "Wyoming uranium operation shuts down after cyberattack"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "Wyoming"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": true,
+      "headlines": [
+        "AI agents used in five cyber attacks in Switzerland, government says",
         "1Password Hit by Backend Breach via Hijacked Employee GitHub Account"
       ],
       "needs_confirming": false,
@@ -373,13 +382,14 @@
     },
     {
       "attack_reported": true,
-      "confirmed": false,
+      "confirmed": true,
       "headlines": [
-        "Hackers Actively Exploit Critical Drupal Vulnerability to Take Over Websites"
+        "Switzerland reports first successful AI agent cyberattacks",
+        "Switzerland Confirms First Cyberattacks Involving AI Agents Against Multiple Organizations"
       ],
       "needs_confirming": false,
       "severity": "Info",
-      "target": "Hackers Actively Exploit"
+      "target": "Switzerland"
     },
     {
       "attack_reported": true,
@@ -410,17 +420,6 @@
       "needs_confirming": false,
       "severity": "Info",
       "target": "AI Hackers Target"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": true,
-      "headlines": [
-        "Switzerland reports first successful AI agent cyberattacks",
-        "Switzerland Confirms First Cyberattacks Involving AI Agents Against Multiple Organizations"
-      ],
-      "needs_confirming": false,
-      "severity": "Info",
-      "target": "Switzerland"
     },
     {
       "attack_reported": false,
@@ -477,8 +476,8 @@
       "pump_cents": 2,
       "week_ago_aud": 133.8
     },
-    "grid_demand_fall_pct": -2.4,
-    "grid_demand_mw": 1449,
+    "grid_demand_fall_pct": 1.1,
+    "grid_demand_mw": 1433,
     "grid_demand_usual_mw": 1336,
     "grid_lor_level": 0,
     "nearby_incidents": [],
@@ -527,23 +526,23 @@
   "markets": {
     "AUD/USD": {
       "big_move": false,
-      "change_pct": -0.04,
-      "price": 0.6631
+      "change_pct": -0.01,
+      "price": 0.6633
     },
     "Brent oil": {
       "big_move": false,
-      "change_pct": -3.13,
-      "price": 91.65
+      "change_pct": -3.4,
+      "price": 91.39
     },
     "Gold": {
       "big_move": false,
-      "change_pct": 1.73,
-      "price": 3597.1
+      "change_pct": 1.87,
+      "price": 3601.9
     },
     "VIX": {
       "big_move": false,
-      "change_pct": -5.69,
-      "price": 26.68
+      "change_pct": -5.97,
+      "price": 26.6
     }
   },
   "national_shocks": {
@@ -554,14 +553,16 @@
     },
     "shocks": [],
     "tracking_glitch": false,
-    "traffic_not_normal": {}
+    "traffic_not_normal": {
+      "AE": "DOWN"
+    }
   },
   "nc3": "normal",
   "news_watch": {
     "ai_hack": [
+      "Switzerland reports first successful AI agent cyberattacks - Bitdefender",
       "Google says the first autonomous AI cyberattack has happened. It won't be the last. - Mashable",
-      "Chinese, North Korean Hackers Adopt ARTEX AI Offensive Framework - Infosecurity Magazine",
-      "What is ARTEX, the AI-powered tool linked to recent cyberattacks? - The Daily Star"
+      "AI agents used in five cyber attacks in Switzerland, government says - Reuters"
     ],
     "airspace": [
       "Iran, US-Israel War Live Updates | US announces civilian nuclear deal with Saudi Arabia: Report - Deccan Herald",
@@ -570,16 +571,13 @@
     ],
     "aviation_halt": [
       "Miami Airport Issues Ground Stop After FedEx Plane Overshoots Runway - The Weekly Times",
-      "FedEx MD-11 overruns runway at Miami airport, triggering ground stop - AeroTime",
-      "FedEx plane overshoots Miami runway, causing brief suspension of flights at airport - BBC"
+      "Timeline of the FAA nationwide ground stop: How it developed - ABC News - Breaking News, Latest News and Videos",
+      "FedEx MD-11 overruns runway at Miami airport, triggering ground stop - AeroTime"
     ],
     "bank_outage": [
       "Wall Street recovers most early losses as pullback in AI stocks eases - CommBank",
       "NAB fails to take down former staffer’s ‘untrue’ Instagram whistleblower account - hrleader.com.au",
       "Student visa decline ‘damaging universities and economy’ - Research Professional News"
-    ],
-    "blood": [
-      "Defense Min. Meets Vice President of Equatorial Guinea - Sada Elbalad English"
     ],
     "cables": [
       "Kalypso Offshore Energy Awarded NYSERDA Grant to Develop Subsea Cable Operations & Maintenance Hub in Brooklyn - 01net",
@@ -608,7 +606,7 @@
     "cyber_ot": [
       "UK operation wards off risk of cyber-attack on supermarket fridges and freezers - The Guardian",
       "Shop freezers in seven European countries hit by cyber-attack - BBC",
-      "Supermarket freezers and fridges in Europe hit by cyberattack - Nine.com.au"
+      "Next Plc’s Supplier Hit by Cyberattack in Latest UK Retail Breach - Insurance Journal"
     ],
     "cyber_state": [
       "ESET Research: Sandworm behind cyberattack on Poland’s power grid in late 2025 - We Live Security",
@@ -617,8 +615,8 @@
     ],
     "cyber_supply": [
       "Critical Zero-Day Wave Strikes Hypervisors, Edge Appliances, and AI Medical Imaging + Video - Howl.Link",
-      "1Password Hit by Backend Breach via Hijacked Employee GitHub Account - Infosecurity Magazine",
-      "CISA Warns of 10 Actively Exploited Vulnerabilities in Juniper, Mitel, Danfoss, and Vates Products - GBHackers News"
+      "CISA Warns of 10 Actively Exploited Vulnerabilities in Juniper, Mitel, Danfoss, and Vates Products - GBHackers News",
+      "VMware fixes third vCenter auth bypass days after patching exploited flaw - iTnews"
     ],
     "deepfake": [
       "Video of Trump slamming Papua New Guinea's politicians is an AI-fake - www.aap.com.au",
@@ -631,17 +629,24 @@
     "flash": [
       "TerraCom Limited Enters Trading Halt Ahead of Board Composition Announcement Following AGM Vote - Kalkine",
       "Toppoint Q3 Earnings Show Narrower Loss Amid Trading Halt Concerns - Yahoo Finance",
-      "Legend Mining Requests Trading Halt Pending Research and Development Claims Announcement - Kalkine"
+      "Crypto's Thanksgiving Reckoning: $3,000 Split Across Bitcoin, Dogecoin and Ether Now Worth About $1,565 - BigGo Finance"
     ],
     "fuel_au": [
       "The Refill Gap: Australia’s Fuel Reserve and the Test of Strategic Endurance - Australian Institute of International Affairs",
       "Niger fuel shortage: Agadez caps sales at 30 litres - DNE Africa",
-      "Oil Supply Shock to Worsen as Inventories Fall Further Even if Conflict Ends - EnergyNow.com"
+      "LBRCA launches fuel tax credit campaign - www.ownerdriver.com.au"
+    ],
+    "gulf_strikes": [
+      "Powerful Explosions Reported in Riyadh following Yemeni Missile Attack - تسنیم",
+      "Houthi attack targets oil refinery in southwestern Saudi Arabia: Coalition - Middle East Monitor",
+      "Saudis say they intercepted Houthi drone near key port in Jeddah - The Times of Israel",
+      "Saudi downs Houthi missiles, drones as attacks continue - Quantum Commodity Intelligence",
+      "Houthi Attacks Gut Riyadh’s Peak Season - Skift"
     ],
     "illness": [
       "Mystery illness causes mass hospitalisation of runners - The Nightly",
       "Dr. Siegel on measles comeback, mystery illness outbreak on cruise ship - Fox News",
-      "Zayn Malik hospitalised with mystery illness, forced to cancel upcoming appearances on album release week - Nine.com.au"
+      "148 aboard Florida-bound cruise ship sickened by ‘unknown’ GI outbreak: CDC - The Hill"
     ],
     "masscas": [
       "Cop wrestles patient trying to grab gun in hospital - The Daily Telegraph",
@@ -662,8 +667,8 @@
     ],
     "national_outage": [
       "Inside the ‘Black Sky’ plans for a nationwide blackout - Herald.Wales",
-      "Chainsaw damage on a GRIDCo line and ECG upgrades cut power in Kumasi and Accra - 3News",
-      "Paravoor market plunges into darkness after high-mast light goes defunct - Onmanorama"
+      "Local students get second chance at exam - Wanaka App",
+      "Chainsaw damage on a GRIDCo line and ECG upgrades cut power in Kumasi and Accra - 3News"
     ],
     "outage_au": [
       "Telstra mobile outage disrupts services across Australia - Australian Cyber Security Magazine",
@@ -686,7 +691,7 @@
     "scams": [
       "Labor and the Greens betray victims of online financial scams - Senator the Hon Sarah Henderson",
       "How to defend against cyber hackers who log on, not break in - CommBank",
-      "Australia’s AI Inquiry Report: What It Means for Your Face, Your Voice and Your Work - The Original PC Doctor"
+      "Retired teacher duped by AI deepfake applauds new Sask. legislation - Yahoo News Canada"
     ],
     "shipping_attacks": [
       "Iran claims LNG carrier and tankers struck mines in Strait of Hormuz - safety4sea",
@@ -710,9 +715,9 @@
       "yes": 5.5
     },
     {
-      "d24h": 0.5,
+      "d24h": 0.4,
       "q": "US-Iran Final Nuclear Deal by December 31, 2026?",
-      "yes": 3.3
+      "yes": 3.2
     },
     {
       "d24h": 0.5,
@@ -760,9 +765,9 @@
       "yes": 1.8
     },
     {
-      "d24h": 0.1,
+      "d24h": 0.2,
       "q": "Will China blockade Taiwan by December 31, 2026??",
-      "yes": 2.0
+      "yes": 2.1
     },
     {
       "d24h": 0.0,
@@ -785,9 +790,9 @@
       "yes": 1.5
     },
     {
-      "d24h": 2.0,
+      "d24h": 2.1,
       "q": "Ukraine agrees not to join NATO by December 31, 2026?",
-      "yes": 3.4
+      "yes": 3.5
     },
     {
       "d24h": -0.5,
@@ -815,9 +820,9 @@
       "yes": 18.0
     },
     {
-      "d24h": 0.5,
+      "d24h": 2.5,
       "q": "Will Nick Stewart attend a US x Iran diplomatic meeting by December 31, 2026?",
-      "yes": 9.0
+      "yes": 9.5
     }
   ],
   "quakes_m6_24h": [],
@@ -1038,7 +1043,7 @@
       "band": "Low",
       "key": "mideast",
       "score": 0,
-      "trend": "down"
+      "trend": "steady"
     },
     {
       "band": "Low",
@@ -1129,22 +1134,17 @@
     },
     {
       "band": "Elevated",
-      "convergence": "Signs are converging across 4 separate areas (ai-enabled hacking, cloud services, fraud waves and markets). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: ",
+      "convergence": "Signs are converging across 3 separate areas (ai-enabled hacking, cloud services and fraud waves). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: a Chinese",
       "domains": [
         "AI-enabled hacking",
         "Cloud services",
-        "Fraud waves",
-        "Markets"
+        "Fraud waves"
       ],
       "key": "ai",
       "lit": [
         {
           "detail": "Google says the first autonomous AI cyberattack has happened. It won't be the last.",
           "name": "Reports of AI-driven hacking campaigns"
-        },
-        {
-          "detail": "Jensen Huang's return to Nvidia was a circuit breaker for the market, says Deutsche's Bankim Chadha",
-          "name": "Flash crash or exchange trading halt"
         },
         {
           "detail": "Microsoft issues 'Code Red' after huge global outage",
@@ -1155,13 +1155,13 @@
           "name": "Surge in AI voice-clone / deepfake scams in Australia"
         }
       ],
-      "score": 40,
-      "trend": "steady"
+      "score": 30,
+      "trend": "down"
     }
   ],
   "sectors_relative_5d": {
     "defence_au": -0.38,
-    "defence_eu": 4.34,
+    "defence_eu": 4.27,
     "defence_us": 4.21,
     "pandemic": 0.09
   },
