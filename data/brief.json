@@ -3,9 +3,9 @@
   "acsc": [],
   "aircraft_flags": {
     "gps_gulf": {
-      "median": 9,
+      "median": 9.0,
       "status": "ANOMALY",
-      "value": 49
+      "value": 42
     }
   },
   "analyst": {
@@ -287,101 +287,22 @@
   ],
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
+    "maritime": "TimeoutError: ",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-26T06:43:00Z",
+  "generated_at": "2026-11-26T06:58:00Z",
   "gps_bad_pct": {
     "Baltic / Kaliningrad": 20,
-    "Black Sea": 36,
-    "Israel & Eastern Mediterranean": 13,
+    "Black Sea": null,
+    "Israel & Eastern Mediterranean": 6,
     "Korea": 0,
-    "Persian Gulf": 49,
-    "South Australia": 4,
-    "Sydney / NSW": 1,
-    "Taiwan Strait": 1
+    "Persian Gulf": 42,
+    "South Australia": 2,
+    "Sydney / NSW": 0,
+    "Taiwan Strait": 0
   },
   "incidents": [
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
-        "Travel giant Flight Centre hit by cyber attack with customer passport details potentially exposed"
-      ],
-      "needs_confirming": false,
-      "severity": "Info",
-      "target": "Travel"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
-        "Flight Centre probes data breach of third-party booking system"
-      ],
-      "needs_confirming": false,
-      "severity": "Info",
-      "target": "Flight Centre"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
-        "Australia's Flight Centre probes data breach in third-party system"
-      ],
-      "needs_confirming": false,
-      "severity": "Info",
-      "target": "Australia's Flight Centre"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
-        "What Flight Centre customers must do now after cyber attack hits passport and personal data"
-      ],
-      "needs_confirming": false,
-      "severity": "Info",
-      "target": "What Flight Centre"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
-        "Passport data exposed in travel giant data breach"
-      ],
-      "needs_confirming": false,
-      "severity": "Info",
-      "target": "Passport"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
-        "‘Significant’: Flight Centre hit by cyber attack"
-      ],
-      "needs_confirming": false,
-      "severity": "Info",
-      "target": "Significant"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
-        "Major travel firm warns of ‘significant’ customer data hack"
-      ],
-      "needs_confirming": false,
-      "severity": "Info",
-      "target": "Major"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
-        "Hacked! Flight Centre Travel Group discloses data breach; “significant number” of customers impacted"
-      ],
-      "needs_confirming": false,
-      "severity": "Info",
-      "target": "Hacked"
-    },
     {
       "attack_reported": true,
       "confirmed": false,
@@ -396,11 +317,11 @@
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
-        "Autonomous AI agents are giving everyday hackers ‘nation-state’ firepower, cyber expert reveals"
+        "[AI Hacking] Two Pillars of U.S. Intelligence Breached, Exposing Limits of U.S. Cyber Defenses Against AI-Driven Attacks"
       ],
       "needs_confirming": false,
       "severity": "Info",
-      "target": "Autonomous AI"
+      "target": "AI Hacking"
     },
     {
       "attack_reported": false,
@@ -426,9 +347,10 @@
     },
     {
       "attack_reported": false,
-      "confirmed": false,
+      "confirmed": true,
       "headlines": [
-        "NAB fails to take down former staffer’s ‘untrue’ Instagram whistleblower account"
+        "NAB fails to take down former staffer’s ‘untrue’ Instagram whistleblower account",
+        "Inflation rise fails to shake ANZ’s revised rate call"
       ],
       "needs_confirming": false,
       "severity": "Info",
@@ -436,11 +358,9 @@
     },
     {
       "attack_reported": false,
-      "confirmed": true,
+      "confirmed": false,
       "headlines": [
-        "U.S. Treasury’s FinCEN Hit by Cyberattack, Disrupting Financial Crime Reporting",
-        "US student visa rule struck down: Relief for Indians, but what next?",
-        "4 Ways to Prep Your Finances Before the Next Tech Outage"
+        "US student visa rule struck down: Relief for Indians, but what next?"
       ],
       "needs_confirming": false,
       "severity": "Info",
@@ -474,19 +394,38 @@
       "pump_cents": 2,
       "week_ago_aud": 133.8
     },
-    "grid_demand_fall_pct": -2.4,
-    "grid_demand_mw": 1427,
-    "grid_demand_usual_mw": 995,
+    "grid_demand_fall_pct": -3.3,
+    "grid_demand_mw": 1496,
+    "grid_demand_usual_mw": 1076,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
       "air": {
-        "aqi": 28,
+        "aqi": 29,
         "peak_pm25_48h": 14,
-        "pm25": 4
+        "pm25": 6
       },
       "air_word": "Good",
-      "days": []
+      "days": [
+        {
+          "date": "2026-11-26",
+          "gust": 37,
+          "rain": 0,
+          "tmax": 29
+        },
+        {
+          "date": "2026-11-27",
+          "gust": 33,
+          "rain": 24,
+          "tmax": 23
+        },
+        {
+          "date": "2026-11-28",
+          "gust": 54,
+          "rain": 0,
+          "tmax": 20
+        }
+      ]
     },
     "possible_blackout": false,
     "power_news": [],
@@ -498,25 +437,25 @@
       "Morgan Vale Road, Pine Valley Station: MORGAN MAIL RD Closed due to flooding over road",
       "Pine Valley Road, Pine Valley Station: PINE VALLEY RD Closed due to flooding over road"
     ],
-    "rooftop_pv_mw": 936,
+    "rooftop_pv_mw": 749,
     "sawater_news": [],
     "watch_and_act": []
   },
   "markets": {
     "AUD/USD": {
       "big_move": false,
-      "change_pct": 0.03,
-      "price": 0.6636
+      "change_pct": 0.09,
+      "price": 0.664
     },
     "Brent oil": {
       "big_move": false,
-      "change_pct": -4.05,
-      "price": 90.78
+      "change_pct": -4.18,
+      "price": 90.66
     },
     "Gold": {
       "big_move": false,
-      "change_pct": 1.8,
-      "price": 3599.4
+      "change_pct": 1.71,
+      "price": 3596.3
     },
     "VIX": {
       "big_move": false,
@@ -544,25 +483,18 @@
     "airspace": [
       "IndiGo Adds Southeast Asia Flights as Westbound Costs Climb - Skift",
       "Iran, US-Israel War Live Updates | US announces civilian nuclear deal with Saudi Arabia: Report - Deccan Herald",
-      "Qatar Airways Operates Limited Flights to and from Doha - https://safariindia.com/"
-    ],
-    "aviation_halt": [
-      "FedEx cargo plane runs off Miami International Airport runway, causing ground stop during Thanksgiving travel - CBS News",
-      "FAA orders ground stop in Miami after cargo plane goes off runway - 9News",
-      "Ground stop, delays at MIA after FedEx cargo plane overshoots runway - Miami Herald"
+      "US advises citizens to leave Iran immediately amid growing security risks - Zoom News"
     ],
     "bank_outage": [
       "Wall Street recovers most early losses as pullback in AI stocks eases - CommBank",
       "NAB fails to take down former staffer’s ‘untrue’ Instagram whistleblower account - hrleader.com.au",
       "Sew Your Story helps Northland kids stitch confidence and creativity - ANZ"
     ],
+    "blood": [
+      "Video: Defending Aden, Yemen’s Holdout Against the Houthis - The New York Times"
+    ],
     "cables": [
       "Kalypso Offshore Energy Awarded NYSERDA Grant to Develop Subsea Cable Operations & Maintenance Hub in Brooklyn - 01net"
-    ],
-    "chem": [
-      "OPCW takes key step towards designation of laboratories for biotoxin analysis - OPCW",
-      "China urges Japan to accelerate destruction of abandoned chemical weapons - CCTV.com English",
-      "Ukraine war briefing: Stop using tear gas on battlefield, dozens of countries tell Russia - The Guardian"
     ],
     "cloud": [
       "Microsoft issues 'Code Red' after huge global outage - Information Age | ACS",
@@ -570,39 +502,38 @@
       "Microsoft invokes 'Code Red' after global Outlook and Microsoft 365 outage - TweakTown"
     ],
     "cyber_attrib": [
-      "Trump blames Minnesota governor, not Iran, for cyberattacks on the state's water systems - ABC News - Breaking News, Latest News and Videos",
       "FBI Warns Hackers Are Using ARTEX AI Tool To Automate Cyberattacks - Forbes",
-      "FBI warns hackers weaponizing ARTEX AI framework to automate attacks on energy, manufacturing, telecom - Industrial Cyber"
-    ],
-    "cyber_au": [
-      "Flight Centre hit by cyber incident affecting ‘significant number’ of customers - SMH.com.au",
-      "‘Significant’: Flight Centre hit by cyber attack - The Weekly Times",
-      "Travel giant Flight Centre hit by cyber attack with customer passport details potentially exposed - 7NEWS"
+      "Spy agency warns active Russian hackers targeting Australian industry - ABC News & Headlines – Australian Broadcasting Corporation",
+      "Busted! Alleged Aussie hackers linked to TeamPCP arrested in joint AFP-FBI-WAPF operation - Cyber Daily"
     ],
     "cyber_ot": [
       "UK operation wards off risk of cyber-attack on supermarket fridges and freezers - The Guardian",
       "Shop freezers in seven European countries hit by cyber-attack - BBC",
-      "Refrigeration under cyber attack - Climate Control News"
+      "Supermarket freezers and fridges in Europe hit by cyberattack - Nine.com.au"
     ],
     "cyber_state": [
       "ESET Research: Sandworm behind cyberattack on Poland’s power grid in late 2025 - We Live Security",
       "ESET attributes DynoWiper-powered attack on Poland’s power grid to Russia-aligned Sandworm group - Industrial Cyber",
       "Russian state hackers likely behind wiper malware attack on Poland’s power grid - The Record from Recorded Future News"
     ],
+    "cyber_supply": [
+      "CVE-2026-123903: Critical VMware vCenter Auth Bypass - SOC Prime",
+      "Hackers now exploit critical Drupal RCE flaw to hijack sites - BleepingComputer",
+      "VMware patches 23 flaws, including another critical vCenter authentication bypass - Field Effect"
+    ],
     "deepfake": [
       "Deloitte banned after AI-generated government report exposed - 7NEWS",
       "WA government suspends Deloitte over AI-riddled report on uni merger plan - ABC News & Headlines – Australian Broadcasting Corporation",
       "AI-generated video misleads Sri Lankans after heavy rains inundate Colombo - AFP Fact Check"
     ],
+    "dieoff": [
+      "Dead fish raise alarm at Olympic Rowing Center - eKathimerini.com",
+      "15% of Peru's Sea Lions Die in Mass Die-Off... 'Strongest El Niño' Cuts Off Food Supply - 아시아경제"
+    ],
     "flash": [
       "TerraCom Limited Enters Trading Halt Ahead of Board Composition Announcement Following AGM Vote - Kalkine",
       "Jensen Huang's return to Nvidia was a circuit breaker for the market, says Deutsche's Bankim Chadha - CNBC",
       "Legend Mining Requests Trading Halt Pending Research and Development Claims Announcement - Kalkine"
-    ],
-    "fuel_au": [
-      "The Refill Gap: Australia’s Fuel Reserve and the Test of Strategic Endurance - Australian Institute of International Affairs",
-      "LBRCA launches fuel tax credit campaign - www.ownerdriver.com.au",
-      "Crisis-tested Matt Halliday never lets a fuel shock go to waste - AFR"
     ],
     "gulf_strikes": [
       "Houthis target Saudi Arabia’s Red Sea ports as strikes escalate - Al Jazeera",
@@ -610,11 +541,6 @@
       "Saudi-led coalition intercepts 2 Houthi ballistic missiles launched toward Riyadh - Anadolu Ajansı",
       "Powerful Explosions Reported in Riyadh following Yemeni Missile Attack - تسنیم",
       "Loud explosions rock Riyadh as Houthis attack Saudi ports - Middle East Eye"
-    ],
-    "illness": [
-      "Mystery illness causes mass hospitalisation of runners - The Nightly",
-      "Dr. Siegel on measles comeback, mystery illness outbreak on cruise ship - Fox News",
-      "148 aboard Florida-bound cruise ship sickened by ‘unknown’ GI outbreak: CDC - The Hill"
     ],
     "masscas": [
       "15 hospitalized after possible food poisoning during Thanksgiving luncheon at Doral medical center headquarters - CBS News",
@@ -638,20 +564,15 @@
       "Cuba’s National Electric Grid Collapses, Reason Unknown - EnergyNow.com",
       "Pezeshkian weeps at Khamenei’s grave – VIDEO - TodayPress.tv"
     ],
-    "outage_au": [
-      "Calls for 'automatic compensation' following telco outages - ABC News & Headlines – Australian Broadcasting Corporation",
-      "Microsoft ‘deeply sorry’ for global outage, rules out cyberattack and AI - Nine.com.au",
-      "The Microsoft outage is part of a growing trend. This is how to prepare for further disruption - SBS"
+    "reservists": [
+      "UK defense ministry prepares former reservists for possible wartime call-up - سانا",
+      "The UK Ministry of Defence told reservists to prepare to be mobilized for war - Mezha.net",
+      "MoD tells 100,000 reservists: be ready for call-up - The Times"
     ],
     "sapn": [
       "Another outage coming as crews race to reconnect power grid - Adelaide Now",
       "Multimillion-dollar bill to replace Outback power line - InDaily South Australia",
-      "Festivalgoer struck by lightning, locust plague, freak storm causes major blackout - 9Now"
-    ],
-    "scams": [
-      "How to defend against cyber hackers who log on, not break in - CommBank",
-      "Sumsub Taps Google Maps Data to Flag Suspicious Business Addresses - Fintech Singapore",
-      "Retired teacher duped by AI deepfake applauds new Sask. legislation - Yahoo News Canada"
+      "Communities face months without permanent power fix after Eyre Peninsula storm devastation - 7NEWS"
     ],
     "shipping_attacks": [
       "IRGC Claims LNG Carrier Hit Mine in Hormuz as Oil Tankers Catch Fire - https://houseofsaud.com/",
@@ -690,7 +611,7 @@
       "yes": 3.6
     },
     {
-      "d24h": -0.2,
+      "d24h": -0.3,
       "q": "US-Iran Hormuz Agreement by November 30?",
       "yes": 2.8
     },
@@ -715,9 +636,9 @@
       "yes": 1.8
     },
     {
-      "d24h": -0.1,
+      "d24h": 0.0,
       "q": "Will China invade Taiwan by June 30, 2027?",
-      "yes": 4.4
+      "yes": 4.5
     },
     {
       "d24h": 0.1,
@@ -740,7 +661,7 @@
       "yes": 3.0
     },
     {
-      "d24h": -3.5,
+      "d24h": -4.0,
       "q": "Iran-Oman Hormuz Agreement by December 31?",
       "yes": 11.5
     },
@@ -750,9 +671,9 @@
       "yes": 1.7
     },
     {
-      "d24h": 1.9,
+      "d24h": 1.8,
       "q": "Ukraine agrees not to join NATO by December 31, 2026?",
-      "yes": 3.5
+      "yes": 3.4
     },
     {
       "d24h": 0.0,
@@ -780,9 +701,9 @@
       "yes": 18.0
     },
     {
-      "d24h": 0.0,
+      "d24h": -2.5,
       "q": "Will Nick Stewart attend a US x Iran diplomatic meeting by December 31, 2026?",
-      "yes": 7.5
+      "yes": 7.0
     }
   ],
   "quakes_m6_24h": [],
@@ -998,7 +919,7 @@
       "key": "mideast",
       "lit": [
         {
-          "detail": "gps_gulf 49 vs usual 9",
+          "detail": "gps_gulf 42 vs usual 9.0",
           "name": "GPS jamming spike (Gulf / Israel)"
         }
       ],
@@ -1056,10 +977,9 @@
       "trend": "steady"
     },
     {
-      "band": "High",
-      "convergence": "Signs are converging across 3 separate areas (chemical weapons, health and trade). Unrelated systems flagging the same scenario at once is the pattern seen before past events. Before COVID-19 (Dec 2019 - Feb 2020): reports of an unknown pneumonia cluster, WHO outbreak notices, mask and hazmat makers",
+      "band": "Guarded",
+      "convergence": "Two different kinds of sign are showing together (health and trade). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: unknown illness / pneumonia cluster reported, countries restricting medical supply exports and pandemic-r",
       "domains": [
-        "Chemical weapons",
         "Health",
         "Trade"
       ],
@@ -1070,20 +990,12 @@
           "name": "WHO outbreak report with a high-concern pathogen (last 14 days)"
         },
         {
-          "detail": "Dr. Siegel on measles comeback, mystery illness outbreak on cruise ship",
-          "name": "Unknown illness / pneumonia cluster reported"
-        },
-        {
           "detail": "newsGP - In Practice: Medication shortages update",
           "name": "Australian medicine or PPE shortage reports"
-        },
-        {
-          "detail": "OPCW Honors Chemical Weapons Victims at States Parties Conference",
-          "name": "Chemical / nerve-agent attack or mass poisoning reported"
         }
       ],
-      "score": 60,
-      "trend": "steady"
+      "score": 25,
+      "trend": "down"
     },
     {
       "band": "Low",
@@ -1103,11 +1015,10 @@
     },
     {
       "band": "Elevated",
-      "convergence": "Signs are converging across 4 separate areas (ai-enabled hacking, cloud services, fraud waves and markets). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: ",
+      "convergence": "Signs are converging across 3 separate areas (ai-enabled hacking, cloud services and markets). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: a Chinese sta",
       "domains": [
         "AI-enabled hacking",
         "Cloud services",
-        "Fraud waves",
         "Markets"
       ],
       "key": "ai",
@@ -1123,14 +1034,10 @@
         {
           "detail": "Microsoft issues 'Code Red' after huge global outage",
           "name": "Major cloud or AI service outage"
-        },
-        {
-          "detail": "Retired teacher duped by AI deepfake applauds new Sask. legislation",
-          "name": "Surge in AI voice-clone / deepfake scams in Australia"
         }
       ],
-      "score": 40,
-      "trend": "steady"
+      "score": 35,
+      "trend": "down"
     }
   ],
   "sectors_relative_5d": {
@@ -1194,9 +1101,9 @@
     {
       "active": true,
       "first_seen": "2026-11-26T03:37:00Z",
-      "last_seen": "2026-11-26T06:43:00Z",
+      "last_seen": "2026-11-26T06:58:00Z",
       "region": "the Middle East",
-      "text": "GPS jamming over Persian Gulf: 49% of 53 aircraft affected for 45+ min (usual ~9%)",
+      "text": "GPS jamming over Persian Gulf: 42% of 62 aircraft affected for 45+ min (usual ~9.0%)",
       "what": "GPS jamming"
     },
     {
