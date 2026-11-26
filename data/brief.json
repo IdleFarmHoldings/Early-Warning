@@ -3,9 +3,9 @@
   "acsc": [],
   "aircraft_flags": {
     "gps_gulf": {
-      "median": 6.0,
+      "median": 6,
       "status": "ANOMALY",
-      "value": 38
+      "value": 27
     }
   },
   "analyst": {
@@ -293,13 +293,13 @@
     "telecom": "RuntimeError: Telstra ping-slash24: TimeoutError: The read operation timed out; Telstra bgp: TimeoutError: The read oper"
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-26T15:09:00Z",
+  "generated_at": "2026-11-26T15:24:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 25,
-    "Black Sea": 32,
-    "Israel & Eastern Mediterranean": 0,
+    "Baltic / Kaliningrad": 24,
+    "Black Sea": 26,
+    "Israel & Eastern Mediterranean": 2,
     "Korea": 0,
-    "Persian Gulf": 38,
+    "Persian Gulf": 27,
     "South Australia": null,
     "Sydney / NSW": null,
     "Taiwan Strait": 0
@@ -328,13 +328,24 @@
     },
     {
       "attack_reported": true,
-      "confirmed": false,
+      "confirmed": true,
       "headlines": [
-        "Australia’s Flight Centre Data Breach Exposes Customer Records and Passport Details"
+        "Australia’s Flight Centre Data Breach Exposes Customer Records and Passport Details",
+        "Australia’s Flight Centre probes data breach in third-party system"
       ],
       "needs_confirming": false,
       "severity": "Info",
       "target": "Australia"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "Travel giant Flight Centre hit by cyber attack with customer passport details potentially exposed"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "Travel"
     },
     {
       "attack_reported": true,
@@ -350,17 +361,26 @@
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
-        "Travel giant Flight Centre hit by cyber attack with customer passport details potentially exposed"
+        "New Danish data breach hits 11,000 despite security upgrades"
       ],
       "needs_confirming": false,
       "severity": "Info",
-      "target": "Travel"
+      "target": "New Danish"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "Hacked! Flight Centre Travel Group discloses data breach, ‘significant number’ of customers impacted"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "Hacked"
     },
     {
       "attack_reported": true,
       "confirmed": true,
       "headlines": [
-        "AI agents used in five cyber attacks in Switzerland, government says",
         "1Password Hit by Backend Breach via Hijacked Employee GitHub Account",
         "US student visa rule struck down: Relief for Indians, but what next?"
       ],
@@ -372,18 +392,7 @@
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
-        "New Danish data breach hits 11,000 despite security upgrades"
-      ],
-      "needs_confirming": false,
-      "severity": "Info",
-      "target": "New Danish"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": true,
-      "headlines": [
-        "Switzerland reports first successful AI agent cyberattacks",
-        "Switzerland Confirms First Cyberattacks Involving AI Agents Against Multiple Organizations"
+        "Switzerland reports first successful AI agent cyberattacks"
       ],
       "needs_confirming": false,
       "severity": "Info",
@@ -398,6 +407,16 @@
       "needs_confirming": false,
       "severity": "Info",
       "target": "Chinese"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "What is ARTEX, the AI-powered tool linked to recent cyberattacks?"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "What"
     },
     {
       "attack_reported": true,
@@ -464,9 +483,9 @@
       "pump_cents": 2,
       "week_ago_aud": 133.8
     },
-    "grid_demand_fall_pct": 9.2,
-    "grid_demand_mw": 1382,
-    "grid_demand_usual_mw": 1359,
+    "grid_demand_fall_pct": 6.8,
+    "grid_demand_mw": 1415,
+    "grid_demand_usual_mw": 1349,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
@@ -514,23 +533,23 @@
   "markets": {
     "AUD/USD": {
       "big_move": false,
-      "change_pct": 0.06,
-      "price": 0.6638
+      "change_pct": 0.03,
+      "price": 0.6636
     },
     "Brent oil": {
       "big_move": false,
-      "change_pct": -3.66,
-      "price": 91.15
+      "change_pct": -3.46,
+      "price": 91.34
     },
     "Gold": {
       "big_move": false,
-      "change_pct": 2.01,
-      "price": 3606.8
+      "change_pct": 1.91,
+      "price": 3603.2
     },
     "VIX": {
       "big_move": false,
-      "change_pct": -5.09,
-      "price": 26.85
+      "change_pct": -4.91,
+      "price": 26.9
     }
   },
   "national_shocks": {
@@ -548,7 +567,7 @@
     "ai_hack": [
       "Switzerland reports first successful AI agent cyberattacks - Bitdefender",
       "Google says the first autonomous AI cyberattack has happened. It won't be the last. - Mashable",
-      "AI agents used in five cyber attacks in Switzerland, government says - Reuters"
+      "Chinese, North Korean Hackers Adopt ARTEX AI Offensive Framework - Infosecurity Magazine"
     ],
     "airspace": [
       "Iran, US-Israel War Live Updates | US announces civilian nuclear deal with Saudi Arabia: Report - Deccan Herald",
@@ -557,8 +576,8 @@
     ],
     "aviation_halt": [
       "Miami Airport Issues Ground Stop After FedEx Plane Overshoots Runway - The Weekly Times",
-      "FedEx cargo plane runs off Miami International Airport runway, causing ground stop during Thanksgiving travel - CBS News",
-      "FedEx MD-11 overruns runway at Miami airport, triggering ground stop - AeroTime"
+      "FedEx MD-11 overruns runway at Miami airport, triggering ground stop - AeroTime",
+      "FedEx cargo plane runs off Miami International Airport runway, causing ground stop during Thanksgiving travel - CBS News"
     ],
     "bank_outage": [
       "Wall Street recovers most early losses as pullback in AI stocks eases - CommBank",
@@ -593,9 +612,9 @@
       "Australia’s Flight Centre Data Breach Exposes Customer Records and Passport Details - Security Affairs"
     ],
     "cyber_ot": [
-      "Who is hacking Europe’s supermarket fridges and freezers, and why? - The Guardian",
+      "UK operation wards off risk of cyber-attack on supermarket fridges and freezers - The Guardian",
       "Shop freezers in seven European countries hit by cyber-attack - BBC",
-      "Supermarket freezers and fridges in Europe hit by cyberattack - Nine.com.au"
+      "Refrigeration under cyber attack - Climate Control News"
     ],
     "cyber_state": [
       "ESET Research: Sandworm behind cyberattack on Poland’s power grid in late 2025 - We Live Security",
@@ -608,8 +627,8 @@
       "VMware fixes third vCenter auth bypass days after patching exploited flaw - iTnews"
     ],
     "deepfake": [
-      "Video of Trump slamming Papua New Guinea's politicians is an AI-fake - www.aap.com.au",
       "Deloitte Banned by WA Government Over AI-Generated Report Errors - OECD AI Policy Observatory",
+      "Video of Trump slamming Papua New Guinea's politicians is an AI-fake - www.aap.com.au",
       "Deloitte banned after AI-generated government report exposed - 7NEWS"
     ],
     "dieoff": [
@@ -618,7 +637,7 @@
     "flash": [
       "TerraCom Limited Enters Trading Halt Ahead of Board Composition Announcement Following AGM Vote - Kalkine",
       "Toppoint Q3 Earnings Show Narrower Loss Amid Trading Halt Concerns - Yahoo Finance",
-      "Jensen Huang's return to Nvidia was a circuit breaker for the market, says Deutsche's Bankim Chadha - CNBC"
+      "Legend Mining Requests Trading Halt Pending Research and Development Claims Announcement - Kalkine"
     ],
     "fuel_au": [
       "The Refill Gap: Australia’s Fuel Reserve and the Test of Strategic Endurance - Australian Institute of International Affairs",
@@ -626,11 +645,11 @@
       "LBRCA launches fuel tax credit campaign - www.ownerdriver.com.au"
     ],
     "gulf_strikes": [
+      "Houthis target Saudi Arabia’s Red Sea ports as strikes escalate - Al Jazeera",
       "Powerful Explosions Reported in Riyadh following Yemeni Missile Attack - تسنیم",
       "Houthis Claim Attack on Saudi Ras Tanura Refinery - The Defense Post",
       "Saudis say they intercepted Houthi drone near key port in Jeddah - The Times of Israel",
-      "Houthi Attacks Gut Riyadh’s Peak Season - Skift",
-      "Saudi downs Houthi missiles, drones as attacks continue - Quantum Commodity Intelligence"
+      "Houthi Attacks Gut Riyadh’s Peak Season - Skift"
     ],
     "illness": [
       "Mystery illness causes mass hospitalisation of runners - The Nightly",
@@ -638,8 +657,8 @@
       "148 aboard Florida-bound cruise ship sickened by ‘unknown’ GI outbreak: CDC - The Hill"
     ],
     "masscas": [
-      "Cop wrestles patient trying to grab gun in hospital - The Daily Telegraph",
       "15 hospitalized after possible food poisoning during Thanksgiving luncheon at Doral medical center headquarters - CBS News",
+      "Cop wrestles patient trying to grab gun in hospital - The Mercury",
       "18 sick after possible food poisoning during luncheon at Leon Medical HQ; patients not affected - NBC 6 South Florida"
     ],
     "medexport": [
@@ -653,11 +672,6 @@
       "Britain is preparing military reservists for a possible mobilization due to the threat from Russia - UA.NEWS",
       "MoD writes to 100,000 veterans as part of Strategic Reserve mobilisation plans - ADS Advance",
       "Britain Contacts 100,000 Former Troops to Prepare for Possible War—First Time Since the Cold War - UNITED24 Media"
-    ],
-    "national_outage": [
-      "Inside the ‘Black Sky’ plans for a nationwide blackout - Herald.Wales",
-      "Cuba’s National Electric Grid Collapses, Reason Unknown - EnergyNow.com",
-      "Chainsaw damage on a GRIDCo line and ECG upgrades cut power in Kumasi and Accra - 3News"
     ],
     "outage_au": [
       "Calls for 'automatic compensation' following telco outages - ABC News & Headlines – Australian Broadcasting Corporation",
@@ -685,13 +699,6 @@
       "IRGC Claims LNG Carrier Hit Mine in Hormuz Nov 25 - https://houseofsaud.com/",
       "Iranian attacks in the Strait of Hormuz are at the highest levels since the conflict began - CNN",
       "ADNOC L&S says one missing, 11 injured in Strait of Hormuz ship attack - Baird Maritime"
-    ],
-    "strikes": [
-      "Ukraine says strike on major Russian air base damaged five military jets - AeroTime",
-      "Ukrainian Neptunes Attacked Marinovka Air Base, Which Housed Russian Su-34s - Мілітарний",
-      "Iran Warns of Retaliation if US Forces Attack - ASHARQ AL-AWSAT English",
-      "Ukraine says it struck a major Russian air base, damaging five planes - Arab News",
-      "Multiple Russian jets damaged during strike at major military air base, Ukraine says - The Independent"
     ]
   },
   "prediction_markets": [
@@ -701,9 +708,9 @@
       "yes": 5.5
     },
     {
-      "d24h": 0.5,
+      "d24h": 0.6,
       "q": "US-Iran Final Nuclear Deal by December 31, 2026?",
-      "yes": 3.3
+      "yes": 3.4
     },
     {
       "d24h": -1.0,
@@ -731,9 +738,9 @@
       "yes": 12.5
     },
     {
-      "d24h": -0.5,
+      "d24h": -0.4,
       "q": "US-Iran Final Nuclear Deal by November 30, 2026?",
-      "yes": 0.4
+      "yes": 0.5
     },
     {
       "d24h": 0.2,
@@ -766,9 +773,9 @@
       "yes": 2.8
     },
     {
-      "d24h": -0.5,
+      "d24h": 0.0,
       "q": "Iran-Oman Hormuz Agreement by December 31?",
-      "yes": 11.0
+      "yes": 11.5
     },
     {
       "d24h": -0.5,
@@ -776,9 +783,9 @@
       "yes": 1.5
     },
     {
-      "d24h": 2.0,
+      "d24h": 1.9,
       "q": "Ukraine agrees not to join NATO by December 31, 2026?",
-      "yes": 3.4
+      "yes": 3.3
     },
     {
       "d24h": -0.5,
@@ -806,9 +813,9 @@
       "yes": 18.0
     },
     {
-      "d24h": -2.0,
+      "d24h": 1.0,
       "q": "Will Nick Stewart attend a US x Iran diplomatic meeting by December 31, 2026?",
-      "yes": 6.5
+      "yes": 9.5
     }
   ],
   "quakes_m6_24h": [],
@@ -1034,12 +1041,12 @@
       "key": "mideast",
       "lit": [
         {
-          "detail": "gps_gulf 38 vs usual 6.0",
+          "detail": "gps_gulf 27 vs usual 6",
           "name": "GPS jamming spike (Gulf / Israel)"
         }
       ],
       "score": 10,
-      "trend": "up"
+      "trend": "steady"
     },
     {
       "band": "Low",
@@ -1162,7 +1169,7 @@
   ],
   "sectors_relative_5d": {
     "defence_au": -0.38,
-    "defence_eu": 3.87,
+    "defence_eu": 4.07,
     "defence_us": 4.21,
     "pandemic": 0.09
   },
