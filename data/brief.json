@@ -284,18 +284,18 @@
     "internet": "RuntimeError: Iran ping-slash24: TimeoutError: The read operation timed out; Iran bgp: TimeoutError: The read operation ",
     "maritime": "TimeoutError: ",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output=",
-    "telecom": "RuntimeError: Telstra ping-slash24: TimeoutError: The read operation timed out; Telstra bgp: URLError: <urlopen error [S"
+    "telecom": "RuntimeError: Telstra ping-slash24: TimeoutError: The read operation timed out; Telstra bgp: TimeoutError: The read oper"
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-26T20:08:00Z",
+  "generated_at": "2026-11-26T20:24:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 70,
+    "Baltic / Kaliningrad": 56,
     "Black Sea": null,
-    "Israel & Eastern Mediterranean": 0,
+    "Israel & Eastern Mediterranean": 2,
     "Korea": 0,
-    "Persian Gulf": 26,
+    "Persian Gulf": 54,
     "South Australia": 0,
-    "Sydney / NSW": 0,
+    "Sydney / NSW": 1,
     "Taiwan Strait": 0
   },
   "incidents": [
@@ -329,6 +329,18 @@
       "needs_confirming": false,
       "severity": "Info",
       "target": "Australia"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": true,
+      "headlines": [
+        "Switzerland Confirms Five AI-Powered Cyberattacks, Four Successfully Breach Computer Systems",
+        "Switzerland confirms AI-assisted cyberattacks on critical infrastructure",
+        "Switzerland reports first successful AI agent cyberattacks"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "Switzerland"
     },
     {
       "attack_reported": true,
@@ -383,17 +395,6 @@
     },
     {
       "attack_reported": true,
-      "confirmed": true,
-      "headlines": [
-        "Switzerland confirms AI-assisted cyberattacks on critical infrastructure",
-        "Switzerland reports first successful AI agent cyberattacks"
-      ],
-      "needs_confirming": false,
-      "severity": "Info",
-      "target": "Switzerland"
-    },
-    {
-      "attack_reported": true,
       "confirmed": false,
       "headlines": [
         "Chinese, North Korean Hackers Adopt ARTEX AI Offensive Framework"
@@ -411,6 +412,16 @@
       "needs_confirming": false,
       "severity": "Info",
       "target": "What"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "AI-Powered Cyberattack Breaches US Intelligence Agencies"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "AI-Powered"
     },
     {
       "attack_reported": false,
@@ -469,7 +480,6 @@
       "Modbury",
       "Noarlunga",
       "Royal Adelaide",
-      "Queen Elizabeth",
       "Women's and Children's"
     ],
     "fire_ban_districts": [],
@@ -481,13 +491,13 @@
     "fires_active": 14,
     "fuel": {
       "brent_aud": 137.5,
-      "change_pct": 2.6,
+      "change_pct": 2.7,
       "pump_cents": 2,
       "week_ago_aud": 134.0
     },
-    "grid_demand_fall_pct": 5.1,
-    "grid_demand_mw": 1489,
-    "grid_demand_usual_mw": 1320,
+    "grid_demand_fall_pct": 0.8,
+    "grid_demand_mw": 1603,
+    "grid_demand_usual_mw": 1283,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
@@ -528,15 +538,15 @@
       "Morgan Vale Road, Pine Valley Station: MORGAN MAIL RD Closed due to flooding over road",
       "Pine Valley Road, Pine Valley Station: PINE VALLEY RD Closed due to flooding over road"
     ],
-    "rooftop_pv_mw": 0,
+    "rooftop_pv_mw": 44,
     "sawater_news": [],
     "watch_and_act": []
   },
   "markets": {
     "AUD/USD": {
       "big_move": false,
-      "change_pct": 0.03,
-      "price": 0.6636
+      "change_pct": 0.05,
+      "price": 0.6637
     },
     "Brent oil": {
       "big_move": false,
@@ -574,8 +584,8 @@
   "news_watch": {
     "ai_hack": [
       "Switzerland reports first successful AI agent cyberattacks - Bitdefender",
-      "AI agents used in five cyber attacks in Switzerland, government says - Reuters",
-      "Google says the first autonomous AI cyberattack has happened. Expect a lot more like it. - Mashable"
+      "Switzerland confirms AI-assisted cyberattacks on critical infrastructure - Resilience Media",
+      "AI agents used in five cyber attacks in Switzerland, government says - Reuters"
     ],
     "airspace": [
       "Iran, US-Israel War Highlights| US strikes Iran in second day of renewed fire; IRGC targets bases in Bahrain & Kuwait - Deccan Herald",
@@ -649,14 +659,26 @@
       "Toppoint Q3 Earnings Show Narrower Loss Amid Trading Halt Concerns - Yahoo Finance",
       "Thu: Construction, renewable energy stocks fuel TASE surge - Globes - Israel Business News"
     ],
+    "fuel_au": [
+      "The Refill Gap: Australia’s Fuel Reserve and the Test of Strategic Endurance - Australian Institute of International Affairs",
+      "Niger fuel shortage: Agadez caps sales at 30 litres - DNE Africa",
+      "Australia, major LNG supplier to Philippines, to reserve up to 20% of gas output for domestic use - Bilyonaryo Business"
+    ],
+    "gulf_strikes": [
+      "Saudi-led coalition says Houthis attacked Aramco's Jazan refinery - Reuters",
+      "Houthis target Saudi Arabia’s Red Sea ports as strikes escalate - Al Jazeera",
+      "Powerful Explosions Reported in Riyadh following Yemeni Missile Attack - تسنیم",
+      "Smoke seen from space after attack on huge Middle East oil hub - Nine.com.au",
+      "Yemen's Houthis claim attack on Saudi Arabia's largest refinery - Al-Monitor"
+    ],
     "illness": [
       "Mystery illness causes mass hospitalisation of runners - The Nightly",
       "Dr. Siegel on measles comeback, mystery illness outbreak on cruise ship - Fox News",
       "Zayn Malik hospitalised with mystery illness, forced to cancel upcoming appearances on album release week - Nine.com.au"
     ],
     "masscas": [
-      "Seven soldiers in critical condition among those still hospitalized after CFB Wainwright fire - My Lethbridge Now",
       "Thanksgiving Dinner Disaster Leaves 18 in Hospital in Florida - The Daily Beast",
+      "Seven soldiers in critical condition among those still hospitalized after CFB Wainwright fire - My Lethbridge Now",
       "15 hospitalized after possible food poisoning during Thanksgiving luncheon at Doral medical center headquarters - CBS News"
     ],
     "medexport": [
@@ -664,6 +686,11 @@
     ],
     "medshort": [
       "newsGP - In Practice: Medication shortages update - Royal Australian College of General Practitioners (RACGP)"
+    ],
+    "mobilisation": [
+      "UK tells 100,000 military reservists to prepare for war amid Russia threats in first since Cold War - The Jerusalem Post",
+      "Britain is preparing military reservists for a possible mobilization due to the threat from Russia - UA.NEWS",
+      "Britain Contacts 100,000 Former Troops to Prepare for Possible War—First Time Since the Cold War - UNITED24 Media"
     ],
     "national_outage": [
       "Inside the ‘Black Sky’ plans for a nationwide blackout - Herald.Wales",
@@ -680,29 +707,32 @@
       "UK tells 100,000 strategic reservists to prepare for possible call-up: Report - Anadolu Ajansı",
       "MoD Strategic Reserve Call-Up: UK Urges 100,000 Reservists to Update Details and Join Exercises - Мілітарний"
     ],
+    "ru_signals": [
+      "NATO intern suspected of spying to remain in jail in Belgium after appeal - News24"
+    ],
     "sapn": [
       "South Australia cuts rooftop solar after storm sparks power outages - pv magazine India",
       "Another outage coming as crews race to reconnect power grid - Adelaide Now",
       "Multimillion-dollar bill to replace Outback power line - InDaily South Australia"
     ],
     "scams": [
-      "How to defend against cyber hackers who log on, not break in - CommBank",
       "Labor and the Greens betray victims of online financial scams - Senator the Hon Sarah Henderson",
+      "How to defend against cyber hackers who log on, not break in - CommBank",
       "Sumsub Taps Google Maps Data to Flag Suspicious Business Addresses - Fintech Singapore"
     ],
     "shipping_attacks": [
       "Iran claims LNG carrier and tankers struck mines in Strait of Hormuz - safety4sea",
       "Three Sinokor VLCCs hit in Strait of Hormuz attacks - Riviera Maritime Media",
       "Middle East latest: Two Italians killed in Iranian drone attack in Kuwait - The National",
-      "IRGC Claims 3 Oil Tankers Hit Mines in Hormuz Under US Escort - https://houseofsaud.com/",
-      "Hormuz oil traffic is down 40 percent: Are Iran’s tanker attacks working? - Al Jazeera"
+      "IRGC Claims LNG Carrier Hit Mine in Hormuz Nov 25 - https://houseofsaud.com/",
+      "ADNOC L&S says one missing, 11 injured in Strait of Hormuz ship attack - Baird Maritime"
     ],
     "strikes": [
       "Ukraine says strike on major Russian air base damaged five military jets - AeroTime",
-      "Ukrainian Neptunes Attacked Marinovka Air Base, Which Housed Russian Su-34s - Мілітарний",
       "Iran Warns of Retaliation if US Forces Attack - ASHARQ AL-AWSAT English",
+      "Ukrainian Neptunes Attacked Marinovka Air Base, Which Housed Russian Su-34s - Мілітарний",
       "Ukraine says it struck a major Russian air base, damaging five planes - Arab News",
-      "Ukrainian naval drones strike a new Russian warship in Libya, and other Mideast news - Boston Herald"
+      "Ukraine says it struck a major Russian air base, damaging five planes - Reuters"
     ]
   },
   "prediction_markets": [
@@ -722,14 +752,14 @@
       "yes": 11.5
     },
     {
-      "d24h": -0.2,
+      "d24h": -1.5,
       "q": "China x Taiwan military clash before 2027?",
       "yes": 2.7
     },
     {
-      "d24h": -0.6,
+      "d24h": -0.7,
       "q": "US-Iran Hormuz Agreement by November 30, 2026?",
-      "yes": 2.2
+      "yes": 2.1
     },
     {
       "d24h": 0.0,
@@ -787,9 +817,9 @@
       "yes": 1.5
     },
     {
-      "d24h": 1.5,
+      "d24h": 1.4,
       "q": "Ukraine agrees not to join NATO by December 31, 2026?",
-      "yes": 2.9
+      "yes": 2.8
     },
     {
       "d24h": -0.5,
@@ -807,7 +837,7 @@
       "yes": 10.5
     },
     {
-      "d24h": -0.1,
+      "d24h": 0.0,
       "q": "Will the U.S. test a nuclear weapon by December 31 2026?",
       "yes": 2.5
     },
@@ -1051,16 +1081,36 @@
       "trend": "steady"
     },
     {
-      "band": "Low",
+      "band": "Guarded",
+      "convergence": "Only one kind of sign is showing (mobilisation). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and us nuclear command aircraft unusual.",
+      "domains": [
+        "Mobilisation"
+      ],
       "key": "russia",
-      "score": 0,
-      "trend": "down"
+      "lit": [
+        {
+          "detail": "UK tells 100,000 military reservists to prepare for war amid Russia threats in first since Cold War",
+          "name": "Mobilisation / reservist reports (Russia / NATO)"
+        }
+      ],
+      "score": 15,
+      "trend": "up"
     },
     {
-      "band": "Low",
+      "band": "Guarded",
+      "convergence": "Only one kind of sign is showing (mobilisation). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: us nuclear command aircraft unusual, private jets heading to retreat destinations and forecast markets jump on nuclear use.",
+      "domains": [
+        "Mobilisation"
+      ],
       "key": "nuclear",
-      "score": 0,
-      "trend": "down"
+      "lit": [
+        {
+          "detail": "UK tells 100,000 military reservists to prepare for war amid Russia threats in first since Cold War",
+          "name": "Mobilisation reports (any major power)"
+        }
+      ],
+      "score": 15,
+      "trend": "up"
     },
     {
       "band": "Low",
