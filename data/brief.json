@@ -282,17 +282,18 @@
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
     "internet": "RuntimeError: Iran ping-slash24: TimeoutError: The read operation timed out; Iran bgp: TimeoutError: The read operation ",
+    "maritime": "TimeoutError: ",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output=",
-    "telecom": "RuntimeError: Telstra ping-slash24: TimeoutError: The read operation timed out; Telstra bgp: TimeoutError: The read oper"
+    "telecom": "RuntimeError: Telstra ping-slash24: HTTPError: HTTP Error 500: Internal Server Error; Telstra bgp: TimeoutError: The rea"
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-26T19:27:00Z",
+  "generated_at": "2026-11-26T19:42:00Z",
   "gps_bad_pct": {
     "Baltic / Kaliningrad": 24,
-    "Black Sea": 20,
-    "Israel & Eastern Mediterranean": 5,
+    "Black Sea": null,
+    "Israel & Eastern Mediterranean": 2,
     "Korea": 0,
-    "Persian Gulf": 36,
+    "Persian Gulf": 34,
     "South Australia": 0,
     "Sydney / NSW": 0,
     "Taiwan Strait": 0
@@ -343,6 +344,16 @@
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
+        "Wyoming uranium operation shuts down after cyberattack"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "Wyoming"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
         "New Danish data breach hits 11,000 despite security upgrades"
       ],
       "needs_confirming": false,
@@ -362,8 +373,9 @@
     },
     {
       "attack_reported": true,
-      "confirmed": false,
+      "confirmed": true,
       "headlines": [
+        "Switzerland confirms AI-assisted cyberattacks on critical infrastructure",
         "Switzerland reports first successful AI agent cyberattacks"
       ],
       "needs_confirming": false,
@@ -389,6 +401,16 @@
       "needs_confirming": false,
       "severity": "Info",
       "target": "What"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "AI-Powered Cyberattack Breaches US Intelligence Agencies"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "AI-Powered"
     },
     {
       "attack_reported": true,
@@ -466,16 +488,16 @@
       "Mount Lofty Ranges": "Moderate / Moderate"
     },
     "fire_danger_ok": true,
-    "fires_active": 14,
+    "fires_active": 13,
     "fuel": {
       "brent_aud": 137.4,
       "change_pct": 2.6,
       "pump_cents": 2,
-      "week_ago_aud": 133.9
+      "week_ago_aud": 134.0
     },
-    "grid_demand_fall_pct": -3.4,
-    "grid_demand_mw": 1439,
-    "grid_demand_usual_mw": 1320,
+    "grid_demand_fall_pct": -9.1,
+    "grid_demand_mw": 1569,
+    "grid_demand_usual_mw": 1322,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
@@ -523,18 +545,18 @@
   "markets": {
     "AUD/USD": {
       "big_move": false,
-      "change_pct": -0.01,
-      "price": 0.6633
+      "change_pct": 0.02,
+      "price": 0.6635
     },
     "Brent oil": {
       "big_move": false,
-      "change_pct": -3.05,
-      "price": 91.72
+      "change_pct": -3.04,
+      "price": 91.73
     },
     "Gold": {
       "big_move": false,
-      "change_pct": 1.62,
-      "price": 3593.1
+      "change_pct": 1.63,
+      "price": 3593.4
     },
     "VIX": {
       "big_move": false,
@@ -556,7 +578,7 @@
   "news_watch": {
     "ai_hack": [
       "Switzerland reports first successful AI agent cyberattacks - Bitdefender",
-      "Google says the first autonomous AI cyberattack has happened. It won't be the last. - Mashable",
+      "Switzerland confirms AI-assisted cyberattacks on critical infrastructure - Resilience Media",
       "AI agents used in five cyber attacks in Switzerland, government says - Reuters"
     ],
     "airspace": [
@@ -574,7 +596,8 @@
       "Student visa decline ‘damaging universities and economy’ - Research Professional News"
     ],
     "blood": [
-      "The Ordinary to Turn Stores Into Blood Donation Centers - Wisevoter"
+      "The Ordinary to Turn Stores Into Blood Donation Centers - Wisevoter",
+      "Meghalaya High Court marks Constitution Day with exhibition, blood donation camp - Northeast News"
     ],
     "cables": [
       "Viettel-Singtel consortium breaks ground on submarine cable linking Vietnam, Thailand and Singapore - Theinvestor",
@@ -603,8 +626,8 @@
     ],
     "cyber_ot": [
       "UK operation wards off risk of cyber-attack on supermarket fridges and freezers - The Guardian",
-      "Next Plc’s Supplier Hit by Cyberattack in Latest UK Retail Breach - Insurance Journal",
-      "Shop freezers in seven European countries hit by cyber-attack - BBC"
+      "Shop freezers in seven European countries hit by cyber-attack - BBC",
+      "Supermarket freezers and fridges in Europe hit by cyberattack - Nine.com.au"
     ],
     "cyber_state": [
       "ESET Research: Sandworm behind cyberattack on Poland’s power grid in late 2025 - We Live Security",
@@ -648,9 +671,9 @@
       "Zayn Malik hospitalised with mystery illness, forced to cancel upcoming appearances on album release week - Nine.com.au"
     ],
     "masscas": [
+      "Mass casualty traffic collision in Santiago Canyon - FOX 11 Los Angeles",
       "Thanksgiving Dinner Disaster Leaves 18 in Hospital in Florida - The Daily Beast",
-      "15 hospitalized after possible food poisoning during Thanksgiving luncheon at Doral medical center headquarters - CBS News",
-      "18 sick after possible food poisoning during luncheon at Leon Medical HQ; patients not affected - NBC 6 South Florida"
+      "15 hospitalized after possible food poisoning during Thanksgiving luncheon at Doral medical center headquarters - CBS News"
     ],
     "medexport": [
       "European Parliament approves Critical Medicines Act to expand EU drug production - CEO Magazyn"
@@ -659,7 +682,7 @@
       "newsGP - In Practice: Medication shortages update - Royal Australian College of General Practitioners (RACGP)"
     ],
     "mobilisation": [
-      "UK tells 100,000 military reservists to prepare for possible wartime call-up - The Jerusalem Post",
+      "UK tells 100,000 military reservists to prepare for war amid Russia threats in first since Cold War - The Jerusalem Post",
       "Britain Contacts 100,000 Former Troops to Prepare for Possible War—First Time Since the Cold War - UNITED24 Media",
       "Britain is preparing military reservists for a possible mobilization due to the threat from Russia - UA.NEWS"
     ],
@@ -670,13 +693,13 @@
     ],
     "outage_au": [
       "Calls for 'automatic compensation' following telco outages - ABC News & Headlines – Australian Broadcasting Corporation",
-      "Telstra mobile outage disrupts services across Australia - Australian Cyber Security Magazine",
-      "The Microsoft outage is part of a growing trend. This is how to prepare for further disruption - SBS"
+      "Microsoft ‘deeply sorry’ for global outage, rules out cyberattack and AI - Nine.com.au",
+      "Telstra mobile outage disrupts services across Australia - Australian Cyber Security Magazine"
     ],
     "reservists": [
       "MoD prepares veterans for war - The Telegraph",
-      "UK reservists contacted as 'threat environment' rises, Streeting says - BBC",
-      "UK tells 100,000 strategic reservists to prepare for possible call-up: Report - Anadolu Ajansı"
+      "UK tells 100,000 strategic reservists to prepare for possible call-up: Report - Anadolu Ajansı",
+      "MoD Strategic Reserve Call-Up: UK Urges 100,000 Reservists to Update Details and Join Exercises - Мілітарний"
     ],
     "ru_signals": [
       "NATO intern suspected of spying to remain in jail in Belgium after appeal - News24"
@@ -696,14 +719,14 @@
       "Three Sinokor VLCCs hit in Strait of Hormuz attacks - Riviera Maritime Media",
       "Middle East latest: Two Italians killed in Iranian drone attack in Kuwait - The National",
       "IRGC Claims LNG Carrier Hit Mine in Hormuz Nov 25 - https://houseofsaud.com/",
-      "ADNOC L&S says one missing, 11 injured in Strait of Hormuz ship attack - Baird Maritime"
+      "Hormuz oil traffic is down 40 percent: Are Iran’s tanker attacks working? - Al Jazeera"
     ],
     "strikes": [
       "Ukraine says strike on major Russian air base damaged five military jets - AeroTime",
       "Ukrainian Neptunes Attacked Marinovka Air Base, Which Housed Russian Su-34s - Мілітарний",
       "Iran Warns of Retaliation if US Forces Attack - ASHARQ AL-AWSAT English",
       "Ukraine says it struck a major Russian air base, damaging five planes - Arab News",
-      "Bahrain Says It Intercepted Iranian Attacks As Tehran Claims Strike On US Base - Radio Free Europe/Radio Liberty"
+      "Ukraine says it struck a major Russian air base, damaging five planes - Reuters"
     ]
   },
   "prediction_markets": [
@@ -783,14 +806,14 @@
       "yes": 11.0
     },
     {
-      "d24h": -0.2,
+      "d24h": -0.4,
       "q": "NATO x Russia military clash by November 30, 2026?",
       "yes": 1.5
     },
     {
-      "d24h": 1.6,
+      "d24h": 0.8,
       "q": "Ukraine agrees not to join NATO by December 31, 2026?",
-      "yes": 3.0
+      "yes": 2.2
     },
     {
       "d24h": -0.5,
@@ -818,9 +841,9 @@
       "yes": 18.0
     },
     {
-      "d24h": 0.0,
+      "d24h": 0.5,
       "q": "Will Nick Stewart attend a US x Iran diplomatic meeting by December 31, 2026?",
-      "yes": 9.5
+      "yes": 7.5
     }
   ],
   "quakes_m6_24h": [],
@@ -1064,7 +1087,7 @@
       "key": "russia",
       "lit": [
         {
-          "detail": "Britain is preparing military reservists for a possible mobilization due to the threat from Russia",
+          "detail": "UK tells 100,000 military reservists to prepare for war amid Russia threats in first since Cold War",
           "name": "Mobilisation / reservist reports (Russia / NATO)"
         }
       ],
@@ -1080,7 +1103,7 @@
       "key": "nuclear",
       "lit": [
         {
-          "detail": "Britain is preparing military reservists for a possible mobilization due to the threat from Russia",
+          "detail": "UK tells 100,000 military reservists to prepare for war amid Russia threats in first since Cold War",
           "name": "Mobilisation reports (any major power)"
         }
       ],
@@ -1146,7 +1169,7 @@
       "key": "ai",
       "lit": [
         {
-          "detail": "Google says the first autonomous AI cyberattack has happened. It won't be the last.",
+          "detail": "AI agents used in five cyber attacks in Switzerland, government says",
           "name": "Reports of AI-driven hacking campaigns"
         },
         {
