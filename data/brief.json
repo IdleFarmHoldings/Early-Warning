@@ -281,20 +281,19 @@
   ],
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
-    "maritime": "TimeoutError: ",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-26T10:41:00Z",
+  "generated_at": "2026-11-26T10:56:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 19,
-    "Black Sea": 8,
-    "Israel & Eastern Mediterranean": 17,
+    "Baltic / Kaliningrad": 21,
+    "Black Sea": 9,
+    "Israel & Eastern Mediterranean": 7,
     "Korea": 1,
-    "Persian Gulf": 21,
+    "Persian Gulf": 20,
     "South Australia": 0,
     "Sydney / NSW": 0,
-    "Taiwan Strait": 1
+    "Taiwan Strait": 0
   },
   "incidents": [
     {
@@ -336,6 +335,16 @@
       "needs_confirming": false,
       "severity": "Info",
       "target": "What Flight Centre"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "Personal data exposed in 'significant' Flight Centre data breach"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "Personal"
     },
     {
       "attack_reported": true,
@@ -399,22 +408,12 @@
       "target": "AI Hacking"
     },
     {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
-        "Nation-State Hackers Target Commercial Ships by Exploiting Fortinet FortiGate Vulnerabilities"
-      ],
-      "needs_confirming": false,
-      "severity": "Info",
-      "target": "Nation-State Hackers Target"
-    },
-    {
       "attack_reported": false,
       "confirmed": true,
       "headlines": [
         "Microsoft Declares Code Red: 24-Hour Outage & NCR Impact",
-        "Hackers exploit Microsoft 365 outage",
-        "11,000+ messages, across 11 Teams chats and a decade of ‘acceptable failures’: How the 24-hour outage that Microsoft says had the biggest customer impact in Exc"
+        "Microsoft launches ‘Code Red’ overhaul after 24-hour outage exposes engineering flaws",
+        "Hackers exploit Microsoft 365 outage"
       ],
       "needs_confirming": false,
       "severity": "Warning",
@@ -463,31 +462,21 @@
       "Mount Lofty Ranges": "Moderate / Moderate"
     },
     "fire_danger_ok": true,
-    "fires_active": 12,
+    "fires_active": 10,
     "fuel": {
       "brent_aud": 136.8,
       "change_pct": 2.3,
       "pump_cents": 2,
       "week_ago_aud": 133.8
     },
-    "grid_demand_fall_pct": 0.4,
-    "grid_demand_mw": 1702,
-    "grid_demand_usual_mw": 1478,
+    "grid_demand_fall_pct": -0.2,
+    "grid_demand_mw": 1705,
+    "grid_demand_usual_mw": 1461,
     "grid_lor_level": 0,
-    "nearby_incidents": [
-      {
-        "area": "WATERLOO CORNER",
-        "dist": "25-60 km",
-        "event": "Grass Fire",
-        "headline": "WATERLOO CORNER : GRASS FIRE",
-        "id": "F-261126-0114 WHITE RD, WATERLOO CORNER, BROOKS RD / WHITE R",
-        "level": null,
-        "notify": false
-      }
-    ],
+    "nearby_incidents": [],
     "outlook": {
       "air": {
-        "aqi": 29,
+        "aqi": 30,
         "peak_pm25_48h": 12,
         "pm25": 8
       },
@@ -530,23 +519,23 @@
   "markets": {
     "AUD/USD": {
       "big_move": false,
-      "change_pct": -0.04,
-      "price": 0.6631
+      "change_pct": -0.01,
+      "price": 0.6633
     },
     "Brent oil": {
       "big_move": false,
-      "change_pct": -4.62,
-      "price": 90.24
+      "change_pct": -4.08,
+      "price": 90.75
     },
     "Gold": {
       "big_move": false,
-      "change_pct": 1.53,
-      "price": 3589.9
+      "change_pct": 1.27,
+      "price": 3580.8
     },
     "VIX": {
       "big_move": false,
-      "change_pct": -4.38,
-      "price": 27.05
+      "change_pct": -3.0,
+      "price": 27.44
     }
   },
   "national_shocks": {
@@ -592,8 +581,8 @@
     ],
     "cloud": [
       "Microsoft issues 'Code Red' after huge global outage - Information Age | ACS",
-      "Microsoft sets one-hour recovery goal after worst-ever M365 outage - Computerworld",
-      "Microsoft invokes 'Code Red' after global Outlook and Microsoft 365 outage - TweakTown"
+      "Microsoft launches ‘Code Red’ overhaul after 24-hour outage exposes engineering flaws - internationalfinance.com",
+      "Microsoft sets one-hour recovery goal after worst-ever M365 outage - Computerworld"
     ],
     "cyber_attrib": [
       "FBI warns hackers weaponizing ARTEX AI framework to automate attacks on energy, manufacturing, telecom - Industrial Cyber",
@@ -603,12 +592,12 @@
     "cyber_au": [
       "Passport information may have been exposed in Flight Centre cyber incident - SBS",
       "Travel giant Flight Centre hit by cyber attack with customer passport details potentially exposed - 7NEWS",
-      "‘Significant’: Flight Centre hit by cyber attack - The Weekly Times"
+      "‘Significant’: Flight Centre hit by cyber attack - News24"
     ],
     "cyber_ot": [
       "UK operation wards off risk of cyber-attack on supermarket fridges and freezers - The Guardian",
       "Shop freezers in seven European countries hit by cyber-attack - BBC",
-      "Supermarket freezers and fridges in Europe hit by cyberattack - Nine.com.au"
+      "Refrigeration under cyber attack - Climate Control News"
     ],
     "cyber_state": [
       "ESET Research: Sandworm behind cyberattack on Poland’s power grid in late 2025 - We Live Security",
@@ -635,25 +624,25 @@
     ],
     "fuel_au": [
       "The Refill Gap: Australia’s Fuel Reserve and the Test of Strategic Endurance - Australian Institute of International Affairs",
-      "Oil Supply Shock to Worsen as Inventories Fall Further Even if Conflict Ends - EnergyNow.com",
-      "LBRCA launches fuel tax credit campaign - www.ownerdriver.com.au"
+      "LBRCA launches fuel tax credit campaign - www.ownerdriver.com.au",
+      "Oil Supply Shock to Worsen as Inventories Fall Further Even if Conflict Ends - EnergyNow.com"
     ],
     "gulf_strikes": [
       "Houthis target Saudi Arabia’s Red Sea ports as strikes escalate - Al Jazeera",
       "Powerful Explosions Reported in Riyadh following Yemeni Missile Attack - تسنیم",
       "Saudis say they intercepted Houthi drone near key port in Jeddah - The Times of Israel",
       "Saudi Coalition Intercepts 2 Houthi Ballistic Missiles Targeting Riyadh - https://houseofsaud.com/",
-      "Saudi-led coalition intercepts 2 Houthi ballistic missiles launched toward Riyadh - Anadolu Ajansı"
+      "Loud explosions rock Riyadh as Houthis attack Saudi ports - Middle East Eye"
     ],
     "illness": [
       "Mystery illness causes mass hospitalisation of runners - The Nightly",
       "Dr. Siegel on measles comeback, mystery illness outbreak on cruise ship - Fox News",
-      "148 aboard Florida-bound cruise ship sickened by ‘unknown’ GI outbreak: CDC - The Hill"
+      "Zayn Malik hospitalised with mystery illness, forced to cancel upcoming appearances on album release week - Nine.com.au"
     ],
     "masscas": [
       "15 hospitalized after possible food poisoning during Thanksgiving luncheon at Doral medical center headquarters - CBS News",
-      "18 sick after possible food poisoning during luncheon at Leon Medical HQ; patients not affected - NBC 6 South Florida",
-      "Cop wrestles patient trying to grab gun in hospital - The Daily Telegraph"
+      "Cop wrestles patient trying to grab gun in hospital - The Mercury",
+      "18 sick after possible food poisoning during luncheon at Leon Medical HQ; patients not affected - NBC 6 South Florida"
     ],
     "medexport": [
       "European Parliament approves Critical Medicines Act to expand EU drug production - CEO Magazyn"
@@ -663,8 +652,8 @@
       "Can Europe fix its chronic medicine shortage and supply chain disruptions? - Yahoo News Australia"
     ],
     "mobilisation": [
-      "MoD writes to 100,000 veterans as part of Strategic Reserve mobilisation plans - ADS Advance",
       "UK tells 100,000 military reservists to prepare for war amid Russia threats in first since Cold War - The Jerusalem Post",
+      "MoD writes to 100,000 veterans as part of Strategic Reserve mobilisation plans - ADS Advance",
       "From AI models to football: how China plans to expand defence education by 2030 - South China Morning Post"
     ],
     "national_outage": [
@@ -673,14 +662,14 @@
       "Paravoor market plunges into darkness after high-mast light goes defunct - Onmanorama"
     ],
     "outage_au": [
-      "Calls for 'automatic compensation' following telco outages - ABC News & Headlines – Australian Broadcasting Corporation",
-      "Microsoft ‘deeply sorry’ for global outage, rules out cyberattack and AI - Nine.com.au",
-      "The Microsoft outage is part of a growing trend. This is how to prepare for further disruption - SBS"
+      "Telstra mobile outage disrupts services across Australia - Australian Cyber Security Magazine",
+      "Australia's Optus apologises for outage that disrupted emergency calls - Reuters",
+      "How a nationwide Telstra outage rocked the Australian economy – and what we can learn - The Conversation"
     ],
     "reservists": [
       "MoD prepares veterans for war - The Telegraph",
       "Reservists told to prepare for call-up: what the MoD letters mean for you - Around Prague",
-      "UK defense ministry prepares former reservists for possible wartime call-up - سانا"
+      "UK tells 100,000 military reservists to prepare for war amid Russia threats in first since Cold War - The Jerusalem Post"
     ],
     "sapn": [
       "South Australia cuts rooftop solar after storm sparks power outages - pv magazine India",
@@ -729,7 +718,7 @@
       "yes": 3.4
     },
     {
-      "d24h": -0.6,
+      "d24h": -0.7,
       "q": "US-Iran Hormuz Agreement by November 30?",
       "yes": 2.7
     },
@@ -744,7 +733,7 @@
       "yes": 12.5
     },
     {
-      "d24h": -0.4,
+      "d24h": -0.2,
       "q": "US-Iran Final Nuclear Deal by November 30, 2026?",
       "yes": 0.5
     },
@@ -754,7 +743,7 @@
       "yes": 1.8
     },
     {
-      "d24h": 0.0,
+      "d24h": -0.1,
       "q": "Will China invade Taiwan by June 30, 2027?",
       "yes": 4.4
     },
@@ -789,7 +778,7 @@
       "yes": 1.6
     },
     {
-      "d24h": 1.9,
+      "d24h": 2.1,
       "q": "Ukraine agrees not to join NATO by December 31, 2026?",
       "yes": 3.5
     },
@@ -799,12 +788,12 @@
       "yes": 4.0
     },
     {
-      "d24h": 0.0,
+      "d24h": 0.1,
       "q": "Will Russia test a nuclear weapon by December 31 2026?",
       "yes": 1.9
     },
     {
-      "d24h": -3.0,
+      "d24h": 0.0,
       "q": "Will Russia invade another country by December 31, 2027?",
       "yes": 10.5
     },
@@ -1169,7 +1158,7 @@
   ],
   "sectors_relative_5d": {
     "defence_au": -0.38,
-    "defence_eu": 4.21,
+    "defence_eu": 3.92,
     "defence_us": 4.21,
     "pandemic": 0.09
   },
@@ -1189,7 +1178,7 @@
     "Optus": 0.0,
     "TPG": 0.0,
     "Telstra": 0.1,
-    "Vodafone": 4.8
+    "Vodafone": 9.5
   },
   "us_departure_orders": [
     "Belarus"
@@ -1232,14 +1221,6 @@
       "region": "the Middle East",
       "text": "GPS jamming over Persian Gulf: 37% of 63 aircraft affected for 45+ min (usual ~8.0%)",
       "what": "GPS jamming"
-    },
-    {
-      "active": false,
-      "first_seen": "2026-11-25T09:45:00Z",
-      "last_seen": "2026-11-25T10:52:00Z",
-      "region": "the Middle East",
-      "text": "19 military aircraft visible over Middle East & Gulf (usual ~5)",
-      "what": "unusual military flights"
     }
   ],
   "who": [
