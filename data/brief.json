@@ -1,13 +1,7 @@
 {
   "about": "Short form of latest.json + indicators.json for the analysis run. Links and raw samples removed.",
   "acsc": [],
-  "aircraft_flags": {
-    "gps_gulf": {
-      "median": 8.0,
-      "status": "ANOMALY",
-      "value": 31
-    }
-  },
+  "aircraft_flags": {},
   "analyst": {
     "ASPI Strategist": [
       "For its own good, Australia should help strengthen the US nuclear umbrella",
@@ -160,13 +154,13 @@
         "other_explanations": "A government has publicly linked some of these attacks to China, but not every incident here is confirmed as part of it."
       },
       "incidents": [
+        "2026-11-26 South Korea: Chinese, North Korean Hackers Adopt ARTEX AI Offensive Framework (named attacker)",
         "2026-11-26 Australia: OpenAI AI Agents Bypass Security Restrictions to Access Australian Government Systems (same pattern)",
         "2026-11-26 ?: Flight Centre cyber incident puts vendor cover back in focus (same pattern)",
         "2026-11-25 Australia: Flight Centre flags ‘significant’ customer data breach (same pattern)",
-        "2026-11-25 ?: Microsoft: China’s Salt Typhoon hackers are using Artex (named attacker)",
-        "2026-11-25 ?: AI-powered hacking tools are becoming a new weapon for cybercriminals (same pattern)"
+        "2026-11-25 ?: Microsoft: China’s Salt Typhoon hackers are using Artex (named attacker)"
       ],
-      "incidents_7d": 41,
+      "incidents_7d": 42,
       "official_warning": true,
       "score": 100,
       "sectors": [
@@ -290,13 +284,13 @@
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-26T11:02:00Z",
+  "generated_at": "2026-11-26T11:17:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 17,
-    "Black Sea": 4,
-    "Israel & Eastern Mediterranean": 14,
-    "Korea": 2,
-    "Persian Gulf": 31,
+    "Baltic / Kaliningrad": 20,
+    "Black Sea": 12,
+    "Israel & Eastern Mediterranean": 6,
+    "Korea": 1,
+    "Persian Gulf": 20,
     "South Australia": 0,
     "Sydney / NSW": 0,
     "Taiwan Strait": 0
@@ -306,11 +300,11 @@
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
-        "Travel giant Flight Centre hit by cyber attack with customer passport details potentially exposed"
+        "Ransomware group reportedly leaks Chase, Visa, and Mastercard customer data, but not credit card numbers"
       ],
       "needs_confirming": false,
       "severity": "Info",
-      "target": "Travel"
+      "target": "Banking & payments"
     },
     {
       "attack_reported": true,
@@ -321,6 +315,16 @@
       "needs_confirming": false,
       "severity": "Info",
       "target": "Personal"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "Travel giant Flight Centre hit by cyber attack with customer passport details potentially exposed"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "Travel"
     },
     {
       "attack_reported": true,
@@ -357,16 +361,6 @@
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
-        "What Flight Centre customers must do now after cyber attack hits passport and personal data"
-      ],
-      "needs_confirming": false,
-      "severity": "Info",
-      "target": "What Flight Centre"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
         "Major travel firm warns of ‘significant’ customer data hack"
       ],
       "needs_confirming": false,
@@ -383,6 +377,16 @@
       "needs_confirming": false,
       "severity": "Info",
       "target": "Other services"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "Chinese, North Korean Hackers Adopt ARTEX AI Offensive Framework"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "Chinese"
     },
     {
       "attack_reported": true,
@@ -458,9 +462,9 @@
     }
   ],
   "internet_drop_pct": {
-    "China": 0.1,
+    "China": 0.3,
     "Iran": 0.0,
-    "Israel": 0.3,
+    "Israel": 0.0,
     "Russia": 0.3,
     "South Korea": 0.0,
     "Taiwan": 0.0
@@ -479,16 +483,16 @@
       "Mount Lofty Ranges": "Moderate / Moderate"
     },
     "fire_danger_ok": true,
-    "fires_active": 11,
+    "fires_active": 10,
     "fuel": {
       "brent_aud": 136.8,
       "change_pct": 2.3,
       "pump_cents": 2,
       "week_ago_aud": 133.8
     },
-    "grid_demand_fall_pct": 3.4,
-    "grid_demand_mw": 1644,
-    "grid_demand_usual_mw": 1456,
+    "grid_demand_fall_pct": 4.9,
+    "grid_demand_mw": 1621,
+    "grid_demand_usual_mw": 1452,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
@@ -541,18 +545,18 @@
     },
     "Brent oil": {
       "big_move": false,
-      "change_pct": -4.08,
-      "price": 90.75
+      "change_pct": -3.79,
+      "price": 91.02
     },
     "Gold": {
       "big_move": false,
-      "change_pct": 1.41,
-      "price": 3585.6
+      "change_pct": 1.48,
+      "price": 3588.3
     },
     "VIX": {
       "big_move": false,
-      "change_pct": -2.79,
-      "price": 27.5
+      "change_pct": -3.08,
+      "price": 27.42
     }
   },
   "national_shocks": {
@@ -568,9 +572,9 @@
   "nc3": "normal",
   "news_watch": {
     "ai_hack": [
+      "Chinese, North Korean Hackers Adopt ARTEX AI Offensive Framework - Infosecurity Magazine",
       "AI-powered hacking tools are becoming a new weapon for cybercriminals - Digital Journal",
-      "Dutch ethical hacking group hit by suspected autonomous AI agents - Anadolu Ajansı",
-      "Italy and Switzerland warn of autonomous AI-driven cyberattacks - BleepingComputer"
+      "Dutch ethical hacking group hit by suspected autonomous AI agents - Anadolu Ajansı"
     ],
     "airspace": [
       "Iran, US-Israel War Live Updates | US announces civilian nuclear deal with Saudi Arabia: Report - Deccan Herald",
@@ -579,8 +583,8 @@
     ],
     "aviation_halt": [
       "Miami Airport Issues Ground Stop After FedEx Plane Overshoots Runway - The Weekly Times",
-      "FedEx cargo plane runs off Miami International Airport runway, causing ground stop during Thanksgiving travel - CBS News",
-      "Timeline of the FAA nationwide ground stop: How it developed - ABC News - Breaking News, Latest News and Videos"
+      "Duffy asked for $50B for air traffic control after ground stop, a marked increase - ABC News - Breaking News, Latest News and Videos",
+      "FedEx cargo plane runs off Miami International Airport runway, causing ground stop during Thanksgiving travel - CBS News"
     ],
     "bank_outage": [
       "Wall Street recovers most early losses as pullback in AI stocks eases - CommBank",
@@ -602,19 +606,19 @@
       "Microsoft sets one-hour recovery goal after worst-ever M365 outage - Computerworld"
     ],
     "cyber_attrib": [
-      "FBI warns hackers weaponizing ARTEX AI framework to automate attacks on energy, manufacturing, telecom - Industrial Cyber",
       "FBI Warns Hackers Are Using ARTEX AI Tool To Automate Cyberattacks - Forbes",
-      "FBI warns hackers using AI-powered tool to automate cyberattacks worldwide - Anadolu Ajansı"
+      "Spy agency warns active Russian hackers targeting Australian industry - ABC News & Headlines – Australian Broadcasting Corporation",
+      "Busted! Alleged Aussie hackers linked to TeamPCP arrested in joint AFP-FBI-WAPF operation - Cyber Daily"
     ],
     "cyber_au": [
+      "Personal data exposed in 'significant' Flight Centre data breach - ABC News & Headlines – Australian Broadcasting Corporation",
       "Passport information may have been exposed in Flight Centre cyber incident - SBS",
-      "Travel giant Flight Centre hit by cyber attack with customer passport details potentially exposed - 7NEWS",
-      "Personal data exposed in 'significant' Flight Centre data breach - ABC News & Headlines – Australian Broadcasting Corporation"
+      "Travel giant Flight Centre hit by cyber attack with customer passport details potentially exposed - 7NEWS"
     ],
     "cyber_ot": [
       "UK operation wards off risk of cyber-attack on supermarket fridges and freezers - The Guardian",
       "Shop freezers in seven European countries hit by cyber-attack - BBC",
-      "Next Plc’s Supplier Hit by Cyberattack in Latest UK Retail Breach - Insurance Journal"
+      "Supermarket freezers and fridges in Europe hit by cyberattack - Nine.com.au"
     ],
     "cyber_state": [
       "ESET Research: Sandworm behind cyberattack on Poland’s power grid in late 2025 - We Live Security",
@@ -622,14 +626,14 @@
       "Russian state hackers likely behind wiper malware attack on Poland’s power grid - The Record from Recorded Future News"
     ],
     "cyber_supply": [
-      "VMware patches 23 flaws, including another critical vCenter authentication bypass - Field Effect",
       "VMware fixes third vCenter auth bypass days after patching exploited flaw - iTnews",
-      "1Password Hit by Backend Breach via Hijacked Employee GitHub Account - Infosecurity Magazine"
+      "1Password Hit by Backend Breach via Hijacked Employee GitHub Account - Infosecurity Magazine",
+      "CVE-2026-123903: Critical VMware vCenter Auth Bypass - SOC Prime"
     ],
     "deepfake": [
-      "Deloitte banned after AI-generated government report exposed - 7NEWS",
       "Video of Trump slamming Papua New Guinea's politicians is an AI-fake - www.aap.com.au",
-      "Tidal to Remove Fully AI-Generated Songs as Uploads Flood Its Platform - AI Insider"
+      "Deloitte banned after AI-generated government report exposed - 7NEWS",
+      "Taiwan ruling party candidate targeted by AI-generated image before elections - AFP Fact Check"
     ],
     "dieoff": [
       "15% of Peru's Sea Lions Die in Mass Die-Off... 'Strongest El Niño' Cuts Off Food Supply - 아시아경제"
@@ -699,11 +703,11 @@
       "Sumsub Taps Google Maps Data to Flag Suspicious Business Addresses - Fintech Singapore"
     ],
     "shipping_attacks": [
+      "Iran claims LNG carrier and tankers struck mines in Strait of Hormuz - safety4sea",
       "Three Sinokor VLCCs hit in latest Strait of Hormuz attacks - Riviera Maritime Media",
-      "IRGC Claims LNG Carrier Hit Mine in Hormuz as Oil Tankers Catch Fire - https://houseofsaud.com/",
       "Middle East latest: Explosion reported near tanker off UAE coast, UKMTO says - The National",
-      "Strait of Hormuz attacks have increased to highest level since Iran war began - ABC News - Breaking News, Latest News and Videos",
-      "Iranian attacks in the Strait of Hormuz are at the highest levels since the conflict began - CNN"
+      "IRGC Claims LNG Carrier Hit Mine in Hormuz as Oil Tankers Catch Fire - https://houseofsaud.com/",
+      "Strait of Hormuz attacks have increased to highest level since Iran war began - ABC News - Breaking News, Latest News and Videos"
     ],
     "strikes": [
       "Ukraine says strike on major Russian air base damaged five military jets - AeroTime",
@@ -720,7 +724,7 @@
       "yes": 5.5
     },
     {
-      "d24h": 0.4,
+      "d24h": 0.5,
       "q": "US-Iran Final Nuclear Deal by December 31, 2026?",
       "yes": 2.8
     },
@@ -1046,19 +1050,9 @@
     },
     {
       "band": "Low",
-      "convergence": "Only one kind of sign is showing (electronic warfare). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
-      "domains": [
-        "Electronic warfare"
-      ],
       "key": "mideast",
-      "lit": [
-        {
-          "detail": "gps_gulf 31 vs usual 8.0",
-          "name": "GPS jamming spike (Gulf / Israel)"
-        }
-      ],
-      "score": 10,
-      "trend": "up"
+      "score": 0,
+      "trend": "down"
     },
     {
       "band": "Low",
@@ -1185,7 +1179,7 @@
   ],
   "sectors_relative_5d": {
     "defence_au": -0.38,
-    "defence_eu": 3.98,
+    "defence_eu": 3.92,
     "defence_us": 4.21,
     "pandemic": 0.09
   },
@@ -1201,11 +1195,11 @@
   ],
   "tankers": "normal",
   "telecom_drop_pct": {
-    "Aussie Broadband": 0.4,
+    "Aussie Broadband": 0.0,
     "Optus": 2.0,
     "TPG": 0.1,
     "Telstra": 0.0,
-    "Vodafone": 4.8
+    "Vodafone": 0.0
   },
   "us_departure_orders": [
     "Belarus"
