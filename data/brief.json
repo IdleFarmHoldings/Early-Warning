@@ -3,9 +3,9 @@
   "acsc": [],
   "aircraft_flags": {
     "gps_gulf": {
-      "median": 9.0,
+      "median": 9,
       "status": "ANOMALY",
-      "value": 30
+      "value": 29
     }
   },
   "analyst": {
@@ -287,32 +287,21 @@
   ],
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
-    "maritime": "TimeoutError: ",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-26T06:07:00Z",
+  "generated_at": "2026-11-26T06:22:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 34,
-    "Black Sea": null,
+    "Baltic / Kaliningrad": 22,
+    "Black Sea": 50,
     "Israel & Eastern Mediterranean": 12,
     "Korea": 1,
-    "Persian Gulf": 30,
+    "Persian Gulf": 29,
     "South Australia": 2,
-    "Sydney / NSW": 3,
+    "Sydney / NSW": 2,
     "Taiwan Strait": 0
   },
   "incidents": [
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
-        "Ethical Hackers Uncover Security Flaws in Software Using Anthropic-Pioneered Protocol"
-      ],
-      "needs_confirming": false,
-      "severity": "Info",
-      "target": "AI platforms"
-    },
     {
       "attack_reported": true,
       "confirmed": false,
@@ -342,6 +331,16 @@
       "needs_confirming": false,
       "severity": "Info",
       "target": "What Flight Centre"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "Travel giant Flight Centre hit by cyber attack with customer passport details potentially exposed"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "Travel"
     },
     {
       "attack_reported": true,
@@ -377,11 +376,11 @@
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
-        "Flight Centre Data Breach: 3 Brands, Mandiant Called In"
+        "FBI’s criminal database targeted in massive cyber attack"
       ],
       "needs_confirming": false,
       "severity": "Info",
-      "target": "Flight Centre Data"
+      "target": "FBI"
     },
     {
       "attack_reported": true,
@@ -402,6 +401,16 @@
       "needs_confirming": false,
       "severity": "Info",
       "target": "Autonomous AI"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "[AI Hacking] Two Pillars of U.S. Intelligence Breached, Exposing Limits of U.S. Cyber Defenses Against AI-Driven Attacks"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "AI Hacking"
     },
     {
       "attack_reported": false,
@@ -427,9 +436,10 @@
     },
     {
       "attack_reported": false,
-      "confirmed": false,
+      "confirmed": true,
       "headlines": [
-        "NAB fails to take down former staffer’s ‘untrue’ Instagram whistleblower account"
+        "NAB fails to take down former staffer’s ‘untrue’ Instagram whistleblower account",
+        "Inflation rise fails to shake ANZ’s revised rate call"
       ],
       "needs_confirming": false,
       "severity": "Info",
@@ -437,10 +447,9 @@
     },
     {
       "attack_reported": false,
-      "confirmed": true,
+      "confirmed": false,
       "headlines": [
-        "US student visa rule struck down: Relief for Indians, but what next?",
-        "4 Ways to Prep Your Finances Before the Next Tech Outage"
+        "US student visa rule struck down: Relief for Indians, but what next?"
       ],
       "needs_confirming": false,
       "severity": "Info",
@@ -448,10 +457,10 @@
     }
   ],
   "internet_drop_pct": {
-    "China": 1.4,
+    "China": 1.3,
     "Iran": 0.0,
-    "Israel": 0.4,
-    "Russia": 0.1,
+    "Israel": 0.1,
+    "Russia": 0.2,
     "South Korea": 0.0,
     "Taiwan": 0.0
   },
@@ -467,7 +476,7 @@
       "Mount Lofty Ranges": "Moderate / Moderate"
     },
     "fire_danger_ok": true,
-    "fires_active": 13,
+    "fires_active": 14,
     "fuel": {
       "brent_aud": 136.8,
       "change_pct": 2.3,
@@ -475,8 +484,8 @@
       "week_ago_aud": 133.8
     },
     "grid_demand_fall_pct": -9.7,
-    "grid_demand_mw": 1269,
-    "grid_demand_usual_mw": 730,
+    "grid_demand_mw": 1393,
+    "grid_demand_usual_mw": 872,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
@@ -517,25 +526,25 @@
       "Morgan Vale Road, Pine Valley Station: MORGAN MAIL RD Closed due to flooding over road",
       "Pine Valley Road, Pine Valley Station: PINE VALLEY RD Closed due to flooding over road"
     ],
-    "rooftop_pv_mw": 1108,
+    "rooftop_pv_mw": 1112,
     "sawater_news": [],
     "watch_and_act": []
   },
   "markets": {
     "AUD/USD": {
       "big_move": false,
-      "change_pct": 0.11,
-      "price": 0.6641
+      "change_pct": 0.03,
+      "price": 0.6636
     },
     "Brent oil": {
       "big_move": false,
-      "change_pct": -3.58,
-      "price": 91.22
+      "change_pct": -3.95,
+      "price": 90.87
     },
     "Gold": {
       "big_move": false,
-      "change_pct": 2.05,
-      "price": 3608.4
+      "change_pct": 1.75,
+      "price": 3597.8
     },
     "VIX": {
       "big_move": false,
@@ -576,8 +585,7 @@
       "Sew Your Story helps Northland kids stitch confidence and creativity - ANZ"
     ],
     "cables": [
-      "Kalypso Offshore Energy Awarded NYSERDA Grant to Develop Subsea Cable Operations & Maintenance Hub in Brooklyn - 01net",
-      "Expert warns of worrying problem with emergency plans if UK suffers 'black sky event' - LADbible"
+      "Kalypso Offshore Energy Awarded NYSERDA Grant to Develop Subsea Cable Operations & Maintenance Hub in Brooklyn - 01net"
     ],
     "chem": [
       "OPCW takes key step towards designation of laboratories for biotoxin analysis - OPCW",
@@ -590,19 +598,19 @@
       "Microsoft invokes 'Code Red' after global Outlook and Microsoft 365 outage - TweakTown"
     ],
     "cyber_attrib": [
+      "FBI warns hackers weaponizing ARTEX AI framework to automate attacks on energy, manufacturing, telecom - Industrial Cyber",
       "FBI Warns Hackers Are Using ARTEX AI Tool To Automate Cyberattacks - Forbes",
-      "Spy agency warns active Russian hackers targeting Australian industry - ABC News & Headlines – Australian Broadcasting Corporation",
-      "Busted! Alleged Aussie hackers linked to TeamPCP arrested in joint AFP-FBI-WAPF operation - Cyber Daily"
+      "Trump blames Minnesota governor, not Iran, for cyberattacks on the state's water systems - ABC News - Breaking News, Latest News and Videos"
     ],
     "cyber_au": [
       "‘Significant’: Flight Centre hit by cyber attack - The Weekly Times",
       "Flight Centre probes data breach of third-party booking system - iTnews",
-      "Australia's Flight Centre probes data breach in third-party system - TradingView"
+      "Flight Centre hit by cyber incident affecting ‘significant number’ of customers - SMH.com.au"
     ],
     "cyber_ot": [
       "UK operation wards off risk of cyber-attack on supermarket fridges and freezers - The Guardian",
       "Shop freezers in seven European countries hit by cyber-attack - BBC",
-      "Next Plc’s Supplier Hit by Cyberattack in Latest UK Retail Breach - Insurance Journal"
+      "Supermarket freezers and fridges in Europe hit by cyberattack - Nine.com.au"
     ],
     "cyber_state": [
       "ESET Research: Sandworm behind cyberattack on Poland’s power grid in late 2025 - We Live Security",
@@ -630,8 +638,8 @@
     ],
     "fuel_au": [
       "The Refill Gap: Australia’s Fuel Reserve and the Test of Strategic Endurance - Australian Institute of International Affairs",
-      "Crisis-tested Matt Halliday never lets a fuel shock go to waste - AFR",
-      "LBRCA launches fuel tax credit campaign - www.ownerdriver.com.au"
+      "LBRCA launches fuel tax credit campaign - www.ownerdriver.com.au",
+      "Crisis-tested Matt Halliday never lets a fuel shock go to waste - AFR"
     ],
     "gulf_strikes": [
       "Houthis target Saudi Arabia’s Red Sea ports as strikes escalate - Al Jazeera",
@@ -668,19 +676,19 @@
       "Colombia plunged into darkness – President issues emergency order - TodayPress.tv"
     ],
     "outage_au": [
-      "Telstra mobile outage disrupts services across Australia - Australian Cyber Security Magazine",
-      "Australia's Optus apologises for outage that disrupted emergency calls - Reuters",
-      "How a nationwide Telstra outage rocked the Australian economy – and what we can learn - The Conversation"
+      "Calls for 'automatic compensation' following telco outages - ABC News & Headlines – Australian Broadcasting Corporation",
+      "Microsoft ‘deeply sorry’ for global outage, rules out cyberattack and AI - Nine.com.au",
+      "The Microsoft outage is part of a growing trend. This is how to prepare for further disruption - SBS"
     ],
     "reservists": [
       "MoD tells 100,000 reservists: be ready for call-up - The Times",
-      "MoD prepares veterans to be called up for war - The Telegraph",
-      "London for the first time since the Cold War has told veterans to prepare for conscription - 1News.az"
+      "Are UK veterans being called up? No, but 100,000 got MoD letters. What they mean - Nacionale",
+      "MoD prepares veterans to be called up for war - The Telegraph"
     ],
     "sapn": [
       "Another outage coming as crews race to reconnect power grid - Adelaide Now",
-      "Festivalgoer struck by lightning, locust plague, freak storm causes major blackout - 9Now",
-      "Multimillion-dollar bill to replace Outback power line - InDaily South Australia"
+      "Multimillion-dollar bill to replace Outback power line - InDaily South Australia",
+      "Festivalgoer struck by lightning, locust plague, freak storm causes major blackout - 9Now"
     ],
     "scams": [
       "How to defend against cyber hackers who log on, not break in - CommBank",
@@ -691,8 +699,8 @@
       "IRGC Claims LNG Carrier Hit Mine in Hormuz as Oil Tankers Catch Fire - https://houseofsaud.com/",
       "Three Sinokor VLCCs hit in latest Strait of Hormuz attacks - Riviera Maritime Media",
       "Iranian attacks on ships near Strait of Hormuz hit highest level since war began, data shows - The Jerusalem Post",
-      "Iran says it struck vessel in Strait of Hormuz — Anadolu Agency - UA.NEWS",
-      "Iran attacks on Gulf shipping hit highest levels since conflict began: Why Strait of Hormuz is on alert - Gulf News"
+      "ADNOC L&S says one missing, 11 injured in Strait of Hormuz ship attack - Baird Maritime",
+      "Further tanker attacks reported in Strait of Hormuz amid Iranian mine claims - safety4sea"
     ],
     "strikes": [
       "Ukraine says strike on major Russian air base damaged five military jets - AeroTime",
@@ -724,7 +732,7 @@
       "yes": 3.6
     },
     {
-      "d24h": 0.3,
+      "d24h": 0.1,
       "q": "US-Iran Hormuz Agreement by November 30?",
       "yes": 2.8
     },
@@ -739,9 +747,9 @@
       "yes": 12.5
     },
     {
-      "d24h": 0.0,
+      "d24h": 0.2,
       "q": "US-Iran Final Nuclear Deal by November 30, 2026?",
-      "yes": 0.5
+      "yes": 0.7
     },
     {
       "d24h": -0.9,
@@ -751,7 +759,7 @@
     {
       "d24h": -0.1,
       "q": "Will China invade Taiwan by June 30, 2027?",
-      "yes": 4.3
+      "yes": 4.4
     },
     {
       "d24h": 0.1,
@@ -759,7 +767,7 @@
       "yes": 1.8
     },
     {
-      "d24h": 0.1,
+      "d24h": 0.0,
       "q": "Will China blockade Taiwan by December 31, 2026??",
       "yes": 1.9
     },
@@ -774,19 +782,19 @@
       "yes": 3.0
     },
     {
-      "d24h": 0.0,
+      "d24h": -3.5,
       "q": "Iran-Oman Hormuz Agreement by December 31?",
       "yes": 11.5
     },
     {
-      "d24h": -0.7,
+      "d24h": -0.8,
       "q": "NATO x Russia military clash by November 30, 2026?",
       "yes": 1.6
     },
     {
-      "d24h": 1.8,
+      "d24h": 1.9,
       "q": "Ukraine agrees not to join NATO by December 31, 2026?",
-      "yes": 3.4
+      "yes": 3.5
     },
     {
       "d24h": 0.0,
@@ -814,7 +822,7 @@
       "yes": 18.0
     },
     {
-      "d24h": 0.5,
+      "d24h": -1.5,
       "q": "Will Nick Stewart attend a US x Iran diplomatic meeting by December 31, 2026?",
       "yes": 7.0
     }
@@ -1032,7 +1040,7 @@
       "key": "mideast",
       "lit": [
         {
-          "detail": "gps_gulf 30 vs usual 9.0",
+          "detail": "gps_gulf 29 vs usual 9",
           "name": "GPS jamming spike (Gulf / Israel)"
         }
       ],
@@ -1228,9 +1236,9 @@
     {
       "active": true,
       "first_seen": "2026-11-26T03:37:00Z",
-      "last_seen": "2026-11-26T06:07:00Z",
+      "last_seen": "2026-11-26T06:22:00Z",
       "region": "the Middle East",
-      "text": "GPS jamming over Persian Gulf: 30% of 77 aircraft affected for 45+ min (usual ~9.0%)",
+      "text": "GPS jamming over Persian Gulf: 29% of 85 aircraft affected for 45+ min (usual ~9%)",
       "what": "GPS jamming"
     },
     {
