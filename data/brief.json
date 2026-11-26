@@ -3,9 +3,9 @@
   "acsc": [],
   "aircraft_flags": {
     "gps_gulf": {
-      "median": 7.0,
+      "median": 7,
       "status": "ANOMALY",
-      "value": 22
+      "value": 32
     }
   },
   "analyst": {
@@ -287,31 +287,22 @@
   ],
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
+    "maritime": "TimeoutError: ",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-26T11:32:00Z",
+  "generated_at": "2026-11-26T11:47:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 15,
-    "Black Sea": 5,
-    "Israel & Eastern Mediterranean": 5,
+    "Baltic / Kaliningrad": 22,
+    "Black Sea": 36,
+    "Israel & Eastern Mediterranean": 3,
     "Korea": 0,
-    "Persian Gulf": 22,
+    "Persian Gulf": 32,
     "South Australia": 0,
     "Sydney / NSW": 0,
     "Taiwan Strait": 0
   },
   "incidents": [
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
-        "Ransomware group reportedly leaks Chase, Visa, and Mastercard customer data, but not credit card numbers"
-      ],
-      "needs_confirming": false,
-      "severity": "Info",
-      "target": "Banking & payments"
-    },
     {
       "attack_reported": true,
       "confirmed": false,
@@ -357,11 +348,11 @@
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
-        "Australia's Flight Centre probes data breach in third-party system"
+        "Australian travel giant investigates extensive data breach: Customers’ personal info at risk"
       ],
       "needs_confirming": false,
       "severity": "Info",
-      "target": "Australia's Flight Centre"
+      "target": "Australian"
     },
     {
       "attack_reported": true,
@@ -398,16 +389,6 @@
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
-        "[AI Hacking] Two Pillars of U.S. Intelligence Breached, Exposing Limits of U.S. Cyber Defenses Against AI-Driven Attacks"
-      ],
-      "needs_confirming": false,
-      "severity": "Info",
-      "target": "AI Hacking"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
         "AI Hackers Target Swiss Electricity and Water Utilities"
       ],
       "needs_confirming": false,
@@ -415,12 +396,32 @@
       "target": "AI Hackers Target"
     },
     {
+      "attack_reported": true,
+      "confirmed": true,
+      "headlines": [
+        "Switzerland Confirms First Cyberattacks Involving AI Agents Against Multiple Organizations"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "Switzerland"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "Nation-State Hackers Target Commercial Ships by Exploiting Fortinet FortiGate Vulnerabilities"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "Nation-State Hackers Target"
+    },
+    {
       "attack_reported": false,
       "confirmed": true,
       "headlines": [
-        "Microsoft Declares Code Red: 24-Hour Outage & NCR Impact",
         "Microsoft launches ‘Code Red’ overhaul after 24-hour outage exposes engineering flaws",
-        "Hackers exploit Microsoft 365 outage"
+        "Hackers exploit Microsoft 365 outage",
+        "11,000+ messages, across 11 Teams chats and a decade of ‘acceptable failures’: How the 24-hour outage tha"
       ],
       "needs_confirming": false,
       "severity": "Warning",
@@ -448,9 +449,9 @@
     }
   ],
   "internet_drop_pct": {
-    "China": 0.5,
+    "China": 0.8,
     "Iran": 0.0,
-    "Israel": 0.3,
+    "Israel": 0.4,
     "Russia": 0.2,
     "South Korea": 0.0,
     "Taiwan": 0.0
@@ -469,16 +470,16 @@
       "Mount Lofty Ranges": "Moderate / Moderate"
     },
     "fire_danger_ok": true,
-    "fires_active": 10,
+    "fires_active": 11,
     "fuel": {
       "brent_aud": 136.8,
       "change_pct": 2.3,
       "pump_cents": 2,
       "week_ago_aud": 133.8
     },
-    "grid_demand_fall_pct": 5.6,
-    "grid_demand_mw": 1610,
-    "grid_demand_usual_mw": 1429,
+    "grid_demand_fall_pct": 7.2,
+    "grid_demand_mw": 1582,
+    "grid_demand_usual_mw": 1408,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
@@ -526,23 +527,23 @@
   "markets": {
     "AUD/USD": {
       "big_move": false,
-      "change_pct": -0.06,
-      "price": 0.663
+      "change_pct": -0.04,
+      "price": 0.6631
     },
     "Brent oil": {
       "big_move": false,
-      "change_pct": -3.75,
-      "price": 91.06
+      "change_pct": -3.58,
+      "price": 91.22
     },
     "Gold": {
       "big_move": false,
-      "change_pct": 1.61,
-      "price": 3592.6
+      "change_pct": 1.6,
+      "price": 3592.2
     },
     "VIX": {
       "big_move": false,
-      "change_pct": -4.24,
-      "price": 27.09
+      "change_pct": -4.42,
+      "price": 27.04
     }
   },
   "national_shocks": {
@@ -560,7 +561,7 @@
     "ai_hack": [
       "Chinese, North Korean Hackers Adopt ARTEX AI Offensive Framework - Infosecurity Magazine",
       "AI-powered hacking tools are becoming a new weapon for cybercriminals - Digital Journal",
-      "Dutch ethical hacking group hit by suspected autonomous AI agents - Anadolu Ajansı"
+      "Italy and Switzerland warn of autonomous AI-driven cyberattacks - BleepingComputer"
     ],
     "airspace": [
       "Iran, US-Israel War Live Updates | US announces civilian nuclear deal with Saudi Arabia: Report - Deccan Herald",
@@ -591,13 +592,13 @@
     ],
     "cloud": [
       "Microsoft issues 'Code Red' after huge global outage - Information Age | ACS",
-      "Microsoft launches ‘Code Red’ overhaul after 24-hour outage exposes engineering flaws - internationalfinance.com",
-      "Microsoft sets one-hour recovery goal after worst-ever M365 outage - Computerworld"
+      "Microsoft sets one-hour recovery goal after worst-ever M365 outage - Computerworld",
+      "Microsoft launches ‘Code Red’ overhaul after 24-hour outage exposes engineering flaws - internationalfinance.com"
     ],
     "cyber_attrib": [
       "FBI Warns Hackers Are Using ARTEX AI Tool To Automate Cyberattacks - Forbes",
-      "Spy agency warns active Russian hackers targeting Australian industry - ABC News & Headlines – Australian Broadcasting Corporation",
-      "Busted! Alleged Aussie hackers linked to TeamPCP arrested in joint AFP-FBI-WAPF operation - Cyber Daily"
+      "Water supply hack warning: FBI says threats are rising - The Hill",
+      "Spy agency warns active Russian hackers targeting Australian industry - ABC News & Headlines – Australian Broadcasting Corporation"
     ],
     "cyber_au": [
       "Personal data exposed in 'significant' Flight Centre data breach - ABC News & Headlines – Australian Broadcasting Corporation",
@@ -607,7 +608,7 @@
     "cyber_ot": [
       "UK operation wards off risk of cyber-attack on supermarket fridges and freezers - The Guardian",
       "Shop freezers in seven European countries hit by cyber-attack - BBC",
-      "Refrigeration under cyber attack - Climate Control News"
+      "Supermarket freezers and fridges in Europe hit by cyberattack - Nine.com.au"
     ],
     "cyber_state": [
       "ESET Research: Sandworm behind cyberattack on Poland’s power grid in late 2025 - We Live Security",
@@ -647,7 +648,7 @@
     "illness": [
       "Mystery illness causes mass hospitalisation of runners - The Nightly",
       "Dr. Siegel on measles comeback, mystery illness outbreak on cruise ship - Fox News",
-      "Zayn Malik hospitalised with mystery illness, forced to cancel upcoming appearances on album release week - Nine.com.au"
+      "148 aboard Florida-bound cruise ship sickened by ‘unknown’ GI outbreak: CDC - The Hill"
     ],
     "masscas": [
       "Cop wrestles patient trying to grab gun in hospital - The Daily Telegraph",
@@ -672,9 +673,9 @@
       "Paravoor market plunges into darkness after high-mast light goes defunct - Onmanorama"
     ],
     "outage_au": [
-      "Telstra mobile outage disrupts services across Australia - Australian Cyber Security Magazine",
-      "Australia's Optus apologises for outage that disrupted emergency calls - Reuters",
-      "How a nationwide Telstra outage rocked the Australian economy – and what we can learn - The Conversation"
+      "Calls for 'automatic compensation' following telco outages - ABC News & Headlines – Australian Broadcasting Corporation",
+      "Microsoft ‘deeply sorry’ for global outage, rules out cyberattack and AI - Nine.com.au",
+      "The Microsoft outage is part of a growing trend. This is how to prepare for further disruption - SBS"
     ],
     "reservists": [
       "MoD prepares veterans for war - The Telegraph",
@@ -696,12 +697,12 @@
       "Three Sinokor VLCCs hit in latest Strait of Hormuz attacks - Riviera Maritime Media",
       "Middle East latest: Explosion reported near tanker off UAE coast, UKMTO says - The National",
       "IRGC Claims LNG Carrier Hit Mine in Hormuz Nov 25 - https://houseofsaud.com/",
-      "Strait of Hormuz attacks have increased to highest level since Iran war began - ABC News - Breaking News, Latest News and Videos"
+      "Iranian attacks in the Strait of Hormuz are at the highest levels since the conflict began - CNN"
     ],
     "strikes": [
       "Ukraine says strike on major Russian air base damaged five military jets - AeroTime",
-      "Ukraine says it struck a major Russian air base, damaging five planes - Arab News",
       "Iran Warns of Retaliation if US Forces Attack - ASHARQ AL-AWSAT English",
+      "Ukraine says it struck a major Russian air base, damaging five planes - Arab News",
       "Multiple Russian jets damaged during strike at major military air base, Ukraine says - The Independent",
       "What is Savasleyka air base? The Russian home of Kinzhal-carrying MiG-31s that Ukraine says it hit - Nacionale"
     ]
@@ -713,9 +714,9 @@
       "yes": 5.5
     },
     {
-      "d24h": 0.4,
+      "d24h": 1.0,
       "q": "US-Iran Final Nuclear Deal by December 31, 2026?",
-      "yes": 2.8
+      "yes": 3.4
     },
     {
       "d24h": -2.0,
@@ -728,7 +729,7 @@
       "yes": 3.4
     },
     {
-      "d24h": -0.7,
+      "d24h": -0.5,
       "q": "US-Iran Hormuz Agreement by November 30?",
       "yes": 2.7
     },
@@ -743,9 +744,9 @@
       "yes": 12.5
     },
     {
-      "d24h": -0.2,
+      "d24h": -0.1,
       "q": "US-Iran Final Nuclear Deal by November 30, 2026?",
-      "yes": 0.5
+      "yes": 0.6
     },
     {
       "d24h": -0.7,
@@ -808,9 +809,9 @@
       "yes": 10.5
     },
     {
-      "d24h": -0.9,
+      "d24h": -0.8,
       "q": "Will the U.S. test a nuclear weapon by December 31 2026?",
-      "yes": 2.5
+      "yes": 2.6
     },
     {
       "d24h": 0.0,
@@ -818,9 +819,9 @@
       "yes": 18.0
     },
     {
-      "d24h": -2.0,
+      "d24h": -1.5,
       "q": "Will Nick Stewart attend a US x Iran diplomatic meeting by December 31, 2026?",
-      "yes": 6.5
+      "yes": 7.0
     }
   ],
   "quakes_m6_24h": [],
@@ -1046,12 +1047,12 @@
       "key": "mideast",
       "lit": [
         {
-          "detail": "gps_gulf 22 vs usual 7.0",
+          "detail": "gps_gulf 32 vs usual 7",
           "name": "GPS jamming spike (Gulf / Israel)"
         }
       ],
       "score": 10,
-      "trend": "up"
+      "trend": "steady"
     },
     {
       "band": "Low",
@@ -1178,7 +1179,7 @@
   ],
   "sectors_relative_5d": {
     "defence_au": -0.38,
-    "defence_eu": 3.67,
+    "defence_eu": 3.65,
     "defence_us": 4.21,
     "pandemic": 0.09
   },
@@ -1196,9 +1197,9 @@
   "telecom_drop_pct": {
     "Aussie Broadband": 0.0,
     "Optus": 10.1,
-    "TPG": 0.1,
+    "TPG": 0.4,
     "Telstra": 0.0,
-    "Vodafone": 0.0
+    "Vodafone": 4.8
   },
   "us_departure_orders": [
     "Belarus"
