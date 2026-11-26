@@ -1,13 +1,7 @@
 {
   "about": "Short form of latest.json + indicators.json for the analysis run. Links and raw samples removed.",
   "acsc": [],
-  "aircraft_flags": {
-    "gps_gulf": {
-      "median": 7,
-      "status": "ANOMALY",
-      "value": 27
-    }
-  },
+  "aircraft_flags": {},
   "analyst": {
     "ASPI Strategist": [
       "For its own good, Australia should help strengthen the US nuclear umbrella",
@@ -287,20 +281,20 @@
   ],
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
-    "internet": "RuntimeError: Iran ping-slash24: HTTPError: HTTP Error 500: Internal Server Error; Iran bgp: TimeoutError: The read oper",
+    "internet": "RuntimeError: Iran ping-slash24: TimeoutError: The read operation timed out; Iran bgp: TimeoutError: The read operation ",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output=",
     "telecom": "RuntimeError: Telstra ping-slash24: TimeoutError: The read operation timed out; Telstra bgp: TimeoutError: The read oper"
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-26T13:16:00Z",
+  "generated_at": "2026-11-26T13:30:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 19,
-    "Black Sea": 11,
-    "Israel & Eastern Mediterranean": 3,
+    "Baltic / Kaliningrad": 22,
+    "Black Sea": 24,
+    "Israel & Eastern Mediterranean": 0,
     "Korea": 0,
-    "Persian Gulf": 27,
+    "Persian Gulf": 13,
     "South Australia": null,
-    "Sydney / NSW": 0,
+    "Sydney / NSW": null,
     "Taiwan Strait": 0
   },
   "incidents": [
@@ -348,18 +342,6 @@
     },
     {
       "attack_reported": true,
-      "confirmed": true,
-      "headlines": [
-        "AI agents used in five cyber attacks in Switzerland, government says",
-        "1Password Hit by Backend Breach via Hijacked Employee GitHub Account",
-        "US student visa rule struck down: Relief for Indians, but what next?"
-      ],
-      "needs_confirming": false,
-      "severity": "Info",
-      "target": "Other services"
-    },
-    {
-      "attack_reported": true,
       "confirmed": false,
       "headlines": [
         "New Danish data breach hits 11,000 despite security upgrades"
@@ -392,12 +374,22 @@
       "attack_reported": true,
       "confirmed": true,
       "headlines": [
-        "Switzerland reports first successful AI agent cyberattacks",
-        "Switzerland Confirms First Cyberattacks Involving AI Agents Against Multiple Organizations"
+        "1Password Hit by Backend Breach via Hijacked Employee GitHub Account",
+        "US student visa rule struck down: Relief for Indians, but what next?"
       ],
       "needs_confirming": false,
       "severity": "Info",
-      "target": "Switzerland"
+      "target": "Other services"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "Hackers Actively Exploit Critical Drupal Vulnerability to Take Over Websites"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "Hackers Actively Exploit"
     },
     {
       "attack_reported": true,
@@ -418,6 +410,16 @@
       "needs_confirming": false,
       "severity": "Info",
       "target": "AI Hackers Target"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": true,
+      "headlines": [
+        "Switzerland Confirms First Cyberattacks Involving AI Agents Against Multiple Organizations"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "Switzerland"
     },
     {
       "attack_reported": false,
@@ -477,16 +479,16 @@
       "Mount Lofty Ranges": "Moderate / Moderate"
     },
     "fire_danger_ok": true,
-    "fires_active": 11,
+    "fires_active": 10,
     "fuel": {
       "brent_aud": 136.9,
       "change_pct": 2.3,
       "pump_cents": 2,
       "week_ago_aud": 133.8
     },
-    "grid_demand_fall_pct": 3.4,
-    "grid_demand_mw": 1511,
-    "grid_demand_usual_mw": 1350,
+    "grid_demand_fall_pct": 1.7,
+    "grid_demand_mw": 1538,
+    "grid_demand_usual_mw": 1359,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
@@ -539,8 +541,8 @@
     },
     "Brent oil": {
       "big_move": false,
-      "change_pct": -3.34,
-      "price": 91.45
+      "change_pct": -3.67,
+      "price": 91.14
     },
     "Gold": {
       "big_move": false,
@@ -549,8 +551,8 @@
     },
     "VIX": {
       "big_move": false,
-      "change_pct": -4.14,
-      "price": 27.12
+      "change_pct": -5.23,
+      "price": 26.81
     }
   },
   "national_shocks": {
@@ -566,9 +568,9 @@
   "nc3": "normal",
   "news_watch": {
     "ai_hack": [
-      "Switzerland reports first successful AI agent cyberattacks - Bitdefender",
-      "AI agents used in five cyber attacks in Switzerland, government says - Reuters",
-      "Chinese, North Korean Hackers Adopt ARTEX AI Offensive Framework - Infosecurity Magazine"
+      "Google says the first autonomous AI cyberattack has happened. It won't be the last. - Mashable",
+      "Chinese, North Korean Hackers Adopt ARTEX AI Offensive Framework - Infosecurity Magazine",
+      "Microsoft explains how state-backed hackers use AI agents to automate cyberattacks - Superpower Daily"
     ],
     "airspace": [
       "Iran, US-Israel War Live Updates | US announces civilian nuclear deal with Saudi Arabia: Report - Deccan Herald",
@@ -577,13 +579,13 @@
     ],
     "aviation_halt": [
       "Miami Airport Issues Ground Stop After FedEx Plane Overshoots Runway - The Weekly Times",
-      "FedEx MD-11 overruns runway at Miami airport, triggering ground stop - AeroTime",
+      "FedEx cargo plane runs off Miami International Airport runway, causing ground stop during Thanksgiving travel - CBS News",
       "Duffy asked for $50B for air traffic control after ground stop, a marked increase - ABC News - Breaking News, Latest News and Videos"
     ],
     "bank_outage": [
       "Wall Street recovers most early losses as pullback in AI stocks eases - CommBank",
       "NAB fails to take down former staffer’s ‘untrue’ Instagram whistleblower account - hrleader.com.au",
-      "F-1 Student Visa Rules: Cap Struck Down, CPT Restrictions Temporarily Blocked - Legal 500"
+      "Student visa decline ‘damaging universities and economy’ - Research Professional News"
     ],
     "blood": [
       "Defense Min. Meets Vice President of Equatorial Guinea - Sada Elbalad English"
@@ -594,8 +596,8 @@
     ],
     "chem": [
       "OPCW takes key step towards designation of laboratories for biotoxin analysis - OPCW",
-      "Araghchi: Israel’s chemical weapons claims aim to drag US into another war - Middle East Monitor",
-      "Embassy of Ukraine welcomes Spain’s rejection of Russia’s use of chemical weapons - thediplomatinspain.com"
+      "Embassy of Ukraine welcomes Spain’s rejection of Russia’s use of chemical weapons - thediplomatinspain.com",
+      "Araghchi: Israel’s chemical weapons claims aim to drag US into another war - Middle East Monitor"
     ],
     "cloud": [
       "Microsoft issues 'Code Red' after huge global outage - Information Age | ACS",
@@ -614,8 +616,8 @@
     ],
     "cyber_ot": [
       "UK operation wards off risk of cyber-attack on supermarket fridges and freezers - The Guardian",
-      "Shop freezers in seven European countries hit by cyber-attack - BBC",
-      "Refrigeration under cyber attack - Climate Control News"
+      "Refrigeration under cyber attack - Climate Control News",
+      "Next Plc’s Supplier Hit by Cyberattack in Latest UK Retail Breach - Insurance Journal"
     ],
     "cyber_state": [
       "ESET Research: Sandworm behind cyberattack on Poland’s power grid in late 2025 - We Live Security",
@@ -623,9 +625,9 @@
       "Russian state hackers likely behind wiper malware attack on Poland’s power grid - The Record from Recorded Future News"
     ],
     "cyber_supply": [
-      "VMware fixes third vCenter auth bypass days after patching exploited flaw - iTnews",
       "1Password Hit by Backend Breach via Hijacked Employee GitHub Account - Infosecurity Magazine",
-      "CVE-2026-123903: Critical VMware vCenter Auth Bypass - SOC Prime"
+      "CISA Warns of 10 Actively Exploited Vulnerabilities in Juniper, Mitel, Danfoss, and Vates Products - GBHackers News",
+      "VMware fixes third vCenter auth bypass days after patching exploited flaw - iTnews"
     ],
     "deepfake": [
       "Video of Trump slamming Papua New Guinea's politicians is an AI-fake - www.aap.com.au",
@@ -646,11 +648,11 @@
       "Oil Supply Shock to Worsen as Inventories Fall Further Even if Conflict Ends - EnergyNow.com"
     ],
     "gulf_strikes": [
-      "Houthis target Saudi Arabia’s Red Sea ports as strikes escalate - Al Jazeera",
       "Powerful Explosions Reported in Riyadh following Yemeni Missile Attack - تسنیم",
       "Saudis say they intercepted Houthi drone near key port in Jeddah - The Times of Israel",
       "Saudi Coalition Intercepts 2 Houthi Ballistic Missiles Targeting Riyadh - https://houseofsaud.com/",
-      "Saudi-led coalition intercepts 2 Houthi ballistic missiles launched toward Riyadh - Anadolu Ajansı"
+      "Saudi-led coalition intercepts 2 Houthi ballistic missiles launched toward Riyadh - Anadolu Ajansı",
+      "Houthis target Saudi Arabia’s Red Sea ports as strikes escalate - Al Jazeera"
     ],
     "illness": [
       "Mystery illness causes mass hospitalisation of runners - The Nightly",
@@ -677,7 +679,7 @@
     "national_outage": [
       "Inside the ‘Black Sky’ plans for a nationwide blackout - Herald.Wales",
       "Cuba’s National Electric Grid Collapses, Reason Unknown - EnergyNow.com",
-      "Paravoor market plunges into darkness after high-mast light goes defunct - Onmanorama"
+      "Chainsaw damage on a GRIDCo line and ECG upgrades cut power in Kumasi and Accra - 3News"
     ],
     "outage_au": [
       "Telstra mobile outage disrupts services across Australia - Australian Cyber Security Magazine",
@@ -697,20 +699,13 @@
     "scams": [
       "Labor and the Greens betray victims of online financial scams - Senator the Hon Sarah Henderson",
       "How to defend against cyber hackers who log on, not break in - CommBank",
-      "Australia’s AI Inquiry Report: What It Means for Your Face, Your Voice and Your Work - The Original PC Doctor"
-    ],
-    "shipping_attacks": [
-      "Iran claims LNG carrier and tankers struck mines in Strait of Hormuz - safety4sea",
-      "Three Sinokor VLCCs hit in Strait of Hormuz attacks - Riviera Maritime Media",
-      "IRGC Claims LNG Carrier Hit Mine in Hormuz Nov 25 - https://houseofsaud.com/",
-      "Iranian attacks in the Strait of Hormuz are at the highest levels since the conflict began - CNN",
-      "Iranian attacks on ships near Strait of Hormuz hit highest level since war began, data shows - The Jerusalem Post"
+      "Retired teacher duped by AI deepfake applauds new Sask. legislation - Yahoo News Canada"
     ],
     "strikes": [
       "Ukraine says strike on major Russian air base damaged five military jets - AeroTime",
-      "Ukraine says it struck a major Russian air base, damaging five planes - Arab News",
       "Iran Warns of Retaliation if US Forces Attack - ASHARQ AL-AWSAT English",
-      "Ukraine strikes major Russian military air base; 5 jets damaged - Firstpost",
+      "Ukraine says it struck a major Russian air base, damaging five planes - Arab News",
+      "Ukraine hits Marinovka air base, home to Russia's Su-34 bombers, with Neptune missiles - RBC-Ukraine",
       "What is Savasleyka air base? The Russian home of Kinzhal-carrying MiG-31s that Ukraine says it hit - Nacionale"
     ]
   },
@@ -781,14 +776,14 @@
       "yes": 1.6
     },
     {
-      "d24h": 1.0,
+      "d24h": -0.1,
       "q": "Iran-Oman Hormuz Agreement by November 30?",
       "yes": 2.9
     },
     {
       "d24h": -0.5,
       "q": "Iran-Oman Hormuz Agreement by December 31?",
-      "yes": 11.5
+      "yes": 11.0
     },
     {
       "d24h": -0.6,
@@ -796,9 +791,9 @@
       "yes": 1.6
     },
     {
-      "d24h": 2.1,
+      "d24h": 1.9,
       "q": "Ukraine agrees not to join NATO by December 31, 2026?",
-      "yes": 3.5
+      "yes": 3.3
     },
     {
       "d24h": 0.0,
@@ -826,13 +821,22 @@
       "yes": 18.0
     },
     {
-      "d24h": -1.0,
+      "d24h": -2.5,
       "q": "Will Nick Stewart attend a US x Iran diplomatic meeting by December 31, 2026?",
-      "yes": 7.5
+      "yes": 6.0
     }
   ],
   "quakes_m6_24h": [],
   "recent_alerts": [
+    {
+      "at": "2026-11-26T13:30:00Z",
+      "channels": [
+        "proactive"
+      ],
+      "confirmed": true,
+      "message": "Early Warning has not been able to read the phone network outage monitor for about an hour, so it cannot warn ",
+      "title": "System check: the phone network outage monitor not updating"
+    },
     {
       "at": "2026-11-26T06:12:00Z",
       "channels": [
@@ -1007,15 +1011,6 @@
       "confirmed": true,
       "message": "Early Warning is running. 22 of 24 data feeds working (down: acsc, navwarn). 67 alerts sent in the last 7 days",
       "title": "System OK: weekly check"
-    },
-    {
-      "at": "2026-11-21T18:11:00Z",
-      "channels": [
-        "proactive"
-      ],
-      "confirmed": null,
-      "message": "Two tankers were hit by projectiles off Oman near Hormuz on Saturday (UK maritime agency); no injuries. No new",
-      "title": "Daily digest: Level 3 Elevated"
     }
   ],
   "scenarios": [
@@ -1043,23 +1038,13 @@
         }
       ],
       "score": 40,
-      "trend": "up"
+      "trend": "steady"
     },
     {
       "band": "Low",
-      "convergence": "Only one kind of sign is showing (electronic warfare). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
-      "domains": [
-        "Electronic warfare"
-      ],
       "key": "mideast",
-      "lit": [
-        {
-          "detail": "gps_gulf 27 vs usual 7",
-          "name": "GPS jamming spike (Gulf / Israel)"
-        }
-      ],
-      "score": 10,
-      "trend": "steady"
+      "score": 0,
+      "trend": "down"
     },
     {
       "band": "Low",
@@ -1160,7 +1145,7 @@
       "key": "ai",
       "lit": [
         {
-          "detail": "AI agents used in five cyber attacks in Switzerland, government says",
+          "detail": "Google says the first autonomous AI cyberattack has happened. It won't be the last.",
           "name": "Reports of AI-driven hacking campaigns"
         },
         {
@@ -1177,7 +1162,7 @@
         }
       ],
       "score": 40,
-      "trend": "up"
+      "trend": "steady"
     }
   ],
   "sectors_relative_5d": {
