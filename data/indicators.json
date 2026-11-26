@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-26T07:29:00Z",
+  "generated_at": "2026-11-26T07:37:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -101,25 +101,14 @@
     },
     {
       "band": "Low",
-      "convergence": "Only one kind of sign is showing (electronic warfare). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
-      "domains": [
-        "Electronic warfare"
-      ],
+      "convergence": "No warning signs are showing. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
+      "domains": [],
       "key": "mideast",
-      "lit": [
-        {
-          "detail": "gps_gulf 37 vs usual 8.0",
-          "domain": "Electronic warfare",
-          "id": "gps",
-          "name": "GPS jamming spike (Gulf / Israel)",
-          "short": "GPS jamming spike",
-          "weight": 10
-        }
-      ],
+      "lit": [],
       "name": "Middle East war & Gulf shipping",
       "sa_impact": "Fuel: Australia imports most of its fuel, much of it refined from Gulf crude in Asia. Shipping attacks or a Hormuz closure push up prices within days and can cause local shortages.",
-      "score": 10,
-      "trend": "steady",
+      "score": 0,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Military air",
@@ -132,6 +121,12 @@
           "id": "air",
           "name": "Unusual military air activity over the region",
           "weight": 15
+        },
+        {
+          "domain": "Electronic warfare",
+          "id": "gps",
+          "name": "GPS jamming spike (Gulf / Israel)",
+          "weight": 10
         },
         {
           "domain": "Communications",
@@ -389,7 +384,7 @@
       "name": "Russia-NATO escalation",
       "sa_impact": "Indirect: energy and market shock, cyber attacks that can spill over to Australian systems, and nuclear-risk rhetoric.",
       "score": 0,
-      "trend": "down",
+      "trend": "steady",
       "unlit": [
         {
           "domain": "Electronic warfare",
@@ -493,7 +488,7 @@
       "name": "Nuclear use or alert",
       "sa_impact": "Fallout risk to SA from a northern-hemisphere exchange is very low, but global trade, fuel and finance would be severely disrupted.",
       "score": 0,
-      "trend": "down",
+      "trend": "steady",
       "unlit": [
         {
           "domain": "Nuclear command",
@@ -804,7 +799,7 @@
       "key": "ai",
       "lit": [
         {
-          "detail": "Dutch ethical hacking group hit by suspected autonomous AI agents",
+          "detail": "AI-powered hacking tools are becoming a new weapon for cybercriminals",
           "domain": "AI-enabled hacking",
           "id": "aihack",
           "name": "Reports of AI-driven hacking campaigns",
