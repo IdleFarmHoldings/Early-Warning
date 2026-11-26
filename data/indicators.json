@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-26T04:07:00Z",
+  "generated_at": "2026-11-26T04:11:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -108,7 +108,7 @@
       "key": "mideast",
       "lit": [
         {
-          "detail": "gps_gulf 50 vs usual 9.0",
+          "detail": "gps_gulf 55 vs usual 9.0",
           "domain": "Electronic warfare",
           "id": "gps",
           "name": "GPS jamming spike (Gulf / Israel)",
@@ -637,8 +637,8 @@
       "why": "The 2023 Optus outage cut mobile, NBN, EFTPOS and some 000 calls nationwide for 12 hours. Hostile states pre-position in critical infrastructure; GPS jamming over Australia would be a new and serious sign."
     },
     {
-      "band": "Elevated",
-      "convergence": "Signs are converging across 3 separate areas (chemical weapons, health and trade). Unrelated systems flagging the same scenario at once is the pattern seen before past events. Before COVID-19 (Dec 2019 - Feb 2020): reports of an unknown pneumonia cluster, WHO outbreak notices, mask and hazmat makers (Alpha Pro Tech, Lakeland) and vaccine developers (Moderna, Novavax) surging weeks before broad markets fell, and countries restricting exports of masks and medicines (Taiwan from 24 Jan 2020, then dozens more). The strongest signs not yet showing: unknown illness / pneumonia cluster reported, countries restricting medical supply exports and pandemic-response stocks outperforming (5 days).",
+      "band": "High",
+      "convergence": "Signs are converging across 3 separate areas (chemical weapons, health and trade). Unrelated systems flagging the same scenario at once is the pattern seen before past events. Before COVID-19 (Dec 2019 - Feb 2020): reports of an unknown pneumonia cluster, WHO outbreak notices, mask and hazmat makers (Alpha Pro Tech, Lakeland) and vaccine developers (Moderna, Novavax) surging weeks before broad markets fell, and countries restricting exports of masks and medicines (Taiwan from 24 Jan 2020, then dozens more). The strongest signs not yet showing: countries restricting medical supply exports, pandemic-response stocks outperforming (5 days) and unexplained mass deaths or animal die-offs.",
       "domains": [
         "Chemical weapons",
         "Health",
@@ -653,6 +653,14 @@
           "name": "WHO outbreak report with a high-concern pathogen (last 14 days)",
           "short": "WHO outbreak report",
           "weight": 15
+        },
+        {
+          "detail": "Dr. Siegel on measles comeback, mystery illness outbreak on cruise ship",
+          "domain": "Health",
+          "id": "illness",
+          "name": "Unknown illness / pneumonia cluster reported",
+          "short": "Illness cluster",
+          "weight": 20
         },
         {
           "detail": "newsGP - In Practice: Medication shortages update",
@@ -673,15 +681,9 @@
       ],
       "name": "Pandemic, biological or chemical emergency",
       "sa_impact": "Health system strain, possible lockdowns and border closures, and shortages of medicines and protective equipment, which Australia mostly imports.",
-      "score": 40,
-      "trend": "down",
+      "score": 60,
+      "trend": "up",
       "unlit": [
-        {
-          "domain": "Health",
-          "id": "illness",
-          "name": "Unknown illness / pneumonia cluster reported",
-          "weight": 20
-        },
         {
           "domain": "Trade",
           "id": "exports",
