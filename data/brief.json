@@ -282,19 +282,18 @@
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
     "internet": "RuntimeError: Iran ping-slash24: TimeoutError: The read operation timed out; Iran bgp: TimeoutError: The read operation ",
-    "maritime": "TimeoutError: ",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output=",
-    "telecom": "RuntimeError: Telstra ping-slash24: TimeoutError: The read operation timed out; Telstra bgp: TimeoutError: The read oper"
+    "telecom": "RuntimeError: Telstra ping-slash24: HTTPError: HTTP Error 500: Internal Server Error; Telstra bgp: URLError: <urlopen er"
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-26T21:34:00Z",
+  "generated_at": "2026-11-26T21:48:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 56,
-    "Black Sea": null,
+    "Baltic / Kaliningrad": 61,
+    "Black Sea": 50,
     "Israel & Eastern Mediterranean": 6,
-    "Korea": 2,
+    "Korea": 0,
     "Persian Gulf": null,
-    "South Australia": 0,
+    "South Australia": 3,
     "Sydney / NSW": 3,
     "Taiwan Strait": 0
   },
@@ -356,27 +355,18 @@
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
-        "New Danish data breach hits 11,000 despite security upgrades"
+        "Wyoming uranium operation shuts down after cyberattack"
       ],
       "needs_confirming": false,
       "severity": "Info",
-      "target": "New Danish"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
-        "Hackers Actively Exploit Critical Drupal Vulnerability to Take Over Websites"
-      ],
-      "needs_confirming": false,
-      "severity": "Info",
-      "target": "Hackers Actively Exploit"
+      "target": "Wyoming"
     },
     {
       "attack_reported": true,
       "confirmed": true,
       "headlines": [
-        "AI agents used in five cyber attacks in Switzerland, government says"
+        "AI agents used in five cyber attacks in Switzerland, government says",
+        "UK student visa approvals crash by 96,000 as refusal rates soar"
       ],
       "needs_confirming": false,
       "severity": "Info",
@@ -445,7 +435,7 @@
     "cfs_feed_ok": true,
     "cfs_warnings": [],
     "ed_very_busy": [
-      "Lyell McEwin",
+      "Flinders Medical Centre",
       "Modbury",
       "Queen Elizabeth"
     ],
@@ -455,23 +445,23 @@
       "Mount Lofty Ranges": "Moderate / Moderate"
     },
     "fire_danger_ok": true,
-    "fires_active": 13,
+    "fires_active": 12,
     "fuel": {
       "brent_aud": 137.7,
       "change_pct": 2.7,
       "pump_cents": 2,
       "week_ago_aud": 134.1
     },
-    "grid_demand_fall_pct": -0.9,
-    "grid_demand_mw": 1534,
-    "grid_demand_usual_mw": 1098,
+    "grid_demand_fall_pct": -3.1,
+    "grid_demand_mw": 1581,
+    "grid_demand_usual_mw": 1042,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
       "air": {
-        "aqi": 36,
+        "aqi": 37,
         "peak_pm25_48h": 12,
-        "pm25": 7
+        "pm25": 8
       },
       "air_word": "Good",
       "days": [
@@ -545,7 +535,7 @@
         "level": "Possible",
         "sector": "aviation",
         "signals": {
-          "traffic": "airborne traffic near Dubai about 17% of normal"
+          "traffic": "airborne traffic near Dubai about 7% of normal"
         }
       },
       {
@@ -555,7 +545,7 @@
         "level": "Possible",
         "sector": "aviation",
         "signals": {
-          "traffic": "airborne traffic near New York (Teterboro), Washington DC, Los Angeles (Van Nuys) about 21% of normal"
+          "traffic": "airborne traffic near New York (Teterboro), Washington DC, Los Angeles (Van Nuys) about 19% of normal"
         }
       }
     ],
@@ -570,7 +560,7 @@
     "ai_hack": [
       "Switzerland reports first successful AI agent cyberattacks - Bitdefender",
       "Switzerland confirms AI-assisted cyberattacks on critical infrastructure - Resilience Media",
-      "Google says the first autonomous AI cyberattack has happened. Expect a lot more like it. - Mashable"
+      "AI agents used in five cyber attacks in Switzerland, government says - Reuters"
     ],
     "airspace": [
       "Iran, US-Israel War Highlights| US strikes Iran in second day of renewed fire; IRGC targets bases in Bahrain & Kuwait - Deccan Herald",
@@ -603,7 +593,7 @@
     "cloud": [
       "Microsoft issues 'Code Red' after huge global outage - Information Age | ACS",
       "Microsoft sets one-hour recovery goal after worst-ever M365 outage - Computerworld",
-      "Preliminary estimates unveiled for Microsoft 365 outage losses - The Actuary"
+      "No plans to ditch Microsoft 365 despite global outage, says Government ICT - Cook Islands News"
     ],
     "cyber_attrib": [
       "FBI Warns Hackers Are Using ARTEX AI Tool To Automate Cyberattacks - Forbes",
@@ -627,8 +617,8 @@
     ],
     "cyber_supply": [
       "Warning: Actively Exploited Critical Vulnerabilities in Mitel MiCollab, Patch Immediately! - CCB Belgium",
-      "Drupal Core: Critical vulnerability CVE-2026-136716 actively exploited - SecNews.gr",
-      "CISA Warns of 10 Actively Exploited Vulnerabilities in Juniper, Mitel, Danfoss, and Vates Products - GBHackers News"
+      "Critical Zero-Day Wave Strikes Hypervisors, Edge Appliances, and AI Medical Imaging + Video - Howl.Link",
+      "Danfoss AK-SM8xxA, three vulnerabilities actively exploited - Meteora Web"
     ],
     "deepfake": [
       "Deloitte Suspended From Western Australian Government Contracts Over AI Report Errors - https://www.big4news.com/",
@@ -663,8 +653,8 @@
     ],
     "masscas": [
       "Thanksgiving Dinner Disaster Leaves 18 in Hospital in Florida - The Daily Beast",
-      "15 hospitalized after possible food poisoning during Thanksgiving luncheon at Doral medical center headquarters - CBS News",
-      "18 sick after possible food poisoning during luncheon at Leon Medical HQ; patients not affected - NBC 6 South Florida"
+      "Seven soldiers in critical condition among those still hospitalized after CFB Wainwright fire - My Lethbridge Now",
+      "15 hospitalized after possible food poisoning during Thanksgiving luncheon at Doral medical center headquarters - CBS News"
     ],
     "medexport": [
       "European Parliament approves Critical Medicines Act to expand EU drug production - CEO Magazyn"
@@ -674,8 +664,8 @@
     ],
     "mobilisation": [
       "UK tells 100,000 military reservists to prepare for war amid Russia threats in first since Cold War - The Jerusalem Post",
-      "Britain Contacts 100,000 Former Troops to Prepare for Possible War—First Time Since the Cold War - UNITED24 Media",
-      "MoD writes to 100,000 veterans as part of Strategic Reserve mobilisation plans - ADS Advance"
+      "Britain is preparing military reservists for a possible mobilization due to the threat from Russia - UA.NEWS",
+      "Britain Contacts 100,000 Former Troops to Prepare for Possible War—First Time Since the Cold War - UNITED24 Media"
     ],
     "national_outage": [
       "Inside the ‘Black Sky’ plans for a nationwide blackout - Herald.Wales",
@@ -683,9 +673,9 @@
       "Chainsaw damage on a GRIDCo line and ECG upgrades cut power in Kumasi and Accra - 3News"
     ],
     "outage_au": [
-      "Telstra mobile outage disrupts services across Australia - Australian Cyber Security Magazine",
-      "Australia's Optus apologises for outage that disrupted emergency calls - Reuters",
-      "Australia to strengthen telecom networks after new Optus outage - Capacity Media"
+      "Calls for 'automatic compensation' following telco outages - ABC News & Headlines – Australian Broadcasting Corporation",
+      "Microsoft ‘deeply sorry’ for global outage, rules out cyberattack and AI - Nine.com.au",
+      "Telstra mobile outage disrupts services across Australia - Australian Cyber Security Magazine"
     ],
     "reservists": [
       "MoD prepares veterans for war - The Telegraph",
@@ -770,9 +760,9 @@
       "yes": 4.4
     },
     {
-      "d24h": 0.3,
+      "d24h": 0.2,
       "q": "Will Russia invade a NATO country by December 31, 2026?",
-      "yes": 2.1
+      "yes": 2.0
     },
     {
       "d24h": 0.2,
@@ -785,24 +775,14 @@
       "yes": 1.6
     },
     {
-      "d24h": -0.9,
-      "q": "Iran-Oman Hormuz Agreement by November 30?",
-      "yes": 2.2
-    },
-    {
-      "d24h": -0.5,
-      "q": "Iran-Oman Hormuz Agreement by December 31?",
-      "yes": 11.0
-    },
-    {
-      "d24h": -0.2,
+      "d24h": -0.3,
       "q": "NATO x Russia military clash by November 30, 2026?",
       "yes": 1.5
     },
     {
-      "d24h": 1.5,
+      "d24h": 2.0,
       "q": "Ukraine agrees not to join NATO by December 31, 2026?",
-      "yes": 2.9
+      "yes": 3.4
     },
     {
       "d24h": -0.5,
@@ -1033,12 +1013,12 @@
           "name": "Fire, flood or storm road closures in SA"
         },
         {
-          "detail": "Lyell McEwin; Modbury; Queen Elizabeth",
+          "detail": "Flinders Medical Centre; Modbury; Queen Elizabeth",
           "name": "Three or more Adelaide emergency departments 'very busy'"
         }
       ],
       "score": 20,
-      "trend": "down"
+      "trend": "steady"
     },
     {
       "band": "Low",
@@ -1115,7 +1095,7 @@
           "name": "Australian medicine or PPE shortage reports"
         },
         {
-          "detail": "Lyell McEwin; Modbury; Queen Elizabeth",
+          "detail": "Flinders Medical Centre; Modbury; Queen Elizabeth",
           "name": "Three or more Adelaide emergency departments 'very busy'"
         }
       ],
@@ -1148,7 +1128,7 @@
       "key": "ai",
       "lit": [
         {
-          "detail": "Google says the first autonomous AI cyberattack has happened. Expect a lot more like it.",
+          "detail": "AI agents used in five cyber attacks in Switzerland, government says",
           "name": "Reports of AI-driven hacking campaigns"
         },
         {
