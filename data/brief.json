@@ -3,9 +3,9 @@
   "acsc": [],
   "aircraft_flags": {
     "gps_gulf": {
-      "median": 9,
+      "median": 9.0,
       "status": "ANOMALY",
-      "value": 29
+      "value": 30
     }
   },
   "analyst": {
@@ -290,18 +290,28 @@
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output="
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-26T06:22:00Z",
+  "generated_at": "2026-11-26T06:37:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 22,
-    "Black Sea": 50,
-    "Israel & Eastern Mediterranean": 12,
-    "Korea": 1,
-    "Persian Gulf": 29,
-    "South Australia": 2,
+    "Baltic / Kaliningrad": 15,
+    "Black Sea": null,
+    "Israel & Eastern Mediterranean": 14,
+    "Korea": 2,
+    "Persian Gulf": 30,
+    "South Australia": 4,
     "Sydney / NSW": 2,
     "Taiwan Strait": 0
   },
   "incidents": [
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "Travel giant Flight Centre hit by cyber attack with customer passport details potentially exposed"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "Travel"
+    },
     {
       "attack_reported": true,
       "confirmed": false,
@@ -331,16 +341,6 @@
       "needs_confirming": false,
       "severity": "Info",
       "target": "What Flight Centre"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
-        "Travel giant Flight Centre hit by cyber attack with customer passport details potentially exposed"
-      ],
-      "needs_confirming": false,
-      "severity": "Info",
-      "target": "Travel"
     },
     {
       "attack_reported": true,
@@ -376,16 +376,6 @@
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
-        "FBI’s criminal database targeted in massive cyber attack"
-      ],
-      "needs_confirming": false,
-      "severity": "Info",
-      "target": "FBI"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
         "Italy and Switzerland warn of autonomous AI-driven cyberattacks"
       ],
       "needs_confirming": false,
@@ -404,13 +394,14 @@
     },
     {
       "attack_reported": true,
-      "confirmed": false,
+      "confirmed": true,
       "headlines": [
-        "[AI Hacking] Two Pillars of U.S. Intelligence Breached, Exposing Limits of U.S. Cyber Defenses Against AI-Driven Attacks"
+        "U.S. Treasury’s FinCEN Hit by Cyberattack, Disrupting Financial Crime Reporting",
+        "US student visa rule struck down: Relief for Indians, but what next?"
       ],
       "needs_confirming": false,
       "severity": "Info",
-      "target": "AI Hacking"
+      "target": "Other services"
     },
     {
       "attack_reported": false,
@@ -444,23 +435,13 @@
       "needs_confirming": false,
       "severity": "Info",
       "target": "Banking & payments"
-    },
-    {
-      "attack_reported": false,
-      "confirmed": false,
-      "headlines": [
-        "US student visa rule struck down: Relief for Indians, but what next?"
-      ],
-      "needs_confirming": false,
-      "severity": "Info",
-      "target": "Other services"
     }
   ],
   "internet_drop_pct": {
     "China": 1.3,
     "Iran": 0.0,
-    "Israel": 0.1,
-    "Russia": 0.2,
+    "Israel": 0.0,
+    "Russia": 0.1,
     "South Korea": 0.0,
     "Taiwan": 0.0
   },
@@ -476,16 +457,16 @@
       "Mount Lofty Ranges": "Moderate / Moderate"
     },
     "fire_danger_ok": true,
-    "fires_active": 14,
+    "fires_active": 13,
     "fuel": {
       "brent_aud": 136.8,
       "change_pct": 2.3,
       "pump_cents": 2,
       "week_ago_aud": 133.8
     },
-    "grid_demand_fall_pct": -9.7,
-    "grid_demand_mw": 1393,
-    "grid_demand_usual_mw": 872,
+    "grid_demand_fall_pct": -3.9,
+    "grid_demand_mw": 1448,
+    "grid_demand_usual_mw": 995,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
@@ -526,7 +507,7 @@
       "Morgan Vale Road, Pine Valley Station: MORGAN MAIL RD Closed due to flooding over road",
       "Pine Valley Road, Pine Valley Station: PINE VALLEY RD Closed due to flooding over road"
     ],
-    "rooftop_pv_mw": 1112,
+    "rooftop_pv_mw": 936,
     "sawater_news": [],
     "watch_and_act": []
   },
@@ -538,13 +519,13 @@
     },
     "Brent oil": {
       "big_move": false,
-      "change_pct": -3.95,
-      "price": 90.87
+      "change_pct": -3.98,
+      "price": 90.84
     },
     "Gold": {
       "big_move": false,
-      "change_pct": 1.75,
-      "price": 3597.8
+      "change_pct": 1.8,
+      "price": 3599.6
     },
     "VIX": {
       "big_move": false,
@@ -599,18 +580,18 @@
     ],
     "cyber_attrib": [
       "FBI warns hackers weaponizing ARTEX AI framework to automate attacks on energy, manufacturing, telecom - Industrial Cyber",
-      "FBI Warns Hackers Are Using ARTEX AI Tool To Automate Cyberattacks - Forbes",
-      "Trump blames Minnesota governor, not Iran, for cyberattacks on the state's water systems - ABC News - Breaking News, Latest News and Videos"
+      "Trump blames Minnesota governor, not Iran, for cyberattacks on the state's water systems - ABC News - Breaking News, Latest News and Videos",
+      "FBI Warns Hackers Are Using ARTEX AI Tool To Automate Cyberattacks - Forbes"
     ],
     "cyber_au": [
+      "Flight Centre hit by cyber incident affecting ‘significant number’ of customers - SMH.com.au",
       "‘Significant’: Flight Centre hit by cyber attack - The Weekly Times",
-      "Flight Centre probes data breach of third-party booking system - iTnews",
-      "Flight Centre hit by cyber incident affecting ‘significant number’ of customers - SMH.com.au"
+      "Travel giant Flight Centre hit by cyber attack with customer passport details potentially exposed - 7NEWS"
     ],
     "cyber_ot": [
       "UK operation wards off risk of cyber-attack on supermarket fridges and freezers - The Guardian",
       "Shop freezers in seven European countries hit by cyber-attack - BBC",
-      "Supermarket freezers and fridges in Europe hit by cyberattack - Nine.com.au"
+      "Next Plc’s Supplier Hit by Cyberattack in Latest UK Retail Breach - Insurance Journal"
     ],
     "cyber_state": [
       "ESET Research: Sandworm behind cyberattack on Poland’s power grid in late 2025 - We Live Security",
@@ -619,8 +600,8 @@
     ],
     "cyber_supply": [
       "Hackers now exploit critical Drupal RCE flaw to hijack sites - BleepingComputer",
-      "VMware vCenter, new critical flaw CVE-2026-123903 rated CVSS 9.8 bypasses authentication - Meteora Web",
-      "VMware patches 23 flaws, including another critical vCenter authentication bypass - Field Effect"
+      "VMware patches 23 flaws, including another critical vCenter authentication bypass - Field Effect",
+      "CVE-2026-123903: Critical VMware vCenter Auth Bypass - SOC Prime"
     ],
     "deepfake": [
       "Deloitte banned after AI-generated government report exposed - 7NEWS",
@@ -670,20 +651,15 @@
       "The Territorial Recruitment Center mobilized the father of a child with Down syndrome who is abroad: the court ordered his release from service - Судово-юридична газета",
       "Iranian Forces Launch Military Drills Near Russia-Linked Bushehr Nuclear Power Plant - The Times of India"
     ],
-    "national_outage": [
-      "Inside the ‘Black Sky’ plans for a nationwide blackout - Herald.Wales",
-      "Cuba’s National Electric Grid Collapses, Reason Unknown - EnergyNow.com",
-      "Colombia plunged into darkness – President issues emergency order - TodayPress.tv"
-    ],
     "outage_au": [
-      "Calls for 'automatic compensation' following telco outages - ABC News & Headlines – Australian Broadcasting Corporation",
-      "Microsoft ‘deeply sorry’ for global outage, rules out cyberattack and AI - Nine.com.au",
-      "The Microsoft outage is part of a growing trend. This is how to prepare for further disruption - SBS"
+      "Telstra mobile outage disrupts services across Australia - Australian Cyber Security Magazine",
+      "Australia's Optus apologises for outage that disrupted emergency calls - Reuters",
+      "How a nationwide Telstra outage rocked the Australian economy – and what we can learn - The Conversation"
     ],
     "reservists": [
       "MoD tells 100,000 reservists: be ready for call-up - The Times",
-      "Are UK veterans being called up? No, but 100,000 got MoD letters. What they mean - Nacionale",
-      "MoD prepares veterans to be called up for war - The Telegraph"
+      "MoD prepares veterans to be called up for war - The Telegraph",
+      "Are UK veterans being called up? No, but 100,000 got MoD letters. What they mean - Nacionale"
     ],
     "sapn": [
       "Another outage coming as crews race to reconnect power grid - Adelaide Now",
@@ -732,7 +708,7 @@
       "yes": 3.6
     },
     {
-      "d24h": 0.1,
+      "d24h": -0.2,
       "q": "US-Iran Hormuz Agreement by November 30?",
       "yes": 2.8
     },
@@ -752,7 +728,7 @@
       "yes": 0.7
     },
     {
-      "d24h": -0.9,
+      "d24h": -1.0,
       "q": "Will Russia invade another country in 2026?",
       "yes": 1.8
     },
@@ -792,9 +768,9 @@
       "yes": 1.6
     },
     {
-      "d24h": 1.9,
+      "d24h": 1.8,
       "q": "Ukraine agrees not to join NATO by December 31, 2026?",
-      "yes": 3.5
+      "yes": 3.4
     },
     {
       "d24h": 0.0,
@@ -822,9 +798,9 @@
       "yes": 18.0
     },
     {
-      "d24h": -1.5,
+      "d24h": 1.5,
       "q": "Will Nick Stewart attend a US x Iran diplomatic meeting by December 31, 2026?",
-      "yes": 7.0
+      "yes": 9.0
     }
   ],
   "quakes_m6_24h": [],
@@ -1040,7 +1016,7 @@
       "key": "mideast",
       "lit": [
         {
-          "detail": "gps_gulf 29 vs usual 9",
+          "detail": "gps_gulf 30 vs usual 9.0",
           "name": "GPS jamming spike (Gulf / Israel)"
         }
       ],
@@ -1196,8 +1172,8 @@
     "Aussie Broadband": 0.0,
     "Optus": 0.0,
     "TPG": 0.0,
-    "Telstra": 0.1,
-    "Vodafone": 0.0
+    "Telstra": 0.0,
+    "Vodafone": 5.0
   },
   "us_departure_orders": [
     "Belarus"
@@ -1236,9 +1212,9 @@
     {
       "active": true,
       "first_seen": "2026-11-26T03:37:00Z",
-      "last_seen": "2026-11-26T06:22:00Z",
+      "last_seen": "2026-11-26T06:37:00Z",
       "region": "the Middle East",
-      "text": "GPS jamming over Persian Gulf: 29% of 85 aircraft affected for 45+ min (usual ~9%)",
+      "text": "GPS jamming over Persian Gulf: 30% of 70 aircraft affected for 45+ min (usual ~9.0%)",
       "what": "GPS jamming"
     },
     {
