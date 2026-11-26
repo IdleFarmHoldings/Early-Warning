@@ -1,16 +1,25 @@
 {
-  "generated_at": "2026-11-26T09:49:00Z",
+  "generated_at": "2026-11-26T10:03:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
-      "band": "Guarded",
-      "convergence": "Two different kinds of sign are showing together (power grid and roads). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: cfs emergency warning in sa, sudden fall in sa electricity demand (possible large blackout) and extreme or catastrophic fire danger near adelaide.",
+      "band": "Elevated",
+      "convergence": "Signs are converging across 3 separate areas (power grid, roads and weather). Unrelated systems flagging the same scenario at once is the pattern seen before past events. The worst local days stack up: extreme fire danger, a heatwave pushing power demand, a tight grid, and storms or fires damaging lines. AEMO warns of supply shortfalls hours to a day ahead; the CFS and Bureau issue ratings and warnings a day or more ahead. The strongest signs not yet showing: cfs emergency warning in sa, sudden fall in sa electricity demand (possible large blackout) and extreme or catastrophic fire danger near adelaide.",
       "domains": [
         "Power grid",
-        "Roads"
+        "Roads",
+        "Weather"
       ],
       "key": "local",
       "lit": [
+        {
+          "detail": "Severe Thunderstorm Warning for North East Pastoral forecast district",
+          "domain": "Weather",
+          "id": "bom",
+          "name": "Bureau severe weather or heatwave warning for SA",
+          "short": "Bureau severe weather or heatwave…",
+          "weight": 15
+        },
         {
           "detail": "Morgan Mail Road, Quondong: MORGAN MAIL RD Closed due to flooding over road; Morgan Vale Road, Danggali: MORGAN MAIL RD Closed due to flooding over road",
           "domain": "Roads",
@@ -30,8 +39,8 @@
       ],
       "name": "Local emergency in SA (bushfire, heat, power)",
       "sa_impact": "Direct: bushfires, heatwaves and power cuts are the emergencies most likely to affect the family. In the 2016 statewide blackout, power, phones, traffic lights and fuel pumps failed together.",
-      "score": 25,
-      "trend": "steady",
+      "score": 40,
+      "trend": "up",
       "unlit": [
         {
           "domain": "Bushfire",
@@ -56,12 +65,6 @@
           "id": "tfb",
           "name": "Total fire ban for Adelaide or the Hills",
           "weight": 10
-        },
-        {
-          "domain": "Weather",
-          "id": "bom",
-          "name": "Bureau severe weather or heatwave warning for SA",
-          "weight": 15
         },
         {
           "domain": "Power grid",
@@ -379,15 +382,26 @@
       "why": "North Korean missile launches are often preceded by navigation warnings; South Korea and Japan report GPS jamming from the North during tense periods."
     },
     {
-      "band": "Low",
-      "convergence": "No warning signs are showing. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and mobilisation / reservist reports (russia / nato).",
-      "domains": [],
+      "band": "Guarded",
+      "convergence": "Only one kind of sign is showing (mobilisation). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and us nuclear command aircraft unusual.",
+      "domains": [
+        "Mobilisation"
+      ],
       "key": "russia",
-      "lit": [],
+      "lit": [
+        {
+          "detail": "UK tells 100,000 military reservists to prepare for war amid Russia threats in first since Cold War",
+          "domain": "Mobilisation",
+          "id": "mob",
+          "name": "Mobilisation / reservist reports (Russia / NATO)",
+          "short": "Mobilisation / reservist reports",
+          "weight": 15
+        }
+      ],
       "name": "Russia-NATO escalation",
       "sa_impact": "Indirect: energy and market shock, cyber attacks that can spill over to Australian systems, and nuclear-risk rhetoric.",
-      "score": 0,
-      "trend": "steady",
+      "score": 15,
+      "trend": "up",
       "unlit": [
         {
           "domain": "Electronic warfare",
@@ -399,12 +413,6 @@
           "domain": "Military air",
           "id": "air",
           "name": "Unusual military air activity (Eastern Europe)",
-          "weight": 15
-        },
-        {
-          "domain": "Mobilisation",
-          "id": "mob",
-          "name": "Mobilisation / reservist reports (Russia / NATO)",
           "weight": 15
         },
         {
@@ -483,15 +491,26 @@
       "why": "Before February 2022: embassy departures, mobilisation reports, airspace closures and a surge in GPS jamming. Baltic and Black Sea jamming is now routine, so only spikes above normal count."
     },
     {
-      "band": "Low",
-      "convergence": "No warning signs are showing. The strongest signs not yet showing: us nuclear command aircraft unusual, private jets heading to retreat destinations and mobilisation reports (any major power).",
-      "domains": [],
+      "band": "Guarded",
+      "convergence": "Only one kind of sign is showing (mobilisation). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: us nuclear command aircraft unusual, private jets heading to retreat destinations and forecast markets jump on nuclear use.",
+      "domains": [
+        "Mobilisation"
+      ],
       "key": "nuclear",
-      "lit": [],
+      "lit": [
+        {
+          "detail": "UK tells 100,000 military reservists to prepare for war amid Russia threats in first since Cold War",
+          "domain": "Mobilisation",
+          "id": "mob",
+          "name": "Mobilisation reports (any major power)",
+          "short": "Mobilisation reports",
+          "weight": 15
+        }
+      ],
       "name": "Nuclear use or alert",
       "sa_impact": "Fallout risk to SA from a northern-hemisphere exchange is very low, but global trade, fuel and finance would be severely disrupted.",
-      "score": 0,
-      "trend": "steady",
+      "score": 15,
+      "trend": "up",
       "unlit": [
         {
           "domain": "Nuclear command",
@@ -528,12 +547,6 @@
           "id": "gold",
           "name": "Gold up 4%+ in a day",
           "weight": 10
-        },
-        {
-          "domain": "Mobilisation",
-          "id": "mob",
-          "name": "Mobilisation reports (any major power)",
-          "weight": 15
         },
         {
           "domain": "Prediction markets",
@@ -625,10 +638,9 @@
       "why": "The 2023 Optus outage cut mobile, NBN, EFTPOS and some 000 calls nationwide for 12 hours. Hostile states pre-position in critical infrastructure; GPS jamming over Australia would be a new and serious sign."
     },
     {
-      "band": "High",
-      "convergence": "Signs are converging across 3 separate areas (chemical weapons, health and trade). Unrelated systems flagging the same scenario at once is the pattern seen before past events. Before COVID-19 (Dec 2019 - Feb 2020): reports of an unknown pneumonia cluster, WHO outbreak notices, mask and hazmat makers (Alpha Pro Tech, Lakeland) and vaccine developers (Moderna, Novavax) surging weeks before broad markets fell, and countries restricting exports of masks and medicines (Taiwan from 24 Jan 2020, then dozens more). The strongest signs not yet showing: countries restricting medical supply exports, pandemic-response stocks outperforming (5 days) and unexplained mass deaths or animal die-offs.",
+      "band": "Elevated",
+      "convergence": "Two different kinds of sign are showing together (health and trade). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: countries restricting medical supply exports, pandemic-response stocks outperforming (5 days) and chemical / nerve-agent attack or mass poisoning reported.",
       "domains": [
-        "Chemical weapons",
         "Health",
         "Trade"
       ],
@@ -657,20 +669,12 @@
           "name": "Australian medicine or PPE shortage reports",
           "short": "Medicine or PPE shortage",
           "weight": 10
-        },
-        {
-          "detail": "OPCW Honors Chemical Weapons Victims at States Parties Conference",
-          "domain": "Chemical weapons",
-          "id": "chem",
-          "name": "Chemical / nerve-agent attack or mass poisoning reported",
-          "short": "Chemical attack",
-          "weight": 15
         }
       ],
       "name": "Pandemic, biological or chemical emergency",
       "sa_impact": "Health system strain, possible lockdowns and border closures, and shortages of medicines and protective equipment, which Australia mostly imports.",
-      "score": 60,
-      "trend": "steady",
+      "score": 45,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Trade",
@@ -689,6 +693,12 @@
           "id": "masscas",
           "name": "Mass casualty declarations (any country)",
           "weight": 5
+        },
+        {
+          "domain": "Chemical weapons",
+          "id": "chem",
+          "name": "Chemical / nerve-agent attack or mass poisoning reported",
+          "weight": 15
         },
         {
           "domain": "Health",
