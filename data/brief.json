@@ -28,20 +28,7 @@
       "k",
       "news"
     ],
-    "bursts": [
-      {
-        "new_threads": 4,
-        "threads": [
-          "/pol/ When did you discover that Russia mogs the west? (21 replies in 0.4 h) https://boards.4chan.org/pol/thread/546858479",
-          "/pol/ HAPPENING (117 replies in 2.8 h) https://boards.4chan.org/pol/thread/546852332",
-          "/pol/ HAPPENING: Finland to be handed over to 500,000 Indian Hindu pedo orc invaders (17 replies in 0.9 h) https://boards.4chan.org/pol/thread/546857127",
-          "/pol/ It has been brought to my attention that after the rosstat data hack, russian bots have gone into a  (15 replies in 1.8 h) https://boards.4chan.org/pol/thread/546854793"
-        ],
-        "topic": "Russia / NATO",
-        "usual": 3.0,
-        "why": "2 threads say it is happening now"
-      }
-    ]
+    "bursts": []
   },
   "chokepoints": {
     "Bab el-Mandeb Strait": {
@@ -295,19 +282,20 @@
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
     "internet": "RuntimeError: Iran ping-slash24: TimeoutError: The read operation timed out; Iran bgp: TimeoutError: The read operation ",
+    "maritime": "TimeoutError: ",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output=",
-    "telecom": "RuntimeError: Telstra ping-slash24: TimeoutError: The read operation timed out; Telstra bgp: TimeoutError: The read oper"
+    "telecom": "RuntimeError: Telstra ping-slash24: URLError: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violati"
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-26T21:03:00Z",
+  "generated_at": "2026-11-26T21:19:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 59,
-    "Black Sea": 18,
-    "Israel & Eastern Mediterranean": 0,
+    "Baltic / Kaliningrad": 41,
+    "Black Sea": null,
+    "Israel & Eastern Mediterranean": 3,
     "Korea": 0,
-    "Persian Gulf": 30,
+    "Persian Gulf": 44,
     "South Australia": 0,
-    "Sydney / NSW": 2,
+    "Sydney / NSW": 1,
     "Taiwan Strait": 2
   },
   "incidents": [
@@ -356,6 +344,16 @@
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
+        "Wyoming uranium operation shuts down after cyberattack"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "Wyoming"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
         "New Danish data breach hits 11,000 despite security upgrades"
       ],
       "needs_confirming": false,
@@ -364,8 +362,9 @@
     },
     {
       "attack_reported": true,
-      "confirmed": false,
+      "confirmed": true,
       "headlines": [
+        "AI agents used in five cyber attacks in Switzerland, government says",
         "1Password Hit by Backend Breach via Hijacked Employee GitHub Account"
       ],
       "needs_confirming": false,
@@ -381,6 +380,38 @@
       "needs_confirming": false,
       "severity": "Info",
       "target": "Hackers Actively Exploit"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": true,
+      "headlines": [
+        "Switzerland confirms AI-assisted cyberattacks on critical infrastructure",
+        "Switzerland reports first successful AI agent cyberattacks"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "Switzerland"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": true,
+      "headlines": [
+        "Chinese and North Korean hackers adopt ARTEX AI tool for cyberattacks",
+        "Chinese, North Korean Hackers Adopt ARTEX AI Offensive Framework"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "Chinese"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "What is ARTEX, the AI-powered tool linked to recent cyberattacks?"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "What"
     },
     {
       "attack_reported": false,
@@ -424,11 +455,8 @@
     "cfs_feed_ok": true,
     "cfs_warnings": [],
     "ed_very_busy": [
-      "Flinders Medical Centre",
       "Lyell McEwin",
       "Modbury",
-      "Noarlunga",
-      "Royal Adelaide",
       "Queen Elizabeth"
     ],
     "fire_ban_districts": [],
@@ -437,16 +465,16 @@
       "Mount Lofty Ranges": "Moderate / Moderate"
     },
     "fire_danger_ok": true,
-    "fires_active": 14,
+    "fires_active": 13,
     "fuel": {
       "brent_aud": 137.7,
       "change_pct": 2.7,
       "pump_cents": 2,
       "week_ago_aud": 134.0
     },
-    "grid_demand_fall_pct": 10.1,
-    "grid_demand_mw": 1453,
-    "grid_demand_usual_mw": 1192,
+    "grid_demand_fall_pct": 11.0,
+    "grid_demand_mw": 1438,
+    "grid_demand_usual_mw": 1160,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
@@ -515,14 +543,8 @@
   },
   "national_shocks": {
     "faa": {
-      "airports": 1,
-      "ground_stops": [
-        {
-          "airport": "DCA",
-          "end": "4:15 pm EST",
-          "reason": "thunderstorms"
-        }
-      ],
+      "airports": 0,
+      "ground_stops": [],
       "national": false
     },
     "shocks": [
@@ -533,17 +555,23 @@
         "level": "Possible",
         "sector": "aviation",
         "signals": {
-          "traffic": "airborne traffic near New York (Teterboro), Washington DC, Los Angeles (Van Nuys) about 25% of normal"
+          "traffic": "airborne traffic near New York (Teterboro), Washington DC, Los Angeles (Van Nuys) about 23% of normal"
         }
       }
     ],
     "tracking_glitch": false,
     "traffic_not_normal": {
+      "AE": "DOWN",
       "US": "DOWN"
     }
   },
   "nc3": "normal",
   "news_watch": {
+    "ai_hack": [
+      "Switzerland reports first successful AI agent cyberattacks - Bitdefender",
+      "Google says the first autonomous AI cyberattack has happened. Expect a lot more like it. - Mashable",
+      "AI agents used in five cyber attacks in Switzerland, government says - Reuters"
+    ],
     "airspace": [
       "Iran, US-Israel War Highlights| US strikes Iran in second day of renewed fire; IRGC targets bases in Bahrain & Kuwait - Deccan Herald",
       "Qatar Airways Operates Limited Flights to and from Doha - https://safariindia.com/"
@@ -557,6 +585,10 @@
       "Wall Street recovers most early losses as pullback in AI stocks eases - CommBank",
       "Student visa decline ‘damaging universities and economy’ - Research Professional News",
       "Track UK's latest migration numbers - net migration, visas, asylum and small boats - BBC"
+    ],
+    "blood": [
+      "The Ordinary to Turn Stores Into Blood Donation Centers - Wisevoter",
+      "Meghalaya High Court marks Constitution Day with exhibition, blood donation camp - Northeast News"
     ],
     "cables": [
       "Viettel-Singtel consortium breaks ground on submarine cable linking Vietnam, Thailand and Singapore - Theinvestor",
@@ -574,8 +606,8 @@
       "No plans to ditch Microsoft 365 despite global outage, says Government ICT - Cook Islands News"
     ],
     "cyber_attrib": [
-      "FBI Warns Hackers Are Using ARTEX AI Tool To Automate Cyberattacks - Forbes",
       "FBI warns hackers weaponizing ARTEX AI framework to automate attacks on energy, manufacturing, telecom - Industrial Cyber",
+      "FBI Warns Hackers Are Using ARTEX AI Tool To Automate Cyberattacks - Forbes",
       "FBI warns hackers using AI-powered tool to automate cyberattacks worldwide - Anadolu Ajansı"
     ],
     "cyber_au": [
@@ -602,11 +634,6 @@
       "Since the invasion of Ukraine, 53 mysterious deaths of Russian officials and high-ranking government officials have been recorded - UA.NEWS",
       "15% of Peru's Sea Lions Die in Mass Die-Off... 'Strongest El Niño' Cuts Off Food Supply - 아시아경제"
     ],
-    "flash": [
-      "TerraCom Limited Enters Trading Halt Ahead of Board Composition Announcement Following AGM Vote - Kalkine",
-      "Toppoint Q3 Earnings Show Narrower Loss Amid Trading Halt Concerns - Yahoo Finance",
-      "Thu: Construction, renewable energy stocks fuel TASE surge - Globes - Israel Business News"
-    ],
     "fuel_au": [
       "The Refill Gap: Australia’s Fuel Reserve and the Test of Strategic Endurance - Australian Institute of International Affairs",
       "Niger fuel shortage leads Agadez to cap sales at the pump - DNE Africa",
@@ -616,8 +643,8 @@
       "Attack on Saudi Aramco's Jazan refinery kills worker, halts some operations - Reuters",
       "Powerful Explosions Reported in Riyadh following Yemeni Missile Attack - تسنیم",
       "Houthis target Saudi Arabia’s Red Sea ports as strikes escalate - Al Jazeera",
-      "Yemen's Houthis claim attack on Saudi Arabia's largest refinery - Al-Monitor",
-      "Houthis Strike Jazan Refinery, 1 Worker Killed - https://houseofsaud.com/"
+      "Smoke seen from space after attack on huge Middle East oil hub - Nine.com.au",
+      "Yemen's Houthis claim attack on Saudi Arabia's largest refinery - Al-Monitor"
     ],
     "illness": [
       "Mystery illness causes mass hospitalisation of runners - The Nightly",
@@ -625,9 +652,9 @@
       "Zayn Malik hospitalised with mystery illness, forced to cancel upcoming appearances on album release week - Nine.com.au"
     ],
     "masscas": [
+      "Health officials reflect on ‘lasting impact,’ heroic response following CFB Wainwright fire - CBC",
       "Thanksgiving Dinner Disaster Leaves 18 in Hospital in Florida - The Daily Beast",
-      "15 hospitalized after possible food poisoning during Thanksgiving luncheon at Doral medical center headquarters - CBS News",
-      "18 sick after possible food poisoning during luncheon at Leon Medical HQ; patients not affected - NBC 6 South Florida"
+      "Seven soldiers in critical condition among those still hospitalized after CFB Wainwright fire - My Lethbridge Now"
     ],
     "medexport": [
       "European Parliament approves Critical Medicines Act to expand EU drug production - CEO Magazyn"
@@ -638,7 +665,7 @@
     "mobilisation": [
       "UK tells 100,000 military reservists to prepare for war amid Russia threats in first since Cold War - The Jerusalem Post",
       "Britain Contacts 100,000 Former Troops to Prepare for Possible War—First Time Since the Cold War - UNITED24 Media",
-      "MoD writes to 100,000 veterans as part of Strategic Reserve mobilisation plans - ADS Advance"
+      "Mobilization in a matter of hours, but processing of MMC results dragged on for days: court canceled man's draft - Судово-юридична газета"
     ],
     "national_outage": [
       "Inside the ‘Black Sky’ plans for a nationwide blackout - Herald.Wales",
@@ -652,8 +679,8 @@
     ],
     "reservists": [
       "MoD prepares veterans for war - The Telegraph",
-      "UK tells 100,000 strategic reservists to prepare for possible call-up: Report - Anadolu Ajansı",
-      "MoD Strategic Reserve Call-Up: UK Urges 100,000 Reservists to Update Details and Join Exercises - Мілітарний"
+      "MoD Strategic Reserve Call-Up: UK Urges 100,000 Reservists to Update Details and Join Exercises - Мілітарний",
+      "UK tells 100,000 strategic reservists to prepare for possible call-up: Report - Anadolu Ajansı"
     ],
     "ru_signals": [
       "NATO intern suspected of spying to remain in jail in Belgium after appeal - News24"
@@ -672,7 +699,7 @@
       "Three Sinokor VLCCs hit in Strait of Hormuz attacks - Riviera Maritime Media",
       "Middle East latest: Two Italians killed in Iranian drone attack in Kuwait - The National",
       "IRGC Claims 3 Oil Tankers Hit Mines in Hormuz Under US Escort - https://houseofsaud.com/",
-      "ADNOC L&S says one missing, 11 injured in Strait of Hormuz ship attack - Baird Maritime"
+      "Hormuz oil traffic is down 40 percent: Are Iran’s tanker attacks working? - Al Jazeera"
     ],
     "strikes": [
       "Ukraine says strike on major Russian air base damaged five military jets - AeroTime",
@@ -764,9 +791,9 @@
       "yes": 1.5
     },
     {
-      "d24h": 1.9,
+      "d24h": 1.5,
       "q": "Ukraine agrees not to join NATO by December 31, 2026?",
-      "yes": 3.3
+      "yes": 2.9
     },
     {
       "d24h": -0.5,
@@ -786,7 +813,7 @@
     {
       "d24h": 0.0,
       "q": "Will the U.S. test a nuclear weapon by December 31 2026?",
-      "yes": 2.5
+      "yes": 2.6
     },
     {
       "d24h": -1.0,
@@ -796,6 +823,15 @@
   ],
   "quakes_m6_24h": [],
   "recent_alerts": [
+    {
+      "at": "2026-11-26T21:19:00Z",
+      "channels": [
+        "proactive"
+      ],
+      "confirmed": false,
+      "message": "One sign so far: airborne traffic near New York (Teterboro), Washington DC, Los Angeles (Van Nuys) about 23% o",
+      "title": "UNCONFIRMED: possible flights grounded nationwide (United States)"
+    },
     {
       "at": "2026-11-26T20:00:00Z",
       "channels": [
@@ -971,15 +1007,6 @@
       "confirmed": null,
       "message": "No new attacks on ships or US bases in the Gulf found since Saturday's two tanker hits; Hormuz stays shut and ",
       "title": "Daily digest: Level 3 Elevated"
-    },
-    {
-      "at": "2026-11-22T06:11:00Z",
-      "channels": [
-        "proactive"
-      ],
-      "confirmed": false,
-      "message": "5 automatic warning signs showing. None confirmed:\n• Illness cluster: 148 aboard Florida-bound cruise ship sic",
-      "title": "Warning signs building: Pandemic, biological or chemical emergency"
     }
   ],
   "scenarios": [
@@ -998,7 +1025,7 @@
           "name": "Fire, flood or storm road closures in SA"
         },
         {
-          "detail": "Flinders Medical Centre; Lyell McEwin; Modbury; Noarlunga",
+          "detail": "Lyell McEwin; Modbury; Queen Elizabeth",
           "name": "Three or more Adelaide emergency departments 'very busy'"
         },
         {
@@ -1084,7 +1111,7 @@
           "name": "Australian medicine or PPE shortage reports"
         },
         {
-          "detail": "Flinders Medical Centre; Lyell McEwin; Modbury; Noarlunga",
+          "detail": "Lyell McEwin; Modbury; Queen Elizabeth",
           "name": "Three or more Adelaide emergency departments 'very busy'"
         }
       ],
@@ -1108,20 +1135,25 @@
       "trend": "steady"
     },
     {
-      "band": "Low",
-      "convergence": "Only one kind of sign is showing (cloud services). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, reports of ai-driven hacking campaigns and deepfakes of leaders or fake official alerts.",
+      "band": "Guarded",
+      "convergence": "Two different kinds of sign are showing together (ai-enabled hacking and cloud services). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, deepfakes of leaders or fake ",
       "domains": [
+        "AI-enabled hacking",
         "Cloud services"
       ],
       "key": "ai",
       "lit": [
         {
+          "detail": "Google says the first autonomous AI cyberattack has happened. Expect a lot more like it.",
+          "name": "Reports of AI-driven hacking campaigns"
+        },
+        {
           "detail": "Microsoft issues 'Code Red' after huge global outage",
           "name": "Major cloud or AI service outage"
         }
       ],
-      "score": 10,
-      "trend": "down"
+      "score": 25,
+      "trend": "up"
     }
   ],
   "sectors_relative_5d": {
