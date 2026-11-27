@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-27T17:27:00Z",
+  "generated_at": "2026-11-27T17:42:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -376,14 +376,23 @@
       "why": "North Korean missile launches are often preceded by navigation warnings; South Korea and Japan report GPS jamming from the North during tense periods."
     },
     {
-      "band": "Guarded",
-      "convergence": "Two different kinds of sign are showing together (markets and mobilisation). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and us nuclear command aircraft unusual.",
+      "band": "Elevated",
+      "convergence": "Signs are converging across 3 separate areas (electronic warfare, markets and mobilisation). Unrelated systems flagging the same scenario at once is the pattern seen before past events. Before February 2022: embassy departures, mobilisation reports, airspace closures and a surge in GPS jamming. Baltic and Black Sea jamming is now routine, so only spikes above normal count. The strongest signs not yet showing: unusual military air activity (eastern europe), us nuclear command aircraft unusual and internet disruption in russia.",
       "domains": [
+        "Electronic warfare",
         "Markets",
         "Mobilisation"
       ],
       "key": "russia",
       "lit": [
+        {
+          "detail": "gps_blacksea 64 vs usual 21",
+          "domain": "Electronic warfare",
+          "id": "gps",
+          "name": "GPS jamming spike (Baltic / Black Sea)",
+          "short": "GPS jamming spike",
+          "weight": 15
+        },
         {
           "detail": "Conscription in the Russian Federation: drunk men are being forced to sign up",
           "domain": "Mobilisation",
@@ -403,15 +412,9 @@
       ],
       "name": "Russia-NATO escalation",
       "sa_impact": "Indirect: energy and market shock, cyber attacks that can spill over to Australian systems, and nuclear-risk rhetoric.",
-      "score": 20,
-      "trend": "steady",
+      "score": 35,
+      "trend": "up",
       "unlit": [
-        {
-          "domain": "Electronic warfare",
-          "id": "gps",
-          "name": "GPS jamming spike (Baltic / Black Sea)",
-          "weight": 15
-        },
         {
           "domain": "Military air",
           "id": "air",
