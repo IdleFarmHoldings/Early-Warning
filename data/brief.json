@@ -281,35 +281,23 @@
   ],
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
-    "internet": "RuntimeError: Iran ping-slash24: TimeoutError: The read operation timed out; Iran bgp: TimeoutError: The read operation ",
-    "maritime": "TimeoutError: ",
+    "internet": "RuntimeError: Iran ping-slash24: TimeoutError: The read operation timed out; Iran bgp: HTTPError: HTTP Error 500: Intern",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output=",
-    "telecom": "RuntimeError: Telstra ping-slash24: HTTPError: HTTP Error 500: Internal Server Error; Telstra bgp: URLError: <urlopen er"
+    "telecom": "RuntimeError: Telstra ping-slash24: TimeoutError: The read operation timed out; Telstra bgp: TimeoutError: The read oper"
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-27T15:28:00Z",
+  "generated_at": "2026-11-27T15:36:00Z",
   "gps_bad_pct": {
     "Baltic / Kaliningrad": 21,
-    "Black Sea": 35,
-    "Israel & Eastern Mediterranean": 6,
+    "Black Sea": 39,
+    "Israel & Eastern Mediterranean": 8,
     "Korea": 0,
-    "Persian Gulf": 4,
+    "Persian Gulf": 23,
     "South Australia": null,
     "Sydney / NSW": null,
     "Taiwan Strait": 0
   },
   "incidents": [
-    {
-      "attack_reported": true,
-      "confirmed": true,
-      "headlines": [
-        "For banks, reaction time matters as much as prevention when it comes to cyberattacks: OCBC tech head",
-        "Malawi: Network outage disrupts electronic visa (e-Visa) services"
-      ],
-      "needs_confirming": false,
-      "severity": "Info",
-      "target": "Banking & payments"
-    },
     {
       "attack_reported": true,
       "confirmed": false,
@@ -374,16 +362,6 @@
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
-        "Israel's health care system on high alert: overseas access blocked amid fears of massive cyberattack"
-      ],
-      "needs_confirming": false,
-      "severity": "Info",
-      "target": "Israel's"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
         "AI models used fake identities to trick humans in cyberattack: Officials - ABC News"
       ],
       "needs_confirming": false,
@@ -394,21 +372,12 @@
       "attack_reported": true,
       "confirmed": true,
       "headlines": [
-        "Switzerland Confirms First Cyberattacks Involving AI Agents Against Multiple Organizations"
+        "Switzerland Confirms First Cyberattacks Involving AI Agents Against Multiple Organizations",
+        "Switzerland Confirms AI-Assisted Cyberattacks Breached Critical Infrastructure Operators"
       ],
       "needs_confirming": false,
       "severity": "Info",
       "target": "Switzerland"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
-        "Korea launches emergency response as data breach reports more than double"
-      ],
-      "needs_confirming": false,
-      "severity": "Info",
-      "target": "Korea"
     },
     {
       "attack_reported": true,
@@ -424,27 +393,40 @@
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
-        "GitHub RCE Vulnerability Allows Hackers to Compromise Servers With a Single Git Push Command"
+        "Israel's health care system on high alert: overseas access blocked amid fears of massive cyberattack"
       ],
       "needs_confirming": false,
       "severity": "Info",
-      "target": "GitHub RCE Vulnerability"
+      "target": "Israel's"
     },
     {
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
-        "Critical Erlang/OTP Vulnerability Allows Hackers to Bypass TLS Certificate Authentication"
+        "FIFA data breach exposes personal and business information"
       ],
       "needs_confirming": false,
       "severity": "Info",
-      "target": "Critical Erlang"
+      "target": "FIFA"
     },
     {
       "attack_reported": false,
-      "confirmed": false,
+      "confirmed": true,
       "headlines": [
-        "What the Microsoft 365 disruption reveals about employee experience"
+        "Lloyds Bank, Bank of Scotland apps hit by major outage",
+        "Lloyds down: Online banking app not working in latest major outage",
+        "For banks, reaction time matters as much as prevention when it comes to cyberattacks: OCBC tech head"
+      ],
+      "needs_confirming": false,
+      "severity": "Warning",
+      "target": "Banking & payments"
+    },
+    {
+      "attack_reported": false,
+      "confirmed": true,
+      "headlines": [
+        "What the Microsoft 365 disruption reveals about employee experience",
+        "Cloud Outage Might Change Microsoft (MSFT) Stock Narrative"
       ],
       "needs_confirming": false,
       "severity": "Info",
@@ -454,11 +436,11 @@
       "attack_reported": false,
       "confirmed": false,
       "headlines": [
-        "Allstate Outage: Can’t Pay Your Bill? Here’s What Happens to Your Coverage"
+        "Analysts dispel ‘conspiracy theories’ surrounding recent tech outages"
       ],
       "needs_confirming": false,
       "severity": "Info",
-      "target": "Allstate"
+      "target": "Analysts"
     },
     {
       "attack_reported": false,
@@ -479,16 +461,6 @@
       "needs_confirming": false,
       "severity": "Info",
       "target": "Bouncer"
-    },
-    {
-      "attack_reported": false,
-      "confirmed": false,
-      "headlines": [
-        "St Kitts CBI Wind-Down: Last Application Date Is Jan 2029"
-      ],
-      "needs_confirming": false,
-      "severity": "Info",
-      "target": "St Kitts CBI"
     }
   ],
   "internet_drop_pct": {},
@@ -515,8 +487,8 @@
       "pump_cents": 2,
       "week_ago_aud": 135.2
     },
-    "grid_demand_fall_pct": 2.8,
-    "grid_demand_mw": 1377,
+    "grid_demand_fall_pct": 4.6,
+    "grid_demand_mw": 1352,
     "grid_demand_usual_mw": 1353,
     "grid_lor_level": 0,
     "nearby_incidents": [],
@@ -565,23 +537,23 @@
   "markets": {
     "AUD/USD": {
       "big_move": false,
-      "change_pct": 0.27,
-      "price": 0.6646
+      "change_pct": 0.29,
+      "price": 0.6647
     },
     "Brent oil": {
       "big_move": false,
-      "change_pct": -3.78,
-      "price": 91.03
+      "change_pct": -3.64,
+      "price": 91.17
     },
     "Gold": {
       "big_move": false,
-      "change_pct": 3.48,
-      "price": 3659.0
+      "change_pct": 3.34,
+      "price": 3653.8
     },
     "VIX": {
       "big_move": false,
-      "change_pct": -0.63,
-      "price": 26.63
+      "change_pct": -1.04,
+      "price": 26.52
     }
   },
   "national_shocks": {
@@ -599,7 +571,7 @@
     "ai_hack": [
       "Korea launches emergency response as AI-powered hacking surges - Korea JoongAng Daily",
       "Report Finds Growing Interest in AI-Powered Cybercrime Tools - Petri IT Knowledgebase",
-      "Israel's health care system on high alert: overseas access blocked amid fears of massive cyberattack - Ynetnews"
+      "For banks, reaction time matters as much as prevention when it comes to cyberattacks: OCBC tech head - Fortune"
     ],
     "airspace": [
       "Explainer: Hours of Notice for a Closed Sky, What Nairobi's Airspace Shutdowns Could Cost - Dawan Africa",
@@ -613,8 +585,8 @@
     ],
     "bank_outage": [
       "Cracking a century - ANZ-Roy Morgan New Zealand Consumer Confidence rises into positive territory above 100 - Roy Morgan Research",
-      "Denials soar for ‘extraordinary ability’ visa in program once used by Melania Trump - The Washington Post",
-      "The only way is down?: CBA pushes 2-3 year term deposit rates lower - Savings.com.au"
+      "The only way is down?: CBA pushes 2-3 year term deposit rates lower - Savings.com.au",
+      "Malawi: Network outage disrupts electronic visa (e-Visa) services - VisasNews"
     ],
     "blood": [
       "Donating is in this aviator's blood - news.defence.gov.au",
@@ -633,12 +605,12 @@
     "cloud": [
       "What the Microsoft 365 disruption reveals about employee experience - Spiceworks",
       "Your backup plan probably runs on the same pipe as your problem - SecurityBrief Australia",
-      "Microsoft Blames Software Flaw, Traffic Surge and Reduced Capacity for Global Microsoft 365 Outage - INDIA New England News"
+      "Microsoft declares ‘Code Red’ in wake of global outage - Cyber Daily"
     ],
     "cyber_attrib": [
-      "FBI says Chinese hacking group targeted US government agencies for years - ABC News - Breaking News, Latest News and Videos",
-      "FBI warns hackers using AI-powered tool to automate cyberattacks worldwide - Anadolu Ajansı",
-      "Australians should prepare for online services to go down unexpectedly as threats rise, cyber agency warns - The Guardian"
+      "Spy agency warns active Russian hackers targeting Australian industry - ABC News & Headlines – Australian Broadcasting Corporation",
+      "Busted! Alleged Aussie hackers linked to TeamPCP arrested in joint AFP-FBI-WAPF operation - Cyber Daily",
+      "CISA, FBI warn that Iran-linked hackers are expanding target set for water, energy - Cybersecurity Dive"
     ],
     "cyber_au": [
       "Flight Centre investigates data breach linked to third-party booking system - Australian Cyber Security Magazine",
@@ -661,9 +633,9 @@
       "Is your website at risk? Sri Lanka CERT issues urgent advisory - Newswire"
     ],
     "deepfake": [
+      "Deepfake Musk, Fake Ransomware Heroes, and a Spy in a Palo Alto Coffee Shop: This Week in Security Was Wild - PCMag Australia",
       "'King is back': Nvidia boss's return sparks fresh AI deepfake deluge - The Korea Times",
-      "Trump takes down image from his social media platform that depicted him as a Jesus-like figure - ABC News - Breaking News, Latest News and Videos",
-      "iProov Secures £45 Million UK Government Contract for GOV.UK One Login Biometric Verification - FF News"
+      "Trump takes down image from his social media platform that depicted him as a Jesus-like figure - ABC News - Breaking News, Latest News and Videos"
     ],
     "dieoff": [
       "Since the invasion of Ukraine, 53 mysterious deaths of Russian officials and high-ranking government officials have been recorded - UA.NEWS",
@@ -677,14 +649,14 @@
     "fuel_au": [
       "CRISIS-TESTED MATT HALLIDAY NEVER LETS A FUEL SHOCK GO TO WASTE - Australian Association of Convenience Stores",
       "Niger fuel shortage leads Agadez to cap sales at the pump - DNE Africa",
-      "Government expected to update fuel situation today - FBC News"
+      "Philippines declares national energy emergency as Asia risks energy crisis amid Iran war - ABC News - Breaking News, Latest News and Videos"
     ],
     "gulf_strikes": [
       "Attack on Saudi’s Jazan refinery kills one person, disrupts operations - Al Jazeera",
       "Powerful Explosions Reported in Riyadh following Yemeni Missile Attack - تسنیم",
       "Saudi-led coalition intercepts Houthi drone targeting Riyadh region - Anadolu Ajansı",
-      "Saudis say they intercepted Houthi drone near key port in Jeddah - The Times of Israel",
-      "Dubai Gets Some Airlines Back as Riyadh Waits on Houthis - Skift"
+      "Smoke seen from space after attack on huge Middle East oil hub - Nine.com.au",
+      "Saudis say they intercepted Houthi drone near key port in Jeddah - The Times of Israel"
     ],
     "illness": [
       "Mystery illness causes mass hospitalisation of runners - The Nightly",
@@ -697,9 +669,9 @@
       "9 separate mass shootings across US leave 9 dead, 60 injured over the weekend - ABC News - Breaking News, Latest News and Videos"
     ],
     "mobilisation": [
+      "NATO Allies Procure 430 Armored Vehicles Amid Russia Tensions - 조선일보",
       "Russian police grab men for minor offenses, force them to sign Defense Ministry contracts - The New Voice of Ukraine",
-      "‘Heightened threat’ as UK contacts thousands of veterans - The Australian",
-      "Mobilization in Advance: While the SBI Investigated the Case of AWOL, the Man Reached Mobilization Age - Судово-юридична газета"
+      "‘Heightened threat’ as UK contacts thousands of veterans - The Australian"
     ],
     "national_outage": [
       "Inside the ‘Black Sky’ plans for a nationwide blackout - Herald.Wales",
@@ -707,17 +679,14 @@
       "Cuba’s National Electric Grid Collapses, Reason Unknown - EnergyNow.com"
     ],
     "outage_au": [
-      "How the Microsoft outage is affecting Australia - ABC News & Headlines – Australian Broadcasting Corporation",
+      "Calls for 'automatic compensation' following telco outages - ABC News & Headlines – Australian Broadcasting Corporation",
       "Microsoft ‘deeply sorry’ for global outage, rules out cyberattack and AI - Nine.com.au",
-      "Australia's Optus apologises for outage that disrupted emergency calls - Reuters"
+      "The Microsoft outage is part of a growing trend. This is how to prepare for further disruption - SBS"
     ],
     "reservists": [
       "Why the UK MoD just wrote to 100,000 former military personnel - ADS Advance",
       "Reservist letters: how many veterans got them and what MoD wants next - Around Prague",
       "MoD has no email addresses for about half of its reservists - BBC"
-    ],
-    "ru_signals": [
-      "NATO intern suspected of spying to remain in jail in Belgium after appeal - News24"
     ],
     "sapn": [
       "Steven Chopping to step away from officiating - Motorsport Australia",
@@ -729,8 +698,8 @@
     ],
     "shipping_attacks": [
       "Seafarer seriously injured in Hormuz tanker attack - Seatrade Maritime News",
-      "Iran claims LNG carrier and tankers struck mines in Strait of Hormuz - safety4sea",
       "Three Sinokor VLCCs hit in Strait of Hormuz attacks - Riviera Maritime Media",
+      "Iran claims LNG carrier and tankers struck mines in Strait of Hormuz - safety4sea",
       "Oil tanker strikes mine in south of Strait of Hormuz - Mehr News Agency",
       "IRGC Claims 3 Oil Tankers Hit Mines in Hormuz Under US Escort - https://houseofsaud.com/"
     ],
@@ -1091,7 +1060,7 @@
         }
       ],
       "score": 5,
-      "trend": "down"
+      "trend": "steady"
     },
     {
       "band": "Low",
@@ -1156,7 +1125,7 @@
           "name": "Reports of AI-driven hacking campaigns"
         },
         {
-          "detail": "Microsoft Blames Software Flaw, Traffic Surge and Reduced Capacity for Global Microsoft 365 Outage",
+          "detail": "Microsoft declares ‘Code Red’ in wake of global outage",
           "name": "Major cloud or AI service outage"
         },
         {
@@ -1170,9 +1139,9 @@
   ],
   "sectors_relative_5d": {
     "defence_au": 4.89,
-    "defence_eu": 6.16,
-    "defence_us": 1.82,
-    "pandemic": 1.44
+    "defence_eu": 6.17,
+    "defence_us": 1.6,
+    "pandemic": 1.09
   },
   "status_pages": [
     {
