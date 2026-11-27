@@ -286,18 +286,28 @@
     "telecom": "RuntimeError: Telstra ping-slash24: TimeoutError: The read operation timed out; Telstra bgp: TimeoutError: The read oper"
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-27T19:34:00Z",
+  "generated_at": "2026-11-27T19:48:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 17,
-    "Black Sea": null,
-    "Israel & Eastern Mediterranean": 0,
-    "Korea": 4,
-    "Persian Gulf": 7,
-    "South Australia": null,
+    "Baltic / Kaliningrad": 24,
+    "Black Sea": 36,
+    "Israel & Eastern Mediterranean": 5,
+    "Korea": 0,
+    "Persian Gulf": 6,
+    "South Australia": 0,
     "Sydney / NSW": 0,
     "Taiwan Strait": 0
   },
   "incidents": [
+    {
+      "attack_reported": true,
+      "confirmed": true,
+      "headlines": [
+        "Anthropic says its AI models hacked 3 organizations on their own during tests - ABC News"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "AI platforms"
+    },
     {
       "attack_reported": true,
       "confirmed": false,
@@ -349,14 +359,46 @@
       "target": "Significant"
     },
     {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "Israel's health care system on high alert: overseas access blocked amid fears of massive cyberattack"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "Israel's"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": true,
+      "headlines": [
+        "Hackers Breach U.S. Air Force Cloud One, Disrupting Military Cloud Operations: 19 outlets compared",
+        "Hackers breach key US Air Force cloud platform, compromising tactical, personnel, and logistics data"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "Hackers"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": true,
+      "headlines": [
+        "Switzerland Confirms First Cyberattacks Involving AI Agents Against Multiple Organizations"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "Switzerland"
+    },
+    {
       "attack_reported": false,
       "confirmed": true,
       "headlines": [
         "Lloyds Bank, Bank of Scotland apps hit by major outage",
-        "Malawi: Network outage disrupts electronic visa (e-Visa) services"
+        "Lloyds down: Online banking app not working in latest major outage",
+        "For banks, reaction time matters as much as prevention when it comes to cyberattacks: OCBC tech head"
       ],
       "needs_confirming": false,
-      "severity": "Info",
+      "severity": "Warning",
       "target": "Banking & payments"
     },
     {
@@ -374,11 +416,11 @@
       "attack_reported": false,
       "confirmed": false,
       "headlines": [
-        "Analysts dispel ‘conspiracy theories’ surrounding recent tech outages"
+        "Allstate Outage: Can’t Pay Your Bill? Here’s What Happens to Your Coverage"
       ],
       "needs_confirming": false,
       "severity": "Info",
-      "target": "Analysts"
+      "target": "Allstate"
     },
     {
       "attack_reported": false,
@@ -410,43 +452,24 @@
     "fire_danger_ok": true,
     "fires_active": 6,
     "fuel": {
-      "brent_aud": 137.6,
-      "change_pct": 1.6,
+      "brent_aud": 137.5,
+      "change_pct": 1.5,
       "pump_cents": 1,
-      "week_ago_aud": 135.4
+      "week_ago_aud": 135.5
     },
-    "grid_demand_fall_pct": 0.9,
-    "grid_demand_mw": 1280,
-    "grid_demand_usual_mw": 1327,
+    "grid_demand_fall_pct": 1.4,
+    "grid_demand_mw": 1273,
+    "grid_demand_usual_mw": 1336,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
       "air": {
         "aqi": 56,
         "peak_pm25_48h": 13,
-        "pm25": 10
+        "pm25": 9
       },
       "air_word": "Good",
-      "days": [
-        {
-          "date": "2026-11-28",
-          "gust": 58,
-          "rain": 0,
-          "tmax": 20
-        },
-        {
-          "date": "2026-11-29",
-          "gust": 54,
-          "rain": 0,
-          "tmax": 17
-        },
-        {
-          "date": "2026-11-30",
-          "gust": 37,
-          "rain": 0,
-          "tmax": 20
-        }
-      ]
+      "days": []
     },
     "possible_blackout": false,
     "power_news": [],
@@ -465,13 +488,13 @@
   "markets": {
     "AUD/USD": {
       "big_move": false,
-      "change_pct": 0.3,
-      "price": 0.6648
+      "change_pct": 0.33,
+      "price": 0.665
     },
     "Brent oil": {
       "big_move": false,
-      "change_pct": -4.29,
-      "price": 90.55
+      "change_pct": -4.26,
+      "price": 90.58
     },
     "Gold": {
       "big_move": false,
@@ -496,6 +519,11 @@
   },
   "nc3": "normal",
   "news_watch": {
+    "ai_hack": [
+      "Korea launches emergency response as AI-powered hacking surges - Korea JoongAng Daily",
+      "Report Finds Growing Interest in AI-Powered Cybercrime Tools - Petri IT Knowledgebase",
+      "Israel's health care system on high alert: overseas access blocked amid fears of massive cyberattack - Ynetnews"
+    ],
     "airspace": [
       "Nairobi Airspace Closed for Military Activity Today and on 4 and 12 December, With Notice Reaching Public Only Hours Ahead - Avi-Go",
       "Explainer: Hours of Notice for a Closed Sky, What Nairobi's Airspace Shutdowns Could Cost - Dawan Africa",
@@ -540,9 +568,9 @@
       "Flight Centre hack victims safe to travel on DFAT advice - The Australian"
     ],
     "cyber_ot": [
-      "Hackers plunged dozens of European supermarkets into chaos. It should worry Australians how easy it was - SMH.com.au",
       "Shop freezers in seven European countries hit by cyber-attack - BBC",
-      "UK operation wards off risk of cyber-attack on supermarket fridges and freezers - The Guardian"
+      "UK operation wards off risk of cyber-attack on supermarket fridges and freezers - The Guardian",
+      "New cyberattack on supermarket fridges sweeps across Europe - Reuters"
     ],
     "cyber_state": [
       "ESET Research: Sandworm behind cyberattack on Poland’s power grid in late 2025 - We Live Security",
@@ -552,7 +580,7 @@
     "cyber_supply": [
       "Warning: Actively Exploited OS Command Injection in Juniper Session Smart Conductor, Patch Immediately! - CCB Belgium",
       "Is your website at risk? Sri Lanka CERT issues urgent advisory - Newswire",
-      "CVE-2026-132165: Drupal Fail2Install RCE Exploited in the Wild - SOC Prime"
+      "Cacti 4HTTP2ROOT Zero-Day Enables Unauthenticated Remote Code Execution - GBHackers News"
     ],
     "deepfake": [
       "Deepfake Musk, Fake Ransomware Heroes, and a Spy in a Palo Alto Coffee Shop: This Week in Security Was Wild - PCMag Australia",
@@ -563,14 +591,21 @@
       "Kenyan sect leader convicted of terrorism ᐉ News from Fakti.bg - Curious - Fakti.bg"
     ],
     "flash": [
-      "Invictus Energy Enters Trading Halt Pending Capital Raise Announcement - Kalkine",
+      "Why has Northern Minerals (ASX:NTU) entered a trading halt ahead of a capital raising? - Kalkine",
       "First Helium Acquisition Update: Trading Halt Continues as Valuation Remains Pending - ChemAnalyst",
       "South Korea's KOSDAQ Surges Over 5%, Triggers Buy-Side Circuit Breaker for Second Time in Three Sessions - BigGo Finance"
     ],
     "fuel_au": [
+      "Job queues, petrol rations: Reality of living through a recession - Adelaide Now",
       "CRISIS-TESTED MATT HALLIDAY NEVER LETS A FUEL SHOCK GO TO WASTE - Australian Association of Convenience Stores",
-      "Niger fuel shortage leads Agadez to cap sales at the pump - DNE Africa",
-      "Ansett Australia: The Airline That Ran Out Of Altitude - Nett Magazine Online"
+      "Niger fuel shortage leads Agadez to cap sales at the pump - DNE Africa"
+    ],
+    "gulf_strikes": [
+      "Houthis target Saudi Arabia’s Red Sea ports as strikes escalate - Al Jazeera",
+      "Powerful Explosions Reported in Riyadh following Yemeni Missile Attack - تسنیم",
+      "Saudi-led coalition intercepts Houthi drone targeting Riyadh region - Anadolu Ajansı",
+      "Deadly Houthi Strike Hits Saudi Aramco’s Jizan Refinery - Energy Intelligence",
+      "Saudis say they intercepted Houthi drone near key port in Jeddah - The Times of Israel"
     ],
     "illness": [
       "Mystery illness causes mass hospitalisation of runners - The Nightly",
@@ -580,10 +615,15 @@
     "masscas": [
       "Thanksgiving meal in Florida leads to mass food poisoning incident - The Guardian",
       "A large-scale food poisoning incident occurred in the United States after a Thanksgiving lunch - Українські Національні Новини (УНН)",
-      "EPA Issues Lead Update, Thanksgiving ‘Mass Casualty Incident’, Secret Service Cyber Warning: The Bulletin, Nov. 27 - Newsweek"
+      "Eighteen attendants at Leon Medical Center headquarters in Doral fell ill on Wednesday due to possible food poisoning during the center's annual Thanksgiving luncheon, fire rescue officials said. According to Miami-Dade Fire Rescue, crews received reports - Facebook"
     ],
     "medexport": [
       "UK Bans Export of Key Medicines: November 2026 - CASRAI"
+    ],
+    "mobilisation": [
+      "NATO Allies Procure 430 Armored Vehicles Amid Russia Tensions - 조선일보",
+      "The British Ministry of Defence is searching for 45,000 missing reservists - UkrMedia News",
+      "“Even Calling Up 100,000 Reservists Would Not Be Enough”: Questions Over Effectiveness of UK Rearmament Plans Amid Training Gaps, Financial Strains and Defense Industry Decline - https://economy.ac/"
     ],
     "national_outage": [
       "Inside the ‘Black Sky’ plans for a nationwide blackout - Herald.Wales",
@@ -635,9 +675,9 @@
       "yes": 5.5
     },
     {
-      "d24h": 1.7,
+      "d24h": 1.5,
       "q": "US-Iran Final Nuclear Deal by December 31, 2026?",
-      "yes": 4.9
+      "yes": 4.7
     },
     {
       "d24h": 1.0,
@@ -653,6 +693,11 @@
       "d24h": -0.6,
       "q": "US-Iran Hormuz Agreement by November 30, 2026?",
       "yes": 1.5
+    },
+    {
+      "d24h": -0.2,
+      "q": "Will the US officially declare war on Iran by December 31, 2026?",
+      "yes": 1.6
     },
     {
       "d24h": 0.4,
@@ -700,17 +745,12 @@
       "yes": 11.0
     },
     {
-      "d24h": 0.0,
-      "q": "Iran charges Hormuz fees by December 31?",
-      "yes": 7.5
-    },
-    {
       "d24h": -0.5,
       "q": "NATO x Russia military clash by November 30, 2026?",
       "yes": 0.9
     },
     {
-      "d24h": 0.3,
+      "d24h": -0.3,
       "q": "Ukraine agrees not to join NATO by December 31, 2026?",
       "yes": 2.9
     },
@@ -730,14 +770,14 @@
       "yes": 10.5
     },
     {
-      "d24h": -0.1,
+      "d24h": -0.2,
       "q": "Will the U.S. test a nuclear weapon by December 31 2026?",
       "yes": 2.5
     },
     {
-      "d24h": 0.5,
+      "d24h": 0.0,
       "q": "Ukraine agrees not to join NATO by December 31, 2027?",
-      "yes": 18.0
+      "yes": 17.5
     }
   ],
   "quakes_m6_24h": [],
@@ -976,7 +1016,7 @@
         }
       ],
       "score": 5,
-      "trend": "down"
+      "trend": "steady"
     },
     {
       "band": "Low",
@@ -1001,14 +1041,10 @@
         {
           "detail": "Influenza A(H5N1) - United States of America",
           "name": "WHO outbreak report with a high-concern pathogen (last 14 days)"
-        },
-        {
-          "detail": "Thanksgiving Meal Ends in ‘Mass Casualty Incident’ After 18 People Fall Ill",
-          "name": "Mass casualty declarations (any country)"
         }
       ],
-      "score": 20,
-      "trend": "steady"
+      "score": 15,
+      "trend": "down"
     },
     {
       "band": "Guarded",
@@ -1032,14 +1068,19 @@
       "trend": "steady"
     },
     {
-      "band": "Guarded",
-      "convergence": "Two different kinds of sign are showing together (cloud services and fraud waves). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, reports of ai-driven hacking campaig",
+      "band": "Elevated",
+      "convergence": "Signs are converging across 3 separate areas (ai-enabled hacking, cloud services and fraud waves). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: a Chinese",
       "domains": [
+        "AI-enabled hacking",
         "Cloud services",
         "Fraud waves"
       ],
       "key": "ai",
       "lit": [
+        {
+          "detail": "Korea launches emergency response as AI-powered hacking surges",
+          "name": "Reports of AI-driven hacking campaigns"
+        },
         {
           "detail": "Microsoft declares ‘Code Red’ in wake of global outage",
           "name": "Major cloud or AI service outage"
@@ -1049,8 +1090,8 @@
           "name": "Surge in AI voice-clone / deepfake scams in Australia"
         }
       ],
-      "score": 15,
-      "trend": "down"
+      "score": 30,
+      "trend": "up"
     }
   ],
   "sectors_relative_5d": {
