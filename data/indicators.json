@@ -1,24 +1,15 @@
 {
-  "generated_at": "2026-11-27T16:07:00Z",
+  "generated_at": "2026-11-27T16:22:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
-      "band": "Guarded",
-      "convergence": "Two different kinds of sign are showing together (roads and weather). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: cfs emergency warning in sa, sudden fall in sa electricity demand (possible large blackout) and extreme or catastrophic fire danger near adelaide.",
+      "band": "Low",
+      "convergence": "Only one kind of sign is showing (roads). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: cfs emergency warning in sa, sudden fall in sa electricity demand (possible large blackout) and extreme or catastrophic fire danger near adelaide.",
       "domains": [
-        "Roads",
-        "Weather"
+        "Roads"
       ],
       "key": "local",
       "lit": [
-        {
-          "detail": "Cancellation of Severe Thunderstorm Warning for Lower South East forecast district",
-          "domain": "Weather",
-          "id": "bom",
-          "name": "Bureau severe weather or heatwave warning for SA",
-          "short": "Bureau severe weather or heatwave…",
-          "weight": 15
-        },
         {
           "detail": "Morgan Mail Road, Quondong: MORGAN MAIL RD Closed due to flooding over road; Morgan Vale Road, Danggali: MORGAN MAIL RD Closed due to flooding over road",
           "domain": "Roads",
@@ -30,8 +21,8 @@
       ],
       "name": "Local emergency in SA (bushfire, heat, power)",
       "sa_impact": "Direct: bushfires, heatwaves and power cuts are the emergencies most likely to affect the family. In the 2016 statewide blackout, power, phones, traffic lights and fuel pumps failed together.",
-      "score": 25,
-      "trend": "steady",
+      "score": 10,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Bushfire",
@@ -56,6 +47,12 @@
           "id": "tfb",
           "name": "Total fire ban for Adelaide or the Hills",
           "weight": 10
+        },
+        {
+          "domain": "Weather",
+          "id": "bom",
+          "name": "Bureau severe weather or heatwave warning for SA",
+          "weight": 15
         },
         {
           "domain": "Power grid",
@@ -111,7 +108,7 @@
       "name": "Middle East war & Gulf shipping",
       "sa_impact": "Fuel: Australia imports most of its fuel, much of it refined from Gulf crude in Asia. Shipping attacks or a Hormuz closure push up prices within days and can cause local shortages.",
       "score": 0,
-      "trend": "down",
+      "trend": "steady",
       "unlit": [
         {
           "domain": "Military air",
@@ -379,24 +376,15 @@
       "why": "North Korean missile launches are often preceded by navigation warnings; South Korea and Japan report GPS jamming from the North during tense periods."
     },
     {
-      "band": "Guarded",
-      "convergence": "Two different kinds of sign are showing together (markets and mobilisation). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and us nuclear command aircraft unusual.",
+      "band": "Low",
+      "convergence": "Only one kind of sign is showing (markets). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and mobilisation / reservist reports (russia / nato).",
       "domains": [
-        "Markets",
-        "Mobilisation"
+        "Markets"
       ],
       "key": "russia",
       "lit": [
         {
-          "detail": "Conscription in the Russian Federation: drunk men are being forced to sign up",
-          "domain": "Mobilisation",
-          "id": "mob",
-          "name": "Mobilisation / reservist reports (Russia / NATO)",
-          "short": "Mobilisation / reservist reports",
-          "weight": 15
-        },
-        {
-          "detail": "European defence stocks +6.0% vs market over 5 days",
+          "detail": "European defence stocks +5.9% vs market over 5 days",
           "domain": "Markets",
           "id": "def",
           "name": "European defence stocks outperforming (5 days)",
@@ -406,8 +394,8 @@
       ],
       "name": "Russia-NATO escalation",
       "sa_impact": "Indirect: energy and market shock, cyber attacks that can spill over to Australian systems, and nuclear-risk rhetoric.",
-      "score": 20,
-      "trend": "up",
+      "score": 5,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Electronic warfare",
@@ -419,6 +407,12 @@
           "domain": "Military air",
           "id": "air",
           "name": "Unusual military air activity (Eastern Europe)",
+          "weight": 15
+        },
+        {
+          "domain": "Mobilisation",
+          "id": "mob",
+          "name": "Mobilisation / reservist reports (Russia / NATO)",
           "weight": 15
         },
         {
