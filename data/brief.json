@@ -282,23 +282,33 @@
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
     "internet": "RuntimeError: Iran ping-slash24: TimeoutError: The read operation timed out; Iran bgp: TimeoutError: The read operation ",
-    "maritime": "TimeoutError: ",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output=",
     "telecom": "RuntimeError: Telstra ping-slash24: TimeoutError: The read operation timed out; Telstra bgp: TimeoutError: The read oper"
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-27T10:58:00Z",
+  "generated_at": "2026-11-27T11:14:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 19,
-    "Black Sea": 18,
-    "Israel & Eastern Mediterranean": 8,
+    "Baltic / Kaliningrad": 24,
+    "Black Sea": 16,
+    "Israel & Eastern Mediterranean": 14,
     "Korea": 0,
-    "Persian Gulf": 8,
-    "South Australia": 7,
+    "Persian Gulf": 12,
+    "South Australia": 0,
     "Sydney / NSW": 0,
     "Taiwan Strait": 0
   },
   "incidents": [
+    {
+      "attack_reported": true,
+      "confirmed": true,
+      "headlines": [
+        "Microsoft Code Red outage: what its two one-hour goals mean",
+        "Hackers exploit Microsoft 365 outage"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "Microsoft"
+    },
     {
       "attack_reported": true,
       "confirmed": true,
@@ -333,13 +343,13 @@
     },
     {
       "attack_reported": true,
-      "confirmed": true,
+      "confirmed": false,
       "headlines": [
-        "OCBC's tech head says a breach is a matter of when, not if—so reaction time matters as much as prevention"
+        "Critical Cacti Zero-Day Could Let Hackers Take Over Network Monitoring Servers Without Authentication"
       ],
       "needs_confirming": false,
       "severity": "Info",
-      "target": "OCBC's"
+      "target": "Critical Cacti Zero-Day"
     },
     {
       "attack_reported": true,
@@ -355,22 +365,13 @@
       "attack_reported": false,
       "confirmed": true,
       "headlines": [
+        "For banks, reaction time matters as much as prevention when it comes to cyberattacks: OCBC tech head",
         "Malawi: Network outage disrupts electronic visa (e-Visa) services",
         "The only way is down?: CBA pushes 2-3 year term deposit rates lower"
       ],
       "needs_confirming": false,
-      "severity": "Info",
+      "severity": "Warning",
       "target": "Banking & payments"
-    },
-    {
-      "attack_reported": false,
-      "confirmed": false,
-      "headlines": [
-        "Microsoft Code Red outage: what its two one-hour goals mean"
-      ],
-      "needs_confirming": false,
-      "severity": "Info",
-      "target": "Microsoft"
     },
     {
       "attack_reported": false,
@@ -417,9 +418,9 @@
       "pump_cents": 2,
       "week_ago_aud": 135.0
     },
-    "grid_demand_fall_pct": 4.4,
-    "grid_demand_mw": 1527,
-    "grid_demand_usual_mw": 1466,
+    "grid_demand_fall_pct": 6.4,
+    "grid_demand_mw": 1495,
+    "grid_demand_usual_mw": 1456,
     "grid_lor_level": 0,
     "nearby_incidents": [
       {
@@ -491,18 +492,18 @@
     },
     "Brent oil": {
       "big_move": false,
-      "change_pct": -2.51,
-      "price": 92.24
+      "change_pct": -2.74,
+      "price": 92.02
     },
     "Gold": {
       "big_move": true,
-      "change_pct": 4.8,
-      "price": 3705.4
+      "change_pct": 4.77,
+      "price": 3704.5
     },
     "VIX": {
       "big_move": false,
-      "change_pct": -8.13,
-      "price": 24.62
+      "change_pct": -7.5,
+      "price": 24.79
     }
   },
   "national_shocks": {
@@ -518,31 +519,32 @@
   "nc3": "normal",
   "news_watch": {
     "ai_hack": [
-      "OCBC's tech head says a breach is a matter of when, not if—so reaction time matters as much as prevention - Fortune",
+      "For banks, reaction time matters as much as prevention when it comes to cyberattacks: OCBC tech head - Fortune",
       "Korea launches emergency response as AI-powered hacking surges - Korea JoongAng Daily",
       "“Swarms of AI agents are already actively attacking.” Cognition CEO warns of a wave of large-scale data leaks in the next six months - dev.ua"
     ],
     "airspace": [
       "Explainer: Hours of Notice for a Closed Sky, What Nairobi's Airspace Shutdowns Could Cost - Dawan Africa",
-      "Nairobi airspace closure: What Kenya Airways passengers need to know about three dates - People Daily",
+      "Nairobi airspace closure: What Kenya Airways passengers need to know about 3 dates - People Daily",
       "Nairobi Airspace To Shut Down On Three Separate Days - The Kenya Times"
     ],
     "aviation_halt": [
-      "Timeline of the FAA nationwide ground stop: How it developed - ABC News - Breaking News, Latest News and Videos",
+      "American Airlines flights resume after brief IT outage led to nationwide ground stop - ABC News - Breaking News, Latest News and Videos",
       "FedEx plane overshoots Miami runway: What happened before FAA stopped flights - Cleveland.com",
       "FAA Issues Ground Stop for Washington National Airport Flights Amid Thunderstorms - Avi-Go"
     ],
     "bank_outage": [
-      "Cracking a century - ANZ-Roy Morgan New Zealand Consumer Confidence rises into positive territory above 100 - Roy Morgan Research",
       "The only way is down?: CBA pushes 2-3 year term deposit rates lower - Savings.com.au",
-      "Malawi: Network outage disrupts electronic visa (e-Visa) services - VisasNews"
+      "Malawi: Network outage disrupts electronic visa (e-Visa) services - VisasNews",
+      "Bizarre rooftop sight sparks theories - News.com.au"
     ],
     "blood": [
       "Donating is in this aviator's blood - news.defence.gov.au",
-      "AYANG organises blood donation camp - The Arunachal Times",
-      "Centre For Safety Heritage Urges Patriotic, Responsible Security Reportage - News Agency of Nigeria"
+      "Centre For Safety Heritage Urges Patriotic, Responsible Security Reportage - News Agency of Nigeria",
+      "AYANG organises blood donation camp - The Arunachal Times"
     ],
     "cables": [
+      "Construction starts on first submarine cable project led by Vietnam - VOV.VN",
       "Gopalganj may face power cuts if political attacks target facilities - Dhaka Tribune"
     ],
     "chem": [
@@ -566,9 +568,9 @@
       "Flight Centre suffers cyberattack; passport info accessed - Inside Retail Australia"
     ],
     "cyber_ot": [
-      "Shop freezers in seven European countries hit by cyber-attack - BBC",
       "UK operation wards off risk of cyber-attack on supermarket fridges and freezers - The Guardian",
-      "Supermarket freezers and fridges in Europe hit by cyberattack - Nine.com.au"
+      "Hackers plunged dozens of European supermarkets into chaos. It should worry Australians how easy it was - SMH.com.au",
+      "Shop freezers in seven European countries hit by cyber-attack - BBC"
     ],
     "cyber_state": [
       "ESET Research: Sandworm behind cyberattack on Poland’s power grid in late 2025 - We Live Security",
@@ -581,16 +583,16 @@
       "Drupal warns of highly critical access bypass vulnerability affecting sites - BetaNews"
     ],
     "deepfake": [
-      "BEN HARVEY: University merger shows why biggest reforms are often hardest to judge - The Nightly",
       "Deloitte Suspended From Western Australian Government Contracts Over AI Report Errors - https://www.big4news.com/",
-      "'King is back': Nvidia boss's return sparks fresh AI deepfake deluge - The Korea Times"
+      "'King is back': Nvidia boss's return sparks fresh AI deepfake deluge - The Korea Times",
+      "MCMC takes down over 367,000 scam, fake and deepfake posts since 2024 - Malay Mail"
     ],
     "dieoff": [
       "Since the invasion of Ukraine, 53 mysterious deaths of Russian officials and high-ranking government officials have been recorded - UA.NEWS",
       "Kenyan sect leader convicted of terrorism ᐉ News from Fakti.bg - Curious - Fakti.bg"
     ],
     "flash": [
-      "Invictus Energy Enters Trading Halt Pending Capital Raise Announcement - Kalkine",
+      "Why has Northern Minerals (ASX:NTU) entered a trading halt ahead of a capital raising? - Kalkine",
       "South Korea's KOSDAQ Surges Over 5%, Triggers Buy-Side Circuit Breaker for Second Time in Three Sessions - BigGo Finance",
       "UK stocks poised to join global stock rebound as FTSE 100 rises 2% - Crypto Briefing"
     ],
@@ -602,9 +604,9 @@
     "gulf_strikes": [
       "Attack on Saudi’s Jazan refinery kills one person, disrupts operations - Al Jazeera",
       "Powerful Explosions Reported in Riyadh following Yemeni Missile Attack - تسنیم",
-      "Smoke seen from space after attack on huge Middle East oil hub - Nine.com.au",
       "Saudis say they intercepted Houthi drone near key port in Jeddah - The Times of Israel",
-      "Houthis Strike Jazan Refinery, Saudi Energy Ministry Confirms 1 Dead - https://houseofsaud.com/"
+      "Attack on Saudi Aramco’s Jazan refinery kills worker, halts some operations - NBC News",
+      "Dubai Gets Some Airlines Back as Riyadh Waits on Houthis - Skift"
     ],
     "illness": [
       "Mystery illness causes mass hospitalisation of runners - The Nightly",
@@ -617,24 +619,24 @@
       "Thanksgiving Dinner Disaster Leaves 18 in Hospital in Florida - The Daily Beast"
     ],
     "mobilisation": [
-      "Conscription in the Russian Federation: drunk men are being forced to sign up - UkrMedia News",
       "Mobilization in Advance: While the SBI Investigated the Case of AWOL, the Man Reached Mobilization Age - Судово-юридична газета",
-      "Koretsky: Periodic adjustments to exemption system necessary during wartime - Interfax-Ukraine"
+      "Koretsky: Periodic adjustments to exemption system necessary during wartime - Interfax-Ukraine",
+      "Police, military raid NUP offices in Kampala to block artistes' engagement - Daily Monitor"
     ],
     "national_outage": [
-      "Coach restrained from fans after heated display as Eagles pull off stunning NFL comeback win: Wrap - Fox Sports",
       "Cuba grid collapse: The situation is growing more dire, experts say - ABC News - Breaking News, Latest News and Videos",
-      "Inside the ‘Black Sky’ plans for a nationwide blackout - Herald.Wales"
+      "Inside the ‘Black Sky’ plans for a nationwide blackout - Herald.Wales",
+      "Cuba’s National Electric Grid Collapses, Reason Unknown - EnergyNow.com"
     ],
     "outage_au": [
-      "How the Microsoft outage is affecting Australia - ABC News & Headlines – Australian Broadcasting Corporation",
+      "Calls for 'automatic compensation' following telco outages - ABC News & Headlines – Australian Broadcasting Corporation",
       "Microsoft ‘deeply sorry’ for global outage, rules out cyberattack and AI - Nine.com.au",
-      "Australia's Optus apologises for outage that disrupted emergency calls - Reuters"
+      "The Microsoft outage is part of a growing trend. This is how to prepare for further disruption - SBS"
     ],
     "reservists": [
       "MoD has no email addresses for about half of its reservists - BBC",
       "UK reservists contacted as 'threat environment' rises, Streeting says - BBC",
-      "MoD 'missing email addresses for half of reservists' - as 100,000 told to ready for emergency call-up - LBC"
+      "Why the UK MoD just wrote to 100,000 former military personnel - ADS Advance"
     ],
     "ru_signals": [
       "NATO intern suspected of spying to remain in jail in Belgium after appeal - News24"
@@ -651,15 +653,15 @@
       "Iran claims LNG carrier and tankers struck mines in Strait of Hormuz - safety4sea",
       "Three Sinokor VLCCs hit in Strait of Hormuz attacks - Riviera Maritime Media",
       "Middle East latest: Iran warns South Korea over planned naval deployment - The National",
-      "Iran Says LNG Carrier Exploded After Hitting a Mine in Hormuz - Crude Oil Prices Today | OilPrice.com",
-      "IRGC Claims 3 Oil Tankers Hit Mines in Hormuz Under US Escort - https://houseofsaud.com/"
+      "IRGC Claims 3 Oil Tankers Hit Mines in Hormuz Under US Escort - https://houseofsaud.com/",
+      "Iranian attacks in the Strait of Hormuz are at the highest levels since the conflict began - CNN"
     ],
     "strikes": [
       "Iran Warns of Retaliation if US Forces Attack - ASHARQ AL-AWSAT English",
       "Ukraine says strike on major Russian air base damaged five military jets - AeroTime",
       "Ukraine says it struck a major Russian air base, damaging five planes - Arab News",
-      "Bahrain Says It Intercepted Iranian Attacks As Tehran Claims Strike On US Base - Radio Free Europe/Radio Liberty",
-      "Ukrainian naval drones strike a new Russian warship in Libya, and other Mideast news - Boston Herald"
+      "Ukrainian naval drones strike a new Russian warship in Libya, and other Mideast news - Boston Herald",
+      "Ukrainian Neptunes Attacked Marinovka Air Base, Which Housed Russian Su-34s - Мілітарний"
     ]
   },
   "prediction_markets": [
@@ -669,7 +671,7 @@
       "yes": 5.5
     },
     {
-      "d24h": 1.1,
+      "d24h": 1.2,
       "q": "US-Iran Final Nuclear Deal by December 31, 2026?",
       "yes": 4.5
     },
@@ -684,9 +686,9 @@
       "yes": 2.6
     },
     {
-      "d24h": -0.9,
+      "d24h": -1.0,
       "q": "US-Iran Hormuz Agreement by November 30, 2026?",
-      "yes": 1.8
+      "yes": 1.7
     },
     {
       "d24h": -0.2,
@@ -1006,7 +1008,7 @@
           "name": "Mobilisation / reservist reports (Russia / NATO)"
         },
         {
-          "detail": "European defence stocks +6.8% vs market over 5 days",
+          "detail": "European defence stocks +6.6% vs market over 5 days",
           "name": "European defence stocks outperforming (5 days)"
         }
       ],
@@ -1090,7 +1092,7 @@
   ],
   "sectors_relative_5d": {
     "defence_au": 4.89,
-    "defence_eu": 6.75,
+    "defence_eu": 6.64,
     "defence_us": 4.21,
     "pandemic": 0.09
   },
