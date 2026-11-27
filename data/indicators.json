@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-27T09:51:00Z",
+  "generated_at": "2026-11-27T10:02:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -396,7 +396,7 @@
           "weight": 15
         },
         {
-          "detail": "European defence stocks +6.1% vs market over 5 days",
+          "detail": "European defence stocks +6.0% vs market over 5 days",
           "domain": "Markets",
           "id": "def",
           "name": "European defence stocks outperforming (5 days)",
@@ -510,7 +510,7 @@
       "name": "Nuclear use or alert",
       "sa_impact": "Fallout risk to SA from a northern-hemisphere exchange is very low, but global trade, fuel and finance would be severely disrupted.",
       "score": 10,
-      "trend": "down",
+      "trend": "steady",
       "unlit": [
         {
           "domain": "Nuclear command",
@@ -665,7 +665,7 @@
       "name": "Pandemic, biological or chemical emergency",
       "sa_impact": "Health system strain, possible lockdowns and border closures, and shortages of medicines and protective equipment, which Australia mostly imports.",
       "score": 20,
-      "trend": "up",
+      "trend": "steady",
       "unlit": [
         {
           "domain": "Health",
@@ -794,12 +794,11 @@
     },
     {
       "band": "Elevated",
-      "convergence": "Signs are converging across 4 separate areas (ai-enabled hacking, cloud services, fraud waves and markets). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: a Chinese state-sponsored group used an AI agent to carry out 80-90% of an attack on about 30 organisations, at thousands of requests per second. A fake AI image of a Pentagon explosion briefly moved US markets in May 2023, and a deepfake video call of a CFO tricked a company into paying US$25 million in 2024. The likely signature of an AI attack is breadth and speed: many unrelated systems and vendors hit at once, synthetic media of officials, and shocks with no clear human cause. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, deepfakes of leaders or fake official alerts and market fear index jumps 25%+ in a day.",
+      "convergence": "Signs are converging across 3 separate areas (ai-enabled hacking, cloud services and fraud waves). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: a Chinese state-sponsored group used an AI agent to carry out 80-90% of an attack on about 30 organisations, at thousands of requests per second. A fake AI image of a Pentagon explosion briefly moved US markets in May 2023, and a deepfake video call of a CFO tricked a company into paying US$25 million in 2024. The likely signature of an AI attack is breadth and speed: many unrelated systems and vendors hit at once, synthetic media of officials, and shocks with no clear human cause. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, deepfakes of leaders or fake official alerts and flash crash or exchange trading halt.",
       "domains": [
         "AI-enabled hacking",
         "Cloud services",
-        "Fraud waves",
-        "Markets"
+        "Fraud waves"
       ],
       "key": "ai",
       "lit": [
@@ -810,14 +809,6 @@
           "name": "Reports of AI-driven hacking campaigns",
           "short": "Reports of AI-driven hacking campaigns",
           "weight": 15
-        },
-        {
-          "detail": "KOSDAQ buy-side sidecar (futures market circuit breaker) triggered… Midday sharp rebound, recovers above 690",
-          "domain": "Markets",
-          "id": "flash",
-          "name": "Flash crash or exchange trading halt",
-          "short": "Flash crash or exchange trading halt",
-          "weight": 10
         },
         {
           "detail": "Microsoft declares ‘Code Red’ in wake of global outage",
@@ -838,8 +829,8 @@
       ],
       "name": "AI-enabled attack (non-traditional)",
       "sa_impact": "Not bombs but disruption: hacking at machine speed across banks, telcos, hospitals and the grid at once; fake videos or alerts from leaders causing panic buying or bank runs; or automated market and fraud shocks. Effects would be outages, payment failures and confusion about what is real.",
-      "score": 40,
-      "trend": "up",
+      "score": 30,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Mass exploitation",
@@ -852,6 +843,12 @@
           "id": "deepfake",
           "name": "Deepfakes of leaders or fake official alerts",
           "weight": 15
+        },
+        {
+          "domain": "Markets",
+          "id": "flash",
+          "name": "Flash crash or exchange trading halt",
+          "weight": 10
         },
         {
           "domain": "Markets",
