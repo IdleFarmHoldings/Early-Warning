@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-27T17:42:00Z",
+  "generated_at": "2026-11-27T17:58:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -376,31 +376,13 @@
       "why": "North Korean missile launches are often preceded by navigation warnings; South Korea and Japan report GPS jamming from the North during tense periods."
     },
     {
-      "band": "Elevated",
-      "convergence": "Signs are converging across 3 separate areas (electronic warfare, markets and mobilisation). Unrelated systems flagging the same scenario at once is the pattern seen before past events. Before February 2022: embassy departures, mobilisation reports, airspace closures and a surge in GPS jamming. Baltic and Black Sea jamming is now routine, so only spikes above normal count. The strongest signs not yet showing: unusual military air activity (eastern europe), us nuclear command aircraft unusual and internet disruption in russia.",
+      "band": "Low",
+      "convergence": "Only one kind of sign is showing (markets). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and mobilisation / reservist reports (russia / nato).",
       "domains": [
-        "Electronic warfare",
-        "Markets",
-        "Mobilisation"
+        "Markets"
       ],
       "key": "russia",
       "lit": [
-        {
-          "detail": "gps_blacksea 64 vs usual 21",
-          "domain": "Electronic warfare",
-          "id": "gps",
-          "name": "GPS jamming spike (Baltic / Black Sea)",
-          "short": "GPS jamming spike",
-          "weight": 15
-        },
-        {
-          "detail": "Conscription in the Russian Federation: drunk men are being forced to sign up",
-          "domain": "Mobilisation",
-          "id": "mob",
-          "name": "Mobilisation / reservist reports (Russia / NATO)",
-          "short": "Mobilisation / reservist reports",
-          "weight": 15
-        },
         {
           "detail": "European defence stocks +6.2% vs market over 5 days",
           "domain": "Markets",
@@ -412,13 +394,25 @@
       ],
       "name": "Russia-NATO escalation",
       "sa_impact": "Indirect: energy and market shock, cyber attacks that can spill over to Australian systems, and nuclear-risk rhetoric.",
-      "score": 35,
-      "trend": "up",
+      "score": 5,
+      "trend": "down",
       "unlit": [
+        {
+          "domain": "Electronic warfare",
+          "id": "gps",
+          "name": "GPS jamming spike (Baltic / Black Sea)",
+          "weight": 15
+        },
         {
           "domain": "Military air",
           "id": "air",
           "name": "Unusual military air activity (Eastern Europe)",
+          "weight": 15
+        },
+        {
+          "domain": "Mobilisation",
+          "id": "mob",
+          "name": "Mobilisation / reservist reports (Russia / NATO)",
           "weight": 15
         },
         {
@@ -708,15 +702,24 @@
       "why": "Before COVID-19 (Dec 2019 - Feb 2020): reports of an unknown pneumonia cluster, WHO outbreak notices, mask and hazmat makers (Alpha Pro Tech, Lakeland) and vaccine developers (Moderna, Novavax) surging weeks before broad markets fell, and countries restricting exports of masks and medicines (Taiwan from 24 Jan 2020, then dozens more)."
     },
     {
-      "band": "Low",
-      "convergence": "Only one kind of sign is showing (australian incidents). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: sudden fall in sa electricity demand (possible large blackout), global cyber threat level raised (sans infocon not green) and several vpn / firewall flaws exploited this week.",
+      "band": "Guarded",
+      "convergence": "Two different kinds of sign are showing together (australian incidents and exploited vulnerabilities). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: sudden fall in sa electricity demand (possible large blackout), global cyber threat level raised (sans infocon not green) and several vpn / firewall flaws exploited this week.",
       "domains": [
-        "Australian incidents"
+        "Australian incidents",
+        "Exploited vulnerabilities"
       ],
       "key": "cyber",
       "lit": [
         {
-          "detail": "Cybersecurity News: ARTEX framework thrives, autonomous cyberattack warning, Australian travel agent breach",
+          "detail": "kev ratio = 2.0",
+          "domain": "Exploited vulnerabilities",
+          "id": "kev",
+          "name": "Surge in newly exploited vulnerabilities (2x normal week)",
+          "short": "Surge in newly exploited vulnerabilities",
+          "weight": 10
+        },
+        {
+          "detail": "‘Dangerous complacency’: Australia is unprepared for a major hack",
           "domain": "Australian incidents",
           "id": "au",
           "name": "Major Australian cyber incident reported",
@@ -726,20 +729,14 @@
       ],
       "name": "Major cyber attack on Australia",
       "sa_impact": "Banks, payments, hospitals, fuel distribution, telcos and the power grid all run on networks; a large attack can stop card payments and services for hours to days.",
-      "score": 10,
-      "trend": "steady",
+      "score": 20,
+      "trend": "up",
       "unlit": [
         {
           "domain": "Global threat level",
           "id": "infocon",
           "name": "Global cyber threat level raised (SANS Infocon not green)",
           "weight": 20
-        },
-        {
-          "domain": "Exploited vulnerabilities",
-          "id": "kev",
-          "name": "Surge in newly exploited vulnerabilities (2x normal week)",
-          "weight": 10
         },
         {
           "domain": "Edge-device exploitation",
