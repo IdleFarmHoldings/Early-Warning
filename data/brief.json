@@ -1,13 +1,7 @@
 {
   "about": "Short form of latest.json + indicators.json for the analysis run. Links and raw samples removed.",
   "acsc": [],
-  "aircraft_flags": {
-    "gps_gulf": {
-      "median": 9,
-      "status": "ANOMALY",
-      "value": 34
-    }
-  },
+  "aircraft_flags": {},
   "analyst": {
     "ASPI Strategist": [
       "Kasandigan – the Philippines is pivotal to Australian strategy as never before",
@@ -293,30 +287,18 @@
     "telecom": "RuntimeError: Telstra ping-slash24: TimeoutError: The read operation timed out; Telstra bgp: TimeoutError: The read oper"
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-27T05:52:00Z",
+  "generated_at": "2026-11-27T06:07:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 60,
-    "Black Sea": null,
-    "Israel & Eastern Mediterranean": 10,
-    "Korea": 1,
-    "Persian Gulf": 34,
+    "Baltic / Kaliningrad": 51,
+    "Black Sea": 27,
+    "Israel & Eastern Mediterranean": 14,
+    "Korea": 2,
+    "Persian Gulf": 7,
     "South Australia": 4,
-    "Sydney / NSW": 5,
-    "Taiwan Strait": 3
+    "Sydney / NSW": 0,
+    "Taiwan Strait": 1
   },
   "incidents": [
-    {
-      "attack_reported": true,
-      "confirmed": true,
-      "headlines": [
-        "Microsoft Code Red outage: what its two one-hour goals mean",
-        "Hackers exploit Microsoft 365 outage",
-        "Microsoft Links China, North Korea Hackers to ARTEX"
-      ],
-      "needs_confirming": false,
-      "severity": "Warning",
-      "target": "Microsoft"
-    },
     {
       "attack_reported": true,
       "confirmed": false,
@@ -337,6 +319,38 @@
       "needs_confirming": false,
       "severity": "Info",
       "target": "Flight Centre"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "Was my data taken in the Flight Centre data breach? Who is affected and what to do now"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "Was"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": true,
+      "headlines": [
+        "Switzerland Confirms Five AI-Powered Cyberattacks, Four Successfully Breach Computer Systems"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "Switzerland"
+    },
+    {
+      "attack_reported": false,
+      "confirmed": true,
+      "headlines": [
+        "Microsoft Code Red outage: what its two one-hour goals mean",
+        "Hackers exploit Microsoft 365 outage",
+        "Microsoft declares ‘Code Red’ in wake of global outage"
+      ],
+      "needs_confirming": false,
+      "severity": "Warning",
+      "target": "Microsoft"
     },
     {
       "attack_reported": false,
@@ -364,27 +378,18 @@
       "Mount Lofty Ranges": "Moderate / High"
     },
     "fire_danger_ok": true,
-    "fires_active": 13,
+    "fires_active": 7,
     "fuel": {
       "brent_aud": 138.3,
       "change_pct": 2.7,
       "pump_cents": 2,
-      "week_ago_aud": 134.6
+      "week_ago_aud": 134.7
     },
-    "grid_demand_fall_pct": 2.8,
-    "grid_demand_mw": 952,
-    "grid_demand_usual_mw": 690,
+    "grid_demand_fall_pct": -9.1,
+    "grid_demand_mw": 1068,
+    "grid_demand_usual_mw": 821,
     "grid_lor_level": 0,
     "nearby_incidents": [
-      {
-        "area": "MUNNO PARA WEST",
-        "dist": "10-25 km",
-        "event": "Structure Fire",
-        "headline": "MUNNO PARA WEST : STRUCTURE FIRE",
-        "id": "F-261127-0091 MUNNO PARA WEST, JEFFREY RD / CHELLASTON RD  (",
-        "level": null,
-        "notify": false
-      },
       {
         "area": "REDBANKS",
         "dist": "25-60 km",
@@ -433,25 +438,25 @@
       "Morgan Vale Road, Pine Valley Station: MORGAN MAIL RD Closed due to flooding over road",
       "Pine Valley Road, Pine Valley Station: PINE VALLEY RD Closed due to flooding over road"
     ],
-    "rooftop_pv_mw": 1455,
+    "rooftop_pv_mw": 1215,
     "sawater_news": [],
     "watch_and_act": []
   },
   "markets": {
     "AUD/USD": {
       "big_move": false,
-      "change_pct": 0.7,
-      "price": 0.6674
+      "change_pct": 0.65,
+      "price": 0.6671
     },
     "Brent oil": {
       "big_move": false,
-      "change_pct": -1.97,
-      "price": 92.75
+      "change_pct": -1.88,
+      "price": 92.83
     },
     "Gold": {
-      "big_move": true,
-      "change_pct": 4.12,
-      "price": 3681.4
+      "big_move": false,
+      "change_pct": 3.77,
+      "price": 3669.0
     },
     "VIX": {
       "big_move": false,
@@ -473,8 +478,8 @@
   "news_watch": {
     "ai_hack": [
       "Switzerland reports first successful AI agent cyberattacks - Bitdefender",
-      "Switzerland, Canada and Italy Warn AI Agents Are Hacking Networks Faster - Daily Voice Of Asia",
-      "AI-driven hacking threats materialize as data breaches average 100 a month, privacy watchdog calls for investment in AI defense - 머니투데이"
+      "Switzerland confirms AI-assisted cyberattacks on critical infrastructure - Resilience Media",
+      "Microsoft Links China, North Korea Hackers to ARTEX - The Defiant"
     ],
     "airspace": [
       "Iran, US-Israel War Highlights| US strikes Iran in second day of renewed fire; IRGC targets bases in Bahrain & Kuwait - Deccan Herald",
@@ -489,7 +494,7 @@
     "bank_outage": [
       "Cracking a century - ANZ-Roy Morgan New Zealand Consumer Confidence rises into positive territory above 100 - Roy Morgan Research",
       "The only way is down?: CBA pushes 2-3 year term deposit rates lower - Savings.com.au",
-      "Student visa decline ‘damaging universities and economy’ - Research Professional News"
+      "Aussie shares end week higher as metals rebound - CommBank"
     ],
     "blood": [
       "AYANG organises blood donation camp - The Arunachal Times",
@@ -498,7 +503,7 @@
     "cables": [
       "Viettel-Singtel consortium breaks ground on submarine cable linking Vietnam, Thailand and Singapore - Theinvestor",
       "Gopalganj may face power cuts if political attacks target facilities - Dhaka Tribune",
-      "Construction starts on first submarine cable project led by Vietnam - VOV.VN"
+      "Work begins on first Vietnam-initiated international submarine fiber-optic cable - Tuoi Tre News | The News Gateway to Vietnam"
     ],
     "chem": [
       "China's Ministry of National Defense releases video on Japan's abandoned chemical weapons on its X account - China Daily Global Edition",
@@ -506,14 +511,14 @@
       "OPCW Statement on Ukraine Chemical Weapons Use - CASRAI"
     ],
     "cloud": [
-      "Microsoft Blames Software Flaw, Traffic Surge and Reduced Capacity for Global Microsoft 365 Outage - INDIA New England News",
-      "Hackers exploit Microsoft 365 outage - Daily Tribune",
-      "Microsoft Code Red outage: what its two one-hour goals mean - NeoTeo"
+      "Your backup plan probably runs on the same pipe as your problem - SecurityBrief Australia",
+      "Microsoft declares ‘Code Red’ in wake of global outage - Cyber Daily",
+      "Microsoft Blames Software Flaw, Traffic Surge and Reduced Capacity for Global Microsoft 365 Outage - INDIA New England News"
     ],
     "cyber_attrib": [
-      "FBI warns hackers weaponizing ARTEX AI framework to automate attacks on energy, manufacturing, telecom - Industrial Cyber",
       "FBI Warns Hackers Are Using ARTEX AI Tool To Automate Cyberattacks - Forbes",
-      "FBI says Chinese hacking group targeted US government agencies for years - ABC News - Breaking News, Latest News and Videos"
+      "Spy agency warns active Russian hackers targeting Australian industry - ABC News & Headlines – Australian Broadcasting Corporation",
+      "Busted! Alleged Aussie hackers linked to TeamPCP arrested in joint AFP-FBI-WAPF operation - Cyber Daily"
     ],
     "cyber_au": [
       "Flight Centre investigates data breach linked to third-party booking system - Australian Cyber Security Magazine",
@@ -522,7 +527,7 @@
     ],
     "cyber_ot": [
       "Shop freezers in seven European countries hit by cyber-attack - BBC",
-      "UK operation wards off risk of cyber-attack on supermarket fridges and freezers - The Guardian",
+      "Who is hacking Europe’s supermarket fridges and freezers, and why? - The Guardian",
       "Supermarket freezers and fridges in Europe hit by cyberattack - Nine.com.au"
     ],
     "cyber_state": [
@@ -533,7 +538,12 @@
     "cyber_supply": [
       "Warning: Actively Exploited Critical Vulnerabilities in Mitel MiCollab, Patch Immediately! - CCB Belgium",
       "Critical Zero-Day Wave Strikes Hypervisors, Edge Appliances, and AI Medical Imaging + Video - Howl.Link",
-      "Danfoss AK-SM8xxA, three vulnerabilities actively exploited - Meteora Web"
+      "VMware patches 23 flaws, including another critical vCenter authentication bypass - Field Effect"
+    ],
+    "deepfake": [
+      "Deloitte Suspended From Western Australian Government Contracts Over AI Report Errors - https://www.big4news.com/",
+      "'King is back': Nvidia boss's return sparks fresh AI deepfake deluge - The Korea Times",
+      "Video of Trump slamming Papua New Guinea's politicians is an AI-fake - www.aap.com.au"
     ],
     "dieoff": [
       "Since the invasion of Ukraine, 53 mysterious deaths of Russian officials and high-ranking government officials have been recorded - UA.NEWS"
@@ -550,10 +560,10 @@
     ],
     "gulf_strikes": [
       "Attack on Saudi’s Jazan refinery kills one person, disrupts operations - Al Jazeera",
+      "Smoke seen from space after attack on huge Middle East oil hub - Nine.com.au",
       "Powerful Explosions Reported in Riyadh following Yemeni Missile Attack - تسنیم",
       "Yemen's Houthis claim attack on Saudi Arabia's largest refinery - Al-Monitor",
-      "Houthis Strike Jazan Refinery, Saudi Energy Ministry Confirms 1 Dead - https://houseofsaud.com/",
-      "Attack on Saudi Aramco’s Jazan refinery kills worker, halts some operations - NBC News"
+      "Houthis Strike Jazan Refinery, Saudi Energy Ministry Confirms 1 Dead - https://houseofsaud.com/"
     ],
     "illness": [
       "Mystery illness causes mass hospitalisation of runners - The Nightly",
@@ -568,7 +578,7 @@
     "mobilisation": [
       "In Poltava region, a 24-year-old was conscripted despite not being liable for military service – the Territorial Recruitment Center failed to prove the legality of mobilization in court - Судово-юридична газета",
       "UK tells 100,000 military reservists to prepare for war amid Russia threats in first since Cold War - The Jerusalem Post",
-      "Britain is preparing military reservists for a possible mobilization due to the threat from Russia - UA.NEWS"
+      "MoD writes to 100,000 veterans as part of Strategic Reserve mobilisation plans - ADS Advance"
     ],
     "national_outage": [
       "Coach restrained from fans after heated display as Eagles pull off stunning Thanksgiving comeback win - Fox Sports",
@@ -583,15 +593,15 @@
     "reservists": [
       "UK reservists contacted as 'threat environment' rises, Streeting says - BBC",
       "UK tells 100,000 strategic reservists to prepare for possible call-up: Report - Anadolu Ajansı",
-      "MoD Strategic Reserve Call-Up: UK Urges 100,000 Reservists to Update Details and Join Exercises - Мілітарний"
+      "UK Reservist Call-Up Letters Raise Fears of Russia War - Военное дело"
     ],
     "ru_signals": [
       "NATO intern suspected of spying to remain in jail in Belgium after appeal - News24"
     ],
     "sapn": [
+      "Steven Chopping to step away from officiating - Motorsport Australia",
       "Letters to the Editor on Santa eviction - InDaily South Australia",
-      "10,000 homes and businesses barred from sending solar power to grid - The Cool Down",
-      "Steven Chopping to step away from officiating - Motorsport Australia"
+      "10,000 homes and businesses barred from sending solar power to grid - The Cool Down"
     ],
     "scams": [
       "Labor and the Greens betray victims of online financial scams - Senator the Hon Sarah Henderson"
@@ -606,9 +616,9 @@
     "strikes": [
       "Iran Warns of Retaliation if US Forces Attack - ASHARQ AL-AWSAT English",
       "Ukraine says strike on major Russian air base damaged five military jets - AeroTime",
-      "Ukraine says it struck a major Russian air base, damaging five planes - Arab News",
       "Ukrainian Neptunes Attacked Marinovka Air Base, Which Housed Russian Su-34s - Мілітарний",
-      "Bahrain Says It Intercepted Iranian Attacks As Tehran Claims Strike On US Base - Radio Free Europe/Radio Liberty"
+      "Ukraine says it struck a major Russian air base, damaging five planes - Arab News",
+      "Ukrainian naval drones strike a new Russian warship in Libya, and other Mideast news - Boston Herald"
     ]
   },
   "prediction_markets": [
@@ -668,7 +678,7 @@
       "yes": 2.1
     },
     {
-      "d24h": 0.2,
+      "d24h": 0.1,
       "q": "Will China blockade Taiwan by December 31, 2026??",
       "yes": 2.1
     },
@@ -688,9 +698,9 @@
       "yes": 1.4
     },
     {
-      "d24h": -0.8,
+      "d24h": -0.5,
       "q": "Ukraine agrees not to join NATO by December 31, 2026?",
-      "yes": 2.7
+      "yes": 3.0
     },
     {
       "d24h": -0.5,
@@ -720,6 +730,15 @@
   ],
   "quakes_m6_24h": [],
   "recent_alerts": [
+    {
+      "at": "2026-11-27T06:11:00Z",
+      "channels": [
+        "proactive"
+      ],
+      "confirmed": null,
+      "message": "Saudi Arabia confirms a Houthi attack hit its big Jazan oil refinery on Wednesday, killing a worker and stoppi",
+      "title": "Heads up: Saudi oil refinery hit"
+    },
     {
       "at": "2026-11-27T04:56:00Z",
       "channels": [
@@ -895,15 +914,6 @@
       "confirmed": true,
       "message": "Not reliable, not affordable: Report shows ageing coal plants boost blackout risk, push up prices. 2 reports f",
       "title": "Power grid: outage in SA"
-    },
-    {
-      "at": "2026-11-23T00:01:00Z",
-      "channels": [
-        "proactive"
-      ],
-      "confirmed": true,
-      "message": "VIX at 35.89 (+26.2% on the day). Sharp moves like this often follow a major shock.",
-      "title": "Market stress: VIX +26.2%"
     }
   ],
   "scenarios": [
@@ -925,19 +935,9 @@
     },
     {
       "band": "Low",
-      "convergence": "Only one kind of sign is showing (electronic warfare). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
-      "domains": [
-        "Electronic warfare"
-      ],
       "key": "mideast",
-      "lit": [
-        {
-          "detail": "gps_gulf 34 vs usual 9",
-          "name": "GPS jamming spike (Gulf / Israel)"
-        }
-      ],
-      "score": 10,
-      "trend": "up"
+      "score": 0,
+      "trend": "down"
     },
     {
       "band": "Low",
@@ -969,24 +969,19 @@
     },
     {
       "band": "Guarded",
-      "convergence": "Two different kinds of sign are showing together (markets and mobilisation). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: us nuclear command aircraft unusual, private jets heading to retreat destinations and forecast ma",
+      "convergence": "Only one kind of sign is showing (mobilisation). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: us nuclear command aircraft unusual, private jets heading to retreat destinations and forecast markets jump on nuclear use.",
       "domains": [
-        "Markets",
         "Mobilisation"
       ],
       "key": "nuclear",
       "lit": [
         {
-          "detail": "Gold +4.1%",
-          "name": "Gold up 4%+ in a day"
-        },
-        {
           "detail": "UK tells 100,000 military reservists to prepare for war amid Russia threats in first since Cold War",
           "name": "Mobilisation reports (any major power)"
         }
       ],
-      "score": 25,
-      "trend": "steady"
+      "score": 15,
+      "trend": "down"
     },
     {
       "band": "Low",
@@ -1026,16 +1021,16 @@
       "key": "ai",
       "lit": [
         {
-          "detail": "Switzerland, Canada and Italy Warn AI Agents Are Hacking Networks Faster",
+          "detail": "AI-driven hacking threats materialize as data breaches average 100 a month, privacy watchdog calls for investment in AI defense",
           "name": "Reports of AI-driven hacking campaigns"
         },
         {
-          "detail": "Microsoft Blames Software Flaw, Traffic Surge and Reduced Capacity for Global Microsoft 365 Outage",
+          "detail": "Microsoft declares ‘Code Red’ in wake of global outage",
           "name": "Major cloud or AI service outage"
         }
       ],
       "score": 25,
-      "trend": "down"
+      "trend": "steady"
     }
   ],
   "sectors_relative_5d": {
