@@ -1,13 +1,7 @@
 {
   "about": "Short form of latest.json + indicators.json for the analysis run. Links and raw samples removed.",
   "acsc": [],
-  "aircraft_flags": {
-    "gps_gulf": {
-      "median": 8.0,
-      "status": "ANOMALY",
-      "value": 33
-    }
-  },
+  "aircraft_flags": {},
   "analyst": {
     "ASPI Strategist": [
       "Kasandigan – the Philippines is pivotal to Australian strategy as never before",
@@ -292,30 +286,18 @@
     "telecom": "RuntimeError: Telstra ping-slash24: TimeoutError: The read operation timed out; Telstra bgp: TimeoutError: The read oper"
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-27T15:52:00Z",
+  "generated_at": "2026-11-27T16:07:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 23,
-    "Black Sea": 25,
-    "Israel & Eastern Mediterranean": 0,
+    "Baltic / Kaliningrad": 20,
+    "Black Sea": 33,
+    "Israel & Eastern Mediterranean": 4,
     "Korea": 0,
-    "Persian Gulf": 33,
+    "Persian Gulf": 6,
     "South Australia": null,
     "Sydney / NSW": null,
-    "Taiwan Strait": 0
+    "Taiwan Strait": 2
   },
   "incidents": [
-    {
-      "attack_reported": true,
-      "confirmed": true,
-      "headlines": [
-        "Ransomware group reportedly leaks Chase, Visa, and Mastercard customer data, but not credit card numbers",
-        "Lloyds down: Online banking app not working in latest major outage",
-        "For banks, reaction time matters as much as prevention when it comes to cyberattacks: OCBC tech head"
-      ],
-      "needs_confirming": false,
-      "severity": "Warning",
-      "target": "Banking & payments"
-    },
     {
       "attack_reported": true,
       "confirmed": false,
@@ -330,21 +312,11 @@
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
-        "ARTEX framework thrives, autonomous cyberattack warning, Australian travel agent breach"
+        "Cybersecurity News: ARTEX framework thrives, autonomous cyberattack warning, Australian travel agent breach"
       ],
       "needs_confirming": false,
       "severity": "Info",
-      "target": "ARTEX"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
-        "Australian travel giant investigates data breach after customer records accessed"
-      ],
-      "needs_confirming": false,
-      "severity": "Info",
-      "target": "Australian"
+      "target": "Cybersecurity News"
     },
     {
       "attack_reported": true,
@@ -421,17 +393,30 @@
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
-        "Guest Post: 100 Percent Chance of Agentic Hackers"
+        "FIFA data breach exposes personal and business information"
       ],
       "needs_confirming": false,
       "severity": "Info",
-      "target": "Guest Post"
+      "target": "FIFA"
     },
     {
       "attack_reported": false,
-      "confirmed": false,
+      "confirmed": true,
       "headlines": [
-        "What the Microsoft 365 disruption reveals about employee experience"
+        "Lloyds down: Online banking app not working in latest major outage",
+        "For banks, reaction time matters as much as prevention when it comes to cyberattacks: OCBC tech head",
+        "Malawi: Network outage disrupts electronic visa (e-Visa) services"
+      ],
+      "needs_confirming": false,
+      "severity": "Warning",
+      "target": "Banking & payments"
+    },
+    {
+      "attack_reported": false,
+      "confirmed": true,
+      "headlines": [
+        "What the Microsoft 365 disruption reveals about employee experience",
+        "Cloud Outage Might Change Microsoft (MSFT) Stock Narrative"
       ],
       "needs_confirming": false,
       "severity": "Info",
@@ -485,16 +470,16 @@
       "Mount Lofty Ranges": "High / High"
     },
     "fire_danger_ok": true,
-    "fires_active": 8,
+    "fires_active": 6,
     "fuel": {
       "brent_aud": 138.3,
       "change_pct": 2.3,
       "pump_cents": 2,
       "week_ago_aud": 135.2
     },
-    "grid_demand_fall_pct": 5.4,
-    "grid_demand_mw": 1315,
-    "grid_demand_usual_mw": 1345,
+    "grid_demand_fall_pct": 4.7,
+    "grid_demand_mw": 1313,
+    "grid_demand_usual_mw": 1346,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
@@ -542,23 +527,23 @@
   "markets": {
     "AUD/USD": {
       "big_move": false,
-      "change_pct": 0.23,
-      "price": 0.6643
+      "change_pct": 0.18,
+      "price": 0.664
     },
     "Brent oil": {
       "big_move": false,
-      "change_pct": -4.07,
-      "price": 90.76
+      "change_pct": -4.24,
+      "price": 90.6
     },
     "Gold": {
       "big_move": false,
-      "change_pct": 3.47,
-      "price": 3658.6
+      "change_pct": 3.35,
+      "price": 3654.3
     },
     "VIX": {
       "big_move": false,
-      "change_pct": -4.22,
-      "price": 25.67
+      "change_pct": -4.55,
+      "price": 25.58
     }
   },
   "national_shocks": {
@@ -569,9 +554,7 @@
     },
     "shocks": [],
     "tracking_glitch": false,
-    "traffic_not_normal": {
-      "AE": "DOWN"
-    }
+    "traffic_not_normal": {}
   },
   "nc3": "normal",
   "news_watch": {
@@ -591,9 +574,9 @@
       "Norse Atlantic once offered $99 flights to Europe. Now it's fighting to avoid being the 2nd big airline casualty of 2026. - Business Insider"
     ],
     "bank_outage": [
-      "Cracking a century - ANZ-Roy Morgan New Zealand Consumer Confidence rises into positive territory above 100 - Roy Morgan Research",
-      "The only way is down?: CBA pushes 2-3 year term deposit rates lower - Savings.com.au",
-      "Irvine faces all-out NAB revolt in midst of huge restructure - AFR"
+      "Aussie shares end week higher as metals rebound - CommBank",
+      "Denials soar for ‘extraordinary ability’ visa in program once used by Melania Trump - The Washington Post",
+      "Cracking a century - ANZ-Roy Morgan New Zealand Consumer Confidence rises into positive territory above 100 - Roy Morgan Research"
     ],
     "blood": [
       "Donating is in this aviator's blood - news.defence.gov.au",
@@ -615,9 +598,9 @@
       "Microsoft Blames Software Flaw, Traffic Surge and Reduced Capacity for Global Microsoft 365 Outage - INDIA New England News"
     ],
     "cyber_attrib": [
-      "Spy agency warns active Russian hackers targeting Australian industry - ABC News & Headlines – Australian Broadcasting Corporation",
       "Busted! Alleged Aussie hackers linked to TeamPCP arrested in joint AFP-FBI-WAPF operation - Cyber Daily",
-      "CISA, FBI warn that Iran-linked hackers are expanding target set for water, energy - Cybersecurity Dive"
+      "FaceStealer Cryptocurrency Theft Scheme | Federal Bureau of Investigation - FBI (.gov)",
+      "Spy agency warns active Russian hackers targeting Australian industry - ABC News & Headlines – Australian Broadcasting Corporation"
     ],
     "cyber_au": [
       "Flight Centre investigates data breach linked to third-party booking system - Australian Cyber Security Magazine",
@@ -636,13 +619,13 @@
     ],
     "cyber_supply": [
       "Warning: Actively Exploited Critical Vulnerabilities in Mitel MiCollab, Patch Immediately! - CCB Belgium",
-      "Is your website at risk? Sri Lanka CERT issues urgent advisory - Newswire",
+      "Warning: Actively Exploited OS Command Injection in Juniper Session Smart Conductor, Patch Immediately! - CCB Belgium",
       "CVE-2026-132165: Drupal Fail2Install RCE Exploited in the Wild - SOC Prime"
     ],
     "deepfake": [
-      "Deepfake Musk, Fake Ransomware Heroes, and a Spy in a Palo Alto Coffee Shop: This Week in Security Was Wild - PCMag Australia",
-      "BEN HARVEY: University merger shows why biggest reforms are often hardest to judge - The Nightly",
-      "'King is back': Nvidia boss's return sparks fresh AI deepfake deluge - The Korea Times"
+      "'King is back': Nvidia boss's return sparks fresh AI deepfake deluge - The Korea Times",
+      "Trump takes down image from his social media platform that depicted him as a Jesus-like figure - ABC News - Breaking News, Latest News and Videos",
+      "iProov Secures £45 Million UK Government Contract for GOV.UK One Login Biometric Verification - FF News"
     ],
     "dieoff": [
       "Since the invasion of Ukraine, 53 mysterious deaths of Russian officials and high-ranking government officials have been recorded - UA.NEWS",
@@ -659,26 +642,26 @@
       "Philippines declares national energy emergency as Asia risks energy crisis amid Iran war - ABC News - Breaking News, Latest News and Videos"
     ],
     "gulf_strikes": [
-      "Attack on Saudi’s Jazan refinery kills one person, disrupts operations - Al Jazeera",
+      "Houthis target Saudi Arabia’s Red Sea ports as strikes escalate - Al Jazeera",
       "Powerful Explosions Reported in Riyadh following Yemeni Missile Attack - تسنیم",
       "Saudi-led coalition intercepts Houthi drone targeting Riyadh region - Anadolu Ajansı",
       "Saudis say they intercepted Houthi drone near key port in Jeddah - The Times of Israel",
-      "Dubai Gets Some Airlines Back as Riyadh Waits on Houthis - Skift"
+      "Smoke seen from space after attack on huge Middle East oil hub - Nine.com.au"
     ],
     "illness": [
       "Mystery illness causes mass hospitalisation of runners - The Nightly",
       "Dr. Siegel on measles comeback, mystery illness outbreak on cruise ship - Fox News",
-      "148 aboard Florida-bound cruise ship sickened by ‘unknown’ GI outbreak: CDC - The Hill"
+      "Zayn Malik hospitalised with mystery illness, forced to cancel upcoming appearances on album release week - Nine.com.au"
     ],
     "masscas": [
       "Thanksgiving meal in Florida leads to mass food poisoning incident - The Guardian",
-      "Company's Thanksgiving Lunch Sends Staff to Hospital - Newser",
+      "Company's Thanksgiving Lunch Doesn't Go as Planned - Newser",
       "Thanksgiving Meal Ends in ‘Mass Casualty Incident’ After 18 People Fall Ill - Newsweek"
     ],
     "mobilisation": [
-      "NATO Allies Procure 430 Armored Vehicles Amid Russia Tensions - 조선일보",
       "Russian police grab men for minor offenses, force them to sign Defense Ministry contracts - The New Voice of Ukraine",
-      "‘Heightened threat’ as UK contacts thousands of veterans - The Australian"
+      "The Military Commissariat Mobilized a Man with a Height of 146 cm: His Medical Record \"Grew\" to 150 cm and He Was Deemed Fit for Service - Судово-юридична газета",
+      "NATO Allies Procure 430 Armored Vehicles Amid Russia Tensions - 조선일보"
     ],
     "national_outage": [
       "Inside the ‘Black Sky’ plans for a nationwide blackout - Herald.Wales",
@@ -686,14 +669,14 @@
       "Cuba’s National Electric Grid Collapses, Reason Unknown - EnergyNow.com"
     ],
     "outage_au": [
-      "Calls for 'automatic compensation' following telco outages - ABC News & Headlines – Australian Broadcasting Corporation",
+      "How the Microsoft outage is affecting Australia - ABC News & Headlines – Australian Broadcasting Corporation",
       "Microsoft ‘deeply sorry’ for global outage, rules out cyberattack and AI - Nine.com.au",
-      "The Microsoft outage is part of a growing trend. This is how to prepare for further disruption - SBS"
+      "Australia's Optus apologises for outage that disrupted emergency calls - Reuters"
     ],
     "reservists": [
+      "UK Begins Contacting Strategic Reserve Veterans, Says Letters Are Not a Call-Up - The Defense Post",
       "Reservist letters: how many veterans got them and what MoD wants next - Around Prague",
-      "Why the UK MoD just wrote to 100,000 former military personnel - ADS Advance",
-      "MoD has no email addresses for about half of its reservists - BBC"
+      "Why the UK MoD just wrote to 100,000 former military personnel - ADS Advance"
     ],
     "ru_signals": [
       "By Putin's logic, Russia should be given to Mongolia, Lukashenka says - Euronews.com"
@@ -708,8 +691,8 @@
     ],
     "shipping_attacks": [
       "Seafarer seriously injured in Hormuz tanker attack - Seatrade Maritime News",
-      "Three Sinokor VLCCs hit in Strait of Hormuz attacks - Riviera Maritime Media",
       "Iran claims LNG carrier and tankers struck mines in Strait of Hormuz - safety4sea",
+      "Three Sinokor VLCCs hit in Strait of Hormuz attacks - Riviera Maritime Media",
       "Oil tanker strikes mine in south of Strait of Hormuz - Mehr News Agency",
       "IRGC Claims 3 Oil Tankers Hit Mines in Hormuz Under US Escort - https://houseofsaud.com/"
     ],
@@ -748,12 +731,12 @@
       "yes": 1.7
     },
     {
-      "d24h": -0.1,
+      "d24h": -0.2,
       "q": "Will the US officially declare war on Iran by December 31, 2026?",
       "yes": 1.6
     },
     {
-      "d24h": 0.3,
+      "d24h": 0.4,
       "q": "US-Iran Final Nuclear Deal by November 30, 2026?",
       "yes": 0.8
     },
@@ -775,7 +758,7 @@
     {
       "d24h": 0.2,
       "q": "Will Russia invade a NATO country by December 31, 2026?",
-      "yes": 1.9
+      "yes": 2.0
     },
     {
       "d24h": 0.0,
@@ -798,14 +781,14 @@
       "yes": 0.9
     },
     {
-      "d24h": 0.8,
+      "d24h": -0.1,
       "q": "Ukraine agrees not to join NATO by December 31, 2026?",
-      "yes": 3.0
+      "yes": 2.9
     },
     {
-      "d24h": 0.0,
+      "d24h": 0.5,
       "q": "NATO/EU troops fighting in Ukraine by December 31, 2026?",
-      "yes": 3.5
+      "yes": 4.0
     },
     {
       "d24h": 0.0,
@@ -1040,19 +1023,9 @@
     },
     {
       "band": "Low",
-      "convergence": "Only one kind of sign is showing (electronic warfare). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
-      "domains": [
-        "Electronic warfare"
-      ],
       "key": "mideast",
-      "lit": [
-        {
-          "detail": "gps_gulf 33 vs usual 8.0",
-          "name": "GPS jamming spike (Gulf / Israel)"
-        }
-      ],
-      "score": 10,
-      "trend": "up"
+      "score": 0,
+      "trend": "down"
     },
     {
       "band": "Low",
@@ -1067,20 +1040,25 @@
       "trend": "steady"
     },
     {
-      "band": "Low",
-      "convergence": "Only one kind of sign is showing (markets). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and mobilisation / reservist reports (russia / nato).",
+      "band": "Guarded",
+      "convergence": "Two different kinds of sign are showing together (markets and mobilisation). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and us nuc",
       "domains": [
-        "Markets"
+        "Markets",
+        "Mobilisation"
       ],
       "key": "russia",
       "lit": [
         {
-          "detail": "European defence stocks +5.8% vs market over 5 days",
+          "detail": "Conscription in the Russian Federation: drunk men are being forced to sign up",
+          "name": "Mobilisation / reservist reports (Russia / NATO)"
+        },
+        {
+          "detail": "European defence stocks +6.0% vs market over 5 days",
           "name": "European defence stocks outperforming (5 days)"
         }
       ],
-      "score": 5,
-      "trend": "steady"
+      "score": 20,
+      "trend": "up"
     },
     {
       "band": "Low",
@@ -1123,7 +1101,7 @@
       "key": "cyber",
       "lit": [
         {
-          "detail": "ARTEX framework thrives, autonomous cyberattack warning, Australian travel agent breach",
+          "detail": "Cybersecurity News: ARTEX framework thrives, autonomous cyberattack warning, Australian travel agent breach",
           "name": "Major Australian cyber incident reported"
         }
       ],
@@ -1159,9 +1137,9 @@
   ],
   "sectors_relative_5d": {
     "defence_au": 4.89,
-    "defence_eu": 5.83,
-    "defence_us": 1.45,
-    "pandemic": 1.42
+    "defence_eu": 5.95,
+    "defence_us": 1.51,
+    "pandemic": 1.06
   },
   "status_pages": [
     {
