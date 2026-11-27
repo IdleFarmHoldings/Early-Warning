@@ -281,22 +281,21 @@
   ],
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
-    "internet": "RuntimeError: Iran ping-slash24: TimeoutError: The read operation timed out; Iran bgp: TimeoutError: The read operation ",
-    "maritime": "TimeoutError: ",
+    "internet": "RuntimeError: Iran ping-slash24: TimeoutError: The read operation timed out; Iran bgp: HTTPError: HTTP Error 500: Intern",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output=",
     "telecom": "RuntimeError: Telstra ping-slash24: TimeoutError: The read operation timed out; Telstra bgp: TimeoutError: The read oper"
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-27T08:56:00Z",
+  "generated_at": "2026-11-27T09:05:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 20,
-    "Black Sea": 36,
-    "Israel & Eastern Mediterranean": 11,
-    "Korea": 0,
-    "Persian Gulf": 7,
-    "South Australia": 3,
+    "Baltic / Kaliningrad": 21,
+    "Black Sea": 25,
+    "Israel & Eastern Mediterranean": 10,
+    "Korea": 1,
+    "Persian Gulf": 22,
+    "South Australia": 4,
     "Sydney / NSW": 0,
-    "Taiwan Strait": 1
+    "Taiwan Strait": 0
   },
   "incidents": [
     {
@@ -322,6 +321,16 @@
       "needs_confirming": false,
       "severity": "Info",
       "target": "Flight Centre"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "Flight Centre Data Breach Puts Millions Of Customer Records At Risk"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "Flight Centre Data"
     },
     {
       "attack_reported": true,
@@ -399,7 +408,7 @@
       "Mount Lofty Ranges": "Moderate / High"
     },
     "fire_danger_ok": true,
-    "fires_active": 8,
+    "fires_active": 7,
     "fuel": {
       "brent_aud": 138.5,
       "change_pct": 2.6,
@@ -407,8 +416,8 @@
       "week_ago_aud": 134.9
     },
     "grid_demand_fall_pct": 1.4,
-    "grid_demand_mw": 1589,
-    "grid_demand_usual_mw": 1491,
+    "grid_demand_mw": 1590,
+    "grid_demand_usual_mw": 1494,
     "grid_lor_level": 0,
     "nearby_incidents": [
       {
@@ -428,26 +437,7 @@
         "pm25": 10
       },
       "air_word": "Good",
-      "days": [
-        {
-          "date": "2026-11-27",
-          "gust": 42,
-          "rain": 3,
-          "tmax": 27
-        },
-        {
-          "date": "2026-11-28",
-          "gust": 56,
-          "rain": 0,
-          "tmax": 20
-        },
-        {
-          "date": "2026-11-29",
-          "gust": 51,
-          "rain": 0,
-          "tmax": 17
-        }
-      ]
+      "days": []
     },
     "possible_blackout": false,
     "power_news": [],
@@ -459,30 +449,30 @@
       "Morgan Vale Road, Pine Valley Station: MORGAN MAIL RD Closed due to flooding over road",
       "Pine Valley Road, Pine Valley Station: PINE VALLEY RD Closed due to flooding over road"
     ],
-    "rooftop_pv_mw": 175,
+    "rooftop_pv_mw": 227,
     "sawater_news": [],
     "watch_and_act": []
   },
   "markets": {
     "AUD/USD": {
       "big_move": false,
-      "change_pct": 0.71,
-      "price": 0.6675
+      "change_pct": 0.79,
+      "price": 0.668
     },
     "Brent oil": {
       "big_move": false,
-      "change_pct": -2.42,
-      "price": 92.32
+      "change_pct": -2.37,
+      "price": 92.37
     },
     "Gold": {
       "big_move": true,
-      "change_pct": 4.85,
-      "price": 3707.3
+      "change_pct": 4.82,
+      "price": 3706.1
     },
     "VIX": {
       "big_move": false,
-      "change_pct": -7.72,
-      "price": 24.73
+      "change_pct": -8.43,
+      "price": 24.54
     }
   },
   "national_shocks": {
@@ -499,8 +489,8 @@
   "news_watch": {
     "ai_hack": [
       "Korea launches emergency response as AI-powered hacking surges - Korea JoongAng Daily",
-      "Switzerland reports first successful AI agent cyberattacks - Bitdefender",
-      "AI-driven hacking threats materialize as data breaches average 100 a month, privacy watchdog calls for investment in AI defense - 머니투데이"
+      "“Swarms of AI agents are already actively attacking.” Cognition CEO warns of a wave of large-scale data leaks in the next six months - dev.ua",
+      "Switzerland reports first successful AI agent cyberattacks - Bitdefender"
     ],
     "airspace": [
       "Iran, US-Israel War Highlights| US strikes Iran in second day of renewed fire; IRGC targets bases in Bahrain & Kuwait - Deccan Herald",
@@ -515,7 +505,7 @@
     "bank_outage": [
       "Cracking a century - ANZ-Roy Morgan New Zealand Consumer Confidence rises into positive territory above 100 - Roy Morgan Research",
       "The only way is down?: CBA pushes 2-3 year term deposit rates lower - Savings.com.au",
-      "Student visa decline ‘damaging universities and economy’ - Research Professional News"
+      "Bizarre rooftop sight sparks theories - News.com.au"
     ],
     "blood": [
       "Donating is in this aviator's blood - news.defence.gov.au",
@@ -525,7 +515,7 @@
     "cables": [
       "Viettel-Singtel consortium breaks ground on submarine cable linking Vietnam, Thailand and Singapore - Theinvestor",
       "Gopalganj may face power cuts if political attacks target facilities - Dhaka Tribune",
-      "Construction starts on first submarine cable project led by Vietnam - VOV.VN"
+      "Work begins on first Vietnam-initiated international submarine fiber-optic cable - Tuoi Tre News | The News Gateway to Vietnam"
     ],
     "chem": [
       "China's Ministry of National Defense releases video on Japan's abandoned chemical weapons on its X account - China Daily Global Edition",
@@ -534,13 +524,13 @@
     ],
     "cloud": [
       "Microsoft Blames Software Flaw, Traffic Surge and Reduced Capacity for Global Microsoft 365 Outage - INDIA New England News",
-      "Microsoft Code Red outage: what its two one-hour goals mean - NeoTeo",
-      "Hackers exploit Microsoft 365 outage - Daily Tribune"
+      "Hackers exploit Microsoft 365 outage - Daily Tribune",
+      "Microsoft Code Red outage: what its two one-hour goals mean - NeoTeo"
     ],
     "cyber_attrib": [
       "Busted! Alleged Aussie hackers linked to TeamPCP arrested in joint AFP-FBI-WAPF operation - Cyber Daily",
-      "Spy agency warns active Russian hackers targeting Australian industry - ABC News & Headlines – Australian Broadcasting Corporation",
-      "NCSC Annual Review 2026 | Understanding the threat | The cyber threat to the UK - National Cyber Security Centre"
+      "FaceStealer Cryptocurrency Theft Scheme | Federal Bureau of Investigation - FBI (.gov)",
+      "Spy agency warns active Russian hackers targeting Australian industry - ABC News & Headlines – Australian Broadcasting Corporation"
     ],
     "cyber_au": [
       "Flight Centre investigates data breach linked to third-party booking system - Australian Cyber Security Magazine",
@@ -549,7 +539,7 @@
     ],
     "cyber_ot": [
       "Shop freezers in seven European countries hit by cyber-attack - BBC",
-      "Who is hacking Europe’s supermarket fridges and freezers, and why? - The Guardian",
+      "UK operation wards off risk of cyber-attack on supermarket fridges and freezers - The Guardian",
       "Supermarket freezers and fridges in Europe hit by cyberattack - Nine.com.au"
     ],
     "cyber_state": [
@@ -560,19 +550,19 @@
     "cyber_supply": [
       "Warning: Actively Exploited Critical Vulnerabilities in Mitel MiCollab, Patch Immediately! - CCB Belgium",
       "Critical Zero-Day Wave Strikes Hypervisors, Edge Appliances, and AI Medical Imaging + Video - Howl.Link",
-      "Danfoss AK-SM8xxA, three vulnerabilities actively exploited - Meteora Web"
+      "CISA Warns of 10 Actively Exploited Vulnerabilities in Juniper, Mitel, Danfoss, and Vates Products - GBHackers News"
     ],
     "deepfake": [
       "Deloitte Suspended From Western Australian Government Contracts Over AI Report Errors - https://www.big4news.com/",
-      "'King is back': Nvidia boss's return sparks fresh AI deepfake deluge - The Korea Times",
-      "Deloitte Banned by WA Government Over AI-Generated Report Errors - OECD AI Policy Observatory"
+      "BEN HARVEY: University merger shows why biggest reforms are often hardest to judge - The Nightly",
+      "'King is back': Nvidia boss's return sparks fresh AI deepfake deluge - The Korea Times"
     ],
     "dieoff": [
       "Since the invasion of Ukraine, 53 mysterious deaths of Russian officials and high-ranking government officials have been recorded - UA.NEWS",
       "Kenyan sect leader convicted of terrorism ᐉ News from Fakti.bg - Curious - Fakti.bg"
     ],
     "flash": [
-      "Why has Northern Minerals (ASX:NTU) entered a trading halt ahead of a capital raising? - Kalkine",
+      "Invictus Energy Enters Trading Halt Pending Capital Raise Announcement - Kalkine",
       "South Korea's KOSDAQ Surges Over 5%, Triggers Buy-Side Circuit Breaker for Second Time in Three Sessions - BigGo Finance",
       "UK stocks poised to join global stock rebound as FTSE 100 rises 2% - Crypto Briefing"
     ],
@@ -583,25 +573,25 @@
     ],
     "gulf_strikes": [
       "Attack on Saudi’s Jazan refinery kills one person, disrupts operations - Al Jazeera",
-      "Smoke seen from space after attack on huge Middle East oil hub - Nine.com.au",
       "Powerful Explosions Reported in Riyadh following Yemeni Missile Attack - تسنیم",
       "Saudis say they intercepted Houthi drone near key port in Jeddah - The Times of Israel",
-      "Houthis Strike Jazan Refinery, Saudi Energy Ministry Confirms 1 Dead - https://houseofsaud.com/"
+      "Houthis Strike Jazan Refinery, Saudi Energy Ministry Confirms 1 Dead - https://houseofsaud.com/",
+      "Dubai Gets Some Airlines Back as Riyadh Waits on Houthis - Skift"
     ],
     "illness": [
       "Mystery illness causes mass hospitalisation of runners - The Nightly",
       "Dr. Siegel on measles comeback, mystery illness outbreak on cruise ship - Fox News",
-      "148 aboard Florida-bound cruise ship sickened by ‘unknown’ GI outbreak: CDC - The Hill"
+      "Zayn Malik hospitalised with mystery illness, forced to cancel upcoming appearances on album release week - Nine.com.au"
     ],
     "masscas": [
       "Thanksgiving Meal Ends in ‘Mass Casualty Incident’ After 18 People Fall Ill - Newsweek",
       "Mass casualty traffic collision in Santiago Canyon - FOX 11 Los Angeles",
-      "Thanksgiving Dinner Disaster Leaves 18 in Hospital in Florida - The Daily Beast"
+      "Health officials reflect on ‘lasting impact,’ heroic response following CFB Wainwright fire - CBC"
     ],
     "mobilisation": [
       "Mobilization in Advance: While the SBI Investigated the Case of AWOL, the Man Reached Mobilization Age - Судово-юридична газета",
       "UK tells 100,000 military reservists to prepare for war amid Russia threats in first since Cold War - The Jerusalem Post",
-      "Britain is preparing military reservists for a possible mobilization due to the threat from Russia - UA.NEWS"
+      "MoD writes to 100,000 veterans as part of Strategic Reserve mobilisation plans - ADS Advance"
     ],
     "national_outage": [
       "Cuba grid collapse: The situation is growing more dire, experts say - ABC News - Breaking News, Latest News and Videos",
@@ -638,7 +628,7 @@
       "Ukraine says strike on major Russian air base damaged five military jets - AeroTime",
       "Ukraine says it struck a major Russian air base, damaging five planes - Arab News",
       "Ukrainian Neptunes Attacked Marinovka Air Base, Which Housed Russian Su-34s - Мілітарний",
-      "Ukrainian naval drones strike a new Russian warship in Libya, and other Mideast news - Boston Herald"
+      "Bahrain Says It Intercepted Iranian Attacks As Tehran Claims Strike On US Base - Radio Free Europe/Radio Liberty"
     ]
   },
   "prediction_markets": [
@@ -980,7 +970,7 @@
           "name": "Mobilisation / reservist reports (Russia / NATO)"
         },
         {
-          "detail": "European defence stocks +6.4% vs market over 5 days",
+          "detail": "European defence stocks +6.2% vs market over 5 days",
           "name": "European defence stocks outperforming (5 days)"
         }
       ],
@@ -1041,12 +1031,11 @@
       "trend": "steady"
     },
     {
-      "band": "Elevated",
-      "convergence": "Signs are converging across 3 separate areas (ai-enabled hacking, cloud services and markets). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: a Chinese sta",
+      "band": "Guarded",
+      "convergence": "Two different kinds of sign are showing together (ai-enabled hacking and cloud services). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, deepfakes of leaders or fake ",
       "domains": [
         "AI-enabled hacking",
-        "Cloud services",
-        "Markets"
+        "Cloud services"
       ],
       "key": "ai",
       "lit": [
@@ -1055,21 +1044,17 @@
           "name": "Reports of AI-driven hacking campaigns"
         },
         {
-          "detail": "KOSDAQ buy-side sidecar (futures market circuit breaker) triggered… Midday sharp rebound, recovers above 690",
-          "name": "Flash crash or exchange trading halt"
-        },
-        {
           "detail": "Microsoft Blames Software Flaw, Traffic Surge and Reduced Capacity for Global Microsoft 365 Outage",
           "name": "Major cloud or AI service outage"
         }
       ],
-      "score": 35,
+      "score": 25,
       "trend": "down"
     }
   ],
   "sectors_relative_5d": {
     "defence_au": 4.89,
-    "defence_eu": 6.38,
+    "defence_eu": 6.24,
     "defence_us": 4.21,
     "pandemic": 0.09
   },
