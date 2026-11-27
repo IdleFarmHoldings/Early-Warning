@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-27T14:32:00Z",
+  "generated_at": "2026-11-27T14:43:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -379,15 +379,24 @@
       "why": "North Korean missile launches are often preceded by navigation warnings; South Korea and Japan report GPS jamming from the North during tense periods."
     },
     {
-      "band": "Low",
-      "convergence": "Only one kind of sign is showing (markets). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and mobilisation / reservist reports (russia / nato).",
+      "band": "Guarded",
+      "convergence": "Two different kinds of sign are showing together (markets and mobilisation). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and us nuclear command aircraft unusual.",
       "domains": [
-        "Markets"
+        "Markets",
+        "Mobilisation"
       ],
       "key": "russia",
       "lit": [
         {
-          "detail": "European defence stocks +6.0% vs market over 5 days",
+          "detail": "Conscription in the Russian Federation: drunk men are being forced to sign up",
+          "domain": "Mobilisation",
+          "id": "mob",
+          "name": "Mobilisation / reservist reports (Russia / NATO)",
+          "short": "Mobilisation / reservist reports",
+          "weight": 15
+        },
+        {
+          "detail": "European defence stocks +6.4% vs market over 5 days",
           "domain": "Markets",
           "id": "def",
           "name": "European defence stocks outperforming (5 days)",
@@ -397,8 +406,8 @@
       ],
       "name": "Russia-NATO escalation",
       "sa_impact": "Indirect: energy and market shock, cyber attacks that can spill over to Australian systems, and nuclear-risk rhetoric.",
-      "score": 5,
-      "trend": "down",
+      "score": 20,
+      "trend": "up",
       "unlit": [
         {
           "domain": "Electronic warfare",
@@ -410,12 +419,6 @@
           "domain": "Military air",
           "id": "air",
           "name": "Unusual military air activity (Eastern Europe)",
-          "weight": 15
-        },
-        {
-          "domain": "Mobilisation",
-          "id": "mob",
-          "name": "Mobilisation / reservist reports (Russia / NATO)",
           "weight": 15
         },
         {
