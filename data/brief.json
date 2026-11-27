@@ -282,22 +282,34 @@
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
     "internet": "RuntimeError: Iran ping-slash24: TimeoutError: The read operation timed out; Iran bgp: TimeoutError: The read operation ",
+    "maritime": "TimeoutError: ",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output=",
     "telecom": "RuntimeError: Telstra ping-slash24: TimeoutError: The read operation timed out; Telstra bgp: TimeoutError: The read oper"
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-27T21:28:00Z",
+  "generated_at": "2026-11-27T21:42:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 57,
+    "Baltic / Kaliningrad": 65,
     "Black Sea": 43,
-    "Israel & Eastern Mediterranean": 0,
-    "Korea": 0,
-    "Persian Gulf": 39,
+    "Israel & Eastern Mediterranean": 4,
+    "Korea": 2,
+    "Persian Gulf": 31,
     "South Australia": 0,
     "Sydney / NSW": 2,
     "Taiwan Strait": 2
   },
   "incidents": [
+    {
+      "attack_reported": true,
+      "confirmed": true,
+      "headlines": [
+        "Lloyds Bank, Bank of Scotland apps hit by major outage",
+        "For banks, reaction time matters as much as prevention when it comes to cyberattacks: OCBC tech head"
+      ],
+      "needs_confirming": false,
+      "severity": "Warning",
+      "target": "Banking & payments"
+    },
     {
       "attack_reported": true,
       "confirmed": true,
@@ -393,18 +405,6 @@
       "attack_reported": false,
       "confirmed": true,
       "headlines": [
-        "Lloyds Bank, Bank of Scotland apps hit by major outage",
-        "Lloyds down: Online banking app not working in latest major outage",
-        "For banks, reaction time matters as much as prevention when it comes to cyberattacks: OCBC tech head"
-      ],
-      "needs_confirming": false,
-      "severity": "Warning",
-      "target": "Banking & payments"
-    },
-    {
-      "attack_reported": false,
-      "confirmed": true,
-      "headlines": [
         "What the Microsoft 365 disruption reveals about employee experience",
         "Cloud Outage Might Change Microsoft (MSFT) Stock Narrative"
       ],
@@ -416,11 +416,11 @@
       "attack_reported": false,
       "confirmed": false,
       "headlines": [
-        "Allstate Outage: Can’t Pay Your Bill? Here’s What Happens to Your Coverage"
+        "Analysts dispel ‘conspiracy theories’ surrounding recent tech outages"
       ],
       "needs_confirming": false,
       "severity": "Info",
-      "target": "Allstate"
+      "target": "Analysts"
     },
     {
       "attack_reported": false,
@@ -448,16 +448,16 @@
       "Mount Lofty Ranges": "High / High"
     },
     "fire_danger_ok": true,
-    "fires_active": 7,
+    "fires_active": 6,
     "fuel": {
-      "brent_aud": 136.9,
-      "change_pct": 0.8,
+      "brent_aud": 136.7,
+      "change_pct": 0.7,
       "pump_cents": 1,
       "week_ago_aud": 135.8
     },
-    "grid_demand_fall_pct": 4.8,
-    "grid_demand_mw": 1145,
-    "grid_demand_usual_mw": 1102,
+    "grid_demand_fall_pct": 10.5,
+    "grid_demand_mw": 1059,
+    "grid_demand_usual_mw": 1066,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
@@ -467,7 +467,26 @@
         "pm25": 9
       },
       "air_word": "Good",
-      "days": []
+      "days": [
+        {
+          "date": "2026-11-28",
+          "gust": 59,
+          "rain": 1,
+          "tmax": 20
+        },
+        {
+          "date": "2026-11-29",
+          "gust": 55,
+          "rain": 1,
+          "tmax": 17
+        },
+        {
+          "date": "2026-11-30",
+          "gust": 38,
+          "rain": 0,
+          "tmax": 20
+        }
+      ]
     },
     "possible_blackout": false,
     "power_news": [],
@@ -486,8 +505,8 @@
   "markets": {
     "AUD/USD": {
       "big_move": false,
-      "change_pct": 0.33,
-      "price": 0.665
+      "change_pct": 0.32,
+      "price": 0.6649
     },
     "Brent oil": {
       "big_move": false,
@@ -562,18 +581,18 @@
     ],
     "cyber_au": [
       "‘Dangerous complacency’: Australia is unprepared for a major hack - The Courier Mail",
-      "Flight Centre hack victims safe to travel on DFAT advice - The Australian",
-      "Flight Centre investigates data breach linked to third-party booking system - Australian Cyber Security Magazine"
+      "Flight Centre investigates data breach linked to third-party booking system - Australian Cyber Security Magazine",
+      "Flight Centre hack victims safe to travel on DFAT advice - The Australian"
     ],
     "cyber_ot": [
-      "Hackers plunged dozens of European supermarkets into chaos. It should worry Australians how easy it was - SMH.com.au",
       "Shop freezers in seven European countries hit by cyber-attack - BBC",
-      "UK operation wards off risk of cyber-attack on supermarket fridges and freezers - The Guardian"
+      "UK operation wards off risk of cyber-attack on supermarket fridges and freezers - The Guardian",
+      "New cyberattack on supermarket fridges sweeps across Europe - Reuters"
     ],
     "cyber_state": [
       "ESET Research: Sandworm behind cyberattack on Poland’s power grid in late 2025 - We Live Security",
       "ESET attributes DynoWiper-powered attack on Poland’s power grid to Russia-aligned Sandworm group - Industrial Cyber",
-      "Russian state hackers likely behind wiper malware attack on Poland’s power grid - The Record from Recorded Future News"
+      "Sandworm Blamed for Wiper Attack on Polish Power Grid - Dark Reading"
     ],
     "cyber_supply": [
       "Cacti zero-day 4HTTP2SHELL, public exploit and fixes - Meteora Web",
@@ -582,8 +601,8 @@
     ],
     "deepfake": [
       "Deepfake Musk, Fake Ransomware Heroes, and a Spy in a Palo Alto Coffee Shop: This Week in Security Was Wild - PCMag Australia",
-      "AI-generated protest video shared thousands of times online - Full Fact",
-      "Doug Bowser posts, then deletes, AI-generated Thanksgiving card while apologizing to the ‘haters’ - Nintendo Wire"
+      "Doug Bowser posts, then deletes, AI-generated Thanksgiving card while apologizing to the ‘haters’ - Nintendo Wire",
+      "AI-generated protest video shared thousands of times online - Full Fact"
     ],
     "dieoff": [
       "Kenyan sect leader convicted of terrorism ᐉ News from Fakti.bg - Curious - Fakti.bg"
@@ -599,11 +618,11 @@
       "Ansett Australia: The Airline That Ran Out Of Altitude - Nett Magazine Online"
     ],
     "gulf_strikes": [
+      "Houthis target Saudi Arabia’s Red Sea ports as strikes escalate - Al Jazeera",
       "Powerful Explosions Reported in Riyadh following Yemeni Missile Attack - تسنیم",
-      "Attack on Saudi’s Jazan refinery kills one person, disrupts operations - Al Jazeera",
       "Saudi-led coalition intercepts Houthi drone targeting Riyadh region - Anadolu Ajansı",
-      "Deadly Houthi Strike Hits Saudi Aramco’s Jizan Refinery - Energy Intelligence",
-      "Saudis say they intercepted Houthi drone near key port in Jeddah - The Times of Israel"
+      "Arab Coalition Intercepts 2 Houthi Drones Targeting Saudi Arabia Nov 27 - https://houseofsaud.com/",
+      "Deadly Houthi Strike Hits Saudi Aramco’s Jizan Refinery - Energy Intelligence"
     ],
     "illness": [
       "Mystery illness causes mass hospitalisation of runners - The Nightly",
@@ -619,9 +638,9 @@
       "UK Bans Export of Key Medicines: November 2026 - CASRAI"
     ],
     "mobilisation": [
+      "“Even Calling Up 100,000 Reservists Would Not Be Enough”: Questions Over Effectiveness of UK Rearmament Plans Amid Training Gaps, Financial Strains and Defense Industry Decline - https://economy.ac/",
       "The British Ministry of Defence is searching for 45,000 missing reservists - UkrMedia News",
-      "NATO Allies Procure 430 Armored Vehicles Amid Russia Tensions - 조선일보",
-      "“Even Calling Up 100,000 Reservists Would Not Be Enough”: Questions Over Effectiveness of UK Rearmament Plans Amid Training Gaps, Financial Strains and Defense Industry Decline - https://economy.ac/"
+      "NATO Allies Procure 430 Armored Vehicles Amid Russia Tensions - 조선일보"
     ],
     "national_outage": [
       "Inside the ‘Black Sky’ plans for a nationwide blackout - Herald.Wales",
@@ -688,9 +707,9 @@
       "yes": 2.6
     },
     {
-      "d24h": -0.6,
+      "d24h": -0.7,
       "q": "US-Iran Hormuz Agreement by November 30, 2026?",
-      "yes": 1.5
+      "yes": 1.4
     },
     {
       "d24h": 0.0,
@@ -743,12 +762,12 @@
       "yes": 11.0
     },
     {
-      "d24h": -0.4,
+      "d24h": -0.5,
       "q": "NATO x Russia military clash by November 30, 2026?",
-      "yes": 1.0
+      "yes": 0.9
     },
     {
-      "d24h": 0.0,
+      "d24h": 0.5,
       "q": "Ukraine agrees not to join NATO by December 31, 2026?",
       "yes": 2.9
     },
@@ -758,9 +777,9 @@
       "yes": 3.5
     },
     {
-      "d24h": 0.0,
+      "d24h": -0.1,
       "q": "Will Russia test a nuclear weapon by December 31 2026?",
-      "yes": 2.0
+      "yes": 1.9
     },
     {
       "d24h": 0.0,
