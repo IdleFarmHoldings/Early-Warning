@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-27T05:22:00Z",
+  "generated_at": "2026-11-27T05:37:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -101,25 +101,14 @@
     },
     {
       "band": "Low",
-      "convergence": "Only one kind of sign is showing (electronic warfare). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
-      "domains": [
-        "Electronic warfare"
-      ],
+      "convergence": "No warning signs are showing. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
+      "domains": [],
       "key": "mideast",
-      "lit": [
-        {
-          "detail": "gps_gulf 43 vs usual 9",
-          "domain": "Electronic warfare",
-          "id": "gps",
-          "name": "GPS jamming spike (Gulf / Israel)",
-          "short": "GPS jamming spike",
-          "weight": 10
-        }
-      ],
+      "lit": [],
       "name": "Middle East war & Gulf shipping",
       "sa_impact": "Fuel: Australia imports most of its fuel, much of it refined from Gulf crude in Asia. Shipping attacks or a Hormuz closure push up prices within days and can cause local shortages.",
-      "score": 10,
-      "trend": "up",
+      "score": 0,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Military air",
@@ -132,6 +121,12 @@
           "id": "air",
           "name": "Unusual military air activity over the region",
           "weight": 15
+        },
+        {
+          "domain": "Electronic warfare",
+          "id": "gps",
+          "name": "GPS jamming spike (Gulf / Israel)",
+          "weight": 10
         },
         {
           "domain": "Communications",
@@ -491,12 +486,21 @@
     },
     {
       "band": "Guarded",
-      "convergence": "Only one kind of sign is showing (mobilisation). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: us nuclear command aircraft unusual, private jets heading to retreat destinations and forecast markets jump on nuclear use.",
+      "convergence": "Two different kinds of sign are showing together (markets and mobilisation). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: us nuclear command aircraft unusual, private jets heading to retreat destinations and forecast markets jump on nuclear use.",
       "domains": [
+        "Markets",
         "Mobilisation"
       ],
       "key": "nuclear",
       "lit": [
+        {
+          "detail": "Gold +4.0%",
+          "domain": "Markets",
+          "id": "gold",
+          "name": "Gold up 4%+ in a day",
+          "short": "Gold up 4%+ in a day",
+          "weight": 10
+        },
         {
           "detail": "UK tells 100,000 military reservists to prepare for war amid Russia threats in first since Cold War",
           "domain": "Mobilisation",
@@ -508,8 +512,8 @@
       ],
       "name": "Nuclear use or alert",
       "sa_impact": "Fallout risk to SA from a northern-hemisphere exchange is very low, but global trade, fuel and finance would be severely disrupted.",
-      "score": 15,
-      "trend": "steady",
+      "score": 25,
+      "trend": "up",
       "unlit": [
         {
           "domain": "Nuclear command",
@@ -539,12 +543,6 @@
           "domain": "Markets",
           "id": "vix",
           "name": "Market fear index above 35",
-          "weight": 10
-        },
-        {
-          "domain": "Markets",
-          "id": "gold",
-          "name": "Gold up 4%+ in a day",
           "weight": 10
         },
         {
@@ -790,11 +788,12 @@
       "why": "Large attacks are usually preceded by quieter steps: a surge in newly exploited flaws in VPNs and firewalls (how state groups like Volt Typhoon get in), scanning of industrial-control systems, a rise in ransomware victims in the target country, and official warnings. Before Russia's 2022 invasion, wiper malware hit Ukraine a day ahead; Chinese groups have been found pre-positioned in US and allied infrastructure."
     },
     {
-      "band": "Guarded",
-      "convergence": "Two different kinds of sign are showing together (ai-enabled hacking and cloud services). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, deepfakes of leaders or fake official alerts and flash crash or exchange trading halt.",
+      "band": "Elevated",
+      "convergence": "Signs are converging across 3 separate areas (ai-enabled hacking, cloud services and markets). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: a Chinese state-sponsored group used an AI agent to carry out 80-90% of an attack on about 30 organisations, at thousands of requests per second. A fake AI image of a Pentagon explosion briefly moved US markets in May 2023, and a deepfake video call of a CFO tricked a company into paying US$25 million in 2024. The likely signature of an AI attack is breadth and speed: many unrelated systems and vendors hit at once, synthetic media of officials, and shocks with no clear human cause. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, deepfakes of leaders or fake official alerts and market fear index jumps 25%+ in a day.",
       "domains": [
         "AI-enabled hacking",
-        "Cloud services"
+        "Cloud services",
+        "Markets"
       ],
       "key": "ai",
       "lit": [
@@ -807,6 +806,14 @@
           "weight": 15
         },
         {
+          "detail": "KOSDAQ buy-side sidecar (futures market circuit breaker) triggered… Midday sharp rebound, recovers above 690",
+          "domain": "Markets",
+          "id": "flash",
+          "name": "Flash crash or exchange trading halt",
+          "short": "Flash crash or exchange trading halt",
+          "weight": 10
+        },
+        {
           "detail": "Microsoft declares ‘Code Red’ in wake of global outage",
           "domain": "Cloud services",
           "id": "cloud",
@@ -817,8 +824,8 @@
       ],
       "name": "AI-enabled attack (non-traditional)",
       "sa_impact": "Not bombs but disruption: hacking at machine speed across banks, telcos, hospitals and the grid at once; fake videos or alerts from leaders causing panic buying or bank runs; or automated market and fraud shocks. Effects would be outages, payment failures and confusion about what is real.",
-      "score": 25,
-      "trend": "steady",
+      "score": 35,
+      "trend": "up",
       "unlit": [
         {
           "domain": "Mass exploitation",
@@ -831,12 +838,6 @@
           "id": "deepfake",
           "name": "Deepfakes of leaders or fake official alerts",
           "weight": 15
-        },
-        {
-          "domain": "Markets",
-          "id": "flash",
-          "name": "Flash crash or exchange trading halt",
-          "weight": 10
         },
         {
           "domain": "Markets",
