@@ -282,23 +282,32 @@
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
     "internet": "RuntimeError: Iran ping-slash24: TimeoutError: The read operation timed out; Iran bgp: TimeoutError: The read operation ",
-    "maritime": "TimeoutError: ",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output=",
     "telecom": "RuntimeError: Telstra ping-slash24: TimeoutError: The read operation timed out; Telstra bgp: TimeoutError: The read oper"
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-27T13:47:00Z",
+  "generated_at": "2026-11-27T14:02:00Z",
   "gps_bad_pct": {
     "Baltic / Kaliningrad": 23,
-    "Black Sea": 31,
-    "Israel & Eastern Mediterranean": 5,
+    "Black Sea": 39,
+    "Israel & Eastern Mediterranean": 0,
     "Korea": 0,
-    "Persian Gulf": 3,
+    "Persian Gulf": 8,
     "South Australia": null,
     "Sydney / NSW": null,
     "Taiwan Strait": 0
   },
   "incidents": [
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "Flight Centre Data Breach Puts Millions Of Customer Records At Risk"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "Flight Centre Data"
+    },
     {
       "attack_reported": true,
       "confirmed": true,
@@ -314,21 +323,21 @@
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
-        "Australian travel giant investigates data breach after customer records accessed"
-      ],
-      "needs_confirming": false,
-      "severity": "Info",
-      "target": "Australian"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
         "Cybersecurity News: ARTEX framework thrives, autonomous cyberattack warning, Australian travel agent breach"
       ],
       "needs_confirming": false,
       "severity": "Info",
       "target": "Cybersecurity News"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "Australian travel giant investigates data breach after customer records accessed"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "Australian"
     },
     {
       "attack_reported": true,
@@ -418,12 +427,31 @@
       "confirmed": true,
       "headlines": [
         "What the Microsoft 365 disruption reveals about employee experience",
-        "Cloud Outage Might Change Microsoft (MSFT) Stock Narrative",
-        "Microsoft Outlook outage impacts governments, courts, hospitals and universities - ABC News"
+        "Cloud Outage Might Change Microsoft (MSFT) Stock Narrative"
       ],
       "needs_confirming": false,
-      "severity": "Warning",
+      "severity": "Info",
       "target": "Microsoft"
+    },
+    {
+      "attack_reported": false,
+      "confirmed": false,
+      "headlines": [
+        "Bouncer who pushed patron down stairs and kicked head stripped of licence"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "Bouncer"
+    },
+    {
+      "attack_reported": false,
+      "confirmed": false,
+      "headlines": [
+        "St Kitts CBI Wind-Down: Last Application Date Is Jan 2029"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "St Kitts CBI"
     }
   ],
   "internet_drop_pct": {},
@@ -450,25 +478,19 @@
       "pump_cents": 2,
       "week_ago_aud": 135.1
     },
-    "grid_demand_fall_pct": 3.7,
-    "grid_demand_mw": 1371,
-    "grid_demand_usual_mw": 1388,
+    "grid_demand_fall_pct": 2.3,
+    "grid_demand_mw": 1390,
+    "grid_demand_usual_mw": 1395,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
       "air": {
-        "aqi": 54,
-        "peak_pm25_48h": 14,
-        "pm25": 14
+        "aqi": 55,
+        "peak_pm25_48h": 13,
+        "pm25": 13
       },
       "air_word": "Good",
       "days": [
-        {
-          "date": "2026-11-27",
-          "gust": 38,
-          "rain": 8,
-          "tmax": 27
-        },
         {
           "date": "2026-11-28",
           "gust": 58,
@@ -480,6 +502,12 @@
           "gust": 54,
           "rain": 0,
           "tmax": 17
+        },
+        {
+          "date": "2026-11-30",
+          "gust": 37,
+          "rain": 0,
+          "tmax": 20
         }
       ]
     },
@@ -505,18 +533,18 @@
     },
     "Brent oil": {
       "big_move": false,
-      "change_pct": -3.15,
-      "price": 91.63
+      "change_pct": -3.34,
+      "price": 91.45
     },
     "Gold": {
       "big_move": false,
-      "change_pct": 3.85,
-      "price": 3672.0
+      "change_pct": 3.91,
+      "price": 3673.9
     },
     "VIX": {
       "big_move": false,
-      "change_pct": -5.15,
-      "price": 25.42
+      "change_pct": -5.6,
+      "price": 25.3
     }
   },
   "national_shocks": {
@@ -542,14 +570,14 @@
       "Nairobi airspace closure: What Kenya Airways passengers need to know about 3 dates - People Daily"
     ],
     "aviation_halt": [
+      "Norse Atlantic once offered $99 flights to Europe. Now it's fighting to avoid being the 2nd big airline casualty of 2026. - Business Insider",
       "American Airlines flights resume after brief IT outage led to nationwide ground stop - ABC News - Breaking News, Latest News and Videos",
-      "FedEx plane overshoots Miami runway: What happened before FAA stopped flights - Cleveland.com",
-      "FAA Issues Ground Stop for Washington National Airport Flights Amid Thunderstorms - Avi-Go"
+      "Days After A Nationwide Ground Stop, 6 In 10 Americans Say Fares Are Air Travel's Biggest Problem - Simple Flying"
     ],
     "bank_outage": [
-      "Aussie shares end week higher as metals rebound - CommBank",
-      "Cracking a century - ANZ-Roy Morgan New Zealand Consumer Confidence rises into positive territory above 100 - Roy Morgan Research",
-      "The only way is down?: CBA pushes 2-3 year term deposit rates lower - Savings.com.au"
+      "Malawi: Network outage disrupts electronic visa (e-Visa) services - VisasNews",
+      "Ransomware group reportedly leaks Chase, Visa, and Mastercard customer data, but not credit card numbers - Mashable",
+      "Bizarre rooftop sight sparks theories - News.com.au"
     ],
     "blood": [
       "Donating is in this aviator's blood - news.defence.gov.au",
@@ -568,7 +596,7 @@
     "cloud": [
       "What the Microsoft 365 disruption reveals about employee experience - Spiceworks",
       "Your backup plan probably runs on the same pipe as your problem - SecurityBrief Australia",
-      "Microsoft Outlook outage impacts governments, courts, hospitals and universities - ABC News - Breaking News, Latest News and Videos"
+      "Microsoft declares ‘Code Red’ in wake of global outage - Cyber Daily"
     ],
     "cyber_attrib": [
       "Busted! Alleged Aussie hackers linked to TeamPCP arrested in joint AFP-FBI-WAPF operation - Cyber Daily",
@@ -581,9 +609,9 @@
       "Flight Centre suffers cyberattack; passport info accessed - Inside Retail Australia"
     ],
     "cyber_ot": [
-      "Shop freezers in seven European countries hit by cyber-attack - BBC",
+      "Hackers plunged dozens of European supermarkets into chaos. It should worry Australians how easy it was - SMH.com.au",
       "UK operation wards off risk of cyber-attack on supermarket fridges and freezers - The Guardian",
-      "Next Plc’s Supplier Hit by Cyberattack in Latest UK Retail Breach - Insurance Journal"
+      "Shop freezers in seven European countries hit by cyber-attack - BBC"
     ],
     "cyber_state": [
       "ESET Research: Sandworm behind cyberattack on Poland’s power grid in late 2025 - We Live Security",
@@ -596,16 +624,16 @@
       "Cacti 4HTTP2ROOT Zero-Day Enables Unauthenticated Remote Code Execution - GBHackers News"
     ],
     "deepfake": [
-      "Deloitte Suspended From Western Australian Government Contracts Over AI Report Errors - https://www.big4news.com/",
       "'King is back': Nvidia boss's return sparks fresh AI deepfake deluge - The Korea Times",
-      "Trump takes down image from his social media platform that depicted him as a Jesus-like figure - ABC News - Breaking News, Latest News and Videos"
+      "Deloitte Suspended From Western Australian Government Contracts Over AI Report Errors - https://www.big4news.com/",
+      "MCMC takes down over 367,000 scam, fake and deepfake posts since 2024 - Malay Mail"
     ],
     "dieoff": [
       "Since the invasion of Ukraine, 53 mysterious deaths of Russian officials and high-ranking government officials have been recorded - UA.NEWS",
       "Kenyan sect leader convicted of terrorism ᐉ News from Fakti.bg - Curious - Fakti.bg"
     ],
     "flash": [
-      "Invictus Energy Enters Trading Halt Pending Capital Raise Announcement - Kalkine",
+      "Why has Northern Minerals (ASX:NTU) entered a trading halt ahead of a capital raising? - Kalkine",
       "First Helium Acquisition Update: Trading Halt Continues as Valuation Remains Pending - ChemAnalyst",
       "South Korea's KOSDAQ Surges Over 5%, Triggers Buy-Side Circuit Breaker for Second Time in Three Sessions - BigGo Finance"
     ],
@@ -629,7 +657,7 @@
     "masscas": [
       "Thanksgiving meal in Florida leads to ‘mass casualty’ food poisoning incident - The Guardian",
       "Thanksgiving Meal Ends in ‘Mass Casualty Incident’ After 18 People Fall Ill - Newsweek",
-      "Mass casualty traffic collision in Santiago Canyon - FOX 11 Los Angeles"
+      "9 separate mass shootings across US leave 9 dead, 60 injured over the weekend - ABC News - Breaking News, Latest News and Videos"
     ],
     "mobilisation": [
       "“Even Calling Up 100,000 Reservists Would Not Be Enough”: Questions Over Effectiveness of UK Rearmament Plans Amid Training Gaps, Financial Strains and Defense Industry Decline - https://economy.ac/",
@@ -639,7 +667,7 @@
     "national_outage": [
       "Cuba grid collapse: The situation is growing more dire, experts say - ABC News - Breaking News, Latest News and Videos",
       "Inside the ‘Black Sky’ plans for a nationwide blackout - Herald.Wales",
-      "Coach restrained from fans after heated display as Eagles pull off stunning NFL comeback win: Wrap - Fox Sports"
+      "Cuba’s National Electric Grid Collapses, Reason Unknown - EnergyNow.com"
     ],
     "outage_au": [
       "How the Microsoft outage is affecting Australia - ABC News & Headlines – Australian Broadcasting Corporation",
@@ -664,8 +692,8 @@
     ],
     "shipping_attacks": [
       "Seafarer seriously injured in Hormuz tanker attack - Seatrade Maritime News",
-      "Three Sinokor VLCCs hit in Strait of Hormuz attacks - Riviera Maritime Media",
       "Iran claims LNG carrier and tankers struck mines in Strait of Hormuz - safety4sea",
+      "Three Sinokor VLCCs hit in Strait of Hormuz attacks - Riviera Maritime Media",
       "Oil tanker said to explode after hitting Hormuz mine - Howl.Link",
       "Oil tanker strikes mine in south of Strait of Hormuz - Mehr News Agency"
     ],
@@ -699,12 +727,12 @@
       "yes": 2.6
     },
     {
-      "d24h": -0.3,
+      "d24h": -0.4,
       "q": "US-Iran Hormuz Agreement by November 30, 2026?",
       "yes": 1.8
     },
     {
-      "d24h": -0.2,
+      "d24h": -0.1,
       "q": "Will the US officially declare war on Iran by December 31, 2026?",
       "yes": 1.6
     },
@@ -749,9 +777,9 @@
       "yes": 0.9
     },
     {
-      "d24h": -0.6,
+      "d24h": -0.3,
       "q": "Ukraine agrees not to join NATO by December 31, 2026?",
-      "yes": 2.6
+      "yes": 2.8
     },
     {
       "d24h": 0.0,
@@ -769,7 +797,7 @@
       "yes": 10.5
     },
     {
-      "d24h": -0.1,
+      "d24h": 0.0,
       "q": "Will the U.S. test a nuclear weapon by December 31 2026?",
       "yes": 2.5
     },
@@ -1021,7 +1049,7 @@
           "name": "Mobilisation / reservist reports (Russia / NATO)"
         },
         {
-          "detail": "European defence stocks +6.6% vs market over 5 days",
+          "detail": "European defence stocks +6.4% vs market over 5 days",
           "name": "European defence stocks outperforming (5 days)"
         }
       ],
@@ -1105,7 +1133,7 @@
   ],
   "sectors_relative_5d": {
     "defence_au": 4.89,
-    "defence_eu": 6.64,
+    "defence_eu": 6.37,
     "defence_us": 4.21,
     "pandemic": 0.09
   },
