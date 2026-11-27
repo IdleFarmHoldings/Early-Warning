@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-27T06:47:00Z",
+  "generated_at": "2026-11-27T07:02:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -108,7 +108,7 @@
       "name": "Middle East war & Gulf shipping",
       "sa_impact": "Fuel: Australia imports most of its fuel, much of it refined from Gulf crude in Asia. Shipping attacks or a Hormuz closure push up prices within days and can cause local shortages.",
       "score": 0,
-      "trend": "down",
+      "trend": "steady",
       "unlit": [
         {
           "domain": "Military air",
@@ -486,12 +486,21 @@
     },
     {
       "band": "Guarded",
-      "convergence": "Only one kind of sign is showing (mobilisation). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: us nuclear command aircraft unusual, private jets heading to retreat destinations and forecast markets jump on nuclear use.",
+      "convergence": "Two different kinds of sign are showing together (markets and mobilisation). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: us nuclear command aircraft unusual, private jets heading to retreat destinations and forecast markets jump on nuclear use.",
       "domains": [
+        "Markets",
         "Mobilisation"
       ],
       "key": "nuclear",
       "lit": [
+        {
+          "detail": "Gold +4.1%",
+          "domain": "Markets",
+          "id": "gold",
+          "name": "Gold up 4%+ in a day",
+          "short": "Gold up 4%+ in a day",
+          "weight": 10
+        },
         {
           "detail": "UK tells 100,000 military reservists to prepare for war amid Russia threats in first since Cold War",
           "domain": "Mobilisation",
@@ -503,8 +512,8 @@
       ],
       "name": "Nuclear use or alert",
       "sa_impact": "Fallout risk to SA from a northern-hemisphere exchange is very low, but global trade, fuel and finance would be severely disrupted.",
-      "score": 15,
-      "trend": "steady",
+      "score": 25,
+      "trend": "up",
       "unlit": [
         {
           "domain": "Nuclear command",
@@ -534,12 +543,6 @@
           "domain": "Markets",
           "id": "vix",
           "name": "Market fear index above 35",
-          "weight": 10
-        },
-        {
-          "domain": "Markets",
-          "id": "gold",
-          "name": "Gold up 4%+ in a day",
           "weight": 10
         },
         {
