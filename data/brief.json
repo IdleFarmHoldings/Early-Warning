@@ -281,22 +281,21 @@
   ],
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
-    "internet": "RuntimeError: Iran ping-slash24: TimeoutError: The read operation timed out; Iran bgp: TimeoutError: The read operation ",
-    "maritime": "TimeoutError: ",
+    "internet": "RuntimeError: Iran ping-slash24: TimeoutError: The read operation timed out; Iran bgp: HTTPError: HTTP Error 500: Intern",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output=",
     "telecom": "RuntimeError: Telstra ping-slash24: TimeoutError: The read operation timed out; Telstra bgp: TimeoutError: The read oper"
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-27T16:32:00Z",
+  "generated_at": "2026-11-27T16:48:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 25,
-    "Black Sea": 21,
-    "Israel & Eastern Mediterranean": 8,
+    "Baltic / Kaliningrad": 19,
+    "Black Sea": 27,
+    "Israel & Eastern Mediterranean": 10,
     "Korea": 0,
-    "Persian Gulf": 2,
+    "Persian Gulf": 20,
     "South Australia": null,
     "Sydney / NSW": null,
-    "Taiwan Strait": 2
+    "Taiwan Strait": 3
   },
   "incidents": [
     {
@@ -353,6 +352,16 @@
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
+        "Israel's health care system on high alert: overseas access blocked amid fears of massive cyberattack"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "Israel's"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
         "AI models used fake identities to trick humans in cyberattack: Officials - ABC News"
       ],
       "needs_confirming": false,
@@ -363,8 +372,7 @@
       "attack_reported": true,
       "confirmed": true,
       "headlines": [
-        "Switzerland Confirms First Cyberattacks Involving AI Agents Against Multiple Organizations",
-        "Switzerland Confirms AI-Assisted Cyberattacks Breached Critical Infrastructure Operators"
+        "Switzerland Confirms First Cyberattacks Involving AI Agents Against Multiple Organizations"
       ],
       "needs_confirming": false,
       "severity": "Info",
@@ -384,21 +392,21 @@
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
-        "Israel's health care system on high alert: overseas access blocked amid fears of massive cyberattack"
+        "Korea launches emergency response as data breach reports more than double"
       ],
       "needs_confirming": false,
       "severity": "Info",
-      "target": "Israel's"
+      "target": "Korea"
     },
     {
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
-        "FIFA data breach exposes personal and business information"
+        "GitHub RCE Vulnerability Allows Hackers to Compromise Servers With a Single Git Push Command"
       ],
       "needs_confirming": false,
       "severity": "Info",
-      "target": "FIFA"
+      "target": "GitHub RCE Vulnerability"
     },
     {
       "attack_reported": false,
@@ -433,6 +441,16 @@
       "needs_confirming": false,
       "severity": "Info",
       "target": "Thanksgiving"
+    },
+    {
+      "attack_reported": false,
+      "confirmed": false,
+      "headlines": [
+        "St Kitts CBI Wind-Down: Last Application Date Is Jan 2029"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "St Kitts CBI"
     }
   ],
   "internet_drop_pct": {},
@@ -453,14 +471,14 @@
     "fire_danger_ok": true,
     "fires_active": 6,
     "fuel": {
-      "brent_aud": 138.2,
-      "change_pct": 2.2,
+      "brent_aud": 138.1,
+      "change_pct": 2.1,
       "pump_cents": 2,
       "week_ago_aud": 135.2
     },
-    "grid_demand_fall_pct": -1.7,
-    "grid_demand_mw": 1338,
-    "grid_demand_usual_mw": 1339,
+    "grid_demand_fall_pct": 0.9,
+    "grid_demand_mw": 1326,
+    "grid_demand_usual_mw": 1338,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
@@ -470,26 +488,7 @@
         "pm25": 13
       },
       "air_word": "Good",
-      "days": [
-        {
-          "date": "2026-11-28",
-          "gust": 58,
-          "rain": 0,
-          "tmax": 20
-        },
-        {
-          "date": "2026-11-29",
-          "gust": 54,
-          "rain": 0,
-          "tmax": 17
-        },
-        {
-          "date": "2026-11-30",
-          "gust": 37,
-          "rain": 0,
-          "tmax": 20
-        }
-      ]
+      "days": []
     },
     "possible_blackout": false,
     "power_news": [],
@@ -508,23 +507,23 @@
   "markets": {
     "AUD/USD": {
       "big_move": false,
-      "change_pct": 0.24,
-      "price": 0.6644
+      "change_pct": 0.3,
+      "price": 0.6648
     },
     "Brent oil": {
       "big_move": false,
-      "change_pct": -4.59,
-      "price": 90.27
+      "change_pct": -4.87,
+      "price": 90.0
     },
     "Gold": {
       "big_move": false,
-      "change_pct": 3.2,
-      "price": 3649.0
+      "change_pct": 3.3,
+      "price": 3652.6
     },
     "VIX": {
       "big_move": false,
-      "change_pct": -5.11,
-      "price": 25.43
+      "change_pct": -6.87,
+      "price": 24.96
     }
   },
   "national_shocks": {
@@ -542,12 +541,12 @@
     "ai_hack": [
       "Korea launches emergency response as AI-powered hacking surges - Korea JoongAng Daily",
       "Report Finds Growing Interest in AI-Powered Cybercrime Tools - Petri IT Knowledgebase",
-      "“Swarms of AI agents are already actively attacking.” Cognition CEO warns of a wave of large-scale data leaks in the next six months - dev.ua"
+      "Israel's health care system on high alert: overseas access blocked amid fears of massive cyberattack - Ynetnews"
     ],
     "airspace": [
+      "Nairobi Airspace Closed for Military Activity Today and on 4 and 12 December, With Notice Reaching Public Only Hours Ahead - Avi-Go",
       "Explainer: Hours of Notice for a Closed Sky, What Nairobi's Airspace Shutdowns Could Cost - Dawan Africa",
-      "Be prepared: Kenya Airways issues 2-day travel advisory to passengers - Tuko News",
-      "Nairobi airspace closure: What Kenya Airways passengers need to know about 3 dates - People Daily"
+      "Be prepared: Kenya Airways issues 2-day travel advisory to passengers - Tuko News"
     ],
     "aviation_halt": [
       "Norse Atlantic files for bankruptcy and halts all flights - Business Day",
@@ -556,8 +555,8 @@
     ],
     "bank_outage": [
       "Denials soar for ‘extraordinary ability’ visa in program once used by Melania Trump - The Washington Post",
-      "Aussie shares end week higher as metals rebound - CommBank",
-      "Cracking a century - ANZ-Roy Morgan New Zealand Consumer Confidence rises into positive territory above 100 - Roy Morgan Research"
+      "Cracking a century - ANZ-Roy Morgan New Zealand Consumer Confidence rises into positive territory above 100 - Roy Morgan Research",
+      "The only way is down?: CBA pushes 2-3 year term deposit rates lower - Savings.com.au"
     ],
     "blood": [
       "Donating is in this aviator's blood - news.defence.gov.au",
@@ -570,8 +569,8 @@
     ],
     "chem": [
       "Japan's abandoned chemical weapons pose long-term threat to health, environment: experts - 巴士的報",
-      "China's Ministry of National Defense releases video on Japan's abandoned chemical weapons on its X account - China Daily Global Edition",
-      "Japan's Abandoned Chemical Weapons: Beijing urges Tokyo to help in efforts to dispose of wartime chemical weapons still remaining in China - CGTN"
+      "EU sanctions target chemical weapons crackdown - Yeni Safak English",
+      "China's Ministry of National Defense releases video on Japan's abandoned chemical weapons on its X account - China Daily Global Edition"
     ],
     "cloud": [
       "What the Microsoft 365 disruption reveals about employee experience - Spiceworks",
@@ -600,13 +599,13 @@
     ],
     "cyber_supply": [
       "Warning: Actively Exploited Critical Vulnerabilities in Mitel MiCollab, Patch Immediately! - CCB Belgium",
-      "Warning: Actively Exploited OS Command Injection in Juniper Session Smart Conductor, Patch Immediately! - CCB Belgium",
-      "CVE-2026-132165: Drupal Fail2Install RCE Exploited in the Wild - SOC Prime"
+      "Is your website at risk? Sri Lanka CERT issues urgent advisory - Newswire",
+      "Warning: Actively Exploited OS Command Injection in Juniper Session Smart Conductor, Patch Immediately! - CCB Belgium"
     ],
     "deepfake": [
-      "'King is back': Nvidia boss's return sparks fresh AI deepfake deluge - The Korea Times",
-      "Trump takes down image from his social media platform that depicted him as a Jesus-like figure - ABC News - Breaking News, Latest News and Videos",
-      "iProov Secures £45 Million UK Government Contract for GOV.UK One Login Biometric Verification - FF News"
+      "Deepfake Musk, Fake Ransomware Heroes, and a Spy in a Palo Alto Coffee Shop: This Week in Security Was Wild - PCMag Australia",
+      "AI-generated protest video shared thousands of times online - Full Fact",
+      "AI-generated video falsely claims tourist apologised to Daura Emir over alleged assault - FactCheckHub"
     ],
     "dieoff": [
       "Since the invasion of Ukraine, 53 mysterious deaths of Russian officials and high-ranking government officials have been recorded - UA.NEWS",
@@ -620,7 +619,7 @@
     "fuel_au": [
       "CRISIS-TESTED MATT HALLIDAY NEVER LETS A FUEL SHOCK GO TO WASTE - Australian Association of Convenience Stores",
       "Niger fuel shortage leads Agadez to cap sales at the pump - DNE Africa",
-      "Government expected to update fuel situation today - FBC News"
+      "Philippines declares national energy emergency as Asia risks energy crisis amid Iran war - ABC News - Breaking News, Latest News and Videos"
     ],
     "gulf_strikes": [
       "Houthis target Saudi Arabia’s Red Sea ports as strikes escalate - Al Jazeera",
@@ -637,17 +636,17 @@
     "masscas": [
       "Thanksgiving meal in Florida leads to mass food poisoning incident - The Guardian",
       "Thanksgiving Meal Ends in ‘Mass Casualty Incident’ After 18 People Fall Ill - Newsweek",
-      "Thanksgiving luncheon sickens 18 in suspected mass food poisoning - upi"
+      "Company's Thanksgiving Lunch Doesn't Go as Planned - Newser"
     ],
     "mobilisation": [
-      "NATO Allies Procure 430 Armored Vehicles Amid Russia Tensions - 조선일보",
       "Russian police grab men for minor offenses, force them to sign Defense Ministry contracts - The New Voice of Ukraine",
-      "“Even Calling Up 100,000 Reservists Would Not Be Enough”: Questions Over Effectiveness of UK Rearmament Plans Amid Training Gaps, Financial Strains and Defense Industry Decline - https://economy.ac/"
+      "The Military Commissariat Mobilized a Man with a Height of 146 cm: His Medical Record \"Grew\" to 150 cm and He Was Deemed Fit for Service - Судово-юридична газета",
+      "NATO Allies Procure 430 Armored Vehicles Amid Russia Tensions - 조선일보"
     ],
     "national_outage": [
       "Inside the ‘Black Sky’ plans for a nationwide blackout - Herald.Wales",
       "Cuba grid collapse: The situation is growing more dire, experts say - ABC News - Breaking News, Latest News and Videos",
-      "Cuba’s National Electric Grid Collapses, Reason Unknown - EnergyNow.com"
+      "'Tipping point': Humanitarian crisis in Cuba continues to grow, aid group director says - ABC News - Breaking News, Latest News and Videos"
     ],
     "outage_au": [
       "How the Microsoft outage is affecting Australia - ABC News & Headlines – Australian Broadcasting Corporation",
@@ -672,10 +671,17 @@
     ],
     "shipping_attacks": [
       "Seafarer seriously injured in Hormuz tanker attack - Seatrade Maritime News",
-      "Three Sinokor VLCCs hit in Strait of Hormuz attacks - Riviera Maritime Media",
       "Iran claims LNG carrier and tankers struck mines in Strait of Hormuz - safety4sea",
+      "Three Sinokor VLCCs hit in Strait of Hormuz attacks - Riviera Maritime Media",
       "Oil tanker strikes mine in south of Strait of Hormuz - Mehr News Agency",
       "IRGC Claims 3 Oil Tankers Hit Mines in Hormuz Under US Escort - https://houseofsaud.com/"
+    ],
+    "strikes": [
+      "Trump downplays Russia, China support for Iran during talks with US troops - Al Jazeera",
+      "Ukraine strikes Savasleyka air base - Key Aero",
+      "Iran Warns of Retaliation if US Forces Attack - ASHARQ AL-AWSAT English",
+      "Ukraine says strike on major Russian air base damaged five military jets - AeroTime",
+      "Ukraine says it struck a major Russian air base, damaging five planes - Arab News"
     ]
   },
   "prediction_markets": [
@@ -755,7 +761,7 @@
       "yes": 0.9
     },
     {
-      "d24h": 0.2,
+      "d24h": 0.6,
       "q": "Ukraine agrees not to join NATO by December 31, 2026?",
       "yes": 3.0
     },
@@ -1009,25 +1015,20 @@
       "trend": "steady"
     },
     {
-      "band": "Guarded",
-      "convergence": "Two different kinds of sign are showing together (markets and mobilisation). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and us nuc",
+      "band": "Low",
+      "convergence": "Only one kind of sign is showing (markets). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and mobilisation / reservist reports (russia / nato).",
       "domains": [
-        "Markets",
-        "Mobilisation"
+        "Markets"
       ],
       "key": "russia",
       "lit": [
         {
-          "detail": "Conscription in the Russian Federation: drunk men are being forced to sign up",
-          "name": "Mobilisation / reservist reports (Russia / NATO)"
-        },
-        {
-          "detail": "European defence stocks +5.8% vs market over 5 days",
+          "detail": "European defence stocks +6.2% vs market over 5 days",
           "name": "European defence stocks outperforming (5 days)"
         }
       ],
-      "score": 20,
-      "trend": "up"
+      "score": 5,
+      "trend": "down"
     },
     {
       "band": "Low",
@@ -1106,9 +1107,9 @@
   ],
   "sectors_relative_5d": {
     "defence_au": 4.89,
-    "defence_eu": 5.84,
-    "defence_us": 1.59,
-    "pandemic": 1.72
+    "defence_eu": 6.18,
+    "defence_us": 1.5,
+    "pandemic": 1.93
   },
   "status_pages": [
     {
