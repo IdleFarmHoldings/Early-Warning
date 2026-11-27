@@ -1,7 +1,13 @@
 {
   "about": "Short form of latest.json + indicators.json for the analysis run. Links and raw samples removed.",
   "acsc": [],
-  "aircraft_flags": {},
+  "aircraft_flags": {
+    "gps_gulf": {
+      "median": 9,
+      "status": "ANOMALY",
+      "value": 34
+    }
+  },
   "analyst": {
     "ASPI Strategist": [
       "Kasandigan – the Philippines is pivotal to Australian strategy as never before",
@@ -287,18 +293,30 @@
     "telecom": "RuntimeError: Telstra ping-slash24: TimeoutError: The read operation timed out; Telstra bgp: TimeoutError: The read oper"
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-27T05:37:00Z",
+  "generated_at": "2026-11-27T05:52:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 59,
+    "Baltic / Kaliningrad": 60,
     "Black Sea": null,
-    "Israel & Eastern Mediterranean": 5,
+    "Israel & Eastern Mediterranean": 10,
     "Korea": 1,
-    "Persian Gulf": 4,
-    "South Australia": 2,
-    "Sydney / NSW": 1,
-    "Taiwan Strait": 1
+    "Persian Gulf": 34,
+    "South Australia": 4,
+    "Sydney / NSW": 5,
+    "Taiwan Strait": 3
   },
   "incidents": [
+    {
+      "attack_reported": true,
+      "confirmed": true,
+      "headlines": [
+        "Microsoft Code Red outage: what its two one-hour goals mean",
+        "Hackers exploit Microsoft 365 outage",
+        "Microsoft Links China, North Korea Hackers to ARTEX"
+      ],
+      "needs_confirming": false,
+      "severity": "Warning",
+      "target": "Microsoft"
+    },
     {
       "attack_reported": true,
       "confirmed": false,
@@ -319,28 +337,6 @@
       "needs_confirming": false,
       "severity": "Info",
       "target": "Flight Centre"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": true,
-      "headlines": [
-        "Switzerland Confirms Five AI-Powered Cyberattacks, Four Successfully Breach Computer Systems"
-      ],
-      "needs_confirming": false,
-      "severity": "Info",
-      "target": "Switzerland"
-    },
-    {
-      "attack_reported": false,
-      "confirmed": true,
-      "headlines": [
-        "Microsoft Code Red outage: what its two one-hour goals mean",
-        "Hackers exploit Microsoft 365 outage",
-        "Microsoft declares ‘Code Red’ in wake of global outage"
-      ],
-      "needs_confirming": false,
-      "severity": "Warning",
-      "target": "Microsoft"
     },
     {
       "attack_reported": false,
@@ -364,20 +360,20 @@
     "ed_very_busy": [],
     "fire_ban_districts": [],
     "fire_danger": {
-      "Adelaide Metropolitan": "No Rating / No Rating",
-      "Mount Lofty Ranges": "Moderate / Moderate"
+      "Adelaide Metropolitan": "No Rating / Moderate",
+      "Mount Lofty Ranges": "Moderate / High"
     },
     "fire_danger_ok": true,
-    "fires_active": 12,
+    "fires_active": 13,
     "fuel": {
       "brent_aud": 138.3,
       "change_pct": 2.7,
       "pump_cents": 2,
       "week_ago_aud": 134.6
     },
-    "grid_demand_fall_pct": -7.1,
-    "grid_demand_mw": 979,
-    "grid_demand_usual_mw": 596,
+    "grid_demand_fall_pct": 2.8,
+    "grid_demand_mw": 952,
+    "grid_demand_usual_mw": 690,
     "grid_lor_level": 0,
     "nearby_incidents": [
       {
@@ -394,16 +390,16 @@
         "dist": "25-60 km",
         "event": "Grass Fire",
         "headline": "REDBANKS : GRASS FIRE",
-        "id": "F-261127-0076 REEVES PLAINS, LYNCH RD / VERNER RD  (GRASS FI",
+        "id": "F-261127-0076 Reeves Plains, Lynch Rd / Verner Rd  (Grass Fi",
         "level": null,
         "notify": false
       }
     ],
     "outlook": {
       "air": {
-        "aqi": 48,
+        "aqi": 49,
         "peak_pm25_48h": 12,
-        "pm25": 11
+        "pm25": 10
       },
       "air_word": "Good",
       "days": [
@@ -444,18 +440,18 @@
   "markets": {
     "AUD/USD": {
       "big_move": false,
-      "change_pct": 0.73,
-      "price": 0.6676
+      "change_pct": 0.7,
+      "price": 0.6674
     },
     "Brent oil": {
       "big_move": false,
-      "change_pct": -1.74,
-      "price": 92.96
+      "change_pct": -1.97,
+      "price": 92.75
     },
     "Gold": {
       "big_move": true,
-      "change_pct": 4.0,
-      "price": 3677.4
+      "change_pct": 4.12,
+      "price": 3681.4
     },
     "VIX": {
       "big_move": false,
@@ -477,8 +473,8 @@
   "news_watch": {
     "ai_hack": [
       "Switzerland reports first successful AI agent cyberattacks - Bitdefender",
-      "Switzerland confirms AI-assisted cyberattacks on critical infrastructure - Resilience Media",
-      "Microsoft Links China, North Korea Hackers to ARTEX - The Defiant"
+      "Switzerland, Canada and Italy Warn AI Agents Are Hacking Networks Faster - Daily Voice Of Asia",
+      "AI-driven hacking threats materialize as data breaches average 100 a month, privacy watchdog calls for investment in AI defense - 머니투데이"
     ],
     "airspace": [
       "Iran, US-Israel War Highlights| US strikes Iran in second day of renewed fire; IRGC targets bases in Bahrain & Kuwait - Deccan Herald",
@@ -502,7 +498,7 @@
     "cables": [
       "Viettel-Singtel consortium breaks ground on submarine cable linking Vietnam, Thailand and Singapore - Theinvestor",
       "Gopalganj may face power cuts if political attacks target facilities - Dhaka Tribune",
-      "Work begins on first Vietnam-initiated international submarine fiber-optic cable - Tuoi Tre News | The News Gateway to Vietnam"
+      "Construction starts on first submarine cable project led by Vietnam - VOV.VN"
     ],
     "chem": [
       "China's Ministry of National Defense releases video on Japan's abandoned chemical weapons on its X account - China Daily Global Edition",
@@ -510,9 +506,9 @@
       "OPCW Statement on Ukraine Chemical Weapons Use - CASRAI"
     ],
     "cloud": [
-      "Your backup plan probably runs on the same pipe as your problem - SecurityBrief Australia",
-      "Microsoft declares ‘Code Red’ in wake of global outage - Cyber Daily",
-      "Microsoft Blames Software Flaw, Traffic Surge and Reduced Capacity for Global Microsoft 365 Outage - INDIA New England News"
+      "Microsoft Blames Software Flaw, Traffic Surge and Reduced Capacity for Global Microsoft 365 Outage - INDIA New England News",
+      "Hackers exploit Microsoft 365 outage - Daily Tribune",
+      "Microsoft Code Red outage: what its two one-hour goals mean - NeoTeo"
     ],
     "cyber_attrib": [
       "FBI warns hackers weaponizing ARTEX AI framework to automate attacks on energy, manufacturing, telecom - Industrial Cyber",
@@ -525,9 +521,9 @@
       "Australian travel giant investigates data breach after customer records accessed - The Area News"
     ],
     "cyber_ot": [
-      "UK operation wards off risk of cyber-attack on supermarket fridges and freezers - The Guardian",
       "Shop freezers in seven European countries hit by cyber-attack - BBC",
-      "Next Plc’s Supplier Hit by Cyberattack in Latest UK Retail Breach - Insurance Journal"
+      "UK operation wards off risk of cyber-attack on supermarket fridges and freezers - The Guardian",
+      "Supermarket freezers and fridges in Europe hit by cyberattack - Nine.com.au"
     ],
     "cyber_state": [
       "ESET Research: Sandworm behind cyberattack on Poland’s power grid in late 2025 - We Live Security",
@@ -537,12 +533,7 @@
     "cyber_supply": [
       "Warning: Actively Exploited Critical Vulnerabilities in Mitel MiCollab, Patch Immediately! - CCB Belgium",
       "Critical Zero-Day Wave Strikes Hypervisors, Edge Appliances, and AI Medical Imaging + Video - Howl.Link",
-      "CISA Warns of 10 Actively Exploited Vulnerabilities in Juniper, Mitel, Danfoss, and Vates Products - GBHackers News"
-    ],
-    "deepfake": [
-      "Deloitte Suspended From Western Australian Government Contracts Over AI Report Errors - https://www.big4news.com/",
-      "'King is back': Nvidia boss's return sparks fresh AI deepfake deluge - The Korea Times",
-      "Video of Trump slamming Papua New Guinea's politicians is an AI-fake - www.aap.com.au"
+      "Danfoss AK-SM8xxA, three vulnerabilities actively exploited - Meteora Web"
     ],
     "dieoff": [
       "Since the invasion of Ukraine, 53 mysterious deaths of Russian officials and high-ranking government officials have been recorded - UA.NEWS"
@@ -559,10 +550,10 @@
     ],
     "gulf_strikes": [
       "Attack on Saudi’s Jazan refinery kills one person, disrupts operations - Al Jazeera",
-      "Smoke seen from space after attack on huge Middle East oil hub - Nine.com.au",
       "Powerful Explosions Reported in Riyadh following Yemeni Missile Attack - تسنیم",
       "Yemen's Houthis claim attack on Saudi Arabia's largest refinery - Al-Monitor",
-      "Houthis Strike Jazan Refinery, Saudi Energy Ministry Confirms 1 Dead - https://houseofsaud.com/"
+      "Houthis Strike Jazan Refinery, Saudi Energy Ministry Confirms 1 Dead - https://houseofsaud.com/",
+      "Attack on Saudi Aramco’s Jazan refinery kills worker, halts some operations - NBC News"
     ],
     "illness": [
       "Mystery illness causes mass hospitalisation of runners - The Nightly",
@@ -575,9 +566,9 @@
       "Thanksgiving Dinner Disaster Leaves 18 in Hospital in Florida - The Daily Beast"
     ],
     "mobilisation": [
+      "In Poltava region, a 24-year-old was conscripted despite not being liable for military service – the Territorial Recruitment Center failed to prove the legality of mobilization in court - Судово-юридична газета",
       "UK tells 100,000 military reservists to prepare for war amid Russia threats in first since Cold War - The Jerusalem Post",
-      "MoD writes to 100,000 veterans as part of Strategic Reserve mobilisation plans - ADS Advance",
-      "Britain Contacts 100,000 Former Troops to Prepare for Possible War—First Time Since the Cold War - UNITED24 Media"
+      "Britain is preparing military reservists for a possible mobilization due to the threat from Russia - UA.NEWS"
     ],
     "national_outage": [
       "Coach restrained from fans after heated display as Eagles pull off stunning Thanksgiving comeback win - Fox Sports",
@@ -587,12 +578,12 @@
     "outage_au": [
       "How the Microsoft outage is affecting Australia - ABC News & Headlines – Australian Broadcasting Corporation",
       "Microsoft ‘deeply sorry’ for global outage, rules out cyberattack and AI - Nine.com.au",
-      "Telstra mobile outage disrupts services across Australia - Australian Cyber Security Magazine"
+      "Microsoft exec reveals details of outage - News.com.au"
     ],
     "reservists": [
+      "UK reservists contacted as 'threat environment' rises, Streeting says - BBC",
       "UK tells 100,000 strategic reservists to prepare for possible call-up: Report - Anadolu Ajansı",
-      "MoD Strategic Reserve Call-Up: UK Urges 100,000 Reservists to Update Details and Join Exercises - Мілітарний",
-      "UK Reservist Call-Up Letters Raise Fears of Russia War - Военное дело"
+      "MoD Strategic Reserve Call-Up: UK Urges 100,000 Reservists to Update Details and Join Exercises - Мілітарний"
     ],
     "ru_signals": [
       "NATO intern suspected of spying to remain in jail in Belgium after appeal - News24"
@@ -610,14 +601,14 @@
       "Three Sinokor VLCCs hit in Strait of Hormuz attacks - Riviera Maritime Media",
       "Middle East latest: Two Italians killed in Iranian drone attack in Kuwait - The National",
       "IRGC Claims 3 Oil Tankers Hit Mines in Hormuz Under US Escort - https://houseofsaud.com/",
-      "ADNOC L&S says one missing, 11 injured in Strait of Hormuz ship attack - Baird Maritime"
+      "UKMTO says 2 tankers struck in Hormuz, as Iran says ship on fire - The New Arab"
     ],
     "strikes": [
       "Iran Warns of Retaliation if US Forces Attack - ASHARQ AL-AWSAT English",
       "Ukraine says strike on major Russian air base damaged five military jets - AeroTime",
       "Ukraine says it struck a major Russian air base, damaging five planes - Arab News",
       "Ukrainian Neptunes Attacked Marinovka Air Base, Which Housed Russian Su-34s - Мілітарний",
-      "Ukrainian naval drones strike a new Russian warship in Libya, and other Mideast news - Boston Herald"
+      "Bahrain Says It Intercepted Iranian Attacks As Tehran Claims Strike On US Base - Radio Free Europe/Radio Liberty"
     ]
   },
   "prediction_markets": [
@@ -667,7 +658,7 @@
       "yes": 2.5
     },
     {
-      "d24h": 0.2,
+      "d24h": 0.1,
       "q": "Will China invade Taiwan by June 30, 2027?",
       "yes": 4.5
     },
@@ -697,9 +688,9 @@
       "yes": 1.4
     },
     {
-      "d24h": -0.6,
+      "d24h": -0.8,
       "q": "Ukraine agrees not to join NATO by December 31, 2026?",
-      "yes": 2.9
+      "yes": 2.7
     },
     {
       "d24h": -0.5,
@@ -934,9 +925,19 @@
     },
     {
       "band": "Low",
+      "convergence": "Only one kind of sign is showing (electronic warfare). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
+      "domains": [
+        "Electronic warfare"
+      ],
       "key": "mideast",
-      "score": 0,
-      "trend": "down"
+      "lit": [
+        {
+          "detail": "gps_gulf 34 vs usual 9",
+          "name": "GPS jamming spike (Gulf / Israel)"
+        }
+      ],
+      "score": 10,
+      "trend": "up"
     },
     {
       "band": "Low",
@@ -976,7 +977,7 @@
       "key": "nuclear",
       "lit": [
         {
-          "detail": "Gold +4.0%",
+          "detail": "Gold +4.1%",
           "name": "Gold up 4%+ in a day"
         },
         {
@@ -985,7 +986,7 @@
         }
       ],
       "score": 25,
-      "trend": "up"
+      "trend": "steady"
     },
     {
       "band": "Low",
@@ -1016,30 +1017,25 @@
       "trend": "steady"
     },
     {
-      "band": "Elevated",
-      "convergence": "Signs are converging across 3 separate areas (ai-enabled hacking, cloud services and markets). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: a Chinese sta",
+      "band": "Guarded",
+      "convergence": "Two different kinds of sign are showing together (ai-enabled hacking and cloud services). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, deepfakes of leaders or fake ",
       "domains": [
         "AI-enabled hacking",
-        "Cloud services",
-        "Markets"
+        "Cloud services"
       ],
       "key": "ai",
       "lit": [
         {
-          "detail": "AI-driven hacking threats materialize as data breaches average 100 a month, privacy watchdog calls for investment in AI defense",
+          "detail": "Switzerland, Canada and Italy Warn AI Agents Are Hacking Networks Faster",
           "name": "Reports of AI-driven hacking campaigns"
         },
         {
-          "detail": "KOSDAQ buy-side sidecar (futures market circuit breaker) triggered… Midday sharp rebound, recovers above 690",
-          "name": "Flash crash or exchange trading halt"
-        },
-        {
-          "detail": "Microsoft declares ‘Code Red’ in wake of global outage",
+          "detail": "Microsoft Blames Software Flaw, Traffic Surge and Reduced Capacity for Global Microsoft 365 Outage",
           "name": "Major cloud or AI service outage"
         }
       ],
-      "score": 35,
-      "trend": "up"
+      "score": 25,
+      "trend": "down"
     }
   ],
   "sectors_relative_5d": {
