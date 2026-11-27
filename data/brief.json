@@ -281,21 +281,22 @@
   ],
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
-    "internet": "RuntimeError: Iran ping-slash24: TimeoutError: The read operation timed out; Iran bgp: HTTPError: HTTP Error 500: Intern",
+    "internet": "RuntimeError: Iran ping-slash24: URLError: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation ",
+    "maritime": "TimeoutError: ",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output=",
     "telecom": "RuntimeError: Telstra ping-slash24: TimeoutError: The read operation timed out; Telstra bgp: TimeoutError: The read oper"
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-27T16:48:00Z",
+  "generated_at": "2026-11-27T17:03:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 19,
-    "Black Sea": 27,
-    "Israel & Eastern Mediterranean": 10,
-    "Korea": 0,
-    "Persian Gulf": 20,
+    "Baltic / Kaliningrad": 21,
+    "Black Sea": 25,
+    "Israel & Eastern Mediterranean": 2,
+    "Korea": null,
+    "Persian Gulf": 4,
     "South Australia": null,
     "Sydney / NSW": null,
-    "Taiwan Strait": 3
+    "Taiwan Strait": 0
   },
   "incidents": [
     {
@@ -425,12 +426,21 @@
       "confirmed": true,
       "headlines": [
         "What the Microsoft 365 disruption reveals about employee experience",
-        "Cloud Outage Might Change Microsoft (MSFT) Stock Narrative",
-        "Microsoft Wants to Fix Global Outages in an Hour. It Has a Long Way To Go"
+        "Cloud Outage Might Change Microsoft (MSFT) Stock Narrative"
       ],
       "needs_confirming": false,
-      "severity": "Warning",
+      "severity": "Info",
       "target": "Microsoft"
+    },
+    {
+      "attack_reported": false,
+      "confirmed": false,
+      "headlines": [
+        "Analysts dispel ‘conspiracy theories’ surrounding recent tech outages"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "Analysts"
     },
     {
       "attack_reported": false,
@@ -456,8 +466,7 @@
   "internet_drop_pct": {},
   "local_sa": {
     "bom": [
-      "Strong Wind Warning for Spencer Gulf for 28 November",
-      "Cancellation of Wind Warning for coastal waters between Murray Mouth and Cape Jaffa and for Investigator Strait for 28 November"
+      "Strong Wind Warning for Spencer Gulf for 28 November"
     ],
     "cable_watch": [],
     "cfs_feed_ok": true,
@@ -471,24 +480,43 @@
     "fire_danger_ok": true,
     "fires_active": 6,
     "fuel": {
-      "brent_aud": 138.1,
+      "brent_aud": 138.0,
       "change_pct": 2.1,
       "pump_cents": 2,
       "week_ago_aud": 135.2
     },
-    "grid_demand_fall_pct": 0.9,
-    "grid_demand_mw": 1326,
-    "grid_demand_usual_mw": 1338,
+    "grid_demand_fall_pct": 3.4,
+    "grid_demand_mw": 1293,
+    "grid_demand_usual_mw": 1336,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
       "air": {
         "aqi": 55,
         "peak_pm25_48h": 13,
-        "pm25": 13
+        "pm25": 12
       },
       "air_word": "Good",
-      "days": []
+      "days": [
+        {
+          "date": "2026-11-28",
+          "gust": 58,
+          "rain": 0,
+          "tmax": 20
+        },
+        {
+          "date": "2026-11-29",
+          "gust": 54,
+          "rain": 0,
+          "tmax": 17
+        },
+        {
+          "date": "2026-11-30",
+          "gust": 37,
+          "rain": 0,
+          "tmax": 20
+        }
+      ]
     },
     "possible_blackout": false,
     "power_news": [],
@@ -507,23 +535,23 @@
   "markets": {
     "AUD/USD": {
       "big_move": false,
-      "change_pct": 0.3,
-      "price": 0.6648
+      "change_pct": 0.27,
+      "price": 0.6646
     },
     "Brent oil": {
       "big_move": false,
-      "change_pct": -4.87,
-      "price": 90.0
+      "change_pct": -4.93,
+      "price": 89.95
     },
     "Gold": {
       "big_move": false,
-      "change_pct": 3.3,
-      "price": 3652.6
+      "change_pct": 3.53,
+      "price": 3660.6
     },
     "VIX": {
       "big_move": false,
-      "change_pct": -6.87,
-      "price": 24.96
+      "change_pct": -8.17,
+      "price": 24.61
     }
   },
   "national_shocks": {
@@ -554,9 +582,9 @@
       "Norse Atlantic once offered $99 flights to Europe. Now it's fighting to avoid being the 2nd big airline casualty of 2026. - Business Insider"
     ],
     "bank_outage": [
-      "Denials soar for ‘extraordinary ability’ visa in program once used by Melania Trump - The Washington Post",
       "Cracking a century - ANZ-Roy Morgan New Zealand Consumer Confidence rises into positive territory above 100 - Roy Morgan Research",
-      "The only way is down?: CBA pushes 2-3 year term deposit rates lower - Savings.com.au"
+      "The only way is down?: CBA pushes 2-3 year term deposit rates lower - Savings.com.au",
+      "Malawi: Network outage disrupts electronic visa (e-Visa) services - VisasNews"
     ],
     "blood": [
       "Donating is in this aviator's blood - news.defence.gov.au",
@@ -569,8 +597,8 @@
     ],
     "chem": [
       "Japan's abandoned chemical weapons pose long-term threat to health, environment: experts - 巴士的報",
-      "EU sanctions target chemical weapons crackdown - Yeni Safak English",
-      "China's Ministry of National Defense releases video on Japan's abandoned chemical weapons on its X account - China Daily Global Edition"
+      "China's Ministry of National Defense releases video on Japan's abandoned chemical weapons on its X account - China Daily Global Edition",
+      "Japan's Abandoned Chemical Weapons: Beijing urges Tokyo to help in efforts to dispose of wartime chemical weapons still remaining in China - CGTN"
     ],
     "cloud": [
       "What the Microsoft 365 disruption reveals about employee experience - Spiceworks",
@@ -588,9 +616,9 @@
       "Flight Centre suffers cyberattack; passport info accessed - Inside Retail Australia"
     ],
     "cyber_ot": [
-      "Hackers plunged dozens of European supermarkets into chaos. It should worry Australians how easy it was - SMH.com.au",
-      "UK operation wards off risk of cyber-attack on supermarket fridges and freezers - The Guardian",
-      "Shop freezers in seven European countries hit by cyber-attack - BBC"
+      "Shop freezers in seven European countries hit by cyber-attack - BBC",
+      "Who is hacking Europe’s supermarket fridges and freezers, and why? - The Guardian",
+      "New cyberattack on supermarket fridges sweeps across Europe - Reuters"
     ],
     "cyber_state": [
       "ESET Research: Sandworm behind cyberattack on Poland’s power grid in late 2025 - We Live Security",
@@ -599,8 +627,8 @@
     ],
     "cyber_supply": [
       "Warning: Actively Exploited Critical Vulnerabilities in Mitel MiCollab, Patch Immediately! - CCB Belgium",
-      "Is your website at risk? Sri Lanka CERT issues urgent advisory - Newswire",
-      "Warning: Actively Exploited OS Command Injection in Juniper Session Smart Conductor, Patch Immediately! - CCB Belgium"
+      "Warning: Actively Exploited OS Command Injection in Juniper Session Smart Conductor, Patch Immediately! - CCB Belgium",
+      "CVE-2026-132165: Drupal Fail2Install RCE Exploited in the Wild - SOC Prime"
     ],
     "deepfake": [
       "Deepfake Musk, Fake Ransomware Heroes, and a Spy in a Palo Alto Coffee Shop: This Week in Security Was Wild - PCMag Australia",
@@ -635,13 +663,13 @@
     ],
     "masscas": [
       "Thanksgiving meal in Florida leads to mass food poisoning incident - The Guardian",
-      "Thanksgiving Meal Ends in ‘Mass Casualty Incident’ After 18 People Fall Ill - Newsweek",
-      "Company's Thanksgiving Lunch Doesn't Go as Planned - Newser"
+      "EPA Issues Lead Update, Thanksgiving ‘Mass Casualty Incident’, Secret Service Cyber Warning: The Bulletin, Nov. 27 - Newsweek",
+      "Thanksgiving luncheon sickens 18 in suspected mass food poisoning - upi"
     ],
     "mobilisation": [
+      "NATO Allies Procure 430 Armored Vehicles Amid Russia Tensions - 조선일보",
       "Russian police grab men for minor offenses, force them to sign Defense Ministry contracts - The New Voice of Ukraine",
-      "The Military Commissariat Mobilized a Man with a Height of 146 cm: His Medical Record \"Grew\" to 150 cm and He Was Deemed Fit for Service - Судово-юридична газета",
-      "NATO Allies Procure 430 Armored Vehicles Amid Russia Tensions - 조선일보"
+      "Conscription in the Russian Federation: drunk men are being forced to sign up - UkrMedia News"
     ],
     "national_outage": [
       "Inside the ‘Black Sky’ plans for a nationwide blackout - Herald.Wales",
@@ -654,8 +682,8 @@
       "Australia's Optus apologises for outage that disrupted emergency calls - Reuters"
     ],
     "reservists": [
-      "UK Begins Contacting Strategic Reserve Veterans, Says Letters Are Not a Call-Up - The Defense Post",
       "Reservist letters: how many veterans got them and what MoD wants next - Around Prague",
+      "UK Begins Contacting Strategic Reserve Veterans, Says Letters Are Not a Call-Up - The Defense Post",
       "Why the UK MoD just wrote to 100,000 former military personnel - ADS Advance"
     ],
     "ru_signals": [
@@ -671,8 +699,8 @@
     ],
     "shipping_attacks": [
       "Seafarer seriously injured in Hormuz tanker attack - Seatrade Maritime News",
-      "Iran claims LNG carrier and tankers struck mines in Strait of Hormuz - safety4sea",
       "Three Sinokor VLCCs hit in Strait of Hormuz attacks - Riviera Maritime Media",
+      "Iran claims LNG carrier and tankers struck mines in Strait of Hormuz - safety4sea",
       "Oil tanker strikes mine in south of Strait of Hormuz - Mehr News Agency",
       "IRGC Claims 3 Oil Tankers Hit Mines in Hormuz Under US Escort - https://houseofsaud.com/"
     ],
@@ -706,7 +734,7 @@
       "yes": 2.6
     },
     {
-      "d24h": -0.4,
+      "d24h": -0.5,
       "q": "US-Iran Hormuz Agreement by November 30, 2026?",
       "yes": 1.7
     },
@@ -726,7 +754,7 @@
       "yes": 11.5
     },
     {
-      "d24h": -0.2,
+      "d24h": -0.1,
       "q": "Will Russia invade another country in 2026?",
       "yes": 2.4
     },
@@ -736,7 +764,7 @@
       "yes": 4.5
     },
     {
-      "d24h": 0.1,
+      "d24h": -0.1,
       "q": "Will Russia invade a NATO country by December 31, 2026?",
       "yes": 2.0
     },
@@ -761,9 +789,9 @@
       "yes": 0.9
     },
     {
-      "d24h": 0.6,
+      "d24h": -0.4,
       "q": "Ukraine agrees not to join NATO by December 31, 2026?",
-      "yes": 3.0
+      "yes": 2.9
     },
     {
       "d24h": 0.5,
@@ -786,7 +814,7 @@
       "yes": 2.5
     },
     {
-      "d24h": 0.0,
+      "d24h": 1.0,
       "q": "Ukraine agrees not to join NATO by December 31, 2027?",
       "yes": 18.0
     }
@@ -1015,20 +1043,25 @@
       "trend": "steady"
     },
     {
-      "band": "Low",
-      "convergence": "Only one kind of sign is showing (markets). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and mobilisation / reservist reports (russia / nato).",
+      "band": "Guarded",
+      "convergence": "Two different kinds of sign are showing together (markets and mobilisation). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and us nuc",
       "domains": [
-        "Markets"
+        "Markets",
+        "Mobilisation"
       ],
       "key": "russia",
       "lit": [
+        {
+          "detail": "Conscription in the Russian Federation: drunk men are being forced to sign up",
+          "name": "Mobilisation / reservist reports (Russia / NATO)"
+        },
         {
           "detail": "European defence stocks +6.2% vs market over 5 days",
           "name": "European defence stocks outperforming (5 days)"
         }
       ],
-      "score": 5,
-      "trend": "down"
+      "score": 20,
+      "trend": "up"
     },
     {
       "band": "Low",
@@ -1108,8 +1141,8 @@
   "sectors_relative_5d": {
     "defence_au": 4.89,
     "defence_eu": 6.18,
-    "defence_us": 1.5,
-    "pandemic": 1.93
+    "defence_us": 1.51,
+    "pandemic": 1.58
   },
   "status_pages": [
     {
