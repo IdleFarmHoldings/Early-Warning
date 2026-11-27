@@ -282,16 +282,15 @@
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
     "internet": "RuntimeError: Iran ping-slash24: TimeoutError: The read operation timed out; Iran bgp: TimeoutError: The read operation ",
-    "maritime": "TimeoutError: ",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output=",
     "telecom": "RuntimeError: Telstra ping-slash24: TimeoutError: The read operation timed out; Telstra bgp: TimeoutError: The read oper"
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-27T11:53:00Z",
+  "generated_at": "2026-11-27T12:09:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 27,
-    "Black Sea": 43,
-    "Israel & Eastern Mediterranean": 12,
+    "Baltic / Kaliningrad": 26,
+    "Black Sea": 38,
+    "Israel & Eastern Mediterranean": 4,
     "Korea": 0,
     "Persian Gulf": 7,
     "South Australia": 0,
@@ -354,8 +353,7 @@
       "attack_reported": true,
       "confirmed": true,
       "headlines": [
-        "Switzerland Confirms First Cyberattacks Involving AI Agents Against Multiple Organizations",
-        "Switzerland Confirms AI-Assisted Cyberattacks Breached Critical Infrastructure Operators"
+        "Switzerland Confirms First Cyberattacks Involving AI Agents Against Multiple Organizations"
       ],
       "needs_confirming": false,
       "severity": "Info",
@@ -372,12 +370,22 @@
       "target": "Korea"
     },
     {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "GitHub RCE Vulnerability Allows Hackers to Compromise Servers With a Single Git Push Command"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "GitHub RCE Vulnerability"
+    },
+    {
       "attack_reported": false,
       "confirmed": true,
       "headlines": [
+        "Lloyds down: Online banking app not working in latest major outage",
         "For banks, reaction time matters as much as prevention when it comes to cyberattacks: OCBC tech head",
-        "Malawi: Network outage disrupts electronic visa (e-Visa) services",
-        "The only way is down?: CBA pushes 2-3 year term deposit rates lower"
+        "Malawi: Network outage disrupts electronic visa (e-Visa) services"
       ],
       "needs_confirming": false,
       "severity": "Warning",
@@ -385,12 +393,13 @@
     },
     {
       "attack_reported": false,
-      "confirmed": false,
+      "confirmed": true,
       "headlines": [
+        "Microsoft Outlook outage impacts governments, courts, hospitals and universities - ABC News",
         "Microsoft Code Red outage: what its two one-hour goals mean"
       ],
       "needs_confirming": false,
-      "severity": "Info",
+      "severity": "Warning",
       "target": "Microsoft"
     },
     {
@@ -409,7 +418,7 @@
     "bom": [
       "Strong Wind Warning for Spencer Gulf for 28 November",
       "Cancellation of Wind Warning for coastal waters between Murray Mouth and Cape Jaffa and for Investigator Strait for 28 November",
-      "Severe Thunderstorm Warning for Lower South East forecast district"
+      "Cancellation of Severe Thunderstorm Warning for Lower South East forecast district"
     ],
     "cable_watch": [],
     "cfs_feed_ok": true,
@@ -421,16 +430,16 @@
       "Mount Lofty Ranges": "Moderate / High"
     },
     "fire_danger_ok": true,
-    "fires_active": 7,
+    "fires_active": 6,
     "fuel": {
       "brent_aud": 138.5,
       "change_pct": 2.6,
       "pump_cents": 2,
       "week_ago_aud": 135.0
     },
-    "grid_demand_fall_pct": 3.4,
-    "grid_demand_mw": 1469,
-    "grid_demand_usual_mw": 1408,
+    "grid_demand_fall_pct": 4.6,
+    "grid_demand_mw": 1468,
+    "grid_demand_usual_mw": 1374,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
@@ -478,23 +487,23 @@
   "markets": {
     "AUD/USD": {
       "big_move": false,
-      "change_pct": 0.62,
-      "price": 0.6669
+      "change_pct": 0.68,
+      "price": 0.6673
     },
     "Brent oil": {
       "big_move": false,
-      "change_pct": -2.76,
-      "price": 92.0
+      "change_pct": -2.71,
+      "price": 92.05
     },
     "Gold": {
       "big_move": true,
-      "change_pct": 4.68,
-      "price": 3701.2
+      "change_pct": 4.67,
+      "price": 3701.0
     },
     "VIX": {
       "big_move": false,
-      "change_pct": -6.34,
-      "price": 25.1
+      "change_pct": -4.55,
+      "price": 25.58
     }
   },
   "national_shocks": {
@@ -516,8 +525,8 @@
     ],
     "airspace": [
       "Explainer: Hours of Notice for a Closed Sky, What Nairobi's Airspace Shutdowns Could Cost - Dawan Africa",
-      "Nairobi airspace closure: What Kenya Airways passengers need to know about 3 dates - People Daily",
-      "Nairobi Airspace To Shut Down On Three Separate Days - The Kenya Times"
+      "Be prepared: Kenya Airways issues 2-day travel advisory to passengers - Tuko News",
+      "Nairobi airspace closure: What Kenya Airways passengers need to know about 3 dates - People Daily"
     ],
     "aviation_halt": [
       "American Airlines flights resume after brief IT outage led to nationwide ground stop - ABC News - Breaking News, Latest News and Videos",
@@ -535,22 +544,23 @@
       "Centre For Safety Heritage Urges Patriotic, Responsible Security Reportage - News Agency of Nigeria"
     ],
     "cables": [
+      "Du joins Singapore-India-Gulf submarine cable system - DD News",
       "Gopalganj may face power cuts if political attacks target facilities - Dhaka Tribune"
     ],
     "chem": [
+      "China's Ministry of National Defense releases video on Japan's abandoned chemical weapons on its X account - China Daily Global Edition",
       "Japan's Abandoned Chemical Weapons: Beijing urges Tokyo to help in efforts to dispose of wartime chemical weapons still remaining in China - CGTN",
-      "UK and 43 OPCW States Parties Issue Joint Statement on Chemical Weapons Convention Findings in Ukraine - CASRAI",
-      "Nepal reaffirms commitment to chemical weapons convention at OPCW conference - The Rising Nepal"
+      "UK and 43 OPCW States Parties Issue Joint Statement on Chemical Weapons Convention Findings in Ukraine - CASRAI"
     ],
     "cloud": [
       "Your backup plan probably runs on the same pipe as your problem - SecurityBrief Australia",
-      "Microsoft declares ‘Code Red’ in wake of global outage - Cyber Daily",
-      "Protecting Critical Infrastructure from Cyber Threats - GLOBSEC"
+      "Microsoft Outlook outage impacts governments, courts, hospitals and universities - ABC News - Breaking News, Latest News and Videos",
+      "Microsoft declares ‘Code Red’ in wake of global outage - Cyber Daily"
     ],
     "cyber_attrib": [
-      "FBI warns hackers using AI-powered tool to automate cyberattacks worldwide - Anadolu Ajansı",
-      "FBI says Chinese hacking group targeted US government agencies for years - ABC News - Breaking News, Latest News and Videos",
-      "Hackers breach US agriculture department and FBI, media reports say - TRT World"
+      "Busted! Alleged Aussie hackers linked to TeamPCP arrested in joint AFP-FBI-WAPF operation - Cyber Daily",
+      "FaceStealer Cryptocurrency Theft Scheme | Federal Bureau of Investigation - FBI (.gov)",
+      "Spy agency warns active Russian hackers targeting Australian industry - ABC News & Headlines – Australian Broadcasting Corporation"
     ],
     "cyber_au": [
       "Flight Centre investigates data breach linked to third-party booking system - Australian Cyber Security Magazine",
@@ -558,9 +568,9 @@
       "Flight Centre suffers cyberattack; passport info accessed - Inside Retail Australia"
     ],
     "cyber_ot": [
-      "Shop freezers in seven European countries hit by cyber-attack - BBC",
+      "Hackers plunged dozens of European supermarkets into chaos. It should worry Australians how easy it was - SMH.com.au",
       "UK operation wards off risk of cyber-attack on supermarket fridges and freezers - The Guardian",
-      "Next Plc’s Supplier Hit by Cyberattack in Latest UK Retail Breach - Insurance Journal"
+      "Shop freezers in seven European countries hit by cyber-attack - BBC"
     ],
     "cyber_state": [
       "ESET Research: Sandworm behind cyberattack on Poland’s power grid in late 2025 - We Live Security",
@@ -570,7 +580,7 @@
     "cyber_supply": [
       "Warning: Actively Exploited Critical Vulnerabilities in Mitel MiCollab, Patch Immediately! - CCB Belgium",
       "Danfoss AK-SM8xxA, three vulnerabilities actively exploited - Meteora Web",
-      "Eclypsium warns of exploited supply chain flaws in network appliances - TechGig"
+      "Cacti 4HTTP2ROOT Zero-Day Enables Unauthenticated Remote Code Execution - GBHackers News"
     ],
     "deepfake": [
       "Deloitte Suspended From Western Australian Government Contracts Over AI Report Errors - https://www.big4news.com/",
@@ -582,7 +592,7 @@
       "Kenyan sect leader convicted of terrorism ᐉ News from Fakti.bg - Curious - Fakti.bg"
     ],
     "flash": [
-      "Why has Northern Minerals (ASX:NTU) entered a trading halt ahead of a capital raising? - Kalkine",
+      "Invictus Energy Enters Trading Halt Pending Capital Raise Announcement - Kalkine",
       "South Korea's KOSDAQ Surges Over 5%, Triggers Buy-Side Circuit Breaker for Second Time in Three Sessions - BigGo Finance",
       "UK stocks poised to join global stock rebound as FTSE 100 rises 2% - Crypto Briefing"
     ],
@@ -595,17 +605,17 @@
       "Attack on Saudi’s Jazan refinery kills one person, disrupts operations - Al Jazeera",
       "Powerful Explosions Reported in Riyadh following Yemeni Missile Attack - تسنیم",
       "Saudi-led coalition intercepts Houthi drone targeting Riyadh region - Anadolu Ajansı",
-      "Smoke seen from space after attack on huge Middle East oil hub - Nine.com.au",
-      "Saudis say they intercepted Houthi drone near key port in Jeddah - The Times of Israel"
+      "Saudis say they intercepted Houthi drone near key port in Jeddah - The Times of Israel",
+      "Dubai Gets Some Airlines Back as Riyadh Waits on Houthis - Skift"
     ],
     "illness": [
       "Mystery illness causes mass hospitalisation of runners - The Nightly",
       "Dr. Siegel on measles comeback, mystery illness outbreak on cruise ship - Fox News",
-      "148 aboard Florida-bound cruise ship sickened by ‘unknown’ GI outbreak: CDC - The Hill"
+      "Zayn Malik hospitalised with mystery illness, forced to cancel upcoming appearances on album release week - Nine.com.au"
     ],
     "masscas": [
       "Thanksgiving Meal Ends in ‘Mass Casualty Incident’ After 18 People Fall Ill - Newsweek",
-      "Mass casualty traffic collision in Santiago Canyon - FOX 11 Los Angeles",
+      "9 separate mass shootings across US leave 9 dead, 60 injured over the weekend - ABC News - Breaking News, Latest News and Videos",
       "Health officials reflect on ‘lasting impact,’ heroic response following CFB Wainwright fire - CBC"
     ],
     "mobilisation": [
@@ -619,9 +629,9 @@
       "Coach restrained from fans after heated display as Eagles pull off stunning NFL comeback win: Wrap - Fox Sports"
     ],
     "outage_au": [
-      "Calls for 'automatic compensation' following telco outages - ABC News & Headlines – Australian Broadcasting Corporation",
+      "How the Microsoft outage is affecting Australia - ABC News & Headlines – Australian Broadcasting Corporation",
       "Microsoft ‘deeply sorry’ for global outage, rules out cyberattack and AI - Nine.com.au",
-      "The Microsoft outage is part of a growing trend. This is how to prepare for further disruption - SBS"
+      "Australia's Optus apologises for outage that disrupted emergency calls - Reuters"
     ],
     "reservists": [
       "MoD has no email addresses for about half of its reservists - BBC",
@@ -661,7 +671,7 @@
       "yes": 5.5
     },
     {
-      "d24h": 0.8,
+      "d24h": 0.9,
       "q": "US-Iran Final Nuclear Deal by December 31, 2026?",
       "yes": 4.2
     },
@@ -686,9 +696,9 @@
       "yes": 1.6
     },
     {
-      "d24h": 0.4,
+      "d24h": 0.3,
       "q": "US-Iran Final Nuclear Deal by November 30, 2026?",
-      "yes": 0.9
+      "yes": 0.8
     },
     {
       "d24h": -1.0,
@@ -726,9 +736,9 @@
       "yes": 1.1
     },
     {
-      "d24h": -0.3,
+      "d24h": -0.9,
       "q": "Ukraine agrees not to join NATO by December 31, 2026?",
-      "yes": 3.2
+      "yes": 2.5
     },
     {
       "d24h": 0.0,
@@ -736,7 +746,7 @@
       "yes": 3.5
     },
     {
-      "d24h": -0.3,
+      "d24h": 0.0,
       "q": "Will Russia test a nuclear weapon by December 31 2026?",
       "yes": 2.0
     },
@@ -751,7 +761,7 @@
       "yes": 2.6
     },
     {
-      "d24h": 0.5,
+      "d24h": 0.0,
       "q": "Ukraine agrees not to join NATO by December 31, 2027?",
       "yes": 18.0
     }
@@ -955,7 +965,7 @@
       "key": "local",
       "lit": [
         {
-          "detail": "Severe Thunderstorm Warning for Lower South East forecast district",
+          "detail": "Cancellation of Severe Thunderstorm Warning for Lower South East forecast district",
           "name": "Bureau severe weather or heatwave warning for SA"
         },
         {
@@ -993,12 +1003,12 @@
       "key": "russia",
       "lit": [
         {
-          "detail": "European defence stocks +6.7% vs market over 5 days",
+          "detail": "European defence stocks +6.9% vs market over 5 days",
           "name": "European defence stocks outperforming (5 days)"
         }
       ],
       "score": 5,
-      "trend": "down"
+      "trend": "steady"
     },
     {
       "band": "Low",
@@ -1050,17 +1060,22 @@
     },
     {
       "band": "Elevated",
-      "convergence": "Signs are converging across 3 separate areas (ai-enabled hacking, cloud services and fraud waves). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: a Chinese",
+      "convergence": "Signs are converging across 4 separate areas (ai-enabled hacking, cloud services, fraud waves and markets). Unrelated systems flagging the same scenario at once is the pattern seen before past events. In November 2025 Anthropic reported the first documented AI-orchestrated cyber-espionage campaign: ",
       "domains": [
         "AI-enabled hacking",
         "Cloud services",
-        "Fraud waves"
+        "Fraud waves",
+        "Markets"
       ],
       "key": "ai",
       "lit": [
         {
           "detail": "Korea launches emergency response as AI-powered hacking surges",
           "name": "Reports of AI-driven hacking campaigns"
+        },
+        {
+          "detail": "KOSDAQ buy-side sidecar (futures market circuit breaker) triggered… Midday sharp rebound, recovers above 690",
+          "name": "Flash crash or exchange trading halt"
         },
         {
           "detail": "Microsoft declares ‘Code Red’ in wake of global outage",
@@ -1071,13 +1086,13 @@
           "name": "Surge in AI voice-clone / deepfake scams in Australia"
         }
       ],
-      "score": 30,
-      "trend": "steady"
+      "score": 40,
+      "trend": "up"
     }
   ],
   "sectors_relative_5d": {
     "defence_au": 4.89,
-    "defence_eu": 6.67,
+    "defence_eu": 6.89,
     "defence_us": 4.21,
     "pandemic": 0.09
   },
