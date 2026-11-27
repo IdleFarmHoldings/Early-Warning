@@ -282,18 +282,19 @@
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
     "internet": "RuntimeError: Iran ping-slash24: TimeoutError: The read operation timed out; Iran bgp: TimeoutError: The read operation ",
+    "maritime": "TimeoutError: ",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output=",
     "telecom": "RuntimeError: Telstra ping-slash24: TimeoutError: The read operation timed out; Telstra bgp: TimeoutError: The read oper"
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-27T02:37:00Z",
+  "generated_at": "2026-11-27T02:52:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 82,
-    "Black Sea": 31,
-    "Israel & Eastern Mediterranean": 17,
-    "Korea": 2,
-    "Persian Gulf": 15,
-    "South Australia": 3,
+    "Baltic / Kaliningrad": 88,
+    "Black Sea": 40,
+    "Israel & Eastern Mediterranean": 12,
+    "Korea": 1,
+    "Persian Gulf": 11,
+    "South Australia": 2,
     "Sydney / NSW": 5,
     "Taiwan Strait": 0
   },
@@ -375,11 +376,21 @@
       "headlines": [
         "Microsoft Code Red outage: what its two one-hour goals mean",
         "Hackers exploit Microsoft 365 outage",
-        "Microsoft Links China, North Korea Hackers to ARTEX"
+        "Microsoft declares 'Code Red' in wake of global outage"
       ],
       "needs_confirming": false,
       "severity": "Warning",
       "target": "Microsoft"
+    },
+    {
+      "attack_reported": false,
+      "confirmed": false,
+      "headlines": [
+        "The only way is down?: CBA pushes 2-3 year term deposit rates lower"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "Banking & payments"
     },
     {
       "attack_reported": false,
@@ -407,26 +418,55 @@
       "Mount Lofty Ranges": "Moderate / Moderate"
     },
     "fire_danger_ok": true,
-    "fires_active": 10,
+    "fires_active": 11,
     "fuel": {
       "brent_aud": 138.2,
       "change_pct": 2.8,
       "pump_cents": 2,
       "week_ago_aud": 134.4
     },
-    "grid_demand_fall_pct": 22.1,
-    "grid_demand_mw": 949,
-    "grid_demand_usual_mw": 264,
+    "grid_demand_fall_pct": 29.1,
+    "grid_demand_mw": 782,
+    "grid_demand_usual_mw": 257,
     "grid_lor_level": 0,
-    "nearby_incidents": [],
+    "nearby_incidents": [
+      {
+        "area": "89 OVAL RD MOUNT TORRENS",
+        "dist": "10-25 km",
+        "event": "Grass Fire",
+        "headline": "MOUNT TORRENS : GRASS FIRE",
+        "id": "F-261127-0069 MOUNT TORRENS, OVAL RD (GRASS FIRE)",
+        "level": null,
+        "notify": false
+      }
+    ],
     "outlook": {
       "air": {
-        "aqi": 42,
+        "aqi": 44,
         "peak_pm25_48h": 12,
-        "pm25": 12
+        "pm25": 11
       },
       "air_word": "Good",
-      "days": []
+      "days": [
+        {
+          "date": "2026-11-27",
+          "gust": 39,
+          "rain": 0,
+          "tmax": 26
+        },
+        {
+          "date": "2026-11-28",
+          "gust": 59,
+          "rain": 0,
+          "tmax": 21
+        },
+        {
+          "date": "2026-11-29",
+          "gust": 53,
+          "rain": 0,
+          "tmax": 17
+        }
+      ]
     },
     "possible_blackout": false,
     "power_news": [],
@@ -438,7 +478,7 @@
       "Morgan Vale Road, Pine Valley Station: MORGAN MAIL RD Closed due to flooding over road",
       "Pine Valley Road, Pine Valley Station: PINE VALLEY RD Closed due to flooding over road"
     ],
-    "rooftop_pv_mw": 709,
+    "rooftop_pv_mw": 768,
     "sawater_news": [],
     "watch_and_act": []
   },
@@ -450,13 +490,13 @@
     },
     "Brent oil": {
       "big_move": false,
-      "change_pct": -2.44,
-      "price": 92.3
+      "change_pct": -2.48,
+      "price": 92.26
     },
     "Gold": {
       "big_move": false,
-      "change_pct": 3.01,
-      "price": 3642.3
+      "change_pct": 3.26,
+      "price": 3651.0
     },
     "VIX": {
       "big_move": false,
@@ -478,7 +518,7 @@
         "level": "Possible",
         "sector": "aviation",
         "signals": {
-          "traffic": "airborne traffic near New York (Teterboro), Washington DC, Los Angeles (Van Nuys) about 24% of normal"
+          "traffic": "airborne traffic near New York (Teterboro), Washington DC, Los Angeles (Van Nuys) about 27% of normal"
         }
       }
     ],
@@ -505,8 +545,8 @@
     ],
     "bank_outage": [
       "Cracking a century - ANZ-Roy Morgan New Zealand Consumer Confidence rises into positive territory above 100 - Roy Morgan Research",
-      "Student visa decline ‘damaging universities and economy’ - Research Professional News",
-      "Track UK's latest migration numbers - net migration, visas, asylum and small boats - BBC"
+      "The only way is down?: CBA pushes 2-3 year term deposit rates lower - Savings.com.au",
+      "Student visa decline ‘damaging universities and economy’ - Research Professional News"
     ],
     "blood": [
       "AYANG organises blood donation camp - The Arunachal Times",
@@ -523,14 +563,14 @@
       "Iran Says Israel Trying to Deceive US into War with Chemical Weapons Claim - ASHARQ AL-AWSAT English"
     ],
     "cloud": [
-      "Hackers exploit Microsoft 365 outage - Daily Tribune",
-      "Microsoft Code Red outage: what its two one-hour goals mean - NeoTeo",
-      "Microsoft sets one-hour recovery goal after worst-ever M365 outage - Computerworld"
+      "Your backup plan probably runs on the same pipe as your problem - SecurityBrief Australia",
+      "Microsoft declares 'Code Red' in wake of global outage - Cyber Daily",
+      "Hackers exploit Microsoft 365 outage - Daily Tribune"
     ],
     "cyber_attrib": [
-      "FBI warns hackers weaponizing ARTEX AI framework to automate attacks on energy, manufacturing, telecom - Industrial Cyber",
       "FBI Warns Hackers Are Using ARTEX AI Tool To Automate Cyberattacks - Forbes",
-      "FBI warns hackers using AI-powered tool to automate cyberattacks worldwide - Anadolu Ajansı"
+      "Spy agency warns active Russian hackers targeting Australian industry - ABC News & Headlines – Australian Broadcasting Corporation",
+      "Busted! Alleged Aussie hackers linked to TeamPCP arrested in joint AFP-FBI-WAPF operation - Cyber Daily"
     ],
     "cyber_au": [
       "Flight Centre investigates data breach linked to third-party booking system - Australian Cyber Security Magazine",
@@ -538,9 +578,9 @@
       "Kinatico Discloses Cyber Incident Affecting Cited Platform, Personal Details of 320 Individuals Accessed - Kalkine"
     ],
     "cyber_ot": [
-      "Shop freezers in seven European countries hit by cyber-attack - BBC",
       "UK operation wards off risk of cyber-attack on supermarket fridges and freezers - The Guardian",
-      "Supermarket freezers and fridges in Europe hit by cyberattack - Nine.com.au"
+      "Shop freezers in seven European countries hit by cyber-attack - BBC",
+      "If hackers can take over a supermarket fridge, what else is at risk? - Al Jazeera"
     ],
     "cyber_state": [
       "ESET Research: Sandworm behind cyberattack on Poland’s power grid in late 2025 - We Live Security",
@@ -554,8 +594,8 @@
     ],
     "deepfake": [
       "Deloitte Suspended From Western Australian Government Contracts Over AI Report Errors - https://www.big4news.com/",
-      "'King is back': Nvidia boss's return sparks fresh AI deepfake deluge - The Korea Times",
-      "Video of Trump slamming Papua New Guinea's politicians is an AI-fake - www.aap.com.au"
+      "Video of Trump slamming Papua New Guinea's politicians is an AI-fake - www.aap.com.au",
+      "Deloitte Banned by WA Government Over AI-Generated Report Errors - OECD AI Policy Observatory"
     ],
     "dieoff": [
       "Since the invasion of Ukraine, 53 mysterious deaths of Russian officials and high-ranking government officials have been recorded - UA.NEWS"
@@ -573,9 +613,9 @@
     "gulf_strikes": [
       "Attack on Saudi’s Jazan refinery kills one person, disrupts operations - Al Jazeera",
       "Powerful Explosions Reported in Riyadh following Yemeni Missile Attack - تسنیم",
-      "Smoke seen from space after attack on huge Middle East oil hub - Nine.com.au",
       "Yemen's Houthis claim attack on Saudi Arabia's largest refinery - Al-Monitor",
-      "Houthis Strike Jazan Refinery, Saudi Energy Ministry Confirms 1 Dead - https://houseofsaud.com/"
+      "Houthis Strike Jazan Refinery, Saudi Energy Ministry Confirms 1 Dead - https://houseofsaud.com/",
+      "Houthis strike Saudi oil infrastructure as Riyadh intensifies attacks on Yemen - CNN"
     ],
     "illness": [
       "Mystery illness causes mass hospitalisation of runners - The Nightly",
@@ -584,8 +624,8 @@
     ],
     "masscas": [
       "Mass casualty traffic collision in Santiago Canyon - FOX 11 Los Angeles",
-      "Health officials reflect on ‘lasting impact,’ heroic response following CFB Wainwright fire - CBC",
-      "Thanksgiving Dinner Disaster Leaves 18 in Hospital in Florida - The Daily Beast"
+      "Thanksgiving Dinner Disaster Leaves 18 in Hospital in Florida - The Daily Beast",
+      "18 Hospitalized After Medical Company Thanksgiving Luncheon in Suspected Food Poisoning Outbreak - People.com"
     ],
     "medshort": [
       "newsGP - In Practice: Medication shortages update - Royal Australian College of General Practitioners (RACGP)"
@@ -598,7 +638,7 @@
     "national_outage": [
       "Cuba grid collapse: The situation is growing more dire, experts say - ABC News - Breaking News, Latest News and Videos",
       "Inside the ‘Black Sky’ plans for a nationwide blackout - Herald.Wales",
-      "Local students get second chance at exam - The Wanaka App"
+      "Cuba’s National Electric Grid Collapses, Reason Unknown - EnergyNow.com"
     ],
     "outage_au": [
       "How the Microsoft outage is affecting Australia - ABC News & Headlines – Australian Broadcasting Corporation",
@@ -608,7 +648,7 @@
     "reservists": [
       "UK tells 100,000 strategic reservists to prepare for possible call-up: Report - Anadolu Ajansı",
       "MoD Strategic Reserve Call-Up: UK Urges 100,000 Reservists to Update Details and Join Exercises - Мілітарний",
-      "Reservists told to prepare for call-up: what the MoD letters mean for you - Around Prague"
+      "UK reservists contacted as 'threat environment' rises, Streeting says - BBC"
     ],
     "ru_signals": [
       "NATO intern suspected of spying to remain in jail in Belgium after appeal - News24"
@@ -626,14 +666,14 @@
       "Three Sinokor VLCCs hit in Strait of Hormuz attacks - Riviera Maritime Media",
       "Middle East latest: Two Italians killed in Iranian drone attack in Kuwait - The National",
       "IRGC Claims 3 Oil Tankers Hit Mines in Hormuz Under US Escort - https://houseofsaud.com/",
-      "ADNOC L&S says one missing, 11 injured in Strait of Hormuz ship attack - Baird Maritime"
+      "Hormuz oil traffic is down 40 percent: Are Iran’s tanker attacks working? - Al Jazeera"
     ],
     "strikes": [
       "Iran Warns of Retaliation if US Forces Attack - ASHARQ AL-AWSAT English",
       "Ukraine says strike on major Russian air base damaged five military jets - AeroTime",
       "Ukrainian Neptunes Attacked Marinovka Air Base, Which Housed Russian Su-34s - Мілітарний",
       "Ukraine says it struck a major Russian air base, damaging five planes - Arab News",
-      "Bahrain Says It Intercepted Iranian Attacks As Tehran Claims Strike On US Base - Radio Free Europe/Radio Liberty"
+      "Ukrainian naval drones strike a new Russian warship in Libya, and other Mideast news - Boston Herald"
     ]
   },
   "prediction_markets": [
@@ -703,12 +743,12 @@
       "yes": 1.6
     },
     {
-      "d24h": -0.2,
+      "d24h": -0.3,
       "q": "NATO x Russia military clash by November 30, 2026?",
       "yes": 1.4
     },
     {
-      "d24h": -0.5,
+      "d24h": -0.6,
       "q": "Ukraine agrees not to join NATO by December 31, 2026?",
       "yes": 2.9
     },
@@ -1045,16 +1085,16 @@
           "name": "Flash crash or exchange trading halt"
         },
         {
-          "detail": "No plans to ditch Microsoft 365 despite global outage, says Government ICT",
+          "detail": "Microsoft declares 'Code Red' in wake of global outage",
           "name": "Major cloud or AI service outage"
         }
       ],
       "score": 35,
-      "trend": "up"
+      "trend": "steady"
     }
   ],
   "sectors_relative_5d": {
-    "defence_au": 4.73,
+    "defence_au": 4.11,
     "defence_eu": 1.05,
     "defence_us": 4.21,
     "pandemic": 0.09
