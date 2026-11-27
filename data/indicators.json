@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-27T22:09:00Z",
+  "generated_at": "2026-11-27T22:25:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -641,12 +641,20 @@
           "name": "WHO outbreak report with a high-concern pathogen (last 14 days)",
           "short": "WHO outbreak report",
           "weight": 15
+        },
+        {
+          "detail": "Thanksgiving Meal Ends in ‘Mass Casualty Incident’ After 18 People Fall Ill",
+          "domain": "Health",
+          "id": "masscas",
+          "name": "Mass casualty declarations (any country)",
+          "short": "Mass casualty event",
+          "weight": 5
         }
       ],
       "name": "Pandemic, biological or chemical emergency",
       "sa_impact": "Health system strain, possible lockdowns and border closures, and shortages of medicines and protective equipment, which Australia mostly imports.",
-      "score": 15,
-      "trend": "down",
+      "score": 20,
+      "trend": "up",
       "unlit": [
         {
           "domain": "Health",
@@ -671,12 +679,6 @@
           "id": "shortage",
           "name": "Australian medicine or PPE shortage reports",
           "weight": 10
-        },
-        {
-          "domain": "Health",
-          "id": "masscas",
-          "name": "Mass casualty declarations (any country)",
-          "weight": 5
         },
         {
           "domain": "Chemical weapons",
@@ -806,7 +808,7 @@
           "weight": 15
         },
         {
-          "detail": "Microsoft declares ‘Code Red’ in wake of global outage",
+          "detail": "Lloyds Bank, Bank of Scotland apps hit by major outage",
           "domain": "Cloud services",
           "id": "cloud",
           "name": "Major cloud or AI service outage",
