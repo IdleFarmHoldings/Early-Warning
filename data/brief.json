@@ -1,13 +1,7 @@
 {
   "about": "Short form of latest.json + indicators.json for the analysis run. Links and raw samples removed.",
   "acsc": [],
-  "aircraft_flags": {
-    "gps_gulf": {
-      "median": 7,
-      "status": "ANOMALY",
-      "value": 27
-    }
-  },
+  "aircraft_flags": {},
   "analyst": {
     "ASPI Strategist": [
       "Kasandigan – the Philippines is pivotal to Australian strategy as never before",
@@ -288,18 +282,17 @@
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
     "internet": "RuntimeError: Iran ping-slash24: TimeoutError: The read operation timed out; Iran bgp: TimeoutError: The read operation ",
-    "maritime": "TimeoutError: ",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output=",
     "telecom": "RuntimeError: Telstra ping-slash24: TimeoutError: The read operation timed out; Telstra bgp: TimeoutError: The read oper"
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-28T15:14:00Z",
+  "generated_at": "2026-11-28T15:29:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 26,
-    "Black Sea": 24,
-    "Israel & Eastern Mediterranean": 2,
+    "Baltic / Kaliningrad": 29,
+    "Black Sea": 39,
+    "Israel & Eastern Mediterranean": 0,
     "Korea": 0,
-    "Persian Gulf": 27,
+    "Persian Gulf": 16,
     "South Australia": null,
     "Sydney / NSW": null,
     "Taiwan Strait": 0
@@ -329,6 +322,26 @@
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
+        "DWP pensions and benefits services still down after 'cyber incident'"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "DWP"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": true,
+      "headlines": [
+        "Pentagon refuses to confirm reported hack of Air Force cloud system"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "Pentagon"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
         "DWP Benefits Services Remain Offline After Cyber Incident"
       ],
       "needs_confirming": false,
@@ -339,11 +352,11 @@
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
-        "DWP pensions and benefits services still down after 'cyber incident'"
+        "ThaiCERT Warns of GT13 Hackers Using Agentic AI to Target Enterprise Systems"
       ],
       "needs_confirming": false,
       "severity": "Info",
-      "target": "DWP"
+      "target": "ThaiCERT Warns"
     },
     {
       "attack_reported": true,
@@ -359,21 +372,21 @@
       "attack_reported": true,
       "confirmed": true,
       "headlines": [
+        "Switzerland confirms first cyberattacks using autonomous AI agents"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "Switzerland"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": true,
+      "headlines": [
         "Hackers breached 24 Check Point management servers, GreyNoise says"
       ],
       "needs_confirming": false,
       "severity": "Info",
       "target": "Hackers"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
-        "pCloud Pass Hit by Cyberattack, Exposing User Emails and Triggering Suspicious Login Alerts"
-      ],
-      "needs_confirming": false,
-      "severity": "Info",
-      "target": "Other services"
     },
     {
       "attack_reported": false,
@@ -410,9 +423,9 @@
       "pump_cents": 0,
       "week_ago_aud": 135.9
     },
-    "grid_demand_fall_pct": 3.8,
-    "grid_demand_mw": 1299,
-    "grid_demand_usual_mw": 1380,
+    "grid_demand_fall_pct": 1.5,
+    "grid_demand_mw": 1304,
+    "grid_demand_usual_mw": 1362,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
@@ -492,9 +505,9 @@
   "nc3": "normal",
   "news_watch": {
     "ai_hack": [
+      "ThaiCERT Warns of GT13 Hackers Using Agentic AI to Target Enterprise Systems - Nation Thailand",
       "Korea Post's mobile service hacked, with personal data of at least 113,000 customers leaked - Korea JoongAng Daily",
-      "What is CyberStrikeAI? The open-source AI hacking tool named in Switzerland's warning - Nacionale",
-      "AI-Driven Breaches Surge Across South Korea: Eight Major Disclosures in Five Days Expose Critical Identity and Telemetry Blind Spots + Video - Howl.Link"
+      "What is CyberStrikeAI? The open-source AI hacking tool named in Switzerland's warning - Nacionale"
     ],
     "airspace": [
       "Kenya Airways warns of schedule changes on three airspace closure dates - 5050 Markets",
@@ -509,7 +522,7 @@
     "bank_outage": [
       "UK: student visa grants down by almost 100,000 in a year - StudyTravel Network",
       "Onshore penalty: Government makes international graduates pay $1500 more to stay in Australia - The Koala News",
-      "Brazilian stocks, Visa, Mastercard, Chaince Digital among gainers: week's financials wrap - TradingView"
+      "Australia's Higher Student Visa Fee Hurts Competitiveness - Mirage News"
     ],
     "blood": [
       "Fourteen migrants remain hospitalized in El Hierro, the highest number to date. - Tenerife Weekly",
@@ -532,19 +545,19 @@
       "MICROSOFT DECLARES 'CODE RED' AFTER MAJOR MICROSOFT 365 OUTAGE INTERNAL MEMOS SHOW - Magzter"
     ],
     "cyber_attrib": [
-      "Spy agency warns active Russian hackers targeting Australian industry - ABC News & Headlines – Australian Broadcasting Corporation",
-      "Busted! Alleged Aussie hackers linked to TeamPCP arrested in joint AFP-FBI-WAPF operation - Cyber Daily",
-      "CISA, FBI warn that Iran-linked hackers are expanding target set for water, energy - Cybersecurity Dive"
+      "FBI warns hackers using AI-powered tool to automate cyberattacks worldwide - Anadolu Ajansı",
+      "Australians should prepare for online services to go down unexpectedly as threats rise, cyber agency warns - The Guardian",
+      "Busted! Alleged Aussie hackers linked to TeamPCP arrested in joint AFP-FBI-WAPF operation - Cyber Daily"
     ],
     "cyber_au": [
       "‘Dangerous complacency’: Australia is unprepared for a major hack - The Courier Mail",
       "Flight Centre hack victims safe to travel on DFAT advice - Herald Sun",
-      "'Catherine on cancer fight' and 'Benefits and pensions chaos' - Yahoo News Australia"
+      "RansomwareRadar — Real-Time Ransomware Tracker & Threat Intelligence - SOCRadar"
     ],
     "cyber_ot": [
       "Shop freezers in seven European countries hit by cyber-attack - BBC",
-      "Hackers plunged dozens of European supermarkets into chaos. It should worry Australians how easy it was - SMH.com.au",
-      "UK operation wards off risk of cyber-attack on supermarket fridges and freezers - The Guardian"
+      "Who is hacking Europe’s supermarket fridges and freezers, and why? - The Guardian",
+      "Supermarket freezers and fridges in Europe hit by cyberattack - Nine.com.au"
     ],
     "cyber_state": [
       "Sandworm behind cyberattack on Poland’s power grid in late 2025 - ESET",
@@ -603,7 +616,7 @@
     "national_outage": [
       "Inside the ‘Black Sky’ plans for a nationwide blackout - Herald.Wales",
       "Nottingham Forest 3-2 Chelsea: Blues plunged into darkness - BeSoccer Livescore",
-      "Cuba grid collapse: The situation is growing more dire, experts say - ABC News - Breaking News, Latest News and Videos"
+      "Cuba’s National Electric Grid Collapses, Reason Unknown - EnergyNow.com"
     ],
     "outage_au": [
       "How the Microsoft outage is affecting Australia - ABC News & Headlines – Australian Broadcasting Corporation",
@@ -613,10 +626,7 @@
     "reservists": [
       "UK Launches Largest Reserve Call-Up Since Cold War: 100,000 to Receive Letters as NT$350 Billion Nuclear Submarine Maintenance Contract Is Signed - BigGo Finance",
       "“Even Calling Up 100,000 Reservists Would Not Be Enough”: Questions Over Effectiveness of UK Rearmament Plans Amid Training Gaps, Financial Strains and Defense Industry Decline - https://economy.ac/",
-      "British Army: Who would the MoD call up under plans for 100,000 extra troops? | LBC coverage analysed - NewsCord"
-    ],
-    "ru_signals": [
-      "By Putin's logic, Russia should be given to Mongolia, Lukashenka says - Euronews.com"
+      "British General Nicholas Carter Proposes New Defence Strategy for Baltic States - Военное дело"
     ],
     "scams": [
       "AI-Generated Fake IDs: How Document Forgery Moved From Print Shops to Generative Models - CyberSecurityNews"
@@ -643,9 +653,9 @@
       "yes": 5.5
     },
     {
-      "d24h": -0.6,
+      "d24h": -0.5,
       "q": "US-Iran Final Nuclear Deal by December 31, 2026?",
-      "yes": 4.3
+      "yes": 4.4
     },
     {
       "d24h": 0.5,
@@ -678,9 +688,9 @@
       "yes": 2.1
     },
     {
-      "d24h": 0.0,
+      "d24h": -0.1,
       "q": "Will China invade Taiwan by June 30, 2027?",
-      "yes": 4.5
+      "yes": 4.4
     },
     {
       "d24h": -0.2,
@@ -698,7 +708,7 @@
       "yes": 1.0
     },
     {
-      "d24h": -0.6,
+      "d24h": -0.5,
       "q": "Iran-Oman Hormuz Agreement by November 30?",
       "yes": 1.6
     },
@@ -718,7 +728,7 @@
       "yes": 1.0
     },
     {
-      "d24h": -1.1,
+      "d24h": -1.2,
       "q": "Ukraine agrees not to join NATO by December 31, 2026?",
       "yes": 1.8
     },
@@ -969,19 +979,9 @@
     },
     {
       "band": "Low",
-      "convergence": "Only one kind of sign is showing (electronic warfare). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
-      "domains": [
-        "Electronic warfare"
-      ],
       "key": "mideast",
-      "lit": [
-        {
-          "detail": "gps_gulf 27 vs usual 7",
-          "name": "GPS jamming spike (Gulf / Israel)"
-        }
-      ],
-      "score": 10,
-      "trend": "up"
+      "score": 0,
+      "trend": "down"
     },
     {
       "band": "Low",
@@ -1037,7 +1037,7 @@
         }
       ],
       "score": 15,
-      "trend": "down"
+      "trend": "steady"
     },
     {
       "band": "Guarded",
