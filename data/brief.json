@@ -281,20 +281,19 @@
   ],
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
-    "internet": "RuntimeError: Iran ping-slash24: TimeoutError: The read operation timed out; Iran bgp: URLError: <urlopen error timed ou",
-    "maritime": "TimeoutError: ",
+    "internet": "RuntimeError: Iran ping-slash24: URLError: <urlopen error timed out>; Iran bgp: TimeoutError: The read operation timed o",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output=",
-    "telecom": "RuntimeError: Telstra ping-slash24: HTTPError: HTTP Error 500: Internal Server Error; Telstra bgp: HTTPError: HTTP Error"
+    "telecom": "RuntimeError: Telstra ping-slash24: URLError: <urlopen error timed out>; Telstra bgp: URLError: <urlopen error _ssl.c:99"
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-28T19:08:00Z",
+  "generated_at": "2026-11-28T19:23:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 33,
-    "Black Sea": 24,
-    "Israel & Eastern Mediterranean": 0,
+    "Baltic / Kaliningrad": 32,
+    "Black Sea": null,
+    "Israel & Eastern Mediterranean": 3,
     "Korea": 0,
-    "Persian Gulf": 24,
-    "South Australia": null,
+    "Persian Gulf": 13,
+    "South Australia": 0,
     "Sydney / NSW": 0,
     "Taiwan Strait": 0
   },
@@ -313,9 +312,9 @@
       "attack_reported": true,
       "confirmed": true,
       "headlines": [
+        "UK cyberattack disrupts access to pension and benefit services",
         "U.K.’s biggest-spending government department confirms it was hit by a cyberattack",
-        "UK pensions department confirms cyber attack",
-        "UK pensions department says cyberattack hit services, payments unaffected"
+        "UK pensions department confirms cyber attack"
       ],
       "needs_confirming": false,
       "severity": "Info",
@@ -345,8 +344,7 @@
       "attack_reported": true,
       "confirmed": true,
       "headlines": [
-        "DWP confirms cyber attack on pensions and benefits services",
-        "DWP pensions and benefits services still down after 'cyber incident'"
+        "DWP confirms cyber attack on pensions and benefits services"
       ],
       "needs_confirming": false,
       "severity": "Info",
@@ -371,6 +369,16 @@
       "needs_confirming": false,
       "severity": "Info",
       "target": "Switzerland"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": true,
+      "headlines": [
+        "Pentagon refuses to confirm reported hack of Air Force cloud system"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "Pentagon"
     },
     {
       "attack_reported": false,
@@ -412,16 +420,16 @@
       "Mount Lofty Ranges": "Moderate / Moderate"
     },
     "fire_danger_ok": true,
-    "fires_active": 5,
+    "fires_active": 6,
     "fuel": {
       "brent_aud": 136.6,
       "change_pct": 0.5,
       "pump_cents": 0,
       "week_ago_aud": 135.9
     },
-    "grid_demand_fall_pct": 3.1,
-    "grid_demand_mw": 1164,
-    "grid_demand_usual_mw": 1310,
+    "grid_demand_fall_pct": 2.7,
+    "grid_demand_mw": 1153,
+    "grid_demand_usual_mw": 1316,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
@@ -496,16 +504,14 @@
     },
     "shocks": [],
     "tracking_glitch": false,
-    "traffic_not_normal": {
-      "AE": "DOWN"
-    }
+    "traffic_not_normal": {}
   },
   "nc3": "normal",
   "news_watch": {
     "ai_hack": [
       "Aton Takes On AI Hacking and Quantum Threats, Shifting Financial Security's Axis from 'Detection' to 'Verification' - BigGo Finance",
-      "Microsoft warns of AI-powered ‘attack factories’ as vulnerability reports surge ninefold - Ynetnews",
-      "UK pensions department says cyberattack hit services, payments unaffected - The Detroit News"
+      "UK pensions department says cyberattack hit services, payments unaffected - The Detroit News",
+      "Korea Post's mobile service hacked, with personal data of at least 113,000 customers leaked - Korea JoongAng Daily"
     ],
     "airspace": [
       "Kenya Airways warns of schedule changes on three airspace closure dates - 5050 Markets",
@@ -514,13 +520,13 @@
     ],
     "aviation_halt": [
       "Nationwide Ground Stop Recovery, Thanksgiving Travel Rush, and Top Air Travel Headlines From November 2026 - Travel Pulse",
-      "Rant and Rave: Readers praise workers during nationwide ground stop - The Seattle Times",
-      "Norwegian long-haul budget airline halts all flights, putting Bangkok and Phuket winter services in doubt - VnExpress International"
+      "FAA chief says US air travel back to normal by Sunday - AFP.com",
+      "Rant and Rave: Readers praise workers during nationwide ground stop - The Seattle Times"
     ],
     "bank_outage": [
-      "Home Office slaps $1.5k surprise fee to onshore visa applicants - News24",
       "Australia's Higher Student Visa Fee Hurts Competitiveness - Mirage News",
-      "Onshore penalty: Government makes international graduates pay $1500 more to stay in Australia - The Koala News"
+      "Onshore penalty: Government makes international graduates pay $1500 more to stay in Australia - The Koala News",
+      "Brazilian stocks, Visa, Mastercard, Chaince Digital among gainers: week's financials wrap - TradingView"
     ],
     "blood": [
       "Fourteen migrants remain hospitalized in El Hierro, the highest number to date. - Tenerife Weekly",
@@ -541,11 +547,6 @@
       "Microsoft’s reported ‘Code Red’ follows a day-long outage—and 11 very busy Teams chats - Digg",
       "Microsoft Blames Software Flaw, Traffic Surge and Reduced Capacity for Global Microsoft 365 Outage - INDIA New England News"
     ],
-    "cyber_attrib": [
-      "Spy agency warns active Russian hackers targeting Australian industry - ABC News & Headlines – Australian Broadcasting Corporation",
-      "Busted! Alleged Aussie hackers linked to TeamPCP arrested in joint AFP-FBI-WAPF operation - Cyber Daily",
-      "CISA, FBI warn that Iran-linked hackers are expanding target set for water, energy - Cybersecurity Dive"
-    ],
     "cyber_au": [
       "‘We’re not prepared’: Hastie’s warning of threat that could cripple Australia - Herald Sun",
       "UK pensions department confirms cyber attack - Gulf News",
@@ -553,8 +554,8 @@
     ],
     "cyber_ot": [
       "Shop freezers in seven European countries hit by cyber-attack - BBC",
-      "Hackers plunged dozens of European supermarkets into chaos. It should worry Australians how easy it was - SMH.com.au",
-      "UK operation wards off risk of cyber-attack on supermarket fridges and freezers - The Guardian"
+      "Who is hacking Europe’s supermarket fridges and freezers, and why? - The Guardian",
+      "Supermarket freezers and fridges in Europe hit by cyberattack - Nine.com.au"
     ],
     "cyber_state": [
       "Sandworm behind cyberattack on Poland’s power grid in late 2025 - ESET",
@@ -594,15 +595,12 @@
     "illness": [
       "Mystery illness causes mass hospitalisation of runners - The Nightly",
       "Dr. Siegel on measles comeback, mystery illness outbreak on cruise ship - Fox News",
-      "Zayn Malik hospitalised with mystery illness, forced to cancel upcoming appearances on album release week - Nine.com.au"
+      "148 aboard Florida-bound cruise ship sickened by ‘unknown’ GI outbreak: CDC - The Hill"
     ],
     "masscas": [
       "Thanksgiving lunch ends in ‘mass casualty incident’ - The Telegraph",
       "Is there a food poisoning outbreak in Florida? - The Mary Sue",
       "Leon Medical Centers Doral Thanksgiving Luncheon Leaves 18 Employees Sick - Latin Times"
-    ],
-    "medexport": [
-      "UK Bans Export of Key Medicines: November 2026 - CASRAI"
     ],
     "mobilisation": [
       "“Even Calling Up 100,000 Reservists Would Not Be Enough”: Questions Over Effectiveness of UK Rearmament Plans Amid Training Gaps, Financial Strains and Defense Industry Decline - https://economy.ac/",
@@ -615,9 +613,9 @@
       "Hurricane-hit Georgia driver reminds us: EVERY prepper should own an EV - Electrek"
     ],
     "outage_au": [
-      "How the Microsoft outage is affecting Australia - ABC News & Headlines – Australian Broadcasting Corporation",
+      "Calls for 'automatic compensation' following telco outages - ABC News & Headlines – Australian Broadcasting Corporation",
       "Microsoft ‘deeply sorry’ for global outage, rules out cyberattack and AI - Nine.com.au",
-      "Microsoft exec reveals details of outage - News.com.au"
+      "The Microsoft outage is part of a growing trend. This is how to prepare for further disruption - SBS"
     ],
     "reservists": [
       "UK Launches Largest Reserve Call-Up Since Cold War: 100,000 to Receive Letters as NT$350 Billion Nuclear Submarine Maintenance Contract Is Signed - BigGo Finance",
@@ -635,8 +633,8 @@
       "CENTCOM Denies Iranian Claims of Tanker Seizures, Aircraft Carrier Attack and Hormuz Tolls - The Diplomatic Insight",
       "Seafarer seriously injured in Hormuz tanker attack - Seatrade Maritime News",
       "Iran claims LNG carrier and tankers struck mines in Strait of Hormuz - safety4sea",
-      "Tehran Refuses to Reopen Hormuz as IRGC Reports Tanker Explosion - Palestine Chronicle",
-      "ADNOC Restricts 5 Export Terminals as IRGC Claims 2 Tankers Hit Mines - https://houseofsaud.com/"
+      "ADNOC Restricts 5 Export Terminals as IRGC Claims 2 Tankers Hit Mines - https://houseofsaud.com/",
+      "Tehran Refuses to Reopen Hormuz as IRGC Reports Tanker Explosion - Palestine Chronicle"
     ],
     "strikes": [
       "US military reportedly repelled drones at UK air base - The Canberra Times",
@@ -673,9 +671,9 @@
       "yes": 8.5
     },
     {
-      "d24h": 0.3,
+      "d24h": 0.2,
       "q": "China x Taiwan military clash before 2027?",
-      "yes": 2.8
+      "yes": 2.7
     },
     {
       "d24h": -0.1,
@@ -708,9 +706,9 @@
       "yes": 4.3
     },
     {
-      "d24h": -0.2,
+      "d24h": -0.3,
       "q": "Will Russia invade a NATO country by December 31, 2026?",
-      "yes": 1.8
+      "yes": 1.7
     },
     {
       "d24h": -0.7,
@@ -733,19 +731,19 @@
       "yes": 0.9
     },
     {
-      "d24h": 0.0,
+      "d24h": -0.1,
       "q": "Ukraine agrees not to join NATO by December 31, 2026?",
       "yes": 1.8
     },
     {
-      "d24h": -1.1,
+      "d24h": 0.0,
       "q": "NATO/EU troops fighting in Ukraine by December 31, 2026?",
-      "yes": 2.3
+      "yes": 3.4
     },
     {
-      "d24h": 0.1,
+      "d24h": 0.0,
       "q": "Will Russia test a nuclear weapon by December 31 2026?",
-      "yes": 2.0
+      "yes": 1.9
     },
     {
       "d24h": 0.0,
@@ -758,14 +756,14 @@
       "yes": 2.1
     },
     {
-      "d24h": -1.0,
+      "d24h": -0.5,
       "q": "Ukraine agrees not to join NATO by December 31, 2027?",
       "yes": 17.0
     },
     {
-      "d24h": 0.5,
+      "d24h": 1.0,
       "q": "Will Nick Stewart attend a US x Iran diplomatic meeting by December 31, 2026?",
-      "yes": 8.0
+      "yes": 8.5
     }
   ],
   "quakes_m6_24h": [
@@ -1067,7 +1065,7 @@
         }
       ],
       "score": 20,
-      "trend": "up"
+      "trend": "steady"
     },
     {
       "band": "Low",
