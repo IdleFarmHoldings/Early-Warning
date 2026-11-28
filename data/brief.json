@@ -1,7 +1,13 @@
 {
   "about": "Short form of latest.json + indicators.json for the analysis run. Links and raw samples removed.",
   "acsc": [],
-  "aircraft_flags": {},
+  "aircraft_flags": {
+    "gps_gulf": {
+      "median": 12.0,
+      "status": "ANOMALY",
+      "value": 48
+    }
+  },
   "analyst": {
     "ASPI Strategist": [
       "Kasandigan – the Philippines is pivotal to Australian strategy as never before",
@@ -281,21 +287,21 @@
   ],
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
-    "internet": "RuntimeError: Iran ping-slash24: TimeoutError: The read operation timed out; Iran bgp: TimeoutError: The read operation ",
+    "internet": "RuntimeError: Iran ping-slash24: TimeoutError: The read operation timed out; Iran bgp: HTTPError: HTTP Error 500: Intern",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output=",
-    "telecom": "RuntimeError: Telstra ping-slash24: TimeoutError: The read operation timed out; Telstra bgp: HTTPError: HTTP Error 500: "
+    "telecom": "RuntimeError: Telstra ping-slash24: TimeoutError: The read operation timed out; Telstra bgp: TimeoutError: The read oper"
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-28T01:28:00Z",
+  "generated_at": "2026-11-28T01:42:00Z",
   "gps_bad_pct": {
     "Baltic / Kaliningrad": null,
-    "Black Sea": 27,
-    "Israel & Eastern Mediterranean": 10,
+    "Black Sea": null,
+    "Israel & Eastern Mediterranean": 7,
     "Korea": 0,
-    "Persian Gulf": 52,
-    "South Australia": 3,
-    "Sydney / NSW": 4,
-    "Taiwan Strait": 0
+    "Persian Gulf": 48,
+    "South Australia": 5,
+    "Sydney / NSW": 3,
+    "Taiwan Strait": 1
   },
   "incidents": [
     {
@@ -332,11 +338,11 @@
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
-        "Hackers Breach U.S. Air Force Cloud One, Disrupting Military Cloud Operations: 19 outlets compared"
+        "'No Classified Networks Accessed' — CIA, ODNI and NGA Breached by Hackers Who May Have Used AI Hacking Tool ARTEX"
       ],
       "needs_confirming": false,
       "severity": "Info",
-      "target": "Hackers"
+      "target": "No Classified Networks"
     },
     {
       "attack_reported": true,
@@ -349,24 +355,24 @@
       "target": "Israel's"
     },
     {
-      "attack_reported": false,
+      "attack_reported": true,
       "confirmed": false,
       "headlines": [
-        "What the Microsoft 365 disruption reveals about employee experience"
+        "Hackers Breach U.S. Air Force Cloud One, Disrupting Military Cloud Operations: 19 outlets compared"
       ],
       "needs_confirming": false,
       "severity": "Info",
-      "target": "Microsoft"
+      "target": "Hackers"
     },
     {
       "attack_reported": false,
       "confirmed": false,
       "headlines": [
-        "Analysts dispel ‘conspiracy theories’ surrounding recent tech outages"
+        "Microsoft outage disrupts Outlook, Teams and AI services for over five hours"
       ],
       "needs_confirming": false,
       "severity": "Info",
-      "target": "Analysts"
+      "target": "Microsoft"
     },
     {
       "attack_reported": false,
@@ -401,17 +407,17 @@
       "pump_cents": 1,
       "week_ago_aud": 135.8
     },
-    "grid_demand_fall_pct": 27.0,
-    "grid_demand_mw": 369,
-    "grid_demand_usual_mw": 324,
+    "grid_demand_fall_pct": 44.0,
+    "grid_demand_mw": 282,
+    "grid_demand_usual_mw": 322,
     "grid_lor_level": 0,
     "nearby_incidents": [
       {
-        "area": "127 UPPER STURT RD UPPER STURT",
-        "dist": "25-60 km",
-        "event": "Grass Fire",
-        "headline": "UPPER STURT : GRASS FIRE",
-        "id": "F-261128-0057 UPPER STURT, UPPER STURT RD (GRASS FIRE)",
+        "area": "1514 SOUTH PARA RD KERSBROOK",
+        "dist": "10-25 km",
+        "event": "Hazardous Materials",
+        "headline": "KERSBROOK : HAZARDOUS MATERIALS",
+        "id": "F-261128-0065 KERSBROOK, SOUTH PARA RD (HAZMAT)",
         "level": null,
         "notify": false
       }
@@ -488,9 +494,7 @@
     },
     "shocks": [],
     "tracking_glitch": false,
-    "traffic_not_normal": {
-      "AE": "DOWN"
-    }
+    "traffic_not_normal": {}
   },
   "nc3": "normal",
   "news_watch": {
@@ -507,12 +511,12 @@
     "aviation_halt": [
       "Flights grounded throughout Midwest after temporary outage at Minnesota air traffic control facility: FAA - ABC News - Breaking News, Latest News and Videos",
       "Norse Atlantic files for bankruptcy and halts all flights - Business Day",
-      "Aviation Business News - Aviation Business News"
+      "Duffy to Testify Before Senate on Nationwide Ground Stop - AVweb"
     ],
     "bank_outage": [
       "Denials soar for ‘extraordinary ability’ visa in program once used by Melania Trump - The Washington Post",
       "UK: student visa grants down by almost 100,000 in a year - StudyTravel Network",
-      "Aussie shares end week higher as metals rebound - CommBank"
+      "Malawi: Network outage disrupts electronic visa (e-Visa) services - VisasNews"
     ],
     "blood": [
       "Vintar government, Army bring services to Barangay Namoroc - Daily Tribune",
@@ -559,8 +563,8 @@
     ],
     "deepfake": [
       "Deepfake Musk, Fake Ransomware Heroes, and a Spy in a Palo Alto Coffee Shop: This Week in Security Was Wild - PCMag Australia",
-      "Doug Bowser posts, then deletes, AI-generated Thanksgiving card while apologizing to the ‘haters’ - Nintendo Wire",
-      "AI-generated protest video shared thousands of times online - Full Fact"
+      "AI-generated protest video shared thousands of times online - Full Fact",
+      "South Gyeongsang Province Governor Park Wan-soo is expected to gain momentum in the operation of the.. - 매일경제"
     ],
     "dieoff": [
       "Mackenzie, 29 others convicted of manslaughter in Shakahola mass deaths - Citizen Digital",
@@ -607,9 +611,9 @@
       "Cuba grid collapse: The situation is growing more dire, experts say - ABC News - Breaking News, Latest News and Videos"
     ],
     "outage_au": [
-      "How the Microsoft outage is affecting Australia - ABC News & Headlines – Australian Broadcasting Corporation",
+      "Calls for 'automatic compensation' following telco outages - ABC News & Headlines – Australian Broadcasting Corporation",
       "Microsoft ‘deeply sorry’ for global outage, rules out cyberattack and AI - Nine.com.au",
-      "Microsoft exec reveals details of outage - News.com.au"
+      "The Microsoft outage is part of a growing trend. This is how to prepare for further disruption - SBS"
     ],
     "reservists": [
       "UK Begins Contacting Strategic Reserve Veterans, Says Letters Are Not a Call-Up - The Defense Post",
@@ -633,11 +637,11 @@
       "Seafarer seriously injured in Hormuz tanker attack - Seatrade Maritime News",
       "Iran claims LNG carrier and tankers struck mines in Strait of Hormuz - safety4sea",
       "IRGC Claims 3 Oil Tankers Hit Mines in Hormuz Under US Escort - https://houseofsaud.com/",
-      "Oil tanker strikes mine in south of Strait of Hormuz - Mehr News Agency"
+      "ADNOC L&S says one missing, 11 injured in Strait of Hormuz ship attack - Baird Maritime"
     ],
     "strikes": [
-      "Iran Warns of Retaliation if US Forces Attack - ASHARQ AL-AWSAT English",
       "Trump downplays Russia, China support for Iran during talks with US troops - Al Jazeera",
+      "Iran Warns of Retaliation if US Forces Attack - ASHARQ AL-AWSAT English",
       "Ukraine strikes Savasleyka air base - Key Aero",
       "Ukraine says strike on major Russian air base damaged five military jets - AeroTime",
       "Ukraine says it struck a major Russian air base, damaging five planes - Arab News"
@@ -650,9 +654,9 @@
       "yes": 5.5
     },
     {
-      "d24h": 1.5,
+      "d24h": 1.4,
       "q": "US-Iran Final Nuclear Deal by December 31, 2026?",
-      "yes": 4.7
+      "yes": 4.6
     },
     {
       "d24h": 1.0,
@@ -725,7 +729,7 @@
       "yes": 0.8
     },
     {
-      "d24h": 0.3,
+      "d24h": -0.1,
       "q": "Ukraine agrees not to join NATO by December 31, 2026?",
       "yes": 2.8
     },
@@ -966,9 +970,19 @@
     },
     {
       "band": "Low",
+      "convergence": "Only one kind of sign is showing (electronic warfare). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
+      "domains": [
+        "Electronic warfare"
+      ],
       "key": "mideast",
-      "score": 0,
-      "trend": "steady"
+      "lit": [
+        {
+          "detail": "gps_gulf 48 vs usual 12.0",
+          "name": "GPS jamming spike (Gulf / Israel)"
+        }
+      ],
+      "score": 10,
+      "trend": "up"
     },
     {
       "band": "Low",
