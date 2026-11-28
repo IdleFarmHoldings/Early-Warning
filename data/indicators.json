@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-28T19:50:00Z",
+  "generated_at": "2026-11-28T20:06:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -376,23 +376,14 @@
       "why": "North Korean missile launches are often preceded by navigation warnings; South Korea and Japan report GPS jamming from the North during tense periods."
     },
     {
-      "band": "Elevated",
-      "convergence": "Signs are converging across 3 separate areas (elite movement, markets and state signalling). Unrelated systems flagging the same scenario at once is the pattern seen before past events. Before February 2022: embassy departures, mobilisation reports, airspace closures and a surge in GPS jamming. Baltic and Black Sea jamming is now routine, so only spikes above normal count. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and mobilisation / reservist reports (russia / nato).",
+      "band": "Low",
+      "convergence": "Two different kinds of sign are showing together (markets and state signalling). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and mobilisation / reservist reports (russia / nato).",
       "domains": [
-        "Elite movement",
         "Markets",
         "State signalling"
       ],
       "key": "russia",
       "lit": [
-        {
-          "detail": "retreat_bizjets 5 vs usual 0.0",
-          "domain": "Elite movement",
-          "id": "jets",
-          "name": "Private jets heading to retreat destinations",
-          "short": "Private jets heading to retreat…",
-          "weight": 10
-        },
         {
           "detail": "Dillon Brooks gets it to go at the buzzer",
           "domain": "State signalling",
@@ -412,8 +403,8 @@
       ],
       "name": "Russia-NATO escalation",
       "sa_impact": "Indirect: energy and market shock, cyber attacks that can spill over to Australian systems, and nuclear-risk rhetoric.",
-      "score": 20,
-      "trend": "up",
+      "score": 10,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Electronic warfare",
@@ -449,6 +440,12 @@
           "domain": "Diplomatic",
           "id": "dep",
           "name": "New US embassy departure order (Russia / Belarus / Ukraine region)",
+          "weight": 10
+        },
+        {
+          "domain": "Elite movement",
+          "id": "jets",
+          "name": "Private jets heading to retreat destinations",
           "weight": 10
         },
         {
@@ -491,26 +488,15 @@
       "why": "Before February 2022: embassy departures, mobilisation reports, airspace closures and a surge in GPS jamming. Baltic and Black Sea jamming is now routine, so only spikes above normal count."
     },
     {
-      "band": "Guarded",
-      "convergence": "Only one kind of sign is showing (elite movement). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: us nuclear command aircraft unusual, mobilisation reports (any major power) and forecast markets jump on nuclear use.",
-      "domains": [
-        "Elite movement"
-      ],
+      "band": "Low",
+      "convergence": "No warning signs are showing. The strongest signs not yet showing: us nuclear command aircraft unusual, private jets heading to retreat destinations and mobilisation reports (any major power).",
+      "domains": [],
       "key": "nuclear",
-      "lit": [
-        {
-          "detail": "retreat_bizjets 5 vs usual 0.0",
-          "domain": "Elite movement",
-          "id": "jets",
-          "name": "Private jets heading to retreat destinations",
-          "short": "Private jets heading to retreat…",
-          "weight": 15
-        }
-      ],
+      "lit": [],
       "name": "Nuclear use or alert",
       "sa_impact": "Fallout risk to SA from a northern-hemisphere exchange is very low, but global trade, fuel and finance would be severely disrupted.",
-      "score": 15,
-      "trend": "up",
+      "score": 0,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Nuclear command",
@@ -523,6 +509,12 @@
           "id": "tankers",
           "name": "Air-refuelling tanker surge",
           "weight": 10
+        },
+        {
+          "domain": "Elite movement",
+          "id": "jets",
+          "name": "Private jets heading to retreat destinations",
+          "weight": 15
         },
         {
           "domain": "Elite movement",
@@ -711,9 +703,10 @@
       "why": "Before COVID-19 (Dec 2019 - Feb 2020): reports of an unknown pneumonia cluster, WHO outbreak notices, mask and hazmat makers (Alpha Pro Tech, Lakeland) and vaccine developers (Moderna, Novavax) surging weeks before broad markets fell, and countries restricting exports of masks and medicines (Taiwan from 24 Jan 2020, then dozens more)."
     },
     {
-      "band": "Low",
-      "convergence": "Only one kind of sign is showing (exploited vulnerabilities). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: sudden fall in sa electricity demand (possible large blackout), global cyber threat level raised (sans infocon not green) and several vpn / firewall flaws exploited this week.",
+      "band": "Guarded",
+      "convergence": "Two different kinds of sign are showing together (australian incidents and exploited vulnerabilities). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: sudden fall in sa electricity demand (possible large blackout), global cyber threat level raised (sans infocon not green) and several vpn / firewall flaws exploited this week.",
       "domains": [
+        "Australian incidents",
         "Exploited vulnerabilities"
       ],
       "key": "cyber",
@@ -725,12 +718,20 @@
           "name": "Surge in newly exploited vulnerabilities (2x normal week)",
           "short": "Surge in newly exploited vulnerabilities",
           "weight": 10
+        },
+        {
+          "detail": "Veeam vs Rubrik vs Commvault for Australian Ransomware Recovery",
+          "domain": "Australian incidents",
+          "id": "au",
+          "name": "Major Australian cyber incident reported",
+          "short": "Major Australian cyber incident reported",
+          "weight": 10
         }
       ],
       "name": "Major cyber attack on Australia",
       "sa_impact": "Banks, payments, hospitals, fuel distribution, telcos and the power grid all run on networks; a large attack can stop card payments and services for hours to days.",
-      "score": 10,
-      "trend": "steady",
+      "score": 20,
+      "trend": "up",
       "unlit": [
         {
           "domain": "Global threat level",
@@ -767,12 +768,6 @@
           "id": "state",
           "name": "Reports of state hackers / pre-positioning / wipers",
           "weight": 15
-        },
-        {
-          "domain": "Australian incidents",
-          "id": "au",
-          "name": "Major Australian cyber incident reported",
-          "weight": 10
         },
         {
           "domain": "Communications",
