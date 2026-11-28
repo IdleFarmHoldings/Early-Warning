@@ -160,7 +160,7 @@
         "2026-11-26 South Korea: Chinese, North Korean Hackers Adopt ARTEX AI Offensive Framework (named attacker)",
         "2026-11-26 Australia: OpenAI AI Agents Bypass Security Restrictions to Access Australian Government Systems (same pattern)"
       ],
-      "incidents_7d": 32,
+      "incidents_7d": 31,
       "official_warning": true,
       "score": 100,
       "sectors": [
@@ -287,14 +287,14 @@
     "telecom": "RuntimeError: Telstra ping-slash24: TimeoutError: The read operation timed out; Telstra bgp: TimeoutError: The read oper"
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-28T09:14:00Z",
+  "generated_at": "2026-11-28T09:23:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 24,
-    "Black Sea": 29,
-    "Israel & Eastern Mediterranean": 17,
-    "Korea": 1,
-    "Persian Gulf": 31,
-    "South Australia": 0,
+    "Baltic / Kaliningrad": 23,
+    "Black Sea": 30,
+    "Israel & Eastern Mediterranean": 11,
+    "Korea": 0,
+    "Persian Gulf": 29,
+    "South Australia": null,
     "Sydney / NSW": 0,
     "Taiwan Strait": 0
   },
@@ -303,11 +303,21 @@
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
-        "DWP Benefits Services Remain Offline After Cyber Incident"
+        "Flight Centre hack victims safe to travel on DFAT advice"
       ],
       "needs_confirming": false,
       "severity": "Info",
-      "target": "DWP Benefits Services"
+      "target": "Flight Centre"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "Pensions and benefits services still down after 'cyber incident'"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "Pensions"
     },
     {
       "attack_reported": true,
@@ -318,6 +328,16 @@
       "needs_confirming": false,
       "severity": "Info",
       "target": "RansomwareRadar"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "DWP Benefits Services Remain Offline After Cyber Incident"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "DWP Benefits Services"
     },
     {
       "attack_reported": true,
@@ -350,14 +370,24 @@
       "target": "No Classified Networks"
     },
     {
-      "attack_reported": false,
+      "attack_reported": true,
       "confirmed": true,
       "headlines": [
-        "Cloudflare status page: Email Delivery Delays"
+        "Hackers breached 24 Check Point management servers, GreyNoise says"
       ],
       "needs_confirming": false,
-      "severity": "Warning",
-      "target": "Internet core (DNS / CDN)"
+      "severity": "Info",
+      "target": "Hackers"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "E9pay reportedly loses 2.5 billion won across 90 cyberattacks"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "E9pay"
     },
     {
       "attack_reported": false,
@@ -369,6 +399,16 @@
       "needs_confirming": false,
       "severity": "Info",
       "target": "Microsoft"
+    },
+    {
+      "attack_reported": false,
+      "confirmed": false,
+      "headlines": [
+        "IT Minister Shares Good News on Pakistan Internet Disruption"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "IT Minister Shares"
     },
     {
       "attack_reported": false,
@@ -397,16 +437,16 @@
       "Mount Lofty Ranges": "High / Moderate"
     },
     "fire_danger_ok": true,
-    "fires_active": 11,
+    "fires_active": 8,
     "fuel": {
       "brent_aud": 136.6,
       "change_pct": 0.5,
       "pump_cents": 0,
       "week_ago_aud": 135.9
     },
-    "grid_demand_fall_pct": -1.5,
-    "grid_demand_mw": 1353,
-    "grid_demand_usual_mw": 1525,
+    "grid_demand_fall_pct": 0.3,
+    "grid_demand_mw": 1329,
+    "grid_demand_usual_mw": 1550,
     "grid_lor_level": 0,
     "nearby_incidents": [
       {
@@ -423,16 +463,7 @@
         "dist": "25-60 km",
         "event": "Grass Fire",
         "headline": "BELAIR : GRASS FIRE",
-        "id": "F-261128-0099 BELAIR, MELVILLE GULLY RD (GRASS FIRE)",
-        "level": null,
-        "notify": false
-      },
-      {
-        "area": "150 ADAMS RD CRAIGMORE",
-        "dist": "10-25 km",
-        "event": "Structure Fire",
-        "headline": "CRAIGMORE : STRUCTURE FIRE",
-        "id": "F-261128-0096 CRAIGMORE, ADAMS RD (STRUCTURE FIRE)",
+        "id": "F-261128-0099 Belair, Melville Gully Rd (Grass Fire)",
         "level": null,
         "notify": false
       }
@@ -475,7 +506,7 @@
       "Morgan Vale Road, Pine Valley Station: MORGAN MAIL RD Closed due to flooding over road",
       "Pine Valley Road, Pine Valley Station: PINE VALLEY RD Closed due to flooding over road"
     ],
-    "rooftop_pv_mw": 338,
+    "rooftop_pv_mw": 381,
     "sawater_news": [],
     "watch_and_act": []
   },
@@ -509,14 +540,16 @@
     },
     "shocks": [],
     "tracking_glitch": false,
-    "traffic_not_normal": {}
+    "traffic_not_normal": {
+      "AU": "DOWN"
+    }
   },
   "nc3": "normal",
   "news_watch": {
     "ai_hack": [
       "Korea Post's mobile service hacked, with personal data of at least 113,000 customers leaked - Korea JoongAng Daily",
-      "Report Finds Growing Interest in AI-Powered Cybercrime Tools - Petri IT Knowledgebase",
-      "What is ARTEX, the AI-powered tool linked to recent cyberattacks? - The Daily Star"
+      "What is CyberStrikeAI? The open-source AI hacking tool named in Switzerland's warning - Nacionale",
+      "Report Finds Growing Interest in AI-Powered Cybercrime Tools - Petri IT Knowledgebase"
     ],
     "airspace": [
       "Nairobi Airspace Closed for Military Activity Today and on 4 and 12 December, With Notice Reaching Public Only Hours Ahead - Avi-Go",
@@ -538,8 +571,9 @@
       "Hawaii Donor Lyman Koike Inducted to Hall of Fame - Wisevoter"
     ],
     "cables": [
+      "PTA Says SMW5 Submarine Cable Fully Restored, Internet Services Normal - UrduPoint",
       "Internet services return to normal across Pakistan as submarine cable fixed - Pakistan Observer",
-      "Prices of Jet Fuel, Kerosene and Light Diesel Oil Cut Further - UrduPoint"
+      "IT Minister Shares Good News on Pakistan Internet Disruption - ProPakistani"
     ],
     "chem": [
       "New findings may shed light on Japan’s wartime chemical weapons - chinadailyhk",
@@ -558,13 +592,8 @@
     ],
     "cyber_au": [
       "‘Dangerous complacency’: Australia is unprepared for a major hack - The Courier Mail",
-      "Australian travel giant investigates data breach after customer records accessed - The Canberra Times",
-      "Flight Centre hack victims safe to travel on DFAT advice - The Australian"
-    ],
-    "cyber_ot": [
-      "Shop freezers in seven European countries hit by cyber-attack - BBC",
-      "Hackers plunged dozens of European supermarkets into chaos. It should worry Australians how easy it was - SMH.com.au",
-      "UK operation wards off risk of cyber-attack on supermarket fridges and freezers - The Guardian"
+      "Flight Centre hack victims safe to travel on DFAT advice - Herald Sun",
+      "Australian travel giant investigates data breach after customer records accessed - The Canberra Times"
     ],
     "cyber_state": [
       "Sandworm behind cyberattack on Poland’s power grid in late 2025 - ESET",
@@ -573,13 +602,13 @@
     ],
     "cyber_supply": [
       "Cairn AI agents found a MONAI Label zero-day, Amazon says - OrcaRouter",
-      "Is your website at risk? Sri Lanka CERT issues urgent advisory - Newswire",
-      "CVE-2026-132165: Drupal Fail2Install RCE Exploited in the Wild - SOC Prime"
+      "CVE-2026-132165: Drupal Fail2Install RCE Exploited in the Wild - SOC Prime",
+      "Unpatched Cacti zero-day gets a public exploit for remote code execution - MLQ.ai"
     ],
     "deepfake": [
       "Deepfake Musk, Fake Ransomware Heroes, and a Spy in a Palo Alto Coffee Shop: This Week in Security Was Wild - PCMag Australia",
-      "AI-generated protest video shared thousands of times online - Full Fact",
-      "AI-generated video falsely claims tourist apologised to Daura Emir over alleged assault - FactCheckHub"
+      "Use AI to fight AI-generated misinformation, says Fahmi - The Star",
+      "Doug Bowser posts, then deletes, AI-generated Thanksgiving card while apologizing to the ‘haters’ - Nintendo Wire"
     ],
     "dieoff": [
       "Mysterious Deaths Of 2 Women Inside Levittown Home Under Investigation - NewsBreak: Local News & Alerts",
@@ -740,12 +769,12 @@
       "yes": 5.5
     },
     {
-      "d24h": -0.3,
+      "d24h": -0.1,
       "q": "NATO x Russia military clash by November 30, 2026?",
       "yes": 0.8
     },
     {
-      "d24h": 0.7,
+      "d24h": 1.0,
       "q": "Ukraine agrees not to join NATO by December 31, 2026?",
       "yes": 2.8
     },
@@ -1095,14 +1124,6 @@
     "pandemic": 0.98
   },
   "status_pages": [
-    {
-      "au": false,
-      "big": true,
-      "provider": "Cloudflare",
-      "started": "2026-11-28T07:21:21Z",
-      "title": "Email Delivery Delays",
-      "where": "Dashboard"
-    },
     {
       "au": false,
       "big": false,
