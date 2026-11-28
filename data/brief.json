@@ -1,13 +1,7 @@
 {
   "about": "Short form of latest.json + indicators.json for the analysis run. Links and raw samples removed.",
   "acsc": [],
-  "aircraft_flags": {
-    "gps_gulf": {
-      "median": 10,
-      "status": "ANOMALY",
-      "value": 40
-    }
-  },
+  "aircraft_flags": {},
   "analyst": {
     "ASPI Strategist": [
       "Kasandigan – the Philippines is pivotal to Australian strategy as never before",
@@ -289,18 +283,18 @@
     "acsc": "TimeoutError: The read operation timed out",
     "internet": "RuntimeError: Iran ping-slash24: TimeoutError: The read operation timed out; Iran bgp: TimeoutError: The read operation ",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output=",
-    "telecom": "RuntimeError: Telstra ping-slash24: TimeoutError: The read operation timed out; Telstra bgp: TimeoutError: The read oper"
+    "telecom": "RuntimeError: Telstra ping-slash24: URLError: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violati"
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-28T04:32:00Z",
+  "generated_at": "2026-11-28T04:43:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 87,
+    "Baltic / Kaliningrad": 82,
     "Black Sea": null,
-    "Israel & Eastern Mediterranean": 0,
-    "Korea": 2,
-    "Persian Gulf": 40,
+    "Israel & Eastern Mediterranean": 4,
+    "Korea": 1,
+    "Persian Gulf": 34,
     "South Australia": 0,
-    "Sydney / NSW": 5,
+    "Sydney / NSW": 3,
     "Taiwan Strait": 1
   },
   "incidents": [
@@ -316,14 +310,13 @@
     },
     {
       "attack_reported": true,
-      "confirmed": true,
+      "confirmed": false,
       "headlines": [
-        "Hackers allegedly access US Air Force’s digital cloud, report says",
-        "Hackers Breach U.S. Air Force Cloud One, Disrupting Military Cloud Operations: 19 outlets compared"
+        "Flight Centre hack victims safe to travel on DFAT advice"
       ],
       "needs_confirming": false,
       "severity": "Info",
-      "target": "Hackers"
+      "target": "Flight Centre"
     },
     {
       "attack_reported": true,
@@ -334,6 +327,16 @@
       "needs_confirming": false,
       "severity": "Info",
       "target": "What"
+    },
+    {
+      "attack_reported": true,
+      "confirmed": false,
+      "headlines": [
+        "Hackers Breach U.S. Air Force Cloud One, Disrupting Military Cloud Operations: 19 outlets compared"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "Hackers"
     },
     {
       "attack_reported": false,
@@ -379,9 +382,9 @@
       "pump_cents": 0,
       "week_ago_aud": 135.9
     },
-    "grid_demand_fall_pct": 19.0,
-    "grid_demand_mw": 262,
-    "grid_demand_usual_mw": 388,
+    "grid_demand_fall_pct": 5.9,
+    "grid_demand_mw": 304,
+    "grid_demand_usual_mw": 410,
     "grid_lor_level": 0,
     "nearby_incidents": [
       {
@@ -398,7 +401,7 @@
         "dist": "10-25 km",
         "event": "Hazardous Materials",
         "headline": "KERSBROOK : HAZARDOUS MATERIALS",
-        "id": "F-261128-0065 KERSBROOK, SOUTH PARA RD (HAZMAT)",
+        "id": "F-261128-0065 Kersbrook, South Para Rd (Hazmat)",
         "level": null,
         "notify": false
       }
@@ -441,7 +444,7 @@
       "Morgan Vale Road, Pine Valley Station: MORGAN MAIL RD Closed due to flooding over road",
       "Pine Valley Road, Pine Valley Station: PINE VALLEY RD Closed due to flooding over road"
     ],
-    "rooftop_pv_mw": 1809,
+    "rooftop_pv_mw": 1520,
     "sawater_news": [],
     "watch_and_act": []
   },
@@ -487,7 +490,7 @@
     "airspace": [
       "Nairobi Airspace Closed for Military Activity Today and on 4 and 12 December, With Notice Reaching Public Only Hours Ahead - Avi-Go",
       "Kenya Airways warns of schedule changes on three airspace closure dates - 5050 Markets",
-      "Explainer: Hours of Notice for a Closed Sky, What Nairobi's Airspace Shutdowns Could Cost - Dawan Africa"
+      "Nairobi airspace set for three temporary closures - 5050 Markets"
     ],
     "aviation_halt": [
       "Flights grounded throughout Midwest after temporary outage at Minnesota air traffic control facility: FAA - ABC News - Breaking News, Latest News and Videos",
@@ -524,8 +527,8 @@
     ],
     "cyber_au": [
       "‘Dangerous complacency’: Australia is unprepared for a major hack - The Courier Mail",
-      "Australian travel giant investigates data breach after customer records accessed - The Canberra Times",
-      "Flight Centre hack victims safe to travel on DFAT advice - The Australian"
+      "Flight Centre hack victims safe to travel on DFAT advice - Herald Sun",
+      "Australian travel giant investigates data breach after customer records accessed - The Canberra Times"
     ],
     "cyber_ot": [
       "Shop freezers in seven European countries hit by cyber-attack - BBC",
@@ -540,16 +543,16 @@
     "cyber_supply": [
       "Cacti zero-day 4HTTP2SHELL, public exploit and fixes - Meteora Web",
       "Warning: Actively Exploited OS Command Injection in Juniper Session Smart Conductor, Patch Immediately! - CCB Belgium",
-      "Breaking RSA Cryptography in Polynomial Time: Rumors of AI Factoring Breakthroughs Shake Cybersecurity + Video - Howl.Link"
+      "Is your website at risk? Sri Lanka CERT issues urgent advisory - Newswire"
     ],
     "deepfake": [
       "Deepfake Musk, Fake Ransomware Heroes, and a Spy in a Palo Alto Coffee Shop: This Week in Security Was Wild - PCMag Australia",
       "AI-generated protest video shared thousands of times online - Full Fact",
-      "AI-generated video falsely claims tourist apologised to Daura Emir over alleged assault - FactCheckHub"
+      "Lai Mohammed: AI-Generated Fake News Could Undermine Democracy, Public Trust - THISDAYLIVE"
     ],
     "dieoff": [
-      "Mackenzie, 29 others convicted of manslaughter in Shakahola mass deaths - Citizen Digital",
       "Mysterious Deaths Of 2 Women Inside Levittown Home Under Investigation - NewsBreak: Local News & Alerts",
+      "Mackenzie, 29 others convicted of manslaughter in Shakahola mass deaths - Citizen Digital",
       "Kalonzo insists opposition unity key to defeating Ruto in 2027 - Citizen Digital"
     ],
     "flash": [
@@ -559,7 +562,6 @@
     ],
     "fuel_au": [
       "Job queues, petrol rations: Reality of living through a recession - Adelaide Now",
-      "Government expected to update fuel situation today - FBC News",
       "Ansett Australia: The Airline That Ran Out Of Altitude - Nett Magazine Online"
     ],
     "gulf_strikes": [
@@ -585,7 +587,7 @@
     "mobilisation": [
       "Mobilized from Kalmykia killed in Ukraine - Caucasian Knot",
       "A postgraduate student was mobilized despite submitting an application for a deferment, after which he went AWOL; the court ruled in the man's favor. - Судово-юридична газета",
-      "“Even Calling Up 100,000 Reservists Would Not Be Enough”: Questions Over Effectiveness of UK Rearmament Plans Amid Training Gaps, Financial Strains and Defense Industry Decline - https://economy.ac/"
+      "Five NATO Members Procure 430 Armored Vehicles Amid Tensions - 조선일보"
     ],
     "national_outage": [
       "Inside the ‘Black Sky’ plans for a nationwide blackout - Herald.Wales",
@@ -621,9 +623,9 @@
       "Oil tanker catches fire in south of Strait of Hormuz - Mehr News Agency"
     ],
     "strikes": [
-      "Iran Warns of Retaliation if US Forces Attack - ASHARQ AL-AWSAT English",
       "Areas near Bahrain US military base largely deserted months after Iran attacks - The Jerusalem Post",
       "Ukraine says strike on major Russian air base damaged five military jets - AeroTime",
+      "Iran Warns of Retaliation if US Forces Attack - ASHARQ AL-AWSAT English",
       "Trump downplays Russia, China support for Iran during talks with US troops - Al Jazeera",
       "Ukraine strikes Savasleyka air base - Key Aero"
     ]
@@ -635,9 +637,9 @@
       "yes": 5.5
     },
     {
-      "d24h": -0.1,
+      "d24h": -0.4,
       "q": "US-Iran Final Nuclear Deal by December 31, 2026?",
-      "yes": 4.6
+      "yes": 4.3
     },
     {
       "d24h": 1.0,
@@ -650,7 +652,7 @@
       "yes": 2.5
     },
     {
-      "d24h": -0.5,
+      "d24h": -0.4,
       "q": "US-Iran Hormuz Agreement by November 30, 2026?",
       "yes": 1.5
     },
@@ -710,7 +712,7 @@
       "yes": 0.8
     },
     {
-      "d24h": -0.6,
+      "d24h": -0.3,
       "q": "Ukraine agrees not to join NATO by December 31, 2026?",
       "yes": 2.8
     },
@@ -951,19 +953,9 @@
     },
     {
       "band": "Low",
-      "convergence": "Only one kind of sign is showing (electronic warfare). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
-      "domains": [
-        "Electronic warfare"
-      ],
       "key": "mideast",
-      "lit": [
-        {
-          "detail": "gps_gulf 40 vs usual 10",
-          "name": "GPS jamming spike (Gulf / Israel)"
-        }
-      ],
-      "score": 10,
-      "trend": "up"
+      "score": 0,
+      "trend": "down"
     },
     {
       "band": "Low",
@@ -1066,6 +1058,14 @@
     "pandemic": 0.98
   },
   "status_pages": [
+    {
+      "au": false,
+      "big": false,
+      "provider": "Cloudflare",
+      "started": "2026-11-28T04:45:43Z",
+      "title": "Elevated Errors for Cloudflare Workers Subrequests",
+      "where": "Workers, Atlanta, United States - (ATL), Columbus, United States - (CMH), Dallas, United States - (DFW)"
+    },
     {
       "au": false,
       "big": false,
