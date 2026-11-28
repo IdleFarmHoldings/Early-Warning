@@ -1,7 +1,13 @@
 {
   "about": "Short form of latest.json + indicators.json for the analysis run. Links and raw samples removed.",
   "acsc": [],
-  "aircraft_flags": {},
+  "aircraft_flags": {
+    "gps_baltic": {
+      "median": 21.0,
+      "status": "ANOMALY",
+      "value": 48
+    }
+  },
   "analyst": {
     "ASPI Strategist": [
       "Kasandigan – the Philippines is pivotal to Australian strategy as never before",
@@ -32,13 +38,13 @@
       {
         "new_threads": 4,
         "threads": [
-          "/pol/ You guys always Doom about american collapsing or being fucked, but i ask (48 replies in 0.7 h) https://boards.4chan.org/pol/thread/546946060",
-          "/pol/ AI derangement syndrome (AIDS) (35 replies in 0.9 h) https://boards.4chan.org/pol/thread/546945503",
-          "/pol/ Samson Option of the jews and Israel (38 replies in 2.3 h) https://boards.4chan.org/pol/thread/546942337",
-          "/pol/ NUCLEAR HAPPENING (17 replies in 1.6 h) https://boards.4chan.org/pol/thread/546943966"
+          "/pol/ You guys always Doom about american collapsing or being fucked, but i ask (48 replies in 0.9 h) https://boards.4chan.org/pol/thread/546946060",
+          "/pol/ AI derangement syndrome (AIDS) (38 replies in 1.1 h) https://boards.4chan.org/pol/thread/546945503",
+          "/pol/ Samson Option of the jews and Israel (39 replies in 2.5 h) https://boards.4chan.org/pol/thread/546942337",
+          "/pol/ NUCLEAR HAPPENING (17 replies in 1.8 h) https://boards.4chan.org/pol/thread/546943966"
         ],
         "topic": "Nuclear",
-        "usual": 0.0,
+        "usual": 0,
         "why": "well above usual for this hour"
       }
     ]
@@ -295,17 +301,18 @@
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
     "internet": "RuntimeError: Iran ping-slash24: TimeoutError: The read operation timed out; Iran bgp: TimeoutError: The read operation ",
+    "maritime": "TimeoutError: ",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output=",
-    "telecom": "RuntimeError: Telstra ping-slash24: TimeoutError: The read operation timed out; Telstra bgp: TimeoutError: The read oper"
+    "telecom": "RuntimeError: Telstra ping-slash24: TimeoutError: The read operation timed out; Telstra bgp: HTTPError: HTTP Error 500: "
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-28T17:36:00Z",
+  "generated_at": "2026-11-28T17:48:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 31,
-    "Black Sea": null,
+    "Baltic / Kaliningrad": 48,
+    "Black Sea": 21,
     "Israel & Eastern Mediterranean": 5,
-    "Korea": 0,
-    "Persian Gulf": 3,
+    "Korea": 6,
+    "Persian Gulf": 1,
     "South Australia": null,
     "Sydney / NSW": null,
     "Taiwan Strait": 0
@@ -385,16 +392,6 @@
       "target": "Switzerland"
     },
     {
-      "attack_reported": true,
-      "confirmed": true,
-      "headlines": [
-        "Hackers breached 24 Check Point management servers, GreyNoise says"
-      ],
-      "needs_confirming": false,
-      "severity": "Info",
-      "target": "Hackers"
-    },
-    {
       "attack_reported": false,
       "confirmed": true,
       "headlines": [
@@ -404,6 +401,16 @@
       "needs_confirming": false,
       "severity": "Info",
       "target": "Microsoft"
+    },
+    {
+      "attack_reported": false,
+      "confirmed": false,
+      "headlines": [
+        "Amazon outage forces websites offline"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "Amazon"
     }
   ],
   "internet_drop_pct": {},
@@ -431,9 +438,9 @@
       "pump_cents": 0,
       "week_ago_aud": 135.9
     },
-    "grid_demand_fall_pct": 4.1,
-    "grid_demand_mw": 1199,
-    "grid_demand_usual_mw": 1308,
+    "grid_demand_fall_pct": 3.8,
+    "grid_demand_mw": 1195,
+    "grid_demand_usual_mw": 1300,
     "grid_lor_level": 0,
     "nearby_incidents": [],
     "outlook": {
@@ -443,7 +450,26 @@
         "pm25": 3
       },
       "air_word": "Good",
-      "days": []
+      "days": [
+        {
+          "date": "2026-11-29",
+          "gust": 54,
+          "rain": 0,
+          "tmax": 17
+        },
+        {
+          "date": "2026-11-30",
+          "gust": 36,
+          "rain": 0,
+          "tmax": 20
+        },
+        {
+          "date": "2026-12-01",
+          "gust": 38,
+          "rain": 0,
+          "tmax": 28
+        }
+      ]
     },
     "possible_blackout": false,
     "power_news": [],
@@ -520,8 +546,8 @@
     ],
     "cables": [
       "PTA says submarine cable fault fixed, internet services return to normal - Dawn",
-      "Pakistan’s Internet Services Return To Normal - WE News English",
-      "PTA fixes submarine cable fault as internet connectivity returns to normal across Pakistan - The Express Tribune"
+      "PTA fixes submarine cable fault as internet connectivity returns to normal across Pakistan - The Express Tribune",
+      "PTA Confirms Restoration of the SMW5 Submarine Cable, Internet Back to Normal - TechJuice"
     ],
     "chem": [
       "New findings may shed light on burial sites of Japan's wartime chemical weapons - Xinhua",
@@ -545,8 +571,8 @@
     ],
     "cyber_ot": [
       "Shop freezers in seven European countries hit by cyber-attack - BBC",
-      "Who is hacking Europe’s supermarket fridges and freezers, and why? - The Guardian",
-      "Supermarket freezers and fridges in Europe hit by cyberattack - Nine.com.au"
+      "Hackers plunged dozens of European supermarkets into chaos. It should worry Australians how easy it was - SMH.com.au",
+      "UK operation wards off risk of cyber-attack on supermarket fridges and freezers - The Guardian"
     ],
     "cyber_state": [
       "Sandworm behind cyberattack on Poland’s power grid in late 2025 - ESET",
@@ -564,14 +590,14 @@
       "Australia’s conservatives win landslide victory in bellwether Victoria state - The Straits Times"
     ],
     "dieoff": [
+      "Mysterious Deaths Of 2 Women Inside Levittown Home Under Investigation - NewsBreak: Local News & Alerts",
       "Halloween: Six most haunted castles in Scotland with spooky tales from the past - ScottishNews.com",
-      "Thousands of fish found dead in Maharashtra river, foul smell triggers health concerns - India Today",
-      "Kalonzo insists opposition unity key to defeating Ruto in 2027 - Citizen Digital"
+      "Thousands of fish found dead in Maharashtra river, foul smell triggers health concerns - India Today"
     ],
     "flash": [
+      "HM POWER: China Leading F-Gas Regulation Compliant Switchgear Manufacturer Expanding European Market Presence - Cincinnati Enquirer",
       "Atoshi urges users to stop trading after 201M ATOS theft - Crypto News",
-      "KOSPI, KOSDAQ Surge on Government Stabilization Fund Anticipation - 조선일보",
-      "Top sales rise as Geelong buyers capitalise on value - News.com.au"
+      "KOSPI, KOSDAQ Surge on Government Stabilization Fund Anticipation - 조선일보"
     ],
     "fuel_au": [
       "Job queues, petrol rations: Reality of living through a recession - Adelaide Now",
@@ -579,10 +605,10 @@
     ],
     "gulf_strikes": [
       "Saudi-led coalition intercepts Houthi cruise missile fired toward capital Riyadh - Anadolu Ajansı",
+      "Saudi coalition shoots down Houthi cruise missile fired toward Riyadh - Africanews",
       "Powerful Explosions Reported in Riyadh following Yemeni Missile Attack - تسنیم",
       "Saudi Arabia’s air defence forces shot down a Houthi missile near Riyadh - UkrMedia News",
-      "Coalition Strikes Sanaa as Houthis Target Riyadh, 2nd Exchange in 4 Days - https://houseofsaud.com/",
-      "Saudi-led coalition intercepts Houthi attacks after Hodeidah strike - Al Jazeera"
+      "Coalition Strikes Sanaa as Houthis Target Riyadh, 2nd Exchange in 4 Days - https://houseofsaud.com/"
     ],
     "illness": [
       "Mystery illness causes mass hospitalisation of runners - The Nightly",
@@ -608,14 +634,14 @@
       "Hurricane-hit Georgia driver reminds us: EVERY prepper should own an EV - Electrek"
     ],
     "outage_au": [
-      "How the Microsoft outage is affecting Australia - ABC News & Headlines – Australian Broadcasting Corporation",
+      "Calls for 'automatic compensation' following telco outages - ABC News & Headlines – Australian Broadcasting Corporation",
       "Microsoft ‘deeply sorry’ for global outage, rules out cyberattack and AI - Nine.com.au",
-      "Microsoft exec reveals details of outage - News.com.au"
+      "The Microsoft outage is part of a growing trend. This is how to prepare for further disruption - SBS"
     ],
     "reservists": [
       "UK Launches Largest Reserve Call-Up Since Cold War: 100,000 to Receive Letters as NT$350 Billion Nuclear Submarine Maintenance Contract Is Signed - BigGo Finance",
       "“Even Calling Up 100,000 Reservists Would Not Be Enough”: Questions Over Effectiveness of UK Rearmament Plans Amid Training Gaps, Financial Strains and Defense Industry Decline - https://economy.ac/",
-      "British General Nicholas Carter Proposes New Defence Strategy for Baltic States - Военное дело"
+      "British Army: Who would the MoD call up under plans for 100,000 extra troops? | LBC coverage analysed - NewsCord"
     ],
     "ru_signals": [
       "Dillon Brooks gets it to go at the buzzer - Yahoo Sports"
@@ -626,8 +652,8 @@
     "shipping_attacks": [
       "CENTCOM Denies Iranian Claims of Tanker Seizures, Aircraft Carrier Attack and Hormuz Tolls - The Diplomatic Insight",
       "Iran claims LNG carrier and tankers struck mines in Strait of Hormuz - safety4sea",
-      "Tehran Refuses to Reopen Hormuz as IRGC Reports Tanker Explosion - Palestine Chronicle",
       "Seafarer seriously injured in Hormuz tanker attack - Seatrade Maritime News",
+      "Tehran Refuses to Reopen Hormuz as IRGC Reports Tanker Explosion - Palestine Chronicle",
       "ADNOC Restricts 5 Export Terminals as IRGC Claims 2 Tankers Hit Mines - https://houseofsaud.com/"
     ],
     "strikes": [
@@ -662,7 +688,7 @@
     {
       "d24h": 0.0,
       "q": "US-Iran Hormuz Agreement by November 30, 2026?",
-      "yes": 1.5
+      "yes": 1.4
     },
     {
       "d24h": -0.3,
@@ -722,7 +748,7 @@
     {
       "d24h": -0.1,
       "q": "NATO x Russia military clash by November 30, 2026?",
-      "yes": 0.9
+      "yes": 0.8
     },
     {
       "d24h": -1.1,
@@ -735,7 +761,7 @@
       "yes": 2.3
     },
     {
-      "d24h": 0.0,
+      "d24h": 0.1,
       "q": "Will Russia test a nuclear weapon by December 31 2026?",
       "yes": 2.0
     },
@@ -755,9 +781,9 @@
       "yes": 17.0
     },
     {
-      "d24h": 2.5,
+      "d24h": 0.5,
       "q": "Will Nick Stewart attend a US x Iran diplomatic meeting by December 31, 2026?",
-      "yes": 10.0
+      "yes": 8.0
     }
   ],
   "quakes_m6_24h": [
@@ -993,14 +1019,19 @@
       "trend": "steady"
     },
     {
-      "band": "Low",
-      "convergence": "Two different kinds of sign are showing together (markets and state signalling). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: gps jamming spike (baltic / black sea), unusual military air activity (eastern europe) and mo",
+      "band": "Elevated",
+      "convergence": "Signs are converging across 3 separate areas (electronic warfare, markets and state signalling). Unrelated systems flagging the same scenario at once is the pattern seen before past events. Before February 2022: embassy departures, mobilisation reports, airspace closures and a surge in GPS jamming. ",
       "domains": [
+        "Electronic warfare",
         "Markets",
         "State signalling"
       ],
       "key": "russia",
       "lit": [
+        {
+          "detail": "gps_baltic 48 vs usual 21.0",
+          "name": "GPS jamming spike (Baltic / Black Sea)"
+        },
         {
           "detail": "Dillon Brooks gets it to go at the buzzer",
           "name": "Russian signalling (Buzzer broadcasts, nuclear drills)"
@@ -1010,8 +1041,8 @@
           "name": "European defence stocks outperforming (5 days)"
         }
       ],
-      "score": 10,
-      "trend": "steady"
+      "score": 25,
+      "trend": "up"
     },
     {
       "band": "Low",
