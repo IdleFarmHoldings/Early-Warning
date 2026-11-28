@@ -1,13 +1,7 @@
 {
   "about": "Short form of latest.json + indicators.json for the analysis run. Links and raw samples removed.",
   "acsc": [],
-  "aircraft_flags": {
-    "gps_gulf": {
-      "median": 10.0,
-      "status": "ANOMALY",
-      "value": 45
-    }
-  },
+  "aircraft_flags": {},
   "analyst": {
     "ASPI Strategist": [
       "Kasandigan – the Philippines is pivotal to Australian strategy as never before",
@@ -288,23 +282,35 @@
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
     "internet": "RuntimeError: Iran ping-slash24: TimeoutError: The read operation timed out; Iran bgp: TimeoutError: The read operation ",
+    "maritime": "TimeoutError: ",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output=",
     "news_watch": "RuntimeError: Fuel shortages in Australia: HTTPError: HTTP Error 503: Service Unavailable; Reservist call-ups: HTTPError",
-    "telecom": "RuntimeError: Telstra ping-slash24: TimeoutError: The read operation timed out; Telstra bgp: TimeoutError: The read oper"
+    "telecom": "RuntimeError: Telstra ping-slash24: HTTPError: HTTP Error 500: Internal Server Error; Telstra bgp: TimeoutError: The rea"
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-28T07:02:00Z",
+  "generated_at": "2026-11-28T07:18:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 14,
-    "Black Sea": 30,
-    "Israel & Eastern Mediterranean": 7,
+    "Baltic / Kaliningrad": 23,
+    "Black Sea": 10,
+    "Israel & Eastern Mediterranean": 15,
     "Korea": 1,
-    "Persian Gulf": 45,
-    "South Australia": 4,
-    "Sydney / NSW": 0,
-    "Taiwan Strait": 1
+    "Persian Gulf": 31,
+    "South Australia": 3,
+    "Sydney / NSW": 2,
+    "Taiwan Strait": 0
   },
-  "incidents": [],
+  "incidents": [
+    {
+      "attack_reported": false,
+      "confirmed": true,
+      "headlines": [
+        "Cloudflare status page: Email Delivery Delays"
+      ],
+      "needs_confirming": false,
+      "severity": "Warning",
+      "target": "Internet core (DNS / CDN)"
+    }
+  ],
   "internet_drop_pct": {},
   "local_sa": {
     "bom": [
@@ -321,16 +327,16 @@
       "Mount Lofty Ranges": "High / Moderate"
     },
     "fire_danger_ok": true,
-    "fires_active": 12,
+    "fires_active": 13,
     "fuel": {
       "brent_aud": 136.6,
       "change_pct": 0.5,
       "pump_cents": 0,
       "week_ago_aud": 135.9
     },
-    "grid_demand_fall_pct": -11.4,
-    "grid_demand_mw": 799,
-    "grid_demand_usual_mw": 1189,
+    "grid_demand_fall_pct": -14.9,
+    "grid_demand_mw": 918,
+    "grid_demand_usual_mw": 1226,
     "grid_lor_level": 0,
     "nearby_incidents": [
       {
@@ -390,7 +396,7 @@
       "Morgan Vale Road, Pine Valley Station: MORGAN MAIL RD Closed due to flooding over road",
       "Pine Valley Road, Pine Valley Station: PINE VALLEY RD Closed due to flooding over road"
     ],
-    "rooftop_pv_mw": 1224,
+    "rooftop_pv_mw": 1294,
     "sawater_news": [],
     "watch_and_act": []
   },
@@ -452,7 +458,7 @@
     {
       "d24h": -0.3,
       "q": "US-Iran Hormuz Agreement by November 30, 2026?",
-      "yes": 1.5
+      "yes": 1.4
     },
     {
       "d24h": -0.3,
@@ -545,13 +551,22 @@
       "yes": 17.0
     },
     {
-      "d24h": 1.0,
+      "d24h": 0.5,
       "q": "Will Nick Stewart attend a US x Iran diplomatic meeting by December 31, 2026?",
-      "yes": 7.5
+      "yes": 7.0
     }
   ],
   "quakes_m6_24h": [],
   "recent_alerts": [
+    {
+      "at": "2026-11-28T07:18:00Z",
+      "channels": [
+        "proactive"
+      ],
+      "confirmed": true,
+      "message": "Cloudflare status page: Email Delivery Delays. The company has declared a major incident on its own status pag",
+      "title": "Internet core (DNS / CDN): outage worldwide"
+    },
     {
       "at": "2026-11-27T18:12:00Z",
       "channels": [
@@ -725,16 +740,6 @@
       "confirmed": null,
       "message": "Not reliable, not affordable: Report shows ageing coal plants boost blackout risk, push up prices. 2 reports f",
       "title": "REPEAT 3: Power grid: outage in SA"
-    },
-    {
-      "at": "2026-11-23T03:40:00Z",
-      "channels": [
-        "proactive",
-        "reactive"
-      ],
-      "confirmed": null,
-      "message": "Not reliable, not affordable: Report shows ageing coal plants boost blackout risk, push up prices. 2 reports f",
-      "title": "REPEAT 2: Power grid: outage in SA"
     }
   ],
   "scenarios": [
@@ -756,19 +761,9 @@
     },
     {
       "band": "Low",
-      "convergence": "Only one kind of sign is showing (electronic warfare). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
-      "domains": [
-        "Electronic warfare"
-      ],
       "key": "mideast",
-      "lit": [
-        {
-          "detail": "gps_gulf 45 vs usual 10.0",
-          "name": "GPS jamming spike (Gulf / Israel)"
-        }
-      ],
-      "score": 10,
-      "trend": "up"
+      "score": 0,
+      "trend": "down"
     },
     {
       "band": "Low",
@@ -846,6 +841,14 @@
     "pandemic": 0.98
   },
   "status_pages": [
+    {
+      "au": false,
+      "big": true,
+      "provider": "Cloudflare",
+      "started": "2026-11-28T07:21:21Z",
+      "title": "Email Delivery Delays",
+      "where": "Dashboard"
+    },
     {
       "au": false,
       "big": false,
