@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-28T12:12:00Z",
+  "generated_at": "2026-11-28T12:27:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -101,25 +101,14 @@
     },
     {
       "band": "Low",
-      "convergence": "Only one kind of sign is showing (electronic warfare). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
-      "domains": [
-        "Electronic warfare"
-      ],
+      "convergence": "No warning signs are showing. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
+      "domains": [],
       "key": "mideast",
-      "lit": [
-        {
-          "detail": "gps_gulf 27 vs usual 8.0",
-          "domain": "Electronic warfare",
-          "id": "gps",
-          "name": "GPS jamming spike (Gulf / Israel)",
-          "short": "GPS jamming spike",
-          "weight": 10
-        }
-      ],
+      "lit": [],
       "name": "Middle East war & Gulf shipping",
       "sa_impact": "Fuel: Australia imports most of its fuel, much of it refined from Gulf crude in Asia. Shipping attacks or a Hormuz closure push up prices within days and can cause local shortages.",
-      "score": 10,
-      "trend": "steady",
+      "score": 0,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Military air",
@@ -132,6 +121,12 @@
           "id": "air",
           "name": "Unusual military air activity over the region",
           "weight": 15
+        },
+        {
+          "domain": "Electronic warfare",
+          "id": "gps",
+          "name": "GPS jamming spike (Gulf / Israel)",
+          "weight": 10
         },
         {
           "domain": "Communications",
@@ -552,26 +547,15 @@
       "why": "Visible changes to US nuclear command aircraft (E-4B / E-6B), tanker surges, elite flight to remote retreats and market panic are the few public signals that would accompany a nuclear alert."
     },
     {
-      "band": "Guarded",
-      "convergence": "Only one kind of sign is showing (undersea cables). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: phone / internet carrier outage, nationwide flight, power, network or payments halt in australia and gps degradation over sa or nsw.",
-      "domains": [
-        "Undersea cables"
-      ],
+      "band": "Low",
+      "convergence": "No warning signs are showing. The strongest signs not yet showing: phone / internet carrier outage, nationwide flight, power, network or payments halt in australia and gps degradation over sa or nsw.",
+      "domains": [],
       "key": "ausinfra",
-      "lit": [
-        {
-          "detail": "Hong Kong vessel OOCL CANADA ~84 min",
-          "domain": "Undersea cables",
-          "id": "cable",
-          "name": "Foreign vessel loitering over Australian cable corridors",
-          "short": "Foreign vessel loitering over…",
-          "weight": 20
-        }
-      ],
+      "lit": [],
       "name": "Australian infrastructure disruption",
       "sa_impact": "Direct: loss of phone, internet, EFTPOS and fuel pumps. Cash, fuel and a pre-agreed meeting point matter most in the first 24 hours.",
-      "score": 20,
-      "trend": "steady",
+      "score": 0,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Communications",
@@ -608,6 +592,12 @@
           "id": "masscas",
           "name": "Mass casualty / Code Brown declared in Australia",
           "weight": 10
+        },
+        {
+          "domain": "Undersea cables",
+          "id": "cable",
+          "name": "Foreign vessel loitering over Australian cable corridors",
+          "weight": 20
         },
         {
           "domain": "Undersea cables",
