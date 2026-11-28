@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-28T20:31:00Z",
+  "generated_at": "2026-11-28T20:47:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -703,9 +703,10 @@
       "why": "Before COVID-19 (Dec 2019 - Feb 2020): reports of an unknown pneumonia cluster, WHO outbreak notices, mask and hazmat makers (Alpha Pro Tech, Lakeland) and vaccine developers (Moderna, Novavax) surging weeks before broad markets fell, and countries restricting exports of masks and medicines (Taiwan from 24 Jan 2020, then dozens more)."
     },
     {
-      "band": "Low",
-      "convergence": "Only one kind of sign is showing (exploited vulnerabilities). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: sudden fall in sa electricity demand (possible large blackout), global cyber threat level raised (sans infocon not green) and several vpn / firewall flaws exploited this week.",
+      "band": "Guarded",
+      "convergence": "Two different kinds of sign are showing together (australian incidents and exploited vulnerabilities). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: sudden fall in sa electricity demand (possible large blackout), global cyber threat level raised (sans infocon not green) and several vpn / firewall flaws exploited this week.",
       "domains": [
+        "Australian incidents",
         "Exploited vulnerabilities"
       ],
       "key": "cyber",
@@ -717,12 +718,20 @@
           "name": "Surge in newly exploited vulnerabilities (2x normal week)",
           "short": "Surge in newly exploited vulnerabilities",
           "weight": 10
+        },
+        {
+          "detail": "Veeam vs Rubrik vs Commvault for Australian Ransomware Recovery",
+          "domain": "Australian incidents",
+          "id": "au",
+          "name": "Major Australian cyber incident reported",
+          "short": "Major Australian cyber incident reported",
+          "weight": 10
         }
       ],
       "name": "Major cyber attack on Australia",
       "sa_impact": "Banks, payments, hospitals, fuel distribution, telcos and the power grid all run on networks; a large attack can stop card payments and services for hours to days.",
-      "score": 10,
-      "trend": "steady",
+      "score": 20,
+      "trend": "up",
       "unlit": [
         {
           "domain": "Global threat level",
@@ -759,12 +768,6 @@
           "id": "state",
           "name": "Reports of state hackers / pre-positioning / wipers",
           "weight": 15
-        },
-        {
-          "domain": "Australian incidents",
-          "id": "au",
-          "name": "Major Australian cyber incident reported",
-          "weight": 10
         },
         {
           "domain": "Communications",
