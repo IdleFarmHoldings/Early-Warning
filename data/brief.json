@@ -28,7 +28,20 @@
       "k",
       "news"
     ],
-    "bursts": []
+    "bursts": [
+      {
+        "new_threads": 6,
+        "threads": [
+          "/pol/ Russia hates Poland, because Poland is a nation of Solzhenitsyn (jesus christ, anglicizing the slavi (195 replies in 2.8 h) https://boards.4chan.org/pol/thread/546948245",
+          "/pol/ Russia enters AI race (38 replies in 0.9 h) https://boards.4chan.org/pol/thread/546952871",
+          "/pol/ HAPPENING (56 replies in 1.4 h) https://boards.4chan.org/pol/thread/546951671",
+          "/pol/ MASSIVE HAPPENING - RUSSIA IS LAUNCHING A NUCLEAR WEAPON INTO SPACE WITHIN TWO MONTHS (20 replies in 0.9 h) https://boards.4chan.org/pol/thread/546952816"
+        ],
+        "topic": "Russia / NATO",
+        "usual": 3.0,
+        "why": "2 threads say it is happening now"
+      }
+    ]
   },
   "chokepoints": {
     "Bab el-Mandeb Strait": {
@@ -281,21 +294,20 @@
   ],
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
-    "internet": "RuntimeError: Iran ping-slash24: TimeoutError: The read operation timed out; Iran bgp: URLError: <urlopen error timed ou",
-    "maritime": "TimeoutError: ",
+    "internet": "RuntimeError: Iran ping-slash24: URLError: <urlopen error timed out>; Iran bgp: HTTPError: HTTP Error 500: Internal Serv",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output=",
-    "telecom": "RuntimeError: Telstra ping-slash24: URLError: <urlopen error _ssl.c:994: The handshake operation timed out>; Telstra bgp"
+    "telecom": "RuntimeError: Telstra ping-slash24: URLError: <urlopen error timed out>; Telstra bgp: URLError: <urlopen error timed out"
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-28T20:21:00Z",
+  "generated_at": "2026-11-28T20:31:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 62,
+    "Baltic / Kaliningrad": 61,
     "Black Sea": null,
     "Israel & Eastern Mediterranean": 0,
     "Korea": 0,
-    "Persian Gulf": 6,
+    "Persian Gulf": 25,
     "South Australia": null,
-    "Sydney / NSW": 3,
+    "Sydney / NSW": 0,
     "Taiwan Strait": 2
   },
   "incidents": [
@@ -325,6 +337,7 @@
       "attack_reported": true,
       "confirmed": true,
       "headlines": [
+        "DWP confirms confirms cyber attack forced it to take pension and benefits systems offline",
         "DWP confirms cyber attack on pensions and benefits services"
       ],
       "needs_confirming": false,
@@ -375,16 +388,6 @@
       "attack_reported": true,
       "confirmed": false,
       "headlines": [
-        "Hong Kong’s Octopus cyberattack exposes data of nearly 30K customers and merchants"
-      ],
-      "needs_confirming": false,
-      "severity": "Info",
-      "target": "Hong Kong"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
         "Cyberattack hits UK pensions and welfare department's online services"
       ],
       "needs_confirming": false,
@@ -403,10 +406,9 @@
     },
     {
       "attack_reported": false,
-      "confirmed": true,
+      "confirmed": false,
       "headlines": [
-        "Microsoft’s reported ‘Code Red’ follows a day-long outage—and 11 very busy Teams chats",
-        "MICROSOFT DECLARES 'CODE RED' AFTER MAJOR MICROSOFT 365 OUTAGE INTERNAL MEMOS SHOW"
+        "Microsoft’s reported ‘Code Red’ follows a day-long outage—and 11 very busy Teams chats"
       ],
       "needs_confirming": false,
       "severity": "Info",
@@ -448,9 +450,9 @@
       "pump_cents": 0,
       "week_ago_aud": 135.9
     },
-    "grid_demand_fall_pct": 5.9,
-    "grid_demand_mw": 1110,
-    "grid_demand_usual_mw": 1281,
+    "grid_demand_fall_pct": 7.0,
+    "grid_demand_mw": 1087,
+    "grid_demand_usual_mw": 1262,
     "grid_lor_level": 0,
     "nearby_incidents": [
       {
@@ -501,7 +503,7 @@
       "Morgan Vale Road, Pine Valley Station: MORGAN MAIL RD Closed due to flooding over road",
       "Pine Valley Road, Pine Valley Station: PINE VALLEY RD Closed due to flooding over road"
     ],
-    "rooftop_pv_mw": 0,
+    "rooftop_pv_mw": 77,
     "sawater_news": [],
     "watch_and_act": []
   },
@@ -551,13 +553,13 @@
     ],
     "aviation_halt": [
       "Nationwide Ground Stop Recovery, Thanksgiving Travel Rush, and Top Air Travel Headlines From November 2026 - Travel Pulse",
-      "Rant and Rave: Readers praise workers during nationwide ground stop - The Seattle Times",
-      "Norwegian long-haul budget airline halts all flights, putting Bangkok and Phuket winter services in doubt - VnExpress International"
+      "FAA chief says US air travel back to normal by Sunday - AFP.com",
+      "Rant and Rave: Readers praise workers during nationwide ground stop - The Seattle Times"
     ],
     "bank_outage": [
-      "Home Office slaps $1.5k surprise fee to onshore visa applicants - News24",
       "Australia's Higher Student Visa Fee Hurts Competitiveness - Mirage News",
-      "Brazilian stocks, Visa, Mastercard, Chaince Digital among gainers: week's financials wrap - TradingView"
+      "Brazilian stocks, Visa, Mastercard, Chaince Digital among gainers: week's financials wrap - TradingView",
+      "I got a green card 4 years after moving to the US as a 'visa bride' — but first, I had to survive a year in limbo - Business Insider"
     ],
     "blood": [
       "Fourteen migrants remain hospitalized in El Hierro, the highest number to date. - Tenerife Weekly"
@@ -569,13 +571,13 @@
     ],
     "chem": [
       "New findings may shed light on burial sites of Japan's wartime chemical weapons - Xinhua",
-      "Syria outlines efforts to tackle Assad chemical weapons legacy at OPCW meeting in The Hague - Arab News",
-      "Morocco Takes Part in 31st Conference of States Parties to Chemical Weapons Convention in The Hague - The North Africa Post"
+      "Morocco Takes Part in 31st Conference of States Parties to Chemical Weapons Convention in The Hague - The North Africa Post",
+      "Syria outlines efforts to tackle Assad chemical weapons legacy at OPCW meeting in The Hague - Arab News"
     ],
     "cloud": [
+      "Microsoft Blames Software Flaw, Traffic Surge and Reduced Capacity for Global Microsoft 365 Outage - INDIA New England News",
       "Microsoft 365 outage report: cause and recovery - NeoTeo",
-      "Microsoft’s reported ‘Code Red’ follows a day-long outage—and 11 very busy Teams chats - Digg",
-      "Microsoft Blames Software Flaw, Traffic Surge and Reduced Capacity for Global Microsoft 365 Outage - INDIA New England News"
+      "Microsoft’s reported ‘Code Red’ follows a day-long outage—and 11 very busy Teams chats - Digg"
     ],
     "cyber_attrib": [
       "FBI warns hackers using AI-powered tool to automate cyberattacks worldwide - Anadolu Ajansı",
@@ -583,14 +585,14 @@
       "Busted! Alleged Aussie hackers linked to TeamPCP arrested in joint AFP-FBI-WAPF operation - Cyber Daily"
     ],
     "cyber_au": [
+      "DWP confirms cyber attack on pensions and benefits services - Yahoo News Australia",
       "‘We’re not prepared’: Hastie’s warning of threat that could cripple Australia - The Daily Telegraph",
-      "UK pensions department says it was hit by cyberattack - The Canberra Times",
-      "DWP confirms cyber attack on pensions and benefits services - BBC"
+      "UK pensions department says it was hit by cyberattack - The Canberra Times"
     ],
     "cyber_ot": [
-      "Hackers plunged dozens of European supermarkets into chaos. It should worry Australians how easy it was - SMH.com.au",
-      "UK operation wards off risk of cyber-attack on supermarket fridges and freezers - The Guardian",
-      "Shop freezers in seven European countries hit by cyber-attack - BBC"
+      "Shop freezers in seven European countries hit by cyber-attack - BBC",
+      "Who is hacking Europe’s supermarket fridges and freezers, and why? - The Guardian",
+      "Supermarket freezers and fridges in Europe hit by cyberattack - Nine.com.au"
     ],
     "cyber_state": [
       "Sandworm behind cyberattack on Poland’s power grid in late 2025 - ESET",
@@ -623,7 +625,7 @@
     "gulf_strikes": [
       "Saudi-led coalition intercepts Houthi cruise missile fired toward capital Riyadh - Anadolu Ajansı",
       "Powerful Explosions Reported in Riyadh following Yemeni Missile Attack - تسنیم",
-      "Saudi-led coalition intercepts Houthi attacks after Hodeidah strike - Al Jazeera",
+      "Saudi coalition shoots down Houthi cruise missile fired toward Riyadh - Africanews",
       "Saudi Arabia’s air defence forces shot down a Houthi missile near Riyadh - UkrMedia News",
       "Coalition Strikes Sanaa as Houthis Target Riyadh, 2nd Exchange in 4 Days - https://houseofsaud.com/"
     ],
@@ -635,12 +637,12 @@
     "masscas": [
       "Thanksgiving lunch ends in ‘mass casualty incident’ - The Telegraph",
       "Florida medical center hired a caterer for its staff Thanksgiving feast. Then fire rescue declared a mass casualty incident - Yahoo",
-      "Leon Medical Centers Doral Thanksgiving Luncheon Leaves 18 Employees Sick - Latin Times"
+      "Thanksgiving Event Gone Wrong Sends 15 to Hospital - The Daily Beast"
     ],
     "mobilisation": [
       "“Even Calling Up 100,000 Reservists Would Not Be Enough”: Questions Over Effectiveness of UK Rearmament Plans Amid Training Gaps, Financial Strains and Defense Industry Decline - https://economy.ac/",
       "Uzbek Senate backs first-ever mobilisation bill covering troop call-ups - Kursiv Media Узбекистан",
-      "Iraq’s Staged Showdown with Kata‘ib Hezbollah - Middle East Forum"
+      "A man with diabetes and grade III obesity was mobilized in 1 day: he claimed lack of medical examination but lost the court case - Судово-юридична газета"
     ],
     "national_outage": [
       "Nottingham Forest 3-2 Chelsea: Blues plunged into darkness - BeSoccer Livescore",
@@ -655,7 +657,7 @@
     "reservists": [
       "UK Launches Largest Reserve Call-Up Since Cold War: 100,000 to Receive Letters as NT$350 Billion Nuclear Submarine Maintenance Contract Is Signed - BigGo Finance",
       "“Even Calling Up 100,000 Reservists Would Not Be Enough”: Questions Over Effectiveness of UK Rearmament Plans Amid Training Gaps, Financial Strains and Defense Industry Decline - https://economy.ac/",
-      "British General Nicholas Carter Proposes New Defence Strategy for Baltic States - Военное дело"
+      "British Army: Who would the MoD call up under plans for 100,000 extra troops? | LBC coverage analysed - NewsCord"
     ],
     "ru_signals": [
       "Dillon Brooks gets it to go at the buzzer - Yahoo Sports"
@@ -681,9 +683,9 @@
   },
   "prediction_markets": [
     {
-      "d24h": 0.0,
+      "d24h": -1.0,
       "q": "Will the U.S. invade Iran before 2027?",
-      "yes": 5.5
+      "yes": 4.5
     },
     {
       "d24h": null,
@@ -771,7 +773,7 @@
       "yes": 1.8
     },
     {
-      "d24h": -0.2,
+      "d24h": -0.1,
       "q": "NATO/EU troops fighting in Ukraine by December 31, 2026?",
       "yes": 3.4
     },
@@ -796,9 +798,9 @@
       "yes": 17.0
     },
     {
-      "d24h": -0.5,
+      "d24h": 0.0,
       "q": "Will Nick Stewart attend a US x Iran diplomatic meeting by December 31, 2026?",
-      "yes": 7.0
+      "yes": 7.5
     }
   ],
   "quakes_m6_24h": [
@@ -1094,7 +1096,7 @@
         }
       ],
       "score": 10,
-      "trend": "down"
+      "trend": "steady"
     },
     {
       "band": "Low",
