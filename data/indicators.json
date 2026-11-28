@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-28T12:42:00Z",
+  "generated_at": "2026-11-28T12:57:00Z",
   "note": "Scores count known warning signs showing now (0-100). They are not probabilities.",
   "scenarios": [
     {
@@ -101,25 +101,14 @@
     },
     {
       "band": "Low",
-      "convergence": "Only one kind of sign is showing (electronic warfare). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
-      "domains": [
-        "Electronic warfare"
-      ],
+      "convergence": "No warning signs are showing. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
+      "domains": [],
       "key": "mideast",
-      "lit": [
-        {
-          "detail": "gps_gulf 36 vs usual 8.0",
-          "domain": "Electronic warfare",
-          "id": "gps",
-          "name": "GPS jamming spike (Gulf / Israel)",
-          "short": "GPS jamming spike",
-          "weight": 10
-        }
-      ],
+      "lit": [],
       "name": "Middle East war & Gulf shipping",
       "sa_impact": "Fuel: Australia imports most of its fuel, much of it refined from Gulf crude in Asia. Shipping attacks or a Hormuz closure push up prices within days and can cause local shortages.",
-      "score": 10,
-      "trend": "up",
+      "score": 0,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Military air",
@@ -132,6 +121,12 @@
           "id": "air",
           "name": "Unusual military air activity over the region",
           "weight": 15
+        },
+        {
+          "domain": "Electronic warfare",
+          "id": "gps",
+          "name": "GPS jamming spike (Gulf / Israel)",
+          "weight": 10
         },
         {
           "domain": "Communications",
@@ -793,11 +788,10 @@
       "why": "Large attacks are usually preceded by quieter steps: a surge in newly exploited flaws in VPNs and firewalls (how state groups like Volt Typhoon get in), scanning of industrial-control systems, a rise in ransomware victims in the target country, and official warnings. Before Russia's 2022 invasion, wiper malware hit Ukraine a day ahead; Chinese groups have been found pre-positioned in US and allied infrastructure."
     },
     {
-      "band": "Guarded",
-      "convergence": "Two different kinds of sign are showing together (cloud services and fraud waves). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, reports of ai-driven hacking campaigns and deepfakes of leaders or fake official alerts.",
+      "band": "Low",
+      "convergence": "Only one kind of sign is showing (cloud services). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, reports of ai-driven hacking campaigns and deepfakes of leaders or fake official alerts.",
       "domains": [
-        "Cloud services",
-        "Fraud waves"
+        "Cloud services"
       ],
       "key": "ai",
       "lit": [
@@ -808,20 +802,12 @@
           "name": "Major cloud or AI service outage",
           "short": "Major cloud or AI service outage",
           "weight": 10
-        },
-        {
-          "detail": "Deepfake Musk, Fake Ransomware Heroes, and a Spy in a Palo Alto Coffee Shop: This Week in Security Was Wild",
-          "domain": "Fraud waves",
-          "id": "scams",
-          "name": "Surge in AI voice-clone / deepfake scams in Australia",
-          "short": "Surge in AI voice-clone / deepfake…",
-          "weight": 5
         }
       ],
       "name": "AI-enabled attack (non-traditional)",
       "sa_impact": "Not bombs but disruption: hacking at machine speed across banks, telcos, hospitals and the grid at once; fake videos or alerts from leaders causing panic buying or bank runs; or automated market and fraud shocks. Effects would be outages, payment failures and confusion about what is real.",
-      "score": 15,
-      "trend": "steady",
+      "score": 10,
+      "trend": "down",
       "unlit": [
         {
           "domain": "Mass exploitation",
@@ -858,6 +844,12 @@
           "id": "tel",
           "name": "Phone / internet carrier outage",
           "weight": 10
+        },
+        {
+          "domain": "Fraud waves",
+          "id": "scams",
+          "name": "Surge in AI voice-clone / deepfake scams in Australia",
+          "weight": 5
         },
         {
           "domain": "Edge-device exploitation",

@@ -1,13 +1,7 @@
 {
   "about": "Short form of latest.json + indicators.json for the analysis run. Links and raw samples removed.",
   "acsc": [],
-  "aircraft_flags": {
-    "gps_gulf": {
-      "median": 8.0,
-      "status": "ANOMALY",
-      "value": 36
-    }
-  },
+  "aircraft_flags": {},
   "analyst": {
     "ASPI Strategist": [
       "Kasandigan – the Philippines is pivotal to Australian strategy as never before",
@@ -288,23 +282,33 @@
   "failed_sources": {
     "acsc": "TimeoutError: The read operation timed out",
     "internet": "RuntimeError: Iran ping-slash24: TimeoutError: The read operation timed out; Iran bgp: TimeoutError: The read operation ",
-    "maritime": "TimeoutError: ",
     "navwarn": "RuntimeError: cast-warn?status=A&output=json: HTTPError: HTTP Error 503: Service Unavailable; ons/broadcast-warn?output=",
     "telecom": "RuntimeError: Telstra ping-slash24: TimeoutError: The read operation timed out; Telstra bgp: TimeoutError: The read oper"
   },
   "gdacs_orange_red": [],
-  "generated_at": "2026-11-28T12:42:00Z",
+  "generated_at": "2026-11-28T12:57:00Z",
   "gps_bad_pct": {
-    "Baltic / Kaliningrad": 26,
-    "Black Sea": 43,
-    "Israel & Eastern Mediterranean": 1,
+    "Baltic / Kaliningrad": 32,
+    "Black Sea": 38,
+    "Israel & Eastern Mediterranean": 0,
     "Korea": 0,
-    "Persian Gulf": 36,
-    "South Australia": 0,
+    "Persian Gulf": 21,
+    "South Australia": null,
     "Sydney / NSW": null,
     "Taiwan Strait": 0
   },
   "incidents": [
+    {
+      "attack_reported": true,
+      "confirmed": true,
+      "headlines": [
+        "Hackers allegedly access US Air Force’s digital cloud, report says",
+        "Hackers breached 24 Check Point management servers, GreyNoise says"
+      ],
+      "needs_confirming": false,
+      "severity": "Info",
+      "target": "Hackers"
+    },
     {
       "attack_reported": true,
       "confirmed": false,
@@ -314,16 +318,6 @@
       "needs_confirming": false,
       "severity": "Info",
       "target": "Flight Centre"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": true,
-      "headlines": [
-        "Hackers allegedly access US Air Force’s digital cloud, report says"
-      ],
-      "needs_confirming": false,
-      "severity": "Info",
-      "target": "Hackers"
     },
     {
       "attack_reported": true,
@@ -366,26 +360,6 @@
       "target": "Korea Post's"
     },
     {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
-        "'No Classified Networks Accessed' — CIA, ODNI and NGA Breached by Hackers Who May Have Used AI Hacking Tool ARTEX"
-      ],
-      "needs_confirming": false,
-      "severity": "Info",
-      "target": "No Classified Networks"
-    },
-    {
-      "attack_reported": true,
-      "confirmed": false,
-      "headlines": [
-        "E9pay reportedly loses 2.5 billion won across 90 cyberattacks"
-      ],
-      "needs_confirming": false,
-      "severity": "Info",
-      "target": "E9pay"
-    },
-    {
       "attack_reported": false,
       "confirmed": false,
       "headlines": [
@@ -414,15 +388,15 @@
       "Mount Lofty Ranges": "High / Moderate"
     },
     "fire_danger_ok": true,
-    "fires_active": 6,
+    "fires_active": 5,
     "fuel": {
       "brent_aud": 136.6,
       "change_pct": 0.5,
       "pump_cents": 0,
       "week_ago_aud": 135.9
     },
-    "grid_demand_fall_pct": 3.2,
-    "grid_demand_mw": 1277,
+    "grid_demand_fall_pct": 3.9,
+    "grid_demand_mw": 1257,
     "grid_demand_usual_mw": 1363,
     "grid_lor_level": 0,
     "nearby_incidents": [
@@ -440,7 +414,7 @@
       "air": {
         "aqi": 41,
         "peak_pm25_48h": 13,
-        "pm25": 8
+        "pm25": 6
       },
       "air_word": "Good",
       "days": [
@@ -514,18 +488,18 @@
   "news_watch": {
     "ai_hack": [
       "Korea Post's mobile service hacked, with personal data of at least 113,000 customers leaked - Korea JoongAng Daily",
-      "Report Finds Growing Interest in AI-Powered Cybercrime Tools - Petri IT Knowledgebase",
+      "Fully autonomous AI hits reality: Why 2027 could become the year of ‘graduated autonomy’ - Digital Journal",
       "What is ARTEX, the AI-powered tool linked to recent cyberattacks? - The Daily Star"
     ],
     "airspace": [
       "Nairobi Airspace Closed for Military Activity Today and on 4 and 12 December, With Notice Reaching Public Only Hours Ahead - Avi-Go",
       "Kenya Airways warns of schedule changes on three airspace closure dates - 5050 Markets",
-      "Air India Board Determined on Transformation Despite Rs 22,000-Cr Loss - Rediff MoneyWiz"
+      "Explainer: Hours of Notice for a Closed Sky, What Nairobi's Airspace Shutdowns Could Cost - Dawan Africa"
     ],
     "aviation_halt": [
       "Nationwide Ground Stop Recovery, Thanksgiving Travel Rush, and Top Air Travel Headlines From November 2026 - Travel Pulse",
-      "Norwegian long-haul budget airline halts all flights, putting Bangkok and Phuket winter services in doubt - VnExpress International",
-      "Duffy to Testify Before Senate on Nationwide Ground Stop - AVweb"
+      "FAA chief says US air travel back to normal by Sunday - AFP.com",
+      "Norwegian long-haul budget airline halts all flights, putting Bangkok and Phuket winter services in doubt - VnExpress International"
     ],
     "bank_outage": [
       "Denials soar for ‘extraordinary ability’ visa in program once used by Melania Trump - The Washington Post",
@@ -538,8 +512,8 @@
     ],
     "cables": [
       "PTA says submarine cable fault fixed, internet services return to normal - Dawn",
-      "PTA Confirms Restoration of the SMW5 Submarine Cable, Internet Back to Normal - TechJuice",
-      "Pakistan’s Faulty Undersea Internet Cable finally Restored after 10 Days - Daily Pakistan"
+      "Pakistan’s Internet Services Return To Normal - WE News English",
+      "PTA Confirms Restoration of the SMW5 Submarine Cable, Internet Back to Normal - TechJuice"
     ],
     "chem": [
       "New findings may shed light on burial sites of Japan's wartime chemical weapons - CGTN",
@@ -558,8 +532,8 @@
     ],
     "cyber_au": [
       "‘Dangerous complacency’: Australia is unprepared for a major hack - The Courier Mail",
-      "Flight Centre hack victims safe to travel on DFAT advice - Herald Sun",
-      "Hackers allegedly access US Air Force’s digital cloud, report says - Nine.com.au"
+      "Hackers allegedly access US Air Force’s digital cloud, report says - Nine.com.au",
+      "Flight Centre hack victims safe to travel on DFAT advice - Herald Sun"
     ],
     "cyber_ot": [
       "Shop freezers in seven European countries hit by cyber-attack - BBC",
@@ -574,17 +548,17 @@
     "cyber_supply": [
       "Cairn AI agents found a MONAI Label zero-day, Amazon says - OrcaRouter",
       "CVE-2026-132165: Drupal Fail2Install RCE Exploited in the Wild - SOC Prime",
-      "Is your website at risk? Sri Lanka CERT issues urgent advisory - Newswire"
+      "SLCERT issues urgent advisory on website security - Sri Lanka Mirror"
     ],
     "deepfake": [
-      "Deepfake Musk, Fake Ransomware Heroes, and a Spy in a Palo Alto Coffee Shop: This Week in Security Was Wild - PCMag Australia",
-      "AI-generated protest video shared thousands of times online - Full Fact",
-      "AI-generated video falsely claims tourist apologised to Daura Emir over alleged assault - FactCheckHub"
+      "Australia’s conservatives win landslide victory in bellwether Victoria state - The Straits Times",
+      "Use AI to fight AI-generated misinformation, says Fahmi - The Star",
+      "AI deepfake scams: How fraudsters exploit consumer trust - Báo VietNamNet"
     ],
     "dieoff": [
       "Mysterious Deaths Of 2 Women Inside Levittown Home Under Investigation - NewsBreak: Local News & Alerts",
       "Mackenzie, 29 others convicted of manslaughter in Shakahola mass deaths - Citizen Digital",
-      "Kalonzo insists opposition unity key to defeating Ruto in 2027 - Citizen Digital"
+      "Halloween: Six most haunted castles in Scotland with spooky tales from the past - ScottishNews.com"
     ],
     "flash": [
       "Top sales rise as Geelong buyers capitalise on value - News.com.au",
@@ -597,8 +571,8 @@
     ],
     "gulf_strikes": [
       "Saudi-led coalition intercepts Houthi cruise missile fired toward capital Riyadh - Anadolu Ajansı",
-      "Powerful Explosions Reported in Riyadh following Yemeni Missile Attack - تسنیم",
       "Saudi Arabia’s air defence forces shot down a Houthi missile near Riyadh - UkrMedia News",
+      "Powerful Explosions Reported in Riyadh following Yemeni Missile Attack - تسنیم",
       "Saudi-led coalition intercepts Houthi attacks after Hodeidah strike - Al Jazeera",
       "Saudis say they intercepted Houthi drone near key port in Jeddah - The Times of Israel"
     ],
@@ -617,8 +591,8 @@
     ],
     "mobilisation": [
       "“Even Calling Up 100,000 Reservists Would Not Be Enough”: Questions Over Effectiveness of UK Rearmament Plans Amid Training Gaps, Financial Strains and Defense Industry Decline - https://economy.ac/",
-      "Mobilized from Kalmykia killed in Ukraine - Caucasian Knot",
-      "A man with diabetes and grade III obesity was mobilized in 1 day: he claimed lack of medical examination but lost the court case - Судово-юридична газета"
+      "Iraq’s Staged Showdown with Kata‘ib Hezbollah - Middle East Forum",
+      "Mobilized from Kalmykia killed in Ukraine - Caucasian Knot"
     ],
     "national_outage": [
       "Inside the ‘Black Sky’ plans for a nationwide blackout - Herald.Wales",
@@ -626,9 +600,9 @@
       "Nottingham Forest 3-2 Chelsea: Blues plunged into darkness - BeSoccer Livescore"
     ],
     "outage_au": [
-      "Calls for 'automatic compensation' following telco outages - ABC News & Headlines – Australian Broadcasting Corporation",
+      "How the Microsoft outage is affecting Australia - ABC News & Headlines – Australian Broadcasting Corporation",
       "Microsoft ‘deeply sorry’ for global outage, rules out cyberattack and AI - Nine.com.au",
-      "The Microsoft outage is part of a growing trend. This is how to prepare for further disruption - SBS"
+      "Microsoft exec reveals details of outage - News.com.au"
     ],
     "reservists": [
       "UK Launches Largest Reserve Call-Up Since Cold War: 100,000 to Receive Letters as NT$350 Billion Nuclear Submarine Maintenance Contract Is Signed - BigGo Finance",
@@ -639,21 +613,20 @@
       "By Putin's logic, Russia should be given to Mongolia, Lukashenka says - Euronews.com"
     ],
     "scams": [
-      "Deepfake Musk, Fake Ransomware Heroes, and a Spy in a Palo Alto Coffee Shop: This Week in Security Was Wild - PCMag Australia",
       "AI-Generated Fake IDs: How Document Forgery Moved From Print Shops to Generative Models - CyberSecurityNews"
     ],
     "shipping_attacks": [
       "Tehran Refuses to Reopen Hormuz as IRGC Reports Tanker Explosion - Palestine Chronicle",
       "Iran claims LNG carrier and tankers struck mines in Strait of Hormuz - safety4sea",
       "Seafarer seriously injured in Hormuz tanker attack - Seatrade Maritime News",
-      "IRGC reports tanker strike, explosion near Strait of Hormuz - Awaz The Voice",
-      "IRGC Claims LNG Carrier Hit Mine in Hormuz Nov 25 - https://houseofsaud.com/"
+      "IRGC Claims LNG Carrier Hit Mine in Hormuz Nov 25 - https://houseofsaud.com/",
+      "IRGC reports tanker strike, explosion near Strait of Hormuz - Awaz The Voice"
     ],
     "strikes": [
+      "| Kyabram Free Press - Kyabram Free Press",
       "US repels drones suspected of Iran links at UK air base – FT - Iran International",
       "US forces drove off drones at British air base, Financial Times reports - Anadolu Ajansı",
       "Report: U.S. Forces Repelled Drones Nearing British Airbase Earlier This Month - Haaretz",
-      "US military repelled drones at UK air base this month, FT reports - Arab News",
       "Drone attack on RAF Lakenheath air base in Britain: what we know - Around Prague"
     ]
   },
@@ -774,9 +747,9 @@
       "yes": 17.0
     },
     {
-      "d24h": 2.0,
+      "d24h": 3.5,
       "q": "Will Nick Stewart attend a US x Iran diplomatic meeting by December 31, 2026?",
-      "yes": 8.5
+      "yes": 10.0
     }
   ],
   "quakes_m6_24h": [],
@@ -984,19 +957,9 @@
     },
     {
       "band": "Low",
-      "convergence": "Only one kind of sign is showing (electronic warfare). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: air-refuelling tanker surge, unusual military air activity over the region and internet blackout in iran or israel.",
-      "domains": [
-        "Electronic warfare"
-      ],
       "key": "mideast",
-      "lit": [
-        {
-          "detail": "gps_gulf 36 vs usual 8.0",
-          "name": "GPS jamming spike (Gulf / Israel)"
-        }
-      ],
-      "score": 10,
-      "trend": "up"
+      "score": 0,
+      "trend": "down"
     },
     {
       "band": "Low",
@@ -1076,25 +1039,20 @@
       "trend": "steady"
     },
     {
-      "band": "Guarded",
-      "convergence": "Two different kinds of sign are showing together (cloud services and fraud waves). Worth watching: independent signs lining up is the pattern that came before past events. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, reports of ai-driven hacking campaig",
+      "band": "Low",
+      "convergence": "Only one kind of sign is showing (cloud services). On its own this is usually routine activity or noise, not a warning. The strongest signs not yet showing: exploited flaws across unusually many vendors at once, reports of ai-driven hacking campaigns and deepfakes of leaders or fake official alerts.",
       "domains": [
-        "Cloud services",
-        "Fraud waves"
+        "Cloud services"
       ],
       "key": "ai",
       "lit": [
         {
           "detail": "Microsoft Blames Software Flaw, Traffic Surge and Reduced Capacity for Global Microsoft 365 Outage",
           "name": "Major cloud or AI service outage"
-        },
-        {
-          "detail": "Deepfake Musk, Fake Ransomware Heroes, and a Spy in a Palo Alto Coffee Shop: This Week in Security Was Wild",
-          "name": "Surge in AI voice-clone / deepfake scams in Australia"
         }
       ],
-      "score": 15,
-      "trend": "steady"
+      "score": 10,
+      "trend": "down"
     }
   ],
   "sectors_relative_5d": {
